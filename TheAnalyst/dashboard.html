@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & tokens ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:            #f5f4f0;
+      --surface:       #ffffff;
+      --surface-2:     #f0eeea;
+      --border:        #e2dfd8;
+      --border-light:  #eceae4;
+
+      --accent:        #2d6a4f;
+      --accent-light:  #e8f5ee;
+      --accent-mid:    #b7dfc8;
+      --accent-dark:   #1e4f39;
+
+      --red:           #c0392b;
+      --red-light:     #fdf1f0;
+      --orange:        #d35400;
+      --orange-light:  #fef5ef;
+      --blue:          #2471a3;
+      --blue-light:    #eaf3fb;
+      --purple:        #7d3c98;
+      --purple-light:  #f5eefb;
+
+      --ink:           #1a1a18;
+      --ink-2:         #4a4a47;
+      --ink-3:         #888884;
+
+      --radius:        8px;
+      --radius-sm:     5px;
+      --shadow-sm:     0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md:     0 4px 16px rgba(0,0,0,0.10);
+      --shadow-lg:     0 8px 32px rgba(0,0,0,0.13);
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink-2);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ─────────────────────────────────────────────────────────── */
+    .page {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+    }
+
+    /* ── Sidebar ─────────────────────────────────────────────────────────── */
+    .sidebar {
+      background: var(--ink);
+      color: rgba(255,255,255,0.75);
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar-header {
+      padding: 28px 24px 22px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .logo span { color: var(--accent-mid); }
+
+    .logo-sub {
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .sidebar-section {
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .sidebar-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 12px;
+    }
+
+    .sidebar-note {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .sidebar-note strong {
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+    }
+
+    .metric-list { display: flex; flex-direction: column; gap: 8px; }
+
+    .metric-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+    }
+
+    .metric-item .k { color: rgba(255,255,255,0.45); }
+    .metric-item .v { color: rgba(255,255,255,0.85); font-weight: 500; font-family: 'DM Mono', monospace; }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 18px 24px;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.2);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* ── Main area ──────────────────────────────────────────────────────── */
+    .main { padding: 36px 40px; overflow-y: auto; }
+
+    .main-header { margin-bottom: 32px; }
+
+    .main-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .main-sub { font-size: 0.9rem; color: var(--ink-3); }
+
+    /* ── Search bar ─────────────────────────────────────────────────────── */
+    .search-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 32px;
+    }
+
+    .search-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 12px;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .ticker-input {
+      flex: 0 0 180px;
+      padding: 0 16px;
+      height: 48px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: 'DM Mono', monospace;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .ticker-input:focus { border-color: var(--accent); }
+    .ticker-input::placeholder { text-transform: none; font-weight: 400; font-family: 'DM Sans', sans-serif; letter-spacing: 0; color: var(--ink-3); }
+
+    .analyze-btn {
+      padding: 0 28px;
+      height: 48px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.12s;
+    }
+
+    .analyze-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .analyze-btn:active { transform: translateY(0); }
+    .analyze-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    .search-hint {
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: var(--ink-3);
+    }
+
+    .search-hint code {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      background: var(--surface-2);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    /* ── Result area ─────────────────────────────────────────────────────── */
+    #result-area { margin-bottom: 40px; }
+
+    /* ── Analysis card ──────────────────────────────────────────────────── */
+    .analysis-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 24px 28px 20px;
+      border-bottom: 1px solid var(--border-light);
+      gap: 16px;
+    }
+
+    .card-ticker-block { flex: 1; min-width: 0; }
+
+    .card-ticker {
+      font-family: 'DM Mono', monospace;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+
+    .card-company {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: 2px;
+    }
+
+    .card-sector {
+      font-size: 0.78rem;
+      color: var(--ink-3);
+      margin-top: 2px;
+    }
+
+    .card-price-block { text-align: right; flex-shrink: 0; }
+
+    .card-price {
+      font-family: 'DM Mono', monospace;
+      font-size: 1.9rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .card-change { font-size: 0.82rem; font-weight: 500; margin-top: 4px; }
+    .card-change.pos { color: #27ae60; }
+    .card-change.neg { color: var(--red); }
+
+    /* Verdict badge */
+    .verdict-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .verdict-badge.UNDERVALUED   { background: var(--accent-light); color: var(--accent-dark); border: 1px solid var(--accent-mid); }
+    .verdict-badge.FAIRLY\ VALUED { background: var(--blue-light);   color: var(--blue);        border: 1px solid #a9cce3; }
+    .verdict-badge.OVERPRICED    { background: var(--red-light);     color: var(--red);         border: 1px solid #f5b7b1; }
+    .verdict-badge.SPECULATIVE   { background: var(--purple-light);  color: var(--purple);      border: 1px solid #d2b4de; }
+
+    .verdict-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .UNDERVALUED   .verdict-dot { background: var(--accent); }
+    .FAIRLY\ VALUED .verdict-dot { background: var(--blue); }
+    .OVERPRICED    .verdict-dot { background: var(--red); }
+    .SPECULATIVE   .verdict-dot { background: var(--purple); }
+
+    /* Commentary */
+    .card-commentary {
+      padding: 20px 28px;
+      font-size: 0.925rem;
+      line-height: 1.75;
+      color: var(--ink-2);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    /* Metrics grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .metric-cell {
+      padding: 18px 22px;
+      border-right: 1px solid var(--border-light);
+    }
+
+    .metric-cell:last-child { border-right: none; }
+
+    .mc-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 5px;
+    }
+
+    .mc-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .mc-value.null { color: var(--ink-3); font-size: 0.85rem; }
+
+    .mc-sub {
+      font-size: 0.7rem;
+      color: var(--ink-3);
+      margin-top: 2px;
+    }
+
+    /* Graham bar */
+    .graham-row {
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.82rem;
+      color: var(--ink-2);
+      border-bottom: 1px solid var(--border-light);
+      flex-wrap: wrap;
+    }
+
+    .graham-label { font-weight: 600; color: var(--ink); flex-shrink: 0; }
+
+    .graham-bar-wrap {
+      flex: 1;
+      min-width: 180px;
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: visible;
+      position: relative;
+    }
+
+    .graham-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--accent);
+      max-width: 100%;
+      transition: width 0.6s ease;
+    }
+
+    .graham-bar-fill.over { background: var(--red); }
+
+    .graham-marker {
+      position: absolute;
+      top: -3px;
+      width: 2px;
+      height: 14px;
+      background: var(--ink-3);
+      border-radius: 1px;
+      left: 100%;
+      transform: translateX(-50%);
+    }
+
+    .graham-values { font-family: 'DM Mono', monospace; font-size: 0.78rem; flex-shrink: 0; }
+
+    /* SEC row */
+    .sec-row {
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.78rem;
+      color: var(--ink-3);
+      flex-wrap: wrap;
+    }
+
+    .sec-item { display: flex; align-items: center; gap: 6px; }
+    .sec-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: var(--ink-2);
+    }
+
+    /* Scanned timestamp */
+    .card-foot {
+      padding: 10px 28px;
+      font-size: 0.7rem;
+      color: var(--ink-3);
+      font-family: 'DM Mono', monospace;
+      background: var(--surface-2);
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* Error state */
+    .error-card {
+      background: var(--red-light);
+      border: 1px solid #f5b7b1;
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      color: var(--red);
+      font-size: 0.9rem;
+    }
+
+    /* Loading spinner */
+    .loading-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 48px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .spinner {
+      width: 36px; height: 36px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto 16px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .loading-text { font-size: 0.9rem; color: var(--ink-3); }
+    .loading-text strong { color: var(--ink-2); }
+
+    /* ── Prescan section ────────────────────────────────────────────────── */
+    .section-header { margin-bottom: 18px; }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      margin-bottom: 3px;
+    }
+
+    .section-sub { font-size: 0.82rem; color: var(--ink-3); }
+
+    .prescan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+      gap: 16px;
+    }
+
+    /* Skeleton card */
+    .skeleton-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skel {
+      background: linear-gradient(90deg, var(--border) 25%, var(--border-light) 50%, var(--border) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 4px;
+      height: 14px;
+      margin-bottom: 10px;
+    }
+
+    .skel.wide  { width: 80%; }
+    .skel.mid   { width: 55%; }
+    .skel.short { width: 35%; }
+    .skel.tall  { height: 10px; width: 100%; }
+    .skel.h24   { height: 24px; width: 60%; }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Mini analysis card (prescan) */
+    .mini-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .mini-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .mini-card-top {
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .mini-ticker {
+      font-family: 'DM Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .mini-company {
+      font-size: 0.78rem;
+      color: var(--ink-3);
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .mini-price-wrap { text-align: right; flex-shrink: 0; }
+
+    .mini-price {
+      font-family: 'DM Mono', monospace;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .mini-change { font-size: 0.72rem; font-weight: 500; margin-top: 2px; }
+    .mini-change.pos { color: #27ae60; }
+    .mini-change.neg { color: var(--red); }
+
+    .mini-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mini-badge.UNDERVALUED    { background: var(--accent-light); color: var(--accent-dark); }
+    .mini-badge.FAIRLY\ VALUED  { background: var(--blue-light);   color: var(--blue);        }
+    .mini-badge.OVERPRICED     { background: var(--red-light);     color: var(--red);         }
+    .mini-badge.SPECULATIVE    { background: var(--purple-light);  color: var(--purple);      }
+
+    .mini-card-body {
+      padding: 14px 20px 16px;
+    }
+
+    .mini-commentary {
+      font-size: 0.8rem;
+      line-height: 1.65;
+      color: var(--ink-2);
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .mini-metrics {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .mini-met {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .mini-met .k {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+
+    .mini-met .v {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* ── Responsive ─────────────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .page { grid-template-columns: 1fr; }
+      .sidebar { position: static; height: auto; }
+      .main { padding: 24px 20px; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .card-top { flex-direction: column; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+      .search-row { flex-direction: column; }
+      .ticker-input { flex: unset; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Shared Site Header ──────────────────────────────────────────────── -->
+<style>
+  .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e0e7e7;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'DM Sans',sans-serif;}
+  .site-nav{display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 28px;}
+  .site-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:#2e3334;font-size:1.05rem;font-weight:700;letter-spacing:-.01em;}
+  .site-logo img{height:2rem;width:auto;display:block;}
+  .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+  .site-nav-link{display:inline-flex;align-items:center;padding:.38rem .85rem;border-radius:3px;text-decoration:none;font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#656d6f;transition:color .15s,background .15s;}
+  .site-nav-link:hover,.site-nav-link.current{color:#38bda6;background:#edf8f6;}
+  .site-nav-badge{font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:#edf8f6;color:#2a9b87;padding:.12rem .4rem;border-radius:3px;}
+</style>
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="/" class="site-logo">
+      <img src="/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </a>
+    <ul class="site-nav-links">
+      <li><a href="http://localhost:8080" class="site-nav-link">Movers &amp; Shakers</a></li>
+      <li><a href="http://localhost:8090" class="site-nav-link">Tried &amp; True</a></li>
+      <li><a href="http://localhost:8095" class="site-nav-link current">The Analyst</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page">
+
+  <!-- ── Sidebar ─────────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">The <span>Analyst</span></div>
+      <div class="logo-sub">Fundamental Research</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Methodology</div>
+      <div class="sidebar-note">
+        <strong>Valuation signals</strong> are derived from SEC 10-K &amp; 10-Q
+        filings, enriched with live market data via yfinance.<br><br>
+        The <strong>Graham Number</strong> (√22.5 × EPS × Book Value) provides a
+        classical intrinsic value floor. Sector-median P/E benchmarks contextualise
+        the multiple.<br><br>
+        Verdict categories: <strong>Undervalued · Fairly Valued · Overpriced · Speculative</strong>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Data Sources</div>
+      <div class="metric-list">
+        <div class="metric-item"><span class="k">Price &amp; Fundamentals</span><span class="v">yfinance</span></div>
+        <div class="metric-item"><span class="k">10-K / 10-Q filings</span><span class="v">SEC EDGAR</span></div>
+        <div class="metric-item"><span class="k">Sector P/E benchmarks</span><span class="v">Built-in</span></div>
+        <div class="metric-item"><span class="k">Graham Number</span><span class="v">Computed</span></div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Pre-scanned</div>
+      <div class="metric-list" id="sb-prescan-list">
+        <div class="metric-item"><span class="k">AAPL</span><span class="v">—</span></div>
+        <div class="metric-item"><span class="k">MSFT</span><span class="v">—</span></div>
+        <div class="metric-item"><span class="k">NVDA</span><span class="v">—</span></div>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      Not financial advice. For personal educational use only.
+    </div>
+  </aside>
+
+  <!-- ── Main ───────────────────────────────────────────────────────────── -->
+  <main class="main">
+
+    <div class="main-header">
+      <h1 class="main-title">Fundamental Analysis</h1>
+      <p class="main-sub">Enter any U.S. ticker to retrieve SEC filing data and a Wall Street-style valuation overview.</p>
+    </div>
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <div class="search-label">Analyse a stock</div>
+      <div class="search-row">
+        <input
+          id="ticker-input"
+          class="ticker-input"
+          type="text"
+          placeholder="e.g. AAPL"
+          maxlength="10"
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <button id="analyze-btn" class="analyze-btn" onclick="doAnalyze()">
+          Run Analysis
+        </button>
+      </div>
+      <p class="search-hint">
+        Try <code>AAPL</code>, <code>TSLA</code>, <code>JPM</code>, <code>AMZN</code> — any U.S. equity ticker.
+        Analysis pulls live data and takes ~10–20 seconds.
+      </p>
+    </div>
+
+    <!-- Result -->
+    <div id="result-area"></div>
+
+    <!-- Pre-scanned examples -->
+    <div id="prescan-section">
+      <div class="section-header">
+        <h2 class="section-title">Example Reports</h2>
+        <p class="section-sub">Pre-scanned on startup — AAPL, MSFT, and NVDA for quick reference.</p>
+      </div>
+      <div class="prescan-grid" id="prescan-grid">
+        <!-- Skeleton cards while scanning -->
+        <div class="skeleton-card"><div class="skel h24"></div><div class="skel wide"></div><div class="skel mid"></div><div class="skel tall"></div><div class="skel tall"></div><div class="skel short"></div></div>
+        <div class="skeleton-card"><div class="skel h24"></div><div class="skel wide"></div><div class="skel mid"></div><div class="skel tall"></div><div class="skel tall"></div><div class="skel short"></div></div>
+        <div class="skeleton-card"><div class="skel h24"></div><div class="skel wide"></div><div class="skel mid"></div><div class="skel tall"></div><div class="skel tall"></div><div class="skel short"></div></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  // ── Helpers ────────────────────────────────────────────────────────────────
+
+  function fmt(v, decimals = 1, suffix = '') {
+    if (v == null) return '—';
+    return Number(v).toFixed(decimals) + suffix;
+  }
+
+  function fmtCap(v) {
+    if (!v) return '—';
+    if (v >= 1e12) return '$' + (v / 1e12).toFixed(2) + 'T';
+    if (v >= 1e9)  return '$' + (v / 1e9).toFixed(1)  + 'B';
+    if (v >= 1e6)  return '$' + (v / 1e6).toFixed(1)  + 'M';
+    return '$' + v;
+  }
+
+  function fmtChange(pct) {
+    if (pct == null) return '';
+    const sign  = pct >= 0 ? '+' : '';
+    const cls   = pct >= 0 ? 'pos' : 'neg';
+    const arrow = pct >= 0 ? '▲' : '▼';
+    return `<span class="card-change ${cls}">${arrow} ${sign}${fmt(pct, 2)}%</span>`;
+  }
+
+  function fmtChangeMini(pct) {
+    if (pct == null) return '';
+    const sign  = pct >= 0 ? '+' : '';
+    const cls   = pct >= 0 ? 'pos' : 'neg';
+    const arrow = pct >= 0 ? '▲' : '▼';
+    return `<span class="mini-change ${cls}">${arrow} ${sign}${fmt(pct, 2)}%</span>`;
+  }
+
+  function verdictBadge(v) {
+    const safe = v.replace(/\s/g, '\\ ');
+    return `<span class="verdict-badge ${v}"><span class="verdict-dot"></span>${v}</span>`;
+  }
+
+  function secRow(filings) {
+    if (!filings || (!filings['10-K'] && !filings['10-Q'])) return '';
+    let parts = ['<div class="sec-row">'];
+    if (filings['10-K']) parts.push(`<span class="sec-item"><span class="sec-badge">10-K</span> Filed ${filings['10-K'].date}</span>`);
+    if (filings['10-Q']) parts.push(`<span class="sec-item"><span class="sec-badge">10-Q</span> Filed ${filings['10-Q'].date}</span>`);
+    parts.push('</div>');
+    return parts.join('');
+  }
+
+  function grahamBar(price, graham) {
+    if (!graham || !price) return '';
+    const ratio   = price / graham;
+    const pct     = Math.min(ratio * 100, 140);
+    const isOver  = ratio >= 1;
+    const fillPct = isOver ? 100 : pct;
+    const cls     = isOver ? 'over' : '';
+    const markerLeft = isOver ? Math.min((1 / ratio) * 100, 100) : 100;
+    return `
+      <div class="graham-row">
+        <span class="graham-label">Graham Number</span>
+        <div class="graham-bar-wrap">
+          <div class="graham-bar-fill ${cls}" style="width:${fillPct}%"></div>
+          ${isOver ? `<div class="graham-marker" style="left:${markerLeft}%"></div>` : ''}
+        </div>
+        <span class="graham-values">$${fmt(price, 2)} vs $${fmt(graham, 2)}</span>
+        <span style="font-size:0.78rem;color:var(--ink-3)">${ratio < 1 ? Math.round((1-ratio)*100)+'% discount' : Math.round((ratio-1)*100)+'% premium'}</span>
+      </div>`;
+  }
+
+  function metricCell(label, value, sub) {
+    const disp = value != null ? value : null;
+    const cls  = disp == null ? 'null' : '';
+    return `<div class="metric-cell">
+      <div class="mc-label">${label}</div>
+      <div class="mc-value ${cls}">${disp ?? '—'}</div>
+      ${sub ? `<div class="mc-sub">${sub}</div>` : ''}
+    </div>`;
+  }
+
+  // ── Build full analysis card ───────────────────────────────────────────────
+
+  function buildCard(d) {
+    const changeHtml = fmtChange(d.change_pct);
+    const ts = d.scanned_at ? new Date(d.scanned_at).toLocaleString() : '';
+
+    return `
+      <div class="analysis-card">
+
+        <div class="card-top">
+          <div>
+            <div class="card-ticker">${d.ticker}</div>
+            <div class="card-company">${d.company || '—'}</div>
+            <div class="card-sector">${d.sector || ''} ${d.industry ? '· ' + d.industry : ''}</div>
+          </div>
+          <div>
+            ${verdictBadge(d.verdict)}
+          </div>
+          <div class="card-price-block">
+            <div class="card-price">$${fmt(d.price, 2)}</div>
+            ${changeHtml}
+            <div style="font-size:0.75rem;color:var(--ink-3);margin-top:3px">${fmtCap(d.mkt_cap)} mkt cap</div>
+          </div>
+        </div>
+
+        <div class="card-commentary">${d.commentary || ''}</div>
+
+        <div class="metrics-grid">
+          ${metricCell('P/E (Trailing)', d.pe_trailing != null ? d.pe_trailing + 'x' : null)}
+          ${metricCell('P/E (Forward)',  d.pe_forward  != null ? d.pe_forward  + 'x' : null)}
+          ${metricCell('PEG Ratio',      d.peg         != null ? d.peg              : null, 'growth-adj.')}
+          ${metricCell('Price / Book',   d.pb          != null ? d.pb  + 'x'        : null)}
+          ${metricCell('Revenue Growth', d.rev_growth  != null ? d.rev_growth + '%'  : null, 'YoY')}
+          ${metricCell('Net Margin',     d.net_margin  != null ? d.net_margin + '%'  : null)}
+          ${metricCell('Return on Equity', d.roe       != null ? d.roe + '%'         : null)}
+          ${metricCell('Debt / Equity',  d.debt_equity != null ? d.debt_equity + '%' : null)}
+        </div>
+
+        ${grahamBar(d.price, d.graham)}
+        ${secRow(d.sec_filings)}
+
+        <div class="card-foot">Scanned ${ts} · Data via yfinance + SEC EDGAR · Not financial advice</div>
+      </div>`;
+  }
+
+  // ── Build mini prescan card ────────────────────────────────────────────────
+
+  function buildMiniCard(d) {
+    return `
+      <div class="mini-card">
+        <div class="mini-card-top">
+          <div>
+            <div class="mini-ticker">${d.ticker}</div>
+            <div class="mini-company" title="${d.company}">${d.company || '—'}</div>
+          </div>
+          <div class="mini-price-wrap">
+            <div class="mini-price">$${fmt(d.price, 2)}</div>
+            ${fmtChangeMini(d.change_pct)}
+          </div>
+        </div>
+        <div class="mini-card-body">
+          <div style="margin-bottom:10px">
+            <span class="mini-badge ${d.verdict}">${d.verdict}</span>
+          </div>
+          <div class="mini-commentary">${d.commentary || ''}</div>
+          <div class="mini-metrics">
+            ${d.pe_forward  != null ? `<div class="mini-met"><span class="k">Fwd P/E</span><span class="v">${d.pe_forward}x</span></div>` : ''}
+            ${d.peg         != null ? `<div class="mini-met"><span class="k">PEG</span><span class="v">${d.peg}</span></div>` : ''}
+            ${d.rev_growth  != null ? `<div class="mini-met"><span class="k">Rev Growth</span><span class="v">${d.rev_growth}%</span></div>` : ''}
+            ${d.net_margin  != null ? `<div class="mini-met"><span class="k">Net Margin</span><span class="v">${d.net_margin}%</span></div>` : ''}
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // ── Analyze ───────────────────────────────────────────────────────────────
+
+  async function doAnalyze() {
+    const input  = document.getElementById('ticker-input');
+    const btn    = document.getElementById('analyze-btn');
+    const area   = document.getElementById('result-area');
+    const ticker = input.value.trim().toUpperCase();
+
+    if (!ticker) { input.focus(); return; }
+
+    btn.disabled = true;
+    btn.textContent = 'Analysing…';
+
+    area.innerHTML = `
+      <div class="loading-card">
+        <div class="spinner"></div>
+        <div class="loading-text">Fetching data for <strong>${ticker}</strong>…<br>
+        Pulling SEC filings and live fundamentals.</div>
+      </div>`;
+
+    try {
+      const res  = await fetch('/api/analyze', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ ticker }),
+      });
+      const data = await res.json();
+
+      if (data.error) {
+        area.innerHTML = `<div class="error-card">⚠ ${data.error}</div>`;
+      } else {
+        area.innerHTML = buildCard(data);
+        area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (err) {
+      area.innerHTML = `<div class="error-card">⚠ Request failed: ${err.message}</div>`;
+    }
+
+    btn.disabled    = false;
+    btn.textContent = 'Run Analysis';
+  }
+
+  // Enter key triggers analysis
+  document.getElementById('ticker-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') doAnalyze();
+  });
+
+  // ── Prescan polling ───────────────────────────────────────────────────────
+
+  const PRESCAN_TICKERS = ['AAPL', 'MSFT', 'NVDA'];
+
+  async function pollPrescan() {
+    try {
+      const res  = await fetch('/api/prescan');
+      const data = await res.json();
+
+      // Update sidebar status
+      const sbList = document.getElementById('sb-prescan-list');
+      if (sbList && data.results) {
+        sbList.innerHTML = PRESCAN_TICKERS.map(t => {
+          const r = data.results[t];
+          const v = r && !r.error ? r.verdict : (data.status === 'scanning' ? '…' : '—');
+          return `<div class="metric-item"><span class="k">${t}</span><span class="v" style="font-size:0.68rem">${v}</span></div>`;
+        }).join('');
+      }
+
+      if (data.status === 'done') {
+        const grid = document.getElementById('prescan-grid');
+        if (grid) {
+          grid.innerHTML = PRESCAN_TICKERS.map(t => {
+            const r = data.results[t];
+            if (!r || r.error) {
+              return `<div class="mini-card" style="padding:24px;font-size:0.85rem;color:var(--ink-3)">
+                <strong style="color:var(--ink)">${t}</strong><br>
+                ${r ? r.error : 'No data'}
+              </div>`;
+            }
+            return buildMiniCard(r);
+          }).join('');
+        }
+      } else {
+        setTimeout(pollPrescan, 3000);
+      }
+    } catch {
+      setTimeout(pollPrescan, 5000);
+    }
+  }
+
+  pollPrescan();
+</script>
+
+<!-- ── Shared Site Footer ──────────────────────────────────────────────── -->
+<style>
+  .site-footer-shared{background:#2e3334;color:rgba(255,255,255,.5);padding:1.5rem 0;font-family:'DM Sans',sans-serif;}
+  .site-footer-inner{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;}
+  .site-footer-brand{display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:1rem;color:rgba(255,255,255,.92);}
+  .site-footer-brand img{height:1.2rem;width:auto;filter:invert(1);opacity:.85;}
+  .site-footer-disc{font-size:.78rem;}
+  .site-footer-copy{font-size:.68rem;font-family:monospace;opacity:.3;}
+</style>
+<footer class="site-footer-shared">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <img src="/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </div>
+    <p class="site-footer-disc">Not financial advice. For personal educational use only.</p>
+    <p class="site-footer-copy">Built with curiosity and caffeine.</p>
+  </div>
+</footer>
+
+</body>
+</html>

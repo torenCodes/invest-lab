@@ -1,0 +1,22 @@
+services:
+
+  - type: web
+    name: invest-movers-shakers
+    runtime: python
+    rootDir: MarketDashboard
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+
+  - type: web
+    name: invest-tried-true
+    runtime: python
+    rootDir: TriedAndTrue
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+
+  - type: web
+    name: invest-the-analyst
+    runtime: python
+    rootDir: TheAnalyst
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py

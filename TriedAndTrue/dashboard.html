@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tried and True</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & Base ───────────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:           #f5f4f0;
+    --surface:      #ffffff;
+    --surface-2:    #fafaf8;
+    --border:       #e8e6e0;
+    --border-light: #f0ede8;
+    --ink:          #1a1a18;
+    --ink-2:        #4a4a46;
+    --ink-3:        #8a8a82;
+    --green:        #1a7a4a;
+    --green-bg:     #edf7f2;
+    --green-light:  #d0edde;
+    --red:          #c0392b;
+    --red-bg:       #fdf0ef;
+    --orange:       #e67e22;
+    --orange-bg:    #fef5ec;
+    --blue:         #1a5fa8;
+    --blue-bg:      #eef3fb;
+    --accent:       #2d6a4f;
+    --gold:         #b8922a;
+    --gold-bg:      #fdf9ed;
+    --silver:       #6e7f87;
+    --silver-bg:    #f5f7f8;
+    --bronze:       #8b5e3c;
+    --bronze-bg:    #fdf3ec;
+    --shadow-sm:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md:    0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-lg:    0 16px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+    --radius:       10px;
+    --radius-sm:    6px;
+  }
+
+  html { font-size: 15px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(45,106,79,0.04) 0%, transparent 50%),
+      radial-gradient(circle at 85% 100%, rgba(184,146,42,0.03) 0%, transparent 50%);
+  }
+
+  /* ── Layout ─────────────────────────────────────────────────────────────── */
+  .layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 64px 1fr;
+    min-height: 100vh;
+  }
+
+  /* ── Header ─────────────────────────────────────────────────────────────── */
+  .header {
+    grid-column: 1 / -1;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .header-left { display: flex; align-items: center; gap: 16px; }
+
+  .logo {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.3rem;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+  }
+  .logo span { font-style: italic; }
+
+  .scan-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--ink-3);
+    background: var(--bg);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
+
+  .pulse {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse-anim 2s ease-in-out infinite;
+  }
+  .pulse.scanning { background: var(--orange); animation: pulse-anim 0.8s ease-in-out infinite; }
+  .pulse.error    { background: var(--red); animation: none; }
+
+  @keyframes pulse-anim {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .header-right { display: flex; align-items: center; gap: 20px; }
+
+  .stat-pill {
+    font-size: 0.75rem;
+    color: var(--ink-2);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .stat-pill strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Sidebar ─────────────────────────────────────────────────────────────── */
+  .sidebar {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 24px 0;
+    overflow-y: auto;
+    position: sticky;
+    top: 124px;
+    height: calc(100vh - 124px);
+  }
+
+  .sidebar-section { margin-bottom: 28px; }
+
+  .sidebar-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding: 0 20px;
+    margin-bottom: 8px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 20px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--ink-2);
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    text-decoration: none;
+  }
+  .nav-item:hover  { color: var(--ink); background: var(--bg); }
+  .nav-item.active { color: var(--accent); border-left-color: var(--accent); background: var(--green-bg); font-weight: 500; }
+  .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+
+  .scan-progress-wrap { padding: 0 20px; }
+  .progress-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #74c69d, var(--accent));
+    border-radius: 2px;
+    transition: width 0.5s ease;
+  }
+  .progress-label {
+    font-size: 0.68rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--ink-3);
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .rescan-btn {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 12px 20px 0;
+    padding: 7px 12px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.15s;
+  }
+  .rescan-btn:hover    { background: #1e4d39; }
+  .rescan-btn:disabled { background: var(--ink-3); cursor: not-allowed; }
+
+  .sidebar-note {
+    padding: 0 20px;
+    font-size: 0.72rem;
+    color: var(--ink-3);
+    line-height: 1.55;
+  }
+
+  /* ── Main ────────────────────────────────────────────────────────────────── */
+  .main {
+    padding: 28px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* ── Section headers ─────────────────────────────────────────────────────── */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .section-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .section-subtitle { font-size: 0.78rem; color: var(--ink-3); }
+
+  .section-badge {
+    margin-left: auto;
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 3px 9px;
+    border-radius: 20px;
+    color: var(--ink-3);
+  }
+
+  /* ── Loading / empty states ─────────────────────────────────────────────── */
+  .loading-state {
+    text-align: center;
+    padding: 56px 20px;
+    color: var(--ink-3);
+  }
+
+  .loading-spinner {
+    width: 28px; height: 28px;
+    border: 2px solid var(--border);
+    border-top-color: var(--green);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 12px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-text { font-size: 0.82rem; }
+
+  .empty-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--ink-3);
+    font-size: 0.82rem;
+  }
+
+  /* ── Scan overlay ────────────────────────────────────────────────────────── */
+  #scan-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(245,244,240,0.88);
+    backdrop-filter: blur(4px);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #scan-overlay.visible { display: flex; }
+
+  .overlay-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 36px 48px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    max-width: 400px;
+    width: 90%;
+  }
+
+  .overlay-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.6rem;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .overlay-sub {
+    font-size: 0.82rem;
+    color: var(--ink-3);
+    margin-bottom: 24px;
+    line-height: 1.55;
+  }
+
+  .overlay-progress {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .overlay-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #74c69d, var(--accent));
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  .overlay-ticker {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-3);
+  }
+
+  /* ── Nominee cards ───────────────────────────────────────────────────────── */
+  .nominees-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nominee-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .nominee-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
+
+  .nominee-rank {
+    width: 58px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.7rem;
+    color: var(--ink-3);
+    background: var(--surface-2);
+    border-right: 1px solid var(--border-light);
+  }
+  .rank-1 { color: var(--gold);   background: var(--gold-bg);   border-right-color: #f0e2a0; }
+  .rank-2 { color: var(--silver); background: var(--silver-bg); border-right-color: #dde3e6; }
+  .rank-3 { color: var(--bronze); background: var(--bronze-bg); border-right-color: #ecd9c8; }
+
+  .nominee-body { flex: 1; padding: 14px 18px; min-width: 0; }
+
+  .nominee-top-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .nominee-ticker {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+  }
+
+  .nominee-fullname {
+    font-size: 0.875rem;
+    color: var(--ink-2);
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  .nominee-sector {
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    background: var(--blue-bg);
+    color: var(--blue);
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .nominee-stats-row {
+    display: flex;
+    gap: 22px;
+    margin: 8px 0 10px;
+    flex-wrap: wrap;
+  }
+
+  .nominee-stat { display: flex; flex-direction: column; gap: 2px; }
+
+  .nominee-stat-label {
+    font-size: 0.59rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  .nominee-stat-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .stat-green { color: var(--green); }
+  .stat-red   { color: var(--red); }
+
+  .nominee-etf-row { display: flex; flex-wrap: wrap; gap: 5px; }
+
+  .nominee-etf-pill {
+    font-size: 0.65rem;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    padding: 2px 7px;
+    background: var(--green-bg);
+    color: var(--green);
+    border: 1px solid var(--green-light);
+    border-radius: 3px;
+  }
+  .etf-pill-wt { color: var(--accent); font-size: 0.6rem; }
+
+  /* ── ETF scorecard grid ──────────────────────────────────────────────────── */
+  .etf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 14px;
+  }
+
+  .etf-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .etf-card:hover      { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+  .etf-card-winner     { border-left: 3px solid var(--green-light); }
+
+  .etf-card-header {
+    padding: 14px 16px 11px;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--surface-2);
+  }
+
+  .etf-symbol {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .etf-fullname {
+    font-size: 0.72rem;
+    color: var(--ink-3);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .etf-chips { display: flex; gap: 4px; margin-top: 8px; flex-wrap: wrap; }
+
+  .etf-chip-provider {
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    background: var(--blue-bg);
+    color: var(--blue);
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .etf-chip-cat {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    background: var(--bg);
+    color: var(--ink-3);
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+
+  .etf-perf-block {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .etf-perf-block:last-of-type { border-bottom: 1px solid var(--border-light); }
+
+  .perf-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+
+  .perf-period-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  .beats-badge {
+    font-size: 0.58rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    background: var(--green-bg);
+    color: var(--green);
+    border-radius: 3px;
+  }
+
+  .lags-badge {
+    font-size: 0.58rem;
+    font-weight: 600;
+    padding: 1px 6px;
+    background: var(--orange-bg);
+    color: var(--orange);
+    border-radius: 3px;
+  }
+
+  .perf-return-val {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.85rem;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .return-pos { color: var(--green); }
+  .return-neg { color: var(--red); }
+
+  .perf-spy-ref {
+    font-size: 0.68rem;
+    color: var(--ink-3);
+    font-family: 'DM Mono', monospace;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .perf-delta-badge {
+    font-size: 0.62rem;
+    font-weight: 600;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+  .delta-pos { background: var(--green-bg); color: var(--green); }
+  .delta-neg { background: var(--red-bg);   color: var(--red); }
+
+  .etf-holdings-block {
+    padding: 10px 16px 13px;
+    flex: 1;
+  }
+
+  .holdings-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 7px;
+  }
+
+  .holdings-pills { display: flex; flex-wrap: wrap; gap: 4px; }
+
+  .holding-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 2px 6px;
+    background: var(--bg);
+    color: var(--ink-2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+  }
+
+  /* ── Scrollbar ───────────────────────────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  /* ── Responsive ──────────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; grid-template-rows: 64px auto 1fr; }
+    .sidebar {
+      position: static; height: auto;
+      display: flex; flex-wrap: wrap;
+      padding: 12px; gap: 4px;
+      border-right: none; border-bottom: 1px solid var(--border);
+    }
+    .sidebar-section { margin: 0; }
+    .sidebar-label { display: none; }
+    .nav-item { border-left: none; border-bottom: 2px solid transparent; padding: 7px 12px; border-radius: 6px; }
+    .nav-item.active { border-bottom-color: var(--accent); }
+    .scan-progress-wrap { width: 100%; padding: 8px 12px 0; }
+    .main { padding: 16px; }
+    .etf-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Shared Site Header ──────────────────────────────────────────────── -->
+<style>
+  .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e0e7e7;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'DM Sans',sans-serif;}
+  .site-nav{display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 28px;}
+  .site-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:#2e3334;font-size:1.05rem;font-weight:700;letter-spacing:-.01em;}
+  .site-logo img{height:2rem;width:auto;display:block;}
+  .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+  .site-nav-link{display:inline-flex;align-items:center;padding:.38rem .85rem;border-radius:3px;text-decoration:none;font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#656d6f;transition:color .15s,background .15s;}
+  .site-nav-link:hover,.site-nav-link.current{color:#38bda6;background:#edf8f6;}
+  .site-nav-badge{font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:#edf8f6;color:#2a9b87;padding:.12rem .4rem;border-radius:3px;}
+</style>
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="/" class="site-logo">
+      <img src="/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </a>
+    <ul class="site-nav-links">
+      <li><a href="http://localhost:8080" class="site-nav-link">Movers &amp; Shakers</a></li>
+      <li><a href="http://localhost:8090" class="site-nav-link current">Tried &amp; True</a></li>
+      <li><a href="http://localhost:8095" class="site-nav-link">The Analyst</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Scan overlay (first load only) -->
+<div id="scan-overlay">
+  <div class="overlay-card">
+    <div style="font-size:2.2rem;margin-bottom:12px;">📊</div>
+    <div class="overlay-title">Scanning Growth ETFs</div>
+    <div class="overlay-sub">Fetching holdings and 3-year performance data across 10 top growth funds. Identifying consensus stock picks. This takes 2–3 minutes.</div>
+    <div class="overlay-progress"><div class="overlay-fill" id="overlay-fill" style="width:0%"></div></div>
+    <div class="overlay-ticker" id="overlay-ticker">Starting up…</div>
+  </div>
+</div>
+
+<div class="layout">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">Tried &amp; <span>True</span></div>
+      <div class="scan-badge">
+        <div class="pulse" id="status-pulse"></div>
+        <span id="status-text">Loading…</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="stat-pill">ETFs: <strong id="hdr-etfs">—</strong></div>
+      <div class="stat-pill">Nominees: <strong id="hdr-nominees">—</strong></div>
+      <div class="stat-pill">Stocks Found: <strong id="hdr-stocks">—</strong></div>
+      <div class="stat-pill" style="color:var(--ink-3);font-size:0.7rem;font-family:'DM Mono',monospace;" id="hdr-time">—</div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Navigation</div>
+      <a class="nav-item active" href="#nominees" onclick="setActive(this)">
+        <span class="nav-icon">♛</span> Top 10 Nominees
+      </a>
+      <a class="nav-item" href="#etf-scorecards" onclick="setActive(this)">
+        <span class="nav-icon">📊</span> ETF Scorecards
+      </a>
+    </div>
+
+    <div class="sidebar-section scan-progress-wrap">
+      <div class="sidebar-label">Scan Progress</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="sidebar-progress" style="width:0%"></div>
+      </div>
+      <div class="progress-label" id="sidebar-label">—</div>
+      <button class="rescan-btn" id="rescan-btn" onclick="triggerRescan()">↺ Rescan ETFs</button>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Methodology</div>
+      <div class="sidebar-note">
+        Stocks are ranked by overlap score: ETF count × 10 + average allocation weight. Breadth of consensus matters most; depth of conviction breaks ties.
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main">
+
+    <!-- Top 10 Nominees -->
+    <section id="nominees">
+      <div class="section-header">
+        <div class="section-title">Top 10 Nominees</div>
+        <div class="section-subtitle">Highest consensus across scanned growth ETFs</div>
+        <span class="section-badge" id="nominee-badge">— nominees</span>
+      </div>
+      <div class="nominees-list" id="nominees-body">
+        <div class="loading-state">
+          <div class="loading-spinner"></div>
+          <div class="loading-text">Waiting for scan results…</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ETF Scorecards -->
+    <section id="etf-scorecards">
+      <div class="section-header">
+        <div class="section-title">ETF Scorecards</div>
+        <div class="section-subtitle">3 &amp; 5-year total return vs SPY</div>
+        <span class="section-badge" id="etf-badge">— ETFs</span>
+      </div>
+      <div class="etf-grid" id="etf-grid-body">
+        <div class="loading-state" style="grid-column:1/-1">
+          <div class="loading-spinner"></div>
+          <div class="loading-text">Loading ETF data…</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+// ── State ────────────────────────────────────────────────────────────────────
+let isFirstLoad    = true;
+let lastResultHash = null;
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+
+function fmtReturn(n) {
+  if (n == null) return '—';
+  return `${n >= 0 ? '+' : ''}${n}%`;
+}
+
+function fmtCap(mc) {
+  if (!mc) return '—';
+  if (mc >= 1e12) return `$${(mc / 1e12).toFixed(2)}T`;
+  if (mc >= 1e9)  return `$${(mc / 1e9).toFixed(1)}B`;
+  return `$${(mc / 1e6).toFixed(0)}M`;
+}
+
+function setActive(el) {
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ── Status update ─────────────────────────────────────────────────────────────
+function updateStatus(st) {
+  const pulse   = $('status-pulse');
+  const text    = $('status-text');
+  const sbar    = $('sidebar-progress');
+  const slabel  = $('sidebar-label');
+  const btn     = $('rescan-btn');
+  const overlay = $('scan-overlay');
+  const ofill   = $('overlay-fill');
+  const oticker = $('overlay-ticker');
+
+  if (st.status === 'scanning') {
+    pulse.className  = 'pulse scanning';
+    text.textContent = 'Scanning ETFs…';
+    sbar.style.width = `${st.progress}%`;
+    slabel.textContent = st.current || '—';
+    if (btn) { btn.disabled = true; btn.textContent = '↺ Scanning…'; }
+    if (ofill)   ofill.style.width   = `${st.progress}%`;
+    if (oticker) oticker.textContent = st.current || 'Scanning ETFs…';
+    if (isFirstLoad && overlay) overlay.classList.add('visible');
+
+  } else if (st.status === 'idle') {
+    pulse.className = 'pulse';
+    const t = st.last_scan
+      ? new Date(st.last_scan).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      : '—';
+    text.textContent   = `Last scan: ${t}`;
+    sbar.style.width   = '100%';
+    slabel.textContent = 'Complete';
+    if (btn) { btn.disabled = false; btn.textContent = '↺ Rescan ETFs'; }
+    if (overlay) overlay.classList.remove('visible');
+    isFirstLoad = false;
+
+  } else if (st.status === 'error') {
+    pulse.className  = 'pulse error';
+    text.textContent = 'Scan error';
+    if (btn) { btn.disabled = false; btn.textContent = '↺ Retry Scan'; }
+    if (overlay) overlay.classList.remove('visible');
+    isFirstLoad = false;
+  }
+}
+
+// ── Results rendering ─────────────────────────────────────────────────────────
+function renderResults(data) {
+  if (!data) return;
+
+  // Avoid unnecessary re-renders
+  const hash = `${data.scanned_at}|${(data.top_10 || []).length}`;
+  if (hash === lastResultHash) return;
+  lastResultHash = hash;
+
+  // Header stats
+  const meta = data.meta || {};
+  $('hdr-etfs').textContent     = meta.etfs_scanned        || '—';
+  $('hdr-nominees').textContent = (data.top_10 || []).length;
+  $('hdr-stocks').textContent   = meta.total_stocks_found  || '—';
+  if (data.scanned_at) {
+    $('hdr-time').textContent = new Date(data.scanned_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+
+  renderNominees(data.top_10 || [], meta.etfs_scanned || 10);
+  renderEtfScorecards(data.etfs || []);
+}
+
+// ── Nominee list ──────────────────────────────────────────────────────────────
+function renderNominees(stocks, totalEtfs) {
+  const el = $('nominees-body');
+  $('nominee-badge').textContent = `${stocks.length} nominees`;
+
+  if (!stocks.length) {
+    el.innerHTML = '<div class="empty-state">No nominees found — run a scan first.</div>';
+    return;
+  }
+  el.innerHTML = stocks.map(s => renderNomineeCard(s, totalEtfs)).join('');
+}
+
+function renderNomineeCard(stock, totalEtfs) {
+  const rankClass = stock.rank <= 3 ? `rank-${stock.rank}` : '';
+  const ret3yr    = stock.performance && stock.performance['3yr'];
+  const retStr    = fmtReturn(ret3yr);
+  const retClass  = ret3yr != null ? (ret3yr >= 0 ? 'stat-green' : 'stat-red') : '';
+
+  const sectorHtml = stock.sector
+    ? `<span class="nominee-sector">${stock.sector}</span>` : '';
+
+  const etfPills = (stock.etfs_holding || [])
+    .sort((a, b) => b.weight - a.weight)
+    .map(e => `<span class="nominee-etf-pill">${e.symbol} <span class="etf-pill-wt">${parseFloat(e.weight).toFixed(1)}%</span></span>`)
+    .join('');
+
+  const peHtml = stock.pe
+    ? `<div class="nominee-stat">
+        <span class="nominee-stat-label">P/E Ratio</span>
+        <span class="nominee-stat-value">${parseFloat(stock.pe).toFixed(1)}</span>
+       </div>` : '';
+
+  return `
+    <div class="nominee-card">
+      <div class="nominee-rank ${rankClass}">${stock.rank}</div>
+      <div class="nominee-body">
+        <div class="nominee-top-row">
+          <span class="nominee-ticker">${stock.ticker}</span>
+          <span class="nominee-fullname">${stock.full_name || stock.name || ''}</span>
+          ${sectorHtml}
+        </div>
+        <div class="nominee-stats-row">
+          <div class="nominee-stat">
+            <span class="nominee-stat-label">ETF Overlap</span>
+            <span class="nominee-stat-value">${stock.etf_count} of ${totalEtfs}</span>
+          </div>
+          <div class="nominee-stat">
+            <span class="nominee-stat-label">Avg Weight</span>
+            <span class="nominee-stat-value">${stock.avg_weight}%</span>
+          </div>
+          <div class="nominee-stat">
+            <span class="nominee-stat-label">3yr Return</span>
+            <span class="nominee-stat-value ${retClass}">${retStr}</span>
+          </div>
+          <div class="nominee-stat">
+            <span class="nominee-stat-label">Market Cap</span>
+            <span class="nominee-stat-value">${fmtCap(stock.market_cap)}</span>
+          </div>
+          ${peHtml}
+          <div class="nominee-stat">
+            <span class="nominee-stat-label">Overlap Score</span>
+            <span class="nominee-stat-value">${stock.score}</span>
+          </div>
+        </div>
+        <div class="nominee-etf-row">${etfPills || '<span style="font-size:0.72rem;color:var(--ink-3);">No ETF detail available</span>'}</div>
+      </div>
+    </div>`;
+}
+
+// ── ETF scorecard grid ────────────────────────────────────────────────────────
+function renderEtfScorecards(etfs) {
+  const el          = $('etf-grid-body');
+  const beatsCount  = etfs.filter(e => e.beats_spy_3yr).length;
+  $('etf-badge').textContent = `${etfs.length} ETFs · ${beatsCount} beat SPY (3yr)`;
+
+  if (!etfs.length) {
+    el.innerHTML = '<div class="empty-state" style="grid-column:1/-1">ETF data loading…</div>';
+    return;
+  }
+  el.innerHTML = etfs.map(renderEtfCard).join('');
+}
+
+function renderEtfCard(etf) {
+  const p   = etf.performance || {};
+  const spy = etf.spy_perf    || {};
+
+  const retClass  = n => n == null ? '' : n >= 0 ? 'return-pos' : 'return-neg';
+  const dClass    = n => n == null ? '' : n >= 0 ? 'delta-pos'  : 'delta-neg';
+  const delta3    = etf.delta_3yr;
+  const delta5    = etf.delta_5yr;
+
+  const beatsBadge = etf.beats_spy_3yr
+    ? '<span class="beats-badge">Beats SPY ✓</span>'
+    : (p['3yr'] != null ? '<span class="lags-badge">Trails SPY</span>' : '');
+
+  const holdingPills = (etf.top_holdings_display || [])
+    .slice(0, 6)
+    .map(h => `<span class="holding-pill">${h.ticker}</span>`)
+    .join('') || '<span style="font-size:0.72rem;color:var(--ink-3);">No holdings data</span>';
+
+  const perf5 = p['5yr'] != null ? `
+    <div class="etf-perf-block">
+      <div class="perf-row">
+        <span class="perf-period-label">5-Year Return</span>
+        ${delta5 != null ? `<span class="perf-delta-badge ${dClass(delta5)}">${fmtReturn(delta5)} vs SPY</span>` : ''}
+      </div>
+      <div class="perf-return-val ${retClass(p['5yr'])}">${fmtReturn(p['5yr'])}</div>
+      <div class="perf-spy-ref">SPY: ${fmtReturn(spy['5yr'])}</div>
+    </div>` : '';
+
+  return `
+    <div class="etf-card ${etf.beats_spy_3yr ? 'etf-card-winner' : ''}">
+      <div class="etf-card-header">
+        <div class="etf-symbol">${etf.symbol}</div>
+        <div class="etf-fullname">${etf.provider} ${etf.name}</div>
+        <div class="etf-chips">
+          <span class="etf-chip-provider">${etf.provider}</span>
+          <span class="etf-chip-cat">${etf.category}</span>
+        </div>
+      </div>
+      <div class="etf-perf-block">
+        <div class="perf-row">
+          <span class="perf-period-label">3-Year Return</span>
+          ${beatsBadge}
+        </div>
+        <div class="perf-return-val ${retClass(p['3yr'])}">${fmtReturn(p['3yr'])}</div>
+        <div class="perf-spy-ref">
+          SPY: ${fmtReturn(spy['3yr'])}
+          ${delta3 != null ? `<span class="perf-delta-badge ${dClass(delta3)}">${delta3 >= 0 ? '+' : ''}${delta3}%</span>` : ''}
+        </div>
+      </div>
+      ${perf5}
+      <div class="etf-holdings-block">
+        <div class="holdings-label">Top Holdings</div>
+        <div class="holdings-pills">${holdingPills}</div>
+      </div>
+    </div>`;
+}
+
+// ── Polling ───────────────────────────────────────────────────────────────────
+async function poll() {
+  try {
+    const [stRes, dataRes] = await Promise.all([
+      fetch('/api/status'),
+      fetch('/api/results').catch(() => null),
+    ]);
+
+    const st = await stRes.json();
+    updateStatus(st);
+
+    if (dataRes && dataRes.ok) {
+      const data = await dataRes.json();
+      if (!data.error) renderResults(data);
+    }
+  } catch (e) {
+    console.warn('Poll error:', e);
+  }
+
+  const scanning = $('status-pulse').classList.contains('scanning');
+  setTimeout(poll, scanning ? 3000 : 30000);
+}
+
+// ── Rescan ────────────────────────────────────────────────────────────────────
+async function triggerRescan() {
+  const btn = $('rescan-btn');
+  btn.disabled     = true;
+  btn.textContent  = '↺ Starting…';
+  try {
+    const res  = await fetch('/api/rescan', { method: 'POST' });
+    const data = await res.json();
+    if (data.ok) {
+      btn.textContent = '↺ Scanning…';
+      poll();
+    } else {
+      btn.disabled    = false;
+      btn.textContent = '↺ Rescan ETFs';
+    }
+  } catch {
+    btn.disabled    = false;
+    btn.textContent = '↺ Rescan ETFs';
+  }
+}
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+poll();
+</script>
+
+<!-- ── Shared Site Footer ──────────────────────────────────────────────── -->
+<style>
+  .site-footer-shared{background:#2e3334;color:rgba(255,255,255,.5);padding:1.5rem 0;font-family:'DM Sans',sans-serif;}
+  .site-footer-inner{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;}
+  .site-footer-brand{display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:1rem;color:rgba(255,255,255,.92);}
+  .site-footer-brand img{height:1.2rem;width:auto;filter:invert(1);opacity:.85;}
+  .site-footer-disc{font-size:.78rem;}
+  .site-footer-copy{font-size:.68rem;font-family:monospace;opacity:.3;}
+</style>
+<footer class="site-footer-shared">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <img src="/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </div>
+    <p class="site-footer-disc">Not financial advice. For personal educational use only.</p>
+    <p class="site-footer-copy">Built with curiosity and caffeine.</p>
+  </div>
+</footer>
+</body>
+</html>

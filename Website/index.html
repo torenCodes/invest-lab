@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Invest Lab — Market Intelligence</title>
+  <meta name="description" content="A personal stock research platform — identifying high-quality trading opportunities through real-time data, sentiment analysis, and disciplined screening.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ── Navigation ──────────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#" class="nav-logo">
+        <img src="images/logo.png" alt="The Invest Lab" class="nav-logo-img">
+        <span class="logo-text">The Invest Lab</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#dashboards" class="nav-link">Dashboards</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#blog" class="nav-link nav-link-muted">Blog <span class="badge">Soon</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ── Hero ────────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Stock Research &amp; Analysis</p>
+        <h1 class="hero-headline">Finding the signal<br>in market noise.</h1>
+        <p class="hero-body">
+          A personal research platform for identifying high-quality stock opportunities —
+          combining real-time market data, sentiment analysis, and disciplined screening
+          to surface what's actually worth your attention.
+        </p>
+        <div class="hero-cta">
+          <a href="#dashboards" class="btn btn-primary">View Dashboards</a>
+          <a href="#about" class="btn btn-ghost">About this site</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/childStockPicker.png" alt="Market research" class="hero-img">
+      </div>
+    </div>
+    <div class="hero-bg-accent"></div>
+  </section>
+
+  <!-- ── Dashboards ───────────────────────────────────────────────────────── -->
+  <section class="section" id="dashboards">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Dashboards</h2>
+        <p class="section-sub">Live tools for scanning, screening, and analyzing the market in real time.</p>
+      </div>
+
+      <div class="dashboard-grid">
+
+        <!-- Market Scanner -->
+        <a href="http://localhost:8080" target="_blank" rel="noopener" class="dashboard-card">
+          <div class="dashboard-card-icon">📡</div>
+          <div class="dashboard-card-body">
+            <h3 class="dashboard-card-title">Movers and Shakers</h3>
+            <p class="dashboard-card-desc">
+              Real-time scan of top movers from Yahoo Finance, enriched with Reddit sentiment
+              across five investing subreddits. Surfaces day-trade and swing-trade nominees,
+              sector flow, Fear &amp; Greed index, unusual volume, earnings calendar, and
+              market news. Refreshes every 15 minutes.
+            </p>
+            <div class="dashboard-card-tags">
+              <span class="tag">Day Trades</span>
+              <span class="tag">Swing Trades</span>
+              <span class="tag">Reddit Sentiment</span>
+              <span class="tag">Sector Flow</span>
+              <span class="tag">Live</span>
+            </div>
+          </div>
+          <span class="dashboard-card-arrow">→</span>
+        </a>
+
+        <!-- Tried and True -->
+        <a href="http://localhost:8090" target="_blank" rel="noopener" class="dashboard-card">
+          <div class="dashboard-card-icon">♛</div>
+          <div class="dashboard-card-body">
+            <h3 class="dashboard-card-title">Tried and True</h3>
+            <p class="dashboard-card-desc">
+              Buy-and-hold research assistant. Scans the top growth ETFs from Vanguard,
+              Schwab, iShares, Fidelity, SPDR, Invesco, and Baron — then surfaces the
+              10 stocks with the strongest cross-ETF consensus. Includes 3 &amp; 5-year
+              performance scorecards for each fund vs SPY.
+            </p>
+            <div class="dashboard-card-tags">
+              <span class="tag">Buy &amp; Hold</span>
+              <span class="tag">ETF Overlap</span>
+              <span class="tag">Growth Stocks</span>
+              <span class="tag">vs SPY</span>
+            </div>
+          </div>
+          <span class="dashboard-card-arrow">→</span>
+        </a>
+
+        <!-- The Analyst -->
+        <a href="http://localhost:8095" target="_blank" rel="noopener" class="dashboard-card">
+          <div class="dashboard-card-icon">🔬</div>
+          <div class="dashboard-card-body">
+            <h3 class="dashboard-card-title">The Analyst</h3>
+            <p class="dashboard-card-desc">
+              Enter any U.S. ticker and receive a Wall Street-style fundamental
+              analysis — pulling SEC 10-K &amp; 10-Q data, computing the Graham
+              Number, and scoring the stock as undervalued, fairly valued, overpriced,
+              or speculative. Includes pre-scanned reports for AAPL, MSFT, and NVDA.
+            </p>
+            <div class="dashboard-card-tags">
+              <span class="tag">Fundamental Analysis</span>
+              <span class="tag">SEC Filings</span>
+              <span class="tag">10-K / 10-Q</span>
+              <span class="tag">Graham Number</span>
+            </div>
+          </div>
+          <span class="dashboard-card-arrow">→</span>
+        </a>
+
+        <!-- Placeholder for future dashboards -->
+        <div class="dashboard-card dashboard-card-placeholder">
+          <div class="dashboard-card-icon">🔭</div>
+          <div class="dashboard-card-body">
+            <h3 class="dashboard-card-title">More Coming Soon</h3>
+            <p class="dashboard-card-desc">
+              Additional dashboards are in development — technical analysis, portfolio
+              tracking, earnings research, and options flow tools.
+            </p>
+            <div class="dashboard-card-tags">
+              <span class="tag">In Development</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ────────────────────────────────────────────────────────────── -->
+  <section class="section section-alt" id="about">
+    <div class="container">
+      <div class="about-layout">
+
+        <div class="about-text">
+          <h2 class="section-title">About This Site</h2>
+          <p>
+            This is a personal research platform built to support a disciplined,
+            data-driven approach to stock investing. The goal isn't to predict the
+            future — it's to identify stocks with <strong>real momentum</strong>, strong
+            market interest, and favorable setups, and to do that research faster and
+            more consistently than is possible by hand.
+          </p>
+          <p>
+            The philosophy here is simple: focus on <strong>green stocks only</strong>.
+            Upward-moving tickers with real volume behind them. No short selling, no
+            chasing noise. Just systematic screening, enriched with sentiment data from
+            the investing community and professional-grade market feeds.
+          </p>
+          <p>
+            Every tool on this site is built from scratch, runs locally, and is
+            maintained as a living project. This site is the front door to that work —
+            and it will keep growing as new dashboards, research notes, and analysis
+            are added over time.
+          </p>
+          <p class="about-disclaimer">
+            ⚠ Nothing on this site is financial advice. All content is for personal
+            educational use only.
+          </p>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number">60+</span>
+            <span class="stat-label">Stocks scanned per cycle</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Subreddits monitored</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">15m</span>
+            <span class="stat-label">Scan refresh interval</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">9</span>
+            <span class="stat-label">Data panels per scan</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Blog ─────────────────────────────────────────────────────────────── -->
+  <section class="section" id="blog">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Research Blog</h2>
+        <p class="section-sub">In-depth write-ups, trade reviews, and market observations.</p>
+      </div>
+      <div class="blog-coming-soon">
+        <p class="coming-soon-icon">✍️</p>
+        <p class="coming-soon-text">Blog posts coming soon.</p>
+        <p class="coming-soon-sub">
+          This section will host research notes, sector deep-dives, and
+          post-mortems on past trade setups.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">
+          <img src="images/logo.png" alt="The Invest Lab" class="footer-logo-img">
+          The Invest Lab
+        </span>
+        <p class="footer-disclaimer">Not financial advice. For personal educational use only.</p>
+        <p class="footer-copy">Built with curiosity and caffeine.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

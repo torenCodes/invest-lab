@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movers and Shakers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  /* ── Reset & Base ──────────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:           #f5f4f0;
+    --surface:      #ffffff;
+    --surface-2:    #fafaf8;
+    --border:       #e8e6e0;
+    --border-light: #f0ede8;
+    --ink:          #1a1a18;
+    --ink-2:        #4a4a46;
+    --ink-3:        #8a8a82;
+    --green:        #1a7a4a;
+    --green-bg:     #edf7f2;
+    --green-light:  #d0edde;
+    --red:          #c0392b;
+    --red-bg:       #fdf0ef;
+    --orange:       #e67e22;
+    --orange-bg:    #fef5ec;
+    --blue:         #1a5fa8;
+    --blue-bg:      #eef3fb;
+    --accent:       #2d6a4f;
+    --reddit:       #ff4500;
+    --shadow-sm:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md:    0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-lg:    0 16px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+    --radius:       10px;
+    --radius-sm:    6px;
+  }
+
+  html { font-size: 15px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 20% 0%, rgba(45,106,79,0.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 100%, rgba(26,95,168,0.03) 0%, transparent 50%);
+  }
+
+  /* ── Layout ────────────────────────────────────────────────────────────── */
+  .layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 64px 1fr;
+    min-height: 100vh;
+  }
+
+  /* ── Header ────────────────────────────────────────────────────────────── */
+  .header {
+    grid-column: 1 / -1;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .header-left { display: flex; align-items: center; gap: 16px; }
+
+  .logo {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.3rem;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+  }
+  .logo span { font-style: italic; }
+
+  .scan-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--ink-3);
+    background: var(--bg);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
+
+  .pulse {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .pulse.scanning { background: var(--orange); animation: pulse 0.8s ease-in-out infinite; }
+  .pulse.error    { background: var(--red); animation: none; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .header-right { display: flex; align-items: center; gap: 20px; }
+
+  .stat-pill {
+    font-size: 0.75rem;
+    color: var(--ink-2);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .stat-pill strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Sidebar ───────────────────────────────────────────────────────────── */
+  .sidebar {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 24px 0;
+    overflow-y: auto;
+    position: sticky;
+    top: 124px;
+    height: calc(100vh - 124px);
+  }
+
+  .sidebar-section { margin-bottom: 32px; }
+
+  .sidebar-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding: 0 20px;
+    margin-bottom: 8px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 20px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--ink-2);
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    text-decoration: none;
+  }
+  .nav-item:hover { color: var(--ink); background: var(--bg); }
+  .nav-item.active { color: var(--accent); border-left-color: var(--accent); background: var(--green-bg); font-weight: 500; }
+  .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+
+  .scan-progress-wrap { padding: 0 20px; }
+  .progress-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--green), var(--accent));
+    border-radius: 2px;
+    transition: width 0.5s ease;
+  }
+  .progress-label {
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--ink-3);
+    margin-top: 5px;
+  }
+
+  /* ── Main Content ──────────────────────────────────────────────────────── */
+  .main {
+    padding: 28px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  /* ── Section Headers ───────────────────────────────────────────────────── */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .section-subtitle {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+  }
+
+  .section-badge {
+    margin-left: auto;
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 3px 9px;
+    border-radius: 20px;
+    color: var(--ink-3);
+  }
+
+  /* ── Stock Cards Grid ──────────────────────────────────────────────────── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .stock-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: var(--shadow-sm);
+  }
+  .stock-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-top {
+    padding: 18px 18px 14px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .card-ticker {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .card-name {
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+  }
+
+  .card-price {
+    text-align: right;
+  }
+  .price-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .price-change {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-top: 4px;
+    display: inline-block;
+  }
+  .change-up   { background: var(--green-bg); color: var(--green); }
+  .change-down { background: var(--red-bg);   color: var(--red); }
+
+  .card-score-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .score-label { font-size: 0.68rem; color: var(--ink-3); font-family: 'DM Mono', monospace; }
+  .score-track {
+    flex: 1;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .score-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #74c69d, var(--green));
+  }
+
+  .card-signals {
+    padding: 10px 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .signal-tag {
+    font-size: 0.67rem;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  .signal-gainer  { background: var(--green-bg); color: var(--green); }
+  .signal-active  { background: var(--blue-bg);  color: var(--blue); }
+  .signal-move    { background: #f0f4ff;          color: #3d5a99; }
+  .signal-reddit  { background: #fff1ec;          color: var(--reddit); }
+  .signal-default { background: var(--bg);        color: var(--ink-2); }
+
+  /* ── Expanded Card Detail ───────────────────────────────────────────────── */
+  .card-detail {
+    display: none;
+    padding: 14px 18px 18px;
+    background: var(--surface-2);
+    border-top: 1px solid var(--border-light);
+    animation: slideDown 0.2s ease;
+  }
+  .card-detail.open { display: block; }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .detail-stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+  }
+  .detail-stat-label { font-size: 0.65rem; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; }
+  .detail-stat-value { font-family: 'DM Mono', monospace; font-size: 0.88rem; color: var(--ink); margin-top: 2px; }
+
+  .trade-plan-box {
+    background: linear-gradient(135deg, #f0faf5, #e8f7ef);
+    border: 1px solid var(--green-light);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    font-size: 0.78rem;
+    color: var(--green);
+    line-height: 1.5;
+  }
+  .trade-plan-box strong { display: block; margin-bottom: 3px; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* ── Sector Flow ───────────────────────────────────────────────────────── */
+  .sector-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .chart-container { position: relative; height: 220px; }
+
+  /* ── Reddit Feed ───────────────────────────────────────────────────────── */
+  .reddit-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+
+  .reddit-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .reddit-icon {
+    width: 28px; height: 28px;
+    background: var(--reddit);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .feed-scroll {
+    max-height: 360px;
+    overflow-y: auto;
+  }
+
+  .feed-item {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.1s;
+  }
+  .feed-item:last-child { border-bottom: none; }
+  .feed-item:hover { background: var(--bg); }
+
+  .feed-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+
+  .feed-sub {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--reddit);
+    text-transform: lowercase;
+  }
+  .feed-sub::before { content: "r/"; }
+
+  .feed-ups {
+    font-size: 0.68rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--ink-3);
+    margin-left: auto;
+  }
+
+  .feed-title {
+    font-size: 0.82rem;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .feed-title a { color: inherit; text-decoration: none; }
+  .feed-title a:hover { color: var(--accent); }
+
+  .feed-tickers { display: flex; gap: 4px; flex-wrap: wrap; }
+  .feed-ticker-tag {
+    font-size: 0.65rem;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    background: var(--green-bg);
+    color: var(--green);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  /* ── Bottom grid (sector + reddit) ─────────────────────────────────────── */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  /* ── Loading / Empty states ─────────────────────────────────────────────── */
+  .loading-state {
+    text-align: center;
+    padding: 48px 20px;
+    color: var(--ink-3);
+  }
+
+  .loading-spinner {
+    width: 28px; height: 28px;
+    border: 2px solid var(--border);
+    border-top-color: var(--green);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 12px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .loading-text { font-size: 0.82rem; }
+
+  .empty-state {
+    text-align: center;
+    padding: 32px;
+    color: var(--ink-3);
+    font-size: 0.82rem;
+  }
+
+  /* ── Scan status overlay ─────────────────────────────────────────────────── */
+  #scan-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(245,244,240,0.85);
+    backdrop-filter: blur(4px);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #scan-overlay.visible { display: flex; }
+
+  .overlay-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 36px 48px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    max-width: 380px;
+    width: 90%;
+  }
+
+  .overlay-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.6rem;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .overlay-sub {
+    font-size: 0.82rem;
+    color: var(--ink-3);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .overlay-progress {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .overlay-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #74c69d, var(--green));
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  .overlay-ticker {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-3);
+  }
+
+  /* ── Scrollbar ───────────────────────────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  /* ── Responsive ─────────────────────────────────────────────────────────── */
+  /* ── Panel card (shared wrapper for bottom four sections) ──────────────── */
+  .full-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--surface-2);
+  }
+  .panel-icon { font-size: 1.1rem; flex-shrink: 0; }
+  .panel-title { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
+  .panel-sub {
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    margin-left: auto;
+    text-align: right;
+  }
+
+  /* ── Fear & Greed ───────────────────────────────────────────────────────── */
+  .fg-wrap {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    padding: 20px 24px;
+  }
+
+  .fg-score {
+    font-family: 'Instrument Serif', serif;
+    font-size: 3.75rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .fg-rating {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+
+  .fg-meta { margin-top: 12px; display: flex; flex-direction: column; gap: 4px; }
+  .fg-stat { font-size: 0.78rem; color: var(--ink-3); }
+  .fg-stat strong { color: var(--ink); font-weight: 600; }
+
+  .fg-bar-wrap { flex: 1; padding-top: 4px; }
+
+  .fg-bar-track {
+    position: relative;
+    height: 10px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #c0392b 0%, #e67e22 25%, #f1c40f 50%, #2ecc71 75%, #27ae60 100%);
+    margin-bottom: 8px;
+  }
+
+  .fg-needle {
+    position: absolute;
+    top: -5px;
+    width: 3px;
+    height: 20px;
+    background: var(--ink);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  }
+
+  .fg-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6rem;
+    color: var(--ink-3);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── Market News ─────────────────────────────────────────────────────────── */
+  .news-item {
+    padding: 11px 20px;
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.1s;
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-item:hover { background: var(--bg); }
+
+  .news-headline { margin-bottom: 5px; }
+  .news-headline a {
+    font-size: 0.875rem;
+    color: var(--ink);
+    text-decoration: none;
+    line-height: 1.45;
+    display: block;
+  }
+  .news-headline a:hover { color: var(--accent); }
+
+  .news-meta { display: flex; align-items: center; gap: 8px; }
+  .news-source {
+    font-size: 0.67rem;
+    font-weight: 600;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .news-time {
+    font-size: 0.67rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--ink-3);
+  }
+
+  /* ── Earnings Calendar ───────────────────────────────────────────────────── */
+  .earnings-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.1s;
+  }
+  .earnings-row:last-child { border-bottom: none; }
+  .earnings-row:hover { background: var(--bg); }
+
+  .earnings-ticker {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--ink);
+    min-width: 60px;
+  }
+
+  .earnings-hour {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  .hour-bmo { background: var(--blue-bg);   color: var(--blue); }
+  .hour-amc { background: var(--orange-bg); color: var(--orange); }
+  .hour-dmh { background: var(--bg);        color: var(--ink-3); border: 1px solid var(--border); }
+
+  .earnings-est {
+    margin-left: auto;
+    font-size: 0.72rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--ink-3);
+  }
+
+  /* ── Unusual Volume ──────────────────────────────────────────────────────── */
+  .vol-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 20px 24px;
+  }
+
+  .vol-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 5px 13px;
+    background: var(--green-bg);
+    color: var(--green);
+    border: 1px solid var(--green-light);
+    border-radius: 6px;
+    letter-spacing: 0.03em;
+    transition: background 0.1s, border-color 0.1s;
+  }
+  .vol-tag:hover { background: var(--green-light); border-color: var(--green); }
+
+  /* ── Responsive ─────────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; grid-template-rows: 64px auto 1fr; }
+    .sidebar { position: static; height: auto; display: flex; flex-wrap: wrap; padding: 12px; gap: 4px; border-right: none; border-bottom: 1px solid var(--border); }
+    .sidebar-section { margin: 0; }
+    .sidebar-label { display: none; }
+    .nav-item { border-left: none; border-bottom: 2px solid transparent; padding: 7px 12px; border-radius: 6px; }
+    .nav-item.active { border-bottom-color: var(--accent); }
+    .scan-progress-wrap { width: 100%; padding: 8px 12px 0; }
+    .bottom-grid { grid-template-columns: 1fr; }
+    .main { padding: 16px; }
+    .fg-wrap { flex-direction: column; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Shared Site Header ──────────────────────────────────────────────── -->
+<style>
+  .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e0e7e7;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'DM Sans',sans-serif;}
+  .site-nav{display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 28px;}
+  .site-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:#2e3334;font-size:1.05rem;font-weight:700;letter-spacing:-.01em;}
+  .site-logo img{height:2rem;width:auto;display:block;}
+  .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+  .site-nav-link{display:inline-flex;align-items:center;padding:.38rem .85rem;border-radius:3px;text-decoration:none;font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#656d6f;transition:color .15s,background .15s;}
+  .site-nav-link:hover,.site-nav-link.current{color:#38bda6;background:#edf8f6;}
+  .site-nav-badge{font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:#edf8f6;color:#2a9b87;padding:.12rem .4rem;border-radius:3px;}
+</style>
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="/" class="site-logo">
+      <img src="/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </a>
+    <ul class="site-nav-links">
+      <li><a href="http://localhost:8080" class="site-nav-link current">Movers &amp; Shakers</a></li>
+      <li><a href="http://localhost:8090" class="site-nav-link">Tried &amp; True</a></li>
+      <li><a href="http://localhost:8095" class="site-nav-link">The Analyst</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Scan overlay (shown on first load while scanning) -->
+<div id="scan-overlay">
+  <div class="overlay-card">
+    <div style="font-size:2rem;margin-bottom:12px;">📊</div>
+    <div class="overlay-title">Running Market Scan</div>
+    <div class="overlay-sub">Fetching Yahoo movers, Reddit sentiment, and Finnhub quotes. Green stocks only — this takes a few minutes.</div>
+    <div class="overlay-progress"><div class="overlay-fill" id="overlay-fill" style="width:0%"></div></div>
+    <div class="overlay-ticker" id="overlay-ticker">Starting up...</div>
+  </div>
+</div>
+
+<div class="layout">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">Movers &amp; <span>Shakers</span></div>
+      <div class="scan-badge">
+        <div class="pulse" id="status-pulse"></div>
+        <span id="status-text">Loading...</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="stat-pill">Scanned: <strong id="hdr-scanned">—</strong></div>
+      <div class="stat-pill">Day: <strong id="hdr-day">—</strong></div>
+      <div class="stat-pill">Swing: <strong id="hdr-swing">—</strong></div>
+      <div class="stat-pill">Reddit: <strong id="hdr-reddit">—</strong></div>
+      <div class="stat-pill" style="color:var(--ink-3);font-size:0.7rem;font-family:'DM Mono',monospace;" id="hdr-time">—</div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Navigation</div>
+      <a class="nav-item active" href="#day-trades" onclick="setActive(this)">
+        <span class="nav-icon">⚡</span> Day Trades
+      </a>
+      <a class="nav-item" href="#swing-trades" onclick="setActive(this)">
+        <span class="nav-icon">📈</span> Swing Trades
+      </a>
+      <a class="nav-item" href="#reddit-section" onclick="setActive(this)">
+        <span class="nav-icon">🔥</span> Reddit Buzz
+      </a>
+      <a class="nav-item" href="#sector-flow" onclick="setActive(this)">
+        <span class="nav-icon">🗺️</span> Sector Flow
+      </a>
+      <a class="nav-item" href="#reddit-feed" onclick="setActive(this)">
+        <span class="nav-icon">📡</span> Live Feed
+      </a>
+      <a class="nav-item" href="#fear-greed" onclick="setActive(this)">
+        <span class="nav-icon">🧠</span> Fear &amp; Greed
+      </a>
+      <a class="nav-item" href="#market-news" onclick="setActive(this)">
+        <span class="nav-icon">📰</span> Market News
+      </a>
+      <a class="nav-item" href="#earnings-cal" onclick="setActive(this)">
+        <span class="nav-icon">📅</span> Earnings
+      </a>
+      <a class="nav-item" href="#finviz-vol" onclick="setActive(this)">
+        <span class="nav-icon">🔊</span> Unusual Volume
+      </a>
+    </div>
+    <div class="sidebar-section scan-progress-wrap">
+      <div class="sidebar-label">Scanner Progress</div>
+      <div class="progress-bar"><div class="progress-fill" id="sidebar-progress" style="width:0%"></div></div>
+      <div class="progress-label" id="sidebar-label">—</div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main">
+
+    <!-- Day Trades -->
+    <section id="day-trades">
+      <div class="section-header">
+        <div class="section-title">Day Trades</div>
+        <div class="section-subtitle">$10–$100, green today, high score</div>
+        <div class="section-badge" id="day-badge">—</div>
+      </div>
+      <div class="cards-grid" id="day-cards">
+        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Waiting for scan results…</div></div>
+      </div>
+    </section>
+
+    <!-- Swing Trades -->
+    <section id="swing-trades">
+      <div class="section-header">
+        <div class="section-title">Swing Trades</div>
+        <div class="section-subtitle">$20+, large cap, multi-day holds</div>
+        <div class="section-badge" id="swing-badge">—</div>
+      </div>
+      <div class="cards-grid" id="swing-cards">
+        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Waiting for scan results…</div></div>
+      </div>
+    </section>
+
+    <!-- Reddit Buzz Picks -->
+    <section id="reddit-section">
+      <div class="section-header">
+        <div class="section-title">Reddit Buzz</div>
+        <div class="section-subtitle">High social activity + green today</div>
+        <div class="section-badge" id="reddit-badge">—</div>
+      </div>
+      <div class="cards-grid" id="reddit-cards">
+        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Waiting for scan results…</div></div>
+      </div>
+    </section>
+
+    <!-- Bottom row: Sector Flow + Reddit Feed -->
+    <div class="bottom-grid">
+
+      <!-- Sector Flow -->
+      <section id="sector-flow" class="sector-panel">
+        <div class="section-header" style="margin-bottom:18px;">
+          <div class="section-title" style="font-size:1.2rem;">Sector Flow</div>
+          <div class="section-subtitle">Avg % gain among today's green movers</div>
+        </div>
+        <div class="chart-container">
+          <canvas id="sectorChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Reddit Live Feed -->
+      <section id="reddit-feed" class="reddit-panel">
+        <div class="reddit-header">
+          <div class="reddit-icon">r/</div>
+          <div>
+            <div style="font-size:0.9rem;font-weight:500;">Live Reddit Feed</div>
+            <div style="font-size:0.72rem;color:var(--ink-3);">High-upvote posts mentioning tickers (last 24h)</div>
+          </div>
+        </div>
+        <div class="feed-scroll" id="reddit-feed-list">
+          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Scanning subreddits…</div></div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Fear & Greed + Unusual Volume row -->
+    <div class="bottom-grid">
+
+      <section id="fear-greed" class="full-panel">
+        <div class="panel-header">
+          <span class="panel-icon">🧠</span>
+          <span class="panel-title">CNN Fear &amp; Greed Index</span>
+          <span class="panel-sub">Market sentiment indicator</span>
+        </div>
+        <div id="fg-body">
+          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading…</div></div>
+        </div>
+      </section>
+
+      <section id="finviz-vol" class="full-panel">
+        <div class="panel-header">
+          <span class="panel-icon">🔊</span>
+          <span class="panel-title">Unusual Volume</span>
+          <span class="panel-sub">Finviz — highest relative volume today</span>
+        </div>
+        <div class="vol-grid" id="vol-body">
+          <div class="loading-state" style="width:100%;"><div class="loading-spinner"></div></div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Market News + Earnings row -->
+    <div class="bottom-grid">
+
+      <section id="market-news" class="full-panel">
+        <div class="panel-header">
+          <span class="panel-icon">📰</span>
+          <span class="panel-title">Market News</span>
+          <span class="panel-sub">Via Finnhub — general financial headlines</span>
+        </div>
+        <div style="max-height:320px;overflow-y:auto;" id="news-body">
+          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading headlines…</div></div>
+        </div>
+      </section>
+
+      <section id="earnings-cal" class="full-panel">
+        <div class="panel-header">
+          <span class="panel-icon">📅</span>
+          <span class="panel-title">Earnings Today &amp; Tomorrow</span>
+          <span class="panel-sub">BMO = before market open · AMC = after market close</span>
+        </div>
+        <div style="max-height:320px;overflow-y:auto;" id="earnings-body">
+          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading calendar…</div></div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────────────
+let sectorChart = null;
+let lastScanTime = null;
+let lastSectorHash = null;   // prevents jarring chart redraws on every poll
+let isFirstLoad = true;
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+
+function fmt(n, digits = 2) {
+  return n != null ? n.toFixed(digits) : '—';
+}
+
+function fmtCap(mc) {
+  if (!mc) return '—';
+  if (mc >= 1e9) return `$${(mc / 1e9).toFixed(1)}B`;
+  return `$${(mc / 1e6).toFixed(0)}M`;
+}
+
+function setActive(el) {
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ── Signal tag classifier ──────────────────────────────────────────────────
+function signalClass(s) {
+  if (s.includes('gainer'))  return 'signal-gainer';
+  if (s.includes('volume') || s.includes('High vol')) return 'signal-active';
+  if (s.includes('Reddit') || s.includes('reddit')) return 'signal-reddit';
+  if (s.includes('move'))    return 'signal-move';
+  return 'signal-default';
+}
+
+// ── Stock card renderer ────────────────────────────────────────────────────
+function renderStockCard(stock, type) {
+  const scorePct  = Math.min((stock.score / 45) * 100, 100);
+  const chgClass  = stock.change_pct >= 0 ? 'change-up' : 'change-down';
+  const chgStr    = `${stock.change_pct >= 0 ? '+' : ''}${fmt(stock.change_pct)}%`;
+  const cardId    = `card-${stock.ticker}-${type}`;
+  const detailId  = `detail-${stock.ticker}-${type}`;
+
+  const signals = (stock.signals || []).map(s =>
+    `<span class="signal-tag ${signalClass(s)}">${s}</span>`
+  ).join('');
+
+  // Intraday range visual
+  const rangeWidth = stock.high && stock.low && stock.high !== stock.low
+    ? Math.round(((stock.current_price - stock.low) / (stock.high - stock.low)) * 100)
+    : 50;
+
+  const planText = type === 'day'
+    ? `Intraday setup. Tight stops 2–3%. Target: close above open with volume.`
+    : `Multi-day hold candidate. Wider stops 5–7%. Watch for continuation.`;
+
+  const redditNote = stock.reddit_mentions > 0
+    ? `<div style="margin-bottom:6px;font-size:0.72rem;color:var(--reddit);">⬆ Reddit confirmed (${stock.reddit_mentions} mentions)</div>`
+    : '';
+
+  return `
+  <div class="stock-card" id="${cardId}" onclick="toggleDetail('${detailId}', '${cardId}')">
+    <div class="card-top">
+      <div class="card-header">
+        <div>
+          <div class="card-ticker">${stock.ticker}</div>
+          <div class="card-name" title="${stock.name || ''}">${stock.name || '—'}</div>
+        </div>
+        <div class="card-price">
+          <div class="price-value">$${fmt(stock.current_price)}</div>
+          <div class="price-change ${chgClass}">${chgStr}</div>
+        </div>
+      </div>
+      <div class="card-score-bar">
+        <span class="score-label">Score ${stock.score}</span>
+        <div class="score-track"><div class="score-fill" style="width:${scorePct}%"></div></div>
+      </div>
+    </div>
+    <div class="card-signals">${signals || '<span style="font-size:0.72rem;color:var(--ink-3);">No signals</span>'}</div>
+    <div class="card-detail" id="${detailId}">
+      ${redditNote}
+      <div class="detail-grid">
+        <div class="detail-stat">
+          <div class="detail-stat-label">Open</div>
+          <div class="detail-stat-value">$${fmt(stock.open)}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="detail-stat-label">Prev Close</div>
+          <div class="detail-stat-value">$${fmt(stock.prev_close)}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="detail-stat-label">Day High</div>
+          <div class="detail-stat-value">$${fmt(stock.high)}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="detail-stat-label">Day Low</div>
+          <div class="detail-stat-value">$${fmt(stock.low)}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="detail-stat-label">Market Cap</div>
+          <div class="detail-stat-value">${fmtCap(stock.market_cap)}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="detail-stat-label">Sector</div>
+          <div class="detail-stat-value" style="font-size:0.75rem;">${stock.sector || '—'}</div>
+        </div>
+      </div>
+      <div style="font-size:0.68rem;color:var(--ink-3);margin-bottom:6px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;">Intraday Position</div>
+      <div style="background:var(--border);height:5px;border-radius:3px;overflow:hidden;margin-bottom:12px;">
+        <div style="width:${rangeWidth}%;height:100%;background:linear-gradient(90deg,#74c69d,var(--green));border-radius:3px;"></div>
+      </div>
+      <div class="trade-plan-box">
+        <strong>Trade Plan</strong>
+        ${planText}
+      </div>
+    </div>
+  </div>`;
+}
+
+// ── Reddit buzz card (nominees) ─────────────────────────────────────────────
+function renderRedditCard(stock) {
+  const hasPrice = stock.current_price != null;
+  const chgStr = hasPrice
+    ? `<div class="price-change change-up">+${fmt(stock.change_pct)}%</div>`
+    : '';
+
+  return `
+  <div class="stock-card" style="border-top:3px solid var(--reddit);">
+    <div class="card-top">
+      <div class="card-header">
+        <div>
+          <div class="card-ticker">${stock.ticker}</div>
+          <div class="card-name">${stock.name || 'High social buzz'}</div>
+        </div>
+        <div class="card-price">
+          ${hasPrice ? `<div class="price-value">$${fmt(stock.current_price)}</div>` : ''}
+          ${chgStr}
+        </div>
+      </div>
+    </div>
+    <div class="card-signals">
+      <span class="signal-tag signal-reddit">🔥 ${stock.mentions} Reddit mentions</span>
+      ${stock.sector ? `<span class="signal-tag signal-default">${stock.sector}</span>` : ''}
+    </div>
+    <div style="padding:0 18px 14px;font-size:0.75rem;color:var(--ink-3);">
+      High social activity. Verify technicals before trading.
+    </div>
+  </div>`;
+}
+
+// ── Toggle expand ──────────────────────────────────────────────────────────
+function toggleDetail(detailId, cardId) {
+  const detail = $(detailId);
+  if (!detail) return;
+  const isOpen = detail.classList.contains('open');
+
+  // Close all other details in the same section
+  const card = $(cardId);
+  if (card) {
+    const grid = card.closest('.cards-grid');
+    if (grid) grid.querySelectorAll('.card-detail.open').forEach(d => d.classList.remove('open'));
+  }
+
+  if (!isOpen) detail.classList.add('open');
+}
+
+// ── Sector chart ───────────────────────────────────────────────────────────
+function renderSectorChart(sectorFlow) {
+  const top = sectorFlow.slice(0, 10);
+  const labels = top.map(s => s.sector.replace('Technology', 'Tech').replace('Financial Services', 'Financials'));
+  const data   = top.map(s => s.avg_change);
+  const colors = top.map(s =>
+    s.avg_change >= 3 ? '#1a7a4a' :
+    s.avg_change >= 1.5 ? '#52b788' :
+    '#74c69d'
+  );
+
+  if (sectorChart) sectorChart.destroy();
+
+  const ctx = document.getElementById('sectorChart').getContext('2d');
+  sectorChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data,
+        backgroundColor: colors,
+        borderRadius: 4,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` +${ctx.raw.toFixed(2)}% avg | ${top[ctx.dataIndex].count} stocks`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: '#f0ede8' },
+          ticks: {
+            font: { family: "'DM Mono', monospace", size: 11 },
+            color: '#8a8a82',
+            callback: v => `+${v}%`
+          }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { font: { family: "'DM Sans', sans-serif", size: 12 }, color: '#4a4a46' }
+        }
+      }
+    }
+  });
+}
+
+// ── Reddit feed renderer ───────────────────────────────────────────────────
+function renderRedditFeed(feed) {
+  const el = $('reddit-feed-list');
+  if (!feed || !feed.length) {
+    el.innerHTML = '<div class="empty-state">No recent high-upvote posts found.</div>';
+    return;
+  }
+
+  el.innerHTML = feed.map(item => {
+    const tags = (item.tickers || []).map(t =>
+      `<span class="feed-ticker-tag">${t}</span>`
+    ).join('');
+    return `
+    <div class="feed-item">
+      <div class="feed-meta">
+        <span class="feed-sub">${item.subreddit}</span>
+        <span style="font-size:0.65rem;color:var(--ink-3);">${item.hours_ago}h ago</span>
+        <span class="feed-ups">▲ ${item.ups.toLocaleString()}</span>
+      </div>
+      <div class="feed-title"><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></div>
+      ${tags ? `<div class="feed-tickers">${tags}</div>` : ''}
+    </div>`;
+  }).join('');
+}
+
+// ── Status poller ──────────────────────────────────────────────────────────
+function updateStatus(status) {
+  const pulse = $('status-pulse');
+  const text  = $('status-text');
+  const fill  = $('sidebar-progress');
+  const label = $('sidebar-label');
+  const overlayFill   = $('overlay-fill');
+  const overlayTicker = $('overlay-ticker');
+  const overlay = $('scan-overlay');
+
+  const pct = status.progress_total > 0
+    ? Math.round((status.progress / status.progress_total) * 100)
+    : 0;
+
+  if (status.status === 'scanning') {
+    pulse.className = 'pulse scanning';
+    text.textContent = `Scanning… ${status.current_ticker || ''}`;
+    fill.style.width = `${pct}%`;
+    label.textContent = `${status.progress} / ${status.progress_total} (${pct}%)`;
+    if (overlayFill) overlayFill.style.width = `${pct}%`;
+    if (overlayTicker) overlayTicker.textContent = status.current_ticker
+      ? `Analyzing ${status.current_ticker}…`
+      : 'Scanning…';
+    if (isFirstLoad && overlay) overlay.classList.add('visible');
+  } else if (status.status === 'done') {
+    pulse.className = 'pulse';
+    const t = status.last_scan ? new Date(status.last_scan).toLocaleTimeString() : '—';
+    text.textContent = `Last scan: ${t}`;
+    fill.style.width = '100%';
+    label.textContent = 'Complete';
+    if (overlay) overlay.classList.remove('visible');
+    isFirstLoad = false;
+  } else if (status.status === 'error') {
+    pulse.className = 'pulse error';
+    text.textContent = 'Scan error';
+    if (overlay) overlay.classList.remove('visible');
+    isFirstLoad = false;
+  } else {
+    text.textContent = 'Idle';
+  }
+}
+
+// ── Results renderer ───────────────────────────────────────────────────────
+function updateResults(data) {
+  if (!data) return;
+
+  // Header stats
+  $('hdr-scanned').textContent = data.total_scanned || '—';
+  $('hdr-day').textContent     = (data.day_trades   || []).length;
+  $('hdr-swing').textContent   = (data.swing_trades || []).length;
+  $('hdr-reddit').textContent  = (data.reddit_cards || []).length;
+  if (data.scan_time) {
+    $('hdr-time').textContent  = new Date(data.scan_time).toLocaleTimeString();
+  }
+
+  // Day trades
+  const dayEl = $('day-cards');
+  $('day-badge').textContent = `${(data.day_trades || []).length} nominees`;
+  if (data.day_trades && data.day_trades.length) {
+    dayEl.innerHTML = data.day_trades.map(s => renderStockCard(s, 'day')).join('');
+  } else {
+    dayEl.innerHTML = '<div class="empty-state">No qualifying day trade setups found this scan.</div>';
+  }
+
+  // Swing trades
+  const swingEl = $('swing-cards');
+  $('swing-badge').textContent = `${(data.swing_trades || []).length} nominees`;
+  if (data.swing_trades && data.swing_trades.length) {
+    swingEl.innerHTML = data.swing_trades.map(s => renderStockCard(s, 'swing')).join('');
+  } else {
+    swingEl.innerHTML = '<div class="empty-state">No qualifying swing trade setups found this scan.</div>';
+  }
+
+  // Reddit buzz nominees
+  const redditEl = $('reddit-cards');
+  $('reddit-badge').textContent = `${(data.reddit_cards || []).length} nominees`;
+  if (data.reddit_cards && data.reddit_cards.length) {
+    redditEl.innerHTML = data.reddit_cards.map(s => renderRedditCard(s)).join('');
+  } else {
+    redditEl.innerHTML = '<div class="empty-state">No Reddit buzz nominees this scan.</div>';
+  }
+
+  // Sector flow — only redraw if the data has actually changed
+  if (data.sector_flow && data.sector_flow.length) {
+    const sectorHash = JSON.stringify(data.sector_flow);
+    if (sectorHash !== lastSectorHash) {
+      lastSectorHash = sectorHash;
+      renderSectorChart(data.sector_flow);
+    }
+  }
+
+  // Reddit feed — only re-render when feed changes (avoids scroll position jumping)
+  if (data.reddit_feed && data.reddit_feed.length) {
+    const feedHash = data.reddit_feed.length + "_" + (data.reddit_feed[0]?.url || "");
+    if (feedHash !== updateResults._lastFeedHash) {
+      updateResults._lastFeedHash = feedHash;
+      renderRedditFeed(data.reddit_feed);
+    }
+  }
+
+  // New data panels — only render once per scan cycle
+  if (data.scan_time !== updateResults._lastScanTime) {
+    updateResults._lastScanTime = data.scan_time;
+    if (data.fear_greed)     renderFearGreed(data.fear_greed);
+    if (data.market_news)    renderMarketNews(data.market_news);
+    if (data.earnings_cal)   renderEarnings(data.earnings_cal);
+    if (data.finviz_unusual) renderUnusualVolume(data.finviz_unusual);
+  }
+}
+
+// ── Main polling loop ──────────────────────────────────────────────────────
+async function poll() {
+  try {
+    const [statusRes, resultsRes] = await Promise.all([
+      fetch('/api/status'),
+      fetch('/api/results').catch(() => null),
+    ]);
+
+    const status = await statusRes.json();
+    updateStatus(status);
+
+    if (resultsRes && resultsRes.ok) {
+      const data = await resultsRes.json();
+      if (!data.error) {
+        updateResults(data);
+        // If we have results, hide overlay even if still scanning
+        if (lastScanTime !== data.scan_time) {
+          lastScanTime = data.scan_time;
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('Poll error:', e);
+  }
+
+  // Poll faster when scanning, slower when idle
+  const interval = $('status-pulse').classList.contains('scanning') ? 3000 : 15000;
+  setTimeout(poll, interval);
+}
+
+// ── Fear & Greed renderer ────────────────────────────────────────────────────
+function renderFearGreed(fg) {
+  const el = $('fg-body');
+  if (!fg) { el.innerHTML = '<div class="empty-state">Fear & Greed data unavailable.</div>'; return; }
+
+  const score = fg.score;
+  const pct = Math.round(score);
+  const color = score <= 25 ? '#c0392b' : score <= 45 ? '#e67e22' : score <= 55 ? '#f1c40f' : score <= 75 ? '#2ecc71' : '#27ae60';
+
+  el.innerHTML = `
+  <div class="fg-wrap">
+    <div>
+      <div class="fg-score" style="color:${color}">${score}</div>
+      <div class="fg-rating" style="color:${color}">${fg.rating}</div>
+      <div class="fg-meta">
+        <div class="fg-stat">Prev close: <strong>${fg.prev_close ?? '—'}</strong></div>
+        ${fg.week_ago != null ? `<div class="fg-stat">Week ago: <strong>${fg.week_ago}</strong></div>` : ''}
+      </div>
+    </div>
+    <div class="fg-bar-wrap">
+      <div style="font-size:0.68rem;color:var(--ink-3);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">Sentiment Scale</div>
+      <div class="fg-bar-track">
+        <div class="fg-needle" style="left:${pct}%"></div>
+      </div>
+      <div class="fg-labels">
+        <span>Extreme Fear</span><span>Fear</span><span>Neutral</span><span>Greed</span><span>Extreme Greed</span>
+      </div>
+      <div style="margin-top:12px;font-size:0.75rem;color:var(--ink-3);line-height:1.5;">
+        Scores below 30 often precede market recoveries. Scores above 70 may signal overheating.
+        Day traders: high fear = potential bounce plays. High greed = momentum continuation.
+      </div>
+    </div>
+  </div>`;
+}
+
+// ── Market news renderer ──────────────────────────────────────────────────────
+function renderMarketNews(news) {
+  const el = $('news-body');
+  if (!news || !news.length) { el.innerHTML = '<div class="empty-state">No headlines available.</div>'; return; }
+  el.innerHTML = news.map(item => {
+    const t = item.datetime ? new Date(item.datetime * 1000).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) : '';
+    return `<div class="news-item">
+      <div class="news-headline"><a href="${item.url}" target="_blank" rel="noopener">${item.headline}</a></div>
+      <div class="news-meta">
+        <span class="news-source">${item.source}</span>
+        ${t ? `<span class="news-time">${t}</span>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── Earnings calendar renderer ────────────────────────────────────────────────
+function renderEarnings(earnings) {
+  const el = $('earnings-body');
+  if (!earnings || !earnings.length) {
+    el.innerHTML = '<div class="empty-state">No earnings scheduled for today or tomorrow.</div>';
+    return;
+  }
+  el.innerHTML = earnings.map(e => {
+    const hourLabel = e.hour === 'bmo' ? 'BMO' : e.hour === 'amc' ? 'AMC' : 'DMH';
+    const hourClass = e.hour === 'bmo' ? 'hour-bmo' : e.hour === 'amc' ? 'hour-amc' : 'hour-dmh';
+    const epsStr = e.eps_est != null ? `EPS est: $${parseFloat(e.eps_est).toFixed(2)}` : '';
+    return `<div class="earnings-row">
+      <span class="earnings-ticker">${e.ticker}</span>
+      <span class="earnings-hour ${hourClass}">${hourLabel}</span>
+      <span style="font-size:0.75rem;color:var(--ink-3);">${e.date}</span>
+      ${epsStr ? `<span class="earnings-est">${epsStr}</span>` : ''}
+    </div>`;
+  }).join('');
+}
+
+// ── Unusual volume renderer ───────────────────────────────────────────────────
+function renderUnusualVolume(tickers) {
+  const el = $('vol-body');
+  if (!tickers || !tickers.length) {
+    el.innerHTML = '<div class="empty-state" style="width:100%;">No unusual volume data.</div>';
+    return;
+  }
+  el.innerHTML = tickers.map(t => `<div class="vol-tag">${t}</div>`).join('');
+}
+
+// ── Boot ───────────────────────────────────────────────────────────────────
+poll();
+</script>
+
+<!-- ── Shared Site Footer ──────────────────────────────────────────────── -->
+<style>
+  .site-footer-shared{background:#2e3334;color:rgba(255,255,255,.5);padding:1.5rem 0;font-family:'DM Sans',sans-serif;}
+  .site-footer-inner{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;}
+  .site-footer-brand{display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:1rem;color:rgba(255,255,255,.92);}
+  .site-footer-brand img{height:1.2rem;width:auto;filter:invert(1);opacity:.85;}
+  .site-footer-disc{font-size:.78rem;}
+  .site-footer-copy{font-size:.68rem;font-family:monospace;opacity:.3;}
+</style>
+<footer class="site-footer-shared">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <img src="/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </div>
+    <p class="site-footer-disc">Not financial advice. For personal educational use only.</p>
+    <p class="site-footer-copy">Built with curiosity and caffeine.</p>
+  </div>
+</footer>
+</body>
+</html>
