@@ -6,7 +6,7 @@
   <title>The Invest Lab — Market Intelligence</title>
   <meta name="description" content="A personal stock research platform — identifying high-quality trading opportunities through real-time data, sentiment analysis, and disciplined screening.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,7 +19,14 @@
         <span class="logo-text">The Invest Lab</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#dashboards" class="nav-link">Dashboards</a></li>
+        <li class="nav-item">
+          <a href="#dashboards" class="nav-link">Dashboards <span class="nav-chevron">▾</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="https://invest-movers-shakers.onrender.com" class="nav-dropdown-link" target="_blank" rel="noopener">Movers and Shakers</a></li>
+            <li><a href="https://invest-tried-true.onrender.com" class="nav-dropdown-link" target="_blank" rel="noopener">Tried and True</a></li>
+            <li><a href="https://invest-the-analyst.onrender.com" class="nav-dropdown-link" target="_blank" rel="noopener">The Analyst</a></li>
+          </ul>
+        </li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#blog" class="nav-link nav-link-muted">Blog <span class="badge">Soon</span></a></li>
       </ul>
@@ -43,7 +50,7 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="images/childStockPicker.png" alt="Market research" class="hero-img">
+        <img src="images/vr.png" alt="Market research" class="hero-img">
       </div>
     </div>
     <div class="hero-bg-accent"></div>
@@ -53,6 +60,7 @@
   <section class="section" id="dashboards">
     <div class="container">
       <div class="section-header">
+        <p class="section-eyebrow">Tools</p>
         <h2 class="section-title">Dashboards</h2>
         <p class="section-sub">Live tools for scanning, screening, and analyzing the market in real time.</p>
       </div>
@@ -148,6 +156,7 @@
       <div class="about-layout">
 
         <div class="about-text">
+          <p class="section-eyebrow">Our Approach</p>
           <h2 class="section-title">About This Site</h2>
           <p>
             This is a personal research platform built to support a disciplined,
@@ -201,6 +210,7 @@
   <section class="section" id="blog">
     <div class="container">
       <div class="section-header">
+        <p class="section-eyebrow">Insights</p>
         <h2 class="section-title">Research Blog</h2>
         <p class="section-sub">In-depth write-ups, trade reviews, and market observations.</p>
       </div>

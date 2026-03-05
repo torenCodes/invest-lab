@@ -2,30 +2,30 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* ── STAX-inspired color system ───────────────────────────────────────── */
-  --accent:        #38bda6;          /* STAX primary teal                  */
-  --accent-dark:   #2a9b87;          /* teal hover / pressed               */
-  --accent-light:  #d9e9e7;          /* pale teal borders & dividers       */
-  --accent-muted:  #edf8f6;          /* very light teal — tag / hover bg   */
+  /* ── Teal / green / blue color system ───────────────────────────────────── */
+  --accent:        #38bda6;          /* teal — primary                         */
+  --accent-dark:   #2a9b87;          /* teal hover / pressed                   */
+  --accent-light:  #b8e8e0;          /* pale teal borders & dividers           */
+  --accent-muted:  #edf8f6;          /* very light teal — tag / hover bg       */
 
-  --bg:            #ffffff;          /* white page background              */
-  --bg-alt:        #f5fafa;          /* light teal-gray for alt sections   */
-  --bg-dark:       #2e3334;          /* hero & footer dark background      */
+  --bg:            #f5f4f0;          /* warm light gray page background        */
+  --bg-alt:        #fdfefb;          /* off-white for alt sections             */
+  --bg-dark:       #1a1a18;          /* dark — hero & footer                   */
 
-  --surface:       #ffffff;
-  --border:        #e0e7e7;
-  --border-light:  #edf3f3;
+  --surface:       #fdfefb;
+  --border:        #e8e6e0;
+  --border-light:  #f0ede8;
 
-  --ink:           #2e3334;          /* near-black for headings            */
-  --ink-2:         #656d6f;          /* medium gray body text              */
-  --ink-3:         #9da6a8;          /* muted labels / placeholders        */
+  --ink:           #1a1a18;          /* near-black headings                    */
+  --ink-2:         #4a4a46;          /* medium gray body text                  */
+  --ink-3:         #8a8a82;          /* muted gray                             */
 
-  --shadow-sm:     0 1px 4px rgba(0,0,0,0.07);
+  --shadow-sm:     0 1px 4px rgba(0,0,0,0.06);
   --shadow-md:     0 4px 18px rgba(0,0,0,0.10);
   --shadow-lg:     0 12px 40px rgba(0,0,0,0.14);
-  --shadow-teal:   0 6px 24px rgba(56,189,166,0.18);
+  --shadow-warm:   0 6px 24px rgba(56,189,166,0.22);
 
-  --radius:        3px;              /* STAX uses sharp corners (3px)      */
+  --radius:        4px;
   --max-width:     1100px;
   --gutter:        clamp(1.5rem, 5vw, 3rem);
 }
@@ -33,8 +33,9 @@
 html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Barlow', sans-serif;
   background: var(--bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.032'/%3E%3C/svg%3E");
   color: var(--ink-2);
   line-height: 1.65;
   min-height: 100vh;
@@ -53,7 +54,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #ffffff;
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 1px 8px rgba(0,0,0,0.06);
 }
@@ -71,7 +72,7 @@ body {
   gap: 0.55rem;
   text-decoration: none;
   color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 2.0rem;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -130,6 +131,76 @@ body {
   border-radius: var(--radius);
 }
 
+/* ── Nav Dropdown ───────────────────────────────────────────────────────── */
+.nav-item {
+  position: relative;
+}
+
+.nav-chevron {
+  font-size: 0.6rem;
+  opacity: 0.6;
+  transition: transform 0.2s;
+}
+
+.nav-item:hover .nav-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  list-style: none;
+  min-width: 180px;
+  padding: 0.4rem 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s, visibility 0.18s, transform 0.18s;
+  transform: translateX(-50%) translateY(-4px);
+  z-index: 200;
+}
+
+/* Invisible bridge fills the 6px gap so hover isn't lost between trigger and menu */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.nav-item:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-link {
+  display: block;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-2);
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-dropdown-link:hover {
+  color: var(--accent);
+  background: var(--accent-muted);
+}
+
 /* ── Hero ───────────────────────────────────────────────────────────────── */
 /*
  * TO ADD A BACKGROUND IMAGE:
@@ -150,7 +221,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(46, 51, 52, 0.55);
+  background: rgba(26, 26, 24, 0.55);
   pointer-events: none;
   z-index: 0;
 }
@@ -221,7 +292,7 @@ body {
 }
 
 .hero-headline {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: clamp(2.6rem, 6vw, 5rem);
   font-weight: 700;
   line-height: 1.08;
@@ -270,7 +341,7 @@ body {
   background: var(--accent-dark);
   border-color: var(--accent-dark);
   transform: translateY(-1px);
-  box-shadow: var(--shadow-teal);
+  box-shadow: var(--shadow-warm);
 }
 
 /* Ghost — designed for use on dark backgrounds (hero) */
@@ -296,14 +367,33 @@ body {
 
 .section-header { margin-bottom: 3rem; }
 
+.section-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
 .section-title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: clamp(1.75rem, 3.5vw, 2.6rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--ink);
   margin-bottom: 0.6rem;
   line-height: 1.15;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 2.75rem;
+  height: 2px;
+  background: var(--accent);
+  margin-top: 0.75rem;
+  border-radius: 1px;
 }
 
 .section-sub {
@@ -337,7 +427,7 @@ body {
 
 .dashboard-card:not(.dashboard-card-placeholder):hover {
   border-color: var(--accent);
-  box-shadow: var(--shadow-teal);
+  box-shadow: var(--shadow-warm);
   transform: translateY(-2px);
 }
 
@@ -354,7 +444,7 @@ body {
 }
 
 .dashboard-card-title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--ink);
@@ -447,7 +537,7 @@ body {
 }
 
 .stat-number {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 2.2rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -474,7 +564,7 @@ body {
 .coming-soon-icon { font-size: 2.5rem; margin-bottom: 1rem; }
 
 .coming-soon-text {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--ink);
@@ -505,7 +595,7 @@ body {
 }
 
 .footer-logo {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.92);
