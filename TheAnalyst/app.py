@@ -34,6 +34,10 @@ _state = {
     "prescan_status": "idle",  # idle | scanning | done
 }
 
+# ── Result cache ───────────────────────────────────────────────────────────────
+_cache     = {}    # ticker → (result_dict, timestamp)
+_CACHE_TTL = 300   # seconds (5 min)
+
 
 # ── SEC EDGAR helpers ──────────────────────────────────────────────────────────
 
@@ -268,13 +272,46 @@ def compute_verdict(info, price, graham):
     return verdict, score, commentary
 
 
+# ── yfinance fetch with retry ──────────────────────────────────────────────────
+
+def _yf_fetch(ticker):
+    """
+    Fetch yfinance .info with exponential-backoff retry on rate-limit errors.
+    Raises the last exception if all attempts fail.
+    """
+    delays = [3, 7, 15]
+    last_exc = None
+    for attempt, delay in enumerate(delays, 1):
+        try:
+            info = yf.Ticker(ticker).info
+            if not info or len(info) < 5:
+                raise ValueError("Empty response — ticker may be invalid")
+            return info
+        except Exception as e:
+            msg = str(e).lower()
+            is_rate_limit = any(k in msg for k in ("429", "too many", "rate limit", "rate-limit"))
+            if is_rate_limit and attempt < len(delays):
+                time.sleep(delay)
+                last_exc = e
+            else:
+                raise
+    raise last_exc
+
+
 # ── Core analysis function ─────────────────────────────────────────────────────
 
 def analyze_ticker(ticker):
     ticker = ticker.upper().strip()
+
+    # Return cached result if still fresh
+    cached = _cache.get(ticker)
+    if cached:
+        result, ts = cached
+        if time.time() - ts < _CACHE_TTL:
+            return result
+
     try:
-        t    = yf.Ticker(ticker)
-        info = t.info
+        info = _yf_fetch(ticker)
     except Exception as e:
         return {"error": f"Could not fetch data for {ticker}: {e}", "ticker": ticker}
 
@@ -307,7 +344,7 @@ def analyze_ticker(ticker):
     def r1(v):
         return round(v, 1) if v is not None else None
 
-    return {
+    result = {
         "ticker":       ticker,
         "company":      info.get("longName") or info.get("shortName", ticker),
         "sector":       info.get("sector", "Unknown"),
@@ -350,6 +387,9 @@ def analyze_ticker(ticker):
         "summary_short": (info.get("longBusinessSummary") or "")[:280],
         "scanned_at":    datetime.now().isoformat(),
     }
+
+    _cache[ticker] = (result, time.time())
+    return result
 
 
 # ── Pre-scan thread ────────────────────────────────────────────────────────────
