@@ -762,8 +762,8 @@
 <!-- ── Shared Site Header ──────────────────────────────────────────────── -->
 <style>
   .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e0e7e7;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'Barlow',sans-serif;}
-  .site-nav{display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px;}
-  .site-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:#1a1a18;font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;}
+  .site-nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px;}
+  .site-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:#1a1a18;font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;white-space:nowrap;}
   .site-logo img{height:2.2rem;width:auto;display:block;}
   .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
   .site-nav-item{position:relative;}
@@ -777,13 +777,41 @@
   .site-nav-item:hover .site-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
   .site-dropdown-link{display:block;padding:.55rem 1.1rem;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#4a4a46;white-space:nowrap;transition:color .15s,background .15s;}
   .site-dropdown-link:hover,.site-dropdown-link.active{color:#38bda6;background:#edf8f6;}
+  /* Hamburger button — hidden on desktop */
+  .nav-burger{display:none;background:none;border:1px solid #e8e6e0;border-radius:4px;cursor:pointer;padding:6px 10px;color:#1a1a18;font-size:1.2rem;line-height:1;}
+  /* Mobile styles */
+  @media(max-width:660px){
+    .site-nav{height:56px;padding:0 16px;}
+    .site-logo{font-size:1.1rem;}
+    .site-logo img{height:1.6rem;}
+    .nav-burger{display:block;}
+    .site-nav-links{
+      display:none;flex-direction:column;align-items:stretch;gap:0;
+      position:absolute;top:56px;left:0;right:0;
+      background:#fff;border-bottom:2px solid #e0e7e7;
+      box-shadow:0 6px 16px rgba(0,0,0,.09);
+      padding:.4rem 0;list-style:none;
+    }
+    .site-nav-links.open{display:flex;}
+    .site-nav-item{width:100%;}
+    .site-nav-link{padding:.7rem 1.2rem;border-radius:0;justify-content:flex-start;font-size:.75rem;}
+    /* On mobile the dropdown sits inline, always visible */
+    .site-dropdown{
+      position:static;opacity:1;visibility:visible;pointer-events:auto;
+      transform:none;box-shadow:none;border:none;border-radius:0;
+      border-top:1px solid #f0ede8;padding:.2rem 0 .4rem 1rem;
+      min-width:unset;
+    }
+    .site-dropdown-link{padding:.5rem 1rem;font-size:.72rem;}
+  }
 </style>
 <header class="site-header">
   <nav class="site-nav">
     <a href="https://theinvestlab.com" class="site-logo">
-      <img src="/images/logo.png" alt="The Invest Lab">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
       The Invest Lab
     </a>
+    <button class="nav-burger" aria-label="Menu" onclick="toggleSiteNav(this)">☰</button>
     <ul class="site-nav-links">
       <li class="site-nav-item">
         <a href="https://theinvestlab.com/#dashboards" class="site-nav-link active">Dashboards <span class="site-nav-chevron">▾</span></a>
@@ -798,17 +826,13 @@
     </ul>
   </nav>
 </header>
-
-<!-- Scan overlay (shown on first load while scanning) -->
-<div id="scan-overlay">
-  <div class="overlay-card">
-    <div style="font-size:2rem;margin-bottom:12px;">📊</div>
-    <div class="overlay-title">Running Market Scan</div>
-    <div class="overlay-sub">Fetching Yahoo movers, Reddit sentiment, and Finnhub quotes. Green stocks only — this takes a few minutes.</div>
-    <div class="overlay-progress"><div class="overlay-fill" id="overlay-fill" style="width:0%"></div></div>
-    <div class="overlay-ticker" id="overlay-ticker">Starting up...</div>
-  </div>
-</div>
+<script>
+function toggleSiteNav(btn) {
+  const links = document.querySelector('.site-nav-links');
+  const open = links.classList.toggle('open');
+  btn.textContent = open ? '✕' : '☰';
+}
+</script>
 
 <div class="layout">
 
@@ -827,6 +851,7 @@
       <div class="stat-pill">Swing: <strong id="hdr-swing">—</strong></div>
       <div class="stat-pill">Reddit: <strong id="hdr-reddit">—</strong></div>
       <div class="stat-pill" style="color:var(--ink-3);font-size:0.7rem;font-family:'DM Mono',monospace;" id="hdr-time">—</div>
+      <button onclick="loadResults()" style="padding:5px 12px;font-size:0.75rem;font-family:'Barlow',sans-serif;font-weight:600;background:var(--accent);color:#fff;border:none;border-radius:var(--radius-sm);cursor:pointer;letter-spacing:0.02em;">Refresh</button>
     </div>
   </header>
 
@@ -863,9 +888,9 @@
       </a>
     </div>
     <div class="sidebar-section scan-progress-wrap">
-      <div class="sidebar-label">Scanner Progress</div>
-      <div class="progress-bar"><div class="progress-fill" id="sidebar-progress" style="width:0%"></div></div>
-      <div class="progress-label" id="sidebar-label">—</div>
+      <div class="sidebar-label">Scan Schedule</div>
+      <div class="progress-label">Last: <strong id="sidebar-last-scan">—</strong></div>
+      <div class="progress-label" style="margin-top:4px;">Next: weekdays 8am &amp; 1pm ET</div>
     </div>
   </nav>
 
@@ -996,11 +1021,15 @@
 </div>
 
 <script>
+// ── Config ─────────────────────────────────────────────────────────────────
+const RESULTS_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+  ? 'data/results.json'
+  : 'https://raw.githubusercontent.com/torenCodes/invest-lab/main/MarketDashboard/data/results.json';
+
 // ── State ──────────────────────────────────────────────────────────────────
 let sectorChart = null;
 let lastScanTime = null;
-let lastSectorHash = null;   // prevents jarring chart redraws on every poll
-let isFirstLoad = true;
+let lastSectorHash = null;   // prevents jarring chart redraws on reload
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
@@ -1243,45 +1272,36 @@ function renderRedditFeed(feed) {
   }).join('');
 }
 
-// ── Status poller ──────────────────────────────────────────────────────────
-function updateStatus(status) {
+// ── Static data loader ─────────────────────────────────────────────────────
+async function loadResults() {
   const pulse = $('status-pulse');
   const text  = $('status-text');
-  const fill  = $('sidebar-progress');
-  const label = $('sidebar-label');
-  const overlayFill   = $('overlay-fill');
-  const overlayTicker = $('overlay-ticker');
-  const overlay = $('scan-overlay');
+  pulse.className = 'pulse scanning';
+  text.textContent = 'Loading…';
 
-  const pct = status.progress_total > 0
-    ? Math.round((status.progress / status.progress_total) * 100)
-    : 0;
+  try {
+    const res = await fetch(RESULTS_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
 
-  if (status.status === 'scanning') {
-    pulse.className = 'pulse scanning';
-    text.textContent = `Scanning… ${status.current_ticker || ''}`;
-    fill.style.width = `${pct}%`;
-    label.textContent = `${status.progress} / ${status.progress_total} (${pct}%)`;
-    if (overlayFill) overlayFill.style.width = `${pct}%`;
-    if (overlayTicker) overlayTicker.textContent = status.current_ticker
-      ? `Analyzing ${status.current_ticker}…`
-      : 'Scanning…';
-    if (isFirstLoad && overlay) overlay.classList.add('visible');
-  } else if (status.status === 'done') {
+    if (!data || !data.scan_time) {
+      pulse.className = 'pulse error';
+      text.textContent = 'No scan data yet — check back after 8am ET on a weekday';
+      return;
+    }
+
+    const scanDate = new Date(data.scan_time);
+    const d = scanDate.toLocaleDateString([], {month: 'short', day: 'numeric'});
+    const t = scanDate.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
     pulse.className = 'pulse';
-    const t = status.last_scan ? new Date(status.last_scan).toLocaleTimeString() : '—';
-    text.textContent = `Last scan: ${t}`;
-    fill.style.width = '100%';
-    label.textContent = 'Complete';
-    if (overlay) overlay.classList.remove('visible');
-    isFirstLoad = false;
-  } else if (status.status === 'error') {
+    text.textContent = `Last scan: ${d}, ${t}`;
+    $('sidebar-last-scan').textContent = `${d}, ${t}`;
+
+    updateResults(data);
+  } catch (e) {
+    console.warn('Load error:', e);
     pulse.className = 'pulse error';
-    text.textContent = 'Scan error';
-    if (overlay) overlay.classList.remove('visible');
-    isFirstLoad = false;
-  } else {
-    text.textContent = 'Idle';
+    text.textContent = 'Failed to load scan data';
   }
 }
 
@@ -1351,36 +1371,6 @@ function updateResults(data) {
     if (data.earnings_cal)   renderEarnings(data.earnings_cal);
     if (data.finviz_unusual) renderUnusualVolume(data.finviz_unusual);
   }
-}
-
-// ── Main polling loop ──────────────────────────────────────────────────────
-async function poll() {
-  try {
-    const [statusRes, resultsRes] = await Promise.all([
-      fetch('/api/status'),
-      fetch('/api/results').catch(() => null),
-    ]);
-
-    const status = await statusRes.json();
-    updateStatus(status);
-
-    if (resultsRes && resultsRes.ok) {
-      const data = await resultsRes.json();
-      if (!data.error) {
-        updateResults(data);
-        // If we have results, hide overlay even if still scanning
-        if (lastScanTime !== data.scan_time) {
-          lastScanTime = data.scan_time;
-        }
-      }
-    }
-  } catch (e) {
-    console.warn('Poll error:', e);
-  }
-
-  // Poll faster when scanning, slower when idle
-  const interval = $('status-pulse').classList.contains('scanning') ? 3000 : 15000;
-  setTimeout(poll, interval);
 }
 
 // ── Fear & Greed renderer ────────────────────────────────────────────────────
@@ -1465,7 +1455,8 @@ function renderUnusualVolume(tickers) {
 }
 
 // ── Boot ───────────────────────────────────────────────────────────────────
-poll();
+loadResults();
+setInterval(loadResults, 5 * 60 * 1000);  // auto-refresh every 5 min
 </script>
 
 <!-- ── Shared Site Footer ──────────────────────────────────────────────── -->

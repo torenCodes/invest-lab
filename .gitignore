@@ -17,10 +17,14 @@ env/
 .env
 .env.local
 *.key
+.github-pat
+git token.txt
 
 # ── Auto-generated scan caches (rebuilt on each run) ──────────────────────────
 scan_results.json
 results.json
+# GitHub Actions commits this file on each scan run — must not be ignored
+!MarketDashboard/data/results.json
 
 # ── IDE ───────────────────────────────────────────────────────────────────────
 .idea/
