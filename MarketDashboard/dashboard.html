@@ -928,7 +928,7 @@
           <div class="reddit-icon">r/</div>
           <div>
             <div style="font-size:0.9rem;font-weight:500;">Live Reddit Feed</div>
-            <div style="font-size:0.72rem;color:var(--ink-3);">High-upvote posts mentioning tickers (last 24h)</div>
+            <div style="font-size:0.72rem;color:var(--ink-3);">High-upvote posts about this scan's Reddit picks</div>
           </div>
         </div>
         <div class="feed-scroll" id="reddit-feed-list">
@@ -1224,7 +1224,10 @@ function renderRedditFeed(feed) {
   }
 
   el.innerHTML = feed.map(item => {
-    const tags = (item.tickers || []).map(t =>
+    // Only highlight tickers that were confirmed as reddit picks — not every
+    // capitalised word the regex happened to catch in the post text.
+    const displayTickers = item.confirmed_tickers || item.tickers || [];
+    const tags = displayTickers.map(t =>
       `<span class="feed-ticker-tag">${t}</span>`
     ).join('');
     return `

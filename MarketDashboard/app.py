@@ -303,12 +303,13 @@ def categorize(results, reddit_lookup, universe, yahoo_cats=None):
     result_map = {r["ticker"]: r for r in results if r}
     reddit_candidates = sorted(reddit_lookup.items(), key=lambda x: x[1], reverse=True)
 
-    reddit_cards = []
+    reddit_cards    = []
+    reddit_fallback = []   # non-green stocks held in reserve
     checked = 0
     for ticker, mentions in reddit_candidates:
         if len(reddit_cards) >= 3:
             break
-        if checked >= 20:  # cap API calls — don't check the entire list
+        if checked >= 40:  # wider net so we reliably find 3
             break
         checked += 1
 
@@ -318,6 +319,8 @@ def categorize(results, reddit_lookup, universe, yahoo_cats=None):
             card["mentions"] = mentions
             if card.get("change_pct", 0) > 0:
                 reddit_cards.append(card)
+            elif len(reddit_fallback) < 3:
+                reddit_fallback.append(card)
             continue
 
         # Otherwise fetch a fresh quote for this reddit-only ticker
@@ -327,32 +330,38 @@ def categorize(results, reddit_lookup, universe, yahoo_cats=None):
             if not quote or not profile or not profile.get("name"):
                 continue
             change_pct = quote.get("dp", 0)
-            if change_pct <= 0:
-                continue  # green only
             market_cap = profile.get("marketCapitalization", 0) * 1_000_000
             if market_cap < MIN_MARKET_CAP:
                 continue  # skip true micro-pennies
-            reddit_cards.append({
-                "ticker":        ticker,
-                "mentions":      mentions,
-                "name":          profile.get("name", ticker),
-                "sector":        profile.get("finnhubIndustry", "Unknown"),
-                "current_price": quote.get("c", 0),
-                "change_pct":    change_pct,
-                "high":          quote.get("h", 0),
-                "low":           quote.get("l", 0),
-                "open":          quote.get("o", 0),
-                "prev_close":    quote.get("pc", 0),
-                "market_cap":    market_cap,
-                "score":         0,
-                "signals":       [f"Reddit buzz ({mentions} mentions)"],
+            card = {
+                "ticker":          ticker,
+                "mentions":        mentions,
+                "name":            profile.get("name", ticker),
+                "sector":          profile.get("finnhubIndustry", "Unknown"),
+                "current_price":   quote.get("c", 0),
+                "change_pct":      change_pct,
+                "high":            quote.get("h", 0),
+                "low":             quote.get("l", 0),
+                "open":            quote.get("o", 0),
+                "prev_close":      quote.get("pc", 0),
+                "market_cap":      market_cap,
+                "score":           0,
+                "signals":         [f"Reddit buzz ({mentions} mentions)"],
                 "reddit_mentions": mentions,
-                "is_gainer":     ticker in yahoo_cats.get("gainers", set()) if False else False,
-                "is_active":     False,
-            })
+                "is_gainer":       False,
+                "is_active":       False,
+            }
+            if change_pct > 0:
+                reddit_cards.append(card)
+            elif len(reddit_fallback) < 3:
+                reddit_fallback.append(card)
             time.sleep(1.1)  # respect Finnhub rate limit
         except Exception:
             continue
+
+    # Always aim for 3 — fill remaining slots with highest-mention non-green stocks
+    while len(reddit_cards) < 3 and reddit_fallback:
+        reddit_cards.append(reddit_fallback.pop(0))
 
     return day_cands[:3], swing_cands[:3], reddit_cards
 
@@ -494,6 +503,20 @@ def run_scan():
             earnings_cal    = get_earnings_calendar()
             finviz_unusual  = get_finviz_movers()
 
+            # Filter feed to posts that mention a confirmed reddit pick.
+            # Annotate each item with the matched tickers so the frontend
+            # highlights only valid, confirmed symbols.
+            confirmed = {card["ticker"] for card in reddit_cards}
+            filtered_feed = []
+            for item in reddit_feed:
+                matched = [t for t in item.get("tickers", []) if t in confirmed]
+                if matched:
+                    enriched = dict(item)
+                    enriched["confirmed_tickers"] = matched
+                    filtered_feed.append(enriched)
+            # Fall back to the raw feed if no posts overlap with confirmed picks
+            display_feed = filtered_feed if filtered_feed else reddit_feed[:20]
+
             output = {
                 "scan_time":      datetime.now().isoformat(),
                 "total_scanned":  len(universe),
@@ -501,7 +524,7 @@ def run_scan():
                 "swing_trades":   swing_trades,
                 "reddit_cards":   reddit_cards,
                 "sector_flow":    sector_flow,
-                "reddit_feed":    reddit_feed,
+                "reddit_feed":    display_feed,
                 "fear_greed":     fear_greed,
                 "market_news":    market_news,
                 "earnings_cal":   earnings_cal,
