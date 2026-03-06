@@ -642,8 +642,8 @@
 <!-- ── Shared Site Header ──────────────────────────────────────────────── -->
 <style>
   .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e0e7e7;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'Barlow',sans-serif;}
-  .site-nav{display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px;}
-  .site-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:#1a1a18;font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;}
+  .site-nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px;}
+  .site-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:#1a1a18;font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;white-space:nowrap;}
   .site-logo img{height:2.2rem;width:auto;display:block;}
   .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
   .site-nav-item{position:relative;}
@@ -657,13 +657,27 @@
   .site-nav-item:hover .site-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
   .site-dropdown-link{display:block;padding:.55rem 1.1rem;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#4a4a46;white-space:nowrap;transition:color .15s,background .15s;}
   .site-dropdown-link:hover,.site-dropdown-link.active{color:#38bda6;background:#edf8f6;}
+  .nav-burger{display:none;background:none;border:1px solid #e8e6e0;border-radius:4px;cursor:pointer;padding:6px 10px;color:#1a1a18;font-size:1.2rem;line-height:1;}
+  @media(max-width:660px){
+    .site-nav{height:56px;padding:0 16px;}
+    .site-logo{font-size:1.1rem;}
+    .site-logo img{height:1.6rem;}
+    .nav-burger{display:block;}
+    .site-nav-links{display:none;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:2px solid #e0e7e7;box-shadow:0 6px 16px rgba(0,0,0,.09);padding:.4rem 0;list-style:none;}
+    .site-nav-links.open{display:flex;}
+    .site-nav-item{width:100%;}
+    .site-nav-link{padding:.7rem 1.2rem;border-radius:0;justify-content:flex-start;font-size:.75rem;}
+    .site-dropdown{position:static;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;border:none;border-radius:0;border-top:1px solid #f0ede8;padding:.2rem 0 .4rem 1rem;min-width:unset;}
+    .site-dropdown-link{padding:.5rem 1rem;font-size:.72rem;}
+  }
 </style>
 <header class="site-header">
   <nav class="site-nav">
     <a href="https://theinvestlab.com" class="site-logo">
-      <img src="/images/logo.png" alt="The Invest Lab">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
       The Invest Lab
     </a>
+    <button class="nav-burger" aria-label="Menu" onclick="toggleSiteNav(this)">☰</button>
     <ul class="site-nav-links">
       <li class="site-nav-item">
         <a href="https://theinvestlab.com/#dashboards" class="site-nav-link active">Dashboards <span class="site-nav-chevron">▾</span></a>
@@ -678,17 +692,13 @@
     </ul>
   </nav>
 </header>
-
-<!-- Scan overlay (first load only) -->
-<div id="scan-overlay">
-  <div class="overlay-card">
-    <div style="font-size:2.2rem;margin-bottom:12px;">📊</div>
-    <div class="overlay-title">Scanning Growth ETFs</div>
-    <div class="overlay-sub">Fetching holdings and 3-year performance data across 10 top growth funds. Identifying consensus stock picks. This takes 2–3 minutes.</div>
-    <div class="overlay-progress"><div class="overlay-fill" id="overlay-fill" style="width:0%"></div></div>
-    <div class="overlay-ticker" id="overlay-ticker">Starting up…</div>
-  </div>
-</div>
+<script>
+function toggleSiteNav(btn) {
+  const links = document.querySelector('.site-nav-links');
+  const open = links.classList.toggle('open');
+  btn.textContent = open ? '✕' : '☰';
+}
+</script>
 
 <div class="layout">
 
@@ -706,6 +716,7 @@
       <div class="stat-pill">Nominees: <strong id="hdr-nominees">—</strong></div>
       <div class="stat-pill">Stocks Found: <strong id="hdr-stocks">—</strong></div>
       <div class="stat-pill" style="color:var(--ink-3);font-size:0.7rem;font-family:'DM Mono',monospace;" id="hdr-time">—</div>
+      <button onclick="loadResults()" style="padding:5px 12px;font-size:0.75rem;font-family:'Barlow',sans-serif;font-weight:600;background:var(--accent);color:#fff;border:none;border-radius:var(--radius-sm);cursor:pointer;letter-spacing:0.02em;">Refresh</button>
     </div>
   </header>
 
@@ -722,12 +733,9 @@
     </div>
 
     <div class="sidebar-section scan-progress-wrap">
-      <div class="sidebar-label">Scan Progress</div>
-      <div class="progress-bar">
-        <div class="progress-fill" id="sidebar-progress" style="width:0%"></div>
-      </div>
-      <div class="progress-label" id="sidebar-label">—</div>
-      <button class="rescan-btn" id="rescan-btn" onclick="triggerRescan()">↺ Rescan ETFs</button>
+      <div class="sidebar-label">Scan Schedule</div>
+      <div class="progress-label">Last: <strong id="sidebar-last-scan">—</strong></div>
+      <div class="progress-label" style="margin-top:4px;">Next: Mondays 9am ET</div>
     </div>
 
     <div class="sidebar-section">
@@ -775,8 +783,12 @@
 </div>
 
 <script>
+// ── Config ────────────────────────────────────────────────────────────────────
+const RESULTS_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+  ? 'data/results.json'
+  : 'https://raw.githubusercontent.com/torenCodes/invest-lab/main/TriedAndTrue/data/results.json';
+
 // ── State ────────────────────────────────────────────────────────────────────
-let isFirstLoad    = true;
 let lastResultHash = null;
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -800,44 +812,35 @@ function setActive(el) {
 }
 
 // ── Status update ─────────────────────────────────────────────────────────────
-function updateStatus(st) {
-  const pulse   = $('status-pulse');
-  const text    = $('status-text');
-  const sbar    = $('sidebar-progress');
-  const slabel  = $('sidebar-label');
-  const btn     = $('rescan-btn');
-  const overlay = $('scan-overlay');
-  const ofill   = $('overlay-fill');
-  const oticker = $('overlay-ticker');
+async function loadResults() {
+  const pulse = $('status-pulse');
+  const text  = $('status-text');
+  pulse.className  = 'pulse scanning';
+  text.textContent = 'Loading…';
 
-  if (st.status === 'scanning') {
-    pulse.className  = 'pulse scanning';
-    text.textContent = 'Scanning ETFs…';
-    sbar.style.width = `${st.progress}%`;
-    slabel.textContent = st.current || '—';
-    if (btn) { btn.disabled = true; btn.textContent = '↺ Scanning…'; }
-    if (ofill)   ofill.style.width   = `${st.progress}%`;
-    if (oticker) oticker.textContent = st.current || 'Scanning ETFs…';
-    if (isFirstLoad && overlay) overlay.classList.add('visible');
+  try {
+    const res = await fetch(RESULTS_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
 
-  } else if (st.status === 'idle') {
-    pulse.className = 'pulse';
-    const t = st.last_scan
-      ? new Date(st.last_scan).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-      : '—';
-    text.textContent   = `Last scan: ${t}`;
-    sbar.style.width   = '100%';
-    slabel.textContent = 'Complete';
-    if (btn) { btn.disabled = false; btn.textContent = '↺ Rescan ETFs'; }
-    if (overlay) overlay.classList.remove('visible');
-    isFirstLoad = false;
+    if (!data || !data.scanned_at) {
+      pulse.className  = 'pulse error';
+      text.textContent = 'No scan data yet — check back Monday 9am ET';
+      return;
+    }
 
-  } else if (st.status === 'error') {
+    const scanDate = new Date(data.scanned_at);
+    const d = scanDate.toLocaleDateString([], {month: 'short', day: 'numeric'});
+    const t = scanDate.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+    pulse.className  = 'pulse';
+    text.textContent = `Last scan: ${d}, ${t}`;
+    $('sidebar-last-scan').textContent = `${d}, ${t}`;
+
+    renderResults(data);
+  } catch (e) {
+    console.warn('Load error:', e);
     pulse.className  = 'pulse error';
-    text.textContent = 'Scan error';
-    if (btn) { btn.disabled = false; btn.textContent = '↺ Retry Scan'; }
-    if (overlay) overlay.classList.remove('visible');
-    isFirstLoad = false;
+    text.textContent = 'Failed to load scan data';
   }
 }
 
@@ -1002,52 +1005,9 @@ function renderEtfCard(etf) {
     </div>`;
 }
 
-// ── Polling ───────────────────────────────────────────────────────────────────
-async function poll() {
-  try {
-    const [stRes, dataRes] = await Promise.all([
-      fetch('/api/status'),
-      fetch('/api/results').catch(() => null),
-    ]);
-
-    const st = await stRes.json();
-    updateStatus(st);
-
-    if (dataRes && dataRes.ok) {
-      const data = await dataRes.json();
-      if (!data.error) renderResults(data);
-    }
-  } catch (e) {
-    console.warn('Poll error:', e);
-  }
-
-  const scanning = $('status-pulse').classList.contains('scanning');
-  setTimeout(poll, scanning ? 3000 : 30000);
-}
-
-// ── Rescan ────────────────────────────────────────────────────────────────────
-async function triggerRescan() {
-  const btn = $('rescan-btn');
-  btn.disabled     = true;
-  btn.textContent  = '↺ Starting…';
-  try {
-    const res  = await fetch('/api/rescan', { method: 'POST' });
-    const data = await res.json();
-    if (data.ok) {
-      btn.textContent = '↺ Scanning…';
-      poll();
-    } else {
-      btn.disabled    = false;
-      btn.textContent = '↺ Rescan ETFs';
-    }
-  } catch {
-    btn.disabled    = false;
-    btn.textContent = '↺ Rescan ETFs';
-  }
-}
-
 // ── Boot ──────────────────────────────────────────────────────────────────────
-poll();
+loadResults();
+setInterval(loadResults, 60 * 60 * 1000);  // auto-refresh every hour
 </script>
 
 <!-- ── Shared Site Footer ──────────────────────────────────────────────── -->
@@ -1062,7 +1022,7 @@ poll();
 <footer class="site-footer-shared">
   <div class="site-footer-inner">
     <div class="site-footer-brand">
-      <img src="/images/logo.png" alt="The Invest Lab">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
       The Invest Lab
     </div>
     <p class="site-footer-disc">Not financial advice. For personal educational use only.</p>

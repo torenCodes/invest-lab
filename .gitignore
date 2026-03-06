@@ -23,8 +23,9 @@ git token.txt
 # ── Auto-generated scan caches (rebuilt on each run) ──────────────────────────
 scan_results.json
 results.json
-# GitHub Actions commits this file on each scan run — must not be ignored
+# GitHub Actions commits these files on each scan run — must not be ignored
 !MarketDashboard/data/results.json
+!TriedAndTrue/data/results.json
 
 # ── IDE ───────────────────────────────────────────────────────────────────────
 .idea/
