@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tried and True</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   /* ── Reset & Base ───────────────────────────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,7 +45,7 @@
   html { font-size: 15px; scroll-behavior: smooth; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Barlow', sans-serif;
     background: var(--bg);
     color: var(--ink);
     min-height: 100vh;
@@ -72,7 +72,7 @@
     justify-content: space-between;
     padding: 0 28px;
     position: sticky;
-    top: 0;
+    top: 70px;
     z-index: 100;
     box-shadow: var(--shadow-sm);
   }
@@ -80,7 +80,7 @@
   .header-left { display: flex; align-items: center; gap: 16px; }
 
   .logo {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     color: var(--accent);
     letter-spacing: -0.01em;
@@ -127,13 +127,13 @@
 
   /* ── Sidebar ─────────────────────────────────────────────────────────────── */
   .sidebar {
-    background: var(--surface);
-    border-right: 1px solid var(--border);
+    background: #1a1a18;
+    border-right: 1px solid rgba(255,255,255,0.08);
     padding: 24px 0;
     overflow-y: auto;
     position: sticky;
-    top: 124px;
-    height: calc(100vh - 124px);
+    top: 134px;
+    height: calc(100vh - 134px);
   }
 
   .sidebar-section { margin-bottom: 28px; }
@@ -143,7 +143,7 @@
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--ink-3);
+    color: rgba(255,255,255,0.35);
     padding: 0 20px;
     margin-bottom: 8px;
   }
@@ -155,13 +155,13 @@
     padding: 9px 20px;
     cursor: pointer;
     font-size: 0.875rem;
-    color: var(--ink-2);
+    color: rgba(255,255,255,0.65);
     border-left: 2px solid transparent;
     transition: all 0.15s;
     text-decoration: none;
   }
-  .nav-item:hover  { color: var(--ink); background: var(--bg); }
-  .nav-item.active { color: var(--accent); border-left-color: var(--accent); background: var(--green-bg); font-weight: 500; }
+  .nav-item:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); }
+  .nav-item.active { color: #38bda6; border-left-color: #38bda6; background: rgba(56,189,166,0.1); font-weight: 500; }
   .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
 
   .scan-progress-wrap { padding: 0 20px; }
@@ -199,7 +199,7 @@
     border-radius: var(--radius-sm);
     font-size: 0.8rem;
     font-weight: 600;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Barlow', sans-serif;
     cursor: pointer;
     text-align: center;
     transition: background 0.15s;
@@ -232,7 +232,7 @@
   }
 
   .section-title {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     color: var(--ink);
     letter-spacing: -0.02em;
@@ -303,7 +303,7 @@
   }
 
   .overlay-title {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.6rem;
     color: var(--ink);
     margin-bottom: 6px;
@@ -364,7 +364,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.7rem;
     color: var(--ink-3);
     background: var(--surface-2);
@@ -559,7 +559,7 @@
   }
 
   .perf-return-val {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.85rem;
     letter-spacing: -0.02em;
     line-height: 1;
@@ -642,24 +642,39 @@
 <!-- ── Shared Site Header ──────────────────────────────────────────────── -->
 <style>
   .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e0e7e7;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'Barlow',sans-serif;}
-  .site-nav{display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 28px;}
-  .site-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:#2e3334;font-size:1.05rem;font-weight:700;letter-spacing:-.01em;}
-  .site-logo img{height:2rem;width:auto;display:block;}
+  .site-nav{display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px;}
+  .site-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:#1a1a18;font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;}
+  .site-logo img{height:2.2rem;width:auto;display:block;}
   .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
-  .site-nav-link{display:inline-flex;align-items:center;padding:.38rem .85rem;border-radius:3px;text-decoration:none;font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#656d6f;transition:color .15s,background .15s;}
-  .site-nav-link:hover,.site-nav-link.current{color:#38bda6;background:#edf8f6;}
+  .site-nav-item{position:relative;}
+  .site-nav-link{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .9rem;border-radius:3px;text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#4a4a46;transition:color .15s,background .15s;}
+  .site-nav-link:hover,.site-nav-link.active{color:#38bda6;background:#edf8f6;}
+  .site-nav-chevron{font-size:.6rem;opacity:.6;transition:transform .2s;}
+  .site-nav-item:hover .site-nav-chevron{transform:rotate(180deg);}
   .site-nav-badge{font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:#edf8f6;color:#2a9b87;padding:.12rem .4rem;border-radius:3px;}
+  .site-dropdown{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%) translateY(-4px);background:#fff;border:1px solid #e8e6e0;border-radius:4px;box-shadow:0 4px 18px rgba(0,0,0,.10);list-style:none;min-width:180px;padding:.4rem 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,visibility .18s,transform .18s;z-index:200;}
+  .site-dropdown::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px;}
+  .site-nav-item:hover .site-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+  .site-dropdown-link{display:block;padding:.55rem 1.1rem;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#4a4a46;white-space:nowrap;transition:color .15s,background .15s;}
+  .site-dropdown-link:hover,.site-dropdown-link.active{color:#38bda6;background:#edf8f6;}
 </style>
 <header class="site-header">
   <nav class="site-nav">
-    <a href="/" class="site-logo">
+    <a href="https://theinvestclub.com" class="site-logo">
       <img src="/images/logo.png" alt="The Invest Lab">
       The Invest Lab
     </a>
     <ul class="site-nav-links">
-      <li><a href="https://invest-movers-shakers.onrender.com" class="site-nav-link">Movers &amp; Shakers</a></li>
-      <li><a href="https://invest-tried-true.onrender.com" class="site-nav-link current">Tried &amp; True</a></li>
-      <li><a href="https://invest-the-analyst.onrender.com" class="site-nav-link">The Analyst</a></li>
+      <li class="site-nav-item">
+        <a href="https://theinvestclub.com/#dashboards" class="site-nav-link active">Dashboards <span class="site-nav-chevron">▾</span></a>
+        <ul class="site-dropdown">
+          <li><a href="https://invest-movers-shakers.onrender.com" class="site-dropdown-link">Movers and Shakers</a></li>
+          <li><a href="https://invest-tried-true.onrender.com" class="site-dropdown-link active">Tried and True</a></li>
+          <li><a href="https://invest-the-analyst.onrender.com" class="site-dropdown-link">The Analyst</a></li>
+        </ul>
+      </li>
+      <li><a href="https://theinvestclub.com/#about" class="site-nav-link">About</a></li>
+      <li><a href="https://theinvestclub.com/#blog" class="site-nav-link" style="color:#8a8a82">Blog <span class="site-nav-badge">Soon</span></a></li>
     </ul>
   </nav>
 </header>
