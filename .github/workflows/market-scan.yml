@@ -20,7 +20,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install -r MarketDashboard/requirements.txt
+        run: pip install -r MarketDashboard/requirements-scan.txt
 
       - name: Run market scan
         run: python MarketDashboard/scan.py
