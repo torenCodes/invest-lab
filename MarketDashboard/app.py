@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    html_path = os.path.join(BASE_DIR, "dashboard.html")
+    html_path = os.path.join(BASE_DIR, "index.html")
     with open(html_path, "r", encoding="utf-8") as f:
         return Response(f.read(), mimetype="text/html")
 
