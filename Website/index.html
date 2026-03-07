@@ -56,6 +56,26 @@
     <div class="hero-bg-accent"></div>
   </section>
 
+  <!-- ── Market Snapshot Preview ─────────────────────────────────────────── -->
+  <section class="preview-section">
+    <div class="container">
+      <div class="preview-header">
+        <div>
+          <p class="section-eyebrow">Live Data</p>
+          <h2 class="section-title">Today's Market Snapshot</h2>
+          <p class="preview-ts-line">From the latest Movers &amp; Shakers scan — <span id="preview-ts">loading…</span></p>
+        </div>
+        <a href="https://invest-movers-shakers.onrender.com" target="_blank" rel="noopener" class="preview-all-link">Full dashboard →</a>
+      </div>
+      <div class="preview-grid">
+        <div class="preview-card" id="pc-day"></div>
+        <div class="preview-card" id="pc-swing"></div>
+        <div class="preview-card" id="pc-sector"></div>
+        <div class="preview-card" id="pc-discussed"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Dashboards ───────────────────────────────────────────────────────── -->
   <section class="section" id="dashboards">
     <div class="container">
@@ -239,5 +259,123 @@
     </div>
   </footer>
 
+
+<script>
+(function () {
+  var DATA_URL = 'https://invest-movers-shakers.onrender.com/data/results.json';
+  var DASH_URL = 'https://invest-movers-shakers.onrender.com';
+
+  // ── Skeleton loading state ─────────────────────────────────────────────
+  function showSkeletons() {
+    ['pc-day', 'pc-swing', 'pc-sector', 'pc-discussed'].forEach(function (id) {
+      document.getElementById(id).innerHTML =
+        '<div class="pv-skel pv-skel-xs"></div>' +
+        '<div class="pv-skel pv-skel-lg" style="margin-top:1.1rem"></div>' +
+        '<div class="pv-skel pv-skel-md" style="margin-top:0.4rem"></div>' +
+        '<div class="pv-skel pv-skel-sm" style="margin-top:1rem"></div>' +
+        '<div class="pv-skel pv-skel-md" style="margin-top:0.4rem"></div>' +
+        '<div class="pv-skel pv-skel-sm" style="margin-top:0.4rem"></div>';
+    });
+  }
+
+  // ── Helpers ────────────────────────────────────────────────────────────
+  function fmt(v, dp) { return parseFloat(v || 0).toFixed(dp); }
+
+  function pctBadge(pct) {
+    var sign = pct >= 0 ? '+' : '';
+    var cls  = pct >= 0 ? 'pv-pct pv-pct-up' : 'pv-pct pv-pct-dn';
+    return '<span class="' + cls + '">' + sign + fmt(pct, 2) + '%</span>';
+  }
+
+  function cta(label) {
+    return '<a href="' + DASH_URL + '" target="_blank" rel="noopener" class="pv-cta">' +
+      label + ' <span class="pv-cta-arr">→</span></a>';
+  }
+
+  // ── Stock card (Day Trade / Swing Trade / Highly Discussed) ────────────
+  function stockCard(stock, typeLabel, ctaLabel, hideRedditSignals) {
+    if (!stock) {
+      return '<div class="pv-type">' + typeLabel + '</div>' +
+        '<div class="pv-empty">No qualifying pick this scan — check back on a trading day.</div>' +
+        cta(ctaLabel);
+    }
+
+    var signals = (stock.signals || []);
+    if (hideRedditSignals) {
+      signals = signals.filter(function (s) { return !/reddit/i.test(s); }).slice(0, 2);
+      var mentions = stock.mentions || stock.reddit_mentions || 0;
+      if (mentions > 0) signals.push('High investor discussion activity');
+    } else {
+      signals = signals.slice(0, 3);
+    }
+
+    var pct = stock.change_pct || 0;
+
+    return '<div class="pv-type">' + typeLabel + '</div>' +
+      '<div class="pv-ticker-row">' +
+        '<span class="pv-ticker">' + stock.ticker + '</span>' +
+        pctBadge(pct) +
+      '</div>' +
+      '<div class="pv-name">' + (stock.name || '') + '</div>' +
+      '<div class="pv-price">$' + fmt(stock.current_price, 2) + '</div>' +
+      (signals.length ? '<ul class="pv-signals">' +
+        signals.map(function (s) { return '<li>' + s + '</li>'; }).join('') +
+        '</ul>' : '') +
+      (stock.score ? '<div class="pv-score"><span class="pv-score-label">Score</span> <span class="pv-score-val">' + stock.score + '</span></div>' : '') +
+      cta(ctaLabel);
+  }
+
+  // ── Sector card ────────────────────────────────────────────────────────
+  function sectorCard(sector) {
+    if (!sector) {
+      return '<div class="pv-type">Leading Sector</div>' +
+        '<div class="pv-empty">No sector data this scan — check back on a trading day.</div>' +
+        cta('View sector flow');
+    }
+
+    var count = sector.count || 0;
+    return '<div class="pv-type">Leading Sector</div>' +
+      '<div class="pv-sector-name">' + sector.sector + '</div>' +
+      '<div class="pv-sector-gain">+' + fmt(sector.avg_change, 2) + '%</div>' +
+      '<div class="pv-sector-sub">avg gain today</div>' +
+      '<ul class="pv-signals">' +
+        '<li>' + count + ' green stock' + (count !== 1 ? 's' : '') + ' in this sector</li>' +
+        '<li>Top sector by average % gain</li>' +
+      '</ul>' +
+      cta('View sector flow');
+  }
+
+  // ── Boot ───────────────────────────────────────────────────────────────
+  showSkeletons();
+
+  fetch(DATA_URL + '?t=' + Date.now())
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (data) {
+      if (data.scan_time) {
+        var d  = new Date(data.scan_time);
+        var ds = d.toLocaleDateString([], { month: 'short', day: 'numeric' });
+        var ts = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        document.getElementById('preview-ts').textContent = ds + ' at ' + ts;
+      }
+
+      var day      = data.day_trades    && data.day_trades[0];
+      var swing    = data.swing_trades  && data.swing_trades[0];
+      var sector   = data.sector_flow   && data.sector_flow[0];
+      var discuss  = data.reddit_cards  && data.reddit_cards[0];
+
+      document.getElementById('pc-day').innerHTML      = stockCard(day,     'Day Trade',        'View day trades',   false);
+      document.getElementById('pc-swing').innerHTML    = stockCard(swing,   'Swing Trade',      'View swing trades', false);
+      document.getElementById('pc-sector').innerHTML   = sectorCard(sector);
+      document.getElementById('pc-discussed').innerHTML = stockCard(discuss, 'Highly Discussed', 'View all picks',    true);
+    })
+    .catch(function () {
+      var msg = '<div class="pv-empty">Data unavailable — check back on a weekday.</div>';
+      ['pc-day', 'pc-swing', 'pc-sector', 'pc-discussed'].forEach(function (id) {
+        document.getElementById(id).innerHTML = msg;
+      });
+      document.getElementById('preview-ts').textContent = 'unavailable';
+    });
+}());
+</script>
 </body>
 </html>
