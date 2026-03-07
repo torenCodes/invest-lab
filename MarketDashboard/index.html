@@ -1352,13 +1352,12 @@ function updateResults(data) {
     }
   }
 
-  // Reddit feed — only re-render when feed changes (avoids scroll position jumping)
-  if (data.reddit_feed && data.reddit_feed.length) {
-    const feedHash = data.reddit_feed.length + "_" + (data.reddit_feed[0]?.url || "");
-    if (feedHash !== updateResults._lastFeedHash) {
-      updateResults._lastFeedHash = feedHash;
-      renderRedditFeed(data.reddit_feed);
-    }
+  // Reddit feed — always render (shows empty-state when no data), skip if unchanged
+  const feedData = data.reddit_feed || [];
+  const feedHash = feedData.length + "_" + (feedData[0]?.url || "");
+  if (feedHash !== updateResults._lastFeedHash) {
+    updateResults._lastFeedHash = feedHash;
+    renderRedditFeed(feedData);
   }
 
   // New data panels — only render once per scan cycle
