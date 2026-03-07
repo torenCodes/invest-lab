@@ -784,9 +784,7 @@ function toggleSiteNav(btn) {
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const RESULTS_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
-  ? 'data/results.json'
-  : 'https://raw.githubusercontent.com/torenCodes/invest-lab/main/TriedAndTrue/data/results.json';
+const RESULTS_URL = 'data/results.json';
 
 // ── State ────────────────────────────────────────────────────────────────────
 let lastResultHash = null;
