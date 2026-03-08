@@ -68,7 +68,7 @@
     justify-content: space-between;
     padding: 0 28px;
     position: sticky;
-    top: 0;
+    top: 70px;
     z-index: 100;
     box-shadow: var(--shadow-sm);
   }
@@ -126,8 +126,8 @@
     padding: 24px 0;
     overflow-y: auto;
     position: sticky;
-    top: 64px;
-    height: calc(100vh - 64px);
+    top: 134px;
+    height: calc(100vh - 134px);
   }
 
   .sidebar-section { margin-bottom: 28px; }
@@ -482,9 +482,78 @@
     .feed-table th:nth-child(3),
     .feed-table td:nth-child(3) { display: none; }
   }
+
+  /* ── Site header (shared top nav) ─────────────────────────────────────────── */
+  .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e0e7e7;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'Barlow',sans-serif;}
+  .site-nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px;}
+  .site-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:#1a1a18;font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;white-space:nowrap;}
+  .site-logo img{height:2.2rem;width:auto;display:block;}
+  .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+  .site-nav-item{position:relative;}
+  .site-nav-link{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .9rem;border-radius:3px;text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#4a4a46;transition:color .15s,background .15s;}
+  .site-nav-link:hover,.site-nav-link.active{color:#38bda6;background:#edf8f6;}
+  .site-nav-chevron{font-size:.6rem;opacity:.6;transition:transform .2s;}
+  .site-nav-item:hover .site-nav-chevron{transform:rotate(180deg);}
+  .site-nav-badge{font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:#edf8f6;color:#2a9b87;padding:.12rem .4rem;border-radius:3px;}
+  .site-dropdown{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%) translateY(-4px);background:#fff;border:1px solid #e8e6e0;border-radius:4px;box-shadow:0 4px 18px rgba(0,0,0,.10);list-style:none;min-width:190px;padding:.4rem 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,visibility .18s,transform .18s;z-index:200;}
+  .site-dropdown::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px;}
+  .site-nav-item:hover .site-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+  .site-dropdown-link{display:block;padding:.55rem 1.1rem;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#4a4a46;white-space:nowrap;transition:color .15s,background .15s;}
+  .site-dropdown-link:hover,.site-dropdown-link.active{color:#38bda6;background:#edf8f6;}
+  .nav-burger{display:none;background:none;border:1px solid #e8e6e0;border-radius:4px;cursor:pointer;padding:6px 10px;color:#1a1a18;font-size:1.2rem;line-height:1;}
+  @media(max-width:660px){
+    .site-nav{height:56px;padding:0 16px;}
+    .site-logo{font-size:1.1rem;}
+    .site-logo img{height:1.6rem;}
+    .nav-burger{display:block;}
+    .site-nav-links{display:none;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:2px solid #e0e7e7;box-shadow:0 6px 16px rgba(0,0,0,.09);padding:.4rem 0;list-style:none;}
+    .site-nav-links.open{display:flex;}
+    .site-nav-item{width:100%;}
+    .site-nav-link{padding:.7rem 1.2rem;border-radius:0;justify-content:flex-start;font-size:.75rem;}
+    .site-dropdown{position:static;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;border:none;border-radius:0;border-top:1px solid #f0ede8;padding:.2rem 0 .4rem 1rem;min-width:unset;}
+    .site-dropdown-link{padding:.5rem 1rem;font-size:.72rem;}
+  }
+
+  /* ── Site footer (shared) ─────────────────────────────────────────────────── */
+  .site-footer-shared{background:#2e3334;color:rgba(255,255,255,.5);padding:1.5rem 0;font-family:'Barlow',sans-serif;}
+  .site-footer-inner{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;}
+  .site-footer-brand{display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:1rem;color:rgba(255,255,255,.92);}
+  .site-footer-brand img{height:1.2rem;width:auto;filter:invert(1);opacity:.85;}
+  .site-footer-disc{font-size:.78rem;}
+  .site-footer-copy{font-size:.68rem;font-family:monospace;opacity:.3;}
 </style>
 </head>
 <body>
+
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="https://theinvestlab.com" class="site-logo">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </a>
+    <button class="nav-burger" aria-label="Menu" onclick="toggleSiteNav(this)">☰</button>
+    <ul class="site-nav-links">
+      <li class="site-nav-item">
+        <a href="https://theinvestlab.com/#dashboards" class="site-nav-link active">Dashboards <span class="site-nav-chevron">▾</span></a>
+        <ul class="site-dropdown">
+          <li><a href="https://invest-movers-shakers.onrender.com" class="site-dropdown-link">Movers and Shakers</a></li>
+          <li><a href="https://invest-tried-true.onrender.com" class="site-dropdown-link">Tried and True</a></li>
+          <li><a href="https://invest-the-analyst.onrender.com" class="site-dropdown-link">The Analyst</a></li>
+          <li><a href="https://invest-insider-buying.onrender.com" class="site-dropdown-link active">Insider Buying</a></li>
+        </ul>
+      </li>
+      <li><a href="https://theinvestlab.com/#about" class="site-nav-link">About</a></li>
+      <li><a href="https://theinvestlab.com/#blog" class="site-nav-link" style="color:#8a8a82">Blog <span class="site-nav-badge">Soon</span></a></li>
+    </ul>
+  </nav>
+</header>
+<script>
+function toggleSiteNav(btn) {
+  const links = document.querySelector('.site-nav-links');
+  const open = links.classList.toggle('open');
+  btn.textContent = open ? '✕' : '☰';
+}
+</script>
 
 <div class="layout">
 
@@ -557,6 +626,17 @@
   </main>
 
 </div><!-- /.layout -->
+
+<footer class="site-footer-shared">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </div>
+    <p class="site-footer-disc">Not financial advice. For personal educational use only.</p>
+    <p class="site-footer-copy">Built with curiosity and caffeine.</p>
+  </div>
+</footer>
 
 <script>
 // ── Format helpers ────────────────────────────────────────────────────────────
