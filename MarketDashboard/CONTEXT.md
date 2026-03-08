@@ -62,10 +62,10 @@ regardless, commits `data/results.json`, and the static frontend reads it fresh.
 
 | Source | Method | API Key? | Notes |
 |--------|--------|----------|-------|
-| Yahoo Finance | HTTP scrape (regex on HTML) | No | Top 60 gainers, losers, most-active |
+| Yahoo Finance movers | HTTP scrape (regex on HTML) | No | Top 60 gainers, losers, most-active |
+| Yahoo Finance trending | HTTP scrape | No | Trending tickers page, ranked 1-N (replaces dead StockTwits) |
 | Finnhub | REST API | Yes (free tier) | Quotes, profiles, news, earnings |
 | Reddit | Public JSON API (`*.reddit.com/*.json`) | No | 5 subreddits: wallstreetbets, stocks, StockMarket, options, daytrading |
-| StockTwits | Public REST API | No | Trending tickers, ranked 1-N |
 | CNN Fear & Greed | `production.dataviz.cnn.io` public endpoint | No | Score 0-100 + history |
 | Finviz | HTTP scrape | No | Unusual volume screener |
 
@@ -88,8 +88,8 @@ Each stock gets a score built from signals. Thresholds determine if it qualifies
 | High Reddit buzz (>=20 mentions) | +15 |
 | Reddit buzz (>=10 mentions) | +10 |
 | Reddit activity (>=5 mentions) | +5 |
-| StockTwits trending top 10 | +12 |
-| StockTwits trending 11+ | +8 |
+| Yahoo trending top 10 | +12 |
+| Yahoo trending 11+ | +8 |
 | Is Yahoo gainer (swing bonus) | +5 |
 
 ### Qualification Thresholds
@@ -120,8 +120,14 @@ Each stock gets a score built from signals. Thresholds determine if it qualifies
 
 - **Split architecture (Mar 7 2026):** scan.py decoupled from app.py so GitHub Actions
   can run the scanner on a schedule independent of the web server's uptime.
-- **StockTwits added (Mar 7 2026):** `get_stocktwits_trending()` fetches ranked trending
-  tickers via the public StockTwits API. Top-10 adds +12 score; 11+ adds +8.
+- **Yahoo trending replaces StockTwits (Mar 7 2026):** StockTwits API is 403/Cloudflare
+  blocked. `get_yahoo_trending()` scrapes Yahoo's trending-tickers page — same ranked
+  dict interface `{ticker: rank}`. Top-10 adds +12 score; 11+ adds +8.
+- **Reddit noise filter repaired (Mar 7 2026):** URLs are stripped from post text before
+  processing (prevents HTTPS, etc. scoring as tickers). NOISE set expanded with ~200
+  additional common English words that were dominating results (ABOUT, TRADE, MONEY, etc.)
+- **Finviz regex repaired (Mar 7 2026):** Finviz added extra query params after the ticker
+  in their HTML (`quote.ashx?t=TICKER&ty=c...`). Regex updated from `"` to `[&\"]` terminator.
 - **`BASE_DIR`** anchors all file paths to the script's own directory.
 - **Reddit buzz decoupled from Yahoo universe:** Reddit nominees are looked up independently
   via Finnhub if not already in the Yahoo universe.
@@ -143,7 +149,6 @@ Each stock gets a score built from signals. Thresholds determine if it qualifies
 ## Possible Next Features
 
 - **Technical indicators** via `yfinance` (RSI, MACD, volume ratio, 52-week high proximity)
-- **Insider Buying dashboard** (separate project) — SEC Form 4 filings, cluster buys, CEO/CFO signals
 - **Push notifications** when a high-score ticker appears
 - **Watchlist integration** — user-defined tickers always checked
 - **Historical scan archive** — save each scan's JSON with timestamp
