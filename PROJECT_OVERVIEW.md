@@ -68,7 +68,13 @@ See `TriedAndTrue/CONTEXT.md` for full technical documentation.
 
 Future dashboards will each live in their own folder and be linked from `Website/index.html`.
 
-Candidate ideas (from MarketDashboard CONTEXT.md):
+### Insider Buying (`InsiderBuying/`) — NEXT UP
+Track executive/insider stock purchases to find momentum signals before the market catches on.
+Key signals: cluster buys (multiple insiders buying the same stock), CEO/CFO buys,
+large dollar amounts, open-market purchases (not option exercises).
+Free data sources: SEC EDGAR Form 4 filings, OpenInsider.com, Finviz insider filter.
+
+### Other Candidates
 - Technical indicators (RSI, MACD, volume ratio) via `yfinance`
 - Watchlist tracker
 - Options flow (Unusual Whales free tier)

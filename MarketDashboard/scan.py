@@ -61,6 +61,7 @@ def get_reddit_buzz():
     headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
     ticker_pattern = re.compile(r"\b([A-Z]{2,5})\b")
     dollar_pattern = re.compile(r"\$([A-Z]{1,5})\b")
+    url_pattern    = re.compile(r"https?://\S+")
 
     NOISE = {
         # Articles / conjunctions / prepositions / pronouns (2-3 chars)
@@ -81,7 +82,7 @@ def get_reddit_buzz():
         "LOAN","RATE","RISK","SELL","HOLD","LONG","HIGH","LOWS","STOP","OPEN",
         "DUE","TAX","IRA","ROTH","REITS","REIT","SPAC","LOT","BUY","OTM","ITM",
         "ATM","SPY","QQQ","IWM","DIA","VIX","WSJ","CNBC","TWTR",
-        # Common 4-5 char English words that slip through
+        # Common 4-letter English words that slip through
         "THIS","WITH","FROM","THAT","HAVE","BEEN","THEY","WILL","MORE","THAN",
         "THEN","WHEN","WHAT","SOME","LIKE","INTO","JUST","OVER","ALSO","BACK",
         "ONLY","COME","WELL","EVEN","WANT","LOOK","GOOD","GIVE","MOST","TELL",
@@ -89,14 +90,99 @@ def get_reddit_buzz():
         "SAME","DOES","EACH","BOTH","WENT","WERE","YOUR","YEAR","DAYS","WEEK",
         "LONG","TERM","TIME","REAL","EVER","NEXT","BEST","WORK","PLAY",
         "DOWN","MOON","NEWS","SHOW","PLAN","MOVE","KEEP","FIND","FEEL","DONE",
-        "WENT","GOES","LETS","STAY","ONCE","NICE","HELP","THEM","THEN","USED",
-        "CAME","GONE","LEFT","SEEN","GAVE","HELD","SOLD","HIGH","FELL","RISE",
-        "FELL","HITS","JUMP","PUMP","DUMP","TANK","DIPS","DROP","RUNS","GAPS",
-        "HUGE","FAST","EASY","SAFE","HARD","DARK","FULL","FREE","OPEN","LIVE",
-        "SAID","TOLD","SENT","FEEL","FELT","KNEW","SEEN","PUTS","CALL","ASKS",
-        "BEAT","MISS","MISS","WARN","CUTS","HIKE","HOLD","FADE","RIPS","LEGS",
-        "ADDS","BUYS","SETS","GETS","HITS","PAYS","SAYS","RUNS","TOPS","NEAR",
-        "LATE","PAST","DAYS","WONT","CANT","DONT","ISNT","AINT","DONT",
+        "GOES","LETS","STAY","ONCE","NICE","HELP","THEM","USED",
+        "CAME","GONE","LEFT","SEEN","GAVE","HELD","SOLD","FELL","RISE",
+        "HITS","JUMP","TANK","DIPS","DROP","RUNS","GAPS",
+        "HUGE","FAST","EASY","SAFE","HARD","DARK","FULL","FREE","LIVE",
+        "TOLD","SENT","FELT","KNEW","ASKS",
+        "BEAT","MISS","WARN","CUTS","HIKE","FADE","RIPS","LEGS",
+        "ADDS","BUYS","SETS","GETS","PAYS","SAYS","TOPS","NEAR",
+        "LATE","PAST","WONT","CANT","DONT","ISNT","AINT",
+        "ABLE","AWAY","BLUE","BOOM","BUST","COOL","DATA","DEAL","DEEP",
+        "EARN","ELSE","FILL","FIRM","FLIP","FLOW","FUND","GAME","GREW","GROW",
+        "HALF","HASH","HEAR","HEAT","HINT","HOPE","HOUR","HURT","IDEA",
+        "JOIN","KICK","KING","LAND","LEAD","LEAN","LEND","LESS","LINE","LIST",
+        "LOSE","LOVE","MADE","MAIN","MARK","MASS","MEAN","MEET","MILD","MIND",
+        "MINT","MUST","NAME","NOTE","OPTS","PACE","PAID","PASS","PICK","POLL",
+        "POOL","POST","PUSH","RACE","RELY","REST","RICH","ROLE","ROLL","RULE",
+        "RUSH","SALE","SAVE","SHOW","SIDE","SIGN","SIZE","SKIP","SLOW","SNAP",
+        "SOAR","SORT","STEP","STOP","SWAP","TALK","TECH","TEST","TIED","TILL",
+        "TIPS","TOOK","TYPE","VARY","VIEW","VOTE","WAIT","WALK","WEAK","WINS",
+        "WORD","WRAP","BORN","BOLD","BUSY","COLD","DEAD","DEAR","DEBT","DENY",
+        "DRAW","DREW","DUAL","EDGE","EPIC","EVEN","EXAM","FACE","FACT","FAIL",
+        "FAIR","FAKE","FAME","FARM","FATE","FEAR","FEED","FEEL","FEET","FILE",
+        "FINE","FIRE","FIVE","FLAG","FLAT","FLEW","FOLD","FORE","FORK","FORM",
+        "FORT","FOUR","FUEL","FURY","FUSE","GATE","GAVE","GAZE","GEAR","GLOW",
+        "GOAL","GOLD","GRAB","GRAY","GREY","GRID","GRIM","GRIP","GRIT","GULF",
+        "GURU","GUYS","HALT","HANG","HARD","HARM","HATE","HAVE","HEAD","HEED",
+        "HELD","HIRE","HITS","HOLE","HOME","HOOK","HORN","HOST","HUNT","ICON",
+        "IDLE","INFO","IRON","ITEM","JOBS","JOHN","JUMP","KEEP","KILL","LACK",
+        "LAID","LAKE","LAME","LAMP","LANE","LAPS","LASH","LAWN","LAZY","LEAD",
+        "LEAK","LEAN","LEAP","LEND","LENS","LIEN","LIFT","LINK","LION","LIPS",
+        "LOAD","LOCK","LOOM","LOOP","LORE","LOUD","LUCK","LURE","LURK","LUST",
+        "MALL","MATH","MAZE","MILD","MILK","MILL","MOCK","MODE","MOOD","MORE",
+        "MOOT","MOVE","MYTH","NAIL","NAVY","NEED","NODE","NORM","NOSE","NULL",
+        "OATH","OBEY","ODDS","OKAY","ONES","ONTO","ORAL","OVER","OWNS","PACK",
+        "PACT","PAGE","PAIN","PAIR","PALM","PATH","PEAK","PEER","PESO","PILL",
+        "PIPE","PITS","PLOT","PLUG","PLUS","PODS","POKE","POLL","POND","POOR",
+        "PORK","POSE","POUR","PREY","PROD","PROF","PROP","PROS","PULL","PURE",
+        "PUTS","RACK","RAID","RAIL","RAIN","RAMP","RAND","RANK","RANT","RARE",
+        "RAYS","READ","REAR","RELY","REPO","RICH","RIDE","RIFE","RING","RIOT",
+        "ROAD","ROAM","ROAR","ROCK","RODE","ROOF","ROOM","ROOT","ROPE","ROSE",
+        "RUIN","SALE","SALT","SAND","SAVE","SCAN","SEAL","SEED","SELF","SHED",
+        "SHIP","SHOP","SHOT","SHUT","SILK","SING","SINK","SITE","SITS","SKEW",
+        "SKIN","SLIM","SLIP","SLOT","SLOW","SLUM","SNAP","SOIL","SOLD","SOLE",
+        "SOME","SOUL","SOUP","SPAN","SPIN","SPIT","SPOT","SPUN","STAR","STEM",
+        "STIR","STUB","STUN","SUCH","SUIT","SUNK","SURE","SWIM","TALE","TALL",
+        "TAPE","TAPS","TASK","TEAR","TEND","TENS","TEST","THAT","THEM","THEN",
+        "TICK","TIER","TILT","TIRE","TOLL","TONE","TOOL","TOPS","TORE","TORN",
+        "TOSS","TOUT","TOWN","TOYS","TRAP","TRIM","TRIO","TRIP","TROY","TUBE",
+        "TUCK","TUNE","TURN","TWIN","TYING","UGLY","UNIT","UPON","URGE","VAIN",
+        "VEIL","VERY","VEST","VETO","VIBE","VOID","WARY","WAYS","WEED","WELL",
+        "WENT","WHOM","WIDE","WIFE","WIKI","WILD","WIPE","WIRE","WISE","WISH",
+        "ZONE","ZOOM",
+        # Common 5-letter English words that slip through
+        "ABOUT","AFTER","AGAIN","AHEAD","ALLOW","ALONG","AMONG","APPLY","AVOID",
+        "BASIC","BELOW","BLACK","BOARD","BREAK","BRING","BROAD","BUILD","BUYER",
+        "CALLS","DAILY","EARLY","EMAIL","ENTER","EVERY","FALLS","FIRST","FIXED",
+        "FLOOR","FOCUS","FORCE","GIVEN","GOING","GOODS","GREAT","GREEN","GROUP",
+        "GROWN","HAPPY","HELLO","HOUSE","INDEX","INNER","ISSUE","LARGE","LATER",
+        "LAYER","LEARN","LEVEL","LIGHT","LIMIT","LOWER","MAJOR","MAYBE","MEDIA",
+        "MIGHT","MIXED","MODEL","MONTH","MOVED","MONEY","NOTES","OFFER","ORDER",
+        "OTHER","OWNED","PAPER","PARTY","PLACE","POINT","POWER","PRESS","PRICE",
+        "PRINT","QUITE","QUOTE","RAISE","RANGE","RAPID","RATIO","REACH","READY",
+        "REPLY","RESET","RIGHT","ROUND","SCALE","SCORE","SETUP","SHARE","SHORT",
+        "SHOWS","SIDES","SIGNS","SINCE","SMALL","SMART","SPACE","SPEAK","SPEND",
+        "SPLIT","STAGE","START","STATE","STILL","STORE","STORM","STORY","STUDY",
+        "STYLE","SUPER","SURGE","TABLE","TALKS","TAXES","TEAMS","THERE","THING",
+        "THINK","THIRD","THOSE","THREE","THROW","TIGHT","TODAY","TOPIC","TOTAL",
+        "TOUCH","TRACK","TRADE","TREND","TRIED","TRULY","TURNS","ULTRA","UNDER",
+        "UNION","UNTIL","UPPER","USING","USUAL","VALUE","WATCH","WEEKS","WHERE",
+        "WHICH","WHILE","WHITE","WHOLE","WHOSE","WIDER","WORLD","WORRY","WORSE",
+        "WORST","WOULD","WRITE","WRONG","YEARS","YIELD","YOURS","STOCK","HTTPS",
+        "AGAIN","CLOSE","COULD","DOING","DOING","DOING","EARLY","EIGHT","EVERY",
+        "EXACT","FALLS","FILED","FINAL","FIRST","FLOOR","FLIES","FUNDS","GAINS",
+        "GOING","GONNA","GROSS","HANDS","HAPPY","HEAVY","HOURS","IDEAS","KEEPS",
+        "KNOWN","LEAST","LEGAL","LOCAL","LOOKS","MAKES","MARKS","MEANS","MEETS",
+        "MICRO","MILES","MINUS","MOVES","NEEDS","NEVER","NIGHT","NORMS","NORTH",
+        "NOWIT","OFTEN","ONSET","OPENS","PAGES","PANEL","PLANS","PLAYS","POSES",
+        "PRIOR","PULLS","RATES","RATIO","RALLY","RANKS","READS","RISKS","ROLES",
+        "RULES","SALES","SEEMS","SHALL","SHOWS","SIDED","SIDES","SITES","SIXTH",
+        "SIZED","SLOWS","SOLID","SORTS","SOUTH","SPEND","SPINS","SPITE","SPOKE",
+        "STEPS","STOCK","STOPS","SUITS","SUPER","TAKES","TALKS","TASKS","TENTH",
+        "TERMS","TESTS","TEXTS","THEIR","THERE","THESE","THICK","THROW","TICKS",
+        "TIMES","TIRED","TITLE","TODOS","TOOLS","TOWNS","TRACE","TRAIL","TRUST",
+        "TRUTH","TWICE","TYPES","UNITS","UNTIL","USUAL","VALID","VIEWS","VIRAL",
+        "VISIT","VOTES","WANTS","WASTE","WAVES","WELLS","WIDER","WINDS","WORKS",
+        "WORSE","WORST","YARDS","ZEROS",
+        # URL / tech terms (strip URLs first, but also add as safety net)
+        "HTTPS","HTTP","HTML","JSON","REST","APIS","REPO","WIKI","BLOG","FEED",
+        # TA / chart jargon
+        "CHART","CHOCH","MACD","VWAP","OHLC","OHCL","WICK","WICKS","BULL","BEAR",
+        # More common words confirmed slipping through
+        "BEING","BASED","PART","LOTS","IRAN","DOESN","CANT","WONT","ISNT",
+        "EVER","JUST","SOME","BACK","ALSO","ONLY","VERY","MUCH","MORE","MOST",
+        "LESS","LIKE","WELL","EVEN","HERE","SOME","CAME","GONE","LEFT","FELL",
         # Reddit slang
         "LMAO","LMFAO","LOL","OMG","WTF","SMH","TBH","IMO","IMHO","NGL","IRL",
         "AMA","TIL","ELI","AFAIK","IIRC","TLDR","YMMV","RIP","GG","GJ",
@@ -119,7 +205,9 @@ def get_reddit_buzz():
                     hours_ago = (time.time() - pd.get("created_utc", 0)) / 3600
                     if hours_ago > 24:
                         continue
-                    text = (pd.get("title", "") + " " + pd.get("selftext", "")).upper()
+                    # Strip URLs before uppercasing to prevent URL fragments (e.g. HTTPS) scoring as tickers
+                    raw = pd.get("title", "") + " " + pd.get("selftext", "")
+                    text = url_pattern.sub(" ", raw).upper()
                     recency = 2.0 if hours_ago < 6 else (1.5 if hours_ago < 12 else 1.0)
                     weight = recency * min(1 + pd.get("ups", 1) // 200, 4)
 
@@ -170,6 +258,29 @@ def get_reddit_buzz():
     return lookup, unique_feed[:40]
 
 
+# ── Yahoo Trending ─────────────────────────────────────────────────────────────
+
+def get_yahoo_trending():
+    """Returns {ticker: rank} for Yahoo Finance trending tickers (rank 1 = most trending)."""
+    try:
+        url  = "https://finance.yahoo.com/trending-tickers"
+        hdrs = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
+        resp = requests.get(url, headers=hdrs, timeout=8)
+        if resp.status_code != 200:
+            print(f"[YahooTrending] HTTP {resp.status_code}")
+            return {}
+        raw     = re.findall(r'"symbol":"([A-Z]{1,5})"', resp.text)
+        # Deduplicate preserving order
+        seen    = set()
+        symbols = [t for t in raw if not (t in seen or seen.add(t))][:20]
+        result  = {ticker: i + 1 for i, ticker in enumerate(symbols)}
+        print(f"[YahooTrending] {len(result)} trending tickers: {list(result.keys())[:8]}")
+        return result
+    except Exception as e:
+        print(f"[YahooTrending] Error: {e}")
+        return {}
+
+
 # ── Finnhub ────────────────────────────────────────────────────────────────────
 
 def get_stock_quote(ticker):
@@ -190,7 +301,7 @@ def get_company_profile(ticker):
 
 # ── Stock analysis ─────────────────────────────────────────────────────────────
 
-def analyze_stock(ticker, yahoo_cats, reddit_lookup):
+def analyze_stock(ticker, yahoo_cats, reddit_lookup, yahoo_trending=None):
     quote = get_stock_quote(ticker)
     if not quote or quote.get("c", 0) == 0:
         return None
@@ -244,6 +355,12 @@ def analyze_stock(ticker, yahoo_cats, reddit_lookup):
         score += 5
         signals.append(f"Reddit activity ({reddit_mentions})")
 
+    st_rank = (yahoo_trending or {}).get(ticker, 0)
+    if st_rank:
+        bonus = 12 if st_rank <= 10 else 8
+        score += bonus
+        signals.append(f"Yahoo trending (#{st_rank})")
+
     market_cap = profile.get("marketCapitalization", 0) * 1_000_000
     sector     = profile.get("finnhubIndustry", "Unknown")
 
@@ -262,9 +379,10 @@ def analyze_stock(ticker, yahoo_cats, reddit_lookup):
         "reddit_mentions": reddit_mentions,
         "market_cap":      market_cap,
         "is_gainer":       is_gainer,
-        "is_active":       is_active,
-        "logo":            profile.get("logo", ""),
-        "weburl":          profile.get("weburl", ""),
+        "is_active":          is_active,
+        "logo":               profile.get("logo", ""),
+        "weburl":             profile.get("weburl", ""),
+        "yahoo_trending_rank": st_rank if st_rank else None,
     }
 
 
@@ -457,7 +575,7 @@ def get_finviz_movers():
         headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
         url = "https://finviz.com/screener.ashx?v=111&s=ta_unusualvolume&o=-volume"
         resp = requests.get(url, headers=headers, timeout=10)
-        tickers = re.findall(r'quote\.ashx\?t=([A-Z]{1,5})"', resp.text)[:20]
+        tickers = re.findall(r'quote\.ashx\?t=([A-Z]{1,5})[&\"]', resp.text)[:20]
         return list(dict.fromkeys(tickers))
     except Exception as e:
         print(f"[Finviz] Error: {e}")
@@ -478,11 +596,14 @@ def run():
     reddit_lookup, reddit_feed = get_reddit_buzz()
     print(f"[scan.py] Reddit: {len(reddit_lookup)} tickers with buzz")
 
+    print("[scan.py] Fetching Yahoo trending tickers...")
+    yahoo_trending = get_yahoo_trending()
+
     results = []
     for i, ticker in enumerate(universe, 1):
         if i % 10 == 0:
             print(f"[scan.py] Analyzing {i}/{len(universe)}: {ticker}")
-        result = analyze_stock(ticker, yahoo_cats, reddit_lookup)
+        result = analyze_stock(ticker, yahoo_cats, reddit_lookup, yahoo_trending)
         if result:
             results.append(result)
         time.sleep(1.1)
