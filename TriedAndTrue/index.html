@@ -82,10 +82,33 @@
   .logo {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
-    color: var(--accent);
-    letter-spacing: -0.01em;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
   }
-  .logo span { font-style: italic; }
+  .logo span { color: var(--accent); }
+
+  .sidebar-header {
+    padding: 28px 24px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .sidebar-header .logo {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .sidebar-header .logo span { color: #b7dfc8; }
+  .logo-sub {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
 
   .scan-badge {
     display: flex;
@@ -234,6 +257,7 @@
   .section-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
+    font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.02em;
   }
@@ -685,6 +709,7 @@
           <li><a href="https://invest-movers-shakers.onrender.com" class="site-dropdown-link">Movers and Shakers</a></li>
           <li><a href="https://invest-tried-true.onrender.com" class="site-dropdown-link active">Tried and True</a></li>
           <li><a href="https://invest-the-analyst.onrender.com" class="site-dropdown-link">The Analyst</a></li>
+          <li><a href="https://invest-insider-buying.onrender.com" class="site-dropdown-link">Insider Buying</a></li>
         </ul>
       </li>
       <li><a href="https://theinvestlab.com/#about" class="site-nav-link">About</a></li>
@@ -722,6 +747,10 @@ function toggleSiteNav(btn) {
 
   <!-- Sidebar -->
   <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">Tried &amp; <span>True</span></div>
+      <div class="logo-sub">ETF Consensus Research</div>
+    </div>
     <div class="sidebar-section">
       <div class="sidebar-label">Navigation</div>
       <a class="nav-item active" href="#nominees" onclick="setActive(this)">

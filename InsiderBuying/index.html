@@ -78,11 +78,35 @@
   .logo {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
-    color: var(--accent);
-    letter-spacing: -0.01em;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
     text-decoration: none;
   }
-  .logo span { font-style: italic; }
+  .logo span { color: var(--accent); }
+
+  .sidebar-header {
+    padding: 28px 24px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .sidebar-header .logo {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+  .sidebar-header .logo span { color: #b7dfc8; }
+  .logo-sub {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
 
   .scan-badge {
     display: flex;
@@ -206,6 +230,7 @@
   .section-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
+    font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.02em;
   }
@@ -575,8 +600,12 @@ function toggleSiteNav(btn) {
 
   <!-- ── Sidebar ─────────────────────────────────────────────────────────── -->
   <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">Insider <span>Buying</span></div>
+      <div class="logo-sub">Executive Purchases · SEC Form 4</div>
+    </div>
     <div class="sidebar-section">
-      <div class="sidebar-label">Insider Buying</div>
+      <div class="sidebar-label">Navigation</div>
       <a class="nav-item active" href="#cluster">
         <span class="nav-icon">🔥</span> Cluster Buys
       </a>
@@ -595,13 +624,13 @@ function toggleSiteNav(btn) {
 
     <div class="sidebar-section">
       <div class="sidebar-label">Dashboards</div>
-      <a class="nav-item" href="http://localhost:8080">
+      <a class="nav-item" href="https://invest-movers-shakers.onrender.com">
         <span class="nav-icon">📈</span> Movers &amp; Shakers
       </a>
-      <a class="nav-item" href="http://localhost:8090">
+      <a class="nav-item" href="https://invest-tried-true.onrender.com">
         <span class="nav-icon">🏆</span> Tried &amp; True
       </a>
-      <a class="nav-item" href="http://localhost:8095">
+      <a class="nav-item" href="https://invest-the-analyst.onrender.com">
         <span class="nav-icon">🔬</span> The Analyst
       </a>
     </div>
