@@ -68,11 +68,13 @@ See `TriedAndTrue/CONTEXT.md` for full technical documentation.
 
 Future dashboards will each live in their own folder and be linked from `Website/index.html`.
 
-### Insider Buying (`InsiderBuying/`) — NEXT UP
+### Insider Buying (`InsiderBuying/`) — COMPLETE
 Track executive/insider stock purchases to find momentum signals before the market catches on.
-Key signals: cluster buys (multiple insiders buying the same stock), CEO/CFO buys,
-large dollar amounts, open-market purchases (not option exercises).
-Free data sources: SEC EDGAR Form 4 filings, OpenInsider.com, Finviz insider filter.
+Key signals: cluster buys (2+ insiders buying same stock), CEO/CFO/President buys,
+largest purchases by dollar value. Min transaction: $25,000. Open-market only.
+Data source: Finviz insider trading screener (free, no key required).
+**Run:** `python app.py` → `http://localhost:8085`
+**Scan:** `python scan.py` (~35s)
 
 ### Other Candidates
 - Technical indicators (RSI, MACD, volume ratio) via `yfinance`

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insider Buying — Invest Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Design tokens ───────────────────────────────────────────── */
+    :root {
+      --bg:       #f5f4f0;
+      --surface:  #ffffff;
+      --accent:   #2d6a4f;
+      --accent-2: #40916c;
+      --ink:      #1a1a18;
+      --ink-2:    #4a4a46;
+      --ink-3:    #8a8a82;
+      --border:   #e2e1dc;
+      --green:    #2d6a4f;
+      --green-bg: #edf5f1;
+      --red:      #b91c1c;
+      --red-bg:   #fef2f2;
+      --gold:     #92400e;
+      --gold-bg:  #fef3c7;
+      --blue:     #1e40af;
+      --blue-bg:  #eff6ff;
+      --radius:   10px;
+      --shadow:   0 1px 4px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.04);
+    }
+
+    /* ── Reset ───────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    /* ── Nav ─────────────────────────────────────────────────────── */
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.2rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a {
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--ink-2);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    /* ── Page header ─────────────────────────────────────────────── */
+    .page-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 2rem 2rem;
+    }
+    .page-header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .5rem;
+    }
+    .page-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: .5rem;
+    }
+    .page-subtitle {
+      font-size: .9rem;
+      color: var(--ink-2);
+      max-width: 600px;
+    }
+
+    /* ── Stats bar ───────────────────────────────────────────────── */
+    .stats-bar {
+      max-width: 1200px;
+      margin: 1.5rem auto 0;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+    }
+    .stat-item { display: flex; flex-direction: column; gap: .15rem; }
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+    .stat-value {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* ── Main layout ─────────────────────────────────────────────── */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* ── Section ─────────────────────────────────────────────────── */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: .75rem;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+    }
+    .section-desc {
+      font-size: .8rem;
+      color: var(--ink-3);
+    }
+
+    /* ── Cards grid ──────────────────────────────────────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1rem;
+    }
+
+    /* ── Card ────────────────────────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 1rem 1.25rem .75rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: .5rem;
+    }
+    .card-ticker {
+      font-family: 'DM Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+    .card-company {
+      font-size: .8rem;
+      color: var(--ink-2);
+      margin-top: .1rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+    }
+    .card-badges { display: flex; gap: .4rem; flex-wrap: wrap; justify-content: flex-end; }
+
+    .badge {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      padding: .2rem .55rem;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+    .badge-cluster  { background: var(--gold-bg);  color: var(--gold); }
+    .badge-csuite   { background: var(--blue-bg);  color: var(--blue); }
+    .badge-big      { background: var(--green-bg); color: var(--green); }
+    .badge-sector   { background: var(--bg);        color: var(--ink-3); border: 1px solid var(--border); }
+
+    /* ── Card metrics ────────────────────────────────────────────── */
+    .card-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+    }
+    .metric {
+      padding: .75rem 1.25rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .metric:nth-child(3n) { border-right: none; }
+    .metric-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .6rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: .2rem;
+    }
+    .metric-value {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .metric-value.up   { color: var(--green); }
+    .metric-value.down { color: var(--red); }
+
+    /* ── Insider list inside cluster card ────────────────────────── */
+    .insider-list {
+      padding: .75rem 1.25rem 1rem;
+    }
+    .insider-list-title {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: .5rem;
+    }
+    .insider-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: .5rem;
+      padding: .35rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .82rem;
+    }
+    .insider-row:last-child { border-bottom: none; }
+    .insider-name { color: var(--ink); font-weight: 500; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .insider-title { color: var(--ink-3); font-size: .75rem; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .insider-value { color: var(--accent); font-weight: 600; font-family: 'DM Mono', monospace; font-size: .8rem; white-space: nowrap; }
+
+    /* ── Single transaction card (C-suite / Big Money) ───────────── */
+    .card-body {
+      padding: .75rem 1.25rem 1rem;
+    }
+    .txn-detail {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem .75rem;
+      font-size: .82rem;
+      color: var(--ink-2);
+      margin-top: .5rem;
+    }
+    .txn-detail span { display: flex; align-items: center; gap: .3rem; }
+    .txn-detail .label {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem;
+      color: var(--ink-3);
+      text-transform: uppercase;
+    }
+
+    /* ── Recent feed table ───────────────────────────────────────── */
+    .feed-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .feed-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .83rem;
+    }
+    .feed-table th {
+      font-family: 'DM Mono', monospace;
+      font-size: .62rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      text-align: left;
+      padding: .65rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      white-space: nowrap;
+    }
+    .feed-table td {
+      padding: .6rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .feed-table tr:last-child td { border-bottom: none; }
+    .feed-table tr:hover td { background: #fafaf8; }
+    .feed-ticker {
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      color: var(--accent);
+      font-size: .85rem;
+    }
+    .feed-value {
+      font-weight: 600;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .feed-title-cell { color: var(--ink-3); font-size: .78rem; }
+
+    /* ── Utilities ───────────────────────────────────────────────── */
+    .up   { color: var(--green) !important; }
+    .down { color: var(--red)   !important; }
+    .mono { font-family: 'DM Mono', monospace; }
+
+    .loading {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--ink-3);
+      font-size: .9rem;
+    }
+    .spinner {
+      width: 28px; height: 28px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .empty {
+      padding: 2.5rem;
+      text-align: center;
+      color: var(--ink-3);
+      font-size: .875rem;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────── */
+    footer {
+      margin-top: 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: .78rem;
+      color: var(--ink-3);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 700px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .card-metrics { grid-template-columns: 1fr 1fr; }
+      .stats-bar { gap: 1.25rem; }
+      .feed-table th:nth-child(4),
+      .feed-table td:nth-child(4) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">Invest Lab</a>
+  <div class="nav-links">
+    <a href="http://localhost:8080">Movers &amp; Shakers</a>
+    <a href="http://localhost:8090">Tried &amp; True</a>
+    <a href="http://localhost:8095">The Analyst</a>
+    <a href="http://localhost:8085" class="active">Insider Buying</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="eyebrow">Insider Buying</div>
+    <h1 class="page-title">Follow the Smart Money</h1>
+    <p class="page-subtitle">Tracks executive and director open-market stock purchases. When insiders buy their own company with real dollars, that's a signal worth watching.</p>
+    <div class="stats-bar" id="stats-bar">
+      <div class="stat-item"><span class="stat-label">Scan Time</span><span class="stat-value" id="stat-scan-time">—</span></div>
+      <div class="stat-item"><span class="stat-label">Transactions</span><span class="stat-value" id="stat-total">—</span></div>
+      <div class="stat-item"><span class="stat-label">Date Range</span><span class="stat-value" id="stat-range">—</span></div>
+      <div class="stat-item"><span class="stat-label">Min Transaction</span><span class="stat-value">$25,000</span></div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    Loading insider data...
+  </div>
+</main>
+
+<footer>
+  Data sourced from Finviz. Not financial advice &mdash; for educational and personal use only. &nbsp;|&nbsp;
+  <a href="/">Invest Lab Home</a>
+</footer>
+
+<script>
+// ── Formatting helpers ────────────────────────────────────────────────────────
+function fmt$(n) {
+  if (!n) return '$0';
+  if (n >= 1e9)  return '$' + (n / 1e9).toFixed(1) + 'B';
+  if (n >= 1e6)  return '$' + (n / 1e6).toFixed(1) + 'M';
+  if (n >= 1e3)  return '$' + (n / 1e3).toFixed(0) + 'K';
+  return '$' + n.toLocaleString();
+}
+function fmtCap(n) {
+  if (!n) return '—';
+  if (n >= 1e12) return '$' + (n / 1e12).toFixed(2) + 'T';
+  if (n >= 1e9)  return '$' + (n / 1e9).toFixed(1) + 'B';
+  if (n >= 1e6)  return '$' + (n / 1e6).toFixed(0) + 'M';
+  return '$' + n.toLocaleString();
+}
+function fmtPct(n) {
+  if (n == null || n === 0) return '—';
+  const sign = n >= 0 ? '+' : '';
+  return sign + n.toFixed(2) + '%';
+}
+function fmtPrice(n) {
+  if (!n) return '—';
+  return '$' + Number(n).toFixed(2);
+}
+function pctClass(n) {
+  return n > 0 ? 'up' : n < 0 ? 'down' : '';
+}
+
+// ── Render stats bar ──────────────────────────────────────────────────────────
+function renderStats(d) {
+  const t = new Date(d.scan_time);
+  document.getElementById('stat-scan-time').textContent =
+    t.toLocaleDateString('en-US', {month:'short', day:'numeric'}) + ' ' +
+    t.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
+  document.getElementById('stat-total').textContent = d.total_transactions.toLocaleString();
+  document.getElementById('stat-range').textContent = d.date_range || '—';
+}
+
+// ── Cluster Buys ──────────────────────────────────────────────────────────────
+function renderClusterBuys(items) {
+  if (!items || !items.length) return '<div class="empty">No cluster buys found in this window.</div>';
+
+  return items.map(c => {
+    const insiderRows = c.insiders.map(ins => `
+      <div class="insider-row">
+        <span class="insider-name">${esc(ins.name)}</span>
+        <span class="insider-title">${esc(ins.title)}</span>
+        <span class="insider-value">${fmt$(ins.value)}</span>
+      </div>`).join('');
+
+    return `
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-ticker">${esc(c.ticker)}</div>
+          <div class="card-company">${esc(c.company)}</div>
+        </div>
+        <div class="card-badges">
+          <span class="badge badge-cluster">${c.insider_count} insiders</span>
+          <span class="badge badge-sector">${esc(c.sector)}</span>
+        </div>
+      </div>
+      <div class="card-metrics">
+        <div class="metric">
+          <div class="metric-label">Total Bought</div>
+          <div class="metric-value">${fmt$(c.total_value)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Current Price</div>
+          <div class="metric-value">${fmtPrice(c.current_price)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Today</div>
+          <div class="metric-value ${pctClass(c.change_pct)}">${fmtPct(c.change_pct)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Market Cap</div>
+          <div class="metric-value">${fmtCap(c.market_cap)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Industry</div>
+          <div class="metric-value" style="font-size:.78rem;font-weight:500;color:var(--ink-2)">${esc(c.industry || c.sector)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Buyers</div>
+          <div class="metric-value">${c.insider_count}</div>
+        </div>
+      </div>
+      <div class="insider-list">
+        <div class="insider-list-title">Who Bought</div>
+        ${insiderRows}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── C-Suite Buys ──────────────────────────────────────────────────────────────
+function renderCsuite(items) {
+  if (!items || !items.length) return '<div class="empty">No C-suite purchases found in this window.</div>';
+
+  return items.map(c => {
+    const multiLabel = c.txn_count > 1
+      ? `<span class="badge badge-cluster">${c.txn_count}x purchases</span>` : '';
+    return `
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-ticker">${esc(c.ticker)}</div>
+          <div class="card-company">${esc(c.company)}</div>
+        </div>
+        <div class="card-badges">
+          <span class="badge badge-csuite">${esc(titleShort(c.title))}</span>
+          ${multiLabel}
+        </div>
+      </div>
+      <div class="card-metrics">
+        <div class="metric">
+          <div class="metric-label">Total Bought</div>
+          <div class="metric-value">${fmt$(c.value)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Current Price</div>
+          <div class="metric-value">${fmtPrice(c.current_price)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Today</div>
+          <div class="metric-value ${pctClass(c.change_pct)}">${fmtPct(c.change_pct)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Price Paid</div>
+          <div class="metric-value">${fmtPrice(c.price)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Shares</div>
+          <div class="metric-value">${c.qty.toLocaleString()}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Market Cap</div>
+          <div class="metric-value">${fmtCap(c.market_cap)}</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="txn-detail">
+          <span><span class="label">Buyer</span> ${esc(c.insider)}</span>
+          <span><span class="label">Date</span> ${esc(c.date)}</span>
+          <span><span class="label">Sector</span> ${esc(c.sector)}</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── Big Money ─────────────────────────────────────────────────────────────────
+function renderBigMoney(items) {
+  if (!items || !items.length) return '<div class="empty">No large purchases found in this window.</div>';
+
+  return items.map(c => {
+    const multiLabel = c.txn_count > 1
+      ? `<span class="badge badge-cluster">${c.txn_count}x purchases</span>` : '';
+    const roleLabel = c.is_csuite
+      ? `<span class="badge badge-csuite">${esc(titleShort(c.title))}</span>` : '';
+    return `
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-ticker">${esc(c.ticker)}</div>
+          <div class="card-company">${esc(c.company)}</div>
+        </div>
+        <div class="card-badges">
+          <span class="badge badge-big">${fmt$(c.value)}</span>
+          ${roleLabel}
+          ${multiLabel}
+        </div>
+      </div>
+      <div class="card-metrics">
+        <div class="metric">
+          <div class="metric-label">Current Price</div>
+          <div class="metric-value">${fmtPrice(c.current_price)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Today</div>
+          <div class="metric-value ${pctClass(c.change_pct)}">${fmtPct(c.change_pct)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Market Cap</div>
+          <div class="metric-value">${fmtCap(c.market_cap)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Price Paid</div>
+          <div class="metric-value">${fmtPrice(c.price)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Shares</div>
+          <div class="metric-value">${c.qty.toLocaleString()}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Sector</div>
+          <div class="metric-value" style="font-size:.78rem;font-weight:500;color:var(--ink-2)">${esc(c.sector)}</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="txn-detail">
+          <span><span class="label">Buyer</span> ${esc(c.insider)}</span>
+          <span><span class="label">Title</span> ${esc(c.title)}</span>
+          <span><span class="label">Date</span> ${esc(c.date)}</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── Recent Feed ───────────────────────────────────────────────────────────────
+function renderFeed(items) {
+  if (!items || !items.length) return '<div class="empty">No recent transactions found.</div>';
+
+  const rows = items.map(t => {
+    const csuiteTag = t.is_csuite
+      ? '<span class="badge badge-csuite" style="font-size:.6rem;padding:.15rem .4rem">C-Suite</span>' : '';
+    return `
+    <tr>
+      <td><span class="feed-ticker">${esc(t.ticker)}</span></td>
+      <td>${esc(t.insider)} ${csuiteTag}</td>
+      <td class="feed-title-cell">${esc(t.title)}</td>
+      <td class="feed-value">${fmt$(t.value)}</td>
+      <td style="color:var(--ink-3);font-size:.78rem">${esc(t.date)}</td>
+    </tr>`;
+  }).join('');
+
+  return `
+  <div class="feed-card">
+    <table class="feed-table">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Insider</th>
+          <th>Title</th>
+          <th>Value</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>`;
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function esc(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function titleShort(t) {
+  const s = (t || '').toLowerCase();
+  if (s.includes('chief executive') || s.includes('ceo')) return 'CEO';
+  if (s.includes('chief financial') || s.includes('cfo')) return 'CFO';
+  if (s.includes('chief operating') || s.includes('coo')) return 'COO';
+  if (s.includes('chief technology') || s.includes('cto')) return 'CTO';
+  if (s.includes('president'))  return 'President';
+  if (s.includes('chairman'))   return 'Chairman';
+  if (s.includes('director'))   return 'Director';
+  // Fallback: first 12 chars
+  return t.length > 14 ? t.slice(0, 14) + '…' : t;
+}
+
+// ── Render all panels ─────────────────────────────────────────────────────────
+function render(d) {
+  document.getElementById('loading').remove();
+  renderStats(d);
+
+  const main = document.getElementById('main');
+  main.innerHTML = `
+
+    <!-- Cluster Buys -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">Cluster Buys</h2>
+        <span class="section-desc">2+ insiders buying the same stock — strongest insider signal</span>
+      </div>
+      <div class="cards-grid">${renderClusterBuys(d.cluster_buys)}</div>
+    </section>
+
+    <!-- C-Suite Buys -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">C-Suite Buys</h2>
+        <span class="section-desc">CEO, CFO, President, and Chairman purchases</span>
+      </div>
+      <div class="cards-grid">${renderCsuite(d.csuite_buys)}</div>
+    </section>
+
+    <!-- Big Money -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">Big Money</h2>
+        <span class="section-desc">Largest open-market purchases by dollar value</span>
+      </div>
+      <div class="cards-grid">${renderBigMoney(d.big_money)}</div>
+    </section>
+
+    <!-- Recent Feed -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">Recent Transactions</h2>
+        <span class="section-desc">All insider purchases &ge; $25,000 in the current window</span>
+      </div>
+      ${renderFeed(d.recent_feed)}
+    </section>
+  `;
+}
+
+// ── Load data ─────────────────────────────────────────────────────────────────
+fetch('data/results.json')
+  .then(r => {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
+  .then(render)
+  .catch(err => {
+    document.getElementById('loading').innerHTML =
+      `<p style="color:var(--red)">Could not load scan data: ${err.message}</p>
+       <p style="margin-top:.5rem;font-size:.8rem;color:var(--ink-3)">Run <code>python scan.py</code> to generate data/results.json, then refresh.</p>`;
+  });
+</script>
+</body>
+</html>
