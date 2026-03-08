@@ -58,7 +58,6 @@
   .layout {
     display: grid;
     grid-template-columns: 260px 1fr;
-    grid-template-rows: 64px 1fr;
     min-height: 100vh;
   }
 
@@ -109,6 +108,15 @@
     text-transform: uppercase;
     margin-top: 4px;
   }
+  .sidebar-scan-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    color: rgba(255,255,255,0.38);
+  }
 
   .scan-badge {
     display: flex;
@@ -155,8 +163,8 @@
     padding: 24px 0;
     overflow-y: auto;
     position: sticky;
-    top: 134px;
-    height: calc(100vh - 134px);
+    top: 70px;
+    height: calc(100vh - 70px);
   }
 
   .sidebar-section { margin-bottom: 28px; }
@@ -255,8 +263,7 @@
   }
 
   .section-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.02em;
@@ -644,7 +651,7 @@
 
   /* ── Responsive ──────────────────────────────────────────────────────────── */
   @media (max-width: 900px) {
-    .layout { grid-template-columns: 1fr; grid-template-rows: 64px auto 1fr; }
+    .layout { grid-template-columns: 1fr; }
     .sidebar {
       position: static; height: auto;
       display: flex; flex-wrap: wrap;
@@ -727,30 +734,21 @@ function toggleSiteNav(btn) {
 
 <div class="layout">
 
-  <!-- Header -->
-  <header class="header">
-    <div class="header-left">
-      <div class="logo">Tried &amp; <span>True</span></div>
-      <div class="scan-badge">
-        <div class="pulse" id="status-pulse"></div>
-        <span id="status-text">Loading…</span>
-      </div>
-    </div>
-    <div class="header-right">
-      <div class="stat-pill">ETFs: <strong id="hdr-etfs">—</strong></div>
-      <div class="stat-pill">Nominees: <strong id="hdr-nominees">—</strong></div>
-      <div class="stat-pill">Stocks Found: <strong id="hdr-stocks">—</strong></div>
-      <div class="stat-pill" style="color:var(--ink-3);font-size:0.7rem;font-family:'DM Mono',monospace;" id="hdr-time">—</div>
-      <button onclick="loadResults()" style="padding:5px 12px;font-size:0.75rem;font-family:'Barlow',sans-serif;font-weight:600;background:var(--accent);color:#fff;border:none;border-radius:var(--radius-sm);cursor:pointer;letter-spacing:0.02em;">Refresh</button>
-    </div>
-  </header>
-
   <!-- Sidebar -->
   <nav class="sidebar">
     <div class="sidebar-header">
       <div class="logo">Tried &amp; <span>True</span></div>
       <div class="logo-sub">ETF Consensus Research</div>
+      <div class="sidebar-scan-status">
+        <div class="pulse" id="status-pulse"></div>
+        <span id="status-text">Loading…</span>
+      </div>
     </div>
+    <!-- Hidden stat elements updated by JS -->
+    <span id="hdr-etfs" style="display:none"></span>
+    <span id="hdr-nominees" style="display:none"></span>
+    <span id="hdr-stocks" style="display:none"></span>
+    <span id="hdr-time" style="display:none"></span>
     <div class="sidebar-section">
       <div class="sidebar-label">Navigation</div>
       <a class="nav-item active" href="#nominees" onclick="setActive(this)">
@@ -765,6 +763,7 @@ function toggleSiteNav(btn) {
       <div class="sidebar-label">Scan Schedule</div>
       <div class="progress-label">Last: <strong id="sidebar-last-scan">—</strong></div>
       <div class="progress-label" style="margin-top:4px;">Next: Mondays 9am ET</div>
+      <button onclick="loadResults()" style="display:block;width:100%;margin-top:10px;padding:6px 12px;font-size:0.75rem;font-family:'Barlow',sans-serif;font-weight:600;background:var(--accent);color:#fff;border:none;border-radius:var(--radius-sm);cursor:pointer;letter-spacing:0.02em;">Refresh</button>
     </div>
 
     <div class="sidebar-section">
