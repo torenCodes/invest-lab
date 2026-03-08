@@ -21,9 +21,8 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python app.py
 
-  - type: web
+  - type: static
     name: invest-insider-buying
-    runtime: python
     rootDir: InsiderBuying
-    buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    staticPublishPath: .
+    buildCommand: ""
