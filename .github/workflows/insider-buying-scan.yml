@@ -1,0 +1,37 @@
+name: InsiderBuying Scan
+
+on:
+  schedule:
+    - cron: '0 13 * * 1-5'   # ~8am ET (EST) weekdays
+    - cron: '0 18 * * 1-5'   # ~1pm ET (EST) weekdays
+  workflow_dispatch:           # Manual trigger button in GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r InsiderBuying/requirements-scan.txt
+
+      - name: Run insider buying scan
+        run: python InsiderBuying/scan.py
+
+      - name: Commit results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          git add InsiderBuying/data/results.json
+          git diff --staged --quiet || git commit -m "chore: insider scan $(date -u +%Y-%m-%dT%H:%M)Z"
+          git push origin HEAD:${{ github.ref_name }}
