@@ -225,26 +225,33 @@
 
   /* ── Section Headers ───────────────────────────────────────────────────── */
   .section-header {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    margin-bottom: 28px;
+    align-items: start;
   }
 
   .section-title {
-    font-size: 1.4rem;
+    grid-column: 1; grid-row: 1;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.02em;
+    margin-bottom: 4px;
   }
 
   .section-subtitle {
-    font-size: 0.78rem;
+    grid-column: 1; grid-row: 2;
+    font-size: 0.9rem;
     color: var(--ink-3);
   }
 
   .section-badge {
-    margin-left: auto;
+    grid-column: 2; grid-row: 1;
+    align-self: start;
+    margin-left: 0;
     font-size: 0.7rem;
     font-family: 'DM Mono', monospace;
     background: var(--bg);
@@ -969,8 +976,8 @@ function toggleSiteNav(btn) {
 
       <!-- Sector Flow -->
       <section id="sector-flow" class="sector-panel">
-        <div class="section-header" style="margin-bottom:18px;">
-          <div class="section-title" style="font-size:1.2rem;">Sector Flow</div>
+        <div class="section-header">
+          <div class="section-title">Sector Flow</div>
           <div class="section-subtitle">Avg % gain among today's green movers</div>
         </div>
         <div class="chart-container">
