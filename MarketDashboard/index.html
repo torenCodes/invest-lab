@@ -38,12 +38,12 @@
     --radius-sm:    6px;
   }
 
-  html { font-size: 15px; scroll-behavior: smooth; }
+  html { font-size: 16px; scroll-behavior: smooth; }
 
   body {
     font-family: 'Barlow', sans-serif;
     background: var(--bg);
-    color: var(--ink);
+    color: var(--ink-2);
     min-height: 100vh;
     background-image:
       radial-gradient(circle at 20% 0%, rgba(45,106,79,0.04) 0%, transparent 50%),
@@ -75,27 +75,18 @@
   .header-left { display: flex; align-items: center; gap: 16px; }
 
   .logo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-  }
-  .logo span { color: var(--accent); }
-
-  .sidebar-header {
-    padding: 28px 24px 22px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .sidebar-header .logo {
-    font-family: 'Barlow', sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
     color: #fff;
     letter-spacing: -0.02em;
     line-height: 1.2;
   }
-  .sidebar-header .logo span { color: #b7dfc8; }
+  .logo span { color: #b7dfc8; }
+
+  .sidebar-header {
+    padding: 28px 24px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
   .logo-sub {
     font-size: 0.72rem;
     font-weight: 400;
@@ -155,31 +146,42 @@
   /* ── Sidebar ───────────────────────────────────────────────────────────── */
   .sidebar {
     background: #1a1a18;
+    color: rgba(255,255,255,0.75);
     border-right: 1px solid rgba(255,255,255,0.08);
-    padding: 24px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
     position: sticky;
     top: 70px;
     height: calc(100vh - 70px);
   }
 
-  .sidebar-section { margin-bottom: 32px; }
+  .sidebar-section { border-bottom: 1px solid rgba(255,255,255,0.06); }
 
   .sidebar-label {
     font-size: 0.65rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.35);
-    padding: 0 20px;
-    margin-bottom: 8px;
+    padding: 16px 24px 10px;
+    margin-bottom: 0;
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding: 18px 24px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255,255,255,0.06);
   }
 
   .nav-item {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 9px 20px;
+    padding: 9px 24px;
     cursor: pointer;
     font-size: 0.875rem;
     color: rgba(255,255,255,0.65);
@@ -214,7 +216,7 @@
 
   /* ── Main Content ──────────────────────────────────────────────────────── */
   .main {
-    padding: 28px;
+    padding: 36px 40px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -920,6 +922,7 @@ function toggleSiteNav(btn) {
       <div class="progress-label" style="margin-top:4px;">Next: weekdays 8am &amp; 1pm ET</div>
       <button onclick="loadResults()" style="display:block;width:100%;margin-top:10px;padding:6px 12px;font-size:0.75rem;font-family:'Barlow',sans-serif;font-weight:600;background:var(--accent);color:#fff;border:none;border-radius:var(--radius-sm);cursor:pointer;letter-spacing:0.02em;">Refresh</button>
     </div>
+    <div class="sidebar-footer">Not financial advice. For personal educational use only.</div>
   </nav>
 
   <!-- Main content -->
