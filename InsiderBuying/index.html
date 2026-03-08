@@ -1,477 +1,631 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Insider Buying — Invest Lab</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <style>
-    /* ── Design tokens ───────────────────────────────────────────── */
-    :root {
-      --bg:       #f5f4f0;
-      --surface:  #ffffff;
-      --accent:   #2d6a4f;
-      --accent-2: #40916c;
-      --ink:      #1a1a18;
-      --ink-2:    #4a4a46;
-      --ink-3:    #8a8a82;
-      --border:   #e2e1dc;
-      --green:    #2d6a4f;
-      --green-bg: #edf5f1;
-      --red:      #b91c1c;
-      --red-bg:   #fef2f2;
-      --gold:     #92400e;
-      --gold-bg:  #fef3c7;
-      --blue:     #1e40af;
-      --blue-bg:  #eff6ff;
-      --radius:   10px;
-      --shadow:   0 1px 4px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.04);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insider Buying</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & Base ───────────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── Reset ───────────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      min-height: 100vh;
-      line-height: 1.5;
-    }
+  :root {
+    --bg:           #f5f4f0;
+    --surface:      #ffffff;
+    --surface-2:    #fafaf8;
+    --border:       #e8e6e0;
+    --border-light: #f0ede8;
+    --ink:          #1a1a18;
+    --ink-2:        #4a4a46;
+    --ink-3:        #8a8a82;
+    --green:        #1a7a4a;
+    --green-bg:     #edf7f2;
+    --green-light:  #d0edde;
+    --red:          #c0392b;
+    --red-bg:       #fdf0ef;
+    --orange:       #e67e22;
+    --orange-bg:    #fef5ec;
+    --blue:         #1a5fa8;
+    --blue-bg:      #eef3fb;
+    --accent:       #2d6a4f;
+    --gold:         #b8922a;
+    --gold-bg:      #fdf9ed;
+    --shadow-sm:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md:    0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-lg:    0 16px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+    --radius:       10px;
+    --radius-sm:    6px;
+  }
 
-    /* ── Nav ─────────────────────────────────────────────────────── */
-    nav {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-logo {
-      font-family: 'Instrument Serif', serif;
-      font-size: 1.2rem;
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a {
-      font-size: .875rem;
-      font-weight: 500;
-      color: var(--ink-2);
-      text-decoration: none;
-      transition: color .15s;
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  html { font-size: 15px; scroll-behavior: smooth; }
 
-    /* ── Page header ─────────────────────────────────────────────── */
-    .page-header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 2.5rem 2rem 2rem;
-    }
-    .page-header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: .7rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: .5rem;
-    }
-    .page-title {
-      font-family: 'Instrument Serif', serif;
-      font-size: 2rem;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: .5rem;
-    }
-    .page-subtitle {
-      font-size: .9rem;
-      color: var(--ink-2);
-      max-width: 600px;
-    }
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 0%,  rgba(45,106,79,0.05)  0%, transparent 50%),
+      radial-gradient(circle at 85% 100%, rgba(184,146,42,0.03) 0%, transparent 50%);
+  }
 
-    /* ── Stats bar ───────────────────────────────────────────────── */
-    .stats-bar {
-      max-width: 1200px;
-      margin: 1.5rem auto 0;
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      padding: 0 2rem;
-    }
-    .stat-item { display: flex; flex-direction: column; gap: .15rem; }
-    .stat-label {
-      font-family: 'DM Mono', monospace;
-      font-size: .65rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--ink-3);
-    }
-    .stat-value {
-      font-size: .95rem;
-      font-weight: 600;
-      color: var(--ink);
-    }
+  /* ── Layout ─────────────────────────────────────────────────────────────── */
+  .layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 64px 1fr;
+    min-height: 100vh;
+  }
 
-    /* ── Main layout ─────────────────────────────────────────────── */
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
+  /* ── Header ─────────────────────────────────────────────────────────────── */
+  .header {
+    grid-column: 1 / -1;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
 
-    /* ── Section ─────────────────────────────────────────────────── */
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: .75rem;
-      margin-bottom: 1rem;
-    }
-    .section-title {
-      font-family: 'Instrument Serif', serif;
-      font-size: 1.35rem;
-      font-weight: 400;
-    }
-    .section-desc {
-      font-size: .8rem;
-      color: var(--ink-3);
-    }
+  .header-left { display: flex; align-items: center; gap: 16px; }
 
-    /* ── Cards grid ──────────────────────────────────────────────── */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1rem;
-    }
+  .logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .logo span { font-style: italic; }
 
-    /* ── Card ────────────────────────────────────────────────────── */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .card-header {
-      padding: 1rem 1.25rem .75rem;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: .5rem;
-    }
-    .card-ticker {
-      font-family: 'DM Mono', monospace;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--accent);
-    }
-    .card-company {
-      font-size: .8rem;
-      color: var(--ink-2);
-      margin-top: .1rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 200px;
-    }
-    .card-badges { display: flex; gap: .4rem; flex-wrap: wrap; justify-content: flex-end; }
+  .scan-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--ink-3);
+    background: var(--bg);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
 
-    .badge {
-      font-family: 'DM Mono', monospace;
-      font-size: .65rem;
-      font-weight: 500;
-      letter-spacing: .04em;
-      padding: .2rem .55rem;
-      border-radius: 99px;
-      white-space: nowrap;
-    }
-    .badge-cluster  { background: var(--gold-bg);  color: var(--gold); }
-    .badge-csuite   { background: var(--blue-bg);  color: var(--blue); }
-    .badge-big      { background: var(--green-bg); color: var(--green); }
-    .badge-sector   { background: var(--bg);        color: var(--ink-3); border: 1px solid var(--border); }
+  .pulse {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse-anim 2s ease-in-out infinite;
+  }
+  @keyframes pulse-anim {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
+  }
 
-    /* ── Card metrics ────────────────────────────────────────────── */
-    .card-metrics {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0;
-    }
-    .metric {
-      padding: .75rem 1.25rem;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .metric:nth-child(3n) { border-right: none; }
-    .metric-label {
-      font-family: 'DM Mono', monospace;
-      font-size: .6rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--ink-3);
-      margin-bottom: .2rem;
-    }
-    .metric-value {
-      font-size: .95rem;
-      font-weight: 600;
-      color: var(--ink);
-    }
-    .metric-value.up   { color: var(--green); }
-    .metric-value.down { color: var(--red); }
+  .header-right { display: flex; align-items: center; gap: 20px; }
 
-    /* ── Insider list inside cluster card ────────────────────────── */
-    .insider-list {
-      padding: .75rem 1.25rem 1rem;
-    }
-    .insider-list-title {
-      font-family: 'DM Mono', monospace;
-      font-size: .65rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--ink-3);
-      margin-bottom: .5rem;
-    }
-    .insider-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: .5rem;
-      padding: .35rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: .82rem;
-    }
-    .insider-row:last-child { border-bottom: none; }
-    .insider-name { color: var(--ink); font-weight: 500; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .insider-title { color: var(--ink-3); font-size: .75rem; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .insider-value { color: var(--accent); font-weight: 600; font-family: 'DM Mono', monospace; font-size: .8rem; white-space: nowrap; }
+  .stat-pill {
+    font-size: 0.75rem;
+    color: var(--ink-2);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .stat-pill strong { color: var(--ink); font-weight: 600; }
 
-    /* ── Single transaction card (C-suite / Big Money) ───────────── */
-    .card-body {
-      padding: .75rem 1.25rem 1rem;
-    }
-    .txn-detail {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .4rem .75rem;
-      font-size: .82rem;
-      color: var(--ink-2);
-      margin-top: .5rem;
-    }
-    .txn-detail span { display: flex; align-items: center; gap: .3rem; }
-    .txn-detail .label {
-      font-family: 'DM Mono', monospace;
-      font-size: .65rem;
-      color: var(--ink-3);
-      text-transform: uppercase;
-    }
+  /* ── Sidebar ─────────────────────────────────────────────────────────────── */
+  .sidebar {
+    background: #1a1a18;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 24px 0;
+    overflow-y: auto;
+    position: sticky;
+    top: 64px;
+    height: calc(100vh - 64px);
+  }
 
-    /* ── Recent feed table ───────────────────────────────────────── */
-    .feed-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .feed-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: .83rem;
-    }
-    .feed-table th {
-      font-family: 'DM Mono', monospace;
-      font-size: .62rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--ink-3);
-      text-align: left;
-      padding: .65rem 1.25rem;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
-      white-space: nowrap;
-    }
-    .feed-table td {
-      padding: .6rem 1.25rem;
-      border-bottom: 1px solid var(--border);
-      vertical-align: middle;
-    }
-    .feed-table tr:last-child td { border-bottom: none; }
-    .feed-table tr:hover td { background: #fafaf8; }
-    .feed-ticker {
-      font-family: 'DM Mono', monospace;
-      font-weight: 500;
-      color: var(--accent);
-      font-size: .85rem;
-    }
-    .feed-value {
-      font-weight: 600;
-      color: var(--ink);
-      white-space: nowrap;
-    }
-    .feed-title-cell { color: var(--ink-3); font-size: .78rem; }
+  .sidebar-section { margin-bottom: 28px; }
 
-    /* ── Utilities ───────────────────────────────────────────────── */
-    .up   { color: var(--green) !important; }
-    .down { color: var(--red)   !important; }
-    .mono { font-family: 'DM Mono', monospace; }
+  .sidebar-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    padding: 0 20px;
+    margin-bottom: 8px;
+  }
 
-    .loading {
-      text-align: center;
-      padding: 4rem 2rem;
-      color: var(--ink-3);
-      font-size: .9rem;
-    }
-    .spinner {
-      width: 28px; height: 28px;
-      border: 3px solid var(--border);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin .7s linear infinite;
-      margin: 0 auto 1rem;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 20px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.65);
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    text-decoration: none;
+  }
+  .nav-item:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); }
+  .nav-item.active { color: #38bda6; border-left-color: #38bda6; background: rgba(56,189,166,0.1); font-weight: 500; }
+  .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
 
-    .empty {
-      padding: 2.5rem;
-      text-align: center;
-      color: var(--ink-3);
-      font-size: .875rem;
-    }
+  .sidebar-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    margin: 4px 20px 16px;
+  }
 
-    /* ── Footer ──────────────────────────────────────────────────── */
-    footer {
-      margin-top: 2rem;
-      border-top: 1px solid var(--border);
-      background: var(--surface);
-      padding: 1.5rem 2rem;
-      text-align: center;
-      font-size: .78rem;
-      color: var(--ink-3);
-    }
-    footer a { color: var(--accent); text-decoration: none; }
+  .sidebar-stat {
+    padding: 6px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+  }
+  .sidebar-stat-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.75);
+  }
 
-    @media (max-width: 700px) {
-      .cards-grid { grid-template-columns: 1fr; }
-      .card-metrics { grid-template-columns: 1fr 1fr; }
-      .stats-bar { gap: 1.25rem; }
-      .feed-table th:nth-child(4),
-      .feed-table td:nth-child(4) { display: none; }
-    }
-  </style>
+  .sidebar-note {
+    padding: 0 20px;
+    margin-top: 8px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.28);
+    line-height: 1.5;
+  }
+
+  /* ── Main content ─────────────────────────────────────────────────────────── */
+  .main {
+    padding: 28px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* ── Section headers ──────────────────────────────────────────────────────── */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .section-subtitle {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+  }
+
+  .section-badge {
+    margin-left: auto;
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 3px 9px;
+    border-radius: 20px;
+    color: var(--ink-3);
+  }
+
+  /* ── Cards grid ───────────────────────────────────────────────────────────── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  /* ── Stock card base ──────────────────────────────────────────────────────── */
+  .stock-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: var(--shadow-sm);
+  }
+  .stock-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-top {
+    padding: 18px 18px 14px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+
+  .card-ticker {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .card-name {
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 165px;
+  }
+
+  .card-price {
+    text-align: right;
+  }
+  .price-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .price-change {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-top: 4px;
+    display: inline-block;
+  }
+  .change-up   { background: var(--green-bg); color: var(--green); }
+  .change-down { background: var(--red-bg);   color: var(--red);   }
+  .change-flat { background: var(--bg);        color: var(--ink-3); }
+
+  /* ── Tag pills ─────────────────────────────────────────────────────────────── */
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  .tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .tag-cluster { background: var(--gold-bg);   color: var(--gold); }
+  .tag-csuite  { background: var(--blue-bg);   color: var(--blue); }
+  .tag-big     { background: var(--green-bg);  color: var(--green); }
+  .tag-sector  { background: var(--bg);        color: var(--ink-3); border: 1px solid var(--border); }
+  .tag-multi   { background: var(--orange-bg); color: var(--orange); }
+
+  /* ── Card metrics row ──────────────────────────────────────────────────────── */
+  .card-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .metric {
+    padding: 10px 14px;
+    border-right: 1px solid var(--border-light);
+  }
+  .metric:last-child { border-right: none; }
+
+  .metric-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 3px;
+  }
+  .metric-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .metric-value.up   { color: var(--green); }
+  .metric-value.down { color: var(--red);   }
+
+  /* ── Insider list (cluster cards) ──────────────────────────────────────────── */
+  .insider-list {
+    padding: 0 18px 14px;
+  }
+  .insider-list-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding: 10px 0 6px;
+    border-top: 1px solid var(--border-light);
+  }
+  .insider-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.8rem;
+  }
+  .insider-row:last-child { border-bottom: none; }
+  .insider-name  { color: var(--ink); font-weight: 500; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .insider-title { color: var(--ink-3); font-size: 0.72rem; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .insider-val   { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--accent); font-weight: 500; white-space: nowrap; }
+
+  /* ── Transaction detail footer (C-suite / big money cards) ─────────────────── */
+  .card-detail {
+    padding: 10px 18px 14px;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    font-size: 0.75rem;
+    color: var(--ink-2);
+  }
+  .detail-item { display: flex; align-items: center; gap: 4px; }
+  .detail-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  /* ── Recent feed table ──────────────────────────────────────────────────────── */
+  .feed-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+
+  .feed-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+  .feed-table th {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    text-align: left;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+    white-space: nowrap;
+  }
+  .feed-table td {
+    padding: 9px 16px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: middle;
+  }
+  .feed-table tr:last-child td { border-bottom: none; }
+  .feed-table tr:hover td { background: var(--bg); }
+
+  .feed-ticker {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    color: var(--accent);
+    font-size: 0.88rem;
+  }
+  .feed-value {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .feed-date { color: var(--ink-3); font-size: 0.75rem; }
+  .feed-title-cell { color: var(--ink-3); font-size: 0.75rem; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  /* ── Loading / empty ──────────────────────────────────────────────────────── */
+  .loading-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    color: var(--ink-3);
+    gap: 1rem;
+    font-size: 0.875rem;
+  }
+  .spinner {
+    width: 28px; height: 28px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .empty-state {
+    padding: 2.5rem;
+    text-align: center;
+    color: var(--ink-3);
+    font-size: 0.875rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  /* ── Responsive ───────────────────────────────────────────────────────────── */
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .feed-table th:nth-child(3),
+    .feed-table td:nth-child(3) { display: none; }
+  }
+</style>
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="/">Invest Lab</a>
-  <div class="nav-links">
-    <a href="http://localhost:8080">Movers &amp; Shakers</a>
-    <a href="http://localhost:8090">Tried &amp; True</a>
-    <a href="http://localhost:8095">The Analyst</a>
-    <a href="http://localhost:8085" class="active">Insider Buying</a>
-  </div>
-</nav>
+<div class="layout">
 
-<div class="page-header">
-  <div class="page-header-inner">
-    <div class="eyebrow">Insider Buying</div>
-    <h1 class="page-title">Follow the Smart Money</h1>
-    <p class="page-subtitle">Tracks executive and director open-market stock purchases. When insiders buy their own company with real dollars, that's a signal worth watching.</p>
-    <div class="stats-bar" id="stats-bar">
-      <div class="stat-item"><span class="stat-label">Scan Time</span><span class="stat-value" id="stat-scan-time">—</span></div>
-      <div class="stat-item"><span class="stat-label">Transactions</span><span class="stat-value" id="stat-total">—</span></div>
-      <div class="stat-item"><span class="stat-label">Date Range</span><span class="stat-value" id="stat-range">—</span></div>
-      <div class="stat-item"><span class="stat-label">Min Transaction</span><span class="stat-value">$25,000</span></div>
+  <!-- ── Header ──────────────────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-left">
+      <a class="logo" href="/"><span>Invest</span> Lab</a>
+      <div class="scan-badge">
+        <div class="pulse"></div>
+        <span id="scan-time-badge">Loading...</span>
+      </div>
     </div>
-  </div>
-</div>
+    <div class="header-right">
+      <div class="stat-pill">Transactions <strong id="stat-total">—</strong></div>
+      <div class="stat-pill">Range <strong id="stat-range">—</strong></div>
+      <div class="stat-pill">Min Buy <strong>$25K</strong></div>
+    </div>
+  </header>
 
-<main id="main">
-  <div class="loading" id="loading">
-    <div class="spinner"></div>
-    Loading insider data...
-  </div>
-</main>
+  <!-- ── Sidebar ─────────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Insider Buying</div>
+      <a class="nav-item active" href="#cluster">
+        <span class="nav-icon">🔥</span> Cluster Buys
+      </a>
+      <a class="nav-item" href="#csuite">
+        <span class="nav-icon">👔</span> C-Suite Buys
+      </a>
+      <a class="nav-item" href="#bigmoney">
+        <span class="nav-icon">💰</span> Big Money
+      </a>
+      <a class="nav-item" href="#feed">
+        <span class="nav-icon">📋</span> Recent Feed
+      </a>
+    </div>
 
-<footer>
-  Data sourced from Finviz. Not financial advice &mdash; for educational and personal use only. &nbsp;|&nbsp;
-  <a href="/">Invest Lab Home</a>
-</footer>
+    <hr class="sidebar-divider">
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Dashboards</div>
+      <a class="nav-item" href="http://localhost:8080">
+        <span class="nav-icon">📈</span> Movers &amp; Shakers
+      </a>
+      <a class="nav-item" href="http://localhost:8090">
+        <span class="nav-icon">🏆</span> Tried &amp; True
+      </a>
+      <a class="nav-item" href="http://localhost:8095">
+        <span class="nav-icon">🔬</span> The Analyst
+      </a>
+    </div>
+
+    <hr class="sidebar-divider">
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">About</div>
+      <div class="sidebar-stat">Clusters <span class="sidebar-stat-val" id="sb-clusters">—</span></div>
+      <div class="sidebar-stat">C-Suite <span class="sidebar-stat-val" id="sb-csuite">—</span></div>
+      <div class="sidebar-stat">Big Money <span class="sidebar-stat-val" id="sb-bigmoney">—</span></div>
+      <div class="sidebar-note">Open-market purchases only. Option exercises excluded. Source: Finviz.</div>
+    </div>
+  </aside>
+
+  <!-- ── Main ────────────────────────────────────────────────────────────── -->
+  <main class="main" id="main">
+    <div class="loading-wrap" id="loading">
+      <div class="spinner"></div>
+      Loading insider data...
+    </div>
+  </main>
+
+</div><!-- /.layout -->
 
 <script>
-// ── Formatting helpers ────────────────────────────────────────────────────────
+// ── Format helpers ────────────────────────────────────────────────────────────
 function fmt$(n) {
   if (!n) return '$0';
-  if (n >= 1e9)  return '$' + (n / 1e9).toFixed(1) + 'B';
+  if (n >= 1e9)  return '$' + (n / 1e9).toFixed(2) + 'B';
   if (n >= 1e6)  return '$' + (n / 1e6).toFixed(1) + 'M';
-  if (n >= 1e3)  return '$' + (n / 1e3).toFixed(0) + 'K';
+  if (n >= 1e3)  return '$' + Math.round(n / 1e3) + 'K';
   return '$' + n.toLocaleString();
 }
 function fmtCap(n) {
   if (!n) return '—';
   if (n >= 1e12) return '$' + (n / 1e12).toFixed(2) + 'T';
   if (n >= 1e9)  return '$' + (n / 1e9).toFixed(1) + 'B';
-  if (n >= 1e6)  return '$' + (n / 1e6).toFixed(0) + 'M';
-  return '$' + n.toLocaleString();
+  if (n >= 1e6)  return '$' + Math.round(n / 1e6) + 'M';
+  return '—';
 }
+function fmtPrice(n) { return n ? '$' + Number(n).toFixed(2) : '—'; }
 function fmtPct(n) {
   if (n == null || n === 0) return '—';
-  const sign = n >= 0 ? '+' : '';
-  return sign + n.toFixed(2) + '%';
+  return (n >= 0 ? '+' : '') + n.toFixed(2) + '%';
 }
-function fmtPrice(n) {
-  if (!n) return '—';
-  return '$' + Number(n).toFixed(2);
+function pctClass(n) { return n > 0 ? 'up' : n < 0 ? 'down' : ''; }
+function changeClass(n) { return n > 0 ? 'change-up' : n < 0 ? 'change-down' : 'change-flat'; }
+function esc(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
-function pctClass(n) {
-  return n > 0 ? 'up' : n < 0 ? 'down' : '';
-}
-
-// ── Render stats bar ──────────────────────────────────────────────────────────
-function renderStats(d) {
-  const t = new Date(d.scan_time);
-  document.getElementById('stat-scan-time').textContent =
-    t.toLocaleDateString('en-US', {month:'short', day:'numeric'}) + ' ' +
-    t.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
-  document.getElementById('stat-total').textContent = d.total_transactions.toLocaleString();
-  document.getElementById('stat-range').textContent = d.date_range || '—';
+function titleShort(t) {
+  const s = (t || '').toLowerCase();
+  if (s.includes('chief executive') || s.includes('ceo')) return 'CEO';
+  if (s.includes('chief financial')  || s.includes('cfo')) return 'CFO';
+  if (s.includes('chief operating')  || s.includes('coo')) return 'COO';
+  if (s.includes('chief technology') || s.includes('cto')) return 'CTO';
+  if (s.includes('chairman')) return 'Chairman';
+  if (s.includes('president')) return 'President';
+  if (s.includes('director')) return 'Director';
+  return t.length > 15 ? t.slice(0,15) + '…' : t;
 }
 
 // ── Cluster Buys ──────────────────────────────────────────────────────────────
 function renderClusterBuys(items) {
-  if (!items || !items.length) return '<div class="empty">No cluster buys found in this window.</div>';
+  if (!items || !items.length)
+    return '<div class="empty-state">No cluster buys found in this window.</div>';
 
-  return items.map(c => {
+  return '<div class="cards-grid">' + items.map(c => {
     const insiderRows = c.insiders.map(ins => `
       <div class="insider-row">
         <span class="insider-name">${esc(ins.name)}</span>
         <span class="insider-title">${esc(ins.title)}</span>
-        <span class="insider-value">${fmt$(ins.value)}</span>
+        <span class="insider-val">${fmt$(ins.value)}</span>
       </div>`).join('');
 
     return `
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <div class="card-ticker">${esc(c.ticker)}</div>
-          <div class="card-company">${esc(c.company)}</div>
+    <div class="stock-card">
+      <div class="card-top">
+        <div class="card-header">
+          <div>
+            <div class="card-ticker">${esc(c.ticker)}</div>
+            <div class="card-name">${esc(c.company)}</div>
+          </div>
+          <div class="card-price">
+            <div class="price-value">${fmtPrice(c.current_price)}</div>
+            <div class="price-change ${changeClass(c.change_pct)}">${fmtPct(c.change_pct)}</div>
+          </div>
         </div>
-        <div class="card-badges">
-          <span class="badge badge-cluster">${c.insider_count} insiders</span>
-          <span class="badge badge-sector">${esc(c.sector)}</span>
+        <div class="card-tags">
+          <span class="tag tag-cluster">${c.insider_count} insiders</span>
+          <span class="tag tag-big">${fmt$(c.total_value)} total</span>
+          <span class="tag tag-sector">${esc(c.sector)}</span>
         </div>
       </div>
       <div class="card-metrics">
@@ -480,20 +634,8 @@ function renderClusterBuys(items) {
           <div class="metric-value">${fmt$(c.total_value)}</div>
         </div>
         <div class="metric">
-          <div class="metric-label">Current Price</div>
-          <div class="metric-value">${fmtPrice(c.current_price)}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Today</div>
-          <div class="metric-value ${pctClass(c.change_pct)}">${fmtPct(c.change_pct)}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Market Cap</div>
+          <div class="metric-label">Mkt Cap</div>
           <div class="metric-value">${fmtCap(c.market_cap)}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Industry</div>
-          <div class="metric-value" style="font-size:.78rem;font-weight:500;color:var(--ink-2)">${esc(c.industry || c.sector)}</div>
         </div>
         <div class="metric">
           <div class="metric-label">Buyers</div>
@@ -501,30 +643,39 @@ function renderClusterBuys(items) {
         </div>
       </div>
       <div class="insider-list">
-        <div class="insider-list-title">Who Bought</div>
+        <div class="insider-list-label">Who Bought</div>
         ${insiderRows}
       </div>
     </div>`;
-  }).join('');
+  }).join('') + '</div>';
 }
 
 // ── C-Suite Buys ──────────────────────────────────────────────────────────────
 function renderCsuite(items) {
-  if (!items || !items.length) return '<div class="empty">No C-suite purchases found in this window.</div>';
+  if (!items || !items.length)
+    return '<div class="empty-state">No C-suite purchases found in this window.</div>';
 
-  return items.map(c => {
-    const multiLabel = c.txn_count > 1
-      ? `<span class="badge badge-cluster">${c.txn_count}x purchases</span>` : '';
+  return '<div class="cards-grid">' + items.map(c => {
+    const multiTag = c.txn_count > 1
+      ? `<span class="tag tag-multi">${c.txn_count}x purchases</span>` : '';
     return `
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <div class="card-ticker">${esc(c.ticker)}</div>
-          <div class="card-company">${esc(c.company)}</div>
+    <div class="stock-card">
+      <div class="card-top">
+        <div class="card-header">
+          <div>
+            <div class="card-ticker">${esc(c.ticker)}</div>
+            <div class="card-name">${esc(c.company)}</div>
+          </div>
+          <div class="card-price">
+            <div class="price-value">${fmtPrice(c.current_price)}</div>
+            <div class="price-change ${changeClass(c.change_pct)}">${fmtPct(c.change_pct)}</div>
+          </div>
         </div>
-        <div class="card-badges">
-          <span class="badge badge-csuite">${esc(titleShort(c.title))}</span>
-          ${multiLabel}
+        <div class="card-tags">
+          <span class="tag tag-csuite">${esc(titleShort(c.title))}</span>
+          <span class="tag tag-big">${fmt$(c.value)}</span>
+          ${multiTag}
+          <span class="tag tag-sector">${esc(c.sector)}</span>
         </div>
       </div>
       <div class="card-metrics">
@@ -533,115 +684,96 @@ function renderCsuite(items) {
           <div class="metric-value">${fmt$(c.value)}</div>
         </div>
         <div class="metric">
-          <div class="metric-label">Current Price</div>
-          <div class="metric-value">${fmtPrice(c.current_price)}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Today</div>
-          <div class="metric-value ${pctClass(c.change_pct)}">${fmtPct(c.change_pct)}</div>
-        </div>
-        <div class="metric">
           <div class="metric-label">Price Paid</div>
           <div class="metric-value">${fmtPrice(c.price)}</div>
         </div>
         <div class="metric">
-          <div class="metric-label">Shares</div>
-          <div class="metric-value">${c.qty.toLocaleString()}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Market Cap</div>
+          <div class="metric-label">Mkt Cap</div>
           <div class="metric-value">${fmtCap(c.market_cap)}</div>
         </div>
       </div>
-      <div class="card-body">
-        <div class="txn-detail">
-          <span><span class="label">Buyer</span> ${esc(c.insider)}</span>
-          <span><span class="label">Date</span> ${esc(c.date)}</span>
-          <span><span class="label">Sector</span> ${esc(c.sector)}</span>
-        </div>
+      <div class="card-detail">
+        <span class="detail-item"><span class="detail-label">Buyer</span> ${esc(c.insider)}</span>
+        <span class="detail-item"><span class="detail-label">Date</span> ${esc(c.date)}</span>
+        <span class="detail-item"><span class="detail-label">Shares</span> ${c.qty.toLocaleString()}</span>
       </div>
     </div>`;
-  }).join('');
+  }).join('') + '</div>';
 }
 
 // ── Big Money ─────────────────────────────────────────────────────────────────
 function renderBigMoney(items) {
-  if (!items || !items.length) return '<div class="empty">No large purchases found in this window.</div>';
+  if (!items || !items.length)
+    return '<div class="empty-state">No large purchases found in this window.</div>';
 
-  return items.map(c => {
-    const multiLabel = c.txn_count > 1
-      ? `<span class="badge badge-cluster">${c.txn_count}x purchases</span>` : '';
-    const roleLabel = c.is_csuite
-      ? `<span class="badge badge-csuite">${esc(titleShort(c.title))}</span>` : '';
+  return '<div class="cards-grid">' + items.map(c => {
+    const csuiteTag = c.is_csuite
+      ? `<span class="tag tag-csuite">${esc(titleShort(c.title))}</span>` : '';
+    const multiTag = c.txn_count > 1
+      ? `<span class="tag tag-multi">${c.txn_count}x purchases</span>` : '';
     return `
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <div class="card-ticker">${esc(c.ticker)}</div>
-          <div class="card-company">${esc(c.company)}</div>
+    <div class="stock-card">
+      <div class="card-top">
+        <div class="card-header">
+          <div>
+            <div class="card-ticker">${esc(c.ticker)}</div>
+            <div class="card-name">${esc(c.company)}</div>
+          </div>
+          <div class="card-price">
+            <div class="price-value">${fmtPrice(c.current_price)}</div>
+            <div class="price-change ${changeClass(c.change_pct)}">${fmtPct(c.change_pct)}</div>
+          </div>
         </div>
-        <div class="card-badges">
-          <span class="badge badge-big">${fmt$(c.value)}</span>
-          ${roleLabel}
-          ${multiLabel}
+        <div class="card-tags">
+          <span class="tag tag-big">${fmt$(c.value)}</span>
+          ${csuiteTag}
+          ${multiTag}
+          <span class="tag tag-sector">${esc(c.sector)}</span>
         </div>
       </div>
       <div class="card-metrics">
         <div class="metric">
-          <div class="metric-label">Current Price</div>
-          <div class="metric-value">${fmtPrice(c.current_price)}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Today</div>
-          <div class="metric-value ${pctClass(c.change_pct)}">${fmtPct(c.change_pct)}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Market Cap</div>
-          <div class="metric-value">${fmtCap(c.market_cap)}</div>
+          <div class="metric-label">Total Bought</div>
+          <div class="metric-value">${fmt$(c.value)}</div>
         </div>
         <div class="metric">
           <div class="metric-label">Price Paid</div>
           <div class="metric-value">${fmtPrice(c.price)}</div>
         </div>
         <div class="metric">
-          <div class="metric-label">Shares</div>
-          <div class="metric-value">${c.qty.toLocaleString()}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Sector</div>
-          <div class="metric-value" style="font-size:.78rem;font-weight:500;color:var(--ink-2)">${esc(c.sector)}</div>
+          <div class="metric-label">Mkt Cap</div>
+          <div class="metric-value">${fmtCap(c.market_cap)}</div>
         </div>
       </div>
-      <div class="card-body">
-        <div class="txn-detail">
-          <span><span class="label">Buyer</span> ${esc(c.insider)}</span>
-          <span><span class="label">Title</span> ${esc(c.title)}</span>
-          <span><span class="label">Date</span> ${esc(c.date)}</span>
-        </div>
+      <div class="card-detail">
+        <span class="detail-item"><span class="detail-label">Buyer</span> ${esc(c.insider)}</span>
+        <span class="detail-item"><span class="detail-label">Title</span> ${esc(c.title)}</span>
+        <span class="detail-item"><span class="detail-label">Date</span> ${esc(c.date)}</span>
       </div>
     </div>`;
-  }).join('');
+  }).join('') + '</div>';
 }
 
 // ── Recent Feed ───────────────────────────────────────────────────────────────
 function renderFeed(items) {
-  if (!items || !items.length) return '<div class="empty">No recent transactions found.</div>';
+  if (!items || !items.length)
+    return '<div class="empty-state">No recent transactions found.</div>';
 
   const rows = items.map(t => {
     const csuiteTag = t.is_csuite
-      ? '<span class="badge badge-csuite" style="font-size:.6rem;padding:.15rem .4rem">C-Suite</span>' : '';
+      ? '<span class="tag tag-csuite" style="font-size:.6rem;padding:2px 6px">C-Suite</span> ' : '';
     return `
     <tr>
       <td><span class="feed-ticker">${esc(t.ticker)}</span></td>
-      <td>${esc(t.insider)} ${csuiteTag}</td>
+      <td>${csuiteTag}${esc(t.insider)}</td>
       <td class="feed-title-cell">${esc(t.title)}</td>
       <td class="feed-value">${fmt$(t.value)}</td>
-      <td style="color:var(--ink-3);font-size:.78rem">${esc(t.date)}</td>
+      <td class="feed-date">${esc(t.date)}</td>
     </tr>`;
   }).join('');
 
   return `
-  <div class="feed-card">
+  <div class="feed-wrap">
     <table class="feed-table">
       <thead>
         <tr>
@@ -657,80 +789,90 @@ function renderFeed(items) {
   </div>`;
 }
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
-function esc(s) {
-  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-function titleShort(t) {
-  const s = (t || '').toLowerCase();
-  if (s.includes('chief executive') || s.includes('ceo')) return 'CEO';
-  if (s.includes('chief financial') || s.includes('cfo')) return 'CFO';
-  if (s.includes('chief operating') || s.includes('coo')) return 'COO';
-  if (s.includes('chief technology') || s.includes('cto')) return 'CTO';
-  if (s.includes('president'))  return 'President';
-  if (s.includes('chairman'))   return 'Chairman';
-  if (s.includes('director'))   return 'Director';
-  // Fallback: first 12 chars
-  return t.length > 14 ? t.slice(0, 14) + '…' : t;
-}
-
-// ── Render all panels ─────────────────────────────────────────────────────────
+// ── Render all sections ───────────────────────────────────────────────────────
 function render(d) {
   document.getElementById('loading').remove();
-  renderStats(d);
 
-  const main = document.getElementById('main');
-  main.innerHTML = `
+  // Stats bar
+  const t = new Date(d.scan_time);
+  document.getElementById('scan-time-badge').textContent =
+    t.toLocaleDateString('en-US', {month:'short', day:'numeric'}) + ' ' +
+    t.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
+  document.getElementById('stat-total').textContent = (d.total_transactions || 0).toLocaleString();
+  document.getElementById('stat-range').textContent = d.date_range || '—';
 
-    <!-- Cluster Buys -->
-    <section>
+  // Sidebar counts
+  document.getElementById('sb-clusters').textContent  = (d.cluster_buys  || []).length;
+  document.getElementById('sb-csuite').textContent    = (d.csuite_buys   || []).length;
+  document.getElementById('sb-bigmoney').textContent  = (d.big_money     || []).length;
+
+  // Main content
+  document.getElementById('main').innerHTML = `
+
+    <section id="cluster">
       <div class="section-header">
         <h2 class="section-title">Cluster Buys</h2>
-        <span class="section-desc">2+ insiders buying the same stock — strongest insider signal</span>
+        <span class="section-subtitle">2+ insiders buying the same stock</span>
+        <span class="section-badge">${(d.cluster_buys||[]).length} found</span>
       </div>
-      <div class="cards-grid">${renderClusterBuys(d.cluster_buys)}</div>
+      ${renderClusterBuys(d.cluster_buys)}
     </section>
 
-    <!-- C-Suite Buys -->
-    <section>
+    <section id="csuite">
       <div class="section-header">
         <h2 class="section-title">C-Suite Buys</h2>
-        <span class="section-desc">CEO, CFO, President, and Chairman purchases</span>
+        <span class="section-subtitle">CEO, CFO, President &amp; Chairman purchases</span>
+        <span class="section-badge">${(d.csuite_buys||[]).length} found</span>
       </div>
-      <div class="cards-grid">${renderCsuite(d.csuite_buys)}</div>
+      ${renderCsuite(d.csuite_buys)}
     </section>
 
-    <!-- Big Money -->
-    <section>
+    <section id="bigmoney">
       <div class="section-header">
         <h2 class="section-title">Big Money</h2>
-        <span class="section-desc">Largest open-market purchases by dollar value</span>
+        <span class="section-subtitle">Largest open-market purchases by dollar value</span>
+        <span class="section-badge">${(d.big_money||[]).length} found</span>
       </div>
-      <div class="cards-grid">${renderBigMoney(d.big_money)}</div>
+      ${renderBigMoney(d.big_money)}
     </section>
 
-    <!-- Recent Feed -->
-    <section>
+    <section id="feed">
       <div class="section-header">
         <h2 class="section-title">Recent Transactions</h2>
-        <span class="section-desc">All insider purchases &ge; $25,000 in the current window</span>
+        <span class="section-subtitle">All insider purchases &ge; $25,000</span>
+        <span class="section-badge">${(d.recent_feed||[]).length} shown</span>
       </div>
       ${renderFeed(d.recent_feed)}
     </section>
   `;
+
+  // Sidebar nav highlight on scroll
+  const sections = ['cluster','csuite','bigmoney','feed'];
+  const navItems = document.querySelectorAll('.nav-item[href^="#"]');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navItems.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
 }
 
 // ── Load data ─────────────────────────────────────────────────────────────────
 fetch('data/results.json')
-  .then(r => {
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    return r.json();
-  })
+  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
   .then(render)
   .catch(err => {
-    document.getElementById('loading').innerHTML =
-      `<p style="color:var(--red)">Could not load scan data: ${err.message}</p>
-       <p style="margin-top:.5rem;font-size:.8rem;color:var(--ink-3)">Run <code>python scan.py</code> to generate data/results.json, then refresh.</p>`;
+    document.getElementById('loading').innerHTML = `
+      <p style="color:var(--red);font-weight:500">Could not load scan data</p>
+      <p style="font-size:.8rem;color:var(--ink-3);margin-top:.4rem">${esc(err.message)}</p>
+      <p style="font-size:.8rem;color:var(--ink-3);margin-top:.25rem">Run <code>python scan.py</code> then refresh.</p>`;
   });
 </script>
 </body>
