@@ -34,4 +34,5 @@ jobs:
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           git add InsiderBuying/data/results.json
           git diff --staged --quiet || git commit -m "chore: insider scan $(date -u +%Y-%m-%dT%H:%M)Z"
+          git pull --rebase origin ${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}

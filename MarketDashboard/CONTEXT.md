@@ -15,7 +15,7 @@ StockTwits trending data, and market context, and presents everything in a singl
 
 ---
 
-## Architecture (Updated Mar 7 2026)
+## Architecture (Updated Mar 9 2026)
 
 The scanner was split from the Flask app into a standalone script:
 
@@ -65,7 +65,7 @@ regardless, commits `data/results.json`, and the static frontend reads it fresh.
 | Yahoo Finance movers | HTTP scrape (regex on HTML) | No | Top 60 gainers, losers, most-active |
 | Yahoo Finance trending | HTTP scrape | No | Trending tickers page, ranked 1-N (replaces dead StockTwits) |
 | Finnhub | REST API | Yes (free tier) | Quotes, profiles, news, earnings |
-| Reddit | Public JSON API (`*.reddit.com/*.json`) | No | 5 subreddits: wallstreetbets, stocks, StockMarket, options, daytrading |
+| Reddit | Public JSON API (`www.reddit.com/r/*.json`) | No | 5 subreddits: wallstreetbets, stocks, StockMarket, options, daytrading. UA: `InvestLabScanner/1.0`. Retries once on 429. |
 | CNN Fear & Greed | `production.dataviz.cnn.io` public endpoint | No | Score 0-100 + history |
 | Finviz | HTTP scrape | No | Unusual volume screener |
 
@@ -133,6 +133,8 @@ Each stock gets a score built from signals. Thresholds determine if it qualifies
   via Finnhub if not already in the Yahoo universe.
 - **Reddit dedup uses post `id` field**, not URL.
 - **Losers explicitly excluded:** `change_pct <= 0` returns None immediately in `analyze_stock`.
+- **Reddit User-Agent fixed (Mar 9 2026):** Replaced truncated browser UA with `InvestLabScanner/1.0 (personal market research tool; non-commercial)` + `Accept: application/json`. Added 429 retry with 15s backoff. Added non-200 and non-JSON logging so failures are visible in scan output.
+- **GitHub Actions push race fixed (Mar 9 2026):** `market-scan.yml` and `insider-buying-scan.yml` both trigger at the same cron slot (`0 13 UTC`). Added `git pull --rebase` before `git push` in all three workflow files to handle the race condition.
 
 ---
 

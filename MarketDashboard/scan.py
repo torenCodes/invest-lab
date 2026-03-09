@@ -58,7 +58,10 @@ def get_reddit_buzz():
     post_counts = defaultdict(set)   # ticker -> set of distinct post IDs mentioning it
     feed = []
     subreddits = ["wallstreetbets", "stocks", "StockMarket", "options", "daytrading"]
-    headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
+    headers = {
+        "User-Agent": "InvestLabScanner/1.0 (personal market research tool; non-commercial)",
+        "Accept": "application/json",
+    }
     ticker_pattern = re.compile(r"\b([A-Z]{2,5})\b")
     dollar_pattern = re.compile(r"\$([A-Z]{1,5})\b")
     url_pattern    = re.compile(r"https?://\S+")
@@ -196,7 +199,15 @@ def get_reddit_buzz():
             try:
                 url = f"https://www.reddit.com/r/{subreddit}/{sort}.json?limit=50"
                 resp = requests.get(url, headers=headers, timeout=10)
+                if resp.status_code == 429:
+                    print(f"[Reddit] Rate limited on r/{subreddit}, retrying after 15s...")
+                    time.sleep(15)
+                    resp = requests.get(url, headers=headers, timeout=10)
                 if resp.status_code != 200:
+                    print(f"[Reddit] r/{subreddit}/{sort} returned {resp.status_code}, skipping")
+                    continue
+                if "json" not in resp.headers.get("content-type", ""):
+                    print(f"[Reddit] r/{subreddit}/{sort} returned non-JSON, skipping")
                     continue
                 posts = resp.json().get("data", {}).get("children", [])
                 for post in posts:

@@ -279,7 +279,7 @@ def _yf_fetch(ticker):
     Fetch yfinance .info with exponential-backoff retry on rate-limit errors.
     Raises the last exception if all attempts fail.
     """
-    delays = [3, 7, 15]
+    delays = [5, 15, 30]
     last_exc = None
     for attempt, delay in enumerate(delays, 1):
         try:
@@ -404,7 +404,7 @@ def run_prescan():
             results[t] = analyze_ticker(t)
         except Exception as e:
             results[t] = {"error": str(e), "ticker": t}
-        time.sleep(1.5)
+        time.sleep(4)
 
     with _lock:
         _state["prescan"]        = results
@@ -468,11 +468,12 @@ if __name__ == "__main__":
         except Exception:
             pass
 
-    # Kick off prescan if cache is absent or incomplete
+    # Kick off prescan if cache is absent, incomplete, or has errors
     with _lock:
         ready = (
             _state["prescan_status"] == "done"
             and len(_state["prescan"]) >= len(PRESCAN_TICKERS)
+            and all("error" not in v for v in _state["prescan"].values())
         )
     if not ready:
         threading.Thread(target=run_prescan, daemon=True).start()
