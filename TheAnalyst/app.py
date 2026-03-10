@@ -13,6 +13,8 @@ PRESCAN_TICKERS = ["AAPL", "MSFT", "NVDA"]
 # SEC EDGAR requires a descriptive User-Agent per their access policy
 SEC_HEADERS = {"User-Agent": "TheInvestLab personal-research@example.com"}
 
+POLYGON_API_KEY = os.environ.get("POLYGON_KEY", "P9fRbZP9VAKhjwABMtvcS7tfcYGU6z1T")
+
 # Approximate sector-median trailing P/E benchmarks
 SECTOR_PE = {
     "Technology":             28,
@@ -272,6 +274,47 @@ def compute_verdict(info, price, graham):
     return verdict, score, commentary
 
 
+# ── Polygon.io news ────────────────────────────────────────────────────────────
+
+def get_polygon_news(ticker):
+    """Return up to 5 recent news items for a ticker from Polygon.io."""
+    if not POLYGON_API_KEY:
+        return []
+    try:
+        from datetime import timezone, timedelta
+        week_ago = (datetime.now(timezone.utc) - timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        url = (
+            f"https://api.polygon.io/v2/reference/news"
+            f"?ticker={ticker}&limit=5&published_utc.gte={week_ago}"
+            f"&sort=published_utc&order=desc&apiKey={POLYGON_API_KEY}"
+        )
+        r = requests.get(url, timeout=8)
+        if r.status_code != 200:
+            return []
+        articles = r.json().get("results", [])
+        news = []
+        for a in articles:
+            pub = a.get("published_utc", "")
+            hours_ago = None
+            if pub:
+                try:
+                    pub_dt = datetime.fromisoformat(pub.replace("Z", "+00:00"))
+                    hours_ago = round(
+                        (datetime.now(timezone.utc) - pub_dt).total_seconds() / 3600, 1
+                    )
+                except Exception:
+                    pass
+            news.append({
+                "title":     a.get("title", ""),
+                "source":    a.get("publisher", {}).get("name", ""),
+                "url":       a.get("article_url", ""),
+                "hours_ago": hours_ago,
+            })
+        return news
+    except Exception:
+        return []
+
+
 # ── yfinance fetch with retry ──────────────────────────────────────────────────
 
 def _yf_fetch(ticker):
@@ -388,6 +431,7 @@ def analyze_ticker(ticker):
         "scanned_at":    datetime.now().isoformat(),
     }
 
+    result["recent_news"] = get_polygon_news(ticker)
     _cache[ticker] = (result, time.time())
     return result
 
@@ -451,6 +495,15 @@ def api_prescan():
 @app.route("/ping")
 def ping():
     return "pong"
+
+
+@app.route("/api/retry-prescan", methods=["POST"])
+def api_retry_prescan():
+    with _lock:
+        _state["prescan_status"] = "idle"
+        _state["prescan"]        = {}
+    threading.Thread(target=run_prescan, daemon=True).start()
+    return jsonify({"status": "started"})
 
 
 # ── Startup ────────────────────────────────────────────────────────────────────

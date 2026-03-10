@@ -10,7 +10,7 @@ import os
 import re
 import time
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 import requests
 
@@ -19,6 +19,7 @@ BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(BASE_DIR, "data", "results.json")
 
 FINNHUB_API_KEY = os.environ.get("FINNHUB_KEY", "d6703v9r01qmckkbjg6gd6703v9r01qmckkbjg70")
+POLYGON_API_KEY = os.environ.get("POLYGON_KEY", "P9fRbZP9VAKhjwABMtvcS7tfcYGU6z1T")
 
 DAY_TRADE_MIN_PRICE   = 2.0
 DAY_TRADE_MAX_PRICE   = 100.0
@@ -269,6 +270,72 @@ def get_reddit_buzz():
     return lookup, unique_feed[:40]
 
 
+# ── Polygon.io news buzz ────────────────────────────────────────────────────────
+
+def get_polygon_news_buzz(api_key):
+    """
+    Returns (lookup_dict, feed_list) using Polygon.io news article ticker mentions.
+    Tickers are pre-extracted by Polygon.io — no regex needed.
+    feed_list items use the same keys as Reddit feed items (subreddit, ups, etc.)
+    so renderRedditFeed() in the frontend works unchanged.
+    """
+    if not api_key:
+        return {}, []
+
+    counts = defaultdict(int)
+    feed = []
+
+    yesterday = (datetime.now(timezone.utc) - timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    url = (
+        f"https://api.polygon.io/v2/reference/news"
+        f"?limit=1000&published_utc.gte={yesterday}"
+        f"&sort=published_utc&order=desc&apiKey={api_key}"
+    )
+    try:
+        resp = requests.get(url, timeout=15)
+        if resp.status_code != 200:
+            print(f"[PolygonNews] HTTP {resp.status_code}")
+            return {}, []
+
+        articles = resp.json().get("results", [])
+        print(f"[PolygonNews] {len(articles)} articles in last 24h")
+
+        for article in articles:
+            tickers = [t for t in article.get("tickers", []) if 2 <= len(t) <= 5 and t.isalpha()]
+            for t in tickers:
+                counts[t] += 1
+
+            if tickers:
+                pub_utc = article.get("published_utc", "")
+                hours_ago = 0.0
+                if pub_utc:
+                    try:
+                        pub_dt = datetime.fromisoformat(pub_utc.replace("Z", "+00:00"))
+                        hours_ago = round(
+                            (datetime.now(timezone.utc) - pub_dt).total_seconds() / 3600, 1
+                        )
+                    except Exception:
+                        pass
+                feed.append({
+                    "id":        article.get("id", ""),
+                    "title":     article.get("title", "")[:120],
+                    "subreddit": article.get("publisher", {}).get("name", "News"),
+                    "ups":       0,
+                    "tickers":   tickers[:5],
+                    "hours_ago": hours_ago,
+                    "url":       article.get("article_url", ""),
+                    "is_news":   True,
+                })
+
+        feed.sort(key=lambda x: x["hours_ago"])
+        lookup = {t: c for t, c in counts.items() if c >= 2}
+        return lookup, feed[:40]
+
+    except Exception as e:
+        print(f"[PolygonNews] Error: {e}")
+        return {}, []
+
+
 # ── Yahoo Trending ─────────────────────────────────────────────────────────────
 
 def get_yahoo_trending():
@@ -312,7 +379,7 @@ def get_company_profile(ticker):
 
 # ── Stock analysis ─────────────────────────────────────────────────────────────
 
-def analyze_stock(ticker, yahoo_cats, reddit_lookup, yahoo_trending=None):
+def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_label="Reddit"):
     quote = get_stock_quote(ticker)
     if not quote or quote.get("c", 0) == 0:
         return None
@@ -355,16 +422,16 @@ def analyze_stock(ticker, yahoo_cats, reddit_lookup, yahoo_trending=None):
         score += 5
         signals.append(f"Moderate move ({change_pct:+.1f}%)")
 
-    reddit_mentions = reddit_lookup.get(ticker, 0)
+    reddit_mentions = buzz_lookup.get(ticker, 0)
     if reddit_mentions >= 20:
         score += 15
-        signals.append(f"High Reddit buzz ({reddit_mentions})")
+        signals.append(f"High {buzz_label} buzz ({reddit_mentions})")
     elif reddit_mentions >= 10:
         score += 10
-        signals.append(f"Reddit buzz ({reddit_mentions})")
+        signals.append(f"{buzz_label} buzz ({reddit_mentions})")
     elif reddit_mentions >= 5:
         score += 5
-        signals.append(f"Reddit activity ({reddit_mentions})")
+        signals.append(f"{buzz_label} activity ({reddit_mentions})")
 
     st_rank = (yahoo_trending or {}).get(ticker, 0)
     if st_rank:
@@ -399,7 +466,7 @@ def analyze_stock(ticker, yahoo_cats, reddit_lookup, yahoo_trending=None):
 
 # ── Categorize ─────────────────────────────────────────────────────────────────
 
-def categorize(results, reddit_lookup, universe, yahoo_cats=None):
+def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Reddit"):
     day_cands   = []
     swing_cands = []
 
@@ -430,7 +497,7 @@ def categorize(results, reddit_lookup, universe, yahoo_cats=None):
     swing_cands = [c for c in swing_cands if c["ticker"] not in day_tickers]
 
     result_map = {r["ticker"]: r for r in results if r}
-    reddit_candidates = sorted(reddit_lookup.items(), key=lambda x: x[1], reverse=True)
+    reddit_candidates = sorted(buzz_lookup.items(), key=lambda x: x[1], reverse=True)
 
     reddit_cards    = []
     reddit_fallback = []
@@ -473,7 +540,7 @@ def categorize(results, reddit_lookup, universe, yahoo_cats=None):
                 "prev_close":      quote.get("pc", 0),
                 "market_cap":      market_cap,
                 "score":           0,
-                "signals":         [f"Reddit buzz ({mentions} mentions)"],
+                "signals":         [f"{buzz_label} buzz ({mentions} mentions)"],
                 "reddit_mentions": mentions,
                 "is_gainer":       False,
                 "is_active":       False,
@@ -607,6 +674,18 @@ def run():
     reddit_lookup, reddit_feed = get_reddit_buzz()
     print(f"[scan.py] Reddit: {len(reddit_lookup)} tickers with buzz")
 
+    print("[scan.py] Fetching Polygon.io news buzz...")
+    news_lookup, news_feed = get_polygon_news_buzz(POLYGON_API_KEY)
+    print(f"[scan.py] News: {len(news_lookup)} tickers in news")
+
+    if len(reddit_lookup) >= 3:
+        buzz_lookup, buzz_feed, buzz_source, buzz_label = reddit_lookup, reddit_feed, "reddit", "Reddit"
+    elif news_lookup:
+        buzz_lookup, buzz_feed, buzz_source, buzz_label = news_lookup, news_feed, "news", "News"
+    else:
+        buzz_lookup, buzz_feed, buzz_source, buzz_label = {}, [], "none", "Reddit"
+    print(f"[scan.py] Buzz source: {buzz_source} ({len(buzz_lookup)} tickers)")
+
     print("[scan.py] Fetching Yahoo trending tickers...")
     yahoo_trending = get_yahoo_trending()
 
@@ -614,12 +693,12 @@ def run():
     for i, ticker in enumerate(universe, 1):
         if i % 10 == 0:
             print(f"[scan.py] Analyzing {i}/{len(universe)}: {ticker}")
-        result = analyze_stock(ticker, yahoo_cats, reddit_lookup, yahoo_trending)
+        result = analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending, buzz_label)
         if result:
             results.append(result)
         time.sleep(1.1)
 
-    day_trades, swing_trades, reddit_cards = categorize(results, reddit_lookup, universe, yahoo_cats)
+    day_trades, swing_trades, reddit_cards = categorize(results, buzz_lookup, universe, yahoo_cats, buzz_label)
     sector_flow = build_sector_flow(results)
 
     print("[scan.py] Fetching Fear & Greed, news, earnings, Finviz...")
@@ -630,13 +709,13 @@ def run():
 
     confirmed = {card["ticker"] for card in reddit_cards}
     filtered_feed = []
-    for item in reddit_feed:
+    for item in buzz_feed:
         matched = [t for t in item.get("tickers", []) if t in confirmed]
         if matched:
             enriched = dict(item)
             enriched["confirmed_tickers"] = matched
             filtered_feed.append(enriched)
-    display_feed = filtered_feed if filtered_feed else reddit_feed[:20]
+    display_feed = filtered_feed if filtered_feed else buzz_feed[:20]
 
     output = {
         "scan_time":      start.isoformat(),
@@ -644,6 +723,7 @@ def run():
         "total_scanned":  len(universe),
         "day_trades":     day_trades,
         "swing_trades":   swing_trades,
+        "buzz_source":    buzz_source,
         "reddit_cards":   reddit_cards,
         "sector_flow":    sector_flow,
         "reddit_feed":    display_feed,

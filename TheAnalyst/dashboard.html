@@ -943,6 +943,16 @@
             ${d.rev_growth  != null ? `<div class="mini-met"><span class="k">Rev Growth</span><span class="v">${d.rev_growth}%</span></div>` : ''}
             ${d.net_margin  != null ? `<div class="mini-met"><span class="k">Net Margin</span><span class="v">${d.net_margin}%</span></div>` : ''}
           </div>
+          ${d.recent_news && d.recent_news.length ? `
+      <div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;">
+        <div style="font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-3);margin-bottom:4px;">Recent News</div>
+        ${d.recent_news.map(n => `
+          <div style="margin-bottom:4px;">
+            <a href="${n.url}" target="_blank" rel="noopener"
+               style="font-size:0.75rem;color:var(--ink);text-decoration:none;line-height:1.35;">${n.title}</a>
+            <div style="font-size:0.65rem;color:var(--ink-3);">${n.source}${n.hours_ago != null ? ' · ' + n.hours_ago + 'h ago' : ''}</div>
+          </div>`).join('')}
+      </div>` : ''}
         </div>
       </div>`;
   }
@@ -998,6 +1008,27 @@
 
   const PRESCAN_TICKERS = ['AAPL', 'MSFT', 'NVDA'];
 
+  async function retryPrescan() {
+    try {
+      await fetch('/api/retry-prescan', { method: 'POST' });
+      // Reset grid to skeleton state
+      const grid = document.getElementById('prescan-grid');
+      if (grid) {
+        grid.innerHTML = `
+          <div class="skeleton-card"><div class="skel h24"></div><div class="skel wide"></div><div class="skel mid"></div><div class="skel tall"></div><div class="skel tall"></div><div class="skel short"></div></div>
+          <div class="skeleton-card"><div class="skel h24"></div><div class="skel wide"></div><div class="skel mid"></div><div class="skel tall"></div><div class="skel tall"></div><div class="skel short"></div></div>
+          <div class="skeleton-card"><div class="skel h24"></div><div class="skel wide"></div><div class="skel mid"></div><div class="skel tall"></div><div class="skel tall"></div><div class="skel short"></div></div>`;
+        // remove the retry button if present
+        const btn = grid.nextElementSibling;
+        if (btn && btn.tagName !== 'DIV'.replace('DIV','')) btn.remove();
+        if (btn) btn.remove();
+      }
+      setTimeout(pollPrescan, 3000);
+    } catch(e) {
+      console.error('Retry failed:', e);
+    }
+  }
+
   async function pollPrescan() {
     try {
       const res  = await fetch('/api/prescan');
@@ -1016,16 +1047,26 @@
       if (data.status === 'done') {
         const grid = document.getElementById('prescan-grid');
         if (grid) {
+          const hasErrors = PRESCAN_TICKERS.some(t => !data.results[t] || data.results[t].error);
           grid.innerHTML = PRESCAN_TICKERS.map(t => {
             const r = data.results[t];
             if (!r || r.error) {
               return `<div class="mini-card" style="padding:24px;font-size:0.85rem;color:var(--ink-3)">
                 <strong style="color:var(--ink)">${t}</strong><br>
-                ${r ? r.error : 'No data'}
+                <span style="font-size:0.8rem;">${r ? r.error : 'No data'}</span>
               </div>`;
             }
             return buildMiniCard(r);
           }).join('');
+          if (hasErrors) {
+            const retryBtn = document.createElement('div');
+            retryBtn.style.cssText = 'margin-top:12px;text-align:center;';
+            retryBtn.innerHTML = `<button onclick="retryPrescan()" style="
+              padding:8px 20px;border:1px solid var(--accent);border-radius:6px;
+              background:transparent;color:var(--accent);font-family:inherit;
+              font-size:0.82rem;cursor:pointer;">↺ Retry Prescan</button>`;
+            grid.after(retryBtn);
+          }
         }
       } else {
         setTimeout(pollPrescan, 3000);

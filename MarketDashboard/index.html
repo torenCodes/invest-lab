@@ -962,8 +962,8 @@ function toggleSiteNav(btn) {
     <!-- Reddit Buzz Picks -->
     <section id="reddit-section">
       <div class="section-header">
-        <div class="section-title">Reddit Buzz</div>
-        <div class="section-subtitle">High social activity + green today</div>
+        <div class="section-title" id="buzz-section-title">Reddit Buzz</div>
+        <div class="section-subtitle" id="buzz-section-subtitle">High social activity + green today</div>
         <div class="section-badge" id="reddit-badge">—</div>
       </div>
       <div class="cards-grid" id="reddit-cards">
@@ -988,10 +988,10 @@ function toggleSiteNav(btn) {
       <!-- Reddit Live Feed -->
       <section id="reddit-feed" class="reddit-panel">
         <div class="reddit-header">
-          <div class="reddit-icon">r/</div>
+          <div class="reddit-icon" id="buzz-feed-icon">r/</div>
           <div>
-            <div style="font-size:0.9rem;font-weight:500;">Live Reddit Feed</div>
-            <div style="font-size:0.72rem;color:var(--ink-3);">High-upvote posts about this scan's Reddit picks</div>
+            <div id="buzz-feed-title" style="font-size:0.9rem;font-weight:500;">Live Reddit Feed</div>
+            <div id="buzz-feed-subtitle" style="font-size:0.72rem;color:var(--ink-3);">High-upvote posts about this scan's Reddit picks</div>
           </div>
         </div>
         <div class="feed-scroll" id="reddit-feed-list">
@@ -1115,8 +1115,10 @@ function renderStockCard(stock, type) {
     ? `Intraday setup. Tight stops 2–3%. Target: close above open with volume.`
     : `Multi-day hold candidate. Wider stops 5–7%. Watch for continuation.`;
 
+  const _src = window._buzzSource || 'reddit';
+  const _buzzLabel = _src === 'news' ? 'News' : 'Reddit';
   const redditNote = stock.reddit_mentions > 0
-    ? `<div style="margin-bottom:6px;font-size:0.72rem;color:var(--reddit);">⬆ Reddit confirmed (${stock.reddit_mentions} mentions)</div>`
+    ? `<div style="margin-bottom:6px;font-size:0.72rem;color:var(--reddit);">⬆ ${_buzzLabel} confirmed (${stock.reddit_mentions} mentions)</div>`
     : '';
 
   return `
@@ -1284,7 +1286,8 @@ function renderSectorChart(sectorFlow) {
 function renderRedditFeed(feed) {
   const el = $('reddit-feed-list');
   if (!feed || !feed.length) {
-    el.innerHTML = '<div class="empty-state">No recent high-upvote posts found.</div>';
+    const _src2 = window._buzzSource || 'reddit';
+    el.innerHTML = `<div class="empty-state">No ${_src2 === 'news' ? 'recent news articles' : 'high-upvote posts'} found.</div>`;
     return;
   }
 
@@ -1300,7 +1303,7 @@ function renderRedditFeed(feed) {
       <div class="feed-meta">
         <span class="feed-sub">${item.subreddit}</span>
         <span style="font-size:0.65rem;color:var(--ink-3);">${item.hours_ago}h ago</span>
-        <span class="feed-ups">▲ ${item.ups.toLocaleString()}</span>
+        ${!item.is_news ? `<span class="feed-ups">▲ ${item.ups.toLocaleString()}</span>` : ''}
       </div>
       <div class="feed-title"><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></div>
       ${tags ? `<div class="feed-tickers">${tags}</div>` : ''}
@@ -1370,6 +1373,20 @@ function updateResults(data) {
     swingEl.innerHTML = data.swing_trades.map(s => renderStockCard(s, 'swing')).join('');
   } else {
     swingEl.innerHTML = '<div class="empty-state">No qualifying swing trade setups found this scan.</div>';
+  }
+
+  // Update buzz section labels based on source
+  const buzzSrc = data.buzz_source || 'reddit';
+  window._buzzSource = buzzSrc;
+  if (buzzSrc === 'news') {
+    const t = $('buzz-section-title');     if (t) t.textContent = 'News Buzz';
+    const s = $('buzz-section-subtitle');  if (s) s.textContent = 'Stocks with the most news coverage today';
+    const fi = $('buzz-feed-icon');        if (fi) fi.textContent = '📰';
+    const ft = $('buzz-feed-title');       if (ft) ft.textContent = 'Live News Feed';
+    const fs = $('buzz-feed-subtitle');    if (fs) fs.textContent = 'Recent articles about this scan\'s top picks';
+  } else if (buzzSrc === 'none') {
+    const t = $('buzz-section-title');     if (t) t.textContent = 'Buzz';
+    const s = $('buzz-section-subtitle');  if (s) s.textContent = 'No buzz data available for this scan';
   }
 
   // Reddit buzz nominees

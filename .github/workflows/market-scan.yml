@@ -26,6 +26,7 @@ jobs:
         run: python MarketDashboard/scan.py
         env:
           FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
+          POLYGON_KEY: ${{ secrets.POLYGON_KEY }}
 
       - name: Commit results
         env:
