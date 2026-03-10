@@ -15,7 +15,7 @@ StockTwits trending data, and market context, and presents everything in a singl
 
 ---
 
-## Architecture (Updated Mar 9 2026)
+## Architecture (Updated Mar 10 2026)
 
 The scanner was split from the Flask app into a standalone script:
 
@@ -65,7 +65,8 @@ regardless, commits `data/results.json`, and the static frontend reads it fresh.
 | Yahoo Finance movers | HTTP scrape (regex on HTML) | No | Top 60 gainers, losers, most-active |
 | Yahoo Finance trending | HTTP scrape | No | Trending tickers page, ranked 1-N (replaces dead StockTwits) |
 | Finnhub | REST API | Yes (free tier) | Quotes, profiles, news, earnings |
-| Reddit | Public JSON API (`www.reddit.com/r/*.json`) | No | 5 subreddits: wallstreetbets, stocks, StockMarket, options, daytrading. UA: `InvestLabScanner/1.0`. Retries once on 429. |
+| Reddit | Public JSON API (`www.reddit.com/r/*.json`) | No | 5 subreddits: wallstreetbets, stocks, StockMarket, options, daytrading. UA: `InvestLabScanner/1.0`. Retries once on 429. Primary buzz source if ≥3 tickers found. |
+| Polygon.io News | REST API (`/v2/reference/news`) | Yes | Fallback buzz source when Reddit returns <3 tickers. Tickers pre-extracted by Polygon — no regex. Key: `POLYGON_KEY` env var. |
 | CNN Fear & Greed | `production.dataviz.cnn.io` public endpoint | No | Score 0-100 + history |
 | Finviz | HTTP scrape | No | Unusual volume screener |
 
@@ -135,6 +136,7 @@ Each stock gets a score built from signals. Thresholds determine if it qualifies
 - **Losers explicitly excluded:** `change_pct <= 0` returns None immediately in `analyze_stock`.
 - **Reddit User-Agent fixed (Mar 9 2026):** Replaced truncated browser UA with `InvestLabScanner/1.0 (personal market research tool; non-commercial)` + `Accept: application/json`. Added 429 retry with 15s backoff. Added non-200 and non-JSON logging so failures are visible in scan output.
 - **GitHub Actions push race fixed (Mar 9 2026):** `market-scan.yml` and `insider-buying-scan.yml` both trigger at the same cron slot (`0 13 UTC`). Added `git pull --rebase` before `git push` in all three workflow files to handle the race condition.
+- **Polygon.io news buzz added (Mar 10 2026):** `get_polygon_news_buzz()` fetches last 24h of news from Polygon.io and counts ticker mentions (Polygon pre-extracts tickers — no regex noise). Used as fallback when Reddit returns <3 tickers. `buzz_source` field in results.json tells the frontend which source was used; section titles, feed header, and labels update dynamically. `analyze_stock()` and `categorize()` now take a `buzz_label` param so signal strings say "News buzz" vs "Reddit buzz" correctly.
 
 ---
 

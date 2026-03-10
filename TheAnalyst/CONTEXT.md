@@ -107,6 +107,13 @@ Score range: −100 (very overpriced) to +100 (very undervalued).
 - **Increased retry delays (Mar 9 2026):** yfinance retry sequence bumped from
   `[3, 7, 15]s` to `[5, 15, 30]s`; inter-ticker prescan delay from 1.5s to 4s.
   Both changes target market-hours rate limiting.
+- **Retry endpoint + button (Mar 10 2026):** `POST /api/retry-prescan` resets prescan
+  state and triggers a fresh background prescan without requiring a service restart.
+  The frontend shows a "↺ Retry Prescan" button on error cards.
+- **Polygon.io news feed (Mar 10 2026):** `get_polygon_news(ticker)` fetches last 7 days
+  of news from Polygon.io `/v2/reference/news`. Result included as `recent_news[]` on
+  every analysis response and rendered as a "Recent News" section in each mini-card.
+  Key: `POLYGON_KEY` env var (default hardcoded).
 - **File-based prescan cache:** `results.json` persists between restarts so the prescan
   doesn't re-fetch on every dyno spin-up (important on Render free tier).
 - **SEC EDGAR integration:** CIK lookup + most-recent 10-K/10-Q filing dates displayed
