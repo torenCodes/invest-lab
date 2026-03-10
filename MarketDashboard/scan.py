@@ -664,7 +664,7 @@ def get_finviz_movers():
 
 def run():
     print("[scan.py] Starting market scan...")
-    start = datetime.now()
+    start = datetime.now(timezone.utc)
 
     yahoo_cats = get_yahoo_movers_categorized()
     universe   = sorted(set().union(*yahoo_cats.values()))
@@ -737,7 +737,7 @@ def run():
     with open(OUTPUT_FILE, "w") as f:
         json.dump(output, f, indent=2)
 
-    elapsed = (datetime.now() - start).seconds
+    elapsed = (datetime.now(timezone.utc) - start).seconds
     print(f"[scan.py] Done in {elapsed}s — {len(day_trades)}D {len(swing_trades)}S {len(reddit_cards)}R")
     print(f"[scan.py] Results written to {OUTPUT_FILE}")
 
