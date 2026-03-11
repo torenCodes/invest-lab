@@ -466,7 +466,7 @@ def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_lab
 
 # ── Categorize ─────────────────────────────────────────────────────────────────
 
-def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Reddit"):
+def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Reddit", yahoo_trending=None):
     day_cands   = []
     swing_cands = []
 
@@ -499,8 +499,8 @@ def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Redd
     result_map = {r["ticker"]: r for r in results if r}
     reddit_candidates = sorted(buzz_lookup.items(), key=lambda x: x[1], reverse=True)
 
-    reddit_cards    = []
-    reddit_fallback = []
+    # Chatter nominees: no green-only filter — buzz is valuable regardless of today's movement
+    reddit_cards = []
     checked = 0
     for ticker, mentions in reddit_candidates:
         if len(reddit_cards) >= 3:
@@ -512,10 +512,7 @@ def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Redd
         if ticker in result_map:
             card = dict(result_map[ticker])
             card["mentions"] = mentions
-            if card.get("change_pct", 0) > 0:
-                reddit_cards.append(card)
-            elif len(reddit_fallback) < 3:
-                reddit_fallback.append(card)
+            reddit_cards.append(card)
             continue
 
         try:
@@ -527,34 +524,33 @@ def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Redd
             market_cap = profile.get("marketCapitalization", 0) * 1_000_000
             if market_cap < MIN_MARKET_CAP:
                 continue
+            st_rank = (yahoo_trending or {}).get(ticker, 0)
+            signals = [f"{buzz_label} buzz ({mentions} mentions)"]
+            if st_rank:
+                signals.append(f"Yahoo trending (#{st_rank})")
             card = {
-                "ticker":          ticker,
-                "mentions":        mentions,
-                "name":            profile.get("name", ticker),
-                "sector":          profile.get("finnhubIndustry", "Unknown"),
-                "current_price":   quote.get("c", 0),
-                "change_pct":      change_pct,
-                "high":            quote.get("h", 0),
-                "low":             quote.get("l", 0),
-                "open":            quote.get("o", 0),
-                "prev_close":      quote.get("pc", 0),
-                "market_cap":      market_cap,
-                "score":           0,
-                "signals":         [f"{buzz_label} buzz ({mentions} mentions)"],
-                "reddit_mentions": mentions,
-                "is_gainer":       False,
-                "is_active":       False,
+                "ticker":              ticker,
+                "mentions":            mentions,
+                "name":                profile.get("name", ticker),
+                "sector":              profile.get("finnhubIndustry", "Unknown"),
+                "current_price":       quote.get("c", 0),
+                "change_pct":          change_pct,
+                "high":                quote.get("h", 0),
+                "low":                 quote.get("l", 0),
+                "open":                quote.get("o", 0),
+                "prev_close":          quote.get("pc", 0),
+                "market_cap":          market_cap,
+                "score":               0,
+                "signals":             signals,
+                "reddit_mentions":     mentions,
+                "is_gainer":           False,
+                "is_active":           False,
+                "yahoo_trending_rank": st_rank if st_rank else None,
             }
-            if change_pct > 0:
-                reddit_cards.append(card)
-            elif len(reddit_fallback) < 3:
-                reddit_fallback.append(card)
+            reddit_cards.append(card)
             time.sleep(1.1)
         except Exception:
             continue
-
-    while len(reddit_cards) < 3 and reddit_fallback:
-        reddit_cards.append(reddit_fallback.pop(0))
 
     return day_cands[:3], swing_cands[:3], reddit_cards
 
@@ -678,12 +674,18 @@ def run():
     news_lookup, news_feed = get_polygon_news_buzz(POLYGON_API_KEY)
     print(f"[scan.py] News: {len(news_lookup)} tickers in news")
 
-    if len(reddit_lookup) >= 3:
-        buzz_lookup, buzz_feed, buzz_source, buzz_label = reddit_lookup, reddit_feed, "reddit", "Reddit"
-    elif news_lookup:
-        buzz_lookup, buzz_feed, buzz_source, buzz_label = news_lookup, news_feed, "news", "News"
+    # Polygon news is always primary; merge Reddit counts as bonus when available
+    buzz_lookup = dict(news_lookup)
+    buzz_feed   = news_feed
+    if reddit_lookup:
+        for ticker, count in reddit_lookup.items():
+            buzz_lookup[ticker] = buzz_lookup.get(ticker, 0) + count
+        buzz_source = "mixed" if news_lookup else "reddit"
+        if not news_lookup:
+            buzz_feed = reddit_feed
     else:
-        buzz_lookup, buzz_feed, buzz_source, buzz_label = {}, [], "none", "Reddit"
+        buzz_source = "news" if news_lookup else "none"
+    buzz_label = "Reddit" if buzz_source == "reddit" else "News"
     print(f"[scan.py] Buzz source: {buzz_source} ({len(buzz_lookup)} tickers)")
 
     print("[scan.py] Fetching Yahoo trending tickers...")
@@ -698,7 +700,7 @@ def run():
             results.append(result)
         time.sleep(1.1)
 
-    day_trades, swing_trades, reddit_cards = categorize(results, buzz_lookup, universe, yahoo_cats, buzz_label)
+    day_trades, swing_trades, reddit_cards = categorize(results, buzz_lookup, universe, yahoo_cats, buzz_label, yahoo_trending)
     sector_flow = build_sector_flow(results)
 
     print("[scan.py] Fetching Fear & Greed, news, earnings, Finviz...")

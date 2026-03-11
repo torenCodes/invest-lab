@@ -30,7 +30,7 @@
     --blue:         #1a5fa8;
     --blue-bg:      #eef3fb;
     --accent:       #2d6a4f;
-    --reddit:       #ff4500;
+    --reddit:       #5271c4;
     --shadow-sm:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
     --shadow-md:    0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
     --shadow-lg:    0 16px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
@@ -369,7 +369,7 @@
   .signal-gainer  { background: var(--green-bg); color: var(--green); }
   .signal-active  { background: var(--blue-bg);  color: var(--blue); }
   .signal-move    { background: #f0f4ff;          color: #3d5a99; }
-  .signal-reddit  { background: #fff1ec;          color: var(--reddit); }
+  .signal-reddit  { background: #eef1fb;          color: var(--reddit); }
   .signal-default { background: var(--bg);        color: var(--ink-2); }
 
   /* ── Expanded Card Detail ───────────────────────────────────────────────── */
@@ -478,6 +478,7 @@
     text-transform: lowercase;
   }
   .feed-sub::before { content: "r/"; }
+  .feed-sub.is-news::before { content: ""; }
 
   .feed-ups {
     font-size: 0.68rem;
@@ -902,13 +903,13 @@ function toggleSiteNav(btn) {
         <span class="nav-icon">📈</span> Swing Trades
       </a>
       <a class="nav-item" href="#reddit-section" onclick="setActive(this)">
-        <span class="nav-icon">🔥</span> Reddit Buzz
+        <span class="nav-icon">💬</span> Market Chatter
       </a>
       <a class="nav-item" href="#sector-flow" onclick="setActive(this)">
         <span class="nav-icon">🗺️</span> Sector Flow
       </a>
       <a class="nav-item" href="#reddit-feed" onclick="setActive(this)">
-        <span class="nav-icon">📡</span> Live Feed
+        <span class="nav-icon">📡</span> Chatter Feed
       </a>
       <a class="nav-item" href="#fear-greed" onclick="setActive(this)">
         <span class="nav-icon">🧠</span> Fear &amp; Greed
@@ -962,8 +963,8 @@ function toggleSiteNav(btn) {
     <!-- Reddit Buzz Picks -->
     <section id="reddit-section">
       <div class="section-header">
-        <div class="section-title" id="buzz-section-title">Reddit Buzz</div>
-        <div class="section-subtitle" id="buzz-section-subtitle">High social activity + green today</div>
+        <div class="section-title" id="buzz-section-title">Market Chatter</div>
+        <div class="section-subtitle" id="buzz-section-subtitle">Most-mentioned stocks — watch for moves</div>
         <div class="section-badge" id="reddit-badge">—</div>
       </div>
       <div class="cards-grid" id="reddit-cards">
@@ -988,14 +989,14 @@ function toggleSiteNav(btn) {
       <!-- Reddit Live Feed -->
       <section id="reddit-feed" class="reddit-panel">
         <div class="reddit-header">
-          <div class="reddit-icon" id="buzz-feed-icon">r/</div>
+          <div class="reddit-icon" id="buzz-feed-icon">💬</div>
           <div>
-            <div id="buzz-feed-title" style="font-size:0.9rem;font-weight:500;">Live Reddit Feed</div>
-            <div id="buzz-feed-subtitle" style="font-size:0.72rem;color:var(--ink-3);">High-upvote posts about this scan's Reddit picks</div>
+            <div id="buzz-feed-title" style="font-size:0.9rem;font-weight:500;">Chatter Feed</div>
+            <div id="buzz-feed-subtitle" style="font-size:0.72rem;color:var(--ink-3);">Latest articles &amp; posts about this scan's top picks</div>
           </div>
         </div>
         <div class="feed-scroll" id="reddit-feed-list">
-          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Scanning subreddits…</div></div>
+          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading chatter data…</div></div>
         </div>
       </section>
 
@@ -1089,7 +1090,7 @@ function setActive(el) {
 function signalClass(s) {
   if (s.includes('gainer'))  return 'signal-gainer';
   if (s.includes('volume') || s.includes('High vol')) return 'signal-active';
-  if (s.includes('Reddit') || s.includes('reddit')) return 'signal-reddit';
+  if (s.includes('Reddit') || s.includes('reddit') || s.includes('News') || s.includes('buzz') || s.includes('mention')) return 'signal-reddit';
   if (s.includes('move'))    return 'signal-move';
   return 'signal-default';
 }
@@ -1115,8 +1116,8 @@ function renderStockCard(stock, type) {
     ? `Intraday setup. Tight stops 2–3%. Target: close above open with volume.`
     : `Multi-day hold candidate. Wider stops 5–7%. Watch for continuation.`;
 
-  const _src = window._buzzSource || 'reddit';
-  const _buzzLabel = _src === 'news' ? 'News' : 'Reddit';
+  const _src = window._buzzSource || 'news';
+  const _buzzLabel = (_src === 'news' || _src === 'mixed') ? 'News' : 'Reddit';
   const redditNote = stock.reddit_mentions > 0
     ? `<div style="margin-bottom:6px;font-size:0.72rem;color:var(--reddit);">⬆ ${_buzzLabel} confirmed (${stock.reddit_mentions} mentions)</div>`
     : '';
@@ -1180,12 +1181,14 @@ function renderStockCard(stock, type) {
   </div>`;
 }
 
-// ── Reddit buzz card (nominees) ─────────────────────────────────────────────
+// ── Market Chatter card (nominees) ──────────────────────────────────────────
 function renderRedditCard(stock) {
   const hasPrice = stock.current_price != null;
-  const chgStr = hasPrice
-    ? `<div class="price-change change-up">+${fmt(stock.change_pct)}%</div>`
-    : '';
+  const chgSign  = stock.change_pct >= 0 ? '+' : '';
+  const chgClass = stock.change_pct >= 0 ? 'change-up' : 'change-down';
+  const signals  = (stock.signals || []).map(s =>
+    `<span class="signal-tag ${signalClass(s)}">${s}</span>`
+  ).join('');
 
   return `
   <div class="stock-card" style="border-top:3px solid var(--reddit);">
@@ -1193,20 +1196,20 @@ function renderRedditCard(stock) {
       <div class="card-header">
         <div>
           <div class="card-ticker">${stock.ticker}</div>
-          <div class="card-name">${stock.name || 'High social buzz'}</div>
+          <div class="card-name">${stock.name || 'High buzz activity'}</div>
         </div>
         <div class="card-price">
           ${hasPrice ? `<div class="price-value">$${fmt(stock.current_price)}</div>` : ''}
-          ${chgStr}
+          ${hasPrice ? `<div class="price-change ${chgClass}">${chgSign}${fmt(stock.change_pct)}%</div>` : ''}
         </div>
       </div>
     </div>
     <div class="card-signals">
-      <span class="signal-tag signal-reddit">🔥 ${stock.mentions} Reddit mentions</span>
+      ${signals || `<span class="signal-tag signal-reddit">📊 ${stock.mentions || stock.reddit_mentions || 0} mentions</span>`}
       ${stock.sector ? `<span class="signal-tag signal-default">${stock.sector}</span>` : ''}
     </div>
     <div style="padding:0 18px 14px;font-size:0.75rem;color:var(--ink-3);">
-      High social activity. Verify technicals before trading.
+      High buzz activity. Watch for price action before entering.
     </div>
   </div>`;
 }
@@ -1286,8 +1289,7 @@ function renderSectorChart(sectorFlow) {
 function renderRedditFeed(feed) {
   const el = $('reddit-feed-list');
   if (!feed || !feed.length) {
-    const _src2 = window._buzzSource || 'reddit';
-    el.innerHTML = `<div class="empty-state">No ${_src2 === 'news' ? 'recent news articles' : 'high-upvote posts'} found.</div>`;
+    el.innerHTML = '<div class="empty-state">No chatter data found for this scan.</div>';
     return;
   }
 
@@ -1301,7 +1303,7 @@ function renderRedditFeed(feed) {
     return `
     <div class="feed-item">
       <div class="feed-meta">
-        <span class="feed-sub">${item.subreddit}</span>
+        <span class="feed-sub${item.is_news ? ' is-news' : ''}">${item.subreddit}</span>
         <span style="font-size:0.65rem;color:var(--ink-3);">${item.hours_ago}h ago</span>
         ${!item.is_news ? `<span class="feed-ups">▲ ${item.ups.toLocaleString()}</span>` : ''}
       </div>
@@ -1375,18 +1377,19 @@ function updateResults(data) {
     swingEl.innerHTML = '<div class="empty-state">No qualifying swing trade setups found this scan.</div>';
   }
 
-  // Update buzz section labels based on source
-  const buzzSrc = data.buzz_source || 'reddit';
+  // Update chatter section labels based on source
+  const buzzSrc = data.buzz_source || 'none';
   window._buzzSource = buzzSrc;
-  if (buzzSrc === 'news') {
-    const t = $('buzz-section-title');     if (t) t.textContent = 'News Buzz';
-    const s = $('buzz-section-subtitle');  if (s) s.textContent = 'Stocks with the most news coverage today';
-    const fi = $('buzz-feed-icon');        if (fi) fi.textContent = '📰';
-    const ft = $('buzz-feed-title');       if (ft) ft.textContent = 'Live News Feed';
-    const fs = $('buzz-feed-subtitle');    if (fs) fs.textContent = 'Recent articles about this scan\'s top picks';
-  } else if (buzzSrc === 'none') {
-    const t = $('buzz-section-title');     if (t) t.textContent = 'Buzz';
-    const s = $('buzz-section-subtitle');  if (s) s.textContent = 'No buzz data available for this scan';
+  const sourceNote = buzzSrc === 'mixed'  ? 'Polygon.io News + Reddit'
+                   : buzzSrc === 'reddit' ? 'Reddit'
+                   : buzzSrc === 'news'   ? 'Polygon.io News'
+                   : 'No data available';
+  const fi = $('buzz-feed-icon');     if (fi) fi.textContent = '💬';
+  const ft = $('buzz-feed-title');    if (ft) ft.textContent = 'Chatter Feed';
+  const fs = $('buzz-feed-subtitle'); if (fs) fs.textContent = `Source: ${sourceNote}`;
+  if (buzzSrc === 'none') {
+    const s = $('buzz-section-subtitle');
+    if (s) s.textContent = 'No chatter data available for this scan';
   }
 
   // Reddit buzz nominees
@@ -1395,7 +1398,7 @@ function updateResults(data) {
   if (data.reddit_cards && data.reddit_cards.length) {
     redditEl.innerHTML = data.reddit_cards.map(s => renderRedditCard(s)).join('');
   } else {
-    redditEl.innerHTML = '<div class="empty-state">No Reddit buzz nominees this scan.</div>';
+    redditEl.innerHTML = '<div class="empty-state">No chatter nominees found this scan.</div>';
   }
 
   // Sector flow — only redraw if the data has actually changed
