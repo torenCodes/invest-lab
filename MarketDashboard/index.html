@@ -1090,7 +1090,7 @@ function setActive(el) {
 function signalClass(s) {
   if (s.includes('gainer'))  return 'signal-gainer';
   if (s.includes('volume') || s.includes('High vol')) return 'signal-active';
-  if (s.includes('Reddit') || s.includes('reddit') || s.includes('News') || s.includes('buzz') || s.includes('mention')) return 'signal-reddit';
+  if (s.includes('Reddit') || s.includes('reddit') || s.includes('News') || s.includes('buzz') || s.includes('mention') || s.includes('Trending')) return 'signal-reddit';
   if (s.includes('move'))    return 'signal-move';
   return 'signal-default';
 }
@@ -1380,9 +1380,10 @@ function updateResults(data) {
   // Update chatter section labels based on source
   const buzzSrc = data.buzz_source || 'none';
   window._buzzSource = buzzSrc;
-  const sourceNote = buzzSrc === 'mixed'  ? 'Polygon.io News + Reddit'
-                   : buzzSrc === 'reddit' ? 'Reddit'
-                   : buzzSrc === 'news'   ? 'Polygon.io News'
+  const sourceNote = buzzSrc === 'mixed'    ? 'Polygon.io News + Reddit'
+                   : buzzSrc === 'reddit'   ? 'Reddit'
+                   : buzzSrc === 'news'     ? 'Polygon.io News'
+                   : buzzSrc === 'trending' ? 'Yahoo Finance Trending'
                    : 'No data available';
   const fi = $('buzz-feed-icon');     if (fi) fi.textContent = '💬';
   const ft = $('buzz-feed-title');    if (ft) ft.textContent = 'Chatter Feed';

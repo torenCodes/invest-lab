@@ -286,19 +286,25 @@ def get_polygon_news_buzz(api_key):
     feed = []
 
     yesterday = (datetime.now(timezone.utc) - timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    url = (
-        f"https://api.polygon.io/v2/reference/news"
-        f"?limit=1000&published_utc.gte={yesterday}"
-        f"&sort=published_utc&order=desc&apiKey={api_key}"
-    )
-    try:
-        resp = requests.get(url, timeout=15)
-        if resp.status_code != 200:
-            print(f"[PolygonNews] HTTP {resp.status_code}")
-            return {}, []
 
-        articles = resp.json().get("results", [])
-        print(f"[PolygonNews] {len(articles)} articles in last 24h")
+    def _fetch_articles(extra_params=""):
+        url = (
+            f"https://api.polygon.io/v2/reference/news"
+            f"?limit=50&sort=published_utc&order=desc{extra_params}&apiKey={api_key}"
+        )
+        r = requests.get(url, timeout=15)
+        if r.status_code != 200:
+            print(f"[PolygonNews] HTTP {r.status_code}: {r.text[:300]}")
+            return []
+        return r.json().get("results", [])
+
+    try:
+        # Try with date filter first; fall back to no filter if it returns nothing
+        articles = _fetch_articles(f"&published_utc.gte={yesterday}")
+        print(f"[PolygonNews] {len(articles)} articles (date-filtered)")
+        if not articles:
+            articles = _fetch_articles()
+            print(f"[PolygonNews] {len(articles)} articles (no date filter fallback)")
 
         for article in articles:
             tickers = [t for t in article.get("tickers", []) if 2 <= len(t) <= 5 and t.isalpha()]
@@ -328,7 +334,9 @@ def get_polygon_news_buzz(api_key):
                 })
 
         feed.sort(key=lambda x: x["hours_ago"])
-        lookup = {t: c for t, c in counts.items() if c >= 2}
+        # Threshold of 1 — any article mention counts; ranked by frequency
+        lookup = {t: c for t, c in counts.items() if c >= 1}
+        print(f"[PolygonNews] {len(lookup)} tickers with >= 1 mention")
         return lookup, feed[:40]
 
     except Exception as e:
@@ -666,6 +674,9 @@ def run():
     universe   = sorted(set().union(*yahoo_cats.values()))
     print(f"[scan.py] Universe: {len(universe)} tickers")
 
+    print("[scan.py] Fetching Yahoo trending tickers...")
+    yahoo_trending = get_yahoo_trending()
+
     print("[scan.py] Fetching Reddit buzz...")
     reddit_lookup, reddit_feed = get_reddit_buzz()
     print(f"[scan.py] Reddit: {len(reddit_lookup)} tickers with buzz")
@@ -685,11 +696,18 @@ def run():
             buzz_feed = reddit_feed
     else:
         buzz_source = "news" if news_lookup else "none"
-    buzz_label = "Reddit" if buzz_source == "reddit" else "News"
-    print(f"[scan.py] Buzz source: {buzz_source} ({len(buzz_lookup)} tickers)")
 
-    print("[scan.py] Fetching Yahoo trending tickers...")
-    yahoo_trending = get_yahoo_trending()
+    # Yahoo Trending as guaranteed fallback when both Polygon and Reddit fail
+    if not buzz_lookup and yahoo_trending:
+        buzz_lookup = {ticker: (21 - rank) for ticker, rank in yahoo_trending.items()}
+        buzz_source = "trending"
+        buzz_feed   = []
+        print(f"[scan.py] Buzz fallback: Yahoo Trending ({len(buzz_lookup)} tickers)")
+
+    buzz_label = ("Reddit"   if buzz_source == "reddit"
+                  else "Trending" if buzz_source == "trending"
+                  else "News")
+    print(f"[scan.py] Buzz source: {buzz_source} ({len(buzz_lookup)} tickers)")
 
     results = []
     for i, ticker in enumerate(universe, 1):
