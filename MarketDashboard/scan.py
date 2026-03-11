@@ -737,6 +737,42 @@ def run():
             filtered_feed.append(enriched)
     display_feed = filtered_feed if filtered_feed else buzz_feed[:20]
 
+    # Last-resort feed: fetch Finnhub company news for chatter picks when no feed exists
+    if not display_feed and reddit_cards:
+        print("[scan.py] No chatter feed — fetching Finnhub news for chatter picks...")
+        for card in reddit_cards[:3]:
+            ticker = card["ticker"]
+            try:
+                today    = datetime.now().strftime("%Y-%m-%d")
+                week_ago = (datetime.now() - timedelta(days=7)).strftime("%Y-%m-%d")
+                url  = (f"https://finnhub.io/api/v1/company-news"
+                        f"?symbol={ticker}&from={week_ago}&to={today}&token={FINNHUB_API_KEY}")
+                resp = requests.get(url, timeout=8)
+                if resp.status_code == 200:
+                    for item in resp.json()[:5]:
+                        headline = item.get("headline", "")[:120]
+                        if not headline:
+                            continue
+                        pub_ts    = item.get("datetime", 0)
+                        hours_ago = round((time.time() - pub_ts) / 3600, 1) if pub_ts else 0.0
+                        display_feed.append({
+                            "id":                str(item.get("id", "")),
+                            "title":             headline,
+                            "subreddit":         item.get("source", "News"),
+                            "ups":               0,
+                            "tickers":           [ticker],
+                            "confirmed_tickers": [ticker],
+                            "hours_ago":         hours_ago,
+                            "url":               item.get("url", ""),
+                            "is_news":           True,
+                        })
+                time.sleep(1.1)
+            except Exception as e:
+                print(f"[FinnhubNews] {ticker}: {e}")
+        display_feed.sort(key=lambda x: x["hours_ago"])
+        display_feed = display_feed[:20]
+        print(f"[scan.py] Chatter feed: {len(display_feed)} Finnhub headlines for chatter picks")
+
     output = {
         "scan_time":      start.isoformat(),
         "next_scan_info": NEXT_SCAN_INFO,
