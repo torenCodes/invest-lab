@@ -15,14 +15,14 @@ StockTwits trending data, and market context, and presents everything in a singl
 
 ---
 
-## Architecture (Updated Mar 11 2026)
+## Architecture (Updated Mar 12 2026)
 
 The scanner was split from the Flask app into a standalone script:
 
 ```
 scan.py  (standalone scanner)
  ├── Runs once, writes data/results.json, then exits
- ├── Invoked by GitHub Actions on a schedule (weekdays 8am & 1pm ET)
+ ├── Invoked by GitHub Actions 3x per trading day (9:35am / 11:30am / 1:30pm ET)
  └── Can also be run manually: python scan.py
 
 app.py  (minimal static file server)
@@ -138,6 +138,8 @@ Each stock gets a score built from signals. Thresholds determine if it qualifies
 - **GitHub Actions push race fixed (Mar 9 2026):** `market-scan.yml` and `insider-buying-scan.yml` both trigger at the same cron slot (`0 13 UTC`). Added `git pull --rebase` before `git push` in all three workflow files to handle the race condition.
 - **Polygon.io news buzz added (Mar 10 2026):** `get_polygon_news_buzz()` fetches last 24h of news from Polygon.io and counts ticker mentions (Polygon pre-extracts tickers — no regex noise). Used as fallback when Reddit returns <3 tickers. `buzz_source` field in results.json tells the frontend which source was used; section titles, feed header, and labels update dynamically. `analyze_stock()` and `categorize()` now take a `buzz_label` param so signal strings say "News buzz" vs "Reddit buzz" correctly.
 - **Market Chatter rebrand + Polygon primary (Mar 11 2026):** "Reddit Buzz" section renamed "Market Chatter" site-wide. Polygon.io news is now always the primary chatter source; Reddit counts are merged in as a bonus when available (`buzz_source` = "mixed"). Green-only filter removed from chatter nominees in `categorize()` — stocks are shown regardless of today's movement since buzz is a leading indicator. `categorize()` now accepts `yahoo_trending` so external ticker cards get trending rank in their signals. Chatter cards now render all signals (not just a hardcoded mention count), and show proper +/- price change. `--reddit` CSS variable recolored from orange (#ff4500) to indigo (#5271c4) to fit the lab aesthetic. News publisher names in the feed no longer get the erroneous `r/` prefix (`.feed-sub.is-news::before` override).
+- **Chatter pipeline fixes (Mar 12 2026):** Polygon free tier cap: `limit=1000` → `limit=50`; date-filtered request now falls back to no-filter if it returns 0 articles; ticker threshold lowered from `c>=2` to `c>=1`. Yahoo Trending added as guaranteed last-resort chatter source (`buzz_source="trending"`, synthetic score = 21-rank) when both Polygon and Reddit fail — ensures chatter cards always populate. Finnhub company-news added as last-resort chatter feed when `display_feed` is empty — fetches up to 5 recent headlines per chatter pick ticker.
+- **Scan schedule updated to 3× daily + DST-safe (Mar 12 2026):** `market-scan.yml` now runs at 9:35am, 11:30am, and 1:30pm ET. Each time has two UTC cron entries (one for EST, one for EDT) so the correct wall-clock time fires year-round. `insider-buying-scan.yml` and `tried-true-scan.yml` also updated with DST-safe dual entries at their existing frequencies.
 
 ---
 
