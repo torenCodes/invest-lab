@@ -3,18 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Fiber Backbone of AI — The Invest Lab</title>
-  <meta name="description" content="Why optical infrastructure is the sleeper trade of the AI decade — COHR, LITE, AXTI, FN, and the full photonics supply chain.">
+  <title>Research Blog — The Invest Lab</title>
+  <meta name="description" content="Research notes, sector deep-dives, and market observations from The Invest Lab.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
   <style>
-    /* ── Blog post layout ───────────────────────────────────────────────── */
+    /* ── Blog hero (listing + post) ─────────────────────────────────────── */
     .blog-hero {
       background: var(--bg-dark);
       position: relative;
       padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2.5rem, 5vw, 4rem);
       overflow: hidden;
+    }
+
+    .blog-hero-sm {
+      padding: clamp(2rem, 4vw, 3rem) 0;
     }
 
     .blog-hero::before {
@@ -51,9 +56,9 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.4);
       text-decoration: none;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
       transition: color 0.15s;
     }
 
@@ -65,7 +70,7 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 1.1rem;
+      margin-bottom: 1rem;
     }
 
     .blog-hero-title {
@@ -76,20 +81,17 @@
       letter-spacing: -0.025em;
       color: #ffffff;
       margin-bottom: 1.75rem;
-      max-width: 22ch;
+      max-width: 24ch;
     }
 
     .blog-hero-meta {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
 
     .blog-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
       font-size: 0.78rem;
       color: rgba(255,255,255,0.45);
     }
@@ -99,6 +101,8 @@
       height: 3px;
       border-radius: 50%;
       background: rgba(255,255,255,0.2);
+      flex-shrink: 0;
+      display: inline-block;
     }
 
     .blog-meta-tag {
@@ -113,28 +117,13 @@
       border: 1px solid rgba(56,189,166,0.35);
     }
 
-    /* ── Article body ───────────────────────────────────────────────────── */
+    /* ── Article body ────────────────────────────────────────────────────── */
     .blog-article {
       padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 7rem);
     }
 
-    .blog-body {
-      max-width: 100%;
-    }
-
-    .blog-body p {
-      font-size: 1.05rem;
-      line-height: 1.85;
-      color: var(--ink-2);
-      margin-bottom: 1.4rem;
-    }
-
-    .blog-body p:last-child { margin-bottom: 0; }
-
-    .blog-body strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
+    /* h1 is already shown in the hero — hide the one rendered from markdown */
+    .blog-body h1 { display: none; }
 
     .blog-body h2 {
       font-family: 'Barlow Condensed', sans-serif;
@@ -143,7 +132,7 @@
       letter-spacing: -0.02em;
       color: var(--ink);
       line-height: 1.15;
-      margin: 3rem 0 1.1rem;
+      margin: 3rem 0 1rem;
     }
 
     .blog-body h2::after {
@@ -152,14 +141,51 @@
       width: 2.25rem;
       height: 2px;
       background: var(--accent);
-      margin-top: 0.6rem;
+      margin-top: 0.55rem;
       border-radius: 1px;
+    }
+
+    .blog-body h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 2rem 0 0.6rem;
+    }
+
+    .blog-body p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-2);
+      margin-bottom: 1.35rem;
+    }
+
+    .blog-body p:last-child { margin-bottom: 0; }
+    .blog-body strong { color: var(--ink); font-weight: 600; }
+
+    .blog-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.25rem 0;
+    }
+
+    /* Disclaimer — the final italic paragraph after last hr */
+    .blog-body hr:last-of-type + p > em:only-child {
+      font-size: 0.85rem;
+      color: var(--ink-3);
+      display: block;
+      background: rgba(56,189,166,0.04);
+      border: 1px solid var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 0.85rem 1.1rem;
+      font-style: normal;
     }
 
     .blog-body ul {
       list-style: none;
       padding: 0;
-      margin: 0.5rem 0 1.4rem;
+      margin: 0.5rem 0 1.35rem;
       display: flex;
       flex-direction: column;
       gap: 0.7rem;
@@ -182,105 +208,25 @@
       top: 0.42rem;
     }
 
-    .blog-body hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 2.5rem 0;
-    }
-
-    /* Company callout boxes */
-    .company-block {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
+    .blog-body blockquote {
       border-left: 3px solid var(--accent);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      margin: 1rem 0 1.4rem;
-    }
-
-    .company-block-name {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.5rem;
-    }
-
-    .company-block-ticker {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent-dark);
-      margin-left: 0.5rem;
-      opacity: 0.8;
-    }
-
-    .company-block p {
-      font-size: 0.95rem !important;
-      line-height: 1.7 !important;
-      color: var(--ink-2) !important;
-      margin-bottom: 0 !important;
-    }
-
-    /* Key thesis callout */
-    .blog-callout {
       background: rgba(56,189,166,0.06);
-      border: 1px solid var(--accent-light);
-      border-left: 3px solid var(--accent);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.1rem 1.4rem;
       margin: 1.5rem 0;
     }
 
-    .blog-callout p {
-      font-size: 1.05rem !important;
-      line-height: 1.75 !important;
-      color: var(--ink) !important;
-      margin-bottom: 0 !important;
-      font-weight: 500;
-    }
+    .blog-body blockquote p { color: var(--ink); font-weight: 500; margin-bottom: 0; }
 
-    /* Disclaimer */
-    .blog-disclaimer {
-      font-size: 0.82rem !important;
-      color: var(--ink-3) !important;
-      background: rgba(56,189,166,0.04);
-      border: 1px solid var(--accent-light);
-      border-left: 3px solid var(--accent);
-      border-radius: var(--radius);
-      padding: 0.85rem 1.1rem;
-      margin-top: 3rem !important;
-    }
-
-    /* Credit cards */
-    .credit-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      margin: 1rem 0;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .credit-name {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.5rem;
-    }
-
-    .credit-card p {
-      font-size: 0.92rem !important;
-      line-height: 1.7 !important;
-      margin-bottom: 0 !important;
-    }
-
-    @media (max-width: 720px) {
-      .blog-body { width: 100%; }
+    /* ── Loading state ───────────────────────────────────────────────────── */
+    .blog-loading {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-3);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
     }
   </style>
 </head>
@@ -303,222 +249,13 @@
           </ul>
         </li>
         <li><a href="index.html#about" class="nav-link">About</a></li>
-        <li><a href="index.html#blog" class="nav-link" style="color:var(--accent)">Blog</a></li>
+        <li><a href="blog.html" class="nav-link" style="color:var(--accent)">Blog</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- ── Blog Hero ────────────────────────────────────────────────────────── -->
-  <section class="blog-hero">
-    <div class="container">
-      <a href="index.html#blog" class="blog-back">← Back to Blog</a>
-      <p class="blog-hero-eyebrow">Research Blog</p>
-      <h1 class="blog-hero-title">The Fiber Backbone of AI: Why Optical Infrastructure Is the Sleeper Trade of the Decade</h1>
-      <div class="blog-hero-meta">
-        <span class="blog-meta-item">March 2026</span>
-        <span class="blog-meta-dot"></span>
-        <span class="blog-meta-item">~6 min read</span>
-        <span class="blog-meta-dot"></span>
-        <span class="blog-meta-tag">Infrastructure</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Article Body ──────────────────────────────────────────────────────── -->
-  <section class="blog-article">
-    <div class="container">
-      <div class="blog-body">
-
-        <p>
-          Everyone knows the AI story. Nvidia prints money. Cloud hyperscalers spend hundreds of billions.
-          Data centers multiply like rabbits. But beneath all that compute lies a quieter revolution —
-          one that a sharp group of investors and analysts began flagging years before it became consensus:
-          <strong>the optical buildout</strong>.
-        </p>
-        <p>
-          While the world was fixated on GPUs, a handful of voices on YouTube and X were pointing at
-          something less glamorous but equally critical: the cables, transceivers, and photonic components
-          that actually move data between all those chips. They were early. They were right.
-        </p>
-
-        <h2>Why Optics? Why Now?</h2>
-        <p>
-          Modern AI workloads — especially large language model training and inference — are fundamentally
-          different from traditional data center tasks. Training a frontier model requires thousands of GPUs
-          working in tight synchrony, passing enormous tensors back and forth constantly. The bottleneck
-          isn't always compute. Often, <strong>it's bandwidth</strong>.
-        </p>
-        <p>
-          Optical interconnects solve this. Unlike copper, fiber can carry data at the speed of light with
-          far lower latency and power consumption over distance. As AI clusters scaled from hundreds to tens
-          of thousands of GPUs, the demand for high-speed optical transceivers, coherent modules, and
-          photonic integration exploded — and it's still accelerating.
-        </p>
-        <p>
-          The numbers back this up. Hyperscalers like Microsoft, Google, Amazon, and Meta have each
-          announced multi-hundred-billion-dollar infrastructure spending plans through 2027. A significant
-          portion of that spend flows into optical networking — inside the data center (intra-DC), between
-          data centers (inter-DC), and increasingly into metro and long-haul networks strained by AI traffic.
-        </p>
-
-        <h2>The Companies Positioned to Win</h2>
-        <p>
-          Several publicly traded companies are at the center of this buildout, and a few have been
-          discussed by forward-looking investors for years:
-        </p>
-
-        <div class="company-block">
-          <div class="company-block-name">II-VI / Coherent <span class="company-block-ticker">COHR</span></div>
-          <p>
-            The heavyweight. After the merger of II-VI and Coherent Corp, this company became one of the
-            most vertically integrated optical component manufacturers in the world. They make everything
-            from compound semiconductors to 400G and 800G transceivers to coherent modules. As data center
-            speeds migrate toward 1.6T, COHR is deeply embedded in that roadmap. Integration has been bumpy,
-            but the underlying demand thesis is hard to argue with.
-          </p>
-        </div>
-
-        <div class="company-block">
-          <div class="company-block-name">Lumentum <span class="company-block-ticker">LITE</span></div>
-          <p>
-            A precision optical and photonic products company with strong positioning in 3D sensing, telecom,
-            and increasingly in data center optics. Lumentum's indium phosphide (InP) laser expertise is core
-            to the high-speed transceivers AI clusters demand. Historically volatile with telecom cycles, but
-            the AI data center tailwind is a new and durable driver.
-          </p>
-        </div>
-
-        <div class="company-block">
-          <div class="company-block-name">AXT Inc. <span class="company-block-ticker">AXTI</span></div>
-          <p>
-            The picks-and-shovels play beneath the picks-and-shovels. AXT makes the compound semiconductor
-            substrates — indium phosphide, gallium arsenide, germanium — that are the raw material for the
-            lasers and photodetectors inside optical components. When COHR and LITE ramp production, AXTI
-            benefits upstream. Small-cap, higher risk, but tightly correlated to optical growth without the
-            integration complexity of larger players.
-          </p>
-        </div>
-
-        <p><strong>Additional names worth watching:</strong></p>
-        <ul>
-          <li><strong>Fabrinet (FN)</strong> — Contract manufacturer for optical components. As optical volume scales, Fabrinet's highly automated Thailand facilities scale with it. Clean balance sheet, consistent execution.</li>
-          <li><strong>Ciena (CIEN)</strong> — The optical networking systems layer. Ciena's WaveLogic coherent technology powers long-haul and metro networks. Less direct AI play than component names, but a clear beneficiary of the same tailwind.</li>
-          <li><strong>Applied Optoelectronics (AAOI)</strong> — A smaller, more speculative name in data center transceivers. Higher volatility, but has seen meaningful demand upticks from hyperscaler relationships.</li>
-          <li><strong>Marvell Technology (MRVL)</strong> — Straddling semiconductor and optical silicon photonics, developing custom silicon photonics solutions for hyperscalers that could reshape how optical components are integrated at scale.</li>
-        </ul>
-
-        <h2>The Investment Case</h2>
-
-        <div class="blog-callout">
-          <p>
-            AI compute investment doesn't exist in a vacuum. Every GPU cluster needs to be networked.
-            Every data center needs to connect to others. Every byte of AI-generated content needs to
-            travel over fiber. <strong>Optical is the connective tissue of the AI era.</strong>
-          </p>
-        </div>
-
-        <p>What makes this particularly compelling as an investment angle:</p>
-        <ul>
-          <li>
-            <strong>Supply constraints are real.</strong> High-speed optical transceivers — especially 400G,
-            800G, and the emerging 1.6T — require specialized manufacturing, compound semiconductors, and
-            long qualification cycles with hyperscalers. Companies already qualified and ramping have durable advantages.
-          </li>
-          <li>
-            <strong>The upgrade cycle is long.</strong> Data center optical infrastructure gets refreshed as
-            speeds increase. The move from 100G to 400G was a multi-year cycle. The move to 800G and beyond
-            is underway now. Each cycle requires new transceivers, new switches, new fiber plant — recurring
-            demand, not a one-time event.
-          </li>
-          <li>
-            <strong>Valuation has lagged the narrative.</strong> While Nvidia trades at eye-watering multiples,
-            many optical component companies still trade at relatively modest valuations despite secular tailwinds.
-            As the AI infrastructure theme broadens beyond GPUs into the full stack, optical names may see
-            multiple expansion.
-          </li>
-        </ul>
-
-        <h2>Risks to Acknowledge</h2>
-        <p>
-          No investment case is complete without honesty about the risks. Optical companies are historically
-          cyclical — telecom spending booms and busts have burned investors before. Inventory digestion cycles
-          can be painful. Integration execution risk (particularly at COHR) remains real. And if AI capex
-          ever hits a wall, the whole infrastructure trade faces a re-rating.
-        </p>
-        <p>
-          But the structural case — that AI requires massive, sustained optical buildout — is well-supported
-          by spending commitments already locked in by hyperscalers through the rest of this decade.
-        </p>
-
-        <h2>Credit Where It's Due</h2>
-        <p>
-          A few people have been doing the work publicly and deserve direct acknowledgment.
-        </p>
-
-        <div class="credit-card">
-          <div class="credit-name">Yiannis Zourmpanos (@yianisz on X)</div>
-          <p>
-            Posted what may be the clearest synthesis of the photonics moment to date. In a March 11, 2026
-            thread, he laid out the full supply chain — from transceiver names like LITE, COHR, AAOI, and FN,
-            to DSP/silicon players like MRVL and CRDO, to foundry and equipment names, all the way up to
-            substrate leaders including AXTI, SIQE, and SOI. His framing — <em>"AI started as a GPU trade.
-            It's quickly becoming an optics and networking trade too"</em> — captures the thesis as well as
-            anything written. He also noted that AAOI landing a $200M+ 1.6T order and LITE and COHR entering
-            the S&P 500 in the same week signaled photonics moving from niche to core AI infrastructure.
-          </p>
-        </div>
-
-        <div class="credit-card">
-          <div class="credit-name">Davy (@Blinklebloop on X)</div>
-          <p>
-            Highlighted a lesser-known angle: SOITEC, a French company with a near-monopoly on Smart-Cut
-            technology used to make SOI (silicon-on-insulator) wafers — the substrate that goes into photonic
-            integrated circuits (PICs), which in turn go into the transceivers powering AI clusters. That kind
-            of upstream supply chain digging — finding the company two levels beneath the headline names —
-            is exactly the research that gets rewarded early.
-          </p>
-        </div>
-
-        <div class="credit-card">
-          <div class="credit-name">Martin Shkreli</div>
-          <p>
-            One of the more vocal and unconventional voices in the optical space, publishing a detailed
-            Substack essay on photonic computing and taking an advisory role at Q/C Technologies (QCLS).
-            His thesis focuses on the longer-horizon possibility of photonics <em>replacing</em> GPUs for
-            matrix multiplication entirely — more speculative than the transceiver/interconnect buildout
-            discussed here, but part of the same broader conviction that light is the future of computing
-            infrastructure. His willingness to make the argument publicly helped put the topic on more
-            investors' radar.
-          </p>
-        </div>
-
-        <p>
-          That kind of bottom-up, public research work — supply chain digging, earnings call analysis,
-          connecting upstream substrates to downstream hyperscaler capex — is how these ideas travel before
-          they become consensus. If you found this thesis through any of these voices, you were early.
-        </p>
-
-        <h2>The Bottom Line</h2>
-        <p>
-          The AI infrastructure trade isn't just about who makes the chips. It's about who makes the
-          light that connects them. Optical component and systems companies — COHR, LITE, AXTI, FN, CIEN,
-          and others — are positioned at the center of a multi-year, multi-hundred-billion-dollar buildout
-          cycle. The story is maturing from "early adopter insight" to "institutional consensus," but there's
-          likely still runway ahead as speeds increase, clusters grow, and the world's data centers continue
-          their transformation into AI factories.
-        </p>
-        <p>
-          The fiber is being laid. The light is already moving.
-        </p>
-
-        <p class="blog-disclaimer">
-          This post is for informational and educational purposes only and does not constitute financial
-          advice. Always do your own research before making investment decisions.
-        </p>
-
-      </div>
-    </div>
-  </section>
+  <!-- ── Dynamic content injected here by JS ─────────────────────────────── -->
+  <div id="blog-root"><div class="blog-loading">Loading…</div></div>
 
   <!-- ── Footer ───────────────────────────────────────────────────────────── -->
   <footer class="site-footer">
@@ -534,6 +271,133 @@
       </div>
     </div>
   </footer>
+
+  <script>
+  (function () {
+    var root = document.getElementById('blog-root');
+    var slug = new URLSearchParams(window.location.search).get('post');
+
+    slug ? loadPost(slug) : loadListing();
+
+    // ── Listing view ──────────────────────────────────────────────────────
+
+    function loadListing() {
+      fetch('Blog/posts.json')
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(renderListing)
+        .catch(function () { root.innerHTML = errHtml('Unable to load posts — please try again later.'); });
+    }
+
+    function renderListing(posts) {
+      var cards = posts.map(function (p) {
+        var tags = (p.tags || []).map(function (t) {
+          return '<span class="blog-card-tag">' + esc(t) + '</span>';
+        }).join('');
+        return (
+          '<article class="blog-card">' +
+            '<div class="blog-card-meta">' +
+              '<span class="blog-card-date">' + esc(p.date) + '</span>' + tags +
+            '</div>' +
+            '<h2 class="blog-card-title">' + esc(p.title) + '</h2>' +
+            '<p class="blog-card-excerpt">' + esc(p.excerpt) + '</p>' +
+            '<a href="blog.html?post=' + esc(p.slug) + '" class="blog-card-read-more">Read more →</a>' +
+          '</article>'
+        );
+      }).join('');
+
+      root.innerHTML =
+        '<section class="blog-hero blog-hero-sm">' +
+          '<div class="container">' +
+            '<a href="index.html#blog" class="blog-back">← Back to home</a>' +
+            '<p class="blog-hero-eyebrow">Insights</p>' +
+            '<h1 class="blog-hero-title" style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:0">Research Blog</h1>' +
+          '</div>' +
+        '</section>' +
+        '<section class="section">' +
+          '<div class="container">' +
+            '<div class="blog-grid">' + cards + '</div>' +
+          '</div>' +
+        '</section>';
+    }
+
+    // ── Post view ─────────────────────────────────────────────────────────
+
+    function loadPost(slug) {
+      Promise.all([
+        fetch('Blog/posts.json').then(function (r) { return r.ok ? r.json() : []; }),
+        fetch('Blog/' + slug + '.md').then(function (r) {
+          if (!r.ok) throw new Error('not found');
+          return r.text();
+        })
+      ])
+      .then(function (res) {
+        var meta = (res[0] || []).find(function (p) { return p.slug === slug; }) || {};
+        renderPost(meta, res[1]);
+      })
+      .catch(function () {
+        root.innerHTML =
+          '<section class="section" style="min-height:60vh">' +
+            '<div class="container">' +
+              '<a href="blog.html" style="color:var(--accent-dark);font-size:0.8rem;font-weight:600;text-decoration:none;">← Back to Blog</a>' +
+              '<p style="margin-top:2rem;color:var(--ink-3)">Post not found.</p>' +
+            '</div>' +
+          '</section>';
+      });
+    }
+
+    function renderPost(meta, mdText) {
+      if (meta.title) document.title = meta.title + ' — The Invest Lab';
+
+      // Strip the h1 and *Published date* / opening --- from markdown body
+      var body = mdText
+        .replace(/^#[^\n]*\n+/, '')
+        .replace(/^\*[^\n]*\*\s*\n+---\n+/, '')
+        .trim();
+
+      var htmlBody = marked.parse(body);
+
+      var metaParts = [];
+      if (meta.date)     metaParts.push('<span class="blog-meta-item">' + esc(meta.date) + '</span>');
+      if (meta.readTime) metaParts.push('<span class="blog-meta-item">' + esc(meta.readTime) + '</span>');
+      var metaHtml = metaParts.join('<span class="blog-meta-dot"></span>');
+
+      var tagsHtml = (meta.tags || []).map(function (t) {
+        return '<span class="blog-meta-tag">' + esc(t) + '</span>';
+      }).join('');
+      if (tagsHtml) metaHtml += (metaHtml ? '<span class="blog-meta-dot"></span>' : '') + tagsHtml;
+
+      root.innerHTML =
+        '<section class="blog-hero">' +
+          '<div class="container">' +
+            '<a href="blog.html" class="blog-back">← Back to Blog</a>' +
+            '<p class="blog-hero-eyebrow">Research Blog</p>' +
+            '<h1 class="blog-hero-title">' + esc(meta.title || '') + '</h1>' +
+            '<div class="blog-hero-meta">' + metaHtml + '</div>' +
+          '</div>' +
+        '</section>' +
+        '<section class="blog-article">' +
+          '<div class="container">' +
+            '<div class="blog-body">' + htmlBody + '</div>' +
+          '</div>' +
+        '</section>';
+    }
+
+    // ── Helpers ───────────────────────────────────────────────────────────
+
+    function esc(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function errHtml(msg) {
+      return '<div class="blog-loading">' + esc(msg) + '</div>';
+    }
+
+  }());
+  </script>
 
 </body>
 </html>

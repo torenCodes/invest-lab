@@ -567,9 +567,15 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
-.blog-card:hover {
+.blog-card:not(.blog-card-placeholder):hover {
   box-shadow: var(--shadow-warm);
   transform: translateY(-2px);
+}
+
+.blog-card-placeholder {
+  opacity: 0.5;
+  cursor: default;
+  background: var(--bg-alt);
 }
 
 .blog-card-meta {
