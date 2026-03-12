@@ -2,8 +2,15 @@ name: MarketDashboard Scan
 
 on:
   schedule:
-    - cron: '0 13 * * 1-5'   # ~8am ET (EST) weekdays
-    - cron: '0 17 * * 1-5'   # ~12pm ET (EST) weekdays
+    # 9:35am ET — 5 min after opening bell (EST + EDT)
+    - cron: '35 14 * * 1-5'
+    - cron: '35 13 * * 1-5'
+    # 11:30am ET — 2 hours after open (EST + EDT)
+    - cron: '30 16 * * 1-5'
+    - cron: '30 15 * * 1-5'
+    # 1:30pm ET — 4 hours after open (EST + EDT)
+    - cron: '30 18 * * 1-5'
+    - cron: '30 17 * * 1-5'
   workflow_dispatch:           # Manual trigger button in GitHub UI
 
 permissions:
