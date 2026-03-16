@@ -237,28 +237,6 @@
     margin-left: auto;
   }
 
-  /* ── Summary banner ──────────────────────────────────────────────────────── */
-  .summary-banner {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px 28px;
-    display: flex;
-    gap: 36px;
-    flex-wrap: wrap;
-    box-shadow: var(--shadow-sm);
-  }
-  .summary-stat { display: flex; flex-direction: column; gap: 2px; }
-  .summary-stat-val {
-    font-family: 'DM Mono', monospace;
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1;
-  }
-  .summary-stat-label { font-size: 0.75rem; color: var(--ink-3); }
-  .summary-divider { width: 1px; background: var(--border); align-self: stretch; }
-
   /* ── Nominee cards grid ──────────────────────────────────────────────────── */
   .nominees-grid {
     display: grid;
@@ -644,47 +622,8 @@ function renderAll(data) {
   document.getElementById('loading').remove();
 
   main.innerHTML =
-    renderSummary(nominees, meta, data.next_scan_info) +
     renderNominees(nominees) +
     renderScanInfo(meta, scanAt, data.next_scan_info);
-}
-
-// ── Summary Banner ────────────────────────────────────────────────────────────
-function renderSummary(nominees, meta, nextInfo) {
-  const total     = meta.total_tickers_found ?? '—';
-  const qualified = meta.candidates_qualified ?? '—';
-  const etfs      = meta.etfs_scanned ?? '—';
-  const avgScore  = nominees.length
-    ? Math.round(nominees.reduce((s,n) => s + n.composite_score, 0) / nominees.length)
-    : '—';
-
-  return `
-  <div class="summary-banner">
-    <div class="summary-stat">
-      <div class="summary-stat-val">${nominees.length}</div>
-      <div class="summary-stat-label">Top Nominees</div>
-    </div>
-    <div class="summary-divider"></div>
-    <div class="summary-stat">
-      <div class="summary-stat-val">${total}</div>
-      <div class="summary-stat-label">Tickers Scanned</div>
-    </div>
-    <div class="summary-divider"></div>
-    <div class="summary-stat">
-      <div class="summary-stat-val">${qualified}</div>
-      <div class="summary-stat-label">Passed Filters</div>
-    </div>
-    <div class="summary-divider"></div>
-    <div class="summary-stat">
-      <div class="summary-stat-val">${etfs}</div>
-      <div class="summary-stat-label">ETFs Sourced</div>
-    </div>
-    <div class="summary-divider"></div>
-    <div class="summary-stat">
-      <div class="summary-stat-val">${avgScore}</div>
-      <div class="summary-stat-label">Avg Composite Score</div>
-    </div>
-  </div>`;
 }
 
 // ── Nominees Section ──────────────────────────────────────────────────────────
@@ -827,7 +766,7 @@ function renderScanInfo(meta, scanAt, nextInfo) {
     <div class="section-header">
       <div class="section-title">Scan Details</div>
     </div>
-    <div class="summary-banner" style="flex-direction:column;gap:10px;">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 28px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-sm);">
       <div style="font-size:.9rem;color:var(--ink-2);">
         <strong>Last scan:</strong> ${esc(fmtDate(scanAt))}
       </div>
