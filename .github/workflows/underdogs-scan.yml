@@ -1,0 +1,41 @@
+name: Underdogs Scan
+
+on:
+  schedule:
+    # Mondays ~9am ET (EST = UTC-5, EDT = UTC-4 — two entries for DST safety)
+    - cron: '0 14 * * 1'   # 9am EST (Nov–Mar)
+    - cron: '0 13 * * 1'   # 9am EDT (Mar–Nov)
+  workflow_dispatch:         # Manual trigger button in GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r Underdogs/requirements-scan.txt
+
+      - name: Run scan
+        env:
+          FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
+        run: python Underdogs/scan.py
+
+      - name: Commit results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          git add Underdogs/data/results.json
+          git diff --staged --quiet || git commit -m "chore: underdogs scan $(date -u +%Y-%m-%dT%H:%M)Z"
+          git pull --rebase -Xtheirs origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref_name }}

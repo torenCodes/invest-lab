@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Invest Lab - The Underdogs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & Base ───────────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:           #f5f4f0;
+    --surface:      #ffffff;
+    --surface-2:    #fafaf8;
+    --border:       #e8e6e0;
+    --border-light: #f0ede8;
+    --ink:          #1a1a18;
+    --ink-2:        #4a4a46;
+    --ink-3:        #8a8a82;
+    --green:        #1a7a4a;
+    --green-bg:     #edf7f2;
+    --green-light:  #d0edde;
+    --red:          #c0392b;
+    --red-bg:       #fdf0ef;
+    --orange:       #c07a1a;
+    --orange-bg:    #fef5ec;
+    --blue:         #1a5fa8;
+    --blue-bg:      #eef3fb;
+    --accent:       #2d6a4f;
+    --gold:         #b8922a;
+    --gold-bg:      #fdf9ed;
+    --shadow-sm:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md:    0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --radius:       10px;
+    --radius-sm:    6px;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg);
+    color: var(--ink-2);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 0%,  rgba(45,106,79,0.05)  0%, transparent 50%),
+      radial-gradient(circle at 85% 100%, rgba(184,146,42,0.03) 0%, transparent 50%);
+  }
+
+  /* ── Site Header ────────────────────────────────────────────────────────── */
+  .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e0e7e7;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'Barlow',sans-serif;}
+  .site-nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px;}
+  .site-logo{display:flex;align-items:center;gap:.55rem;font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:#1a1a18;text-decoration:none;letter-spacing:.01em;}
+  .site-logo img{height:1.8rem;width:auto;}
+  .nav-burger{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#4a4a46;padding:.2rem .4rem;}
+  .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+  .site-nav-item{position:relative;}
+  .site-nav-link{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .9rem;border-radius:3px;text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#4a4a46;transition:color .15s,background .15s;}
+  .site-nav-link:hover,.site-nav-link.active{color:#38bda6;background:#edf8f6;}
+  .site-nav-chevron{font-size:.6rem;opacity:.6;transition:transform .2s;}
+  .site-nav-item:hover .site-nav-chevron{transform:rotate(180deg);}
+  .site-nav-badge{font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:#edf8f6;color:#2a9b87;padding:.12rem .4rem;border-radius:3px;}
+  .site-dropdown{position:absolute;top:calc(100% + 2px);left:50%;transform:translateX(-50%) translateY(4px);background:#fff;border:1px solid #e0e7e7;border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.1);min-width:180px;list-style:none;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s,transform .15s,visibility .15s;z-index:200;}
+  .site-dropdown li a{display:block;padding:.55rem 1.1rem;font-size:.82rem;color:#4a4a46;text-decoration:none;transition:color .12s,background .12s;}
+  .site-dropdown li a:hover{background:#edf8f6;color:#38bda6;}
+  .site-dropdown li a.active{color:#38bda6;font-weight:600;}
+  .site-nav-item:hover .site-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+  @media(max-width:680px){
+    .nav-burger{display:block;}
+    .site-nav{height:56px;padding:0 16px;}
+    .site-nav-links{display:none;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:2px solid #e0e7e7;box-shadow:0 6px 16px rgba(0,0,0,.09);padding:.4rem 0;list-style:none;}
+    .site-nav-links.open{display:flex;}
+    .site-nav-item{width:100%;}
+    .site-nav-link{padding:.7rem 1.2rem;border-radius:0;justify-content:flex-start;font-size:.75rem;}
+    .site-dropdown{display:none;}
+  }
+
+  /* ── Layout ─────────────────────────────────────────────────────────────── */
+  .layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: calc(100vh - 70px);
+  }
+
+  /* ── Sidebar ─────────────────────────────────────────────────────────────── */
+  .sidebar {
+    background: #1a1a18;
+    color: rgba(255,255,255,0.75);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+
+  .sidebar-header {
+    padding: 28px 24px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .logo span { color: #b7dfc8; }
+  .logo-sub {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .sidebar-scan-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    color: rgba(255,255,255,0.38);
+  }
+  .pulse {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse-anim 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulse-anim {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .sidebar-section { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .sidebar-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    padding: 16px 24px 10px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 24px;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.65);
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    text-decoration: none;
+  }
+  .nav-item:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); }
+  .nav-item.active { color: #38bda6; border-left-color: #38bda6; background: rgba(56,189,166,0.1); font-weight: 500; }
+  .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+
+  .sidebar-stat {
+    padding: 6px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+  }
+  .sidebar-stat-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .sidebar-note {
+    padding: 0 24px 16px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+  }
+
+  .progress-label {
+    padding: 4px 24px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+  }
+  .progress-label strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding: 18px 24px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* ── Main ────────────────────────────────────────────────────────────────── */
+  .main {
+    padding: 36px 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* ── Section headers ─────────────────────────────────────────────────────── */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .section-subtitle {
+    font-size: 0.88rem;
+    color: var(--ink-3);
+  }
+  .section-badge {
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 3px 9px;
+    border-radius: 20px;
+    color: var(--ink-3);
+    margin-left: auto;
+  }
+
+  /* ── Summary banner ──────────────────────────────────────────────────────── */
+  .summary-banner {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 28px;
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    box-shadow: var(--shadow-sm);
+  }
+  .summary-stat { display: flex; flex-direction: column; gap: 2px; }
+  .summary-stat-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .summary-stat-label { font-size: 0.75rem; color: var(--ink-3); }
+  .summary-divider { width: 1px; background: var(--border); align-self: stretch; }
+
+  /* ── Nominee cards grid ──────────────────────────────────────────────────── */
+  .nominees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 18px;
+  }
+
+  /* ── Nominee card ────────────────────────────────────────────────────────── */
+  .nominee-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.15s;
+  }
+  .nominee-card:hover { box-shadow: var(--shadow-md); }
+
+  .card-top {
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .card-rank-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .card-rank {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    background: #1a1a18;
+    padding: 2px 8px;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+  .card-composite-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  .badge-high   { background: var(--green-bg);  color: var(--green); }
+  .badge-mid    { background: var(--gold-bg);   color: var(--gold); }
+  .badge-normal { background: var(--surface-2); color: var(--ink-3); border: 1px solid var(--border); }
+
+  .card-identity { flex: 1; min-width: 0; }
+  .card-ticker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .card-name {
+    font-size: 0.8rem;
+    color: var(--ink-3);
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .tag-sector   { background: var(--surface-2); color: var(--ink-3); border: 1px solid var(--border); }
+  .tag-fin      { background: var(--blue-bg);   color: var(--blue); }
+  .tag-etf      { background: var(--green-bg);  color: var(--green); }
+  .tag-insider  { background: var(--gold-bg);   color: var(--gold); }
+
+  .card-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 0;
+  }
+  .metric {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .metric-label { font-size: 0.65rem; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; }
+  .metric-value { font-family: 'DM Mono', monospace; font-size: 0.85rem; color: var(--ink); font-weight: 500; }
+  .metric-value.neg { color: var(--red); }
+
+  /* ── Score bars ──────────────────────────────────────────────────────────── */
+  .card-scores {
+    padding: 14px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .score-row { display: flex; flex-direction: column; gap: 4px; }
+  .score-row-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .score-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .score-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  .label-quality { color: var(--green); }
+  .label-beaten  { color: var(--orange); }
+  .label-recovery{ color: var(--blue); }
+
+  .score-bar-bg {
+    height: 5px;
+    border-radius: 3px;
+    background: var(--border);
+    overflow: hidden;
+  }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.4s ease;
+  }
+  .fill-quality  { background: var(--green); }
+  .fill-beaten   { background: var(--orange); }
+  .fill-recovery { background: var(--blue); }
+
+  .score-signals {
+    font-size: 0.72rem;
+    color: var(--ink-3);
+    margin-top: 1px;
+  }
+
+  /* ── ETF holding tags ────────────────────────────────────────────────────── */
+  .card-etfs {
+    padding: 10px 20px 14px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .etf-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-3);
+    margin-right: 2px;
+  }
+
+  /* ── Loading / error states ─────────────────────────────────────────────── */
+  .loading-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 80px 0;
+    color: var(--ink-3);
+    font-size: 0.9rem;
+  }
+  .spinner {
+    width: 36px; height: 36px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .error-box {
+    background: var(--red-bg);
+    border: 1px solid #f5c6c2;
+    border-radius: var(--radius);
+    padding: 20px 28px;
+    color: var(--red);
+    font-size: 0.9rem;
+  }
+  .empty-state {
+    padding: 48px 0;
+    text-align: center;
+    color: var(--ink-3);
+    font-size: 0.9rem;
+  }
+
+  /* ── Site footer ─────────────────────────────────────────────────────────── */
+  .site-footer-shared{background:#2e3334;color:rgba(255,255,255,.5);padding:1.5rem 0;font-family:'Barlow',sans-serif;}
+  .site-footer-inner{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;}
+  .site-footer-brand{display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:1rem;color:rgba(255,255,255,.92);}
+  .site-footer-brand img{height:1.2rem;width:auto;filter:invert(1);opacity:.85;}
+  .site-footer-disc{font-size:.78rem;}
+  .site-footer-copy{font-size:.68rem;font-family:monospace;opacity:.3;}
+</style>
+</head>
+<body>
+
+<!-- ── Site Navigation ────────────────────────────────────────────────────── -->
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="https://theinvestlab.com" class="site-logo">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </a>
+    <button class="nav-burger" aria-label="Menu" onclick="toggleSiteNav(this)">☰</button>
+    <ul class="site-nav-links">
+      <li class="site-nav-item">
+        <a href="https://theinvestlab.com/#dashboards" class="site-nav-link active">Dashboards <span class="site-nav-chevron">▾</span></a>
+        <ul class="site-dropdown">
+          <li><a href="https://invest-movers-shakers.onrender.com" class="site-dropdown-link">Movers and Shakers</a></li>
+          <li><a href="https://invest-tried-true.onrender.com" class="site-dropdown-link">Tried and True</a></li>
+          <li><a href="https://invest-insider-buying.onrender.com" class="site-dropdown-link">Insider Buying</a></li>
+          <li><a href="https://invest-underdogs.onrender.com" class="site-dropdown-link active">The Underdogs</a></li>
+        </ul>
+      </li>
+      <li><a href="https://theinvestlab.com/#about" class="site-nav-link">About</a></li>
+      <li><a href="https://theinvestlab.com/blog.html" class="site-nav-link">Blog</a></li>
+    </ul>
+  </nav>
+</header>
+<script>
+function toggleSiteNav(btn) {
+  const links = document.querySelector('.site-nav-links');
+  const open = links.classList.toggle('open');
+  btn.textContent = open ? '✕' : '☰';
+}
+</script>
+
+<div class="layout">
+
+  <!-- ── Sidebar ──────────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">The <span>Underdogs</span></div>
+      <div class="logo-sub">Quality Stocks · Beaten-Up Prices</div>
+      <div class="sidebar-scan-status">
+        <div class="pulse"></div>
+        <span id="scan-time-badge">Loading…</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Navigation</div>
+      <a class="nav-item active" href="#nominees">
+        <span class="nav-icon">🏆</span> Top Nominees
+      </a>
+      <a class="nav-item" href="#scan-info">
+        <span class="nav-icon">ℹ️</span> Scan Info
+      </a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Scan Schedule</div>
+      <div class="progress-label">Last: <strong id="sidebar-last-scan">—</strong></div>
+      <div class="progress-label" style="margin-top:4px;">Mondays 9am ET</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Universe</div>
+      <div class="sidebar-stat">ETFs scanned <span class="sidebar-stat-val" id="sb-etfs">—</span></div>
+      <div class="sidebar-stat">Tickers found <span class="sidebar-stat-val" id="sb-tickers">—</span></div>
+      <div class="sidebar-stat">Qualified <span class="sidebar-stat-val" id="sb-qualified">—</span></div>
+      <div class="sidebar-note">QUAL · MOAT · COWZ · QQQ</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Scoring</div>
+      <div class="sidebar-note">
+        Quality 45% · Beaten-Up 40% · Recovery bonus (max 30pts).
+        Financial sector uses ROE-primary path.
+      </div>
+    </div>
+
+    <div class="sidebar-footer">Not financial advice. For personal educational use only.</div>
+  </aside>
+
+  <!-- ── Main ─────────────────────────────────────────────────────────────── -->
+  <main class="main" id="main">
+    <div class="loading-wrap" id="loading">
+      <div class="spinner"></div>
+      Loading underdog nominees…
+    </div>
+  </main>
+
+</div><!-- /.layout -->
+
+<footer class="site-footer-shared">
+  <div class="site-footer-inner">
+    <span class="site-footer-brand">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </span>
+    <p class="site-footer-disc">Not financial advice. For personal educational use only.</p>
+    <p class="site-footer-copy">Built with curiosity and caffeine.</p>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+const RESULTS_URL = 'data/results.json';
+
+// ── Formatters ────────────────────────────────────────────────────────────────
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function fmtPrice(v) {
+  if (v == null) return '—';
+  return '$' + Number(v).toFixed(2);
+}
+function fmtCap(v) {
+  if (v == null) return '—';
+  if (v >= 1e12) return '$' + (v/1e12).toFixed(1) + 'T';
+  if (v >= 1e9)  return '$' + (v/1e9).toFixed(1) + 'B';
+  if (v >= 1e6)  return '$' + (v/1e6).toFixed(0) + 'M';
+  return '$' + v;
+}
+function fmtPct(v) {
+  if (v == null) return '—';
+  const n = Number(v);
+  return (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
+}
+function fmtScore(v) { return v != null ? Math.round(v) : 0; }
+
+function scoreBadgeClass(score) {
+  if (score >= 70) return 'badge-high';
+  if (score >= 50) return 'badge-mid';
+  return 'badge-normal';
+}
+
+function fmtDate(iso) {
+  try {
+    const d = new Date(iso);
+    return d.toLocaleDateString('en-US', {month:'short', day:'numeric'}) + ' ' +
+           d.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
+  } catch { return iso || '—'; }
+}
+
+// ── Main render ───────────────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const res = await fetch(RESULTS_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    renderAll(data);
+  } catch (e) {
+    document.getElementById('loading').innerHTML =
+      '<div class="error-box">Unable to load scan data. Run <code>python scan.py</code> to generate results.</div>';
+  }
+}
+
+function renderAll(data) {
+  const nominees = data.nominees || [];
+  const meta     = data.meta    || {};
+  const scanAt   = data.scanned_at;
+
+  // Sidebar stats
+  const timeStr = fmtDate(scanAt);
+  document.getElementById('scan-time-badge').textContent = timeStr;
+  document.getElementById('sidebar-last-scan').textContent = timeStr;
+  document.getElementById('sb-etfs').textContent      = meta.etfs_scanned ?? '—';
+  document.getElementById('sb-tickers').textContent   = meta.total_tickers_found ?? '—';
+  document.getElementById('sb-qualified').textContent = meta.candidates_qualified ?? '—';
+
+  const main = document.getElementById('main');
+  document.getElementById('loading').remove();
+
+  main.innerHTML =
+    renderSummary(nominees, meta, data.next_scan_info) +
+    renderNominees(nominees) +
+    renderScanInfo(meta, scanAt, data.next_scan_info);
+}
+
+// ── Summary Banner ────────────────────────────────────────────────────────────
+function renderSummary(nominees, meta, nextInfo) {
+  const total     = meta.total_tickers_found ?? '—';
+  const qualified = meta.candidates_qualified ?? '—';
+  const etfs      = meta.etfs_scanned ?? '—';
+  const avgScore  = nominees.length
+    ? Math.round(nominees.reduce((s,n) => s + n.composite_score, 0) / nominees.length)
+    : '—';
+
+  return `
+  <div class="summary-banner">
+    <div class="summary-stat">
+      <div class="summary-stat-val">${nominees.length}</div>
+      <div class="summary-stat-label">Top Nominees</div>
+    </div>
+    <div class="summary-divider"></div>
+    <div class="summary-stat">
+      <div class="summary-stat-val">${total}</div>
+      <div class="summary-stat-label">Tickers Scanned</div>
+    </div>
+    <div class="summary-divider"></div>
+    <div class="summary-stat">
+      <div class="summary-stat-val">${qualified}</div>
+      <div class="summary-stat-label">Passed Filters</div>
+    </div>
+    <div class="summary-divider"></div>
+    <div class="summary-stat">
+      <div class="summary-stat-val">${etfs}</div>
+      <div class="summary-stat-label">ETFs Sourced</div>
+    </div>
+    <div class="summary-divider"></div>
+    <div class="summary-stat">
+      <div class="summary-stat-val">${avgScore}</div>
+      <div class="summary-stat-label">Avg Composite Score</div>
+    </div>
+  </div>`;
+}
+
+// ── Nominees Section ──────────────────────────────────────────────────────────
+function renderNominees(nominees) {
+  if (!nominees || !nominees.length) {
+    return `<section id="nominees">
+      <div class="section-header">
+        <div class="section-title">Top Nominees</div>
+      </div>
+      <div class="empty-state">No qualifying nominees found. Check back after the next scan.</div>
+    </section>`;
+  }
+
+  const cards = nominees.map(n => renderCard(n)).join('');
+
+  return `
+  <section id="nominees">
+    <div class="section-header">
+      <div class="section-title">Top Nominees</div>
+      <div class="section-subtitle">High-quality companies currently trading at a discount</div>
+      <div class="section-badge">${nominees.length} stocks</div>
+    </div>
+    <div class="nominees-grid">${cards}</div>
+  </section>`;
+}
+
+function renderCard(n) {
+  const composite = n.composite_score ?? 0;
+  const qScore    = n.quality_score   ?? 0;
+  const bScore    = n.beaten_up_score ?? 0;
+  const rBonus    = n.recovery_bonus  ?? 0;
+
+  const badgeClass = scoreBadgeClass(composite);
+
+  // Tags
+  const sectorTag = n.sector
+    ? `<span class="tag ${n.is_financial ? 'tag-fin' : 'tag-sector'}">${esc(n.sector)}</span>`
+    : '';
+  const etfTag = n.etf_count > 1
+    ? `<span class="tag tag-etf">${n.etf_count} ETFs</span>`
+    : `<span class="tag tag-etf">1 ETF</span>`;
+  const insiderTag = (n.recovery_signals || []).some(s => s.includes('Insider'))
+    ? `<span class="tag tag-insider">Insider buying</span>`
+    : '';
+
+  // Metrics row
+  const ytdClass = (n.ytd_pct != null && n.ytd_pct < 0) ? 'neg' : '';
+  const metricsRow = `
+    <div class="card-metrics">
+      <div class="metric">
+        <div class="metric-label">Price</div>
+        <div class="metric-value">${fmtPrice(n.price)}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">YTD</div>
+        <div class="metric-value ${ytdClass}">${n.ytd_pct != null ? fmtPct(n.ytd_pct) : '—'}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Mkt Cap</div>
+        <div class="metric-value">${fmtCap(n.market_cap)}</div>
+      </div>
+    </div>`;
+
+  // Score bars
+  const qSigs = (n.quality_signals || []).join(' · ') || '—';
+  const bSigs = (n.beaten_signals  || []).join(' · ') || '—';
+  const rSigs = (n.recovery_signals || []).join(' · ') || 'None detected';
+
+  const scoreBars = `
+  <div class="card-scores">
+    <div class="score-row">
+      <div class="score-row-header">
+        <span class="score-label label-quality">Quality</span>
+        <span class="score-val label-quality">${fmtScore(qScore)} / 100</span>
+      </div>
+      <div class="score-bar-bg">
+        <div class="score-bar-fill fill-quality" style="width:${Math.min(qScore,100)}%"></div>
+      </div>
+      <div class="score-signals">${esc(qSigs)}</div>
+    </div>
+    <div class="score-row">
+      <div class="score-row-header">
+        <span class="score-label label-beaten">Beaten-Up</span>
+        <span class="score-val label-beaten">${fmtScore(bScore)} / 100</span>
+      </div>
+      <div class="score-bar-bg">
+        <div class="score-bar-fill fill-beaten" style="width:${Math.min(bScore,100)}%"></div>
+      </div>
+      <div class="score-signals">${esc(bSigs)}</div>
+    </div>
+    <div class="score-row">
+      <div class="score-row-header">
+        <span class="score-label label-recovery">Recovery Signals</span>
+        <span class="score-val label-recovery">+${fmtScore(rBonus)} pts</span>
+      </div>
+      <div class="score-bar-bg">
+        <div class="score-bar-fill fill-recovery" style="width:${Math.min(rBonus / 30 * 100, 100)}%"></div>
+      </div>
+      <div class="score-signals">${esc(rSigs)}</div>
+    </div>
+  </div>`;
+
+  // ETF holding tags
+  const etfTags = (n.etfs_holding || []).map(e =>
+    `<span class="tag tag-etf">${esc(e.symbol)} ${e.weight}%</span>`
+  ).join('');
+  const etfRow = `
+    <div class="card-etfs">
+      <span class="etf-label">Held by</span>
+      ${etfTags || '<span class="tag tag-sector">—</span>'}
+    </div>`;
+
+  return `
+  <div class="nominee-card">
+    <div class="card-top">
+      <div class="card-rank-row">
+        <div class="card-identity">
+          <div class="card-ticker">${esc(n.ticker)}</div>
+          <div class="card-name">${esc(n.name)}</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;">
+          <span class="card-rank">#${n.rank}</span>
+          <span class="card-composite-badge ${badgeClass}">${composite.toFixed(1)}</span>
+        </div>
+      </div>
+      <div class="card-tags">
+        ${sectorTag}${etfTag}${insiderTag}
+      </div>
+      ${metricsRow}
+    </div>
+    ${scoreBars}
+    ${etfRow}
+  </div>`;
+}
+
+// ── Scan Info Section ─────────────────────────────────────────────────────────
+function renderScanInfo(meta, scanAt, nextInfo) {
+  return `
+  <section id="scan-info">
+    <div class="section-header">
+      <div class="section-title">Scan Details</div>
+    </div>
+    <div class="summary-banner" style="flex-direction:column;gap:10px;">
+      <div style="font-size:.9rem;color:var(--ink-2);">
+        <strong>Last scan:</strong> ${esc(fmtDate(scanAt))}
+      </div>
+      <div style="font-size:.9rem;color:var(--ink-2);">
+        <strong>Schedule:</strong> ${esc(nextInfo || 'Mondays 9am ET')}
+      </div>
+      <div style="font-size:.85rem;color:var(--ink-3);line-height:1.7;">
+        Universe sourced from <strong>QUAL</strong> (iShares MSCI USA Quality Factor),
+        <strong>MOAT</strong> (VanEck Morningstar Wide Moat),
+        <strong>COWZ</strong> (Pacer US Cash Cows 100), and
+        <strong>QQQ</strong> (Invesco Nasdaq-100) ETF holdings.
+        Stocks are scored on fundamental quality (margins, ROE, FCF, debt),
+        price drawdown (52w high, YTD, RSI, 200-day MA),
+        and recovery signals (insider buying, earnings beats, price stabilization).
+        Financial sector companies use a ROE-primary scoring path.
+        Minimum thresholds: Quality ≥ 30, Beaten-Up ≥ 20.
+      </div>
+    </div>
+  </section>`;
+}
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+loadData();
+</script>
+
+</body>
+</html>
