@@ -624,22 +624,11 @@ function toggleSiteNav(btn) {
       </a>
     </div>
 
-    <hr class="sidebar-divider">
-
-    <div class="sidebar-section">
-      <div class="sidebar-label">Dashboards</div>
-      <a class="nav-item" href="https://invest-movers-shakers.onrender.com">
-        <span class="nav-icon">📈</span> Movers &amp; Shakers
-      </a>
-      <a class="nav-item" href="https://invest-tried-true.onrender.com">
-        <span class="nav-icon">🏆</span> Tried &amp; True
-      </a>
-      <a class="nav-item" href="https://invest-the-analyst.onrender.com">
-        <span class="nav-icon">🔬</span> The Analyst
-      </a>
+    <div class="sidebar-section scan-progress-wrap">
+      <div class="sidebar-label">Scan Schedule</div>
+      <div class="progress-label">Last: <strong id="sidebar-last-scan">—</strong></div>
+      <div class="progress-label" style="margin-top:4px;">Weekdays 8am &amp; 1pm ET</div>
     </div>
-
-    <hr class="sidebar-divider">
 
     <div class="sidebar-section">
       <div class="sidebar-label">About</div>
@@ -909,9 +898,10 @@ function render(d) {
 
   // Stats bar
   const t = new Date(d.scan_time);
-  document.getElementById('scan-time-badge').textContent =
-    t.toLocaleDateString('en-US', {month:'short', day:'numeric'}) + ' ' +
+  const tStr = t.toLocaleDateString('en-US', {month:'short', day:'numeric'}) + ' ' +
     t.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
+  document.getElementById('scan-time-badge').textContent = tStr;
+  document.getElementById('sidebar-last-scan').textContent = tStr;
   document.getElementById('stat-total').textContent = (d.total_transactions || 0).toLocaleString();
   document.getElementById('stat-range').textContent = d.date_range || '—';
 
