@@ -581,7 +581,7 @@
         </ul>
       </li>
       <li><a href="https://theinvestlab.com/#about" class="site-nav-link">About</a></li>
-      <li><a href="https://theinvestlab.com/#blog" class="site-nav-link" style="color:#8a8a82">Blog <span class="site-nav-badge">Soon</span></a></li>
+      <li><a href="https://theinvestlab.com/blog.html" class="site-nav-link">Blog</a></li>
     </ul>
   </nav>
 </header>
@@ -897,7 +897,9 @@ function render(d) {
   document.getElementById('loading').remove();
 
   // Stats bar
-  const t = new Date(d.scan_time);
+  const scanStr = d.scan_time && !d.scan_time.includes('+') && !d.scan_time.endsWith('Z')
+    ? d.scan_time + 'Z' : d.scan_time;
+  const t = new Date(scanStr);
   const tStr = t.toLocaleDateString('en-US', {month:'short', day:'numeric'}) + ' ' +
     t.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
   document.getElementById('scan-time-badge').textContent = tStr;
