@@ -19,6 +19,11 @@ def index():
         return Response(f.read(), mimetype="text/html")
 
 
+@app.route("/data/<path:filename>")
+def data(filename):
+    return send_from_directory(os.path.join(BASE_DIR, "data"), filename)
+
+
 @app.route("/images/<path:filename>")
 def images(filename):
     return send_from_directory(os.path.join(BASE_DIR, "..", "Website", "images"), filename)
