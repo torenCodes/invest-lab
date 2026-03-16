@@ -4,7 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research Blog — The Invest Lab</title>
-  <meta name="description" content="Research notes, sector deep-dives, and market observations from The Invest Lab.">
+  <meta name="description" content="In-depth research posts from The Invest Lab — sector deep-dives, trade reviews, market observations, and stock screening insights for individual investors.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://theinvestlab.com/blog.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Open Graph (defaults; JS updates title/description/url per post) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theinvestlab.com/blog.html">
+  <meta property="og:title" content="Research Blog — The Invest Lab">
+  <meta property="og:description" content="In-depth research posts from The Invest Lab — sector deep-dives, trade reviews, market observations, and stock screening insights for individual investors.">
+  <meta property="og:image" content="https://theinvestlab.com/images/favicon.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Research Blog — The Invest Lab">
+  <meta name="twitter:description" content="In-depth research posts from The Invest Lab — sector deep-dives, trade reviews, market observations, and stock screening insights for individual investors.">
+  <meta name="twitter:image" content="https://theinvestlab.com/images/favicon.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -133,7 +152,18 @@
     }
 
     function renderPost(meta, mdText) {
-      if (meta.title) document.title = meta.title + ' — The Invest Lab';
+      if (meta.title) {
+        var postTitle = meta.title + ' — The Invest Lab';
+        var postUrl   = 'https://theinvestlab.com/blog.html?post=' + slug;
+        var postDesc  = meta.excerpt || document.querySelector('meta[name="description"]').content;
+        document.title = postTitle;
+        document.querySelector('link[rel="canonical"]').href = postUrl;
+        document.querySelector('meta[property="og:title"]').content   = postTitle;
+        document.querySelector('meta[property="og:url"]').content     = postUrl;
+        document.querySelector('meta[property="og:description"]').content = postDesc;
+        document.querySelector('meta[name="twitter:title"]').content      = postTitle;
+        document.querySelector('meta[name="twitter:description"]').content = postDesc;
+      }
 
       // Strip the h1 and *Published date* / opening --- from markdown body
       var body = mdText
@@ -152,6 +182,26 @@
         return '<span class="blog-meta-tag">' + esc(t) + '</span>';
       }).join('');
       if (tagsHtml) metaHtml += (metaHtml ? '<span class="blog-meta-dot"></span>' : '') + tagsHtml;
+
+      // Inject BlogPosting JSON-LD
+      var ldScript = document.getElementById('ld-json-post') || document.createElement('script');
+      ldScript.id = 'ld-json-post';
+      ldScript.type = 'application/ld+json';
+      ldScript.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": meta.title || '',
+        "description": meta.excerpt || '',
+        "datePublished": meta.date || '',
+        "url": 'https://theinvestlab.com/blog.html?post=' + slug,
+        "image": 'https://theinvestlab.com/images/favicon.png',
+        "publisher": {
+          "@type": "Organization",
+          "name": "The Invest Lab",
+          "logo": { "@type": "ImageObject", "url": "https://theinvestlab.com/images/logo.png" }
+        }
+      });
+      document.head.appendChild(ldScript);
 
       root.innerHTML =
         '<section class="blog-hero">' +
