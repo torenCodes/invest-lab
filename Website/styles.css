@@ -31,6 +31,8 @@
 }
 
 html { font-size: 16px; scroll-behavior: smooth; }
+/* Fix anchored sections being hidden under sticky nav */
+section[id] { scroll-margin-top: 85px; }
 
 body {
   font-family: 'Barlow', sans-serif;
@@ -359,7 +361,7 @@ body {
 
 /* ── Sections ───────────────────────────────────────────────────────────── */
 .section {
-  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+  padding: clamp(2.5rem, 3vw, 4.5rem) 0;
   background: var(--bg);
 }
 
@@ -486,10 +488,7 @@ body {
 
 /* ── About Section ──────────────────────────────────────────────────────── */
 .about-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
+  max-width: 100%;
 }
 
 @media (max-width: 720px) {
@@ -618,6 +617,23 @@ body {
 }
 
 .blog-card-read-more:hover { color: var(--accent); gap: 0.55rem; }
+
+/* ── Homepage blog grid (2 cols + full-width CTA row) ────────────────────── */
+.blog-grid--home { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 700px) { .blog-grid--home { grid-template-columns: 1fr; } }
+
+.blog-card-all {
+  grid-column: 1 / -1;
+  background: var(--accent-muted);
+  border: 1px solid var(--accent-light);
+  border-left: 3px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.blog-card-all:hover { box-shadow: var(--shadow-warm); transform: translateY(-2px); }
 
 /* ── Blog Coming Soon ───────────────────────────────────────────────────── */
 .blog-coming-soon {
@@ -928,6 +944,37 @@ body {
 @keyframes pv-shimmer {
   0%   { background-position:  300% 0; }
   100% { background-position: -300% 0; }
+}
+
+/* ── Underdogs preview helpers ───────────────────────────────────────────── */
+.pv-score-badge {
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  background: var(--accent-muted);
+  color: var(--accent-dark);
+  letter-spacing: -0.01em;
+}
+
+.ud-etf-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.ud-etf-tag {
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--ink-3);
 }
 
 /* ── Blog Hero ───────────────────────────────────────────────────────────── */

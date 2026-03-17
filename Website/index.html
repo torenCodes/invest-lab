@@ -108,11 +108,30 @@
     </div>
   </section>
 
-  <!-- ── Dashboards ───────────────────────────────────────────────────────── -->
+  <!-- ── Underdogs Snapshot Preview ────────────────────────────────────────── -->
+  <section class="preview-section">
+    <div class="container">
+      <div class="preview-header">
+        <div>
+          <h2 class="section-title">Underdogs Snapshot</h2>
+          <p class="preview-ts-line">From the latest Underdogs scan — <span id="ud-ts">loading…</span></p>
+        </div>
+        <a href="https://invest-underdogs.onrender.com" class="preview-all-link">Full dashboard →</a>
+      </div>
+      <div class="preview-grid">
+        <div class="preview-card" id="ud-1"></div>
+        <div class="preview-card" id="ud-2"></div>
+        <div class="preview-card" id="ud-3"></div>
+        <div class="preview-card" id="ud-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── All Dashboards ───────────────────────────────────────────────────── -->
   <section class="section" id="dashboards">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Dashboards</h2>
+        <h2 class="section-title">All Dashboards</h2>
         <p class="section-sub">Live tools for scanning, screening, and analyzing the market in real time.</p>
       </div>
 
@@ -243,8 +262,56 @@
     </div>
   </section>
 
+  <!-- ── Blog ─────────────────────────────────────────────────────────────── -->
+  <section class="section section-alt" id="blog">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Research Blog</h2>
+        <p class="section-sub">In-depth write-ups, trade reviews, and market observations.</p>
+      </div>
+      <div class="blog-grid blog-grid--home">
+        <article class="blog-card">
+          <div class="blog-card-meta">
+            <span class="blog-card-date">March 2026</span>
+            <span class="blog-card-tag">Infrastructure</span>
+          </div>
+          <h3 class="blog-card-title">The Fiber Backbone of AI: Why Optical Infrastructure Is the Sleeper Trade of the Decade</h3>
+          <p class="blog-card-excerpt">
+            Everyone knows the AI story — Nvidia prints money, hyperscalers spend hundreds of billions, data
+            centers multiply. But beneath all that compute lies a quieter revolution that a sharp group of
+            investors began flagging years before it became consensus: the optical buildout.
+          </p>
+          <a href="blog.html?post=optical-ai-infrastructure" class="blog-card-read-more">Read more →</a>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-meta">
+            <span class="blog-card-date">March 16, 2026</span>
+            <span class="blog-card-tag">NVIDIA</span>
+            <span class="blog-card-tag">AI Infrastructure</span>
+          </div>
+          <h3 class="blog-card-title">Jensen's Moment: What the GTC 2026 Keynote Tells Us About the Next Phase of AI</h3>
+          <p class="blog-card-excerpt">
+            Jensen Huang called it the Inference Inflection. GTC 2026 wasn't just a product launch —
+            it was a declaration that the AI race has shifted from training the biggest model to
+            deploying AI everywhere, all the time, at a cost that makes it economically viable.
+          </p>
+          <a href="blog.html?post=nvidia-gtc26-keynote-recap" class="blog-card-read-more">Read more →</a>
+        </article>
+
+        <article class="blog-card blog-card-all">
+          <div>
+            <h3 class="blog-card-title" style="margin-bottom:0.4rem">More Research Posts</h3>
+            <p class="blog-card-excerpt" style="margin-bottom:0">Sector deep-dives, trade reviews, dashboard notes, and market observations.</p>
+          </div>
+          <a href="blog.html" class="blog-card-read-more">View all posts →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ── About ────────────────────────────────────────────────────────────── -->
-  <section class="section section-alt" id="about">
+  <section class="section" id="about">
     <div class="container">
       <div class="about-layout">
 
@@ -275,43 +342,6 @@
           </p>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Blog ─────────────────────────────────────────────────────────────── -->
-  <section class="section" id="blog">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Research Blog</h2>
-        <p class="section-sub">In-depth write-ups, trade reviews, and market observations.</p>
-      </div>
-      <div class="blog-grid">
-        <article class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-date">March 2026</span>
-            <span class="blog-card-tag">Infrastructure</span>
-          </div>
-          <h3 class="blog-card-title">The Fiber Backbone of AI: Why Optical Infrastructure Is the Sleeper Trade of the Decade</h3>
-          <p class="blog-card-excerpt">
-            Everyone knows the AI story — Nvidia prints money, hyperscalers spend hundreds of billions, data
-            centers multiply. But beneath all that compute lies a quieter revolution that a sharp group of
-            investors began flagging years before it became consensus: the optical buildout. The cables,
-            transceivers, and photonic components that actually move data between all those chips.
-          </p>
-          <a href="blog.html?post=optical-ai-infrastructure" class="blog-card-read-more">Read more →</a>
-        </article>
-
-        <article class="blog-card blog-card-placeholder">
-          <div class="blog-card-meta">
-            <span class="blog-card-date">Coming Soon</span>
-          </div>
-          <h3 class="blog-card-title">More Research Posts on the Way</h3>
-          <p class="blog-card-excerpt">
-            Future posts will cover sector deep-dives, trade reviews, dashboard research notes,
-            and market observations from ongoing scans.
-          </p>
-        </article>
       </div>
     </div>
   </section>
@@ -446,6 +476,93 @@
         document.getElementById(id).innerHTML = msg;
       });
       document.getElementById('preview-ts').textContent = 'unavailable';
+    });
+}());
+</script>
+
+<script>
+(function () {
+  var DATA_URL = 'https://invest-underdogs.onrender.com/data/results.json';
+  var DASH_URL = 'https://invest-underdogs.onrender.com';
+
+  function showSkeletons() {
+    ['ud-1', 'ud-2', 'ud-3', 'ud-4'].forEach(function (id) {
+      document.getElementById(id).innerHTML =
+        '<div class="pv-skel pv-skel-xs"></div>' +
+        '<div class="pv-skel pv-skel-lg" style="margin-top:1.1rem"></div>' +
+        '<div class="pv-skel pv-skel-md" style="margin-top:0.4rem"></div>' +
+        '<div class="pv-skel pv-skel-sm" style="margin-top:1rem"></div>' +
+        '<div class="pv-skel pv-skel-md" style="margin-top:0.4rem"></div>';
+    });
+  }
+
+  function fmt(v, dp) { return parseFloat(v || 0).toFixed(dp !== undefined ? dp : 1); }
+
+  function cta(label) {
+    return '<a href="' + DASH_URL + '" class="pv-cta">' + label + ' <span class="pv-cta-arr">→</span></a>';
+  }
+
+  function nomineeCard(nom, typeLabel) {
+    if (!nom) {
+      return '<div class="pv-type">' + typeLabel + '</div>' +
+        '<div class="pv-empty">No data — check back after the next weekly scan.</div>' +
+        cta('View dashboard');
+    }
+    var etfTags = (nom.etf_tags || []).slice(0, 3).map(function (t) {
+      return '<span class="ud-etf-tag">' + t + '</span>';
+    }).join('');
+    var drawdown = nom.drawdown_52w ? '<li>' + fmt(nom.drawdown_52w, 1) + '% from 52w high</li>' : '';
+    return '<div class="pv-type">' + typeLabel + '</div>' +
+      '<div class="pv-ticker-row">' +
+        '<span class="pv-ticker">' + nom.ticker + '</span>' +
+        '<span class="pv-score-badge">' + fmt(nom.composite_score, 1) + '</span>' +
+      '</div>' +
+      '<div class="pv-name">' + (nom.name || '') + '</div>' +
+      '<ul class="pv-signals">' +
+        '<li>Quality: ' + fmt(nom.quality_score, 1) + '</li>' +
+        '<li>Beaten-up: ' + fmt(nom.beaten_up_score, 1) + '</li>' +
+        drawdown +
+      '</ul>' +
+      (etfTags ? '<div class="ud-etf-tags">' + etfTags + '</div>' : '') +
+      cta('View dashboard');
+  }
+
+  showSkeletons();
+
+  fetch(DATA_URL + '?t=' + Date.now())
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (data) {
+      if (data.scan_time) {
+        var scanStr = !data.scan_time.includes('+') && !data.scan_time.endsWith('Z')
+          ? data.scan_time + 'Z' : data.scan_time;
+        var d  = new Date(scanStr);
+        var ds = d.toLocaleDateString([], { month: 'short', day: 'numeric' });
+        var ts = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        document.getElementById('ud-ts').textContent = ds + ' at ' + ts;
+      }
+
+      var nominees = data.nominees || [];
+      if (!nominees.length) throw new Error('no nominees');
+
+      var byComposite  = nominees[0];
+      var byQuality    = nominees.slice().sort(function (a, b) { return b.quality_score    - a.quality_score; })[0];
+      var byBeatdown   = nominees.slice().sort(function (a, b) { return b.beaten_up_score  - a.beaten_up_score; })[0];
+      var byRecovery   = nominees.slice().sort(function (a, b) { return (b.recovery_bonus || 0) - (a.recovery_bonus || 0); })[0];
+      if (!byRecovery || (byRecovery.recovery_bonus || 0) === 0) {
+        byRecovery = nominees[Math.min(3, nominees.length - 1)];
+      }
+
+      document.getElementById('ud-1').innerHTML = nomineeCard(byComposite, '#1 Underdog');
+      document.getElementById('ud-2').innerHTML = nomineeCard(byQuality,   'Quality Leader');
+      document.getElementById('ud-3').innerHTML = nomineeCard(byBeatdown,  'Most Oversold');
+      document.getElementById('ud-4').innerHTML = nomineeCard(byRecovery,  'Recovery Signal');
+    })
+    .catch(function () {
+      var msg = '<div class="pv-empty">Data unavailable — check back after the weekly scan.</div>';
+      ['ud-1', 'ud-2', 'ud-3', 'ud-4'].forEach(function (id) {
+        document.getElementById(id).innerHTML = msg;
+      });
+      document.getElementById('ud-ts').textContent = 'unavailable';
     });
 }());
 </script>
