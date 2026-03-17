@@ -761,6 +761,19 @@
     color: var(--ink-3);
   }
 
+  /* ── Earnings callout (inline card) ─────────────────────────────────────── */
+  .earnings-callout {
+    margin-top: 10px;
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-size: 0.73rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+  .earnings-upcoming { background: var(--orange-bg); color: var(--orange); border-left: 3px solid var(--orange); }
+  .earnings-beat     { background: var(--green-bg);  color: var(--green);  border-left: 3px solid var(--green); }
+  .earnings-miss     { background: var(--red-bg);    color: var(--red);    border-left: 3px solid var(--red); }
+
   /* ── Unusual Volume ──────────────────────────────────────────────────────── */
   .vol-grid {
     display: flex;
@@ -1046,7 +1059,7 @@ function toggleSiteNav(btn) {
       <section id="earnings-cal" class="full-panel">
         <div class="panel-header">
           <span class="panel-icon">📅</span>
-          <span class="panel-title">Earnings Today &amp; Tomorrow</span>
+          <span class="panel-title">Earnings — Next 5 Days</span>
           <span class="panel-sub">BMO = before market open · AMC = after market close</span>
         </div>
         <div style="max-height:320px;overflow-y:auto;" id="earnings-body">
@@ -1093,6 +1106,28 @@ function signalClass(s) {
   if (s.includes('Reddit') || s.includes('reddit') || s.includes('News') || s.includes('buzz') || s.includes('mention') || s.includes('Trending')) return 'signal-reddit';
   if (s.includes('move'))    return 'signal-move';
   return 'signal-default';
+}
+
+// ── Earnings callout renderer ──────────────────────────────────────────────
+function renderEarningsCallout(stock) {
+  const info = stock.earnings_info;
+  if (!info) return '';
+  const parts = [];
+  if (info.upcoming) {
+    const u = info.upcoming;
+    const hourMap = {amc: 'After Close', bmo: 'Before Open', dmh: 'During Hours'};
+    const hourStr = hourMap[u.hour] || (u.hour || '');
+    parts.push(`<div class="earnings-callout earnings-upcoming">⚠ Earnings ${u.date}${hourStr ? ' — ' + hourStr : ''}</div>`);
+  }
+  if (info.recent) {
+    const r = info.recent;
+    const cls  = r.beat ? 'earnings-beat' : 'earnings-miss';
+    const icon = r.beat ? '✓' : '✗';
+    const lbl  = r.beat ? 'Beat' : 'Miss';
+    const surp = r.surprise_pct >= 0 ? `+${r.surprise_pct}%` : `${r.surprise_pct}%`;
+    parts.push(`<div class="earnings-callout ${cls}">${icon} Q Earnings ${lbl} (${r.period}): actual $${r.actual} vs est $${r.estimate} (${surp})</div>`);
+  }
+  return parts.join('');
 }
 
 // ── Stock card renderer ────────────────────────────────────────────────────
@@ -1177,13 +1212,16 @@ function renderStockCard(stock, type) {
         <strong>Trade Plan</strong>
         ${planText}
       </div>
+      ${renderEarningsCallout(stock)}
     </div>
   </div>`;
 }
 
 // ── Market Chatter card (nominees) ──────────────────────────────────────────
 function renderRedditCard(stock) {
-  const hasPrice = stock.current_price != null;
+  const cardId   = `card-${stock.ticker}-chatter`;
+  const detailId = `detail-${stock.ticker}-chatter`;
+  const hasPrice = stock.current_price != null && stock.current_price > 0;
   const chgSign  = stock.change_pct >= 0 ? '+' : '';
   const chgClass = stock.change_pct >= 0 ? 'change-up' : 'change-down';
   const signals  = (stock.signals || []).map(s =>
@@ -1191,7 +1229,7 @@ function renderRedditCard(stock) {
   ).join('');
 
   return `
-  <div class="stock-card" style="border-top:3px solid var(--reddit);">
+  <div class="stock-card" id="${cardId}" onclick="toggleDetail('${detailId}', '${cardId}')" style="border-top:3px solid var(--reddit);cursor:pointer;">
     <div class="card-top">
       <div class="card-header">
         <div>
@@ -1208,8 +1246,37 @@ function renderRedditCard(stock) {
       ${signals || `<span class="signal-tag signal-reddit">📊 ${stock.mentions || stock.reddit_mentions || 0} mentions</span>`}
       ${stock.sector ? `<span class="signal-tag signal-default">${stock.sector}</span>` : ''}
     </div>
-    <div style="padding:0 18px 14px;font-size:0.75rem;color:var(--ink-3);">
-      High buzz activity. Watch for price action before entering.
+    <div class="card-detail" id="${detailId}">
+      <div class="detail-grid">
+        <div class="detail-stat">
+          <div class="detail-stat-label">Open</div>
+          <div class="detail-stat-value">${hasPrice ? '$' + fmt(stock.open) : '—'}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="detail-stat-label">Prev Close</div>
+          <div class="detail-stat-value">${hasPrice ? '$' + fmt(stock.prev_close) : '—'}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="detail-stat-label">Day High</div>
+          <div class="detail-stat-value">${hasPrice ? '$' + fmt(stock.high) : '—'}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="detail-stat-label">Day Low</div>
+          <div class="detail-stat-value">${hasPrice ? '$' + fmt(stock.low) : '—'}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="detail-stat-label">Market Cap</div>
+          <div class="detail-stat-value">${fmtCap(stock.market_cap)}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="detail-stat-label">Sector</div>
+          <div class="detail-stat-value" style="font-size:0.75rem;">${stock.sector || '—'}</div>
+        </div>
+      </div>
+      ${renderEarningsCallout(stock)}
+      <div style="padding-top:10px;font-size:0.75rem;color:var(--ink-3);">
+        High buzz activity. Watch for price action before entering.
+      </div>
     </div>
   </div>`;
 }

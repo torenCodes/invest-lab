@@ -29,7 +29,7 @@ MIN_MARKET_CAP_SWING  = 50_000_000
 MIN_DAY_SCORE         = 10
 MIN_SWING_SCORE       = 8
 
-NEXT_SCAN_INFO = "weekdays 8am & 1pm ET"
+NEXT_SCAN_INFO = "Weekdays 9:35am, 11:30am & 1:30pm ET"
 
 # ── Yahoo Finance movers ───────────────────────────────────────────────────────
 
@@ -369,25 +369,36 @@ def get_yahoo_trending():
 
 # ── Finnhub ────────────────────────────────────────────────────────────────────
 
+def _finnhub_get(url, retries=2):
+    """GET a Finnhub URL with simple 429 backoff."""
+    for attempt in range(retries + 1):
+        try:
+            resp = requests.get(url, timeout=5)
+            if resp.status_code == 429:
+                wait = 10 * (attempt + 1)
+                print(f"[Finnhub] 429 — waiting {wait}s...")
+                time.sleep(wait)
+                continue
+            return resp.json()
+        except Exception:
+            return None
+    return None
+
+
 def get_stock_quote(ticker):
     url = f"https://finnhub.io/api/v1/quote?symbol={ticker}&token={FINNHUB_API_KEY}"
-    try:
-        return requests.get(url, timeout=5).json()
-    except Exception:
-        return None
+    return _finnhub_get(url)
 
 
 def get_company_profile(ticker):
     url = f"https://finnhub.io/api/v1/stock/profile2?symbol={ticker}&token={FINNHUB_API_KEY}"
-    try:
-        return requests.get(url, timeout=5).json()
-    except Exception:
-        return None
+    return _finnhub_get(url)
 
 
 # ── Stock analysis ─────────────────────────────────────────────────────────────
 
-def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_label="Reddit"):
+def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_label="Reddit",
+                  buzz_source="news", finviz_set=None):
     quote = get_stock_quote(ticker)
     if not quote or quote.get("c", 0) == 0:
         return None
@@ -412,8 +423,9 @@ def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_lab
     is_gainer = ticker in yahoo_cats["gainers"]
     is_active = ticker in yahoo_cats["active"]
 
+    # Gainer: reduced from +15 to +8 to avoid double-dip with strong move signal
     if is_gainer:
-        score += 15
+        score += 8
         signals.append(f"Top gainer ({change_pct:+.1f}%)")
 
     if is_active:
@@ -431,13 +443,18 @@ def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_lab
         signals.append(f"Moderate move ({change_pct:+.1f}%)")
 
     reddit_mentions = buzz_lookup.get(ticker, 0)
-    if reddit_mentions >= 20:
+    # Thresholds differ by source: Polygon article counts are smaller than Reddit weighted scores
+    if buzz_source in ("news", "mixed"):
+        _hi, _mid, _lo = 12, 6, 3
+    else:
+        _hi, _mid, _lo = 20, 10, 5
+    if reddit_mentions >= _hi:
         score += 15
         signals.append(f"High {buzz_label} buzz ({reddit_mentions})")
-    elif reddit_mentions >= 10:
+    elif reddit_mentions >= _mid:
         score += 10
         signals.append(f"{buzz_label} buzz ({reddit_mentions})")
-    elif reddit_mentions >= 5:
+    elif reddit_mentions >= _lo:
         score += 5
         signals.append(f"{buzz_label} activity ({reddit_mentions})")
 
@@ -447,27 +464,31 @@ def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_lab
         score += bonus
         signals.append(f"Yahoo trending (#{st_rank})")
 
+    if finviz_set and ticker in finviz_set:
+        score += 8
+        signals.append("Unusual volume (Finviz)")
+
     market_cap = profile.get("marketCapitalization", 0) * 1_000_000
     sector     = profile.get("finnhubIndustry", "Unknown")
 
     return {
-        "ticker":          ticker,
-        "name":            profile.get("name", ticker),
-        "sector":          sector,
-        "current_price":   current_price,
-        "change_pct":      change_pct,
-        "high":            high,
-        "low":             low,
-        "open":            open_,
-        "prev_close":      prev_close,
-        "score":           score,
-        "signals":         signals,
-        "reddit_mentions": reddit_mentions,
-        "market_cap":      market_cap,
-        "is_gainer":       is_gainer,
-        "is_active":          is_active,
-        "logo":               profile.get("logo", ""),
-        "weburl":             profile.get("weburl", ""),
+        "ticker":              ticker,
+        "name":                profile.get("name", ticker),
+        "sector":              sector,
+        "current_price":       current_price,
+        "change_pct":          change_pct,
+        "high":                high,
+        "low":                 low,
+        "open":                open_,
+        "prev_close":          prev_close,
+        "score":               score,
+        "signals":             signals,
+        "reddit_mentions":     reddit_mentions,
+        "market_cap":          market_cap,
+        "is_gainer":           is_gainer,
+        "is_active":           is_active,
+        "logo":                profile.get("logo", ""),
+        "weburl":              profile.get("weburl", ""),
         "yahoo_trending_rank": st_rank if st_rank else None,
     }
 
@@ -563,6 +584,58 @@ def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Redd
     return day_cands[:3], swing_cands[:3], reddit_cards
 
 
+# ── Earnings enrichment ────────────────────────────────────────────────────────
+
+def enrich_with_earnings(nominees, earnings_cal):
+    """Adds earnings_info dict to each nominee card in-place."""
+    upcoming_by_ticker = {e["ticker"]: e for e in (earnings_cal or [])}
+
+    for card in nominees:
+        ticker = card.get("ticker", "")
+        if not ticker:
+            continue
+
+        info = {"upcoming": None, "recent": None}
+
+        if ticker in upcoming_by_ticker:
+            e = upcoming_by_ticker[ticker]
+            info["upcoming"] = {"date": e.get("date", ""), "hour": e.get("hour", "")}
+
+        try:
+            url  = f"https://finnhub.io/api/v1/stock/earnings?symbol={ticker}&limit=4&token={FINNHUB_API_KEY}"
+            resp = requests.get(url, timeout=6)
+            if resp.status_code == 200:
+                eps_list = resp.json()
+                if isinstance(eps_list, list):
+                    for eq in eps_list:
+                        actual   = eq.get("actual")
+                        estimate = eq.get("estimate")
+                        period   = eq.get("period", "")
+                        if actual is not None and estimate is not None and period:
+                            try:
+                                report_dt = datetime.strptime(period, "%Y-%m-%d")
+                                days_ago  = (datetime.now() - report_dt).days
+                                if 0 <= days_ago <= 90:
+                                    surprise_pct = 0
+                                    if estimate and estimate != 0:
+                                        surprise_pct = round(((actual - estimate) / abs(estimate)) * 100, 1)
+                                    info["recent"] = {
+                                        "period":       period,
+                                        "actual":       round(float(actual), 2),
+                                        "estimate":     round(float(estimate), 2),
+                                        "beat":         actual >= estimate,
+                                        "surprise_pct": surprise_pct,
+                                    }
+                                    break
+                            except Exception:
+                                pass
+            time.sleep(0.5)
+        except Exception as e:
+            print(f"[Earnings] {ticker}: {e}")
+
+        card["earnings_info"] = info
+
+
 # ── Sector flow ────────────────────────────────────────────────────────────────
 
 def build_sector_flow(results):
@@ -631,12 +704,11 @@ def get_market_news():
 
 def get_earnings_calendar():
     try:
-        from datetime import timedelta
-        today    = datetime.now().strftime("%Y-%m-%d")
-        tomorrow = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
-        url = f"https://finnhub.io/api/v1/calendar/earnings?from={today}&to={tomorrow}&token={FINNHUB_API_KEY}"
+        today       = datetime.now().strftime("%Y-%m-%d")
+        five_days   = (datetime.now() + timedelta(days=5)).strftime("%Y-%m-%d")
+        url = f"https://finnhub.io/api/v1/calendar/earnings?from={today}&to={five_days}&token={FINNHUB_API_KEY}"
         resp = requests.get(url, timeout=8)
-        items = resp.json().get("earningsCalendar", [])[:15]
+        items = resp.json().get("earningsCalendar", [])[:30]
         earnings = []
         for item in items:
             earnings.append({
@@ -671,8 +743,9 @@ def run():
     start = datetime.now(timezone.utc)
 
     yahoo_cats = get_yahoo_movers_categorized()
-    universe   = sorted(set().union(*yahoo_cats.values()))
-    print(f"[scan.py] Universe: {len(universe)} tickers")
+    # Exclude losers — they fail the change_pct > 0 check anyway, wasting Finnhub quota
+    universe   = sorted(yahoo_cats["gainers"] | yahoo_cats["active"])
+    print(f"[scan.py] Universe: {len(universe)} tickers (gainers + active only)")
 
     print("[scan.py] Fetching Yahoo trending tickers...")
     yahoo_trending = get_yahoo_trending()
@@ -709,11 +782,16 @@ def run():
                   else "News")
     print(f"[scan.py] Buzz source: {buzz_source} ({len(buzz_lookup)} tickers)")
 
+    print("[scan.py] Fetching Finviz unusual volume...")
+    finviz_unusual = get_finviz_movers()
+    finviz_set     = set(finviz_unusual)
+
     results = []
     for i, ticker in enumerate(universe, 1):
         if i % 10 == 0:
             print(f"[scan.py] Analyzing {i}/{len(universe)}: {ticker}")
-        result = analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending, buzz_label)
+        result = analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending, buzz_label,
+                               buzz_source, finviz_set)
         if result:
             results.append(result)
         time.sleep(1.1)
@@ -721,11 +799,13 @@ def run():
     day_trades, swing_trades, reddit_cards = categorize(results, buzz_lookup, universe, yahoo_cats, buzz_label, yahoo_trending)
     sector_flow = build_sector_flow(results)
 
-    print("[scan.py] Fetching Fear & Greed, news, earnings, Finviz...")
-    fear_greed     = get_fear_greed()
-    market_news    = get_market_news()
-    earnings_cal   = get_earnings_calendar()
-    finviz_unusual = get_finviz_movers()
+    print("[scan.py] Fetching Fear & Greed, news, earnings...")
+    fear_greed   = get_fear_greed()
+    market_news  = get_market_news()
+    earnings_cal = get_earnings_calendar()
+
+    print(f"[scan.py] Enriching nominees with earnings data...")
+    enrich_with_earnings(day_trades + swing_trades + reddit_cards, earnings_cal)
 
     confirmed = {card["ticker"] for card in reddit_cards}
     filtered_feed = []
