@@ -490,16 +490,21 @@ body {
 .about-layout {
   display: grid;
   grid-template-columns: 1fr 220px;
-  gap: 4rem;
+  column-gap: 4rem;
+  row-gap: 0;
   align-items: start;
 }
 
-@media (max-width: 720px) {
-  .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-  .about-image  { display: none; }
+/* Title spans both columns; text + image share the row below */
+.about-layout > .section-title {
+  grid-column: 1 / -1;
+  margin-bottom: 1.5rem;
 }
 
-.about-text .section-title { margin-bottom: 1.5rem; }
+@media (max-width: 720px) {
+  .about-layout { grid-template-columns: 1fr; }
+  .about-image  { display: none; }
+}
 
 .about-text p {
   font-size: 1rem;
