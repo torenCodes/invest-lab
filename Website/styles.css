@@ -488,11 +488,15 @@ body {
 
 /* ── About Section ──────────────────────────────────────────────────────── */
 .about-layout {
-  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 4rem;
+  align-items: start;
 }
 
 @media (max-width: 720px) {
   .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-image  { display: none; }
 }
 
 .about-text .section-title { margin-bottom: 1.5rem; }
@@ -522,6 +526,17 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  object-position: top;
+  border-radius: var(--radius);
+  display: block;
+  box-shadow: var(--shadow-md);
 }
 
 .about-img {
