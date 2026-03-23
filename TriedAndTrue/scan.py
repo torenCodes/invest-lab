@@ -72,7 +72,7 @@ def get_holdings(symbol):
                 if df is not None and not df.empty:
                     result = []
                     for idx, row in df.iterrows():
-                        raw = row.get('holdingPercent', 0)
+                        raw = row.get('Holding Percent', row.get('holdingPercent', 0))
                         try:
                             pct = float(raw) * 100
                         except (TypeError, ValueError):
@@ -82,7 +82,7 @@ def get_holdings(symbol):
                             continue
                         result.append({
                             'ticker': sym,
-                            'name':   str(row.get('holdingName', sym)).strip(),
+                            'name':   str(row.get('Name', row.get('holdingName', sym))).strip(),
                             'weight': round(pct, 2),
                         })
                     if result:
