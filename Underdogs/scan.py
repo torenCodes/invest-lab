@@ -22,7 +22,7 @@ except ImportError:
 BASE_DIR       = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE    = os.path.join(BASE_DIR, "data", "results.json")
 INSIDER_FILE   = os.path.join(BASE_DIR, "..", "InsiderBuying", "data", "results.json")
-NEXT_SCAN_INFO = "Mondays 9am ET"
+NEXT_SCAN_INFO = "Mon / Wed / Fri 9am ET"
 
 FINNHUB_KEY = os.environ.get("FINNHUB_KEY", "d6703v9r01qmckkbjg6gd6703v9r01qmckkbjg70")
 
