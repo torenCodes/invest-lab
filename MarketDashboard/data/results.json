@@ -1,33 +1,105 @@
 {
-  "scan_time": "2026-03-23T13:54:30.203267+00:00",
+  "scan_time": "2026-03-23T14:40:21.127105+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 13,
+  "total_scanned": 19,
   "day_trades": [
     {
-      "ticker": "AAL",
-      "name": "American Airlines Group Inc",
+      "ticker": "UAL",
+      "name": "United Airlines Holdings Inc",
       "sector": "Airlines",
-      "current_price": 10.97,
-      "change_pct": 5.1774,
-      "high": 11.335,
-      "low": 10.72,
-      "open": 10.72,
-      "prev_close": 10.43,
+      "current_price": 93.99,
+      "change_pct": 4.4914,
+      "high": 96.6,
+      "low": 92.3025,
+      "open": 92.3025,
+      "prev_close": 89.95,
+      "score": 55,
+      "signals": [
+        "Top gainer (+4.5%)",
+        "High volume",
+        "Good move (+4.5%)",
+        "High Trending buzz (20)",
+        "Yahoo trending (#1)"
+      ],
+      "reddit_mentions": 20,
+      "market_cap": 29092566743.319702,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/UAL.png",
+      "weburl": "https://ir.united.com/",
+      "yahoo_trending_rank": 1,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2025-12-31",
+          "actual": 3.1,
+          "estimate": 2.97,
+          "beat": true,
+          "surprise_pct": 4.5
+        }
+      }
+    },
+    {
+      "ticker": "CCL",
+      "name": "Carnival Corp",
+      "sector": "Hotels, Restaurants & Leisure",
+      "current_price": 25.84,
+      "change_pct": 7.131,
+      "high": 26.03,
+      "low": 24.71,
+      "open": 24.71,
+      "prev_close": 24.12,
       "score": 51,
       "signals": [
-        "Top gainer (+5.2%)",
+        "Top gainer (+7.1%)",
         "High volume",
-        "Strong move (+5.2%)",
+        "Strong move (+7.1%)",
         "Trending buzz (10)",
         "Yahoo trending (#11)"
       ],
       "reddit_mentions": 10,
+      "market_cap": 33306716258.256607,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CCL.png",
+      "weburl": "https://www.carnivalcorp.com/",
+      "yahoo_trending_rank": 11,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2025-12-31",
+          "actual": 0.34,
+          "estimate": 0.25,
+          "beat": true,
+          "surprise_pct": 37.2
+        }
+      }
+    },
+    {
+      "ticker": "AAL",
+      "name": "American Airlines Group Inc",
+      "sector": "Airlines",
+      "current_price": 10.89,
+      "change_pct": 4.4104,
+      "high": 11.335,
+      "low": 10.72,
+      "open": 10.72,
+      "prev_close": 10.43,
+      "score": 50,
+      "signals": [
+        "Top gainer (+4.4%)",
+        "High volume",
+        "Good move (+4.4%)",
+        "Trending buzz (13)",
+        "Yahoo trending (#8)"
+      ],
+      "reddit_mentions": 13,
       "market_cap": 6886976739.462037,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AAL.png",
       "weburl": "https://americanairlines.gcs-web.com/",
-      "yahoo_trending_rank": 11,
+      "yahoo_trending_rank": 8,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -38,22 +110,60 @@
           "surprise_pct": -53.8
         }
       }
+    }
+  ],
+  "swing_trades": [
+    {
+      "ticker": "COF",
+      "name": "Capital One Financial Corp",
+      "sector": "Financial Services",
+      "current_price": 188.03,
+      "change_pct": 3.6206,
+      "high": 190.99,
+      "low": 184.39,
+      "open": 184.39,
+      "prev_close": 181.46,
+      "score": 50,
+      "signals": [
+        "Top gainer (+3.6%)",
+        "High volume",
+        "Good move (+3.6%)",
+        "Trending buzz (14)",
+        "Yahoo trending (#7)"
+      ],
+      "reddit_mentions": 14,
+      "market_cap": 112824605171.87799,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/COF.png",
+      "weburl": "https://www.capitalone.com/",
+      "yahoo_trending_rank": 7,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2025-12-31",
+          "actual": 3.86,
+          "estimate": 4.16,
+          "beat": false,
+          "surprise_pct": -7.1
+        }
+      }
     },
     {
       "ticker": "DKNG",
       "name": "Draftkings Inc",
       "sector": "Hotels, Restaurants & Leisure",
-      "current_price": 24.62,
-      "change_pct": 4.0135,
+      "current_price": 24.58,
+      "change_pct": 3.8445,
       "high": 25.64,
       "low": 24.296,
       "open": 24.296,
       "prev_close": 23.67,
       "score": 50,
       "signals": [
-        "Top gainer (+4.0%)",
+        "Top gainer (+3.8%)",
         "High volume",
-        "Good move (+4.0%)",
+        "Good move (+3.8%)",
         "Trending buzz (16)",
         "Yahoo trending (#5)"
       ],
@@ -79,27 +189,27 @@
       "ticker": "APGE",
       "name": "Apogee Therapeutics Inc",
       "sector": "Biotechnology",
-      "current_price": 77.74,
-      "change_pct": 17.7165,
+      "current_price": 78.09,
+      "change_pct": 18.2465,
       "high": 81,
       "low": 72.13,
       "open": 72.13,
       "prev_close": 66.04,
       "score": 46,
       "signals": [
-        "Top gainer (+17.7%)",
+        "Top gainer (+18.2%)",
         "High volume",
-        "Strong move (+17.7%)",
-        "Trending activity (8)",
-        "Yahoo trending (#13)"
+        "Strong move (+18.2%)",
+        "Trending activity (7)",
+        "Yahoo trending (#14)"
       ],
-      "reddit_mentions": 8,
+      "reddit_mentions": 7,
       "market_cap": 4588805634.270948,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950866473786.png",
       "weburl": "https://apogeetherapeutics.com/",
-      "yahoo_trending_rank": 13,
+      "yahoo_trending_rank": 14,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -112,138 +222,71 @@
       }
     }
   ],
-  "swing_trades": [
+  "buzz_source": "trending",
+  "reddit_cards": [
     {
-      "ticker": "SNPS",
-      "name": "Synopsys Inc",
-      "sector": "Technology",
-      "current_price": 439.32,
-      "change_pct": 4.5204,
-      "high": 439.69,
-      "low": 429.65,
-      "open": 431.87,
-      "prev_close": 420.32,
-      "score": 50,
+      "ticker": "UAL",
+      "name": "United Airlines Holdings Inc",
+      "sector": "Airlines",
+      "current_price": 93.99,
+      "change_pct": 4.4914,
+      "high": 96.6,
+      "low": 92.3025,
+      "open": 92.3025,
+      "prev_close": 89.95,
+      "score": 55,
       "signals": [
         "Top gainer (+4.5%)",
         "High volume",
         "Good move (+4.5%)",
-        "Trending buzz (12)",
-        "Yahoo trending (#9)"
-      ],
-      "reddit_mentions": 12,
-      "market_cap": 80517351179.07054,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SNPS.png",
-      "weburl": "https://www.synopsys.com/",
-      "yahoo_trending_rank": 9,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2025-12-31",
-          "actual": 2.9,
-          "estimate": 2.83,
-          "beat": true,
-          "surprise_pct": 2.4
-        }
-      }
-    },
-    {
-      "ticker": "VST",
-      "name": "Vistra Corp",
-      "sector": "Utilities",
-      "current_price": 153.24,
-      "change_pct": 4.9445,
-      "high": 153.28,
-      "low": 148.795,
-      "open": 148.795,
-      "prev_close": 146.02,
-      "score": 50,
-      "signals": [
-        "Top gainer (+4.9%)",
-        "High volume",
-        "Good move (+4.9%)",
-        "Trending buzz (11)",
-        "Yahoo trending (#10)"
-      ],
-      "reddit_mentions": 11,
-      "market_cap": 53558880000.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/VST.png",
-      "weburl": "https://www.vistracorp.com/",
-      "yahoo_trending_rank": 10,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      }
-    },
-    {
-      "ticker": "INSM",
-      "name": "Insmed Inc",
-      "sector": "Biotechnology",
-      "current_price": 144.06,
-      "change_pct": 5.9265,
-      "high": 149.76,
-      "low": 142.56,
-      "open": 142.56,
-      "prev_close": 136,
-      "score": 46,
-      "signals": [
-        "Top gainer (+5.9%)",
-        "High volume",
-        "Strong move (+5.9%)",
-        "Trending activity (9)",
-        "Yahoo trending (#12)"
-      ],
-      "reddit_mentions": 9,
-      "market_cap": 29315057738.88889,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/INSM.png",
-      "weburl": "https://insmed.com/",
-      "yahoo_trending_rank": 12,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2025-12-31",
-          "actual": -1.54,
-          "estimate": -1.32,
-          "beat": false,
-          "surprise_pct": -17.0
-        }
-      }
-    }
-  ],
-  "buzz_source": "trending",
-  "reddit_cards": [
-    {
-      "ticker": "FFAI",
-      "name": "Faraday Future Intelligent Electric Inc",
-      "sector": "Automobiles",
-      "current_price": 0.3071,
-      "change_pct": 13.8251,
-      "high": 0.35125,
-      "low": 0.2997,
-      "open": 0.35125,
-      "prev_close": 0.2698,
-      "score": 55,
-      "signals": [
-        "Top gainer (+13.8%)",
-        "High volume",
-        "Strong move (+13.8%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)"
       ],
       "reddit_mentions": 20,
-      "market_cap": 55412465.47557328,
+      "market_cap": 29092566743.319702,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950748507876.png",
-      "weburl": "https://www.ff.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/UAL.png",
+      "weburl": "https://ir.united.com/",
       "yahoo_trending_rank": 1,
       "mentions": 20,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2025-12-31",
+          "actual": 3.1,
+          "estimate": 2.97,
+          "beat": true,
+          "surprise_pct": 4.5
+        }
+      }
+    },
+    {
+      "ticker": "UGRO",
+      "name": "urban-gro Inc",
+      "sector": "Machinery",
+      "current_price": 3.53,
+      "change_pct": 61.9266,
+      "high": 4.33,
+      "low": 2.94,
+      "open": 2.94,
+      "prev_close": 2.18,
+      "score": 50,
+      "signals": [
+        "Top gainer (+61.9%)",
+        "High volume",
+        "Strong move (+61.9%)",
+        "Trending buzz (19)",
+        "Yahoo trending (#2)"
+      ],
+      "reddit_mentions": 19,
+      "market_cap": 1638536.3430962344,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950791178656.png",
+      "weburl": "https://urban-gro.com/",
+      "yahoo_trending_rank": 2,
+      "mentions": 19,
       "earnings_info": {
         "upcoming": null,
         "recent": null
@@ -253,58 +296,27 @@
       "ticker": "MGRX",
       "name": "Mangoceuticals Inc",
       "sector": "Retail",
-      "current_price": 0.3545,
-      "change_pct": 118.8272,
-      "high": 0.3945,
+      "current_price": 0.3583,
+      "change_pct": 121.1728,
+      "high": 0.4128,
       "low": 0.3273,
       "open": 0.3319,
       "prev_close": 0.162,
       "score": 58,
       "signals": [
-        "Top gainer (+118.8%)",
+        "Top gainer (+121.2%)",
         "High volume",
-        "Strong move (+118.8%)",
-        "Trending buzz (19)",
-        "Yahoo trending (#2)",
+        "Strong move (+121.2%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)",
         "Unusual volume (Finviz)"
       ],
-      "reddit_mentions": 19,
+      "reddit_mentions": 18,
       "market_cap": 5800441.0,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950834429316.png",
       "weburl": "https://www.mangorx.com/",
-      "yahoo_trending_rank": 2,
-      "mentions": 19,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      }
-    },
-    {
-      "ticker": "UGRO",
-      "name": "urban-gro Inc",
-      "sector": "Machinery",
-      "current_price": 4.12,
-      "change_pct": 88.9908,
-      "high": 4.33,
-      "low": 2.94,
-      "open": 2.94,
-      "prev_close": 2.18,
-      "score": 50,
-      "signals": [
-        "Top gainer (+89.0%)",
-        "High volume",
-        "Strong move (+89.0%)",
-        "Trending buzz (18)",
-        "Yahoo trending (#3)"
-      ],
-      "reddit_mentions": 18,
-      "market_cap": 1638536.3430962344,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950791178656.png",
-      "weburl": "https://urban-gro.com/",
       "yahoo_trending_rank": 3,
       "mentions": 18,
       "earnings_info": {
@@ -315,60 +327,70 @@
   ],
   "sector_flow": [
     {
-      "sector": "Machinery",
-      "avg_change": 88.99,
-      "count": 1
-    },
-    {
       "sector": "Retail",
-      "avg_change": 74.47,
+      "avg_change": 72.63,
       "count": 2
     },
     {
-      "sector": "Biotechnology",
-      "avg_change": 14.63,
-      "count": 3
+      "sector": "Machinery",
+      "avg_change": 61.93,
+      "count": 1
+    },
+    {
+      "sector": "Health Care",
+      "avg_change": 55.56,
+      "count": 1
+    },
+    {
+      "sector": "Media",
+      "avg_change": 34.95,
+      "count": 2
     },
     {
       "sector": "Automobiles",
-      "avg_change": 13.83,
+      "avg_change": 27.46,
+      "count": 1
+    },
+    {
+      "sector": "Biotechnology",
+      "avg_change": 12.68,
+      "count": 3
+    },
+    {
+      "sector": "Hotels, Restaurants & Leisure",
+      "avg_change": 5.49,
+      "count": 2
+    },
+    {
+      "sector": "Technology",
+      "avg_change": 4.79,
       "count": 1
     },
     {
       "sector": "Airlines",
-      "avg_change": 5.18,
-      "count": 1
+      "avg_change": 4.45,
+      "count": 2
     },
     {
-      "sector": "Utilities",
-      "avg_change": 4.94,
-      "count": 1
-    },
-    {
-      "sector": "Technology",
-      "avg_change": 4.52,
-      "count": 1
-    },
-    {
-      "sector": "Hotels, Restaurants & Leisure",
-      "avg_change": 4.01,
+      "sector": "Financial Services",
+      "avg_change": 3.62,
       "count": 1
     }
   ],
   "reddit_feed": [
     {
-      "id": "139510334",
-      "title": "Wondering what's happening in today's pre-market session?",
+      "id": "139510366",
+      "title": "What's going on in today's pre-market session: S&P500 movers",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "MGRX"
+        "UAL"
       ],
       "confirmed_tickers": [
-        "MGRX"
+        "UAL"
       ],
-      "hours_ago": 0.4,
-      "url": "https://finnhub.io/api/news?id=8c1df2355003494f4d8a197f7e6ee71ad4de1353155ee3f6004111aa6d9d6b92",
+      "hours_ago": 1.1,
+      "url": "https://finnhub.io/api/news?id=8ac55a36b8c3c47f2202f7a508a0b36ae1047558ab498b7e380a1e22be5f4bd9",
       "is_news": true
     },
     {
@@ -382,8 +404,173 @@
       "confirmed_tickers": [
         "UGRO"
       ],
-      "hours_ago": 0.4,
+      "hours_ago": 1.2,
       "url": "https://finnhub.io/api/news?id=8c1df2355003494f4d8a197f7e6ee71ad4de1353155ee3f6004111aa6d9d6b92",
+      "is_news": true
+    },
+    {
+      "id": "139510334",
+      "title": "Wondering what's happening in today's pre-market session?",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "MGRX"
+      ],
+      "confirmed_tickers": [
+        "MGRX"
+      ],
+      "hours_ago": 1.2,
+      "url": "https://finnhub.io/api/news?id=8c1df2355003494f4d8a197f7e6ee71ad4de1353155ee3f6004111aa6d9d6b92",
+      "is_news": true
+    },
+    {
+      "id": "139510705",
+      "title": "Trump Postpones Strikes Against Iran\u2019s Power Plants for 5 Days. Stocks Spike.",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "UAL"
+      ],
+      "confirmed_tickers": [
+        "UAL"
+      ],
+      "hours_ago": 1.4,
+      "url": "https://finnhub.io/api/news?id=f8ccd9b80d23cdc779cc4bbfd7cf73757f040aceb683d326b46ffd599debafad",
+      "is_news": true
+    },
+    {
+      "id": "139510785",
+      "title": "UBS Lowers PT on United Airlines Holdings (UAL) Stock",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "UAL"
+      ],
+      "confirmed_tickers": [
+        "UAL"
+      ],
+      "hours_ago": 2.0,
+      "url": "https://finnhub.io/api/news?id=d3857128aac3fa0fe7e6a41af9359b35c4320687dd0eb9a647b22f25ed46e1cf",
+      "is_news": true
+    },
+    {
+      "id": "139512840",
+      "title": "10 War-Beaten Stocks Rally Monday On Trump Truce Talk\u2014Despite Iran Denial",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "UAL"
+      ],
+      "confirmed_tickers": [
+        "UAL"
+      ],
+      "hours_ago": 4.1,
+      "url": "https://finnhub.io/api/news?id=bc1bf16c9c363f97b0b68ad91a94c0e75130b1b3b08b726f7ce4cd707d721c12",
+      "is_news": true
+    },
+    {
+      "id": "139509838",
+      "title": "United shares slip as airline cuts flights on soaring fuel costs",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "UAL"
+      ],
+      "confirmed_tickers": [
+        "UAL"
+      ],
+      "hours_ago": 4.2,
+      "url": "https://finnhub.io/api/news?id=611bfe66134f3b05bb839157114cf1db149e2273878177e6476caab1e3ad506f",
+      "is_news": true
+    },
+    {
+      "id": "139512685",
+      "title": "Dow Jumps Over 800 Points; Chicago Fed National Activity Index Declines In February",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "UGRO"
+      ],
+      "confirmed_tickers": [
+        "UGRO"
+      ],
+      "hours_ago": 4.3,
+      "url": "https://finnhub.io/api/news?id=08a108e359f1af27fbb0793eb0170166b03fdd4e6f189e33ef1751bc987d3ee8",
+      "is_news": true
+    },
+    {
+      "id": "139512685",
+      "title": "Dow Jumps Over 800 Points; Chicago Fed National Activity Index Declines In February",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "MGRX"
+      ],
+      "confirmed_tickers": [
+        "MGRX"
+      ],
+      "hours_ago": 4.3,
+      "url": "https://finnhub.io/api/news?id=08a108e359f1af27fbb0793eb0170166b03fdd4e6f189e33ef1751bc987d3ee8",
+      "is_news": true
+    },
+    {
+      "id": "139511494",
+      "title": "urban-gro shares are trading higher after the company announced that its merger with Sri Lanka's Innovative Production G",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "UGRO"
+      ],
+      "confirmed_tickers": [
+        "UGRO"
+      ],
+      "hours_ago": 5.2,
+      "url": "https://finnhub.io/api/news?id=9909013914ceac2925adc7b285894b77bbcf274619237e81af16a3106b390712",
+      "is_news": true
+    },
+    {
+      "id": "139511495",
+      "title": "Why Is urban-gro Stock Gaining Monday?",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "UGRO"
+      ],
+      "confirmed_tickers": [
+        "UGRO"
+      ],
+      "hours_ago": 5.5,
+      "url": "https://finnhub.io/api/news?id=cd76aa1be0fbdf76034886dfe3d40caf833dabfb2a32a7855bc7b08697005db0",
+      "is_news": true
+    },
+    {
+      "id": "139510439",
+      "title": "12 Industrials Stocks Moving In Monday's Pre-Market Session",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "UGRO"
+      ],
+      "confirmed_tickers": [
+        "UGRO"
+      ],
+      "hours_ago": 6.6,
+      "url": "https://finnhub.io/api/news?id=5167a9c47d17bd1b239bb0c771ad694f330863de6af1ad10081fe046b123df7f",
+      "is_news": true
+    },
+    {
+      "id": "139510436",
+      "title": "Why Faraday Future Intelligent Electric Shares Are Trading Higher By Around 55%; Here Are 20 Stocks Moving Premarket",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "MGRX"
+      ],
+      "confirmed_tickers": [
+        "MGRX"
+      ],
+      "hours_ago": 8.1,
+      "url": "https://finnhub.io/api/news?id=f1de68c09f6bcded10fd9d930999df8f58de8f12ea451ea074b768bfeb15a8a6",
       "is_news": true
     },
     {
@@ -397,38 +584,8 @@
       "confirmed_tickers": [
         "MGRX"
       ],
-      "hours_ago": 63.9,
+      "hours_ago": 64.7,
       "url": "https://finnhub.io/api/news?id=e90ddb191ca6b4859dfbd9a03d538ec8a8ef9cf9deda979a6b9ba06f187ce8fc",
-      "is_news": true
-    },
-    {
-      "id": "139496806",
-      "title": "Faraday Future Intelligent Electric Receives Nasdaq Notice",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "FFAI"
-      ],
-      "confirmed_tickers": [
-        "FFAI"
-      ],
-      "hours_ago": 68.8,
-      "url": "https://finnhub.io/api/news?id=3cba23d7b13e6b38ac2e64c45cb5c7f96d02d577a9fd12d02b93686e6aa22df5",
-      "is_news": true
-    },
-    {
-      "id": "139451160",
-      "title": "Reported Earlier, Faraday Future Launches ~$500K Executive Share Purchase Initiative To Align Management Interests With ",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "FFAI"
-      ],
-      "confirmed_tickers": [
-        "FFAI"
-      ],
-      "hours_ago": 132.1,
-      "url": "https://finnhub.io/api/news?id=0846d4bce457401c2db201dc344f53bd2c1b25c92e5fb9e136d7a182dda651e3",
       "is_news": true
     },
     {
@@ -442,58 +599,13 @@
       "confirmed_tickers": [
         "MGRX"
       ],
-      "hours_ago": 141.9,
+      "hours_ago": 142.6,
       "url": "https://finnhub.io/api/news?id=327f3a9987547833a4f00a24fd196a751c477fe7e909ba53f897d9769feb3a22",
-      "is_news": true
-    },
-    {
-      "id": "139451337",
-      "title": "Mangoceuticals Files Civil Lawsuit Against Clarity Ventures For $73M; Alleges Clarity Failed To Deliver Fully Functional",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "MGRX"
-      ],
-      "confirmed_tickers": [
-        "MGRX"
-      ],
-      "hours_ago": 141.9,
-      "url": "https://finnhub.io/api/news?id=8991896f539fd597df0b61c429ef749c45c59b615f25a71fed4fddca447a2708",
-      "is_news": true
-    },
-    {
-      "id": "139435148",
-      "title": "12 Consumer Discretionary Stocks Moving In Monday's Intraday Session",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "FFAI"
-      ],
-      "confirmed_tickers": [
-        "FFAI"
-      ],
-      "hours_ago": 168.8,
-      "url": "https://finnhub.io/api/news?id=f53dc3a1b3e343f6e620a333d9c51b0b0b3f2d5ef25424e9bb614ba0c791e8ed",
-      "is_news": true
-    },
-    {
-      "id": "139422936",
-      "title": "Reported Sunday, Faraday Future Delivers Two FF Master And Pre-Delivers Two FX Aegis Units, Relocates Headquarters To Si",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "FFAI"
-      ],
-      "confirmed_tickers": [
-        "FFAI"
-      ],
-      "hours_ago": 180.8,
-      "url": "https://finnhub.io/api/news?id=14c10cdc25307ee5d33645808c5d8de442264a7087006cd884498c7123c7183d",
       "is_news": true
     }
   ],
   "fear_greed": {
-    "score": 18.1,
+    "score": 18.4,
     "rating": "Extreme Fear",
     "prev_close": 14.6,
     "week_ago": 15.4
@@ -521,6 +633,20 @@
       "datetime": 1774266118
     },
     {
+      "headline": "Instant view: World markets rally as Trump postpones military strikes on Iranian power plants - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQX291SG9VaHJHSUZVdnhSNDZadTFBOHZqQXdQVkNKTDVYdlRmM1o5UFlvTEhPM3VkMXRuOHRTdEZXM3lSZ2ZsTmpGUUphV2daZzZtTW9Dc2V2b3k1Y3poOGdjZDZqNDdHdDVhT2tZWDBNeGdRUVY2Q2VGT0w3MmdYMkp4bURXbzgyQTZoWkhCQmExRHRMeE1EbWZDYUVTVG5HbmFpMENRR3BYd3UxbEFYaTRod1ZIZHRrWDA4WjQwMnQydmRRRVE?oc=5",
+      "summary": "Instant view: World markets rally as Trump postpones military strikes on Iranian power plants\u00a0\u00a0Reuters",
+      "datetime": 1774265384
+    },
+    {
+      "headline": "Oil falls over 13% on Trump postponing military strikes on Iran energy infrastructure - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOMzNmYW1GMDdmZm5EODlKcnZBODBYV2xmUnB4TmdIRnFXZ0lTRmZUX05XVXE4SF9KQXdrbVRzUU15Q19GZGs0MjlQbW1UQjdKd29LWTgwU25CR1c5cmdsVGxBNzBFLTdhU2owREtYdEFEZVRKMU94c3pUMmszUUZWTE5oa1lYM25UejNjZUxQTnZFLTRPeFE5V1FZUThMQlFhcHJySkhNRjVFNHlIaDF0RjZqd2FIUWRrY0x1aTN4OVRtZ01nNGFkanFB?oc=5",
+      "summary": "Oil falls over 13% on Trump postponing military strikes on Iran energy infrastructure\u00a0\u00a0Reuters",
+      "datetime": 1774265363
+    },
+    {
       "headline": "Dollar slides, stocks jump as Trump signals pause on Iran strikes - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQQzFTdmdXU0tTajdwaENVS3ZCeDFQc3NRc0h2OS1lTWhiVWZJZW1BbHJaSjJDRTQ1b0R0RThEVS1BekQ2YWpzakdwZXZyUzFDU1dJY09sTVdiS3dIWkgxTWtrM0N5M29RTTdYenpRS2w0Nkg0Z3lBLU5uVDluN2lTcEkzem44c1ZLWEE4MjBVUW1IYUtNY0ZORkVZdXRHaTRHR2JJUE8xcXpoSW5uMEJFRWFKRXc?oc=5",
@@ -535,6 +661,20 @@
       "datetime": 1774264299
     },
     {
+      "headline": "Trump visits Memphis to tout crime-fighting efforts as Iran war lingers - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPUHY4cjctVHRJUHQwZzZ1MTBmRGxRT24wQlV4bXMtMjlFTWpISHZZZk5sUnJIS2w3by1hQlBiSFVnWUppUEtzYko4SXlyeEdIUXo5NHEzVThQQ2JROTY0S1B5c010dm4yZFRFV1AyOGZwcG9wMl85R08yUXpKRTRGS2xlbzBIUlFrdDJEdGh1cjljYjNZQkxrZmxIRXE2bC1oQm8yaWxRZEdTYUstQmZr?oc=5",
+      "summary": "Trump visits Memphis to tout crime-fighting efforts as Iran war lingers\u00a0\u00a0Reuters",
+      "datetime": 1774260228
+    },
+    {
+      "headline": "Sterling drops along with bonds as Iran war shakes UK markets - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNUE3UU1ydTJnSjFnN2FJX0pVakdkRU43ZFMtRGRPaW1hSHBlVUY0SElQd2JtUUt4eU1vdC12dXhXeU04Y1loWkxwaFBXRTIwWTNfeE8tTDRiOW9WaGxwSUFGWGtUQ2hnNGV0SmZXVHAxUXg4UmJuUTBOcG84emZyQURqaVdEWkQ5SE9YeFZuNWxLS0dGc080cHJyUWEtdVhJenhYOUVn?oc=5",
+      "summary": "Sterling drops along with bonds as Iran war shakes UK markets\u00a0\u00a0Reuters",
+      "datetime": 1774260065
+    },
+    {
       "headline": "UK sees no evidence of Iran targeting Britain, says Starmer - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORE5ja0JxVEpEVmcxYUNQQzc5N0FOR0UxNTRVZXRBYllLRURobWJpVWxlNnBzWjB1dW9ULWIyRFM1bUdjbWNDZXVLTDZqV21lakIwa3ZLWFE3TVFRcUlKeHlFQ01oM3MtXzM2d00yd2paVTBFV1dCbkhsSmpUNmVuVmktcVRnb3NiUGltZHpPT19DWWw5MWJxVDVrY1JtVmYzMlE?oc=5",
@@ -542,10 +682,10 @@
       "datetime": 1774258408
     },
     {
-      "headline": "Wall St set for higher open after Trump postpones strikes on Iranian power plants - Reuters",
+      "headline": "SNAPSHOT Wall St opens higher after Trump postpones strikes on Iranian power plants - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPdmQ5dTl1Ni1MNnlQODduaV9wU0pNdzJ0LW9VT0U5akt5eWRkZWN4TXkzVlFjUVIyeVV3UjZuVHRmT2ZRTGZPTWgzXzRhbzcwNVp1Vi1MV0NpZ25jLUdyc1d4TGJIWFRiczdJVEotOTNKSmJyQXItMzRKOGVWMUFtU2t6RXZQQ0RMMl9Rb1NQbnRPSnJfV3d3a2RKSnRpSC1JVFp1cHZvNlc2aXVFMGlnbw?oc=5",
-      "summary": "Wall St set for higher open after Trump postpones strikes on Iranian power plants\u00a0\u00a0Reuters",
+      "summary": "SNAPSHOT Wall St opens higher after Trump postpones strikes on Iranian power plants\u00a0\u00a0Reuters",
       "datetime": 1774256748
     },
     {
@@ -554,34 +694,6 @@
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcjFtZl9HY2NPR3I0YnhJVDJFUWlJQW84U3lPQTRCUG9CenYzZVZLWHUtbkhaeVRkX1BhdmVtNVBqRWpjcEdfcVh4SDdUV1JjVVJibUs0Zm04TGUxbXlWSU1uMkp1aVJidjFrd1Rnc3JZQ3JuOVJLYkxQZkZnMHVXbVk1ZjJaNUFTUV9GU0hlazBjRy1GeGp3emhYcEhVVG9Hbm9CRQ?oc=5",
       "summary": "Briton held in Iran urges UK PM Starmer to publicly reject spying accusation\u00a0\u00a0Reuters",
       "datetime": 1774255768
-    },
-    {
-      "headline": "Iran says coastal attack will lead to full Gulf closure and mine-laying - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQQ0RHekRXX282RGdBRFhZTkRPTGluSnpiS2hYMUVRSGlmMUo4aVhyVEowTWFwYXF2N2k4TGM2OGpWaWoydEJrbE9SUXE3aXExaVVCMEZRY1EzLXVTa3o1RGJnRzYzOU4tVXJsdXQ5c2RLQ3ZxdEszNmREZDFDa29lbXdUWDVjSjBwSlMyWVM4LU1BaUsyaEFncmJIU3RoMGFzR054YzNpbmRPNDN2YWhsYnk5UmNqTHBQSWc?oc=5",
-      "summary": "Iran says coastal attack will lead to full Gulf closure and mine-laying\u00a0\u00a0Reuters",
-      "datetime": 1774253674
-    },
-    {
-      "headline": "China's Sinopec will not buy Iranian oil, wants to tap state reserves - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQ3BvVUxad1hpTUpnRWhPTWJwWXpnel9YMzY5cWlkRDhTZDJ6OGhlaEM1SXZRTzJPQVlDMGtpeU9Ka3o1QURyNWdLLXVyelhsUzRORW5hY3MxM2V4UE8yOFBXcjlVQ2dzYXZzQUJYRHhKRnBjbnZvZE5BcTY2TUp1WjAwNnpEbXVTbGF3dGtHdjNueXFUelpGemtZVDFaZ3BnRG1aWkJCZFNSQQ?oc=5",
-      "summary": "China's Sinopec will not buy Iranian oil, wants to tap state reserves\u00a0\u00a0Reuters",
-      "datetime": 1774253251
-    },
-    {
-      "headline": "China urges US, Israel to stop military action in Middle East, warns of 'vicious cycle' - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZGJFU0steDY5bUNTYkRKQmVRMS1weGNzM2NBMWV0ZDZSWVVRX0NYMDFabkVOLXJHVkg0dl9Qcng4UlgzZy1ZamdXVkYxOHBNQk02eXBidk5kY0M1aHdwRER4TjdrRll6RFpsM0p1Njd1MHYwWFEtOGstMW1Zc3ZiTkhfbGNqNzFJQm1zRjFVMlQ1RnZpZktDNUhNZzRfOFFWc0lKMA?oc=5",
-      "summary": "China urges US, Israel to stop military action in Middle East, warns of 'vicious cycle'\u00a0\u00a0Reuters",
-      "datetime": 1774251588
-    },
-    {
-      "headline": "Siemens CEO says customers holding back on investments due to Iran war - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOSThBYUJLR1cxZjY0N1hRWU9FS2s2ajlBdkxYVFZmVGxRSzU0b2VIbzk1R19tTEhxLWE1SFVNZVpSZnZwa3VBUGFjbGxBOHBTUFRUR1JHVWhrcDY5c2wzZnBVRk1qd0R6OFN6bHM0YmhVWGEzWEQ0VDhXSWxUeExkOUQ3MW5keDRtYUwwQXJfX1JGem8yZENQQ2tqR3lQaGY4Mm41LXpRdUlBbnRpSVhlc2RR?oc=5",
-      "summary": "Siemens CEO says customers holding back on investments due to Iran war\u00a0\u00a0Reuters",
-      "datetime": 1774250531
     }
   ],
   "earnings_cal": [
