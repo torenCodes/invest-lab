@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-03-25T19:30:30.816868+00:00",
+  "scan_time": "2026-03-25T19:53:16.751288+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 22,
   "day_trades": [
@@ -7,17 +7,17 @@
       "ticker": "CORT",
       "name": "Corcept Therapeutics Inc",
       "sector": "Pharmaceuticals",
-      "current_price": 41.72,
-      "change_pct": 23.359,
+      "current_price": 40.85,
+      "change_pct": 20.7865,
       "high": 50.4,
       "low": 33.99,
       "open": 34.195,
       "prev_close": 33.82,
       "score": 55,
       "signals": [
-        "Top gainer (+23.4%)",
+        "Top gainer (+20.8%)",
         "High volume",
-        "Strong move (+23.4%)",
+        "Strong move (+20.8%)",
         "Trending buzz (12)",
         "Yahoo trending (#9)"
       ],
@@ -43,17 +43,17 @@
       "ticker": "INTC",
       "name": "Intel Corp",
       "sector": "Semiconductors",
-      "current_price": 47.16,
-      "change_pct": 7.0359,
+      "current_price": 47.11,
+      "change_pct": 6.9224,
       "high": 47.845,
       "low": 45.425,
       "open": 45.425,
       "prev_close": 44.06,
       "score": 55,
       "signals": [
-        "Top gainer (+7.0%)",
+        "Top gainer (+6.9%)",
         "High volume",
-        "Strong move (+7.0%)",
+        "Strong move (+6.9%)",
         "Trending buzz (16)",
         "Yahoo trending (#5)"
       ],
@@ -79,17 +79,17 @@
       "ticker": "JBLU",
       "name": "JetBlue Airways Corp",
       "sector": "Airlines",
-      "current_price": 4.84,
-      "change_pct": 15.5131,
+      "current_price": 4.81,
+      "change_pct": 14.7971,
       "high": 4.99,
       "low": 4.2301,
       "open": 4.2775,
       "prev_close": 4.19,
       "score": 55,
       "signals": [
-        "Top gainer (+15.5%)",
+        "Top gainer (+14.8%)",
         "High volume",
-        "Strong move (+15.5%)",
+        "Strong move (+14.8%)",
         "Trending buzz (17)",
         "Yahoo trending (#4)"
       ],
@@ -117,17 +117,17 @@
       "ticker": "AMD",
       "name": "Advanced Micro Devices Inc",
       "sector": "Semiconductors",
-      "current_price": 220.44,
-      "change_pct": 7.338,
+      "current_price": 220,
+      "change_pct": 7.1237,
       "high": 221.33,
       "low": 209.4875,
       "open": 209.4875,
       "prev_close": 205.37,
       "score": 60,
       "signals": [
-        "Top gainer (+7.3%)",
+        "Top gainer (+7.1%)",
         "High volume",
-        "Strong move (+7.3%)",
+        "Strong move (+7.1%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)"
       ],
@@ -153,8 +153,8 @@
       "ticker": "ARM",
       "name": "Arm Holdings PLC",
       "sector": "Semiconductors",
-      "current_price": 157.79,
-      "change_pct": 16.9161,
+      "current_price": 157.73,
+      "change_pct": 16.8717,
       "high": 166.69,
       "low": 147.6975,
       "open": 147.6975,
@@ -189,17 +189,17 @@
       "ticker": "SRPT",
       "name": "Sarepta Therapeutics Inc",
       "sector": "Biotechnology",
-      "current_price": 23.41,
-      "change_pct": 32.9358,
-      "high": 23.43,
+      "current_price": 23.6,
+      "change_pct": 34.0148,
+      "high": 23.62,
       "low": 18.85,
       "open": 18.85,
       "prev_close": 17.61,
       "score": 55,
       "signals": [
-        "Top gainer (+32.9%)",
+        "Top gainer (+34.0%)",
         "High volume",
-        "Strong move (+32.9%)",
+        "Strong move (+34.0%)",
         "Trending buzz (18)",
         "Yahoo trending (#3)"
       ],
@@ -228,17 +228,17 @@
       "ticker": "AMD",
       "name": "Advanced Micro Devices Inc",
       "sector": "Semiconductors",
-      "current_price": 220.44,
-      "change_pct": 7.338,
+      "current_price": 220,
+      "change_pct": 7.1237,
       "high": 221.33,
       "low": 209.4875,
       "open": 209.4875,
       "prev_close": 205.37,
       "score": 60,
       "signals": [
-        "Top gainer (+7.3%)",
+        "Top gainer (+7.1%)",
         "High volume",
-        "Strong move (+7.3%)",
+        "Strong move (+7.1%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)"
       ],
@@ -297,17 +297,17 @@
       "ticker": "SRPT",
       "name": "Sarepta Therapeutics Inc",
       "sector": "Biotechnology",
-      "current_price": 23.41,
-      "change_pct": 32.9358,
-      "high": 23.43,
+      "current_price": 23.6,
+      "change_pct": 34.0148,
+      "high": 23.62,
       "low": 18.85,
       "open": 18.85,
       "prev_close": 17.61,
       "score": 55,
       "signals": [
-        "Top gainer (+32.9%)",
+        "Top gainer (+34.0%)",
         "High volume",
-        "Strong move (+32.9%)",
+        "Strong move (+34.0%)",
         "Trending buzz (18)",
         "Yahoo trending (#3)"
       ],
@@ -331,61 +331,94 @@
       }
     }
   ],
-  "sector_flow": [
+  "sector_rotation": [
     {
-      "sector": "Machinery",
-      "avg_change": 308.12,
-      "count": 1
+      "ticker": "XLB",
+      "sector": "Materials",
+      "ret_1d": 1.98,
+      "ret_5d": 1.92,
+      "ret_1m": -7.4,
+      "ret_3m": null
     },
     {
-      "sector": "Real Estate",
-      "avg_change": 78.89,
-      "count": 1
+      "ticker": "XLY",
+      "sector": "Cons. Discretionary",
+      "ret_1d": 0.91,
+      "ret_5d": 0.1,
+      "ret_1m": -5.19,
+      "ret_3m": null
     },
     {
+      "ticker": "XLV",
       "sector": "Health Care",
-      "avg_change": 49.46,
-      "count": 1
+      "ret_1d": 0.9,
+      "ret_5d": -0.71,
+      "ret_1m": -7.46,
+      "ret_3m": null
     },
     {
-      "sector": "Biotechnology",
-      "avg_change": 32.94,
-      "count": 1
+      "ticker": "XLI",
+      "sector": "Industrials",
+      "ret_1d": 0.69,
+      "ret_5d": -0.03,
+      "ret_1m": -6.7,
+      "ret_3m": null
     },
     {
+      "ticker": "XLP",
+      "sector": "Cons. Staples",
+      "ret_1d": 0.5,
+      "ret_5d": -1.36,
+      "ret_1m": -9.17,
+      "ret_3m": null
+    },
+    {
+      "ticker": "XLK",
       "sector": "Technology",
-      "avg_change": 19.92,
-      "count": 1
+      "ret_1d": 0.44,
+      "ret_5d": -0.88,
+      "ret_1m": -2.55,
+      "ret_3m": null
     },
     {
-      "sector": "Aerospace & Defense",
-      "avg_change": 17.69,
-      "count": 2
+      "ticker": "XLU",
+      "sector": "Utilities",
+      "ret_1d": 0.38,
+      "ret_5d": -3.15,
+      "ret_1m": -4.11,
+      "ret_3m": null
     },
     {
-      "sector": "Airlines",
-      "avg_change": 15.51,
-      "count": 1
+      "ticker": "XLC",
+      "sector": "Comm. Services",
+      "ret_1d": 0.31,
+      "ret_5d": -1.93,
+      "ret_1m": -4.04,
+      "ret_3m": null
     },
     {
-      "sector": "N/A",
-      "avg_change": 15.12,
-      "count": 1
+      "ticker": "XLF",
+      "sector": "Financials",
+      "ret_1d": 0.17,
+      "ret_5d": 0.81,
+      "ret_1m": -3.17,
+      "ret_3m": null
     },
     {
-      "sector": "Pharmaceuticals",
-      "avg_change": 14.59,
-      "count": 2
+      "ticker": "XLRE",
+      "sector": "Real Estate",
+      "ret_1d": 0.01,
+      "ret_5d": -4.11,
+      "ret_1m": -7.86,
+      "ret_3m": null
     },
     {
-      "sector": "Semiconductors",
-      "avg_change": 10.4,
-      "count": 5
-    },
-    {
-      "sector": "Retail",
-      "avg_change": 8.34,
-      "count": 1
+      "ticker": "XLE",
+      "sector": "Energy",
+      "ret_1d": -0.31,
+      "ret_5d": 3.8,
+      "ret_1m": 10.07,
+      "ret_3m": null
     }
   ],
   "reddit_feed": [
@@ -400,7 +433,7 @@
       "confirmed_tickers": [
         "AMD"
       ],
-      "hours_ago": 0.4,
+      "hours_ago": 0.8,
       "url": "https://finnhub.io/api/news?id=43a5de65a41369006e7be00f4df213479df8433cea5cf378af8edfa26c944e86",
       "is_news": true
     },
@@ -415,7 +448,7 @@
       "confirmed_tickers": [
         "AMD"
       ],
-      "hours_ago": 1.9,
+      "hours_ago": 2.3,
       "url": "https://finnhub.io/api/news?id=382aec36dacbfd99faa2e95c0b0b83f7b07834b725b52580f1317891aa69ebcf",
       "is_news": true
     },
@@ -430,7 +463,7 @@
       "confirmed_tickers": [
         "AMD"
       ],
-      "hours_ago": 1.9,
+      "hours_ago": 2.3,
       "url": "https://finnhub.io/api/news?id=5e95101874e1d0f2bb093240076e01bc0ec600564a477897b7b4af113111f8a3",
       "is_news": true
     },
@@ -445,7 +478,7 @@
       "confirmed_tickers": [
         "SRPT"
       ],
-      "hours_ago": 2.0,
+      "hours_ago": 2.4,
       "url": "https://finnhub.io/api/news?id=cf31ecef9168d144bcbcd8e8693ab9a3ffd98f98496f38c804c8039326c78267",
       "is_news": true
     },
@@ -460,7 +493,7 @@
       "confirmed_tickers": [
         "AMD"
       ],
-      "hours_ago": 3.4,
+      "hours_ago": 3.7,
       "url": "https://finnhub.io/api/news?id=f6368f9c65ef1c47aa520b6b21e5c45305d58ab65e8ed76dc2dddebae4e2f1fb",
       "is_news": true
     },
@@ -475,7 +508,7 @@
       "confirmed_tickers": [
         "AMD"
       ],
-      "hours_ago": 3.8,
+      "hours_ago": 4.2,
       "url": "https://finnhub.io/api/news?id=bd63277de652ce8633057a8eb694302a535f4f312e878aed6845d857c5a64036",
       "is_news": true
     },
@@ -490,7 +523,7 @@
       "confirmed_tickers": [
         "SRPT"
       ],
-      "hours_ago": 4.0,
+      "hours_ago": 4.4,
       "url": "https://finnhub.io/api/news?id=4ea2ad159862f7bbd4ce3cc45bd088aa194a2d0c35e61bbf6a9345249cb36c13",
       "is_news": true
     },
@@ -505,7 +538,7 @@
       "confirmed_tickers": [
         "SRPT"
       ],
-      "hours_ago": 5.1,
+      "hours_ago": 5.4,
       "url": "https://finnhub.io/api/news?id=2bedd3485696d526399953675e7f21e979dd65e83021a04db84da1a15955fe06",
       "is_news": true
     },
@@ -520,7 +553,7 @@
       "confirmed_tickers": [
         "SRPT"
       ],
-      "hours_ago": 6.6,
+      "hours_ago": 7.0,
       "url": "https://finnhub.io/api/news?id=04dc6aae46144fd9846288c3d1988ada4ed741820f99741ba0c2e3cc9b8ff120",
       "is_news": true
     },
@@ -535,7 +568,7 @@
       "confirmed_tickers": [
         "SRPT"
       ],
-      "hours_ago": 10.4,
+      "hours_ago": 10.8,
       "url": "https://finnhub.io/api/news?id=c230ee451f471ce878be829e44635da570b90a5527e773f9370e5ced61ec58f6",
       "is_news": true
     },
@@ -550,7 +583,7 @@
       "confirmed_tickers": [
         "DKNG"
       ],
-      "hours_ago": 11.5,
+      "hours_ago": 11.9,
       "url": "https://finnhub.io/api/news?id=83e35760f07dbdc2eed11e766a9e46832da7885888fdd0a98488a7d0cd7c3242",
       "is_news": true
     },
@@ -565,7 +598,7 @@
       "confirmed_tickers": [
         "DKNG"
       ],
-      "hours_ago": 29.1,
+      "hours_ago": 29.5,
       "url": "https://finnhub.io/api/news?id=00c4ce9e812432a05c8fa90c295fd8e486f028b3a7e4c0e7e98772f14e456cb2",
       "is_news": true
     },
@@ -580,7 +613,7 @@
       "confirmed_tickers": [
         "DKNG"
       ],
-      "hours_ago": 29.5,
+      "hours_ago": 29.9,
       "url": "https://finnhub.io/api/news?id=24cf2e679fc380d595852744e13756f8e80b3f27260c314607451fd668c0788a",
       "is_news": true
     },
@@ -595,7 +628,7 @@
       "confirmed_tickers": [
         "DKNG"
       ],
-      "hours_ago": 30.0,
+      "hours_ago": 30.4,
       "url": "https://finnhub.io/api/news?id=ea4988c049bd88052ee7cb9ca20c5c19216b1207496305a22dc82873836648a1",
       "is_news": true
     },
@@ -610,317 +643,15 @@
       "confirmed_tickers": [
         "DKNG"
       ],
-      "hours_ago": 31.1,
+      "hours_ago": 31.5,
       "url": "https://finnhub.io/api/news?id=eb105e232fea679fcf915e841c365cc836818b01063369a9bdab660dcf1ad811",
       "is_news": true
     }
   ],
   "fear_greed": {
-    "score": 19.4,
+    "score": 19.0,
     "rating": "Extreme Fear",
     "prev_close": 16.9,
     "week_ago": 16.5
-  },
-  "market_news": [
-    {
-      "headline": "Why Trump's meeting with Xi matters for Boeing, and Honeywell inks a deal with the Pentagon",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/03/25/why-trumps-meeting-with-xi-matters-for-boeing-and-honeywell-inks-a-deal-with-the-pentagon.html",
-      "summary": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading.",
-      "datetime": 1774464979
-    },
-    {
-      "headline": "Space stocks rally on reports of SpaceX's imminent IPO filing",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/03/25/space-stocks-.html",
-      "summary": "Space stocks, including AST SpaceMobile, Rocket Lab and Firefly Aerospace, rallied after a report that SpaceX may file to go public this week.",
-      "datetime": 1774462425
-    },
-    {
-      "headline": "Gen Z brothers bought a $4,000 pickup truck to start their business\u2014now it brings in $3 million a year",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/03/25/junk-teens-gen-z-students-launched-business-that-brings-in-millions.html",
-      "summary": "Kirk and Jacob McKinney found entrepreneurial inspiration at a local dump, launching junk removal and reselling business Junk Teens while still in high school.",
-      "datetime": 1774457628
-    },
-    {
-      "headline": "Trump says he could send National Guard to airports 'for more help'",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/03/25/trump-airport-security-tsa-national-guard.html",
-      "summary": "President Donald Trump says he is considering sending the National Guard to airports where  TSA officer absences have led to long lines.",
-      "datetime": 1774456002
-    },
-    {
-      "headline": "We're adding to an out-of-favor stock with limited exposure to Iran war upheaval",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/03/25/were-adding-to-an-out-of-favor-stock-with-limited-exposure-to-iran-war-upheaval.html",
-      "summary": "The stock has pulled back roughly 9% since the start of the conflict with Iran.",
-      "datetime": 1774455668
-    },
-    {
-      "headline": "We like the message of Meta's new executive stock plan \u2014 plus, a war beneficiary stock",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/03/25/we-like-the-message-of-metas-new-executive-stock-plan-plus-a-war-beneficiary-stock.html",
-      "summary": "The Investing Club holds its \"Morning Meeting\" every weekday at 10:20 a.m. ET.",
-      "datetime": 1774450994
-    },
-    {
-      "headline": "Netanyahu seeks to avoid snap vote as Iran war gives no boost in polls - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPa0J0UEY4NTRibVF5aFBsZTlHLU5yVlF1dDJJVkFkbE9QQXhHQXlzVXcwZXg0UnFHd19lU0dHelNXUnpNQXhXWlAtYVhmLXdDTC1vMkc2UTh0Y3U3Nmc2QXE0Q19GOFBHY2JfV3RwUGRpTmNoR29Iei0tWTJ3T2ZXZ2FkWXJyRC05d1p6QkZ1d3BXZ0JGTmt4ZnU1THBSbmY3dnRQWi1Ra1pKV3hnZWNWNld1ZndHUQ?oc=5",
-      "summary": "Netanyahu seeks to avoid snap vote as Iran war gives no boost in polls\u00a0\u00a0Reuters",
-      "datetime": 1774449696
-    },
-    {
-      "headline": "Iran's initial response to US proposal 'not positive', senior Iranian official tells Reuters - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQM2Z5TkNUZm56RGdHUUxDR19mOHpqazNfV0VKU0JINGZwYjVpTmhPc1FRQm9CX2FvUzZfc0NLU1JOQ3RONHZWQVJUUmJCbl9ZNDVJZGpqTG1KazBEZ01xV0xZci1MUFBTTC1HN1NrLWxYLUZWTG9NdzNULWtaeFBvUWdITnBockF2NjJJWGNPS2NQc2Myamx3aUprQmJlNHRJLUN1OU1pRTRXNl9nRWx2dE1vYnRtTWQyT0lSYmxlUndTOGExTVVRZXhYQQ?oc=5",
-      "summary": "Iran's initial response to US proposal 'not positive', senior Iranian official tells Reuters\u00a0\u00a0Reuters",
-      "datetime": 1774449228
-    },
-    {
-      "headline": "Russia evacuates 163 more staff from Iran's Bushehr nuclear plant, 300 remain - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOd2JBajVURW95OFF6YUxnTzAtb2R1VnJ1U253aC1DcDFPdEpidmpuRlMxRWpkOXpBLThDRWhSY0FHYlhzaHdyNWtsdFdPTVo3T3JkdGVKeGtmNGxNaUFXd0RsZ2FSVVBHaFdWcFV1cmZYZFNLandLUU1tdUFfTDR6ZWkxakNWTms3NGdVSzR1Q3ZsWFZ2RC1RaDZpYWFEV3VYd0xVN3BTSmRSQmpweTVVbDZn?oc=5",
-      "summary": "Russia evacuates 163 more staff from Iran's Bushehr nuclear plant, 300 remain\u00a0\u00a0Reuters",
-      "datetime": 1774447498
-    },
-    {
-      "headline": "Africa grapples with energy crisis as Iran war disrupts fuel supplies - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQVHZiMlZ3X2QxTGhYYXEwUGhOa2lsT2tPSmNvQUpSV2dSUHJfdnlhMlVZSkI5aDhLeVNTSUJZVWpiYVNEYkdFN1RCSHJURWdMbHBCOWg0VEx5bER0VUJrVWxjNjRLWUU4MkF2MlBIZEtEdWpiQUV3V2VSX0ZlZHdGN2I3QlBaR3Z3NkdkeGZhSUR0cU5GVC0wMzdpYlRZMzVTQTFXck9TeTdBZ0drTEhwUHVjdmhCT3JLUUlEendySlpTeDZCVUNtNlg5MWdBMExUZm5mSnlzRnVFZw?oc=5",
-      "summary": "Africa grapples with energy crisis as Iran war disrupts fuel supplies\u00a0\u00a0Reuters",
-      "datetime": 1774444875
-    },
-    {
-      "headline": "Jim Cramer's top 10 things to watch in the stock market Wednesday",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/03/25/jim-cramers-top-10-things-to-watch-in-the-stock-market-wednesday.html",
-      "summary": "If oil prices are falling, then it's hard to be negative about stocks.",
-      "datetime": 1774444618
-    },
-    {
-      "headline": "Spain's Sanchez says global citizens shouldn't pay for fallout of Iran war - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPS0NjSl9vbmpyNlI0aHd3U2tBaERvSWttbmhjaEdPR1BsMjhNNDMwdjI4aVk4cjBwYVVKSFlzVnpCdVpkN2p3NGtYZjdDSjFjQXU2UlJrZUZBNVZ5M21oVjg5T1U5WmU4cVBsSEJ1eFVFbWUtWldKOHpBNHlPb2JBNEhRODhLT0dBYWpxTDVxLUJ6VllSMU5VYXRMamdhVW05NHhmVXBoOFRDQUFVWWNWaHlZY2prWEtNTHJJ?oc=5",
-      "summary": "Spain's Sanchez says global citizens shouldn't pay for fallout of Iran war\u00a0\u00a0Reuters",
-      "datetime": 1774442522
-    }
-  ],
-  "earnings_cal": [
-    {
-      "ticker": "VMCAF",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "DARE",
-      "date": "2026-03-30",
-      "hour": "amc",
-      "eps_est": -0.4412,
-      "rev_est": 383265
-    },
-    {
-      "ticker": "COOT",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "YHC",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": -0.4545,
-      "rev_est": 1242300
-    },
-    {
-      "ticker": "HGTXU",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "HBSI",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "DSHK",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "PMN",
-      "date": "2026-03-30",
-      "hour": "amc",
-      "eps_est": -4.9254,
-      "rev_est": 0
-    },
-    {
-      "ticker": "KALA",
-      "date": "2026-03-30",
-      "hour": "amc",
-      "eps_est": -1.4688,
-      "rev_est": null
-    },
-    {
-      "ticker": "ZSPC",
-      "date": "2026-03-30",
-      "hour": "amc",
-      "eps_est": -0.1836,
-      "rev_est": 6321623
-    },
-    {
-      "ticker": "INLX",
-      "date": "2026-03-30",
-      "hour": "amc",
-      "eps_est": -0.0816,
-      "rev_est": 4227900
-    },
-    {
-      "ticker": "NIXX",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "PXHI",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "DSS",
-      "date": "2026-03-30",
-      "hour": "amc",
-      "eps_est": -0.3838,
-      "rev_est": 5151000
-    },
-    {
-      "ticker": "ATPC",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "EESE",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "PRGS",
-      "date": "2026-03-30",
-      "hour": "amc",
-      "eps_est": 1.5995,
-      "rev_est": 251329530
-    },
-    {
-      "ticker": "TREP",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "SPCE",
-      "date": "2026-03-30",
-      "hour": "amc",
-      "eps_est": -1.0557,
-      "rev_est": 504900
-    },
-    {
-      "ticker": "POLA",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "IDXG",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "CARM",
-      "date": "2026-03-30",
-      "hour": "amc",
-      "eps_est": -0.1224,
-      "rev_est": 0
-    },
-    {
-      "ticker": "CRTAF",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "RNGE",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "RBCN",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "BUDZ",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "BAYA",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "DHCC",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "MITI",
-      "date": "2026-03-30",
-      "hour": "",
-      "eps_est": null,
-      "rev_est": null
-    },
-    {
-      "ticker": "AQMS",
-      "date": "2026-03-30",
-      "hour": "amc",
-      "eps_est": -0.408,
-      "rev_est": 1224000
-    }
-  ],
-  "finviz_unusual": [
-    "RMSG",
-    "LNKS"
-  ]
+  }
 }
