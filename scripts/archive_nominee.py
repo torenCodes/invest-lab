@@ -18,7 +18,7 @@ import os
 import sys
 from datetime import datetime, timezone, timedelta
 
-ARCHIVE_PATH = 'Website/data/nominees_archive.json'
+ARCHIVE_PATH = 'MarketDashboard/data/nominees_archive.json'
 
 RESULTS_PATHS = {
     'movers':      'MarketDashboard/data/results.json',
