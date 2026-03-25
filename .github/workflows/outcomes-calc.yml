@@ -1,14 +1,10 @@
-name: InsiderBuying Scan
+name: Calculate Nominee Outcomes
 
 on:
   schedule:
-    # 8am ET (EST + EDT)
-    - cron: '0 13 * * 1-5'
-    - cron: '0 12 * * 1-5'
-    # 1pm ET (EST + EDT)
-    - cron: '0 18 * * 1-5'
-    - cron: '0 17 * * 1-5'
-  workflow_dispatch:           # Manual trigger button in GitHub UI
+    # Every Monday at ~10am ET — runs after the morning scan has a chance to complete
+    - cron: '30 14 * * 1'
+  workflow_dispatch:   # Manual trigger button in GitHub UI
 
 permissions:
   contents: write
@@ -17,23 +13,22 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  scan:
+  calculate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install -r InsiderBuying/requirements-scan.txt
+        run: pip install yfinance
 
-      - name: Run insider buying scan
-        run: python InsiderBuying/scan.py
-
-      - name: Archive top nominee
-        run: python scripts/archive_nominee.py --source insider
+      - name: Calculate 30-day outcomes
+        run: python scripts/calculate_outcomes.py
 
       - name: Commit results
         env:
@@ -42,7 +37,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
-          git add InsiderBuying/data/results.json Website/data/nominees_archive.json
-          git diff --staged --quiet || git commit -m "chore: insider scan $(date -u +%Y-%m-%dT%H:%M)Z"
+          git add Website/data/nominees_archive.json
+          git diff --staged --quiet || git commit -m "chore: nominee outcomes $(date -u +%Y-%m-%dT%H:%M)Z"
           git pull --rebase -Xtheirs origin ${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Blog — The Invest Lab</title>
+  <meta name="description" content="In-depth research posts from The Invest Lab — sector deep-dives, trade reviews, market observations, and stock screening insights for individual investors.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://theinvestlab.com/blog.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Open Graph (defaults; JS updates title/description/url per post) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theinvestlab.com/blog.html">
+  <meta property="og:title" content="Research Blog — The Invest Lab">
+  <meta property="og:description" content="In-depth research posts from The Invest Lab — sector deep-dives, trade reviews, market observations, and stock screening insights for individual investors.">
+  <meta property="og:image" content="https://theinvestlab.com/images/favicon.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Research Blog — The Invest Lab">
+  <meta name="twitter:description" content="In-depth research posts from The Invest Lab — sector deep-dives, trade reviews, market observations, and stock screening insights for individual investors.">
+  <meta name="twitter:image" content="https://theinvestlab.com/images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+</head>
+<body>
+
+  <!-- ── Navigation ──────────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="The Invest Lab" class="nav-logo-img">
+        <span class="logo-text">The Invest Lab</span>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="index.html#dashboards" class="nav-link">Dashboards <span class="nav-chevron">▾</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="https://invest-movers-shakers.onrender.com" class="nav-dropdown-link">Movers and Shakers</a></li>
+            <li><a href="https://invest-tried-true.onrender.com" class="nav-dropdown-link">Tried and True</a></li>
+            <li><a href="https://invest-the-analyst.onrender.com" class="nav-dropdown-link" style="display:none">The Analyst</a></li>
+            <li><a href="https://invest-insider-buying.onrender.com" class="nav-dropdown-link">Insider Buying</a></li>
+            <li><a href="https://invest-underdogs.onrender.com" class="nav-dropdown-link">The Underdogs</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html" class="nav-link" style="color:var(--accent)">Blog</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ── Dynamic content injected here by JS ─────────────────────────────── -->
+  <div id="blog-root"><div class="blog-loading">Loading…</div></div>
+
+  <!-- ── Footer ───────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">
+          <img src="images/logo.png" alt="The Invest Lab" class="footer-logo-img">
+          The Invest Lab
+        </span>
+        <p class="footer-disclaimer">Not financial advice. For personal educational use only.</p>
+        <p class="footer-disclaimer"><a href="mailto:contact@theinvestlab.com" style="color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.9)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">contact@theinvestlab.com</a></p>
+        <p class="footer-copy">Built with curiosity and caffeine.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var root = document.getElementById('blog-root');
+    var slug = new URLSearchParams(window.location.search).get('post');
+
+    slug ? loadPost(slug) : loadListing();
+
+    // ── Listing view ──────────────────────────────────────────────────────
+
+    function loadListing() {
+      fetch('Blog/posts.json')
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(renderListing)
+        .catch(function () { root.innerHTML = errHtml('Unable to load posts — please try again later.'); });
+    }
+
+    function renderListing(posts) {
+      var cards = posts.map(function (p) {
+        var tags = (p.tags || []).map(function (t) {
+          return '<span class="blog-card-tag">' + esc(t) + '</span>';
+        }).join('');
+        return (
+          '<article class="blog-card">' +
+            '<div class="blog-card-meta">' +
+              '<span class="blog-card-date">' + esc(p.date) + '</span>' + tags +
+            '</div>' +
+            '<h2 class="blog-card-title">' + esc(p.title) + '</h2>' +
+            '<p class="blog-card-excerpt">' + esc(p.excerpt) + '</p>' +
+            '<a href="blog.html?post=' + esc(p.slug) + '" class="blog-card-read-more">Read more →</a>' +
+          '</article>'
+        );
+      }).join('');
+
+      root.innerHTML =
+        '<section class="blog-hero blog-hero-sm">' +
+          '<div class="container">' +
+            '<a href="index.html#blog" class="blog-back">← Back to home</a>' +
+            '<h1 class="blog-hero-title" style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:0">Research Blog</h1>' +
+          '</div>' +
+        '</section>' +
+        '<section class="section">' +
+          '<div class="container">' +
+            '<div class="blog-grid">' +
+              cards +
+              '<article class="blog-card blog-card-placeholder">' +
+                '<div class="blog-card-meta"><span class="blog-card-date">Coming Soon</span></div>' +
+                '<h2 class="blog-card-title">More Research Posts on the Way</h2>' +
+                '<p class="blog-card-excerpt">Future posts will cover sector deep-dives, trade reviews, dashboard research notes, and market observations.</p>' +
+              '</article>' +
+            '</div>' +
+          '</div>' +
+        '</section>';
+    }
+
+    // ── Post view ─────────────────────────────────────────────────────────
+
+    function loadPost(slug) {
+      Promise.all([
+        fetch('Blog/posts.json').then(function (r) { return r.ok ? r.json() : []; }),
+        fetch('Blog/' + slug + '.md').then(function (r) {
+          if (!r.ok) throw new Error('not found');
+          return r.text();
+        })
+      ])
+      .then(function (res) {
+        var meta = (res[0] || []).find(function (p) { return p.slug === slug; }) || {};
+        renderPost(meta, res[1]);
+      })
+      .catch(function () {
+        root.innerHTML =
+          '<section class="section" style="min-height:60vh">' +
+            '<div class="container">' +
+              '<a href="blog.html" style="color:var(--accent-dark);font-size:0.8rem;font-weight:600;text-decoration:none;">← Back to Blog</a>' +
+              '<p style="margin-top:2rem;color:var(--ink-3)">Post not found.</p>' +
+            '</div>' +
+          '</section>';
+      });
+    }
+
+    function renderPost(meta, mdText) {
+      if (meta.title) {
+        var postTitle = meta.title + ' — The Invest Lab';
+        var postUrl   = 'https://theinvestlab.com/blog.html?post=' + slug;
+        var postDesc  = meta.excerpt || document.querySelector('meta[name="description"]').content;
+        document.title = postTitle;
+        document.querySelector('link[rel="canonical"]').href = postUrl;
+        document.querySelector('meta[property="og:title"]').content   = postTitle;
+        document.querySelector('meta[property="og:url"]').content     = postUrl;
+        document.querySelector('meta[property="og:description"]').content = postDesc;
+        document.querySelector('meta[name="twitter:title"]').content      = postTitle;
+        document.querySelector('meta[name="twitter:description"]').content = postDesc;
+      }
+
+      // Strip the h1 and *Published date* / opening --- from markdown body
+      var body = mdText
+        .replace(/^#[^\n]*\n+/, '')
+        .replace(/^\*[^\n]*\*\s*\n+---\n+/, '')
+        .trim();
+
+      var htmlBody = marked.parse(body);
+
+      var metaParts = [];
+      if (meta.date)     metaParts.push('<span class="blog-meta-item">' + esc(meta.date) + '</span>');
+      if (meta.readTime) metaParts.push('<span class="blog-meta-item">' + esc(meta.readTime) + '</span>');
+      var metaHtml = metaParts.join('<span class="blog-meta-dot"></span>');
+
+      var tagsHtml = (meta.tags || []).map(function (t) {
+        return '<span class="blog-meta-tag">' + esc(t) + '</span>';
+      }).join('');
+      if (tagsHtml) metaHtml += (metaHtml ? '<span class="blog-meta-dot"></span>' : '') + tagsHtml;
+
+      // Inject BlogPosting JSON-LD
+      var ldScript = document.getElementById('ld-json-post') || document.createElement('script');
+      ldScript.id = 'ld-json-post';
+      ldScript.type = 'application/ld+json';
+      ldScript.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": meta.title || '',
+        "description": meta.excerpt || '',
+        "datePublished": meta.date || '',
+        "url": 'https://theinvestlab.com/blog.html?post=' + slug,
+        "image": 'https://theinvestlab.com/images/favicon.png',
+        "publisher": {
+          "@type": "Organization",
+          "name": "The Invest Lab",
+          "logo": { "@type": "ImageObject", "url": "https://theinvestlab.com/images/logo.png" }
+        }
+      });
+      document.head.appendChild(ldScript);
+
+      root.innerHTML =
+        '<section class="blog-hero">' +
+          '<div class="container">' +
+            '<a href="blog.html" class="blog-back">← Back to Blog</a>' +
+            '<h1 class="blog-hero-title">' + esc(meta.title || '') + '</h1>' +
+            '<div class="blog-hero-meta">' + metaHtml + '</div>' +
+          '</div>' +
+        '</section>' +
+        '<section class="blog-article">' +
+          '<div class="container">' +
+            '<div class="blog-body">' + htmlBody + '</div>' +
+          '</div>' +
+        '</section>';
+    }
+
+    // ── Helpers ───────────────────────────────────────────────────────────
+
+    function esc(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function errHtml(msg) {
+      return '<div class="blog-loading">' + esc(msg) + '</div>';
+    }
+
+  }());
+  </script>
+
+</body>
+</html>

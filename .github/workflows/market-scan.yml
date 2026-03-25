@@ -34,6 +34,9 @@ jobs:
           FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
           POLYGON_KEY: ${{ secrets.POLYGON_KEY }}
 
+      - name: Archive top nominee
+        run: python scripts/archive_nominee.py --source movers
+
       - name: Commit results
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -41,7 +44,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
-          git add MarketDashboard/data/results.json
+          git add MarketDashboard/data/results.json Website/data/nominees_archive.json
           git diff --staged --quiet || git commit -m "chore: market scan $(date -u +%Y-%m-%dT%H:%M)Z"
           git pull --rebase -Xtheirs origin ${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}

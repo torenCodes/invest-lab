@@ -99,17 +99,6 @@
         </div>
         <a href="https://invest-movers-shakers.onrender.com" class="preview-all-link">Full dashboard →</a>
       </div>
-      <div class="fg-strip">
-        <span class="fg-strip-label">Fear &amp; Greed</span>
-        <div class="fg-strip-track">
-          <div class="fg-strip-needle" id="fg-needle" style="left:50%"></div>
-        </div>
-        <div class="fg-strip-score">
-          <span class="fg-strip-score-num" id="fg-score">—</span>
-          <span class="fg-strip-rating" id="fg-rating">loading…</span>
-        </div>
-        <span class="fg-strip-delta" id="fg-delta"></span>
-      </div>
       <div class="preview-grid">
         <div class="preview-card" id="pc-day"></div>
         <div class="preview-card" id="pc-swing"></div>
@@ -138,22 +127,8 @@
     </div>
   </section>
 
-  <!-- ── Past Nominees ──────────────────────────────────────────────────────── -->
-  <section class="section" id="track-record">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Past Nominees</h2>
-        <p class="section-sub">Stocks surfaced by the dashboards — with 30-day outcomes tracked automatically from the scan archive.</p>
-      </div>
-      <div class="track-record-grid" id="track-record-grid">
-        <!-- Populated by JS from nominees_archive.json -->
-      </div>
-      <p class="track-record-footnote" id="track-record-footnote">Past nominees are shown for informational purposes only. Outcomes are not guaranteed and vary widely. Nothing here is financial advice.</p>
-    </div>
-  </section>
-
   <!-- ── All Dashboards ───────────────────────────────────────────────────── -->
-  <section class="section section-alt" id="dashboards">
+  <section class="section" id="dashboards">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">All Dashboards</h2>
@@ -288,7 +263,7 @@
   </section>
 
   <!-- ── Blog ─────────────────────────────────────────────────────────────── -->
-  <section class="section" id="blog">
+  <section class="section section-alt" id="blog">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Research Blog</h2>
@@ -336,7 +311,7 @@
   </section>
 
   <!-- ── About ────────────────────────────────────────────────────────────── -->
-  <section class="section section-alt" id="about">
+  <section class="section" id="about">
     <div class="container">
       <div class="about-layout">
 
@@ -499,35 +474,6 @@
       document.getElementById('pc-swing').innerHTML    = stockCard(swing,   'Swing Trade',      'View swing trades', false);
       document.getElementById('pc-sector').innerHTML   = sectorCard(sector);
       document.getElementById('pc-discussed').innerHTML = stockCard(discuss, 'Highly Discussed', 'View all picks',    true);
-
-      // ── Fear & Greed ──────────────────────────────────────────────────────
-      if (data.fear_greed) {
-        var fg     = data.fear_greed;
-        var score  = parseFloat(fg.score  || 0);
-        var prev   = parseFloat(fg.prev_close || 0);
-        var rating = fg.rating || '';
-
-        document.getElementById('fg-score').textContent  = Math.round(score);
-        document.getElementById('fg-rating').textContent = rating;
-        document.getElementById('fg-needle').style.left  = score + '%';
-
-        // Colour the rating label based on sentiment zone
-        var ratingColor = score < 25  ? '#c0392b'   // Extreme Fear
-                        : score < 45  ? '#e67e22'   // Fear
-                        : score < 55  ? '#c8a000'   // Neutral
-                        : score < 75  ? '#27ae60'   // Greed
-                        :               '#1a7a4a';  // Extreme Greed
-        document.getElementById('fg-rating').style.color = ratingColor;
-
-        // Show delta vs previous close
-        var delta = score - prev;
-        if (Math.abs(delta) >= 0.5) {
-          var sign = delta > 0 ? '▲' : '▼';
-          var col  = delta > 0 ? '#27ae60' : '#c0392b';
-          var el   = document.getElementById('fg-delta');
-          el.innerHTML = '<span style="color:' + col + '">' + sign + ' ' + Math.abs(delta).toFixed(1) + ' from prev close</span>';
-        }
-      }
     })
     .catch(function () {
       var msg = '<div class="pv-empty">Data unavailable — check back on a weekday.</div>';
@@ -535,7 +481,6 @@
         document.getElementById(id).innerHTML = msg;
       });
       document.getElementById('preview-ts').textContent = 'unavailable';
-      document.getElementById('fg-rating').textContent  = 'unavailable';
     });
 }());
 </script>
@@ -623,92 +568,6 @@
         document.getElementById(id).innerHTML = msg;
       });
       document.getElementById('ud-ts').textContent = 'unavailable';
-    });
-}());
-</script>
-
-<script>
-// ── Past Nominees — load from nominees_archive.json via GitHub raw URL ────────
-(function () {
-  var ARCHIVE_URL = 'https://raw.githubusercontent.com/torenCodes/invest-lab/main/Website/data/nominees_archive.json';
-  var grid     = document.getElementById('track-record-grid');
-  var footnote = document.getElementById('track-record-footnote');
-
-  // ── Skeleton loaders ──────────────────────────────────────────────────────
-  var skelCard =
-    '<div class="track-record-card">' +
-      '<div class="pv-skel pv-skel-xs"></div>' +
-      '<div class="pv-skel pv-skel-lg" style="margin-top:1rem"></div>' +
-      '<div class="pv-skel pv-skel-md" style="margin-top:0.4rem"></div>' +
-      '<div class="pv-skel pv-skel-sm" style="margin-top:0.75rem"></div>' +
-    '</div>';
-  grid.innerHTML = skelCard + skelCard + skelCard;
-
-  // ── Helpers ───────────────────────────────────────────────────────────────
-  function fmtDate(dateStr) {
-    var d = new Date(dateStr + 'T12:00:00Z');
-    return d.toLocaleDateString([], { month: 'short', year: 'numeric' });
-  }
-
-  function nomineeCard(n) {
-    var pct          = n.outcome_pct;
-    var isPending    = pct === null;
-    var outcomeClass = isPending    ? 'track-record-outcome-tbd'
-                     : pct >= 0    ? 'track-record-outcome-up'
-                     :               'track-record-outcome-down';
-    var outcomeText  = isPending          ? 'Pending'
-                     : (pct >= 0 ? '+' : '') + pct.toFixed(1) + '%';
-    var dateLine     = 'Flagged: ' + fmtDate(n.date_flagged) +
-                       (n.outcome_date ? ' &middot; Outcome: ' + fmtDate(n.outcome_date)
-                                       : ' &middot; 30-day window');
-
-    return '<div class="track-record-card">' +
-      '<div class="track-record-source">' + n.source + '</div>' +
-      '<div class="track-record-ticker-row">' +
-        '<span class="track-record-ticker">' + n.ticker + '</span>' +
-        '<span class="track-record-outcome ' + outcomeClass + '">' + outcomeText + '</span>' +
-      '</div>' +
-      '<div class="track-record-name">' + (n.name || '') + '</div>' +
-      '<div class="track-record-meta">' + (n.reason || '') + '</div>' +
-      '<div class="track-record-date">' + dateLine + '</div>' +
-    '</div>';
-  }
-
-  // ── Fetch & render ────────────────────────────────────────────────────────
-  fetch(ARCHIVE_URL + '?t=' + Date.now())
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (data) {
-      var all = data.nominees || [];
-
-      if (all.length === 0) {
-        grid.innerHTML = '<div class="pv-empty" style="grid-column:1/-1">' +
-          'Track record is building — nominees are recorded after each scan and ' +
-          'outcomes are calculated after 30 days.' +
-          '</div>';
-        if (footnote) footnote.style.display = 'none';
-        return;
-      }
-
-      // Sort newest-first
-      all.sort(function (a, b) {
-        return new Date(b.date_flagged) - new Date(a.date_flagged);
-      });
-
-      // Prefer completed nominees (outcome filled); backfill with pending
-      var completed = all.filter(function (n) { return n.outcome_pct !== null; });
-      var pending   = all.filter(function (n) { return n.outcome_pct === null; });
-      var display   = completed.slice(0, 3);
-      if (display.length < 3) {
-        display = display.concat(pending.slice(0, 3 - display.length));
-      }
-
-      grid.innerHTML = display.map(nomineeCard).join('');
-    })
-    .catch(function () {
-      grid.innerHTML = '<div class="pv-empty" style="grid-column:1/-1">' +
-        'Nominee data unavailable — check back soon.' +
-        '</div>';
-      if (footnote) footnote.style.display = 'none';
     });
 }());
 </script>
