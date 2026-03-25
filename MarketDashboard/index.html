@@ -684,6 +684,75 @@
   .sr-neg-strong { color: #c0392b; background: rgba(192,57,43,0.07); }
   .sr-neutral    { color: var(--ink-3); }
 
+  .sr-expandable { cursor: pointer; }
+  .sr-expandable:hover { background: var(--bg); }
+  .sr-chevron {
+    display: inline-block;
+    margin-left: 7px;
+    font-size: 0.6rem;
+    color: var(--ink-3);
+    transition: transform 0.18s ease;
+    vertical-align: middle;
+  }
+  .sr-expandable.open .sr-chevron { transform: rotate(90deg); }
+
+  .sr-detail-row { display: none; }
+  .sr-detail-row.open { display: table-row; }
+  .sr-detail-inner {
+    padding: 12px 14px 14px;
+    background: var(--bg);
+    border-top: 1px solid var(--border-light);
+  }
+  .sr-detail-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 10px;
+  }
+  .sr-stocks { display: flex; gap: 10px; flex-wrap: wrap; }
+  .sr-stock {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    min-width: 140px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 3px;
+    column-gap: 10px;
+  }
+  .sr-s-ticker {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink);
+    grid-column: 1; grid-row: 1;
+  }
+  .sr-s-chg {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    font-weight: 600;
+    grid-column: 2; grid-row: 1;
+    text-align: right;
+  }
+  .sr-s-name {
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    grid-column: 1; grid-row: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 110px;
+  }
+  .sr-s-price {
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    grid-column: 2; grid-row: 2;
+    text-align: right;
+  }
+
   /* ── Fear & Greed ───────────────────────────────────────────────────────── */
   .fg-wrap {
     display: flex;
@@ -1334,27 +1403,63 @@ function renderSectorRotation(data) {
     return `<th class="sr-th${active}" onclick="sectorSort('${c.key}')">${c.label}${arrow}</th>`;
   }).join('');
 
-  const rows = sorted.map(s => `
-    <tr class="sr-row">
-      <td class="sr-sector">${s.sector}</td>
-      <td class="sr-ticker">${s.ticker}</td>
-      ${cell(s.ret_1d)}
-      ${cell(s.ret_5d)}
-      ${cell(s.ret_1m)}
-      ${cell(s.ret_3m)}
-    </tr>`).join('');
+  const rows = sorted.map((s, i) => {
+    const stocks = s.top_stocks || [];
+    const expandable = stocks.length > 0;
+    const chevron = expandable ? `<span class="sr-chevron">&#9654;</span>` : '';
+    const expandClass = expandable ? ' sr-expandable' : '';
+    const onclickAttr = expandable ? ` onclick="toggleSector(${i})"` : '';
 
-  el.innerHTML = `
-    <table class="sr-table">
-      <thead>
-        <tr>
-          <th class="sr-th sr-th-left">Sector</th>
-          <th class="sr-th sr-th-left">ETF</th>
-          ${thHtml}
-        </tr>
-      </thead>
-      <tbody>${rows}</tbody>
-    </table>`;
+    const mainRow = `<tr class="sr-row${expandClass}" id="sr-row-${i}"${onclickAttr}>
+      <td class="sr-sector">${s.sector}${chevron}</td>
+      <td class="sr-ticker">${s.ticker}</td>
+      ${cell(s.ret_1d)}${cell(s.ret_5d)}${cell(s.ret_1m)}${cell(s.ret_3m)}
+    </tr>`;
+
+    if (!expandable) return mainRow;
+
+    const stockCards = stocks.map(st => {
+      const chg = st.change_pct;
+      const chgCls = chg >= 2  ? 'sr-pos-strong' :
+                     chg >= 0  ? 'sr-pos' :
+                     chg <= -2 ? 'sr-neg-strong' : 'sr-neg';
+      const chgStr = chg != null ? `${chg >= 0 ? '+' : ''}${chg.toFixed(2)}%` : '—';
+      const priceHtml = st.price != null
+        ? `<div class="sr-s-price">$${parseFloat(st.price).toFixed(2)}</div>` : '';
+      return `<div class="sr-stock">
+        <div class="sr-s-ticker">${st.ticker}</div>
+        <div class="sr-s-chg ${chgCls}">${chgStr}</div>
+        <div class="sr-s-name">${st.name}</div>
+        ${priceHtml}
+      </div>`;
+    }).join('');
+
+    const detailRow = `<tr class="sr-detail-row" id="sr-detail-${i}">
+      <td colspan="6"><div class="sr-detail-inner">
+        <div class="sr-detail-label">Today's scan movers in this sector</div>
+        <div class="sr-stocks">${stockCards}</div>
+      </div></td>
+    </tr>`;
+
+    return mainRow + detailRow;
+  }).join('');
+
+  el.innerHTML = `<table class="sr-table">
+    <thead><tr>
+      <th class="sr-th sr-th-left">Sector</th>
+      <th class="sr-th sr-th-left">ETF</th>
+      ${thHtml}
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
+function toggleSector(i) {
+  const mainRow   = document.getElementById(`sr-row-${i}`);
+  const detailRow = document.getElementById(`sr-detail-${i}`);
+  if (!mainRow || !detailRow) return;
+  mainRow.classList.toggle('open');
+  detailRow.classList.toggle('open');
 }
 
 function sectorSort(col) {

@@ -672,9 +672,25 @@ SECTOR_ETFS = [
     ("XLU",  "Utilities"),
 ]
 
+# Keyword lists to fuzzy-match Finnhub finnhubIndustry strings → SPDR sector names
+SECTOR_KEYWORDS = {
+    "Technology":          ["technology", "software", "semiconductor", "hardware", "electronics"],
+    "Financials":          ["financial", "finance", "bank", "insurance", "asset management", "investment"],
+    "Health Care":         ["health", "biotech", "pharmaceutical", "medical", "drug", "clinical"],
+    "Energy":              ["energy", "oil", "gas", "petroleum", "coal", "renewable energy"],
+    "Industrials":         ["industrial", "aerospace", "defense", "machinery", "logistics", "transport", "construction"],
+    "Comm. Services":      ["communication", "media", "entertainment", "telecom", "internet services", "broadcasting"],
+    "Cons. Discretionary": ["consumer cyclical", "retail", "automobile", "auto", "leisure", "restaurant", "apparel", "hotel"],
+    "Cons. Staples":       ["consumer defensive", "consumer staples", "food", "beverage", "household", "grocery", "tobacco"],
+    "Real Estate":         ["real estate", "reit"],
+    "Materials":           ["basic material", "chemical", "mining", "metal", "steel", "aluminum", "packaging"],
+    "Utilities":           ["utility", "utilities", "electric", "power", "water", "gas distribution"],
+}
 
-def get_sector_rotation():
-    """Fetch 1D/5D/1M/3M % returns for all 11 SPDR sector ETFs via yfinance."""
+
+def get_sector_rotation(scan_results=None):
+    """Fetch 1D/5D/1M/3M % returns for all 11 SPDR sector ETFs via yfinance.
+    Optionally enriches each sector with top_stocks from today's scan results."""
     result = []
     for ticker, sector_name in SECTOR_ETFS:
         try:
@@ -690,13 +706,33 @@ def get_sector_rotation():
                 ref = float(_close.iloc[-(n + 1)])
                 return round((_current - ref) / ref * 100, 2)
 
+            # Find top movers from today's scan that belong to this sector
+            top_stocks = []
+            if scan_results:
+                keywords = SECTOR_KEYWORDS.get(sector_name, [])
+                matches = [
+                    r for r in scan_results
+                    if any(kw in (r.get('sector') or '').lower() for kw in keywords)
+                ]
+                matches.sort(key=lambda x: x.get('change_pct', 0), reverse=True)
+                top_stocks = [
+                    {
+                        'ticker':     r['ticker'],
+                        'name':       r.get('name', r['ticker']),
+                        'change_pct': r.get('change_pct'),
+                        'price':      r.get('current_price'),
+                    }
+                    for r in matches[:3]
+                ]
+
             result.append({
-                'ticker':  ticker,
-                'sector':  sector_name,
-                'ret_1d':  pct_change(1),
-                'ret_5d':  pct_change(5),
-                'ret_1m':  pct_change(21),
-                'ret_3m':  pct_change(63),
+                'ticker':     ticker,
+                'sector':     sector_name,
+                'ret_1d':     pct_change(1),
+                'ret_5d':     pct_change(5),
+                'ret_1m':     pct_change(21),
+                'ret_3m':     pct_change(63),
+                'top_stocks': top_stocks,
             })
         except Exception as e:
             print(f"[SectorRot] {ticker}: {e}")
@@ -854,7 +890,7 @@ def run():
     earnings_cal = get_earnings_calendar()
 
     print("[scan.py] Fetching sector rotation data...")
-    sector_rotation = get_sector_rotation()
+    sector_rotation = get_sector_rotation(results)
 
     print(f"[scan.py] Enriching nominees with earnings data...")
     enrich_with_earnings(day_trades + swing_trades + reddit_cards, earnings_cal)
