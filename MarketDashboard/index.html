@@ -7,7 +7,6 @@
 <link rel="icon" type="image/png" href="https://theinvestlab.com/images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   /* ── Reset & Base ──────────────────────────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -633,6 +632,58 @@
     text-align: right;
   }
 
+  /* ── Sector Rotation Table ──────────────────────────────────────────────── */
+  .sr-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .sr-th {
+    padding: 9px 14px;
+    text-align: right;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+  .sr-th:hover { color: var(--ink); }
+  .sr-th-active { color: var(--green) !important; }
+  .sr-th-left { text-align: left; }
+  .sr-row { border-bottom: 1px solid var(--border-light); }
+  .sr-row:last-child { border-bottom: none; }
+  .sr-row:hover { background: var(--bg); }
+  .sr-sector {
+    padding: 10px 14px;
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .sr-ticker {
+    padding: 10px 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-3);
+  }
+  .sr-cell {
+    padding: 10px 14px;
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .sr-pos-strong { color: #1a7a4a; background: rgba(26,122,74,0.07); }
+  .sr-pos        { color: #52b788; }
+  .sr-neg        { color: #e67e22; }
+  .sr-neg-strong { color: #c0392b; background: rgba(192,57,43,0.07); }
+  .sr-neutral    { color: var(--ink-3); }
+
   /* ── Fear & Greed ───────────────────────────────────────────────────────── */
   .fg-wrap {
     display: flex;
@@ -920,23 +971,14 @@ function toggleSiteNav(btn) {
       <a class="nav-item" href="#reddit-section" onclick="setActive(this)">
         <span class="nav-icon">💬</span> Market Chatter
       </a>
-      <a class="nav-item" href="#sector-flow" onclick="setActive(this)">
-        <span class="nav-icon">🗺️</span> Sector Flow
+      <a class="nav-item" href="#sector-rotation" onclick="setActive(this)">
+        <span class="nav-icon">🗺️</span> Sector Rotation
       </a>
       <a class="nav-item" href="#reddit-feed" onclick="setActive(this)">
         <span class="nav-icon">📡</span> Chatter Feed
       </a>
       <a class="nav-item" href="#fear-greed" onclick="setActive(this)">
         <span class="nav-icon">🧠</span> Fear &amp; Greed
-      </a>
-      <a class="nav-item" href="#market-news" onclick="setActive(this)">
-        <span class="nav-icon">📰</span> Market News
-      </a>
-      <a class="nav-item" href="#earnings-cal" onclick="setActive(this)">
-        <span class="nav-icon">📅</span> Earnings
-      </a>
-      <a class="nav-item" href="#finviz-vol" onclick="setActive(this)">
-        <span class="nav-icon">🔊</span> Unusual Volume
       </a>
     </div>
     <div class="sidebar-section scan-progress-wrap">
@@ -986,21 +1028,33 @@ function toggleSiteNav(btn) {
       </div>
     </section>
 
-    <!-- Bottom row: Sector Flow + Reddit Feed -->
+    <!-- Sector Rotation Tracker — full width -->
+    <section id="sector-rotation" class="full-panel">
+      <div class="panel-header">
+        <span class="panel-icon">🗺️</span>
+        <span class="panel-title">Sector Rotation</span>
+        <span class="panel-sub">SPDR ETF performance — click column header to sort</span>
+      </div>
+      <div id="sector-rotation-body">
+        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading sector data…</div></div>
+      </div>
+    </section>
+
+    <!-- Fear & Greed + Chatter Feed -->
     <div class="bottom-grid">
 
-      <!-- Sector Flow -->
-      <section id="sector-flow" class="sector-panel">
-        <div class="section-header">
-          <div class="section-title">Sector Flow</div>
-          <div class="section-subtitle">Avg % gain among today's green movers</div>
+      <section id="fear-greed" class="full-panel">
+        <div class="panel-header">
+          <span class="panel-icon">🧠</span>
+          <span class="panel-title">CNN Fear &amp; Greed Index</span>
+          <span class="panel-sub">Market sentiment indicator</span>
         </div>
-        <div class="chart-container">
-          <canvas id="sectorChart"></canvas>
+        <div id="fg-body">
+          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading…</div></div>
         </div>
       </section>
 
-      <!-- Reddit Live Feed -->
+      <!-- Chatter Feed -->
       <section id="reddit-feed" class="reddit-panel">
         <div class="reddit-header">
           <div class="reddit-icon" id="buzz-feed-icon">💬</div>
@@ -1016,60 +1070,6 @@ function toggleSiteNav(btn) {
 
     </div>
 
-    <!-- Fear & Greed + Unusual Volume row -->
-    <div class="bottom-grid">
-
-      <section id="fear-greed" class="full-panel">
-        <div class="panel-header">
-          <span class="panel-icon">🧠</span>
-          <span class="panel-title">CNN Fear &amp; Greed Index</span>
-          <span class="panel-sub">Market sentiment indicator</span>
-        </div>
-        <div id="fg-body">
-          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading…</div></div>
-        </div>
-      </section>
-
-      <section id="finviz-vol" class="full-panel">
-        <div class="panel-header">
-          <span class="panel-icon">🔊</span>
-          <span class="panel-title">Unusual Volume</span>
-          <span class="panel-sub">Finviz — highest relative volume today</span>
-        </div>
-        <div class="vol-grid" id="vol-body">
-          <div class="loading-state" style="width:100%;"><div class="loading-spinner"></div></div>
-        </div>
-      </section>
-
-    </div>
-
-    <!-- Market News + Earnings row -->
-    <div class="bottom-grid">
-
-      <section id="market-news" class="full-panel">
-        <div class="panel-header">
-          <span class="panel-icon">📰</span>
-          <span class="panel-title">Market News</span>
-          <span class="panel-sub">Via Finnhub — general financial headlines</span>
-        </div>
-        <div style="max-height:320px;overflow-y:auto;" id="news-body">
-          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading headlines…</div></div>
-        </div>
-      </section>
-
-      <section id="earnings-cal" class="full-panel">
-        <div class="panel-header">
-          <span class="panel-icon">📅</span>
-          <span class="panel-title">Earnings — Next 5 Days</span>
-          <span class="panel-sub">BMO = before market open · AMC = after market close</span>
-        </div>
-        <div style="max-height:320px;overflow-y:auto;" id="earnings-body">
-          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading calendar…</div></div>
-        </div>
-      </section>
-
-    </div>
-
   </main>
 </div>
 
@@ -1078,9 +1078,9 @@ function toggleSiteNav(btn) {
 const RESULTS_URL = 'data/results.json';
 
 // ── State ──────────────────────────────────────────────────────────────────
-let sectorChart = null;
 let lastScanTime = null;
-let lastSectorHash = null;   // prevents jarring chart redraws on reload
+let sectorSortCol = 'ret_1d';
+let sectorSortDir = -1; // -1 = descending, 1 = ascending
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
@@ -1298,59 +1298,73 @@ function toggleDetail(detailId, cardId) {
   if (!isOpen) detail.classList.add('open');
 }
 
-// ── Sector chart ───────────────────────────────────────────────────────────
-function renderSectorChart(sectorFlow) {
-  const top = sectorFlow.slice(0, 10);
-  const labels = top.map(s => s.sector.replace('Technology', 'Tech').replace('Financial Services', 'Financials'));
-  const data   = top.map(s => s.avg_change);
-  const colors = top.map(s =>
-    s.avg_change >= 3 ? '#1a7a4a' :
-    s.avg_change >= 1.5 ? '#52b788' :
-    '#74c69d'
-  );
+// ── Sector Rotation table ─────────────────────────────────────────────────
+function renderSectorRotation(data) {
+  const el = $('sector-rotation-body');
+  if (!data || !data.length) {
+    el.innerHTML = '<div class="empty-state">No sector data available.</div>';
+    return;
+  }
 
-  if (sectorChart) sectorChart.destroy();
+  function cell(val) {
+    if (val == null) return '<td class="sr-cell sr-neutral">—</td>';
+    const cls = val >= 2  ? 'sr-pos-strong' :
+                val >  0  ? 'sr-pos' :
+                val <= -2 ? 'sr-neg-strong' : 'sr-neg';
+    const sign = val >= 0 ? '+' : '';
+    return `<td class="sr-cell ${cls}">${sign}${val.toFixed(2)}%</td>`;
+  }
 
-  const ctx = document.getElementById('sectorChart').getContext('2d');
-  sectorChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels,
-      datasets: [{
-        data,
-        backgroundColor: colors,
-        borderRadius: 4,
-        borderSkipped: false,
-      }]
-    },
-    options: {
-      indexAxis: 'y',
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: ctx => ` +${ctx.raw.toFixed(2)}% avg | ${top[ctx.dataIndex].count} stocks`
-          }
-        }
-      },
-      scales: {
-        x: {
-          grid: { color: '#f0ede8' },
-          ticks: {
-            font: { family: "'DM Mono', monospace", size: 11 },
-            color: '#8a8a82',
-            callback: v => `+${v}%`
-          }
-        },
-        y: {
-          grid: { display: false },
-          ticks: { font: { family: "'Barlow', sans-serif", size: 12 }, color: '#4a4a46' }
-        }
-      }
-    }
+  const cols = [
+    { key: 'ret_1d', label: '1D' },
+    { key: 'ret_5d', label: '5D' },
+    { key: 'ret_1m', label: '1M' },
+    { key: 'ret_3m', label: '3M' },
+  ];
+
+  const sorted = [...data].sort((a, b) => {
+    const av = a[sectorSortCol] ?? -999;
+    const bv = b[sectorSortCol] ?? -999;
+    return sectorSortDir === -1 ? bv - av : av - bv;
   });
+
+  const thHtml = cols.map(c => {
+    const active = c.key === sectorSortCol ? ' sr-th-active' : '';
+    const arrow  = c.key === sectorSortCol ? (sectorSortDir === -1 ? ' ↓' : ' ↑') : '';
+    return `<th class="sr-th${active}" onclick="sectorSort('${c.key}')">${c.label}${arrow}</th>`;
+  }).join('');
+
+  const rows = sorted.map(s => `
+    <tr class="sr-row">
+      <td class="sr-sector">${s.sector}</td>
+      <td class="sr-ticker">${s.ticker}</td>
+      ${cell(s.ret_1d)}
+      ${cell(s.ret_5d)}
+      ${cell(s.ret_1m)}
+      ${cell(s.ret_3m)}
+    </tr>`).join('');
+
+  el.innerHTML = `
+    <table class="sr-table">
+      <thead>
+        <tr>
+          <th class="sr-th sr-th-left">Sector</th>
+          <th class="sr-th sr-th-left">ETF</th>
+          ${thHtml}
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+}
+
+function sectorSort(col) {
+  if (sectorSortCol === col) {
+    sectorSortDir *= -1;
+  } else {
+    sectorSortCol = col;
+    sectorSortDir = -1;
+  }
+  if (window._lastSectorData) renderSectorRotation(window._lastSectorData);
 }
 
 // ── Reddit feed renderer ───────────────────────────────────────────────────
@@ -1470,13 +1484,14 @@ function updateResults(data) {
     redditEl.innerHTML = '<div class="empty-state">No chatter nominees found this scan.</div>';
   }
 
-  // Sector flow — only redraw if the data has actually changed
-  if (data.sector_flow && data.sector_flow.length) {
-    const sectorHash = JSON.stringify(data.sector_flow);
-    if (sectorHash !== lastSectorHash) {
-      lastSectorHash = sectorHash;
-      renderSectorChart(data.sector_flow);
+  // Sector rotation — render once per scan cycle
+  if (data.scan_time !== updateResults._lastScanTime) {
+    updateResults._lastScanTime = data.scan_time;
+    if (data.sector_rotation && data.sector_rotation.length) {
+      window._lastSectorData = data.sector_rotation;
+      renderSectorRotation(data.sector_rotation);
     }
+    if (data.fear_greed) renderFearGreed(data.fear_greed);
   }
 
   // Reddit feed — always render (shows empty-state when no data), skip if unchanged
@@ -1485,15 +1500,6 @@ function updateResults(data) {
   if (feedHash !== updateResults._lastFeedHash) {
     updateResults._lastFeedHash = feedHash;
     renderRedditFeed(feedData);
-  }
-
-  // New data panels — only render once per scan cycle
-  if (data.scan_time !== updateResults._lastScanTime) {
-    updateResults._lastScanTime = data.scan_time;
-    if (data.fear_greed)     renderFearGreed(data.fear_greed);
-    if (data.market_news)    renderMarketNews(data.market_news);
-    if (data.earnings_cal)   renderEarnings(data.earnings_cal);
-    if (data.finviz_unusual) renderUnusualVolume(data.finviz_unusual);
   }
 }
 
@@ -1530,52 +1536,6 @@ function renderFearGreed(fg) {
       </div>
     </div>
   </div>`;
-}
-
-// ── Market news renderer ──────────────────────────────────────────────────────
-function renderMarketNews(news) {
-  const el = $('news-body');
-  if (!news || !news.length) { el.innerHTML = '<div class="empty-state">No headlines available.</div>'; return; }
-  el.innerHTML = news.map(item => {
-    const t = item.datetime ? new Date(item.datetime * 1000).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) : '';
-    return `<div class="news-item">
-      <div class="news-headline"><a href="${item.url}" target="_blank" rel="noopener">${item.headline}</a></div>
-      <div class="news-meta">
-        <span class="news-source">${item.source}</span>
-        ${t ? `<span class="news-time">${t}</span>` : ''}
-      </div>
-    </div>`;
-  }).join('');
-}
-
-// ── Earnings calendar renderer ────────────────────────────────────────────────
-function renderEarnings(earnings) {
-  const el = $('earnings-body');
-  if (!earnings || !earnings.length) {
-    el.innerHTML = '<div class="empty-state">No earnings scheduled for today or tomorrow.</div>';
-    return;
-  }
-  el.innerHTML = earnings.map(e => {
-    const hourLabel = e.hour === 'bmo' ? 'BMO' : e.hour === 'amc' ? 'AMC' : 'DMH';
-    const hourClass = e.hour === 'bmo' ? 'hour-bmo' : e.hour === 'amc' ? 'hour-amc' : 'hour-dmh';
-    const epsStr = e.eps_est != null ? `EPS est: $${parseFloat(e.eps_est).toFixed(2)}` : '';
-    return `<div class="earnings-row">
-      <span class="earnings-ticker">${e.ticker}</span>
-      <span class="earnings-hour ${hourClass}">${hourLabel}</span>
-      <span style="font-size:0.75rem;color:var(--ink-3);">${e.date}</span>
-      ${epsStr ? `<span class="earnings-est">${epsStr}</span>` : ''}
-    </div>`;
-  }).join('');
-}
-
-// ── Unusual volume renderer ───────────────────────────────────────────────────
-function renderUnusualVolume(tickers) {
-  const el = $('vol-body');
-  if (!tickers || !tickers.length) {
-    el.innerHTML = '<div class="empty-state" style="width:100%;">No unusual volume data.</div>';
-    return;
-  }
-  el.innerHTML = tickers.map(t => `<div class="vol-tag">${t}</div>`).join('');
 }
 
 // ── Boot ───────────────────────────────────────────────────────────────────

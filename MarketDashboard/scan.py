@@ -13,6 +13,7 @@ from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 
 import requests
+import yfinance as yf
 
 # ── Config ────────────────────────────────────────────────────────────────────
 BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
@@ -655,6 +656,56 @@ def build_sector_flow(results):
     return flow
 
 
+# ── Sector Rotation (SPDR ETFs) ────────────────────────────────────────────────
+
+SECTOR_ETFS = [
+    ("XLK",  "Technology"),
+    ("XLF",  "Financials"),
+    ("XLV",  "Health Care"),
+    ("XLE",  "Energy"),
+    ("XLI",  "Industrials"),
+    ("XLC",  "Comm. Services"),
+    ("XLY",  "Cons. Discretionary"),
+    ("XLP",  "Cons. Staples"),
+    ("XLRE", "Real Estate"),
+    ("XLB",  "Materials"),
+    ("XLU",  "Utilities"),
+]
+
+
+def get_sector_rotation():
+    """Fetch 1D/5D/1M/3M % returns for all 11 SPDR sector ETFs via yfinance."""
+    result = []
+    for ticker, sector_name in SECTOR_ETFS:
+        try:
+            hist = yf.Ticker(ticker).history(period='3mo')
+            if hist.empty or len(hist) < 2:
+                continue
+            close = hist['Close']
+            current = float(close.iloc[-1])
+
+            def pct_change(n, _close=close, _current=current):
+                if len(_close) <= n:
+                    return None
+                ref = float(_close.iloc[-(n + 1)])
+                return round((_current - ref) / ref * 100, 2)
+
+            result.append({
+                'ticker':  ticker,
+                'sector':  sector_name,
+                'ret_1d':  pct_change(1),
+                'ret_5d':  pct_change(5),
+                'ret_1m':  pct_change(21),
+                'ret_3m':  pct_change(63),
+            })
+        except Exception as e:
+            print(f"[SectorRot] {ticker}: {e}")
+
+    result.sort(key=lambda x: (x['ret_1d'] or 0), reverse=True)
+    print(f"[SectorRot] Fetched {len(result)}/11 sectors")
+    return result
+
+
 # ── Supplemental data ─────────────────────────────────────────────────────────
 
 def get_fear_greed():
@@ -797,12 +848,13 @@ def run():
         time.sleep(1.1)
 
     day_trades, swing_trades, reddit_cards = categorize(results, buzz_lookup, universe, yahoo_cats, buzz_label, yahoo_trending)
-    sector_flow = build_sector_flow(results)
 
-    print("[scan.py] Fetching Fear & Greed, news, earnings...")
+    print("[scan.py] Fetching Fear & Greed and earnings...")
     fear_greed   = get_fear_greed()
-    market_news  = get_market_news()
     earnings_cal = get_earnings_calendar()
+
+    print("[scan.py] Fetching sector rotation data...")
+    sector_rotation = get_sector_rotation()
 
     print(f"[scan.py] Enriching nominees with earnings data...")
     enrich_with_earnings(day_trades + swing_trades + reddit_cards, earnings_cal)
@@ -854,19 +906,16 @@ def run():
         print(f"[scan.py] Chatter feed: {len(display_feed)} Finnhub headlines for chatter picks")
 
     output = {
-        "scan_time":      start.isoformat(),
-        "next_scan_info": NEXT_SCAN_INFO,
-        "total_scanned":  len(universe),
-        "day_trades":     day_trades,
-        "swing_trades":   swing_trades,
-        "buzz_source":    buzz_source,
-        "reddit_cards":   reddit_cards,
-        "sector_flow":    sector_flow,
-        "reddit_feed":    display_feed,
-        "fear_greed":     fear_greed,
-        "market_news":    market_news,
-        "earnings_cal":   earnings_cal,
-        "finviz_unusual": finviz_unusual,
+        "scan_time":        start.isoformat(),
+        "next_scan_info":   NEXT_SCAN_INFO,
+        "total_scanned":    len(universe),
+        "day_trades":       day_trades,
+        "swing_trades":     swing_trades,
+        "buzz_source":      buzz_source,
+        "reddit_cards":     reddit_cards,
+        "sector_rotation":  sector_rotation,
+        "reddit_feed":      display_feed,
+        "fear_greed":       fear_greed,
     }
 
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
