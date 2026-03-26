@@ -27,54 +27,28 @@ The current site does a solid job of presenting what it *is* — but not enough 
 ## Phase 1 — Homepage & Static Site Upgrades
 *Target: Quick wins, no new backend required*
 
-### 1.1 — Metrics / Credibility Bar
-Add a horizontal stats strip between the Hero and Market Snapshot sections.
-- "5 active dashboards"
-- "~500 stocks scanned per day"
-- "Updated 4× per trading day"
-- "Powered by Finnhub · Polygon.io · SEC filings · Reddit"
+### ✅ 1.1 — Metrics / Credibility Bar
+~~Implemented then removed~~ — user decided to keep homepage clean. Revisit if the site grows.
 
-Short, punchy, builds trust. Modeled after how AskLivermore leads with "741 setups found today."
+### ~~1.2 — "How It Works" Section~~
+Removed — user prefers to keep methodology proprietary. Reserved for Methodology Page (2.1).
 
-### 1.2 — "How It Works" Section
-A new 3–4 step explainer section on the homepage showing the scan-to-surface pipeline:
-1. **Scan** — pull movers, ETF holdings, insider filings from live data feeds
-2. **Score** — apply multi-factor scoring (momentum, quality, sentiment, drawdown)
-3. **Surface** — rank and present the top nominees per category
-4. **Decide** — you do the research, you pull the trigger
+### ✅ 1.3 — Track Record / Past Nominees Section *(DONE — Mar 2026)*
+Fully implemented as an **automated system**:
+- `scripts/archive_nominee.py` runs after every scan, saves top pick to `MarketDashboard/data/nominees_archive.json`
+- `scripts/calculate_outcomes.py` fills 30-day outcome prices weekly (GitHub Actions)
+- Homepage fetches archive from `https://invest-movers-shakers.onrender.com/data/nominees_archive.json`
+- Seeded with 4 historical picks (AXTI, SMCI, PYPL, PLTR) with real outcomes
 
-This directly addresses the question a first-time visitor asks: *"Why should I trust this?"* AskLivermore does this extremely well with its pattern-scoring transparency.
+### ✅ 1.4 — Expanded Market Snapshot Cards *(DONE — Mar 2026)*
+- Fear & Greed strip added above preview cards
+- Sector card reads from `sector_rotation[0]` (updated from `sector_flow`)
 
-### 1.3 — Track Record / Notable Picks Section
-A "Past Nominees" callout section — 3–4 historical scan picks with outcome data.
-- Format: Ticker · Date picked · % gain/loss over X days · Dashboard source
-- Frame as informational, not as financial advice
-- Honest mix of wins and near-misses builds more trust than cherry-picking
-- Could be a static section manually curated monthly, or eventually pull from a historical JSON file
-
-*Inspired by AskLivermore's "SMCI +2,515% · NVDA +638%" credibility anchors.*
-
-### 1.4 — Expanded Market Snapshot Cards
-The current preview cards are solid. Expand with:
-- **Fear & Greed index** as a fifth card (data already fetched in MarketDashboard)
-- **Top sector today** surfaced more prominently (already in scan data)
-- Mini sparkline / trend arrow on the day-trade and swing-trade cards (simple SVG)
-
-### 1.5 — "Why Use This?" FAQ / Objections Section
-A short Q&A block near the bottom of the homepage:
-- *"Is this financial advice?"* — No. Methodology-driven screening only.
-- *"Where does the data come from?"* — Finnhub, Polygon.io, SEC Form 4, Reddit, yfinance
-- *"How often do scans run?"* — Movers 4×/day; Underdogs 3×/week; Insider Buying daily
-- *"Do I need an account?"* — No. Fully open, no login required.
-
-Helps skeptical visitors self-qualify and sets proper expectations.
+### ~~1.5 — FAQ Section~~
+Removed — user found it overkill.
 
 ### 1.6 — Email / Newsletter CTA
-Add a clean single-row section: *"Get weekly scan highlights in your inbox."*
-- Link to a Substack or Beehiiv free newsletter
-- No account required on our end; no backend needed
-- Just a simple email input or a prominent "Subscribe on Substack" button
-- Placed below the Blog section
+Deferred — no newsletter setup yet. Revisit when traffic warrants.
 
 ---
 
@@ -121,17 +95,50 @@ Earnings calendars are one of the most searched financial pages on the web. Good
 ## Phase 3 — New Dashboards
 *Target: Grow the tool suite, attract advanced users*
 
-### 3.1 — Technical Pattern Scanner *(AskLivermore-inspired)*
-**What:** Automated daily scan detecting classic swing-trade chart patterns.
-- Patterns: Bull flag, bear flag, VCP (Volatility Contraction Pattern), cup-with-handle, moving average crossover (20/50/200-day), RSI divergence, Bollinger Band squeeze
-- Universe: Top 500–1,000 liquid stocks (use Polygon.io or yfinance)
-- Quality grade: A / B / Watch (like AskLivermore's A+ to B system)
-- Output: Ranked list with pattern type, grade, and live chart link (TradingView embed)
+### 3.1 — Technical Pattern Scanner *(AskLivermore-inspired)* — **NEXT BUILD**
+**What:** Automated daily scan detecting classic swing-trade chart patterns across ~500 liquid stocks.
 
-**Stack:** Flask + yfinance/Polygon.io + pandas-ta for pattern detection
-**Scan schedule:** Daily at market open (9:40am ET)
-**URL:** `https://invest-patterns.onrender.com`
+**Inspiration:** asklivermore.com — detects 21 patterns, grades A+/A/B, shows historical credibility anchors (SMCI +2,515%, NVDA +638%). Free tier = top 6 results; $29/mo for full access.
+**Our differentiator:** Free + open + cross-references our own insider buying and ETF data for multi-signal confluence picks.
 
+#### Patterns to detect (Phase 1, ordered by priority):
+1. **Bull Flag** — strong uptrend (10%+ in 1–4 wks), tight consolidation on declining volume, then breakout
+2. **VCP** (Volatility Contraction Pattern) — Minervini method; 3–4 progressively tighter consolidations with lower volume
+3. **Bollinger Band Squeeze** — BB width at N-month low; pending explosive move direction unclear, but alerts to watch
+4. **MA Crossover** — 20-day crossing above 50-day with above-average volume
+5. **Cup-with-Handle** — rounded base + shallow handle before breakout above prior high
+6. **Power Earnings Gap** — stock gaps up 5%+ on earnings day, holds above gap in subsequent sessions
+
+#### Grading system:
+- **Grade A** — 3+ confirming signals (pattern + volume + relative strength + any cross-ref signal)
+- **Grade B** — 2 confirming signals; pattern forming cleanly
+- **Watch** — pattern developing but not yet confirmed; volume or RS not yet there
+
+#### Cross-reference bonus (unique to us):
+- Insider buying match (from InsiderBuying/data/results.json) → +1 grade or flag
+- ETF overlap (appears in 3+ growth ETFs from TriedAndTrue universe) → flag as "ETF confirmed"
+
+#### Technical stack:
+- **Language/Framework:** Python + Flask (same as all other dashboards)
+- **Data:** yfinance for OHLCV history (daily bars, 1-year lookback minimum)
+- **Indicators:** `pandas-ta` library (RSI, EMA/SMA, Bollinger Bands, ATR, volume MA)
+- **Pattern logic:** Custom detection functions per pattern type
+- **Output:** `data/results.json` with ranked list of setups
+- **Charts:** Link to TradingView chart for each ticker (no embedded chart to keep it simple)
+
+#### Infrastructure:
+- **Folder:** `PatternScanner/`
+- **Render URL:** `https://invest-patterns.onrender.com`
+- **Scan schedule:** Daily at market open, ~9:40am ET (`40 13 * * 1-5` cron)
+- **GitHub Actions workflow:** `pattern-scanner.yml`
+- **Universe:** S&P 500 tickers (~500 stocks) — fetched from a static list or Wikipedia
+
+#### Homepage integration:
+- New preview card in Market Snapshot section showing top-graded setup of the day
+- Dashboard card in "All Dashboards" section
+- Added to nav dropdown across ALL HTML files (position 6, after The Underdogs)
+
+**Stack:** Flask + yfinance + pandas-ta
 *This is the highest-impact new dashboard — differentiates the site from pure fundamental screeners.*
 
 ### 3.2 — Earnings Dashboard
@@ -144,15 +151,11 @@ Earnings calendars are one of the most searched financial pages on the web. Good
 **Stack:** Flask + Finnhub earnings API + yfinance price history
 **URL:** `https://invest-earnings.onrender.com`
 
-### 3.3 — Sector Rotation Tracker
-**What:** Shows where institutional money is flowing week-over-week.
-- 11 S&P 500 sectors with 1-week, 1-month, 3-month performance
-- Heatmap-style visualization (green = leading, red = lagging)
-- Identifies rotation patterns (e.g., money leaving tech, entering energy)
-- Pairs well with Movers & Shakers sector flow data
-
-**Stack:** Flask + yfinance sector ETF data (XLK, XLF, XLV, XLE, etc.)
-**URL:** Could be a section within MarketDashboard rather than standalone
+### ✅ 3.3 — Sector Rotation Tracker *(DONE — merged into MarketDashboard, Mar 2026)*
+- Full-width panel in MarketDashboard showing 11 SPDR ETFs with 1D/5D/1M/3M % returns
+- Sortable by any column; rows expand on click to show top 3 scan movers in that sector
+- yfinance fetches ETF history; `SECTOR_KEYWORDS` fuzzy-matches Finnhub industry strings
+- Homepage "Leading Sector" preview card reads from `sector_rotation[0]`
 
 ### 3.4 — Dividend & Income Dashboard *(Blossom-inspired)*
 **What:** Identifies high-quality dividend payers with sustainable yield + growth.
