@@ -59,6 +59,7 @@
             <li><a href="https://invest-the-analyst.onrender.com" class="nav-dropdown-link" style="display:none">The Analyst</a></li>
             <li><a href="https://invest-insider-buying.onrender.com" class="nav-dropdown-link">Insider Buying</a></li>
             <li><a href="https://invest-underdogs.onrender.com" class="nav-dropdown-link">The Underdogs</a></li>
+            <li><a href="https://invest-patterns.onrender.com" class="nav-dropdown-link">Pattern Scanner</a></li>
           </ul>
         </li>
         <li><a href="#blog" class="nav-link">Blog</a></li>
@@ -115,6 +116,7 @@
         <div class="preview-card" id="pc-swing"></div>
         <div class="preview-card" id="pc-sector"></div>
         <div class="preview-card" id="pc-discussed"></div>
+        <div class="preview-card" id="pc-pattern"></div>
       </div>
     </div>
   </section>
@@ -399,7 +401,7 @@
 
   // ── Skeleton loading state ─────────────────────────────────────────────
   function showSkeletons() {
-    ['pc-day', 'pc-swing', 'pc-sector', 'pc-discussed'].forEach(function (id) {
+    ['pc-day', 'pc-swing', 'pc-sector', 'pc-discussed', 'pc-pattern'].forEach(function (id) {
       document.getElementById(id).innerHTML =
         '<div class="pv-skel pv-skel-xs"></div>' +
         '<div class="pv-skel pv-skel-lg" style="margin-top:1.1rem"></div>' +
@@ -537,11 +539,67 @@
     })
     .catch(function () {
       var msg = '<div class="pv-empty">Data unavailable — check back on a weekday.</div>';
-      ['pc-day', 'pc-swing', 'pc-sector', 'pc-discussed'].forEach(function (id) {
+      ['pc-day', 'pc-swing', 'pc-sector', 'pc-discussed', 'pc-pattern'].forEach(function (id) {
         document.getElementById(id).innerHTML = msg;
       });
       document.getElementById('preview-ts').textContent = 'unavailable';
       document.getElementById('fg-rating').textContent  = 'unavailable';
+    });
+}());
+</script>
+
+<script>
+(function () {
+  var DASH_URL = 'https://invest-patterns.onrender.com';
+  var DATA_URL = DASH_URL + '/data/results.json';
+
+  function cta(label) {
+    return '<a href="' + DASH_URL + '" class="pv-cta">' + label + ' <span class="pv-cta-arr">→</span></a>';
+  }
+
+  function fmt(v, dp) { return parseFloat(v || 0).toFixed(dp !== undefined ? dp : 2); }
+
+  function patternCard(setup) {
+    if (!setup) {
+      return '<div class="pv-type">Top Pattern Setup</div>' +
+        '<div class="pv-empty">No patterns yet — scanner runs weekdays at 9:40am ET.</div>' +
+        cta('Open Pattern Scanner');
+    }
+    var changeSign = setup.change_pct >= 0 ? '+' : '';
+    var changeCol  = setup.change_pct >= 0 ? 'var(--green)' : 'var(--red)';
+    var signals    = setup.signals || [];
+    var sigHtml    = signals.slice(0, 2).map(function(s) { return '<li>' + s + '</li>'; }).join('');
+    var gradeColor = setup.grade === 'A' ? 'var(--green)' : setup.grade === 'B' ? '#1a7070' : '#c07a1a';
+
+    return '<div class="pv-type">Top Pattern Setup</div>' +
+      '<div class="pv-ticker" style="display:flex;align-items:center;gap:8px;">' +
+        '<span>' + setup.ticker + '</span>' +
+        '<span style="font-family:monospace;font-size:0.68rem;font-weight:700;background:' + gradeColor + ';color:#fff;padding:2px 7px;border-radius:4px;">Grade ' + setup.grade + '</span>' +
+        '<span style="font-size:0.7rem;color:var(--ink-3);background:var(--bg);border:1px solid var(--border);padding:2px 7px;border-radius:10px;">' + setup.pattern + '</span>' +
+      '</div>' +
+      '<div class="pv-name">' + (setup.name || '') + '</div>' +
+      '<div class="pv-price">' +
+        (setup.current_price != null ? '$' + fmt(setup.current_price) : '') +
+        (setup.change_pct != null ? ' <span style="color:' + changeCol + ';font-size:0.82rem;">' + changeSign + fmt(setup.change_pct) + '%</span>' : '') +
+      '</div>' +
+      '<ul class="pv-signals">' + sigHtml + '</ul>' +
+      cta('View all setups');
+  }
+
+  document.getElementById('pc-pattern').innerHTML =
+    '<div class="pv-skel pv-skel-xs"></div>' +
+    '<div class="pv-skel pv-skel-lg" style="margin-top:1.1rem"></div>' +
+    '<div class="pv-skel pv-skel-md" style="margin-top:.6rem"></div>';
+
+  fetch(DATA_URL + '?t=' + Date.now())
+    .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(data) {
+      var setups = data.setups || [];
+      var top = setups.find(function(s) { return s.grade === 'A'; }) || setups[0] || null;
+      document.getElementById('pc-pattern').innerHTML = patternCard(top);
+    })
+    .catch(function() {
+      document.getElementById('pc-pattern').innerHTML = patternCard(null);
     });
 }());
 </script>

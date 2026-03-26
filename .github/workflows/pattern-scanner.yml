@@ -1,0 +1,44 @@
+name: Pattern Scanner
+
+on:
+  schedule:
+    # Weekdays ~9:40am ET (single entry; ~1hr drift EST vs EDT)
+    - cron: '40 13 * * 1-5'
+  workflow_dispatch:         # Manual trigger button in GitHub UI
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r PatternScanner/requirements-scan.txt
+
+      - name: Run scan
+        run: python PatternScanner/scan.py
+
+      - name: Archive top nominee
+        run: python scripts/archive_nominee.py --source patterns
+
+      - name: Commit results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          git add PatternScanner/data/results.json MarketDashboard/data/nominees_archive.json
+          git diff --staged --quiet || git commit -m "chore: pattern scan $(date -u +%Y-%m-%dT%H:%M)Z"
+          git pull --rebase -Xtheirs origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref_name }}

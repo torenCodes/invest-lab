@@ -25,6 +25,7 @@ RESULTS_PATHS = {
     'underdogs':   'Underdogs/data/results.json',
     'insider':     'InsiderBuying/data/results.json',
     'tried-true':  'TriedAndTrue/data/results.json',
+    'patterns':    'PatternScanner/data/results.json',
 }
 
 DEDUP_DAYS = 14  # Don't re-archive the same ticker+source within N days
@@ -180,11 +181,39 @@ def extract_tried_true(path):
     }
 
 
+def extract_patterns(path):
+    with open(path) as f:
+        data = json.load(f)
+
+    setups = data.get('setups', [])
+    if not setups:
+        return None
+
+    # Pick top Grade A, or fall back to first setup
+    grade_a = [s for s in setups if s.get('grade') == 'A']
+    pick = grade_a[0] if grade_a else setups[0]
+
+    signals = pick.get('signals', [])
+    reason = pick.get('pattern', 'Pattern setup') + ' — ' + '; '.join(signals[:2]) if signals else pick.get('pattern', 'Pattern setup')
+
+    return {
+        'source':      'Pattern Scanner',
+        'source_key':  'patterns',
+        'ticker':      pick['ticker'],
+        'name':        pick.get('name', pick['ticker']),
+        'sector':      pick.get('sector', ''),
+        'entry_price': pick.get('current_price'),
+        'score':       pick.get('score'),
+        'reason':      reason,
+    }
+
+
 EXTRACTORS = {
     'movers':     extract_movers,
     'underdogs':  extract_underdogs,
     'insider':    extract_insider,
     'tried-true': extract_tried_true,
+    'patterns':   extract_patterns,
 }
 
 

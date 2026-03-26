@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Invest Lab - Pattern Scanner</title>
+<link rel="icon" type="image/png" href="https://theinvestlab.com/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & Base ───────────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:           #f5f4f0;
+    --surface:      #ffffff;
+    --surface-2:    #fafaf8;
+    --border:       #e8e6e0;
+    --border-light: #f0ede8;
+    --ink:          #1a1a18;
+    --ink-2:        #4a4a46;
+    --ink-3:        #8a8a82;
+    --green:        #1a7a4a;
+    --green-bg:     #edf7f2;
+    --green-light:  #d0edde;
+    --red:          #c0392b;
+    --red-bg:       #fdf0ef;
+    --orange:       #c07a1a;
+    --orange-bg:    #fef5ec;
+    --blue:         #1a5fa8;
+    --blue-bg:      #eef3fb;
+    --teal:         #1a7070;
+    --teal-bg:      #edf7f7;
+    --accent:       #2d6a4f;
+    --gold:         #b8922a;
+    --gold-bg:      #fdf9ed;
+    --shadow-sm:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md:    0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --radius:       10px;
+    --radius-sm:    6px;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg);
+    color: var(--ink-2);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 0%,  rgba(45,106,79,0.05)  0%, transparent 50%),
+      radial-gradient(circle at 85% 100%, rgba(184,146,42,0.03) 0%, transparent 50%);
+  }
+
+  /* ── Site Header ────────────────────────────────────────────────────────── */
+  .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e0e7e7;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'Barlow',sans-serif;}
+  .site-nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px;}
+  .site-logo{display:flex;align-items:center;gap:.55rem;font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:#1a1a18;text-decoration:none;letter-spacing:.01em;}
+  .site-logo img{height:1.8rem;width:auto;}
+  .nav-burger{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#4a4a46;padding:.2rem .4rem;}
+  .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+  .site-nav-item{position:relative;}
+  .site-nav-link{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .9rem;border-radius:3px;text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#4a4a46;transition:color .15s,background .15s;}
+  .site-nav-link:hover,.site-nav-link.active{color:#38bda6;background:#edf8f6;}
+  .site-nav-chevron{font-size:.6rem;opacity:.6;transition:transform .2s;}
+  .site-nav-item:hover .site-nav-chevron{transform:rotate(180deg);}
+  .site-dropdown{position:absolute;top:calc(100% + 2px);left:50%;transform:translateX(-50%) translateY(4px);background:#fff;border:1px solid #e0e7e7;border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.1);min-width:180px;list-style:none;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s,transform .15s,visibility .15s;z-index:200;}
+  .site-dropdown li a{display:block;padding:.55rem 1.1rem;font-size:.82rem;color:#4a4a46;text-decoration:none;transition:color .12s,background .12s;}
+  .site-dropdown li a:hover{background:#edf8f6;color:#38bda6;}
+  .site-dropdown li a.active{color:#38bda6;font-weight:600;}
+  .site-nav-item:hover .site-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+  @media(max-width:680px){
+    .nav-burger{display:block;}
+    .site-nav{height:56px;padding:0 16px;}
+    .site-nav-links{display:none;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:2px solid #e0e7e7;box-shadow:0 6px 16px rgba(0,0,0,.09);padding:.4rem 0;list-style:none;}
+    .site-nav-links.open{display:flex;}
+    .site-nav-item{width:100%;}
+    .site-nav-link{padding:.7rem 1.2rem;border-radius:0;justify-content:flex-start;font-size:.75rem;}
+    .site-dropdown{display:none;}
+  }
+
+  /* ── Layout ─────────────────────────────────────────────────────────────── */
+  .layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: calc(100vh - 70px);
+  }
+
+  /* ── Sidebar ─────────────────────────────────────────────────────────────── */
+  .sidebar {
+    background: #1a1a18;
+    color: rgba(255,255,255,0.75);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+
+  .sidebar-header {
+    padding: 28px 24px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .logo span { color: #b7dfc8; }
+  .logo-sub {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .sidebar-scan-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    color: rgba(255,255,255,0.38);
+  }
+  .pulse {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse-anim 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulse-anim {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .sidebar-section { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .sidebar-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    padding: 16px 24px 10px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 24px;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.65);
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .nav-item:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); }
+  .nav-item.active { color: #38bda6; border-left-color: #38bda6; background: rgba(56,189,166,0.1); font-weight: 500; }
+  .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+  .nav-badge {
+    margin-left: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    background: var(--green);
+    color: #fff;
+    padding: 1px 7px;
+    border-radius: 20px;
+    min-width: 20px;
+    text-align: center;
+  }
+
+  .sidebar-stat {
+    padding: 6px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+  }
+  .sidebar-stat-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .sidebar-note {
+    padding: 0 24px 16px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding: 18px 24px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    line-height: 1.6;
+  }
+
+  /* ── Main ────────────────────────────────────────────────────────────────── */
+  .main {
+    padding: 36px 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* ── Header bar ──────────────────────────────────────────────────────────── */
+  .scan-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .scan-stat {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink-3);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+  .scan-stat strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .scan-stat.grade-a strong { color: var(--green); }
+  .scan-stat.grade-b strong { color: var(--teal); }
+  .scan-stat.grade-w strong { color: var(--orange); }
+  .scan-time {
+    margin-left: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--ink-3);
+  }
+
+  /* ── Filter tabs ─────────────────────────────────────────────────────────── */
+  .filter-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .filter-tab {
+    padding: 7px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--ink-3);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Barlow', sans-serif;
+  }
+  .filter-tab:hover { border-color: #38bda6; color: #38bda6; }
+  .filter-tab.active {
+    background: #1a1a18;
+    border-color: #1a1a18;
+    color: #fff;
+  }
+  .filter-tab.active.grade-a { background: var(--green); border-color: var(--green); }
+  .filter-tab.active.grade-b { background: var(--teal); border-color: var(--teal); }
+  .filter-tab.active.grade-w { background: var(--orange); border-color: var(--orange); }
+  .tab-count {
+    display: inline-block;
+    margin-left: 5px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    opacity: 0.7;
+  }
+
+  /* ── Setup cards grid ────────────────────────────────────────────────────── */
+  .setups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 18px;
+  }
+
+  /* ── Setup card ──────────────────────────────────────────────────────────── */
+  .setup-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.15s;
+    cursor: pointer;
+  }
+  .setup-card:hover { box-shadow: var(--shadow-md); }
+  .setup-card.grade-a { border-left: 3px solid var(--green); }
+  .setup-card.grade-b { border-left: 3px solid var(--teal); }
+  .setup-card.grade-w { border-left: 3px solid var(--orange); }
+
+  .card-top {
+    padding: 16px 18px 14px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .card-badges {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .grade-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .grade-badge.a { background: var(--green); color: #fff; }
+  .grade-badge.b { background: var(--teal); color: #fff; }
+  .grade-badge.watch { background: var(--orange); color: #fff; }
+
+  .pattern-pill {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 2px 9px;
+    border-radius: 20px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--ink-2);
+    white-space: nowrap;
+  }
+  .insider-pill {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: var(--green-bg);
+    color: var(--green);
+    border: 1px solid var(--green-light);
+    white-space: nowrap;
+  }
+  .etf-pill {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: var(--blue-bg);
+    color: var(--blue);
+    border: 1px solid #c5d9f0;
+    white-space: nowrap;
+  }
+
+  .card-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .card-identity { flex: 1; min-width: 0; }
+  .card-ticker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .card-name {
+    font-size: 0.8rem;
+    color: var(--ink-3);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-sector {
+    font-size: 0.72rem;
+    color: var(--ink-3);
+    margin-top: 2px;
+    font-style: italic;
+  }
+
+  .card-price {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .price-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .price-change {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .price-change.pos { color: var(--green); }
+  .price-change.neg { color: var(--red); }
+  .price-change.flat { color: var(--ink-3); }
+
+  /* ── Card signals (bottom) ───────────────────────────────────────────────── */
+  .card-signals {
+    padding: 12px 18px 14px;
+  }
+  .signal-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .signal-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 0.8rem;
+    color: var(--ink-2);
+    line-height: 1.4;
+  }
+  .signal-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #38bda6;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .card-chart-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--blue);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .card-chart-link:hover { color: #38bda6; }
+
+  /* ── Expandable detail ───────────────────────────────────────────────────── */
+  .card-detail {
+    display: none;
+    border-top: 1px solid var(--border-light);
+    padding: 14px 18px 16px;
+    background: var(--surface-2);
+  }
+  .card-detail.open { display: block; }
+
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 4px 0;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-label { color: var(--ink-3); }
+  .detail-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .detail-signals-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 10px 0 6px;
+  }
+
+  /* ── Empty state ─────────────────────────────────────────────────────────── */
+  .empty-state {
+    text-align: center;
+    padding: 60px 40px;
+    color: var(--ink-3);
+  }
+  .empty-icon { font-size: 2.5rem; margin-bottom: 12px; }
+  .empty-title { font-size: 1.1rem; font-weight: 600; color: var(--ink-2); margin-bottom: 6px; }
+  .empty-sub { font-size: 0.88rem; }
+
+  /* ── Loading ─────────────────────────────────────────────────────────────── */
+  .loading-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 60px 40px;
+    color: var(--ink-3);
+    font-size: 0.88rem;
+  }
+  .spinner {
+    width: 18px; height: 18px;
+    border: 2px solid var(--border);
+    border-top-color: #38bda6;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Mobile ──────────────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; height: auto; }
+    .main { padding: 20px 16px; }
+    .setups-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Site Header ──────────────────────────────────────────────────────────── -->
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="https://theinvestlab.com" class="site-logo">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </a>
+    <button class="nav-burger" onclick="this.closest('nav').querySelector('.site-nav-links').classList.toggle('open')">&#9776;</button>
+    <ul class="site-nav-links">
+      <li class="site-nav-item">
+        <a href="#" class="site-nav-link active">
+          Dashboards <span class="site-nav-chevron">&#9660;</span>
+        </a>
+        <ul class="site-dropdown">
+          <li><a href="https://invest-movers-shakers.onrender.com">Movers and Shakers</a></li>
+          <li><a href="https://invest-tried-true.onrender.com">Tried and True</a></li>
+          <li><a href="https://invest-the-analyst.onrender.com" style="display:none">The Analyst</a></li>
+          <li><a href="https://invest-insider-buying.onrender.com">Insider Buying</a></li>
+          <li><a href="https://invest-underdogs.onrender.com">The Underdogs</a></li>
+          <li><a href="https://invest-patterns.onrender.com" class="active">Pattern Scanner</a></li>
+        </ul>
+      </li>
+      <li class="site-nav-item">
+        <a href="https://theinvestlab.com/blog.html" class="site-nav-link">Blog</a>
+      </li>
+      <li class="site-nav-item">
+        <a href="https://theinvestlab.com/#about" class="site-nav-link">About</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ── Dashboard Layout ──────────────────────────────────────────────────────── -->
+<div class="layout">
+
+  <!-- ── Sidebar ──────────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">Pattern <span>Scanner</span></div>
+      <div class="logo-sub">Technical setups — S&amp;P 500</div>
+      <div class="sidebar-scan-status">
+        <div class="pulse"></div>
+        <span id="sidebar-scan-time">Loading...</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Filter</div>
+      <div class="nav-item active" onclick="setFilter('all')" id="nav-all">
+        <span class="nav-icon">&#9776;</span> All Setups
+      </div>
+      <div class="nav-item" onclick="setFilter('A')" id="nav-A">
+        <span class="nav-icon">&#9650;</span> Grade A
+        <span class="nav-badge" id="sidebar-grade-a-count">—</span>
+      </div>
+      <div class="nav-item" onclick="setFilter('B')" id="nav-B">
+        <span class="nav-icon">&#9670;</span> Grade B
+      </div>
+      <div class="nav-item" onclick="setFilter('Watch')" id="nav-Watch">
+        <span class="nav-icon">&#9651;</span> Watch List
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Scan Info</div>
+      <div class="sidebar-stat">
+        <span>Total scanned</span>
+        <span class="sidebar-stat-val" id="sidebar-total">—</span>
+      </div>
+      <div class="sidebar-stat">
+        <span>Setups found</span>
+        <span class="sidebar-stat-val" id="sidebar-setups">—</span>
+      </div>
+      <div class="sidebar-stat">
+        <span>Schedule</span>
+        <span class="sidebar-stat-val">Weekdays 9:40am</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Patterns</div>
+      <div class="sidebar-note">
+        Bull Flag · VCP · BB Squeeze<br>
+        MA Crossover · Cup &amp; Handle<br>
+        High-Vol Gap
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      Not financial advice. Pattern detection is algorithmic and may miss or generate false setups. Always do your own research before trading.
+    </div>
+  </aside>
+
+  <!-- ── Main Content ──────────────────────────────────────────────────────── -->
+  <main class="main">
+
+    <!-- Scan header stats -->
+    <div class="scan-header" id="scan-header">
+      <span class="scan-stat">Setups: <strong id="hdr-total">—</strong></span>
+      <span class="scan-stat grade-a">Grade A: <strong id="hdr-grade-a">—</strong></span>
+      <span class="scan-stat grade-b">Grade B: <strong id="hdr-grade-b">—</strong></span>
+      <span class="scan-stat grade-w">Watch: <strong id="hdr-grade-w">—</strong></span>
+      <span class="scan-time" id="hdr-scan-time"></span>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs" id="filter-tabs">
+      <button class="filter-tab active" onclick="setFilter('all')" id="tab-all">All <span class="tab-count" id="tc-all"></span></button>
+      <button class="filter-tab grade-a" onclick="setFilter('A')" id="tab-A">Grade A <span class="tab-count" id="tc-A"></span></button>
+      <button class="filter-tab grade-b" onclick="setFilter('B')" id="tab-B">Grade B <span class="tab-count" id="tc-B"></span></button>
+      <button class="filter-tab grade-w" onclick="setFilter('Watch')" id="tab-Watch">Watch <span class="tab-count" id="tc-Watch"></span></button>
+    </div>
+
+    <!-- Setup cards -->
+    <div id="setups-container">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        Loading pattern data...
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  var allSetups = [];
+  var activeFilter = 'all';
+
+  // ── Data fetch ─────────────────────────────────────────────────────────────
+  fetch('/data/results.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      allSetups = data.setups || [];
+      renderStats(data);
+      renderCards(activeFilter);
+    })
+    .catch(function() {
+      document.getElementById('setups-container').innerHTML =
+        '<div class="empty-state"><div class="empty-icon">&#9888;</div>' +
+        '<div class="empty-title">Could not load scan data</div>' +
+        '<div class="empty-sub">The scanner runs weekdays at ~9:40am ET.</div></div>';
+    });
+
+  // ── Stats ──────────────────────────────────────────────────────────────────
+  function renderStats(data) {
+    var setups = data.setups || [];
+    var total  = setups.length;
+    var gradeA = setups.filter(function(s) { return s.grade === 'A'; }).length;
+    var gradeB = setups.filter(function(s) { return s.grade === 'B'; }).length;
+    var gradeW = setups.filter(function(s) { return s.grade === 'Watch'; }).length;
+
+    document.getElementById('hdr-total').textContent   = total;
+    document.getElementById('hdr-grade-a').textContent = gradeA;
+    document.getElementById('hdr-grade-b').textContent = gradeB;
+    document.getElementById('hdr-grade-w').textContent = gradeW;
+
+    document.getElementById('sidebar-total').textContent  = data.total_scanned || '—';
+    document.getElementById('sidebar-setups').textContent = total;
+    document.getElementById('sidebar-grade-a-count').textContent = gradeA || '—';
+
+    // Tab counts
+    document.getElementById('tc-all').textContent   = total;
+    document.getElementById('tc-A').textContent     = gradeA;
+    document.getElementById('tc-B').textContent     = gradeB;
+    document.getElementById('tc-Watch').textContent = gradeW;
+
+    // Timestamps
+    var timeStr = '—';
+    if (data.scan_time) {
+      var d = new Date(data.scan_time);
+      timeStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' +
+                d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+    }
+    document.getElementById('hdr-scan-time').textContent = 'Last scan: ' + timeStr;
+    document.getElementById('sidebar-scan-time').textContent = timeStr;
+  }
+
+  // ── Filter ─────────────────────────────────────────────────────────────────
+  function setFilter(grade) {
+    activeFilter = grade;
+
+    // Update tabs
+    ['all', 'A', 'B', 'Watch'].forEach(function(g) {
+      var tab = document.getElementById('tab-' + g);
+      var nav = document.getElementById('nav-' + g);
+      if (tab) tab.classList.toggle('active', g === grade);
+      if (nav) nav.classList.toggle('active', g === grade);
+    });
+
+    renderCards(grade);
+  }
+
+  // ── Render cards ───────────────────────────────────────────────────────────
+  function renderCards(grade) {
+    var filtered = grade === 'all'
+      ? allSetups
+      : allSetups.filter(function(s) { return s.grade === grade; });
+
+    var container = document.getElementById('setups-container');
+    if (!filtered.length) {
+      var msg = allSetups.length === 0
+        ? 'No setups yet — scanner runs weekdays at ~9:40am ET.'
+        : 'No ' + (grade === 'Watch' ? 'Watch' : 'Grade ' + grade) + ' setups today.';
+      container.innerHTML =
+        '<div class="empty-state"><div class="empty-icon">&#128202;</div>' +
+        '<div class="empty-title">No setups found</div>' +
+        '<div class="empty-sub">' + msg + '</div></div>';
+      return;
+    }
+
+    var html = '<div class="setups-grid">';
+    filtered.forEach(function(setup, i) {
+      html += buildCard(setup, i);
+    });
+    html += '</div>';
+    container.innerHTML = html;
+  }
+
+  // ── Build a single card ────────────────────────────────────────────────────
+  function buildCard(s, i) {
+    var gradeKey  = s.grade === 'Watch' ? 'w' : s.grade.toLowerCase();
+    var gradeClass = s.grade === 'Watch' ? 'grade-w' : 'grade-' + s.grade.toLowerCase();
+    var gradeLetter = s.grade;
+
+    var changeClass = s.change_pct > 0 ? 'pos' : s.change_pct < 0 ? 'neg' : 'flat';
+    var changeSign  = s.change_pct > 0 ? '+' : '';
+    var changePct   = s.change_pct != null ? changeSign + s.change_pct.toFixed(2) + '%' : '—';
+    var price       = s.current_price != null ? '$' + s.current_price.toFixed(2) : '—';
+
+    // Grade badge class
+    var gradeBadgeClass = gradeKey === 'a' ? 'a' : gradeKey === 'b' ? 'b' : 'watch';
+
+    // Badges row
+    var badges = '<span class="grade-badge ' + gradeBadgeClass + '">Grade ' + gradeLetter + '</span>';
+    badges += ' <span class="pattern-pill">' + escHtml(s.pattern) + '</span>';
+    if (s.insider_flag) badges += ' <span class="insider-pill">&#128100; Insider</span>';
+    if (s.etf_flag)     badges += ' <span class="etf-pill">&#128202; ETF ×' + (s.etf_count || '') + '</span>';
+
+    // Signals preview (first 3)
+    var signals = s.signals || [];
+    var signalHtml = '';
+    signals.slice(0, 3).forEach(function(sig) {
+      signalHtml += '<li class="signal-item"><span class="signal-dot"></span>' + escHtml(sig) + '</li>';
+    });
+
+    // Expanded detail
+    var weekChange = s.week_change_pct != null
+      ? (s.week_change_pct > 0 ? '+' : '') + s.week_change_pct.toFixed(2) + '%'
+      : '—';
+    var rsPct = s.rs_pct != null ? s.rs_pct.toFixed(1) + '%' : '—';
+    var score = s.score != null ? s.score + ' pts' : '—';
+
+    var allSignalsHtml = '';
+    if (signals.length > 3) {
+      allSignalsHtml = '<div class="detail-signals-title">All signals</div><ul class="signal-list">';
+      signals.forEach(function(sig) {
+        allSignalsHtml += '<li class="signal-item"><span class="signal-dot"></span>' + escHtml(sig) + '</li>';
+      });
+      allSignalsHtml += '</ul>';
+    }
+
+    return '<div class="setup-card ' + gradeClass + '" onclick="toggleCard(\'detail-' + i + '\')">' +
+      '<div class="card-top">' +
+        '<div class="card-badges">' + badges + '</div>' +
+        '<div class="card-main">' +
+          '<div class="card-identity">' +
+            '<div class="card-ticker">' + escHtml(s.ticker) + '</div>' +
+            '<div class="card-name">' + escHtml(s.name || '') + '</div>' +
+            '<div class="card-sector">' + escHtml(s.sector || '') + '</div>' +
+          '</div>' +
+          '<div class="card-price">' +
+            '<div class="price-value">' + price + '</div>' +
+            '<div class="price-change ' + changeClass + '">' + changePct + ' today</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card-signals">' +
+        '<ul class="signal-list">' + signalHtml + '</ul>' +
+        '<a href="' + escHtml(s.chart_url || '#') + '" target="_blank" rel="noopener" class="card-chart-link" onclick="event.stopPropagation()">View Chart &#8594;</a>' +
+      '</div>' +
+      '<div class="card-detail" id="detail-' + i + '">' +
+        '<div class="detail-row"><span class="detail-label">Score</span><span class="detail-val">' + score + '</span></div>' +
+        '<div class="detail-row"><span class="detail-label">RS Percentile</span><span class="detail-val">' + rsPct + '</span></div>' +
+        '<div class="detail-row"><span class="detail-label">Week change</span><span class="detail-val">' + weekChange + '</span></div>' +
+        '<div class="detail-row"><span class="detail-label">Pattern</span><span class="detail-val">' + escHtml(s.pattern) + '</span></div>' +
+        allSignalsHtml +
+      '</div>' +
+    '</div>';
+  }
+
+  function toggleCard(id) {
+    var el = document.getElementById(id);
+    if (el) el.classList.toggle('open');
+  }
+
+  function escHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+</script>
+</body>
+</html>
