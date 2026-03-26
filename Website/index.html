@@ -462,19 +462,25 @@
     if (!sector) {
       return '<div class="pv-type">Leading Sector</div>' +
         '<div class="pv-empty">No sector data this scan — check back on a trading day.</div>' +
-        cta('View sector flow');
+        cta('View sector rotation');
     }
 
-    var count = sector.count || 0;
+    var ret1d  = sector.ret_1d  != null ? sector.ret_1d  : null;
+    var ret1m  = sector.ret_1m  != null ? sector.ret_1m  : null;
+    var sign   = ret1d >= 0 ? '+' : '';
+    var stocks = sector.top_stocks || [];
+    var moversLine = stocks.length
+      ? stocks.map(function(s) { return s.ticker; }).join(', ') + ' leading'
+      : 'Top sector by 1-day return';
     return '<div class="pv-type">Leading Sector</div>' +
-      '<div class="pv-sector-name">' + sector.sector + '</div>' +
-      '<div class="pv-sector-gain">+' + fmt(sector.avg_change, 2) + '%</div>' +
-      '<div class="pv-sector-sub">avg gain today</div>' +
+      '<div class="pv-sector-name">' + sector.sector + ' <span style="font-size:0.75rem;color:var(--ink-3);font-family:monospace;font-weight:400;">' + sector.ticker + '</span></div>' +
+      '<div class="pv-sector-gain">' + sign + fmt(ret1d, 2) + '%</div>' +
+      '<div class="pv-sector-sub">1-day return</div>' +
       '<ul class="pv-signals">' +
-        '<li>' + count + ' green stock' + (count !== 1 ? 's' : '') + ' in this sector</li>' +
-        '<li>Top sector by average % gain</li>' +
+        '<li>' + moversLine + '</li>' +
+        (ret1m != null ? '<li>' + (ret1m >= 0 ? '+' : '') + fmt(ret1m, 2) + '% past month</li>' : '') +
       '</ul>' +
-      cta('View sector flow');
+      cta('View sector rotation');
   }
 
   // ── Boot ───────────────────────────────────────────────────────────────
@@ -492,7 +498,7 @@
 
       var day      = data.day_trades    && data.day_trades[0];
       var swing    = data.swing_trades  && data.swing_trades[0];
-      var sector   = data.sector_flow   && data.sector_flow[0];
+      var sector   = data.sector_rotation && data.sector_rotation[0];
       var discuss  = data.reddit_cards  && data.reddit_cards[0];
 
       document.getElementById('pc-day').innerHTML      = stockCard(day,     'Day Trade',        'View day trades',   false);
