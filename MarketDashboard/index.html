@@ -425,95 +425,6 @@
 
   .chart-container { position: relative; height: 220px; }
 
-  /* ── Reddit Feed ───────────────────────────────────────────────────────── */
-  .reddit-panel {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-  }
-
-  .reddit-header {
-    padding: 16px 20px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .reddit-icon {
-    width: 28px; height: 28px;
-    background: var(--reddit);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 0.9rem;
-    flex-shrink: 0;
-  }
-
-  .feed-scroll {
-    max-height: 360px;
-    overflow-y: auto;
-  }
-
-  .feed-item {
-    padding: 12px 20px;
-    border-bottom: 1px solid var(--border-light);
-    transition: background 0.1s;
-  }
-  .feed-item:last-child { border-bottom: none; }
-  .feed-item:hover { background: var(--bg); }
-
-  .feed-meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 5px;
-  }
-
-  .feed-sub {
-    font-size: 0.68rem;
-    font-weight: 600;
-    color: var(--reddit);
-    text-transform: lowercase;
-  }
-  .feed-sub::before { content: "r/"; }
-  .feed-sub.is-news::before { content: ""; }
-
-  .feed-ups {
-    font-size: 0.68rem;
-    font-family: 'DM Mono', monospace;
-    color: var(--ink-3);
-    margin-left: auto;
-  }
-
-  .feed-title {
-    font-size: 0.82rem;
-    color: var(--ink);
-    line-height: 1.4;
-    margin-bottom: 6px;
-  }
-  .feed-title a { color: inherit; text-decoration: none; }
-  .feed-title a:hover { color: var(--accent); }
-
-  .feed-tickers { display: flex; gap: 4px; flex-wrap: wrap; }
-  .feed-ticker-tag {
-    font-size: 0.65rem;
-    font-family: 'DM Mono', monospace;
-    font-weight: 500;
-    background: var(--green-bg);
-    color: var(--green);
-    padding: 2px 6px;
-    border-radius: 3px;
-  }
-
-  /* ── Bottom grid (sector + reddit) ─────────────────────────────────────── */
-  .bottom-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
-
   /* ── Loading / Empty states ─────────────────────────────────────────────── */
   .loading-state {
     text-align: center;
@@ -753,63 +664,6 @@
     text-align: right;
   }
 
-  /* ── Fear & Greed ───────────────────────────────────────────────────────── */
-  .fg-wrap {
-    display: flex;
-    gap: 32px;
-    align-items: flex-start;
-    padding: 20px 24px;
-  }
-
-  .fg-score {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 3.75rem;
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  .fg-rating {
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-top: 6px;
-  }
-
-  .fg-meta { margin-top: 12px; display: flex; flex-direction: column; gap: 4px; }
-  .fg-stat { font-size: 0.78rem; color: var(--ink-3); }
-  .fg-stat strong { color: var(--ink); font-weight: 600; }
-
-  .fg-bar-wrap { flex: 1; padding-top: 4px; }
-
-  .fg-bar-track {
-    position: relative;
-    height: 10px;
-    border-radius: 5px;
-    background: linear-gradient(90deg, #c0392b 0%, #e67e22 25%, #f1c40f 50%, #2ecc71 75%, #27ae60 100%);
-    margin-bottom: 8px;
-  }
-
-  .fg-needle {
-    position: absolute;
-    top: -5px;
-    width: 3px;
-    height: 20px;
-    background: var(--ink);
-    border-radius: 2px;
-    transform: translateX(-50%);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
-  }
-
-  .fg-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.6rem;
-    color: var(--ink-3);
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.01em;
-  }
-
   /* ── Market News ─────────────────────────────────────────────────────────── */
   .news-item {
     padding: 11px 20px;
@@ -926,9 +780,7 @@
     .nav-item { border-left: none; border-bottom: 2px solid transparent; padding: 7px 12px; border-radius: 6px; }
     .nav-item.active { border-bottom-color: var(--accent); }
     .scan-progress-wrap { width: 100%; padding: 8px 12px 0; }
-    .bottom-grid { grid-template-columns: 1fr; }
     .main { padding: 16px; }
-    .fg-wrap { flex-direction: column; gap: 20px; }
   }
 </style>
 </head>
@@ -1028,7 +880,6 @@ function toggleSiteNav(btn) {
     <span id="hdr-scanned" style="display:none"></span>
     <span id="hdr-day" style="display:none"></span>
     <span id="hdr-swing" style="display:none"></span>
-    <span id="hdr-reddit" style="display:none"></span>
     <span id="hdr-time" style="display:none"></span>
     <div class="sidebar-section">
       <div class="sidebar-label">Navigation</div>
@@ -1038,17 +889,8 @@ function toggleSiteNav(btn) {
       <a class="nav-item" href="#swing-trades" onclick="setActive(this)">
         <span class="nav-icon">📈</span> Swing Trades
       </a>
-      <a class="nav-item" href="#reddit-section" onclick="setActive(this)">
-        <span class="nav-icon">💬</span> Market Chatter
-      </a>
       <a class="nav-item" href="#sector-rotation" onclick="setActive(this)">
         <span class="nav-icon">🗺️</span> Sector Rotation
-      </a>
-      <a class="nav-item" href="#reddit-feed" onclick="setActive(this)">
-        <span class="nav-icon">📡</span> Chatter Feed
-      </a>
-      <a class="nav-item" href="#fear-greed" onclick="setActive(this)">
-        <span class="nav-icon">🧠</span> Fear &amp; Greed
       </a>
     </div>
     <div class="sidebar-section scan-progress-wrap">
@@ -1086,18 +928,6 @@ function toggleSiteNav(btn) {
       </div>
     </section>
 
-    <!-- Reddit Buzz Picks -->
-    <section id="reddit-section">
-      <div class="section-header">
-        <div class="section-title" id="buzz-section-title">Market Chatter</div>
-        <div class="section-subtitle" id="buzz-section-subtitle">Most-mentioned stocks — watch for moves</div>
-        <div class="section-badge" id="reddit-badge">—</div>
-      </div>
-      <div class="cards-grid" id="reddit-cards">
-        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Waiting for scan results…</div></div>
-      </div>
-    </section>
-
     <!-- Sector Rotation Tracker — full width -->
     <section id="sector-rotation" class="full-panel">
       <div class="panel-header">
@@ -1109,36 +939,6 @@ function toggleSiteNav(btn) {
         <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading sector data…</div></div>
       </div>
     </section>
-
-    <!-- Fear & Greed + Chatter Feed -->
-    <div class="bottom-grid">
-
-      <section id="fear-greed" class="full-panel">
-        <div class="panel-header">
-          <span class="panel-icon">🧠</span>
-          <span class="panel-title">CNN Fear &amp; Greed Index</span>
-          <span class="panel-sub">Market sentiment indicator</span>
-        </div>
-        <div id="fg-body">
-          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading…</div></div>
-        </div>
-      </section>
-
-      <!-- Chatter Feed -->
-      <section id="reddit-feed" class="reddit-panel">
-        <div class="reddit-header">
-          <div class="reddit-icon" id="buzz-feed-icon">💬</div>
-          <div>
-            <div id="buzz-feed-title" style="font-size:0.9rem;font-weight:500;">Chatter Feed</div>
-            <div id="buzz-feed-subtitle" style="font-size:0.72rem;color:var(--ink-3);">Latest articles &amp; posts about this scan's top picks</div>
-          </div>
-        </div>
-        <div class="feed-scroll" id="reddit-feed-list">
-          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading chatter data…</div></div>
-        </div>
-      </section>
-
-    </div>
 
   </main>
 </div>
@@ -1289,69 +1089,6 @@ function renderStockCard(stock, type) {
 }
 
 // ── Market Chatter card (nominees) ──────────────────────────────────────────
-function renderRedditCard(stock) {
-  const cardId   = `card-${stock.ticker}-chatter`;
-  const detailId = `detail-${stock.ticker}-chatter`;
-  const hasPrice = stock.current_price != null && stock.current_price > 0;
-  const chgSign  = stock.change_pct >= 0 ? '+' : '';
-  const chgClass = stock.change_pct >= 0 ? 'change-up' : 'change-down';
-  const signals  = (stock.signals || []).map(s =>
-    `<span class="signal-tag ${signalClass(s)}">${s}</span>`
-  ).join('');
-
-  return `
-  <div class="stock-card" id="${cardId}" onclick="toggleDetail('${detailId}', '${cardId}')" style="border-top:3px solid var(--reddit);cursor:pointer;">
-    <div class="card-top">
-      <div class="card-header">
-        <div>
-          <div class="card-ticker">${stock.ticker}</div>
-          <div class="card-name">${stock.name || 'High buzz activity'}</div>
-        </div>
-        <div class="card-price">
-          ${hasPrice ? `<div class="price-value">$${fmt(stock.current_price)}</div>` : ''}
-          ${hasPrice ? `<div class="price-change ${chgClass}">${chgSign}${fmt(stock.change_pct)}%</div>` : ''}
-        </div>
-      </div>
-    </div>
-    <div class="card-signals">
-      ${signals || `<span class="signal-tag signal-reddit">📊 ${stock.mentions || stock.reddit_mentions || 0} mentions</span>`}
-      ${stock.sector ? `<span class="signal-tag signal-default">${stock.sector}</span>` : ''}
-    </div>
-    <div class="card-detail" id="${detailId}">
-      <div class="detail-grid">
-        <div class="detail-stat">
-          <div class="detail-stat-label">Open</div>
-          <div class="detail-stat-value">${hasPrice ? '$' + fmt(stock.open) : '—'}</div>
-        </div>
-        <div class="detail-stat">
-          <div class="detail-stat-label">Prev Close</div>
-          <div class="detail-stat-value">${hasPrice ? '$' + fmt(stock.prev_close) : '—'}</div>
-        </div>
-        <div class="detail-stat">
-          <div class="detail-stat-label">Day High</div>
-          <div class="detail-stat-value">${hasPrice ? '$' + fmt(stock.high) : '—'}</div>
-        </div>
-        <div class="detail-stat">
-          <div class="detail-stat-label">Day Low</div>
-          <div class="detail-stat-value">${hasPrice ? '$' + fmt(stock.low) : '—'}</div>
-        </div>
-        <div class="detail-stat">
-          <div class="detail-stat-label">Market Cap</div>
-          <div class="detail-stat-value">${fmtCap(stock.market_cap)}</div>
-        </div>
-        <div class="detail-stat">
-          <div class="detail-stat-label">Sector</div>
-          <div class="detail-stat-value" style="font-size:0.75rem;">${stock.sector || '—'}</div>
-        </div>
-      </div>
-      ${renderEarningsCallout(stock)}
-      <div style="padding-top:10px;font-size:0.75rem;color:var(--ink-3);">
-        High buzz activity. Watch for price action before entering.
-      </div>
-    </div>
-  </div>`;
-}
-
 // ── Toggle expand ──────────────────────────────────────────────────────────
 function toggleDetail(detailId, cardId) {
   const detail = $(detailId);
@@ -1473,34 +1210,6 @@ function sectorSort(col) {
   if (window._lastSectorData) renderSectorRotation(window._lastSectorData);
 }
 
-// ── Reddit feed renderer ───────────────────────────────────────────────────
-function renderRedditFeed(feed) {
-  const el = $('reddit-feed-list');
-  if (!feed || !feed.length) {
-    el.innerHTML = '<div class="empty-state">No chatter data found for this scan.</div>';
-    return;
-  }
-
-  el.innerHTML = feed.map(item => {
-    // Only highlight tickers that were confirmed as reddit picks — not every
-    // capitalised word the regex happened to catch in the post text.
-    const displayTickers = item.confirmed_tickers || item.tickers || [];
-    const tags = displayTickers.map(t =>
-      `<span class="feed-ticker-tag">${t}</span>`
-    ).join('');
-    return `
-    <div class="feed-item">
-      <div class="feed-meta">
-        <span class="feed-sub${item.is_news ? ' is-news' : ''}">${item.subreddit}</span>
-        <span style="font-size:0.65rem;color:var(--ink-3);">${item.hours_ago}h ago</span>
-        ${!item.is_news ? `<span class="feed-ups">▲ ${item.ups.toLocaleString()}</span>` : ''}
-      </div>
-      <div class="feed-title"><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></div>
-      ${tags ? `<div class="feed-tickers">${tags}</div>` : ''}
-    </div>`;
-  }).join('');
-}
-
 // ── Static data loader ─────────────────────────────────────────────────────
 async function loadResults() {
   const pulse = $('status-pulse');
@@ -1542,7 +1251,6 @@ function updateResults(data) {
   $('hdr-scanned').textContent = data.total_scanned || '—';
   $('hdr-day').textContent     = (data.day_trades   || []).length;
   $('hdr-swing').textContent   = (data.swing_trades || []).length;
-  $('hdr-reddit').textContent  = (data.reddit_cards || []).length;
   if (data.scan_time) {
     $('hdr-time').textContent  = new Date(data.scan_time).toLocaleTimeString();
   }
@@ -1565,31 +1273,6 @@ function updateResults(data) {
     swingEl.innerHTML = '<div class="empty-state">No qualifying swing trade setups found this scan.</div>';
   }
 
-  // Update chatter section labels based on source
-  const buzzSrc = data.buzz_source || 'none';
-  window._buzzSource = buzzSrc;
-  const sourceNote = buzzSrc === 'mixed'    ? 'Polygon.io News + Reddit'
-                   : buzzSrc === 'reddit'   ? 'Reddit'
-                   : buzzSrc === 'news'     ? 'Polygon.io News'
-                   : buzzSrc === 'trending' ? 'Yahoo Finance Trending'
-                   : 'No data available';
-  const fi = $('buzz-feed-icon');     if (fi) fi.textContent = '💬';
-  const ft = $('buzz-feed-title');    if (ft) ft.textContent = 'Chatter Feed';
-  const fs = $('buzz-feed-subtitle'); if (fs) fs.textContent = `Source: ${sourceNote}`;
-  if (buzzSrc === 'none') {
-    const s = $('buzz-section-subtitle');
-    if (s) s.textContent = 'No chatter data available for this scan';
-  }
-
-  // Reddit buzz nominees
-  const redditEl = $('reddit-cards');
-  $('reddit-badge').textContent = `${(data.reddit_cards || []).length} nominees`;
-  if (data.reddit_cards && data.reddit_cards.length) {
-    redditEl.innerHTML = data.reddit_cards.map(s => renderRedditCard(s)).join('');
-  } else {
-    redditEl.innerHTML = '<div class="empty-state">No chatter nominees found this scan.</div>';
-  }
-
   // Sector rotation — render once per scan cycle
   if (data.scan_time !== updateResults._lastScanTime) {
     updateResults._lastScanTime = data.scan_time;
@@ -1597,51 +1280,7 @@ function updateResults(data) {
       window._lastSectorData = data.sector_rotation;
       renderSectorRotation(data.sector_rotation);
     }
-    if (data.fear_greed) renderFearGreed(data.fear_greed);
   }
-
-  // Reddit feed — always render (shows empty-state when no data), skip if unchanged
-  const feedData = data.reddit_feed || [];
-  const feedHash = feedData.length + "_" + (feedData[0]?.url || "");
-  if (feedHash !== updateResults._lastFeedHash) {
-    updateResults._lastFeedHash = feedHash;
-    renderRedditFeed(feedData);
-  }
-}
-
-// ── Fear & Greed renderer ────────────────────────────────────────────────────
-function renderFearGreed(fg) {
-  const el = $('fg-body');
-  if (!fg) { el.innerHTML = '<div class="empty-state">Fear & Greed data unavailable.</div>'; return; }
-
-  const score = fg.score;
-  const pct = Math.round(score);
-  const color = score <= 25 ? '#c0392b' : score <= 45 ? '#e67e22' : score <= 55 ? '#f1c40f' : score <= 75 ? '#2ecc71' : '#27ae60';
-
-  el.innerHTML = `
-  <div class="fg-wrap">
-    <div>
-      <div class="fg-score" style="color:${color}">${score}</div>
-      <div class="fg-rating" style="color:${color}">${fg.rating}</div>
-      <div class="fg-meta">
-        <div class="fg-stat">Prev close: <strong>${fg.prev_close ?? '—'}</strong></div>
-        ${fg.week_ago != null ? `<div class="fg-stat">Week ago: <strong>${fg.week_ago}</strong></div>` : ''}
-      </div>
-    </div>
-    <div class="fg-bar-wrap">
-      <div style="font-size:0.68rem;color:var(--ink-3);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">Sentiment Scale</div>
-      <div class="fg-bar-track">
-        <div class="fg-needle" style="left:${pct}%"></div>
-      </div>
-      <div class="fg-labels">
-        <span>Extreme Fear</span><span>Fear</span><span>Neutral</span><span>Greed</span><span>Extreme Greed</span>
-      </div>
-      <div style="margin-top:12px;font-size:0.75rem;color:var(--ink-3);line-height:1.5;">
-        Scores below 30 often precede market recoveries. Scores above 70 may signal overheating.
-        Day traders: high fear = potential bounce plays. High greed = momentum continuation.
-      </div>
-    </div>
-  </div>`;
 }
 
 // ── Boot ───────────────────────────────────────────────────────────────────
