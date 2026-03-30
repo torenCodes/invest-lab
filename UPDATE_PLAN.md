@@ -1,5 +1,5 @@
 # Site Expansion Plan — theinvestlab.com
-*Last updated: March 2026*
+*Last updated: March 30, 2026*
 
 ---
 
@@ -14,9 +14,23 @@
 
 ---
 
+## Dashboard Investing Themes
+
+The dashboards now map to three investing horizons. This framing should inform how they're presented on the homepage, in nav, and in content:
+
+| Theme | Dashboard | Horizon |
+|-------|-----------|---------|
+| **Trading Nominees** | Movers and Shakers | Day / swing trades |
+| **Short-Term Holding Nominees** | Pattern Scanner | Swing / position (days–weeks) |
+| **Long-Term Holding Nominees** | Tried and True | Buy & hold (months–years) |
+
+Other dashboards (Insider Buying, The Underdogs) cross-cut these themes — they surface signals used across all horizons.
+
+---
+
 ## Overview
 
-The current site does a solid job of presenting what it *is* — but not enough of what it *does for the visitor*. The expansion plan focuses on three pillars:
+Three pillars:
 
 1. **Credibility** — prove the dashboards work (track record, methodology transparency)
 2. **Value density** — give visitors more useful data before they ever click into a dashboard
@@ -28,10 +42,10 @@ The current site does a solid job of presenting what it *is* — but not enough 
 *Target: Quick wins, no new backend required*
 
 ### ✅ 1.1 — Metrics / Credibility Bar
-~~Implemented then removed~~ — user decided to keep homepage clean. Revisit if the site grows.
+~~Implemented then removed~~ — decided to keep homepage clean. Revisit if the site grows.
 
 ### ~~1.2 — "How It Works" Section~~
-Removed — user prefers to keep methodology proprietary. Reserved for Methodology Page (2.1).
+Removed — methodology stays proprietary. Reserved for Methodology Page (2.1).
 
 ### ✅ 1.3 — Track Record / Past Nominees Section *(DONE — Mar 2026)*
 Fully implemented as an **automated system**:
@@ -42,13 +56,34 @@ Fully implemented as an **automated system**:
 
 ### ✅ 1.4 — Expanded Market Snapshot Cards *(DONE — Mar 2026)*
 - Fear & Greed strip added above preview cards
-- Sector card reads from `sector_rotation[0]` (updated from `sector_flow`)
+- Sector card reads from `sector_rotation[0]`
 
 ### ~~1.5 — FAQ Section~~
-Removed — user found it overkill.
+Removed — found it overkill.
 
 ### 1.6 — Email / Newsletter CTA
 Deferred — no newsletter setup yet. Revisit when traffic warrants.
+
+### 1.7 — Homepage Layout Refresh *(NEXT — from EDITS.md)*
+A focused round of homepage edits to tighten the page and prepare for the Newsstand:
+
+**1.7a — Rename section:** "Today's Market Snapshot" → **"Today's Lab Results"**
+
+**1.7b — Remove Pattern Scanner preview card.** Four cards remain: Day Trade, Swing Trade, Leading Sector, Highly Discussed. The Pattern Scanner is better represented in the dashboard grid below (Short-Term Holding theme) than as a daily preview card.
+
+**1.7c — Create "The Newsstand" section on the homepage.** A new informational section below the preview cards (or below Past Nominees). This is where market context lives — not trade picks, but the backdrop:
+- Fear & Greed bar (moves here from the Lab Results section)
+- Market News highlights
+- Unusual Volume alerts
+- Earnings calendar snippet (upcoming week)
+- Links to a dedicated **Newsstand page** (`newsstand.html`) with full-size versions of all cards
+
+This replaces the old 2.4 Earnings Calendar concept with something broader and more useful.
+
+**1.7d — Dashboard theme labels (optional).** Consider grouping the "All Dashboards" cards under the three investing theme headings (Trading / Short-Term / Long-Term) instead of a flat list. Open question — may be overdesign for 5–6 dashboards.
+
+### 1.8 — Streamline MarketDashboard (Movers & Shakers)
+Remove Fear & Greed and Market Chatter sections from the MarketDashboard itself. These migrate to the Newsstand. Movers & Shakers stays focused on: Day Trades, Swing Trades, Sector Rotation.
 
 ---
 
@@ -62,84 +97,45 @@ A full deep-dive on how each dashboard works:
 - What each signal means and why it matters
 - "What this tool is / what it isn't" framing
 
-This is the most powerful trust-builder for technically-minded visitors. AskLivermore's entire brand rests on pattern transparency — we can do the same for fundamental + sentiment scoring.
+Most powerful trust-builder for technically-minded visitors.
 
 ### 2.2 — Glossary Page (`/glossary.html`)
 Definitions for every term used across the dashboards:
-- RSI (Relative Strength Index), 52-week drawdown, YTD performance
+- RSI, 52-week drawdown, YTD performance
 - Graham Number, P/E, PEG ratio, FCF yield
 - ETF overlap scoring, cross-ETF consensus
 - Cluster buys, SEC Form 4, open-market purchases
 - Fear & Greed index, Finnhub sentiment, Reddit mentions
 
-Good for SEO ("what is RSI in stocks", etc.) and for new investors using the dashboards.
+Good for SEO ("what is RSI in stocks", etc.) and for new investors.
 
 ### 2.3 — Resources Page (`/resources.html`)
 Curated list of trusted financial tools, data sources, and reading material:
 - Data sources we actually use (Finnhub, Polygon.io, SEC EDGAR, yfinance)
 - Recommended screeners (Finviz, Barchart)
 - Books and resources for systematic investing
-- Could include tasteful affiliate links (Tastytrade, TradingView, Seeking Alpha) as a Phase 5 monetization step
+- Could include tasteful affiliate links (Tastytrade, TradingView, Seeking Alpha) as a Phase 5 step
 
-### 2.4 — Earnings Calendar Page (`/earnings.html`)
-Static or lightly dynamic page:
-- Next 7–14 days of earnings for notable stocks
-- Pulls from Finnhub earnings calendar API
-- Shows prior EPS surprise (beat/miss %) alongside upcoming date
-- Static JSON refresh via GitHub Actions (similar to MarketDashboard pattern)
+### 2.4 — The Newsstand *(inline expandable cards on homepage)*
+No standalone page — all Newsstand content lives on the homepage in expandable cards to keep visitors on the main page. Each card click-expands to show full data inline.
 
-Earnings calendars are one of the most searched financial pages on the web. Good SEO surface area.
+**Data pipeline:** `scripts/newsstand_scan.py` → `data/newsstand.json`, hosted on Render or committed to repo. GitHub Actions runs on schedule.
+
+**Card content when expanded:**
+- **Earnings Calendar** — next 7–14 days of notable earnings, prior EPS surprise, Finnhub API
+- **Market News** — curated headlines from Polygon.io / Finnhub
+- **Unusual Volume** — Finviz unusual volume tickers
+- Fear & Greed already populated from Movers & Shakers scan data
+
+This avoids page sprawl while still surfacing high-value market context. Earnings calendar data is the highest-SEO-value content on financial sites.
 
 ---
 
 ## Phase 3 — New Dashboards
 *Target: Grow the tool suite, attract advanced users*
 
-### 3.1 — Technical Pattern Scanner *(AskLivermore-inspired)* — **NEXT BUILD**
-**What:** Automated daily scan detecting classic swing-trade chart patterns across ~500 liquid stocks.
-
-**Inspiration:** asklivermore.com — detects 21 patterns, grades A+/A/B, shows historical credibility anchors (SMCI +2,515%, NVDA +638%). Free tier = top 6 results; $29/mo for full access.
-**Our differentiator:** Free + open + cross-references our own insider buying and ETF data for multi-signal confluence picks.
-
-#### Patterns to detect (Phase 1, ordered by priority):
-1. **Bull Flag** — strong uptrend (10%+ in 1–4 wks), tight consolidation on declining volume, then breakout
-2. **VCP** (Volatility Contraction Pattern) — Minervini method; 3–4 progressively tighter consolidations with lower volume
-3. **Bollinger Band Squeeze** — BB width at N-month low; pending explosive move direction unclear, but alerts to watch
-4. **MA Crossover** — 20-day crossing above 50-day with above-average volume
-5. **Cup-with-Handle** — rounded base + shallow handle before breakout above prior high
-6. **Power Earnings Gap** — stock gaps up 5%+ on earnings day, holds above gap in subsequent sessions
-
-#### Grading system:
-- **Grade A** — 3+ confirming signals (pattern + volume + relative strength + any cross-ref signal)
-- **Grade B** — 2 confirming signals; pattern forming cleanly
-- **Watch** — pattern developing but not yet confirmed; volume or RS not yet there
-
-#### Cross-reference bonus (unique to us):
-- Insider buying match (from InsiderBuying/data/results.json) → +1 grade or flag
-- ETF overlap (appears in 3+ growth ETFs from TriedAndTrue universe) → flag as "ETF confirmed"
-
-#### Technical stack:
-- **Language/Framework:** Python + Flask (same as all other dashboards)
-- **Data:** yfinance for OHLCV history (daily bars, 1-year lookback minimum)
-- **Indicators:** `pandas-ta` library (RSI, EMA/SMA, Bollinger Bands, ATR, volume MA)
-- **Pattern logic:** Custom detection functions per pattern type
-- **Output:** `data/results.json` with ranked list of setups
-- **Charts:** Link to TradingView chart for each ticker (no embedded chart to keep it simple)
-
-#### Infrastructure:
-- **Folder:** `PatternScanner/`
-- **Render URL:** `https://invest-patterns.onrender.com`
-- **Scan schedule:** Daily at market open, ~9:40am ET (`40 13 * * 1-5` cron)
-- **GitHub Actions workflow:** `pattern-scanner.yml`
-- **Universe:** S&P 500 tickers (~500 stocks) — fetched from a static list or Wikipedia
-
-#### Homepage integration:
-- New preview card in Market Snapshot section showing top-graded setup of the day
-- Dashboard card in "All Dashboards" section
-- Added to nav dropdown across ALL HTML files (position 6, after The Underdogs)
-
-**Stack:** Flask + yfinance + pandas-ta
-*This is the highest-impact new dashboard — differentiates the site from pure fundamental screeners.*
+### ✅ 3.1 — Technical Pattern Scanner *(DONE — Mar 2026)*
+Live at `https://invest-patterns.onrender.com`. Detects 6 chart patterns across S&P 500, grades A/B/Watch, cross-references insider buying and ETF consensus. Daily scan at 9:40am ET. See `PatternScanner/PROGRESS.md` for full architecture.
 
 ### 3.2 — Earnings Dashboard
 **What:** Tracks upcoming and recent earnings across a curated universe of quality stocks.
@@ -148,14 +144,13 @@ Earnings calendars are one of the most searched financial pages on the web. Good
 - "Earnings movers": stocks that gapped up/down significantly post-earnings
 - Cross-reference with Insider Buying data (insiders buying before earnings = strong signal)
 
+**Note:** The Newsstand (2.4) now covers the earnings calendar inline on the homepage. This dashboard would only be needed if there's demand for deeper earnings analysis (movers, cross-ref with insider buying) beyond what the Newsstand card provides. Lower priority — revisit after 2.4 is live.
+
 **Stack:** Flask + Finnhub earnings API + yfinance price history
 **URL:** `https://invest-earnings.onrender.com`
 
 ### ✅ 3.3 — Sector Rotation Tracker *(DONE — merged into MarketDashboard, Mar 2026)*
-- Full-width panel in MarketDashboard showing 11 SPDR ETFs with 1D/5D/1M/3M % returns
-- Sortable by any column; rows expand on click to show top 3 scan movers in that sector
-- yfinance fetches ETF history; `SECTOR_KEYWORDS` fuzzy-matches Finnhub industry strings
-- Homepage "Leading Sector" preview card reads from `sector_rotation[0]`
+Full-width panel in MarketDashboard showing 11 SPDR ETFs with 1D/5D/1M/3M % returns. Sortable columns, expandable rows with top movers.
 
 ### 3.4 — Dividend & Income Dashboard *(Blossom-inspired)*
 **What:** Identifies high-quality dividend payers with sustainable yield + growth.
@@ -166,6 +161,21 @@ Earnings calendars are one of the most searched financial pages on the web. Good
 
 **Stack:** Flask + yfinance
 **URL:** `https://invest-dividends.onrender.com`
+
+### 3.5 — Optionality Dashboard *(idea stage)*
+**What:** User inputs stock option parameters (ticker, strike, expiry, premium) and gets analysis — theoretical value, Greeks, risk/reward profile, breakeven. Think: The Analyst but for options contracts.
+- Interactive (requires live Flask backend on Render, like TheAnalyst)
+- Could use Black-Scholes or binomial pricing models
+- Pairs with Movers & Shakers (found a mover → now evaluate an options play on it)
+
+**Stack:** Flask + scipy/numpy + yfinance
+**URL:** TBD — `https://invest-options.onrender.com`
+
+### 3.6 — The Analyst Revival *(idea stage)*
+Bring back The Analyst dashboard with verified setup and improved functionality. Currently hidden (`display:none`). Needs:
+- Verify yfinance data reliability for fundamentals
+- Improve error handling and loading UX
+- Consider Render premium plan so the Flask server stays warm (applies to Optionality too)
 
 ---
 
@@ -185,7 +195,7 @@ One blog post per dashboard explaining how to use it:
 - "How the Underdogs Scanner Finds Quality Stocks at a Discount"
 - "Reading Insider Buying Signals: What Form 4 Actually Tells You"
 
-These are high-SEO posts that funnel blog readers directly into the dashboards.
+High-SEO posts that funnel blog readers directly into the dashboards.
 
 ### 4.3 — Weekly Market Roundup
 Short (500-word) weekly post: *"What the Scans Are Showing This Week."*
@@ -214,32 +224,42 @@ Occasional deep-dive on a past nominee: what the scan picked, why, what happened
 
 ---
 
-## Implementation Order (Suggested)
+## Implementation Order
 
 ```
-Phase 1 first — homepage improvements are highest-visibility, lowest effort
-  → 1.2 "How It Works" section
-  → 1.1 Metrics bar
-  → 1.3 Track Record callout
-  → 1.4 Market Snapshot expansion
-  → 1.5 FAQ section
-  → 1.6 Newsletter CTA
+Immediate — Homepage refresh (1.7 + 1.8)
+  → 1.7a  Rename to "Today's Lab Results"
+  → 1.7b  Remove Pattern Scanner preview card
+  → 1.7c  Build "The Newsstand" homepage section
+  → 1.8   Streamline MarketDashboard (remove F&G + Chatter)
 
-Phase 2 next — static pages, good for SEO
-  → 2.1 Methodology page (highest trust-builder)
-  → 2.4 Earnings calendar (highest SEO value)
-  → 2.2 Glossary
-  → 2.3 Resources
+Next — The Newsstand data pipeline (2.4)
+  → Build newsstand_scan.py (earnings + news + unusual volume)
+  → GitHub Actions workflow to generate newsstand.json
+  → Wire homepage Newsstand cards to expand with live data
 
-Phase 3 — new dashboards (pick one at a time)
-  → 3.1 Technical Pattern Scanner (biggest differentiator)
-  → 3.2 Earnings Dashboard
-  → 3.3 Sector Rotation (can be merged into MarketDashboard)
-  → 3.4 Dividend Dashboard
+Then — Static pages for SEO & trust
+  → 2.1   Methodology page (highest trust-builder)
+  → 2.2   Glossary
+  → 2.3   Resources
 
-Phase 4 — content runs in parallel throughout
-Phase 5 — monetization begins as soon as traffic justifies
+Then — New dashboards (pick one at a time)
+  → 3.4   Dividend Dashboard
+  → 3.2   Earnings Dashboard (or fold into Newsstand — TBD)
+  → 3.5   Optionality (idea stage)
+  → 3.6   The Analyst revival (idea stage)
+
+Parallel throughout — Blog content (Phase 4)
+Monetization (Phase 5) — begins as soon as traffic justifies
 ```
+
+---
+
+## Open Questions
+
+- **Dashboard density on homepage:** Are there too many dashboards pulling visitors away from the main page? Should some content (e.g., Underdogs, Insider Buying) be surfaced inline on the homepage rather than as separate click-away dashboards? The Newsstand concept is a step in this direction — pulling informational content back to the main site.
+- **Render premium:** Interactive dashboards (The Analyst, Optionality) need a live Flask server. Free tier has cold-start delays. Worth evaluating Render paid plan if/when these go live.
+- **Earnings overlap:** Newsstand page (2.4) vs. Earnings Dashboard (3.2) — how much depth belongs on the static page vs. warranting its own dashboard?
 
 ---
 
