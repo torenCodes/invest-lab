@@ -87,8 +87,8 @@ def fetch_earnings(days_ahead=14):
 
 # ── Polygon.io Market News ───────────────────────────────────────────────────
 
-def fetch_news(limit=15):
-    """Fetch latest market news from Polygon.io."""
+def fetch_news(limit=15, retries=3):
+    """Fetch latest market news from Polygon.io with retry logic."""
     print("[newsstand] Fetching market news...")
     url = "https://api.polygon.io/v2/reference/news"
     params = {
@@ -98,36 +98,67 @@ def fetch_news(limit=15):
         "apiKey": POLYGON_KEY,
     }
 
-    try:
-        r = requests.get(url, params=params, timeout=15)
-        r.raise_for_status()
-        data = r.json()
-        results = data.get("results", [])
-        print(f"[newsstand] News: {len(results)} articles from Polygon.io")
-    except Exception as e:
-        print(f"[newsstand] News fetch failed: {e}")
-        return []
+    results = []
+    for attempt in range(1, retries + 1):
+        try:
+            r = requests.get(url, params=params, timeout=15)
+            if r.status_code == 429:
+                wait = 15 * attempt
+                print(f"[newsstand] Polygon rate-limited (429), waiting {wait}s (attempt {attempt}/{retries})")
+                time.sleep(wait)
+                continue
+            r.raise_for_status()
+            data = r.json()
+            results = data.get("results", [])
+            print(f"[newsstand] News: {len(results)} articles from Polygon.io")
+            break
+        except Exception as e:
+            print(f"[newsstand] News fetch attempt {attempt}/{retries} failed: {e}")
+            if attempt < retries:
+                time.sleep(5 * attempt)
+
+    if not results:
+        print("[newsstand] News: falling back to Finnhub general news")
+        results = _fetch_news_finnhub(limit)
 
     articles = []
     for a in results:
-        tickers = a.get("tickers", [])
+        # Normalize — Polygon and Finnhub have different field names
+        tickers = a.get("tickers") or a.get("related", "").split(",") if a.get("related") else []
+        tickers = [t.strip() for t in tickers if t.strip()][:5]
         publisher = a.get("publisher", {})
+        source = publisher.get("name", "") if isinstance(publisher, dict) else (a.get("source", "") or str(publisher))
         articles.append({
-            "title":     a.get("title", ""),
-            "url":       a.get("article_url", ""),
-            "source":    publisher.get("name", "") if isinstance(publisher, dict) else str(publisher),
-            "published": a.get("published_utc", ""),
-            "tickers":   tickers[:5],  # Cap ticker list
-            "snippet":   (a.get("description", "") or "")[:200],
+            "title":     a.get("title") or a.get("headline", ""),
+            "url":       a.get("article_url") or a.get("url", ""),
+            "source":    source,
+            "published": a.get("published_utc") or a.get("datetime", ""),
+            "tickers":   tickers,
+            "snippet":   (a.get("description") or a.get("summary", "") or "")[:200],
         })
 
     return articles
 
 
+def _fetch_news_finnhub(limit=15):
+    """Fallback: fetch general news from Finnhub."""
+    url = "https://finnhub.io/api/v1/news"
+    params = {"category": "general", "token": FINNHUB_KEY}
+    try:
+        r = requests.get(url, params=params, timeout=15)
+        r.raise_for_status()
+        items = r.json()
+        print(f"[newsstand] Finnhub fallback: {len(items)} articles")
+        return items[:limit]
+    except Exception as e:
+        print(f"[newsstand] Finnhub news fallback also failed: {e}")
+        return []
+
+
 # ── Finviz Unusual Volume ────────────────────────────────────────────────────
 
-def fetch_unusual_volume(limit=15):
-    """Scrape Finviz unusual volume screener."""
+def fetch_unusual_volume(limit=10):
+    """Scrape Finviz unusual volume screener. Positive movers only."""
     print("[newsstand] Fetching unusual volume...")
     url = "https://finviz.com/screener.ashx?v=111&s=ta_unusualvolume&o=-volume"
 
@@ -157,7 +188,7 @@ def fetch_unusual_volume(limit=15):
         return []
 
     rows = table.find_all("tr")[1:]  # Skip header
-    for row in rows[:limit]:
+    for row in rows:
         cells = row.find_all("td")
         if len(cells) < 10:
             continue
@@ -186,7 +217,7 @@ def fetch_unusual_volume(limit=15):
         # Volume in column 6
         volume_text = cells[6].text.strip() if len(cells) > 6 else ""
 
-        if ticker:
+        if ticker and change_pct is not None and change_pct > 0:
             tickers.append({
                 "ticker":     ticker,
                 "name":       name,
@@ -194,8 +225,10 @@ def fetch_unusual_volume(limit=15):
                 "change_pct": change_pct,
                 "volume":     volume_text,
             })
+            if len(tickers) >= limit:
+                break
 
-    print(f"[newsstand] Unusual volume: {len(tickers)} tickers")
+    print(f"[newsstand] Unusual volume: {len(tickers)} positive tickers")
     return tickers
 
 
