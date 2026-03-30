@@ -1,0 +1,44 @@
+name: Newsstand Scan
+
+on:
+  schedule:
+    # Once daily, weekday mornings before market open
+    - cron: '0 13 * * 1-5'    # ~9:00am EDT / 8:00am EST
+  workflow_dispatch:            # Manual trigger
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements-newsstand.txt
+
+      - name: Run newsstand scan
+        run: python scripts/newsstand_scan.py
+        env:
+          FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
+          POLYGON_KEY: ${{ secrets.POLYGON_KEY }}
+
+      - name: Commit results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          git add MarketDashboard/data/newsstand.json
+          git diff --staged --quiet || git commit -m "chore: newsstand scan $(date -u +%Y-%m-%dT%H:%M)Z"
+          git pull --rebase -Xtheirs origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref_name }}
