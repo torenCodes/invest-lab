@@ -807,12 +807,8 @@
       ? '<div class="card-chart">' + chartSvg + '</div>' +
         '<div class="card-chart-footer">' +
           '<span class="chart-range-label">60-day · pattern region highlighted</span>' +
-          '<a href="' + escHtml(s.chart_url || '#') + '" target="_blank" rel="noopener" class="card-chart-link" onclick="event.stopPropagation()">Full Chart &#8594;</a>' +
         '</div>'
-      : '<div class="card-chart-footer" style="padding-top:10px;">' +
-          '<span></span>' +
-          '<a href="' + escHtml(s.chart_url || '#') + '" target="_blank" rel="noopener" class="card-chart-link" onclick="event.stopPropagation()">View Chart &#8594;</a>' +
-        '</div>';
+      : '';
 
     // Signals preview (first 3)
     var signals = s.signals || [];
