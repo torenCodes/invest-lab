@@ -18,14 +18,16 @@ import os
 import sys
 from datetime import datetime, timezone, timedelta
 
-ARCHIVE_PATH = 'MarketDashboard/data/nominees_archive.json'
+WEBSITE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+ARCHIVE_PATH = os.path.join(WEBSITE_DIR, 'MarketDashboard', 'data', 'nominees_archive.json')
 
 RESULTS_PATHS = {
-    'movers':      'MarketDashboard/data/results.json',
-    'underdogs':   'Underdogs/data/results.json',
-    'insider':     'InsiderBuying/data/results.json',
-    'tried-true':  'TriedAndTrue/data/results.json',
-    'patterns':    'PatternScanner/data/results.json',
+    'movers':      os.path.join(WEBSITE_DIR, 'MarketDashboard', 'data', 'results.json'),
+    'underdogs':   os.path.join(WEBSITE_DIR, 'Underdogs', 'data', 'results.json'),
+    'insider':     os.path.join(WEBSITE_DIR, 'InsiderBuying', 'data', 'results.json'),
+    'tried-true':  os.path.join(WEBSITE_DIR, 'TriedAndTrue', 'data', 'results.json'),
+    'patterns':    os.path.join(WEBSITE_DIR, 'PatternScanner', 'data', 'results.json'),
 }
 
 DEDUP_DAYS = 14  # Don't re-archive the same ticker+source within N days

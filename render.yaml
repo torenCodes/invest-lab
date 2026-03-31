@@ -3,32 +3,32 @@ services:
   - type: web
     name: invest-movers-shakers
     runtime: python
-    rootDir: MarketDashboard
+    rootDir: Website/MarketDashboard
     buildCommand: pip install -r requirements.txt
     startCommand: python app.py
 
   - type: web
     name: invest-tried-true
     runtime: python
-    rootDir: TriedAndTrue
+    rootDir: Website/TriedAndTrue
     buildCommand: pip install -r requirements.txt
     startCommand: python app.py
 
   - type: web
     name: invest-the-analyst
     runtime: python
-    rootDir: TheAnalyst
+    rootDir: Website/TheAnalyst
     buildCommand: pip install -r requirements.txt
     startCommand: python app.py
 
   - type: static
     name: invest-insider-buying
-    rootDir: InsiderBuying
+    rootDir: Website/InsiderBuying
     staticPublishPath: .
     buildCommand: ""
 
   - type: static
     name: invest-underdogs
-    rootDir: Underdogs
+    rootDir: Website/Underdogs
     staticPublishPath: .
     buildCommand: ""

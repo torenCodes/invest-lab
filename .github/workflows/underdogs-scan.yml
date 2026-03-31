@@ -23,15 +23,15 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install -r Underdogs/requirements-scan.txt
+        run: pip install -r Website/Underdogs/requirements-scan.txt
 
       - name: Run scan
         env:
           FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
-        run: python Underdogs/scan.py
+        run: python Website/Underdogs/scan.py
 
       - name: Archive top nominee
-        run: python scripts/archive_nominee.py --source underdogs
+        run: python Website/scripts/archive_nominee.py --source underdogs
 
       - name: Commit results
         env:
@@ -40,7 +40,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
-          git add Underdogs/data/results.json MarketDashboard/data/nominees_archive.json
+          git add Website/Underdogs/data/results.json Website/MarketDashboard/data/nominees_archive.json
           git diff --staged --quiet || git commit -m "chore: underdogs scan $(date -u +%Y-%m-%dT%H:%M)Z"
           git pull --rebase -Xtheirs origin ${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}

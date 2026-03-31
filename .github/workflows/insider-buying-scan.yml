@@ -27,13 +27,13 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install -r InsiderBuying/requirements-scan.txt
+        run: pip install -r Website/InsiderBuying/requirements-scan.txt
 
       - name: Run insider buying scan
-        run: python InsiderBuying/scan.py
+        run: python Website/InsiderBuying/scan.py
 
       - name: Archive top nominee
-        run: python scripts/archive_nominee.py --source insider
+        run: python Website/scripts/archive_nominee.py --source insider
 
       - name: Commit results
         env:
@@ -42,7 +42,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
-          git add InsiderBuying/data/results.json MarketDashboard/data/nominees_archive.json
+          git add Website/InsiderBuying/data/results.json Website/MarketDashboard/data/nominees_archive.json
           git diff --staged --quiet || git commit -m "chore: insider scan $(date -u +%Y-%m-%dT%H:%M)Z"
           git pull --rebase -Xtheirs origin ${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}

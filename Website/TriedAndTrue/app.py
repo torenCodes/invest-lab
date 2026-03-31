@@ -1,5 +1,5 @@
 """
-MarketDashboard — Minimal Static File Server
+Tried and True — Minimal Static File Server
 Serves dashboard.html at / — scan data is fetched client-side from GitHub raw.
 Run: python app.py
 """
@@ -26,7 +26,7 @@ def data(filename):
 
 @app.route("/images/<path:filename>")
 def images(filename):
-    return send_from_directory(os.path.join(BASE_DIR, "..", "Website", "images"), filename)
+    return send_from_directory(os.path.join(BASE_DIR, "..", "images"), filename)
 
 
 @app.route("/ping")
@@ -35,6 +35,6 @@ def ping():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8080))
+    port = int(os.environ.get("PORT", 8090))
     print(f"[Startup] Dashboard running at http://localhost:{port}")
     app.run(host="0.0.0.0", port=port)

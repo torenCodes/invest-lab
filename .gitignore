@@ -24,11 +24,11 @@ git token.txt
 scan_results.json
 results.json
 # GitHub Actions commits these files on each scan run — must not be ignored
-!MarketDashboard/data/results.json
-!TriedAndTrue/data/results.json
-!InsiderBuying/data/results.json
-!Underdogs/data/results.json
-!PatternScanner/data/results.json
+!Website/MarketDashboard/data/results.json
+!Website/TriedAndTrue/data/results.json
+!Website/InsiderBuying/data/results.json
+!Website/Underdogs/data/results.json
+!Website/PatternScanner/data/results.json
 
 # ── IDE ───────────────────────────────────────────────────────────────────────
 .idea/

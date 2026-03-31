@@ -20,7 +20,8 @@ except ImportError:
     print('[outcomes] yfinance not installed — run: pip install yfinance')
     sys.exit(1)
 
-ARCHIVE_PATH = 'MarketDashboard/data/nominees_archive.json'
+WEBSITE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ARCHIVE_PATH = os.path.join(WEBSITE_DIR, 'MarketDashboard', 'data', 'nominees_archive.json')
 OUTCOME_DAYS = 30
 
 

@@ -23,10 +23,10 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install -r scripts/requirements-newsstand.txt
+        run: pip install -r Website/scripts/requirements-newsstand.txt
 
       - name: Run newsstand scan
-        run: python scripts/newsstand_scan.py
+        run: python Website/scripts/newsstand_scan.py
         env:
           FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
           POLYGON_KEY: ${{ secrets.POLYGON_KEY }}
@@ -38,7 +38,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
-          git add MarketDashboard/data/newsstand.json
+          git add Website/MarketDashboard/data/newsstand.json
           git diff --staged --quiet || git commit -m "chore: newsstand scan $(date -u +%Y-%m-%dT%H:%M)Z"
           git pull --rebase -Xtheirs origin ${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}

@@ -463,7 +463,7 @@ def run_prescan():
 
 # ── Flask routes ───────────────────────────────────────────────────────────────
 
-WEBSITE_IMAGES = os.path.join(BASE_DIR, "..", "Website", "images")
+WEBSITE_IMAGES = os.path.join(BASE_DIR, "..", "images")
 
 @app.route("/images/<path:filename>")
 def serve_images(filename):
