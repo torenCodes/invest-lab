@@ -29,6 +29,7 @@ MIN_MARKET_CAP        = 20_000_000
 MIN_MARKET_CAP_SWING  = 50_000_000
 MIN_DAY_SCORE         = 10
 MIN_SWING_SCORE       = 8
+MAX_POSSIBLE_SCORE    = 63   # 8(gainer)+5(active)+15(move)+15(buzz)+12(trending)+8(finviz)
 
 NEXT_SCAN_INFO = "Weekdays 9:35am, 11:30am & 1:30pm ET"
 
@@ -523,7 +524,7 @@ def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Redd
     day_cands.sort(key=lambda x: x["score"], reverse=True)
     swing_cands.sort(key=lambda x: x["score"], reverse=True)
 
-    day_tickers = {c["ticker"] for c in day_cands[:3]}
+    day_tickers = {c["ticker"] for c in day_cands[:6]}
     swing_cands = [c for c in swing_cands if c["ticker"] not in day_tickers]
 
     result_map = {r["ticker"]: r for r in results if r}
@@ -582,7 +583,7 @@ def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Redd
         except Exception:
             continue
 
-    return day_cands[:3], swing_cands[:3], reddit_cards
+    return day_cands[:6], swing_cands[:6], reddit_cards
 
 
 # ── Earnings enrichment ────────────────────────────────────────────────────────
@@ -940,6 +941,11 @@ def run():
         display_feed.sort(key=lambda x: x["hours_ago"])
         display_feed = display_feed[:20]
         print(f"[scan.py] Chatter feed: {len(display_feed)} Finnhub headlines for chatter picks")
+
+    # Normalize scores to 0-100 scale for frontend display
+    for nominee in day_trades + swing_trades + reddit_cards:
+        raw = nominee.get("score", 0)
+        nominee["score_normalized"] = round(min(raw / MAX_POSSIBLE_SCORE * 100, 100))
 
     output = {
         "scan_time":        start.isoformat(),

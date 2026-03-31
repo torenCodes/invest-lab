@@ -266,6 +266,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 16px;
+    align-items: start;
   }
 
   .stock-card {
@@ -280,6 +281,26 @@
   .stock-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+  }
+  .stock-card.premiere {
+    border: 2px solid #c9a227;
+    box-shadow: 0 2px 12px rgba(201,162,39,0.18), var(--shadow-sm);
+  }
+  .stock-card.premiere:hover {
+    box-shadow: 0 4px 16px rgba(201,162,39,0.25), var(--shadow-md);
+  }
+  .premiere-label {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c9a227;
+    background: #fdf9ed;
+    border: 1px solid #e8d88c;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 8px;
   }
 
   .card-top {
@@ -413,6 +434,43 @@
     line-height: 1.5;
   }
   .trade-plan-box strong { display: block; margin-bottom: 3px; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* ── Score Explainer ───────────────────────────────────────────────────── */
+  .score-explainer {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    font-size: 0.82rem;
+    color: var(--ink-2);
+    line-height: 1.6;
+    box-shadow: var(--shadow-sm);
+  }
+  .score-explainer-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 8px;
+  }
+  .score-explainer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 6px 16px;
+    margin-top: 8px;
+  }
+  .score-explainer-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--ink-2);
+  }
+  .score-explainer-item span:last-child {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    color: var(--ink);
+  }
 
   /* ── Sector Flow ───────────────────────────────────────────────────────── */
   .sector-panel {
@@ -916,6 +974,20 @@ function toggleSiteNav(btn) {
       </div>
     </section>
 
+    <!-- Score Explainer -->
+    <div class="score-explainer">
+      <div class="score-explainer-title">How the Score Works</div>
+      Each nominee is scored on a 0–100 scale based on the strength of signals detected during the scan. A higher score means more bullish signals converged on the same ticker. The top-ranked pick in each section is highlighted with a gold border.
+      <div class="score-explainer-grid">
+        <div class="score-explainer-item"><span>Top gainer</span><span>+13</span></div>
+        <div class="score-explainer-item"><span>High volume</span><span>+8</span></div>
+        <div class="score-explainer-item"><span>Strong move (≥5%)</span><span>+24</span></div>
+        <div class="score-explainer-item"><span>High buzz</span><span>+24</span></div>
+        <div class="score-explainer-item"><span>Yahoo trending</span><span>+19</span></div>
+        <div class="score-explainer-item"><span>Unusual volume</span><span>+13</span></div>
+      </div>
+    </div>
+
     <!-- Swing Trades -->
     <section id="swing-trades">
       <div class="section-header">
@@ -1002,12 +1074,13 @@ function renderEarningsCallout(stock) {
 }
 
 // ── Stock card renderer ────────────────────────────────────────────────────
-function renderStockCard(stock, type) {
-  const scorePct  = Math.min((stock.score / 45) * 100, 100);
+function renderStockCard(stock, type, idx) {
+  const normScore = stock.score_normalized != null ? stock.score_normalized : Math.min(Math.round(stock.score / 63 * 100), 100);
   const chgClass  = stock.change_pct >= 0 ? 'change-up' : 'change-down';
   const chgStr    = `${stock.change_pct >= 0 ? '+' : ''}${fmt(stock.change_pct)}%`;
   const cardId    = `card-${stock.ticker}-${type}`;
   const detailId  = `detail-${stock.ticker}-${type}`;
+  const isPremiere = idx === 0;
 
   const signals = (stock.signals || []).map(s =>
     `<span class="signal-tag ${signalClass(s)}">${s}</span>`
@@ -1028,9 +1101,13 @@ function renderStockCard(stock, type) {
     ? `<div style="margin-bottom:6px;font-size:0.72rem;color:var(--reddit);">⬆ ${_buzzLabel} confirmed (${stock.reddit_mentions} mentions)</div>`
     : '';
 
+  const premiereClass = isPremiere ? ' premiere' : '';
+  const premiereLabel = isPremiere ? '<div class="premiere-label">★ Top Pick</div>' : '';
+
   return `
-  <div class="stock-card" id="${cardId}" onclick="toggleDetail('${detailId}', '${cardId}')">
+  <div class="stock-card${premiereClass}" id="${cardId}" onclick="toggleDetail('${detailId}', '${cardId}')">
     <div class="card-top">
+      ${premiereLabel}
       <div class="card-header">
         <div>
           <div class="card-ticker">${stock.ticker}</div>
@@ -1042,8 +1119,8 @@ function renderStockCard(stock, type) {
         </div>
       </div>
       <div class="card-score-bar">
-        <span class="score-label">Score ${stock.score}</span>
-        <div class="score-track"><div class="score-fill" style="width:${scorePct}%"></div></div>
+        <span class="score-label">Score ${normScore}/100</span>
+        <div class="score-track"><div class="score-fill" style="width:${normScore}%"></div></div>
       </div>
     </div>
     <div class="card-signals">${signals || '<span style="font-size:0.72rem;color:var(--ink-3);">No signals</span>'}</div>
@@ -1259,7 +1336,7 @@ function updateResults(data) {
   const dayEl = $('day-cards');
   $('day-badge').textContent = `${(data.day_trades || []).length} nominees`;
   if (data.day_trades && data.day_trades.length) {
-    dayEl.innerHTML = data.day_trades.map(s => renderStockCard(s, 'day')).join('');
+    dayEl.innerHTML = data.day_trades.map((s, i) => renderStockCard(s, 'day', i)).join('');
   } else {
     dayEl.innerHTML = '<div class="empty-state">No qualifying day trade setups found this scan.</div>';
   }
@@ -1268,7 +1345,7 @@ function updateResults(data) {
   const swingEl = $('swing-cards');
   $('swing-badge').textContent = `${(data.swing_trades || []).length} nominees`;
   if (data.swing_trades && data.swing_trades.length) {
-    swingEl.innerHTML = data.swing_trades.map(s => renderStockCard(s, 'swing')).join('');
+    swingEl.innerHTML = data.swing_trades.map((s, i) => renderStockCard(s, 'swing', i)).join('');
   } else {
     swingEl.innerHTML = '<div class="empty-state">No qualifying swing trade setups found this scan.</div>';
   }
@@ -1300,7 +1377,7 @@ setInterval(loadResults, 5 * 60 * 1000);  // auto-refresh every 5 min
 <footer class="site-footer-shared">
   <div class="site-footer-inner">
     <div class="site-footer-brand">
-      <img src="/images/logo.png" alt="The Invest Lab">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
       The Invest Lab
     </div>
     <p class="site-footer-disc">Not financial advice. For personal educational use only.</p>
