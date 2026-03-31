@@ -216,8 +216,11 @@ def detect_bull_flag(df):
     if c.iloc[-1] > df['EMA_200'].iloc[-1]:
         signals.append("Above 200-day EMA")
 
+    # Pattern spans from trough to current bar within the last 50
+    bars_back = 50 - trough_loc
     return {'pattern': 'Bull Flag', 'pattern_key': 'bull_flag',
-            'signals': signals, 'score_bonus': min(int(pole_gain), 25)}
+            'signals': signals, 'score_bonus': min(int(pole_gain), 25),
+            'pattern_start_bar': bars_back}
 
 
 def detect_vcp(df):
@@ -269,7 +272,8 @@ def detect_vcp(df):
         signals.append("Above 200-day EMA")
 
     return {'pattern': 'VCP', 'pattern_key': 'vcp',
-            'signals': signals, 'score_bonus': 15}
+            'signals': signals, 'score_bonus': 15,
+            'pattern_start_bar': 45}
 
 
 def detect_bb_squeeze(df):
@@ -302,7 +306,8 @@ def detect_bb_squeeze(df):
         signals.append("Below 200-day EMA — direction of move uncertain")
 
     return {'pattern': 'BB Squeeze', 'pattern_key': 'bb_squeeze',
-            'signals': signals, 'score_bonus': 12}
+            'signals': signals, 'score_bonus': 12,
+            'pattern_start_bar': 30}
 
 
 def detect_ma_crossover(df):
@@ -348,7 +353,8 @@ def detect_ma_crossover(df):
         signals.append("Below 200-day EMA — watch for overhead resistance")
 
     return {'pattern': 'MA Crossover', 'pattern_key': 'ma_crossover',
-            'signals': signals, 'score_bonus': 10}
+            'signals': signals, 'score_bonus': 10,
+            'pattern_start_bar': 15}
 
 
 def detect_cup_handle(df):
@@ -405,7 +411,8 @@ def detect_cup_handle(df):
         signals.append("Above 200-day EMA")
 
     return {'pattern': 'Cup & Handle', 'pattern_key': 'cup_handle',
-            'signals': signals, 'score_bonus': 18}
+            'signals': signals, 'score_bonus': 18,
+            'pattern_start_bar': 120}
 
 
 def detect_hv_gap(df):
@@ -440,7 +447,8 @@ def detect_hv_gap(df):
                 if float(c.iloc[-1]) > float(df['EMA_200'].iloc[-1]):
                     signals.append("Above 200-day EMA")
                 return {'pattern': 'High-Vol Gap', 'pattern_key': 'hv_gap',
-                        'signals': signals, 'score_bonus': 20}
+                        'signals': signals, 'score_bonus': 20,
+                        'pattern_start_bar': i + 5}
     return None
 
 
@@ -629,6 +637,15 @@ def run():
             change_pct   = None
             week_chg_pct = None
 
+        # Price history for inline sparkline charts (last 60 trading days)
+        hist_len = min(60, len(c))
+        price_hist = [round(float(x), 2) for x in c.iloc[-hist_len:].values]
+        vol_hist = [int(x) for x in df['Volume'].iloc[-hist_len:].values]
+
+        # Pattern highlight region within the price history
+        pat_bars_back = best.get('pattern_start_bar', 30)
+        pat_start_idx = max(0, hist_len - pat_bars_back)
+
         output_setups.append({
             'ticker':          ticker,
             'name':            names.get(ticker, ticker),
@@ -646,6 +663,9 @@ def run():
             'insider_flag':    best['_insider'],
             'etf_flag':        best['_etf'],
             'etf_count':       best['_etf_count'],
+            'price_history':   price_hist,
+            'volume_history':  vol_hist,
+            'pattern_start':   pat_start_idx,
         })
 
     # Sort: A → B → Watch, then by score descending within each grade
@@ -673,7 +693,7 @@ def run():
     elapsed = (datetime.now(timezone.utc) - start).seconds
     print(f"[scan] Done in {elapsed}s — "
           f"{grade_counts['A']}A  {grade_counts['B']}B  {grade_counts['Watch']}W")
-    print(f"[scan] Output → {OUTPUT_FILE}")
+    print(f"[scan] Output -> {OUTPUT_FILE}")
 
 
 if __name__ == '__main__':

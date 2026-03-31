@@ -346,6 +346,40 @@
   .price-change.neg { color: var(--red); }
   .price-change.flat { color: var(--ink-3); }
 
+  /* ── Sparkline chart ─────────────────────────────────────────────────────── */
+  .card-chart {
+    padding: 0 18px 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-chart svg {
+    display: block;
+    width: 100%;
+    height: 80px;
+  }
+  .card-chart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px 10px;
+  }
+  .chart-range-label {
+    font-size: 0.62rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--ink-3);
+  }
+  .card-chart-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--blue);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .card-chart-link:hover { color: #38bda6; }
+
   /* ── Card signals (bottom) ───────────────────────────────────────────────── */
   .card-signals {
     padding: 12px 18px 14px;
@@ -696,6 +730,57 @@
     container.innerHTML = html;
   }
 
+  // ── Sparkline SVG builder ──────────────────────────────────────────────────
+  function buildSparkline(prices, patternStart, gradeKey) {
+    if (!prices || prices.length < 2) return '';
+
+    var W = 320, H = 80, PAD = 2;
+    var n    = prices.length;
+    var pMin = Math.min.apply(null, prices);
+    var pMax = Math.max.apply(null, prices);
+    var range = pMax - pMin || 1;
+
+    function x(i) { return PAD + (i / (n - 1)) * (W - PAD * 2); }
+    function y(v) { return PAD + (1 - (v - pMin) / range) * (H - PAD * 2); }
+
+    // Build polyline points
+    var pts = [];
+    for (var i = 0; i < n; i++) {
+      pts.push(x(i).toFixed(1) + ',' + y(prices[i]).toFixed(1));
+    }
+    var polyline = pts.join(' ');
+
+    // Pattern highlight region
+    var ps = Math.max(0, Math.min(patternStart || 0, n - 2));
+    var hlX1 = x(ps).toFixed(1);
+    var hlX2 = x(n - 1).toFixed(1);
+
+    // Grade color for highlight
+    var hlColor = gradeKey === 'a' ? 'rgba(26,122,74,0.10)' :
+                  gradeKey === 'b' ? 'rgba(26,112,112,0.10)' :
+                                     'rgba(192,122,26,0.10)';
+    var lineColor = gradeKey === 'a' ? '#1a7a4a' :
+                    gradeKey === 'b' ? '#1a7070' : '#c07a1a';
+
+    // Area fill under the line
+    var areaPath = 'M' + x(0).toFixed(1) + ',' + y(prices[0]).toFixed(1);
+    for (var j = 1; j < n; j++) {
+      areaPath += 'L' + x(j).toFixed(1) + ',' + y(prices[j]).toFixed(1);
+    }
+    areaPath += 'L' + x(n-1).toFixed(1) + ',' + H + 'L' + x(0).toFixed(1) + ',' + H + 'Z';
+
+    return '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">' +
+      '<defs><linearGradient id="area-' + lineColor.replace('#','') + '" x1="0" y1="0" x2="0" y2="1">' +
+        '<stop offset="0%" stop-color="' + lineColor + '" stop-opacity="0.12"/>' +
+        '<stop offset="100%" stop-color="' + lineColor + '" stop-opacity="0.01"/>' +
+      '</linearGradient></defs>' +
+      '<rect x="' + hlX1 + '" y="0" width="' + (parseFloat(hlX2) - parseFloat(hlX1)).toFixed(1) + '" height="' + H + '" fill="' + hlColor + '" rx="2"/>' +
+      '<path d="' + areaPath + '" fill="url(#area-' + lineColor.replace('#','') + ')"/>' +
+      '<polyline points="' + polyline + '" fill="none" stroke="' + lineColor + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<circle cx="' + x(n-1).toFixed(1) + '" cy="' + y(prices[n-1]).toFixed(1) + '" r="2.5" fill="' + lineColor + '"/>' +
+    '</svg>';
+  }
+
   // ── Build a single card ────────────────────────────────────────────────────
   function buildCard(s, i) {
     var gradeKey  = s.grade === 'Watch' ? 'w' : s.grade.toLowerCase();
@@ -715,6 +800,19 @@
     badges += ' <span class="pattern-pill">' + escHtml(s.pattern) + '</span>';
     if (s.insider_flag) badges += ' <span class="insider-pill">&#128100; Insider</span>';
     if (s.etf_flag)     badges += ' <span class="etf-pill">&#128202; ETF ×' + (s.etf_count || '') + '</span>';
+
+    // Sparkline chart
+    var chartSvg = buildSparkline(s.price_history, s.pattern_start, gradeKey);
+    var chartSection = chartSvg
+      ? '<div class="card-chart">' + chartSvg + '</div>' +
+        '<div class="card-chart-footer">' +
+          '<span class="chart-range-label">60-day · pattern region highlighted</span>' +
+          '<a href="' + escHtml(s.chart_url || '#') + '" target="_blank" rel="noopener" class="card-chart-link" onclick="event.stopPropagation()">Full Chart &#8594;</a>' +
+        '</div>'
+      : '<div class="card-chart-footer" style="padding-top:10px;">' +
+          '<span></span>' +
+          '<a href="' + escHtml(s.chart_url || '#') + '" target="_blank" rel="noopener" class="card-chart-link" onclick="event.stopPropagation()">View Chart &#8594;</a>' +
+        '</div>';
 
     // Signals preview (first 3)
     var signals = s.signals || [];
@@ -754,9 +852,9 @@
           '</div>' +
         '</div>' +
       '</div>' +
+      chartSection +
       '<div class="card-signals">' +
         '<ul class="signal-list">' + signalHtml + '</ul>' +
-        '<a href="' + escHtml(s.chart_url || '#') + '" target="_blank" rel="noopener" class="card-chart-link" onclick="event.stopPropagation()">View Chart &#8594;</a>' +
       '</div>' +
       '<div class="card-detail" id="detail-' + i + '">' +
         '<div class="detail-row"><span class="detail-label">Score</span><span class="detail-val">' + score + '</span></div>' +
