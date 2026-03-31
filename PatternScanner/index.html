@@ -217,71 +217,6 @@
     gap: 32px;
   }
 
-  /* ── Header bar ──────────────────────────────────────────────────────────── */
-  .scan-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .scan-stat {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--ink-3);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 5px 12px;
-    border-radius: 20px;
-  }
-  .scan-stat strong {
-    color: var(--ink);
-    font-weight: 600;
-  }
-  .scan-stat.grade-a strong { color: var(--green); }
-  .scan-stat.grade-b strong { color: var(--teal); }
-  .scan-stat.grade-w strong { color: var(--orange); }
-  .scan-time {
-    margin-left: auto;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--ink-3);
-  }
-
-  /* ── Filter tabs ─────────────────────────────────────────────────────────── */
-  .filter-tabs {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .filter-tab {
-    padding: 7px 18px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    color: var(--ink-3);
-    cursor: pointer;
-    transition: all 0.15s;
-    font-family: 'Barlow', sans-serif;
-  }
-  .filter-tab:hover { border-color: #38bda6; color: #38bda6; }
-  .filter-tab.active {
-    background: #1a1a18;
-    border-color: #1a1a18;
-    color: #fff;
-  }
-  .filter-tab.active.grade-a { background: var(--green); border-color: var(--green); }
-  .filter-tab.active.grade-b { background: var(--teal); border-color: var(--teal); }
-  .filter-tab.active.grade-w { background: var(--orange); border-color: var(--orange); }
-  .tab-count {
-    display: inline-block;
-    margin-left: 5px;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    opacity: 0.7;
-  }
-
   /* ── Setup cards grid ────────────────────────────────────────────────────── */
   .setups-grid {
     display: grid;
@@ -621,23 +556,6 @@
   <!-- ── Main Content ──────────────────────────────────────────────────────── -->
   <main class="main">
 
-    <!-- Scan header stats -->
-    <div class="scan-header" id="scan-header">
-      <span class="scan-stat">Setups: <strong id="hdr-total">—</strong></span>
-      <span class="scan-stat grade-a">Grade A: <strong id="hdr-grade-a">—</strong></span>
-      <span class="scan-stat grade-b">Grade B: <strong id="hdr-grade-b">—</strong></span>
-      <span class="scan-stat grade-w">Watch: <strong id="hdr-grade-w">—</strong></span>
-      <span class="scan-time" id="hdr-scan-time"></span>
-    </div>
-
-    <!-- Filter tabs -->
-    <div class="filter-tabs" id="filter-tabs">
-      <button class="filter-tab active" onclick="setFilter('all')" id="tab-all">All <span class="tab-count" id="tc-all"></span></button>
-      <button class="filter-tab grade-a" onclick="setFilter('A')" id="tab-A">Grade A <span class="tab-count" id="tc-A"></span></button>
-      <button class="filter-tab grade-b" onclick="setFilter('B')" id="tab-B">Grade B <span class="tab-count" id="tc-B"></span></button>
-      <button class="filter-tab grade-w" onclick="setFilter('Watch')" id="tab-Watch">Watch <span class="tab-count" id="tc-Watch"></span></button>
-    </div>
-
     <!-- Setup cards -->
     <div id="setups-container">
       <div class="loading-state">
@@ -646,8 +564,59 @@
       </div>
     </div>
 
+    <!-- Glossary -->
+    <div id="glossary-section" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow-sm);">
+      <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px;">Understanding the Results</div>
+      <div style="font-size:0.85rem;color:var(--ink-2);line-height:1.7;margin-bottom:14px;">
+        Each setup is scored and assigned a grade based on the strength of the detected pattern and supporting technical indicators. The scanner runs daily against all S&amp;P 500 stocks.
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px 20px;font-size:0.82rem;color:var(--ink-2);line-height:1.6;">
+        <div><strong style="color:var(--green);">Grade A</strong> (≥65 pts) — High-confidence setup with multiple confirming signals.</div>
+        <div><strong style="color:var(--teal);">Grade B</strong> (≥45 pts) — Solid setup, worth monitoring for entry.</div>
+        <div><strong style="color:var(--orange);">Watch</strong> (≥30 pts) — Early-stage pattern forming; not yet confirmed.</div>
+      </div>
+      <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin:16px 0 10px;">Pattern Glossary</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:6px 20px;font-size:0.8rem;color:var(--ink-2);line-height:1.55;">
+        <div><strong>Bull Flag</strong> — Sharp rally (flagpole) followed by a tight, downward-drifting consolidation (flag). Breakout above the flag signals continuation.</div>
+        <div><strong>VCP</strong> — Volatility Contraction Pattern. Successive tightening pullbacks on declining volume, signaling a supply/demand squeeze before breakout.</div>
+        <div><strong>BB Squeeze</strong> — Bollinger Band Squeeze. Bands narrow to historic lows, indicating compressed volatility that often precedes a strong directional move.</div>
+        <div><strong>MA Crossover</strong> — Short-term moving average crosses above a longer-term average (e.g., 20 EMA &gt; 50 SMA), signaling a momentum shift.</div>
+        <div><strong>Cup &amp; Handle</strong> — Rounded bottom (cup) followed by a shallow pullback (handle). Cup depth and handle depth measure the amplitude of each phase.</div>
+        <div><strong>High-Vol Gap</strong> — Stock gaps up on significantly higher-than-normal volume, often driven by news or earnings. Gap fill vs. continuation is key.</div>
+      </div>
+      <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin:16px 0 10px;">Signal Terms</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:6px 20px;font-size:0.8rem;color:var(--ink-2);line-height:1.55;">
+        <div><strong>RS Percentile</strong> — Relative strength vs. S&amp;P 500 over 3 months. Higher = outperforming more of the index.</div>
+        <div><strong>Flagpole</strong> — The initial sharp price surge before a flag consolidation begins.</div>
+        <div><strong>Handle Depth</strong> — How far price pulled back during the handle phase of a cup &amp; handle, as a percentage of the cup high.</div>
+        <div><strong>Cup Depth</strong> — The percentage decline from cup rim to bottom, measuring the correction's severity.</div>
+        <div><strong>Insider Flag</strong> — Recent open-market insider purchases detected, adding conviction to the setup.</div>
+        <div><strong>ETF Consensus</strong> — Stock appears in multiple top growth ETFs, indicating institutional overlap.</div>
+      </div>
+    </div>
+
   </main>
 </div>
+
+<!-- ── Shared Site Footer ──────────────────────────────────────────────── -->
+<style>
+  .site-footer-shared{background:#2e3334;color:rgba(255,255,255,.5);padding:1.5rem 0;font-family:'Barlow',sans-serif;}
+  .site-footer-inner{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;}
+  .site-footer-brand{display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:1rem;color:rgba(255,255,255,.92);}
+  .site-footer-brand img{height:1.2rem;width:auto;filter:invert(1);opacity:.85;}
+  .site-footer-disc{font-size:.78rem;}
+  .site-footer-copy{font-size:.68rem;font-family:monospace;opacity:.3;}
+</style>
+<footer class="site-footer-shared">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </div>
+    <p class="site-footer-disc">Not financial advice. For personal educational use only.</p>
+    <p class="site-footer-copy">Built with curiosity and caffeine.</p>
+  </div>
+</footer>
 
 <script>
   var allSetups = [];
@@ -673,23 +642,10 @@
     var setups = data.setups || [];
     var total  = setups.length;
     var gradeA = setups.filter(function(s) { return s.grade === 'A'; }).length;
-    var gradeB = setups.filter(function(s) { return s.grade === 'B'; }).length;
-    var gradeW = setups.filter(function(s) { return s.grade === 'Watch'; }).length;
-
-    document.getElementById('hdr-total').textContent   = total;
-    document.getElementById('hdr-grade-a').textContent = gradeA;
-    document.getElementById('hdr-grade-b').textContent = gradeB;
-    document.getElementById('hdr-grade-w').textContent = gradeW;
 
     document.getElementById('sidebar-total').textContent  = data.total_scanned || '—';
     document.getElementById('sidebar-setups').textContent = total;
     document.getElementById('sidebar-grade-a-count').textContent = gradeA || '—';
-
-    // Tab counts
-    document.getElementById('tc-all').textContent   = total;
-    document.getElementById('tc-A').textContent     = gradeA;
-    document.getElementById('tc-B').textContent     = gradeB;
-    document.getElementById('tc-Watch').textContent = gradeW;
 
     // Timestamps
     var timeStr = '—';
@@ -698,7 +654,6 @@
       timeStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' +
                 d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
     }
-    document.getElementById('hdr-scan-time').textContent = 'Last scan: ' + timeStr;
     document.getElementById('sidebar-scan-time').textContent = timeStr;
   }
 
@@ -706,11 +661,9 @@
   function setFilter(grade) {
     activeFilter = grade;
 
-    // Update tabs
+    // Update sidebar nav
     ['all', 'A', 'B', 'Watch'].forEach(function(g) {
-      var tab = document.getElementById('tab-' + g);
       var nav = document.getElementById('nav-' + g);
-      if (tab) tab.classList.toggle('active', g === grade);
       if (nav) nav.classList.toggle('active', g === grade);
     });
 
