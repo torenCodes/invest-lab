@@ -472,6 +472,105 @@
     color: var(--ink);
   }
 
+  /* ── Market Chatter ────────────────────────────────────────────────────── */
+  .chatter-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+  .chatter-featured {
+    background: var(--surface);
+    border: 2px solid #c9a227;
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: 0 2px 12px rgba(201,162,39,0.12), var(--shadow-sm);
+  }
+  .chatter-featured-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c9a227;
+    margin-bottom: 10px;
+  }
+  .chatter-featured .card-ticker {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .chatter-featured .card-name {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    margin-top: 2px;
+    margin-bottom: 8px;
+  }
+  .chatter-featured-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .chatter-featured-stat {
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: 6px 8px;
+  }
+  .chatter-featured-stat-label { font-size: 0.62rem; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; }
+  .chatter-featured-stat-value { font-family: 'DM Mono', monospace; font-size: 0.85rem; color: var(--ink); margin-top: 1px; }
+  .chatter-featured-signals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .chatter-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: start;
+  }
+  .chatter-chip {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    min-width: 120px;
+    box-shadow: var(--shadow-sm);
+  }
+  .chatter-chip-ticker {
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .chatter-chip-name {
+    font-size: 0.68rem;
+    color: var(--ink-3);
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 110px;
+  }
+  .chatter-chip-change {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    margin-top: 4px;
+  }
+  .chatter-chip-mentions {
+    font-size: 0.62rem;
+    color: var(--ink-3);
+    margin-top: 2px;
+  }
+
+  @media (max-width: 700px) {
+    .chatter-layout { grid-template-columns: 1fr; }
+  }
+
   /* ── Sector Flow ───────────────────────────────────────────────────────── */
   .sector-panel {
     background: var(--surface);
@@ -947,6 +1046,9 @@ function toggleSiteNav(btn) {
       <a class="nav-item" href="#swing-trades" onclick="setActive(this)">
         <span class="nav-icon">📈</span> Swing Trades
       </a>
+      <a class="nav-item" href="#market-chatter" onclick="setActive(this)">
+        <span class="nav-icon">💬</span> Market Chatter
+      </a>
       <a class="nav-item" href="#sector-rotation" onclick="setActive(this)">
         <span class="nav-icon">🗺️</span> Sector Rotation
       </a>
@@ -974,6 +1076,18 @@ function toggleSiteNav(btn) {
       </div>
     </section>
 
+    <!-- Swing Trades -->
+    <section id="swing-trades">
+      <div class="section-header">
+        <div class="section-title">Swing Trades</div>
+        <div class="section-subtitle">$20+, large cap, multi-day holds</div>
+        <div class="section-badge" id="swing-badge">—</div>
+      </div>
+      <div class="cards-grid" id="swing-cards">
+        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Waiting for scan results…</div></div>
+      </div>
+    </section>
+
     <!-- Score Explainer -->
     <div class="score-explainer">
       <div class="score-explainer-title">How the Score Works</div>
@@ -988,15 +1102,15 @@ function toggleSiteNav(btn) {
       </div>
     </div>
 
-    <!-- Swing Trades -->
-    <section id="swing-trades">
+    <!-- Market Chatter -->
+    <section id="market-chatter">
       <div class="section-header">
-        <div class="section-title">Swing Trades</div>
-        <div class="section-subtitle">$20+, large cap, multi-day holds</div>
-        <div class="section-badge" id="swing-badge">—</div>
+        <div class="section-title">Market Chatter</div>
+        <div class="section-subtitle">Most-discussed tickers across news &amp; social media</div>
+        <div class="section-badge" id="chatter-badge">—</div>
       </div>
-      <div class="cards-grid" id="swing-cards">
-        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Waiting for scan results…</div></div>
+      <div id="chatter-content">
+        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading chatter data…</div></div>
       </div>
     </section>
 
@@ -1350,6 +1464,9 @@ function updateResults(data) {
     swingEl.innerHTML = '<div class="empty-state">No qualifying swing trade setups found this scan.</div>';
   }
 
+  // Market chatter
+  renderChatter(data.reddit_cards || [], data.buzz_source || 'news');
+
   // Sector rotation — render once per scan cycle
   if (data.scan_time !== updateResults._lastScanTime) {
     updateResults._lastScanTime = data.scan_time;
@@ -1358,6 +1475,74 @@ function updateResults(data) {
       renderSectorRotation(data.sector_rotation);
     }
   }
+}
+
+// ── Market Chatter renderer ────────────────────────────────────────────────
+function renderChatter(cards, buzzSource) {
+  const el = $('chatter-content');
+  const badge = $('chatter-badge');
+  const srcLabel = (buzzSource === 'news' || buzzSource === 'mixed') ? 'News' : 'Reddit';
+
+  if (!cards || !cards.length) {
+    badge.textContent = '0 tickers';
+    el.innerHTML = '<div class="empty-state">No chatter data available this scan.</div>';
+    return;
+  }
+
+  badge.textContent = `${cards.length} tickers`;
+  const featured = cards[0];
+  const rest = cards.slice(1);
+
+  // Featured card
+  const fChgClass = featured.change_pct >= 0 ? 'change-up' : 'change-down';
+  const fChgStr = `${featured.change_pct >= 0 ? '+' : ''}${fmt(featured.change_pct)}%`;
+  const fSignals = (featured.signals || []).slice(0, 4).map(s =>
+    `<span class="signal-tag ${signalClass(s)}">${s}</span>`
+  ).join('');
+
+  const featuredHtml = `
+    <div class="chatter-featured">
+      <div class="chatter-featured-label">★ Most Discussed</div>
+      <div class="card-ticker">${featured.ticker}</div>
+      <div class="card-name">${featured.name || '—'}</div>
+      <div class="chatter-featured-stats">
+        <div class="chatter-featured-stat">
+          <div class="chatter-featured-stat-label">Price</div>
+          <div class="chatter-featured-stat-value">$${fmt(featured.current_price)}</div>
+        </div>
+        <div class="chatter-featured-stat">
+          <div class="chatter-featured-stat-label">Change</div>
+          <div class="chatter-featured-stat-value"><span class="price-change ${fChgClass}">${fChgStr}</span></div>
+        </div>
+        <div class="chatter-featured-stat">
+          <div class="chatter-featured-stat-label">${srcLabel} Mentions</div>
+          <div class="chatter-featured-stat-value">${featured.reddit_mentions || featured.mentions || '—'}</div>
+        </div>
+        <div class="chatter-featured-stat">
+          <div class="chatter-featured-stat-label">Sector</div>
+          <div class="chatter-featured-stat-value" style="font-size:0.75rem;">${featured.sector || '—'}</div>
+        </div>
+      </div>
+      <div class="chatter-featured-signals">${fSignals}</div>
+    </div>`;
+
+  // Ticker cloud chips
+  const chipsHtml = rest.map(c => {
+    const cClass = c.change_pct >= 0 ? 'change-up' : 'change-down';
+    const cStr = `${c.change_pct >= 0 ? '+' : ''}${fmt(c.change_pct)}%`;
+    const mentions = c.reddit_mentions || c.mentions || 0;
+    return `<div class="chatter-chip">
+      <div class="chatter-chip-ticker">${c.ticker}</div>
+      <div class="chatter-chip-name">${c.name || '—'}</div>
+      <div class="chatter-chip-change ${cClass}">${cStr}</div>
+      <div class="chatter-chip-mentions">${mentions} ${srcLabel.toLowerCase()} mentions</div>
+    </div>`;
+  }).join('');
+
+  el.innerHTML = `<div class="chatter-layout">
+    ${featuredHtml}
+    <div class="chatter-cloud">${chipsHtml || '<div style="color:var(--ink-3);font-size:0.82rem;">No additional tickers.</div>'}</div>
+  </div>`;
 }
 
 // ── Boot ───────────────────────────────────────────────────────────────────
