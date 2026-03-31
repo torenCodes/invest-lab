@@ -2,8 +2,9 @@ name: Pattern Scanner
 
 on:
   schedule:
-    # Weekdays ~9:40am ET (single entry; ~1hr drift EST vs EDT)
+    # Weekdays ~9:40am ET and ~2:00pm ET (single entries; ~1hr drift EST vs EDT)
     - cron: '40 13 * * 1-5'
+    - cron: '0 18 * * 1-5'
   workflow_dispatch:         # Manual trigger button in GitHub UI
 
 permissions:

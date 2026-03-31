@@ -569,7 +569,7 @@
       </div>
       <div class="sidebar-stat">
         <span>Schedule</span>
-        <span class="sidebar-stat-val">Weekdays 9:40am</span>
+        <span class="sidebar-stat-val">Weekdays 9:40am &amp; 2pm</span>
       </div>
     </div>
 
@@ -843,7 +843,7 @@
         '<div class="card-main">' +
           '<div class="card-identity">' +
             '<div class="card-ticker">' + escHtml(s.ticker) + '</div>' +
-            '<div class="card-name">' + escHtml(s.name || '') + '</div>' +
+            '<div class="card-name">' + escHtml(s.name && s.name !== s.ticker ? s.name : '') + '</div>' +
             '<div class="card-sector">' + escHtml(s.sector || '') + '</div>' +
           '</div>' +
           '<div class="card-price">' +

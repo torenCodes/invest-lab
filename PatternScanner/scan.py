@@ -30,7 +30,7 @@ GRADE_A_SCORE  = 65
 GRADE_B_SCORE  = 45
 GRADE_W_SCORE  = 30    # minimum to appear in output
 
-NEXT_SCAN_INFO = 'Weekdays ~9:40am ET'
+NEXT_SCAN_INFO = 'Weekdays ~9:40am & ~2:00pm ET'
 
 
 # ── Universe ───────────────────────────────────────────────────────────────────
@@ -625,6 +625,17 @@ def run():
             matches.append((ticker, df, best))
 
     print(f"[scan] Processed {processed} tickers — {len(matches)} setups found (skipped {skipped})")
+
+    # If names dict is empty (Wikipedia fallback), resolve names for matched tickers
+    if not names and matches:
+        print(f"[scan] Resolving company names for {len(matches)} setups via yfinance...")
+        for ticker, _, _ in matches:
+            try:
+                info = yf.Ticker(ticker).info
+                name = info.get('shortName') or info.get('longName') or ticker
+                names[ticker] = name
+            except Exception:
+                names[ticker] = ticker
 
     # Build output records
     output_setups = []
