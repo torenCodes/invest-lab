@@ -90,97 +90,26 @@
     <div class="hero-bg-accent"></div>
   </section>
 
-  <!-- ── Zone 2: Today's Intelligence (Lab Results + Newsstand) ────────── -->
-  <section class="preview-section" id="newsstand">
+  <!-- ── Market Snapshot Preview ─────────────────────────────────────────── -->
+  <section class="preview-section">
     <div class="container">
-      <div class="broadsheet">
-
-        <!-- MAIN COLUMN: Lab Results -->
-        <div class="broadsheet-main">
-          <div class="preview-header">
-            <div>
-              <h2 class="section-title">Today's Lab Results</h2>
-              <p class="preview-ts-line">From the latest Movers &amp; Shakers scan — <span id="preview-ts">loading…</span></p>
-            </div>
-            <a href="https://invest-movers-shakers.onrender.com" class="preview-all-link">Full dashboard →</a>
-          </div>
-          <div class="preview-grid">
-            <div class="preview-card" id="pc-day"></div>
-            <div class="preview-card" id="pc-swing"></div>
-            <div class="preview-card" id="pc-sector"></div>
-            <div class="preview-card" id="pc-discussed"></div>
-          </div>
-
-          <div class="archive-inline" id="track-record">
-            <h3 class="archive-inline-title">Other Lab Results</h3>
-            <div class="track-record-grid" id="track-record-grid">
-              <!-- Populated by JS from nominees_archive.json -->
-            </div>
-            <p class="track-record-footnote" id="track-record-footnote">Past nominees are shown for informational purposes only. Nothing here is financial advice.</p>
-          </div>
+      <div class="preview-header">
+        <div>
+          <h2 class="section-title">Today's Lab Results</h2>
+          <p class="preview-ts-line">From the latest Movers &amp; Shakers scan — <span id="preview-ts">loading…</span></p>
         </div>
-
-        <!-- SIDEBAR: Newsstand -->
-        <div class="broadsheet-side">
-          <div class="broadsheet-side-title">The Newsstand</div>
-
-          <div class="fg-strip fg-strip--vertical">
-            <span class="fg-strip-label">Fear &amp; Greed</span>
-            <div class="fg-strip-track">
-              <div class="fg-strip-needle" id="fg-needle" style="left:50%"></div>
-            </div>
-            <div class="fg-strip-score">
-              <span class="fg-strip-score-num" id="fg-score">—</span>
-              <span class="fg-strip-rating" id="fg-rating">loading…</span>
-            </div>
-            <span class="fg-strip-delta" id="fg-delta"></span>
-          </div>
-
-          <div class="newsstand-grid">
-            <div class="newsstand-card" id="ns-news" onclick="toggleNewsstand('ns-news')">
-              <div class="newsstand-card-header">
-                <div class="newsstand-card-icon">📰</div>
-                <div class="newsstand-card-left">
-                  <h3 class="newsstand-card-title">Market News</h3>
-                  <p class="newsstand-card-desc">Top headlines moving the market today.</p>
-                </div>
-                <span class="newsstand-chevron">▾</span>
-              </div>
-              <div class="newsstand-card-preview" id="ns-news-preview"></div>
-              <div class="newsstand-card-body" id="ns-news-body"></div>
-            </div>
-            <div class="newsstand-card" id="ns-volume" onclick="toggleNewsstand('ns-volume')">
-              <div class="newsstand-card-header">
-                <div class="newsstand-card-icon">📊</div>
-                <div class="newsstand-card-left">
-                  <h3 class="newsstand-card-title">Unusual Volume</h3>
-                  <p class="newsstand-card-desc">Stocks with abnormal trading activity.</p>
-                </div>
-                <span class="newsstand-chevron">▾</span>
-              </div>
-              <div class="newsstand-card-preview" id="ns-volume-preview"></div>
-              <div class="newsstand-card-body" id="ns-volume-body"></div>
-            </div>
-            <div class="newsstand-card" id="ns-earnings" onclick="toggleNewsstand('ns-earnings')">
-              <div class="newsstand-card-header">
-                <div class="newsstand-card-icon">📅</div>
-                <div class="newsstand-card-left">
-                  <h3 class="newsstand-card-title">Earnings Calendar</h3>
-                  <p class="newsstand-card-desc">Notable earnings in the next 14 days.</p>
-                </div>
-                <span class="newsstand-chevron">▾</span>
-              </div>
-              <div class="newsstand-card-preview" id="ns-earnings-preview"></div>
-              <div class="newsstand-card-body" id="ns-earnings-body"></div>
-            </div>
-          </div>
-        </div>
-
+        <a href="https://invest-movers-shakers.onrender.com" class="preview-all-link">Full dashboard →</a>
+      </div>
+      <div class="preview-grid">
+        <div class="preview-card" id="pc-day"></div>
+        <div class="preview-card" id="pc-swing"></div>
+        <div class="preview-card" id="pc-sector"></div>
+        <div class="preview-card" id="pc-discussed"></div>
       </div>
     </div>
   </section>
 
-  <!-- ── Underdogs Snapshot Preview (hidden) ─────────────────────────────── -->
+  <!-- ── Underdogs Snapshot Preview ────────────────────────────────────────── -->
   <section class="preview-section" style="display:none">
     <div class="container">
       <div class="preview-header">
@@ -199,184 +128,230 @@
     </div>
   </section>
 
+  <!-- ── Past Nominees ──────────────────────────────────────────────────────── -->
+  <section class="section" id="track-record">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Lab Results Archive</h2>
+        <p class="section-sub">Stocks surfaced by the dashboards — with 30-day outcomes tracked automatically from the scan archive.</p>
+      </div>
+      <div class="track-record-grid" id="track-record-grid">
+        <!-- Populated by JS from nominees_archive.json -->
+      </div>
+      <p class="track-record-footnote" id="track-record-footnote">Past nominees are shown for informational purposes only. Outcomes are not guaranteed and vary widely. Nothing here is financial advice.</p>
+    </div>
+  </section>
 
-  <!-- ── Zone 4: Dashboards + Blog ──────────────────────────────────────── -->
+  <!-- ── The Newsstand ──────────────────────────────────────────────────── -->
+  <section class="section section-alt" id="newsstand">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">The Newsstand</h2>
+        <p class="section-sub">Market context at a glance — the backdrop behind today's picks.</p>
+      </div>
+
+      <div class="fg-strip">
+        <span class="fg-strip-label">Fear &amp; Greed</span>
+        <div class="fg-strip-track">
+          <div class="fg-strip-needle" id="fg-needle" style="left:50%"></div>
+        </div>
+        <div class="fg-strip-score">
+          <span class="fg-strip-score-num" id="fg-score">—</span>
+          <span class="fg-strip-rating" id="fg-rating">loading…</span>
+        </div>
+        <span class="fg-strip-delta" id="fg-delta"></span>
+      </div>
+
+      <div class="newsstand-grid">
+        <div class="newsstand-card" id="ns-news" onclick="toggleNewsstand('ns-news')">
+          <div class="newsstand-card-header">
+            <div class="newsstand-card-icon">📰</div>
+            <div class="newsstand-card-left">
+              <h3 class="newsstand-card-title">Market News</h3>
+              <p class="newsstand-card-desc">Top headlines moving the market today.</p>
+            </div>
+            <span class="newsstand-chevron">▾</span>
+          </div>
+          <div class="newsstand-card-preview" id="ns-news-preview"></div>
+          <div class="newsstand-card-body" id="ns-news-body"></div>
+        </div>
+        <div class="newsstand-card" id="ns-volume" onclick="toggleNewsstand('ns-volume')">
+          <div class="newsstand-card-header">
+            <div class="newsstand-card-icon">📊</div>
+            <div class="newsstand-card-left">
+              <h3 class="newsstand-card-title">Unusual Volume</h3>
+              <p class="newsstand-card-desc">Stocks with abnormal trading activity.</p>
+            </div>
+            <span class="newsstand-chevron">▾</span>
+          </div>
+          <div class="newsstand-card-preview" id="ns-volume-preview"></div>
+          <div class="newsstand-card-body" id="ns-volume-body"></div>
+        </div>
+        <div class="newsstand-card" id="ns-earnings" onclick="toggleNewsstand('ns-earnings')">
+          <div class="newsstand-card-header">
+            <div class="newsstand-card-icon">📅</div>
+            <div class="newsstand-card-left">
+              <h3 class="newsstand-card-title">Earnings Calendar</h3>
+              <p class="newsstand-card-desc">Notable earnings in the next 14 days.</p>
+            </div>
+            <span class="newsstand-chevron">▾</span>
+          </div>
+          <div class="newsstand-card-preview" id="ns-earnings-preview"></div>
+          <div class="newsstand-card-body" id="ns-earnings-body"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── All Dashboards ───────────────────────────────────────────────────── -->
   <section class="section" id="dashboards">
     <div class="container">
-      <div class="broadsheet">
+      <div class="section-header">
+        <h2 class="section-title">All Dashboards</h2>
+        <p class="section-sub">Live tools for scanning, screening, and analyzing the market in real time.</p>
+      </div>
 
-        <!-- MAIN COLUMN: All Dashboards -->
-        <div class="broadsheet-main">
-          <div class="section-header">
-            <h2 class="section-title">All Dashboards</h2>
-            <p class="section-sub">Live tools for scanning, screening, and analyzing the market in real time.</p>
-          </div>
+      <div class="dashboard-grid">
 
-          <div class="dashboard-grid dashboard-grid--stacked">
-
-            <a href="https://invest-movers-shakers.onrender.com" class="dashboard-card">
-              <div class="dashboard-card-icon">📡</div>
-              <div class="dashboard-card-body">
-                <h3 class="dashboard-card-title">Movers and Shakers</h3>
-                <p class="dashboard-card-desc">
-                  Real-time scan of top movers, enriched with Reddit sentiment. Surfaces day-trade
-                  and swing-trade nominees, sector flow, and market context.
-                </p>
-                <div class="dashboard-card-tags">
-                  <span class="tag">Day Trades</span>
-                  <span class="tag">Swing Trades</span>
-                  <span class="tag">Sentiment</span>
-                  <span class="tag">Live</span>
-                </div>
-              </div>
-              <span class="dashboard-card-arrow">→</span>
-            </a>
-
-            <a href="https://invest-tried-true.onrender.com" class="dashboard-card">
-              <div class="dashboard-card-icon">♛</div>
-              <div class="dashboard-card-body">
-                <h3 class="dashboard-card-title">Tried and True</h3>
-                <p class="dashboard-card-desc">
-                  Scans top growth ETFs and surfaces the 10 stocks with the strongest
-                  cross-ETF consensus. Includes fund performance vs SPY.
-                </p>
-                <div class="dashboard-card-tags">
-                  <span class="tag">Buy &amp; Hold</span>
-                  <span class="tag">ETF Overlap</span>
-                  <span class="tag">Growth</span>
-                </div>
-              </div>
-              <span class="dashboard-card-arrow">→</span>
-            </a>
-
-            <a href="https://invest-the-analyst.onrender.com" class="dashboard-card" style="display:none">
-              <div class="dashboard-card-icon">🔬</div>
-              <div class="dashboard-card-body">
-                <h3 class="dashboard-card-title">The Analyst</h3>
-                <p class="dashboard-card-desc">
-                  Enter any ticker for a fundamental analysis — P/E, PEG, Graham Number, SEC filings, and a valuation verdict.
-                </p>
-                <div class="dashboard-card-tags">
-                  <span class="tag">Fundamentals</span>
-                  <span class="tag">SEC Filings</span>
-                  <span class="tag">Graham Number</span>
-                </div>
-              </div>
-              <span class="dashboard-card-arrow">→</span>
-            </a>
-
-            <a href="https://invest-insider-buying.onrender.com" class="dashboard-card">
-              <div class="dashboard-card-icon">🕴️</div>
-              <div class="dashboard-card-body">
-                <h3 class="dashboard-card-title">Insider Buying</h3>
-                <p class="dashboard-card-desc">
-                  Tracks open-market purchases by executives and directors via SEC Form 4.
-                  Surfaces cluster buys and C-suite activity.
-                </p>
-                <div class="dashboard-card-tags">
-                  <span class="tag">Cluster Buys</span>
-                  <span class="tag">C-Suite</span>
-                  <span class="tag">Smart Money</span>
-                </div>
-              </div>
-              <span class="dashboard-card-arrow">→</span>
-            </a>
-
-            <a href="https://invest-underdogs.onrender.com" class="dashboard-card">
-              <div class="dashboard-card-icon">🥊</div>
-              <div class="dashboard-card-body">
-                <h3 class="dashboard-card-title">The Underdogs</h3>
-                <p class="dashboard-card-desc">
-                  High-quality companies with beaten-up prices. Scores quality, drawdown, RSI,
-                  and recovery signals from ETFs like QUAL, MOAT, and COWZ.
-                </p>
-                <div class="dashboard-card-tags">
-                  <span class="tag">Quality</span>
-                  <span class="tag">Drawdown</span>
-                  <span class="tag">Value</span>
-                </div>
-              </div>
-              <span class="dashboard-card-arrow">→</span>
-            </a>
-
-            <a href="https://invest-patterns.onrender.com" class="dashboard-card">
-              <div class="dashboard-card-icon">📐</div>
-              <div class="dashboard-card-body">
-                <h3 class="dashboard-card-title">Pattern Scanner</h3>
-                <p class="dashboard-card-desc">
-                  Daily S&amp;P 500 scan for bull flags, VCPs, BB squeezes, MA crossovers,
-                  cup &amp; handles, and gaps. Graded A/B/Watch with cross-references.
-                </p>
-                <div class="dashboard-card-tags">
-                  <span class="tag">Chart Patterns</span>
-                  <span class="tag">S&amp;P 500</span>
-                  <span class="tag">Graded</span>
-                </div>
-              </div>
-              <span class="dashboard-card-arrow">→</span>
-            </a>
-
-            <div class="dashboard-card dashboard-card-placeholder">
-              <div class="dashboard-card-icon">🔭</div>
-              <div class="dashboard-card-body">
-                <h3 class="dashboard-card-title">More Coming Soon</h3>
-                <p class="dashboard-card-desc">
-                  Additional dashboards in development — options flow, earnings research, and more.
-                </p>
-                <div class="dashboard-card-tags">
-                  <span class="tag">In Development</span>
-                </div>
-              </div>
+        <!-- Market Scanner -->
+        <a href="https://invest-movers-shakers.onrender.com" class="dashboard-card">
+          <div class="dashboard-card-icon">📡</div>
+          <div class="dashboard-card-body">
+            <h3 class="dashboard-card-title">Movers and Shakers</h3>
+            <p class="dashboard-card-desc">
+              Real-time scan of top movers from Yahoo Finance, enriched with Reddit sentiment
+              across five investing subreddits. Surfaces day-trade and swing-trade nominees,
+              sector flow, Fear &amp; Greed index, unusual volume, earnings calendar, and
+              market news. Refreshes every 15 minutes.
+            </p>
+            <div class="dashboard-card-tags">
+              <span class="tag">Day Trades</span>
+              <span class="tag">Swing Trades</span>
+              <span class="tag">Reddit Sentiment</span>
+              <span class="tag">Sector Flow</span>
+              <span class="tag">Live</span>
             </div>
-
           </div>
-        </div>
+          <span class="dashboard-card-arrow">→</span>
+        </a>
 
-        <!-- SIDEBAR: Blog -->
-        <div class="broadsheet-side" id="blog">
-          <div class="broadsheet-side-title">Research Blog</div>
+        <!-- Tried and True -->
+        <a href="https://invest-tried-true.onrender.com" class="dashboard-card">
+          <div class="dashboard-card-icon">♛</div>
+          <div class="dashboard-card-body">
+            <h3 class="dashboard-card-title">Tried and True</h3>
+            <p class="dashboard-card-desc">
+              Buy-and-hold research assistant. Scans the top growth ETFs from Vanguard,
+              Schwab, iShares, Fidelity, SPDR, Invesco, and Baron — then surfaces the
+              10 stocks with the strongest cross-ETF consensus. Includes 3 &amp; 5-year
+              performance scorecards for each fund vs SPY.
+            </p>
+            <div class="dashboard-card-tags">
+              <span class="tag">Buy &amp; Hold</span>
+              <span class="tag">ETF Overlap</span>
+              <span class="tag">Growth Stocks</span>
+              <span class="tag">vs SPY</span>
+            </div>
+          </div>
+          <span class="dashboard-card-arrow">→</span>
+        </a>
 
-          <div class="blog-sidebar-stack">
-            <a href="blog.html?post=optical-ai-infrastructure" class="blog-card blog-card--sidebar">
-              <div class="blog-card-meta">
-                <span class="blog-card-date">March 2026</span>
-                <span class="blog-card-tag">Infrastructure</span>
-              </div>
-              <h3 class="blog-card-title">The Fiber Backbone of AI: Why Optical Infrastructure Is the Sleeper Trade of the Decade</h3>
-              <p class="blog-card-excerpt">
-                Beneath the AI compute revolution lies a quieter trade that sharp investors
-                flagged years before consensus: the optical buildout.
-              </p>
-              <span class="blog-card-read-more">Read more →</span>
-            </a>
+        <!-- The Analyst -->
+        <a href="https://invest-the-analyst.onrender.com" class="dashboard-card" style="display:none">
+          <div class="dashboard-card-icon">🔬</div>
+          <div class="dashboard-card-body">
+            <h3 class="dashboard-card-title">The Analyst</h3>
+            <p class="dashboard-card-desc">
+              Enter any U.S. ticker and receive a Wall Street-style fundamental
+              analysis — pulling SEC 10-K &amp; 10-Q data, computing the Graham
+              Number, and scoring the stock as undervalued, fairly valued, overpriced,
+              or speculative. Includes pre-scanned reports for AAPL, MSFT, and NVDA.
+            </p>
+            <div class="dashboard-card-tags">
+              <span class="tag">Fundamental Analysis</span>
+              <span class="tag">SEC Filings</span>
+              <span class="tag">10-K / 10-Q</span>
+              <span class="tag">Graham Number</span>
+            </div>
+          </div>
+          <span class="dashboard-card-arrow">→</span>
+        </a>
 
-            <a href="blog.html?post=nvidia-gtc26-keynote-recap" class="blog-card blog-card--sidebar">
-              <div class="blog-card-meta">
-                <span class="blog-card-date">March 16, 2026</span>
-                <span class="blog-card-tag">NVIDIA</span>
-              </div>
-              <h3 class="blog-card-title">Jensen's Moment: What GTC 2026 Tells Us About the Next Phase of AI</h3>
-              <p class="blog-card-excerpt">
-                GTC 2026 wasn't just a product launch — it was a declaration that the AI race
-                has shifted from training to deploying AI everywhere.
-              </p>
-              <span class="blog-card-read-more">Read more →</span>
-            </a>
+        <!-- Insider Buying -->
+        <a href="https://invest-insider-buying.onrender.com" class="dashboard-card">
+          <div class="dashboard-card-icon">🕴️</div>
+          <div class="dashboard-card-body">
+            <h3 class="dashboard-card-title">Insider Buying</h3>
+            <p class="dashboard-card-desc">
+              Tracks open-market stock purchases filed by executives, directors, and
+              officers via SEC Form 4. Surfaces cluster buys (multiple insiders buying
+              the same stock), C-suite activity, and the biggest single transactions —
+              a leading signal that insiders believe in their own company.
+            </p>
+            <div class="dashboard-card-tags">
+              <span class="tag">Cluster Buys</span>
+              <span class="tag">C-Suite</span>
+              <span class="tag">SEC Form 4</span>
+              <span class="tag">Smart Money</span>
+            </div>
+          </div>
+          <span class="dashboard-card-arrow">→</span>
+        </a>
 
-            <a href="blog.html?post=ai-infrastructure-stack-part-1" class="blog-card blog-card--sidebar">
-              <div class="blog-card-meta">
-                <span class="blog-card-date">March 20, 2026</span>
-                <span class="blog-card-tag">AI Infrastructure</span>
-              </div>
-              <h3 class="blog-card-title">The AI Factory, Part 1: A Ground-Up Look at Everything That Powers Artificial Intelligence</h3>
-              <p class="blog-card-excerpt">
-                Behind every AI response is a factory the size of city blocks. This is Part 1 of a series
-                breaking down every layer of the AI infrastructure stack.
-              </p>
-              <span class="blog-card-read-more">Read more →</span>
-            </a>
+        <!-- The Underdogs -->
+        <a href="https://invest-underdogs.onrender.com" class="dashboard-card">
+          <div class="dashboard-card-icon">🥊</div>
+          <div class="dashboard-card-body">
+            <h3 class="dashboard-card-title">The Underdogs</h3>
+            <p class="dashboard-card-desc">
+              Finds high-quality companies with temporarily beaten-up stock prices.
+              Scores fundamental quality (margins, ROE, FCF), price drawdown from
+              52-week highs, RSI, and recovery signals like insider buying and
+              earnings beats — sourced from quality ETFs like QUAL, MOAT, and COWZ.
+            </p>
+            <div class="dashboard-card-tags">
+              <span class="tag">Quality Stocks</span>
+              <span class="tag">Drawdown</span>
+              <span class="tag">RSI</span>
+              <span class="tag">Value</span>
+            </div>
+          </div>
+          <span class="dashboard-card-arrow">→</span>
+        </a>
 
-            <a href="blog.html" class="blog-sidebar-cta">View all posts →</a>
+        <!-- Pattern Scanner -->
+        <a href="https://invest-patterns.onrender.com" class="dashboard-card">
+          <div class="dashboard-card-icon">📐</div>
+          <div class="dashboard-card-body">
+            <h3 class="dashboard-card-title">Pattern Scanner</h3>
+            <p class="dashboard-card-desc">
+              Daily scan of the S&amp;P 500 for classic chart patterns — bull flags,
+              VCPs, Bollinger Band squeezes, moving average crossovers, cup &amp; handles,
+              and high-volume gaps. Each setup is graded A/B/Watch and cross-referenced
+              with insider buying and ETF consensus data.
+            </p>
+            <div class="dashboard-card-tags">
+              <span class="tag">Chart Patterns</span>
+              <span class="tag">S&amp;P 500</span>
+              <span class="tag">Graded Setups</span>
+              <span class="tag">Daily Scan</span>
+            </div>
+          </div>
+          <span class="dashboard-card-arrow">→</span>
+        </a>
+
+        <!-- Placeholder for future dashboards -->
+        <div class="dashboard-card dashboard-card-placeholder">
+          <div class="dashboard-card-icon">🔭</div>
+          <div class="dashboard-card-body">
+            <h3 class="dashboard-card-title">More Coming Soon</h3>
+            <p class="dashboard-card-desc">
+              Additional dashboards are in development — technical analysis, portfolio
+              tracking, earnings research, and options flow tools.
+            </p>
+            <div class="dashboard-card-tags">
+              <span class="tag">In Development</span>
+            </div>
           </div>
         </div>
 
@@ -384,8 +359,56 @@
     </div>
   </section>
 
+  <!-- ── Blog ─────────────────────────────────────────────────────────────── -->
+  <section class="section section-alt" id="blog">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Research Blog</h2>
+        <p class="section-sub">In-depth write-ups, trade reviews, and market observations.</p>
+      </div>
+      <div class="blog-grid blog-grid--home">
+        <article class="blog-card">
+          <div class="blog-card-meta">
+            <span class="blog-card-date">March 2026</span>
+            <span class="blog-card-tag">Infrastructure</span>
+          </div>
+          <h3 class="blog-card-title">The Fiber Backbone of AI: Why Optical Infrastructure Is the Sleeper Trade of the Decade</h3>
+          <p class="blog-card-excerpt">
+            Everyone knows the AI story — Nvidia prints money, hyperscalers spend hundreds of billions, data
+            centers multiply. But beneath all that compute lies a quieter revolution that a sharp group of
+            investors began flagging years before it became consensus: the optical buildout.
+          </p>
+          <a href="blog.html?post=optical-ai-infrastructure" class="blog-card-read-more">Read more →</a>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-meta">
+            <span class="blog-card-date">March 16, 2026</span>
+            <span class="blog-card-tag">NVIDIA</span>
+            <span class="blog-card-tag">AI Infrastructure</span>
+          </div>
+          <h3 class="blog-card-title">Jensen's Moment: What the GTC 2026 Keynote Tells Us About the Next Phase of AI</h3>
+          <p class="blog-card-excerpt">
+            Jensen Huang called it the Inference Inflection. GTC 2026 wasn't just a product launch —
+            it was a declaration that the AI race has shifted from training the biggest model to
+            deploying AI everywhere, all the time, at a cost that makes it economically viable.
+          </p>
+          <a href="blog.html?post=nvidia-gtc26-keynote-recap" class="blog-card-read-more">Read more →</a>
+        </article>
+
+        <article class="blog-card blog-card-all">
+          <div>
+            <h3 class="blog-card-title" style="margin-bottom:0.4rem">More Research Posts</h3>
+            <p class="blog-card-excerpt" style="margin-bottom:0">Sector deep-dives, trade reviews, dashboard notes, and market observations.</p>
+          </div>
+          <a href="blog.html" class="blog-card-read-more">View all posts →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ── About ────────────────────────────────────────────────────────────── -->
-  <section class="section section-alt" id="about">
+  <section class="section" id="about">
     <div class="container">
       <div class="about-layout">
 
@@ -705,14 +728,6 @@
     return d.toLocaleDateString([], { month: 'short', year: 'numeric' });
   }
 
-  var DASH_URLS = {
-    'movers':     'https://invest-movers-shakers.onrender.com',
-    'underdogs':  'https://invest-underdogs.onrender.com',
-    'insider':    'https://invest-insider-buying.onrender.com',
-    'tried-true': 'https://invest-tried-true.onrender.com',
-    'patterns':   'https://invest-patterns.onrender.com'
-  };
-
   function nomineeCard(n) {
     var pct          = n.outcome_pct;
     var isPending    = pct === null;
@@ -724,17 +739,17 @@
     var dateLine     = 'Flagged: ' + fmtDate(n.date_flagged) +
                        (n.outcome_date ? ' &middot; Outcome: ' + fmtDate(n.outcome_date)
                                        : ' &middot; 30-day window');
-    var href = DASH_URLS[n.source_key] || '#';
 
-    return '<a href="' + href + '" class="track-record-card">' +
+    return '<div class="track-record-card">' +
       '<div class="track-record-source">' + n.source + '</div>' +
       '<div class="track-record-ticker-row">' +
         '<span class="track-record-ticker">' + n.ticker + '</span>' +
         '<span class="track-record-outcome ' + outcomeClass + '">' + outcomeText + '</span>' +
       '</div>' +
       '<div class="track-record-name">' + (n.name || '') + '</div>' +
+      '<div class="track-record-meta">' + (n.reason || '') + '</div>' +
       '<div class="track-record-date">' + dateLine + '</div>' +
-    '</a>';
+    '</div>';
   }
 
   // ── Fetch & render ────────────────────────────────────────────────────────
@@ -883,18 +898,13 @@
       return t.change_pct != null && t.change_pct > 0;
     }).slice(0, 10);
 
-    // Filter news to only articles that have at least one ticker
-    var newsWithTickers = (data.news || []).filter(function (a) {
-      return a.tickers && a.tickers.length > 0;
-    });
-
-    document.getElementById('ns-news-body').innerHTML = renderNews(newsWithTickers);
+    document.getElementById('ns-news-body').innerHTML = renderNews(data.news);
     document.getElementById('ns-volume-body').innerHTML = renderVolume(volume);
     document.getElementById('ns-earnings-body').innerHTML = renderEarnings(data.earnings);
 
     // Update card descriptions
     var newsDesc = document.querySelector('#ns-news .newsstand-card-desc');
-    if (newsDesc && newsWithTickers.length) newsDesc.textContent = newsWithTickers.length + ' headlines — click to expand';
+    if (newsDesc && data.news) newsDesc.textContent = data.news.length + ' headlines — click to expand';
 
     var volDesc = document.querySelector('#ns-volume .newsstand-card-desc');
     if (volDesc) volDesc.textContent = volume.length + ' tickers — click to expand';
@@ -902,64 +912,34 @@
     var earnDesc = document.querySelector('#ns-earnings .newsstand-card-desc');
     if (earnDesc && data.earnings) earnDesc.textContent = data.earnings.length + ' reports — click to expand';
 
-    // Preview content — inline items matching expanded format
+    // Preview content — richer teasers visible when collapsed
     var newsPrev = document.getElementById('ns-news-preview');
-    if (newsPrev && newsWithTickers.length) {
-      newsPrev.innerHTML = '<div class="ns-list">' + newsWithTickers.slice(0, 3).map(function (a) {
-        var tickers = (a.tickers || []).slice(0, 2).map(function (t) {
-          return '<span class="ns-ticker-tag">' + t + '</span>';
-        }).join('');
-        return '<div class="ns-item">' +
-          '<div class="ns-item-content">' +
-            '<div class="ns-item-title"><a href="' + a.url + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + a.title + '</a></div>' +
-            '<div class="ns-item-meta">' +
-              '<span class="ns-source">' + (a.source || '') + '</span>' +
-              '<span class="ns-time">' + timeAgo(a.published) + '</span>' +
-            '</div>' +
-          '</div>' +
-          (tickers ? '<div class="ns-item-tickers">' + tickers + '</div>' : '') +
+    if (newsPrev && data.news && data.news.length) {
+      newsPrev.innerHTML = data.news.slice(0, 3).map(function (a) {
+        var topTicker = (a.tickers && a.tickers.length) ? a.tickers[0] : '';
+        return '<div class="ns-preview-item">' +
+          (topTicker ? '<span class="ns-ticker-tag">' + topTicker + '</span>' : '') +
+          '<span class="ns-preview-text">' + a.title + '</span>' +
+          '<span class="ns-preview-source">' + (a.source || '') + '</span>' +
         '</div>';
-      }).join('') + '</div>';
+      }).join('');
     }
 
     var volPrev = document.getElementById('ns-volume-preview');
     if (volPrev && volume.length) {
-      volPrev.innerHTML = '<table class="ns-table"><thead><tr>' +
-        '<th>Ticker</th><th>Price</th><th>Change</th>' +
-      '</tr></thead><tbody>' + volume.slice(0, 4).map(function (t) {
-        return '<tr>' +
-          '<td class="ns-ticker-cell">' + t.ticker + '</td>' +
-          '<td>$' + fmt(t.price, 2) + '</td>' +
-          '<td class="ns-up">+' + fmt(t.change_pct, 2) + '%</td>' +
-        '</tr>';
-      }).join('') + '</tbody></table>';
+      volPrev.innerHTML = volume.slice(0, 6).map(function (t) {
+        return '<span class="ns-preview-chip"><strong>' + t.ticker + '</strong> +' +
+          parseFloat(t.change_pct).toFixed(1) + '%</span>';
+      }).join('');
     }
 
     var earnPrev = document.getElementById('ns-earnings-preview');
     if (earnPrev && data.earnings && data.earnings.length) {
-      // Group first few by date and show as chips
-      var first8 = data.earnings.slice(0, 8);
-      var byDate = {};
-      first8.forEach(function (e) {
-        var d = e.date || 'Unknown';
-        if (!byDate[d]) byDate[d] = [];
-        byDate[d].push(e);
-      });
-      var html = '';
-      Object.keys(byDate).sort().slice(0, 2).forEach(function (date) {
-        html += '<div class="ns-date-group" style="margin-bottom:0.6rem">' +
-          '<div class="ns-date-label">' + fmtDate(date) + '</div>' +
-          '<div class="ns-earnings-row">' +
-          byDate[date].slice(0, 4).map(function (e) {
-            var timing = e.hour === 'bmo' ? 'Pre-market' : e.hour === 'amc' ? 'After-close' : '';
-            return '<div class="ns-earnings-chip">' +
-              '<span class="ns-earnings-sym">' + e.symbol + '</span>' +
-              (timing ? '<span class="ns-earnings-time">' + timing + '</span>' : '') +
-            '</div>';
-          }).join('') +
-          '</div></div>';
-      });
-      earnPrev.innerHTML = html;
+      var upcoming = data.earnings.slice(0, 6);
+      earnPrev.innerHTML = upcoming.map(function (e) {
+        return '<span class="ns-preview-chip"><strong>' + e.symbol + '</strong> ' +
+          (e.date || '').substring(5) + '</span>';
+      }).join('');
     }
   }
 
