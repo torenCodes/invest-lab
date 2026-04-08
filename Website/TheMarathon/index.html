@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Invest Lab - The Marathon</title>
+<link rel="icon" type="image/png" href="https://theinvestlab.com/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & Base ───────────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:           #f5f4f0;
+    --surface:      #ffffff;
+    --surface-2:    #fafaf8;
+    --border:       #e8e6e0;
+    --border-light: #f0ede8;
+    --ink:          #1a1a18;
+    --ink-2:        #4a4a46;
+    --ink-3:        #8a8a82;
+    --green:        #1a7a4a;
+    --green-bg:     #edf7f2;
+    --green-light:  #d0edde;
+    --red:          #c0392b;
+    --red-bg:       #fdf0ef;
+    --orange:       #c07a1a;
+    --orange-bg:    #fef5ec;
+    --blue:         #1a5fa8;
+    --blue-bg:      #eef3fb;
+    --teal:         #1a7070;
+    --teal-bg:      #edf7f7;
+    --accent:       #2d6a4f;
+    --gold:         #b8922a;
+    --gold-bg:      #fdf9ed;
+    --silver:       #6e7f87;
+    --silver-bg:    #f5f7f8;
+    --bronze:       #8b5e3c;
+    --bronze-bg:    #fdf3ec;
+    --shadow-sm:    0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md:    0 4px 12px rgba(0,0,0,0.08);
+    --radius:       10px;
+    --radius-sm:    6px;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg);
+    color: var(--ink-2);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 0%,  rgba(45,106,79,0.05) 0%, transparent 50%),
+      radial-gradient(circle at 85% 100%, rgba(26,112,112,0.04) 0%, transparent 50%);
+  }
+
+  /* ── Layout ─────────────────────────────────────────────────────────────── */
+  .layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+  }
+
+  /* ── Sidebar ────────────────────────────────────────────────────────────── */
+  .sidebar {
+    background: #1a1a18;
+    color: rgba(255,255,255,0.75);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+
+  .sidebar-header {
+    padding: 28px 24px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .logo span { color: #b7dfc8; }
+  .logo-sub {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .sidebar-scan-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    color: rgba(255,255,255,0.38);
+  }
+
+  .pulse {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse-anim 2s ease-in-out infinite;
+  }
+  @keyframes pulse-anim {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .sidebar-section { border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+  .sidebar-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    padding: 16px 24px 10px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 24px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.65);
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    text-decoration: none;
+  }
+  .nav-item:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); }
+  .nav-item.active { color: #38bda6; border-left-color: #38bda6; background: rgba(56,189,166,0.1); font-weight: 500; }
+  .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+
+  .sidebar-stat {
+    padding: 6px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+  }
+  .sidebar-stat-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .sidebar-note {
+    padding: 0 24px 14px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding: 18px 24px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .progress-label {
+    padding: 4px 24px;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.4;
+  }
+  .progress-label strong { font-weight: 600; color: rgba(255,255,255,0.85); }
+
+  /* ── Main content ───────────────────────────────────────────────────────── */
+  .main {
+    padding: 32px 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  /* ── Tab bar ─────────────────────────────────────────────────────────────── */
+  .tab-bar {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 4px;
+  }
+  .tab-btn {
+    padding: 10px 24px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink-3);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tab-btn:hover { color: var(--ink); }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab-badge {
+    font-size: 0.68rem;
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 2px 7px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* ── Tab panels ──────────────────────────────────────────────────────────── */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── Section headers ─────────────────────────────────────────────────────── */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .section-subtitle {
+    font-size: 0.88rem;
+    color: var(--ink-3);
+  }
+  .section-badge {
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 3px 9px;
+    border-radius: 20px;
+    color: var(--ink-3);
+    margin-left: auto;
+  }
+
+  /* ── Cards grid ──────────────────────────────────────────────────────────── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 18px;
+  }
+
+  /* ── Stock card ──────────────────────────────────────────────────────────── */
+  .stock-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    align-self: start;
+  }
+  .stock-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Rank accent borders */
+  .stock-card.rank-1 { border-left: 3px solid var(--gold); }
+  .stock-card.rank-2 { border-left: 3px solid var(--silver); }
+  .stock-card.rank-3 { border-left: 3px solid var(--bronze); }
+
+  /* Grade accent borders (Deep Value) */
+  .stock-card.grade-a { border-left: 3px solid var(--green); }
+  .stock-card.grade-b { border-left: 3px solid var(--teal); }
+  .stock-card.grade-w { border-left: 3px solid var(--orange); }
+
+  .card-top {
+    padding: 16px 18px 14px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .badge {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 3px 9px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .badge-rank      { background: var(--ink); color: #fff; }
+  .badge-rank-1    { background: var(--gold); color: #fff; }
+  .badge-rank-2    { background: var(--silver); color: #fff; }
+  .badge-rank-3    { background: var(--bronze); color: #fff; }
+  .badge-grade-a   { background: var(--green); color: #fff; }
+  .badge-grade-b   { background: var(--teal); color: #fff; }
+  .badge-grade-w   { background: var(--orange); color: #fff; }
+  .badge-etf       { background: var(--blue-bg); color: var(--blue); }
+  .badge-sector    { background: var(--bg); color: var(--ink-3); border: 1px solid var(--border); }
+  .badge-insider   { background: var(--green-bg); color: var(--green); }
+  .badge-financial { background: var(--blue-bg); color: var(--blue); }
+
+  .card-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .card-identity { flex: 1; min-width: 0; }
+  .card-ticker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .card-name {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-sector {
+    font-size: 0.72rem;
+    color: var(--ink-3);
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  .card-price { flex-shrink: 0; text-align: right; }
+  .price-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .price-change {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-top: 4px;
+    display: inline-block;
+  }
+  .change-up   { background: var(--green-bg); color: var(--green); }
+  .change-down { background: var(--red-bg);   color: var(--red); }
+  .change-flat { background: var(--bg);        color: var(--ink-3); }
+
+  /* ── Card body: metrics row ──────────────────────────────────────────────── */
+  .card-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .metric {
+    padding: 10px 14px;
+    border-right: 1px solid var(--border-light);
+  }
+  .metric:last-child { border-right: none; }
+  .metric-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 3px;
+  }
+  .metric-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .metric-value.up   { color: var(--green); }
+  .metric-value.down { color: var(--red);   }
+
+  /* ── Card body: signals ──────────────────────────────────────────────────── */
+  .card-signals {
+    padding: 10px 18px 12px;
+  }
+  .signal-list { list-style: none; }
+  .signal-item {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    font-size: 0.8rem;
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+  .signal-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .signal-dot.quality { background: var(--green); }
+  .signal-dot.beaten  { background: var(--orange); }
+  .signal-dot.recover { background: var(--blue); }
+
+  /* ── Card body: ETF pills ────────────────────────────────────────────────── */
+  .card-etfs {
+    padding: 8px 18px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+  }
+  .card-etfs-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-right: 4px;
+  }
+  .etf-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: var(--green-bg);
+    color: var(--green);
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* ── Score bar ───────────────────────────────────────────────────────────── */
+  .card-score-bar {
+    padding: 8px 18px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .score-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+  .score-track {
+    flex: 1;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .score-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #74c69d, var(--green));
+    transition: width 0.4s ease;
+  }
+
+  /* ── Underdog factor (dual bar) ──────────────────────────────────────────── */
+  .underdog-factor {
+    padding: 10px 18px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .uf-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .uf-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    width: 58px;
+    flex-shrink: 0;
+  }
+  .uf-label.quality { color: var(--green); }
+  .uf-label.beaten  { color: var(--orange); }
+  .uf-track {
+    flex: 1;
+    height: 5px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .uf-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.4s ease;
+  }
+  .uf-fill.quality { background: linear-gradient(90deg, #74c69d, var(--green)); }
+  .uf-fill.beaten  { background: linear-gradient(90deg, #f0c36d, var(--orange)); }
+  .uf-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--ink-2);
+    width: 24px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* ── Legend box ───────────────────────────────────────────────────────────── */
+  .legend-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow-sm);
+    margin-top: 8px;
+  }
+  .legend-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 14px;
+  }
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 8px 24px;
+  }
+  .legend-item {
+    font-size: 0.82rem;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+  .legend-item strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .legend-section {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 14px;
+    margin-bottom: 6px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-light);
+    grid-column: 1 / -1;
+  }
+  .legend-section:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+  /* ── Scorecard category tag ──────────────────────────────────────────────── */
+  .sc-category {
+    font-size: 0.65rem;
+    color: var(--ink-3);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+  .sc-comparison {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    background: var(--surface-2);
+    border: 1px dashed var(--border);
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+
+  /* ── Expand hint ─────────────────────────────────────────────────────────── */
+  .card-expand-hint {
+    padding: 6px 18px 10px;
+    font-size: 0.68rem;
+    color: var(--ink-3);
+    text-align: center;
+    letter-spacing: 0.04em;
+    transition: color 0.15s;
+  }
+  .stock-card:hover .card-expand-hint { color: var(--accent); }
+  .stock-card.open .card-expand-hint .hint-show { display: none; }
+  .stock-card .card-expand-hint .hint-hide { display: none; }
+  .stock-card.open .card-expand-hint .hint-hide { display: inline; }
+
+  /* ── Expandable detail ───────────────────────────────────────────────────── */
+  .card-detail {
+    display: none;
+    border-top: 1px solid var(--border-light);
+    padding: 14px 18px 16px;
+    background: var(--surface-2);
+  }
+  .card-detail.open { display: block; }
+
+  .deep-dive-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #38bda6;
+    border: 1px solid #38bda6;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .deep-dive-link:hover { background: #38bda6; color: #fff; }
+
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.8rem;
+  }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-label { font-size: 0.72rem; color: var(--ink-3); }
+  .detail-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink);
+    font-weight: 500;
+    text-align: right;
+  }
+
+  .detail-etfs {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-light);
+  }
+  .detail-etfs-title {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 6px;
+  }
+  .detail-etf-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+    font-size: 0.78rem;
+  }
+  .detail-etf-sym {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  .detail-etf-provider { color: var(--ink-3); font-size: 0.72rem; }
+  .detail-etf-weight {
+    font-family: 'DM Mono', monospace;
+    color: var(--ink);
+  }
+
+  /* ── ETF Scorecard table ─────────────────────────────────────────────────── */
+  .scorecard-section {
+    margin-top: 12px;
+  }
+  .scorecard-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+  .scorecard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+  .scorecard-table th {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.15s;
+  }
+  .scorecard-table th:hover { color: var(--ink); }
+  .scorecard-table th.sorted { color: var(--accent); }
+  .scorecard-table th .sort-arrow { font-size: 0.6rem; margin-left: 3px; }
+  .scorecard-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: middle;
+  }
+  .scorecard-table tbody tr:last-child td { border-bottom: none; }
+  .scorecard-table tbody tr:nth-child(even) td { background: var(--surface-2); }
+  .scorecard-table tbody tr:hover td { background: var(--bg); }
+  .sc-symbol {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    color: var(--accent);
+    font-size: 0.88rem;
+  }
+  .sc-name { color: var(--ink-2); }
+  .sc-provider {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: var(--blue-bg);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+  .sc-pct {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+  }
+  .sc-pct.up   { color: var(--green); }
+  .sc-pct.down { color: var(--red); }
+  .sc-beats {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .sc-beats.yes { background: var(--green-bg); color: var(--green); }
+  .sc-beats.no  { background: var(--red-bg);   color: var(--red); }
+  .sc-beats.na  { background: var(--bg); color: var(--ink-3); }
+
+  .scorecard-table tr.sc-benchmark-row td {
+    background: #eef3ee;
+    font-weight: 600;
+    border-bottom: 2px solid var(--green);
+  }
+
+  /* ── Loading / empty ─────────────────────────────────────────────────────── */
+  .loading-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    color: var(--ink-3);
+    gap: 1rem;
+    font-size: 0.875rem;
+  }
+  .spinner {
+    width: 28px; height: 28px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .empty-state {
+    padding: 2.5rem;
+    text-align: center;
+    color: var(--ink-3);
+    font-size: 0.875rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .main { padding: 20px 16px; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .scorecard-table th:nth-child(4),
+    .scorecard-table td:nth-child(4),
+    .scorecard-table th:nth-child(6),
+    .scorecard-table td:nth-child(6) { display: none; }
+  }
+
+  /* ── Site header (shared top nav) ────────────────────────────────────────── */
+  .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e0e7e7;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'Barlow',sans-serif;}
+  .site-nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px;}
+  .site-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:#1a1a18;font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;white-space:nowrap;}
+  .site-logo img{height:2.2rem;width:auto;display:block;}
+  .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+  .site-nav-item{position:relative;}
+  .site-nav-link{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .9rem;border-radius:3px;text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#4a4a46;transition:color .15s,background .15s;}
+  .site-nav-link:hover,.site-nav-link.active{color:#38bda6;background:#edf8f6;}
+  .site-nav-chevron{font-size:.6rem;opacity:.6;transition:transform .2s;}
+  .site-nav-item:hover .site-nav-chevron{transform:rotate(180deg);}
+  .site-dropdown{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%) translateY(-4px);background:#fff;border:1px solid #e8e6e0;border-radius:4px;box-shadow:0 4px 18px rgba(0,0,0,.10);list-style:none;min-width:190px;padding:.4rem 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,visibility .18s,transform .18s;z-index:200;}
+  .site-dropdown::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px;}
+  .site-nav-item:hover .site-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+  .site-dropdown-link{display:block;padding:.55rem 1.1rem;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#4a4a46;white-space:nowrap;transition:color .15s,background .15s;}
+  .site-dropdown-link:hover,.site-dropdown-link.active{color:#38bda6;background:#edf8f6;}
+  .nav-burger{display:none;background:none;border:1px solid #e8e6e0;border-radius:4px;cursor:pointer;padding:6px 10px;color:#1a1a18;font-size:1.2rem;line-height:1;}
+  @media(max-width:660px){
+    .site-nav{height:56px;padding:0 16px;}
+    .site-logo{font-size:1.1rem;}
+    .site-logo img{height:1.6rem;}
+    .nav-burger{display:block;}
+    .site-nav-links{display:none;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:2px solid #e0e7e7;box-shadow:0 6px 16px rgba(0,0,0,.09);padding:.4rem 0;list-style:none;}
+    .site-nav-links.open{display:flex;}
+    .site-nav-item{width:100%;}
+    .site-nav-link{padding:.7rem 1.2rem;border-radius:0;justify-content:flex-start;font-size:.75rem;}
+    .site-dropdown{position:static;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;border:none;border-radius:0;border-top:1px solid #f0ede8;padding:.2rem 0 .4rem 1rem;min-width:unset;}
+    .site-dropdown-link{padding:.5rem 1rem;font-size:.72rem;}
+  }
+
+  /* ── Site footer (shared) ────────────────────────────────────────────────── */
+  .site-footer-shared{background:#2e3334;color:rgba(255,255,255,.5);padding:1.5rem 0;font-family:'Barlow',sans-serif;}
+  .site-footer-inner{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;}
+  .site-footer-brand{display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:1rem;color:rgba(255,255,255,.92);}
+  .site-footer-brand img{height:1.2rem;width:auto;filter:invert(1);opacity:.85;}
+  .site-footer-disc{font-size:.78rem;}
+  .site-footer-copy{font-size:.68rem;font-family:monospace;opacity:.3;}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="https://theinvestlab.com" class="site-logo">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </a>
+    <button class="nav-burger" aria-label="Menu" onclick="toggleSiteNav(this)">&#9776;</button>
+    <ul class="site-nav-links">
+      <li class="site-nav-item">
+        <a href="https://theinvestlab.com/#dashboards" class="site-nav-link active">Dashboards <span class="site-nav-chevron">&#9662;</span></a>
+        <ul class="site-dropdown">
+          <li><a href="https://invest-movers-shakers.onrender.com" class="site-dropdown-link">Movers and Shakers</a></li>
+          <li><a href="https://invest-the-marathon.onrender.com" class="site-dropdown-link active">The Marathon</a></li>
+          <li><a href="https://invest-the-analyst.onrender.com" class="site-dropdown-link">The Analyst</a></li>
+          <li><a href="https://invest-insider-buying.onrender.com" class="site-dropdown-link">Insider Buying</a></li>
+          <li><a href="https://invest-patterns.onrender.com" class="site-dropdown-link">Pattern Scanner</a></li>
+        </ul>
+      </li>
+      <li><a href="https://theinvestlab.com/blog.html" class="site-nav-link">Blog</a></li>
+      <li><a href="https://theinvestlab.com/#about" class="site-nav-link">About</a></li>
+    </ul>
+  </nav>
+</header>
+<script>
+function toggleSiteNav(btn) {
+  var links = document.querySelector('.site-nav-links');
+  var open = links.classList.toggle('open');
+  btn.textContent = open ? '\u2715' : '\u2630';
+}
+</script>
+
+<div class="layout">
+
+  <!-- ── Sidebar ───────────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">The <span>Marathon</span></div>
+      <div class="logo-sub">Long-term investment ideas</div>
+      <div class="sidebar-scan-status">
+        <div class="pulse"></div>
+        <span id="sidebar-scan-time">Loading&hellip;</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Navigation</div>
+      <div class="nav-item active" onclick="switchTab('consensus')" id="nav-consensus">
+        <span class="nav-icon">&#9670;</span> Consensus Picks
+      </div>
+      <div class="nav-item" onclick="switchTab('deepvalue')" id="nav-deepvalue">
+        <span class="nav-icon">&#9650;</span> Deep Value
+      </div>
+      <div class="nav-item" onclick="switchTab('scorecard')" id="nav-scorecard">
+        <span class="nav-icon">&#9776;</span> ETF Scorecard
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Scan Schedules</div>
+      <div class="progress-label"><strong>Consensus:</strong> Mondays 9am ET</div>
+      <div class="progress-label"><strong>Deep Value:</strong> Mon / Wed / Fri 9am ET</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Stats</div>
+      <div class="sidebar-stat">Consensus picks <span class="sidebar-stat-val" id="sb-consensus">&#8212;</span></div>
+      <div class="sidebar-stat">Deep Value picks <span class="sidebar-stat-val" id="sb-deepvalue">&#8212;</span></div>
+      <div class="sidebar-stat">ETFs tracked <span class="sidebar-stat-val" id="sb-etfs">&#8212;</span></div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">About</div>
+      <div class="sidebar-note">
+        <strong>Consensus Picks</strong> surfaces stocks held across multiple top growth ETFs. Breadth of agreement matters most.<br><br>
+        <strong>Deep Value</strong> finds quality companies whose stock prices have been beaten down, with signals of potential recovery.
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      Not financial advice. For personal educational use only. Always do your own research.
+    </div>
+  </aside>
+
+  <!-- ── Main ──────────────────────────────────────────────────────────────── -->
+  <main class="main" id="main">
+    <div class="loading-wrap" id="loading">
+      <div class="spinner"></div>
+      Loading data&hellip;
+    </div>
+  </main>
+
+</div><!-- /.layout -->
+
+<footer class="site-footer-shared">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </div>
+    <p class="site-footer-disc">Not financial advice. For personal educational use only.</p>
+    <p class="site-footer-copy">Built with curiosity and caffeine.</p>
+  </div>
+</footer>
+
+<script>
+// ── Globals ──────────────────────────────────────────────────────────────────
+var consensusData = null;
+var deepValueData = null;
+var currentTab = 'consensus';
+var sortCol = null;
+var sortAsc = true;
+
+// ── Format helpers ───────────────────────────────────────────────────────────
+function esc(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function fmtPrice(n) { return n ? '$' + Number(n).toFixed(2) : '\u2014'; }
+function fmtPct(n) {
+  if (n == null) return '\u2014';
+  return (n >= 0 ? '+' : '') + Number(n).toFixed(1) + '%';
+}
+function fmtPct2(n) {
+  if (n == null) return '\u2014';
+  return (n >= 0 ? '+' : '') + Number(n).toFixed(2) + '%';
+}
+function fmtCap(n) {
+  if (!n) return '\u2014';
+  if (n >= 1e12) return '$' + (n / 1e12).toFixed(2) + 'T';
+  if (n >= 1e9)  return '$' + (n / 1e9).toFixed(1) + 'B';
+  if (n >= 1e6)  return '$' + Math.round(n / 1e6) + 'M';
+  return '\u2014';
+}
+function changeClass(n) { return n > 0 ? 'change-up' : n < 0 ? 'change-down' : 'change-flat'; }
+function pctClass(n) { return n > 0 ? 'up' : n < 0 ? 'down' : ''; }
+
+function fmtScanTime(raw) {
+  var s = raw;
+  if (s && !s.includes('+') && !s.endsWith('Z')) s += 'Z';
+  var t = new Date(s);
+  return t.toLocaleDateString('en-US', {month:'short', day:'numeric'}) + ' ' +
+    t.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
+}
+
+// ── Score normalization (fallback if scan hasn't added score_normalized yet)──
+function normalizeConsensus(raw, items) {
+  var maxRaw = 1;
+  for (var i = 0; i < items.length; i++) {
+    if (items[i].score > maxRaw) maxRaw = items[i].score;
+  }
+  return Math.min(Math.round(raw / maxRaw * 100), 100);
+}
+
+// ── Toggle card detail ───────────────────────────────────────────────────────
+function toggleCard(id) {
+  var el = document.getElementById(id);
+  if (el) {
+    el.classList.toggle('open');
+    el.closest('.stock-card').classList.toggle('open');
+  }
+}
+
+// ── Tab switching ────────────────────────────────────────────────────────────
+function switchTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.tab-btn').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.tab === tab);
+  });
+  document.querySelectorAll('.tab-panel').forEach(function(p) {
+    p.classList.toggle('active', p.id === 'panel-' + tab);
+  });
+  document.querySelectorAll('.nav-item[id^="nav-"]').forEach(function(n) {
+    n.classList.toggle('active', n.id === 'nav-' + tab);
+  });
+}
+
+// ── Render: Consensus Picks cards ────────────────────────────────────────────
+function renderConsensusCards(items) {
+  if (!items || !items.length)
+    return '<div class="empty-state">No consensus picks available.</div>';
+
+  return '<div class="cards-grid">' + items.map(function(s, i) {
+    var detailId = 'con-' + i;
+    var rank = s.rank || (i + 1);
+    var rankClass = rank <= 3 ? ' rank-' + rank : '';
+    var badgeClass = rank === 1 ? 'badge-rank-1' : rank === 2 ? 'badge-rank-2' : rank === 3 ? 'badge-rank-3' : 'badge-rank';
+    var chg1 = s.performance ? s.performance['1yr'] : null;
+    var chg1Str = chg1 != null ? fmtPct(chg1) : '\u2014';
+    var chg = s.performance ? s.performance['3yr'] : null;
+    var chgStr = chg != null ? fmtPct(chg) : '\u2014';
+
+    var etfPills = (s.etfs_holding || []).map(function(e) {
+      return '<span class="etf-pill">' + esc(e.symbol) + ' ' + Number(e.weight).toFixed(1) + '%</span>';
+    }).join('');
+
+    var detailEtfs = (s.etfs_holding || []).map(function(e) {
+      return '<div class="detail-etf-row">' +
+        '<span><span class="detail-etf-sym">' + esc(e.symbol) + '</span> <span class="detail-etf-provider">' + esc(e.provider) + '</span></span>' +
+        '<span class="detail-etf-weight">' + Number(e.weight).toFixed(2) + '%</span>' +
+      '</div>';
+    }).join('');
+
+    return '<div class="stock-card' + rankClass + '" onclick="toggleCard(\'' + detailId + '\')">' +
+      '<div class="card-top">' +
+        '<div class="card-badges">' +
+          '<span class="badge ' + badgeClass + '">#' + rank + '</span>' +
+          '<span class="badge badge-etf">' + s.etf_count + ' ETFs</span>' +
+          '<span class="badge badge-sector">' + esc(s.sector) + '</span>' +
+        '</div>' +
+        '<div class="card-main">' +
+          '<div class="card-identity">' +
+            '<div class="card-ticker">' + esc(s.ticker) + '</div>' +
+            '<div class="card-name">' + esc(s.full_name || s.name) + '</div>' +
+          '</div>' +
+          '<div class="card-price">' +
+            '<div class="price-value">' + fmtPrice(s.price) + '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card-metrics">' +
+        '<div class="metric"><div class="metric-label">Score</div><div class="metric-value">' + Math.round(s.score_normalized != null ? s.score_normalized : normalizeConsensus(s.score, conItems)) + '/100</div></div>' +
+        '<div class="metric"><div class="metric-label">Avg Weight</div><div class="metric-value">' + Number(s.avg_weight).toFixed(1) + '%</div></div>' +
+        '<div class="metric"><div class="metric-label">Mkt Cap</div><div class="metric-value">' + fmtCap(s.market_cap) + '</div></div>' +
+      '</div>' +
+      '<div class="card-etfs">' +
+        '<span class="card-etfs-label">Held by</span>' + etfPills +
+      '</div>' +
+      '<div class="card-expand-hint"><span class="hint-show">Click for details &#9662;</span><span class="hint-hide">&#9652; Collapse</span></div>' +
+      '<div class="card-detail" id="' + detailId + '">' +
+        '<div class="detail-row"><span class="detail-label">Consensus Score</span><span class="detail-val">' + Math.round(s.score_normalized != null ? s.score_normalized : normalizeConsensus(s.score, conItems)) + ' / 100</span></div>' +
+        '<div class="detail-row"><span class="detail-label">Total Weight Across ETFs</span><span class="detail-val">' + Number(s.total_weight).toFixed(1) + '%</span></div>' +
+        (s.pe ? '<div class="detail-row"><span class="detail-label">P/E Ratio</span><span class="detail-val">' + Number(s.pe).toFixed(1) + '</span></div>' : '') +
+        (chg1 != null ? '<div class="detail-row"><span class="detail-label">1yr Return</span><span class="detail-val ' + pctClass(chg1) + '">' + chg1Str + '</span></div>' : '') +
+        (chg != null ? '<div class="detail-row"><span class="detail-label">3yr Return</span><span class="detail-val ' + pctClass(chg) + '">' + chgStr + '</span></div>' : '') +
+        '<div class="detail-row"><span class="detail-label">Market Cap</span><span class="detail-val">' + fmtCap(s.market_cap) + '</span></div>' +
+        '<div class="detail-row"><span class="detail-label">Industry</span><span class="detail-val">' + esc(s.industry || s.sector) + '</span></div>' +
+        '<div class="detail-etfs">' +
+          '<div class="detail-etfs-title">ETF Holdings</div>' +
+          detailEtfs +
+        '</div>' +
+        '<a href="https://invest-the-analyst.onrender.com/?ticker=' + encodeURIComponent(s.ticker) + '" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive \u2192</a>' +
+      '</div>' +
+    '</div>';
+  }).join('') + '</div>';
+}
+
+// ── Render: Deep Value cards ─────────────────────────────────────────────────
+function renderDeepValueCards(items) {
+  if (!items || !items.length)
+    return '<div class="empty-state">No deep value picks available.</div>';
+
+  return '<div class="cards-grid">' + items.map(function(s, i) {
+    var detailId = 'dv-' + i;
+    var comp = s.composite_score || 0;
+    var grade, gradeClass, badgeClass;
+    if (comp >= 70) { grade = 'A'; gradeClass = 'grade-a'; badgeClass = 'badge-grade-a'; }
+    else if (comp >= 50) { grade = 'B'; gradeClass = 'grade-b'; badgeClass = 'badge-grade-b'; }
+    else { grade = 'Watch'; gradeClass = 'grade-w'; badgeClass = 'badge-grade-w'; }
+
+    var badges = '<span class="badge ' + badgeClass + '">Grade ' + grade + '</span>';
+    if (s.etf_count > 0) badges += '<span class="badge badge-etf">' + s.etf_count + ' ETF' + (s.etf_count > 1 ? 's' : '') + '</span>';
+    if (s.is_financial) badges += '<span class="badge badge-financial">Financial</span>';
+    badges += '<span class="badge badge-sector">' + esc(s.sector) + '</span>';
+
+    // Signals: show top 2 from each category
+    var signals = [];
+    (s.quality_signals || []).slice(0, 2).forEach(function(sig) { signals.push({text: sig, type: 'quality'}); });
+    (s.beaten_signals || []).slice(0, 2).forEach(function(sig) { signals.push({text: sig, type: 'beaten'}); });
+    (s.recovery_signals || []).slice(0, 1).forEach(function(sig) { signals.push({text: sig, type: 'recover'}); });
+
+    var signalHtml = signals.map(function(sig) {
+      return '<li class="signal-item"><span class="signal-dot ' + sig.type + '"></span>' + esc(sig.text) + '</li>';
+    }).join('');
+
+    var scorePct = Math.min(Math.round(comp), 100);
+
+    // Detail: all signals
+    var allSignals = '';
+    (s.quality_signals || []).forEach(function(sig) { allSignals += '<li class="signal-item"><span class="signal-dot quality"></span>' + esc(sig) + '</li>'; });
+    (s.beaten_signals || []).forEach(function(sig) { allSignals += '<li class="signal-item"><span class="signal-dot beaten"></span>' + esc(sig) + '</li>'; });
+    (s.recovery_signals || []).forEach(function(sig) { allSignals += '<li class="signal-item"><span class="signal-dot recover"></span>' + esc(sig) + '</li>'; });
+
+    var etfDetail = '';
+    if (s.etfs_holding && s.etfs_holding.length) {
+      etfDetail = '<div class="detail-etfs"><div class="detail-etfs-title">ETF Holdings</div>' +
+        s.etfs_holding.map(function(e) {
+          return '<div class="detail-etf-row"><span><span class="detail-etf-sym">' + esc(e.symbol) + '</span> <span class="detail-etf-provider">' + esc(e.provider) + '</span></span><span class="detail-etf-weight">' + Number(e.weight).toFixed(2) + '%</span></div>';
+        }).join('') + '</div>';
+    }
+
+    return '<div class="stock-card ' + gradeClass + '" onclick="toggleCard(\'' + detailId + '\')">' +
+      '<div class="card-top">' +
+        '<div class="card-badges">' + badges + '</div>' +
+        '<div class="card-main">' +
+          '<div class="card-identity">' +
+            '<div class="card-ticker">' + esc(s.ticker) + '</div>' +
+            '<div class="card-name">' + esc(s.name) + '</div>' +
+            '<div class="card-sector">' + esc(s.industry || '') + '</div>' +
+          '</div>' +
+          '<div class="card-price">' +
+            '<div class="price-value">' + fmtPrice(s.price) + '</div>' +
+            '<div class="price-change ' + changeClass(s.ytd_pct) + '">' + fmtPct(s.ytd_pct) + ' YTD</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="underdog-factor">' +
+        '<div class="uf-row">' +
+          '<span class="uf-label quality">Quality</span>' +
+          '<div class="uf-track"><div class="uf-fill quality" style="width:' + Math.min(s.quality_score || 0, 100) + '%"></div></div>' +
+          '<span class="uf-val">' + Math.round(s.quality_score || 0) + '</span>' +
+        '</div>' +
+        '<div class="uf-row">' +
+          '<span class="uf-label beaten">Value</span>' +
+          '<div class="uf-track"><div class="uf-fill beaten" style="width:' + Math.min(s.beaten_up_score || 0, 100) + '%"></div></div>' +
+          '<span class="uf-val">' + Math.round(s.beaten_up_score || 0) + '</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card-score-bar">' +
+        '<span class="score-label">Composite ' + Math.round(comp) + '/100</span>' +
+        '<div class="score-track"><div class="score-fill" style="width:' + scorePct + '%"></div></div>' +
+      '</div>' +
+      '<div class="card-signals"><ul class="signal-list">' + signalHtml + '</ul></div>' +
+      '<div class="card-expand-hint"><span class="hint-show">Click for details &#9662;</span><span class="hint-hide">&#9652; Collapse</span></div>' +
+      '<div class="card-detail" id="' + detailId + '">' +
+        '<div class="detail-row"><span class="detail-label">Composite Score</span><span class="detail-val">' + comp.toFixed(1) + '</span></div>' +
+        '<div class="detail-row"><span class="detail-label">Quality Score</span><span class="detail-val">' + (s.quality_score || 0) + ' / 100</span></div>' +
+        '<div class="detail-row"><span class="detail-label">Value / Beaten-Up Score</span><span class="detail-val">' + (s.beaten_up_score || 0) + ' / 100</span></div>' +
+        '<div class="detail-row"><span class="detail-label">Recovery Bonus</span><span class="detail-val">+' + (s.recovery_bonus || 0) + '</span></div>' +
+        '<div class="detail-row"><span class="detail-label">RSI (14d)</span><span class="detail-val">' + (s.rsi != null ? s.rsi.toFixed(1) : '\u2014') + '</span></div>' +
+        '<div class="detail-row"><span class="detail-label">52w Drawdown</span><span class="detail-val down">' + (s.drawdown_pct != null ? '-' + s.drawdown_pct.toFixed(1) + '%' : '\u2014') + '</span></div>' +
+        '<div class="detail-row"><span class="detail-label">Market Cap</span><span class="detail-val">' + fmtCap(s.market_cap) + '</span></div>' +
+        '<div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border-light)">' +
+          '<div style="font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px">All Signals</div>' +
+          '<ul class="signal-list">' + allSignals + '</ul>' +
+        '</div>' +
+        etfDetail +
+        '<a href="https://invest-the-analyst.onrender.com/?ticker=' + encodeURIComponent(s.ticker) + '" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive \u2192</a>' +
+      '</div>' +
+    '</div>';
+  }).join('') + '</div>';
+}
+
+// ── Render: ETF Scorecard table ──────────────────────────────────────────────
+function renderScorecard(etfs, comparisonEtfs, spyPerf) {
+  var all = (etfs || []).concat(comparisonEtfs || []);
+  if (!all.length)
+    return '<div class="empty-state">No ETF data available.</div>';
+
+  // Sort
+  var sorted = all.slice();
+  if (sortCol) {
+    sorted.sort(function(a, b) {
+      var av, bv;
+      switch (sortCol) {
+        case 'symbol': av = a.symbol; bv = b.symbol; return sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
+        case '1yr':    av = (a.performance||{})['1yr']||0; bv = (b.performance||{})['1yr']||0; break;
+        case '3yr':    av = (a.performance||{})['3yr']||0; bv = (b.performance||{})['3yr']||0; break;
+        case '5yr':    av = (a.performance||{})['5yr']||0; bv = (b.performance||{})['5yr']||0; break;
+        case 'delta':  av = a.delta_3yr||0; bv = b.delta_3yr||0; break;
+        case 'beats':  av = a.beats_spy_3yr?1:0; bv = b.beats_spy_3yr?1:0; break;
+        default: av = 0; bv = 0;
+      }
+      return sortAsc ? av - bv : bv - av;
+    });
+  }
+
+  function arrow(col) {
+    if (sortCol !== col) return '';
+    return '<span class="sort-arrow">' + (sortAsc ? '&#9650;' : '&#9660;') + '</span>';
+  }
+  function thClass(col) { return sortCol === col ? ' class="sorted"' : ''; }
+
+  // SPY benchmark row (pinned at top, not affected by sort)
+  var spyRow = '';
+  if (spyPerf) {
+    spyRow = '<tr class="sc-benchmark-row">' +
+      '<td><span class="sc-symbol" style="font-size:0.95rem">SPY</span></td>' +
+      '<td><span class="sc-name" style="color:var(--ink)">S&amp;P 500</span> <span class="sc-category">Benchmark</span></td>' +
+      '<td><span class="sc-provider">SPDR</span></td>' +
+      '<td><span class="sc-pct ' + pctClass(spyPerf['1yr']) + '">' + (spyPerf['1yr'] != null ? fmtPct(spyPerf['1yr']) : '\u2014') + '</span></td>' +
+      '<td><span class="sc-pct ' + pctClass(spyPerf['3yr']) + '">' + (spyPerf['3yr'] != null ? fmtPct(spyPerf['3yr']) : '\u2014') + '</span></td>' +
+      '<td><span class="sc-pct ' + pctClass(spyPerf['5yr']) + '">' + (spyPerf['5yr'] != null ? fmtPct(spyPerf['5yr']) : '\u2014') + '</span></td>' +
+      '<td><span class="sc-pct" style="color:var(--ink-3)">N/A</span></td>' +
+      '<td><span class="sc-beats na">N/A</span></td>' +
+    '</tr>';
+  }
+
+  // Main ETF rows
+  var rows = sorted.map(function(e) {
+    var p1 = (e.performance||{})['1yr'];
+    var p3 = (e.performance||{})['3yr'];
+    var p5 = (e.performance||{})['5yr'];
+    var isComp = e.comparison_only;
+    var catTag = isComp
+      ? '<span class="sc-comparison">comparison</span>'
+      : '<span class="sc-category">' + esc(e.category) + '</span>';
+    return '<tr' + (isComp ? ' style="opacity:0.8"' : '') + '>' +
+      '<td><span class="sc-symbol">' + esc(e.symbol) + '</span></td>' +
+      '<td><span class="sc-name">' + esc(e.name) + '</span> ' + catTag + '</td>' +
+      '<td><span class="sc-provider">' + esc(e.provider) + '</span></td>' +
+      '<td><span class="sc-pct ' + pctClass(p1) + '">' + (p1 != null ? fmtPct(p1) : '\u2014') + '</span></td>' +
+      '<td><span class="sc-pct ' + pctClass(p3) + '">' + (p3 != null ? fmtPct(p3) : '\u2014') + '</span></td>' +
+      '<td><span class="sc-pct ' + pctClass(p5) + '">' + (p5 != null ? fmtPct(p5) : '\u2014') + '</span></td>' +
+      '<td><span class="sc-pct ' + pctClass(e.delta_3yr) + '">' + (e.delta_3yr != null ? fmtPct(e.delta_3yr) : '\u2014') + '</span></td>' +
+      '<td><span class="sc-beats ' + (e.beats_spy_3yr ? 'yes' : 'no') + '">' + (e.beats_spy_3yr ? 'Beats SPY' : 'Trails') + '</span></td>' +
+    '</tr>';
+  }).join('');
+
+  return '<div class="scorecard-wrap"><table class="scorecard-table">' +
+    '<thead><tr>' +
+      '<th onclick="sortTable(\'symbol\')"' + thClass('symbol') + '>Symbol' + arrow('symbol') + '</th>' +
+      '<th>Name</th>' +
+      '<th>Provider</th>' +
+      '<th onclick="sortTable(\'1yr\')"' + thClass('1yr') + '>1yr' + arrow('1yr') + '</th>' +
+      '<th onclick="sortTable(\'3yr\')"' + thClass('3yr') + '>3yr' + arrow('3yr') + '</th>' +
+      '<th onclick="sortTable(\'5yr\')"' + thClass('5yr') + '>5yr' + arrow('5yr') + '</th>' +
+      '<th onclick="sortTable(\'delta\')"' + thClass('delta') + '>vs SPY (3yr)' + arrow('delta') + '</th>' +
+      '<th onclick="sortTable(\'beats\')"' + thClass('beats') + '>3yr SPY' + arrow('beats') + '</th>' +
+    '</tr></thead>' +
+    '<tbody>' + spyRow + rows + '</tbody>' +
+  '</table></div>';
+}
+
+function sortTable(col) {
+  if (sortCol === col) { sortAsc = !sortAsc; }
+  else { sortCol = col; sortAsc = col === 'symbol'; }
+  renderAll();
+}
+
+// ── Render all ───────────────────────────────────────────────────────────────
+// ── Legends ──────────────────────────────────────────────────────────────────
+var LEGEND_CONSENSUS =
+  '<div class="legend-box">' +
+    '<div class="legend-title">Understanding the Results</div>' +
+    '<div class="legend-grid">' +
+      '<div class="legend-section" style="margin-top:0;padding-top:0;border-top:none">Scoring</div>' +
+      '<div class="legend-item"><strong>Consensus Score (0-100)</strong> &mdash; How broadly agreed-upon a stock is across top growth ETFs. Higher = more ETFs hold it at higher weights.</div>' +
+      '<div class="legend-item"><strong>ETF Count</strong> &mdash; Number of ETFs (out of 10) that hold this stock. More ETFs = stronger consensus.</div>' +
+      '<div class="legend-item"><strong>Avg Weight</strong> &mdash; Average allocation percentage across the ETFs that hold this stock. Higher weight = stronger conviction.</div>' +
+      '<div class="legend-section">Fundamentals</div>' +
+      '<div class="legend-item"><strong>P/E Ratio</strong> &mdash; Price-to-Earnings. How much investors pay per dollar of earnings. Lower can mean cheaper, but varies by sector.</div>' +
+      '<div class="legend-item"><strong>Market Cap</strong> &mdash; Total market value of the company. T = trillion, B = billion, M = million.</div>' +
+      '<div class="legend-item"><strong>3yr Return</strong> &mdash; Total stock price return over the past 3 years.</div>' +
+    '</div>' +
+  '</div>';
+
+var LEGEND_DEEPVALUE =
+  '<div class="legend-box">' +
+    '<div class="legend-title">Understanding the Results</div>' +
+    '<div class="legend-grid">' +
+      '<div class="legend-section" style="margin-top:0;padding-top:0;border-top:none">The Underdog Factor</div>' +
+      '<div class="legend-item"><strong>Quality Score (0-100)</strong> &mdash; Fundamental business strength: gross margin, operating margin, ROE, revenue growth, free cash flow, debt levels, and ETF consensus.</div>' +
+      '<div class="legend-item"><strong>Beaten-Up Score (0-100)</strong> &mdash; How far the stock has fallen: 52-week drawdown, YTD loss, RSI oversold reading, and price below 200-day moving average.</div>' +
+      '<div class="legend-item"><strong>Recovery Bonus (0-30)</strong> &mdash; Catalysts suggesting a rebound: insider buying, recent earnings beats, and price stabilization.</div>' +
+      '<div class="legend-item"><strong>Composite Score</strong> &mdash; Quality &times; 45% + Beaten-Up &times; 40% + Recovery Bonus. The best underdogs score high on both quality AND beaten-up.</div>' +
+      '<div class="legend-section">Key Metrics</div>' +
+      '<div class="legend-item"><strong>RSI (14d)</strong> &mdash; Relative Strength Index. Below 30 = oversold (potentially a buying opportunity). Above 70 = overbought.</div>' +
+      '<div class="legend-item"><strong>52w Drawdown</strong> &mdash; How far the stock has dropped from its 52-week high. Larger drawdowns = more beaten-up.</div>' +
+      '<div class="legend-item"><strong>YTD</strong> &mdash; Year-to-date return. Shows how much the stock has gained or lost this calendar year.</div>' +
+      '<div class="legend-item"><strong>Gross Margin</strong> &mdash; Revenue minus cost of goods, as a %. High margins mean pricing power and profitability.</div>' +
+      '<div class="legend-item"><strong>ROE</strong> &mdash; Return on Equity. How efficiently a company turns shareholder equity into profit. &gt;15% is strong.</div>' +
+      '<div class="legend-section">Grades</div>' +
+      '<div class="legend-item"><strong style="color:var(--green)">Grade A</strong> (Composite &ge; 70) &mdash; High-quality company with significant price damage. Strong underdog candidate.</div>' +
+      '<div class="legend-item"><strong style="color:var(--teal)">Grade B</strong> (Composite &ge; 50) &mdash; Solid fundamentals with moderate price pressure. Worth watching.</div>' +
+      '<div class="legend-item"><strong style="color:var(--orange)">Watch</strong> (Composite &lt; 50) &mdash; On the radar but either quality or beaten-up score needs to be stronger.</div>' +
+    '</div>' +
+  '</div>';
+
+var LEGEND_SCORECARD =
+  '<div class="legend-box">' +
+    '<div class="legend-title">Understanding the Scorecard</div>' +
+    '<div class="legend-grid">' +
+      '<div class="legend-item"><strong>Core ETFs</strong> &mdash; The 10 growth ETFs used to find consensus stock picks. Their holdings drive the Consensus Picks tab.</div>' +
+      '<div class="legend-item"><strong>Comparison ETFs</strong> &mdash; Additional ETFs shown for benchmarking (value, dividend, international, etc.). Not used for stock overlap scoring.</div>' +
+      '<div class="legend-item"><strong>vs SPY (3yr)</strong> &mdash; How much the ETF outperformed or underperformed SPY over 3 years. Positive = beat the S&amp;P 500.</div>' +
+      '<div class="legend-item"><strong>SPY (benchmark row)</strong> &mdash; The S&amp;P 500 baseline. ETFs above this row outperformed the broad market.</div>' +
+    '</div>' +
+  '</div>';
+
+function renderAll() {
+  var mainEl = document.getElementById('main');
+  var conItems = consensusData ? (consensusData.top_10 || []) : [];
+  var dvItems = deepValueData ? (deepValueData.nominees || []) : [];
+  var etfs = consensusData ? (consensusData.etfs || []) : [];
+  var compEtfs = consensusData ? (consensusData.etfs_comparison || []) : [];
+  var spyPerf = consensusData ? consensusData.spy_perf : null;
+  var totalEtfs = etfs.length + compEtfs.length;
+
+  mainEl.innerHTML =
+    '<div class="tab-bar">' +
+      '<button class="tab-btn' + (currentTab === 'consensus' ? ' active' : '') + '" data-tab="consensus" onclick="switchTab(\'consensus\')">Consensus Picks<span class="tab-badge">' + conItems.length + '</span></button>' +
+      '<button class="tab-btn' + (currentTab === 'deepvalue' ? ' active' : '') + '" data-tab="deepvalue" onclick="switchTab(\'deepvalue\')">Deep Value<span class="tab-badge">' + dvItems.length + '</span></button>' +
+      '<button class="tab-btn' + (currentTab === 'scorecard' ? ' active' : '') + '" data-tab="scorecard" onclick="switchTab(\'scorecard\')">ETF Scorecard<span class="tab-badge">' + totalEtfs + '</span></button>' +
+    '</div>' +
+
+    '<div class="tab-panel' + (currentTab === 'consensus' ? ' active' : '') + '" id="panel-consensus">' +
+      '<div class="section-header">' +
+        '<h2 class="section-title">Consensus Picks</h2>' +
+        '<span class="section-subtitle">Stocks held across the top growth ETFs</span>' +
+      '</div>' +
+      renderConsensusCards(conItems) +
+      LEGEND_CONSENSUS +
+    '</div>' +
+
+    '<div class="tab-panel' + (currentTab === 'deepvalue' ? ' active' : '') + '" id="panel-deepvalue">' +
+      '<div class="section-header">' +
+        '<h2 class="section-title">Deep Value</h2>' +
+        '<span class="section-subtitle">Quality companies at beaten-up prices</span>' +
+      '</div>' +
+      renderDeepValueCards(dvItems) +
+      LEGEND_DEEPVALUE +
+    '</div>' +
+
+    '<div class="tab-panel' + (currentTab === 'scorecard' ? ' active' : '') + '" id="panel-scorecard">' +
+      '<div class="section-header">' +
+        '<h2 class="section-title">ETF Scorecard</h2>' +
+        '<span class="section-subtitle">' + etfs.length + ' core ETFs + ' + compEtfs.length + ' comparison, benchmarked against SPY</span>' +
+      '</div>' +
+      renderScorecard(etfs, compEtfs, spyPerf) +
+      LEGEND_SCORECARD +
+    '</div>';
+}
+
+// ── Load data ────────────────────────────────────────────────────────────────
+var loaded = 0;
+function checkReady() {
+  loaded++;
+  if (loaded >= 2) {
+    document.getElementById('loading').remove();
+
+    // Sidebar stats
+    var conItems = consensusData ? (consensusData.top_10 || []) : [];
+    var dvItems = deepValueData ? (deepValueData.nominees || []) : [];
+    var etfs = consensusData ? (consensusData.etfs || []) : [];
+    var compEtfs = consensusData ? (consensusData.etfs_comparison || []) : [];
+    document.getElementById('sb-consensus').textContent = conItems.length;
+    document.getElementById('sb-deepvalue').textContent = dvItems.length;
+    document.getElementById('sb-etfs').textContent = etfs.length + compEtfs.length;
+
+    // Scan time: show most recent
+    var times = [];
+    if (consensusData && consensusData.scanned_at) times.push(new Date(consensusData.scanned_at));
+    if (deepValueData && deepValueData.scanned_at) times.push(new Date(deepValueData.scanned_at));
+    if (times.length) {
+      times.sort(function(a,b) { return b - a; });
+      document.getElementById('sidebar-scan-time').textContent = fmtScanTime(times[0].toISOString());
+    }
+
+    renderAll();
+  }
+}
+
+fetch('data/consensus.json')
+  .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(function(d) { consensusData = d; checkReady(); })
+  .catch(function() { consensusData = {}; checkReady(); });
+
+fetch('data/deep_value.json')
+  .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(function(d) { deepValueData = d; checkReady(); })
+  .catch(function() { deepValueData = {}; checkReady(); });
+</script>
+</body>
+</html>

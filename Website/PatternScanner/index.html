@@ -427,6 +427,22 @@
   }
   .card-detail.open { display: block; }
 
+  .deep-dive-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #38bda6;
+    border: 1px solid #38bda6;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .deep-dive-link:hover { background: #38bda6; color: #fff; }
+
   .detail-row {
     display: flex;
     justify-content: space-between;
@@ -509,10 +525,9 @@
         </a>
         <ul class="site-dropdown">
           <li><a href="https://invest-movers-shakers.onrender.com">Movers and Shakers</a></li>
-          <li><a href="https://invest-tried-true.onrender.com">Tried and True</a></li>
-          <li><a href="https://invest-the-analyst.onrender.com" style="display:none">The Analyst</a></li>
+          <li><a href="https://invest-the-marathon.onrender.com">The Marathon</a></li>
+          <li><a href="https://invest-the-analyst.onrender.com">The Analyst</a></li>
           <li><a href="https://invest-insider-buying.onrender.com">Insider Buying</a></li>
-          <li><a href="https://invest-underdogs.onrender.com">The Underdogs</a></li>
           <li><a href="https://invest-patterns.onrender.com" class="active">Pattern Scanner</a></li>
         </ul>
       </li>
@@ -858,6 +873,7 @@
         '<div class="detail-row"><span class="detail-label">Week change</span><span class="detail-val">' + weekChange + '</span></div>' +
         '<div class="detail-row"><span class="detail-label">Pattern</span><span class="detail-val">' + escHtml(s.pattern) + '</span></div>' +
         allSignalsHtml +
+        '<a href="https://invest-the-analyst.onrender.com/?ticker=' + encodeURIComponent(s.ticker) + '" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive \u2192</a>' +
       '</div>' +
     '</div>';
   }

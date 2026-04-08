@@ -39,7 +39,7 @@ FINANCIAL_SECTORS = {'financial services', 'financials', 'finance', 'banks', 'in
 # Minimum thresholds to qualify
 MIN_QUALITY_SCORE   = 30
 MIN_BEATEN_UP_SCORE = 20
-TOP_N               = 10
+TOP_N               = 12
 
 
 # ── ETF Holdings ──────────────────────────────────────────────────────────────

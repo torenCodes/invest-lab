@@ -55,10 +55,9 @@
           <a href="#dashboards" class="nav-link">Dashboards <span class="nav-chevron">▾</span></a>
           <ul class="nav-dropdown">
             <li><a href="https://invest-movers-shakers.onrender.com" class="nav-dropdown-link">Movers and Shakers</a></li>
-            <li><a href="https://invest-tried-true.onrender.com" class="nav-dropdown-link">Tried and True</a></li>
-            <li><a href="https://invest-the-analyst.onrender.com" class="nav-dropdown-link" style="display:none">The Analyst</a></li>
+            <li><a href="https://invest-the-marathon.onrender.com" class="nav-dropdown-link">The Marathon</a></li>
+            <li><a href="https://invest-the-analyst.onrender.com" class="nav-dropdown-link">The Analyst</a></li>
             <li><a href="https://invest-insider-buying.onrender.com" class="nav-dropdown-link">Insider Buying</a></li>
-            <li><a href="https://invest-underdogs.onrender.com" class="nav-dropdown-link">The Underdogs</a></li>
             <li><a href="https://invest-patterns.onrender.com" class="nav-dropdown-link">Pattern Scanner</a></li>
           </ul>
         </li>
@@ -188,7 +187,7 @@
           <h2 class="section-title">Underdogs Snapshot</h2>
           <p class="preview-ts-line">From the latest Underdogs scan — <span id="ud-ts">loading…</span></p>
         </div>
-        <a href="https://invest-underdogs.onrender.com" class="preview-all-link">Full dashboard →</a>
+        <a href="https://invest-the-marathon.onrender.com" class="preview-all-link">Full dashboard →</a>
       </div>
       <div class="preview-grid">
         <div class="preview-card" id="ud-1"></div>
@@ -232,24 +231,24 @@
               <span class="dashboard-card-arrow">→</span>
             </a>
 
-            <a href="https://invest-tried-true.onrender.com" class="dashboard-card">
-              <div class="dashboard-card-icon">♛</div>
+            <a href="https://invest-the-marathon.onrender.com" class="dashboard-card">
+              <div class="dashboard-card-icon">🏃</div>
               <div class="dashboard-card-body">
-                <h3 class="dashboard-card-title">Tried and True</h3>
+                <h3 class="dashboard-card-title">The Marathon</h3>
                 <p class="dashboard-card-desc">
-                  Scans top growth ETFs and surfaces the 10 stocks with the strongest
-                  cross-ETF consensus. Includes fund performance vs SPY.
+                  Long-term investing thesis combining ETF consensus picks and beaten-down
+                  quality stocks. Includes ETF scorecard vs SPY.
                 </p>
                 <div class="dashboard-card-tags">
                   <span class="tag">Buy &amp; Hold</span>
-                  <span class="tag">ETF Overlap</span>
-                  <span class="tag">Growth</span>
+                  <span class="tag">Deep Value</span>
+                  <span class="tag">ETF Scorecard</span>
                 </div>
               </div>
               <span class="dashboard-card-arrow">→</span>
             </a>
 
-            <a href="https://invest-the-analyst.onrender.com" class="dashboard-card" style="display:none">
+            <a href="https://invest-the-analyst.onrender.com" class="dashboard-card">
               <div class="dashboard-card-icon">🔬</div>
               <div class="dashboard-card-body">
                 <h3 class="dashboard-card-title">The Analyst</h3>
@@ -277,23 +276,6 @@
                   <span class="tag">Cluster Buys</span>
                   <span class="tag">C-Suite</span>
                   <span class="tag">Smart Money</span>
-                </div>
-              </div>
-              <span class="dashboard-card-arrow">→</span>
-            </a>
-
-            <a href="https://invest-underdogs.onrender.com" class="dashboard-card">
-              <div class="dashboard-card-icon">🥊</div>
-              <div class="dashboard-card-body">
-                <h3 class="dashboard-card-title">The Underdogs</h3>
-                <p class="dashboard-card-desc">
-                  High-quality companies with beaten-up prices. Scores quality, drawdown, RSI,
-                  and recovery signals from ETFs like QUAL, MOAT, and COWZ.
-                </p>
-                <div class="dashboard-card-tags">
-                  <span class="tag">Quality</span>
-                  <span class="tag">Drawdown</span>
-                  <span class="tag">Value</span>
                 </div>
               </div>
               <span class="dashboard-card-arrow">→</span>
@@ -334,7 +316,10 @@
 
         <!-- SIDEBAR: Blog -->
         <div class="broadsheet-side" id="blog">
-          <div class="broadsheet-side-title">Research Blog</div>
+          <div class="section-header">
+            <h2 class="section-title">Research Blog</h2>
+            <p class="section-sub">Deep dives into market trends.</p>
+          </div>
 
           <div class="blog-sidebar-stack">
             <a href="blog.html?post=optical-ai-infrastructure" class="blog-card blog-card--sidebar">
@@ -502,7 +487,7 @@
       (signals.length ? '<ul class="pv-signals">' +
         signals.map(function (s) { return '<li>' + s + '</li>'; }).join('') +
         '</ul>' : '') +
-      (stock.score ? '<div class="pv-score"><span class="pv-score-label">Score</span> <span class="pv-score-val">' + stock.score + '</span></div>' : '') +
+      (stock.score ? '<div class="pv-score"><span class="pv-score-label">Score</span> <span class="pv-score-val">' + (stock.score_normalized != null ? stock.score_normalized : Math.min(Math.round(stock.score / 63 * 100), 100)) + '</span></div>' : '') +
       cta(ctaLabel);
   }
 
@@ -597,8 +582,8 @@
 
 <script>
 (function () {
-  var DATA_URL = 'https://invest-underdogs.onrender.com/data/results.json';
-  var DASH_URL = 'https://invest-underdogs.onrender.com';
+  var DATA_URL = 'https://invest-the-marathon.onrender.com/data/deep_value.json';
+  var DASH_URL = 'https://invest-the-marathon.onrender.com';
 
   function showSkeletons() {
     ['ud-1', 'ud-2', 'ud-3', 'ud-4'].forEach(function (id) {
@@ -707,10 +692,11 @@
 
   var DASH_URLS = {
     'movers':     'https://invest-movers-shakers.onrender.com',
-    'underdogs':  'https://invest-underdogs.onrender.com',
+    'underdogs':  'https://invest-the-marathon.onrender.com',
     'insider':    'https://invest-insider-buying.onrender.com',
-    'tried-true': 'https://invest-tried-true.onrender.com',
-    'patterns':   'https://invest-patterns.onrender.com'
+    'tried-true': 'https://invest-the-marathon.onrender.com',
+    'patterns':   'https://invest-patterns.onrender.com',
+    'marathon':   'https://invest-the-marathon.onrender.com'
   };
 
   function nomineeCard(n) {
@@ -798,7 +784,10 @@
 
   function timeAgo(isoStr) {
     if (!isoStr) return '';
-    var diff = (Date.now() - new Date(isoStr).getTime()) / 3600000;
+    var ts = (typeof isoStr === 'number' || /^\d+$/.test(isoStr))
+      ? new Date(Number(isoStr) * 1000)   // Unix seconds → ms
+      : new Date(isoStr);
+    var diff = (Date.now() - ts.getTime()) / 3600000;
     if (diff < 1) return Math.round(diff * 60) + 'm ago';
     if (diff < 24) return Math.round(diff) + 'h ago';
     return Math.round(diff / 24) + 'd ago';

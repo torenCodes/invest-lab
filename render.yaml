@@ -32,3 +32,15 @@ services:
     rootDir: Website/Underdogs
     staticPublishPath: .
     buildCommand: ""
+
+  - type: static
+    name: invest-the-marathon
+    rootDir: Website/TheMarathon
+    staticPublishPath: .
+    buildCommand: ""
+
+  - type: static
+    name: invest-patterns
+    rootDir: Website/PatternScanner
+    staticPublishPath: .
+    buildCommand: ""

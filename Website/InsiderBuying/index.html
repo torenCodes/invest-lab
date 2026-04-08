@@ -280,8 +280,8 @@
   /* ── Cards grid ───────────────────────────────────────────────────────────── */
   .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 18px;
   }
 
   /* ── Stock card base ──────────────────────────────────────────────────────── */
@@ -292,6 +292,7 @@
     overflow: hidden;
     transition: transform 0.15s, box-shadow 0.15s;
     box-shadow: var(--shadow-sm);
+    cursor: pointer;
   }
   .stock-card:hover {
     transform: translateY(-2px);
@@ -401,18 +402,77 @@
   .metric-value.up   { color: var(--green); }
   .metric-value.down { color: var(--red);   }
 
-  /* ── Insider list (cluster cards) ──────────────────────────────────────────── */
-  .insider-list {
-    padding: 0 18px 14px;
+  /* ── Card expand hint ──────────────────────────────────────────────────────── */
+  .card-expand-hint {
+    padding: 6px 18px 10px;
+    font-size: 0.68rem;
+    color: var(--ink-3);
+    text-align: center;
+    letter-spacing: 0.04em;
+    transition: color 0.15s;
   }
+  .stock-card:hover .card-expand-hint { color: var(--accent); }
+  .stock-card.open .card-expand-hint .hint-show { display: none; }
+  .stock-card .card-expand-hint .hint-hide { display: none; }
+  .stock-card.open .card-expand-hint .hint-hide { display: inline; }
+
+  /* ── Expandable detail panel ─────────────────────────────────────────────── */
+  .card-detail {
+    display: none;
+    border-top: 1px solid var(--border-light);
+    padding: 14px 18px 16px;
+    background: var(--surface-2);
+  }
+  .card-detail.open { display: block; }
+
+  .deep-dive-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #38bda6;
+    border: 1px solid #38bda6;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .deep-dive-link:hover { background: #38bda6; color: #fff; }
+
+  /* ── Detail rows (shared) ────────────────────────────────────────────────── */
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.8rem;
+  }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-label {
+    font-size: 0.72rem;
+    color: var(--ink-3);
+  }
+  .detail-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink);
+    font-weight: 500;
+    text-align: right;
+  }
+
+  /* ── Insider rows (inside detail panel) ──────────────────────────────────── */
   .insider-list-label {
     font-size: 0.62rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink-3);
-    padding: 10px 0 6px;
-    border-top: 1px solid var(--border-light);
+    padding: 0 0 6px;
+    margin-bottom: 4px;
   }
   .insider-row {
     display: flex;
@@ -427,25 +487,6 @@
   .insider-name  { color: var(--ink); font-weight: 500; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .insider-title { color: var(--ink-3); font-size: 0.72rem; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .insider-val   { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--accent); font-weight: 500; white-space: nowrap; }
-
-  /* ── Transaction detail footer (C-suite / big money cards) ─────────────────── */
-  .card-detail {
-    padding: 10px 18px 14px;
-    border-top: 1px solid var(--border-light);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 14px;
-    font-size: 0.75rem;
-    color: var(--ink-2);
-  }
-  .detail-item { display: flex; align-items: center; gap: 4px; }
-  .detail-label {
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-  }
 
   /* ── Recent feed table ──────────────────────────────────────────────────────── */
   .feed-wrap {
@@ -588,10 +629,9 @@
         <a href="https://theinvestlab.com/#dashboards" class="site-nav-link active">Dashboards <span class="site-nav-chevron">▾</span></a>
         <ul class="site-dropdown">
           <li><a href="https://invest-movers-shakers.onrender.com" class="site-dropdown-link">Movers and Shakers</a></li>
-          <li><a href="https://invest-tried-true.onrender.com" class="site-dropdown-link">Tried and True</a></li>
-          <li><a href="https://invest-the-analyst.onrender.com" class="site-dropdown-link" style="display:none">The Analyst</a></li>
+          <li><a href="https://invest-the-marathon.onrender.com" class="site-dropdown-link">The Marathon</a></li>
+          <li><a href="https://invest-the-analyst.onrender.com" class="site-dropdown-link">The Analyst</a></li>
           <li><a href="https://invest-insider-buying.onrender.com" class="site-dropdown-link active">Insider Buying</a></li>
-          <li><a href="https://invest-underdogs.onrender.com" class="site-dropdown-link">The Underdogs</a></li>
           <li><a href="https://invest-patterns.onrender.com" class="site-dropdown-link">Pattern Scanner</a></li>
         </ul>
       </li>
@@ -714,12 +754,22 @@ function titleShort(t) {
   return t.length > 15 ? t.slice(0,15) + '…' : t;
 }
 
+// ── Toggle expand ─────────────────────────────────────────────────────────────
+function toggleCard(id) {
+  var el = document.getElementById(id);
+  if (el) {
+    el.classList.toggle('open');
+    el.closest('.stock-card').classList.toggle('open');
+  }
+}
+
 // ── Cluster Buys ──────────────────────────────────────────────────────────────
 function renderClusterBuys(items) {
   if (!items || !items.length)
     return '<div class="empty-state">No cluster buys found in this window.</div>';
 
-  return '<div class="cards-grid">' + items.map(c => {
+  return '<div class="cards-grid">' + items.map((c, i) => {
+    const detailId = 'cluster-' + i;
     const insiderRows = c.insiders.map(ins => `
       <div class="insider-row">
         <span class="insider-name">${esc(ins.name)}</span>
@@ -728,7 +778,7 @@ function renderClusterBuys(items) {
       </div>`).join('');
 
     return `
-    <div class="stock-card">
+    <div class="stock-card" onclick="toggleCard('${detailId}')">
       <div class="card-top">
         <div class="card-header">
           <div>
@@ -760,9 +810,11 @@ function renderClusterBuys(items) {
           <div class="metric-value">${c.insider_count}</div>
         </div>
       </div>
-      <div class="insider-list">
+      <div class="card-expand-hint"><span class="hint-show">Click to see buyers ▾</span><span class="hint-hide">▴ Collapse</span></div>
+      <div class="card-detail" id="${detailId}">
         <div class="insider-list-label">Who Bought</div>
         ${insiderRows}
+        <a href="https://invest-the-analyst.onrender.com/?ticker=${encodeURIComponent(c.ticker)}" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive \u2192</a>
       </div>
     </div>`;
   }).join('') + '</div>';
@@ -773,11 +825,12 @@ function renderCsuite(items) {
   if (!items || !items.length)
     return '<div class="empty-state">No C-suite purchases found in this window.</div>';
 
-  return '<div class="cards-grid">' + items.map(c => {
+  return '<div class="cards-grid">' + items.map((c, i) => {
+    const detailId = 'csuite-' + i;
     const multiTag = c.txn_count > 1
       ? `<span class="tag tag-multi">${c.txn_count}x purchases</span>` : '';
     return `
-    <div class="stock-card">
+    <div class="stock-card" onclick="toggleCard('${detailId}')">
       <div class="card-top">
         <div class="card-header">
           <div>
@@ -810,10 +863,14 @@ function renderCsuite(items) {
           <div class="metric-value">${fmtCap(c.market_cap)}</div>
         </div>
       </div>
-      <div class="card-detail">
-        <span class="detail-item"><span class="detail-label">Buyer</span> ${esc(c.insider)}</span>
-        <span class="detail-item"><span class="detail-label">Date</span> ${esc(c.date)}</span>
-        <span class="detail-item"><span class="detail-label">Shares</span> ${c.qty.toLocaleString()}</span>
+      <div class="card-expand-hint"><span class="hint-show">Click for details ▾</span><span class="hint-hide">▴ Collapse</span></div>
+      <div class="card-detail" id="${detailId}">
+        <div class="detail-row"><span class="detail-label">Buyer</span><span class="detail-val">${esc(c.insider)}</span></div>
+        <div class="detail-row"><span class="detail-label">Title</span><span class="detail-val">${esc(c.title)}</span></div>
+        <div class="detail-row"><span class="detail-label">Date</span><span class="detail-val">${esc(c.date)}</span></div>
+        <div class="detail-row"><span class="detail-label">Shares</span><span class="detail-val">${c.qty.toLocaleString()}</span></div>
+        <div class="detail-row"><span class="detail-label">Industry</span><span class="detail-val">${esc(c.industry || c.sector)}</span></div>
+        <a href="https://invest-the-analyst.onrender.com/?ticker=${encodeURIComponent(c.ticker)}" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive \u2192</a>
       </div>
     </div>`;
   }).join('') + '</div>';
@@ -824,13 +881,14 @@ function renderBigMoney(items) {
   if (!items || !items.length)
     return '<div class="empty-state">No large purchases found in this window.</div>';
 
-  return '<div class="cards-grid">' + items.map(c => {
+  return '<div class="cards-grid">' + items.map((c, i) => {
+    const detailId = 'big-' + i;
     const csuiteTag = c.is_csuite
       ? `<span class="tag tag-csuite">${esc(titleShort(c.title))}</span>` : '';
     const multiTag = c.txn_count > 1
       ? `<span class="tag tag-multi">${c.txn_count}x purchases</span>` : '';
     return `
-    <div class="stock-card">
+    <div class="stock-card" onclick="toggleCard('${detailId}')">
       <div class="card-top">
         <div class="card-header">
           <div>
@@ -863,10 +921,14 @@ function renderBigMoney(items) {
           <div class="metric-value">${fmtCap(c.market_cap)}</div>
         </div>
       </div>
-      <div class="card-detail">
-        <span class="detail-item"><span class="detail-label">Buyer</span> ${esc(c.insider)}</span>
-        <span class="detail-item"><span class="detail-label">Title</span> ${esc(c.title)}</span>
-        <span class="detail-item"><span class="detail-label">Date</span> ${esc(c.date)}</span>
+      <div class="card-expand-hint"><span class="hint-show">Click for details ▾</span><span class="hint-hide">▴ Collapse</span></div>
+      <div class="card-detail" id="${detailId}">
+        <div class="detail-row"><span class="detail-label">Buyer</span><span class="detail-val">${esc(c.insider)}</span></div>
+        <div class="detail-row"><span class="detail-label">Title</span><span class="detail-val">${esc(c.title)}</span></div>
+        <div class="detail-row"><span class="detail-label">Date</span><span class="detail-val">${esc(c.date)}</span></div>
+        <div class="detail-row"><span class="detail-label">Shares</span><span class="detail-val">${c.qty.toLocaleString()}</span></div>
+        <div class="detail-row"><span class="detail-label">Industry</span><span class="detail-val">${esc(c.industry || c.sector)}</span></div>
+        <a href="https://invest-the-analyst.onrender.com/?ticker=${encodeURIComponent(c.ticker)}" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive \u2192</a>
       </div>
     </div>`;
   }).join('') + '</div>';

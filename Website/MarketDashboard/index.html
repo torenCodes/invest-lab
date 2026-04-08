@@ -403,6 +403,22 @@
   }
   .card-detail.open { display: block; }
 
+  .deep-dive-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #38bda6;
+    border: 1px solid #38bda6;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .deep-dive-link:hover { background: #38bda6; color: #fff; }
+
   @keyframes slideDown {
     from { opacity: 0; transform: translateY(-6px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -1001,10 +1017,9 @@
         <a href="https://theinvestlab.com/#dashboards" class="site-nav-link active">Dashboards <span class="site-nav-chevron">▾</span></a>
         <ul class="site-dropdown">
           <li><a href="https://invest-movers-shakers.onrender.com" class="site-dropdown-link active">Movers and Shakers</a></li>
-          <li><a href="https://invest-tried-true.onrender.com" class="site-dropdown-link">Tried and True</a></li>
-          <li><a href="https://invest-the-analyst.onrender.com" class="site-dropdown-link" style="display:none">The Analyst</a></li>
+          <li><a href="https://invest-the-marathon.onrender.com" class="site-dropdown-link">The Marathon</a></li>
+          <li><a href="https://invest-the-analyst.onrender.com" class="site-dropdown-link">The Analyst</a></li>
           <li><a href="https://invest-insider-buying.onrender.com" class="site-dropdown-link">Insider Buying</a></li>
-          <li><a href="https://invest-underdogs.onrender.com" class="site-dropdown-link">The Underdogs</a></li>
           <li><a href="https://invest-patterns.onrender.com" class="site-dropdown-link">Pattern Scanner</a></li>
         </ul>
       </li>
@@ -1275,6 +1290,7 @@ function renderStockCard(stock, type, idx) {
         ${planText}
       </div>
       ${renderEarningsCallout(stock)}
+      <a href="https://invest-the-analyst.onrender.com/?ticker=${encodeURIComponent(stock.ticker)}" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive \u2192</a>
     </div>
   </div>`;
 }

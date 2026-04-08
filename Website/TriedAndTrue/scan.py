@@ -33,6 +33,22 @@ ETF_UNIVERSE = [
     {'symbol': 'BGRWX', 'name': 'Growth Fund',            'provider': 'Baron',    'category': 'Active Growth'},
 ]
 
+# Comparison-only ETFs: shown in the scorecard table but NOT used for stock overlap scoring.
+ETF_COMPARISON = [
+    {'symbol': 'SCHD',  'name': 'US Dividend Equity',     'provider': 'Schwab',   'category': 'Dividend'},
+    {'symbol': 'DGRO',  'name': 'Dividend Growth',        'provider': 'iShares',  'category': 'Dividend Growth'},
+    {'symbol': 'VIG',   'name': 'Dividend Appreciation',  'provider': 'Vanguard', 'category': 'Dividend Growth'},
+    {'symbol': 'VTV',   'name': 'Value ETF',              'provider': 'Vanguard', 'category': 'Large-Cap Value'},
+    {'symbol': 'VXUS',  'name': 'Total Intl Stock',       'provider': 'Vanguard', 'category': 'International'},
+    {'symbol': 'VTI',   'name': 'Total Stock Market',     'provider': 'Vanguard', 'category': 'Total Market'},
+    {'symbol': 'ARKK',  'name': 'Innovation ETF',         'provider': 'ARK',      'category': 'Thematic Growth'},
+    {'symbol': 'VOO',   'name': 'S&P 500 ETF',            'provider': 'Vanguard', 'category': 'S&P 500'},
+    {'symbol': 'DIA',   'name': 'Dow Jones Industrial',   'provider': 'SPDR',     'category': 'Blue Chip'},
+    {'symbol': 'JEPI',  'name': 'Equity Premium Income',  'provider': 'JPMorgan', 'category': 'Income'},
+    {'symbol': 'JEPQ',  'name': 'Nasdaq Equity Premium',  'provider': 'JPMorgan', 'category': 'Income Growth'},
+    {'symbol': 'RSP',   'name': 'S&P 500 Equal Weight',   'provider': 'Invesco',  'category': 'Equal Weight'},
+]
+
 SPY = 'SPY'
 
 
@@ -211,6 +227,36 @@ def run():
 
         time.sleep(1.0)
 
+    # Comparison ETFs (scorecard only — no stock overlap)
+    print("[scan.py] Scanning comparison ETFs for scorecard...")
+    comparison_results = []
+    for i, etf in enumerate(ETF_COMPARISON):
+        sym = etf['symbol']
+        print(f"[scan.py] Comparison {sym} ({i+1}/{len(ETF_COMPARISON)})...")
+        t    = yf.Ticker(sym)
+        perf = {
+            '1yr': calc_return(t, 1),
+            '3yr': calc_return(t, 3),
+            '5yr': calc_return(t, 5),
+        }
+        spy3 = spy_perf.get('3yr')
+        spy5 = spy_perf.get('5yr')
+        p3   = perf.get('3yr')
+        p5   = perf.get('5yr')
+        comparison_results.append({
+            **etf,
+            'comparison_only':      True,
+            'performance':          perf,
+            'spy_perf':             spy_perf,
+            'beats_spy_3yr':        (p3 is not None and spy3 is not None and p3 > spy3),
+            'beats_spy_5yr':        (p5 is not None and spy5 is not None and p5 > spy5),
+            'delta_3yr':            round(p3 - spy3, 1) if (p3 is not None and spy3 is not None) else None,
+            'delta_5yr':            round(p5 - spy5, 1) if (p5 is not None and spy5 is not None) else None,
+            'top_holdings_display': [],
+            'holdings_count':       0,
+        })
+        time.sleep(1.0)
+
     # Score and rank
     print("[scan.py] Ranking nominees...")
     for entry in stock_map.values():
@@ -224,11 +270,17 @@ def run():
         key=lambda x: x['score'],
         reverse=True
     )
-    top_10 = candidates[:10]
+    top_12 = candidates[:12]
 
-    # Enrich top 10 with fundamentals
+    # Normalize scores to 0-100 scale
+    # Max possible raw score: 10 ETFs * 10 + ~20% avg weight = ~120
+    max_raw = max((s['score'] for s in top_12), default=1)
+    for stock in top_12:
+        stock['score_normalized'] = round(min(stock['score'] / max_raw * 100, 100), 1)
+
+    # Enrich top 12 with fundamentals
     print("[scan.py] Enriching top nominees with fundamentals...")
-    for rank, stock in enumerate(top_10, 1):
+    for rank, stock in enumerate(top_12, 1):
         stock['rank'] = rank
         print(f"  [{rank}] {stock['ticker']}")
         info = get_stock_info(stock['ticker'])
@@ -244,10 +296,12 @@ def run():
         'scanned_at':    start.isoformat(),
         'next_scan_info': NEXT_SCAN_INFO,
         'spy_perf':      spy_perf,
-        'top_10':        top_10,
+        'top_10':        top_12,
         'etfs':          etf_results,
+        'etfs_comparison': comparison_results,
         'meta': {
             'etfs_scanned':       len(etf_results),
+            'comparison_etfs':    len(comparison_results),
             'total_stocks_found': len(stock_map),
             'candidates_2plus':   len(candidates),
         },
@@ -258,7 +312,7 @@ def run():
         json.dump(results, f, indent=2, default=str)
 
     elapsed = (datetime.now() - start).seconds
-    print(f"[scan.py] Done in {elapsed}s — {len(top_10)} nominees from {len(etf_results)} ETFs")
+    print(f"[scan.py] Done in {elapsed}s — {len(top_12)} nominees from {len(etf_results)} ETFs")
     print(f"[scan.py] Results written to {OUTPUT_FILE}")
 
 

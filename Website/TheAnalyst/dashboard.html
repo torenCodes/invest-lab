@@ -690,10 +690,9 @@
         <a href="https://theinvestlab.com/#dashboards" class="site-nav-link active">Dashboards <span class="site-nav-chevron">▾</span></a>
         <ul class="site-dropdown">
           <li><a href="https://invest-movers-shakers.onrender.com" class="site-dropdown-link">Movers and Shakers</a></li>
-          <li><a href="https://invest-tried-true.onrender.com" class="site-dropdown-link">Tried and True</a></li>
+          <li><a href="https://invest-the-marathon.onrender.com" class="site-dropdown-link">The Marathon</a></li>
           <li><a href="https://invest-the-analyst.onrender.com" class="site-dropdown-link active">The Analyst</a></li>
           <li><a href="https://invest-insider-buying.onrender.com" class="site-dropdown-link">Insider Buying</a></li>
-          <li><a href="https://invest-underdogs.onrender.com" class="site-dropdown-link">The Underdogs</a></li>
           <li><a href="https://invest-patterns.onrender.com" class="site-dropdown-link">Pattern Scanner</a></li>
         </ul>
       </li>
@@ -1080,6 +1079,16 @@
   }
 
   pollPrescan();
+
+  // ── Auto-analyze from URL param (?ticker=AAPL) ────────────────────────────
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var ticker = (params.get('ticker') || '').trim().toUpperCase();
+    if (ticker) {
+      document.getElementById('ticker-input').value = ticker;
+      setTimeout(doAnalyze, 300);
+    }
+  })();
 </script>
 
 <!-- ── Shared Site Footer ──────────────────────────────────────────────── -->
