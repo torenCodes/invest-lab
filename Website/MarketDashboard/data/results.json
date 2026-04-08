@@ -1,32 +1,69 @@
 {
-  "scan_time": "2026-04-07T20:00:28.151135+00:00",
+  "scan_time": "2026-04-08T13:54:24.320355+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 21,
+  "total_scanned": 22,
   "day_trades": [
     {
-      "ticker": "CVS",
-      "name": "CVS Health Corp",
-      "sector": "Health Care",
-      "current_price": 78.2,
-      "change_pct": 6.714,
-      "high": 78.5851,
-      "low": 75.44,
-      "open": 77.42,
-      "prev_close": 73.28,
+      "ticker": "DAL",
+      "name": "Delta Air Lines Inc",
+      "sector": "Airlines",
+      "current_price": 71.31,
+      "change_pct": 8.6711,
+      "high": 74.19,
+      "low": 71.22,
+      "open": 71.495,
+      "prev_close": 65.62,
+      "score": 60,
+      "signals": [
+        "Top gainer (+8.7%)",
+        "High volume",
+        "Strong move (+8.7%)",
+        "High Trending buzz (20)",
+        "Yahoo trending (#1)"
+      ],
+      "reddit_mentions": 20,
+      "market_cap": 42858434193.37646,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/DAL.png",
+      "weburl": "https://www.delta.com/",
+      "yahoo_trending_rank": 1,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.64,
+          "estimate": 0.61,
+          "beat": true,
+          "surprise_pct": 4.9
+        }
+      },
+      "score_normalized": 95
+    },
+    {
+      "ticker": "AAL",
+      "name": "American Airlines Group Inc",
+      "sector": "Airlines",
+      "current_price": 11.88,
+      "change_pct": 9.8982,
+      "high": 12.2,
+      "low": 11.81,
+      "open": 11.844999999999999,
+      "prev_close": 10.81,
       "score": 55,
       "signals": [
-        "Top gainer (+6.7%)",
+        "Top gainer (+9.9%)",
         "High volume",
-        "Strong move (+6.7%)",
+        "Strong move (+9.9%)",
         "Trending buzz (14)",
         "Yahoo trending (#7)"
       ],
       "reddit_mentions": 14,
-      "market_cap": 93227548800.0,
+      "market_cap": 7137892102.193578,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CVS.png",
-      "weburl": "https://cvshealth.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AAL.png",
+      "weburl": "https://americanairlines.gcs-web.com/",
       "yahoo_trending_rank": 7,
       "earnings_info": {
         "upcoming": null,
@@ -35,30 +72,92 @@
       "score_normalized": 87
     },
     {
-      "ticker": "PSKY",
-      "name": "Paramount Skydance Corp",
-      "sector": "Media",
-      "current_price": 10.905,
-      "change_pct": 10.7107,
-      "high": 11.15,
-      "low": 9.76,
-      "open": 9.76,
-      "prev_close": 9.85,
-      "score": 46,
+      "ticker": "UAL",
+      "name": "United Airlines Holdings Inc",
+      "sector": "Airlines",
+      "current_price": 99.43,
+      "change_pct": 11.3563,
+      "high": 102.5,
+      "low": 97.975,
+      "open": 97.975,
+      "prev_close": 89.29,
+      "score": 55,
       "signals": [
-        "Top gainer (+10.7%)",
+        "Top gainer (+11.4%)",
         "High volume",
-        "Strong move (+10.7%)",
-        "Trending activity (9)",
-        "Yahoo trending (#12)"
+        "Strong move (+11.4%)",
+        "Trending buzz (11)",
+        "Yahoo trending (#10)"
       ],
-      "reddit_mentions": 9,
-      "market_cap": 10640364000.0,
+      "reddit_mentions": 11,
+      "market_cap": 28879102582.241947,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/PARA.png",
-      "weburl": "https://www.paramount.com/",
-      "yahoo_trending_rank": 12,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/UAL.png",
+      "weburl": "https://ir.united.com/",
+      "yahoo_trending_rank": 10,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 87
+    },
+    {
+      "ticker": "IREN",
+      "name": "IREN Ltd",
+      "sector": "Technology",
+      "current_price": 37.57,
+      "change_pct": 5.1203,
+      "high": 38.9,
+      "low": 37.46,
+      "open": 38.61,
+      "prev_close": 35.74,
+      "score": 51,
+      "signals": [
+        "Top gainer (+5.1%)",
+        "High volume",
+        "Strong move (+5.1%)",
+        "Trending buzz (10)",
+        "Yahoo trending (#11)"
+      ],
+      "reddit_mentions": 10,
+      "market_cap": 11857073731.697693,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950792146376.png",
+      "weburl": "https://iren.com/",
+      "yahoo_trending_rank": 11,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 81
+    },
+    {
+      "ticker": "SOFI",
+      "name": "SoFi Technologies Inc",
+      "sector": "Financial Services",
+      "current_price": 16.92,
+      "change_pct": 5.0279,
+      "high": 17.85,
+      "low": 16.9,
+      "open": 17.53,
+      "prev_close": 16.11,
+      "score": 46,
+      "signals": [
+        "Top gainer (+5.0%)",
+        "High volume",
+        "Strong move (+5.0%)",
+        "Trending activity (6)",
+        "Yahoo trending (#15)"
+      ],
+      "reddit_mentions": 6,
+      "market_cap": 20544502264.700058,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SOFI.png",
+      "weburl": "https://www.sofi.com/",
+      "yahoo_trending_rank": 15,
       "earnings_info": {
         "upcoming": null,
         "recent": null
@@ -66,29 +165,160 @@
       "score_normalized": 73
     },
     {
-      "ticker": "ALHC",
-      "name": "Alignment Healthcare Inc",
-      "sector": "Health Care",
-      "current_price": 21.635,
-      "change_pct": 15.8811,
-      "high": 22.33,
-      "low": 20.18,
-      "open": 20.26,
-      "prev_close": 18.67,
+      "ticker": "APLD",
+      "name": "Applied Digital Corp",
+      "sector": "Technology",
+      "current_price": 27.64,
+      "change_pct": 9.7697,
+      "high": 29.39,
+      "low": 27.52,
+      "open": 28.122500000000002,
+      "prev_close": 25.18,
       "score": 41,
       "signals": [
-        "Top gainer (+15.9%)",
+        "Top gainer (+9.8%)",
         "High volume",
-        "Strong move (+15.9%)",
-        "Yahoo trending (#20)"
+        "Strong move (+9.8%)",
+        "Yahoo trending (#19)"
       ],
-      "reddit_mentions": 1,
-      "market_cap": 3814224990.0000005,
+      "reddit_mentions": 2,
+      "market_cap": 7039970981.786422,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950606149446.png",
-      "weburl": "https://www.alignmenthealth.com/",
-      "yahoo_trending_rank": 20,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942959019826.png",
+      "weburl": "https://appliedblockchaininc.com/",
+      "yahoo_trending_rank": 19,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 65
+    }
+  ],
+  "swing_trades": [
+    {
+      "ticker": "AXON",
+      "name": "Axon Enterprise Inc",
+      "sector": "Aerospace & Defense",
+      "current_price": 406.82,
+      "change_pct": 9.1051,
+      "high": 412.8278,
+      "low": 396.475,
+      "open": 396.475,
+      "prev_close": 372.87,
+      "score": 55,
+      "signals": [
+        "Top gainer (+9.1%)",
+        "High volume",
+        "Strong move (+9.1%)",
+        "Trending buzz (12)",
+        "Yahoo trending (#9)"
+      ],
+      "reddit_mentions": 12,
+      "market_cap": 29977881445.317745,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AXON.png",
+      "weburl": "https://www.axon.com/",
+      "yahoo_trending_rank": 9,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 87
+    },
+    {
+      "ticker": "META",
+      "name": "Meta Platforms Inc",
+      "sector": "Media",
+      "current_price": 599.62,
+      "change_pct": 4.2727,
+      "high": 608.96,
+      "low": 599.1,
+      "open": 603.99,
+      "prev_close": 575.05,
+      "score": 50,
+      "signals": [
+        "Top gainer (+4.3%)",
+        "High volume",
+        "Good move (+4.3%)",
+        "Trending buzz (17)",
+        "Yahoo trending (#4)"
+      ],
+      "reddit_mentions": 17,
+      "market_cap": 1454620911318.2854,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/FB.png",
+      "weburl": "https://www.meta.com/",
+      "yahoo_trending_rank": 4,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 79
+    },
+    {
+      "ticker": "PANW",
+      "name": "Palo Alto Networks Inc",
+      "sector": "Technology",
+      "current_price": 176.02,
+      "change_pct": 3.6204,
+      "high": 179.27,
+      "low": 173.72,
+      "open": 174.3025,
+      "prev_close": 169.87,
+      "score": 50,
+      "signals": [
+        "Top gainer (+3.6%)",
+        "High volume",
+        "Good move (+3.6%)",
+        "Trending buzz (19)",
+        "Yahoo trending (#2)"
+      ],
+      "reddit_mentions": 19,
+      "market_cap": 138613917388.2291,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/PANW.png",
+      "weburl": "https://www.paloaltonetworks.com/",
+      "yahoo_trending_rank": 2,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 1.03,
+          "estimate": 0.96,
+          "beat": true,
+          "surprise_pct": 7.2
+        }
+      },
+      "score_normalized": 79
+    },
+    {
+      "ticker": "BABA",
+      "name": "Alibaba Group Holding Ltd",
+      "sector": "Retail",
+      "current_price": 126.63,
+      "change_pct": 5.7718,
+      "high": 129.34,
+      "low": 126.59,
+      "open": 128.375,
+      "prev_close": 119.72,
+      "score": 41,
+      "signals": [
+        "Top gainer (+5.8%)",
+        "High volume",
+        "Strong move (+5.8%)",
+        "Yahoo trending (#18)"
+      ],
+      "reddit_mentions": 3,
+      "market_cap": 254277513380.966,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BABA.png",
+      "weburl": "https://www.alibabagroup.com/",
+      "yahoo_trending_rank": 18,
       "earnings_info": {
         "upcoming": null,
         "recent": null
@@ -96,191 +326,30 @@
       "score_normalized": 65
     },
     {
-      "ticker": "INTC",
-      "name": "Intel Corp",
-      "sector": "Semiconductors",
-      "current_price": 52.935,
-      "change_pct": 4.2438,
-      "high": 53.27,
-      "low": 51.215,
-      "open": 51.905,
-      "prev_close": 50.78,
-      "score": 36,
-      "signals": [
-        "Top gainer (+4.2%)",
-        "High volume",
-        "Good move (+4.2%)",
-        "Yahoo trending (#19)"
-      ],
-      "reddit_mentions": 2,
-      "market_cap": 253646100000.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/INTC.png",
-      "weburl": "https://www.intel.com/",
-      "yahoo_trending_rank": 19,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 57
-    }
-  ],
-  "swing_trades": [
-    {
-      "ticker": "UNH",
-      "name": "UnitedHealth Group Inc",
-      "sector": "Health Care",
-      "current_price": 307.45,
-      "change_pct": 9.2728,
-      "high": 312.43,
-      "low": 300.75,
-      "open": 308.845,
-      "prev_close": 281.36,
-      "score": 60,
-      "signals": [
-        "Top gainer (+9.3%)",
-        "High volume",
-        "Strong move (+9.3%)",
-        "High Trending buzz (20)",
-        "Yahoo trending (#1)"
-      ],
-      "reddit_mentions": 20,
-      "market_cap": 255383719360.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/UNH.png",
-      "weburl": "https://www.unitedhealthgroup.com/",
-      "yahoo_trending_rank": 1,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 95
-    },
-    {
-      "ticker": "AVGO",
-      "name": "Broadcom Inc",
-      "sector": "Semiconductors",
-      "current_price": 333.94,
-      "change_pct": 6.2049,
-      "high": 333.98,
-      "low": 321.8,
-      "open": 326.73,
-      "prev_close": 314.43,
-      "score": 55,
-      "signals": [
-        "Top gainer (+6.2%)",
-        "High volume",
-        "Strong move (+6.2%)",
-        "Trending buzz (19)",
-        "Yahoo trending (#2)"
-      ],
-      "reddit_mentions": 19,
-      "market_cap": 1488722288100.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AVGO.png",
-      "weburl": "https://www.broadcom.com",
-      "yahoo_trending_rank": 2,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 2.05,
-          "estimate": 2.07,
-          "beat": false,
-          "surprise_pct": -0.9
-        }
-      },
-      "score_normalized": 87
-    },
-    {
-      "ticker": "CAR",
-      "name": "Avis Budget Group Inc",
-      "sector": "Road & Rail",
-      "current_price": 255.65,
-      "change_pct": 20.2493,
-      "high": 256.99,
-      "low": 209.6,
-      "open": 217.01,
-      "prev_close": 212.6,
-      "score": 55,
-      "signals": [
-        "Top gainer (+20.2%)",
-        "High volume",
-        "Strong move (+20.2%)",
-        "Trending buzz (15)",
-        "Yahoo trending (#6)"
-      ],
-      "reddit_mentions": 15,
-      "market_cap": 7495999620.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CAR.png",
-      "weburl": "https://avisbudgetgroup.com/",
-      "yahoo_trending_rank": 6,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 87
-    },
-    {
-      "ticker": "HUM",
-      "name": "Humana Inc",
-      "sector": "Health Care",
-      "current_price": 197.18,
-      "change_pct": 7.9551,
-      "high": 203.5,
-      "low": 190.05,
-      "open": 202,
-      "prev_close": 182.65,
-      "score": 46,
-      "signals": [
-        "Top gainer (+8.0%)",
-        "High volume",
-        "Strong move (+8.0%)",
-        "Trending activity (5)",
-        "Yahoo trending (#16)"
-      ],
-      "reddit_mentions": 5,
-      "market_cap": 21927863100.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HUM.png",
-      "weburl": "https://www.humana.com/",
-      "yahoo_trending_rank": 16,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 73
-    },
-    {
       "ticker": "CRWD",
       "name": "CrowdStrike Holdings Inc",
       "sector": "Technology",
-      "current_price": 423.23,
-      "change_pct": 6.1765,
-      "high": 423.69,
-      "low": 395.579,
-      "open": 397.865,
-      "prev_close": 398.61,
+      "current_price": 439.81,
+      "change_pct": 3.9175,
+      "high": 449.9,
+      "low": 436.795,
+      "open": 436.795,
+      "prev_close": 423.23,
       "score": 41,
       "signals": [
-        "Top gainer (+6.2%)",
+        "Top gainer (+3.9%)",
         "High volume",
-        "Strong move (+6.2%)",
-        "Yahoo trending (#17)"
+        "Good move (+3.9%)",
+        "Trending activity (9)",
+        "Yahoo trending (#12)"
       ],
-      "reddit_mentions": 4,
-      "market_cap": 101093076540.0,
+      "reddit_mentions": 9,
+      "market_cap": 107337087351.48587,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CRWD.png",
       "weburl": "https://ir.crowdstrike.com/",
-      "yahoo_trending_rank": 17,
+      "yahoo_trending_rank": 12,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -294,526 +363,564 @@
       "score_normalized": 65
     },
     {
-      "ticker": "CF",
-      "name": "CF Industries Holdings Inc",
-      "sector": "Chemicals",
-      "current_price": 133.63,
-      "change_pct": 2.0232,
-      "high": 139.445,
-      "low": 132.25,
-      "open": 134.91,
-      "prev_close": 130.98,
-      "score": 23,
+      "ticker": "GRAB",
+      "name": "Grab Holdings Ltd",
+      "sector": "Road & Rail",
+      "current_price": 3.74,
+      "change_pct": 5.6497,
+      "high": 3.93,
+      "low": 3.71,
+      "open": 3.7824999999999998,
+      "prev_close": 3.54,
+      "score": 33,
       "signals": [
-        "Top gainer (+2.0%)",
+        "Top gainer (+5.6%)",
         "High volume",
-        "Moderate move (+2.0%)"
+        "Strong move (+5.6%)"
       ],
       "reddit_mentions": 0,
-      "market_cap": 20120623680.0,
+      "market_cap": 14515705601.83146,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CF.png",
-      "weburl": "https://www.cfindustries.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/GRAB.png",
+      "weburl": "https://www.grab.com/sg/",
       "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 37
+      "score_normalized": 52
     }
   ],
   "buzz_source": "trending",
   "reddit_cards": [
     {
-      "ticker": "UNH",
-      "name": "UnitedHealth Group Inc",
-      "sector": "Health Care",
-      "current_price": 307.45,
-      "change_pct": 9.2728,
-      "high": 312.43,
-      "low": 300.75,
-      "open": 308.845,
-      "prev_close": 281.36,
+      "ticker": "DAL",
+      "name": "Delta Air Lines Inc",
+      "sector": "Airlines",
+      "current_price": 71.31,
+      "change_pct": 8.6711,
+      "high": 74.19,
+      "low": 71.22,
+      "open": 71.495,
+      "prev_close": 65.62,
       "score": 60,
       "signals": [
-        "Top gainer (+9.3%)",
+        "Top gainer (+8.7%)",
         "High volume",
-        "Strong move (+9.3%)",
+        "Strong move (+8.7%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)"
       ],
       "reddit_mentions": 20,
-      "market_cap": 255383719360.0,
+      "market_cap": 42858434193.37646,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/UNH.png",
-      "weburl": "https://www.unitedhealthgroup.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/DAL.png",
+      "weburl": "https://www.delta.com/",
       "yahoo_trending_rank": 1,
       "mentions": 20,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.64,
+          "estimate": 0.61,
+          "beat": true,
+          "surprise_pct": 4.9
+        }
       },
       "score_normalized": 95
     },
     {
-      "ticker": "AVGO",
-      "name": "Broadcom Inc",
-      "sector": "Semiconductors",
-      "current_price": 333.94,
-      "change_pct": 6.2049,
-      "high": 333.98,
-      "low": 321.8,
-      "open": 326.73,
-      "prev_close": 314.43,
-      "score": 55,
+      "ticker": "PANW",
+      "name": "Palo Alto Networks Inc",
+      "sector": "Technology",
+      "current_price": 176.02,
+      "change_pct": 3.6204,
+      "high": 179.27,
+      "low": 173.72,
+      "open": 174.3025,
+      "prev_close": 169.87,
+      "score": 50,
       "signals": [
-        "Top gainer (+6.2%)",
+        "Top gainer (+3.6%)",
         "High volume",
-        "Strong move (+6.2%)",
+        "Good move (+3.6%)",
         "Trending buzz (19)",
         "Yahoo trending (#2)"
       ],
       "reddit_mentions": 19,
-      "market_cap": 1488722288100.0,
+      "market_cap": 138613917388.2291,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AVGO.png",
-      "weburl": "https://www.broadcom.com",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/PANW.png",
+      "weburl": "https://www.paloaltonetworks.com/",
       "yahoo_trending_rank": 2,
       "mentions": 19,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-03-31",
-          "actual": 2.05,
-          "estimate": 2.07,
-          "beat": false,
-          "surprise_pct": -0.9
+          "actual": 1.03,
+          "estimate": 0.96,
+          "beat": true,
+          "surprise_pct": 7.2
         }
       },
-      "score_normalized": 87
+      "score_normalized": 79
     },
     {
-      "ticker": "AXON",
-      "mentions": 18,
-      "name": "Axon Enterprise Inc",
-      "sector": "Aerospace & Defense",
-      "current_price": 372.675,
-      "change_pct": -9.7792,
-      "high": 411.485,
-      "low": 362.73,
-      "open": 409.91,
-      "prev_close": 413.07,
-      "market_cap": 33209877939.0,
-      "score": 0,
+      "ticker": "QNCX",
+      "name": "Quince Therapeutics Inc",
+      "sector": "Biotechnology",
+      "current_price": 0.2725,
+      "change_pct": 67.1779,
+      "high": 0.38429,
+      "low": 0.2656,
+      "open": 0.30405,
+      "prev_close": 0.163,
+      "score": 58,
       "signals": [
-        "Trending buzz (18 mentions)",
-        "Yahoo trending (#3)"
+        "Top gainer (+67.2%)",
+        "High volume",
+        "Strong move (+67.2%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)",
+        "Unusual volume (Finviz)"
       ],
       "reddit_mentions": 18,
-      "is_gainer": false,
-      "is_active": false,
+      "market_cap": 9076082.171428574,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950429466566.png",
+      "weburl": "https://quincetx.com/",
       "yahoo_trending_rank": 3,
+      "mentions": 18,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 0
+      "score_normalized": 92
     }
   ],
   "sector_rotation": [
     {
-      "ticker": "XLE",
-      "sector": "Energy",
-      "ret_1d": 0.8,
-      "ret_5d": -2.91,
-      "ret_1m": 7.04,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLK",
-      "sector": "Technology",
-      "ret_1d": 0.44,
-      "ret_5d": 7.75,
-      "ret_1m": 0.19,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "AIXI",
-          "name": "Xiao-I Corp",
-          "change_pct": 136.3772,
-          "price": 1.9
-        },
-        {
-          "ticker": "QNCX",
-          "name": "Quince Therapeutics Inc",
-          "change_pct": 82.9714,
-          "price": 0.1601
-        },
-        {
-          "ticker": "BMEA",
-          "name": "Biomea Fusion Inc",
-          "change_pct": 24.8344,
-          "price": 1.885
-        }
-      ]
-    },
-    {
-      "ticker": "XLU",
-      "sector": "Utilities",
-      "ret_1d": 0.26,
-      "ret_5d": 0.81,
-      "ret_1m": -0.27,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "CETX",
-          "name": "Cemtrex Inc",
-          "change_pct": 60.8646,
-          "price": 1.28
-        }
-      ]
-    },
-    {
-      "ticker": "XLV",
-      "sector": "Health Care",
-      "ret_1d": 0.21,
-      "ret_5d": 1.92,
-      "ret_1m": -3.61,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "QNCX",
-          "name": "Quince Therapeutics Inc",
-          "change_pct": 82.9714,
-          "price": 0.1601
-        },
-        {
-          "ticker": "BMEA",
-          "name": "Biomea Fusion Inc",
-          "change_pct": 24.8344,
-          "price": 1.885
-        },
-        {
-          "ticker": "ALHC",
-          "name": "Alignment Healthcare Inc",
-          "change_pct": 15.8811,
-          "price": 21.635
-        }
-      ]
-    },
-    {
-      "ticker": "XLC",
-      "sector": "Comm. Services",
-      "ret_1d": 0.07,
-      "ret_5d": 3.59,
-      "ret_1m": -4.48,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "PSKY",
-          "name": "Paramount Skydance Corp",
-          "change_pct": 10.7107,
-          "price": 10.905
-        }
-      ]
-    },
-    {
-      "ticker": "XLF",
-      "sector": "Financials",
-      "ret_1d": 0.02,
-      "ret_5d": 3.16,
-      "ret_1m": -0.84,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLRE",
-      "sector": "Real Estate",
-      "ret_1d": -0.11,
-      "ret_5d": 3.74,
-      "ret_1m": -2.09,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
       "ticker": "XLI",
       "sector": "Industrials",
-      "ret_1d": -0.21,
-      "ret_5d": 4.89,
-      "ret_1m": -3.06,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLB",
-      "sector": "Materials",
-      "ret_1d": -0.23,
-      "ret_5d": 2.07,
-      "ret_1m": 0.94,
+      "ret_1d": 3.71,
+      "ret_5d": 5.34,
+      "ret_1m": -0.05,
       "ret_3m": null,
       "top_stocks": [
         {
-          "ticker": "CF",
-          "name": "CF Industries Holdings Inc",
-          "change_pct": 2.0232,
-          "price": 133.63
+          "ticker": "AXON",
+          "name": "Axon Enterprise Inc",
+          "change_pct": 9.1051,
+          "price": 406.82
         }
       ]
     },
     {
       "ticker": "XLY",
       "sector": "Cons. Discretionary",
-      "ret_1d": -1.16,
-      "ret_5d": 2.0,
-      "ret_1m": -5.64,
+      "ret_1d": 3.62,
+      "ret_5d": 2.47,
+      "ret_1m": -2.35,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "UCAR",
+          "name": "U Power Ltd",
+          "change_pct": 137.5771,
+          "price": 1.31
+        },
+        {
+          "ticker": "BABA",
+          "name": "Alibaba Group Holding Ltd",
+          "change_pct": 5.7718,
+          "price": 126.63
+        },
+        {
+          "ticker": "DLTR",
+          "name": "Dollar Tree Inc",
+          "change_pct": 2.5465,
+          "price": 109.13
+        }
+      ]
+    },
+    {
+      "ticker": "XLK",
+      "sector": "Technology",
+      "ret_1d": 3.43,
+      "ret_5d": 6.96,
+      "ret_1m": 1.83,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "QNCX",
+          "name": "Quince Therapeutics Inc",
+          "change_pct": 67.1779,
+          "price": 0.2725
+        },
+        {
+          "ticker": "APLD",
+          "name": "Applied Digital Corp",
+          "change_pct": 9.7697,
+          "price": 27.64
+        },
+        {
+          "ticker": "IREN",
+          "name": "IREN Ltd",
+          "change_pct": 5.1203,
+          "price": 37.57
+        }
+      ]
+    },
+    {
+      "ticker": "XLF",
+      "sector": "Financials",
+      "ret_1d": 2.68,
+      "ret_5d": 3.74,
+      "ret_1m": 2.28,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "SOFI",
+          "name": "SoFi Technologies Inc",
+          "change_pct": 5.0279,
+          "price": 16.92
+        }
+      ]
+    },
+    {
+      "ticker": "XLC",
+      "sector": "Comm. Services",
+      "ret_1d": 1.57,
+      "ret_5d": 2.44,
+      "ret_1m": -3.09,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "BBGI",
+          "name": "Beasley Broadcast Group Inc",
+          "change_pct": 62.7389,
+          "price": 5.11
+        },
+        {
+          "ticker": "META",
+          "name": "Meta Platforms Inc",
+          "change_pct": 4.2727,
+          "price": 599.62
+        },
+        {
+          "ticker": "PSKY",
+          "name": "Paramount Skydance Corp",
+          "change_pct": 2.0183,
+          "price": 11.12
+        }
+      ]
+    },
+    {
+      "ticker": "XLB",
+      "sector": "Materials",
+      "ret_1d": 1.5,
+      "ret_5d": 1.72,
+      "ret_1m": 2.13,
       "ret_3m": null,
       "top_stocks": []
     },
     {
+      "ticker": "XLRE",
+      "sector": "Real Estate",
+      "ret_1d": 1.02,
+      "ret_5d": 3.22,
+      "ret_1m": -1.28,
+      "ret_3m": null,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLV",
+      "sector": "Health Care",
+      "ret_1d": 0.99,
+      "ret_5d": 0.96,
+      "ret_1m": -3.65,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "QNCX",
+          "name": "Quince Therapeutics Inc",
+          "change_pct": 67.1779,
+          "price": 0.2725
+        }
+      ]
+    },
+    {
       "ticker": "XLP",
       "sector": "Cons. Staples",
-      "ret_1d": -1.68,
-      "ret_5d": -0.74,
-      "ret_1m": -4.72,
+      "ret_1d": 0.55,
+      "ret_5d": -0.33,
+      "ret_1m": -4.42,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "CPB",
+          "name": "Campbell's Co",
+          "change_pct": 0.1916,
+          "price": 20.92
+        }
+      ]
+    },
+    {
+      "ticker": "XLU",
+      "sector": "Utilities",
+      "ret_1d": -0.36,
+      "ret_5d": 0.47,
+      "ret_1m": -0.9,
+      "ret_3m": null,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLE",
+      "sector": "Energy",
+      "ret_1d": -5.14,
+      "ret_5d": -6.84,
+      "ret_1m": 1.99,
       "ret_3m": null,
       "top_stocks": []
     }
   ],
   "reddit_feed": [
     {
-      "id": "139700344",
-      "title": "Sector Update: Tech Stocks Retreat Late Afternoon",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "AVGO"
-      ],
-      "confirmed_tickers": [
-        "AVGO"
-      ],
-      "hours_ago": 0.2,
-      "url": "https://finnhub.io/api/news?id=f7155287dbaa94aa1a2c6c199a06f3ffad029313e3ed9d42641b8d0c2063935e",
-      "is_news": true
-    },
-    {
-      "id": "139700347",
-      "title": "Stock Market Today: Dow Loses Ground As Iran Deadline Nears; These IBD 50 Names Are Moving (Live Coverage)",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "UNH"
-      ],
-      "confirmed_tickers": [
-        "UNH"
-      ],
-      "hours_ago": 0.3,
-      "url": "https://finnhub.io/api/news?id=04bf0a5e987ab33a4dec947ce6b5413229f50deae8c05f8004833f1ed0d7ffff",
-      "is_news": true
-    },
-    {
-      "id": "139700347",
-      "title": "Stock Market Today: Dow Loses Ground As Iran Deadline Nears; These IBD 50 Names Are Moving (Live Coverage)",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "AVGO"
-      ],
-      "confirmed_tickers": [
-        "AVGO"
-      ],
-      "hours_ago": 0.3,
-      "url": "https://finnhub.io/api/news?id=04bf0a5e987ab33a4dec947ce6b5413229f50deae8c05f8004833f1ed0d7ffff",
-      "is_news": true
-    },
-    {
-      "id": "139700379",
-      "title": "Broadcom (AVGO) Stock Is Up, What You Need To Know",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "AVGO"
-      ],
-      "confirmed_tickers": [
-        "AVGO"
-      ],
-      "hours_ago": 0.3,
-      "url": "https://finnhub.io/api/news?id=6925bc05aa4f2c52a990e73dd2111b7f773712dd7e35bce0b6e4479b9f0b6bbf",
-      "is_news": true
-    },
-    {
-      "id": "139700357",
-      "title": "Anthropic pulls ahead of OpenAI as revenue race heats up",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "AVGO"
-      ],
-      "confirmed_tickers": [
-        "AVGO"
-      ],
-      "hours_ago": 0.4,
-      "url": "https://finnhub.io/api/news?id=9dfdcc48988470936b8d6de8bd57e17faa2e50dd7013d5c34bc170646bb76979",
-      "is_news": true
-    },
-    {
-      "id": "139700202",
-      "title": "These S&P500 stocks are moving in today's session",
+      "id": "139705722",
+      "title": "These S&P500 stocks that are showing activity before the opening bell on Wednesday.",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "UNH"
+        "DAL"
       ],
       "confirmed_tickers": [
-        "UNH"
+        "DAL"
       ],
-      "hours_ago": 0.9,
-      "url": "https://finnhub.io/api/news?id=66d00d72cce4863c5d7a5432aa1595e94faa3598e44deec2fcaa4d5ab02affb2",
+      "hours_ago": 1.3,
+      "url": "https://finnhub.io/api/news?id=1f7e23db4602fcc8ae8d987b7843d366a137d764bcef1aef5368d262af7cc09f",
       "is_news": true
     },
     {
-      "id": "139700202",
-      "title": "These S&P500 stocks are moving in today's session",
+      "id": "139705656",
+      "title": "Top movers in Wednesday's pre-market session",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "AVGO"
+        "QNCX"
       ],
       "confirmed_tickers": [
-        "AVGO"
+        "QNCX"
       ],
-      "hours_ago": 0.9,
-      "url": "https://finnhub.io/api/news?id=66d00d72cce4863c5d7a5432aa1595e94faa3598e44deec2fcaa4d5ab02affb2",
+      "hours_ago": 1.4,
+      "url": "https://finnhub.io/api/news?id=1fcd0da5e70543897dcc956fc9bbb11dcc0951bac720e5c650eb654ff90e1a9c",
       "is_news": true
     },
     {
-      "id": "139700202",
-      "title": "These S&P500 stocks are moving in today's session",
+      "id": "139705398",
+      "title": "Delta Stock Soars On Earnings, Cease-Fire, Jet Fuel Strategies. Airlines Spike.",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "DAL"
+      ],
+      "confirmed_tickers": [
+        "DAL"
+      ],
+      "hours_ago": 2.1,
+      "url": "https://finnhub.io/api/news?id=45b5e8a5de827aac828d353025d8561eada4f0b42df11ee963f0439184c71f4e",
+      "is_news": true
+    },
+    {
+      "id": "139705203",
+      "title": "Cybersecurity Stocks Climb Amid Anthropic's Project Glasswing Launch",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "PANW"
+      ],
+      "confirmed_tickers": [
+        "PANW"
+      ],
+      "hours_ago": 2.2,
+      "url": "https://finnhub.io/api/news?id=78b83bc8034fc6e49fa530071040d1ba5f6c96ad23ff6026cc950afcd5d472d1",
+      "is_news": true
+    },
+    {
+      "id": "139705349",
+      "title": "Stocks Rise, Oil Declines Pre-Bell as US, Iran Agree to Two-Week Ceasefire",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "DAL"
+      ],
+      "confirmed_tickers": [
+        "DAL"
+      ],
+      "hours_ago": 2.4,
+      "url": "https://finnhub.io/api/news?id=f939de5e6facb3f5885bb1496aba5102d2b2e8084e800f80be990e0b6bd5a5ec",
+      "is_news": true
+    },
+    {
+      "id": "139705400",
+      "title": "Delta Air Lines Q1 2026 earnings results fuel costs",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "DAL"
+      ],
+      "confirmed_tickers": [
+        "DAL"
+      ],
+      "hours_ago": 2.4,
+      "url": "https://finnhub.io/api/news?id=c43d085aa81d435ba0cfffaca4516b6a2cc9f3b619d42ee5effd55c892281c94",
+      "is_news": true
+    },
+    {
+      "id": "139705349",
+      "title": "Stocks Rise, Oil Declines Pre-Bell as US, Iran Agree to Two-Week Ceasefire",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "PANW"
+      ],
+      "confirmed_tickers": [
+        "PANW"
+      ],
+      "hours_ago": 2.4,
+      "url": "https://finnhub.io/api/news?id=f939de5e6facb3f5885bb1496aba5102d2b2e8084e800f80be990e0b6bd5a5ec",
+      "is_news": true
+    },
+    {
+      "id": "139705116",
+      "title": "Delta Air Lines Inc (NYSE:DAL) Reports Q1 2026 Earnings Beat Amid Strong Demand, Fuel Cost Concerns",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "AXON"
+        "DAL"
       ],
       "confirmed_tickers": [
-        "AXON"
+        "DAL"
       ],
-      "hours_ago": 0.9,
-      "url": "https://finnhub.io/api/news?id=66d00d72cce4863c5d7a5432aa1595e94faa3598e44deec2fcaa4d5ab02affb2",
+      "hours_ago": 2.6,
+      "url": "https://finnhub.io/api/news?id=1d46b1fda302b2edce397fd27a1487fdb76ced57aee30b1e25504954cbfa21f3",
       "is_news": true
     },
     {
-      "id": "139700329",
-      "title": "Why UnitedHealth Group Rallied Today",
-      "subreddit": "Yahoo",
+      "id": "139705981",
+      "title": "Palo Alto (PANW) Stock Is Trending Overnight: Here's What Is Happening",
+      "subreddit": "Benzinga",
       "ups": 0,
       "tickers": [
-        "UNH"
+        "PANW"
       ],
       "confirmed_tickers": [
-        "UNH"
+        "PANW"
       ],
-      "hours_ago": 1.0,
-      "url": "https://finnhub.io/api/news?id=09313cc0a8021af3aba6ca6d0fb6add66bd8f3260600724d8d246eed14ff6b92",
+      "hours_ago": 14.7,
+      "url": "https://finnhub.io/api/news?id=c9c301ad644a1843acbaeeb78f81b6649c373ef95438f1a2ec62c531c9ad7f23",
       "is_news": true
     },
     {
-      "id": "139700471",
-      "title": "UnitedHealth Rockets 11%, Humana Climbs 9% as Medicare Advantage Rate Decision Crushes Regulatory Fears",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "UNH"
-      ],
-      "confirmed_tickers": [
-        "UNH"
-      ],
-      "hours_ago": 1.7,
-      "url": "https://finnhub.io/api/news?id=d86e9599736638ed23131a84f5fcbf615ebb5b9cd3e98b8de855d18a524d1d76",
-      "is_news": true
-    },
-    {
-      "id": "139700350",
-      "title": "Equities Drop Intraday, Oil Rises as Trump's Iran Deadline Looms",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "UNH"
-      ],
-      "confirmed_tickers": [
-        "UNH"
-      ],
-      "hours_ago": 1.9,
-      "url": "https://finnhub.io/api/news?id=d8c04ac0818c364b451db32cd7359ec21a6c7106ad44d0ec0a235698d36c4b61",
-      "is_news": true
-    },
-    {
-      "id": "139698875",
-      "title": "Tuesday's session: top gainers and losers in the S&P500 index",
+      "id": "139700856",
+      "title": "Wondering what's happening in today's after-hours session?",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "AXON"
+        "QNCX"
       ],
       "confirmed_tickers": [
-        "AXON"
+        "QNCX"
       ],
-      "hours_ago": 3.4,
-      "url": "https://finnhub.io/api/news?id=7c76059c63b32af969bafed9f42952d1c83ce5eb5c7024fc70f95070d0bd322e",
+      "hours_ago": 16.9,
+      "url": "https://finnhub.io/api/news?id=d79c1afbc2637431570a2a5a978d27b38f999e6b0bbfeb4f9ab68270704e53a0",
       "is_news": true
     },
     {
-      "id": "139698590",
-      "title": "Axon Tackles Public Safety's Data Overload With Three New AI Tools",
+      "id": "139701012",
+      "title": "Palo Alto, CrowdStrike Stocks Pop After Anthropic Announces Partnerships",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "AXON"
+        "PANW"
       ],
       "confirmed_tickers": [
-        "AXON"
+        "PANW"
       ],
-      "hours_ago": 5.0,
-      "url": "https://finnhub.io/api/news?id=0fc2a622315d204b745a77473d37c8ce1636a0842da8164289ac7671fc0901db",
+      "hours_ago": 17.8,
+      "url": "https://finnhub.io/api/news?id=2a63e429817a0bfccc55aeab9c771ecd439db3137738f7e32c5216e4970c598a",
       "is_news": true
     },
     {
-      "id": "139697985",
-      "title": "Which S&P500 stocks are gapping on Tuesday?",
+      "id": "139700201",
+      "title": "What's going on in today's session",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "AXON"
+        "QNCX"
       ],
       "confirmed_tickers": [
-        "AXON"
+        "QNCX"
       ],
-      "hours_ago": 5.4,
-      "url": "https://finnhub.io/api/news?id=dfcd15a8beee19d1ca571d8f243d5d79d6ea931b671251c7bde03d759cdc014f",
+      "hours_ago": 18.9,
+      "url": "https://finnhub.io/api/news?id=dd19f32a1e3484533eb612fb8528ba237289acfc72cde3c6c64c94792be1c0aa",
       "is_news": true
     },
     {
-      "id": "139685406",
-      "title": "Axon Enterprise (AXON) is One of the Best Unmanned Aerial Vehicle Stocks, Here is Why",
+      "id": "139700340",
+      "title": "Anthropic touts AI cybersecurity project with Big Tech partners",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "AXON"
+        "PANW"
       ],
       "confirmed_tickers": [
-        "AXON"
+        "PANW"
       ],
-      "hours_ago": 11.0,
-      "url": "https://finnhub.io/api/news?id=b5ad3e2c847a6597651b3e20fc880bdc74ac144ece59c0aab3bd1d8ced1e1ecf",
+      "hours_ago": 19.9,
+      "url": "https://finnhub.io/api/news?id=27d7ec1d5dbd253807f60546bf78f8f116455468f6c3c5eff1d9b1d8a3f0c393",
+      "is_news": true
+    },
+    {
+      "id": "139700019",
+      "title": "Which stocks are most active on Tuesday?",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "QNCX"
+      ],
+      "confirmed_tickers": [
+        "QNCX"
+      ],
+      "hours_ago": 19.9,
+      "url": "https://finnhub.io/api/news?id=96ba3a31764d6e6539cbf2d21ebdce2a6eb4df37e6b92042f58b54cc30985aa3",
+      "is_news": true
+    },
+    {
+      "id": "139705982",
+      "title": "12 Health Care Stocks Moving In Tuesday's After-Market Session",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "QNCX"
+      ],
+      "confirmed_tickers": [
+        "QNCX"
+      ],
+      "hours_ago": 20.8,
+      "url": "https://finnhub.io/api/news?id=e459c0cf19a3d7b05f568fda0e86e93193405cc787e7b72ce4fbe41b437a82d8",
       "is_news": true
     }
   ],
   "fear_greed": {
-    "score": 21.5,
-    "rating": "Extreme Fear",
-    "prev_close": 22.6,
-    "week_ago": 19.0
+    "score": 29.4,
+    "rating": "Fear",
+    "prev_close": 22.2,
+    "week_ago": 23.7
   }
 }
