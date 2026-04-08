@@ -161,10 +161,9 @@ Plus:
 All code is complete. Only the Render deployment step remains:
 
 **Render setup (manual — do this in the Render dashboard):**
-1. New Web Service → connect repo
+1. New **Static Site** → connect repo (same as all other dashboards except The Analyst)
 2. Root directory: `PatternScanner/`
-3. Build command: `pip install -r requirements.txt`
-4. Start command: `gunicorn app:app`
-5. Set env var: `PORT=8110`
-6. Service name: `invest-patterns` → URL: `https://invest-patterns.onrender.com`
-7. After first deploy: manually trigger `pattern-scanner.yml` from GitHub Actions to populate `data/results.json`
+3. Build command: *(leave empty)*
+4. Publish directory: `.`
+5. Service name: `invest-patterns` → URL: `https://invest-patterns.onrender.com`
+6. After first deploy: manually trigger `pattern-scanner.yml` from GitHub Actions to populate `data/results.json`

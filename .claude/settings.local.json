@@ -1,7 +1,18 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:stax.organicthemes.com)"
+      "WebFetch(domain:stax.organicthemes.com)",
+      "WebFetch(domain:wordpress.com)",
+      "Bash(git:*)",
+      "Bash(python -c \":*)",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\(''D:/Coding Projects/scripts/archive_nominee.py''\\).read\\(\\)\\); print\\(''OK''\\)\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\(''D:/Coding Projects/scripts/calculate_outcomes.py''\\).read\\(\\)\\); print\\(''OK''\\)\")",
+      "Bash(python3 \"D:/Coding Projects/scripts/archive_nominee.py\" --source movers)",
+      "Bash(python3:*)",
+      "Bash(curl -s \"https://invest-movers-shakers.onrender.com/data/newsstand.json\")",
+      "Bash(python PatternScanner/scan.py)",
+      "Bash(curl -s \"https://invest-patterns.onrender.com/data/results.json\")",
+      "WebFetch(domain:invest-movers-shakers.onrender.com)"
     ]
   }
 }

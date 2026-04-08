@@ -16,7 +16,7 @@ except ImportError:
     raise SystemExit("yfinance not installed. Run: pip install yfinance")
 
 BASE_DIR     = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_FILE  = os.path.join(BASE_DIR, "data", "results.json")
+OUTPUT_FILE  = os.path.join(BASE_DIR, "..", "TheMarathon", "data", "consensus.json")
 
 NEXT_SCAN_INFO = "Mondays 9am ET"
 

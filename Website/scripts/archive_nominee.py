@@ -24,9 +24,9 @@ ARCHIVE_PATH = os.path.join(WEBSITE_DIR, 'MarketDashboard', 'data', 'nominees_ar
 
 RESULTS_PATHS = {
     'movers':      os.path.join(WEBSITE_DIR, 'MarketDashboard', 'data', 'results.json'),
-    'underdogs':   os.path.join(WEBSITE_DIR, 'Underdogs', 'data', 'results.json'),
+    'underdogs':   os.path.join(WEBSITE_DIR, 'TheMarathon', 'data', 'deep_value.json'),
     'insider':     os.path.join(WEBSITE_DIR, 'InsiderBuying', 'data', 'results.json'),
-    'tried-true':  os.path.join(WEBSITE_DIR, 'TriedAndTrue', 'data', 'results.json'),
+    'tried-true':  os.path.join(WEBSITE_DIR, 'TheMarathon', 'data', 'consensus.json'),
     'patterns':    os.path.join(WEBSITE_DIR, 'PatternScanner', 'data', 'results.json'),
 }
 

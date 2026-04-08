@@ -20,7 +20,7 @@ except ImportError:
 
 # ── Config ────────────────────────────────────────────────────────────────────
 BASE_DIR       = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_FILE    = os.path.join(BASE_DIR, "data", "results.json")
+OUTPUT_FILE    = os.path.join(BASE_DIR, "..", "TheMarathon", "data", "deep_value.json")
 INSIDER_FILE   = os.path.join(BASE_DIR, "..", "InsiderBuying", "data", "results.json")
 NEXT_SCAN_INFO = "Mon / Wed / Fri 9am ET"
 
