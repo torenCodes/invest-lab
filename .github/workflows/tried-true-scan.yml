@@ -2,9 +2,8 @@ name: TriedAndTrue Scan
 
 on:
   schedule:
-    # Mondays ~9am ET (EST + EDT)
-    - cron: '0 14 * * 1'
-    - cron: '0 13 * * 1'
+    # Daily weekdays ~9am ET (single entry; ~1hr drift EST vs EDT)
+    - cron: '0 14 * * 1-5'
   workflow_dispatch:         # Manual trigger button in GitHub UI
 
 permissions:

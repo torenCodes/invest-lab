@@ -2,8 +2,10 @@ name: MarketDashboard Scan
 
 on:
   schedule:
-    # 4 runs/day across the trading day (single UTC entry each; ~1hr drift in EST vs EDT)
+    # 6 runs/day across the trading day (single UTC entry each; ~1hr drift in EST vs EDT)
+    - cron: '0 13 * * 1-5'    # ~9:00am EDT / 8:00am EST
     - cron: '35 13 * * 1-5'   # ~9:35am EDT / 8:35am EST
+    - cron: '0 14 * * 1-5'    # ~10:00am EDT / 9:00am EST
     - cron: '30 15 * * 1-5'   # ~11:30am EDT / 10:30am EST
     - cron: '30 17 * * 1-5'   # ~1:30pm EDT / 12:30pm EST
     - cron: '15 19 * * 1-5'   # ~3:15pm EDT / 2:15pm EST

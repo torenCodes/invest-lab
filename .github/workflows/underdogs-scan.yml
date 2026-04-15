@@ -2,8 +2,8 @@ name: Underdogs Scan
 
 on:
   schedule:
-    # Mon/Wed/Fri ~9am ET (single entry; ~1hr drift EST vs EDT)
-    - cron: '0 13 * * 1,3,5'
+    # Daily weekdays ~9am ET (single entry; ~1hr drift EST vs EDT)
+    - cron: '0 13 * * 1-5'
   workflow_dispatch:         # Manual trigger button in GitHub UI
 
 permissions:

@@ -2,8 +2,10 @@ name: Newsstand Scan
 
 on:
   schedule:
-    # Once daily, weekday mornings before market open
-    - cron: '0 13 * * 1-5'    # ~9:00am EDT / 8:00am EST
+    # 3x/day weekdays (single UTC entry each; ~1hr drift in EST vs EDT)
+    - cron: '0 13 * * 1-5'    # ~8:00am EST / 9:00am EDT
+    - cron: '0 16 * * 1-5'    # ~11:00am EST / 12:00pm EDT
+    - cron: '0 19 * * 1-5'    # ~2:00pm EST / 3:00pm EDT
   workflow_dispatch:            # Manual trigger
 
 permissions:
