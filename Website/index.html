@@ -110,6 +110,30 @@
             <div class="preview-card" id="pc-discussed"></div>
           </div>
 
+          <!-- ─── Market Temperature (temporary placement — compartmentalized, safe to move) ─── -->
+          <section class="market-temp" id="market-temperature" aria-labelledby="mt-title">
+            <div class="mt-strip" id="mt-strip" role="button" tabindex="0" aria-expanded="false">
+              <div class="mt-strip-left">
+                <span class="mt-eyebrow">Proprietary Gauge</span>
+                <span class="mt-title" id="mt-title">Market Temperature</span>
+                <span class="mt-meta" id="mt-meta">loading…</span>
+              </div>
+              <div class="mt-strip-gauge">
+                <div class="mt-gauge-track"><div class="mt-gauge-fill" id="mt-gauge-fill" style="width:0%"></div></div>
+                <div class="mt-gauge-row">
+                  <span class="mt-gauge-score" id="mt-score">—</span>
+                  <span class="mt-gauge-verdict" id="mt-verdict">loading…</span>
+                </div>
+              </div>
+              <span class="mt-chevron" id="mt-chevron" aria-hidden="true">▾</span>
+            </div>
+            <div class="mt-body" id="mt-body" hidden>
+              <div class="mt-components" id="mt-components"></div>
+              <p class="mt-footnote">Composite of four valuation signals, weighted. Buffett Indicator &amp; Shiller CAPE are percentile-ranked against their own 10-year history so structurally elevated readings don't dominate. Fed Model &amp; Breadth use fixed threshold bands. Updated weekdays around 6:00am ET. Educational only — not investment advice.</p>
+            </div>
+          </section>
+          <!-- ─── /Market Temperature ─── -->
+
           <div class="archive-inline" id="track-record">
             <h3 class="archive-inline-title">Other Lab Results</h3>
             <div class="track-record-grid" id="track-record-grid">
@@ -321,48 +345,33 @@
             <p class="section-sub">Deep dives into market trends.</p>
           </div>
 
-          <div class="blog-sidebar-stack">
-            <a href="blog.html?post=optical-ai-infrastructure" class="blog-card blog-card--sidebar">
-              <div class="blog-card-meta">
-                <span class="blog-card-date">March 2026</span>
-                <span class="blog-card-tag">Infrastructure</span>
-              </div>
-              <h3 class="blog-card-title">The Fiber Backbone of AI: Why Optical Infrastructure Is the Sleeper Trade of the Decade</h3>
-              <p class="blog-card-excerpt">
-                Beneath the AI compute revolution lies a quieter trade that sharp investors
-                flagged years before consensus: the optical buildout.
-              </p>
-              <span class="blog-card-read-more">Read more →</span>
-            </a>
-
-            <a href="blog.html?post=nvidia-gtc26-keynote-recap" class="blog-card blog-card--sidebar">
-              <div class="blog-card-meta">
-                <span class="blog-card-date">March 16, 2026</span>
-                <span class="blog-card-tag">NVIDIA</span>
-              </div>
-              <h3 class="blog-card-title">Jensen's Moment: What GTC 2026 Tells Us About the Next Phase of AI</h3>
-              <p class="blog-card-excerpt">
-                GTC 2026 wasn't just a product launch — it was a declaration that the AI race
-                has shifted from training to deploying AI everywhere.
-              </p>
-              <span class="blog-card-read-more">Read more →</span>
-            </a>
-
-            <a href="blog.html?post=ai-infrastructure-stack-part-1" class="blog-card blog-card--sidebar">
-              <div class="blog-card-meta">
-                <span class="blog-card-date">March 20, 2026</span>
-                <span class="blog-card-tag">AI Infrastructure</span>
-              </div>
-              <h3 class="blog-card-title">The AI Factory, Part 1: A Ground-Up Look at Everything That Powers Artificial Intelligence</h3>
-              <p class="blog-card-excerpt">
-                Behind every AI response is a factory the size of city blocks. This is Part 1 of a series
-                breaking down every layer of the AI infrastructure stack.
-              </p>
-              <span class="blog-card-read-more">Read more →</span>
-            </a>
-
-            <a href="https://theinvestlab.com/blog.html" class="blog-sidebar-cta">View all posts →</a>
+          <div class="blog-sidebar-stack" id="blog-sidebar-stack">
+            <!-- Loaded dynamically from Blog/posts.json -->
           </div>
+          <script>
+          (function() {
+            fetch('Blog/posts.json')
+              .then(function(r) { return r.json(); })
+              .then(function(posts) {
+                var container = document.getElementById('blog-sidebar-stack');
+                var html = '';
+                posts.forEach(function(post) {
+                  var tag = (post.tags && post.tags[0]) || '';
+                  html += '<a href="blog.html?post=' + post.slug + '" class="blog-card blog-card--sidebar">'
+                    + '<div class="blog-card-meta">'
+                    + '<span class="blog-card-date">' + post.date + '</span>'
+                    + (tag ? '<span class="blog-card-tag">' + tag + '</span>' : '')
+                    + '</div>'
+                    + '<h3 class="blog-card-title">' + post.title + '</h3>'
+                    + '<p class="blog-card-excerpt">' + post.excerpt + '</p>'
+                    + '<span class="blog-card-read-more">Read more &rarr;</span>'
+                    + '</a>';
+                });
+                html += '<a href="blog.html" class="blog-sidebar-cta">View all posts &rarr;</a>';
+                container.innerHTML = html;
+              });
+          })();
+          </script>
         </div>
 
       </div>
@@ -758,6 +767,113 @@
         'Nominee data unavailable — check back soon.' +
         '</div>';
       if (footnote) footnote.style.display = 'none';
+    });
+}());
+</script>
+
+<script>
+// ── Market Temperature — composite valuation gauge (compartmentalized) ──────
+(function () {
+  var MT_URL = 'https://invest-movers-shakers.onrender.com/data/market_temperature.json';
+  var root   = document.getElementById('market-temperature');
+  if (!root) return;
+
+  var strip     = document.getElementById('mt-strip');
+  var body      = document.getElementById('mt-body');
+  var chevron   = document.getElementById('mt-chevron');
+  var scoreEl   = document.getElementById('mt-score');
+  var verdictEl = document.getElementById('mt-verdict');
+  var metaEl    = document.getElementById('mt-meta');
+  var fillEl    = document.getElementById('mt-gauge-fill');
+  var compsEl   = document.getElementById('mt-components');
+
+  function verdictClass(label) {
+    switch (label) {
+      case 'Cheap':    return 'mt-v-cheap';
+      case 'Fair':     return 'mt-v-fair';
+      case 'Elevated': return 'mt-v-elevated';
+      case 'Frothy':   return 'mt-v-frothy';
+      case 'Extreme':  return 'mt-v-extreme';
+      default:         return 'mt-v-unknown';
+    }
+  }
+
+  function fmtTs(iso) {
+    try {
+      var d = new Date(iso);
+      return d.toLocaleDateString([], { month: 'short', day: 'numeric' }) +
+             ' · ' + d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    } catch (e) { return ''; }
+  }
+
+  function setExpanded(open) {
+    body.hidden = !open;
+    strip.setAttribute('aria-expanded', open ? 'true' : 'false');
+    chevron.textContent = open ? '▴' : '▾';
+  }
+
+  strip.addEventListener('click', function () {
+    setExpanded(body.hidden);
+  });
+  strip.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setExpanded(body.hidden); }
+  });
+
+  function renderComponent(key, c) {
+    if (!c) {
+      return '<div class="mt-comp mt-comp--missing">' +
+               '<div class="mt-comp-head"><span class="mt-comp-title">' + titleFor(key) + '</span>' +
+               '<span class="mt-comp-state">unavailable</span></div>' +
+             '</div>';
+    }
+    var pct = Math.max(0, Math.min(100, c.score || 0));
+    return '<div class="mt-comp">' +
+             '<div class="mt-comp-head">' +
+               '<div class="mt-comp-head-left">' +
+                 '<span class="mt-comp-title">' + (c.title || key) + '</span>' +
+                 '<span class="mt-comp-sub">' + (c.subtitle || '') + '</span>' +
+               '</div>' +
+               '<div class="mt-comp-head-right">' +
+                 '<span class="mt-comp-raw">' + (c.raw_label || '') + '</span>' +
+                 '<span class="mt-comp-badge ' + verdictClass(c.label) + '">' + (c.label || '—') + '</span>' +
+               '</div>' +
+             '</div>' +
+             '<div class="mt-comp-bar"><div class="mt-comp-bar-fill" style="width:' + pct + '%"></div></div>' +
+             '<p class="mt-comp-desc">' + (c.description || '') + '</p>' +
+           '</div>';
+  }
+
+  function titleFor(key) {
+    return ({
+      buffett:   'Buffett Indicator',
+      shiller:   'Shiller CAPE',
+      fed_model: 'Fed Model',
+      breadth:   'Breadth'
+    })[key] || key;
+  }
+
+  function render(data) {
+    var score = data.composite_score;
+    var label = data.composite_label || 'Unknown';
+
+    scoreEl.textContent   = score != null ? Math.round(score) : '—';
+    verdictEl.textContent = label;
+    verdictEl.className   = 'mt-gauge-verdict ' + verdictClass(label);
+    fillEl.style.width    = (score != null ? Math.max(0, Math.min(100, score)) : 0) + '%';
+    metaEl.textContent    = data.scan_time ? 'Updated ' + fmtTs(data.scan_time) : '';
+
+    var keys = ['buffett', 'shiller', 'fed_model', 'breadth'];
+    compsEl.innerHTML = keys.map(function (k) {
+      return renderComponent(k, (data.components || {})[k]);
+    }).join('');
+  }
+
+  fetch(MT_URL, { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error('fetch failed'); return r.json(); })
+    .then(render)
+    .catch(function () {
+      // Gracefully hide if the scan hasn't populated yet
+      root.style.display = 'none';
     });
 }());
 </script>
