@@ -1,0 +1,46 @@
+{
+  "scan_time": "2026-04-22T16:09:26.558716+00:00",
+  "next_scan_info": "Weekdays at 6:00am ET",
+  "composite_score": 75.7,
+  "composite_label": "Frothy",
+  "components": {
+    "buffett": null,
+    "shiller": {
+      "raw": 40.09,
+      "raw_label": "40.1x CAPE",
+      "percentile": 100.0,
+      "score": 100.0,
+      "label": "Extreme",
+      "description": "S&P 500 price divided by 10-year inflation-adjusted earnings. Percentile-ranked over the last 10 years.",
+      "title": "Shiller CAPE",
+      "subtitle": "10-Year Real P/E",
+      "weight": 0.3
+    },
+    "fed_model": {
+      "raw": -0.97,
+      "raw_label": "-0.97% spread",
+      "earnings_yield": 3.29,
+      "treasury_10y": 4.26,
+      "pe": 30.35,
+      "score": 70,
+      "label": "Frothy",
+      "description": "S&P earnings yield 3.29% vs 10Y Treasury 4.26%. Positive spread means stocks are relatively cheap vs bonds.",
+      "title": "Fed Model",
+      "subtitle": "Earnings Yield \u2212 10Y",
+      "weight": 0.2
+    },
+    "breadth": {
+      "raw": 58.4,
+      "raw_label": "58.4% above 200-DMA",
+      "above_200dma": 293,
+      "total": 502,
+      "score": 45,
+      "label": "Elevated",
+      "description": "293 of 502 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
+      "title": "Breadth",
+      "subtitle": "% S&P 500 > 200-DMA",
+      "weight": 0.2
+    }
+  },
+  "coverage": 0.7
+}
