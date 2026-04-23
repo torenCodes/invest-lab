@@ -119,17 +119,54 @@ def ffill_to_dates(sparse, target_dates):
 # ── Component 1: Buffett Indicator ───────────────────────────────────────────
 
 def compute_buffett():
+    """Buffett Indicator: total US market cap vs GDP.
+
+    Data sources:
+      - Wilshire 5000 (^W5000) via yfinance — FRED discontinued its WILL5000*
+        series on June 3, 2024, so we go straight to Yahoo Finance for the
+        same index.
+      - GDP via FRED (GDP series) — quarterly, forward-filled onto monthly
+        Wilshire dates.
+
+    Score = percentile rank of the current Wilshire/GDP ratio over the
+    prior ~10 years of monthly observations, so structurally elevated
+    readings don't dominate.
+    """
     print("[market-temp] Buffett Indicator...")
-    wilshire = fred_series("WILL5000PRFC", CALIB_YEARS + 1)
-    gdp      = fred_series("GDP", CALIB_YEARS + 2)
-    if not wilshire or not gdp:
+    try:
+        import yfinance as yf
+    except ImportError:
+        print("[market-temp] yfinance unavailable")
+        return None
+
+    try:
+        hist = yf.Ticker("^W5000").history(
+            period=f"{CALIB_YEARS + 1}y", interval="1mo", auto_adjust=False
+        )
+    except Exception as e:
+        print(f"[market-temp] Wilshire 5000 fetch failed: {e}")
+        return None
+    if hist is None or len(hist) < 24:
+        print("[market-temp] Wilshire 5000: insufficient history")
+        return None
+
+    wilshire = [
+        (d.strftime("%Y-%m-%d"), float(c))
+        for d, c in zip(hist.index, hist["Close"].values)
+        if c == c  # filter NaN
+    ]
+    wilshire.sort(key=lambda x: x[0])
+
+    gdp = fred_series("GDP", CALIB_YEARS + 2)
+    if not gdp:
         return None
 
     dates       = [d for d, _ in wilshire]
     gdp_aligned = ffill_to_dates(gdp, dates)
 
     ratios = [(d, w / gdp_aligned[d]) for d, w in wilshire if d in gdp_aligned]
-    if len(ratios) < 100:
+    if len(ratios) < 24:
+        print("[market-temp] Buffett: not enough overlapping history")
         return None
 
     current    = ratios[-1][1]
@@ -138,11 +175,11 @@ def compute_buffett():
 
     return {
         "raw":         round(current, 3),
-        "raw_label":   f"{current:.2f} (Wilshire/GDP)",
+        "raw_label":   f"{current:.1f} (W5000/GDP)",
         "percentile":  pct,
         "score":       pct,
         "label":       label_for(pct),
-        "description": "Total US market cap vs GDP — Warren Buffett's \"best single measure.\" "
+        "description": "Total US market cap (Wilshire 5000) vs GDP — Warren Buffett's \"best single measure.\" "
                        f"Percentile-ranked over the last {CALIB_YEARS} years.",
     }
 
