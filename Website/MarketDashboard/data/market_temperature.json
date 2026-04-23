@@ -1,10 +1,20 @@
 {
-  "scan_time": "2026-04-23T11:02:31.588761+00:00",
+  "scan_time": "2026-04-23T14:44:26.325879+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 80.0,
+  "composite_score": 84.4,
   "composite_label": "Extreme",
   "components": {
-    "buffett": null,
+    "buffett": {
+      "raw": 2.065,
+      "raw_label": "2.1 (W5000/GDP)",
+      "percentile": 94.6,
+      "score": 94.6,
+      "label": "Extreme",
+      "description": "Total US market cap (Wilshire 5000) vs GDP \u2014 Warren Buffett's \"best single measure.\" Percentile-ranked over the last 10 years.",
+      "title": "Buffett Indicator",
+      "subtitle": "Market Cap / GDP",
+      "weight": 0.3
+    },
     "shiller": {
       "raw": 40.5,
       "raw_label": "40.5x CAPE",
@@ -30,17 +40,17 @@
       "weight": 0.2
     },
     "breadth": {
-      "raw": 58.4,
-      "raw_label": "58.4% above 200-DMA",
-      "above_200dma": 293,
+      "raw": 58.8,
+      "raw_label": "58.8% above 200-DMA",
+      "above_200dma": 295,
       "total": 502,
       "score": 45,
       "label": "Elevated",
-      "description": "293 of 502 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
+      "description": "295 of 502 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
       "title": "Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
       "weight": 0.2
     }
   },
-  "coverage": 0.7
+  "coverage": 1.0
 }
