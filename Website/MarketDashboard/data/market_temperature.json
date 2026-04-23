@@ -1,13 +1,13 @@
 {
-  "scan_time": "2026-04-22T16:09:26.558716+00:00",
+  "scan_time": "2026-04-23T11:02:31.588761+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 75.7,
-  "composite_label": "Frothy",
+  "composite_score": 80.0,
+  "composite_label": "Extreme",
   "components": {
     "buffett": null,
     "shiller": {
-      "raw": 40.09,
-      "raw_label": "40.1x CAPE",
+      "raw": 40.5,
+      "raw_label": "40.5x CAPE",
       "percentile": 100.0,
       "score": 100.0,
       "label": "Extreme",
@@ -17,14 +17,14 @@
       "weight": 0.3
     },
     "fed_model": {
-      "raw": -0.97,
-      "raw_label": "-0.97% spread",
-      "earnings_yield": 3.29,
-      "treasury_10y": 4.26,
-      "pe": 30.35,
-      "score": 70,
-      "label": "Frothy",
-      "description": "S&P earnings yield 3.29% vs 10Y Treasury 4.26%. Positive spread means stocks are relatively cheap vs bonds.",
+      "raw": -1.04,
+      "raw_label": "-1.04% spread",
+      "earnings_yield": 3.26,
+      "treasury_10y": 4.3,
+      "pe": 30.66,
+      "score": 85,
+      "label": "Extreme",
+      "description": "S&P earnings yield 3.26% vs 10Y Treasury 4.30%. Positive spread means stocks are relatively cheap vs bonds.",
       "title": "Fed Model",
       "subtitle": "Earnings Yield \u2212 10Y",
       "weight": 0.2
