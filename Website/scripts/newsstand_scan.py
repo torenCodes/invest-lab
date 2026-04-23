@@ -7,6 +7,8 @@ Invoked by GitHub Actions on schedule.
 Run locally: python scripts/newsstand_scan.py
 """
 
+import csv
+import io
 import json
 import os
 import re
@@ -32,10 +34,68 @@ HEADERS = {
 }
 
 
+# ── Russell 3000 universe (for earnings calendar filter) ─────────────────────
+
+IWV_URL = ("https://www.ishares.com/us/products/239714/ishares-russell-3000-etf/"
+           "1467271812596.ajax?fileType=csv&fileName=IWV_holdings&dataType=fund")
+
+
+def fetch_russell3000_universe():
+    """Fetch the iShares IWV (Russell 3000) holdings CSV and return a set of
+    equity tickers. The Russell 3000 ≈ top ~3000 US stocks by market cap,
+    covering S&P 500, Russell 2000, and mid-cap contenders.
+
+    Returns an empty set on failure (callers should treat that as "no filter").
+    """
+    print("[newsstand] Fetching Russell 3000 universe from iShares IWV...")
+    try:
+        r = requests.get(IWV_URL, headers=HEADERS, timeout=20)
+        r.raise_for_status()
+    except Exception as e:
+        print(f"[newsstand] IWV fetch failed: {e}")
+        return set()
+
+    tickers = set()
+    reader = csv.reader(io.StringIO(r.text))
+    in_holdings = False
+    for row in reader:
+        if not row:
+            continue
+        if not in_holdings:
+            # Header row — first cell is exactly "Ticker"
+            if row[0].strip().lower() == "ticker":
+                in_holdings = True
+            continue
+        # Data row — only keep Equity rows with a real ticker
+        if len(row) < 4:
+            continue
+        ticker    = row[0].strip().upper()
+        asset_cls = row[3].strip() if len(row) > 3 else ""
+        if not ticker or asset_cls.lower() != "equity":
+            continue
+        # Normalize away punctuation — iShares/Finnhub/Yahoo disagree on
+        # share-class formatting (BRKB vs BRK.B vs BRK-B). Strip on both
+        # sides of the comparison.
+        tickers.add(_norm_ticker(ticker))
+
+    print(f"[newsstand] Universe: {len(tickers)} tickers loaded")
+    return tickers
+
+
+def _norm_ticker(t):
+    """Canonicalize a ticker for set membership: uppercase, strip . and -."""
+    return (t or "").upper().replace(".", "").replace("-", "").strip()
+
+
 # ── Finnhub Earnings Calendar ────────────────────────────────────────────────
 
-def fetch_earnings(days_ahead=14):
-    """Fetch upcoming earnings from Finnhub for the next N days."""
+def fetch_earnings(days_ahead=14, universe=None):
+    """Fetch upcoming earnings from Finnhub for the next N days.
+
+    If `universe` is a non-empty set, entries whose symbol is not in that set
+    are dropped — used to cap the calendar at the Russell 3000 so small-cap
+    earnings don't overwhelm the homepage card.
+    """
     print("[newsstand] Fetching earnings calendar...")
     today = datetime.now(timezone.utc).date()
     from_date = today.isoformat()
@@ -58,15 +118,21 @@ def fetch_earnings(days_ahead=14):
         print(f"[newsstand] Earnings fetch failed: {e}")
         return []
 
-    # Filter to notable stocks: require an EPS estimate (filters out micro-caps)
-    # and sort by date, then by symbol
     notable = []
+    dropped_universe = 0
     for e in raw:
+        # Require an EPS estimate (filters out analyst-less micro-caps)
         if e.get("epsEstimate") is None:
+            continue
+        symbol = (e.get("symbol") or "").upper().strip()
+        # Russell 3000 filter (skip if caller didn't supply a universe).
+        # Normalize both sides: iShares IWV uses "BRKB", Finnhub uses "BRK.B".
+        if universe and _norm_ticker(symbol) not in universe:
+            dropped_universe += 1
             continue
         notable.append({
             "date":             e.get("date"),
-            "symbol":           e.get("symbol", ""),
+            "symbol":           symbol,
             "eps_estimate":     e.get("epsEstimate"),
             "eps_actual":       e.get("epsActual"),
             "revenue_estimate": e.get("revenueEstimate"),
@@ -81,6 +147,8 @@ def fetch_earnings(days_ahead=14):
 
     # Cap at 50 to keep the JSON reasonable
     notable = notable[:50]
+    if universe:
+        print(f"[newsstand] Earnings: dropped {dropped_universe} outside Russell 3000")
     print(f"[newsstand] Earnings: {len(notable)} notable entries after filtering")
     return notable
 
@@ -157,10 +225,16 @@ def _fetch_news_finnhub(limit=15):
 
 # ── Finviz Unusual Volume ────────────────────────────────────────────────────
 
+MIN_UNUSUAL_VOLUME_PRICE = 7.00  # Filter out penny stocks ($7 floor)
+
+
 def fetch_unusual_volume(limit=10):
-    """Scrape Finviz unusual volume screener. Positive movers only."""
+    """Scrape Finviz unusual volume screener. Positive movers only.
+    Filters out stocks priced under MIN_UNUSUAL_VOLUME_PRICE to avoid penny-stock noise."""
     print("[newsstand] Fetching unusual volume...")
-    url = "https://finviz.com/screener.ashx?v=111&s=ta_unusualvolume&o=-volume"
+    # f=sh_price_o5  → pre-filter at Finviz to price > $5 so we don't burn
+    # the 20-row budget on penny stocks. Python post-filter below raises to $7.
+    url = "https://finviz.com/screener.ashx?v=111&s=ta_unusualvolume&o=-volume&f=sh_price_o5"
 
     try:
         r = requests.get(url, headers=HEADERS, timeout=15)
@@ -217,7 +291,9 @@ def fetch_unusual_volume(limit=10):
         # Volume in column 6
         volume_text = cells[6].text.strip() if len(cells) > 6 else ""
 
-        if ticker and change_pct is not None and change_pct > 0:
+        if (ticker
+                and change_pct is not None and change_pct > 0
+                and price is not None and price >= MIN_UNUSUAL_VOLUME_PRICE):
             tickers.append({
                 "ticker":     ticker,
                 "name":       name,
@@ -228,7 +304,8 @@ def fetch_unusual_volume(limit=10):
             if len(tickers) >= limit:
                 break
 
-    print(f"[newsstand] Unusual volume: {len(tickers)} positive tickers")
+    print(f"[newsstand] Unusual volume: {len(tickers)} positive tickers "
+          f"(price >= ${MIN_UNUSUAL_VOLUME_PRICE:.2f})")
     return tickers
 
 
@@ -238,7 +315,8 @@ def run():
     start = datetime.now(timezone.utc)
     print(f"[newsstand] Starting scan at {start.isoformat()}")
 
-    earnings = fetch_earnings(days_ahead=14)
+    universe = fetch_russell3000_universe()
+    earnings = fetch_earnings(days_ahead=14, universe=universe)
 
     # Respect Polygon rate limit (5 calls/min on free tier)
     time.sleep(1)
