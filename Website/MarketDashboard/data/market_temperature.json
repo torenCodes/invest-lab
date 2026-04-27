@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-04-24T11:01:27.726201+00:00",
+  "scan_time": "2026-04-27T11:40:47.958767+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
   "composite_score": 84.4,
   "composite_label": "Extreme",
@@ -16,8 +16,8 @@
       "weight": 0.3
     },
     "shiller": {
-      "raw": 40.34,
-      "raw_label": "40.3x CAPE",
+      "raw": 40.66,
+      "raw_label": "40.7x CAPE",
       "percentile": 100.0,
       "score": 100.0,
       "label": "Extreme",
@@ -27,26 +27,26 @@
       "weight": 0.3
     },
     "fed_model": {
-      "raw": -1.03,
-      "raw_label": "-1.03% spread",
-      "earnings_yield": 3.27,
-      "treasury_10y": 4.3,
-      "pe": 30.54,
+      "raw": -1.09,
+      "raw_label": "-1.09% spread",
+      "earnings_yield": 3.25,
+      "treasury_10y": 4.34,
+      "pe": 30.78,
       "score": 85,
       "label": "Extreme",
-      "description": "S&P earnings yield 3.27% vs 10Y Treasury 4.30%. Positive spread means stocks are relatively cheap vs bonds.",
+      "description": "S&P earnings yield 3.25% vs 10Y Treasury 4.34%. Positive spread means stocks are relatively cheap vs bonds.",
       "title": "Fed Model",
       "subtitle": "Earnings Yield \u2212 10Y",
       "weight": 0.2
     },
     "breadth": {
-      "raw": 58.6,
-      "raw_label": "58.6% above 200-DMA",
-      "above_200dma": 294,
+      "raw": 57.2,
+      "raw_label": "57.2% above 200-DMA",
+      "above_200dma": 287,
       "total": 502,
       "score": 45,
       "label": "Elevated",
-      "description": "294 of 502 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
+      "description": "287 of 502 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
       "title": "Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
       "weight": 0.2
