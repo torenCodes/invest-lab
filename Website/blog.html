@@ -90,27 +90,52 @@
     }
 
     function renderListing(posts) {
+      // posts.json is ordered newest-first
+      var latest    = posts[0];
+      var firstPost = posts[posts.length - 1];
+
+      var heroCta = '';
+      if (latest) {
+        heroCta += '<a href="blog.html?post=' + esc(latest.slug) + '" class="btn btn-primary">Read Latest</a>';
+      }
+      // Hide "Read First Entry" if there's only one post (would link to the same place)
+      if (firstPost && posts.length > 1) {
+        heroCta += '<a href="blog.html?post=' + esc(firstPost.slug) + '" class="btn btn-ghost">Read First Entry</a>';
+      }
+
       var cards = posts.map(function (p) {
         var tags = (p.tags || []).map(function (t) {
           return '<span class="blog-card-tag">' + esc(t) + '</span>';
         }).join('');
+        // Whole card is an <a> — matches the .dashboard-card / .preview-card pattern.
+        // Inner "Read more" cue is a <span> (nested anchors are invalid HTML).
         return (
-          '<article class="blog-card">' +
+          '<a class="blog-card" href="blog.html?post=' + esc(p.slug) + '">' +
             '<div class="blog-card-meta">' +
               '<span class="blog-card-date">' + esc(p.date) + '</span>' + tags +
             '</div>' +
             '<h2 class="blog-card-title">' + esc(p.title) + '</h2>' +
             '<p class="blog-card-excerpt">' + esc(p.excerpt) + '</p>' +
-            '<a href="blog.html?post=' + esc(p.slug) + '" class="blog-card-read-more">Read more →</a>' +
-          '</article>'
+            '<span class="blog-card-read-more">Read more →</span>' +
+          '</a>'
         );
       }).join('');
 
       root.innerHTML =
-        '<section class="blog-hero blog-hero-sm">' +
-          '<div class="container">' +
-            '<a href="index.html#blog" class="blog-back">← Back to home</a>' +
-            '<h1 class="blog-hero-title" style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:0">Research Blog</h1>' +
+        '<section class="blog-hero">' +
+          '<div class="container hero-container">' +
+            '<div class="hero-content">' +
+              '<h1 class="blog-hero-title">Research Blog</h1>' +
+              '<p class="hero-body">' +
+                'Long-form posts on sector trends, trade reviews, market observations, ' +
+                'and the research behind the dashboards — written to think through ideas ' +
+                'more deeply than a screen of tickers can.' +
+              '</p>' +
+              (heroCta ? '<div class="hero-cta">' + heroCta + '</div>' : '') +
+            '</div>' +
+            '<div class="hero-image">' +
+              '<img src="images/blogMain.jpg" alt="Research blog" class="hero-img">' +
+            '</div>' +
           '</div>' +
         '</section>' +
         '<section class="section">' +

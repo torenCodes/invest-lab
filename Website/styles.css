@@ -411,7 +411,7 @@ body {
 /* ── Broadsheet Layout (WSJ-style two-column zones) ────────────────────── */
 .broadsheet {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 420px;
   gap: 0;
   align-items: start;
 }
@@ -426,23 +426,10 @@ body {
 }
 
 .broadsheet-side-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--ink);
+  /* Wrapper for the sidebar heading + tagline.
+     Typography & accent line are supplied by the inner .section-title
+     (matches the .preview-header pattern on the main column). */
   margin-bottom: 1.25rem;
-  line-height: 1.15;
-}
-
-.broadsheet-side-title::after {
-  content: '';
-  display: block;
-  width: 2.25rem;
-  height: 2px;
-  background: var(--accent);
-  margin-top: 0.6rem;
-  border-radius: 1px;
 }
 
 @media (max-width: 900px) {
@@ -520,6 +507,7 @@ body {
   line-height: 1.55;
   color: var(--ink-2);
   margin-bottom: 0.75rem;
+  padding-right: 10rem;
 }
 
 .dashboard-card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
@@ -627,6 +615,10 @@ body {
   padding: 2rem 2.25rem;
   transition: box-shadow 0.2s, transform 0.2s;
   box-shadow: var(--shadow-sm);
+  /* Listing-view cards render as <a> (whole card clickable) — reset anchor defaults */
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
 .blog-card:not(.blog-card-placeholder):hover {
@@ -903,6 +895,9 @@ body {
   gap: 0.6rem;
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+  /* Root element is <a> (whole card is clickable) — reset anchor defaults */
+  color: inherit;
+  text-decoration: none;
 }
 
 .preview-card:hover {
@@ -1119,7 +1114,7 @@ body {
 .blog-hero {
   background-color: var(--bg-dark);
   position: relative;
-  padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(3rem, 7vw, 2.5rem) 0 clamp(2.5rem, 5vw, 2.5rem);
   overflow: hidden;
 }
 
@@ -1127,15 +1122,18 @@ body {
   padding: clamp(2rem, 4vw, 3rem) 0;
 }
 
-/* Dark overlay + teal glow — matches index.html .hero treatment */
+/* Dark overlay + teal glow — matches index.html .hero treatment.
+   In multi-background shorthand the FIRST layer paints on top, so the
+   teal radials are listed first to sit above the 55% dark wash — mirrors
+   index.html, where .hero-bg-accent (z-index: 1) sits over .hero::before. */
 .blog-hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(rgba(26,26,24,0.55), rgba(26,26,24,0.55)),
     radial-gradient(ellipse at 18% 65%, rgba(56,189,166,0.28) 0%, transparent 52%),
-    radial-gradient(ellipse at 82% 12%, rgba(56,189,166,0.12) 0%, transparent 44%);
+    radial-gradient(ellipse at 82% 12%, rgba(56,189,166,0.12) 0%, transparent 44%),
+    linear-gradient(rgba(26,26,24,0.55), rgba(26,26,24,0.55));
   pointer-events: none;
   z-index: 0;
 }
@@ -1953,8 +1951,8 @@ body {
 .market-temp {
   background: var(--surface);
   border: 1px solid #e8e6df;
-  border-radius: 12px;
-  margin-bottom: 1.75rem;
+  border-radius: 4px;
+  margin: 0 0 1.75rem 0;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }

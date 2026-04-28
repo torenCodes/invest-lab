@@ -94,21 +94,13 @@
     <div class="container">
       <div class="broadsheet">
 
-        <!-- MAIN COLUMN: Lab Results -->
         <div class="broadsheet-main">
           <div class="preview-header">
             <div>
               <h2 class="section-title">Today's Lab Results</h2>
               <p class="preview-ts-line">From the latest Movers &amp; Shakers scan — <span id="preview-ts">loading…</span></p>
-            </div>
-            <a href="https://invest-movers-shakers.onrender.com" class="preview-all-link">Full dashboard →</a>
-          </div>
-          <div class="preview-grid">
-            <div class="preview-card" id="pc-day"></div>
-            <div class="preview-card" id="pc-swing"></div>
-            <div class="preview-card" id="pc-sector"></div>
-            <div class="preview-card" id="pc-discussed"></div>
-          </div>
+            </div>            
+          </div>          
 
           <!-- ─── Market Temperature (temporary placement — compartmentalized, safe to move) ─── -->
           <section class="market-temp" id="market-temperature" aria-labelledby="mt-title">
@@ -134,6 +126,13 @@
           </section>
           <!-- ─── /Market Temperature ─── -->
 
+          <div class="preview-grid">
+            <a class="preview-card" id="pc-day"       href="https://invest-movers-shakers.onrender.com"></a>
+            <a class="preview-card" id="pc-swing"     href="https://invest-movers-shakers.onrender.com"></a>
+            <a class="preview-card" id="pc-sector"    href="https://invest-movers-shakers.onrender.com"></a>
+            <a class="preview-card" id="pc-discussed" href="https://invest-movers-shakers.onrender.com"></a>
+          </div>
+
           <div class="archive-inline" id="track-record">
             <h3 class="archive-inline-title">Other Lab Results</h3>
             <div class="track-record-grid" id="track-record-grid">
@@ -145,8 +144,11 @@
 
         <!-- SIDEBAR: Newsstand -->
         <div class="broadsheet-side">
-          <div class="broadsheet-side-title">The Newsstand</div>
-
+            <div class="broadsheet-side-title">
+              <h2 class="section-title">The Newsstand</h2>
+              <p class="preview-ts-line">Extra, extra!  Read all about it!</p>
+            </div>
+          
           <div class="fg-strip fg-strip--vertical">
             <span class="fg-strip-label">Fear &amp; Greed</span>
             <div class="fg-strip-track">
@@ -158,7 +160,7 @@
             </div>
             <span class="fg-strip-delta" id="fg-delta"></span>
           </div>
-
+          
           <div class="newsstand-grid">
             <div class="newsstand-card" id="ns-news" onclick="toggleNewsstand('ns-news')">
               <div class="newsstand-card-header">
@@ -272,22 +274,6 @@
               <span class="dashboard-card-arrow">→</span>
             </a>
 
-            <a href="https://invest-the-analyst.onrender.com" class="dashboard-card">
-              <div class="dashboard-card-icon">🔬</div>
-              <div class="dashboard-card-body">
-                <h3 class="dashboard-card-title">The Analyst</h3>
-                <p class="dashboard-card-desc">
-                  Enter any ticker for a fundamental analysis — P/E, PEG, Graham Number, SEC filings, and a valuation verdict.
-                </p>
-                <div class="dashboard-card-tags">
-                  <span class="tag">Fundamentals</span>
-                  <span class="tag">SEC Filings</span>
-                  <span class="tag">Graham Number</span>
-                </div>
-              </div>
-              <span class="dashboard-card-arrow">→</span>
-            </a>
-
             <a href="https://invest-insider-buying.onrender.com" class="dashboard-card">
               <div class="dashboard-card-icon">🕴️</div>
               <div class="dashboard-card-body">
@@ -317,6 +303,22 @@
                   <span class="tag">Chart Patterns</span>
                   <span class="tag">S&amp;P 500</span>
                   <span class="tag">Graded</span>
+                </div>
+              </div>
+              <span class="dashboard-card-arrow">→</span>
+            </a>
+
+            <a href="https://invest-the-analyst.onrender.com" class="dashboard-card">
+              <div class="dashboard-card-icon">🔬</div>
+              <div class="dashboard-card-body">
+                <h3 class="dashboard-card-title">The Analyst</h3>
+                <p class="dashboard-card-desc">
+                  Enter any ticker for a fundamental analysis — P/E, PEG, Graham Number, SEC filings, and a valuation verdict.
+                </p>
+                <div class="dashboard-card-tags">
+                  <span class="tag">Fundamentals</span>
+                  <span class="tag">SEC Filings</span>
+                  <span class="tag">Graham Number</span>
                 </div>
               </div>
               <span class="dashboard-card-arrow">→</span>
@@ -462,9 +464,11 @@
     return '<span class="' + cls + '">' + sign + fmt(pct, 2) + '%</span>';
   }
 
+  // The outer .preview-card is itself an <a> (whole card is clickable), so
+  // this renders as a <span> — nested anchors are invalid HTML.
   function cta(label) {
-    return '<a href="' + DASH_URL + '" class="pv-cta">' +
-      label + ' <span class="pv-cta-arr">→</span></a>';
+    return '<span class="pv-cta">' +
+      label + ' <span class="pv-cta-arr">→</span></span>';
   }
 
   // ── Stock card (Day Trade / Swing Trade / Highly Discussed) ────────────

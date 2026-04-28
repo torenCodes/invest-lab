@@ -13,7 +13,7 @@
 
   :root {
     --bg:           #f5f4f0;
-    --surface:      #ffffff;
+    --surface:      #fdfefb;
     --surface-2:    #fafaf8;
     --border:       #e8e6e0;
     --border-light: #f0ede8;
@@ -31,7 +31,11 @@
     --blue-bg:      #eef3fb;
     --teal:         #1a7070;
     --teal-bg:      #edf7f7;
-    --accent:       #2d6a4f;
+    /* Brand teal — matches index.html .preview-card / .btn-primary */
+    --accent:       #38bda6;
+    --accent-dark:  #2a9b87;
+    --accent-light: #b8e8e0;
+    --accent-muted: #edf8f6;
     --gold:         #b8922a;
     --gold-bg:      #fdf9ed;
     --silver:       #6e7f87;
@@ -40,8 +44,9 @@
     --bronze-bg:    #fdf3ec;
     --shadow-sm:    0 1px 3px rgba(0,0,0,0.06);
     --shadow-md:    0 4px 12px rgba(0,0,0,0.08);
-    --radius:       10px;
-    --radius-sm:    6px;
+    --shadow-warm:  0 6px 24px rgba(56,189,166,0.22);
+    --radius:       4px;
+    --radius-sm:    4px;
   }
 
   html { font-size: 16px; scroll-behavior: smooth; }
@@ -49,11 +54,10 @@
   body {
     font-family: 'Barlow', sans-serif;
     background: var(--bg);
+    /* Noise texture matches index.html — replaces tinted radial gradients */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.032'/%3E%3C/svg%3E");
     color: var(--ink-2);
     min-height: 100vh;
-    background-image:
-      radial-gradient(circle at 15% 0%,  rgba(45,106,79,0.05) 0%, transparent 50%),
-      radial-gradient(circle at 85% 100%, rgba(26,112,112,0.04) 0%, transparent 50%);
   }
 
   /* ── Layout ─────────────────────────────────────────────────────────────── */
@@ -265,19 +269,23 @@
   }
 
   /* ── Stock card ──────────────────────────────────────────────────────────── */
+  /* Top border = brand teal (matches index.html .preview-card)
+     Left border = rank/grade-coded color — see modifier rules below */
   .stock-card {
     background: var(--surface);
     border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
     border-radius: var(--radius);
     overflow: hidden;
-    transition: transform 0.15s, box-shadow 0.15s;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
     box-shadow: var(--shadow-sm);
     cursor: pointer;
     align-self: start;
   }
   .stock-card:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-warm);
+    border-top-color: var(--accent);
   }
 
   /* Rank accent borders */
