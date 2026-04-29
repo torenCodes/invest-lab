@@ -317,16 +317,18 @@
     margin-bottom: 8px;
   }
 
+  /* ─── BEGIN unified card text styles (keep in sync across all dashboards) ─── */
   .card-ticker {
-    font-family: 'DM Mono', monospace;
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--ink);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
   }
 
   .card-name {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     color: var(--ink-3);
     margin-top: 2px;
     white-space: nowrap;
@@ -334,6 +336,7 @@
     text-overflow: ellipsis;
     max-width: 165px;
   }
+  /* ─── END unified card text styles ──────────────────────────────────────── */
 
   .card-price {
     text-align: right;

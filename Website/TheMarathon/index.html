@@ -344,21 +344,24 @@
     gap: 12px;
   }
   .card-identity { flex: 1; min-width: 0; }
+  /* ─── BEGIN unified card text styles (keep in sync across all dashboards) ─── */
   .card-ticker {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.01em;
+    line-height: 1.1;
   }
   .card-name {
     font-size: 0.78rem;
     color: var(--ink-3);
-    margin-top: 1px;
+    margin-top: 2px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  /* ─── END unified card text styles ──────────────────────────────────────── */
   .card-sector {
     font-size: 0.72rem;
     color: var(--ink-3);
