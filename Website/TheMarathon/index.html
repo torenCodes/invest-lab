@@ -892,11 +892,11 @@ function toggleSiteNav(btn) {
 
     <div class="sidebar-section">
       <div class="sidebar-label">Navigation</div>
-      <div class="nav-item active" onclick="switchTab('consensus')" id="nav-consensus">
-        <span class="nav-icon">&#9670;</span> Consensus Picks
+      <div class="nav-item active" onclick="switchTab('tried-true')" id="nav-tried-true">
+        <span class="nav-icon">&#9670;</span> Tried and True
       </div>
-      <div class="nav-item" onclick="switchTab('deepvalue')" id="nav-deepvalue">
-        <span class="nav-icon">&#9650;</span> Deep Value
+      <div class="nav-item" onclick="switchTab('underdogs')" id="nav-underdogs">
+        <span class="nav-icon">&#9650;</span> The Underdogs
       </div>
       <div class="nav-item" onclick="switchTab('scorecard')" id="nav-scorecard">
         <span class="nav-icon">&#9776;</span> ETF Scorecard
@@ -905,22 +905,22 @@ function toggleSiteNav(btn) {
 
     <div class="sidebar-section">
       <div class="sidebar-label">Scan Schedules</div>
-      <div class="progress-label"><strong>Consensus:</strong> Mondays 9am ET</div>
-      <div class="progress-label"><strong>Deep Value:</strong> Mon / Wed / Fri 9am ET</div>
+      <div class="progress-label"><strong>Tried and True:</strong> Mondays 9am ET</div>
+      <div class="progress-label"><strong>The Underdogs:</strong> Mon / Wed / Fri 9am ET</div>
     </div>
 
     <div class="sidebar-section">
       <div class="sidebar-label">Stats</div>
-      <div class="sidebar-stat">Consensus picks <span class="sidebar-stat-val" id="sb-consensus">&#8212;</span></div>
-      <div class="sidebar-stat">Deep Value picks <span class="sidebar-stat-val" id="sb-deepvalue">&#8212;</span></div>
+      <div class="sidebar-stat">Tried &amp; True picks <span class="sidebar-stat-val" id="sb-tried-true">&#8212;</span></div>
+      <div class="sidebar-stat">Underdog picks <span class="sidebar-stat-val" id="sb-underdogs">&#8212;</span></div>
       <div class="sidebar-stat">ETFs tracked <span class="sidebar-stat-val" id="sb-etfs">&#8212;</span></div>
     </div>
 
     <div class="sidebar-section">
       <div class="sidebar-label">About</div>
       <div class="sidebar-note">
-        <strong>Consensus Picks</strong> surfaces stocks held across multiple top growth ETFs. Breadth of agreement matters most.<br><br>
-        <strong>Deep Value</strong> finds quality companies whose stock prices have been beaten down, with signals of potential recovery.
+        <strong>Tried and True</strong> surfaces stocks held with conviction across multiple top growth ETFs. Breadth of agreement matters most.<br><br>
+        <strong>The Underdogs</strong> finds quality companies whose stock prices have been beaten down, with signals of potential recovery.
       </div>
     </div>
 
@@ -954,7 +954,17 @@ function toggleSiteNav(btn) {
 // ── Globals ──────────────────────────────────────────────────────────────────
 var consensusData = null;
 var deepValueData = null;
-var currentTab = 'consensus';
+
+// Read ?tab=… from URL so cards on the homepage can deep-link to a specific
+// tab (?tab=tried-true / ?tab=underdogs / ?tab=scorecard). Falls back to the
+// Tried-and-True tab.
+var VALID_TABS = ['tried-true', 'underdogs', 'scorecard'];
+var initialTab = (function () {
+  var p = new URLSearchParams(window.location.search).get('tab');
+  return VALID_TABS.indexOf(p) >= 0 ? p : 'tried-true';
+}());
+var currentTab = initialTab;
+
 var sortCol = null;
 var sortAsc = true;
 
@@ -1017,6 +1027,11 @@ function switchTab(tab) {
   document.querySelectorAll('.nav-item[id^="nav-"]').forEach(function(n) {
     n.classList.toggle('active', n.id === 'nav-' + tab);
   });
+  // Keep the URL in sync so the current tab is bookmarkable / shareable
+  if (window.history && window.history.replaceState) {
+    var url = window.location.pathname + '?tab=' + tab + window.location.hash;
+    window.history.replaceState(null, '', url);
+  }
 }
 
 // ── Render: Consensus Picks cards ────────────────────────────────────────────
@@ -1333,24 +1348,24 @@ function renderAll() {
 
   mainEl.innerHTML =
     '<div class="tab-bar">' +
-      '<button class="tab-btn' + (currentTab === 'consensus' ? ' active' : '') + '" data-tab="consensus" onclick="switchTab(\'consensus\')">Consensus Picks<span class="tab-badge">' + conItems.length + '</span></button>' +
-      '<button class="tab-btn' + (currentTab === 'deepvalue' ? ' active' : '') + '" data-tab="deepvalue" onclick="switchTab(\'deepvalue\')">Deep Value<span class="tab-badge">' + dvItems.length + '</span></button>' +
+      '<button class="tab-btn' + (currentTab === 'tried-true' ? ' active' : '') + '" data-tab="tried-true" onclick="switchTab(\'tried-true\')">Tried and True<span class="tab-badge">' + conItems.length + '</span></button>' +
+      '<button class="tab-btn' + (currentTab === 'underdogs' ? ' active' : '') + '" data-tab="underdogs" onclick="switchTab(\'underdogs\')">The Underdogs<span class="tab-badge">' + dvItems.length + '</span></button>' +
       '<button class="tab-btn' + (currentTab === 'scorecard' ? ' active' : '') + '" data-tab="scorecard" onclick="switchTab(\'scorecard\')">ETF Scorecard<span class="tab-badge">' + totalEtfs + '</span></button>' +
     '</div>' +
 
-    '<div class="tab-panel' + (currentTab === 'consensus' ? ' active' : '') + '" id="panel-consensus">' +
+    '<div class="tab-panel' + (currentTab === 'tried-true' ? ' active' : '') + '" id="panel-tried-true">' +
       '<div class="section-header">' +
-        '<h2 class="section-title">Consensus Picks</h2>' +
-        '<span class="section-subtitle">Stocks held across the top growth ETFs</span>' +
+        '<h2 class="section-title">Tried and True</h2>' +
+        '<span class="section-subtitle">Stocks held with conviction across multiple top growth ETFs — when the smartest fund managers all own a name, that breadth of agreement is a signal worth respecting.</span>' +
       '</div>' +
       renderConsensusCards(conItems) +
       LEGEND_CONSENSUS +
     '</div>' +
 
-    '<div class="tab-panel' + (currentTab === 'deepvalue' ? ' active' : '') + '" id="panel-deepvalue">' +
+    '<div class="tab-panel' + (currentTab === 'underdogs' ? ' active' : '') + '" id="panel-underdogs">' +
       '<div class="section-header">' +
-        '<h2 class="section-title">Deep Value</h2>' +
-        '<span class="section-subtitle">Quality companies at beaten-up prices</span>' +
+        '<h2 class="section-title">The Underdogs</h2>' +
+        '<span class="section-subtitle">Quality companies whose stock prices have been beaten down — sound businesses with signals of potential recovery, hiding in plain sight while the market looks the other way.</span>' +
       '</div>' +
       renderDeepValueCards(dvItems) +
       LEGEND_DEEPVALUE +
@@ -1378,8 +1393,8 @@ function checkReady() {
     var dvItems = deepValueData ? (deepValueData.nominees || []) : [];
     var etfs = consensusData ? (consensusData.etfs || []) : [];
     var compEtfs = consensusData ? (consensusData.etfs_comparison || []) : [];
-    document.getElementById('sb-consensus').textContent = conItems.length;
-    document.getElementById('sb-deepvalue').textContent = dvItems.length;
+    document.getElementById('sb-tried-true').textContent = conItems.length;
+    document.getElementById('sb-underdogs').textContent = dvItems.length;
     document.getElementById('sb-etfs').textContent = etfs.length + compEtfs.length;
 
     // Scan time: show most recent
