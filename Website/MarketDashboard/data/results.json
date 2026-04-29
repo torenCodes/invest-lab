@@ -1,33 +1,101 @@
 {
-  "scan_time": "2026-04-29T15:10:36.499368+00:00",
+  "scan_time": "2026-04-29T15:33:42.186497+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 24,
+  "total_scanned": 25,
   "day_trades": [
+    {
+      "ticker": "INTC",
+      "name": "Intel Corp",
+      "sector": "Semiconductors",
+      "current_price": 93.4,
+      "change_pct": 10.5064,
+      "high": 93.73,
+      "low": 85.87,
+      "open": 85.9425,
+      "prev_close": 84.52,
+      "score": 55,
+      "signals": [
+        "Top gainer (+10.5%)",
+        "High volume",
+        "Strong move (+10.5%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)"
+      ],
+      "reddit_mentions": 18,
+      "market_cap": 424797503128.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/INTC.png",
+      "weburl": "https://www.intel.com/",
+      "yahoo_trending_rank": 3,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.29,
+          "estimate": 0.01,
+          "beat": true,
+          "surprise_pct": 1971.4
+        }
+      },
+      "score_normalized": 87
+    },
+    {
+      "ticker": "ON",
+      "name": "ON Semiconductor Corp",
+      "sector": "Semiconductors",
+      "current_price": 98.8,
+      "change_pct": 5.895,
+      "high": 101.255,
+      "low": 98.31,
+      "open": 98.565,
+      "prev_close": 93.3,
+      "score": 46,
+      "signals": [
+        "Top gainer (+5.9%)",
+        "High volume",
+        "Strong move (+5.9%)",
+        "Trending activity (5)",
+        "Yahoo trending (#16)"
+      ],
+      "reddit_mentions": 5,
+      "market_cap": 36697438386.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ON.png",
+      "weburl": "https://www.onsemi.com/",
+      "yahoo_trending_rank": 16,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 73
+    },
     {
       "ticker": "TEVA",
       "name": "Teva Pharmaceutical Industries Ltd",
       "sector": "Pharmaceuticals",
-      "current_price": 35.27,
-      "change_pct": 11.5433,
+      "current_price": 35.14,
+      "change_pct": 11.1322,
       "high": 35.62,
       "low": 33.045,
       "open": 33.045,
       "prev_close": 31.62,
-      "score": 51,
+      "score": 46,
       "signals": [
-        "Top gainer (+11.5%)",
+        "Top gainer (+11.1%)",
         "High volume",
-        "Strong move (+11.5%)",
-        "Trending buzz (10)",
-        "Yahoo trending (#11)"
+        "Strong move (+11.1%)",
+        "Trending activity (6)",
+        "Yahoo trending (#15)"
       ],
-      "reddit_mentions": 10,
+      "reddit_mentions": 6,
       "market_cap": 109080073706.0,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/TEVA.TA.png",
       "weburl": "https://www.tevapharm.com/",
-      "yahoo_trending_rank": 11,
+      "yahoo_trending_rank": 15,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -38,73 +106,36 @@
           "surprise_pct": 8.8
         }
       },
-      "score_normalized": 81
+      "score_normalized": 73
     },
     {
       "ticker": "SAGT",
       "name": "Sagtec Global Ltd",
       "sector": "Technology",
-      "current_price": 2.24,
-      "change_pct": 31.7647,
+      "current_price": 2.35,
+      "change_pct": 38.2353,
       "high": 3.39,
       "low": 2.14,
       "open": 2.6025,
       "prev_close": 1.7,
-      "score": 41,
+      "score": 28,
       "signals": [
-        "Top gainer (+31.8%)",
+        "Top gainer (+38.2%)",
         "High volume",
-        "Strong move (+31.8%)",
-        "Trending activity (9)",
-        "Yahoo trending (#12)"
+        "Strong move (+38.2%)"
       ],
-      "reddit_mentions": 9,
+      "reddit_mentions": 0,
       "market_cap": 21335001.0,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950908952436.png",
       "weburl": "https://www.sagtec-global.com/",
-      "yahoo_trending_rank": 12,
+      "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 65
-    },
-    {
-      "ticker": "ETSY",
-      "name": "ETSY Inc",
-      "sector": "Retail",
-      "current_price": 70.36,
-      "change_pct": 11.3115,
-      "high": 70.88,
-      "low": 65.25,
-      "open": 65.25,
-      "prev_close": 63.21,
-      "score": 33,
-      "signals": [
-        "Top gainer (+11.3%)",
-        "High volume",
-        "Strong move (+11.3%)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 6083783978.000001,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ETSY.png",
-      "weburl": "https://www.etsy.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.89,
-          "estimate": 0.63,
-          "beat": true,
-          "surprise_pct": 40.3
-        }
-      },
-      "score_normalized": 52
+      "score_normalized": 44
     }
   ],
   "swing_trades": [
@@ -112,27 +143,27 @@
       "ticker": "BE",
       "name": "Bloom Energy Corp",
       "sector": "Electrical Equipment",
-      "current_price": 275,
-      "change_pct": 21.4825,
+      "current_price": 282.9,
+      "change_pct": 24.9724,
       "high": 290.5,
       "low": 266.775,
       "open": 266.775,
       "prev_close": 226.37,
       "score": 55,
       "signals": [
-        "Top gainer (+21.5%)",
+        "Top gainer (+25.0%)",
         "High volume",
-        "Strong move (+21.5%)",
-        "Trending buzz (18)",
-        "Yahoo trending (#3)"
+        "Strong move (+25.0%)",
+        "Trending buzz (17)",
+        "Yahoo trending (#4)"
       ],
-      "reddit_mentions": 18,
+      "reddit_mentions": 17,
       "market_cap": 64388474715.99999,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BE.png",
       "weburl": "https://www.bloomenergy.com/",
-      "yahoo_trending_rank": 3,
+      "yahoo_trending_rank": 4,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -149,27 +180,27 @@
       "ticker": "NXPI",
       "name": "NXP Semiconductors NV",
       "sector": "Semiconductors",
-      "current_price": 284.85,
-      "change_pct": 23.6382,
+      "current_price": 286.43,
+      "change_pct": 24.324,
       "high": 289.14,
       "low": 275.165,
       "open": 275.165,
       "prev_close": 230.39,
       "score": 55,
       "signals": [
-        "Top gainer (+23.6%)",
+        "Top gainer (+24.3%)",
         "High volume",
-        "Strong move (+23.6%)",
-        "Trending buzz (14)",
-        "Yahoo trending (#7)"
+        "Strong move (+24.3%)",
+        "Trending buzz (13)",
+        "Yahoo trending (#8)"
       ],
-      "reddit_mentions": 14,
+      "reddit_mentions": 13,
       "market_cap": 58217903386.0,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/NXPI.png",
       "weburl": "https://www.nxp.com/",
-      "yahoo_trending_rank": 7,
+      "yahoo_trending_rank": 8,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -186,27 +217,27 @@
       "ticker": "STX",
       "name": "Seagate Technology Holdings PLC",
       "sector": "Technology",
-      "current_price": 666.1,
-      "change_pct": 15.0372,
+      "current_price": 667.5,
+      "change_pct": 15.279,
       "high": 697,
       "low": 654.26,
       "open": 675.825,
       "prev_close": 579.03,
       "score": 55,
       "signals": [
-        "Top gainer (+15.0%)",
+        "Top gainer (+15.3%)",
         "High volume",
-        "Strong move (+15.0%)",
-        "Trending buzz (17)",
-        "Yahoo trending (#4)"
+        "Strong move (+15.3%)",
+        "Trending buzz (16)",
+        "Yahoo trending (#5)"
       ],
-      "reddit_mentions": 17,
+      "reddit_mentions": 16,
       "market_cap": 126270849789.0,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/STX.png",
       "weburl": "https://investors.seagate.com/overview/default.aspx",
-      "yahoo_trending_rank": 4,
+      "yahoo_trending_rank": 5,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -223,27 +254,27 @@
       "ticker": "V",
       "name": "Visa Inc",
       "sector": "Financial Services",
-      "current_price": 337.01,
-      "change_pct": 8.9589,
+      "current_price": 336.65,
+      "change_pct": 8.8425,
       "high": 341.98,
       "low": 329.59,
       "open": 329.59,
       "prev_close": 309.3,
       "score": 55,
       "signals": [
-        "Top gainer (+9.0%)",
+        "Top gainer (+8.8%)",
         "High volume",
-        "Strong move (+9.0%)",
-        "Trending buzz (16)",
-        "Yahoo trending (#5)"
+        "Strong move (+8.8%)",
+        "Trending buzz (15)",
+        "Yahoo trending (#6)"
       ],
-      "reddit_mentions": 16,
+      "reddit_mentions": 15,
       "market_cap": 589528671204.0,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/V.png",
       "weburl": "https://usa.visa.com/",
-      "yahoo_trending_rank": 5,
+      "yahoo_trending_rank": 6,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -260,17 +291,17 @@
       "ticker": "WDC",
       "name": "Western Digital Corp",
       "sector": "Technology",
-      "current_price": 428.66,
-      "change_pct": 9.6345,
+      "current_price": 434.12,
+      "change_pct": 11.031,
       "high": 441.99,
       "low": 422.4501,
       "open": 425.876,
       "prev_close": 390.99,
       "score": 55,
       "signals": [
-        "Top gainer (+9.6%)",
+        "Top gainer (+11.0%)",
         "High volume",
-        "Strong move (+9.6%)",
+        "Strong move (+11.0%)",
         "Trending buzz (12)",
         "Yahoo trending (#9)"
       ],
@@ -288,39 +319,33 @@
       "score_normalized": 87
     },
     {
-      "ticker": "SBUX",
-      "name": "Starbucks Corp",
-      "sector": "Hotels, Restaurants & Leisure",
-      "current_price": 105.76,
-      "change_pct": 8.7171,
-      "high": 106.225,
-      "low": 100.08,
-      "open": 102.02000000000001,
-      "prev_close": 97.28,
+      "ticker": "MA",
+      "name": "Mastercard Inc",
+      "sector": "Financial Services",
+      "current_price": 525.68,
+      "change_pct": 3.5578,
+      "high": 534.21,
+      "low": 520.89,
+      "open": 524.825,
+      "prev_close": 507.62,
       "score": 46,
       "signals": [
-        "Top gainer (+8.7%)",
+        "Top gainer (+3.6%)",
         "High volume",
-        "Strong move (+8.7%)",
-        "Trending activity (6)",
-        "Yahoo trending (#15)"
+        "Good move (+3.6%)",
+        "Trending buzz (10)",
+        "Yahoo trending (#11)"
       ],
-      "reddit_mentions": 6,
-      "market_cap": 110831107359.0,
+      "reddit_mentions": 10,
+      "market_cap": 452701752645.0,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SBUX.png",
-      "weburl": "https://www.starbucks.com/",
-      "yahoo_trending_rank": 15,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MA.png",
+      "weburl": "https://www.mastercard.us/",
+      "yahoo_trending_rank": 11,
       "earnings_info": {
         "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.5,
-          "estimate": 0.44,
-          "beat": true,
-          "surprise_pct": 14.2
-        }
+        "recent": null
       },
       "score_normalized": 73
     }
@@ -332,8 +357,8 @@
       "mentions": 20,
       "name": "SoFi Technologies Inc",
       "sector": "Financial Services",
-      "current_price": 16,
-      "change_pct": -12.854,
+      "current_price": 16.03,
+      "change_pct": -12.6906,
       "high": 17.52,
       "low": 15.77,
       "open": 17.52,
@@ -365,8 +390,8 @@
       "mentions": 19,
       "name": "Robinhood Markets Inc",
       "sector": "Financial Services",
-      "current_price": 70.58,
-      "change_pct": -14.0002,
+      "current_price": 71.33,
+      "change_pct": -13.0864,
       "high": 73.59,
       "low": 70.25,
       "open": 73.46000000000001,
@@ -394,39 +419,39 @@
       "score_normalized": 0
     },
     {
-      "ticker": "BE",
-      "name": "Bloom Energy Corp",
-      "sector": "Electrical Equipment",
-      "current_price": 275,
-      "change_pct": 21.4825,
-      "high": 290.5,
-      "low": 266.775,
-      "open": 266.775,
-      "prev_close": 226.37,
+      "ticker": "INTC",
+      "name": "Intel Corp",
+      "sector": "Semiconductors",
+      "current_price": 93.4,
+      "change_pct": 10.5064,
+      "high": 93.73,
+      "low": 85.87,
+      "open": 85.9425,
+      "prev_close": 84.52,
       "score": 55,
       "signals": [
-        "Top gainer (+21.5%)",
+        "Top gainer (+10.5%)",
         "High volume",
-        "Strong move (+21.5%)",
+        "Strong move (+10.5%)",
         "Trending buzz (18)",
         "Yahoo trending (#3)"
       ],
       "reddit_mentions": 18,
-      "market_cap": 64388474715.99999,
+      "market_cap": 424797503128.0,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BE.png",
-      "weburl": "https://www.bloomenergy.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/INTC.png",
+      "weburl": "https://www.intel.com/",
       "yahoo_trending_rank": 3,
       "mentions": 18,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-03-31",
-          "actual": 0.44,
-          "estimate": 0.14,
+          "actual": 0.29,
+          "estimate": 0.01,
           "beat": true,
-          "surprise_pct": 225.4
+          "surprise_pct": 1971.4
         }
       },
       "score_normalized": 87
@@ -436,183 +461,171 @@
     {
       "ticker": "XLE",
       "sector": "Energy",
-      "ret_1d": 1.27,
-      "ret_5d": 3.37,
-      "ret_1m": -5.67,
+      "ret_1d": 1.39,
+      "ret_5d": 3.49,
+      "ret_1m": -5.56,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLK",
       "sector": "Technology",
-      "ret_1d": 0.46,
-      "ret_5d": 0.31,
-      "ret_1m": 24.38,
+      "ret_1d": 0.54,
+      "ret_5d": 0.39,
+      "ret_1m": 24.47,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "XTLB",
           "name": "X T L Biopharmaceuticals Ltd",
-          "change_pct": 75.6522,
-          "price": 4.04
+          "change_pct": 70.8696,
+          "price": 3.93
         },
         {
           "ticker": "SAGT",
           "name": "Sagtec Global Ltd",
-          "change_pct": 31.7647,
-          "price": 2.24
+          "change_pct": 38.2353,
+          "price": 2.35
         },
         {
           "ticker": "SIMO",
           "name": "Silicon Motion Technology Corp",
-          "change_pct": 31.1101,
-          "price": 195.59
+          "change_pct": 30.7347,
+          "price": 195.03
         }
       ]
     },
     {
       "ticker": "XLF",
       "sector": "Financials",
-      "ret_1d": 0.14,
-      "ret_5d": -0.55,
-      "ret_1m": 7.37,
+      "ret_1d": -0.09,
+      "ret_5d": -0.78,
+      "ret_1m": 7.12,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "V",
           "name": "Visa Inc",
-          "change_pct": 8.9589,
-          "price": 337.01
+          "change_pct": 8.8425,
+          "price": 336.65
         },
         {
           "ticker": "MA",
           "name": "Mastercard Inc",
-          "change_pct": 4.0227,
-          "price": 528.04
+          "change_pct": 3.5578,
+          "price": 525.68
+        }
+      ]
+    },
+    {
+      "ticker": "XLY",
+      "sector": "Cons. Discretionary",
+      "ret_1d": -0.2,
+      "ret_5d": -1.81,
+      "ret_1m": 10.52,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "SBUX",
+          "name": "Starbucks Corp",
+          "change_pct": 9.5189,
+          "price": 106.54
         }
       ]
     },
     {
       "ticker": "XLC",
       "sector": "Comm. Services",
-      "ret_1d": -0.28,
-      "ret_5d": -2.08,
-      "ret_1m": 6.92,
+      "ret_1d": -0.31,
+      "ret_5d": -2.11,
+      "ret_1m": 6.88,
       "ret_3m": null,
       "top_stocks": []
     },
     {
-      "ticker": "XLY",
-      "sector": "Cons. Discretionary",
-      "ret_1d": -0.41,
-      "ret_5d": -2.02,
-      "ret_1m": 10.29,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "ETSY",
-          "name": "ETSY Inc",
-          "change_pct": 11.3115,
-          "price": 70.36
-        },
-        {
-          "ticker": "SBUX",
-          "name": "Starbucks Corp",
-          "change_pct": 8.7171,
-          "price": 105.76
-        }
-      ]
-    },
-    {
       "ticker": "XLP",
       "sector": "Cons. Staples",
-      "ret_1d": -0.49,
-      "ret_5d": 0.69,
-      "ret_1m": 0.97,
+      "ret_1d": -0.44,
+      "ret_5d": 0.74,
+      "ret_1m": 1.02,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLU",
       "sector": "Utilities",
-      "ret_1d": -0.59,
-      "ret_5d": 2.46,
-      "ret_1m": 0.12,
+      "ret_1d": -0.58,
+      "ret_5d": 2.47,
+      "ret_1m": 0.13,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "BE",
           "name": "Bloom Energy Corp",
-          "change_pct": 21.4825,
-          "price": 275
+          "change_pct": 24.9724,
+          "price": 282.9
         },
         {
-          "ticker": "APH",
-          "name": "Amphenol Corp",
-          "change_pct": 5.4203,
-          "price": 151.51
+          "ticker": "GNRC",
+          "name": "Generac Holdings Inc",
+          "change_pct": 16.0142,
+          "price": 251.89
         }
       ]
     },
     {
       "ticker": "XLRE",
       "sector": "Real Estate",
-      "ret_1d": -0.64,
-      "ret_5d": 0.39,
-      "ret_1m": 8.51,
+      "ret_1d": -0.77,
+      "ret_5d": 0.25,
+      "ret_1m": 8.36,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLB",
       "sector": "Materials",
-      "ret_1d": -0.68,
-      "ret_5d": -1.5,
-      "ret_1m": 3.99,
+      "ret_1d": -0.77,
+      "ret_5d": -1.59,
+      "ret_1m": 3.9,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLI",
       "sector": "Industrials",
-      "ret_1d": -0.73,
-      "ret_5d": -0.76,
-      "ret_1m": 8.38,
+      "ret_1d": -0.88,
+      "ret_5d": -0.92,
+      "ret_1m": 8.21,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "GD",
           "name": "General Dynamics Corp",
-          "change_pct": 9.2738,
-          "price": 342.77
+          "change_pct": 9.8954,
+          "price": 344.72
         }
       ]
     },
     {
       "ticker": "XLV",
       "sector": "Health Care",
-      "ret_1d": -1.06,
-      "ret_5d": -2.78,
-      "ret_1m": -1.05,
+      "ret_1d": -0.89,
+      "ret_5d": -2.61,
+      "ret_1m": -0.88,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "XTLB",
           "name": "X T L Biopharmaceuticals Ltd",
-          "change_pct": 75.6522,
-          "price": 4.04
+          "change_pct": 70.8696,
+          "price": 3.93
         },
         {
           "ticker": "TEVA",
           "name": "Teva Pharmaceutical Industries Ltd",
-          "change_pct": 11.5433,
-          "price": 35.27
-        },
-        {
-          "ticker": "GCTK",
-          "name": "GlucoTrack Inc",
-          "change_pct": 7.6464,
-          "price": 0.901
+          "change_pct": 11.1322,
+          "price": 35.14
         }
       ]
     }
@@ -629,23 +642,8 @@
       "confirmed_tickers": [
         "HOOD"
       ],
-      "hours_ago": 0.6,
+      "hours_ago": 1.0,
       "url": "https://finnhub.io/api/news?id=41e4e2c9e12e357ad7e4f3be7851acbd7aab321c5ab6b46a97e7647bbdcd6d96",
-      "is_news": true
-    },
-    {
-      "id": "139943562",
-      "title": "Traders are paying attention to the gapping stocks in Wednesday's session.",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "BE"
-      ],
-      "confirmed_tickers": [
-        "BE"
-      ],
-      "hours_ago": 0.7,
-      "url": "https://finnhub.io/api/news?id=806558dec4af447c6aa6a455ade5340afc824acb3598c272e5a0d3bb46147373",
       "is_news": true
     },
     {
@@ -659,7 +657,7 @@
       "confirmed_tickers": [
         "HOOD"
       ],
-      "hours_ago": 1.3,
+      "hours_ago": 1.7,
       "url": "https://finnhub.io/api/news?id=9f89d0c8a88f805c1a49e2f164094a6cc0d602ceed0de5682cf98b302d6d5253",
       "is_news": true
     },
@@ -674,8 +672,68 @@
       "confirmed_tickers": [
         "HOOD"
       ],
-      "hours_ago": 1.4,
+      "hours_ago": 1.8,
       "url": "https://finnhub.io/api/news?id=abe66f3ba63a1ede9029a94350d03483c00b5c5a62d4dc61473a378be77f17f4",
+      "is_news": true
+    },
+    {
+      "id": "139932972",
+      "title": "Intel CEO Lip-Bu Tan Just Delivered Phenomenal News to Shareholders",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "INTC"
+      ],
+      "confirmed_tickers": [
+        "INTC"
+      ],
+      "hours_ago": 1.9,
+      "url": "https://finnhub.io/api/news?id=b69e86aaaebbce6d7a5b55804876c7c9c6bf695e764492c949f7966cd6f977cb",
+      "is_news": true
+    },
+    {
+      "id": "139932838",
+      "title": "The 4% Rule Isn't Dead -- but It May Need This Crucial Adjustment",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "INTC"
+      ],
+      "confirmed_tickers": [
+        "INTC"
+      ],
+      "hours_ago": 1.9,
+      "url": "https://finnhub.io/api/news?id=d9878f5ec8cdeafc824b1b0d4bb064dddece641319d9edcbb0efbdc433dd99ab",
+      "is_news": true
+    },
+    {
+      "id": "139932839",
+      "title": "Verizon Communications vs. AT&T: What's the Better Dividend Stock to Buy Right Now?",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "INTC"
+      ],
+      "confirmed_tickers": [
+        "INTC"
+      ],
+      "hours_ago": 2.0,
+      "url": "https://finnhub.io/api/news?id=2c1afb21586e4211e9a027b4e2456377165aa9676721db4870ea2787f81084d0",
+      "is_news": true
+    },
+    {
+      "id": "139932841",
+      "title": "This 5.7%-Yielding Energy Stock Got a War-Fueled Boost in the First Quarter (And Has Plenty of Fuel to Continue Growing ",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "INTC"
+      ],
+      "confirmed_tickers": [
+        "INTC"
+      ],
+      "hours_ago": 2.2,
+      "url": "https://finnhub.io/api/news?id=d5396dac0ffaef744af1d59274dfcbed840150af68d0b4e9526e1df630b7a6dd",
       "is_news": true
     },
     {
@@ -689,7 +747,7 @@
       "confirmed_tickers": [
         "HOOD"
       ],
-      "hours_ago": 2.0,
+      "hours_ago": 2.4,
       "url": "https://finnhub.io/api/news?id=8b793cc5415b142b4d617cef79fc0a9de528f155bb121c454eaeedb951c7d991",
       "is_news": true
     },
@@ -704,7 +762,7 @@
       "confirmed_tickers": [
         "HOOD"
       ],
-      "hours_ago": 2.2,
+      "hours_ago": 2.6,
       "url": "https://finnhub.io/api/news?id=c703034ffe8cd815224edad22848abe9d1ced4606aa4597b100287a3c666d0cf",
       "is_news": true
     },
@@ -719,38 +777,23 @@
       "confirmed_tickers": [
         "SOFI"
       ],
-      "hours_ago": 2.7,
+      "hours_ago": 3.1,
       "url": "https://finnhub.io/api/news?id=9dd0638ebb9cfa30dff43b606d734429ba4a6636f3b91e5dcbb3f6cec5fd8aad",
       "is_news": true
     },
     {
-      "id": "139928988",
-      "title": "Get insights into the top gainers and losers of Wednesday's pre-market session.",
-      "subreddit": "ChartMill",
+      "id": "139932852",
+      "title": "Cathie Wood Goes Bargain Hunting: 3 Stocks She Just Bought",
+      "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "BE"
+        "INTC"
       ],
       "confirmed_tickers": [
-        "BE"
+        "INTC"
       ],
-      "hours_ago": 2.7,
-      "url": "https://finnhub.io/api/news?id=f34bf5a8bddb706f5e079477033637734803a2a753283a82d47dbcacbaa24b92",
-      "is_news": true
-    },
-    {
-      "id": "139943992",
-      "title": "My High Yield Sleeve: Beta Core With An Alpha Vacuum",
-      "subreddit": "SeekingAlpha",
-      "ups": 0,
-      "tickers": [
-        "BE"
-      ],
-      "confirmed_tickers": [
-        "BE"
-      ],
-      "hours_ago": 4.4,
-      "url": "https://finnhub.io/api/news?id=d78c059b0673efcea8c32417a88d5be0c82271ddc8949ad802d64db187c7c448",
+      "hours_ago": 3.1,
+      "url": "https://finnhub.io/api/news?id=82f373d221f2cf4faec35eec850ef8ea40241218f8de6166e096796c455f574a",
       "is_news": true
     },
     {
@@ -764,23 +807,8 @@
       "confirmed_tickers": [
         "SOFI"
       ],
-      "hours_ago": 4.9,
+      "hours_ago": 5.3,
       "url": "https://finnhub.io/api/news?id=e2c6cb3b593088596bfa73cee1638a43bfbe037908099efc620c5c12351c443d",
-      "is_news": true
-    },
-    {
-      "id": "139937111",
-      "title": "General Dynamics, Visa, NXP Semiconductors, Penske Automotive And Other Big Stocks Moving Higher On Wednesday",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "BE"
-      ],
-      "confirmed_tickers": [
-        "BE"
-      ],
-      "hours_ago": 5.0,
-      "url": "https://finnhub.io/api/news?id=b725ca92e209b825e906ef30d3feb8f7eeebf88f403e8247013097b9a367112d",
       "is_news": true
     },
     {
@@ -794,23 +822,8 @@
       "confirmed_tickers": [
         "SOFI"
       ],
-      "hours_ago": 5.6,
+      "hours_ago": 6.0,
       "url": "https://finnhub.io/api/news?id=96c772e6271f58570f39150774d8979db49a252c32b2944ccdb6f8673c181da1",
-      "is_news": true
-    },
-    {
-      "id": "139929324",
-      "title": "Bloom Energy's 130% Revenue Explosion Is Too Expensive, But Impressive",
-      "subreddit": "SeekingAlpha",
-      "ups": 0,
-      "tickers": [
-        "BE"
-      ],
-      "confirmed_tickers": [
-        "BE"
-      ],
-      "hours_ago": 6.2,
-      "url": "https://finnhub.io/api/news?id=5e4bbe0534067eb34fbdf5de3b1b1eba4403e3a3e22d23ccf5ba1e0d8aa8adba",
       "is_news": true
     },
     {
@@ -824,7 +837,7 @@
       "confirmed_tickers": [
         "SOFI"
       ],
-      "hours_ago": 8.0,
+      "hours_ago": 8.4,
       "url": "https://finnhub.io/api/news?id=682720170fa148eae6288942d3fc8bc991d69d5458f54d59e0944b1481b1f39f",
       "is_news": true
     },
@@ -839,13 +852,13 @@
       "confirmed_tickers": [
         "SOFI"
       ],
-      "hours_ago": 8.1,
+      "hours_ago": 8.5,
       "url": "https://finnhub.io/api/news?id=fa489ba881de62fe130202ae2b921d6bf7d40a21d892ebfdb6ecc78d47741b46",
       "is_news": true
     }
   ],
   "fear_greed": {
-    "score": 64.2,
+    "score": 63.7,
     "rating": "Greed",
     "prev_close": 63.8,
     "week_ago": 66.0
