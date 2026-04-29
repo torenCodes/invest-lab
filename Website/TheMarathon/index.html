@@ -237,6 +237,7 @@
   .section-header {
     display: flex;
     align-items: baseline;
+    flex-wrap: wrap;
     gap: 12px;
     margin-bottom: 18px;
   }
@@ -245,10 +246,16 @@
     font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.02em;
+    /* Keep the title on a single line — subtitle takes remaining space
+       and wraps naturally; on narrow viewports it drops to a 2nd row. */
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .section-subtitle {
     font-size: 0.88rem;
     color: var(--ink-3);
+    flex: 1;
+    min-width: 0;
   }
   .section-badge {
     font-size: 0.7rem;
