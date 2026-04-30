@@ -229,8 +229,9 @@
   }
 
   /* ── Setup card ──────────────────────────────────────────────────────────── */
-  /* Top border = brand teal (matches index.html .preview-card)
-     Left border = grade-coded color (A/B/Watch) — grade-specific rules below */
+  /* Top border = brand teal (matches index.html .preview-card).
+     Watch cards keep an orange left border to flag lower-conviction picks;
+     Grade A and B cards stay clean — their badges already do the work. */
   .setup-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -246,8 +247,6 @@
     transform: translateY(-2px);
     border-top-color: var(--accent);
   }
-  .setup-card.grade-a { border-left: 3px solid var(--green); }
-  .setup-card.grade-b { border-left: 3px solid var(--teal); }
   .setup-card.grade-w { border-left: 3px solid var(--orange); }
 
   .card-top {
