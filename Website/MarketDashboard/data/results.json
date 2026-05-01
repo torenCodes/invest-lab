@@ -1,23 +1,60 @@
 {
-  "scan_time": "2026-05-01T13:35:22.251201+00:00",
+  "scan_time": "2026-05-01T14:16:04.369728+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 23,
   "day_trades": [
     {
+      "ticker": "EL",
+      "name": "Estee Lauder Companies Inc",
+      "sector": "Consumer products",
+      "current_price": 81.63,
+      "change_pct": 6.4138,
+      "high": 86.42,
+      "low": 78.75,
+      "open": 82.49000000000001,
+      "prev_close": 76.71,
+      "score": 55,
+      "signals": [
+        "Top gainer (+6.4%)",
+        "High volume",
+        "Strong move (+6.4%)",
+        "Trending buzz (12)",
+        "Yahoo trending (#9)"
+      ],
+      "reddit_mentions": 12,
+      "market_cap": 27748080910.999996,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/EL.png",
+      "weburl": "https://www.elcompanies.com/en",
+      "yahoo_trending_rank": 9,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.91,
+          "estimate": 0.67,
+          "beat": true,
+          "surprise_pct": 36.2
+        }
+      },
+      "score_normalized": 87
+    },
+    {
       "ticker": "TEAM",
       "name": "Atlassian Corp",
       "sector": "Technology",
-      "current_price": 85.59,
-      "change_pct": 24.785,
-      "high": 86.58,
+      "current_price": 84.15,
+      "change_pct": 22.6855,
+      "high": 89.64,
       "low": 82.79,
       "open": 83.935,
       "prev_close": 68.59,
       "score": 55,
       "signals": [
-        "Top gainer (+24.8%)",
+        "Top gainer (+22.7%)",
         "High volume",
-        "Strong move (+24.8%)",
+        "Strong move (+22.7%)",
         "Trending buzz (11)",
         "Yahoo trending (#10)"
       ],
@@ -41,51 +78,14 @@
       "score_normalized": 87
     },
     {
-      "ticker": "EL",
-      "name": "Estee Lauder Companies Inc",
-      "sector": "Consumer products",
-      "current_price": 79.24,
-      "change_pct": 3.2981,
-      "high": 86.42,
-      "low": 79,
-      "open": 82.49000000000001,
-      "prev_close": 76.71,
-      "score": 50,
-      "signals": [
-        "Top gainer (+3.3%)",
-        "High volume",
-        "Good move (+3.3%)",
-        "Trending buzz (12)",
-        "Yahoo trending (#9)"
-      ],
-      "reddit_mentions": 12,
-      "market_cap": 27748080910.999996,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/EL.png",
-      "weburl": "https://www.elcompanies.com/en",
-      "yahoo_trending_rank": 9,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.91,
-          "estimate": 0.67,
-          "beat": true,
-          "surprise_pct": 36.2
-        }
-      },
-      "score_normalized": 79
-    },
-    {
       "ticker": "ESPR",
       "name": "Esperion Therapeutics Inc",
       "sector": "Pharmaceuticals",
-      "current_price": 3.1301,
-      "change_pct": 56.505,
+      "current_price": 3.13,
+      "change_pct": 56.5,
       "high": 3.14,
-      "low": 3.125,
-      "open": 3.1399999999999997,
+      "low": 3.1,
+      "open": 3.13,
       "prev_close": 2,
       "score": 46,
       "signals": [
@@ -112,17 +112,17 @@
       "ticker": "CUE",
       "name": "Cue Biopharma Inc",
       "sector": "Biotechnology",
-      "current_price": 30.1,
-      "change_pct": 104.2062,
+      "current_price": 29.15,
+      "change_pct": 97.7612,
       "high": 33.8,
-      "low": 28.28,
+      "low": 25.95,
       "open": 28.28,
       "prev_close": 14.74,
       "score": 41,
       "signals": [
-        "Top gainer (+104.2%)",
+        "Top gainer (+97.8%)",
         "High volume",
-        "Strong move (+104.2%)",
+        "Strong move (+97.8%)",
         "Trending activity (9)",
         "Yahoo trending (#12)"
       ],
@@ -143,17 +143,17 @@
       "ticker": "ZETA",
       "name": "Zeta Global Holdings Corp",
       "sector": "Technology",
-      "current_price": 19.16,
-      "change_pct": 4.0174,
+      "current_price": 18.89,
+      "change_pct": 2.5516,
       "high": 19.88,
-      "low": 19.08,
+      "low": 18.45,
       "open": 19.5,
       "prev_close": 18.42,
-      "score": 41,
+      "score": 36,
       "signals": [
-        "Top gainer (+4.0%)",
+        "Top gainer (+2.6%)",
         "High volume",
-        "Good move (+4.0%)",
+        "Moderate move (+2.6%)",
         "Trending activity (5)",
         "Yahoo trending (#16)"
       ],
@@ -168,7 +168,7 @@
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 65
+      "score_normalized": 57
     }
   ],
   "swing_trades": [
@@ -176,17 +176,17 @@
       "ticker": "AAPL",
       "name": "Apple Inc",
       "sector": "Technology",
-      "current_price": 280.51,
-      "change_pct": 3.3757,
-      "high": 283.75,
+      "current_price": 286.14,
+      "change_pct": 5.4505,
+      "high": 287.22,
       "low": 278.37,
       "open": 278.7375,
       "prev_close": 271.35,
-      "score": 55,
+      "score": 60,
       "signals": [
-        "Top gainer (+3.4%)",
+        "Top gainer (+5.5%)",
         "High volume",
-        "Good move (+3.4%)",
+        "Strong move (+5.5%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)"
       ],
@@ -207,23 +207,23 @@
           "surprise_pct": 1.1
         }
       },
-      "score_normalized": 87
+      "score_normalized": 95
     },
     {
       "ticker": "RDDT",
       "name": "Reddit Inc",
       "sector": "Media",
-      "current_price": 160.42,
-      "change_pct": 8.9588,
+      "current_price": 160.84,
+      "change_pct": 9.244,
       "high": 167.5,
-      "low": 159,
+      "low": 156.49,
       "open": 166.185,
       "prev_close": 147.23,
       "score": 55,
       "signals": [
-        "Top gainer (+9.0%)",
+        "Top gainer (+9.2%)",
         "High volume",
-        "Strong move (+9.0%)",
+        "Strong move (+9.2%)",
         "Trending buzz (18)",
         "Yahoo trending (#3)"
       ],
@@ -250,17 +250,17 @@
       "ticker": "TWLO",
       "name": "Twilio Inc",
       "sector": "Technology",
-      "current_price": 175.02,
-      "change_pct": 18.2088,
+      "current_price": 171.3,
+      "change_pct": 15.6963,
       "high": 179.475,
-      "low": 173.33,
+      "low": 171.15,
       "open": 176.95499999999998,
       "prev_close": 148.06,
       "score": 51,
       "signals": [
-        "Top gainer (+18.2%)",
+        "Top gainer (+15.7%)",
         "High volume",
-        "Strong move (+18.2%)",
+        "Strong move (+15.7%)",
         "Trending buzz (10)",
         "Yahoo trending (#11)"
       ],
@@ -287,17 +287,17 @@
       "ticker": "ROKU",
       "name": "Roku Inc",
       "sector": "Media",
-      "current_price": 120.53,
-      "change_pct": 3.406,
+      "current_price": 119.75,
+      "change_pct": 2.7368,
       "high": 127,
-      "low": 120,
+      "low": 115,
       "open": 125.7475,
       "prev_close": 116.56,
-      "score": 41,
+      "score": 36,
       "signals": [
-        "Top gainer (+3.4%)",
+        "Top gainer (+2.7%)",
         "High volume",
-        "Good move (+3.4%)",
+        "Moderate move (+2.7%)",
         "Trending activity (6)",
         "Yahoo trending (#15)"
       ],
@@ -318,59 +318,23 @@
           "surprise_pct": 71.3
         }
       },
-      "score_normalized": 65
-    },
-    {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corp",
-      "sector": "Semiconductors",
-      "current_price": 201.76,
-      "change_pct": 1.0974,
-      "high": 203,
-      "low": 200.19,
-      "open": 200.94,
-      "prev_close": 199.57,
-      "score": 40,
-      "signals": [
-        "Top gainer (+1.1%)",
-        "High volume",
-        "Trending buzz (15)",
-        "Yahoo trending (#6)"
-      ],
-      "reddit_mentions": 15,
-      "market_cap": 4849551177979.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/NVDA.png",
-      "weburl": "https://www.nvidia.com/",
-      "yahoo_trending_rank": 6,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 1.62,
-          "estimate": 1.56,
-          "beat": true,
-          "surprise_pct": 3.6
-        }
-      },
-      "score_normalized": 63
+      "score_normalized": 57
     },
     {
       "ticker": "CIEN",
       "name": "Ciena Corp",
       "sector": "Communications",
-      "current_price": 535.84,
-      "change_pct": 1.5656,
-      "high": 536.5089,
+      "current_price": 541.89,
+      "change_pct": 2.7124,
+      "high": 550,
       "low": 518.58,
-      "open": 527.26,
+      "open": 527.725,
       "prev_close": 527.58,
       "score": 31,
       "signals": [
-        "Top gainer (+1.6%)",
+        "Top gainer (+2.7%)",
         "High volume",
-        "Moderate move (+1.6%)",
+        "Moderate move (+2.7%)",
         "Yahoo trending (#18)"
       ],
       "reddit_mentions": 3,
@@ -391,6 +355,41 @@
         }
       },
       "score_normalized": 49
+    },
+    {
+      "ticker": "SNDK",
+      "name": "Sandisk Corp",
+      "sector": "Technology",
+      "current_price": 1138.64,
+      "change_pct": 3.8422,
+      "high": 1153.43,
+      "low": 1048,
+      "open": 1049.095,
+      "prev_close": 1096.51,
+      "score": 28,
+      "signals": [
+        "Top gainer (+3.8%)",
+        "High volume",
+        "Good move (+3.8%)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 161845938213.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950906460416.png",
+      "weburl": "https://www.sandisk.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 23.41,
+          "estimate": 14.72,
+          "beat": true,
+          "surprise_pct": 59.0
+        }
+      },
+      "score_normalized": 44
     }
   ],
   "buzz_source": "trending",
@@ -399,17 +398,17 @@
       "ticker": "AAPL",
       "name": "Apple Inc",
       "sector": "Technology",
-      "current_price": 280.51,
-      "change_pct": 3.3757,
-      "high": 283.75,
+      "current_price": 286.14,
+      "change_pct": 5.4505,
+      "high": 287.22,
       "low": 278.37,
       "open": 278.7375,
       "prev_close": 271.35,
-      "score": 55,
+      "score": 60,
       "signals": [
-        "Top gainer (+3.4%)",
+        "Top gainer (+5.5%)",
         "High volume",
-        "Good move (+3.4%)",
+        "Strong move (+5.5%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)"
       ],
@@ -431,23 +430,23 @@
           "surprise_pct": 1.1
         }
       },
-      "score_normalized": 87
+      "score_normalized": 95
     },
     {
       "ticker": "BYND",
       "name": "Beyond Meat Inc",
       "sector": "Food Products",
-      "current_price": 1.05,
-      "change_pct": 6.6965,
+      "current_price": 1.02,
+      "change_pct": 3.648,
       "high": 1.0999,
-      "low": 1.02,
-      "open": 1.095,
+      "low": 0.9914,
+      "open": 1.0775000000000001,
       "prev_close": 0.9841,
-      "score": 50,
+      "score": 45,
       "signals": [
-        "Top gainer (+6.7%)",
+        "Top gainer (+3.6%)",
         "High volume",
-        "Strong move (+6.7%)",
+        "Good move (+3.6%)",
         "Trending buzz (19)",
         "Yahoo trending (#2)"
       ],
@@ -463,23 +462,23 @@
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 79
+      "score_normalized": 71
     },
     {
       "ticker": "RDDT",
       "name": "Reddit Inc",
       "sector": "Media",
-      "current_price": 160.42,
-      "change_pct": 8.9588,
+      "current_price": 160.84,
+      "change_pct": 9.244,
       "high": 167.5,
-      "low": 159,
+      "low": 156.49,
       "open": 166.185,
       "prev_close": 147.23,
       "score": 55,
       "signals": [
-        "Top gainer (+9.0%)",
+        "Top gainer (+9.2%)",
         "High volume",
-        "Strong move (+9.0%)",
+        "Strong move (+9.2%)",
         "Trending buzz (18)",
         "Yahoo trending (#3)"
       ],
@@ -508,201 +507,179 @@
     {
       "ticker": "XLK",
       "sector": "Technology",
-      "ret_1d": 1.08,
-      "ret_5d": 0.62,
-      "ret_1m": 19.5,
+      "ret_1d": 1.45,
+      "ret_5d": 1.0,
+      "ret_1m": 19.94,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "CUE",
           "name": "Cue Biopharma Inc",
-          "change_pct": 104.2062,
-          "price": 30.1
+          "change_pct": 97.7612,
+          "price": 29.15
         },
         {
           "ticker": "TEAM",
           "name": "Atlassian Corp",
-          "change_pct": 24.785,
-          "price": 85.59
+          "change_pct": 22.6855,
+          "price": 84.15
         },
         {
           "ticker": "TWLO",
           "name": "Twilio Inc",
-          "change_pct": 18.2088,
-          "price": 175.02
-        }
-      ]
-    },
-    {
-      "ticker": "XLP",
-      "sector": "Cons. Staples",
-      "ret_1d": 0.64,
-      "ret_5d": 1.95,
-      "ret_1m": 4.16,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "BYND",
-          "name": "Beyond Meat Inc",
-          "change_pct": 6.6965,
-          "price": 1.05
-        }
-      ]
-    },
-    {
-      "ticker": "XLB",
-      "sector": "Materials",
-      "ret_1d": 0.47,
-      "ret_5d": -0.4,
-      "ret_1m": 2.48,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLF",
-      "sector": "Financials",
-      "ret_1d": 0.46,
-      "ret_5d": 1.85,
-      "ret_1m": 5.93,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "BX",
-          "name": "Blackstone Inc",
-          "change_pct": 0.3504,
-          "price": 126.02
-        }
-      ]
-    },
-    {
-      "ticker": "XLC",
-      "sector": "Comm. Services",
-      "ret_1d": 0.39,
-      "ret_5d": 1.24,
-      "ret_1m": 5.15,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "RDDT",
-          "name": "Reddit Inc",
-          "change_pct": 8.9588,
-          "price": 160.42
-        },
-        {
-          "ticker": "ROKU",
-          "name": "Roku Inc",
-          "change_pct": 3.406,
-          "price": 120.53
-        },
-        {
-          "ticker": "CIEN",
-          "name": "Ciena Corp",
-          "change_pct": 1.5656,
-          "price": 535.84
+          "change_pct": 15.6963,
+          "price": 171.3
         }
       ]
     },
     {
       "ticker": "XLY",
       "sector": "Cons. Discretionary",
-      "ret_1d": 0.26,
-      "ret_5d": -0.03,
-      "ret_1m": 8.07,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLV",
-      "sector": "Health Care",
-      "ret_1d": 0.17,
-      "ret_5d": 1.43,
-      "ret_1m": -1.01,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "CUE",
-          "name": "Cue Biopharma Inc",
-          "change_pct": 104.2062,
-          "price": 30.1
-        },
-        {
-          "ticker": "ESPR",
-          "name": "Esperion Therapeutics Inc",
-          "change_pct": 56.505,
-          "price": 3.1301
-        }
-      ]
-    },
-    {
-      "ticker": "XLI",
-      "sector": "Industrials",
-      "ret_1d": 0.09,
-      "ret_5d": 1.32,
-      "ret_1m": 6.27,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLRE",
-      "sector": "Real Estate",
-      "ret_1d": 0.0,
-      "ret_5d": 1.3,
-      "ret_1m": 8.42,
+      "ret_1d": 1.01,
+      "ret_5d": 0.72,
+      "ret_1m": 8.88,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLU",
       "sector": "Utilities",
-      "ret_1d": -0.13,
-      "ret_5d": 1.32,
-      "ret_1m": 1.47,
+      "ret_1d": 0.81,
+      "ret_5d": 2.27,
+      "ret_1m": 2.43,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "SOBR",
           "name": "Sobr Safe Inc",
-          "change_pct": 99.6337,
-          "price": 1.09
+          "change_pct": 110.6227,
+          "price": 1.15
         }
       ]
+    },
+    {
+      "ticker": "XLP",
+      "sector": "Cons. Staples",
+      "ret_1d": 0.76,
+      "ret_5d": 2.07,
+      "ret_1m": 4.28,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "BYND",
+          "name": "Beyond Meat Inc",
+          "change_pct": 3.648,
+          "price": 1.02
+        }
+      ]
+    },
+    {
+      "ticker": "XLF",
+      "sector": "Financials",
+      "ret_1d": 0.75,
+      "ret_5d": 2.14,
+      "ret_1m": 6.23,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "BX",
+          "name": "Blackstone Inc",
+          "change_pct": 0.0717,
+          "price": 125.67
+        }
+      ]
+    },
+    {
+      "ticker": "XLB",
+      "sector": "Materials",
+      "ret_1d": 0.58,
+      "ret_5d": -0.29,
+      "ret_1m": 2.6,
+      "ret_3m": null,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLC",
+      "sector": "Comm. Services",
+      "ret_1d": 0.25,
+      "ret_5d": 1.09,
+      "ret_1m": 5.0,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "RDDT",
+          "name": "Reddit Inc",
+          "change_pct": 9.244,
+          "price": 160.84
+        },
+        {
+          "ticker": "ROKU",
+          "name": "Roku Inc",
+          "change_pct": 2.7368,
+          "price": 119.75
+        },
+        {
+          "ticker": "CIEN",
+          "name": "Ciena Corp",
+          "change_pct": 2.7124,
+          "price": 541.89
+        }
+      ]
+    },
+    {
+      "ticker": "XLV",
+      "sector": "Health Care",
+      "ret_1d": 0.24,
+      "ret_5d": 1.5,
+      "ret_1m": -0.94,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "CUE",
+          "name": "Cue Biopharma Inc",
+          "change_pct": 97.7612,
+          "price": 29.15
+        },
+        {
+          "ticker": "ESPR",
+          "name": "Esperion Therapeutics Inc",
+          "change_pct": 56.5,
+          "price": 3.13
+        }
+      ]
+    },
+    {
+      "ticker": "XLRE",
+      "sector": "Real Estate",
+      "ret_1d": 0.18,
+      "ret_5d": 1.48,
+      "ret_1m": 8.62,
+      "ret_3m": null,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLI",
+      "sector": "Industrials",
+      "ret_1d": -0.1,
+      "ret_5d": 1.12,
+      "ret_1m": 6.07,
+      "ret_3m": null,
+      "top_stocks": []
     },
     {
       "ticker": "XLE",
       "sector": "Energy",
-      "ret_1d": -0.52,
-      "ret_5d": 4.34,
-      "ret_1m": 0.63,
+      "ret_1d": -1.73,
+      "ret_5d": 3.08,
+      "ret_1m": -0.59,
       "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "CVX",
-          "name": "Chevron Corp",
-          "change_pct": 0.0776,
-          "price": 193.46
-        }
-      ]
+      "top_stocks": []
     }
   ],
   "reddit_feed": [
     {
-      "id": "140132076",
-      "title": "What's going on in today's pre-market session: S&P500 movers",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "AAPL"
-      ],
-      "confirmed_tickers": [
-        "AAPL"
-      ],
-      "hours_ago": 1.0,
-      "url": "https://finnhub.io/api/news?id=c0530ca3e73613bd898c0edf0976f0550ad14c012738bd626bd4785aae3dff97",
-      "is_news": true
-    },
-    {
-      "id": "140131275",
-      "title": "Apple's earnings beat is part of an amazing trend",
+      "id": "140132756",
+      "title": "Nasdaq Composite Takes Off as Tech Bulls Retake Control on Strong Earnings, M&A",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -711,13 +688,13 @@
       "confirmed_tickers": [
         "AAPL"
       ],
-      "hours_ago": 2.1,
-      "url": "https://finnhub.io/api/news?id=9e407a8936e3d87b6c6d4f658c95edffee38f907b792dbdece85cf0ff2404003",
+      "hours_ago": 0.5,
+      "url": "https://finnhub.io/api/news?id=7485c46183b94299aad847168437a487769aef0c70c57373c381a2bb9c1146b8",
       "is_news": true
     },
     {
-      "id": "140131262",
-      "title": "Stocks Mostly Up Pre-Bell as Investors Await More Corporate Earnings",
+      "id": "140132757",
+      "title": "Stock Market Today: Dow Rises As Apple Jumps On Earnings; Roblox, Sandisk, Western Digital Dive (Live Coverage)",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -726,13 +703,13 @@
       "confirmed_tickers": [
         "AAPL"
       ],
-      "hours_ago": 2.2,
-      "url": "https://finnhub.io/api/news?id=d91c8d6522726d4ce287caf5eee28a7d43ca5d9f26e432fcb7bbf2b03dcf9f37",
+      "hours_ago": 0.5,
+      "url": "https://finnhub.io/api/news?id=113405f09031d9ddf670e072d8c4eb12cf6516b2b7e429960f7d8a4fcc60f6c4",
       "is_news": true
     },
     {
-      "id": "140131277",
-      "title": "Apple CEO warns memory constraints are intensifying",
+      "id": "140132758",
+      "title": "S&P 500, Nasdaq Rise to Start May at Fresh Record Highs",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -741,13 +718,13 @@
       "confirmed_tickers": [
         "AAPL"
       ],
-      "hours_ago": 2.8,
-      "url": "https://finnhub.io/api/news?id=558b3bb9a277e3d0929755c028ce7269a529ba683894902b41d462d349035795",
+      "hours_ago": 0.6,
+      "url": "https://finnhub.io/api/news?id=570bb343aff3a96020f93e2b04c4fd527c6670816ba5ef7b7c0c5ca2a9358906",
       "is_news": true
     },
     {
-      "id": "140131268",
-      "title": "Social Buzz: Wallstreetbets Stocks Mostly Advancing Premarket Friday; Reddit, Apple to Open Higher",
+      "id": "140132739",
+      "title": "Apple Proves AI Doesn\u2019t Matter",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -756,8 +733,23 @@
       "confirmed_tickers": [
         "AAPL"
       ],
-      "hours_ago": 3.0,
-      "url": "https://finnhub.io/api/news?id=61f088a82d7713b1170d6727f18c8e0afe6f87d4d678923cb2ef9522f80fdeb8",
+      "hours_ago": 0.6,
+      "url": "https://finnhub.io/api/news?id=ff928de2b230d81818690e7ec62cb71274db4fd1af3ff1a46114e0d51ff2f1be",
+      "is_news": true
+    },
+    {
+      "id": "140132760",
+      "title": "Big Tech Is Spending an Unprecedented Amount on AI. Only 1 Company Is Making It Work.",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "AAPL"
+      ],
+      "confirmed_tickers": [
+        "AAPL"
+      ],
+      "hours_ago": 0.9,
+      "url": "https://finnhub.io/api/news?id=fa6c7e8efd887ca9de79ba7e1919a740797e07993fe3b2b6ed22988268502d3f",
       "is_news": true
     },
     {
@@ -771,7 +763,7 @@
       "confirmed_tickers": [
         "RDDT"
       ],
-      "hours_ago": 4.1,
+      "hours_ago": 4.7,
       "url": "https://finnhub.io/api/news?id=9472ab01e54fd65afcf8e56ffee4a4f58b1fb92743084b4c052c0faecc1f7c35",
       "is_news": true
     },
@@ -786,7 +778,7 @@
       "confirmed_tickers": [
         "RDDT"
       ],
-      "hours_ago": 8.2,
+      "hours_ago": 8.9,
       "url": "https://finnhub.io/api/news?id=8e7ec49e1ca0f4482a6037b471ada2ad5b7bd97b31dfed2d11a7f5da4b40cb70",
       "is_news": true
     },
@@ -801,7 +793,7 @@
       "confirmed_tickers": [
         "RDDT"
       ],
-      "hours_ago": 9.7,
+      "hours_ago": 10.4,
       "url": "https://finnhub.io/api/news?id=5288c76cfc36a355b2bc36f1775f60aa57c157b14c071fc5b5acf3acbc80b442",
       "is_news": true
     },
@@ -816,7 +808,7 @@
       "confirmed_tickers": [
         "RDDT"
       ],
-      "hours_ago": 16.9,
+      "hours_ago": 17.5,
       "url": "https://finnhub.io/api/news?id=6bc2fa26381a542ef32fb9a1cb7b3bc4ca3e1be281cee0ca1c148e05ba6e1def",
       "is_news": true
     },
@@ -831,7 +823,7 @@
       "confirmed_tickers": [
         "BYND"
       ],
-      "hours_ago": 19.6,
+      "hours_ago": 20.3,
       "url": "https://finnhub.io/api/news?id=2a82f91bb96adaecaa4c3b558096393ca334063758ea3e58858fc7a4fcc7e5d5",
       "is_news": true
     },
@@ -846,7 +838,7 @@
       "confirmed_tickers": [
         "RDDT"
       ],
-      "hours_ago": 19.7,
+      "hours_ago": 20.3,
       "url": "https://finnhub.io/api/news?id=deebae236eab948760c3bbb034bf669c2152ab107e33d47d09827603feab0244",
       "is_news": true
     },
@@ -861,7 +853,7 @@
       "confirmed_tickers": [
         "BYND"
       ],
-      "hours_ago": 23.5,
+      "hours_ago": 24.1,
       "url": "https://finnhub.io/api/news?id=0c366b1a2d787572907be6282a6a164638495dcefe5122added5a796d4d0dc00",
       "is_news": true
     },
@@ -876,7 +868,7 @@
       "confirmed_tickers": [
         "BYND"
       ],
-      "hours_ago": 27.3,
+      "hours_ago": 28.0,
       "url": "https://finnhub.io/api/news?id=2c7472054a3365d02feff98206fff38356a75c102b76f52cd8fa11597e993f6e",
       "is_news": true
     },
@@ -891,13 +883,13 @@
       "confirmed_tickers": [
         "BYND"
       ],
-      "hours_ago": 163.6,
+      "hours_ago": 164.3,
       "url": "https://finnhub.io/api/news?id=76a884cb1f138bf6e5707c4ac11e3ca6d6236dd9fd200a05943227f2d6cf09a6",
       "is_news": true
     }
   ],
   "fear_greed": {
-    "score": 66.7,
+    "score": 67.5,
     "rating": "Greed",
     "prev_close": 66.6,
     "week_ago": 63.7
