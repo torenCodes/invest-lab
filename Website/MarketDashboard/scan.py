@@ -524,8 +524,11 @@ def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Redd
     day_cands.sort(key=lambda x: x["score"], reverse=True)
     swing_cands.sort(key=lambda x: x["score"], reverse=True)
 
-    day_tickers = {c["ticker"] for c in day_cands[:6]}
-    swing_cands = [c for c in swing_cands if c["ticker"] not in day_tickers]
+    # No more cross-section dedup. A high-quality $20+ name with strong
+    # momentum is legitimately both a day-trade play (intraday) AND a swing
+    # play (multi-day large cap) — the section headers already frame them
+    # differently. Excluding day picks from swing was leaving swing empty
+    # whenever the top scorers happened to also meet swing criteria.
 
     result_map = {r["ticker"]: r for r in results if r}
     reddit_candidates = sorted(buzz_lookup.items(), key=lambda x: x[1], reverse=True)
