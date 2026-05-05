@@ -748,24 +748,10 @@ def get_sector_rotation(scan_results=None):
 
 # ── Supplemental data ─────────────────────────────────────────────────────────
 
-def get_fear_greed():
-    try:
-        url = "https://production.dataviz.cnn.io/index/fearandgreed/graphdata/"
-        headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
-        resp = requests.get(url, headers=headers, timeout=8)
-        data = resp.json()
-        fg = data.get("fear_and_greed", {})
-        score = round(float(fg.get("score", 0)), 1)
-        rating = fg.get("rating", "Unknown").replace("_", " ").title()
-        prev = round(float(fg.get("previous_close", score)), 1)
-        week_ago = None
-        history = data.get("fear_and_greed_historical", {}).get("data", [])
-        if len(history) >= 5:
-            week_ago = round(float(history[-5].get("y", score)), 1)
-        return {"score": score, "rating": rating, "prev_close": prev, "week_ago": week_ago}
-    except Exception as e:
-        print(f"[F&G] Error: {e}")
-        return None
+# Fear & Greed is now sourced by scripts/market_temperature_scan.py and
+# surfaced inside the Market Temperature card on the homepage. The legacy
+# get_fear_greed() helper that lived here was removed once the homepage
+# Newsstand stopped reading the fear_greed field from results.json.
 
 
 def get_market_news():
@@ -889,8 +875,7 @@ def run():
 
     day_trades, swing_trades, reddit_cards = categorize(results, buzz_lookup, universe, yahoo_cats, buzz_label, yahoo_trending)
 
-    print("[scan.py] Fetching Fear & Greed and earnings...")
-    fear_greed   = get_fear_greed()
+    print("[scan.py] Fetching earnings calendar...")
     earnings_cal = get_earnings_calendar()
 
     print("[scan.py] Fetching sector rotation data...")
@@ -960,7 +945,6 @@ def run():
         "reddit_cards":     reddit_cards,
         "sector_rotation":  sector_rotation,
         "reddit_feed":      display_feed,
-        "fear_greed":       fear_greed,
     }
 
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)

@@ -121,7 +121,7 @@
             </div>
             <div class="mt-body" id="mt-body" hidden>
               <div class="mt-components" id="mt-components"></div>
-              <p class="mt-footnote">Composite of four valuation signals, weighted. Buffett Indicator &amp; Shiller CAPE are percentile-ranked against their own 10-year history so structurally elevated readings don't dominate. Fed Model &amp; Breadth use fixed threshold bands. Updated weekdays around 6:00am ET. Educational only — not investment advice.</p>
+              <p class="mt-footnote">Composite of six signals, weighted: Buffett Indicator (25%) &amp; Shiller CAPE (25%) are percentile-ranked against their own 10-year history so structurally elevated readings don't dominate; Fed Model (15%) &amp; Breadth (15%) use fixed threshold bands; Fear &amp; Greed (10%) and VIX (10%) capture short-term sentiment and implied volatility. Updated weekdays around 6:00am ET. Educational only — not investment advice.</p>
             </div>
           </section>
           <!-- ─── /Market Temperature ─── -->
@@ -148,18 +148,6 @@
               <h2 class="section-title">The Newsstand</h2>
               <p class="preview-ts-line">Extra, extra!  Read all about it!</p>
             </div>
-          
-          <div class="fg-strip fg-strip--vertical">
-            <span class="fg-strip-label">Fear &amp; Greed</span>
-            <div class="fg-strip-track">
-              <div class="fg-strip-needle" id="fg-needle" style="left:50%"></div>
-            </div>
-            <div class="fg-strip-score">
-              <span class="fg-strip-score-num" id="fg-score">—</span>
-              <span class="fg-strip-rating" id="fg-rating">loading…</span>
-            </div>
-            <span class="fg-strip-delta" id="fg-delta"></span>
-          </div>
           
           <div class="newsstand-grid">
             <div class="newsstand-card" id="ns-news" onclick="toggleNewsstand('ns-news')">
@@ -552,35 +540,6 @@
       document.getElementById('pc-swing').innerHTML    = stockCard(swing,   'Swing Trade',      'View swing trades', false);
       document.getElementById('pc-sector').innerHTML   = sectorCard(sector);
       document.getElementById('pc-discussed').innerHTML = stockCard(discuss, 'Highly Discussed', 'View all picks',    true);
-
-      // ── Fear & Greed ──────────────────────────────────────────────────────
-      if (data.fear_greed) {
-        var fg     = data.fear_greed;
-        var score  = parseFloat(fg.score  || 0);
-        var prev   = parseFloat(fg.prev_close || 0);
-        var rating = fg.rating || '';
-
-        document.getElementById('fg-score').textContent  = Math.round(score);
-        document.getElementById('fg-rating').textContent = rating;
-        document.getElementById('fg-needle').style.left  = score + '%';
-
-        // Colour the rating label based on sentiment zone
-        var ratingColor = score < 25  ? '#c0392b'   // Extreme Fear
-                        : score < 45  ? '#e67e22'   // Fear
-                        : score < 55  ? '#c8a000'   // Neutral
-                        : score < 75  ? '#27ae60'   // Greed
-                        :               '#1a7a4a';  // Extreme Greed
-        document.getElementById('fg-rating').style.color = ratingColor;
-
-        // Show delta vs previous close
-        var delta = score - prev;
-        if (Math.abs(delta) >= 0.5) {
-          var sign = delta > 0 ? '▲' : '▼';
-          var col  = delta > 0 ? '#27ae60' : '#c0392b';
-          var el   = document.getElementById('fg-delta');
-          el.innerHTML = '<span style="color:' + col + '">' + sign + ' ' + Math.abs(delta).toFixed(1) + ' from prev close</span>';
-        }
-      }
     })
     .catch(function () {
       var msg = '<div class="pv-empty">Data unavailable — check back on a weekday.</div>';
@@ -588,7 +547,6 @@
         document.getElementById(id).innerHTML = msg;
       });
       document.getElementById('preview-ts').textContent = 'unavailable';
-      document.getElementById('fg-rating').textContent  = 'unavailable';
     });
 }());
 </script>
@@ -879,10 +837,12 @@
 
   function titleFor(key) {
     return ({
-      buffett:   'Buffett Indicator',
-      shiller:   'Shiller CAPE',
-      fed_model: 'Fed Model',
-      breadth:   'Breadth'
+      buffett:    'Buffett Indicator',
+      shiller:    'Shiller CAPE',
+      fed_model:  'Fed Model',
+      breadth:    'Breadth',
+      fear_greed: 'Fear & Greed',
+      vix:        'VIX'
     })[key] || key;
   }
 
@@ -896,7 +856,7 @@
     fillEl.style.width    = (score != null ? Math.max(0, Math.min(100, score)) : 0) + '%';
     metaEl.textContent    = data.scan_time ? 'Updated ' + fmtTs(data.scan_time) : '';
 
-    var keys = ['buffett', 'shiller', 'fed_model', 'breadth'];
+    var keys = ['buffett', 'shiller', 'fed_model', 'breadth', 'fear_greed', 'vix'];
     compsEl.innerHTML = keys.map(function (k) {
       return renderComponent(k, (data.components || {})[k]);
     }).join('');

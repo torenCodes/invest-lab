@@ -5,10 +5,12 @@ Composite score 0-100:
   0 = Cheap, 100 = Frothy
 
 Components (each scored 0-100):
-  - Buffett Indicator (Wilshire 5000 / GDP)       — 30%  percentile over 10yr
-  - Shiller CAPE (10yr real P/E)                  — 30%  percentile over 10yr
-  - Fed Model (S&P earnings yield − 10Y Treasury) — 20%  fixed thresholds
-  - Breadth (% S&P 500 above 200-DMA)             — 20%  fixed thresholds
+  - Buffett Indicator (Wilshire 5000 / GDP)       — 25%  percentile over 10yr
+  - Shiller CAPE (10yr real P/E)                  — 25%  percentile over 10yr
+  - Fed Model (S&P earnings yield − 10Y Treasury) — 15%  fixed thresholds
+  - Breadth (% S&P 500 above 200-DMA)             — 15%  fixed thresholds
+  - Fear & Greed (CNN sentiment composite)        — 10%  used directly (already 0-100)
+  - VIX (30-day implied S&P volatility)           — 10%  inverted threshold table
 
 Output: MarketDashboard/data/market_temperature.json
 Invoked by GitHub Actions daily. Run locally: python scripts/market_temperature_scan.py
@@ -36,10 +38,12 @@ NEXT_SCAN_INFO = "Weekdays at 6:00am ET"
 CALIB_YEARS    = 10
 
 WEIGHTS = {
-    "buffett":    0.30,
-    "shiller":    0.30,
-    "fed_model":  0.20,
-    "breadth":    0.20,
+    "buffett":    0.25,
+    "shiller":    0.25,
+    "fed_model":  0.15,
+    "breadth":    0.15,
+    "fear_greed": 0.10,
+    "vix":        0.10,
 }
 
 HEADERS = {
@@ -391,13 +395,103 @@ def compute_breadth():
     }
 
 
+# ── Component 5: Fear & Greed (CNN) ──────────────────────────────────────────
+
+def compute_fear_greed():
+    """CNN's Fear & Greed Index — composite of 7 short-term sentiment signals.
+    The published score is already 0-100 (0 = Extreme Fear, 100 = Extreme
+    Greed) and aligns directly with our Cheap → Frothy framing, so we use
+    it without transformation."""
+    print("[market-temp] Fear & Greed...")
+    url = "https://production.dataviz.cnn.io/index/fearandgreed/graphdata/"
+    headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                             "AppleWebKit/537.36 (KHTML, like Gecko) "
+                             "Chrome/125.0.0.0 Safari/537.36"}
+    try:
+        r = requests.get(url, headers=headers, timeout=10)
+        r.raise_for_status()
+        data = r.json()
+    except Exception as e:
+        print(f"[market-temp] Fear & Greed fetch failed: {e}")
+        return None
+
+    fg = data.get("fear_and_greed", {}) or {}
+    try:
+        score = float(fg.get("score", 0) or 0)
+    except (TypeError, ValueError):
+        return None
+    if score <= 0:
+        return None
+    rating = (fg.get("rating") or "Unknown").replace("_", " ").title()
+
+    return {
+        "raw":         round(score, 1),
+        "raw_label":   f"{round(score)} ({rating})",
+        "score":       round(score, 1),
+        "label":       label_for(score),
+        "description": "CNN's composite of 7 short-term sentiment signals (momentum, "
+                       "breadth, put/call ratio, junk-bond demand, volatility, etc.). "
+                       "High readings reflect investor euphoria — historically a "
+                       "contrarian sell signal.",
+    }
+
+
+# ── Component 6: VIX (volatility) ────────────────────────────────────────────
+
+def compute_vix():
+    """CBOE Volatility Index — 30-day implied S&P 500 volatility.
+    Inverted relative to raw value: low VIX = complacency = frothy market;
+    high VIX = fear = often near short-term bottoms."""
+    print("[market-temp] VIX...")
+    try:
+        import yfinance as yf
+    except ImportError:
+        print("[market-temp] yfinance unavailable")
+        return None
+
+    try:
+        hist = yf.Ticker("^VIX").history(period="5d", interval="1d", auto_adjust=False)
+    except Exception as e:
+        print(f"[market-temp] VIX fetch failed: {e}")
+        return None
+    if hist is None or hist.empty:
+        return None
+
+    closes = [float(c) for c in hist["Close"].values if c == c]  # filter NaN
+    if not closes:
+        return None
+    vix = closes[-1]
+
+    # Inverse threshold table — raw VIX → 0-100 frothy/cheap score
+    if   vix < 12:  score = 95
+    elif vix < 15:  score = 85
+    elif vix < 18:  score = 70
+    elif vix < 22:  score = 50
+    elif vix < 28:  score = 30
+    elif vix < 35:  score = 15
+    else:           score = 5
+
+    return {
+        "raw":         round(vix, 2),
+        "raw_label":   f"{vix:.1f} VIX",
+        "score":       score,
+        "label":       label_for(score),
+        "description": "30-day expected S&P 500 volatility implied by options. "
+                       "Low readings (under 15) signal complacency and often coincide "
+                       "with frothy markets; high readings (over 30) signal fear and "
+                       "frequently mark short-term bottoms.",
+    }
+
+
 # ── Composite ────────────────────────────────────────────────────────────────
 
 COMPONENT_META = {
-    "buffett":   {"title": "Buffett Indicator",    "subtitle": "Market Cap / GDP"},
-    "shiller":   {"title": "Shiller CAPE",         "subtitle": "10-Year Real P/E"},
-    "fed_model": {"title": "Fed Model",            "subtitle": "Earnings Yield − 10Y"},
-    "breadth":   {"title": "Breadth",              "subtitle": "% S&P 500 > 200-DMA"},
+    "buffett":    {"title": "Buffett Indicator", "subtitle": "Market Cap / GDP"},
+    "shiller":    {"title": "Shiller CAPE",      "subtitle": "10-Year Real P/E"},
+    "fed_model":  {"title": "Fed Model",         "subtitle": "Earnings Yield − 10Y"},
+    "breadth":    {"title": "Breadth",           "subtitle": "% S&P 500 > 200-DMA"},
+    "fear_greed": {"title": "Fear & Greed",      "subtitle": "CNN Sentiment Index"},
+    "vix":        {"title": "VIX",               "subtitle": "Implied Volatility"},
 }
 
 
@@ -406,10 +500,12 @@ def run():
     print(f"[market-temp] Starting scan at {start.isoformat()}")
 
     components = {
-        "buffett":   compute_buffett(),
-        "shiller":   compute_shiller(),
-        "fed_model": compute_fed_model(),
-        "breadth":   compute_breadth(),
+        "buffett":    compute_buffett(),
+        "shiller":    compute_shiller(),
+        "fed_model":  compute_fed_model(),
+        "breadth":    compute_breadth(),
+        "fear_greed": compute_fear_greed(),
+        "vix":        compute_vix(),
     }
 
     weighted_sum, total_weight = 0.0, 0.0
