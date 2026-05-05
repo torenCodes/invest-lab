@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-05-05T17:22:06.289360+00:00",
+  "scan_time": "2026-05-05T17:59:21.340782+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 84.1,
+  "composite_score": 81.6,
   "composite_label": "Extreme",
   "components": {
     "buffett": {
@@ -13,7 +13,7 @@
       "description": "Total US market cap (Wilshire 5000) vs GDP \u2014 Warren Buffett's \"best single measure.\" Percentile-ranked over the last 10 years.",
       "title": "Buffett Indicator",
       "subtitle": "Market Cap / GDP",
-      "weight": 0.3
+      "weight": 0.25
     },
     "shiller": {
       "raw": 40.9,
@@ -24,7 +24,7 @@
       "description": "S&P 500 price divided by 10-year inflation-adjusted earnings. Percentile-ranked over the last 10 years.",
       "title": "Shiller CAPE",
       "subtitle": "10-Year Real P/E",
-      "weight": 0.3
+      "weight": 0.25
     },
     "fed_model": {
       "raw": -1.16,
@@ -37,7 +37,7 @@
       "description": "S&P earnings yield 3.23% vs 10Y Treasury 4.39%. Positive spread means stocks are relatively cheap vs bonds.",
       "title": "Fed Model",
       "subtitle": "Earnings Yield \u2212 10Y",
-      "weight": 0.2
+      "weight": 0.15
     },
     "breadth": {
       "raw": 56.2,
@@ -49,7 +49,27 @@
       "description": "282 of 502 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
       "title": "Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
-      "weight": 0.2
+      "weight": 0.15
+    },
+    "fear_greed": {
+      "raw": 66.8,
+      "raw_label": "67 (Greed)",
+      "score": 66.8,
+      "label": "Frothy",
+      "description": "CNN's composite of 7 short-term sentiment signals (momentum, breadth, put/call ratio, junk-bond demand, volatility, etc.). High readings reflect investor euphoria \u2014 historically a contrarian sell signal.",
+      "title": "Fear & Greed",
+      "subtitle": "CNN Sentiment Index",
+      "weight": 0.1
+    },
+    "vix": {
+      "raw": 17.24,
+      "raw_label": "17.2 VIX",
+      "score": 70,
+      "label": "Frothy",
+      "description": "30-day expected S&P 500 volatility implied by options. Low readings (under 15) signal complacency and often coincide with frothy markets; high readings (over 30) signal fear and frequently mark short-term bottoms.",
+      "title": "VIX",
+      "subtitle": "Implied Volatility",
+      "weight": 0.1
     }
   },
   "coverage": 1.0
