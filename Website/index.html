@@ -1001,7 +1001,7 @@
     // Preview content — inline items matching expanded format
     var newsPrev = document.getElementById('ns-news-preview');
     if (newsPrev && news.length) {
-      newsPrev.innerHTML = '<div class="ns-list">' + news.slice(0, 3).map(function (a) {
+      newsPrev.innerHTML = '<div class="ns-list">' + news.slice(0, 5).map(function (a) {
         var tickers = (a.tickers || []).slice(0, 2).map(function (t) {
           return '<span class="ns-ticker-tag">' + t + '</span>';
         }).join('');
@@ -1022,7 +1022,7 @@
     if (volPrev && volume.length) {
       volPrev.innerHTML = '<table class="ns-table"><thead><tr>' +
         '<th>Ticker</th><th>Price</th><th>Change</th>' +
-      '</tr></thead><tbody>' + volume.slice(0, 4).map(function (t) {
+      '</tr></thead><tbody>' + volume.slice(0, 7).map(function (t) {
         return '<tr>' +
           '<td class="ns-ticker-cell">' + t.ticker + '</td>' +
           '<td>$' + fmt(t.price, 2) + '</td>' +

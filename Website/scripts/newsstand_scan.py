@@ -95,61 +95,98 @@ def fetch_earnings(days_ahead=14, universe=None):
     If `universe` is a non-empty set, entries whose symbol is not in that set
     are dropped — used to cap the calendar at the Russell 3000 so small-cap
     earnings don't overwhelm the homepage card.
+
+    Implementation note: Finnhub's calendar endpoint caps a multi-day response
+    at ~1500 entries and serves later dates first when the cap is hit, silently
+    dropping the earliest 1-2 days from the result. Workaround: query day by
+    day so each request returns a complete single-day list.
     """
-    print("[newsstand] Fetching earnings calendar...")
+    print("[newsstand] Fetching earnings calendar (day-by-day)...")
     today = datetime.now(timezone.utc).date()
-    from_date = today.isoformat()
-    to_date = (today + timedelta(days=days_ahead)).isoformat()
 
     url = "https://finnhub.io/api/v1/calendar/earnings"
-    params = {
-        "from": from_date,
-        "to": to_date,
-        "token": FINNHUB_KEY,
-    }
 
-    try:
-        r = requests.get(url, params=params, timeout=15)
-        r.raise_for_status()
-        data = r.json()
-        raw = data.get("earningsCalendar", [])
-        print(f"[newsstand] Earnings: {len(raw)} total entries from Finnhub")
-    except Exception as e:
-        print(f"[newsstand] Earnings fetch failed: {e}")
-        return []
-
+    raw_total = 0
     notable = []
     dropped_universe = 0
-    for e in raw:
-        # Require an EPS estimate (filters out analyst-less micro-caps)
-        if e.get("epsEstimate") is None:
-            continue
-        symbol = (e.get("symbol") or "").upper().strip()
-        # Russell 3000 filter (skip if caller didn't supply a universe).
-        # Normalize both sides: iShares IWV uses "BRKB", Finnhub uses "BRK.B".
-        if universe and _norm_ticker(symbol) not in universe:
-            dropped_universe += 1
-            continue
-        notable.append({
-            "date":             e.get("date"),
-            "symbol":           symbol,
-            "eps_estimate":     e.get("epsEstimate"),
-            "eps_actual":       e.get("epsActual"),
-            "revenue_estimate": e.get("revenueEstimate"),
-            "revenue_actual":   e.get("revenueActual"),
-            "hour":             e.get("hour", ""),  # bmo = before market open, amc = after market close
-            "quarter":          e.get("quarter"),
-            "year":             e.get("year"),
-        })
+    dropped_reported = 0
+    fetch_failures = 0
 
-    # Sort by date, then symbol
-    notable.sort(key=lambda x: (x["date"] or "", x["symbol"]))
+    for offset in range(days_ahead + 1):
+        day = (today + timedelta(days=offset)).isoformat()
+        try:
+            r = requests.get(url, params={
+                "from": day, "to": day, "token": FINNHUB_KEY,
+            }, timeout=15)
+            r.raise_for_status()
+            day_raw = r.json().get("earningsCalendar", [])
+        except Exception as e:
+            fetch_failures += 1
+            print(f"[newsstand] Earnings fetch failed for {day}: {e}")
+            continue
 
-    # Cap at 50 to keep the JSON reasonable
-    notable = notable[:50]
+        raw_total += len(day_raw)
+        for e in day_raw:
+            # Require an EPS estimate (filters out analyst-less micro-caps)
+            if e.get("epsEstimate") is None:
+                continue
+            # Skip entries that have already reported (epsActual filled in).
+            # Today's pre-market names accumulate actuals after ~9am ET, so
+            # the scan picks them up as "already happened" not "upcoming".
+            if e.get("epsActual") is not None:
+                dropped_reported += 1
+                continue
+            symbol = (e.get("symbol") or "").upper().strip()
+            # Russell 3000 filter (skip if caller didn't supply a universe).
+            # Normalize both sides: iShares IWV uses "BRKB", Finnhub uses "BRK.B".
+            if universe and _norm_ticker(symbol) not in universe:
+                dropped_universe += 1
+                continue
+            notable.append({
+                "date":             e.get("date"),
+                "symbol":           symbol,
+                "eps_estimate":     e.get("epsEstimate"),
+                "eps_actual":       e.get("epsActual"),
+                "revenue_estimate": e.get("revenueEstimate"),
+                "revenue_actual":   e.get("revenueActual"),
+                "hour":             e.get("hour", ""),  # bmo = before market open, amc = after market close
+                "quarter":          e.get("quarter"),
+                "year":             e.get("year"),
+            })
+
+        # Stay well under Finnhub's free-tier 60 req/min limit
+        time.sleep(0.2)
+
+    print(f"[newsstand] Earnings: scanned {days_ahead + 1} days, "
+          f"{raw_total} raw entries from Finnhub, {fetch_failures} day(s) failed")
     if universe:
-        print(f"[newsstand] Earnings: dropped {dropped_universe} outside Russell 3000")
-    print(f"[newsstand] Earnings: {len(notable)} notable entries after filtering")
+        print(f"[newsstand] Earnings: dropped {dropped_universe} outside Russell 3000, "
+              f"{dropped_reported} already reported")
+
+    # Group by date so we can spread coverage across days instead of letting
+    # a single heavy day (50+ reports) eat the whole 50-entry cap.
+    PER_DAY_CAP   = 8
+    DAYS_TO_SHOW  = 7   # first 7 calendar days that actually have entries
+
+    by_date = {}
+    for x in notable:
+        by_date.setdefault(x["date"], []).append(x)
+
+    # Within each day, surface larger companies first (revenue estimate desc),
+    # then alphabetical. Larger companies tend to be the recognizable names
+    # users want to see — keeps obscure micro-caps off the top of each day.
+    for date_key in by_date:
+        by_date[date_key].sort(
+            key=lambda x: (-(x.get("revenue_estimate") or 0), x["symbol"])
+        )
+        by_date[date_key] = by_date[date_key][:PER_DAY_CAP]
+
+    notable = []
+    for date_key in sorted(by_date.keys())[:DAYS_TO_SHOW]:
+        notable.extend(by_date[date_key])
+
+    print(f"[newsstand] Earnings: {len(notable)} notable entries across "
+          f"{min(len(by_date), DAYS_TO_SHOW)} days")
     return notable
 
 
