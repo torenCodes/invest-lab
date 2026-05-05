@@ -5,6 +5,8 @@ Invoked by GitHub Actions on a schedule (weekdays 8am & 1pm ET).
 Run locally: python scan.py
 """
 
+import csv
+import io
 import json
 import os
 import re
@@ -25,13 +27,70 @@ POLYGON_API_KEY = os.environ.get("POLYGON_KEY", "P9fRbZP9VAKhjwABMtvcS7tfcYGU6z1
 DAY_TRADE_MIN_PRICE   = 5.0
 DAY_TRADE_MAX_PRICE   = 150.0
 SWING_TRADE_MIN_PRICE = 20.0
+SWING_TRADE_MAX_CHG   = 10.0   # Skip parabolic blowoff tops in swing pool
 MIN_MARKET_CAP        = 20_000_000
-MIN_MARKET_CAP_SWING  = 50_000_000
+MIN_MARKET_CAP_SWING  = 2_000_000_000   # $2B floor — established mid-cap+
 MIN_DAY_SCORE         = 10
-MIN_SWING_SCORE       = 8
-MAX_POSSIBLE_SCORE    = 63   # 8(gainer)+5(active)+15(move)+15(buzz)+12(trending)+8(finviz)
+MIN_SWING_SCORE       = 15     # Forces multi-signal conviction
+# Score components: 8(gainer)+5(active)+15(move)+15(buzz)+12(trending)+8(finviz)
+#                 + 3(closing strong) + 5(sector leader) = 71
+MAX_POSSIBLE_SCORE    = 71
+
+# Russell 1000 ETF (iShares IWB) — universe for swing candidates.
+# Russell 1000 already contains the entire S&P 500, so this single
+# fetch covers "S&P 500 plus Russell 1000."
+IWB_URL = ("https://www.ishares.com/us/products/239707/ishares-russell-1000-etf/"
+           "1467271812596.ajax?fileType=csv&fileName=IWB_holdings&dataType=fund")
 
 NEXT_SCAN_INFO = "Weekdays 9:35am, 11:30am & 1:30pm ET"
+
+
+# ── Universe helpers ──────────────────────────────────────────────────────────
+
+def _norm_ticker(t):
+    """Canonicalize a ticker for set membership: uppercase, strip . and -.
+    Different sources spell share-class tickers differently (BRKB / BRK.B / BRK-B);
+    normalizing on both sides of the comparison avoids false misses."""
+    return (t or "").upper().replace(".", "").replace("-", "").strip()
+
+
+def fetch_russell1000_universe():
+    """Fetch the iShares IWB (Russell 1000) holdings CSV and return a set of
+    normalized equity tickers. Russell 1000 ≈ top 1000 US stocks by market cap
+    and contains the entire S&P 500 — used to gate swing candidates to
+    institutional-grade names. Returns empty set on failure (caller should
+    treat that as "no universe filter applied")."""
+    print("[scan.py] Fetching Russell 1000 universe (iShares IWB)...")
+    headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                             "AppleWebKit/537.36 (KHTML, like Gecko) "
+                             "Chrome/125.0.0.0 Safari/537.36"}
+    try:
+        r = requests.get(IWB_URL, headers=headers, timeout=20)
+        r.raise_for_status()
+    except Exception as e:
+        print(f"[scan.py] IWB fetch failed: {e}")
+        return set()
+
+    tickers = set()
+    in_holdings = False
+    for row in csv.reader(io.StringIO(r.text)):
+        if not row:
+            continue
+        if not in_holdings:
+            if row[0].strip().lower() == "ticker":
+                in_holdings = True
+            continue
+        if len(row) < 4:
+            continue
+        ticker    = row[0].strip().upper()
+        asset_cls = row[3].strip() if len(row) > 3 else ""
+        if not ticker or asset_cls.lower() != "equity":
+            continue
+        tickers.add(_norm_ticker(ticker))
+
+    print(f"[scan.py] Russell 1000 universe: {len(tickers)} tickers loaded")
+    return tickers
+
 
 # ── Yahoo Finance movers ───────────────────────────────────────────────────────
 
@@ -470,6 +529,15 @@ def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_lab
         score += 8
         signals.append("Unusual volume (Finviz)")
 
+    # Closing strong: stock is in the upper half of today's intraday range
+    # AND finished at-or-above its open. A constructive daily candle —
+    # bullish for an overnight hold rather than a fade-into-close.
+    if (high and low and high > low
+            and current_price > (high + low) / 2.0
+            and current_price >= open_):
+        score += 3
+        signals.append("Closing strong")
+
     market_cap = profile.get("marketCapitalization", 0) * 1_000_000
     sector     = profile.get("finnhubIndustry", "Unknown")
 
@@ -495,31 +563,78 @@ def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_lab
     }
 
 
+# ── Sector Leadership ──────────────────────────────────────────────────────────
+
+def apply_sector_leadership(results):
+    """Per sector with 2+ scored stocks, the top-scored one earns +5 and a
+    'Sector leader' signal. Run AFTER all stocks have been analyzed but
+    BEFORE categorization, so the bonus can lift a stock over the score
+    cutoffs. Sectors with only one entrant are skipped — there's nothing to
+    'lead' against."""
+    by_sector = defaultdict(list)
+    for r in results:
+        if r and r.get("sector") and r.get("sector") != "Unknown":
+            by_sector[r["sector"]].append(r)
+
+    leader_count = 0
+    for sector, stocks in by_sector.items():
+        if len(stocks) < 2:
+            continue
+        leader = max(stocks, key=lambda x: x.get("score", 0))
+        leader["score"] = leader.get("score", 0) + 5
+        sigs = leader.setdefault("signals", [])
+        sigs.append(f"Sector leader ({sector})")
+        leader_count += 1
+
+    print(f"[scan.py] Sector leadership: tagged {leader_count} sector leaders")
+
+
 # ── Categorize ─────────────────────────────────────────────────────────────────
 
-def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Reddit", yahoo_trending=None):
+def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Reddit",
+               yahoo_trending=None, swing_universe=None):
+    """Split results into day-trade vs swing-trade candidate lists.
+
+    Day trades: full scan universe (gainers + active), $5–$150, +1.5%+, score 10+.
+    Swing trades: Russell 1000 only (institutional-grade), $20+, $2B+ market cap,
+    1%–10% change band (not parabolic), score 15+ (multi-signal conviction).
+    """
     day_cands   = []
     swing_cands = []
+
+    swing_dropped_universe = 0
+    swing_dropped_change   = 0
 
     for r in results:
         if not r:
             continue
         price      = r["current_price"]
         market_cap = r["market_cap"]
+        chg_pct    = r["change_pct"]
 
         if (DAY_TRADE_MIN_PRICE <= price <= DAY_TRADE_MAX_PRICE
                 and market_cap >= MIN_MARKET_CAP
-                and r["change_pct"] >= 1.5
+                and chg_pct >= 1.5
                 and r["score"] >= MIN_DAY_SCORE):
             day_cands.append(r)
 
+        # Swing — gated on Russell 1000 universe + tighter constraints
+        if swing_universe and _norm_ticker(r["ticker"]) not in swing_universe:
+            swing_dropped_universe += 1
+            continue
+        if chg_pct > SWING_TRADE_MAX_CHG:
+            swing_dropped_change += 1
+            continue
         if (price >= SWING_TRADE_MIN_PRICE
                 and market_cap >= MIN_MARKET_CAP_SWING
-                and r["change_pct"] >= 1.0
+                and chg_pct >= 1.0
                 and r["score"] >= MIN_SWING_SCORE):
-            if r["is_gainer"]:
-                r["score"] += 5
             swing_cands.append(r)
+
+    if swing_universe:
+        print(f"[scan.py] Swing pre-filter: {swing_dropped_universe} dropped "
+              f"(outside Russell 1000), {swing_dropped_change} dropped "
+              f"(change > {SWING_TRADE_MAX_CHG:.0f}%)")
 
     day_cands.sort(key=lambda x: x["score"], reverse=True)
     swing_cands.sort(key=lambda x: x["score"], reverse=True)
@@ -824,6 +939,9 @@ def run():
     universe   = sorted(yahoo_cats["gainers"] | yahoo_cats["active"])
     print(f"[scan.py] Universe: {len(universe)} tickers (gainers + active only)")
 
+    # Russell 1000 universe used to gate swing-trade candidates only
+    swing_universe = fetch_russell1000_universe()
+
     print("[scan.py] Fetching Yahoo trending tickers...")
     yahoo_trending = get_yahoo_trending()
 
@@ -873,7 +991,14 @@ def run():
             results.append(result)
         time.sleep(1.1)
 
-    day_trades, swing_trades, reddit_cards = categorize(results, buzz_lookup, universe, yahoo_cats, buzz_label, yahoo_trending)
+    # Sector leadership pass — applied before categorize so the +5 bonus
+    # can lift a stock over the day/swing score cutoffs.
+    apply_sector_leadership(results)
+
+    day_trades, swing_trades, reddit_cards = categorize(
+        results, buzz_lookup, universe, yahoo_cats, buzz_label, yahoo_trending,
+        swing_universe=swing_universe,
+    )
 
     print("[scan.py] Fetching earnings calendar...")
     earnings_cal = get_earnings_calendar()
