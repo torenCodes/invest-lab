@@ -1,11 +1,11 @@
 {
-  "scan_time": "2026-05-04T11:44:12.051013+00:00",
+  "scan_time": "2026-05-05T11:13:24.732592+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
   "composite_score": 84.1,
   "composite_label": "Extreme",
   "components": {
     "buffett": {
-      "raw": 2.037,
+      "raw": 2.04,
       "raw_label": "2.0 (W5000/GDP)",
       "percentile": 93.8,
       "score": 93.8,
@@ -16,8 +16,8 @@
       "weight": 0.3
     },
     "shiller": {
-      "raw": 41.06,
-      "raw_label": "41.1x CAPE",
+      "raw": 40.9,
+      "raw_label": "40.9x CAPE",
       "percentile": 100.0,
       "score": 100.0,
       "label": "Extreme",
@@ -27,26 +27,26 @@
       "weight": 0.3
     },
     "fed_model": {
-      "raw": -1.18,
-      "raw_label": "-1.18% spread",
-      "earnings_yield": 3.22,
-      "treasury_10y": 4.4,
-      "pe": 31.08,
+      "raw": -1.16,
+      "raw_label": "-1.16% spread",
+      "earnings_yield": 3.23,
+      "treasury_10y": 4.39,
+      "pe": 30.96,
       "score": 85,
       "label": "Extreme",
-      "description": "S&P earnings yield 3.22% vs 10Y Treasury 4.40%. Positive spread means stocks are relatively cheap vs bonds.",
+      "description": "S&P earnings yield 3.23% vs 10Y Treasury 4.39%. Positive spread means stocks are relatively cheap vs bonds.",
       "title": "Fed Model",
       "subtitle": "Earnings Yield \u2212 10Y",
       "weight": 0.2
     },
     "breadth": {
-      "raw": 58.2,
-      "raw_label": "58.2% above 200-DMA",
-      "above_200dma": 292,
+      "raw": 55.4,
+      "raw_label": "55.4% above 200-DMA",
+      "above_200dma": 278,
       "total": 502,
       "score": 45,
       "label": "Elevated",
-      "description": "292 of 502 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
+      "description": "278 of 502 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
       "title": "Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
       "weight": 0.2
