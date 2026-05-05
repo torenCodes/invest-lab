@@ -27,9 +27,9 @@ POLYGON_API_KEY = os.environ.get("POLYGON_KEY", "P9fRbZP9VAKhjwABMtvcS7tfcYGU6z1
 DAY_TRADE_MIN_PRICE   = 5.0
 DAY_TRADE_MAX_PRICE   = 150.0
 SWING_TRADE_MIN_PRICE = 20.0
-SWING_TRADE_MAX_CHG   = 10.0   # Skip parabolic blowoff tops in swing pool
+SWING_TRADE_MAX_CHG   = 12.0   # Skip parabolic blowoff tops in swing pool
 MIN_MARKET_CAP        = 20_000_000
-MIN_MARKET_CAP_SWING  = 2_000_000_000   # $2B floor — established mid-cap+
+MIN_MARKET_CAP_SWING  = 1_000_000_000   # $1B floor — established mid-cap+
 MIN_DAY_SCORE         = 10
 MIN_SWING_SCORE       = 15     # Forces multi-signal conviction
 # Score components: 8(gainer)+5(active)+15(move)+15(buzz)+12(trending)+8(finviz)
