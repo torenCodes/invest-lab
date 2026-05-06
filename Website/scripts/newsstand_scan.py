@@ -26,7 +26,7 @@ OUTPUT_FILE = os.path.join(BASE_DIR, "MarketDashboard", "data", "newsstand.json"
 FINNHUB_KEY = os.environ.get("FINNHUB_KEY", "d6703v9r01qmckkbjg6gd6703v9r01qmckkbjg70")
 POLYGON_KEY = os.environ.get("POLYGON_KEY", "P9fRbZP9VAKhjwABMtvcS7tfcYGU6z1T")
 
-NEXT_SCAN_INFO = "Weekdays at 9:00am ET"
+NEXT_SCAN_INFO = "Weekdays at 10:30am, 1pm, 4pm ET"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "

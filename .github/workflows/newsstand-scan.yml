@@ -2,10 +2,13 @@ name: Newsstand Scan
 
 on:
   schedule:
-    # 3x/day weekdays (single UTC entry each; ~1hr drift in EST vs EDT)
-    - cron: '0 13 * * 1-5'    # ~8:00am EST / 9:00am EDT
-    - cron: '0 16 * * 1-5'    # ~11:00am EST / 12:00pm EDT
-    - cron: '0 19 * * 1-5'    # ~2:00pm EST / 3:00pm EDT
+    # 3x/day weekdays (single UTC entry each; ~1hr drift in EST vs EDT).
+    # Morning scan deliberately runs an HOUR after market open (9:30 ET),
+    # because Finviz's unusual-volume screener is still showing yesterday's
+    # session until intraday volume accumulates.
+    - cron: '30 14 * * 1-5'   # ~9:30am EST / 10:30am EDT  (1hr post-open)
+    - cron: '0 17 * * 1-5'    # ~12:00pm EST / 1:00pm EDT
+    - cron: '0 20 * * 1-5'    # ~3:00pm EST / 4:00pm EDT
   workflow_dispatch:            # Manual trigger
 
 permissions:
