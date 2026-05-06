@@ -101,6 +101,9 @@ def compute_verdict(info, price, graham):
     roe         = info.get("returnOnEquity")
     debt_eq     = info.get("debtToEquity")
     eps_trail   = info.get("trailingEps")
+    fcf         = info.get("freeCashflow")        # absolute $ — can be negative
+    mkt_cap     = info.get("marketCap")
+    revenue     = info.get("totalRevenue")
 
     sector_pe  = SECTOR_PE.get(sector, 20)
     pe         = pe_fwd or pe_trail
@@ -190,6 +193,41 @@ def compute_verdict(info, price, graham):
                 f"Negative net margin ({net_margin*100:.1f}%) — the company is currently "
                 f"burning cash at the operating level"
             )
+
+    # ── Free cash flow (yield + margin). FCF is the cash left after capex —
+    # actual money available for buybacks, dividends, R&D, or debt paydown.
+    # Harder to massage with accounting choices than reported earnings.
+    fcf_yield  = fcf / mkt_cap if (fcf is not None and mkt_cap)         else None
+    fcf_margin = fcf / revenue if (fcf is not None and revenue)         else None
+
+    if fcf_yield is not None:
+        if   fcf_yield > 0.08:
+            score += 12
+            signals.append(
+                f"Free cash flow yield of {fcf_yield*100:.1f}% reflects strong cash "
+                f"generation at an attractive price"
+            )
+        elif fcf_yield > 0.04:
+            score += 6
+            signals.append(
+                f"Free cash flow yield of {fcf_yield*100:.1f}% — cash returns to "
+                f"shareholders are well-supported"
+            )
+        elif fcf_yield < 0:
+            score -= 15
+            cautions.append(
+                f"Free cash flow is negative — the company is currently consuming cash "
+                f"at the corporate level after capex, which limits flexibility for "
+                f"buybacks, dividends, or debt paydown"
+            )
+
+    # FCF margin bonus only when FCF is positive — capital-efficiency signal
+    if fcf_margin is not None and fcf_margin > 0.20 and (fcf_yield is None or fcf_yield > 0):
+        score += 5
+        signals.append(
+            f"FCF margin of {fcf_margin*100:.1f}% — the business converts a high "
+            f"share of revenue into actual cash"
+        )
 
     # ── Graham Number
     if graham and price:
@@ -415,6 +453,14 @@ def analyze_ticker(ticker):
         "net_margin":   pct(info.get("profitMargins")),
         "roe":          pct(info.get("returnOnEquity")),
         "roa":          pct(info.get("returnOnAssets")),
+        # Free cash flow
+        "fcf":          info.get("freeCashflow"),  # absolute $, can be negative
+        "fcf_yield":    pct((info.get("freeCashflow") or 0) / info.get("marketCap"))
+                            if info.get("freeCashflow") is not None and info.get("marketCap")
+                            else None,
+        "fcf_margin":   pct((info.get("freeCashflow") or 0) / info.get("totalRevenue"))
+                            if info.get("freeCashflow") is not None and info.get("totalRevenue")
+                            else None,
         # Balance sheet
         "debt_equity":   r1(info.get("debtToEquity")),
         "current_ratio": r2(info.get("currentRatio")),
