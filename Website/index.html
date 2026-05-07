@@ -356,60 +356,20 @@
   </section>
 
   <!-- ── Zone 5: Lab Methodology + Track Record ─────────────────────────── -->
-  <!-- SEO-rich section: explains how the lab works and surfaces the
-       nominees-archive track record so the site holds itself accountable. -->
-  <section class="section" id="methodology">
+  <!-- Bright section between two gray ones (Dashboards above, About below).
+       Concise framing of how the lab works, then the track-record receipts. -->
+  <section class="section section-alt" id="methodology">
     <div class="container">
 
       <div class="section-header">
-        <h2 class="section-title">Lab Methodology</h2>
-        <p class="section-sub">How the lab thinks about markets, and how each dashboard contributes to the picture.</p>
+        <h2 class="section-title">Lab Methodology and Track Record</h2>
+        <p class="section-sub">How the lab works, and how its picks have performed.</p>
       </div>
 
       <div class="methodology-intro">
-        <p>The Invest Lab runs five complementary screens each weekday, each one a different lens on the same market. No single dashboard is the answer — the goal is to give you signal-rich starting points for your own research, not "buy this" recommendations.</p>
-        <p>Day-to-day momentum, long-term ETF consensus, deep value mean reversion, insider conviction, and chart structure: each dashboard codifies one well-known investment style and runs it against fresh data. When the same name appears across multiple lenses, that's where The Analyst takes over with a fundamental deep-dive.</p>
-        <p>Everything is automated, scheduled via GitHub Actions, and committed to a public repo. The site reads pre-computed JSON — no live API calls per page load — which makes the dashboards fast, transparent, and reproducible.</p>
-      </div>
-
-      <div class="methodology-grid">
-
-        <article class="methodology-card">
-          <div class="methodology-icon">📡</div>
-          <h3>Movers &amp; Shakers</h3>
-          <p>Scans the day's gainers and most-active stocks three times daily. Each name is scored on multi-signal momentum: today's intraday move, news and Reddit buzz, Yahoo trending status, and Finviz unusual-volume flags. <strong>Day Trade</strong> nominees pull from the broader scan pool; <strong>Swing Trade</strong> nominees are gated to the Russell 1000 with a $1B market-cap floor and a +12% change ceiling — keeping multi-day candidates institutional-grade and away from blowoff tops.</p>
-        </article>
-
-        <article class="methodology-card">
-          <div class="methodology-icon">🏃</div>
-          <h3>The Marathon</h3>
-          <p>Two long-horizon screens combined into one dashboard. <strong>Tried and True</strong> ranks stocks held with conviction across the top growth ETFs — when the smartest fund managers all own a name, that breadth of agreement is a signal worth respecting. <strong>The Underdogs</strong> finds quality companies with beaten-down stock prices showing signs of recovery — sound businesses hiding in plain sight while the market looks the other way.</p>
-        </article>
-
-        <article class="methodology-card">
-          <div class="methodology-icon">🕴️</div>
-          <h3>Insider Buying</h3>
-          <p>Tracks open-market purchases by company executives and large shareholders via SEC Form 4 filings. Surfaces three patterns: <strong>cluster buys</strong> (multiple insiders simultaneously, suggesting coordinated conviction), <strong>C-suite buys</strong> (CEO / CFO / President — the executives closest to the books), and <strong>big-money buys</strong> (single transactions large enough to move the needle). Insider purchases historically outperform on average — these are the people with the best information.</p>
-        </article>
-
-        <article class="methodology-card">
-          <div class="methodology-icon">📐</div>
-          <h3>Pattern Scanner</h3>
-          <p>Daily scan of every S&amp;P 500 stock for six classical chart patterns: <strong>Bull Flag, Volatility Contraction, Bollinger Band Squeeze, MA Crossover, Cup &amp; Handle, and High-Volume Gap</strong>. Each setup is graded A / B / Watch based on pattern strength plus confirming technicals — RSI, breadth, volume profile, relative strength. Setups also cross-reference insider buying and ETF consensus for bonus signals.</p>
-        </article>
-
-        <article class="methodology-card">
-          <div class="methodology-icon">🔬</div>
-          <h3>The Analyst</h3>
-          <p>The deep-dive layer. Each morning it pulls the top picks from every other dashboard, dedups by ticker, and ranks by how many independent lenses surfaced each name. The top 15 get full fundamental scoring: <strong>P/E vs sector, PEG ratio, Free Cash Flow yield and margin, Graham Number, ROE, leverage</strong>, and a written verdict — Undervalued, Fairly Valued, Overpriced, or Speculative. Cross-dashboard tags on every card show which lenses surfaced the name.</p>
-        </article>
-
-      </div>
-
-      <!-- ── Track Record (data from nominees archive) ──────────────────── -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2 class="section-title">Track Record</h2>
-        <p class="section-sub">Every top nominee from every scan is logged with a 30-day outcome. We keep the receipts — the misses included.</p>
+        <p>The Invest Lab runs five complementary screens each weekday — momentum, ETF consensus, deep value, insider conviction, and chart structure. Each dashboard codifies one well-known investment style and runs it against fresh data; no single lens is the answer. The goal is signal-rich starting points for your own research, not "buy this" recommendations.</p>
+        <p>When the same name appears across multiple dashboards, The Analyst takes over with a fundamental deep-dive — P/E, PEG, Free Cash Flow, Graham Number, ROE, leverage, and a written verdict. Everything is automated, scheduled via GitHub Actions, and committed to a public repo. The site reads pre-computed JSON — no live API calls per page load — which keeps the dashboards fast, transparent, and reproducible.</p>
+        <p>Below is the receipt: every top nominee from every scan is logged with a 30-day outcome. The misses are kept right alongside the wins.</p>
       </div>
 
       <div class="track-stats" id="track-stats">
@@ -454,7 +414,7 @@
   </section>
 
   <!-- ── About ────────────────────────────────────────────────────────────── -->
-  <section class="section section-alt" id="about">
+  <section class="section" id="about">
     <div class="container">
       <div class="about-layout">
 

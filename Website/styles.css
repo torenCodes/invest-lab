@@ -1925,45 +1925,6 @@ body {
 }
 .methodology-intro p:last-child { margin-bottom: 0; }
 
-.methodology-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 1rem;
-}
-.methodology-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--radius);
-  padding: 1.5rem 1.6rem;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.methodology-card:hover {
-  box-shadow: var(--shadow-warm);
-  transform: translateY(-2px);
-}
-.methodology-icon {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  line-height: 1;
-}
-.methodology-card h3 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.015em;
-  margin-bottom: 0.5rem;
-}
-.methodology-card p {
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: var(--ink-2);
-}
-.methodology-card p strong { color: var(--ink); font-weight: 600; }
-
 /* Track-record stats strip */
 .track-stats {
   display: grid;
@@ -2066,9 +2027,6 @@ body {
 @media (max-width: 700px) {
   .track-stats          { grid-template-columns: repeat(2, 1fr); }
   .track-record-detail  { grid-template-columns: 1fr; }
-}
-@media (max-width: 400px) {
-  .methodology-grid     { grid-template-columns: 1fr; }
 }
 
 /* ── FAQ Section ─────────────────────────────────────────────────────────── */
