@@ -1914,8 +1914,23 @@ body {
 
 /* ── Lab Methodology section ─────────────────────────────────────────────── */
 .methodology-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
   margin: 0 auto 2rem;
 }
+.methodology-image {
+  flex: 0 0 35%;
+  max-width: 35%;
+}
+.methodology-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+.methodology-text { flex: 1; min-width: 0; }
 .methodology-intro p {
   font-size: 1rem;
   line-height: 1.75;
@@ -1923,6 +1938,11 @@ body {
   margin-bottom: 1rem;
 }
 .methodology-intro p:last-child { margin-bottom: 0; }
+
+@media (max-width: 700px) {
+  .methodology-intro { flex-direction: column; }
+  .methodology-image { flex: none; max-width: 100%; }
+}
 
 /* Track-record stats strip */
 .track-stats {
