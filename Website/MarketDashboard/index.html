@@ -1156,11 +1156,32 @@ function toggleSiteNav(btn) {
 <script>
 // ── Config ─────────────────────────────────────────────────────────────────
 const RESULTS_URL = 'data/results.json';
+const ANALYST_URL = 'https://invest-the-analyst.onrender.com/data/results.json';
 
 // ── State ──────────────────────────────────────────────────────────────────
 let lastScanTime = null;
 let sectorSortCol = 'ret_1d';
 let sectorSortDir = -1; // -1 = descending, 1 = ascending
+
+// Tickers currently featured in The Analyst's curated 15. The Analyst is a
+// static site so this fetch usually resolves before the local data fetch
+// — racing them in parallel keeps initial render fast. If The Analyst is
+// unavailable we silently skip the Deep Dive link.
+let analystTickers = new Set();
+let analystReady = fetch(ANALYST_URL + '?t=' + Date.now())
+  .then(r => r.ok ? r.json() : null)
+  .then(d => {
+    (d?.tickers || []).forEach(t => {
+      if (t.ticker && !t.error) analystTickers.add(t.ticker.toUpperCase());
+    });
+  })
+  .catch(() => { /* silent */ });
+
+// Helper used by render fns: returns Deep Dive HTML or empty string
+function deepDiveLink(ticker) {
+  if (!ticker || !analystTickers.has(String(ticker).toUpperCase())) return '';
+  return `<a href="https://invest-the-analyst.onrender.com/?ticker=${encodeURIComponent(ticker)}" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive →</a>`;
+}
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
@@ -1299,7 +1320,7 @@ function renderStockCard(stock, type, idx) {
         ${planText}
       </div>
       ${renderEarningsCallout(stock)}
-      <a href="https://invest-the-analyst.onrender.com/?ticker=${encodeURIComponent(stock.ticker)}" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive \u2192</a>
+      ${deepDiveLink(stock.ticker)}
     </div>
   </div>`;
 }
@@ -1434,9 +1455,11 @@ async function loadResults() {
   text.textContent = 'Loading…';
 
   try {
+    // Race local results fetch + Analyst-set fetch in parallel, then render
+    // once both complete so Deep Dive links appear on the first paint.
     const res = await fetch(RESULTS_URL + '?t=' + Date.now());
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+    const [data] = await Promise.all([res.json(), analystReady]);
 
     if (!data || !data.scan_time) {
       pulse.className = 'pulse error';

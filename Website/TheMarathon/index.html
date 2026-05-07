@@ -978,6 +978,27 @@ var currentTab = initialTab;
 var sortCol = null;
 var sortAsc = true;
 
+// ── The Analyst eligibility set ────────────────────────────────────────────
+// Tickers featured in The Analyst's curated 15. Only those names get a
+// Deep Dive link on their card.
+var ANALYST_URL = 'https://invest-the-analyst.onrender.com/data/results.json';
+var analystTickers = new Set();
+var analystReady = fetch(ANALYST_URL + '?t=' + Date.now())
+  .then(function(r) { return r.ok ? r.json() : null; })
+  .then(function(d) {
+    ((d && d.tickers) || []).forEach(function(t) {
+      if (t.ticker && !t.error) analystTickers.add(String(t.ticker).toUpperCase());
+    });
+  })
+  .catch(function() { /* silent */ });
+
+function deepDiveLink(ticker) {
+  if (!ticker || !analystTickers.has(String(ticker).toUpperCase())) return '';
+  return '<a href="https://invest-the-analyst.onrender.com/?ticker=' +
+         encodeURIComponent(ticker) + '" class="deep-dive-link"' +
+         ' onclick="event.stopPropagation()">Deep Dive →</a>';
+}
+
 // ── Format helpers ───────────────────────────────────────────────────────────
 function esc(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function fmtPrice(n) { return n ? '$' + Number(n).toFixed(2) : '\u2014'; }
@@ -1108,7 +1129,7 @@ function renderConsensusCards(items) {
           '<div class="detail-etfs-title">ETF Holdings</div>' +
           detailEtfs +
         '</div>' +
-        '<a href="https://invest-the-analyst.onrender.com/?ticker=' + encodeURIComponent(s.ticker) + '" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive \u2192</a>' +
+        deepDiveLink(s.ticker) +
       '</div>' +
     '</div>';
   }).join('') + '</div>';
@@ -1204,7 +1225,7 @@ function renderDeepValueCards(items) {
           '<ul class="signal-list">' + allSignals + '</ul>' +
         '</div>' +
         etfDetail +
-        '<a href="https://invest-the-analyst.onrender.com/?ticker=' + encodeURIComponent(s.ticker) + '" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive \u2192</a>' +
+        deepDiveLink(s.ticker) +
       '</div>' +
     '</div>';
   }).join('') + '</div>';
@@ -1392,10 +1413,13 @@ function renderAll() {
 }
 
 // ── Load data ────────────────────────────────────────────────────────────────
+// 3 promises: consensus.json, deep_value.json, analystReady. Render fires
+// when all three complete so Deep Dive links are correct on first paint.
 var loaded = 0;
+analystReady.finally(checkReady);
 function checkReady() {
   loaded++;
-  if (loaded >= 2) {
+  if (loaded >= 3) {
     document.getElementById('loading').remove();
 
     // Sidebar stats

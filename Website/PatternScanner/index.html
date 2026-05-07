@@ -683,10 +683,35 @@
   var allSetups = [];
   var activeFilter = 'all';
 
+  // ── The Analyst eligibility set ──────────────────────────────────────────
+  // Tickers featured in The Analyst's curated 15. Only those names get a
+  // Deep Dive link on their card.
+  var ANALYST_URL = 'https://invest-the-analyst.onrender.com/data/results.json';
+  var analystTickers = new Set();
+  var analystReady = fetch(ANALYST_URL + '?t=' + Date.now())
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(d) {
+      ((d && d.tickers) || []).forEach(function(t) {
+        if (t.ticker && !t.error) analystTickers.add(String(t.ticker).toUpperCase());
+      });
+    })
+    .catch(function() { /* silent */ });
+
+  function deepDiveLink(ticker) {
+    if (!ticker || !analystTickers.has(String(ticker).toUpperCase())) return '';
+    return '<a href="https://invest-the-analyst.onrender.com/?ticker=' +
+           encodeURIComponent(ticker) + '" class="deep-dive-link"' +
+           ' onclick="event.stopPropagation()">Deep Dive →</a>';
+  }
+
   // ── Data fetch ─────────────────────────────────────────────────────────────
-  fetch('/data/results.json')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
+  // Wait on analystReady so Deep Dive links appear correctly on first paint
+  Promise.all([
+    fetch('/data/results.json').then(function(r) { return r.json(); }),
+    analystReady,
+  ])
+    .then(function(arr) {
+      var data = arr[0];
       allSetups = data.setups || [];
       renderStats(data);
       renderCards(activeFilter);
@@ -885,7 +910,7 @@
         '<div class="detail-row"><span class="detail-label">Week change</span><span class="detail-val">' + weekChange + '</span></div>' +
         '<div class="detail-row"><span class="detail-label">Pattern</span><span class="detail-val">' + escHtml(s.pattern) + '</span></div>' +
         allSignalsHtml +
-        '<a href="https://invest-the-analyst.onrender.com/?ticker=' + encodeURIComponent(s.ticker) + '" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive \u2192</a>' +
+        deepDiveLink(s.ticker) +
       '</div>' +
     '</div>';
   }

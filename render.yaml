@@ -14,12 +14,15 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python app.py
 
-  - type: web
+  # The Analyst migrated from live Flask (type: web) to a Static Site that
+  # serves index.html and reads pre-computed deep-dive analyses from
+  # data/results.json. The cross-dashboard scan that produces that file is
+  # Website/scripts/analyst_scan.py, run on a daily GitHub Actions schedule.
+  - type: static
     name: invest-the-analyst
-    runtime: python
     rootDir: Website/TheAnalyst
-    buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    staticPublishPath: .
+    buildCommand: ""
 
   - type: static
     name: invest-insider-buying

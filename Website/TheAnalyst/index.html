@@ -805,6 +805,7 @@
       allTickers = data.tickers || [];
       renderStats(data);
       renderCards(activeFilter);
+      maybeDeepLinkToTicker();
     })
     .catch(function() {
       document.getElementById('cards-container').innerHTML =
@@ -812,6 +813,29 @@
         '<div class="empty-title">Could not load deep-dive data</div>' +
         '<div class="empty-sub">The Analyst scan runs weekdays at ~10:30am ET.</div></div>';
     });
+
+  // ── Deep-link from other dashboards via ?ticker=XXX ────────────────────────
+  // If the URL carries a ticker we have in our 15, auto-expand its card and
+  // scroll it into view. If the ticker isn't in today's set, we silently
+  // ignore — the user just sees the full grid.
+  function maybeDeepLinkToTicker() {
+    var params = new URLSearchParams(window.location.search);
+    var want = (params.get('ticker') || '').toUpperCase();
+    if (!want) return;
+    var idx = -1;
+    for (var i = 0; i < allTickers.length; i++) {
+      if ((allTickers[i].ticker || '').toUpperCase() === want) { idx = i; break; }
+    }
+    if (idx < 0) return;
+    // Force the 'all' filter so the card is in the rendered set, then expand
+    setFilter('all');
+    setTimeout(function() {
+      var card = document.getElementById('card-' + idx);
+      if (!card) return;
+      toggleCard(idx);
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  }
 
   // ── Stats / sidebar badges ─────────────────────────────────────────────────
   function renderStats(data) {
