@@ -368,6 +368,104 @@
     </div>
   </section>
 
+  <!-- ── Zone 5: Lab Methodology + Track Record ─────────────────────────── -->
+  <!-- SEO-rich section: explains how the lab works and surfaces the
+       nominees-archive track record so the site holds itself accountable. -->
+  <section class="section" id="methodology">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 class="section-title">Lab Methodology</h2>
+        <p class="section-sub">How the lab thinks about markets, and how each dashboard contributes to the picture.</p>
+      </div>
+
+      <div class="methodology-intro">
+        <p>The Invest Lab runs five complementary screens each weekday, each one a different lens on the same market. No single dashboard is the answer — the goal is to give you signal-rich starting points for your own research, not "buy this" recommendations.</p>
+        <p>Day-to-day momentum, long-term ETF consensus, deep value mean reversion, insider conviction, and chart structure: each dashboard codifies one well-known investment style and runs it against fresh data. When the same name appears across multiple lenses, that's where The Analyst takes over with a fundamental deep-dive.</p>
+        <p>Everything is automated, scheduled via GitHub Actions, and committed to a public repo. The site reads pre-computed JSON — no live API calls per page load — which makes the dashboards fast, transparent, and reproducible.</p>
+      </div>
+
+      <div class="methodology-grid">
+
+        <article class="methodology-card">
+          <div class="methodology-icon">📡</div>
+          <h3>Movers &amp; Shakers</h3>
+          <p>Scans the day's gainers and most-active stocks three times daily. Each name is scored on multi-signal momentum: today's intraday move, news and Reddit buzz, Yahoo trending status, and Finviz unusual-volume flags. <strong>Day Trade</strong> nominees pull from the broader scan pool; <strong>Swing Trade</strong> nominees are gated to the Russell 1000 with a $1B market-cap floor and a +12% change ceiling — keeping multi-day candidates institutional-grade and away from blowoff tops.</p>
+        </article>
+
+        <article class="methodology-card">
+          <div class="methodology-icon">🏃</div>
+          <h3>The Marathon</h3>
+          <p>Two long-horizon screens combined into one dashboard. <strong>Tried and True</strong> ranks stocks held with conviction across the top growth ETFs — when the smartest fund managers all own a name, that breadth of agreement is a signal worth respecting. <strong>The Underdogs</strong> finds quality companies with beaten-down stock prices showing signs of recovery — sound businesses hiding in plain sight while the market looks the other way.</p>
+        </article>
+
+        <article class="methodology-card">
+          <div class="methodology-icon">🕴️</div>
+          <h3>Insider Buying</h3>
+          <p>Tracks open-market purchases by company executives and large shareholders via SEC Form 4 filings. Surfaces three patterns: <strong>cluster buys</strong> (multiple insiders simultaneously, suggesting coordinated conviction), <strong>C-suite buys</strong> (CEO / CFO / President — the executives closest to the books), and <strong>big-money buys</strong> (single transactions large enough to move the needle). Insider purchases historically outperform on average — these are the people with the best information.</p>
+        </article>
+
+        <article class="methodology-card">
+          <div class="methodology-icon">📐</div>
+          <h3>Pattern Scanner</h3>
+          <p>Daily scan of every S&amp;P 500 stock for six classical chart patterns: <strong>Bull Flag, Volatility Contraction, Bollinger Band Squeeze, MA Crossover, Cup &amp; Handle, and High-Volume Gap</strong>. Each setup is graded A / B / Watch based on pattern strength plus confirming technicals — RSI, breadth, volume profile, relative strength. Setups also cross-reference insider buying and ETF consensus for bonus signals.</p>
+        </article>
+
+        <article class="methodology-card">
+          <div class="methodology-icon">🔬</div>
+          <h3>The Analyst</h3>
+          <p>The deep-dive layer. Each morning it pulls the top picks from every other dashboard, dedups by ticker, and ranks by how many independent lenses surfaced each name. The top 15 get full fundamental scoring: <strong>P/E vs sector, PEG ratio, Free Cash Flow yield and margin, Graham Number, ROE, leverage</strong>, and a written verdict — Undervalued, Fairly Valued, Overpriced, or Speculative. Cross-dashboard tags on every card show which lenses surfaced the name.</p>
+        </article>
+
+      </div>
+
+      <!-- ── Track Record (data from nominees archive) ──────────────────── -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2 class="section-title">Track Record</h2>
+        <p class="section-sub">Every top nominee from every scan is logged with a 30-day outcome. We keep the receipts — the misses included.</p>
+      </div>
+
+      <div class="track-stats" id="track-stats">
+        <div class="track-stat">
+          <div class="track-stat-num" id="ts-total">—</div>
+          <div class="track-stat-lbl">Total nominees logged</div>
+        </div>
+        <div class="track-stat">
+          <div class="track-stat-num" id="ts-completed">—</div>
+          <div class="track-stat-lbl">30-day outcomes calculated</div>
+        </div>
+        <div class="track-stat">
+          <div class="track-stat-num" id="ts-positive">—</div>
+          <div class="track-stat-lbl">Positive returns</div>
+        </div>
+        <div class="track-stat">
+          <div class="track-stat-num" id="ts-avg">—</div>
+          <div class="track-stat-lbl">Average outcome</div>
+        </div>
+      </div>
+
+      <div class="track-record-detail">
+        <div class="track-record-detail-col">
+          <div class="track-record-detail-title">Top winners</div>
+          <ul class="track-record-detail-list" id="ts-winners">
+            <li class="track-record-detail-loading">Loading…</li>
+          </ul>
+        </div>
+        <div class="track-record-detail-col">
+          <div class="track-record-detail-title">Worst misses</div>
+          <ul class="track-record-detail-list" id="ts-losers">
+            <li class="track-record-detail-loading">Loading…</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="track-record-footnote" style="margin-top:1.5rem;">
+        Outcomes are calculated 30 calendar days after a nominee is flagged. Pending nominees are excluded from the stats above. Past performance is not predictive of future results — these are educational records of the lab's process, not investment advice.
+      </p>
+
+    </div>
+  </section>
+
   <!-- ── About ────────────────────────────────────────────────────────────── -->
   <section class="section section-alt" id="about">
     <div class="container">
@@ -759,6 +857,96 @@
         'Nominee data unavailable — check back soon.' +
         '</div>';
       if (footnote) footnote.style.display = 'none';
+    });
+}());
+</script>
+
+<script>
+// ── Lab Methodology / Track Record — aggregate stats from nominees_archive ──
+// Pulls the same archive used by Other Lab Results but presents the
+// portfolio-level view: total nominees, % positive, average outcome, plus
+// top winners and worst misses. Pending nominees are excluded since we
+// can't yet score them.
+(function () {
+  var ARCHIVE_URL = 'https://invest-movers-shakers.onrender.com/data/nominees_archive.json';
+
+  function fmtPct(v) {
+    if (v == null) return '—';
+    return (v >= 0 ? '+' : '') + v.toFixed(1) + '%';
+  }
+
+  function dashUrlFor(sourceKey) {
+    var map = {
+      'movers':     'https://invest-movers-shakers.onrender.com',
+      'underdogs':  'https://invest-the-marathon.onrender.com/?tab=underdogs',
+      'insider':    'https://invest-insider-buying.onrender.com',
+      'tried-true': 'https://invest-the-marathon.onrender.com/?tab=tried-true',
+      'patterns':   'https://invest-patterns.onrender.com',
+      'marathon':   'https://invest-the-marathon.onrender.com'
+    };
+    return map[sourceKey] || '#';
+  }
+
+  fetch(ARCHIVE_URL + '?t=' + Date.now())
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (data) {
+      var all       = data.nominees || [];
+      var completed = all.filter(function (n) { return n.outcome_pct !== null; });
+
+      var total     = all.length;
+      var nDone     = completed.length;
+      var nPositive = completed.filter(function (n) { return n.outcome_pct > 0; }).length;
+      var avg       = nDone ? completed.reduce(function (s, n) { return s + n.outcome_pct; }, 0) / nDone : null;
+
+      var pctPositive = nDone ? Math.round((nPositive / nDone) * 100) : null;
+
+      document.getElementById('ts-total').textContent     = total || '—';
+      document.getElementById('ts-completed').textContent = nDone || '—';
+      document.getElementById('ts-positive').textContent  = pctPositive != null ? pctPositive + '%' : '—';
+      document.getElementById('ts-avg').textContent       = fmtPct(avg);
+      // Color the avg/positive cells based on direction
+      if (avg != null) {
+        document.getElementById('ts-avg').style.color = avg >= 0 ? 'var(--accent-dark)' : '#c0392b';
+      }
+      if (pctPositive != null) {
+        document.getElementById('ts-positive').style.color = pctPositive >= 50 ? 'var(--accent-dark)' : '#c0392b';
+      }
+
+      function renderList(elId, items) {
+        var ul = document.getElementById(elId);
+        if (!ul) return;
+        if (!items.length) {
+          ul.innerHTML = '<li class="track-record-detail-empty">No data yet.</li>';
+          return;
+        }
+        ul.innerHTML = items.map(function (n) {
+          var href = dashUrlFor(n.source_key);
+          var pct  = fmtPct(n.outcome_pct);
+          var pctCls = n.outcome_pct >= 0 ? 'pos' : 'neg';
+          return '<li>' +
+            '<a href="' + href + '" class="track-record-detail-row">' +
+              '<span class="track-record-detail-ticker">' + (n.ticker || '?') + '</span>' +
+              '<span class="track-record-detail-source">' + (n.source || '') + '</span>' +
+              '<span class="track-record-detail-pct ' + pctCls + '">' + pct + '</span>' +
+            '</a>' +
+          '</li>';
+        }).join('');
+      }
+
+      var winners = completed.slice().sort(function (a, b) { return b.outcome_pct - a.outcome_pct; }).slice(0, 5);
+      var losers  = completed.slice().sort(function (a, b) { return a.outcome_pct - b.outcome_pct; }).slice(0, 5);
+      renderList('ts-winners', winners);
+      renderList('ts-losers',  losers);
+    })
+    .catch(function () {
+      ['ts-total','ts-completed','ts-positive','ts-avg'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = '—';
+      });
+      ['ts-winners','ts-losers'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.innerHTML = '<li class="track-record-detail-empty">Track record data unavailable.</li>';
+      });
     });
 }());
 </script>

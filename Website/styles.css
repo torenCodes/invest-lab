@@ -1912,6 +1912,165 @@ body {
 @media (max-width: 900px) { .track-record-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 400px) { .track-record-grid { grid-template-columns: 1fr; } }
 
+/* ── Lab Methodology section ─────────────────────────────────────────────── */
+.methodology-intro {
+  max-width: 80ch;
+  margin: 0 auto 2.5rem;
+}
+.methodology-intro p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink-2);
+  margin-bottom: 1rem;
+}
+.methodology-intro p:last-child { margin-bottom: 0; }
+
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+.methodology-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.6rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.methodology-card:hover {
+  box-shadow: var(--shadow-warm);
+  transform: translateY(-2px);
+}
+.methodology-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.methodology-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.5rem;
+}
+.methodology-card p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+.methodology-card p strong { color: var(--ink); font-weight: 600; }
+
+/* Track-record stats strip */
+.track-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.track-stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.track-stat-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 0.25rem;
+}
+.track-stat-lbl {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* Track-record winners / losers two-column */
+.track-record-detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.track-record-detail-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+.track-record-detail-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 0.6rem;
+}
+.track-record-detail-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.track-record-detail-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 80px;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background 0.12s;
+}
+.track-record-detail-row:hover { background: var(--accent-muted); }
+.track-record-detail-ticker {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.track-record-detail-source {
+  font-size: 0.72rem;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.track-record-detail-pct {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: right;
+}
+.track-record-detail-pct.pos { color: var(--accent-dark); }
+.track-record-detail-pct.neg { color: #c0392b; }
+.track-record-detail-loading,
+.track-record-detail-empty {
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  font-style: italic;
+  padding: 0.4rem 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .track-stats          { grid-template-columns: repeat(2, 1fr); }
+  .track-record-detail  { grid-template-columns: 1fr; }
+}
+@media (max-width: 400px) {
+  .methodology-grid     { grid-template-columns: 1fr; }
+}
+
 /* ── FAQ Section ─────────────────────────────────────────────────────────── */
 .faq-grid {
   display: grid;
