@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Invest Lab - The Analyst</title>
+<link rel="icon" type="image/png" href="https://theinvestlab.com/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & Base ───────────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:           #fafaf8;
+    --surface:      #fdfefb;
+    --surface-2:    #f5f4f0;
+    --border:       #e8e6e0;
+    --border-light: #f0ede8;
+    --ink:          #1a1a18;
+    --ink-2:        #4a4a46;
+    --ink-3:        #8a8a82;
+    --green:        #1a7a4a;
+    --green-bg:     #edf7f2;
+    --green-light:  #d0edde;
+    --red:          #c0392b;
+    --red-bg:       #fdf0ef;
+    --orange:       #c07a1a;
+    --orange-bg:    #fef5ec;
+    --blue:         #1a5fa8;
+    --blue-bg:      #eef3fb;
+    --teal:         #1a7070;
+    --teal-bg:      #edf7f7;
+    /* Brand teal — matches index.html .preview-card / .btn-primary */
+    --accent:       #38bda6;
+    --accent-dark:  #2a9b87;
+    --accent-light: #b8e8e0;
+    --accent-muted: #edf8f6;
+    --gold:         #b8922a;
+    --gold-bg:      #fdf9ed;
+    --shadow-sm:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md:    0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-warm:  0 6px 24px rgba(56,189,166,0.22);
+    --radius:       4px;
+    --radius-sm:    4px;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.032'/%3E%3C/svg%3E");
+    color: var(--ink-2);
+    min-height: 100vh;
+  }
+
+  /* ── Site Header ────────────────────────────────────────────────────────── */
+  .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e0e7e7;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'Barlow',sans-serif;}
+  .site-nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px;}
+  .site-logo{display:flex;align-items:center;gap:.55rem;font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:#1a1a18;text-decoration:none;letter-spacing:.01em;}
+  .site-logo img{height:1.8rem;width:auto;}
+  .nav-burger{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#4a4a46;padding:.2rem .4rem;}
+  .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+  .site-nav-item{position:relative;}
+  .site-nav-link{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .9rem;border-radius:3px;text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#4a4a46;transition:color .15s,background .15s;}
+  .site-nav-link:hover,.site-nav-link.active{color:#38bda6;background:#edf8f6;}
+  .site-nav-chevron{font-size:.6rem;opacity:.6;transition:transform .2s;}
+  .site-nav-item:hover .site-nav-chevron{transform:rotate(180deg);}
+  .site-dropdown{position:absolute;top:calc(100% + 2px);left:50%;transform:translateX(-50%) translateY(4px);background:#fff;border:1px solid #e0e7e7;border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.1);min-width:180px;list-style:none;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s,transform .15s,visibility .15s;z-index:200;}
+  .site-dropdown li a{display:block;padding:.55rem 1.1rem;font-size:.82rem;color:#4a4a46;text-decoration:none;transition:color .12s,background .12s;}
+  .site-dropdown li a:hover{background:#edf8f6;color:#38bda6;}
+  .site-dropdown li a.active{color:#38bda6;font-weight:600;}
+  .site-nav-item:hover .site-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+  @media(max-width:680px){
+    .nav-burger{display:block;}
+    .site-nav{height:56px;padding:0 16px;}
+    .site-nav-links{display:none;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:2px solid #e0e7e7;box-shadow:0 6px 16px rgba(0,0,0,.09);padding:.4rem 0;list-style:none;}
+    .site-nav-links.open{display:flex;}
+    .site-nav-item{width:100%;}
+    .site-nav-link{padding:.7rem 1.2rem;border-radius:0;justify-content:flex-start;font-size:.75rem;}
+    .site-dropdown{display:none;}
+  }
+
+  /* ── Layout ─────────────────────────────────────────────────────────────── */
+  .layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: calc(100vh - 70px);
+  }
+
+  /* ── Sidebar ─────────────────────────────────────────────────────────────── */
+  .sidebar {
+    background: #1a1a18;
+    color: rgba(255,255,255,0.75);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+
+  .sidebar-header {
+    padding: 28px 24px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .logo span { color: #b7dfc8; }
+  .logo-sub {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .sidebar-scan-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    color: rgba(255,255,255,0.38);
+  }
+  .pulse {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse-anim 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulse-anim {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .sidebar-section { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .sidebar-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    padding: 16px 24px 10px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 24px;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.65);
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .nav-item:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); }
+  .nav-item.active { color: #38bda6; border-left-color: #38bda6; background: rgba(56,189,166,0.1); font-weight: 500; }
+  .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+  .nav-badge {
+    margin-left: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    background: var(--accent);
+    color: #fff;
+    padding: 1px 7px;
+    border-radius: 20px;
+    min-width: 20px;
+    text-align: center;
+  }
+
+  .sidebar-stat {
+    padding: 6px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+  }
+  .sidebar-stat-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .sidebar-note {
+    padding: 0 24px 16px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding: 18px 24px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    line-height: 1.6;
+  }
+
+  /* ── Main ────────────────────────────────────────────────────────────────── */
+  .main {
+    padding: 36px 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* Intro paragraph at top of main column */
+  .intro {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    box-shadow: var(--shadow-sm);
+  }
+  .intro-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .intro-sub {
+    font-size: 0.95rem;
+    color: var(--ink-2);
+    line-height: 1.55;
+    max-width: 75ch;
+  }
+
+  /* ── Cards grid ──────────────────────────────────────────────────────────── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 18px;
+  }
+
+  /* ── Stock card ──────────────────────────────────────────────────────────── */
+  /* ─── BEGIN unified card text styles (keep in sync across all dashboards) ─── */
+  .stock-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
+    cursor: pointer;
+  }
+  .stock-card:hover {
+    box-shadow: var(--shadow-warm);
+    transform: translateY(-2px);
+    border-top-color: var(--accent);
+  }
+  /* ─── END unified card text styles ──────────────────────────────────────── */
+
+  .card-top {
+    padding: 16px 18px 14px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .card-badges {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .verdict-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.66rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .verdict-badge.undervalued    { background: var(--green);  color: #fff; }
+  .verdict-badge.fairly-valued  { background: var(--teal);   color: #fff; }
+  .verdict-badge.overpriced     { background: var(--red);    color: #fff; }
+  .verdict-badge.speculative    { background: var(--orange); color: #fff; }
+  .verdict-badge.error          { background: var(--ink-3);  color: #fff; }
+
+  .source-pill {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--ink-2);
+    white-space: nowrap;
+  }
+  .source-pill.movers       { background: #fff5ec; border-color: #f4d8b8; color: #a04d10; }
+  .source-pill.tried-true   { background: var(--accent-muted); border-color: var(--accent-light); color: var(--accent-dark); }
+  .source-pill.underdogs    { background: var(--blue-bg); border-color: #c5d9f0; color: var(--blue); }
+  .source-pill.insider      { background: var(--green-bg); border-color: var(--green-light); color: var(--green); }
+  .source-pill.patterns     { background: var(--teal-bg); border-color: #c3e3e3; color: var(--teal); }
+
+  .card-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .card-identity { flex: 1; min-width: 0; }
+
+  /* ─── BEGIN unified card text styles (keep in sync across all dashboards) ─── */
+  .card-ticker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .card-name {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* ─── END unified card text styles ──────────────────────────────────────── */
+
+  .card-sector {
+    font-size: 0.72rem;
+    color: var(--ink-3);
+    margin-top: 2px;
+    font-style: italic;
+  }
+
+  .card-price {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .price-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .price-change {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .price-change.pos  { color: var(--green); }
+  .price-change.neg  { color: var(--red); }
+  .price-change.flat { color: var(--ink-3); }
+
+  /* ── Score bar (visual -100 → +100) ─────────────────────────────────────── */
+  .score-row {
+    padding: 10px 18px 12px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .score-row-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .score-label    { color: var(--ink-3); }
+  .score-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .score-bar {
+    position: relative;
+    height: 5px;
+    background: var(--surface-2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .score-bar-mid {
+    /* Visual midline at score = 0 */
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+  .score-bar-fill {
+    position: absolute;
+    top: 0; bottom: 0;
+    border-radius: 3px;
+  }
+
+  /* ── Commentary (the documentary edge) ─────────────────────────────────── */
+  .card-commentary {
+    padding: 14px 18px 16px;
+    font-size: 0.86rem;
+    line-height: 1.62;
+    color: var(--ink-2);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .card-commentary em {
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* ── Quick metrics row ─────────────────────────────────────────────────── */
+  .card-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .metric {
+    padding: 10px 12px;
+    text-align: center;
+    border-right: 1px solid var(--border-light);
+  }
+  .metric:last-child { border-right: none; }
+  .metric-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 3px;
+  }
+  .metric-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .metric-value.pos { color: var(--green); }
+  .metric-value.neg { color: var(--red); }
+  .metric-value.dim { color: var(--ink-3); font-weight: 500; }
+
+  /* ── Click-to-expand hint ─────────────────────────────────────────────── */
+  .card-foot {
+    padding: 10px 18px;
+    font-size: 0.72rem;
+    color: var(--ink-3);
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .stock-card.open .card-foot { color: var(--accent); }
+
+  /* ── Expandable detail ─────────────────────────────────────────────────── */
+  .card-detail {
+    display: none;
+    border-top: 1px solid var(--border-light);
+    padding: 16px 18px 18px;
+    background: var(--surface-2);
+  }
+  .card-detail.open { display: block; }
+
+  .detail-section-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0 0 8px;
+  }
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 18px;
+    margin-bottom: 14px;
+  }
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 5px 0;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .detail-row.last,
+  .detail-row:last-child { border-bottom: none; }
+  .detail-label { color: var(--ink-3); }
+  .detail-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .detail-val.pos { color: var(--green); }
+  .detail-val.neg { color: var(--red); }
+
+  .signal-list {
+    list-style: none;
+    margin: 4px 0 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .signal-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 0.8rem;
+    color: var(--ink-2);
+    line-height: 1.45;
+  }
+  .signal-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .signal-dot.signal-pos { background: var(--green); }
+  .signal-dot.signal-neg { background: var(--red); }
+
+  .filings-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.78rem;
+  }
+  .filing-link {
+    color: var(--blue);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .filing-link:hover { color: var(--accent-dark); }
+
+  .deep-dive-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 14px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .deep-dive-link:hover { background: var(--accent); color: #fff; }
+
+  /* ── Empty / loading ────────────────────────────────────────────────────── */
+  .empty-state {
+    text-align: center;
+    padding: 60px 40px;
+    color: var(--ink-3);
+  }
+  .empty-icon { font-size: 2.5rem; margin-bottom: 12px; }
+  .empty-title { font-size: 1.1rem; font-weight: 600; color: var(--ink-2); margin-bottom: 6px; }
+  .empty-sub { font-size: 0.88rem; }
+  .loading-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 60px 40px;
+    color: var(--ink-3);
+    font-size: 0.88rem;
+  }
+  .spinner {
+    width: 18px; height: 18px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Methodology card (bottom of main) ─────────────────────────────────── */
+  .methodology {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .methodology h3 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 12px;
+  }
+  .methodology p {
+    font-size: 0.85rem;
+    color: var(--ink-2);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .methodology .verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 6px 20px;
+    font-size: 0.82rem;
+    color: var(--ink-2);
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  /* ── Mobile ──────────────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; height: auto; }
+    .main { padding: 20px 16px; }
+    .cards-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Site Header ──────────────────────────────────────────────────────────── -->
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="https://theinvestlab.com" class="site-logo">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </a>
+    <button class="nav-burger" onclick="this.closest('nav').querySelector('.site-nav-links').classList.toggle('open')">&#9776;</button>
+    <ul class="site-nav-links">
+      <li class="site-nav-item">
+        <a href="#" class="site-nav-link active">
+          Dashboards <span class="site-nav-chevron">&#9660;</span>
+        </a>
+        <ul class="site-dropdown">
+          <li><a href="https://invest-movers-shakers.onrender.com">Movers and Shakers</a></li>
+          <li><a href="https://invest-the-marathon.onrender.com">The Marathon</a></li>
+          <li><a href="https://invest-the-analyst.onrender.com" class="active">The Analyst</a></li>
+          <li><a href="https://invest-insider-buying.onrender.com">Insider Buying</a></li>
+          <li><a href="https://invest-patterns.onrender.com">Pattern Scanner</a></li>
+        </ul>
+      </li>
+      <li class="site-nav-item">
+        <a href="https://theinvestlab.com/blog.html" class="site-nav-link">Blog</a>
+      </li>
+      <li class="site-nav-item">
+        <a href="https://theinvestlab.com/#about" class="site-nav-link">About</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ── Dashboard Layout ──────────────────────────────────────────────────────── -->
+<div class="layout">
+
+  <!-- ── Sidebar ──────────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">The <span>Analyst</span></div>
+      <div class="logo-sub">Cross-dashboard greatest hits</div>
+      <div class="sidebar-scan-status">
+        <div class="pulse"></div>
+        <span id="sidebar-scan-time">Loading...</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Filter by verdict</div>
+      <div class="nav-item active" onclick="setFilter('all')" id="nav-all">
+        <span class="nav-icon">&#9776;</span> All
+        <span class="nav-badge" id="badge-all">—</span>
+      </div>
+      <div class="nav-item" onclick="setFilter('UNDERVALUED')" id="nav-UNDERVALUED">
+        <span class="nav-icon">&#9650;</span> Undervalued
+        <span class="nav-badge" id="badge-UNDERVALUED">—</span>
+      </div>
+      <div class="nav-item" onclick="setFilter('FAIRLY VALUED')" id="nav-FAIRLY VALUED">
+        <span class="nav-icon">&#9670;</span> Fairly Valued
+        <span class="nav-badge" id="badge-FAIRLY VALUED">—</span>
+      </div>
+      <div class="nav-item" onclick="setFilter('OVERPRICED')" id="nav-OVERPRICED">
+        <span class="nav-icon">&#9660;</span> Overpriced
+        <span class="nav-badge" id="badge-OVERPRICED">—</span>
+      </div>
+      <div class="nav-item" onclick="setFilter('SPECULATIVE')" id="nav-SPECULATIVE">
+        <span class="nav-icon">&#9651;</span> Speculative
+        <span class="nav-badge" id="badge-SPECULATIVE">—</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Scan Info</div>
+      <div class="sidebar-stat">
+        <span>Surfaced</span>
+        <span class="sidebar-stat-val" id="sidebar-surfaced">—</span>
+      </div>
+      <div class="sidebar-stat">
+        <span>Analyzed</span>
+        <span class="sidebar-stat-val" id="sidebar-analyzed">—</span>
+      </div>
+      <div class="sidebar-stat">
+        <span>Schedule</span>
+        <span class="sidebar-stat-val">Weekdays 10:30am ET</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">How it works</div>
+      <div class="sidebar-note">
+        Pulls top picks from every other dashboard, dedups by ticker, and ranks by how many independent lenses surfaced each name. The top 15 get a deep-dive on fundamentals: P/E, PEG, FCF, Graham Number, ROE, leverage, and a written verdict.
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      Not financial advice. Fundamental data via Yahoo Finance. Run your own checks before acting on anything you read here.
+    </div>
+  </aside>
+
+  <!-- ── Main Content ──────────────────────────────────────────────────────── -->
+  <main class="main">
+
+    <!-- Intro -->
+    <div class="intro">
+      <div class="intro-title">Greatest hits, with a documentary edge.</div>
+      <div class="intro-sub">
+        These fifteen names didn't make this list by accident — every one of them was already surfaced by at least one of the lab's other dashboards (Movers &amp; Shakers, Tried &amp; True, The Underdogs, Insider Buying, or Pattern Scanner). The Analyst takes the cross-section, runs the fundamentals, and writes the story. Click any card to see the full report card, SEC filings, and the deeper metric stack.
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div id="cards-container">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        Loading deep-dive analysis...
+      </div>
+    </div>
+
+    <!-- Methodology -->
+    <div class="methodology">
+      <h3>How the verdict is calculated</h3>
+      <p>
+        Each stock starts at zero and accumulates points across seven dimensions. A score of +25 or higher reads as <em>Undervalued</em>, -15 to +25 is <em>Fairly Valued</em>, below -15 is <em>Overpriced</em>. Pre-profitability growth stories with negative EPS but accelerating revenue route to <em>Speculative</em> instead, since traditional value metrics don't apply.
+      </p>
+      <div class="verdict-grid">
+        <div><strong style="color:var(--ink)">P/E vs sector</strong> — penalizes premium multiples, rewards discount-to-peers.</div>
+        <div><strong style="color:var(--ink)">PEG ratio</strong> — under 1.0 means growth may be underpriced.</div>
+        <div><strong style="color:var(--ink)">Revenue growth</strong> — top-line momentum, with penalty for contraction.</div>
+        <div><strong style="color:var(--ink)">Net margin</strong> — pricing power and operational leverage.</div>
+        <div><strong style="color:var(--ink)">Free Cash Flow yield + margin</strong> — actual cash generated after capex; harder to massage than reported earnings.</div>
+        <div><strong style="color:var(--ink)">Graham Number</strong> — classic margin-of-safety check (price vs &radic;(22.5 &times; EPS &times; book value)).</div>
+        <div><strong style="color:var(--ink)">Return on equity</strong> — capital efficiency.</div>
+        <div><strong style="color:var(--ink)">Debt/Equity</strong> — penalty for leverage above 200%.</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ── Shared Site Footer ──────────────────────────────────────────────── -->
+<style>
+  .site-footer-shared{background:#2e3334;color:rgba(255,255,255,.5);padding:1.5rem 0;font-family:'Barlow',sans-serif;}
+  .site-footer-inner{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;}
+  .site-footer-brand{display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:1rem;color:rgba(255,255,255,.92);}
+  .site-footer-brand img{height:1.2rem;width:auto;filter:invert(1);opacity:.85;}
+  .site-footer-disc{font-size:.78rem;}
+  .site-footer-copy{font-size:.68rem;font-family:monospace;opacity:.3;}
+</style>
+<footer class="site-footer-shared">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
+      The Invest Lab
+    </div>
+    <p class="site-footer-disc">Not financial advice. For personal educational use only.</p>
+    <p class="site-footer-copy">Built with curiosity and caffeine.</p>
+  </div>
+</footer>
+
+<script>
+  var allTickers = [];
+  var activeFilter = 'all';
+
+  // ── Data fetch ─────────────────────────────────────────────────────────────
+  fetch('/data/results.json?t=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      allTickers = data.tickers || [];
+      renderStats(data);
+      renderCards(activeFilter);
+    })
+    .catch(function() {
+      document.getElementById('cards-container').innerHTML =
+        '<div class="empty-state"><div class="empty-icon">&#9888;</div>' +
+        '<div class="empty-title">Could not load deep-dive data</div>' +
+        '<div class="empty-sub">The Analyst scan runs weekdays at ~10:30am ET.</div></div>';
+    });
+
+  // ── Stats / sidebar badges ─────────────────────────────────────────────────
+  function renderStats(data) {
+    document.getElementById('sidebar-surfaced').textContent = data.total_surfaced || '—';
+    document.getElementById('sidebar-analyzed').textContent = data.tickers_analyzed || '—';
+
+    // Verdict counts
+    var counts = { 'all': allTickers.length };
+    ['UNDERVALUED', 'FAIRLY VALUED', 'OVERPRICED', 'SPECULATIVE'].forEach(function(v) {
+      counts[v] = allTickers.filter(function(t) { return t.verdict === v; }).length;
+    });
+    Object.keys(counts).forEach(function(k) {
+      var el = document.getElementById('badge-' + k);
+      if (el) el.textContent = counts[k] || '—';
+    });
+
+    // Scan-time line
+    var timeStr = '—';
+    if (data.scan_time) {
+      var d = new Date(data.scan_time);
+      timeStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' +
+                d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+    }
+    document.getElementById('sidebar-scan-time').textContent = timeStr;
+  }
+
+  // ── Filter ─────────────────────────────────────────────────────────────────
+  function setFilter(verdict) {
+    activeFilter = verdict;
+    ['all', 'UNDERVALUED', 'FAIRLY VALUED', 'OVERPRICED', 'SPECULATIVE'].forEach(function(v) {
+      var nav = document.getElementById('nav-' + v);
+      if (nav) nav.classList.toggle('active', v === verdict);
+    });
+    renderCards(verdict);
+  }
+
+  // ── Render cards ───────────────────────────────────────────────────────────
+  function renderCards(verdict) {
+    var filtered = verdict === 'all'
+      ? allTickers
+      : allTickers.filter(function(t) { return t.verdict === verdict; });
+
+    var container = document.getElementById('cards-container');
+    if (!filtered.length) {
+      var msg = allTickers.length === 0
+        ? 'No data yet — Analyst scan runs weekdays ~10:30am ET.'
+        : 'No ' + verdict.toLowerCase() + ' picks in today\'s set.';
+      container.innerHTML =
+        '<div class="empty-state"><div class="empty-icon">&#128202;</div>' +
+        '<div class="empty-title">No matches</div>' +
+        '<div class="empty-sub">' + msg + '</div></div>';
+      return;
+    }
+
+    var html = '<div class="cards-grid">';
+    filtered.forEach(function(t, i) { html += buildCard(t, i); });
+    html += '</div>';
+    container.innerHTML = html;
+  }
+
+  // ── Helpers ───────────────────────────────────────────────────────────────
+  function escHtml(s) {
+    if (s == null) return '';
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function fmtPct(v) {
+    return v == null ? '—' : (v >= 0 ? '+' : '') + v.toFixed(1) + '%';
+  }
+  function fmtNum(v, dp) {
+    return v == null ? '—' : Number(v).toFixed(dp == null ? 2 : dp);
+  }
+  function fmtCap(v) {
+    if (!v) return '—';
+    if (v >= 1e12) return '$' + (v/1e12).toFixed(2) + 'T';
+    if (v >= 1e9)  return '$' + (v/1e9).toFixed(1) + 'B';
+    if (v >= 1e6)  return '$' + Math.round(v/1e6) + 'M';
+    return '$' + v;
+  }
+  function fmtFcf(v) {
+    if (v == null) return '—';
+    var sign = v < 0 ? '-' : '';
+    var abs  = Math.abs(v);
+    if (abs >= 1e9) return sign + '$' + (abs/1e9).toFixed(1) + 'B';
+    if (abs >= 1e6) return sign + '$' + Math.round(abs/1e6) + 'M';
+    return sign + '$' + abs;
+  }
+
+  // Verdict label → CSS class
+  function verdictKey(v) {
+    return (v || '').toLowerCase().replace(/ /g, '-');
+  }
+
+  // Source key → pill class (matches CSS source-pill colors)
+  function sourcePillClass(key) {
+    if (key === 'movers_day' || key === 'movers_swing') return 'movers';
+    if (key === 'tried_true')      return 'tried-true';
+    if (key === 'underdogs')       return 'underdogs';
+    if (key === 'insider_cluster' || key === 'insider_csuite') return 'insider';
+    if (key === 'patterns')        return 'patterns';
+    return '';
+  }
+
+  // ── Build a single card ────────────────────────────────────────────────────
+  function buildCard(t, i) {
+    if (t.error) {
+      return '<div class="stock-card">' +
+        '<div class="card-top">' +
+          '<div class="card-badges">' +
+            '<span class="verdict-badge error">Unavailable</span>' +
+          '</div>' +
+          '<div class="card-main"><div class="card-identity">' +
+            '<div class="card-ticker">' + escHtml(t.ticker) + '</div>' +
+            '<div class="card-name" style="color:var(--red)">' + escHtml(t.error) + '</div>' +
+          '</div></div>' +
+        '</div></div>';
+    }
+
+    var verdictClass = 'verdict-badge ' + verdictKey(t.verdict);
+    var changeCls   = t.change_pct > 0 ? 'pos' : t.change_pct < 0 ? 'neg' : 'flat';
+    var changeStr   = (t.change_pct >= 0 ? '+' : '') + fmtNum(t.change_pct, 2) + '%';
+    var price       = t.price != null ? '$' + fmtNum(t.price, 2) : '—';
+
+    // Cross-dashboard pills (one per unique label)
+    var tags = t.cross_dashboard_tags || [];
+    var seenLabels = {};
+    var pillHtml = '';
+    tags.forEach(function(tag) {
+      var label = tag.label;
+      if (seenLabels[label]) return;
+      seenLabels[label] = true;
+      var cls = sourcePillClass(tag.source_key);
+      pillHtml += ' <span class="source-pill ' + cls + '">' + escHtml(label) + '</span>';
+    });
+
+    // Score bar — map -100..+100 to 0..100% width, anchored on midline
+    var scoreNum = t.score == null ? 0 : Math.max(-100, Math.min(100, t.score));
+    var fillColor = scoreNum >= 0 ? 'var(--green)' : 'var(--red)';
+    var fillLeft, fillWidth;
+    if (scoreNum >= 0) {
+      fillLeft  = '50%';
+      fillWidth = (scoreNum / 2) + '%';   // up to 50% of bar to the right
+    } else {
+      fillWidth = (-scoreNum / 2) + '%';
+      fillLeft  = (50 - (-scoreNum / 2)) + '%';
+    }
+
+    // Quick metrics row — 4 cells
+    var pe       = t.pe_forward || t.pe_trailing;
+    var fcfYield = t.fcf_yield;
+    var grahamCmp;
+    if (t.graham && t.price) {
+      var ratio = t.price / t.graham;
+      grahamCmp = ratio < 1 ? (((1-ratio)*100).toFixed(0) + '% below') : (ratio.toFixed(2) + 'x');
+    } else {
+      grahamCmp = '—';
+    }
+
+    var metricHtml =
+      '<div class="metric"><div class="metric-label">Fwd P/E</div>' +
+        '<div class="metric-value">' + (pe != null ? fmtNum(pe, 1) + 'x' : '—') + '</div></div>' +
+      '<div class="metric"><div class="metric-label">PEG</div>' +
+        '<div class="metric-value">' + (t.peg != null ? fmtNum(t.peg, 2) : '—') + '</div></div>' +
+      '<div class="metric"><div class="metric-label">FCF Yield</div>' +
+        '<div class="metric-value ' + (fcfYield == null ? 'dim' : (fcfYield >= 4 ? 'pos' : (fcfYield < 0 ? 'neg' : ''))) + '">' +
+        (fcfYield != null ? fmtNum(fcfYield, 1) + '%' : '—') + '</div></div>' +
+      '<div class="metric"><div class="metric-label">vs Graham</div>' +
+        '<div class="metric-value">' + escHtml(grahamCmp) + '</div></div>';
+
+    // Detail section — full metric grid + signals + filings + deep-dive
+    var dataRows = [
+      ['P/E (trailing)',  t.pe_trailing != null ? fmtNum(t.pe_trailing, 1) + 'x' : '—'],
+      ['P/E (forward)',   t.pe_forward != null  ? fmtNum(t.pe_forward, 1) + 'x'  : '—'],
+      ['PEG',             t.peg != null         ? fmtNum(t.peg, 2)               : '—'],
+      ['Price/Book',      t.pb != null          ? fmtNum(t.pb, 2)                : '—'],
+      ['Price/Sales',     t.ps != null          ? fmtNum(t.ps, 2)                : '—'],
+      ['EV/EBITDA',       t.ev_ebitda != null   ? fmtNum(t.ev_ebitda, 1) + 'x'   : '—'],
+      ['Graham Number',   t.graham != null      ? '$' + fmtNum(t.graham, 2)      : '—'],
+      ['EPS (trailing)',  t.eps_trailing != null? fmtNum(t.eps_trailing, 2)      : '—'],
+      ['EPS (forward)',   t.eps_forward != null ? fmtNum(t.eps_forward, 2)       : '—'],
+      ['Revenue growth',  fmtPct(t.rev_growth)],
+      ['Earnings growth', fmtPct(t.earn_growth)],
+      ['Gross margin',    fmtPct(t.gross_margin)],
+      ['Operating margin',fmtPct(t.op_margin)],
+      ['Net margin',      fmtPct(t.net_margin)],
+      ['ROE',             fmtPct(t.roe)],
+      ['ROA',             fmtPct(t.roa)],
+      ['Debt/Equity',     t.debt_equity != null ? fmtNum(t.debt_equity, 0) + '%' : '—'],
+      ['Current ratio',   t.current_ratio != null ? fmtNum(t.current_ratio, 2)   : '—'],
+      ['Free Cash Flow',  fmtFcf(t.fcf)],
+      ['FCF yield',       fmtPct(t.fcf_yield)],
+      ['FCF margin',      fmtPct(t.fcf_margin)],
+      ['Market cap',      fmtCap(t.mkt_cap)],
+      ['52-week low',     t.week52_low != null  ? '$' + fmtNum(t.week52_low, 2)  : '—'],
+      ['52-week high',    t.week52_high != null ? '$' + fmtNum(t.week52_high, 2) : '—'],
+    ];
+    var detailGrid = '<div class="detail-grid">';
+    dataRows.forEach(function(r) {
+      detailGrid += '<div class="detail-row"><span class="detail-label">' + r[0] + '</span>' +
+                    '<span class="detail-val">' + escHtml(r[1]) + '</span></div>';
+    });
+    detailGrid += '</div>';
+
+    // Cross-dashboard signals (the "behind the scenes")
+    var signalHtml = '';
+    if (tags.length) {
+      signalHtml = '<div class="detail-section-title">Why this stock made the list</div>' +
+                   '<ul class="signal-list">';
+      tags.forEach(function(tag) {
+        signalHtml += '<li class="signal-item"><span class="signal-dot signal-pos"></span>' +
+                      '<span><strong style="color:var(--ink)">' + escHtml(tag.label) + '</strong> &middot; ' +
+                      escHtml(tag.signal) + '</span></li>';
+      });
+      signalHtml += '</ul>';
+    }
+
+    // SEC filings — dict shape: {"10-K": {date, accession}, "10-Q": {...}}.
+    // Build direct EDGAR filing-index URLs from cik + accession when available.
+    var filingsHtml = '';
+    var filings = t.sec_filings;
+    if (filings && (filings['10-K'] || filings['10-Q'])) {
+      filingsHtml = '<div class="detail-section-title">Recent SEC filings</div>' +
+                    '<ul class="filings-list">';
+      ['10-K', '10-Q'].forEach(function(form) {
+        var f = filings[form];
+        if (!f) return;
+        var url = '#';
+        if (t.cik && f.accession) {
+          var cikInt    = String(parseInt(t.cik, 10));     // strip leading zeros
+          var accNoDash = String(f.accession).replace(/-/g, '');
+          url = 'https://www.sec.gov/Archives/edgar/data/' + cikInt + '/' + accNoDash +
+                '/' + f.accession + '-index.htm';
+        }
+        filingsHtml += '<li>&#128196; <a href="' + escHtml(url) + '" target="_blank" rel="noopener"' +
+                       ' class="filing-link" onclick="event.stopPropagation()">' +
+                       form + ' filed ' + escHtml(f.date || '') + '</a></li>';
+      });
+      filingsHtml += '</ul>';
+    }
+
+    // TradingView chart link
+    var chartLink = '<a href="https://www.tradingview.com/chart/?symbol=' + encodeURIComponent(t.ticker) +
+                    '" target="_blank" rel="noopener" class="deep-dive-link" onclick="event.stopPropagation()">' +
+                    'View Chart on TradingView →</a>';
+
+    return '<div class="stock-card" id="card-' + i + '" onclick="toggleCard(' + i + ')">' +
+      '<div class="card-top">' +
+        '<div class="card-badges">' +
+          '<span class="' + verdictClass + '">' + escHtml(t.verdict || '—') + '</span>' +
+          pillHtml +
+        '</div>' +
+        '<div class="card-main">' +
+          '<div class="card-identity">' +
+            '<div class="card-ticker">' + escHtml(t.ticker) + '</div>' +
+            '<div class="card-name">' + escHtml(t.company || '') + '</div>' +
+            '<div class="card-sector">' + escHtml(t.sector || '') + '</div>' +
+          '</div>' +
+          '<div class="card-price">' +
+            '<div class="price-value">' + price + '</div>' +
+            '<div class="price-change ' + changeCls + '">' + changeStr + ' today</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="score-row">' +
+        '<div class="score-row-top">' +
+          '<span class="score-label">Verdict score</span>' +
+          '<span class="score-val">' + (t.score != null ? (t.score > 0 ? '+' : '') + t.score : '—') + '</span>' +
+        '</div>' +
+        '<div class="score-bar">' +
+          '<div class="score-bar-mid"></div>' +
+          '<div class="score-bar-fill" style="left:' + fillLeft + ';width:' + fillWidth + ';background:' + fillColor + ';"></div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="card-commentary">' + escHtml(t.commentary || '') + '</div>' +
+
+      '<div class="card-metrics">' + metricHtml + '</div>' +
+
+      '<div class="card-foot" id="foot-' + i + '">Click to expand &middot; full metric stack &middot; SEC filings</div>' +
+
+      '<div class="card-detail" id="detail-' + i + '">' +
+        '<div class="detail-section-title">Full report card</div>' +
+        detailGrid +
+        signalHtml +
+        filingsHtml +
+        chartLink +
+      '</div>' +
+    '</div>';
+  }
+
+  function toggleCard(i) {
+    var card   = document.getElementById('card-' + i);
+    var detail = document.getElementById('detail-' + i);
+    var foot   = document.getElementById('foot-' + i);
+    if (!detail) return;
+    var open = !detail.classList.contains('open');
+    detail.classList.toggle('open', open);
+    card.classList.toggle('open', open);
+    if (foot) foot.textContent = open ? 'Click to collapse' : 'Click to expand · full metric stack · SEC filings';
+  }
+</script>
+</body>
+</html>

@@ -1,3 +1,22 @@
+"""
+TheAnalyst — Flask app (local development only).
+
+The production deployment of this dashboard is now a Static Site on Render
+that serves `index.html` and reads pre-computed deep-dive analyses from
+`data/results.json`. The cross-dashboard scan that produces that file is
+`Website/scripts/analyst_scan.py`, run on a daily GitHub Actions schedule.
+
+This Flask app is preserved for local-dev iteration on the analysis logic:
+running `python app.py` boots a server that lets you type any ticker and
+see the live Analyst output (rendered via `dashboard.html`). It is NOT
+what Render serves and should not be relied on for production traffic —
+the cold-start + rate-limit issues are exactly what motivated the move
+to the static-site model.
+
+`compute_verdict()` and `analyze_ticker()` are imported by the scan
+script, so changes here flow through to the daily scan automatically.
+"""
+
 import os, json, math, time, threading, socket
 import requests
 from datetime import datetime
