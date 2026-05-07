@@ -1,0 +1,44 @@
+name: Analyst Scan
+
+on:
+  schedule:
+    # Daily ~10:30am ET (weekdays). Runs after the morning Movers / Newsstand /
+    # Insider scans complete so it has fresh per-dashboard data on disk.
+    - cron: '30 14 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r Website/scripts/requirements-analyst-scan.txt
+
+      - name: Run Analyst scan
+        run: python Website/scripts/analyst_scan.py
+        env:
+          POLYGON_KEY: ${{ secrets.POLYGON_KEY }}
+
+      - name: Commit results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          git add Website/TheAnalyst/data/results.json
+          git diff --staged --quiet || git commit -m "chore: analyst scan $(date -u +%Y-%m-%dT%H:%M)Z"
+          git pull --rebase -Xtheirs origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref_name }}
