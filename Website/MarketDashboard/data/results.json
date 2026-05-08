@@ -1,35 +1,74 @@
 {
-  "scan_time": "2026-05-08T16:48:10.077332+00:00",
+  "scan_time": "2026-05-08T18:48:50.612833+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 25,
+  "total_scanned": 23,
   "day_trades": [
+    {
+      "ticker": "INTC",
+      "name": "Intel Corp",
+      "sector": "Semiconductors",
+      "current_price": 124.35,
+      "change_pct": 13.4373,
+      "high": 130.57,
+      "low": 111.11,
+      "open": 111.11,
+      "prev_close": 109.62,
+      "score": 63,
+      "signals": [
+        "Top gainer (+13.4%)",
+        "High volume",
+        "Strong move (+13.4%)",
+        "High Trending buzz (20)",
+        "Yahoo trending (#1)",
+        "Closing strong",
+        "Sector leader (Semiconductors)"
+      ],
+      "reddit_mentions": 20,
+      "market_cap": 550950130414.9186,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/INTC.png",
+      "weburl": "https://www.intel.com/",
+      "yahoo_trending_rank": 1,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.29,
+          "estimate": 0.01,
+          "beat": true,
+          "surprise_pct": 1971.4
+        }
+      },
+      "score_normalized": 89
+    },
     {
       "ticker": "RKLB",
       "name": "Rocket Lab Corp",
       "sector": "Aerospace & Defense",
-      "current_price": 99.48,
-      "change_pct": 26.5971,
-      "high": 100.37,
+      "current_price": 101.51,
+      "change_pct": 29.1805,
+      "high": 102.44,
       "low": 85.1625,
       "open": 85.1625,
       "prev_close": 78.58,
-      "score": 63,
+      "score": 58,
       "signals": [
-        "Top gainer (+26.6%)",
+        "Top gainer (+29.2%)",
         "High volume",
-        "Strong move (+26.6%)",
-        "High Trending buzz (20)",
-        "Yahoo trending (#1)",
+        "Strong move (+29.2%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)",
         "Closing strong",
         "Sector leader (Aerospace & Defense)"
       ],
-      "reddit_mentions": 20,
+      "reddit_mentions": 18,
       "market_cap": 45243797919.7401,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950811866506.png",
       "weburl": "https://rocketlabcorp.com/",
-      "yahoo_trending_rank": 1,
+      "yahoo_trending_rank": 3,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -40,104 +79,34 @@
           "surprise_pct": 75.5
         }
       },
-      "score_normalized": 89
-    },
-    {
-      "ticker": "EOSE",
-      "name": "Eos Energy Enterprises Inc",
-      "sector": "Electrical Equipment",
-      "current_price": 7.84,
-      "change_pct": 23.2704,
-      "high": 7.88,
-      "low": 6.465,
-      "open": 6.465,
-      "prev_close": 6.36,
-      "score": 53,
-      "signals": [
-        "Top gainer (+23.3%)",
-        "High volume",
-        "Strong move (+23.3%)",
-        "Trending buzz (11)",
-        "Yahoo trending (#10)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 11,
-      "market_cap": 2159237843.9816513,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950742072646.png",
-      "weburl": "https://www.eose.com",
-      "yahoo_trending_rank": 10,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 75
-    },
-    {
-      "ticker": "INOD",
-      "name": "Innodata Inc",
-      "sector": "Professional Services",
-      "current_price": 81.48,
-      "change_pct": 78.5276,
-      "high": 91.88,
-      "low": 65.58,
-      "open": 65.58,
-      "prev_close": 45.64,
-      "score": 53,
-      "signals": [
-        "Top gainer (+78.5%)",
-        "High volume",
-        "Strong move (+78.5%)",
-        "Trending buzz (19)",
-        "Yahoo trending (#2)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 19,
-      "market_cap": 1487973386.8432596,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942959068086.png",
-      "weburl": "https://innodata.com/",
-      "yahoo_trending_rank": 2,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.42,
-          "estimate": 0.08,
-          "beat": true,
-          "surprise_pct": 446.9
-        }
-      },
-      "score_normalized": 75
+      "score_normalized": 82
     },
     {
       "ticker": "MRNA",
       "name": "Moderna Inc",
       "sector": "Biotechnology",
-      "current_price": 57.5,
-      "change_pct": 18.459,
-      "high": 57.5907,
+      "current_price": 53.25,
+      "change_pct": 9.7033,
+      "high": 57.779,
       "low": 48.98,
       "open": 49.185,
       "prev_close": 48.54,
-      "score": 53,
+      "score": 55,
       "signals": [
-        "Top gainer (+18.5%)",
+        "Top gainer (+9.7%)",
         "High volume",
-        "Strong move (+18.5%)",
-        "Trending buzz (17)",
-        "Yahoo trending (#4)",
-        "Closing strong"
+        "Strong move (+9.7%)",
+        "Trending buzz (15)",
+        "Yahoo trending (#6)",
+        "Sector leader (Biotechnology)"
       ],
-      "reddit_mentions": 17,
+      "reddit_mentions": 15,
       "market_cap": 19260005173.41791,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MRNA.png",
       "weburl": "https://www.modernatx.com/",
-      "yahoo_trending_rank": 4,
+      "yahoo_trending_rank": 6,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -148,231 +117,34 @@
           "surprise_pct": 15.8
         }
       },
-      "score_normalized": 75
-    },
-    {
-      "ticker": "IREN",
-      "name": "IREN Ltd",
-      "sector": "Technology",
-      "current_price": 58.36,
-      "change_pct": 2.6561,
-      "high": 65.61,
-      "low": 58.31,
-      "open": 62.9675,
-      "prev_close": 56.85,
-      "score": 45,
-      "signals": [
-        "Top gainer (+2.7%)",
-        "High volume",
-        "Moderate move (+2.7%)",
-        "Trending buzz (14)",
-        "Yahoo trending (#7)",
-        "Sector leader (Technology)"
-      ],
-      "reddit_mentions": 14,
-      "market_cap": 18860509684.683502,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950792146376.png",
-      "weburl": "https://iren.com/",
-      "yahoo_trending_rank": 7,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": -0.25,
-          "estimate": -0.17,
-          "beat": false,
-          "surprise_pct": -43.0
-        }
-      },
-      "score_normalized": 63
-    },
-    {
-      "ticker": "INTC",
-      "name": "Intel Corp",
-      "sector": "Semiconductors",
-      "current_price": 117.01,
-      "change_pct": 6.7415,
-      "high": 118.75,
-      "low": 111.11,
-      "open": 111.11,
-      "prev_close": 109.62,
-      "score": 44,
-      "signals": [
-        "Top gainer (+6.7%)",
-        "High volume",
-        "Strong move (+6.7%)",
-        "Trending activity (7)",
-        "Yahoo trending (#14)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 7,
-      "market_cap": 550950130414.9186,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/INTC.png",
-      "weburl": "https://www.intel.com/",
-      "yahoo_trending_rank": 14,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.29,
-          "estimate": 0.01,
-          "beat": true,
-          "surprise_pct": 1971.4
-        }
-      },
-      "score_normalized": 62
-    }
-  ],
-  "swing_trades": [
-    {
-      "ticker": "INTC",
-      "name": "Intel Corp",
-      "sector": "Semiconductors",
-      "current_price": 117.01,
-      "change_pct": 6.7415,
-      "high": 118.75,
-      "low": 111.11,
-      "open": 111.11,
-      "prev_close": 109.62,
-      "score": 44,
-      "signals": [
-        "Top gainer (+6.7%)",
-        "High volume",
-        "Strong move (+6.7%)",
-        "Trending activity (7)",
-        "Yahoo trending (#14)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 7,
-      "market_cap": 550950130414.9186,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/INTC.png",
-      "weburl": "https://www.intel.com/",
-      "yahoo_trending_rank": 14,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.29,
-          "estimate": 0.01,
-          "beat": true,
-          "surprise_pct": 1971.4
-        }
-      },
-      "score_normalized": 62
-    },
-    {
-      "ticker": "XYZ",
-      "name": "Block Inc",
-      "sector": "Financial Services",
-      "current_price": 75.22,
-      "change_pct": 7.2427,
-      "high": 77.16,
-      "low": 72.5,
-      "open": 75.435,
-      "prev_close": 70.14,
-      "score": 41,
-      "signals": [
-        "Top gainer (+7.2%)",
-        "High volume",
-        "Strong move (+7.2%)",
-        "Trending activity (9)",
-        "Yahoo trending (#12)"
-      ],
-      "reddit_mentions": 9,
-      "market_cap": 39630200000.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SQ.png",
-      "weburl": "https://squareup.com",
-      "yahoo_trending_rank": 12,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.85,
-          "estimate": 0.68,
-          "beat": true,
-          "surprise_pct": 24.7
-        }
-      },
-      "score_normalized": 58
-    }
-  ],
-  "buzz_source": "trending",
-  "reddit_cards": [
-    {
-      "ticker": "RKLB",
-      "name": "Rocket Lab Corp",
-      "sector": "Aerospace & Defense",
-      "current_price": 99.48,
-      "change_pct": 26.5971,
-      "high": 100.37,
-      "low": 85.1625,
-      "open": 85.1625,
-      "prev_close": 78.58,
-      "score": 63,
-      "signals": [
-        "Top gainer (+26.6%)",
-        "High volume",
-        "Strong move (+26.6%)",
-        "High Trending buzz (20)",
-        "Yahoo trending (#1)",
-        "Closing strong",
-        "Sector leader (Aerospace & Defense)"
-      ],
-      "reddit_mentions": 20,
-      "market_cap": 45243797919.7401,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950811866506.png",
-      "weburl": "https://rocketlabcorp.com/",
-      "yahoo_trending_rank": 1,
-      "mentions": 20,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": -0.02,
-          "estimate": -0.08,
-          "beat": true,
-          "surprise_pct": 75.5
-        }
-      },
-      "score_normalized": 89
+      "score_normalized": 77
     },
     {
       "ticker": "INOD",
       "name": "Innodata Inc",
       "sector": "Professional Services",
-      "current_price": 81.48,
-      "change_pct": 78.5276,
+      "current_price": 84.79,
+      "change_pct": 85.78,
       "high": 91.88,
       "low": 65.58,
       "open": 65.58,
       "prev_close": 45.64,
       "score": 53,
       "signals": [
-        "Top gainer (+78.5%)",
+        "Top gainer (+85.8%)",
         "High volume",
-        "Strong move (+78.5%)",
-        "Trending buzz (19)",
-        "Yahoo trending (#2)",
+        "Strong move (+85.8%)",
+        "Trending buzz (17)",
+        "Yahoo trending (#4)",
         "Closing strong"
       ],
-      "reddit_mentions": 19,
+      "reddit_mentions": 17,
       "market_cap": 1487973386.8432596,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942959068086.png",
       "weburl": "https://innodata.com/",
-      "yahoo_trending_rank": 2,
-      "mentions": 19,
+      "yahoo_trending_rank": 4,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -386,33 +158,382 @@
       "score_normalized": 75
     },
     {
+      "ticker": "HPQ",
+      "name": "HP Inc",
+      "sector": "Technology",
+      "current_price": 22.37,
+      "change_pct": 6.5746,
+      "high": 22.56,
+      "low": 21,
+      "open": 21.064999999999998,
+      "prev_close": 20.99,
+      "score": 49,
+      "signals": [
+        "Top gainer (+6.6%)",
+        "High volume",
+        "Strong move (+6.6%)",
+        "Trending buzz (10)",
+        "Yahoo trending (#11)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 10,
+      "market_cap": 19196407949.96777,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HPQ.png",
+      "weburl": "https://investor.hp.com/",
+      "yahoo_trending_rank": 11,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.81,
+          "estimate": 0.77,
+          "beat": true,
+          "surprise_pct": 4.9
+        }
+      },
+      "score_normalized": 69
+    },
+    {
+      "ticker": "CSCO",
+      "name": "Cisco Systems Inc",
+      "sector": "Communications",
+      "current_price": 96.62,
+      "change_pct": 4.8394,
+      "high": 97.02,
+      "low": 92.9302,
+      "open": 92.9302,
+      "prev_close": 92.16,
+      "score": 48,
+      "signals": [
+        "Top gainer (+4.8%)",
+        "High volume",
+        "Good move (+4.8%)",
+        "Trending buzz (16)",
+        "Yahoo trending (#5)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 16,
+      "market_cap": 364022142575.85333,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950800186156.png",
+      "weburl": "https://www.cisco.com/",
+      "yahoo_trending_rank": 5,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 1.04,
+          "estimate": 1.04,
+          "beat": false,
+          "surprise_pct": -0.2
+        }
+      },
+      "score_normalized": 68
+    }
+  ],
+  "swing_trades": [
+    {
+      "ticker": "DELL",
+      "name": "Dell Technologies Inc",
+      "sector": "Technology",
+      "current_price": 257.23,
+      "change_pct": 11.708,
+      "high": 263.99,
+      "low": 233.04500000000002,
+      "open": 233.04500000000002,
+      "prev_close": 230.27,
+      "score": 58,
+      "signals": [
+        "Top gainer (+11.7%)",
+        "High volume",
+        "Strong move (+11.7%)",
+        "Trending buzz (13)",
+        "Yahoo trending (#8)",
+        "Closing strong",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 13,
+      "market_cap": 150376662228.52585,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/DELL.png",
+      "weburl": "https://www.dell.com/en-in",
+      "yahoo_trending_rank": 8,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 3.89,
+          "estimate": 3.6,
+          "beat": true,
+          "surprise_pct": 8.1
+        }
+      },
+      "score_normalized": 82
+    },
+    {
+      "ticker": "MRNA",
+      "name": "Moderna Inc",
+      "sector": "Biotechnology",
+      "current_price": 53.25,
+      "change_pct": 9.7033,
+      "high": 57.779,
+      "low": 48.98,
+      "open": 49.185,
+      "prev_close": 48.54,
+      "score": 55,
+      "signals": [
+        "Top gainer (+9.7%)",
+        "High volume",
+        "Strong move (+9.7%)",
+        "Trending buzz (15)",
+        "Yahoo trending (#6)",
+        "Sector leader (Biotechnology)"
+      ],
+      "reddit_mentions": 15,
+      "market_cap": 19260005173.41791,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MRNA.png",
+      "weburl": "https://www.modernatx.com/",
+      "yahoo_trending_rank": 6,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -3.4,
+          "estimate": -4.04,
+          "beat": true,
+          "surprise_pct": 15.8
+        }
+      },
+      "score_normalized": 77
+    },
+    {
+      "ticker": "HPQ",
+      "name": "HP Inc",
+      "sector": "Technology",
+      "current_price": 22.37,
+      "change_pct": 6.5746,
+      "high": 22.56,
+      "low": 21,
+      "open": 21.064999999999998,
+      "prev_close": 20.99,
+      "score": 49,
+      "signals": [
+        "Top gainer (+6.6%)",
+        "High volume",
+        "Strong move (+6.6%)",
+        "Trending buzz (10)",
+        "Yahoo trending (#11)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 10,
+      "market_cap": 19196407949.96777,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HPQ.png",
+      "weburl": "https://investor.hp.com/",
+      "yahoo_trending_rank": 11,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.81,
+          "estimate": 0.77,
+          "beat": true,
+          "surprise_pct": 4.9
+        }
+      },
+      "score_normalized": 69
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc",
+      "sector": "Semiconductors",
+      "current_price": 428.37,
+      "change_pct": 3.8322,
+      "high": 435,
+      "low": 414,
+      "open": 418.295,
+      "prev_close": 412.56,
+      "score": 48,
+      "signals": [
+        "Top gainer (+3.8%)",
+        "High volume",
+        "Good move (+3.8%)",
+        "Trending buzz (12)",
+        "Yahoo trending (#9)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 12,
+      "market_cap": 1953334628396.5566,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AVGO.png",
+      "weburl": "https://www.broadcom.com",
+      "yahoo_trending_rank": 9,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 2.05,
+          "estimate": 2.07,
+          "beat": false,
+          "surprise_pct": -0.9
+        }
+      },
+      "score_normalized": 68
+    },
+    {
+      "ticker": "CSCO",
+      "name": "Cisco Systems Inc",
+      "sector": "Communications",
+      "current_price": 96.62,
+      "change_pct": 4.8394,
+      "high": 97.02,
+      "low": 92.9302,
+      "open": 92.9302,
+      "prev_close": 92.16,
+      "score": 48,
+      "signals": [
+        "Top gainer (+4.8%)",
+        "High volume",
+        "Good move (+4.8%)",
+        "Trending buzz (16)",
+        "Yahoo trending (#5)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 16,
+      "market_cap": 364022142575.85333,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950800186156.png",
+      "weburl": "https://www.cisco.com/",
+      "yahoo_trending_rank": 5,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 1.04,
+          "estimate": 1.04,
+          "beat": false,
+          "surprise_pct": -0.2
+        }
+      },
+      "score_normalized": 68
+    },
+    {
+      "ticker": "XYZ",
+      "name": "Block Inc",
+      "sector": "Financial Services",
+      "current_price": 75.98,
+      "change_pct": 8.3262,
+      "high": 77.16,
+      "low": 72.5,
+      "open": 75.435,
+      "prev_close": 70.14,
+      "score": 44,
+      "signals": [
+        "Top gainer (+8.3%)",
+        "High volume",
+        "Strong move (+8.3%)",
+        "Trending activity (7)",
+        "Yahoo trending (#14)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 7,
+      "market_cap": 39630200000.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SQ.png",
+      "weburl": "https://squareup.com",
+      "yahoo_trending_rank": 14,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.85,
+          "estimate": 0.68,
+          "beat": true,
+          "surprise_pct": 24.7
+        }
+      },
+      "score_normalized": 62
+    }
+  ],
+  "buzz_source": "trending",
+  "reddit_cards": [
+    {
+      "ticker": "INTC",
+      "name": "Intel Corp",
+      "sector": "Semiconductors",
+      "current_price": 124.35,
+      "change_pct": 13.4373,
+      "high": 130.57,
+      "low": 111.11,
+      "open": 111.11,
+      "prev_close": 109.62,
+      "score": 63,
+      "signals": [
+        "Top gainer (+13.4%)",
+        "High volume",
+        "Strong move (+13.4%)",
+        "High Trending buzz (20)",
+        "Yahoo trending (#1)",
+        "Closing strong",
+        "Sector leader (Semiconductors)"
+      ],
+      "reddit_mentions": 20,
+      "market_cap": 550950130414.9186,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/INTC.png",
+      "weburl": "https://www.intel.com/",
+      "yahoo_trending_rank": 1,
+      "mentions": 20,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.29,
+          "estimate": 0.01,
+          "beat": true,
+          "surprise_pct": 1971.4
+        }
+      },
+      "score_normalized": 89
+    },
+    {
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "current_price": 728.7,
-      "change_pct": 12.692,
+      "current_price": 737.2,
+      "change_pct": 14.0065,
       "high": 742.1499,
       "low": 667.185,
       "open": 667.185,
       "prev_close": 646.63,
-      "score": 58,
+      "score": 53,
       "signals": [
-        "Top gainer (+12.7%)",
+        "Top gainer (+14.0%)",
         "High volume",
-        "Strong move (+12.7%)",
-        "Trending buzz (18)",
-        "Yahoo trending (#3)",
-        "Closing strong",
-        "Sector leader (Semiconductors)"
+        "Strong move (+14.0%)",
+        "Trending buzz (19)",
+        "Yahoo trending (#2)",
+        "Closing strong"
       ],
-      "reddit_mentions": 18,
+      "reddit_mentions": 19,
       "market_cap": 729226671482.6943,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MU.png",
       "weburl": "https://www.micron.com/",
-      "yahoo_trending_rank": 3,
-      "mentions": 18,
+      "yahoo_trending_rank": 2,
+      "mentions": 19,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -423,6 +544,46 @@
           "surprise_pct": 27.3
         }
       },
+      "score_normalized": 75
+    },
+    {
+      "ticker": "RKLB",
+      "name": "Rocket Lab Corp",
+      "sector": "Aerospace & Defense",
+      "current_price": 101.51,
+      "change_pct": 29.1805,
+      "high": 102.44,
+      "low": 85.1625,
+      "open": 85.1625,
+      "prev_close": 78.58,
+      "score": 58,
+      "signals": [
+        "Top gainer (+29.2%)",
+        "High volume",
+        "Strong move (+29.2%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)",
+        "Closing strong",
+        "Sector leader (Aerospace & Defense)"
+      ],
+      "reddit_mentions": 18,
+      "market_cap": 45243797919.7401,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950811866506.png",
+      "weburl": "https://rocketlabcorp.com/",
+      "yahoo_trending_rank": 3,
+      "mentions": 18,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.02,
+          "estimate": -0.08,
+          "beat": true,
+          "surprise_pct": 75.5
+        }
+      },
       "score_normalized": 82
     }
   ],
@@ -430,292 +591,376 @@
     {
       "ticker": "XLK",
       "sector": "Technology",
-      "ret_1d": 2.68,
-      "ret_5d": 7.64,
-      "ret_1m": 22.64,
+      "ret_1d": 3.07,
+      "ret_5d": 8.05,
+      "ret_1m": 23.11,
       "ret_3m": null,
       "top_stocks": [
         {
-          "ticker": "AKAM",
-          "name": "Akamai Technologies Inc",
-          "change_pct": 19.9417,
-          "price": 139.96
-        },
-        {
-          "ticker": "MRNA",
-          "name": "Moderna Inc",
-          "change_pct": 18.459,
-          "price": 57.5
+          "ticker": "FROG",
+          "name": "Jfrog Ltd",
+          "change_pct": 23.4304,
+          "price": 70.38
         },
         {
           "ticker": "MU",
           "name": "Micron Technology Inc",
-          "change_pct": 12.692,
-          "price": 728.7
+          "change_pct": 14.0065,
+          "price": 737.2
+        },
+        {
+          "ticker": "INTC",
+          "name": "Intel Corp",
+          "change_pct": 13.4373,
+          "price": 124.35
         }
       ]
     },
     {
       "ticker": "XLP",
       "sector": "Cons. Staples",
-      "ret_1d": 0.86,
-      "ret_5d": 0.63,
-      "ret_1m": 1.5,
+      "ret_1d": 0.54,
+      "ret_5d": 0.31,
+      "ret_1m": 1.17,
       "ret_3m": null,
       "top_stocks": []
     },
     {
-      "ticker": "XLY",
-      "sector": "Cons. Discretionary",
-      "ret_1d": 0.69,
-      "ret_5d": 1.75,
-      "ret_1m": 7.07,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "YMAT",
-          "name": "J-Star Holding Co Ltd",
-          "change_pct": 119.9168,
-          "price": 0.5289
-        },
-        {
-          "ticker": "AIIO",
-          "name": "Robo.ai Inc",
-          "change_pct": 60.5567,
-          "price": 0.946
-        }
-      ]
-    },
-    {
       "ticker": "XLB",
       "sector": "Materials",
-      "ret_1d": 0.67,
-      "ret_5d": 0.77,
-      "ret_1m": 0.15,
+      "ret_1d": 0.37,
+      "ret_5d": 0.47,
+      "ret_1m": -0.16,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLRE",
       "sector": "Real Estate",
-      "ret_1d": 0.53,
-      "ret_5d": 0.71,
-      "ret_1m": 4.46,
+      "ret_1d": 0.32,
+      "ret_5d": 0.5,
+      "ret_1m": 4.24,
       "ret_3m": null,
       "top_stocks": []
     },
     {
+      "ticker": "XLY",
+      "sector": "Cons. Discretionary",
+      "ret_1d": 0.2,
+      "ret_5d": 1.25,
+      "ret_1m": 6.54,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "AIIO",
+          "name": "Robo.ai Inc",
+          "change_pct": 59.131,
+          "price": 0.9376
+        }
+      ]
+    },
+    {
       "ticker": "XLE",
       "sector": "Energy",
-      "ret_1d": 0.04,
-      "ret_5d": -4.89,
-      "ret_1m": -2.37,
+      "ret_1d": -0.13,
+      "ret_5d": -5.05,
+      "ret_1m": -2.53,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLI",
       "sector": "Industrials",
-      "ret_1d": 0.02,
-      "ret_5d": 0.62,
-      "ret_1m": 1.07,
+      "ret_1d": -0.33,
+      "ret_5d": 0.27,
+      "ret_1m": 0.72,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "RKLB",
           "name": "Rocket Lab Corp",
-          "change_pct": 26.5971,
-          "price": 99.48
+          "change_pct": 29.1805,
+          "price": 101.51
         },
         {
-          "ticker": "FLY",
-          "name": "Firefly Aerospace Inc",
-          "change_pct": 19.2213,
-          "price": 38.58
-        },
-        {
-          "ticker": "RDW",
-          "name": "Redwire Corp",
-          "change_pct": 17.8261,
-          "price": 10.84
-        }
-      ]
-    },
-    {
-      "ticker": "XLU",
-      "sector": "Utilities",
-      "ret_1d": -0.23,
-      "ret_5d": -3.3,
-      "ret_1m": -4.53,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "EOSE",
-          "name": "Eos Energy Enterprises Inc",
-          "change_pct": 23.2704,
-          "price": 7.84
-        }
-      ]
-    },
-    {
-      "ticker": "XLC",
-      "sector": "Comm. Services",
-      "ret_1d": -0.44,
-      "ret_5d": 0.12,
-      "ret_1m": 2.27,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "AEHL",
-          "name": "Antelope Enterprise Holdings Ltd",
-          "change_pct": 57.5799,
-          "price": 0.8035
+          "ticker": "LUNR",
+          "name": "Intuitive Machines Inc",
+          "change_pct": 19.7843,
+          "price": 28.88
         }
       ]
     },
     {
       "ticker": "XLF",
       "sector": "Financials",
-      "ret_1d": -0.53,
-      "ret_5d": -1.24,
-      "ret_1m": -0.11,
+      "ret_1d": -0.46,
+      "ret_5d": -1.17,
+      "ret_1m": -0.03,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "XYZ",
           "name": "Block Inc",
-          "change_pct": 7.2427,
-          "price": 75.22
+          "change_pct": 8.3262,
+          "price": 75.98
+        }
+      ]
+    },
+    {
+      "ticker": "XLU",
+      "sector": "Utilities",
+      "ret_1d": -0.53,
+      "ret_5d": -3.59,
+      "ret_1m": -4.81,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "EOSE",
+          "name": "Eos Energy Enterprises Inc",
+          "change_pct": 20.7547,
+          "price": 7.68
+        }
+      ]
+    },
+    {
+      "ticker": "XLC",
+      "sector": "Comm. Services",
+      "ret_1d": -0.54,
+      "ret_5d": 0.02,
+      "ret_1m": 2.16,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "AEHL",
+          "name": "Antelope Enterprise Holdings Ltd",
+          "change_pct": 79.3489,
+          "price": 0.9145
+        },
+        {
+          "ticker": "CSCO",
+          "name": "Cisco Systems Inc",
+          "change_pct": 4.8394,
+          "price": 96.62
         }
       ]
     },
     {
       "ticker": "XLV",
       "sector": "Health Care",
-      "ret_1d": -0.74,
-      "ret_5d": -1.04,
-      "ret_1m": -3.81,
+      "ret_1d": -0.88,
+      "ret_5d": -1.18,
+      "ret_1m": -3.94,
       "ret_3m": null,
       "top_stocks": [
         {
-          "ticker": "TRAW",
-          "name": "Traws Pharma Inc",
-          "change_pct": 26.4706,
-          "price": 2.15
+          "ticker": "QURE",
+          "name": "Uniqure NV",
+          "change_pct": 11.8427,
+          "price": 27.01
         },
         {
           "ticker": "MRNA",
           "name": "Moderna Inc",
-          "change_pct": 18.459,
-          "price": 57.5
+          "change_pct": 9.7033,
+          "price": 53.25
         }
       ]
     }
   ],
   "reddit_feed": [
     {
-      "id": "140223464",
-      "title": "Micron\u2019s AI memory rally is still running hot",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "MU"
-      ],
-      "confirmed_tickers": [
-        "MU"
-      ],
-      "hours_ago": 1.2,
-      "url": "https://finnhub.io/api/news?id=9080afd6e899d300eb1b822c9baa11bd46eece458052c2bed655cd5b331f670e",
-      "is_news": true
-    },
-    {
-      "id": "140223469",
-      "title": "Jim Cramer Notes NVIDIA\u2019s Status as Largest Company While Praising New Tech Chips",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "MU"
-      ],
-      "confirmed_tickers": [
-        "MU"
-      ],
-      "hours_ago": 1.7,
-      "url": "https://finnhub.io/api/news?id=154b395dc04e8a38b7bce038ce5732df1ea83159de65b22819961417db84cac9",
-      "is_news": true
-    },
-    {
-      "id": "140223470",
-      "title": "AMD vs. NVDA: Which AI Chip Giant Belongs in Your 10-Year Portfolio?",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "MU"
-      ],
-      "confirmed_tickers": [
-        "MU"
-      ],
-      "hours_ago": 1.8,
-      "url": "https://finnhub.io/api/news?id=b5ae3ef0d1a75c91e258a73b2517a2f5872dd2073de1b397fb4be347e49ae740",
-      "is_news": true
-    },
-    {
-      "id": "140223471",
-      "title": "Why Micron Stock Bounced Back Today",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "MU"
-      ],
-      "confirmed_tickers": [
-        "MU"
-      ],
-      "hours_ago": 1.9,
-      "url": "https://finnhub.io/api/news?id=dbecd49efe7a81c7aa3fdf28f693d131fd2e2e0fd3778c7988bd6a85bb477762",
-      "is_news": true
-    },
-    {
-      "id": "140222786",
-      "title": "Gapping stocks in Friday's session",
+      "id": "140226292",
+      "title": "Looking for the most active stocks in the S&P500 index on Friday?",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "INOD"
+        "INTC"
       ],
       "confirmed_tickers": [
-        "INOD"
+        "INTC"
+      ],
+      "hours_ago": 0.7,
+      "url": "https://finnhub.io/api/news?id=e41391406e87f20fc1c96bcc5b51bb9730fd30c9634f118df1cdb77482748215",
+      "is_news": true
+    },
+    {
+      "id": "140226292",
+      "title": "Looking for the most active stocks in the S&P500 index on Friday?",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "confirmed_tickers": [
+        "MU"
+      ],
+      "hours_ago": 0.7,
+      "url": "https://finnhub.io/api/news?id=e41391406e87f20fc1c96bcc5b51bb9730fd30c9634f118df1cdb77482748215",
+      "is_news": true
+    },
+    {
+      "id": "140226291",
+      "title": "These stocks are making the most noise in today's session.",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "INTC"
+      ],
+      "confirmed_tickers": [
+        "INTC"
+      ],
+      "hours_ago": 0.8,
+      "url": "https://finnhub.io/api/news?id=0c6c43615a5d37a9ae1d13541c05ce004d3d4c24cea15356fc889a7d26920f31",
+      "is_news": true
+    },
+    {
+      "id": "140225774",
+      "title": "Block Earnings Show How the Company Is Leaning Into AI As a Catalyst for Its Business",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "INTC"
+      ],
+      "confirmed_tickers": [
+        "INTC"
+      ],
+      "hours_ago": 1.3,
+      "url": "https://finnhub.io/api/news?id=6e0a7028793141eb0fcaeb92fb32f74cb790608c4f5405875b4c9dec51133652",
+      "is_news": true
+    },
+    {
+      "id": "140225775",
+      "title": "Is Apple Stock Headed to $400? 1 Analyst Says Apple Is a \"Sleeping Giant\" With a Major AI Catalyst.",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "INTC"
+      ],
+      "confirmed_tickers": [
+        "INTC"
+      ],
+      "hours_ago": 1.4,
+      "url": "https://finnhub.io/api/news?id=b1acbbb106a5482cd6a9383c1016bf66b2184c3aeb419223613654566a30d791",
+      "is_news": true
+    },
+    {
+      "id": "140225776",
+      "title": "Why Did Nebius Stock Jump Again This Week?",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "INTC"
+      ],
+      "confirmed_tickers": [
+        "INTC"
+      ],
+      "hours_ago": 1.4,
+      "url": "https://finnhub.io/api/news?id=31f5ed0c1ea5c76f906a9d482ebe599cb11c09afd41c5a6058b63f6a7adfd7c2",
+      "is_news": true
+    },
+    {
+      "id": "140225780",
+      "title": "Intel stock hits fourth straight record high as Apple report fuels chip rally",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "confirmed_tickers": [
+        "MU"
+      ],
+      "hours_ago": 1.6,
+      "url": "https://finnhub.io/api/news?id=9e5c4c1573ad2af685a24dd8d9c95fb4d3c9f8964848f4f9138d002877179a19",
+      "is_news": true
+    },
+    {
+      "id": "140225781",
+      "title": "Why Memory-Chip Stocks Are Top Of Mind For Investors",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "confirmed_tickers": [
+        "MU"
+      ],
+      "hours_ago": 1.6,
+      "url": "https://finnhub.io/api/news?id=18726fd8289830cd2bf455da0ae013dde9a4aab4fa598454eccc1c3e56dfbd65",
+      "is_news": true
+    },
+    {
+      "id": "140224366",
+      "title": "Which S&P500 stocks are moving on Friday?",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "confirmed_tickers": [
+        "MU"
+      ],
+      "hours_ago": 2.2,
+      "url": "https://finnhub.io/api/news?id=b56cfbeebfeafbcbe9892086b769a8ef82c82efba99a4c4686c5f629a63140ef",
+      "is_news": true
+    },
+    {
+      "id": "140225799",
+      "title": "Memory Stocks Continue to Surge. What\u2019s Driving Micron and Sandisk Higher.",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "confirmed_tickers": [
+        "MU"
       ],
       "hours_ago": 2.3,
-      "url": "https://finnhub.io/api/news?id=6c24c4f834c1b011c5090afd7c6d20fc36f7acf7676cea53ecf46df432eb9a1f",
+      "url": "https://finnhub.io/api/news?id=97d82b0a753739bb47505bc469bde5ce385d912a64b922a0d2a462a63f157028",
       "is_news": true
     },
     {
-      "id": "140223520",
-      "title": "Appian Q1 Earnings & Revenues Beat Estimates on Strong Cloud Growth",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "MU"
-      ],
-      "confirmed_tickers": [
-        "MU"
-      ],
-      "hours_ago": 3.2,
-      "url": "https://finnhub.io/api/news?id=aa41115b353c12c6b259e2f3fb74f95761bddf01f8d9f9be0322b4d3a097fbd9",
-      "is_news": true
-    },
-    {
-      "id": "140221184",
-      "title": "Which stocks are moving before the opening bell on Friday?",
+      "id": "140224365",
+      "title": "Let's take a look at the stocks that are in motion in today's session.",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "INOD"
+        "RKLB"
       ],
       "confirmed_tickers": [
-        "INOD"
+        "RKLB"
       ],
-      "hours_ago": 4.3,
-      "url": "https://finnhub.io/api/news?id=6e010c3232fa5a0950214139cba97700d8e98a170476f055a52f53d2b5626f48",
+      "hours_ago": 2.3,
+      "url": "https://finnhub.io/api/news?id=7172e5b0d46f743b9703e99d54dc6fdf96d087e65fdc4870fc4565218cb7c8d0",
+      "is_news": true
+    },
+    {
+      "id": "140225591",
+      "title": "Nasdaq Tops 29,000 Records, Micron Soars 13%: Stock Market Today",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "RKLB"
+      ],
+      "confirmed_tickers": [
+        "RKLB"
+      ],
+      "hours_ago": 5.2,
+      "url": "https://finnhub.io/api/news?id=a45a2a26ef0e186a12be850424bbb49410c61dc5a5f9bdfb7c05588a37d04585",
+      "is_news": true
+    },
+    {
+      "id": "140226175",
+      "title": "12 Industrials Stocks Moving In Friday's Intraday Session",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "RKLB"
+      ],
+      "confirmed_tickers": [
+        "RKLB"
+      ],
+      "hours_ago": 5.7,
+      "url": "https://finnhub.io/api/news?id=33f47ddd0bdf6d82ab6fcd32db8e8b398d50e86906c7f5273a0cad52e0e093dd",
       "is_news": true
     },
     {
@@ -729,7 +974,7 @@
       "confirmed_tickers": [
         "RKLB"
       ],
-      "hours_ago": 5.5,
+      "hours_ago": 7.5,
       "url": "https://finnhub.io/api/news?id=19a3156148b6a4d009db7a6f6c17d0e9bd1833a6211b75d73380df0eacaf1fac",
       "is_news": true
     },
@@ -744,98 +989,8 @@
       "confirmed_tickers": [
         "RKLB"
       ],
-      "hours_ago": 6.1,
+      "hours_ago": 8.1,
       "url": "https://finnhub.io/api/news?id=de103d430d5f16420564bb1a4e79d1ec606ba967a5b931b24c6a1b78174ff70f",
-      "is_news": true
-    },
-    {
-      "id": "140223418",
-      "title": "Rocket Lab CEO Says Demand Is 'Super Healthy' As Defense, Neutron Backlog Builds",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "RKLB"
-      ],
-      "confirmed_tickers": [
-        "RKLB"
-      ],
-      "hours_ago": 6.5,
-      "url": "https://finnhub.io/api/news?id=9b7fa5d1b8f4784fcfb75136c4d584b2b37f323131d6b1316c565c593dd119a8",
-      "is_news": true
-    },
-    {
-      "id": "140223037",
-      "title": "Monster Beverage, Westrock Coffee, Himax Technologies And Other Big Stocks Moving Higher On Friday",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "RKLB"
-      ],
-      "confirmed_tickers": [
-        "RKLB"
-      ],
-      "hours_ago": 6.6,
-      "url": "https://finnhub.io/api/news?id=b23cc030d5fc6497a6a7fe09de8e43d7354f9043eb53389b7a91fabe9ef37e3d",
-      "is_news": true
-    },
-    {
-      "id": "140223037",
-      "title": "Monster Beverage, Westrock Coffee, Himax Technologies And Other Big Stocks Moving Higher On Friday",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "INOD"
-      ],
-      "confirmed_tickers": [
-        "INOD"
-      ],
-      "hours_ago": 6.6,
-      "url": "https://finnhub.io/api/news?id=b23cc030d5fc6497a6a7fe09de8e43d7354f9043eb53389b7a91fabe9ef37e3d",
-      "is_news": true
-    },
-    {
-      "id": "140223363",
-      "title": "Nasdaq Jumps 200 Points; US Adds 115,000 Jobs In April",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "INOD"
-      ],
-      "confirmed_tickers": [
-        "INOD"
-      ],
-      "hours_ago": 6.9,
-      "url": "https://finnhub.io/api/news?id=418263ff86c4ee4a9491b584ab5b4369e05622cd38548d1ece34bb7babbe0992",
-      "is_news": true
-    },
-    {
-      "id": "140222579",
-      "title": "12 Industrials Stocks Moving In Friday's Pre-Market Session",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "RKLB"
-      ],
-      "confirmed_tickers": [
-        "RKLB"
-      ],
-      "hours_ago": 8.7,
-      "url": "https://finnhub.io/api/news?id=2c0d3102acf703a8c23a8be3d8f5071d44c5f3b79e44b6b4b27093957f1f9771",
-      "is_news": true
-    },
-    {
-      "id": "140222579",
-      "title": "12 Industrials Stocks Moving In Friday's Pre-Market Session",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "INOD"
-      ],
-      "confirmed_tickers": [
-        "INOD"
-      ],
-      "hours_ago": 8.7,
-      "url": "https://finnhub.io/api/news?id=2c0d3102acf703a8c23a8be3d8f5071d44c5f3b79e44b6b4b27093957f1f9771",
       "is_news": true
     }
   ]
