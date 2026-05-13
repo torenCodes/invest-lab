@@ -1,34 +1,73 @@
 {
-  "scan_time": "2026-05-13T13:35:24.205514+00:00",
+  "scan_time": "2026-05-13T15:42:35.219937+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 22,
+  "total_scanned": 24,
   "day_trades": [
+    {
+      "ticker": "F",
+      "name": "Ford Motor Co",
+      "sector": "Automobiles",
+      "current_price": 13.06,
+      "change_pct": 8.9241,
+      "high": 13.07,
+      "low": 11.97,
+      "open": 11.975000000000001,
+      "prev_close": 11.99,
+      "score": 58,
+      "signals": [
+        "Top gainer (+8.9%)",
+        "High volume",
+        "Strong move (+8.9%)",
+        "Trending buzz (16)",
+        "Yahoo trending (#5)",
+        "Closing strong",
+        "Sector leader (Automobiles)"
+      ],
+      "reddit_mentions": 16,
+      "market_cap": 47776465656.08382,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/F.png",
+      "weburl": "https://www.ford.com/",
+      "yahoo_trending_rank": 5,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.66,
+          "estimate": 0.19,
+          "beat": true,
+          "surprise_pct": 245.4
+        }
+      },
+      "score_normalized": 82
+    },
     {
       "ticker": "EOSE",
       "name": "Eos Energy Enterprises Inc",
       "sector": "Electrical Equipment",
-      "current_price": 9.62,
-      "change_pct": 18.7654,
+      "current_price": 8.89,
+      "change_pct": 9.7531,
       "high": 9.99,
-      "low": 9.28,
-      "open": 9.98,
+      "low": 8.67,
+      "open": 9.135000000000002,
       "prev_close": 8.1,
       "score": 55,
       "signals": [
-        "Top gainer (+18.8%)",
+        "Top gainer (+9.8%)",
         "High volume",
-        "Strong move (+18.8%)",
-        "Trending buzz (17)",
-        "Yahoo trending (#4)",
+        "Strong move (+9.8%)",
+        "Trending buzz (14)",
+        "Yahoo trending (#7)",
         "Sector leader (Electrical Equipment)"
       ],
-      "reddit_mentions": 17,
+      "reddit_mentions": 14,
       "market_cap": 2749972644.084014,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950742072646.png",
       "weburl": "https://www.eose.com",
-      "yahoo_trending_rank": 4,
+      "yahoo_trending_rank": 7,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -42,23 +81,92 @@
       "score_normalized": 77
     },
     {
+      "ticker": "BABA",
+      "name": "Alibaba Group Holding Ltd",
+      "sector": "Retail",
+      "current_price": 145.03,
+      "change_pct": 7.605,
+      "high": 146,
+      "low": 130.33,
+      "open": 133.735,
+      "prev_close": 134.78,
+      "score": 53,
+      "signals": [
+        "Top gainer (+7.6%)",
+        "High volume",
+        "Strong move (+7.6%)",
+        "Trending buzz (19)",
+        "Yahoo trending (#2)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 19,
+      "market_cap": 328197180513.59906,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BABA.png",
+      "weburl": "https://www.alibabagroup.com/",
+      "yahoo_trending_rank": 2,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.61,
+          "estimate": 5.91,
+          "beat": false,
+          "surprise_pct": -89.7
+        }
+      },
+      "score_normalized": 75
+    },
+    {
+      "ticker": "NIO",
+      "name": "NIO Inc",
+      "sector": "Automobiles",
+      "current_price": 6.53,
+      "change_pct": 7.4013,
+      "high": 6.58,
+      "low": 6.06,
+      "open": 6.09,
+      "prev_close": 6.08,
+      "score": 53,
+      "signals": [
+        "Top gainer (+7.4%)",
+        "High volume",
+        "Strong move (+7.4%)",
+        "Trending buzz (17)",
+        "Yahoo trending (#4)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 17,
+      "market_cap": 13912627368.84372,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/NIO.png",
+      "weburl": "https://ir.nio.com/",
+      "yahoo_trending_rank": 4,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 75
+    },
+    {
       "ticker": "WOLF",
       "name": "Wolfspeed Inc",
       "sector": "Semiconductors",
-      "current_price": 72.49,
-      "change_pct": 34.9404,
+      "current_price": 65.57,
+      "change_pct": 22.0588,
       "high": 73.74,
-      "low": 64.61,
-      "open": 66.64,
+      "low": 58.6,
+      "open": 64.315,
       "prev_close": 53.72,
-      "score": 53,
+      "score": 50,
       "signals": [
-        "Top gainer (+34.9%)",
+        "Top gainer (+22.1%)",
         "High volume",
-        "Strong move (+34.9%)",
+        "Strong move (+22.1%)",
         "Trending buzz (18)",
-        "Yahoo trending (#3)",
-        "Closing strong"
+        "Yahoo trending (#3)"
       ],
       "reddit_mentions": 18,
       "market_cap": 1651595640.185309,
@@ -77,225 +185,116 @@
           "surprise_pct": -58.6
         }
       },
-      "score_normalized": 75
-    },
-    {
-      "ticker": "SLS",
-      "name": "Sellas Life Sciences Group Inc",
-      "sector": "Biotechnology",
-      "current_price": 6.15,
-      "change_pct": 17.8161,
-      "high": 6.49,
-      "low": 6.03,
-      "open": 6.235,
-      "prev_close": 5.22,
-      "score": 50,
-      "signals": [
-        "Top gainer (+17.8%)",
-        "High volume",
-        "Strong move (+17.8%)",
-        "Trending buzz (11)",
-        "Yahoo trending (#10)"
-      ],
-      "reddit_mentions": 11,
-      "market_cap": 937421070.5828571,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SLS.png",
-      "weburl": "https://www.sellaslifesciences.com/",
-      "yahoo_trending_rank": 10,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
       "score_normalized": 70
     },
     {
-      "ticker": "PENG",
-      "name": "Penguin Solutions Inc",
-      "sector": "Semiconductors",
-      "current_price": 52.79,
-      "change_pct": 19.6238,
-      "high": 53.09,
-      "low": 50.81,
-      "open": 51.114999999999995,
-      "prev_close": 44.13,
+      "ticker": "VNET",
+      "name": "VNET Group Inc",
+      "sector": "Technology",
+      "current_price": 11.44,
+      "change_pct": 26.8293,
+      "high": 12.02,
+      "low": 10.21,
+      "open": 10.21,
+      "prev_close": 9.02,
       "score": 49,
       "signals": [
-        "Top gainer (+19.6%)",
+        "Top gainer (+26.8%)",
         "High volume",
-        "Strong move (+19.6%)",
+        "Strong move (+26.8%)",
         "Trending buzz (10)",
         "Yahoo trending (#11)",
         "Closing strong"
       ],
       "reddit_mentions": 10,
-      "market_cap": 2239487618.9352326,
+      "market_cap": 2449129439.0,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SGH.png",
-      "weburl": "https://www.penguinsolutions.com/en-us",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/VNET.png",
+      "weburl": "https://ir.21vianet.com/",
       "yahoo_trending_rank": 11,
       "earnings_info": {
         "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.52,
-          "estimate": 0.43,
-          "beat": true,
-          "surprise_pct": 20.6
-        }
+        "recent": null
       },
       "score_normalized": 69
-    },
-    {
-      "ticker": "CRWV",
-      "name": "CoreWeave Inc",
-      "sector": "Technology",
-      "current_price": 110.59,
-      "change_pct": 2.6357,
-      "high": 112.98,
-      "low": 110.38,
-      "open": 112.96000000000001,
-      "prev_close": 107.75,
-      "score": 31,
-      "signals": [
-        "Top gainer (+2.6%)",
-        "High volume",
-        "Moderate move (+2.6%)",
-        "Trending activity (9)",
-        "Yahoo trending (#12)"
-      ],
-      "reddit_mentions": 9,
-      "market_cap": 58785203765.812996,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950683281286.png",
-      "weburl": "https://www.coreweave.com/",
-      "yahoo_trending_rank": 12,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": -1.12,
-          "estimate": -0.92,
-          "beat": false,
-          "surprise_pct": -22.3
-        }
-      },
-      "score_normalized": 44
     }
   ],
   "swing_trades": [
     {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corp",
+      "ticker": "MRVL",
+      "name": "Marvell Technology Inc",
       "sector": "Semiconductors",
-      "current_price": 226.79,
-      "change_pct": 2.7222,
-      "high": 226.92,
-      "low": 224.12,
-      "open": 224.8,
-      "prev_close": 220.78,
-      "score": 43,
+      "current_price": 177.02,
+      "change_pct": 7.6109,
+      "high": 182.31,
+      "low": 168.825,
+      "open": 168.825,
+      "prev_close": 164.5,
+      "score": 58,
       "signals": [
-        "Top gainer (+2.7%)",
+        "Top gainer (+7.6%)",
         "High volume",
-        "Moderate move (+2.7%)",
-        "Trending buzz (16)",
-        "Yahoo trending (#5)",
-        "Closing strong"
+        "Strong move (+7.6%)",
+        "Trending buzz (13)",
+        "Yahoo trending (#8)",
+        "Closing strong",
+        "Sector leader (Semiconductors)"
       ],
-      "reddit_mentions": 16,
-      "market_cap": 5364954059688.271,
+      "reddit_mentions": 13,
+      "market_cap": 143848379362.47073,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/NVDA.png",
-      "weburl": "https://www.nvidia.com/",
-      "yahoo_trending_rank": 5,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MRVL.png",
+      "weburl": "https://www.marvell.com/",
+      "yahoo_trending_rank": 8,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-03-31",
-          "actual": 1.62,
-          "estimate": 1.56,
-          "beat": true,
-          "surprise_pct": 3.6
-        }
-      },
-      "score_normalized": 61
-    },
-    {
-      "ticker": "COHR",
-      "name": "Coherent Corp",
-      "sector": "Electrical Equipment",
-      "current_price": 396.7,
-      "change_pct": 6.0667,
-      "high": 407,
-      "low": 393.2126,
-      "open": 395.6775,
-      "prev_close": 374.01,
-      "score": 36,
-      "signals": [
-        "Top gainer (+6.1%)",
-        "High volume",
-        "Strong move (+6.1%)",
-        "Yahoo trending (#18)"
-      ],
-      "reddit_mentions": 3,
-      "market_cap": 73171065536.79915,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/IIVI.png",
-      "weburl": "https://www.coherent.com/",
-      "yahoo_trending_rank": 18,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 1.41,
-          "estimate": 1.43,
+          "actual": 0.8,
+          "estimate": 0.8,
           "beat": false,
-          "surprise_pct": -1.1
+          "surprise_pct": -0.4
         }
       },
-      "score_normalized": 51
+      "score_normalized": 82
     },
     {
-      "ticker": "TSLA",
-      "name": "Tesla Inc",
-      "sector": "Automobiles",
-      "current_price": 437.8,
-      "change_pct": 1.0036,
-      "high": 439.7986,
-      "low": 435.0001,
-      "open": 436.3225,
-      "prev_close": 433.45,
-      "score": 24,
+      "ticker": "ENPH",
+      "name": "Enphase Energy Inc",
+      "sector": "Semiconductors",
+      "current_price": 41.34,
+      "change_pct": 10.2988,
+      "high": 42.06,
+      "low": 37.65,
+      "open": 38.379999999999995,
+      "prev_close": 37.48,
+      "score": 31,
       "signals": [
-        "Top gainer (+1.0%)",
+        "Top gainer (+10.3%)",
         "High volume",
-        "Yahoo trending (#19)",
+        "Strong move (+10.3%)",
         "Closing strong"
       ],
-      "reddit_mentions": 2,
-      "market_cap": 1627918408643.0042,
+      "reddit_mentions": 0,
+      "market_cap": 4939797402.0717125,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/TSLA.png",
-      "weburl": "https://www.tesla.com/",
-      "yahoo_trending_rank": 19,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ENPH.png",
+      "weburl": "https://enphase.com/",
+      "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-03-31",
-          "actual": 0.41,
-          "estimate": 0.38,
+          "actual": 0.47,
+          "estimate": 0.42,
           "beat": true,
-          "surprise_pct": 8.7
+          "surprise_pct": 12.2
         }
       },
-      "score_normalized": 34
+      "score_normalized": 44
     }
   ],
   "buzz_source": "trending",
@@ -304,17 +303,17 @@
       "ticker": "NBIS",
       "name": "Nebius Group NV",
       "sector": "Technology",
-      "current_price": 204.71,
-      "change_pct": 14.2929,
-      "high": 210,
+      "current_price": 206.39,
+      "change_pct": 15.2309,
+      "high": 211.5894,
       "low": 194.3225,
       "open": 194.3225,
       "prev_close": 179.11,
       "score": 63,
       "signals": [
-        "Top gainer (+14.3%)",
+        "Top gainer (+15.2%)",
         "High volume",
-        "Strong move (+14.3%)",
+        "Strong move (+15.2%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)",
         "Closing strong",
@@ -342,25 +341,31 @@
     },
     {
       "ticker": "BABA",
-      "mentions": 19,
       "name": "Alibaba Group Holding Ltd",
       "sector": "Retail",
-      "current_price": 133.87,
-      "change_pct": -0.6752,
-      "high": 134.15,
+      "current_price": 145.03,
+      "change_pct": 7.605,
+      "high": 146,
       "low": 130.33,
       "open": 133.735,
       "prev_close": 134.78,
-      "market_cap": 328197180513.59906,
-      "score": 0,
+      "score": 53,
       "signals": [
-        "Trending buzz (19 mentions)",
-        "Yahoo trending (#2)"
+        "Top gainer (+7.6%)",
+        "High volume",
+        "Strong move (+7.6%)",
+        "Trending buzz (19)",
+        "Yahoo trending (#2)",
+        "Closing strong"
       ],
       "reddit_mentions": 19,
-      "is_gainer": false,
-      "is_active": false,
+      "market_cap": 328197180513.59906,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BABA.png",
+      "weburl": "https://www.alibabagroup.com/",
       "yahoo_trending_rank": 2,
+      "mentions": 19,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -371,26 +376,25 @@
           "surprise_pct": -89.7
         }
       },
-      "score_normalized": 0
+      "score_normalized": 75
     },
     {
       "ticker": "WOLF",
       "name": "Wolfspeed Inc",
       "sector": "Semiconductors",
-      "current_price": 72.49,
-      "change_pct": 34.9404,
+      "current_price": 65.57,
+      "change_pct": 22.0588,
       "high": 73.74,
-      "low": 64.61,
-      "open": 66.64,
+      "low": 58.6,
+      "open": 64.315,
       "prev_close": 53.72,
-      "score": 53,
+      "score": 50,
       "signals": [
-        "Top gainer (+34.9%)",
+        "Top gainer (+22.1%)",
         "High volume",
-        "Strong move (+34.9%)",
+        "Strong move (+22.1%)",
         "Trending buzz (18)",
-        "Yahoo trending (#3)",
-        "Closing strong"
+        "Yahoo trending (#3)"
       ],
       "reddit_mentions": 18,
       "market_cap": 1651595640.185309,
@@ -410,183 +414,190 @@
           "surprise_pct": -58.6
         }
       },
-      "score_normalized": 75
+      "score_normalized": 70
     }
   ],
   "sector_rotation": [
     {
       "ticker": "XLK",
       "sector": "Technology",
-      "ret_1d": 0.63,
-      "ret_5d": 3.69,
-      "ret_1m": 19.17,
+      "ret_1d": 0.64,
+      "ret_5d": 3.7,
+      "ret_1m": 19.18,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "QUCY",
           "name": "Mainz Biomed NV",
-          "change_pct": 88.1351,
-          "price": 0.6073
+          "change_pct": 68.1227,
+          "price": 0.5427
+        },
+        {
+          "ticker": "VNET",
+          "name": "VNET Group Inc",
+          "change_pct": 26.8293,
+          "price": 11.44
         },
         {
           "ticker": "WOLF",
           "name": "Wolfspeed Inc",
-          "change_pct": 34.9404,
-          "price": 72.49
+          "change_pct": 22.0588,
+          "price": 65.57
+        }
+      ]
+    },
+    {
+      "ticker": "XLY",
+      "sector": "Cons. Discretionary",
+      "ret_1d": 0.41,
+      "ret_5d": -0.91,
+      "ret_1m": 2.01,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "F",
+          "name": "Ford Motor Co",
+          "change_pct": 8.9241,
+          "price": 13.06
         },
         {
-          "ticker": "PENG",
-          "name": "Penguin Solutions Inc",
-          "change_pct": 19.6238,
-          "price": 52.79
+          "ticker": "BABA",
+          "name": "Alibaba Group Holding Ltd",
+          "change_pct": 7.605,
+          "price": 145.03
+        },
+        {
+          "ticker": "NIO",
+          "name": "NIO Inc",
+          "change_pct": 7.4013,
+          "price": 6.53
+        }
+      ]
+    },
+    {
+      "ticker": "XLC",
+      "sector": "Comm. Services",
+      "ret_1d": 0.35,
+      "ret_5d": -0.92,
+      "ret_1m": -0.25,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "BIDU",
+          "name": "Baidu Inc",
+          "change_pct": 7.2603,
+          "price": 150.1
         }
       ]
     },
     {
       "ticker": "XLB",
       "sector": "Materials",
-      "ret_1d": 0.02,
-      "ret_5d": -0.5,
-      "ret_1m": 0.27,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLP",
-      "sector": "Cons. Staples",
-      "ret_1d": -0.05,
-      "ret_5d": 0.18,
-      "ret_1m": 3.59,
+      "ret_1d": 0.14,
+      "ret_5d": -0.37,
+      "ret_1m": 0.39,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLV",
       "sector": "Health Care",
-      "ret_1d": -0.25,
-      "ret_5d": 0.06,
-      "ret_1m": -2.24,
+      "ret_1d": -0.02,
+      "ret_5d": 0.29,
+      "ret_1m": -2.02,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "QUCY",
           "name": "Mainz Biomed NV",
-          "change_pct": 88.1351,
-          "price": 0.6073
+          "change_pct": 68.1227,
+          "price": 0.5427
         },
         {
           "ticker": "SLS",
           "name": "Sellas Life Sciences Group Inc",
-          "change_pct": 17.8161,
-          "price": 6.15
+          "change_pct": 12.6437,
+          "price": 5.88
         },
         {
-          "ticker": "ERNA",
-          "name": "Ernexa Therapeutics Inc",
-          "change_pct": 8.3264,
-          "price": 13.01
+          "ticker": "UNH",
+          "name": "UnitedHealth Group Inc",
+          "change_pct": 0.9864,
+          "price": 400.3
         }
       ]
+    },
+    {
+      "ticker": "XLP",
+      "sector": "Cons. Staples",
+      "ret_1d": -0.09,
+      "ret_5d": 0.15,
+      "ret_1m": 3.55,
+      "ret_3m": null,
+      "top_stocks": []
     },
     {
       "ticker": "XLI",
       "sector": "Industrials",
-      "ret_1d": -0.31,
-      "ret_5d": -1.73,
-      "ret_1m": 0.27,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLC",
-      "sector": "Comm. Services",
       "ret_1d": -0.33,
-      "ret_5d": -1.59,
-      "ret_1m": -0.93,
+      "ret_5d": -1.75,
+      "ret_1m": 0.25,
       "ret_3m": null,
       "top_stocks": [
         {
-          "ticker": "OCG",
-          "name": "Oriental Culture Holding Ltd",
-          "change_pct": 40.3226,
-          "price": 2.61
-        },
-        {
-          "ticker": "AEHL",
-          "name": "Antelope Enterprise Holdings Ltd",
-          "change_pct": 30.3318,
-          "price": 2.75
+          "ticker": "VELO",
+          "name": "Velo3D Inc",
+          "change_pct": 46.7283,
+          "price": 20.63
         }
       ]
-    },
-    {
-      "ticker": "XLE",
-      "sector": "Energy",
-      "ret_1d": -0.45,
-      "ret_5d": 0.54,
-      "ret_1m": 2.43,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLY",
-      "sector": "Cons. Discretionary",
-      "ret_1d": -0.55,
-      "ret_5d": -1.86,
-      "ret_1m": 1.03,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "TSLA",
-          "name": "Tesla Inc",
-          "change_pct": 1.0036,
-          "price": 437.8
-        },
-        {
-          "ticker": "QS",
-          "name": "Quantumscape Corp",
-          "change_pct": 0.7126,
-          "price": 8.48
-        }
-      ]
-    },
-    {
-      "ticker": "XLF",
-      "sector": "Financials",
-      "ret_1d": -0.97,
-      "ret_5d": -1.47,
-      "ret_1m": -1.35,
-      "ret_3m": null,
-      "top_stocks": []
     },
     {
       "ticker": "XLRE",
       "sector": "Real Estate",
-      "ret_1d": -1.22,
-      "ret_5d": -1.58,
-      "ret_1m": 1.39,
+      "ret_1d": -0.95,
+      "ret_5d": -1.31,
+      "ret_1m": 1.67,
+      "ret_3m": null,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLE",
+      "sector": "Energy",
+      "ret_1d": -1.0,
+      "ret_5d": -0.01,
+      "ret_1m": 1.87,
+      "ret_3m": null,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLF",
+      "sector": "Financials",
+      "ret_1d": -1.02,
+      "ret_5d": -1.51,
+      "ret_1m": -1.4,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLU",
       "sector": "Utilities",
-      "ret_1d": -1.63,
-      "ret_5d": -2.75,
-      "ret_1m": -4.34,
+      "ret_1d": -1.45,
+      "ret_5d": -2.57,
+      "ret_1m": -4.16,
       "ret_3m": null,
       "top_stocks": [
         {
-          "ticker": "EOSE",
-          "name": "Eos Energy Enterprises Inc",
-          "change_pct": 18.7654,
-          "price": 9.62
+          "ticker": "OUST",
+          "name": "Ouster Inc",
+          "change_pct": 17.8967,
+          "price": 31.95
         },
         {
-          "ticker": "COHR",
-          "name": "Coherent Corp",
-          "change_pct": 6.0667,
-          "price": 396.7
+          "ticker": "EOSE",
+          "name": "Eos Energy Enterprises Inc",
+          "change_pct": 9.7531,
+          "price": 8.89
         }
       ]
     }
@@ -603,8 +614,68 @@
       "confirmed_tickers": [
         "NBIS"
       ],
-      "hours_ago": 1.1,
+      "hours_ago": 3.2,
       "url": "https://finnhub.io/api/news?id=41c3ebb28f86827998c84b3860cdfb377fb2bcb15a7a01d0bdb3e34d48afd157",
+      "is_news": true
+    },
+    {
+      "id": "140285441",
+      "title": "Nebius: Firing On All Cylinders",
+      "subreddit": "SeekingAlpha",
+      "ups": 0,
+      "tickers": [
+        "NBIS"
+      ],
+      "confirmed_tickers": [
+        "NBIS"
+      ],
+      "hours_ago": 4.5,
+      "url": "https://finnhub.io/api/news?id=6007b177a7dee549a353c5f0f402b5d6da1006873476c213b0b521b8f1781f26",
+      "is_news": true
+    },
+    {
+      "id": "140284970",
+      "title": "Nebius Group N.V. Reports Earnings Results for the First Quarter Ended March 31, 2026",
+      "subreddit": "Finnhub",
+      "ups": 0,
+      "tickers": [
+        "NBIS"
+      ],
+      "confirmed_tickers": [
+        "NBIS"
+      ],
+      "hours_ago": 5.4,
+      "url": "https://finnhub.io/api/news?id=2d2bca269b04019419270102827abd11071aaa6c8e5df4b054f7008e8e8b2321",
+      "is_news": true
+    },
+    {
+      "id": "140284987",
+      "title": "Nebius, Like AI, Is Evolving",
+      "subreddit": "SeekingAlpha",
+      "ups": 0,
+      "tickers": [
+        "NBIS"
+      ],
+      "confirmed_tickers": [
+        "NBIS"
+      ],
+      "hours_ago": 5.4,
+      "url": "https://finnhub.io/api/news?id=71541c15ff2e3476e8b87ca3abb0d305fe76d10de97686473777088367dc653e",
+      "is_news": true
+    },
+    {
+      "id": "140284651",
+      "title": "Nebius : Letter to shareholders (Nebius SHL Q1 2026)",
+      "subreddit": "Finnhub",
+      "ups": 0,
+      "tickers": [
+        "NBIS"
+      ],
+      "confirmed_tickers": [
+        "NBIS"
+      ],
+      "hours_ago": 5.7,
+      "url": "https://finnhub.io/api/news?id=524c75c43d15d82c5a210bf5e86fb25dd1228e66e734ffc2a7ee6c63a9981a09",
       "is_news": true
     },
     {
@@ -618,23 +689,8 @@
       "confirmed_tickers": [
         "BABA"
       ],
-      "hours_ago": 4.3,
+      "hours_ago": 6.4,
       "url": "https://finnhub.io/api/news?id=a2a86d6e83fa5b9b18c7d5fc7bddd7e9763c26ec1198499b3130e311981782f2",
-      "is_news": true
-    },
-    {
-      "id": "140283746",
-      "title": "IREN: Microsoft And Nvidia Aren't Enough To Outrun The Dilution Math",
-      "subreddit": "SeekingAlpha",
-      "ups": 0,
-      "tickers": [
-        "NBIS"
-      ],
-      "confirmed_tickers": [
-        "NBIS"
-      ],
-      "hours_ago": 4.8,
-      "url": "https://finnhub.io/api/news?id=a4b728dabe134d3960d022652408a1394fbfaa763fc72fe251de7d3254d78867",
       "is_news": true
     },
     {
@@ -648,38 +704,23 @@
       "confirmed_tickers": [
         "BABA"
       ],
-      "hours_ago": 5.1,
+      "hours_ago": 7.3,
       "url": "https://finnhub.io/api/news?id=1339a641649ab7f9c4eed84dbcbe4afdf9d63ccf798e7966490909b15207f88e",
       "is_news": true
     },
     {
-      "id": "140283421",
-      "title": "Nebius Group continues to expect 800MW-1GW of connected power by year-end",
-      "subreddit": "Finnhub",
+      "id": "140285115",
+      "title": "12 Information Technology Stocks Moving In Wednesday's Pre-Market Session",
+      "subreddit": "Benzinga",
       "ups": 0,
       "tickers": [
-        "NBIS"
+        "WOLF"
       ],
       "confirmed_tickers": [
-        "NBIS"
+        "WOLF"
       ],
-      "hours_ago": 5.3,
-      "url": "https://finnhub.io/api/news?id=c8a2a1c837ed0a5a5f9d3177e3a9441ab3896fd89d358ee333c3c62358633268",
-      "is_news": true
-    },
-    {
-      "id": "140283237",
-      "title": "Nebius reports higher quarterly capex on AI cloud expansion",
-      "subreddit": "Finnhub",
-      "ups": 0,
-      "tickers": [
-        "NBIS"
-      ],
-      "confirmed_tickers": [
-        "NBIS"
-      ],
-      "hours_ago": 5.5,
-      "url": "https://finnhub.io/api/news?id=10c3fe300093431b4440e72fca71ebe1e888996eb39200122fd1d6c11e87581a",
+      "hours_ago": 7.6,
+      "url": "https://finnhub.io/api/news?id=f50b94483721e6a0c601eec941d408a608912db765cbf6a053db69692a89aa81",
       "is_news": true
     },
     {
@@ -693,7 +734,7 @@
       "confirmed_tickers": [
         "BABA"
       ],
-      "hours_ago": 5.9,
+      "hours_ago": 8.0,
       "url": "https://finnhub.io/api/news?id=5941c90e511e74ec609d4fc900abecb90fbe4f659f5e36ee9c47fd44d07845bc",
       "is_news": true
     },
@@ -708,38 +749,38 @@
       "confirmed_tickers": [
         "BABA"
       ],
-      "hours_ago": 6.0,
+      "hours_ago": 8.1,
       "url": "https://finnhub.io/api/news?id=2a265bfff052551cc470646e5dd2409eea6382371281386113909d004271e77e",
       "is_news": true
     },
     {
-      "id": "140282692",
-      "title": "Nebius Group: Q1 Earnings Snapshot",
-      "subreddit": "Finnhub",
+      "id": "140284854",
+      "title": "Earnings Scheduled For May 13, 2026",
+      "subreddit": "Benzinga",
       "ups": 0,
       "tickers": [
-        "NBIS"
+        "BABA"
       ],
       "confirmed_tickers": [
-        "NBIS"
+        "BABA"
       ],
-      "hours_ago": 6.3,
-      "url": "https://finnhub.io/api/news?id=f1cdcc04b564b9ebec3418ebe054e0c4f4e87cfc668f081182b85152912cb4ad",
+      "hours_ago": 8.5,
+      "url": "https://finnhub.io/api/news?id=6dac421ce3bb67d0bc0ce26b0fecdc34eb3d275965041c12e73eccafbd4fdec0",
       "is_news": true
     },
     {
-      "id": "140282445",
-      "title": "Alibaba's Quarterly Profitability Still Under Pressure",
-      "subreddit": "Finnhub",
+      "id": "140284904",
+      "title": "Why Nextpower Shares Are Trading Higher By Over 12%; Here Are 20 Stocks Moving Premarket",
+      "subreddit": "Benzinga",
       "ups": 0,
       "tickers": [
-        "BABA"
+        "WOLF"
       ],
       "confirmed_tickers": [
-        "BABA"
+        "WOLF"
       ],
-      "hours_ago": 7.1,
-      "url": "https://finnhub.io/api/news?id=b503606900d62fbddd960a0ec00b20ae4f33c66aa5e101f018fd416374453f94",
+      "hours_ago": 9.7,
+      "url": "https://finnhub.io/api/news?id=ef22a1fd67765b8c706ce6e2d9bea4812f9835cd9da0d82a7cbccdd80758e29a",
       "is_news": true
     },
     {
@@ -753,7 +794,7 @@
       "confirmed_tickers": [
         "WOLF"
       ],
-      "hours_ago": 8.5,
+      "hours_ago": 10.6,
       "url": "https://finnhub.io/api/news?id=1e05b6f2110f4e144045b51015df571b6c23d63bfc7daf1e049c17198bd8809c",
       "is_news": true
     },
@@ -768,7 +809,7 @@
       "confirmed_tickers": [
         "WOLF"
       ],
-      "hours_ago": 144.0,
+      "hours_ago": 146.1,
       "url": "https://finnhub.io/api/news?id=73bc6bc4e1e99f9cb4e0cec27bbddfb53225fcacd3085b3a1f6c2aec626e66a7",
       "is_news": true
     },
@@ -783,38 +824,8 @@
       "confirmed_tickers": [
         "WOLF"
       ],
-      "hours_ago": 166.1,
+      "hours_ago": 168.2,
       "url": "https://finnhub.io/api/news?id=8a9b24689a8ae7478093e266bb22effe2fcb3b7919429e230ada81a21d507c03",
-      "is_news": true
-    },
-    {
-      "id": "140207267",
-      "title": "Wolfspeed Stock Surges Despite Weak Q3 Financials",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "WOLF"
-      ],
-      "confirmed_tickers": [
-        "WOLF"
-      ],
-      "hours_ago": 166.5,
-      "url": "https://finnhub.io/api/news?id=b639a6f9b4f77d51324b4a45898b4f6e58b97aeba8b9069df29e4d053247710a",
-      "is_news": true
-    },
-    {
-      "id": "140190728",
-      "title": "Upstart Posts Downbeat Q1 Earnings, Joins Wolfspeed, Arista Networks And Other Big Stocks Moving Lower In Wednesday's Pr",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "WOLF"
-      ],
-      "confirmed_tickers": [
-        "WOLF"
-      ],
-      "hours_ago": 173.6,
-      "url": "https://finnhub.io/api/news?id=37fe451e4238b6cf0f0d6dbca3496a6c6bbc421f102c8aeed6ef33c5f22c7478",
       "is_news": true
     }
   ]
