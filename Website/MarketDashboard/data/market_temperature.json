@@ -1,8 +1,8 @@
 {
-  "scan_time": "2026-05-12T11:49:00.596547+00:00",
+  "scan_time": "2026-05-13T11:58:40.570836+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 79.5,
-  "composite_label": "Frothy",
+  "composite_score": 81.5,
+  "composite_label": "Extreme",
   "components": {
     "buffett": {
       "raw": 2.04,
@@ -16,7 +16,7 @@
       "weight": 0.25
     },
     "shiller": {
-      "raw": 42.15,
+      "raw": 42.08,
       "raw_label": "42.1x CAPE",
       "percentile": 100.0,
       "score": 100.0,
@@ -27,34 +27,34 @@
       "weight": 0.25
     },
     "fed_model": {
-      "raw": -1.25,
-      "raw_label": "-1.25% spread",
-      "earnings_yield": 3.13,
-      "treasury_10y": 4.38,
-      "pe": 31.91,
+      "raw": -1.28,
+      "raw_label": "-1.28% spread",
+      "earnings_yield": 3.14,
+      "treasury_10y": 4.42,
+      "pe": 31.86,
       "score": 85,
       "label": "Extreme",
-      "description": "S&P earnings yield 3.13% vs 10Y Treasury 4.38%. Positive spread means stocks are relatively cheap vs bonds.",
+      "description": "S&P earnings yield 3.14% vs 10Y Treasury 4.42%. Positive spread means stocks are relatively cheap vs bonds.",
       "title": "Fed Model",
       "subtitle": "Earnings Yield \u2212 10Y",
       "weight": 0.15
     },
     "breadth": {
-      "raw": 55.0,
-      "raw_label": "55.0% above 200-DMA",
-      "above_200dma": 276,
+      "raw": 55.8,
+      "raw_label": "55.8% above 200-DMA",
+      "above_200dma": 280,
       "total": 502,
       "score": 45,
       "label": "Elevated",
-      "description": "276 of 502 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
+      "description": "280 of 502 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
       "title": "Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
       "weight": 0.15
     },
     "fear_greed": {
-      "raw": 65.9,
+      "raw": 65.5,
       "raw_label": "66 (Greed)",
-      "score": 65.9,
+      "score": 65.5,
       "label": "Frothy",
       "description": "CNN's composite of 7 short-term sentiment signals (momentum, breadth, put/call ratio, junk-bond demand, volatility, etc.). High readings reflect investor euphoria \u2014 historically a contrarian sell signal.",
       "title": "Fear & Greed",
@@ -62,10 +62,10 @@
       "weight": 0.1
     },
     "vix": {
-      "raw": 18.79,
-      "raw_label": "18.8 VIX",
-      "score": 50,
-      "label": "Elevated",
+      "raw": 17.85,
+      "raw_label": "17.9 VIX",
+      "score": 70,
+      "label": "Frothy",
       "description": "30-day expected S&P 500 volatility implied by options. Low readings (under 15) signal complacency and often coincide with frothy markets; high readings (over 30) signal fear and frequently mark short-term bottoms.",
       "title": "VIX",
       "subtitle": "Implied Volatility",
