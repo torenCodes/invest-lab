@@ -25,11 +25,14 @@ MIN_VALUE   = 25_000
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
 
-C_SUITE_KEYWORDS = {
-    "ceo", "cfo", "coo", "cto", "president", "chairman",
-    "chief executive", "chief financial", "chief operating",
-    "chief technology", "chief revenue", "chief strategy", "chief investment",
-}
+# Word-boundary regex — substring matching was incorrectly flagging titles
+# like "Director" as C-suite because the substring "cto" appears in
+# "director". \b ensures whole-word matches only.
+_CSUITE_RE = re.compile(
+    r"\b(ceo|cfo|coo|cto|president|chairman|"
+    r"chief\s+(executive|financial|operating|technology|revenue|strategy|investment))\b",
+    re.IGNORECASE,
+)
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -48,8 +51,10 @@ def parse_float(s):
 
 
 def is_csuite(title):
-    t = title.lower()
-    return any(k in t for k in C_SUITE_KEYWORDS)
+    """True if the title is a true C-suite role (CEO, CFO, COO, CTO,
+    President, Chairman, or any 'Chief X' role). Uses word boundaries to
+    avoid the 'cto in director' substring trap."""
+    return bool(_CSUITE_RE.search(title or ""))
 
 
 # ── Fetch transactions ────────────────────────────────────────────────────────
@@ -291,6 +296,146 @@ def build_big_money(transactions, enrichment):
     return rows[:10]
 
 
+# ── Phase B: conviction scoring + nominees ────────────────────────────────────
+#
+# Replaces the three separate panels (cluster / csuite / big money) — which
+# always overlapped on top names — with one ranked list of unique tickers.
+# Each nominee gets a conviction score combining insider count, C-suite
+# presence, dollar volume, and recency. Tier A / B / Watch grades mirror the
+# Pattern Scanner UX so users get one coherent leaderboard with a sidebar
+# filter chip per tier.
+
+TIER_A_CUTOFF = 50
+TIER_B_CUTOFF = 25
+TIER_W_CUTOFF = 10
+
+
+def _parse_finviz_date(s):
+    """'Apr 28 '26' or 'May 02 '26' -> datetime. Used for recency checks."""
+    if not s:
+        return None
+    try:
+        return datetime.strptime(s, "%b %d '%y")
+    except ValueError:
+        return None
+
+
+def _conviction_score(row, today=None):
+    """Score a deduped ticker row across four dimensions. Returns
+    (score, list_of_signal_tags). Tunable; keep weights conservative so
+    Tier A really means high-conviction (multi-dimensional)."""
+    today = today or datetime.now()
+    signals = []
+    score   = 0
+
+    # Distinct insiders — multi-insider buying is the strongest cluster signal
+    n_ins = row["insider_count"]
+    if   n_ins >= 5: score += 35; signals.append(f"{n_ins} insiders buying")
+    elif n_ins == 4: score += 28; signals.append("4 insiders buying")
+    elif n_ins == 3: score += 20; signals.append("3 insiders buying")
+    elif n_ins == 2: score += 12; signals.append("2 insiders buying")
+    # 1 insider = no cluster bonus (still in pool via other signals)
+
+    # C-suite presence
+    if row["is_csuite"]:
+        # Identify the top C-suite buyer for the signal label
+        top_csuite = next((i for i in row["insiders"] if i["is_csuite"]), None)
+        if top_csuite:
+            score += 15
+            title = top_csuite["title"]
+            signals.append(f"{title} bought")
+
+    # Dollar volume tier
+    v = row["value"]
+    if   v >= 10_000_000: score += 30; signals.append(f"${v/1e6:.1f}M total")
+    elif v >=  5_000_000: score += 22; signals.append(f"${v/1e6:.1f}M total")
+    elif v >=  1_000_000: score += 15; signals.append(f"${v/1e6:.1f}M total")
+    elif v >=    500_000: score += 10; signals.append(f"${v/1e3:.0f}K total")
+    elif v >=    100_000: score +=  5; signals.append(f"${v/1e3:.0f}K total")
+
+    # Recency — most-recent insider buy within last 3 days
+    dates = [_parse_finviz_date(i["date"]) for i in row["insiders"]]
+    dates = [d for d in dates if d]
+    if dates:
+        most_recent = max(dates)
+        age_days = (today - most_recent).days
+        if age_days <= 3:
+            score += 5
+            signals.append("Activity in last 3 days")
+
+    return score, signals
+
+
+def _build_story(row, signals):
+    """One-sentence narrative for the Standouts callout. Reads naturally
+    rather than as a list of badges. Falls back to the signal list if we
+    don't have enough material for a full sentence."""
+    ticker  = row["ticker"]
+    n_ins   = row["insider_count"]
+    has_cs  = row["is_csuite"]
+    v       = row["value"]
+    csuite_titles = [i["title"] for i in row["insiders"] if i["is_csuite"]]
+
+    parts = []
+    if n_ins >= 3:
+        if csuite_titles:
+            roles = " and ".join(sorted(set(csuite_titles[:2])))
+            parts.append(f"Cluster of {n_ins} buyers including the {roles}")
+        else:
+            parts.append(f"Cluster of {n_ins} insiders")
+    elif n_ins == 2:
+        if csuite_titles:
+            parts.append(f"Two insiders bought including the {csuite_titles[0]}")
+        else:
+            parts.append("Two insiders bought")
+    else:
+        # Single buyer
+        i0 = row["insiders"][0]
+        if has_cs:
+            parts.append(f"The {i0['title']} bought")
+        else:
+            parts.append(f"{i0['name']} ({i0['title']}) bought")
+
+    # Dollar magnitude
+    if   v >= 1_000_000: parts.append(f"${v/1e6:.1f}M total")
+    elif v >=   100_000: parts.append(f"${v/1e3:.0f}K total")
+
+    return f"{ticker} — " + ", ".join(parts) + "."
+
+
+def build_nominees(transactions, enrichment):
+    """Single ranked list of unique tickers with conviction tier (A/B/Watch),
+    plus a 'standouts' top-3 for the homepage callout, plus tier_counts for
+    sidebar badges."""
+    rows = _roll_up_by_ticker(transactions, enrichment)
+
+    today = datetime.now()
+    scored = []
+    for r in rows:
+        score, signals = _conviction_score(r, today=today)
+        if score < TIER_W_CUTOFF:
+            continue
+        if   score >= TIER_A_CUTOFF: tier = "A"
+        elif score >= TIER_B_CUTOFF: tier = "B"
+        else:                         tier = "W"
+        r["conviction_score"] = score
+        r["tier"]              = tier
+        r["signals"]           = signals
+        r["story"]             = _build_story(r, signals)
+        scored.append(r)
+
+    scored.sort(key=lambda x: x["conviction_score"], reverse=True)
+
+    standouts = scored[:3]
+    tier_counts = {
+        "A":     sum(1 for r in scored if r["tier"] == "A"),
+        "B":     sum(1 for r in scored if r["tier"] == "B"),
+        "W":     sum(1 for r in scored if r["tier"] == "W"),
+        "total": len(scored),
+    }
+    return scored, standouts, tier_counts
+
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def run():
@@ -311,6 +456,11 @@ def run():
     big_money    = build_big_money(transactions, enrichment)
     recent_feed  = transactions[:40]
 
+    # Phase B — single ranked nominees list (replaces the 3 panels for the
+    # rebuilt UI in Phase C). Old panels kept in output during the rollout
+    # so the deployed dashboard doesn't break; Phase C removes them.
+    nominees, standouts, tier_counts = build_nominees(transactions, enrichment)
+
     # Date range from data
     dates = [t["date"] for t in transactions if t.get("date")]
     date_range = f"{dates[-1]} – {dates[0]}" if dates else "Unknown"
@@ -320,6 +470,11 @@ def run():
         "total_transactions": len(transactions),
         "date_range":         date_range,
         "min_value":          MIN_VALUE,
+        # New Phase B schema
+        "nominees":           nominees,
+        "standouts":          standouts,
+        "tier_counts":        tier_counts,
+        # Legacy panels — to be removed once Phase C frontend is live
         "cluster_buys":       cluster_buys,
         "csuite_buys":        csuite_buys,
         "big_money":          big_money,
@@ -332,6 +487,7 @@ def run():
 
     elapsed = (datetime.now() - start).seconds
     print(f"[scan.py] Done in {elapsed}s — "
+          f"{tier_counts['total']} nominees ({tier_counts['A']}A / {tier_counts['B']}B / {tier_counts['W']}W), "
           f"{len(cluster_buys)} clusters, {len(csuite_buys)} C-suite, "
           f"{len(big_money)} big money, {len(recent_feed)} feed items")
     print(f"[scan.py] Results written to {OUTPUT_FILE}")
