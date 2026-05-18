@@ -213,74 +213,82 @@ def build_cluster_buys(transactions, enrichment):
     return clusters[:10]
 
 
-def build_csuite_buys(transactions, enrichment):
-    """Top C-suite purchases, deduplicated per person+ticker, ranked by total value."""
-    # Merge multiple transactions by same insider at same ticker
+def _roll_up_by_ticker(transactions, enrichment):
+    """Helper — group transactions by ticker (not by ticker+insider), summing
+    dollar value across every insider at that company. Each row carries an
+    `insiders` list with the per-insider breakdown for the expanded view.
+    The top-level `insider` / `title` / `date` / `price` fields surface the
+    single largest buyer so cards still have one face to display."""
     groups = defaultdict(lambda: {"value": 0, "qty": 0, "txns": []})
     for t in transactions:
-        if not t["is_csuite"]:
-            continue
-        key = (t["ticker"], t["insider"])
-        groups[key]["value"] += t["value"]
-        groups[key]["qty"]   += t["qty"]
-        groups[key]["txns"].append(t)
+        groups[t["ticker"]]["value"] += t["value"]
+        groups[t["ticker"]]["qty"]   += t["qty"]
+        groups[t["ticker"]]["txns"].append(t)
 
-    merged = []
-    for (ticker, insider), g in groups.items():
-        base = g["txns"][0]
-        enr  = enrichment.get(ticker, {})
-        merged.append({
-            "ticker":        ticker,
-            "insider":       insider,
-            "title":         base["title"],
-            "date":          base["date"],
-            "price":         base["price"],
-            "qty":           g["qty"],
-            "value":         g["value"],
-            "txn_count":     len(g["txns"]),
-            "is_csuite":     True,
-            "company":       enr.get("name", ticker),
-            "sector":        enr.get("sector", "Unknown"),
-            "current_price": enr.get("current_price", 0),
-            "change_pct":    enr.get("change_pct", 0),
-            "market_cap":    enr.get("market_cap", 0),
+    rows = []
+    for ticker, g in groups.items():
+        # Per-insider rollup within the ticker (one row per unique insider)
+        per_insider = defaultdict(lambda: {"value": 0, "qty": 0, "txns": []})
+        for t in g["txns"]:
+            per_insider[t["insider"]]["value"] += t["value"]
+            per_insider[t["insider"]]["qty"]   += t["qty"]
+            per_insider[t["insider"]]["txns"].append(t)
+
+        insiders = []
+        for name, sub in per_insider.items():
+            base = sub["txns"][0]
+            insiders.append({
+                "name":      name,
+                "title":     base["title"],
+                "date":      base["date"],
+                "price":     base["price"],
+                "qty":       sub["qty"],
+                "value":     sub["value"],
+                "is_csuite": base["is_csuite"],
+            })
+        insiders.sort(key=lambda x: x["value"], reverse=True)
+        top = insiders[0]
+        enr = enrichment.get(ticker, {})
+
+        rows.append({
+            "ticker":         ticker,
+            "insider":        top["name"],
+            "title":          top["title"],
+            "date":           top["date"],
+            "price":          top["price"],
+            "qty":            g["qty"],
+            "value":          g["value"],          # total across every insider at this ticker
+            "txn_count":      len(g["txns"]),
+            "insider_count":  len(insiders),
+            "is_csuite":      any(i["is_csuite"] for i in insiders),
+            "company":        enr.get("name", ticker),
+            "sector":         enr.get("sector", "Unknown"),
+            "current_price":  enr.get("current_price", 0),
+            "change_pct":     enr.get("change_pct", 0),
+            "market_cap":     enr.get("market_cap", 0),
+            "insiders":       insiders,
         })
+    return rows
 
-    merged.sort(key=lambda x: x["value"], reverse=True)
-    return merged[:10]
+
+def build_csuite_buys(transactions, enrichment):
+    """Tickers with at least one C-suite open-market buy. Deduplicated by
+    ticker (multiple execs at the same company roll up into one entry) and
+    ranked by total dollar value across all insiders at that ticker."""
+    csuite_txns = [t for t in transactions if t["is_csuite"]]
+    rows = _roll_up_by_ticker(csuite_txns, enrichment)
+    rows.sort(key=lambda x: x["value"], reverse=True)
+    return rows[:10]
 
 
 def build_big_money(transactions, enrichment):
-    """Top 10 purchases by dollar value, deduplicated per person+ticker."""
-    groups = defaultdict(lambda: {"value": 0, "qty": 0, "txns": []})
-    for t in transactions:
-        key = (t["ticker"], t["insider"])
-        groups[key]["value"] += t["value"]
-        groups[key]["qty"]   += t["qty"]
-        groups[key]["txns"].append(t)
-
-    merged = []
-    for (ticker, insider), g in groups.items():
-        base = g["txns"][0]
-        enr  = enrichment.get(ticker, {})
-        merged.append({
-            "ticker":        ticker,
-            "insider":       insider,
-            "title":         base["title"],
-            "date":          base["date"],
-            "price":         base["price"],
-            "qty":           g["qty"],
-            "value":         g["value"],
-            "txn_count":     len(g["txns"]),
-            "company":       enr.get("name", ticker),
-            "sector":        enr.get("sector", "Unknown"),
-            "current_price": enr.get("current_price", 0),
-            "change_pct":    enr.get("change_pct", 0),
-            "market_cap":    enr.get("market_cap", 0),
-        })
-
-    merged.sort(key=lambda x: x["value"], reverse=True)
-    return merged[:10]
+    """Tickers with the largest total insider purchase activity. Deduplicated
+    by ticker — every insider's buy at the same company is summed into the
+    row's `value` so we never show two ALKT rows just because two execs
+    bought separately."""
+    rows = _roll_up_by_ticker(transactions, enrichment)
+    rows.sort(key=lambda x: x["value"], reverse=True)
+    return rows[:10]
 
 
 # ── Main ───────────────────────────────────────────────────────────────────────
