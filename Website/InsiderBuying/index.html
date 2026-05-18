@@ -206,6 +206,18 @@
   .nav-item:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); }
   .nav-item.active { color: #38bda6; border-left-color: #38bda6; background: rgba(56,189,166,0.1); font-weight: 500; }
   .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+  .nav-badge {
+    margin-left: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    background: var(--accent);
+    color: #fff;
+    padding: 1px 7px;
+    border-radius: 20px;
+    min-width: 20px;
+    text-align: center;
+  }
 
   .sidebar-divider {
     border: none;
@@ -424,6 +436,96 @@
   .stock-card.open .card-expand-hint .hint-show { display: none; }
   .stock-card .card-expand-hint .hint-hide { display: none; }
   .stock-card.open .card-expand-hint .hint-hide { display: inline; }
+
+  /* ── Conviction tier badges + signal pills (Phase C) ─────────────────────── */
+  .tier-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.66rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .tier-badge.tier-a { background: var(--green);  color: #fff; }
+  .tier-badge.tier-b { background: var(--teal,#1a7070); color: #fff; }
+  .tier-badge.tier-w { background: var(--orange); color: #fff; }
+
+  .conviction-signals {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .signal-pill {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: var(--accent-muted);
+    color: var(--accent-dark);
+    border: 1px solid var(--accent-light);
+    white-space: nowrap;
+  }
+
+  /* ── "This Week's Standouts" callout ─────────────────────────────────────── */
+  .standouts-callout {
+    margin-bottom: 28px;
+  }
+  .standouts-callout-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .standouts-callout-sub {
+    font-size: 0.85rem;
+    color: var(--ink-3);
+    margin-bottom: 14px;
+  }
+  .standouts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+  }
+  .standout-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 14px 16px 16px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.15s, transform 0.15s;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+  .standout-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .standout-rank {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    margin-bottom: 6px;
+  }
+  .standout-story {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .standout-story strong {
+    color: var(--ink);
+    font-weight: 700;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05em;
+    letter-spacing: -0.01em;
+  }
 
   /* ── Expandable detail panel ─────────────────────────────────────────────── */
   .card-detail {
@@ -673,16 +775,23 @@ function toggleSiteNav(btn) {
     <span id="stat-total" style="display:none"></span>
     <span id="stat-range" style="display:none"></span>
     <div class="sidebar-section">
-      <div class="sidebar-label">Navigation</div>
-      <a class="nav-item active" href="#cluster">
-        <span class="nav-icon">🔥</span> Cluster Buys
-      </a>
-      <a class="nav-item" href="#csuite">
-        <span class="nav-icon">👔</span> C-Suite Buys
-      </a>
-      <a class="nav-item" href="#bigmoney">
-        <span class="nav-icon">💰</span> Big Money
-      </a>
+      <div class="sidebar-label">Filter by tier</div>
+      <div class="nav-item active" onclick="setFilter('all')" id="nav-all">
+        <span class="nav-icon">☰</span> All Nominees
+        <span class="nav-badge" id="badge-all">—</span>
+      </div>
+      <div class="nav-item" onclick="setFilter('A')" id="nav-A">
+        <span class="nav-icon">▲</span> Tier A
+        <span class="nav-badge" id="badge-A">—</span>
+      </div>
+      <div class="nav-item" onclick="setFilter('B')" id="nav-B">
+        <span class="nav-icon">◆</span> Tier B
+        <span class="nav-badge" id="badge-B">—</span>
+      </div>
+      <div class="nav-item" onclick="setFilter('W')" id="nav-W">
+        <span class="nav-icon">△</span> Watch List
+        <span class="nav-badge" id="badge-W">—</span>
+      </div>
       <a class="nav-item" href="#feed">
         <span class="nav-icon">📋</span> Recent Feed
       </a>
@@ -695,11 +804,10 @@ function toggleSiteNav(btn) {
     </div>
 
     <div class="sidebar-section">
-      <div class="sidebar-label">About</div>
-      <div class="sidebar-stat">Clusters <span class="sidebar-stat-val" id="sb-clusters">—</span></div>
-      <div class="sidebar-stat">C-Suite <span class="sidebar-stat-val" id="sb-csuite">—</span></div>
-      <div class="sidebar-stat">Big Money <span class="sidebar-stat-val" id="sb-bigmoney">—</span></div>
-      <div class="sidebar-note">Open-market purchases only. Option exercises excluded. Source: Finviz.</div>
+      <div class="sidebar-label">How it works</div>
+      <div class="sidebar-note">
+        Every ticker is scored on four dimensions: distinct insiders, C-suite presence, dollar volume, and recency. Tier A = high conviction (multi-signal). Tier B = solid. Watch = single signal. Open-market purchases only; option exercises excluded.
+      </div>
     </div>
     <div class="sidebar-footer">Not financial advice. For personal educational use only.</div>
   </aside>
@@ -791,177 +899,131 @@ function toggleCard(id) {
   }
 }
 
-// ── Cluster Buys ──────────────────────────────────────────────────────────────
-function renderClusterBuys(items) {
-  if (!items || !items.length)
-    return '<div class="empty-state">No cluster buys found in this window.</div>';
+// ── Nominees (Phase C) ──────────────────────────────────────────────────────
+// Single ranked list of unique tickers with a conviction tier. Sidebar
+// filter chips narrow the visible set; the same render fn handles all 4
+// states (All / A / B / Watch).
 
-  return '<div class="cards-grid">' + items.map((c, i) => {
-    const detailId = 'cluster-' + i;
-    const insiderRows = c.insiders.map(ins => `
-      <div class="insider-row">
-        <span class="insider-name">${esc(ins.name)}</span>
-        <span class="insider-title">${esc(ins.title)}</span>
-        <span class="insider-val">${fmt$(ins.value)}</span>
-      </div>`).join('');
+let allNominees = [];
+let activeFilter = 'all';
 
-    return `
-    <div class="stock-card" onclick="toggleCard('${detailId}')">
-      <div class="card-top">
-        <div class="card-header">
-          <div>
-            <div class="card-ticker">${esc(c.ticker)}</div>
-            <div class="card-name">${esc(c.company)}</div>
-          </div>
-          <div class="card-price">
-            <div class="price-value">${fmtPrice(c.current_price)}</div>
-            <div class="price-change ${changeClass(c.change_pct)}">${fmtPct(c.change_pct)}</div>
-          </div>
-        </div>
-        <div class="card-tags">
-          <span class="tag tag-cluster">${c.insider_count} insiders</span>
-          <span class="tag tag-big">${fmt$(c.total_value)} total</span>
-          <span class="tag tag-sector">${esc(c.sector)}</span>
-        </div>
-      </div>
-      <div class="card-metrics">
-        <div class="metric">
-          <div class="metric-label">Total Bought</div>
-          <div class="metric-value">${fmt$(c.total_value)}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Mkt Cap</div>
-          <div class="metric-value">${fmtCap(c.market_cap)}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Buyers</div>
-          <div class="metric-value">${c.insider_count}</div>
-        </div>
-      </div>
-      <div class="card-expand-hint"><span class="hint-show">Click to see buyers ▾</span><span class="hint-hide">▴ Collapse</span></div>
-      <div class="card-detail" id="${detailId}">
-        <div class="insider-list-label">Who Bought</div>
-        ${insiderRows}
-        ${deepDiveLink(c.ticker)}
-      </div>
-    </div>`;
-  }).join('') + '</div>';
+function tierClass(t) {
+  return t === 'A' ? 'tier-a' : t === 'B' ? 'tier-b' : 'tier-w';
+}
+function tierLabel(t) {
+  return t === 'A' ? 'Tier A' : t === 'B' ? 'Tier B' : 'Watch';
 }
 
-// ── C-Suite Buys ──────────────────────────────────────────────────────────────
-function renderCsuite(items) {
-  if (!items || !items.length)
-    return '<div class="empty-state">No C-suite purchases found in this window.</div>';
-
-  return '<div class="cards-grid">' + items.map((c, i) => {
-    const detailId = 'csuite-' + i;
-    const multiTag = c.txn_count > 1
-      ? `<span class="tag tag-multi">${c.txn_count}x purchases</span>` : '';
+function renderStandouts(standouts) {
+  if (!standouts || !standouts.length) return '';
+  const cards = standouts.map((s, i) => {
+    const ranks = ['#1', '#2', '#3'];
+    // Make "TICKER — " in the story bold via splitting at em-dash
+    let story = esc(s.story || '');
+    story = story.replace(/^([A-Z.-]+)\s+(—|--)\s*/, '<strong>$1</strong> $2 ');
     return `
-    <div class="stock-card" onclick="toggleCard('${detailId}')">
-      <div class="card-top">
-        <div class="card-header">
-          <div>
-            <div class="card-ticker">${esc(c.ticker)}</div>
-            <div class="card-name">${esc(c.company)}</div>
-          </div>
-          <div class="card-price">
-            <div class="price-value">${fmtPrice(c.current_price)}</div>
-            <div class="price-change ${changeClass(c.change_pct)}">${fmtPct(c.change_pct)}</div>
-          </div>
-        </div>
-        <div class="card-tags">
-          <span class="tag tag-csuite">${esc(titleShort(c.title))}</span>
-          <span class="tag tag-big">${fmt$(c.value)}</span>
-          ${multiTag}
-          <span class="tag tag-sector">${esc(c.sector)}</span>
-        </div>
-      </div>
-      <div class="card-metrics">
-        <div class="metric">
-          <div class="metric-label">Total Bought</div>
-          <div class="metric-value">${fmt$(c.value)}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Price Paid</div>
-          <div class="metric-value">${fmtPrice(c.price)}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Mkt Cap</div>
-          <div class="metric-value">${fmtCap(c.market_cap)}</div>
-        </div>
-      </div>
-      <div class="card-expand-hint"><span class="hint-show">Click for details ▾</span><span class="hint-hide">▴ Collapse</span></div>
-      <div class="card-detail" id="${detailId}">
-        <div class="detail-row"><span class="detail-label">Buyer</span><span class="detail-val">${esc(c.insider)}</span></div>
-        <div class="detail-row"><span class="detail-label">Title</span><span class="detail-val">${esc(c.title)}</span></div>
-        <div class="detail-row"><span class="detail-label">Date</span><span class="detail-val">${esc(c.date)}</span></div>
-        <div class="detail-row"><span class="detail-label">Shares</span><span class="detail-val">${c.qty.toLocaleString()}</span></div>
-        <div class="detail-row"><span class="detail-label">Industry</span><span class="detail-val">${esc(c.industry || c.sector)}</span></div>
-        ${deepDiveLink(c.ticker)}
-      </div>
+    <a class="standout-card" href="data/results.json" onclick="event.preventDefault();scrollToCard('${esc(s.ticker)}');">
+      <div class="standout-rank">${ranks[i] || '#' + (i+1)} · Tier ${esc(s.tier)} · Score ${s.conviction_score}</div>
+      <div class="standout-story">${story}</div>
+    </a>`;
+  }).join('');
+  return `
+    <div class="standouts-callout">
+      <div class="standouts-callout-title">This Week's Standouts</div>
+      <div class="standouts-callout-sub">Top conviction across all dimensions — click to jump to the card.</div>
+      <div class="standouts-grid">${cards}</div>
     </div>`;
-  }).join('') + '</div>';
 }
 
-// ── Big Money ─────────────────────────────────────────────────────────────────
-function renderBigMoney(items) {
-  if (!items || !items.length)
-    return '<div class="empty-state">No large purchases found in this window.</div>';
+function renderNomineeCard(n, idx) {
+  const detailId = 'nom-' + idx;
+  const tier = n.tier || 'W';
+  const insiderRows = (n.insiders || []).map(ins => `
+    <div class="insider-row">
+      <span class="insider-name">${esc(ins.name)}</span>
+      <span class="insider-title">${esc(ins.title)}${ins.is_csuite ? ' · C-suite' : ''}</span>
+      <span class="insider-val">${fmt$(ins.value)}</span>
+    </div>`).join('');
 
-  return '<div class="cards-grid">' + items.map((c, i) => {
-    const detailId = 'big-' + i;
-    const csuiteTag = c.is_csuite
-      ? `<span class="tag tag-csuite">${esc(titleShort(c.title))}</span>` : '';
-    const multiTag = c.txn_count > 1
-      ? `<span class="tag tag-multi">${c.txn_count}x purchases</span>` : '';
-    return `
-    <div class="stock-card" onclick="toggleCard('${detailId}')">
-      <div class="card-top">
-        <div class="card-header">
-          <div>
-            <div class="card-ticker">${esc(c.ticker)}</div>
-            <div class="card-name">${esc(c.company)}</div>
-          </div>
-          <div class="card-price">
-            <div class="price-value">${fmtPrice(c.current_price)}</div>
-            <div class="price-change ${changeClass(c.change_pct)}">${fmtPct(c.change_pct)}</div>
-          </div>
+  // Signal pills — up to 4
+  const pills = (n.signals || []).slice(0, 4).map(s =>
+    `<span class="signal-pill">${esc(s)}</span>`
+  ).join('');
+
+  return `
+  <div class="stock-card" id="card-${esc(n.ticker)}" onclick="toggleCard('${detailId}')">
+    <div class="card-top">
+      <div class="card-header">
+        <div>
+          <div class="card-ticker">${esc(n.ticker)}</div>
+          <div class="card-name">${esc(n.company)}</div>
         </div>
-        <div class="card-tags">
-          <span class="tag tag-big">${fmt$(c.value)}</span>
-          ${csuiteTag}
-          ${multiTag}
-          <span class="tag tag-sector">${esc(c.sector)}</span>
+        <div class="card-price">
+          <div class="price-value">${fmtPrice(n.current_price)}</div>
+          <div class="price-change ${changeClass(n.change_pct)}">${fmtPct(n.change_pct)}</div>
         </div>
       </div>
-      <div class="card-metrics">
-        <div class="metric">
-          <div class="metric-label">Total Bought</div>
-          <div class="metric-value">${fmt$(c.value)}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Price Paid</div>
-          <div class="metric-value">${fmtPrice(c.price)}</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Mkt Cap</div>
-          <div class="metric-value">${fmtCap(c.market_cap)}</div>
-        </div>
+      <div class="card-tags">
+        <span class="tier-badge ${tierClass(tier)}">${tierLabel(tier)} · ${n.conviction_score}</span>
+        <span class="tag tag-cluster">${n.insider_count} insider${n.insider_count === 1 ? '' : 's'}</span>
+        <span class="tag tag-big">${fmt$(n.value)} total</span>
+        <span class="tag tag-sector">${esc(n.sector)}</span>
       </div>
-      <div class="card-expand-hint"><span class="hint-show">Click for details ▾</span><span class="hint-hide">▴ Collapse</span></div>
-      <div class="card-detail" id="${detailId}">
-        <div class="detail-row"><span class="detail-label">Buyer</span><span class="detail-val">${esc(c.insider)}</span></div>
-        <div class="detail-row"><span class="detail-label">Title</span><span class="detail-val">${esc(c.title)}</span></div>
-        <div class="detail-row"><span class="detail-label">Date</span><span class="detail-val">${esc(c.date)}</span></div>
-        <div class="detail-row"><span class="detail-label">Shares</span><span class="detail-val">${c.qty.toLocaleString()}</span></div>
-        <div class="detail-row"><span class="detail-label">Industry</span><span class="detail-val">${esc(c.industry || c.sector)}</span></div>
-        ${deepDiveLink(c.ticker)}
-      </div>
-    </div>`;
-  }).join('') + '</div>';
+      <div class="conviction-signals">${pills}</div>
+    </div>
+    <div class="card-expand-hint"><span class="hint-show">Click to see buyers ▾</span><span class="hint-hide">▴ Collapse</span></div>
+    <div class="card-detail" id="${detailId}">
+      <div class="insider-list-label">Who Bought (${n.insider_count})</div>
+      ${insiderRows}
+      <div class="detail-row"><span class="detail-label">Market cap</span><span class="detail-val">${fmtCap(n.market_cap)}</span></div>
+      <div class="detail-row"><span class="detail-label">Sector</span><span class="detail-val">${esc(n.sector)}</span></div>
+      ${deepDiveLink(n.ticker)}
+    </div>
+  </div>`;
 }
 
+function renderNominees(filter) {
+  const list = filter === 'all'
+    ? allNominees
+    : allNominees.filter(n => n.tier === filter);
+
+  if (!list.length) {
+    const msg = !allNominees.length
+      ? 'No insider activity in this window — check back after the next scan.'
+      : `No ${tierLabel(filter)} nominees today.`;
+    return `<div class="empty-state">${msg}</div>`;
+  }
+  return '<div class="cards-grid">' + list.map(renderNomineeCard).join('') + '</div>';
+}
+
+function setFilter(tier) {
+  activeFilter = tier;
+  ['all', 'A', 'B', 'W'].forEach(t => {
+    const el = document.getElementById('nav-' + t);
+    if (el) el.classList.toggle('active', t === tier);
+  });
+  const nomineesEl = document.getElementById('nominees-section');
+  if (nomineesEl) nomineesEl.innerHTML = renderNominees(tier);
+}
+
+function scrollToCard(ticker) {
+  setFilter('all');   // reset filter so the card is in view
+  setTimeout(() => {
+    const el = document.getElementById('card-' + ticker);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Auto-expand the standout card on jump
+      const detail = el.querySelector('.card-detail');
+      if (detail && !detail.classList.contains('open')) {
+        toggleCard(detail.id);
+      }
+    }
+  }, 60);
+}
+
+// Legacy renderClusterBuys / renderCsuite / renderBigMoney removed in
+// Phase C — the single renderNominees above replaces all three.
+// (Old function bodies removed below; renderFeed continues unchanged.)
 // ── Recent Feed ───────────────────────────────────────────────────────────────
 function renderFeed(items) {
   if (!items || !items.length)
@@ -1001,7 +1063,7 @@ function renderFeed(items) {
 function render(d) {
   document.getElementById('loading').remove();
 
-  // Stats bar
+  // Scan time (header + sidebar)
   const scanStr = d.scan_time && !d.scan_time.includes('+') && !d.scan_time.endsWith('Z')
     ? d.scan_time + 'Z' : d.scan_time;
   const t = new Date(scanStr);
@@ -1012,39 +1074,28 @@ function render(d) {
   document.getElementById('stat-total').textContent = (d.total_transactions || 0).toLocaleString();
   document.getElementById('stat-range').textContent = d.date_range || '—';
 
-  // Sidebar counts
-  document.getElementById('sb-clusters').textContent  = (d.cluster_buys  || []).length;
-  document.getElementById('sb-csuite').textContent    = (d.csuite_buys   || []).length;
-  document.getElementById('sb-bigmoney').textContent  = (d.big_money     || []).length;
+  // Cache nominees globally so setFilter() can re-render without refetching
+  allNominees = d.nominees || [];
+
+  // Sidebar tier-count badges
+  const tc = d.tier_counts || { A: 0, B: 0, W: 0, total: 0 };
+  document.getElementById('badge-all').textContent = tc.total || allNominees.length;
+  document.getElementById('badge-A').textContent   = tc.A;
+  document.getElementById('badge-B').textContent   = tc.B;
+  document.getElementById('badge-W').textContent   = tc.W;
 
   // Main content
   document.getElementById('main').innerHTML = `
 
-    <section id="cluster">
-      <div class="section-header">
-        <h2 class="section-title">Cluster Buys</h2>
-        <span class="section-subtitle">2+ insiders buying the same stock</span>
-        <span class="section-badge">${(d.cluster_buys||[]).length} found</span>
-      </div>
-      ${renderClusterBuys(d.cluster_buys)}
-    </section>
+    ${renderStandouts(d.standouts)}
 
-    <section id="csuite">
+    <section id="nominees">
       <div class="section-header">
-        <h2 class="section-title">C-Suite Buys</h2>
-        <span class="section-subtitle">CEO, CFO, President &amp; Chairman purchases</span>
-        <span class="section-badge">${(d.csuite_buys||[]).length} found</span>
+        <h2 class="section-title">All Nominees</h2>
+        <span class="section-subtitle">Ranked by conviction score across every dimension</span>
+        <span class="section-badge">${allNominees.length} found</span>
       </div>
-      ${renderCsuite(d.csuite_buys)}
-    </section>
-
-    <section id="bigmoney">
-      <div class="section-header">
-        <h2 class="section-title">Big Money</h2>
-        <span class="section-subtitle">Largest open-market purchases by dollar value</span>
-        <span class="section-badge">${(d.big_money||[]).length} found</span>
-      </div>
-      ${renderBigMoney(d.big_money)}
+      <div id="nominees-section">${renderNominees(activeFilter)}</div>
     </section>
 
     <section id="feed">
@@ -1056,23 +1107,6 @@ function render(d) {
       ${renderFeed(d.recent_feed)}
     </section>
   `;
-
-  // Sidebar nav highlight on scroll
-  const sections = ['cluster','csuite','bigmoney','feed'];
-  const navItems = document.querySelectorAll('.nav-item[href^="#"]');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        navItems.forEach(a => a.classList.remove('active'));
-        const active = document.querySelector(`.nav-item[href="#${e.target.id}"]`);
-        if (active) active.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-30% 0px -60% 0px' });
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) observer.observe(el);
-  });
 }
 
 // ── Load data ─────────────────────────────────────────────────────────────────
