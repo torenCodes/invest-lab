@@ -45,8 +45,7 @@ DASHBOARD_FAMILY = {
     "movers_swing":    "movers",
     "tried_true":      "tried_true",
     "underdogs":       "underdogs",
-    "insider_cluster": "insider",
-    "insider_csuite":  "insider",
+    "insider":         "insider",
     "patterns":        "patterns",
 }
 
@@ -124,26 +123,21 @@ def gather_sources():
                 "score":      s.get("composite_score") or 0,
             })
 
-    # ── Insider Buying — top 5 cluster, top 5 c-suite
+    # ── Insider Buying — top 10 conviction-ranked nominees
+    # Single ranked list (cluster + C-suite + big-money were unified into
+    # `nominees` by the Insider scan's Phase B/C rebuild). One source_key
+    # covers all three lenses since `conviction_score` already weighs them.
     ib = _load("InsiderBuying/data/results.json")
     if ib:
-        for s in (ib.get("cluster_buys") or [])[:5]:
-            buyers   = s.get("insider_count") or "?"
-            value_m  = (s.get("total_value") or 0) / 1e6
+        for s in (ib.get("nominees") or [])[:10]:
+            tier   = s.get("tier", "?")
+            score  = s.get("conviction_score", 0)
+            sig    = " · ".join((s.get("signals") or [])[:2]) or f"Tier {tier} insider buy"
             add(s.get("ticker"), {
-                "source_key": "insider_cluster",
+                "source_key": "insider",
                 "label":      "Insider Buying",
-                "signal":     f"Insider cluster ({buyers} buyers, ${value_m:.1f}M)",
-                "score":      value_m,    # scale of $1M ≈ 1 score point
-            })
-        for s in (ib.get("csuite_buys") or [])[:5]:
-            title    = s.get("title") or "exec"
-            value_m  = (s.get("value") or 0) / 1e6
-            add(s.get("ticker"), {
-                "source_key": "insider_csuite",
-                "label":      "Insider Buying",
-                "signal":     f"C-suite buy ({title}, ${value_m:.1f}M)",
-                "score":      value_m,
+                "signal":     f"Tier {tier} (score {score}) — {sig}",
+                "score":      score,
             })
 
     # ── Pattern Scanner — top 10 setups (Grade A/B only — Watch tier excluded)

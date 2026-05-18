@@ -120,40 +120,44 @@ def extract_underdogs(path):
 
 
 def extract_insider(path):
+    """Pick the top-conviction Insider nominee for the daily archive entry.
+    The nominees list is already sorted by conviction score, so nominees[0]
+    is the best representative across every dimension (cluster size +
+    C-suite + dollar volume + recency) without the old cluster-then-csuite
+    fallback dance."""
     with open(path) as f:
         data = json.load(f)
 
-    # Prefer cluster buys (multiple insiders buying the same stock)
-    cluster = data.get('cluster_buys', [])
-    csuite  = data.get('csuite_buys', [])
-
-    if cluster:
-        pick    = cluster[0]
-        count   = pick.get('insider_count', 1)
-        value   = pick.get('total_value', 0)
-        reason  = f'{count} insiders bought open-market — ${value:,.0f} total'
-        score   = count
-        price   = pick.get('current_price')
-        name    = pick.get('company', pick['ticker'])
-    elif csuite:
-        pick    = csuite[0]
-        title   = pick.get('title', 'Insider')
-        value   = pick.get('value', 0)
-        reason  = f'{title} — ${value:,.0f} open-market purchase'
-        score   = None
-        price   = pick.get('price')   # purchase price
-        name    = pick.get('company', pick['ticker'])
-    else:
+    nominees = data.get('nominees', [])
+    if not nominees:
         return None
+
+    pick    = nominees[0]
+    count   = pick.get('insider_count', 1)
+    value   = pick.get('value', 0)
+    signals = pick.get('signals') or []
+
+    # Reason string — prefer the conviction signal list since it's richer
+    # than the legacy "N insiders bought" template
+    if signals:
+        reason = ' · '.join(signals[:3])
+    elif count > 1:
+        reason = f'{count} insiders bought open-market — ${value:,.0f} total'
+    else:
+        title = (pick.get('insiders') or [{}])[0].get('title', 'Insider')
+        reason = f'{title} — ${value:,.0f} open-market purchase'
+
+    # Entry price — top-level current_price, fall back to top insider's purchase
+    price = pick.get('current_price') or (pick.get('insiders') or [{}])[0].get('price')
 
     return {
         'source':      'Insider Buying',
         'source_key':  'insider',
         'ticker':      pick['ticker'],
-        'name':        name,
+        'name':        pick.get('company', pick['ticker']),
         'sector':      pick.get('sector', ''),
         'entry_price': price,
-        'score':       score,
+        'score':       pick.get('conviction_score'),
         'reason':      reason,
     }
 

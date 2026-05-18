@@ -1,8 +1,11 @@
 """
 InsiderBuying -- Standalone Scanner
 Scrapes Finviz insider trading page for recent open-market purchases >= $25k.
-Groups results into cluster buys, C-suite buys, big money, and a recent feed.
-Writes results to data/results.json.
+Builds a single ranked nominees list with conviction tier (A / B / Watch)
+plus a 'standouts' top-3 callout. Writes results to data/results.json.
+
+Conviction score combines four dimensions: distinct insider count, C-suite
+presence, dollar volume tier, and recency. See build_nominees() below.
 
 Run locally: python scan.py
 Invoked by GitHub Actions on schedule (weekdays, matches MarketDashboard cadence).
@@ -178,44 +181,13 @@ def enrich_tickers(tickers):
     return enriched
 
 
-# ── Build panels ──────────────────────────────────────────────────────────────
-
-def build_cluster_buys(transactions, enrichment):
-    """Stocks where 2+ distinct insiders bought. Ranked by insider count, then total value."""
-    groups = defaultdict(list)
-    for t in transactions:
-        groups[t["ticker"]].append(t)
-
-    clusters = []
-    for ticker, txns in groups.items():
-        distinct = len({t["insider"] for t in txns})
-        if distinct < 2:
-            continue
-
-        total_value = sum(t["value"] for t in txns)
-        enr = enrichment.get(ticker, {})
-
-        clusters.append({
-            "ticker":         ticker,
-            "company":        enr.get("name", ticker),
-            "sector":         enr.get("sector", "Unknown"),
-            "industry":       enr.get("industry", ""),
-            "current_price":  enr.get("current_price", 0),
-            "change_pct":     enr.get("change_pct", 0),
-            "market_cap":     enr.get("market_cap", 0),
-            "insider_count":  distinct,
-            "total_value":    total_value,
-            "insiders": sorted(
-                [{"name": t["insider"], "title": t["title"],
-                  "value": t["value"], "price": t["price"],
-                  "qty": t["qty"], "date": t["date"]}
-                 for t in txns],
-                key=lambda x: x["value"], reverse=True
-            ),
-        })
-
-    clusters.sort(key=lambda x: (x["insider_count"], x["total_value"]), reverse=True)
-    return clusters[:10]
+# ── Build nominees ────────────────────────────────────────────────────────────
+# Legacy three-panel builders (build_cluster_buys / build_csuite_buys /
+# build_big_money) were removed once the unified conviction-tier nominees
+# schema replaced them and all downstream consumers (archive_nominee.py,
+# analyst_scan.py) migrated. The single `nominees` list now captures
+# every angle (cluster size, C-suite presence, dollar volume, recency)
+# in one ranked output.
 
 
 def _roll_up_by_ticker(transactions, enrichment):
@@ -274,26 +246,6 @@ def _roll_up_by_ticker(transactions, enrichment):
             "insiders":       insiders,
         })
     return rows
-
-
-def build_csuite_buys(transactions, enrichment):
-    """Tickers with at least one C-suite open-market buy. Deduplicated by
-    ticker (multiple execs at the same company roll up into one entry) and
-    ranked by total dollar value across all insiders at that ticker."""
-    csuite_txns = [t for t in transactions if t["is_csuite"]]
-    rows = _roll_up_by_ticker(csuite_txns, enrichment)
-    rows.sort(key=lambda x: x["value"], reverse=True)
-    return rows[:10]
-
-
-def build_big_money(transactions, enrichment):
-    """Tickers with the largest total insider purchase activity. Deduplicated
-    by ticker — every insider's buy at the same company is summed into the
-    row's `value` so we never show two ALKT rows just because two execs
-    bought separately."""
-    rows = _roll_up_by_ticker(transactions, enrichment)
-    rows.sort(key=lambda x: x["value"], reverse=True)
-    return rows[:10]
 
 
 # ── Phase B: conviction scoring + nominees ────────────────────────────────────
@@ -451,15 +403,8 @@ def run():
     print(f"[scan.py] Enriching {len(unique_tickers)} unique tickers via yfinance...")
     enrichment = enrich_tickers(unique_tickers)
 
-    cluster_buys = build_cluster_buys(transactions, enrichment)
-    csuite_buys  = build_csuite_buys(transactions, enrichment)
-    big_money    = build_big_money(transactions, enrichment)
-    recent_feed  = transactions[:40]
-
-    # Phase B — single ranked nominees list (replaces the 3 panels for the
-    # rebuilt UI in Phase C). Old panels kept in output during the rollout
-    # so the deployed dashboard doesn't break; Phase C removes them.
     nominees, standouts, tier_counts = build_nominees(transactions, enrichment)
+    recent_feed = transactions[:40]
 
     # Date range from data
     dates = [t["date"] for t in transactions if t.get("date")]
@@ -470,14 +415,9 @@ def run():
         "total_transactions": len(transactions),
         "date_range":         date_range,
         "min_value":          MIN_VALUE,
-        # New Phase B schema
         "nominees":           nominees,
         "standouts":          standouts,
         "tier_counts":        tier_counts,
-        # Legacy panels — to be removed once Phase C frontend is live
-        "cluster_buys":       cluster_buys,
-        "csuite_buys":        csuite_buys,
-        "big_money":          big_money,
         "recent_feed":        recent_feed,
     }
 
@@ -488,8 +428,7 @@ def run():
     elapsed = (datetime.now() - start).seconds
     print(f"[scan.py] Done in {elapsed}s — "
           f"{tier_counts['total']} nominees ({tier_counts['A']}A / {tier_counts['B']}B / {tier_counts['W']}W), "
-          f"{len(cluster_buys)} clusters, {len(csuite_buys)} C-suite, "
-          f"{len(big_money)} big money, {len(recent_feed)} feed items")
+          f"{len(recent_feed)} feed items")
     print(f"[scan.py] Results written to {OUTPUT_FILE}")
 
 
