@@ -332,12 +332,12 @@ body {
 
 .hero-image {
   flex-shrink: 0;
-  max-width: 42%;
+  max-width: 40%;
 }
 
 /* Image sizes to its column width naturally, no longer capped by a
    stretched parent. The 1100x782 (1.41:1) source renders at roughly
-   480x340 inside a 1280px container after gutter and the 42% cap. */
+   457x325 inside a 1280px container after gutter and the 40% cap. */
 .hero-img {
   width: 100%;
   height: auto;
