@@ -1875,7 +1875,10 @@ body {
 /* ── Track Record ────────────────────────────────────────────────────────── */
 .track-record-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* Other Lab Results now shows exactly 4 cards, one per non-Movers
+     dashboard. A 2-column grid renders them as a clean 2x2 block that
+     fills the section width instead of leaving an orphan row. */
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
   margin-top: 1.5rem;
 }
@@ -1992,7 +1995,7 @@ body {
   border-radius: 1px;
 }
 
-@media (max-width: 900px) { .track-record-grid { grid-template-columns: repeat(2, 1fr); } }
+/* 2-col default already; collapse to a single column only on very narrow phones */
 @media (max-width: 400px) { .track-record-grid { grid-template-columns: 1fr; } }
 
 /* ── Lab Methodology section ─────────────────────────────────────────────── */
