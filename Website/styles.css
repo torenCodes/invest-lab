@@ -323,22 +323,24 @@ body {
 
 .hero-container {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-between;
   gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
-.hero-content { flex: 1; }
+.hero-content { flex: 1; min-width: 0; }
 
 .hero-image {
   flex-shrink: 0;
-  max-width: 35%;
+  max-width: 42%;
 }
 
+/* Image sizes to its column width naturally, no longer capped by a
+   stretched parent. The 1100x782 (1.41:1) source renders at roughly
+   480x340 inside a 1280px container after gutter and the 42% cap. */
 .hero-img {
-  width: auto;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: auto;
   display: block;
   border-radius: 6px;
   box-shadow: 0 12px 36px rgba(0,0,0,0.45);
