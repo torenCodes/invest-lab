@@ -451,12 +451,6 @@
             enriched with sentiment data from professional-grade market feeds and the
             investing community.
           </p>
-          <p>
-            Every tool on this site is built from scratch, runs locally, and is
-            maintained as a living project. This site is the front door to that work,
-            and it will keep growing as new dashboards, research notes, and analysis
-            get added over time.
-          </p>
         </div>
 
         <div class="about-image">
@@ -716,7 +710,7 @@
       '<div class="pv-skel pv-skel-md" style="margin-top:0.4rem"></div>' +
       '<div class="pv-skel pv-skel-sm" style="margin-top:0.75rem"></div>' +
     '</div>';
-  grid.innerHTML = skelCard + skelCard + skelCard + skelCard + skelCard + skelCard;
+  grid.innerHTML = skelCard + skelCard + skelCard + skelCard;
 
   // ── Helpers ───────────────────────────────────────────────────────────────
   function fmtDate(dateStr) {
@@ -779,36 +773,26 @@
         return new Date(b.date_flagged) - new Date(a.date_flagged);
       });
 
-      // Show up to 6 cards, diversified by source so every dashboard gets
-      // representation. Strategy:
-      //   1. Pick the most recent completed nominee from each source (one each).
-      //   2. Top up with extra completed nominees (any source) until we hit 6.
-      //   3. If still short, fall back to pending (still-in-window) nominees.
-      var MAX_CARDS = 6;
-      var completed = all.filter(function (n) { return n.outcome_pct !== null; });
-      var pending   = all.filter(function (n) { return n.outcome_pct === null; });
-
-      var seen = {};
+      // Show one card per non-Movers dashboard. Movers & Shakers already
+      // gets four dedicated preview cards above (Day Trade / Swing Trade /
+      // Leading Sector / Highly Discussed), so re-surfacing Movers picks
+      // here would double-dip on the same dashboard. The four target
+      // sources below correspond to Tried & True, The Underdogs, Insider
+      // Buying, and Pattern Scanner.
+      //
+      // For each target source we prefer the most recent completed
+      // nominee (outcome filled in); if a source has no completed picks
+      // yet, fall back to its most recent pending one so the card slot
+      // doesn't go empty just because outcomes haven't matured.
+      var TARGET_SOURCES = ['tried-true', 'underdogs', 'insider', 'patterns'];
       var display = [];
-      // Pass 1 — one per source (completed)
-      completed.forEach(function (n) {
-        if (!seen[n.source_key]) {
-          seen[n.source_key] = true;
-          display.push(n);
-        }
+
+      TARGET_SOURCES.forEach(function (src) {
+        var fromSrc       = all.filter(function (n) { return n.source_key === src; });
+        var completedSrc  = fromSrc.filter(function (n) { return n.outcome_pct !== null; });
+        var pick = completedSrc[0] || fromSrc[0];
+        if (pick) display.push(pick);
       });
-      // Pass 2 — top up with the next-most-recent completed from any source
-      if (display.length < MAX_CARDS) {
-        completed.forEach(function (n) {
-          if (display.length < MAX_CARDS && display.indexOf(n) === -1) {
-            display.push(n);
-          }
-        });
-      }
-      // Pass 3 — fall back to pending if we're still short
-      if (display.length < MAX_CARDS) {
-        display = display.concat(pending.slice(0, MAX_CARDS - display.length));
-      }
 
       // Sort the final selection newest-first for display
       display.sort(function (a, b) {
