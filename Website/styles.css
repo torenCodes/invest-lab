@@ -205,6 +205,66 @@ body {
   background: var(--accent-muted);
 }
 
+/* ── Mobile hamburger ────────────────────────────────────────────────────── */
+/* Hidden on desktop; mobile media query below 680px swaps the nav links
+   for a hamburger button that toggles a vertical menu panel. */
+.nav-burger {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  padding: 6px 10px;
+  color: var(--ink);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+@media (max-width: 680px) {
+  .nav-burger { display: block; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 2px solid var(--border);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.09);
+    padding: 0.4rem 0;
+    z-index: 110;
+  }
+  .nav-links.open { display: flex; }
+  .nav-item { width: 100%; position: static; }
+  .nav-link {
+    padding: 0.7rem 1.2rem;
+    border-radius: 0;
+    justify-content: flex-start;
+    font-size: 0.75rem;
+  }
+  /* Inline the dropdown rather than the desktop floating panel */
+  .nav-dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    border-top: 1px solid var(--border-light);
+    padding: 0.2rem 0 0.4rem 1rem;
+    min-width: 0;
+  }
+  .nav-dropdown-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.72rem;
+  }
+}
+
 /* ── Hero ───────────────────────────────────────────────────────────────── */
 /*
  * TO ADD A BACKGROUND IMAGE:
@@ -551,8 +611,12 @@ body {
 }
 
 @media (max-width: 720px) {
+  /* Single-column on mobile. Since the disclaimer sits as a sibling
+     after .about-image in the HTML, the natural order becomes:
+     title -> text -> image -> disclaimer, which is what we want. */
   .about-layout { grid-template-columns: 1fr; }
-  .about-image  { display: none; }
+  .about-image  { justify-content: flex-start; margin-top: 1rem; }
+  .about-image img { max-width: 320px; }
 }
 
 .about-text p {
@@ -566,6 +630,10 @@ body {
 .about-text strong { color: var(--ink); font-weight: 600; }
 
 .about-disclaimer {
+  /* Disclaimer is its own grid sibling now (moved out of .about-text in
+     May 2026 so mobile order reads text -> image -> disclaimer). Spans
+     full grid width on desktop, then falls below the image on mobile. */
+  grid-column: 1 / -1;
   font-size: 0.85rem !important;
   color: var(--ink-3) !important;
   background: rgba(56, 189, 166, 0.05);
@@ -582,12 +650,15 @@ body {
   justify-content: center;
 }
 
+/* Natural sizing — the previous width:100% + object-fit:contain caused
+   the box-shadow to extend to the full container while the rendered
+   image was letterboxed inside. Letting the image size itself by aspect
+   ratio means the shadow tracks the actual image dimensions. */
 .about-image img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
   max-height: 420px;
-  object-fit: contain;
-  object-position: top;
+  height: auto;
+  width: auto;
   border-radius: var(--radius);
   display: block;
   box-shadow: var(--shadow-md);
@@ -1335,13 +1406,17 @@ body {
 
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 560px) {
-  .nav-links { gap: 0; }
-  .nav-link { padding: 0.35rem 0.55rem; font-size: 0.68rem; }
+  /* Nav rules removed — hamburger pattern at 680px handles the navbar
+     below this width, so the old horizontal-nav sizing was both stale
+     and overriding the mobile menu styling. */
   .nav-logo { font-size: 1.5rem; }
   .nav-logo-img { height: 2.2rem; }
   .hero-cta { flex-direction: column; align-items: flex-start; }
   .dashboard-card { grid-template-columns: auto 1fr; }
   .dashboard-card-arrow { display: none; }
+  /* Clear the 10rem right reserve from desktop — the arrow column is
+     gone at this width, so the description text can use the full row. */
+  .dashboard-card-desc { padding-right: 0; }
   .about-stats { grid-template-columns: 1fr 1fr; }
 }
 
