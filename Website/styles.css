@@ -598,10 +598,13 @@ body {
 }
 
 /* ── About Section ──────────────────────────────────────────────────────── */
+/* Two-column layout: paragraphs on the left, the stockPicker image on the
+   right. Image column sized for the wider 1200x896 image (May 2026) so it
+   renders at a meaningful presentation size on desktop instead of a thumb. */
 .about-layout {
   display: grid;
-  grid-template-columns: 1fr 220px;
-  column-gap: 4rem;
+  grid-template-columns: 1fr 380px;
+  column-gap: 3rem;
   row-gap: 0;
   align-items: start;
 }
@@ -612,13 +615,14 @@ body {
   margin-bottom: 1.5rem;
 }
 
-@media (max-width: 720px) {
-  /* Single-column on mobile. Since the disclaimer sits as a sibling
-     after .about-image in the HTML, the natural order becomes:
-     title -> text -> image -> disclaimer, which is what we want. */
+@media (max-width: 900px) {
+  /* Stack to a single column below 900px so the image column doesn't get
+     squeezed too narrow. Since the disclaimer sits as a sibling after
+     .about-image in the HTML, the natural order becomes:
+     title -> text -> image -> disclaimer. */
   .about-layout { grid-template-columns: 1fr; }
   .about-image  { justify-content: flex-start; margin-top: 1rem; }
-  .about-image img { max-width: 320px; }
+  .about-image img { max-width: 380px; }
 }
 
 .about-text p {
