@@ -1,111 +1,981 @@
 {
-  "scan_time": "2026-05-25T20:42:27.732176+00:00",
+  "scan_time": "2026-05-26T13:35:29.818729+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 0,
-  "day_trades": [],
-  "swing_trades": [],
-  "buzz_source": "none",
-  "reddit_cards": [],
-  "sector_rotation": [
+  "total_scanned": 22,
+  "day_trades": [
     {
-      "ticker": "XLV",
-      "sector": "Health Care",
-      "ret_1d": 1.17,
-      "ret_5d": 3.3,
-      "ret_1m": 2.5,
-      "ret_3m": -5.07,
-      "top_stocks": []
+      "ticker": "MNTS",
+      "name": "Momentus Inc",
+      "sector": "Aerospace & Defense",
+      "current_price": 12.64,
+      "change_pct": 71.2737,
+      "high": 13.45,
+      "low": 11.23,
+      "open": 11.23,
+      "prev_close": 7.38,
+      "score": 58,
+      "signals": [
+        "Top gainer (+71.3%)",
+        "High volume",
+        "Strong move (+71.3%)",
+        "Trending buzz (12)",
+        "Yahoo trending (#9)",
+        "Closing strong",
+        "Sector leader (Aerospace & Defense)"
+      ],
+      "reddit_mentions": 12,
+      "market_cap": 73743899.99999999,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950714857336.png",
+      "weburl": "https://momentus.space/",
+      "yahoo_trending_rank": 9,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 82
     },
+    {
+      "ticker": "ASTS",
+      "name": "AST SpaceMobile Inc",
+      "sector": "Telecommunication",
+      "current_price": 117.15,
+      "change_pct": 10.665,
+      "high": 117.69,
+      "low": 112.1725,
+      "open": 112.1725,
+      "prev_close": 105.86,
+      "score": 53,
+      "signals": [
+        "Top gainer (+10.7%)",
+        "High volume",
+        "Strong move (+10.7%)",
+        "Trending buzz (13)",
+        "Yahoo trending (#8)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 13,
+      "market_cap": 41086865884.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950711601196.png",
+      "weburl": "https://ast-science.com/spacemobile/",
+      "yahoo_trending_rank": 8,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.66,
+          "estimate": -0.23,
+          "beat": false,
+          "surprise_pct": -188.5
+        }
+      },
+      "score_normalized": 75
+    },
+    {
+      "ticker": "OKLO",
+      "name": "Oklo Inc",
+      "sector": "Utilities",
+      "current_price": 72.78,
+      "change_pct": 10.4736,
+      "high": 73.29,
+      "low": 69.465,
+      "open": 69.465,
+      "prev_close": 65.88,
+      "score": 53,
+      "signals": [
+        "Top gainer (+10.5%)",
+        "High volume",
+        "Strong move (+10.5%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 18,
+      "market_cap": 11462525420.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950800337796.png",
+      "weburl": "https://oklo.com/",
+      "yahoo_trending_rank": 3,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.19,
+          "estimate": -0.2,
+          "beat": true,
+          "surprise_pct": 3.4
+        }
+      },
+      "score_normalized": 75
+    },
+    {
+      "ticker": "RDW",
+      "name": "Redwire Corp",
+      "sector": "Aerospace & Defense",
+      "current_price": 20.03,
+      "change_pct": 14.5226,
+      "high": 20.03,
+      "low": 19.2,
+      "open": 19.655,
+      "prev_close": 17.49,
+      "score": 53,
+      "signals": [
+        "Top gainer (+14.5%)",
+        "High volume",
+        "Strong move (+14.5%)",
+        "Trending buzz (17)",
+        "Yahoo trending (#4)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 17,
+      "market_cap": 3479088572.0000005,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950813255056.png",
+      "weburl": "https://redwirespace.com/",
+      "yahoo_trending_rank": 4,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.4,
+          "estimate": -0.16,
+          "beat": false,
+          "surprise_pct": -149.7
+        }
+      },
+      "score_normalized": 75
+    },
+    {
+      "ticker": "SOFI",
+      "name": "SoFi Technologies Inc",
+      "sector": "Financial Services",
+      "current_price": 16.44,
+      "change_pct": 5.2497,
+      "high": 16.95,
+      "low": 16.405,
+      "open": 16.490000000000002,
+      "prev_close": 15.62,
+      "score": 50,
+      "signals": [
+        "Top gainer (+5.2%)",
+        "High volume",
+        "Strong move (+5.2%)",
+        "Trending buzz (14)",
+        "Yahoo trending (#7)"
+      ],
+      "reddit_mentions": 14,
+      "market_cap": 20036417568.000004,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SOFI.png",
+      "weburl": "https://www.sofi.com/",
+      "yahoo_trending_rank": 7,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.12,
+          "estimate": 0.12,
+          "beat": false,
+          "surprise_pct": -1.2
+        }
+      },
+      "score_normalized": 70
+    },
+    {
+      "ticker": "IREN",
+      "name": "IREN Ltd",
+      "sector": "Technology",
+      "current_price": 60.54,
+      "change_pct": 6.5282,
+      "high": 61.49,
+      "low": 58.94,
+      "open": 58.94,
+      "prev_close": 56.83,
+      "score": 49,
+      "signals": [
+        "Top gainer (+6.5%)",
+        "High volume",
+        "Strong move (+6.5%)",
+        "Trending activity (9)",
+        "Yahoo trending (#12)",
+        "Closing strong",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 9,
+      "market_cap": 20280211521.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950792146376.png",
+      "weburl": "https://iren.com/",
+      "yahoo_trending_rank": 12,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.74,
+          "estimate": -0.19,
+          "beat": false,
+          "surprise_pct": -283.0
+        }
+      },
+      "score_normalized": 69
+    }
+  ],
+  "swing_trades": [
+    {
+      "ticker": "MU",
+      "name": "Micron Technology Inc",
+      "sector": "Semiconductors",
+      "current_price": 835.68,
+      "change_pct": 11.2756,
+      "high": 845,
+      "low": 799.5450000000001,
+      "open": 799.5450000000001,
+      "prev_close": 751,
+      "score": 63,
+      "signals": [
+        "Top gainer (+11.3%)",
+        "High volume",
+        "Strong move (+11.3%)",
+        "High Trending buzz (20)",
+        "Yahoo trending (#1)",
+        "Closing strong",
+        "Sector leader (Semiconductors)"
+      ],
+      "reddit_mentions": 20,
+      "market_cap": 846928240601.0001,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MU.png",
+      "weburl": "https://www.micron.com/",
+      "yahoo_trending_rank": 1,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 12.2,
+          "estimate": 9.58,
+          "beat": true,
+          "surprise_pct": 27.3
+        }
+      },
+      "score_normalized": 89
+    },
+    {
+      "ticker": "ASTS",
+      "name": "AST SpaceMobile Inc",
+      "sector": "Telecommunication",
+      "current_price": 117.15,
+      "change_pct": 10.665,
+      "high": 117.69,
+      "low": 112.1725,
+      "open": 112.1725,
+      "prev_close": 105.86,
+      "score": 53,
+      "signals": [
+        "Top gainer (+10.7%)",
+        "High volume",
+        "Strong move (+10.7%)",
+        "Trending buzz (13)",
+        "Yahoo trending (#8)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 13,
+      "market_cap": 41086865884.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950711601196.png",
+      "weburl": "https://ast-science.com/spacemobile/",
+      "yahoo_trending_rank": 8,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.66,
+          "estimate": -0.23,
+          "beat": false,
+          "surprise_pct": -188.5
+        }
+      },
+      "score_normalized": 75
+    },
+    {
+      "ticker": "MRVL",
+      "name": "Marvell Technology Inc",
+      "sector": "Semiconductors",
+      "current_price": 216.3,
+      "change_pct": 10.1716,
+      "high": 217.45,
+      "low": 207.02,
+      "open": 207.02,
+      "prev_close": 196.33,
+      "score": 53,
+      "signals": [
+        "Top gainer (+10.2%)",
+        "High volume",
+        "Strong move (+10.2%)",
+        "Trending buzz (15)",
+        "Yahoo trending (#6)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 15,
+      "market_cap": 171897353824.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MRVL.png",
+      "weburl": "https://www.marvell.com/",
+      "yahoo_trending_rank": 6,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.8,
+          "estimate": 0.8,
+          "beat": false,
+          "surprise_pct": -0.4
+        }
+      },
+      "score_normalized": 75
+    },
+    {
+      "ticker": "OKLO",
+      "name": "Oklo Inc",
+      "sector": "Utilities",
+      "current_price": 72.78,
+      "change_pct": 10.4736,
+      "high": 73.29,
+      "low": 69.465,
+      "open": 69.465,
+      "prev_close": 65.88,
+      "score": 53,
+      "signals": [
+        "Top gainer (+10.5%)",
+        "High volume",
+        "Strong move (+10.5%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 18,
+      "market_cap": 11462525420.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950800337796.png",
+      "weburl": "https://oklo.com/",
+      "yahoo_trending_rank": 3,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.19,
+          "estimate": -0.2,
+          "beat": true,
+          "surprise_pct": 3.4
+        }
+      },
+      "score_normalized": 75
+    },
+    {
+      "ticker": "IREN",
+      "name": "IREN Ltd",
+      "sector": "Technology",
+      "current_price": 60.54,
+      "change_pct": 6.5282,
+      "high": 61.49,
+      "low": 58.94,
+      "open": 58.94,
+      "prev_close": 56.83,
+      "score": 49,
+      "signals": [
+        "Top gainer (+6.5%)",
+        "High volume",
+        "Strong move (+6.5%)",
+        "Trending activity (9)",
+        "Yahoo trending (#12)",
+        "Closing strong",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 9,
+      "market_cap": 20280211521.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950792146376.png",
+      "weburl": "https://iren.com/",
+      "yahoo_trending_rank": 12,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.74,
+          "estimate": -0.19,
+          "beat": false,
+          "surprise_pct": -283.0
+        }
+      },
+      "score_normalized": 69
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices Inc",
+      "sector": "Semiconductors",
+      "current_price": 481.87,
+      "change_pct": 3.0716,
+      "high": 489.55,
+      "low": 480.595,
+      "open": 480.595,
+      "prev_close": 467.51,
+      "score": 45,
+      "signals": [
+        "Top gainer (+3.1%)",
+        "High volume",
+        "Good move (+3.1%)",
+        "Trending buzz (19)",
+        "Yahoo trending (#2)"
+      ],
+      "reddit_mentions": 19,
+      "market_cap": 762322095855.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AMD.png",
+      "weburl": "https://www.amd.com/",
+      "yahoo_trending_rank": 2,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 1.37,
+          "estimate": 1.31,
+          "beat": true,
+          "surprise_pct": 4.8
+        }
+      },
+      "score_normalized": 63
+    }
+  ],
+  "buzz_source": "trending",
+  "reddit_cards": [
+    {
+      "ticker": "MU",
+      "name": "Micron Technology Inc",
+      "sector": "Semiconductors",
+      "current_price": 835.68,
+      "change_pct": 11.2756,
+      "high": 845,
+      "low": 799.5450000000001,
+      "open": 799.5450000000001,
+      "prev_close": 751,
+      "score": 63,
+      "signals": [
+        "Top gainer (+11.3%)",
+        "High volume",
+        "Strong move (+11.3%)",
+        "High Trending buzz (20)",
+        "Yahoo trending (#1)",
+        "Closing strong",
+        "Sector leader (Semiconductors)"
+      ],
+      "reddit_mentions": 20,
+      "market_cap": 846928240601.0001,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MU.png",
+      "weburl": "https://www.micron.com/",
+      "yahoo_trending_rank": 1,
+      "mentions": 20,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 12.2,
+          "estimate": 9.58,
+          "beat": true,
+          "surprise_pct": 27.3
+        }
+      },
+      "score_normalized": 89
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices Inc",
+      "sector": "Semiconductors",
+      "current_price": 481.87,
+      "change_pct": 3.0716,
+      "high": 489.55,
+      "low": 480.595,
+      "open": 480.595,
+      "prev_close": 467.51,
+      "score": 45,
+      "signals": [
+        "Top gainer (+3.1%)",
+        "High volume",
+        "Good move (+3.1%)",
+        "Trending buzz (19)",
+        "Yahoo trending (#2)"
+      ],
+      "reddit_mentions": 19,
+      "market_cap": 762322095855.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AMD.png",
+      "weburl": "https://www.amd.com/",
+      "yahoo_trending_rank": 2,
+      "mentions": 19,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 1.37,
+          "estimate": 1.31,
+          "beat": true,
+          "surprise_pct": 4.8
+        }
+      },
+      "score_normalized": 63
+    },
+    {
+      "ticker": "OKLO",
+      "name": "Oklo Inc",
+      "sector": "Utilities",
+      "current_price": 72.78,
+      "change_pct": 10.4736,
+      "high": 73.29,
+      "low": 69.465,
+      "open": 69.465,
+      "prev_close": 65.88,
+      "score": 53,
+      "signals": [
+        "Top gainer (+10.5%)",
+        "High volume",
+        "Strong move (+10.5%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 18,
+      "market_cap": 11462525420.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950800337796.png",
+      "weburl": "https://oklo.com/",
+      "yahoo_trending_rank": 3,
+      "mentions": 18,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.19,
+          "estimate": -0.2,
+          "beat": true,
+          "surprise_pct": 3.4
+        }
+      },
+      "score_normalized": 75
+    }
+  ],
+  "sector_rotation": [
     {
       "ticker": "XLK",
       "sector": "Technology",
-      "ret_1d": 1.0,
-      "ret_5d": 2.34,
-      "ret_1m": 15.75,
-      "ret_3m": 30.39,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLU",
-      "sector": "Utilities",
-      "ret_1d": 0.78,
-      "ret_5d": 3.37,
-      "ret_1m": -1.61,
-      "ret_3m": -2.17,
-      "top_stocks": []
+      "ret_1d": 1.34,
+      "ret_5d": 4.85,
+      "ret_1m": 14.1,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "OTLK",
+          "name": "Outlook Therapeutics Inc",
+          "change_pct": 43.5302,
+          "price": 0.4448
+        },
+        {
+          "ticker": "MU",
+          "name": "Micron Technology Inc",
+          "change_pct": 11.2756,
+          "price": 835.68
+        },
+        {
+          "ticker": "APP",
+          "name": "Applovin Corp",
+          "change_pct": 10.5257,
+          "price": 532.38
+        }
+      ]
     },
     {
       "ticker": "XLI",
       "sector": "Industrials",
-      "ret_1d": 0.73,
-      "ret_5d": 0.22,
-      "ret_1m": -1.32,
-      "ret_3m": -1.47,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLE",
-      "sector": "Energy",
-      "ret_1d": 0.61,
-      "ret_5d": 0.08,
-      "ret_1m": 4.41,
-      "ret_3m": 8.57,
-      "top_stocks": []
+      "ret_1d": 0.82,
+      "ret_5d": 1.42,
+      "ret_1m": 0.41,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "MNTS",
+          "name": "Momentus Inc",
+          "change_pct": 71.2737,
+          "price": 12.64
+        },
+        {
+          "ticker": "LUNR",
+          "name": "Intuitive Machines Inc",
+          "change_pct": 15.2117,
+          "price": 44.08
+        },
+        {
+          "ticker": "RDW",
+          "name": "Redwire Corp",
+          "change_pct": 14.5226,
+          "price": 20.03
+        }
+      ]
     },
     {
       "ticker": "XLB",
       "sector": "Materials",
-      "ret_1d": 0.54,
-      "ret_5d": -0.02,
-      "ret_1m": -2.93,
-      "ret_3m": -4.62,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLF",
-      "sector": "Financials",
-      "ret_1d": 0.41,
-      "ret_5d": 1.64,
-      "ret_1m": 0.27,
-      "ret_3m": 2.91,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLY",
-      "sector": "Cons. Discretionary",
-      "ret_1d": 0.4,
-      "ret_5d": 2.27,
-      "ret_1m": 1.22,
-      "ret_3m": 3.85,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLP",
-      "sector": "Cons. Staples",
-      "ret_1d": 0.17,
-      "ret_5d": 0.19,
-      "ret_1m": 1.58,
-      "ret_3m": -4.15,
+      "ret_1d": 0.79,
+      "ret_5d": 0.93,
+      "ret_1m": -2.38,
+      "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLRE",
       "sector": "Real Estate",
-      "ret_1d": 0.13,
-      "ret_5d": 3.08,
+      "ret_1d": 0.5,
+      "ret_5d": 2.37,
+      "ret_1m": 2.18,
+      "ret_3m": null,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLU",
+      "sector": "Utilities",
+      "ret_1d": 0.43,
+      "ret_5d": 3.65,
+      "ret_1m": -1.38,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "OKLO",
+          "name": "Oklo Inc",
+          "change_pct": 10.4736,
+          "price": 72.78
+        },
+        {
+          "ticker": "SMR",
+          "name": "Nuscale Power Corp",
+          "change_pct": 10.4386,
+          "price": 12.59
+        }
+      ]
+    },
+    {
+      "ticker": "XLF",
+      "sector": "Financials",
+      "ret_1d": 0.35,
+      "ret_5d": 0.73,
       "ret_1m": 1.36,
-      "ret_3m": 2.87,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "SOFI",
+          "name": "SoFi Technologies Inc",
+          "change_pct": 5.2497,
+          "price": 16.44
+        }
+      ]
+    },
+    {
+      "ticker": "XLY",
+      "sector": "Cons. Discretionary",
+      "ret_1d": 0.33,
+      "ret_5d": 2.79,
+      "ret_1m": 0.74,
+      "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLC",
       "sector": "Comm. Services",
-      "ret_1d": -0.55,
-      "ret_5d": -0.53,
-      "ret_1m": -1.64,
-      "ret_3m": 0.41,
+      "ret_1d": 0.1,
+      "ret_5d": -1.21,
+      "ret_1m": 0.03,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "ASTS",
+          "name": "AST SpaceMobile Inc",
+          "change_pct": 10.665,
+          "price": 117.15
+        }
+      ]
+    },
+    {
+      "ticker": "XLV",
+      "sector": "Health Care",
+      "ret_1d": -0.43,
+      "ret_5d": 2.42,
+      "ret_1m": 3.52,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "OTLK",
+          "name": "Outlook Therapeutics Inc",
+          "change_pct": 43.5302,
+          "price": 0.4448
+        }
+      ]
+    },
+    {
+      "ticker": "XLP",
+      "sector": "Cons. Staples",
+      "ret_1d": -0.45,
+      "ret_5d": -1.72,
+      "ret_1m": 1.43,
+      "ret_3m": null,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLE",
+      "sector": "Energy",
+      "ret_1d": -0.92,
+      "ret_5d": -2.7,
+      "ret_1m": 3.65,
+      "ret_3m": null,
       "top_stocks": []
     }
   ],
-  "reddit_feed": []
+  "reddit_feed": [
+    {
+      "id": "140419810",
+      "title": "Get insights into the top movers in the S&P500 index of Tuesday's pre-market session.",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "confirmed_tickers": [
+        "MU"
+      ],
+      "hours_ago": 1.0,
+      "url": "https://finnhub.io/api/news?id=d7da08b9862b38e9b894ada3043ba706aec0dee8674f92503ef4d367f09cc4df",
+      "is_news": true
+    },
+    {
+      "id": "140419453",
+      "title": "Had You Put $1,000 in AMD or Micron 10 Years Ago, Here\u2019s What You\u2019d Have Today",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "confirmed_tickers": [
+        "MU"
+      ],
+      "hours_ago": 1.8,
+      "url": "https://finnhub.io/api/news?id=781ac41fb555ff739feac9c71de14ffaa71ad59ee75af4c6d8a15e70824a6867",
+      "is_news": true
+    },
+    {
+      "id": "140419453",
+      "title": "Had You Put $1,000 in AMD or Micron 10 Years Ago, Here\u2019s What You\u2019d Have Today",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "AMD"
+      ],
+      "confirmed_tickers": [
+        "AMD"
+      ],
+      "hours_ago": 1.8,
+      "url": "https://finnhub.io/api/news?id=781ac41fb555ff739feac9c71de14ffaa71ad59ee75af4c6d8a15e70824a6867",
+      "is_news": true
+    },
+    {
+      "id": "140419454",
+      "title": "DRAM\u2019s 49 Percent Korea Weighting Means Half the Fund Trades While New York Is Closed",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "confirmed_tickers": [
+        "MU"
+      ],
+      "hours_ago": 1.9,
+      "url": "https://finnhub.io/api/news?id=d169eebc566a246d9cf3a455d5977ce05a6210da2264f3d4794a981f402a4cf7",
+      "is_news": true
+    },
+    {
+      "id": "140419455",
+      "title": "Intel and 10 Other Stocks That Are Moving Today\u2019s Market",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "confirmed_tickers": [
+        "MU"
+      ],
+      "hours_ago": 2.5,
+      "url": "https://finnhub.io/api/news?id=077451907dc2c639f6d264da019d9d21638ff0a0bc43feb87e5c0dfa2fbb0e75",
+      "is_news": true
+    },
+    {
+      "id": "140419456",
+      "title": "Micron Stock Jumps After Trump Name-Checks the Chip Maker",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "confirmed_tickers": [
+        "MU"
+      ],
+      "hours_ago": 2.5,
+      "url": "https://finnhub.io/api/news?id=dd635a2d4158cfef7accdaea7971dc5546d7ac2cc43fbdbb291cbdbabed8aae6",
+      "is_news": true
+    },
+    {
+      "id": "140419414",
+      "title": "Did Nvidia Just Say \"Checkmate\" to Intel and AMD?",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "AMD"
+      ],
+      "confirmed_tickers": [
+        "AMD"
+      ],
+      "hours_ago": 2.8,
+      "url": "https://finnhub.io/api/news?id=02a9a57e4996e1ff20531ceed5c4cbb27aec249ad5b19ee85f8bcf66690dbe46",
+      "is_news": true
+    },
+    {
+      "id": "140419417",
+      "title": "AMD Stock Investors Just Got Fantastic News From Nvidia's CEO Jensen Huang",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "AMD"
+      ],
+      "confirmed_tickers": [
+        "AMD"
+      ],
+      "hours_ago": 3.0,
+      "url": "https://finnhub.io/api/news?id=58494073cc446d6ab040f0f925963c42c4feeb8523f7a1335579d41810bdc02e",
+      "is_news": true
+    },
+    {
+      "id": "140419875",
+      "title": "GlobalFoundries: Government Funding Isn't The Boon Wall Street Thinks It Is",
+      "subreddit": "SeekingAlpha",
+      "ups": 0,
+      "tickers": [
+        "AMD"
+      ],
+      "confirmed_tickers": [
+        "AMD"
+      ],
+      "hours_ago": 4.6,
+      "url": "https://finnhub.io/api/news?id=82e2b87b8c0280b4274d2e0899d865956bbbe86f73297c5b72834d37c0873072",
+      "is_news": true
+    },
+    {
+      "id": "140418447",
+      "title": "Broadcom: Rock-Solid Custom Silicon Partnerships Create Massive Opportunity",
+      "subreddit": "SeekingAlpha",
+      "ups": 0,
+      "tickers": [
+        "AMD"
+      ],
+      "confirmed_tickers": [
+        "AMD"
+      ],
+      "hours_ago": 9.9,
+      "url": "https://finnhub.io/api/news?id=9118b123fa0375f768c3eb5824758bba781004c2f21e98b945c9efd8d8ae59a7",
+      "is_news": true
+    },
+    {
+      "id": "140384464",
+      "title": "NLR: Equipped On All Sides For Nuclear Run",
+      "subreddit": "SeekingAlpha",
+      "ups": 0,
+      "tickers": [
+        "OKLO"
+      ],
+      "confirmed_tickers": [
+        "OKLO"
+      ],
+      "hours_ago": 115.8,
+      "url": "https://finnhub.io/api/news?id=391576649601e7e5d7ccd54d612f0657e2922e7f36c0e76043d3a038b1c215ae",
+      "is_news": true
+    },
+    {
+      "id": "140373188",
+      "title": "Why Is Oklo Stock Surging On Wednesday?",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "OKLO"
+      ],
+      "confirmed_tickers": [
+        "OKLO"
+      ],
+      "hours_ago": 145.2,
+      "url": "https://finnhub.io/api/news?id=c5a1f75648a201551b1aecf969f098695da5b9dcd2c2a5d56f09d63b39db5436",
+      "is_news": true
+    },
+    {
+      "id": "140370624",
+      "title": "A Buy Rating For Oklo As AI Data Centers Run Into The Power Wall",
+      "subreddit": "SeekingAlpha",
+      "ups": 0,
+      "tickers": [
+        "OKLO"
+      ],
+      "confirmed_tickers": [
+        "OKLO"
+      ],
+      "hours_ago": 145.4,
+      "url": "https://finnhub.io/api/news?id=389b2ebcc011fd6cffcd80a20057e69c3c73404581719f9c22ff175d62592d01",
+      "is_news": true
+    },
+    {
+      "id": "140364374",
+      "title": "Wolfe Research Initiates Coverage of Oklo (OKLO) with Peer Perform Recommendation",
+      "subreddit": "Fintel",
+      "ups": 0,
+      "tickers": [
+        "OKLO"
+      ],
+      "confirmed_tickers": [
+        "OKLO"
+      ],
+      "hours_ago": 157.5,
+      "url": "https://finnhub.io/api/news?id=283858869c57e8d53b02faef9a704fbd416d87c05d3ff2bb1ee7381bc0fb1a30",
+      "is_news": true
+    },
+    {
+      "id": "140361874",
+      "title": "This Interface Analyst Begins Coverage On A Bullish Note; Here Are Top 5 Initiations For Tuesday",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "OKLO"
+      ],
+      "confirmed_tickers": [
+        "OKLO"
+      ],
+      "hours_ago": 172.2,
+      "url": "https://finnhub.io/api/news?id=a276ce6ca3157cc3d939a6a72d6f886affeef77c2729cd4eef0e79a72c8acf11",
+      "is_news": true
+    }
+  ]
 }
