@@ -1,14 +1,14 @@
 {
-  "scan_time": "2026-05-27T12:49:36.301085+00:00",
+  "scan_time": "2026-05-28T13:43:15.127116+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 81.1,
+  "composite_score": 81.2,
   "composite_label": "Extreme",
   "components": {
     "buffett": {
-      "raw": 2.037,
+      "raw": 2.043,
       "raw_label": "2.0 (W5000/GDP)",
-      "percentile": 93.8,
-      "score": 93.8,
+      "percentile": 94.6,
+      "score": 94.6,
       "label": "Extreme",
       "description": "Total US market cap (Wilshire 5000) vs GDP \u2014 Warren Buffett's \"best single measure.\" Percentile-ranked over the last 10 years.",
       "title": "Buffett Indicator",
@@ -27,14 +27,14 @@
       "weight": 0.25
     },
     "fed_model": {
-      "raw": -1.47,
-      "raw_label": "-1.47% spread",
+      "raw": -1.41,
+      "raw_label": "-1.41% spread",
       "earnings_yield": 3.09,
-      "treasury_10y": 4.56,
-      "pe": 32.41,
+      "treasury_10y": 4.5,
+      "pe": 32.4,
       "score": 85,
       "label": "Extreme",
-      "description": "S&P earnings yield 3.09% vs 10Y Treasury 4.56%. Positive spread means stocks are relatively cheap vs bonds.",
+      "description": "S&P earnings yield 3.09% vs 10Y Treasury 4.50%. Positive spread means stocks are relatively cheap vs bonds.",
       "title": "Fed Model",
       "subtitle": "Earnings Yield \u2212 10Y",
       "weight": 0.15
@@ -52,9 +52,9 @@
       "weight": 0.15
     },
     "fear_greed": {
-      "raw": 61.4,
+      "raw": 60.6,
       "raw_label": "61 (Greed)",
-      "score": 61.4,
+      "score": 60.6,
       "label": "Frothy",
       "description": "CNN's composite of 7 short-term sentiment signals (momentum, breadth, put/call ratio, junk-bond demand, volatility, etc.). High readings reflect investor euphoria \u2014 historically a contrarian sell signal.",
       "title": "Fear & Greed",
@@ -62,8 +62,8 @@
       "weight": 0.1
     },
     "vix": {
-      "raw": 16.79,
-      "raw_label": "16.8 VIX",
+      "raw": 16.39,
+      "raw_label": "16.4 VIX",
       "score": 70,
       "label": "Frothy",
       "description": "30-day expected S&P 500 volatility implied by options. Low readings (under 15) signal complacency and often coincide with frothy markets; high readings (over 30) signal fear and frequently mark short-term bottoms.",
