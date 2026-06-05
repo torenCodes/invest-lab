@@ -1,71 +1,33 @@
 {
-  "scan_time": "2026-06-05T19:12:58.361205+00:00",
+  "scan_time": "2026-06-05T20:54:41.100413+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 17,
+  "total_scanned": 16,
   "day_trades": [
-    {
-      "ticker": "CURLF",
-      "name": "Curaleaf Holdings Inc",
-      "sector": "Pharmaceuticals",
-      "current_price": 10.92,
-      "change_pct": 6.7449,
-      "high": 11.49,
-      "low": 9.99,
-      "open": 10.53,
-      "prev_close": 10.23,
-      "score": 53,
-      "signals": [
-        "Top gainer (+6.7%)",
-        "High volume",
-        "Strong move (+6.7%)",
-        "Trending buzz (12)",
-        "Yahoo trending (#9)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 12,
-      "market_cap": 3747542302.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950458513066.png",
-      "weburl": "https://ir.curaleaf.com/",
-      "yahoo_trending_rank": 9,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.09,
-          "estimate": -0.08,
-          "beat": true,
-          "surprise_pct": 217.6
-        }
-      },
-      "score_normalized": 75
-    },
     {
       "ticker": "MRLN",
       "name": "Merlin Inc",
       "sector": "Aerospace & Defense",
-      "current_price": 8.69,
-      "change_pct": 21.0306,
+      "current_price": 8.6,
+      "change_pct": 19.7772,
       "high": 10.2499,
       "low": 8.31,
-      "open": 9.864999999999998,
+      "open": 9.19,
       "prev_close": 7.18,
       "score": 50,
       "signals": [
-        "Top gainer (+21.0%)",
+        "Top gainer (+19.8%)",
         "High volume",
-        "Strong move (+21.0%)",
-        "Trending buzz (16)",
-        "Yahoo trending (#5)"
+        "Strong move (+19.8%)",
+        "Trending buzz (11)",
+        "Yahoo trending (#10)"
       ],
-      "reddit_mentions": 16,
+      "reddit_mentions": 11,
       "market_cap": 904430398.1210454,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950891313246.png",
       "weburl": "",
-      "yahoo_trending_rank": 5,
+      "yahoo_trending_rank": 10,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -77,37 +39,6 @@
         }
       },
       "score_normalized": 70
-    },
-    {
-      "ticker": "SPHL",
-      "name": "Springview Holdings Ltd",
-      "sector": "Consumer products",
-      "current_price": 6.31,
-      "change_pct": 164.1272,
-      "high": 10.71,
-      "low": 2.385,
-      "open": 2.385,
-      "prev_close": 2.389,
-      "score": 41,
-      "signals": [
-        "Top gainer (+164.1%)",
-        "High volume",
-        "Strong move (+164.1%)",
-        "Trending activity (9)",
-        "Yahoo trending (#12)"
-      ],
-      "reddit_mentions": 9,
-      "market_cap": 30777570.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950871722776.png",
-      "weburl": "https://ir.springviewggl.com/",
-      "yahoo_trending_rank": 12,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 58
     }
   ],
   "swing_trades": [
@@ -115,17 +46,17 @@
       "ticker": "COKE",
       "name": "Coca-Cola Consolidated Inc",
       "sector": "Beverages",
-      "current_price": 180.66,
-      "change_pct": 6.1021,
+      "current_price": 179.91,
+      "change_pct": 5.6616,
       "high": 183.2999,
       "low": 170.86,
-      "open": 171.01,
+      "open": 170.86,
       "prev_close": 170.27,
       "score": 53,
       "signals": [
-        "Top gainer (+6.1%)",
+        "Top gainer (+5.7%)",
         "High volume",
-        "Strong move (+6.1%)",
+        "Strong move (+5.7%)",
         "Trending buzz (13)",
         "Yahoo trending (#8)",
         "Closing strong"
@@ -147,26 +78,59 @@
   "buzz_source": "trending",
   "reddit_cards": [
     {
+      "ticker": "META",
+      "mentions": 19,
+      "name": "Meta Platforms Inc",
+      "sector": "Media",
+      "current_price": 593,
+      "change_pct": -5.5085,
+      "high": 629.145,
+      "low": 582.91,
+      "open": 623.46,
+      "prev_close": 627.57,
+      "market_cap": 1544401965765.4321,
+      "score": 0,
+      "signals": [
+        "Trending buzz (19 mentions)",
+        "Yahoo trending (#2)"
+      ],
+      "reddit_mentions": 19,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": 2,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 7.31,
+          "estimate": 6.92,
+          "beat": true,
+          "surprise_pct": 5.6
+        }
+      },
+      "score_normalized": 0
+    },
+    {
       "ticker": "TSLA",
-      "mentions": 20,
+      "mentions": 18,
       "name": "Tesla Inc",
       "sector": "Automobiles",
-      "current_price": 389.52,
-      "change_pct": -6.9136,
+      "current_price": 391,
+      "change_pct": -6.5599,
       "high": 424.6799,
-      "low": 389.2,
-      "open": 418.765,
+      "low": 388.59,
+      "open": 420.5,
       "prev_close": 418.45,
       "market_cap": 1485426296809.724,
       "score": 0,
       "signals": [
-        "Trending buzz (20 mentions)",
-        "Yahoo trending (#1)"
+        "Trending buzz (18 mentions)",
+        "Yahoo trending (#3)"
       ],
-      "reddit_mentions": 20,
+      "reddit_mentions": 18,
       "is_gainer": false,
       "is_active": false,
-      "yahoo_trending_rank": 1,
+      "yahoo_trending_rank": 3,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -183,223 +147,322 @@
       "ticker": "RMSG",
       "name": "Real Messenger Corp",
       "sector": "Real Estate",
-      "current_price": 2.1,
-      "change_pct": 90.9091,
+      "current_price": 1.83,
+      "change_pct": 66.3636,
       "high": 3.9,
-      "low": 1.88,
-      "open": 2.4175,
+      "low": 1.71,
+      "open": 3.265,
       "prev_close": 1.1,
       "score": 50,
       "signals": [
-        "Top gainer (+90.9%)",
+        "Top gainer (+66.4%)",
         "High volume",
-        "Strong move (+90.9%)",
-        "Trending buzz (19)",
-        "Yahoo trending (#2)"
+        "Strong move (+66.4%)",
+        "Trending buzz (16)",
+        "Yahoo trending (#5)"
       ],
-      "reddit_mentions": 19,
+      "reddit_mentions": 16,
       "market_cap": 4515976.0,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950866425286.png",
       "weburl": "",
-      "yahoo_trending_rank": 2,
-      "mentions": 19,
+      "yahoo_trending_rank": 5,
+      "mentions": 16,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
       "score_normalized": 70
-    },
-    {
-      "ticker": "PL",
-      "mentions": 17,
-      "name": "Planet Labs PBC",
-      "sector": "Professional Services",
-      "current_price": 32.22,
-      "change_pct": -25.9821,
-      "high": 40,
-      "low": 31.66,
-      "open": 40,
-      "prev_close": 43.53,
-      "market_cap": 11645148427.438555,
-      "score": 0,
-      "signals": [
-        "Trending buzz (17 mentions)",
-        "Yahoo trending (#4)"
-      ],
-      "reddit_mentions": 17,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": 4,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.0,
-          "estimate": -0.05,
-          "beat": true,
-          "surprise_pct": 100.0
-        }
-      },
-      "score_normalized": 0
     }
   ],
   "sector_rotation": [
     {
       "ticker": "XLP",
       "sector": "Cons. Staples",
-      "ret_1d": 2.16,
-      "ret_5d": 1.09,
-      "ret_1m": -0.5,
-      "ret_3m": -1.74,
+      "ret_1d": 1.71,
+      "ret_5d": 0.64,
+      "ret_1m": -0.95,
+      "ret_3m": -2.18,
       "top_stocks": [
         {
           "ticker": "COKE",
           "name": "Coca-Cola Consolidated Inc",
-          "change_pct": 6.1021,
-          "price": 180.66
-        }
-      ]
-    },
-    {
-      "ticker": "XLRE",
-      "sector": "Real Estate",
-      "ret_1d": 1.04,
-      "ret_5d": 1.98,
-      "ret_1m": 0.27,
-      "ret_3m": 5.3,
-      "top_stocks": [
-        {
-          "ticker": "RMSG",
-          "name": "Real Messenger Corp",
-          "change_pct": 90.9091,
-          "price": 2.1
+          "change_pct": 5.6616,
+          "price": 179.91
         }
       ]
     },
     {
       "ticker": "XLU",
       "sector": "Utilities",
-      "ret_1d": 0.86,
-      "ret_5d": -0.23,
-      "ret_1m": -3.04,
-      "ret_3m": -4.51,
+      "ret_1d": 0.93,
+      "ret_5d": -0.16,
+      "ret_1m": -2.98,
+      "ret_3m": -4.45,
       "top_stocks": []
+    },
+    {
+      "ticker": "XLRE",
+      "sector": "Real Estate",
+      "ret_1d": 0.68,
+      "ret_5d": 1.61,
+      "ret_1m": -0.09,
+      "ret_3m": 4.92,
+      "top_stocks": [
+        {
+          "ticker": "RMSG",
+          "name": "Real Messenger Corp",
+          "change_pct": 66.3636,
+          "price": 1.83
+        }
+      ]
     },
     {
       "ticker": "XLV",
       "sector": "Health Care",
-      "ret_1d": 0.81,
-      "ret_5d": 2.57,
-      "ret_1m": 5.44,
-      "ret_3m": 0.81,
+      "ret_1d": 0.61,
+      "ret_5d": 2.37,
+      "ret_1m": 5.23,
+      "ret_3m": 0.61,
       "top_stocks": [
         {
           "ticker": "BGMS",
           "name": "Bio Green Med Solution Inc",
-          "change_pct": 79.2453,
-          "price": 1.9
-        },
-        {
-          "ticker": "BCDA",
-          "name": "BioCardia Inc",
-          "change_pct": 34.9293,
-          "price": 1.24
-        },
-        {
-          "ticker": "CURLF",
-          "name": "Curaleaf Holdings Inc",
-          "change_pct": 6.7449,
-          "price": 10.92
+          "change_pct": 41.5094,
+          "price": 1.5
         }
       ]
     },
     {
       "ticker": "XLF",
       "sector": "Financials",
-      "ret_1d": 0.07,
-      "ret_5d": 1.25,
-      "ret_1m": 0.74,
-      "ret_3m": 3.8,
+      "ret_1d": 0.21,
+      "ret_5d": 1.4,
+      "ret_1m": 0.89,
+      "ret_3m": 3.95,
       "top_stocks": []
     },
     {
       "ticker": "XLI",
       "sector": "Industrials",
-      "ret_1d": -1.36,
-      "ret_5d": 0.37,
-      "ret_1m": -1.75,
-      "ret_3m": 2.54,
+      "ret_1d": -1.12,
+      "ret_5d": 0.61,
+      "ret_1m": -1.52,
+      "ret_3m": 2.78,
       "top_stocks": [
         {
           "ticker": "MRLN",
           "name": "Merlin Inc",
-          "change_pct": 21.0306,
-          "price": 8.69
+          "change_pct": 19.7772,
+          "price": 8.6
         }
       ]
     },
     {
-      "ticker": "XLE",
-      "sector": "Energy",
-      "ret_1d": -1.49,
-      "ret_5d": 2.82,
-      "ret_1m": 1.54,
-      "ret_3m": 2.98,
+      "ticker": "XLC",
+      "sector": "Comm. Services",
+      "ret_1d": -1.27,
+      "ret_5d": -3.47,
+      "ret_1m": -4.84,
+      "ret_3m": -4.63,
       "top_stocks": []
     },
     {
-      "ticker": "XLC",
-      "sector": "Comm. Services",
-      "ret_1d": -1.64,
-      "ret_5d": -3.83,
-      "ret_1m": -5.19,
-      "ret_3m": -4.98,
+      "ticker": "XLE",
+      "sector": "Energy",
+      "ret_1d": -1.84,
+      "ret_5d": 2.45,
+      "ret_1m": 1.18,
+      "ret_3m": 2.61,
       "top_stocks": []
     },
     {
       "ticker": "XLB",
       "sector": "Materials",
-      "ret_1d": -1.98,
-      "ret_5d": -1.08,
-      "ret_1m": -3.45,
-      "ret_3m": 1.94,
+      "ret_1d": -1.92,
+      "ret_5d": -1.02,
+      "ret_1m": -3.4,
+      "ret_3m": 2.0,
       "top_stocks": []
     },
     {
       "ticker": "XLY",
       "sector": "Cons. Discretionary",
-      "ret_1d": -2.11,
-      "ret_5d": -5.03,
-      "ret_1m": -4.24,
-      "ret_3m": 0.5,
+      "ret_1d": -2.05,
+      "ret_5d": -4.97,
+      "ret_1m": -4.18,
+      "ret_3m": 0.57,
       "top_stocks": []
     },
     {
       "ticker": "XLK",
       "sector": "Technology",
-      "ret_1d": -6.54,
-      "ret_5d": -5.49,
-      "ret_1m": 6.18,
-      "ret_3m": 31.66,
+      "ret_1d": -6.66,
+      "ret_5d": -5.61,
+      "ret_1m": 6.04,
+      "ret_3m": 31.49,
       "top_stocks": [
         {
           "ticker": "BGMS",
           "name": "Bio Green Med Solution Inc",
-          "change_pct": 79.2453,
-          "price": 1.9
-        },
-        {
-          "ticker": "BCDA",
-          "name": "BioCardia Inc",
-          "change_pct": 34.9293,
-          "price": 1.24
+          "change_pct": 41.5094,
+          "price": 1.5
         }
       ]
     }
   ],
   "reddit_feed": [
+    {
+      "id": "140540385",
+      "title": "XPEV Stock Falls On $500M AI Bet For Self-Driving Tech \u2014 Exec Says Xpeng Is Following Google\u2019s Pixel Playbook",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "TSLA"
+      ],
+      "confirmed_tickers": [
+        "TSLA"
+      ],
+      "hours_ago": 1.0,
+      "url": "https://finnhub.io/api/news?id=1f388e6475a93824b2e847e51a05f205d21a7add9909fec0468958ccb9b8e6cb",
+      "is_news": true
+    },
+    {
+      "id": "140540341",
+      "title": "Sector Update: Tech Stocks Lower Late Afternoon",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "META"
+      ],
+      "confirmed_tickers": [
+        "META"
+      ],
+      "hours_ago": 1.2,
+      "url": "https://finnhub.io/api/news?id=3265a2e9055197c516b3b58496c6964a6d9224f575ae9fed3d90c56fd56e2488",
+      "is_news": true
+    },
+    {
+      "id": "140540386",
+      "title": "META Stock Drops Nearly 7% In Afternoon Trading \u2014 Here\u2019s What\u2019s Driving The Selloff",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "META"
+      ],
+      "confirmed_tickers": [
+        "META"
+      ],
+      "hours_ago": 1.3,
+      "url": "https://finnhub.io/api/news?id=7cd2cced6a9fbe151813513db1b61fc5d8b6384561a2eb75d011585bf45bd585",
+      "is_news": true
+    },
+    {
+      "id": "140540363",
+      "title": "Meta stock sinks 6% on report of stock sale",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "META"
+      ],
+      "confirmed_tickers": [
+        "META"
+      ],
+      "hours_ago": 1.6,
+      "url": "https://finnhub.io/api/news?id=6e521538b5b41cb1709e0eb24df8357818d16b416ab5bfd9590ddecf4aed97bc",
+      "is_news": true
+    },
+    {
+      "id": "140539922",
+      "title": "Let's take a look at the stocks that are in motion in today's session.",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "RMSG"
+      ],
+      "confirmed_tickers": [
+        "RMSG"
+      ],
+      "hours_ago": 1.9,
+      "url": "https://finnhub.io/api/news?id=2c79a836c63a6e87bac7a9971f6329cf3a634ab80bd0e4784deab590ce4f9a58",
+      "is_news": true
+    },
+    {
+      "id": "140540389",
+      "title": "Market Chatter: Meta Weighing Tens of Billions in Stock Offering to Fund AI Ambitions",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "META"
+      ],
+      "confirmed_tickers": [
+        "META"
+      ],
+      "hours_ago": 2.0,
+      "url": "https://finnhub.io/api/news?id=fe118a23fa292339290efaf61b34ccb54f6675cd07665b48f7451437de0c9f11",
+      "is_news": true
+    },
+    {
+      "id": "140540392",
+      "title": "Meta stock tumbles on report of potential equity raise",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "META"
+      ],
+      "confirmed_tickers": [
+        "META"
+      ],
+      "hours_ago": 2.0,
+      "url": "https://finnhub.io/api/news?id=a1cb3c63caf61ed976366d9d0253473de6e4c63528b260f6cf9a11c55684c2fd",
+      "is_news": true
+    },
+    {
+      "id": "140540430",
+      "title": "SpaceX Targets Record $75 Billion IPO At $1.8 Trillion Valuation",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "TSLA"
+      ],
+      "confirmed_tickers": [
+        "TSLA"
+      ],
+      "hours_ago": 2.3,
+      "url": "https://finnhub.io/api/news?id=66020133307dba045830601a9cd61186a80ffcd8621486635d9da6d2b9a8e8c9",
+      "is_news": true
+    },
+    {
+      "id": "140540431",
+      "title": "Tesla Stock Just Got a Rare 'Upgrade' Ahead of Cybercab Launch",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "TSLA"
+      ],
+      "confirmed_tickers": [
+        "TSLA"
+      ],
+      "hours_ago": 2.3,
+      "url": "https://finnhub.io/api/news?id=9f39bd1e091b954a521a5a6423f72a506c032a62e6725a785c16bf2a16e9b5fe",
+      "is_news": true
+    },
+    {
+      "id": "140540432",
+      "title": "Tesla gets double dose of good news from key region",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "TSLA"
+      ],
+      "confirmed_tickers": [
+        "TSLA"
+      ],
+      "hours_ago": 2.6,
+      "url": "https://finnhub.io/api/news?id=3dfdd6ef534377b80703afe92e3296189047c0ed8acb8b6fb4276cf041510316",
+      "is_news": true
+    },
     {
       "id": "140538981",
       "title": "What's going on in today's session: S&P500 most active stocks",
@@ -411,7 +474,7 @@
       "confirmed_tickers": [
         "TSLA"
       ],
-      "hours_ago": 1.1,
+      "hours_ago": 2.8,
       "url": "https://finnhub.io/api/news?id=a5d9aba34cb3f9fe4e8acd658e21dbcea3b040c99b5800a033451a54981e4c66",
       "is_news": true
     },
@@ -426,68 +489,8 @@
       "confirmed_tickers": [
         "RMSG"
       ],
-      "hours_ago": 1.2,
+      "hours_ago": 2.9,
       "url": "https://finnhub.io/api/news?id=e8fca3e47d621aab67ed44575f6da999b005ab74fcf1fea275458f69c9e3d3c3",
-      "is_news": true
-    },
-    {
-      "id": "140538409",
-      "title": "TSLA Stock On Track For Worst Week In A Year On Fresh Roadster Delay As Musk\u2019s April Promise Fades",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "TSLA"
-      ],
-      "confirmed_tickers": [
-        "TSLA"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://finnhub.io/api/news?id=025992101fded8dc22d464ab66160d3b978eb26fb01ceb53351df8e6e8e9de57",
-      "is_news": true
-    },
-    {
-      "id": "140538179",
-      "title": "Tesla Gets 227.6% Target Boost As JPMorgan Upgrades Rating",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "TSLA"
-      ],
-      "confirmed_tickers": [
-        "TSLA"
-      ],
-      "hours_ago": 1.8,
-      "url": "https://finnhub.io/api/news?id=56d03d835f66f341b94adf13aebb16c8c154594f7de6296dadad19c540e01ab5",
-      "is_news": true
-    },
-    {
-      "id": "140538180",
-      "title": "'Borderline dishonest': Analysts shred SpaceX's IPO filing, ringing alarm bells on its $1.77 trillion valuation",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "TSLA"
-      ],
-      "confirmed_tickers": [
-        "TSLA"
-      ],
-      "hours_ago": 2.1,
-      "url": "https://finnhub.io/api/news?id=b80751cea511da34dea4c0a2287283fb126130dbb04db69b84a9dc9c569768f8",
-      "is_news": true
-    },
-    {
-      "id": "140538183",
-      "title": "Prediction: Tesla Stock Will Hit $500 on This Date",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "TSLA"
-      ],
-      "confirmed_tickers": [
-        "TSLA"
-      ],
-      "hours_ago": 2.1,
-      "url": "https://finnhub.io/api/news?id=fc46ea7b1d53a3e4837f585d0f23f10e091add39705384dfe20a7f6e9b380d10",
       "is_news": true
     },
     {
@@ -501,7 +504,7 @@
       "confirmed_tickers": [
         "RMSG"
       ],
-      "hours_ago": 2.7,
+      "hours_ago": 4.4,
       "url": "https://finnhub.io/api/news?id=81f25c0ef102283c0f93881e25239e94b59f7764ad59b36891b5875cccadcbc0",
       "is_news": true
     },
@@ -516,23 +519,8 @@
       "confirmed_tickers": [
         "RMSG"
       ],
-      "hours_ago": 6.7,
+      "hours_ago": 8.4,
       "url": "https://finnhub.io/api/news?id=869abb7c9dca14bce8c78c0942888c7311bdb708fa8a22434d34a1eb041872fc",
-      "is_news": true
-    },
-    {
-      "id": "140535931",
-      "title": "Rubrik To Rally Around 20%? Here Are 10 Top Analyst Forecasts For Friday",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "PL"
-      ],
-      "confirmed_tickers": [
-        "PL"
-      ],
-      "hours_ago": 10.2,
-      "url": "https://finnhub.io/api/news?id=d621e1cb81838195437e552005c7af9869bb6b27e0e94f8e971972b2b19658d2",
       "is_news": true
     },
     {
@@ -546,83 +534,8 @@
       "confirmed_tickers": [
         "RMSG"
       ],
-      "hours_ago": 13.2,
+      "hours_ago": 14.9,
       "url": "https://finnhub.io/api/news?id=fc748a652a76d1199a09220a3731ca514880b9d6c6e211e398568f612aa44ed4",
-      "is_news": true
-    },
-    {
-      "id": "140532720",
-      "title": "Planet Labs PBC (PL) Q1 2027 Earnings Call Transcript",
-      "subreddit": "SeekingAlpha",
-      "ups": 0,
-      "tickers": [
-        "PL"
-      ],
-      "confirmed_tickers": [
-        "PL"
-      ],
-      "hours_ago": 18.5,
-      "url": "https://finnhub.io/api/news?id=d5baa217759fdede4fb364f365781ca68eea40ccceb08b19c0cf5272afc041f0",
-      "is_news": true
-    },
-    {
-      "id": "140528523",
-      "title": "Thursday's after hours session: top gainers and losers",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "RMSG"
-      ],
-      "confirmed_tickers": [
-        "RMSG"
-      ],
-      "hours_ago": 22.2,
-      "url": "https://finnhub.io/api/news?id=9136822b507dc84f42dc9ab52b94a9db662f9ec2a14468e61f8d3418024c1fab",
-      "is_news": true
-    },
-    {
-      "id": "140528233",
-      "title": "Planet Labs (NYSE:PL) Revenue Beat Fails to Lift Stock as Guidance Disappoints",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "PL"
-      ],
-      "confirmed_tickers": [
-        "PL"
-      ],
-      "hours_ago": 22.5,
-      "url": "https://finnhub.io/api/news?id=0012d9b3fffa5c9cea36e7c73aab1ee1cf5ed58c93c5be0d127d2b0311779249",
-      "is_news": true
-    },
-    {
-      "id": "140530026",
-      "title": "Planet Labs PBC 2027 Q1 - Results - Earnings Call Presentation",
-      "subreddit": "SeekingAlpha",
-      "ups": 0,
-      "tickers": [
-        "PL"
-      ],
-      "confirmed_tickers": [
-        "PL"
-      ],
-      "hours_ago": 24.3,
-      "url": "https://finnhub.io/api/news?id=02b10f8c11afa405888bb08cc717a2f6ae83caf82b561d055203e414cce04980",
-      "is_news": true
-    },
-    {
-      "id": "140530089",
-      "title": "Planet Labs Q1 2027 Earnings Call: Complete Transcript",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "PL"
-      ],
-      "confirmed_tickers": [
-        "PL"
-      ],
-      "hours_ago": 25.1,
-      "url": "https://finnhub.io/api/news?id=f300566f9753a22392abbb2e15ff743345b9d3314fe6c4f4bfc7ca1f4a6f057f",
       "is_news": true
     }
   ]
