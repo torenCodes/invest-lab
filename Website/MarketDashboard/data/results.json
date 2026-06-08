@@ -1,541 +1,712 @@
 {
-  "scan_time": "2026-06-05T20:54:41.100413+00:00",
+  "scan_time": "2026-06-08T13:35:29.735822+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 16,
+  "total_scanned": 21,
   "day_trades": [
     {
-      "ticker": "MRLN",
-      "name": "Merlin Inc",
-      "sector": "Aerospace & Defense",
-      "current_price": 8.6,
-      "change_pct": 19.7772,
-      "high": 10.2499,
-      "low": 8.31,
-      "open": 9.19,
-      "prev_close": 7.18,
-      "score": 50,
+      "ticker": "TNGX",
+      "name": "Tango Therapeutics Inc",
+      "sector": "Biotechnology",
+      "current_price": 28.96,
+      "change_pct": 43.2245,
+      "high": 30.015,
+      "low": 28.7,
+      "open": 30.015,
+      "prev_close": 20.22,
+      "score": 55,
       "signals": [
-        "Top gainer (+19.8%)",
+        "Top gainer (+43.2%)",
         "High volume",
-        "Strong move (+19.8%)",
-        "Trending buzz (11)",
-        "Yahoo trending (#10)"
+        "Strong move (+43.2%)",
+        "Trending buzz (13)",
+        "Yahoo trending (#8)",
+        "Sector leader (Biotechnology)"
       ],
-      "reddit_mentions": 11,
-      "market_cap": 904430398.1210454,
+      "reddit_mentions": 13,
+      "market_cap": 2924782051.0,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950891313246.png",
-      "weburl": "",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950763535176.png",
+      "weburl": "https://www.tangotx.com/",
+      "yahoo_trending_rank": 8,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.32,
+          "estimate": -0.32,
+          "beat": false,
+          "surprise_pct": -0.1
+        }
+      },
+      "score_normalized": 77
+    },
+    {
+      "ticker": "OCC",
+      "name": "Optical Cable Corp",
+      "sector": "Communications",
+      "current_price": 17.62,
+      "change_pct": 43.252,
+      "high": 19.61,
+      "low": 15.98,
+      "open": 15.98,
+      "prev_close": 12.3,
+      "score": 50,
+      "signals": [
+        "Top gainer (+43.3%)",
+        "High volume",
+        "Strong move (+43.3%)",
+        "Trending buzz (14)",
+        "Yahoo trending (#7)"
+      ],
+      "reddit_mentions": 14,
+      "market_cap": 108628649.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/OCC.png",
+      "weburl": "https://www.occfiber.com/",
+      "yahoo_trending_rank": 7,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 70
+    },
+    {
+      "ticker": "NRIX",
+      "name": "Nurix Therapeutics Inc",
+      "sector": "Biotechnology",
+      "current_price": 17.51,
+      "change_pct": 19.6038,
+      "high": 17.5886,
+      "low": 16.1,
+      "open": 17.4025,
+      "prev_close": 14.64,
+      "score": 44,
+      "signals": [
+        "Top gainer (+19.6%)",
+        "High volume",
+        "Strong move (+19.6%)",
+        "Trending activity (9)",
+        "Yahoo trending (#12)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 9,
+      "market_cap": 1513861169.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950376390076.png",
+      "weburl": "https://www.nurixtx.com/",
+      "yahoo_trending_rank": 12,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.79,
+          "estimate": -0.77,
+          "beat": false,
+          "surprise_pct": -2.7
+        }
+      },
+      "score_normalized": 62
+    },
+    {
+      "ticker": "NNE",
+      "name": "Nano Nuclear Energy Inc",
+      "sector": "Electrical Equipment",
+      "current_price": 24.85,
+      "change_pct": 5.4754,
+      "high": 26.3,
+      "low": 24.7,
+      "open": 25.685000000000002,
+      "prev_close": 23.56,
+      "score": 41,
+      "signals": [
+        "Top gainer (+5.5%)",
+        "High volume",
+        "Strong move (+5.5%)",
+        "Trending activity (8)",
+        "Yahoo trending (#13)"
+      ],
+      "reddit_mentions": 8,
+      "market_cap": 1227082377.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950825111226.png",
+      "weburl": "https://nanonuclearenergy.com/",
+      "yahoo_trending_rank": 13,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.17,
+          "estimate": -0.27,
+          "beat": true,
+          "surprise_pct": 34.7
+        }
+      },
+      "score_normalized": 58
+    }
+  ],
+  "swing_trades": [
+    {
+      "ticker": "MRVL",
+      "name": "Marvell Technology Inc",
+      "sector": "Semiconductors",
+      "current_price": 287.08,
+      "change_pct": 8.9612,
+      "high": 292.44,
+      "low": 284.15999999999997,
+      "open": 284.15999999999997,
+      "prev_close": 263.47,
+      "score": 55,
+      "signals": [
+        "Top gainer (+9.0%)",
+        "High volume",
+        "Strong move (+9.0%)",
+        "Trending buzz (11)",
+        "Yahoo trending (#10)",
+        "Sector leader (Semiconductors)"
+      ],
+      "reddit_mentions": 11,
+      "market_cap": 230483553852.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MRVL.png",
+      "weburl": "https://www.marvell.com/",
       "yahoo_trending_rank": 10,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-03-31",
-          "actual": 2.51,
-          "estimate": -0.1,
-          "beat": true,
-          "surprise_pct": 2560.8
+          "actual": 0.8,
+          "estimate": 0.8,
+          "beat": false,
+          "surprise_pct": -0.4
         }
       },
-      "score_normalized": 70
-    }
-  ],
-  "swing_trades": [
+      "score_normalized": 77
+    },
     {
-      "ticker": "COKE",
-      "name": "Coca-Cola Consolidated Inc",
-      "sector": "Beverages",
-      "current_price": 179.91,
-      "change_pct": 5.6616,
-      "high": 183.2999,
-      "low": 170.86,
-      "open": 170.86,
-      "prev_close": 170.27,
-      "score": 53,
+      "ticker": "NNE",
+      "name": "Nano Nuclear Energy Inc",
+      "sector": "Electrical Equipment",
+      "current_price": 24.85,
+      "change_pct": 5.4754,
+      "high": 26.3,
+      "low": 24.7,
+      "open": 25.685000000000002,
+      "prev_close": 23.56,
+      "score": 41,
       "signals": [
-        "Top gainer (+5.7%)",
+        "Top gainer (+5.5%)",
         "High volume",
-        "Strong move (+5.7%)",
-        "Trending buzz (13)",
-        "Yahoo trending (#8)",
-        "Closing strong"
+        "Strong move (+5.5%)",
+        "Trending activity (8)",
+        "Yahoo trending (#13)"
       ],
-      "reddit_mentions": 13,
-      "market_cap": 12027502721.023571,
+      "reddit_mentions": 8,
+      "market_cap": 1227082377.0,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/COKE.png",
-      "weburl": "https://www.cokeconsolidated.com/",
-      "yahoo_trending_rank": 8,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950825111226.png",
+      "weburl": "https://nanonuclearenergy.com/",
+      "yahoo_trending_rank": 13,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.17,
+          "estimate": -0.27,
+          "beat": true,
+          "surprise_pct": 34.7
+        }
       },
-      "score_normalized": 75
+      "score_normalized": 58
+    },
+    {
+      "ticker": "GLW",
+      "name": "Corning Inc",
+      "sector": "Electrical Equipment",
+      "current_price": 186.22,
+      "change_pct": 4.8654,
+      "high": 192.91,
+      "low": 185,
+      "open": 192.91,
+      "prev_close": 177.58,
+      "score": 36,
+      "signals": [
+        "Top gainer (+4.9%)",
+        "High volume",
+        "Good move (+4.9%)",
+        "Trending activity (6)",
+        "Yahoo trending (#15)"
+      ],
+      "reddit_mentions": 6,
+      "market_cap": 152832065187.00003,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/GLW.png",
+      "weburl": "https://www.corning.com/",
+      "yahoo_trending_rank": 15,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.7,
+          "estimate": 0.7,
+          "beat": true,
+          "surprise_pct": 0.5
+        }
+      },
+      "score_normalized": 51
+    },
+    {
+      "ticker": "FLEX",
+      "name": "Flex Ltd",
+      "sector": "Electrical Equipment",
+      "current_price": 154.32,
+      "change_pct": 1.5798,
+      "high": 158.7,
+      "low": 154.0415,
+      "open": 157.87,
+      "prev_close": 151.92,
+      "score": 31,
+      "signals": [
+        "Top gainer (+1.6%)",
+        "High volume",
+        "Moderate move (+1.6%)",
+        "Trending activity (7)",
+        "Yahoo trending (#14)"
+      ],
+      "reddit_mentions": 7,
+      "market_cap": 55660134407.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/FLEX.png",
+      "weburl": "https://flex.com/",
+      "yahoo_trending_rank": 14,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.93,
+          "estimate": 0.89,
+          "beat": true,
+          "surprise_pct": 4.3
+        }
+      },
+      "score_normalized": 44
+    },
+    {
+      "ticker": "LLY",
+      "name": "Eli Lilly and Co",
+      "sector": "Pharmaceuticals",
+      "current_price": 1163.84,
+      "change_pct": 2.8654,
+      "high": 1173.23,
+      "low": 1150.85,
+      "open": 1171.6950000000002,
+      "prev_close": 1131.42,
+      "score": 26,
+      "signals": [
+        "Top gainer (+2.9%)",
+        "High volume",
+        "Moderate move (+2.9%)",
+        "Yahoo trending (#20)"
+      ],
+      "reddit_mentions": 1,
+      "market_cap": 1065505089433.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/LLY.png",
+      "weburl": "https://www.lilly.com/",
+      "yahoo_trending_rank": 20,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 8.55,
+          "estimate": 6.73,
+          "beat": true,
+          "surprise_pct": 27.0
+        }
+      },
+      "score_normalized": 37
     }
   ],
   "buzz_source": "trending",
   "reddit_cards": [
     {
-      "ticker": "META",
-      "mentions": 19,
-      "name": "Meta Platforms Inc",
-      "sector": "Media",
-      "current_price": 593,
-      "change_pct": -5.5085,
-      "high": 629.145,
-      "low": 582.91,
-      "open": 623.46,
-      "prev_close": 627.57,
-      "market_cap": 1544401965765.4321,
-      "score": 0,
+      "ticker": "ABAT",
+      "name": "American Battery Technology Co",
+      "sector": "Metals & Mining",
+      "current_price": 3.5,
+      "change_pct": 12.5402,
+      "high": 4.01,
+      "low": 3.47,
+      "open": 4.01,
+      "prev_close": 3.11,
+      "score": 50,
       "signals": [
-        "Trending buzz (19 mentions)",
+        "Top gainer (+12.5%)",
+        "High volume",
+        "Strong move (+12.5%)",
+        "Trending buzz (19)",
         "Yahoo trending (#2)"
       ],
       "reddit_mentions": 19,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": 2,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 7.31,
-          "estimate": 6.92,
-          "beat": true,
-          "surprise_pct": 5.6
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "TSLA",
-      "mentions": 18,
-      "name": "Tesla Inc",
-      "sector": "Automobiles",
-      "current_price": 391,
-      "change_pct": -6.5599,
-      "high": 424.6799,
-      "low": 388.59,
-      "open": 420.5,
-      "prev_close": 418.45,
-      "market_cap": 1485426296809.724,
-      "score": 0,
-      "signals": [
-        "Trending buzz (18 mentions)",
-        "Yahoo trending (#3)"
-      ],
-      "reddit_mentions": 18,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": 3,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.41,
-          "estimate": 0.38,
-          "beat": true,
-          "surprise_pct": 8.7
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "RMSG",
-      "name": "Real Messenger Corp",
-      "sector": "Real Estate",
-      "current_price": 1.83,
-      "change_pct": 66.3636,
-      "high": 3.9,
-      "low": 1.71,
-      "open": 3.265,
-      "prev_close": 1.1,
-      "score": 50,
-      "signals": [
-        "Top gainer (+66.4%)",
-        "High volume",
-        "Strong move (+66.4%)",
-        "Trending buzz (16)",
-        "Yahoo trending (#5)"
-      ],
-      "reddit_mentions": 16,
-      "market_cap": 4515976.0,
+      "market_cap": 424248812.0,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950866425286.png",
-      "weburl": "",
-      "yahoo_trending_rank": 5,
-      "mentions": 16,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950399237176.png",
+      "weburl": "https://americanbatterytechnology.com/",
+      "yahoo_trending_rank": 2,
+      "mentions": 19,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.26,
+          "estimate": -0.07,
+          "beat": false,
+          "surprise_pct": -292.2
+        }
+      },
+      "score_normalized": 70
+    },
+    {
+      "ticker": "SUNE",
+      "name": "Sunation Energy Inc",
+      "sector": "Electrical Equipment",
+      "current_price": 3.14,
+      "change_pct": 177.8761,
+      "high": 3.17,
+      "low": 2.7201,
+      "open": 3,
+      "prev_close": 1.13,
+      "score": 58,
+      "signals": [
+        "Top gainer (+177.9%)",
+        "High volume",
+        "Strong move (+177.9%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)",
+        "Closing strong",
+        "Sector leader (Electrical Equipment)"
+      ],
+      "reddit_mentions": 18,
+      "market_cap": 4659110.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950907227476.png",
+      "weburl": "https://www.sunation.com/",
+      "yahoo_trending_rank": 3,
+      "mentions": 18,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 70
+      "score_normalized": 82
+    },
+    {
+      "ticker": "BATL",
+      "name": "Battalion Oil Corp",
+      "sector": "Energy",
+      "current_price": 1.36,
+      "change_pct": 3.0303,
+      "high": 1.3876,
+      "low": 1.32,
+      "open": 1.36,
+      "prev_close": 1.32,
+      "score": 48,
+      "signals": [
+        "Top gainer (+3.0%)",
+        "High volume",
+        "Good move (+3.0%)",
+        "Trending buzz (17)",
+        "Yahoo trending (#4)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 17,
+      "market_cap": 29064884.000000004,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942958994376.png",
+      "weburl": "https://battalionoil.com/",
+      "yahoo_trending_rank": 4,
+      "mentions": 17,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 68
     }
   ],
   "sector_rotation": [
     {
-      "ticker": "XLP",
-      "sector": "Cons. Staples",
-      "ret_1d": 1.71,
-      "ret_5d": 0.64,
-      "ret_1m": -0.95,
-      "ret_3m": -2.18,
+      "ticker": "XLK",
+      "sector": "Technology",
+      "ret_1d": 2.39,
+      "ret_5d": -5.7,
+      "ret_1m": 8.79,
+      "ret_3m": 32.25,
       "top_stocks": [
         {
-          "ticker": "COKE",
-          "name": "Coca-Cola Consolidated Inc",
-          "change_pct": 5.6616,
-          "price": 179.91
+          "ticker": "TNGX",
+          "name": "Tango Therapeutics Inc",
+          "change_pct": 43.2245,
+          "price": 28.96
+        },
+        {
+          "ticker": "NRIX",
+          "name": "Nurix Therapeutics Inc",
+          "change_pct": 19.6038,
+          "price": 17.51
+        },
+        {
+          "ticker": "MRVL",
+          "name": "Marvell Technology Inc",
+          "change_pct": 8.9612,
+          "price": 287.08
         }
       ]
     },
     {
-      "ticker": "XLU",
-      "sector": "Utilities",
-      "ret_1d": 0.93,
-      "ret_5d": -0.16,
-      "ret_1m": -2.98,
-      "ret_3m": -4.45,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLRE",
-      "sector": "Real Estate",
-      "ret_1d": 0.68,
-      "ret_5d": 1.61,
-      "ret_1m": -0.09,
-      "ret_3m": 4.92,
+      "ticker": "XLE",
+      "sector": "Energy",
+      "ret_1d": 1.23,
+      "ret_5d": 1.88,
+      "ret_1m": 4.34,
+      "ret_3m": 4.33,
       "top_stocks": [
         {
-          "ticker": "RMSG",
-          "name": "Real Messenger Corp",
-          "change_pct": 66.3636,
-          "price": 1.83
+          "ticker": "BATL",
+          "name": "Battalion Oil Corp",
+          "change_pct": 3.0303,
+          "price": 1.36
+        }
+      ]
+    },
+    {
+      "ticker": "XLI",
+      "sector": "Industrials",
+      "ret_1d": 0.45,
+      "ret_5d": 1.49,
+      "ret_1m": 0.56,
+      "ret_3m": 2.65,
+      "top_stocks": [
+        {
+          "ticker": "NCRA",
+          "name": "Nocera Inc",
+          "change_pct": 34.6658,
+          "price": 0.2156
         }
       ]
     },
     {
       "ticker": "XLV",
       "sector": "Health Care",
-      "ret_1d": 0.61,
-      "ret_5d": 2.37,
-      "ret_1m": 5.23,
-      "ret_3m": 0.61,
+      "ret_1d": 0.34,
+      "ret_5d": 3.85,
+      "ret_1m": 6.09,
+      "ret_3m": -0.06,
       "top_stocks": [
         {
-          "ticker": "BGMS",
-          "name": "Bio Green Med Solution Inc",
-          "change_pct": 41.5094,
-          "price": 1.5
+          "ticker": "TNGX",
+          "name": "Tango Therapeutics Inc",
+          "change_pct": 43.2245,
+          "price": 28.96
+        },
+        {
+          "ticker": "NRIX",
+          "name": "Nurix Therapeutics Inc",
+          "change_pct": 19.6038,
+          "price": 17.51
+        },
+        {
+          "ticker": "LLY",
+          "name": "Eli Lilly and Co",
+          "change_pct": 2.8654,
+          "price": 1163.84
+        }
+      ]
+    },
+    {
+      "ticker": "XLY",
+      "sector": "Cons. Discretionary",
+      "ret_1d": 0.11,
+      "ret_5d": -2.71,
+      "ret_1m": -4.08,
+      "ret_3m": 0.55,
+      "top_stocks": [
+        {
+          "ticker": "NEXR",
+          "name": "Nexera Technologies Ltd",
+          "change_pct": 47.9339,
+          "price": 1.79
+        },
+        {
+          "ticker": "FRSX",
+          "name": "Foresight Autonomous Holdings Ltd",
+          "change_pct": 19.6809,
+          "price": 2.25
         }
       ]
     },
     {
       "ticker": "XLF",
       "sector": "Financials",
-      "ret_1d": 0.21,
-      "ret_5d": 1.4,
-      "ret_1m": 0.89,
-      "ret_3m": 3.95,
+      "ret_1d": 0.02,
+      "ret_5d": 1.71,
+      "ret_1m": 1.47,
+      "ret_3m": 4.47,
       "top_stocks": []
     },
     {
-      "ticker": "XLI",
-      "sector": "Industrials",
-      "ret_1d": -1.12,
-      "ret_5d": 0.61,
-      "ret_1m": -1.52,
-      "ret_3m": 2.78,
+      "ticker": "XLRE",
+      "sector": "Real Estate",
+      "ret_1d": -0.23,
+      "ret_5d": 3.06,
+      "ret_1m": 0.44,
+      "ret_3m": 4.45,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLU",
+      "sector": "Utilities",
+      "ret_1d": -0.25,
+      "ret_5d": 2.65,
+      "ret_1m": -1.95,
+      "ret_3m": -4.91,
       "top_stocks": [
         {
-          "ticker": "MRLN",
-          "name": "Merlin Inc",
-          "change_pct": 19.7772,
-          "price": 8.6
+          "ticker": "SUNE",
+          "name": "Sunation Energy Inc",
+          "change_pct": 177.8761,
+          "price": 3.14
+        },
+        {
+          "ticker": "NNE",
+          "name": "Nano Nuclear Energy Inc",
+          "change_pct": 5.4754,
+          "price": 24.85
+        },
+        {
+          "ticker": "GLW",
+          "name": "Corning Inc",
+          "change_pct": 4.8654,
+          "price": 186.22
         }
       ]
     },
     {
-      "ticker": "XLC",
-      "sector": "Comm. Services",
-      "ret_1d": -1.27,
-      "ret_5d": -3.47,
-      "ret_1m": -4.84,
-      "ret_3m": -4.63,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLE",
-      "sector": "Energy",
-      "ret_1d": -1.84,
-      "ret_5d": 2.45,
-      "ret_1m": 1.18,
-      "ret_3m": 2.61,
-      "top_stocks": []
-    },
-    {
       "ticker": "XLB",
       "sector": "Materials",
-      "ret_1d": -1.92,
-      "ret_5d": -1.02,
-      "ret_1m": -3.4,
-      "ret_3m": 2.0,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLY",
-      "sector": "Cons. Discretionary",
-      "ret_1d": -2.05,
-      "ret_5d": -4.97,
-      "ret_1m": -4.18,
-      "ret_3m": 0.57,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLK",
-      "sector": "Technology",
-      "ret_1d": -6.66,
-      "ret_5d": -5.61,
-      "ret_1m": 6.04,
-      "ret_3m": 31.49,
+      "ret_1d": -0.36,
+      "ret_5d": -0.92,
+      "ret_1m": -1.85,
+      "ret_3m": 1.37,
       "top_stocks": [
         {
-          "ticker": "BGMS",
-          "name": "Bio Green Med Solution Inc",
-          "change_pct": 41.5094,
-          "price": 1.5
+          "ticker": "ABAT",
+          "name": "American Battery Technology Co",
+          "change_pct": 12.5402,
+          "price": 3.5
+        }
+      ]
+    },
+    {
+      "ticker": "XLP",
+      "sector": "Cons. Staples",
+      "ret_1d": -0.4,
+      "ret_5d": 1.32,
+      "ret_1m": -1.04,
+      "ret_3m": -2.78,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLC",
+      "sector": "Comm. Services",
+      "ret_1d": -1.28,
+      "ret_5d": -4.64,
+      "ret_1m": -6.08,
+      "ret_3m": -5.93,
+      "top_stocks": [
+        {
+          "ticker": "TDIC",
+          "name": "Dreamland Ltd",
+          "change_pct": 43.3036,
+          "price": 0.321
+        },
+        {
+          "ticker": "OCC",
+          "name": "Optical Cable Corp",
+          "change_pct": 43.252,
+          "price": 17.62
         }
       ]
     }
   ],
   "reddit_feed": [
     {
-      "id": "140540385",
-      "title": "XPEV Stock Falls On $500M AI Bet For Self-Driving Tech \u2014 Exec Says Xpeng Is Following Google\u2019s Pixel Playbook",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "TSLA"
-      ],
-      "confirmed_tickers": [
-        "TSLA"
-      ],
-      "hours_ago": 1.0,
-      "url": "https://finnhub.io/api/news?id=1f388e6475a93824b2e847e51a05f205d21a7add9909fec0468958ccb9b8e6cb",
-      "is_news": true
-    },
-    {
-      "id": "140540341",
-      "title": "Sector Update: Tech Stocks Lower Late Afternoon",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "META"
-      ],
-      "confirmed_tickers": [
-        "META"
-      ],
-      "hours_ago": 1.2,
-      "url": "https://finnhub.io/api/news?id=3265a2e9055197c516b3b58496c6964a6d9224f575ae9fed3d90c56fd56e2488",
-      "is_news": true
-    },
-    {
-      "id": "140540386",
-      "title": "META Stock Drops Nearly 7% In Afternoon Trading \u2014 Here\u2019s What\u2019s Driving The Selloff",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "META"
-      ],
-      "confirmed_tickers": [
-        "META"
-      ],
-      "hours_ago": 1.3,
-      "url": "https://finnhub.io/api/news?id=7cd2cced6a9fbe151813513db1b61fc5d8b6384561a2eb75d011585bf45bd585",
-      "is_news": true
-    },
-    {
-      "id": "140540363",
-      "title": "Meta stock sinks 6% on report of stock sale",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "META"
-      ],
-      "confirmed_tickers": [
-        "META"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://finnhub.io/api/news?id=6e521538b5b41cb1709e0eb24df8357818d16b416ab5bfd9590ddecf4aed97bc",
-      "is_news": true
-    },
-    {
-      "id": "140539922",
-      "title": "Let's take a look at the stocks that are in motion in today's session.",
+      "id": "140567255",
+      "title": "Monday's pre-market session: top gainers and losers",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "RMSG"
+        "ABAT"
       ],
       "confirmed_tickers": [
-        "RMSG"
+        "ABAT"
       ],
-      "hours_ago": 1.9,
-      "url": "https://finnhub.io/api/news?id=2c79a836c63a6e87bac7a9971f6329cf3a634ab80bd0e4784deab590ce4f9a58",
+      "hours_ago": 1.1,
+      "url": "https://finnhub.io/api/news?id=ee2ae80513097e7aa6e8e043d3d0036b90509a414f4776e587f71131c48de87a",
       "is_news": true
     },
     {
-      "id": "140540389",
-      "title": "Market Chatter: Meta Weighing Tens of Billions in Stock Offering to Fund AI Ambitions",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "META"
-      ],
-      "confirmed_tickers": [
-        "META"
-      ],
-      "hours_ago": 2.0,
-      "url": "https://finnhub.io/api/news?id=fe118a23fa292339290efaf61b34ccb54f6675cd07665b48f7451437de0c9f11",
-      "is_news": true
-    },
-    {
-      "id": "140540392",
-      "title": "Meta stock tumbles on report of potential equity raise",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "META"
-      ],
-      "confirmed_tickers": [
-        "META"
-      ],
-      "hours_ago": 2.0,
-      "url": "https://finnhub.io/api/news?id=a1cb3c63caf61ed976366d9d0253473de6e4c63528b260f6cf9a11c55684c2fd",
-      "is_news": true
-    },
-    {
-      "id": "140540430",
-      "title": "SpaceX Targets Record $75 Billion IPO At $1.8 Trillion Valuation",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "TSLA"
-      ],
-      "confirmed_tickers": [
-        "TSLA"
-      ],
-      "hours_ago": 2.3,
-      "url": "https://finnhub.io/api/news?id=66020133307dba045830601a9cd61186a80ffcd8621486635d9da6d2b9a8e8c9",
-      "is_news": true
-    },
-    {
-      "id": "140540431",
-      "title": "Tesla Stock Just Got a Rare 'Upgrade' Ahead of Cybercab Launch",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "TSLA"
-      ],
-      "confirmed_tickers": [
-        "TSLA"
-      ],
-      "hours_ago": 2.3,
-      "url": "https://finnhub.io/api/news?id=9f39bd1e091b954a521a5a6423f72a506c032a62e6725a785c16bf2a16e9b5fe",
-      "is_news": true
-    },
-    {
-      "id": "140540432",
-      "title": "Tesla gets double dose of good news from key region",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "TSLA"
-      ],
-      "confirmed_tickers": [
-        "TSLA"
-      ],
-      "hours_ago": 2.6,
-      "url": "https://finnhub.io/api/news?id=3dfdd6ef534377b80703afe92e3296189047c0ed8acb8b6fb4276cf041510316",
-      "is_news": true
-    },
-    {
-      "id": "140538981",
-      "title": "What's going on in today's session: S&P500 most active stocks",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "TSLA"
-      ],
-      "confirmed_tickers": [
-        "TSLA"
-      ],
-      "hours_ago": 2.8,
-      "url": "https://finnhub.io/api/news?id=a5d9aba34cb3f9fe4e8acd658e21dbcea3b040c99b5800a033451a54981e4c66",
-      "is_news": true
-    },
-    {
-      "id": "140538980",
-      "title": "Which stocks are most active on Friday?",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "RMSG"
-      ],
-      "confirmed_tickers": [
-        "RMSG"
-      ],
-      "hours_ago": 2.9,
-      "url": "https://finnhub.io/api/news?id=e8fca3e47d621aab67ed44575f6da999b005ab74fcf1fea275458f69c9e3d3c3",
-      "is_news": true
-    },
-    {
-      "id": "140537115",
-      "title": "Which stocks are moving on Friday?",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "RMSG"
-      ],
-      "confirmed_tickers": [
-        "RMSG"
-      ],
-      "hours_ago": 4.4,
-      "url": "https://finnhub.io/api/news?id=81f25c0ef102283c0f93881e25239e94b59f7764ad59b36891b5875cccadcbc0",
-      "is_news": true
-    },
-    {
-      "id": "140535105",
-      "title": "Wondering what's happening in today's pre-market session?",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "RMSG"
-      ],
-      "confirmed_tickers": [
-        "RMSG"
-      ],
-      "hours_ago": 8.4,
-      "url": "https://finnhub.io/api/news?id=869abb7c9dca14bce8c78c0942888c7311bdb708fa8a22434d34a1eb041872fc",
-      "is_news": true
-    },
-    {
-      "id": "140535882",
-      "title": "Why Solidion Technology Shares Are Rallying Over 50%; Here Are 20 Stocks Moving Premarket",
+      "id": "140501498",
+      "title": "Aehr Test Systems, Applied Optoelectronics, AXT And Other Big Stocks Moving Higher On Tuesday",
       "subreddit": "Benzinga",
       "ups": 0,
       "tickers": [
-        "RMSG"
+        "ABAT"
       ],
       "confirmed_tickers": [
-        "RMSG"
+        "ABAT"
       ],
-      "hours_ago": 14.9,
-      "url": "https://finnhub.io/api/news?id=fc748a652a76d1199a09220a3731ca514880b9d6c6e211e398568f612aa44ed4",
+      "hours_ago": 146.2,
+      "url": "https://finnhub.io/api/news?id=55bf62577a5f9fcba583b42263ffd44cfecb972b737b4cc078dca3ba84ce0195",
+      "is_news": true
+    },
+    {
+      "id": "140484727",
+      "title": "BATL, USO, UCO Edge Higher As Oil Gains: Exxon Executive Warns Shrinking Inventories Could Send Crude To $160",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "BATL"
+      ],
+      "confirmed_tickers": [
+        "BATL"
+      ],
+      "hours_ago": 174.4,
+      "url": "https://finnhub.io/api/news?id=873bf255c46ba4262926100f54f066768d8be8811343c382f1d4e321a8e9cd1e",
+      "is_news": true
+    },
+    {
+      "id": "139931102",
+      "title": "Shares of several metals & mining companies are trading lower amid reports of weakness in Chinese demand.",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "ABAT"
+      ],
+      "confirmed_tickers": [
+        "ABAT"
+      ],
+      "hours_ago": 27359.3,
+      "url": "https://finnhub.io/api/news?id=7d6ef401039bc4f6d2c4f49b77253d98b4ba70200c70455ed596f28f87ebf05f",
       "is_news": true
     }
   ]
