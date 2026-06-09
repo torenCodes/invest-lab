@@ -1,25 +1,65 @@
 {
-  "scan_time": "2026-06-09T17:31:46.697298+00:00",
+  "scan_time": "2026-06-09T19:31:47.225502+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 21,
+  "total_scanned": 20,
   "day_trades": [
+    {
+      "ticker": "ALHC",
+      "name": "Alignment Healthcare Inc",
+      "sector": "Health Care",
+      "current_price": 19.48,
+      "change_pct": 26.9055,
+      "high": 19.64,
+      "low": 15.24,
+      "open": 15.27,
+      "prev_close": 15.35,
+      "score": 58,
+      "signals": [
+        "Top gainer (+26.9%)",
+        "High volume",
+        "Strong move (+26.9%)",
+        "Trending buzz (11)",
+        "Yahoo trending (#10)",
+        "Closing strong",
+        "Sector leader (Health Care)"
+      ],
+      "reddit_mentions": 11,
+      "market_cap": 3173364303.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950606149446.png",
+      "weburl": "https://www.alignmenthealth.com/",
+      "yahoo_trending_rank": 10,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.05,
+          "estimate": 0.01,
+          "beat": true,
+          "surprise_pct": 575.7
+        }
+      },
+      "score_normalized": 82
+    },
     {
       "ticker": "NUVL",
       "name": "Nuvalent, Inc",
       "sector": "Biotechnology",
-      "current_price": 123.05,
-      "change_pct": 39.0553,
+      "current_price": 123.19,
+      "change_pct": 39.2135,
       "high": 123.62,
       "low": 122.66999999999999,
       "open": 122.66999999999999,
       "prev_close": 88.49,
-      "score": 50,
+      "score": 53,
       "signals": [
-        "Top gainer (+39.1%)",
+        "Top gainer (+39.2%)",
         "High volume",
-        "Strong move (+39.1%)",
+        "Strong move (+39.2%)",
         "Trending buzz (14)",
-        "Yahoo trending (#7)"
+        "Yahoo trending (#7)",
+        "Closing strong"
       ],
       "reddit_mentions": 14,
       "market_cap": 6990525935.0,
@@ -38,226 +78,301 @@
           "surprise_pct": -3.4
         }
       },
-      "score_normalized": 70
+      "score_normalized": 75
     },
     {
-      "ticker": "PLD",
-      "name": "Prologis Inc",
-      "sector": "Real Estate",
-      "current_price": 147.26,
-      "change_pct": 3.1377,
-      "high": 148,
-      "low": 143,
-      "open": 144.2,
-      "prev_close": 142.78,
-      "score": 39,
+      "ticker": "VELO",
+      "name": "Velo3D Inc",
+      "sector": "Machinery",
+      "current_price": 20.25,
+      "change_pct": 24.7689,
+      "high": 20.4,
+      "low": 14.72,
+      "open": 17.39,
+      "prev_close": 16.23,
+      "score": 53,
       "signals": [
-        "Top gainer (+3.1%)",
+        "Top gainer (+24.8%)",
         "High volume",
-        "Good move (+3.1%)",
+        "Strong move (+24.8%)",
+        "Trending buzz (13)",
+        "Yahoo trending (#8)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 13,
+      "market_cap": 715520000.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950813783266.png",
+      "weburl": "https://www.velo3d.com/",
+      "yahoo_trending_rank": 8,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.28,
+          "estimate": -0.49,
+          "beat": true,
+          "surprise_pct": 42.8
+        }
+      },
+      "score_normalized": 75
+    },
+    {
+      "ticker": "DKNG",
+      "name": "Draftkings Inc",
+      "sector": "Hotels, Restaurants & Leisure",
+      "current_price": 27.37,
+      "change_pct": 10.452,
+      "high": 27.58,
+      "low": 25.049999999999997,
+      "open": 25.049999999999997,
+      "prev_close": 24.78,
+      "score": 44,
+      "signals": [
+        "Top gainer (+10.5%)",
+        "High volume",
+        "Strong move (+10.5%)",
+        "Trending activity (7)",
+        "Yahoo trending (#14)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 7,
+      "market_cap": 12294072369.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950813883726.png",
+      "weburl": "https://draftkings.gcs-web.com/",
+      "yahoo_trending_rank": 14,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.03,
+          "estimate": 0.01,
+          "beat": true,
+          "surprise_pct": 229.7
+        }
+      },
+      "score_normalized": 62
+    },
+    {
+      "ticker": "HIMS",
+      "name": "Hims & Hers Health Inc",
+      "sector": "Health Care",
+      "current_price": 28.92,
+      "change_pct": 6.4409,
+      "high": 28.97,
+      "low": 26.02,
+      "open": 27.240000000000002,
+      "prev_close": 27.17,
+      "score": 44,
+      "signals": [
+        "Top gainer (+6.4%)",
+        "High volume",
+        "Strong move (+6.4%)",
         "Trending activity (8)",
         "Yahoo trending (#13)",
         "Closing strong"
       ],
       "reddit_mentions": 8,
-      "market_cap": 135930986830.00002,
+      "market_cap": 6288705757.0,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942959032636.png",
-      "weburl": "https://www.prologis.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HIMS.png",
+      "weburl": "https://www.forhims.com/",
       "yahoo_trending_rank": 13,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-03-31",
-          "actual": 1.05,
-          "estimate": 0.82,
-          "beat": true,
-          "surprise_pct": 28.3
+          "actual": -0.19,
+          "estimate": 0.04,
+          "beat": false,
+          "surprise_pct": -529.9
         }
       },
-      "score_normalized": 55
+      "score_normalized": 62
     },
     {
-      "ticker": "SJM",
-      "name": "J.M. Smucker Co",
-      "sector": "Food Products",
-      "current_price": 112.29,
-      "change_pct": 10.337,
-      "high": 115.227339,
-      "low": 104.37,
-      "open": 104.37,
-      "prev_close": 101.77,
-      "score": 39,
+      "ticker": "APLD",
+      "name": "Applied Digital Corp",
+      "sector": "Technology",
+      "current_price": 41.95,
+      "change_pct": 2.4545,
+      "high": 46.8712,
+      "low": 38.34,
+      "open": 45.39,
+      "prev_close": 40.945,
+      "score": 31,
       "signals": [
-        "Top gainer (+10.3%)",
+        "Top gainer (+2.5%)",
         "High volume",
-        "Strong move (+10.3%)",
-        "Yahoo trending (#18)",
-        "Closing strong"
+        "Moderate move (+2.5%)",
+        "Trending activity (6)",
+        "Yahoo trending (#15)"
       ],
-      "reddit_mentions": 3,
-      "market_cap": 10853599480.000002,
+      "reddit_mentions": 6,
+      "market_cap": 11700833370.000002,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SJM.png",
-      "weburl": "https://www.jmsmucker.com/",
-      "yahoo_trending_rank": 18,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942959019826.png",
+      "weburl": "https://appliedblockchaininc.com/",
+      "yahoo_trending_rank": 15,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-03-31",
-          "actual": 2.38,
-          "estimate": 2.3,
-          "beat": true,
-          "surprise_pct": 3.6
+          "actual": -0.4,
+          "estimate": -0.13,
+          "beat": false,
+          "surprise_pct": -209.6
         }
       },
-      "score_normalized": 55
+      "score_normalized": 44
     }
   ],
   "swing_trades": [
     {
-      "ticker": "SPG",
-      "name": "Simon Property Group Inc",
-      "sector": "Real Estate",
-      "current_price": 211.78,
-      "change_pct": 2.1414,
-      "high": 212.05,
-      "low": 205.18,
-      "open": 206.88,
-      "prev_close": 207.34,
-      "score": 48,
+      "ticker": "DKNG",
+      "name": "Draftkings Inc",
+      "sector": "Hotels, Restaurants & Leisure",
+      "current_price": 27.37,
+      "change_pct": 10.452,
+      "high": 27.58,
+      "low": 25.049999999999997,
+      "open": 25.049999999999997,
+      "prev_close": 24.78,
+      "score": 44,
       "signals": [
-        "Top gainer (+2.1%)",
+        "Top gainer (+10.5%)",
         "High volume",
-        "Moderate move (+2.1%)",
-        "Trending buzz (11)",
-        "Yahoo trending (#10)",
-        "Closing strong",
-        "Sector leader (Real Estate)"
+        "Strong move (+10.5%)",
+        "Trending activity (7)",
+        "Yahoo trending (#14)",
+        "Closing strong"
       ],
-      "reddit_mentions": 11,
-      "market_cap": 67236612393.0,
+      "reddit_mentions": 7,
+      "market_cap": 12294072369.0,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942959049246.png",
-      "weburl": "https://www.simon.com/",
-      "yahoo_trending_rank": 10,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950813883726.png",
+      "weburl": "https://draftkings.gcs-web.com/",
+      "yahoo_trending_rank": 14,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-03-31",
-          "actual": 1.48,
-          "estimate": 1.5,
-          "beat": false,
-          "surprise_pct": -1.5
+          "actual": 0.03,
+          "estimate": 0.01,
+          "beat": true,
+          "surprise_pct": 229.7
         }
       },
-      "score_normalized": 68
+      "score_normalized": 62
     },
     {
-      "ticker": "PLD",
-      "name": "Prologis Inc",
-      "sector": "Real Estate",
-      "current_price": 147.26,
-      "change_pct": 3.1377,
-      "high": 148,
-      "low": 143,
-      "open": 144.2,
-      "prev_close": 142.78,
-      "score": 39,
+      "ticker": "HIMS",
+      "name": "Hims & Hers Health Inc",
+      "sector": "Health Care",
+      "current_price": 28.92,
+      "change_pct": 6.4409,
+      "high": 28.97,
+      "low": 26.02,
+      "open": 27.240000000000002,
+      "prev_close": 27.17,
+      "score": 44,
       "signals": [
-        "Top gainer (+3.1%)",
+        "Top gainer (+6.4%)",
         "High volume",
-        "Good move (+3.1%)",
+        "Strong move (+6.4%)",
         "Trending activity (8)",
         "Yahoo trending (#13)",
         "Closing strong"
       ],
       "reddit_mentions": 8,
-      "market_cap": 135930986830.00002,
+      "market_cap": 6288705757.0,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942959032636.png",
-      "weburl": "https://www.prologis.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HIMS.png",
+      "weburl": "https://www.forhims.com/",
       "yahoo_trending_rank": 13,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-03-31",
-          "actual": 1.05,
-          "estimate": 0.82,
-          "beat": true,
-          "surprise_pct": 28.3
+          "actual": -0.19,
+          "estimate": 0.04,
+          "beat": false,
+          "surprise_pct": -529.9
         }
       },
-      "score_normalized": 55
+      "score_normalized": 62
     },
     {
-      "ticker": "SJM",
-      "name": "J.M. Smucker Co",
-      "sector": "Food Products",
-      "current_price": 112.29,
-      "change_pct": 10.337,
-      "high": 115.227339,
-      "low": 104.37,
-      "open": 104.37,
-      "prev_close": 101.77,
-      "score": 39,
+      "ticker": "APLD",
+      "name": "Applied Digital Corp",
+      "sector": "Technology",
+      "current_price": 41.95,
+      "change_pct": 2.4545,
+      "high": 46.8712,
+      "low": 38.34,
+      "open": 45.39,
+      "prev_close": 40.945,
+      "score": 31,
       "signals": [
-        "Top gainer (+10.3%)",
+        "Top gainer (+2.5%)",
         "High volume",
-        "Strong move (+10.3%)",
-        "Yahoo trending (#18)",
-        "Closing strong"
+        "Moderate move (+2.5%)",
+        "Trending activity (6)",
+        "Yahoo trending (#15)"
       ],
-      "reddit_mentions": 3,
-      "market_cap": 10853599480.000002,
+      "reddit_mentions": 6,
+      "market_cap": 11700833370.000002,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SJM.png",
-      "weburl": "https://www.jmsmucker.com/",
-      "yahoo_trending_rank": 18,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942959019826.png",
+      "weburl": "https://appliedblockchaininc.com/",
+      "yahoo_trending_rank": 15,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-03-31",
-          "actual": 2.38,
-          "estimate": 2.3,
-          "beat": true,
-          "surprise_pct": 3.6
+          "actual": -0.4,
+          "estimate": -0.13,
+          "beat": false,
+          "surprise_pct": -209.6
         }
       },
-      "score_normalized": 55
+      "score_normalized": 44
     }
   ],
   "buzz_source": "trending",
   "reddit_cards": [
     {
-      "ticker": "PAVS",
-      "name": "Paranovus Entertainment Technology Ltd",
-      "sector": "Consumer products",
-      "current_price": 3.38,
-      "change_pct": 259.3833,
-      "high": 26.69,
-      "low": 1.16555,
-      "open": 1.16555,
-      "prev_close": 0.9405,
+      "ticker": "CHAI",
+      "name": "Core AI Holdings Inc",
+      "sector": "Communications",
+      "current_price": 2.2,
+      "change_pct": 168.2927,
+      "high": 4.05,
+      "low": 2.16,
+      "open": 3.385,
+      "prev_close": 0.82,
       "score": 55,
       "signals": [
-        "Top gainer (+259.4%)",
+        "Top gainer (+168.3%)",
         "High volume",
-        "Strong move (+259.4%)",
+        "Strong move (+168.3%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)"
       ],
       "reddit_mentions": 20,
-      "market_cap": 986237.0000000001,
+      "market_cap": 16336369.000000002,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HAPP.png",
-      "weburl": "https://pavs.ai/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SYTA.png",
+      "weburl": "https://siyata.net/",
       "yahoo_trending_rank": 1,
       "mentions": 20,
       "earnings_info": {
@@ -267,29 +382,29 @@
       "score_normalized": 77
     },
     {
-      "ticker": "CHAI",
-      "name": "Core AI Holdings Inc",
-      "sector": "Communications",
-      "current_price": 2.5,
-      "change_pct": 204.878,
-      "high": 4.05,
-      "low": 2.36,
-      "open": 3.385,
-      "prev_close": 0.82,
+      "ticker": "PAVS",
+      "name": "Paranovus Entertainment Technology Ltd",
+      "sector": "Consumer products",
+      "current_price": 1.48,
+      "change_pct": 57.3631,
+      "high": 26.69,
+      "low": 1.16555,
+      "open": 1.16555,
+      "prev_close": 0.9405,
       "score": 50,
       "signals": [
-        "Top gainer (+204.9%)",
+        "Top gainer (+57.4%)",
         "High volume",
-        "Strong move (+204.9%)",
+        "Strong move (+57.4%)",
         "Trending buzz (19)",
         "Yahoo trending (#2)"
       ],
       "reddit_mentions": 19,
-      "market_cap": 16336369.000000002,
+      "market_cap": 986237.0000000001,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SYTA.png",
-      "weburl": "https://siyata.net/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HAPP.png",
+      "weburl": "https://pavs.ai/",
       "yahoo_trending_rank": 2,
       "mentions": 19,
       "earnings_info": {
@@ -302,20 +417,19 @@
       "ticker": "AZI",
       "name": "Autozi Internet Technology (Global) Ltd",
       "sector": "Retail",
-      "current_price": 4.7,
-      "change_pct": 315.9292,
+      "current_price": 2.53,
+      "change_pct": 123.8938,
       "high": 7,
       "low": 2.115,
       "open": 2.115,
       "prev_close": 1.13,
-      "score": 53,
+      "score": 50,
       "signals": [
-        "Top gainer (+315.9%)",
+        "Top gainer (+123.9%)",
         "High volume",
-        "Strong move (+315.9%)",
+        "Strong move (+123.9%)",
         "Trending buzz (18)",
-        "Yahoo trending (#3)",
-        "Closing strong"
+        "Yahoo trending (#3)"
       ],
       "reddit_mentions": 18,
       "market_cap": 76929632.99999999,
@@ -329,178 +443,255 @@
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 75
+      "score_normalized": 70
     }
   ],
   "sector_rotation": [
     {
       "ticker": "XLRE",
       "sector": "Real Estate",
-      "ret_1d": 2.03,
-      "ret_5d": 3.3,
-      "ret_1m": 1.16,
-      "ret_3m": 5.38,
-      "top_stocks": [
-        {
-          "ticker": "PLD",
-          "name": "Prologis Inc",
-          "change_pct": 3.1377,
-          "price": 147.26
-        },
-        {
-          "ticker": "SPG",
-          "name": "Simon Property Group Inc",
-          "change_pct": 2.1414,
-          "price": 211.78
-        }
-      ]
-    },
-    {
-      "ticker": "XLP",
-      "sector": "Cons. Staples",
-      "ret_1d": 1.05,
-      "ret_5d": 2.58,
-      "ret_1m": -0.29,
-      "ret_3m": -1.53,
-      "top_stocks": [
-        {
-          "ticker": "SJM",
-          "name": "J.M. Smucker Co",
-          "change_pct": 10.337,
-          "price": 112.29
-        }
-      ]
+      "ret_1d": 2.11,
+      "ret_5d": 3.38,
+      "ret_1m": 1.24,
+      "ret_3m": 5.46,
+      "top_stocks": []
     },
     {
       "ticker": "XLV",
       "sector": "Health Care",
-      "ret_1d": 1.0,
-      "ret_5d": 5.31,
-      "ret_1m": 7.45,
-      "ret_3m": 1.09,
+      "ret_1d": 1.25,
+      "ret_5d": 5.57,
+      "ret_1m": 7.71,
+      "ret_3m": 1.34,
       "top_stocks": [
         {
           "ticker": "NUVL",
           "name": "Nuvalent, Inc",
-          "change_pct": 39.0553,
-          "price": 123.05
-        }
-      ]
-    },
-    {
-      "ticker": "XLU",
-      "sector": "Utilities",
-      "ret_1d": 0.84,
-      "ret_5d": -0.03,
-      "ret_1m": -1.87,
-      "ret_3m": -5.09,
-      "top_stocks": [
-        {
-          "ticker": "CCTG",
-          "name": "CCSC Technology International Holdings Ltd",
-          "change_pct": 309.015,
-          "price": 1.96
+          "change_pct": 39.2135,
+          "price": 123.19
         },
         {
-          "ticker": "ELPW",
-          "name": "eLong Power Holding Ltd",
-          "change_pct": 62.2113,
-          "price": 1.25
+          "ticker": "ALHC",
+          "name": "Alignment Healthcare Inc",
+          "change_pct": 26.9055,
+          "price": 19.48
+        },
+        {
+          "ticker": "CLOV",
+          "name": "Clover Health Investments Corp",
+          "change_pct": 10.9694,
+          "price": 4.35
         }
       ]
     },
     {
       "ticker": "XLB",
       "sector": "Materials",
-      "ret_1d": 0.52,
-      "ret_5d": -2.52,
-      "ret_1m": -2.66,
-      "ret_3m": 1.13,
+      "ret_1d": 1.07,
+      "ret_5d": -1.99,
+      "ret_1m": -2.12,
+      "ret_3m": 1.68,
       "top_stocks": []
     },
     {
-      "ticker": "XLF",
-      "sector": "Financials",
-      "ret_1d": 0.51,
-      "ret_5d": 1.51,
-      "ret_1m": 1.94,
-      "ret_3m": 4.88,
+      "ticker": "XLP",
+      "sector": "Cons. Staples",
+      "ret_1d": 0.91,
+      "ret_5d": 2.44,
+      "ret_1m": -0.42,
+      "ret_3m": -1.66,
       "top_stocks": []
     },
     {
-      "ticker": "XLC",
-      "sector": "Comm. Services",
-      "ret_1d": 0.04,
-      "ret_5d": -2.14,
-      "ret_1m": -4.96,
-      "ret_3m": -5.02,
+      "ticker": "XLU",
+      "sector": "Utilities",
+      "ret_1d": 0.82,
+      "ret_5d": -0.06,
+      "ret_1m": -1.89,
+      "ret_3m": -5.11,
       "top_stocks": [
         {
-          "ticker": "CHAI",
-          "name": "Core AI Holdings Inc",
-          "change_pct": 204.878,
-          "price": 2.5
+          "ticker": "CCTG",
+          "name": "CCSC Technology International Holdings Ltd",
+          "change_pct": 398.7479,
+          "price": 2.39
+        },
+        {
+          "ticker": "ELPW",
+          "name": "eLong Power Holding Ltd",
+          "change_pct": 51.8297,
+          "price": 1.17
         }
       ]
     },
     {
       "ticker": "XLI",
       "sector": "Industrials",
-      "ret_1d": -0.05,
-      "ret_5d": -0.37,
-      "ret_1m": 0.2,
-      "ret_3m": 2.36,
+      "ret_1d": 0.78,
+      "ret_5d": 0.46,
+      "ret_1m": 1.03,
+      "ret_3m": 3.21,
+      "top_stocks": [
+        {
+          "ticker": "VELO",
+          "name": "Velo3D Inc",
+          "change_pct": 24.7689,
+          "price": 20.25
+        }
+      ]
+    },
+    {
+      "ticker": "XLF",
+      "sector": "Financials",
+      "ret_1d": 0.74,
+      "ret_5d": 1.73,
+      "ret_1m": 2.17,
+      "ret_3m": 5.12,
       "top_stocks": []
+    },
+    {
+      "ticker": "XLC",
+      "sector": "Comm. Services",
+      "ret_1d": 0.49,
+      "ret_5d": -1.71,
+      "ret_1m": -4.54,
+      "ret_3m": -4.6,
+      "top_stocks": [
+        {
+          "ticker": "CHAI",
+          "name": "Core AI Holdings Inc",
+          "change_pct": 168.2927,
+          "price": 2.2
+        },
+        {
+          "ticker": "AHMA",
+          "name": "Ambitions Enterprise Management Co LLC",
+          "change_pct": 91.6667,
+          "price": 2.07
+        }
+      ]
     },
     {
       "ticker": "XLY",
       "sector": "Cons. Discretionary",
-      "ret_1d": -0.13,
-      "ret_5d": -1.99,
-      "ret_1m": -4.12,
-      "ret_3m": 0.91,
+      "ret_1d": 0.26,
+      "ret_5d": -1.62,
+      "ret_1m": -3.76,
+      "ret_3m": 1.29,
       "top_stocks": [
         {
           "ticker": "AZI",
           "name": "Autozi Internet Technology (Global) Ltd",
-          "change_pct": 315.9292,
-          "price": 4.7
+          "change_pct": 123.8938,
+          "price": 2.53
+        },
+        {
+          "ticker": "DKNG",
+          "name": "Draftkings Inc",
+          "change_pct": 10.452,
+          "price": 27.37
         },
         {
           "ticker": "MTEN",
           "name": "Mingteng International Corp Inc",
-          "change_pct": 55.6701,
-          "price": 3.02
+          "change_pct": 8.7629,
+          "price": 2.11
         }
       ]
     },
     {
       "ticker": "XLE",
       "sector": "Energy",
-      "ret_1d": -1.69,
-      "ret_5d": -1.06,
-      "ret_1m": 2.95,
-      "ret_3m": 3.81,
+      "ret_1d": -2.04,
+      "ret_5d": -1.41,
+      "ret_1m": 2.59,
+      "ret_3m": 3.44,
       "top_stocks": []
     },
     {
       "ticker": "XLK",
       "sector": "Technology",
-      "ret_1d": -3.65,
-      "ret_5d": -10.47,
-      "ret_1m": 1.11,
-      "ret_3m": 27.14,
+      "ret_1d": -2.55,
+      "ret_5d": -9.45,
+      "ret_1m": 2.26,
+      "ret_3m": 28.58,
       "top_stocks": [
         {
           "ticker": "NUVL",
           "name": "Nuvalent, Inc",
-          "change_pct": 39.0553,
-          "price": 123.05
+          "change_pct": 39.2135,
+          "price": 123.19
+        },
+        {
+          "ticker": "APLD",
+          "name": "Applied Digital Corp",
+          "change_pct": 2.4545,
+          "price": 41.95
         }
       ]
     }
   ],
   "reddit_feed": [
+    {
+      "id": "140584416",
+      "title": "Tuesday's session: top gainers and losers",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "PAVS"
+      ],
+      "confirmed_tickers": [
+        "PAVS"
+      ],
+      "hours_ago": 0.5,
+      "url": "https://finnhub.io/api/news?id=77a156661ef9d52ec316169edae3580fd9f895d2f22285053bdd0a0784d7dcc3",
+      "is_news": true
+    },
+    {
+      "id": "140583574",
+      "title": "Which stocks are most active on Tuesday?",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "PAVS"
+      ],
+      "confirmed_tickers": [
+        "PAVS"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://finnhub.io/api/news?id=7148cb53bffb19f9a684ed64753af2c336ee5f75783ab74108ca7dc35e05d7c3",
+      "is_news": true
+    },
+    {
+      "id": "140582752",
+      "title": "12 Information Technology Stocks Moving In Tuesday's Intraday Session",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "CHAI"
+      ],
+      "confirmed_tickers": [
+        "CHAI"
+      ],
+      "hours_ago": 6.4,
+      "url": "https://finnhub.io/api/news?id=c5ea48f823e22bf2f2d26749a0758af1a11e568783fdd84859670d47a5566841",
+      "is_news": true
+    },
+    {
+      "id": "140582763",
+      "title": "11 Consumer Discretionary Stocks Moving In Tuesday's Intraday Session",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "AZI"
+      ],
+      "confirmed_tickers": [
+        "AZI"
+      ],
+      "hours_ago": 6.4,
+      "url": "https://finnhub.io/api/news?id=7691a7ed7873a3831ef08149373cd665daac69bfae27f1db3f913e71c6083569",
+      "is_news": true
+    },
     {
       "id": "140580757",
       "title": "Nasdaq Gains 1%; United Natural Foods Earnings Miss Views",
@@ -512,7 +703,7 @@
       "confirmed_tickers": [
         "AZI"
       ],
-      "hours_ago": 7.6,
+      "hours_ago": 9.6,
       "url": "https://finnhub.io/api/news?id=f12361f1fe160e246c708362fd3ad9abdb00a9f0ae7f87ad611c725afe7d4680",
       "is_news": true
     },
@@ -527,8 +718,23 @@
       "confirmed_tickers": [
         "CHAI"
       ],
-      "hours_ago": 9.5,
+      "hours_ago": 11.4,
       "url": "https://finnhub.io/api/news?id=9043be76d931a34d42ecee9a84e02547531f74df3240bbd25b08648be77558d2",
+      "is_news": true
+    },
+    {
+      "id": "140584098",
+      "title": "Paranovus Entertainment Technology Enters Sales Agreement With AC Sunshine Securities For Up To $195M Of Shares",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "PAVS"
+      ],
+      "confirmed_tickers": [
+        "PAVS"
+      ],
+      "hours_ago": 13.4,
+      "url": "https://finnhub.io/api/news?id=917f3842097db1495e04a6343ac002be7b11c4239aa94c671b200e4d3cc1ffd4",
       "is_news": true
     },
     {
@@ -542,7 +748,7 @@
       "confirmed_tickers": [
         "CHAI"
       ],
-      "hours_ago": 12.2,
+      "hours_ago": 14.2,
       "url": "https://finnhub.io/api/news?id=e31701bcae7d0f96d1ed8ca06a911d8562695e5f4e08dcb9ea581fae90df26b8",
       "is_news": true
     },
@@ -557,23 +763,8 @@
       "confirmed_tickers": [
         "PAVS"
       ],
-      "hours_ago": 22.5,
+      "hours_ago": 24.5,
       "url": "https://finnhub.io/api/news?id=e8cfb4ca8fabf2914b51360c7a55efc5f5cf9ef45ae7d77130d2e8147d2d2391",
-      "is_news": true
-    },
-    {
-      "id": "140573988",
-      "title": "12 Consumer Staples Stocks Moving In Monday's After-Market Session",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "PAVS"
-      ],
-      "confirmed_tickers": [
-        "PAVS"
-      ],
-      "hours_ago": 24.4,
-      "url": "https://finnhub.io/api/news?id=b160e32bb67d67900d1482d25ec27d1e341f0bc07fac498a33ce6101e14d492c",
       "is_news": true
     },
     {
@@ -587,8 +778,38 @@
       "confirmed_tickers": [
         "CHAI"
       ],
-      "hours_ago": 24.4,
+      "hours_ago": 26.4,
       "url": "https://finnhub.io/api/news?id=8ad3bded2288ee38789f675f4eaf71711539128a6d4954f62b558b5e63a111c8",
+      "is_news": true
+    },
+    {
+      "id": "140573988",
+      "title": "12 Consumer Staples Stocks Moving In Monday's After-Market Session",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "PAVS"
+      ],
+      "confirmed_tickers": [
+        "PAVS"
+      ],
+      "hours_ago": 26.4,
+      "url": "https://finnhub.io/api/news?id=b160e32bb67d67900d1482d25ec27d1e341f0bc07fac498a33ce6101e14d492c",
+      "is_news": true
+    },
+    {
+      "id": "139936134",
+      "title": "Shares of retail stocks are trading lower after President Trump suggested an increase in tariffs on Chinese products com",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "AZI"
+      ],
+      "confirmed_tickers": [
+        "AZI"
+      ],
+      "hours_ago": 5812.7,
+      "url": "https://finnhub.io/api/news?id=e19e72bfd8df42e35f0dc0d8d39a4dc826ce29f111b04c10c60024d75dd52715",
       "is_news": true
     }
   ]
