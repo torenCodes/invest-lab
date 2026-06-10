@@ -1,33 +1,72 @@
 {
-  "scan_time": "2026-06-10T16:53:38.216848+00:00",
+  "scan_time": "2026-06-10T18:11:32.108865+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 25,
+  "total_scanned": 24,
   "day_trades": [
+    {
+      "ticker": "BULL",
+      "name": "Webull Corp",
+      "sector": "Financial Services",
+      "current_price": 6.15,
+      "change_pct": 11.8182,
+      "high": 6.245,
+      "low": 5.41,
+      "open": 5.42,
+      "prev_close": 5.5,
+      "score": 58,
+      "signals": [
+        "Top gainer (+11.8%)",
+        "High volume",
+        "Strong move (+11.8%)",
+        "Trending buzz (12)",
+        "Yahoo trending (#9)",
+        "Closing strong",
+        "Sector leader (Financial Services)"
+      ],
+      "reddit_mentions": 12,
+      "market_cap": 3234042457.748618,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950870994546.png",
+      "weburl": "https://www.webullcorp.com/",
+      "yahoo_trending_rank": 9,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.02,
+          "estimate": 0.04,
+          "beat": false,
+          "surprise_pct": -61.5
+        }
+      },
+      "score_normalized": 82
+    },
     {
       "ticker": "CBRL",
       "name": "Cracker Barrel Old Country Store Inc",
       "sector": "Hotels, Restaurants & Leisure",
-      "current_price": 44.98,
-      "change_pct": 23.9118,
+      "current_price": 45.49,
+      "change_pct": 25.3168,
       "high": 48.9099,
       "low": 43.15,
       "open": 43.51,
       "prev_close": 36.3,
       "score": 50,
       "signals": [
-        "Top gainer (+23.9%)",
+        "Top gainer (+25.3%)",
         "High volume",
-        "Strong move (+23.9%)",
-        "Trending buzz (16)",
-        "Yahoo trending (#5)"
+        "Strong move (+25.3%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)"
       ],
-      "reddit_mentions": 16,
-      "market_cap": 811342103.2475884,
+      "reddit_mentions": 18,
+      "market_cap": 1045469066.1625346,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CBRL.png",
       "weburl": "https://www.crackerbarrel.com/",
-      "yahoo_trending_rank": 5,
+      "yahoo_trending_rank": 3,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -41,143 +80,31 @@
       "score_normalized": 70
     },
     {
-      "ticker": "LMND",
-      "name": "Lemonade Inc",
-      "sector": "Insurance",
-      "current_price": 56.59,
-      "change_pct": 5.6178,
-      "high": 60.8,
-      "low": 52.75,
-      "open": 52.75,
-      "prev_close": 53.58,
-      "score": 50,
-      "signals": [
-        "Top gainer (+5.6%)",
-        "High volume",
-        "Strong move (+5.6%)",
-        "Trending buzz (12)",
-        "Yahoo trending (#9)"
-      ],
-      "reddit_mentions": 12,
-      "market_cap": 4116057783.249764,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/LMND.png",
-      "weburl": "https://www.lemonade.com/",
-      "yahoo_trending_rank": 9,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": -0.47,
-          "estimate": -0.58,
-          "beat": true,
-          "surprise_pct": 18.6
-        }
-      },
-      "score_normalized": 70
-    },
-    {
-      "ticker": "BULL",
-      "name": "Webull Corp",
-      "sector": "Financial Services",
-      "current_price": 6.15,
-      "change_pct": 11.8182,
-      "high": 6.245,
-      "low": 5.41,
-      "open": 5.42,
-      "prev_close": 5.5,
-      "score": 49,
-      "signals": [
-        "Top gainer (+11.8%)",
-        "High volume",
-        "Strong move (+11.8%)",
-        "Trending activity (8)",
-        "Yahoo trending (#13)",
-        "Closing strong",
-        "Sector leader (Financial Services)"
-      ],
-      "reddit_mentions": 8,
-      "market_cap": 2925002673.45679,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950870994546.png",
-      "weburl": "https://www.webullcorp.com/",
-      "yahoo_trending_rank": 13,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.02,
-          "estimate": 0.04,
-          "beat": false,
-          "surprise_pct": -61.5
-        }
-      },
-      "score_normalized": 69
-    },
-    {
-      "ticker": "KO",
-      "name": "Coca-Cola Co",
-      "sector": "Beverages",
-      "current_price": 83.69,
-      "change_pct": 2.8891,
-      "high": 83.85,
-      "low": 82.1,
-      "open": 82.1,
-      "prev_close": 81.34,
-      "score": 34,
-      "signals": [
-        "Top gainer (+2.9%)",
-        "High volume",
-        "Moderate move (+2.9%)",
-        "Trending activity (6)",
-        "Yahoo trending (#15)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 6,
-      "market_cap": 349963924223.5164,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/KO.png",
-      "weburl": "https://www.coca-colacompany.com/",
-      "yahoo_trending_rank": 15,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.86,
-          "estimate": 0.84,
-          "beat": true,
-          "surprise_pct": 2.9
-        }
-      },
-      "score_normalized": 48
-    },
-    {
       "ticker": "RXT",
       "name": "Rackspace Technology Inc",
       "sector": "Technology",
-      "current_price": 5.65,
-      "change_pct": 21.2446,
+      "current_price": 5.64,
+      "change_pct": 21.03,
       "high": 5.9,
       "low": 4.54,
       "open": 4.57,
       "prev_close": 4.66,
-      "score": 31,
+      "score": 44,
       "signals": [
-        "Top gainer (+21.2%)",
+        "Top gainer (+21.0%)",
         "High volume",
-        "Strong move (+21.2%)",
+        "Strong move (+21.0%)",
+        "Trending activity (5)",
+        "Yahoo trending (#16)",
         "Closing strong"
       ],
-      "reddit_mentions": 0,
-      "market_cap": 1161376926.4611976,
+      "reddit_mentions": 5,
+      "market_cap": 1413091549.4484978,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950760880736.png",
       "weburl": "https://www.rackspace.com/",
-      "yahoo_trending_rank": null,
+      "yahoo_trending_rank": 16,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -188,40 +115,115 @@
           "surprise_pct": -69.5
         }
       },
-      "score_normalized": 44
+      "score_normalized": 62
     },
     {
-      "ticker": "TGTX",
-      "name": "TG Therapeutics Inc",
-      "sector": "Biotechnology",
-      "current_price": 47.29,
-      "change_pct": 9.0385,
-      "high": 49.305,
-      "low": 43.0126,
-      "open": 43.42,
-      "prev_close": 43.37,
+      "ticker": "VELO",
+      "name": "Velo3D Inc",
+      "sector": "Machinery",
+      "current_price": 23.15,
+      "change_pct": 19.1457,
+      "high": 23.5,
+      "low": 19.08,
+      "open": 19.4225,
+      "prev_close": 19.43,
+      "score": 44,
+      "signals": [
+        "Top gainer (+19.1%)",
+        "High volume",
+        "Strong move (+19.1%)",
+        "Trending activity (7)",
+        "Yahoo trending (#14)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 7,
+      "market_cap": 715520000.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950813783266.png",
+      "weburl": "https://www.velo3d.com/",
+      "yahoo_trending_rank": 14,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.28,
+          "estimate": -0.49,
+          "beat": true,
+          "surprise_pct": 42.8
+        }
+      },
+      "score_normalized": 62
+    },
+    {
+      "ticker": "FRMI",
+      "name": "Fermi Inc",
+      "sector": "Real Estate",
+      "current_price": 7.12,
+      "change_pct": 26.6904,
+      "high": 7.1786,
+      "low": 5.49,
+      "open": 5.5,
+      "prev_close": 5.62,
+      "score": 39,
+      "signals": [
+        "Top gainer (+26.7%)",
+        "High volume",
+        "Strong move (+26.7%)",
+        "Yahoo trending (#17)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 4,
+      "market_cap": 3692957667.7302136,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950967598156.png",
+      "weburl": "https://fermiamerica.com/",
+      "yahoo_trending_rank": 17,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -0.26,
+          "estimate": -0.05,
+          "beat": false,
+          "surprise_pct": -427.4
+        }
+      },
+      "score_normalized": 55
+    },
+    {
+      "ticker": "DUOL",
+      "name": "Duolingo Inc",
+      "sector": "Diversified Consumer Services",
+      "current_price": 124.37,
+      "change_pct": 5.5235,
+      "high": 126.96,
+      "low": 114,
+      "open": 115.32000000000001,
+      "prev_close": 117.86,
       "score": 31,
       "signals": [
-        "Top gainer (+9.0%)",
+        "Top gainer (+5.5%)",
         "High volume",
-        "Strong move (+9.0%)",
+        "Strong move (+5.5%)",
         "Closing strong"
       ],
       "reddit_mentions": 0,
-      "market_cap": 6639234658.076189,
+      "market_cap": 5882847383.4780245,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/TGTX.png",
-      "weburl": "https://www.tgtherapeutics.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/DUOL.png",
+      "weburl": "https://www.duolingo.com/",
       "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-03-31",
-          "actual": 0.18,
-          "estimate": 0.3,
-          "beat": false,
-          "surprise_pct": -40.1
+          "actual": 0.89,
+          "estimate": 0.76,
+          "beat": true,
+          "surprise_pct": 16.4
         }
       },
       "score_normalized": 44
@@ -229,30 +231,64 @@
   ],
   "swing_trades": [
     {
+      "ticker": "DUOL",
+      "name": "Duolingo Inc",
+      "sector": "Diversified Consumer Services",
+      "current_price": 124.37,
+      "change_pct": 5.5235,
+      "high": 126.96,
+      "low": 114,
+      "open": 115.32000000000001,
+      "prev_close": 117.86,
+      "score": 31,
+      "signals": [
+        "Top gainer (+5.5%)",
+        "High volume",
+        "Strong move (+5.5%)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 5882847383.4780245,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/DUOL.png",
+      "weburl": "https://www.duolingo.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.89,
+          "estimate": 0.76,
+          "beat": true,
+          "surprise_pct": 16.4
+        }
+      },
+      "score_normalized": 44
+    },
+    {
       "ticker": "LMND",
       "name": "Lemonade Inc",
       "sector": "Insurance",
-      "current_price": 56.59,
-      "change_pct": 5.6178,
+      "current_price": 56.09,
+      "change_pct": 4.6846,
       "high": 60.8,
       "low": 52.75,
       "open": 52.75,
       "prev_close": 53.58,
-      "score": 50,
+      "score": 23,
       "signals": [
-        "Top gainer (+5.6%)",
+        "Top gainer (+4.7%)",
         "High volume",
-        "Strong move (+5.6%)",
-        "Trending buzz (12)",
-        "Yahoo trending (#9)"
+        "Good move (+4.7%)"
       ],
-      "reddit_mentions": 12,
-      "market_cap": 4116057783.249764,
+      "reddit_mentions": 0,
+      "market_cap": 4588605543.138255,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/LMND.png",
       "weburl": "https://www.lemonade.com/",
-      "yahoo_trending_rank": 9,
+      "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -263,81 +299,7 @@
           "surprise_pct": 18.6
         }
       },
-      "score_normalized": 70
-    },
-    {
-      "ticker": "KO",
-      "name": "Coca-Cola Co",
-      "sector": "Beverages",
-      "current_price": 83.69,
-      "change_pct": 2.8891,
-      "high": 83.85,
-      "low": 82.1,
-      "open": 82.1,
-      "prev_close": 81.34,
-      "score": 34,
-      "signals": [
-        "Top gainer (+2.9%)",
-        "High volume",
-        "Moderate move (+2.9%)",
-        "Trending activity (6)",
-        "Yahoo trending (#15)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 6,
-      "market_cap": 349963924223.5164,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/KO.png",
-      "weburl": "https://www.coca-colacompany.com/",
-      "yahoo_trending_rank": 15,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.86,
-          "estimate": 0.84,
-          "beat": true,
-          "surprise_pct": 2.9
-        }
-      },
-      "score_normalized": 48
-    },
-    {
-      "ticker": "TGTX",
-      "name": "TG Therapeutics Inc",
-      "sector": "Biotechnology",
-      "current_price": 47.29,
-      "change_pct": 9.0385,
-      "high": 49.305,
-      "low": 43.0126,
-      "open": 43.42,
-      "prev_close": 43.37,
-      "score": 31,
-      "signals": [
-        "Top gainer (+9.0%)",
-        "High volume",
-        "Strong move (+9.0%)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 6639234658.076189,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/TGTX.png",
-      "weburl": "https://www.tgtherapeutics.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.18,
-          "estimate": 0.3,
-          "beat": false,
-          "surprise_pct": -40.1
-        }
-      },
-      "score_normalized": 44
+      "score_normalized": 32
     }
   ],
   "buzz_source": "trending",
@@ -347,13 +309,13 @@
       "mentions": 20,
       "name": "Super Micro Computer Inc",
       "sector": "Technology",
-      "current_price": 33.21,
-      "change_pct": -18.2825,
+      "current_price": 32.61,
+      "change_pct": -19.7589,
       "high": 36.525000000000006,
-      "low": 32.98,
+      "low": 32.03,
       "open": 36.525000000000006,
       "prev_close": 40.64,
-      "market_cap": 24441649506.618774,
+      "market_cap": 20237732828.876724,
       "score": 0,
       "signals": [
         "Trending buzz (20 mentions)",
@@ -379,22 +341,22 @@
       "ticker": "DSY",
       "name": "Big Tree Cloud Holdings Ltd",
       "sector": "Consumer products",
-      "current_price": 8.51,
-      "change_pct": 362.5,
+      "current_price": 10.03,
+      "change_pct": 445.1087,
       "high": 19.9,
       "low": 6.39,
       "open": 9.59,
       "prev_close": 1.84,
       "score": 50,
       "signals": [
-        "Top gainer (+362.5%)",
+        "Top gainer (+445.1%)",
         "High volume",
-        "Strong move (+362.5%)",
+        "Strong move (+445.1%)",
         "Trending buzz (19)",
         "Yahoo trending (#2)"
       ],
       "reddit_mentions": 19,
-      "market_cap": 15183443.866666665,
+      "market_cap": 15183445.0,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950868103436.png",
@@ -408,34 +370,40 @@
       "score_normalized": 70
     },
     {
-      "ticker": "VSME",
-      "name": "VS Media Holdings Ltd",
-      "sector": "Media",
-      "current_price": 2.48,
-      "change_pct": 201.1902,
-      "high": 5.38,
-      "low": 2.15,
-      "open": 2.2845,
-      "prev_close": 0.8234,
+      "ticker": "CBRL",
+      "name": "Cracker Barrel Old Country Store Inc",
+      "sector": "Hotels, Restaurants & Leisure",
+      "current_price": 45.49,
+      "change_pct": 25.3168,
+      "high": 48.9099,
+      "low": 43.15,
+      "open": 43.51,
+      "prev_close": 36.3,
       "score": 50,
       "signals": [
-        "Top gainer (+201.2%)",
+        "Top gainer (+25.3%)",
         "High volume",
-        "Strong move (+201.2%)",
+        "Strong move (+25.3%)",
         "Trending buzz (18)",
         "Yahoo trending (#3)"
       ],
       "reddit_mentions": 18,
-      "market_cap": 2480000.0,
+      "market_cap": 1045469066.1625346,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950867296136.png",
-      "weburl": "http://www.vs-media.com",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CBRL.png",
+      "weburl": "https://www.crackerbarrel.com/",
       "yahoo_trending_rank": 3,
       "mentions": 18,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.25,
+          "estimate": -0.31,
+          "beat": true,
+          "surprise_pct": 181.8
+        }
       },
       "score_normalized": 70
     }
@@ -444,82 +412,73 @@
     {
       "ticker": "XLE",
       "sector": "Energy",
-      "ret_1d": 2.54,
-      "ret_5d": 0.23,
-      "ret_1m": 2.93,
-      "ret_3m": 3.95,
+      "ret_1d": 2.3,
+      "ret_5d": 0.0,
+      "ret_1m": 2.69,
+      "ret_3m": 3.71,
       "top_stocks": [
         {
           "ticker": "BATL",
           "name": "Battalion Oil Corp",
-          "change_pct": 63.3588,
-          "price": 2.14
+          "change_pct": 40.458,
+          "price": 1.84
         }
       ]
     },
     {
       "ticker": "XLP",
       "sector": "Cons. Staples",
-      "ret_1d": 1.44,
-      "ret_5d": 3.84,
-      "ret_1m": 2.33,
-      "ret_3m": 1.42,
+      "ret_1d": 1.39,
+      "ret_5d": 3.79,
+      "ret_1m": 2.28,
+      "ret_3m": 1.37,
       "top_stocks": [
         {
-          "ticker": "KO",
-          "name": "Coca-Cola Co",
-          "change_pct": 2.8891,
-          "price": 83.69
+          "ticker": "SDOT",
+          "name": "Sadot Group Inc",
+          "change_pct": 124.8889,
+          "price": 30.36
         }
       ]
     },
     {
       "ticker": "XLRE",
       "sector": "Real Estate",
-      "ret_1d": 0.43,
-      "ret_5d": 3.8,
-      "ret_1m": 1.33,
-      "ret_3m": 7.21,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLU",
-      "sector": "Utilities",
-      "ret_1d": 0.36,
-      "ret_5d": 0.98,
-      "ret_1m": -2.22,
-      "ret_3m": -3.73,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLC",
-      "sector": "Comm. Services",
-      "ret_1d": 0.21,
-      "ret_5d": -0.33,
-      "ret_1m": -3.34,
-      "ret_3m": -4.21,
+      "ret_1d": 0.41,
+      "ret_5d": 3.78,
+      "ret_1m": 1.31,
+      "ret_3m": 7.19,
       "top_stocks": [
         {
-          "ticker": "VSME",
-          "name": "VS Media Holdings Ltd",
-          "change_pct": 201.1902,
-          "price": 2.48
+          "ticker": "FRMI",
+          "name": "Fermi Inc",
+          "change_pct": 26.6904,
+          "price": 7.12
         }
       ]
     },
     {
+      "ticker": "XLU",
+      "sector": "Utilities",
+      "ret_1d": 0.31,
+      "ret_5d": 0.93,
+      "ret_1m": -2.27,
+      "ret_3m": -3.78,
+      "top_stocks": []
+    },
+    {
       "ticker": "XLF",
       "sector": "Financials",
-      "ret_1d": 0.19,
-      "ret_5d": 3.32,
+      "ret_1d": 0.2,
+      "ret_5d": 3.33,
       "ret_1m": 2.7,
       "ret_3m": 6.43,
       "top_stocks": [
         {
           "ticker": "FLD",
           "name": "Fold Holdings Inc",
-          "change_pct": 18.118,
-          "price": 0.723
+          "change_pct": 27.7079,
+          "price": 0.7817
         },
         {
           "ticker": "BULL",
@@ -530,107 +489,123 @@
         {
           "ticker": "LMND",
           "name": "Lemonade Inc",
-          "change_pct": 5.6178,
-          "price": 56.59
+          "change_pct": 4.6846,
+          "price": 56.09
+        }
+      ]
+    },
+    {
+      "ticker": "XLC",
+      "sector": "Comm. Services",
+      "ret_1d": 0.06,
+      "ret_5d": -0.47,
+      "ret_1m": -3.49,
+      "ret_3m": -4.35,
+      "top_stocks": [
+        {
+          "ticker": "CPOP",
+          "name": "Pop Culture Group Co Ltd",
+          "change_pct": 511.1111,
+          "price": 2.2
+        },
+        {
+          "ticker": "VSME",
+          "name": "VS Media Holdings Ltd",
+          "change_pct": 226.6942,
+          "price": 2.69
         }
       ]
     },
     {
       "ticker": "XLV",
       "sector": "Health Care",
-      "ret_1d": -0.63,
-      "ret_5d": 4.09,
-      "ret_1m": 7.38,
-      "ret_3m": 0.9,
+      "ret_1d": -0.73,
+      "ret_5d": 3.99,
+      "ret_1m": 7.27,
+      "ret_3m": 0.8,
       "top_stocks": [
         {
-          "ticker": "TGTX",
-          "name": "TG Therapeutics Inc",
-          "change_pct": 9.0385,
-          "price": 47.29
+          "ticker": "CLOV",
+          "name": "Clover Health Investments Corp",
+          "change_pct": 13.986,
+          "price": 4.89
+        }
+      ]
+    },
+    {
+      "ticker": "XLK",
+      "sector": "Technology",
+      "ret_1d": -1.2,
+      "ret_5d": -8.98,
+      "ret_1m": 0.41,
+      "ret_3m": 27.34,
+      "top_stocks": [
+        {
+          "ticker": "CHOW",
+          "name": "ChowChow Cloud International Holdings Ltd",
+          "change_pct": 148.7121,
+          "price": 0.869
+        },
+        {
+          "ticker": "RXT",
+          "name": "Rackspace Technology Inc",
+          "change_pct": 21.03,
+          "price": 5.64
         }
       ]
     },
     {
       "ticker": "XLB",
       "sector": "Materials",
-      "ret_1d": -1.34,
-      "ret_5d": -2.98,
-      "ret_1m": -4.15,
-      "ret_3m": 0.95,
+      "ret_1d": -1.41,
+      "ret_5d": -3.05,
+      "ret_1m": -4.22,
+      "ret_3m": 0.88,
       "top_stocks": []
-    },
-    {
-      "ticker": "XLK",
-      "sector": "Technology",
-      "ret_1d": -1.56,
-      "ret_5d": -9.32,
-      "ret_1m": 0.04,
-      "ret_3m": 26.87,
-      "top_stocks": [
-        {
-          "ticker": "CHOW",
-          "name": "ChowChow Cloud International Holdings Ltd",
-          "change_pct": 82.0263,
-          "price": 0.636
-        },
-        {
-          "ticker": "WCT",
-          "name": "Wellchange Holdings Co Ltd",
-          "change_pct": 60.3053,
-          "price": 2.1
-        },
-        {
-          "ticker": "RXT",
-          "name": "Rackspace Technology Inc",
-          "change_pct": 21.2446,
-          "price": 5.65
-        }
-      ]
     },
     {
       "ticker": "XLY",
       "sector": "Cons. Discretionary",
       "ret_1d": -1.61,
-      "ret_5d": -2.33,
-      "ret_1m": -4.49,
-      "ret_3m": 0.09,
+      "ret_5d": -2.34,
+      "ret_1m": -4.5,
+      "ret_3m": 0.08,
       "top_stocks": [
         {
           "ticker": "CBRL",
           "name": "Cracker Barrel Old Country Store Inc",
-          "change_pct": 23.9118,
-          "price": 44.98
+          "change_pct": 25.3168,
+          "price": 45.49
         },
         {
           "ticker": "CASY",
           "name": "Caseys General Stores Inc",
-          "change_pct": 14.605,
-          "price": 872.35
+          "change_pct": 17.4965,
+          "price": 894.36
         }
       ]
     },
     {
       "ticker": "XLI",
       "sector": "Industrials",
-      "ret_1d": -2.53,
-      "ret_5d": -1.67,
-      "ret_1m": -2.22,
-      "ret_3m": 1.26,
+      "ret_1d": -2.59,
+      "ret_5d": -1.72,
+      "ret_1m": -2.28,
+      "ret_3m": 1.2,
       "top_stocks": [
         {
           "ticker": "VELO",
           "name": "Velo3D Inc",
-          "change_pct": 15.4915,
-          "price": 22.44
+          "change_pct": 19.1457,
+          "price": 23.15
         }
       ]
     }
   ],
   "reddit_feed": [
     {
-      "id": "140594181",
-      "title": "Top Midday Stories: Trump Says Iran Must 'Pay the Price'; SpaceX Gets Big Orders From Gulf Wealth Funds Ahead of IPO",
+      "id": "140595709",
+      "title": "Micron, Super Micro, Newmont, Robinhood, Casey\u2019s, and More Stocks That Explain Today\u2019s Market",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -640,12 +615,12 @@
         "SMCI"
       ],
       "hours_ago": 1.0,
-      "url": "https://finnhub.io/api/news?id=34c2ba3fe86f92cec50cd553cccf46fc291731153b8b7c75bbd6d6bf97fa33d9",
+      "url": "https://finnhub.io/api/news?id=f8b682efffb24268e59b07a4c2bf7ac12e004ba904bac6e11358fd88e17fb240",
       "is_news": true
     },
     {
-      "id": "140593773",
-      "title": "Why Super Micro Computer Stock Got Crushed Today",
+      "id": "140595634",
+      "title": "Stock Market Today, June 10: Hot Inflation and War Escalation Fears Pressure Stocks at Midday",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -654,13 +629,13 @@
       "confirmed_tickers": [
         "SMCI"
       ],
-      "hours_ago": 1.5,
-      "url": "https://finnhub.io/api/news?id=1a9be5cf9e444a63e466007e47f6d3707cbc8be7906980f86bb5ac385d7b3ee0",
+      "hours_ago": 1.1,
+      "url": "https://finnhub.io/api/news?id=60d66b19c36a6a24fc4fd90dbff273d78e88c77e777e7ee9a1c443884f0f5826",
       "is_news": true
     },
     {
-      "id": "140593776",
-      "title": "Why Super Micro stock is plunging & Cracker Barrel stock is surging",
+      "id": "140596020",
+      "title": "Why Super Micro Shares Are Crashing?",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -669,28 +644,13 @@
       "confirmed_tickers": [
         "SMCI"
       ],
-      "hours_ago": 1.8,
-      "url": "https://finnhub.io/api/news?id=0c8c270def69dff794ebba4737a139446c4fc9a1dae01a7fc05f5f28091b4f17",
+      "hours_ago": 1.3,
+      "url": "https://finnhub.io/api/news?id=94c342bf1e2ae4e9fb27598d60eee1579dc96c669e9513dedd3c994a9bcc7d5c",
       "is_news": true
     },
     {
-      "id": "140594184",
-      "title": "Supermicro Stock Tumbles On Financing Deals To Fund AI Orders",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "SMCI"
-      ],
-      "confirmed_tickers": [
-        "SMCI"
-      ],
-      "hours_ago": 2.3,
-      "url": "https://finnhub.io/api/news?id=053c3cbdbb084141c190b242a1f4c1d50c0a1f1bafdd49e6322ce45c6c9717fa",
-      "is_news": true
-    },
-    {
-      "id": "140593381",
-      "title": "What's going on in today's session: S&P500 gap up and gap down stocks",
+      "id": "140594718",
+      "title": "Top S&P500 movers in Wednesday's session",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
@@ -699,8 +659,68 @@
       "confirmed_tickers": [
         "SMCI"
       ],
-      "hours_ago": 2.3,
-      "url": "https://finnhub.io/api/news?id=5083a890db4129679b0c18df2027a3efe7427d6c19004353260cd0b6a052cf15",
+      "hours_ago": 1.6,
+      "url": "https://finnhub.io/api/news?id=19f2945c2bd46b8a38cf731c1765dec41d29758ad772a67ed6a931889ef38510",
+      "is_news": true
+    },
+    {
+      "id": "140594324",
+      "title": "Stock Market Today: Nasdaq, Dow Knocked Down As Techs Sell Off; Cracker Barrel Surges (Live Coverage)",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "SMCI"
+      ],
+      "confirmed_tickers": [
+        "SMCI"
+      ],
+      "hours_ago": 2.2,
+      "url": "https://finnhub.io/api/news?id=fff750997243135bcf56aa6e7db91a25f573a8631ccaf495e74d3470e8a61948",
+      "is_news": true
+    },
+    {
+      "id": "140593380",
+      "title": "Wednesday's session: gap up and gap down stocks",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "CBRL"
+      ],
+      "confirmed_tickers": [
+        "CBRL"
+      ],
+      "hours_ago": 3.7,
+      "url": "https://finnhub.io/api/news?id=de8d9597ebbbbf8935f9fe9c72ff1a0925dcf9c9bc7448600506c58a70214f10",
+      "is_news": true
+    },
+    {
+      "id": "140595366",
+      "title": "Crude Oil Gains 3%; Core & Main Earnings Top Views",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "CBRL"
+      ],
+      "confirmed_tickers": [
+        "CBRL"
+      ],
+      "hours_ago": 5.6,
+      "url": "https://finnhub.io/api/news?id=c8f4ab1ede4e76ed628423883fc54abb57a48053b8bfb3bde63c961388454ddb",
+      "is_news": true
+    },
+    {
+      "id": "140593275",
+      "title": "Caseys General Stores Upbeat Q4 Earnings, Joins Applied Optoelectronics, Clover Health Investments And Other Big Stocks ",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "CBRL"
+      ],
+      "confirmed_tickers": [
+        "CBRL"
+      ],
+      "hours_ago": 8.2,
+      "url": "https://finnhub.io/api/news?id=9e2b62d45302f7b4d04844158aa165a9d2b46e076df7a90737980b2c0e64479e",
       "is_news": true
     },
     {
@@ -714,38 +734,38 @@
       "confirmed_tickers": [
         "DSY"
       ],
-      "hours_ago": 7.2,
+      "hours_ago": 8.5,
       "url": "https://finnhub.io/api/news?id=37cb5b752416c74659908b70a5f6a0024d2985cb586a54cdc760661f8285ec71",
       "is_news": true
     },
     {
-      "id": "140593299",
-      "title": "Dow Tumbles 350 Points; US Inflation Rate Accelerates In May",
+      "id": "140593341",
+      "title": "Stock Market Today: S&P 500, Dow Futures Fall As May Inflation Rises The Most In 37 Months\u2014 Autozi Internet, Cracker Bar",
       "subreddit": "Benzinga",
       "ups": 0,
       "tickers": [
-        "VSME"
+        "CBRL"
       ],
       "confirmed_tickers": [
-        "VSME"
+        "CBRL"
       ],
-      "hours_ago": 7.2,
-      "url": "https://finnhub.io/api/news?id=37cb5b752416c74659908b70a5f6a0024d2985cb586a54cdc760661f8285ec71",
+      "hours_ago": 9.5,
+      "url": "https://finnhub.io/api/news?id=7c6c92ac60d1ee8d255e07117103d2904c6007315cc3c4cdf5c8d4cec9c77306",
       "is_news": true
     },
     {
-      "id": "140593638",
-      "title": "12 Communication Services Stocks Moving In Wednesday's Pre-Market Session",
+      "id": "140593688",
+      "title": "Market-Moving News for June 10th",
       "subreddit": "Benzinga",
       "ups": 0,
       "tickers": [
-        "VSME"
+        "CBRL"
       ],
       "confirmed_tickers": [
-        "VSME"
+        "CBRL"
       ],
-      "hours_ago": 8.8,
-      "url": "https://finnhub.io/api/news?id=29ad11c1d6138a437d53216cc9a382e68b49a1d03cd5f8bdbdd72fa3e9b5922e",
+      "hours_ago": 11.0,
+      "url": "https://finnhub.io/api/news?id=99aa9b465a19924115780d51b372efad2189ab50f347e8f1b7f4edbde7224566",
       "is_news": true
     }
   ]
