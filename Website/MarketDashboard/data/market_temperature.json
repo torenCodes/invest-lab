@@ -1,14 +1,14 @@
 {
-  "scan_time": "2026-06-09T12:32:10.022973+00:00",
+  "scan_time": "2026-06-10T12:50:27.087193+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 77.1,
+  "composite_score": 76.3,
   "composite_label": "Frothy",
   "components": {
     "buffett": {
-      "raw": 2.043,
+      "raw": 2.039,
       "raw_label": "2.0 (W5000/GDP)",
-      "percentile": 94.5,
-      "score": 94.5,
+      "percentile": 93.8,
+      "score": 93.8,
       "label": "Extreme",
       "description": "Total US market cap (Wilshire 5000) vs GDP \u2014 Warren Buffett's \"best single measure.\" Percentile-ranked over the last 10 years.",
       "title": "Buffett Indicator",
@@ -16,8 +16,8 @@
       "weight": 0.25
     },
     "shiller": {
-      "raw": 41.67,
-      "raw_label": "41.7x CAPE",
+      "raw": 41.54,
+      "raw_label": "41.5x CAPE",
       "percentile": 100.0,
       "score": 100.0,
       "label": "Extreme",
@@ -29,12 +29,12 @@
     "fed_model": {
       "raw": -1.42,
       "raw_label": "-1.42% spread",
-      "earnings_yield": 3.13,
-      "treasury_10y": 4.55,
-      "pe": 31.9,
+      "earnings_yield": 3.14,
+      "treasury_10y": 4.56,
+      "pe": 31.81,
       "score": 85,
       "label": "Extreme",
-      "description": "S&P earnings yield 3.13% vs 10Y Treasury 4.55%. Positive spread means stocks are relatively cheap vs bonds.",
+      "description": "S&P earnings yield 3.14% vs 10Y Treasury 4.56%. Positive spread means stocks are relatively cheap vs bonds.",
       "title": "Fed Model",
       "subtitle": "Earnings Yield \u2212 10Y",
       "weight": 0.15
@@ -52,9 +52,9 @@
       "weight": 0.15
     },
     "fear_greed": {
-      "raw": 39.4,
-      "raw_label": "39 (Fear)",
-      "score": 39.4,
+      "raw": 33.7,
+      "raw_label": "34 (Fear)",
+      "score": 33.7,
       "label": "Fair",
       "description": "CNN's composite of 7 short-term sentiment signals (momentum, breadth, put/call ratio, junk-bond demand, volatility, etc.). High readings reflect investor euphoria \u2014 historically a contrarian sell signal.",
       "title": "Fear & Greed",
@@ -62,8 +62,8 @@
       "weight": 0.1
     },
     "vix": {
-      "raw": 18.16,
-      "raw_label": "18.2 VIX",
+      "raw": 20.94,
+      "raw_label": "20.9 VIX",
       "score": 50,
       "label": "Elevated",
       "description": "30-day expected S&P 500 volatility implied by options. Low readings (under 15) signal complacency and often coincide with frothy markets; high readings (over 30) signal fear and frequently mark short-term bottoms.",
