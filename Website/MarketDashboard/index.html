@@ -763,6 +763,27 @@
     font-size: 0.78rem;
     color: var(--ink-3);
   }
+  /* Cadence Watchlist table accents */
+  .cad-ticker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .cad-score { color: var(--accent, #38bda6); font-weight: 700; }
+  .cad-tag {
+    display: inline-block;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .cad-tag-day   { background: var(--accent-muted, #edf8f6); color: var(--accent-dark, #2a9b87); }
+  .cad-tag-swing { background: #fdf9ed; color: #b8922a; }
   .sr-cell {
     padding: 10px 14px;
     text-align: right;
@@ -1060,15 +1081,14 @@ function toggleSiteNav(btn) {
     <!-- Hidden stat elements updated by JS -->
     <span id="hdr-scanned" style="display:none"></span>
     <span id="hdr-day" style="display:none"></span>
-    <span id="hdr-swing" style="display:none"></span>
     <span id="hdr-time" style="display:none"></span>
     <div class="sidebar-section">
       <div class="sidebar-label">Navigation</div>
-      <a class="nav-item active" href="#day-trades" onclick="setActive(this)">
-        <span class="nav-icon">⚡</span> Day Trades
+      <a class="nav-item active" href="#cadence" onclick="setActive(this)">
+        <span class="nav-icon">🎯</span> Cadence Watchlist
       </a>
-      <a class="nav-item" href="#swing-trades" onclick="setActive(this)">
-        <span class="nav-icon">📈</span> Swing Trades
+      <a class="nav-item" href="#day-trades" onclick="setActive(this)">
+        <span class="nav-icon">⚡</span> In Play Today
       </a>
       <a class="nav-item" href="#market-chatter" onclick="setActive(this)">
         <span class="nav-icon">💬</span> Market Chatter
@@ -1088,11 +1108,23 @@ function toggleSiteNav(btn) {
   <!-- Main content -->
   <main class="main">
 
-    <!-- Day Trades -->
+    <!-- Cadence Watchlist — day-trade rhythm engine (new headline) -->
+    <section id="cadence" class="full-panel">
+      <div class="panel-header">
+        <span class="panel-icon">🎯</span>
+        <span class="panel-title">Cadence Watchlist</span>
+        <span class="panel-sub">Tradeable daily rhythm across the liquid US market — click a column to sort</span>
+      </div>
+      <div id="cadence-body">
+        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading watchlist…</div></div>
+      </div>
+    </section>
+
+    <!-- In Play Today — live movers from the intraday scan -->
     <section id="day-trades">
       <div class="section-header">
-        <div class="section-title">Day Trades</div>
-        <div class="section-subtitle">$5–$150, green today, high score</div>
+        <div class="section-title">In Play Today</div>
+        <div class="section-subtitle">Today's movers with real volume and momentum behind them</div>
         <div class="section-badge" id="day-badge">—</div>
       </div>
       <div class="cards-grid" id="day-cards">
@@ -1100,22 +1132,10 @@ function toggleSiteNav(btn) {
       </div>
     </section>
 
-    <!-- Swing Trades -->
-    <section id="swing-trades">
-      <div class="section-header">
-        <div class="section-title">Swing Trades</div>
-        <div class="section-subtitle">$20+, large cap, multi-day holds</div>
-        <div class="section-badge" id="swing-badge">—</div>
-      </div>
-      <div class="cards-grid" id="swing-cards">
-        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Waiting for scan results…</div></div>
-      </div>
-    </section>
-
     <!-- Score Explainer -->
     <div class="score-explainer">
-      <div class="score-explainer-title">How the Score Works</div>
-      Each nominee is scored on a 0–100 scale based on the strength of signals detected during the scan. A higher score means more bullish signals converged on the same ticker. The top-ranked pick in each section is highlighted with a gold border.
+      <div class="score-explainer-title">How the In Play Score Works</div>
+      Each In Play nominee is scored on a 0–100 scale based on the strength of momentum signals detected during the intraday scan. A higher score means more bullish signals converged on the same ticker. The top-ranked pick is highlighted with a gold border. (This is separate from the Cadence Score above, which measures tradeable daily rhythm rather than today's move.)
       <div class="score-explainer-grid">
         <div class="score-explainer-item"><span>Top gainer</span><span>+13</span></div>
         <div class="score-explainer-item"><span>High volume</span><span>+8</span></div>
@@ -1156,7 +1176,13 @@ function toggleSiteNav(btn) {
 <script>
 // ── Config ─────────────────────────────────────────────────────────────────
 const RESULTS_URL = 'data/results.json';
+const CADENCE_URL = 'data/cadence.json';
 const ANALYST_URL = 'https://invest-the-analyst.onrender.com/data/results.json';
+
+// Cadence Watchlist state
+let cadenceData    = [];
+let cadenceSortCol = 'cadence_score';
+let cadenceSortDir = -1;   // -1 = descending
 
 // ── State ──────────────────────────────────────────────────────────────────
 let lastScanTime = null;
@@ -1482,6 +1508,82 @@ async function loadResults() {
   }
 }
 
+// ── Cadence Watchlist (day-trade rhythm engine) ────────────────────────────
+function loadCadence() {
+  fetch(CADENCE_URL + '?t=' + Date.now())
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { cadenceData = (d && d.names) || []; renderCadence(); })
+    .catch(() => {
+      $('cadence-body').innerHTML =
+        '<div class="empty-state">Watchlist unavailable — the Cadence scan runs pre-market on weekdays.</div>';
+    });
+}
+
+function cadenceSort(col) {
+  if (cadenceSortCol === col) cadenceSortDir *= -1;
+  else { cadenceSortCol = col; cadenceSortDir = -1; }
+  renderCadence();
+}
+
+function renderCadence() {
+  const el = $('cadence-body');
+  if (!cadenceData.length) {
+    el.innerHTML = '<div class="empty-state">No watchlist yet — the Cadence scan runs pre-market on weekdays.</div>';
+    return;
+  }
+
+  const numCols = [
+    { key: 'cadence_score', label: 'Score' },
+    { key: 'adr_pct',       label: 'ADR%' },
+    { key: 'consistency',   label: 'Consistency' },
+    { key: 'dollar_vol',    label: '$ Vol' },
+    { key: 'price',         label: 'Price' },
+  ];
+
+  const sorted = [...cadenceData].sort((a, b) => {
+    let av = a[cadenceSortCol], bv = b[cadenceSortCol];
+    if (typeof av === 'string' || typeof bv === 'string') {
+      av = av || ''; bv = bv || '';
+      return cadenceSortDir === -1 ? bv.localeCompare(av) : av.localeCompare(bv);
+    }
+    av = (av == null) ? -Infinity : av;
+    bv = (bv == null) ? -Infinity : bv;
+    return cadenceSortDir === -1 ? bv - av : av - bv;
+  });
+
+  const numTh = numCols.map(c => {
+    const active = c.key === cadenceSortCol ? ' sr-th-active' : '';
+    const arrow  = c.key === cadenceSortCol ? (cadenceSortDir === -1 ? ' ↓' : ' ↑') : '';
+    return `<th class="sr-th${active}" onclick="cadenceSort('${c.key}')">${c.label}${arrow}</th>`;
+  }).join('');
+
+  const tkActive = cadenceSortCol === 'ticker' ? ' sr-th-active' : '';
+  const tkArrow  = cadenceSortCol === 'ticker' ? (cadenceSortDir === -1 ? ' ↓' : ' ↑') : '';
+
+  const rows = sorted.map(n => {
+    const tagCls   = n.tag === 'leans-swing' ? 'cad-tag-swing' : 'cad-tag-day';
+    const tagLabel = n.tag === 'leans-swing' ? 'leans swing' : 'day';
+    return `<tr class="sr-row">
+      <td class="sr-ticker cad-ticker">${n.ticker}</td>
+      <td class="sr-cell cad-score">${n.cadence_score.toFixed(1)}</td>
+      <td class="sr-cell">${n.adr_pct.toFixed(1)}%</td>
+      <td class="sr-cell">${n.consistency.toFixed(2)}</td>
+      <td class="sr-cell">$${(n.dollar_vol / 1e6).toFixed(0)}M</td>
+      <td class="sr-cell">$${n.price.toFixed(2)}</td>
+      <td class="sr-cell"><span class="cad-tag ${tagCls}">${tagLabel}</span></td>
+    </tr>`;
+  }).join('');
+
+  el.innerHTML = `<table class="sr-table">
+    <thead><tr>
+      <th class="sr-th sr-th-left${tkActive}" onclick="cadenceSort('ticker')">Ticker${tkArrow}</th>
+      ${numTh}
+      <th class="sr-th">Tag</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
 // ── Results renderer ───────────────────────────────────────────────────────
 function updateResults(data) {
   if (!data) return;
@@ -1489,27 +1591,17 @@ function updateResults(data) {
   // Header stats
   $('hdr-scanned').textContent = data.total_scanned || '—';
   $('hdr-day').textContent     = (data.day_trades   || []).length;
-  $('hdr-swing').textContent   = (data.swing_trades || []).length;
   if (data.scan_time) {
     $('hdr-time').textContent  = new Date(data.scan_time).toLocaleTimeString();
   }
 
-  // Day trades
+  // In Play Today (live movers)
   const dayEl = $('day-cards');
-  $('day-badge').textContent = `${(data.day_trades || []).length} nominees`;
+  $('day-badge').textContent = `${(data.day_trades || []).length} in play`;
   if (data.day_trades && data.day_trades.length) {
     dayEl.innerHTML = data.day_trades.map((s, i) => renderStockCard(s, 'day', i)).join('');
   } else {
-    dayEl.innerHTML = '<div class="empty-state">No qualifying day trade setups found this scan.</div>';
-  }
-
-  // Swing trades
-  const swingEl = $('swing-cards');
-  $('swing-badge').textContent = `${(data.swing_trades || []).length} nominees`;
-  if (data.swing_trades && data.swing_trades.length) {
-    swingEl.innerHTML = data.swing_trades.map((s, i) => renderStockCard(s, 'swing', i)).join('');
-  } else {
-    swingEl.innerHTML = '<div class="empty-state">No qualifying swing trade setups found this scan.</div>';
+    dayEl.innerHTML = '<div class="empty-state">No movers in play yet — check back after the open.</div>';
   }
 
   // Market chatter
@@ -1595,6 +1687,7 @@ function renderChatter(cards, buzzSource) {
 
 // ── Boot ───────────────────────────────────────────────────────────────────
 loadResults();
+loadCadence();
 setInterval(loadResults, 5 * 60 * 1000);  // auto-refresh every 5 min
 </script>
 
