@@ -23,6 +23,8 @@ git token.txt
 # ── Auto-generated scan caches (rebuilt on each run) ──────────────────────────
 scan_results.json
 results.json
+# Cadence scan's local grouped-daily bar cache (~50MB, dev-only, rebuilt in CI)
+Website/scripts/.cadence_cache/
 # GitHub Actions commits these files on each scan run — must not be ignored
 !Website/MarketDashboard/data/results.json
 !Website/TriedAndTrue/data/results.json

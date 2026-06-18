@@ -1,0 +1,45 @@
+name: Cadence Scan
+
+on:
+  schedule:
+    # Pre-market, ~7:00am ET weekdays (11:00 UTC EDT). Runs before the open
+    # so a fresh day-trade watchlist is waiting, built off the last completed
+    # session (Polygon free tier serves prior-day data, not same-day).
+    - cron: '0 11 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r Website/scripts/requirements-cadence.txt
+
+      - name: Run Cadence scan
+        run: python Website/scripts/cadence_scan.py
+        env:
+          POLYGON_KEY: ${{ secrets.POLYGON_KEY }}
+
+      - name: Commit results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          git add Website/MarketDashboard/data/cadence.json
+          git diff --staged --quiet || git commit -m "chore: cadence scan $(date -u +%Y-%m-%dT%H:%M)Z"
+          git pull --rebase -Xtheirs origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref_name }}
