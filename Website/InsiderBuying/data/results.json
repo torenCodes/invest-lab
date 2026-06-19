@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-06-18T20:10:52.945756",
-  "total_transactions": 200,
-  "date_range": "Jun 11 '26 \u2013 Jun 17 '26",
+  "scan_time": "2026-06-19T15:13:06.843326",
+  "total_transactions": 184,
+  "date_range": "Jun 10 '26 \u2013 Jun 18 '26",
   "min_value": 25000,
   "nominees": [
     {
@@ -132,6 +132,60 @@
       "story": "SMMT \u2014 Two insiders bought including the Co-Chief Executive Officer, $100.0M total."
     },
     {
+      "ticker": "HLNE",
+      "insider": "Rogers Hartley R.",
+      "title": "Executive Co-Chairman",
+      "date": "Jun 11 '26",
+      "price": 78.49,
+      "qty": 54573,
+      "value": 4248770,
+      "txn_count": 3,
+      "insider_count": 3,
+      "is_csuite": true,
+      "company": "Hamilton Lane Incorporated",
+      "sector": "Financial Services",
+      "current_price": 82.22,
+      "change_pct": 1.01,
+      "market_cap": 4565990400,
+      "insiders": [
+        {
+          "name": "Rogers Hartley R.",
+          "title": "Executive Co-Chairman",
+          "date": "Jun 11 '26",
+          "price": 78.49,
+          "qty": 38290,
+          "value": 3005339,
+          "is_csuite": true
+        },
+        {
+          "name": "BERKMAN DAVID J",
+          "title": "Director",
+          "date": "Jun 11 '26",
+          "price": 76.27,
+          "qty": 15000,
+          "value": 1144050,
+          "is_csuite": false
+        },
+        {
+          "name": "Kramer Andrea Anigati",
+          "title": "Chief Operating Officer",
+          "date": "Jun 11 '26",
+          "price": 77.46,
+          "qty": 1283,
+          "value": 99381,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 50,
+      "tier": "A",
+      "signals": [
+        "3 insiders buying",
+        "Executive Co-Chairman bought",
+        "$4.2M total"
+      ],
+      "story": "HLNE \u2014 Cluster of 3 buyers including the Chief Operating Officer and Executive Co-Chairman, $4.2M total."
+    },
+    {
       "ticker": "XRAY",
       "insider": "Barber Michael J",
       "title": "Director",
@@ -194,68 +248,13 @@
           "is_csuite": false
         }
       ],
-      "conviction_score": 50,
-      "tier": "A",
+      "conviction_score": 45,
+      "tier": "B",
       "signals": [
         "5 insiders buying",
-        "$516K total",
-        "Activity in last 3 days"
+        "$516K total"
       ],
       "story": "XRAY \u2014 Cluster of 5 insiders, $516K total."
-    },
-    {
-      "ticker": "HLNE",
-      "insider": "Rogers Hartley R.",
-      "title": "Executive Co-Chairman",
-      "date": "Jun 11 '26",
-      "price": 78.49,
-      "qty": 54573,
-      "value": 4248770,
-      "txn_count": 3,
-      "insider_count": 3,
-      "is_csuite": true,
-      "company": "Hamilton Lane Incorporated",
-      "sector": "Financial Services",
-      "current_price": 82.22,
-      "change_pct": 1.01,
-      "market_cap": 4565990400,
-      "insiders": [
-        {
-          "name": "Rogers Hartley R.",
-          "title": "Executive Co-Chairman",
-          "date": "Jun 11 '26",
-          "price": 78.49,
-          "qty": 38290,
-          "value": 3005339,
-          "is_csuite": true
-        },
-        {
-          "name": "BERKMAN DAVID J",
-          "title": "Director",
-          "date": "Jun 11 '26",
-          "price": 76.27,
-          "qty": 15000,
-          "value": 1144050,
-          "is_csuite": false
-        },
-        {
-          "name": "Kramer Andrea Anigati",
-          "title": "Chief Operating Officer",
-          "date": "Jun 11 '26",
-          "price": 77.46,
-          "qty": 1283,
-          "value": 99381,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 50,
-      "tier": "A",
-      "signals": [
-        "3 insiders buying",
-        "Executive Co-Chairman bought",
-        "$4.2M total"
-      ],
-      "story": "HLNE \u2014 Cluster of 3 buyers including the Chief Operating Officer and Executive Co-Chairman, $4.2M total."
     },
     {
       "ticker": "EQPT",
@@ -293,60 +292,14 @@
           "is_csuite": true
         }
       ],
-      "conviction_score": 47,
+      "conviction_score": 42,
       "tier": "B",
       "signals": [
         "2 insiders buying",
         "Co-Founder & President bought",
-        "$2.1M total",
-        "Activity in last 3 days"
+        "$2.1M total"
       ],
       "story": "EQPT \u2014 Two insiders bought including the Co-Founder & President, $2.1M total."
-    },
-    {
-      "ticker": "PBLS",
-      "insider": "RA CAPITAL MANAGEMENT, L.P.",
-      "title": "Director",
-      "date": "Jun 11 '26",
-      "price": 20.0,
-      "qty": 21218750,
-      "value": 424498528,
-      "txn_count": 4,
-      "insider_count": 2,
-      "is_csuite": false,
-      "company": "Parabilis Medicines, Inc.",
-      "sector": "Healthcare",
-      "current_price": 25.85,
-      "change_pct": -0.69,
-      "market_cap": 3161776896,
-      "insiders": [
-        {
-          "name": "RA CAPITAL MANAGEMENT, L.P.",
-          "title": "Director",
-          "date": "Jun 11 '26",
-          "price": 20.0,
-          "qty": 21188750,
-          "value": 423775000,
-          "is_csuite": false
-        },
-        {
-          "name": "SEBULSKY ALAN",
-          "title": "Director",
-          "date": "Jun 15 '26",
-          "price": 26.49,
-          "qty": 30000,
-          "value": 723528,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 47,
-      "tier": "B",
-      "signals": [
-        "2 insiders buying",
-        "$424.5M total",
-        "Activity in last 3 days"
-      ],
-      "story": "PBLS \u2014 Two insiders bought, $424.5M total."
     },
     {
       "ticker": "ADSK",
@@ -395,6 +348,50 @@
       "story": "ADSK \u2014 Two insiders bought including the President and CEO, $993K total."
     },
     {
+      "ticker": "PBLS",
+      "insider": "RA CAPITAL MANAGEMENT, L.P.",
+      "title": "Director",
+      "date": "Jun 11 '26",
+      "price": 20.0,
+      "qty": 21218750,
+      "value": 424498528,
+      "txn_count": 4,
+      "insider_count": 2,
+      "is_csuite": false,
+      "company": "Parabilis Medicines, Inc.",
+      "sector": "Healthcare",
+      "current_price": 25.85,
+      "change_pct": -0.69,
+      "market_cap": 3161776896,
+      "insiders": [
+        {
+          "name": "RA CAPITAL MANAGEMENT, L.P.",
+          "title": "Director",
+          "date": "Jun 11 '26",
+          "price": 20.0,
+          "qty": 21188750,
+          "value": 423775000,
+          "is_csuite": false
+        },
+        {
+          "name": "SEBULSKY ALAN",
+          "title": "Director",
+          "date": "Jun 15 '26",
+          "price": 26.49,
+          "qty": 30000,
+          "value": 723528,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 42,
+      "tier": "B",
+      "signals": [
+        "2 insiders buying",
+        "$424.5M total"
+      ],
+      "story": "PBLS \u2014 Two insiders bought, $424.5M total."
+    },
+    {
       "ticker": "CXT",
       "insider": "Saak Aaron W",
       "title": "CEO",
@@ -407,9 +404,9 @@
       "is_csuite": true,
       "company": "Crane NXT, Co.",
       "sector": "Industrials",
-      "current_price": 46.925,
-      "change_pct": 3.47,
-      "market_cap": 2700175616,
+      "current_price": 46.93,
+      "change_pct": 3.48,
+      "market_cap": 2700463360,
       "insiders": [
         {
           "name": "Saak Aaron W",
@@ -454,7 +451,7 @@
       "sector": "Consumer Defensive",
       "current_price": 11.49,
       "change_pct": 3.79,
-      "market_cap": 1015457984,
+      "market_cap": 1014794560,
       "insiders": [
         {
           "name": "Taylor Bruce C.",
@@ -483,6 +480,52 @@
         "Activity in last 3 days"
       ],
       "story": "AVO \u2014 Two insiders bought, $7.9M total."
+    },
+    {
+      "ticker": "WHF",
+      "insider": "BOLDUC JOHN",
+      "title": "Director",
+      "date": "Jun 18 '26",
+      "price": 6.49,
+      "qty": 30380,
+      "value": 195966,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": true,
+      "company": "WhiteHorse Finance, Inc.",
+      "sector": "Financial Services",
+      "current_price": 6.45,
+      "change_pct": 0.62,
+      "market_cap": 139393472,
+      "insiders": [
+        {
+          "name": "BOLDUC JOHN",
+          "title": "Director",
+          "date": "Jun 18 '26",
+          "price": 6.49,
+          "qty": 15380,
+          "value": 99816,
+          "is_csuite": false
+        },
+        {
+          "name": "Aronson Stuart D",
+          "title": "Chief Executive Officer",
+          "date": "Jun 15 '26",
+          "price": 6.41,
+          "qty": 15000,
+          "value": 96150,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 37,
+      "tier": "B",
+      "signals": [
+        "2 insiders buying",
+        "Chief Executive Officer bought",
+        "$196K total",
+        "Activity in last 3 days"
+      ],
+      "story": "WHF \u2014 Two insiders bought including the Chief Executive Officer, $196K total."
     },
     {
       "ticker": "NRSN",
@@ -623,248 +666,94 @@
       "story": "BZUN \u2014 Two insiders bought including the Chief Executive Officer, $157K total."
     },
     {
-      "ticker": "VIA",
-      "insider": "Peres Nechemia Jacob",
-      "title": "Director",
-      "date": "Jun 09 '26",
-      "price": 14.7,
-      "qty": 31904,
-      "value": 467305,
-      "txn_count": 3,
-      "insider_count": 2,
-      "is_csuite": true,
-      "company": "Via Transportation, Inc.",
-      "sector": "Technology",
-      "current_price": 15.3,
-      "change_pct": 3.24,
-      "market_cap": 1302673536,
-      "insiders": [
-        {
-          "name": "Peres Nechemia Jacob",
-          "title": "Director",
-          "date": "Jun 09 '26",
-          "price": 14.7,
-          "qty": 25000,
-          "value": 367500,
-          "is_csuite": false
-        },
-        {
-          "name": "Ramot Daniel",
-          "title": "Chief Executive Officer",
-          "date": "Jun 16 '26",
-          "price": 14.0,
-          "qty": 6904,
-          "value": 99805,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 37,
-      "tier": "B",
-      "signals": [
-        "2 insiders buying",
-        "Chief Executive Officer bought",
-        "$467K total",
-        "Activity in last 3 days"
-      ],
-      "story": "VIA \u2014 Two insiders bought including the Chief Executive Officer, $467K total."
-    },
-    {
-      "ticker": "REI",
-      "insider": "Johl Sundip Singh",
-      "title": "EVP, Chief Financial Officer",
-      "date": "Jun 15 '26",
-      "price": 1.21,
-      "qty": 281000,
-      "value": 338340,
-      "txn_count": 2,
-      "insider_count": 2,
-      "is_csuite": true,
-      "company": "Ring Energy, Inc.",
-      "sector": "Energy",
-      "current_price": 1.135,
-      "change_pct": -1.3,
-      "market_cap": 288123872,
-      "insiders": [
-        {
-          "name": "Johl Sundip Singh",
-          "title": "EVP, Chief Financial Officer",
-          "date": "Jun 15 '26",
-          "price": 1.21,
-          "qty": 231000,
-          "value": 278840,
-          "is_csuite": true
-        },
-        {
-          "name": "McKinney Paul D.",
-          "title": "CEO and Chairman of the Board",
-          "date": "Jun 15 '26",
-          "price": 1.19,
-          "qty": 50000,
-          "value": 59500,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 37,
-      "tier": "B",
-      "signals": [
-        "2 insiders buying",
-        "EVP, Chief Financial Officer bought",
-        "$338K total",
-        "Activity in last 3 days"
-      ],
-      "story": "REI \u2014 Two insiders bought including the EVP, Chief Financial Officer, $338K total."
-    },
-    {
-      "ticker": "CTSO",
-      "insider": "Chan Phillip P.",
+      "ticker": "SAGT",
+      "insider": "Ng Chen Lok",
       "title": "Chief Executive Officer",
-      "date": "Jun 12 '26",
-      "price": 0.4,
-      "qty": 351136,
-      "value": 144454,
-      "txn_count": 2,
-      "insider_count": 2,
-      "is_csuite": true,
-      "company": "Cytosorbents Corporation",
-      "sector": "Healthcare",
-      "current_price": 0.4383,
-      "change_pct": -8.11,
-      "market_cap": 27522938,
-      "insiders": [
-        {
-          "name": "Chan Phillip P.",
-          "title": "Chief Executive Officer",
-          "date": "Jun 12 '26",
-          "price": 0.4,
-          "qty": 251136,
-          "value": 100454,
-          "is_csuite": true
-        },
-        {
-          "name": "MARIANI PETER J",
-          "title": "Chief Financial Officer",
-          "date": "Jun 15 '26",
-          "price": 0.44,
-          "qty": 100000,
-          "value": 44000,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 37,
-      "tier": "B",
-      "signals": [
-        "2 insiders buying",
-        "Chief Executive Officer bought",
-        "$144K total",
-        "Activity in last 3 days"
-      ],
-      "story": "CTSO \u2014 Two insiders bought including the Chief Executive Officer, $144K total."
-    },
-    {
-      "ticker": "COE",
-      "insider": "Huang Jack Jiajia",
-      "title": "Chief Executive Officer",
-      "date": "Jun 15 '26",
-      "price": 19.63,
-      "qty": 216300,
-      "value": 4570570,
-      "txn_count": 6,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "51Talk Online Education Group",
-      "sector": "Consumer Defensive",
-      "current_price": 16.7,
-      "change_pct": 8.3,
-      "market_cap": 100322168,
-      "insiders": [
-        {
-          "name": "Huang Jack Jiajia",
-          "title": "Chief Executive Officer",
-          "date": "Jun 15 '26",
-          "price": 19.63,
-          "qty": 216300,
-          "value": 4570570,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 35,
-      "tier": "B",
-      "signals": [
-        "Chief Executive Officer bought",
-        "$4.6M total",
-        "Activity in last 3 days"
-      ],
-      "story": "COE \u2014 The Chief Executive Officer bought, $4.6M total."
-    },
-    {
-      "ticker": "ARTV",
-      "insider": "RA CAPITAL MANAGEMENT, L.P.",
-      "title": "Director",
-      "date": "Jun 16 '26",
-      "price": 8.89,
-      "qty": 1558945,
-      "value": 12249331,
-      "txn_count": 5,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Artiva Biotherapeutics, Inc.",
-      "sector": "Healthcare",
-      "current_price": 9.82,
-      "change_pct": -1.21,
-      "market_cap": 477136096,
-      "insiders": [
-        {
-          "name": "RA CAPITAL MANAGEMENT, L.P.",
-          "title": "Director",
-          "date": "Jun 16 '26",
-          "price": 8.89,
-          "qty": 1558945,
-          "value": 12249331,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 35,
-      "tier": "B",
-      "signals": [
-        "$12.2M total",
-        "Activity in last 3 days"
-      ],
-      "story": "ARTV \u2014 RA CAPITAL MANAGEMENT, L.P. (Director) bought, $12.2M total."
-    },
-    {
-      "ticker": "KNOP",
-      "insider": "Seglem Trygve",
-      "title": "Director",
-      "date": "Jun 15 '26",
-      "price": 20.0,
-      "qty": 1250000,
-      "value": 25000000,
+      "date": "Jun 18 '26",
+      "price": 1.04,
+      "qty": 1500000,
+      "value": 1560000,
       "txn_count": 1,
       "insider_count": 1,
-      "is_csuite": false,
-      "company": "KNOT Offshore Partners LP",
-      "sector": "Energy",
-      "current_price": 10.275,
-      "change_pct": 0.44,
-      "market_cap": 355032320,
+      "is_csuite": true,
+      "company": "Sagtec Global Limited",
+      "sector": "Technology",
+      "current_price": 0.99,
+      "change_pct": -4.81,
+      "market_cap": 18859500,
       "insiders": [
         {
-          "name": "Seglem Trygve",
+          "name": "Ng Chen Lok",
+          "title": "Chief Executive Officer",
+          "date": "Jun 18 '26",
+          "price": 1.04,
+          "qty": 1500000,
+          "value": 1560000,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 35,
+      "tier": "B",
+      "signals": [
+        "Chief Executive Officer bought",
+        "$1.6M total",
+        "Activity in last 3 days"
+      ],
+      "story": "SAGT \u2014 The Chief Executive Officer bought, $1.6M total."
+    },
+    {
+      "ticker": "INR",
+      "insider": "GRAY STEVEN D",
+      "title": "Director",
+      "date": "Jun 12 '26",
+      "price": 12.81,
+      "qty": 46497,
+      "value": 601365,
+      "txn_count": 3,
+      "insider_count": 3,
+      "is_csuite": false,
+      "company": "Infinity Natural Resources, Inc.",
+      "sector": "Energy",
+      "current_price": 12.79,
+      "change_pct": -2.89,
+      "market_cap": 239833072,
+      "insiders": [
+        {
+          "name": "GRAY STEVEN D",
           "title": "Director",
-          "date": "Jun 15 '26",
-          "price": 20.0,
-          "qty": 1250000,
-          "value": 25000000,
+          "date": "Jun 12 '26",
+          "price": 12.81,
+          "qty": 25000,
+          "value": 320175,
+          "is_csuite": false
+        },
+        {
+          "name": "Quinn William J",
+          "title": "Director",
+          "date": "Jun 11 '26",
+          "price": 13.2,
+          "qty": 11497,
+          "value": 151750,
+          "is_csuite": false
+        },
+        {
+          "name": "Gieselman Scott",
+          "title": "Director",
+          "date": "Jun 17 '26",
+          "price": 12.94,
+          "qty": 10000,
+          "value": 129440,
           "is_csuite": false
         }
       ],
       "conviction_score": 35,
       "tier": "B",
       "signals": [
-        "$25.0M total",
+        "3 insiders buying",
+        "$601K total",
         "Activity in last 3 days"
       ],
-      "story": "KNOP \u2014 Seglem Trygve (Director) bought, $25.0M total."
+      "story": "INR \u2014 Cluster of 3 insiders, $601K total."
     },
     {
       "ticker": "BSBR",
@@ -879,9 +768,9 @@
       "is_csuite": true,
       "company": "Banco Santander (Brasil) S.A.",
       "sector": "Financial Services",
-      "current_price": 5.21,
-      "change_pct": -2.98,
-      "market_cap": 39010017280,
+      "current_price": 5.2,
+      "change_pct": -3.17,
+      "market_cap": 38935142400,
       "insiders": [
         {
           "name": "Leao Mario Roberto Opice",
@@ -948,6 +837,131 @@
       "story": "VRA \u2014 Two insiders bought including the Chief Executive Officer, $205K total."
     },
     {
+      "ticker": "REI",
+      "insider": "Johl Sundip Singh",
+      "title": "EVP, Chief Financial Officer",
+      "date": "Jun 15 '26",
+      "price": 1.21,
+      "qty": 281000,
+      "value": 338340,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": true,
+      "company": "Ring Energy, Inc.",
+      "sector": "Energy",
+      "current_price": 1.14,
+      "change_pct": -0.87,
+      "market_cap": 289393152,
+      "insiders": [
+        {
+          "name": "Johl Sundip Singh",
+          "title": "EVP, Chief Financial Officer",
+          "date": "Jun 15 '26",
+          "price": 1.21,
+          "qty": 231000,
+          "value": 278840,
+          "is_csuite": true
+        },
+        {
+          "name": "McKinney Paul D.",
+          "title": "CEO and Chairman of the Board",
+          "date": "Jun 15 '26",
+          "price": 1.19,
+          "qty": 50000,
+          "value": 59500,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 32,
+      "tier": "B",
+      "signals": [
+        "2 insiders buying",
+        "EVP, Chief Financial Officer bought",
+        "$338K total"
+      ],
+      "story": "REI \u2014 Two insiders bought including the EVP, Chief Financial Officer, $338K total."
+    },
+    {
+      "ticker": "CTSO",
+      "insider": "Chan Phillip P.",
+      "title": "Chief Executive Officer",
+      "date": "Jun 12 '26",
+      "price": 0.4,
+      "qty": 351136,
+      "value": 144454,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": true,
+      "company": "Cytosorbents Corporation",
+      "sector": "Healthcare",
+      "current_price": 0.4383,
+      "change_pct": -8.11,
+      "market_cap": 27522938,
+      "insiders": [
+        {
+          "name": "Chan Phillip P.",
+          "title": "Chief Executive Officer",
+          "date": "Jun 12 '26",
+          "price": 0.4,
+          "qty": 251136,
+          "value": 100454,
+          "is_csuite": true
+        },
+        {
+          "name": "MARIANI PETER J",
+          "title": "Chief Financial Officer",
+          "date": "Jun 15 '26",
+          "price": 0.44,
+          "qty": 100000,
+          "value": 44000,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 32,
+      "tier": "B",
+      "signals": [
+        "2 insiders buying",
+        "Chief Executive Officer bought",
+        "$144K total"
+      ],
+      "story": "CTSO \u2014 Two insiders bought including the Chief Executive Officer, $144K total."
+    },
+    {
+      "ticker": "COE",
+      "insider": "Huang Jack Jiajia",
+      "title": "Chief Executive Officer",
+      "date": "Jun 15 '26",
+      "price": 19.63,
+      "qty": 216300,
+      "value": 4570570,
+      "txn_count": 6,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "51Talk Online Education Group",
+      "sector": "Consumer Defensive",
+      "current_price": 15.62,
+      "change_pct": 1.3,
+      "market_cap": 93834256,
+      "insiders": [
+        {
+          "name": "Huang Jack Jiajia",
+          "title": "Chief Executive Officer",
+          "date": "Jun 15 '26",
+          "price": 19.63,
+          "qty": 216300,
+          "value": 4570570,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 30,
+      "tier": "B",
+      "signals": [
+        "Chief Executive Officer bought",
+        "$4.6M total"
+      ],
+      "story": "COE \u2014 The Chief Executive Officer bought, $4.6M total."
+    },
+    {
       "ticker": "GOTU",
       "insider": "Chen Xiangdong",
       "title": "CEO",
@@ -960,9 +974,9 @@
       "is_csuite": true,
       "company": "Gaotu Techedu Inc.",
       "sector": "Consumer Defensive",
-      "current_price": 1.66,
-      "change_pct": 1.84,
-      "market_cap": 395833248,
+      "current_price": 1.65,
+      "change_pct": 1.23,
+      "market_cap": 393448704,
       "insiders": [
         {
           "name": "Chen Xiangdong",
@@ -984,164 +998,38 @@
       "story": "GOTU \u2014 The CEO bought, $758K total."
     },
     {
-      "ticker": "NRDY",
-      "insider": "Cohn Charles K.",
-      "title": "Chief Executive Officer",
-      "date": "Jun 15 '26",
-      "price": 1.0,
-      "qty": 759292,
-      "value": 751546,
-      "txn_count": 3,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "Nerdy Inc.",
-      "sector": "Technology",
-      "current_price": 0.901,
-      "change_pct": 0.49,
-      "market_cap": 171870416,
-      "insiders": [
-        {
-          "name": "Cohn Charles K.",
-          "title": "Chief Executive Officer",
-          "date": "Jun 15 '26",
-          "price": 1.0,
-          "qty": 759292,
-          "value": 751546,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 30,
-      "tier": "B",
-      "signals": [
-        "Chief Executive Officer bought",
-        "$752K total",
-        "Activity in last 3 days"
-      ],
-      "story": "NRDY \u2014 The Chief Executive Officer bought, $752K total."
-    },
-    {
-      "ticker": "AAT",
-      "insider": "RADY ERNEST S",
-      "title": "Executive Chairman",
-      "date": "Jun 15 '26",
-      "price": 24.21,
-      "qty": 40000,
-      "value": 981000,
-      "txn_count": 4,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "American Assets Trust, Inc.",
-      "sector": "Real Estate",
-      "current_price": 24.06,
-      "change_pct": 0.88,
-      "market_cap": 1866393600,
-      "insiders": [
-        {
-          "name": "RADY ERNEST S",
-          "title": "Executive Chairman",
-          "date": "Jun 15 '26",
-          "price": 24.21,
-          "qty": 40000,
-          "value": 981000,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 30,
-      "tier": "B",
-      "signals": [
-        "Executive Chairman bought",
-        "$981K total",
-        "Activity in last 3 days"
-      ],
-      "story": "AAT \u2014 The Executive Chairman bought, $981K total."
-    },
-    {
-      "ticker": "INR",
-      "insider": "GRAY STEVEN D",
+      "ticker": "KNOP",
+      "insider": "Seglem Trygve",
       "title": "Director",
-      "date": "Jun 12 '26",
-      "price": 12.81,
-      "qty": 47997,
-      "value": 630887,
-      "txn_count": 4,
-      "insider_count": 3,
+      "date": "Jun 15 '26",
+      "price": 20.0,
+      "qty": 1250000,
+      "value": 25000000,
+      "txn_count": 1,
+      "insider_count": 1,
       "is_csuite": false,
-      "company": "Infinity Natural Resources, Inc.",
+      "company": "KNOT Offshore Partners LP",
       "sector": "Energy",
-      "current_price": 12.825,
-      "change_pct": -2.62,
-      "market_cap": 240489376,
+      "current_price": 10.26,
+      "change_pct": 0.29,
+      "market_cap": 354514048,
       "insiders": [
         {
-          "name": "GRAY STEVEN D",
+          "name": "Seglem Trygve",
           "title": "Director",
-          "date": "Jun 12 '26",
-          "price": 12.81,
-          "qty": 25000,
-          "value": 320175,
-          "is_csuite": false
-        },
-        {
-          "name": "Poole David P",
-          "title": "Director",
-          "date": "Jun 11 '26",
-          "price": 13.5,
-          "qty": 11500,
-          "value": 158962,
-          "is_csuite": false
-        },
-        {
-          "name": "Quinn William J",
-          "title": "Director",
-          "date": "Jun 11 '26",
-          "price": 13.2,
-          "qty": 11497,
-          "value": 151750,
+          "date": "Jun 15 '26",
+          "price": 20.0,
+          "qty": 1250000,
+          "value": 25000000,
           "is_csuite": false
         }
       ],
       "conviction_score": 30,
       "tier": "B",
       "signals": [
-        "3 insiders buying",
-        "$631K total"
+        "$25.0M total"
       ],
-      "story": "INR \u2014 Cluster of 3 insiders, $631K total."
-    },
-    {
-      "ticker": "FUN",
-      "insider": "JAFFER REHAN",
-      "title": "Director",
-      "date": "Jun 15 '26",
-      "price": 23.41,
-      "qty": 250000,
-      "value": 5887674,
-      "txn_count": 2,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Six Flags Entertainment Corporation",
-      "sector": "Consumer Cyclical",
-      "current_price": 24.93,
-      "change_pct": 0.24,
-      "market_cap": 2547944448,
-      "insiders": [
-        {
-          "name": "JAFFER REHAN",
-          "title": "Director",
-          "date": "Jun 15 '26",
-          "price": 23.41,
-          "qty": 250000,
-          "value": 5887674,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 27,
-      "tier": "B",
-      "signals": [
-        "$5.9M total",
-        "Activity in last 3 days"
-      ],
-      "story": "FUN \u2014 JAFFER REHAN (Director) bought, $5.9M total."
+      "story": "KNOP \u2014 Seglem Trygve (Director) bought, $25.0M total."
     },
     {
       "ticker": "EML",
@@ -1245,9 +1133,9 @@
       "is_csuite": true,
       "company": "AECOM",
       "sector": "Industrials",
-      "current_price": 68.79,
-      "change_pct": -0.91,
-      "market_cap": 8841092096,
+      "current_price": 68.81,
+      "change_pct": -0.88,
+      "market_cap": 8843661312,
       "insiders": [
         {
           "name": "Poloni Lara",
@@ -1269,40 +1157,74 @@
       "story": "ACM \u2014 The PRESIDENT bought, $298K total."
     },
     {
-      "ticker": "NEWT",
-      "insider": "SLOANE BARRY",
-      "title": "President, Chairman & CEO",
+      "ticker": "NRDY",
+      "insider": "Cohn Charles K.",
+      "title": "Chief Executive Officer",
       "date": "Jun 15 '26",
-      "price": 14.2,
-      "qty": 16000,
-      "value": 227260,
-      "txn_count": 2,
+      "price": 1.0,
+      "qty": 759292,
+      "value": 751546,
+      "txn_count": 3,
       "insider_count": 1,
       "is_csuite": true,
-      "company": "NewtekOne, Inc.",
-      "sector": "Financial Services",
-      "current_price": 13.91,
-      "change_pct": 2.2,
-      "market_cap": 401427584,
+      "company": "Nerdy Inc.",
+      "sector": "Technology",
+      "current_price": 0.8556,
+      "change_pct": -4.57,
+      "market_cap": 163210128,
       "insiders": [
         {
-          "name": "SLOANE BARRY",
-          "title": "President, Chairman & CEO",
+          "name": "Cohn Charles K.",
+          "title": "Chief Executive Officer",
           "date": "Jun 15 '26",
-          "price": 14.2,
-          "qty": 16000,
-          "value": 227260,
+          "price": 1.0,
+          "qty": 759292,
+          "value": 751546,
           "is_csuite": true
         }
       ],
       "conviction_score": 25,
       "tier": "B",
       "signals": [
-        "President, Chairman & CEO bought",
-        "$227K total",
-        "Activity in last 3 days"
+        "Chief Executive Officer bought",
+        "$752K total"
       ],
-      "story": "NEWT \u2014 The President, Chairman & CEO bought, $227K total."
+      "story": "NRDY \u2014 The Chief Executive Officer bought, $752K total."
+    },
+    {
+      "ticker": "AAT",
+      "insider": "RADY ERNEST S",
+      "title": "Executive Chairman",
+      "date": "Jun 15 '26",
+      "price": 24.21,
+      "qty": 40000,
+      "value": 981000,
+      "txn_count": 4,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "American Assets Trust, Inc.",
+      "sector": "Real Estate",
+      "current_price": 24.05,
+      "change_pct": 0.84,
+      "market_cap": 1865617920,
+      "insiders": [
+        {
+          "name": "RADY ERNEST S",
+          "title": "Executive Chairman",
+          "date": "Jun 15 '26",
+          "price": 24.21,
+          "qty": 40000,
+          "value": 981000,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 25,
+      "tier": "B",
+      "signals": [
+        "Executive Chairman bought",
+        "$981K total"
+      ],
+      "story": "AAT \u2014 The Executive Chairman bought, $981K total."
     },
     {
       "ticker": "GGB",
@@ -1317,9 +1239,9 @@
       "is_csuite": true,
       "company": "Gerdau S.A.",
       "sector": "Basic Materials",
-      "current_price": 4.1658,
-      "change_pct": -7.22,
-      "market_cap": 8197060608,
+      "current_price": 4.17,
+      "change_pct": -7.13,
+      "market_cap": 8205324800,
       "insiders": [
         {
           "name": "Da Cunha Gustavo Werneck",
@@ -1465,6 +1387,40 @@
       "story": "ONMD \u2014 Two insiders bought, $200K total."
     },
     {
+      "ticker": "FUN",
+      "insider": "JAFFER REHAN",
+      "title": "Director",
+      "date": "Jun 15 '26",
+      "price": 23.41,
+      "qty": 250000,
+      "value": 5887674,
+      "txn_count": 2,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Six Flags Entertainment Corporation",
+      "sector": "Consumer Cyclical",
+      "current_price": 24.94,
+      "change_pct": 0.28,
+      "market_cap": 2548966400,
+      "insiders": [
+        {
+          "name": "JAFFER REHAN",
+          "title": "Director",
+          "date": "Jun 15 '26",
+          "price": 23.41,
+          "qty": 250000,
+          "value": 5887674,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 22,
+      "tier": "W",
+      "signals": [
+        "$5.9M total"
+      ],
+      "story": "FUN \u2014 JAFFER REHAN (Director) bought, $5.9M total."
+    },
+    {
       "ticker": "PICS",
       "insider": "Augusto Cazotto Andre",
       "title": "IR, Strategy and M&A Officer",
@@ -1509,40 +1465,6 @@
       "story": "PICS \u2014 Two insiders bought, $641K total."
     },
     {
-      "ticker": "STEP",
-      "insider": "McCabe Michael I",
-      "title": "Head of Strategy",
-      "date": "Jun 11 '26",
-      "price": 41.85,
-      "qty": 120000,
-      "value": 5022072,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "StepStone Group Inc.",
-      "sector": "Financial Services",
-      "current_price": 45.2,
-      "change_pct": -1.46,
-      "market_cap": 5696832000,
-      "insiders": [
-        {
-          "name": "McCabe Michael I",
-          "title": "Head of Strategy",
-          "date": "Jun 11 '26",
-          "price": 41.85,
-          "qty": 120000,
-          "value": 5022072,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 22,
-      "tier": "W",
-      "signals": [
-        "$5.0M total"
-      ],
-      "story": "STEP \u2014 McCabe Michael I (Head of Strategy) bought, $5.0M total."
-    },
-    {
       "ticker": "STRR",
       "insider": "Eberwein Jeffrey E.",
       "title": "Chief Executive Officer",
@@ -1578,64 +1500,64 @@
       "story": "STRR \u2014 The Chief Executive Officer bought."
     },
     {
-      "ticker": "OCGN",
-      "insider": "Johnson-Greene Treerita Essali",
-      "title": "Chief Financial Officer",
-      "date": "Jun 15 '26",
-      "price": 1.23,
-      "qty": 21000,
-      "value": 25830,
-      "txn_count": 1,
+      "ticker": "ARTV",
+      "insider": "RA CAPITAL MANAGEMENT, L.P.",
+      "title": "Director",
+      "date": "Jun 16 '26",
+      "price": 8.89,
+      "qty": 531326,
+      "value": 4599904,
+      "txn_count": 3,
       "insider_count": 1,
-      "is_csuite": true,
-      "company": "Ocugen, Inc.",
+      "is_csuite": false,
+      "company": "Artiva Biotherapeutics, Inc.",
       "sector": "Healthcare",
-      "current_price": 1.24,
-      "change_pct": 0.81,
-      "market_cap": 419767104,
+      "current_price": 9.82,
+      "change_pct": -1.21,
+      "market_cap": 477136096,
       "insiders": [
         {
-          "name": "Johnson-Greene Treerita Essali",
-          "title": "Chief Financial Officer",
-          "date": "Jun 15 '26",
-          "price": 1.23,
-          "qty": 21000,
-          "value": 25830,
-          "is_csuite": true
+          "name": "RA CAPITAL MANAGEMENT, L.P.",
+          "title": "Director",
+          "date": "Jun 16 '26",
+          "price": 8.89,
+          "qty": 531326,
+          "value": 4599904,
+          "is_csuite": false
         }
       ],
       "conviction_score": 20,
       "tier": "W",
       "signals": [
-        "Chief Financial Officer bought",
+        "$4.6M total",
         "Activity in last 3 days"
       ],
-      "story": "OCGN \u2014 The Chief Financial Officer bought."
+      "story": "ARTV \u2014 RA CAPITAL MANAGEMENT, L.P. (Director) bought, $4.6M total."
     },
     {
-      "ticker": "WHF",
-      "insider": "Aronson Stuart D",
+      "ticker": "VIA",
+      "insider": "Ramot Daniel",
       "title": "Chief Executive Officer",
-      "date": "Jun 15 '26",
-      "price": 6.41,
-      "qty": 15000,
-      "value": 96150,
-      "txn_count": 1,
+      "date": "Jun 16 '26",
+      "price": 14.0,
+      "qty": 6904,
+      "value": 99805,
+      "txn_count": 2,
       "insider_count": 1,
       "is_csuite": true,
-      "company": "WhiteHorse Finance, Inc.",
-      "sector": "Financial Services",
-      "current_price": 6.45,
-      "change_pct": 0.62,
-      "market_cap": 139393472,
+      "company": "Via Transportation, Inc.",
+      "sector": "Technology",
+      "current_price": 15.29,
+      "change_pct": 3.17,
+      "market_cap": 1301822080,
       "insiders": [
         {
-          "name": "Aronson Stuart D",
+          "name": "Ramot Daniel",
           "title": "Chief Executive Officer",
-          "date": "Jun 15 '26",
-          "price": 6.41,
-          "qty": 15000,
-          "value": 96150,
+          "date": "Jun 16 '26",
+          "price": 14.0,
+          "qty": 6904,
+          "value": 99805,
           "is_csuite": true
         }
       ],
@@ -1645,147 +1567,42 @@
         "Chief Executive Officer bought",
         "Activity in last 3 days"
       ],
-      "story": "WHF \u2014 The Chief Executive Officer bought."
+      "story": "VIA \u2014 The Chief Executive Officer bought."
     },
     {
-      "ticker": "VANI",
-      "insider": "Williams Gregg",
-      "title": "Director",
+      "ticker": "NEWT",
+      "insider": "SLOANE BARRY",
+      "title": "President, Chairman & CEO",
       "date": "Jun 15 '26",
-      "price": 1.26,
-      "qty": 1587301,
-      "value": 1999999,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Vivani Medical, Inc.",
-      "sector": "Healthcare",
-      "current_price": 1.15,
-      "change_pct": 0,
-      "market_cap": 99170368,
-      "insiders": [
-        {
-          "name": "Williams Gregg",
-          "title": "Director",
-          "date": "Jun 15 '26",
-          "price": 1.26,
-          "qty": 1587301,
-          "value": 1999999,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 20,
-      "tier": "W",
-      "signals": [
-        "$2.0M total",
-        "Activity in last 3 days"
-      ],
-      "story": "VANI \u2014 Williams Gregg (Director) bought, $2.0M total."
-    },
-    {
-      "ticker": "BLND",
-      "insider": "Haveli Investments, L.P.",
-      "title": "Director",
-      "date": "Jun 15 '26",
-      "price": 1.72,
-      "qty": 1156928,
-      "value": 1991366,
-      "txn_count": 3,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Blend Labs, Inc.",
-      "sector": "Technology",
-      "current_price": 1.645,
-      "change_pct": 3.46,
-      "market_cap": 398281888,
-      "insiders": [
-        {
-          "name": "Haveli Investments, L.P.",
-          "title": "Director",
-          "date": "Jun 15 '26",
-          "price": 1.72,
-          "qty": 1156928,
-          "value": 1991366,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 20,
-      "tier": "W",
-      "signals": [
-        "$2.0M total",
-        "Activity in last 3 days"
-      ],
-      "story": "BLND \u2014 Haveli Investments, L.P. (Director) bought, $2.0M total."
-    },
-    {
-      "ticker": "RMT",
-      "insider": "CLARK CHRISTOPHER D",
-      "title": "President",
-      "date": "Jun 15 '26",
-      "price": 14.12,
-      "qty": 3600,
-      "value": 50832,
-      "txn_count": 1,
+      "price": 14.2,
+      "qty": 16000,
+      "value": 227260,
+      "txn_count": 2,
       "insider_count": 1,
       "is_csuite": true,
-      "company": "Royce Micro-Cap Trust, Inc.",
+      "company": "NewtekOne, Inc.",
       "sector": "Financial Services",
-      "current_price": 14.22,
-      "change_pct": 1.64,
-      "market_cap": 760464576,
+      "current_price": 13.91,
+      "change_pct": 2.2,
+      "market_cap": 401427584,
       "insiders": [
         {
-          "name": "CLARK CHRISTOPHER D",
-          "title": "President",
+          "name": "SLOANE BARRY",
+          "title": "President, Chairman & CEO",
           "date": "Jun 15 '26",
-          "price": 14.12,
-          "qty": 3600,
-          "value": 50832,
+          "price": 14.2,
+          "qty": 16000,
+          "value": 227260,
           "is_csuite": true
         }
       ],
       "conviction_score": 20,
       "tier": "W",
       "signals": [
-        "President bought",
-        "Activity in last 3 days"
+        "President, Chairman & CEO bought",
+        "$227K total"
       ],
-      "story": "RMT \u2014 The President bought."
-    },
-    {
-      "ticker": "RVT",
-      "insider": "CLARK CHRISTOPHER D",
-      "title": "President",
-      "date": "Jun 15 '26",
-      "price": 18.16,
-      "qty": 2800,
-      "value": 50848,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "Royce Small-Cap Trust, Inc.",
-      "sector": "Financial Services",
-      "current_price": 17.96,
-      "change_pct": 1.13,
-      "market_cap": 2197653760,
-      "insiders": [
-        {
-          "name": "CLARK CHRISTOPHER D",
-          "title": "President",
-          "date": "Jun 15 '26",
-          "price": 18.16,
-          "qty": 2800,
-          "value": 50848,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 20,
-      "tier": "W",
-      "signals": [
-        "President bought",
-        "Activity in last 3 days"
-      ],
-      "story": "RVT \u2014 The President bought."
+      "story": "NEWT \u2014 The President, Chairman & CEO bought, $227K total."
     },
     {
       "ticker": "ORBS",
@@ -1835,9 +1652,9 @@
       "is_csuite": true,
       "company": "Installed Building Products, Inc.",
       "sector": "Consumer Cyclical",
-      "current_price": 217.99,
-      "change_pct": 3.16,
-      "market_cap": 5872805376,
+      "current_price": 218.25,
+      "change_pct": 3.28,
+      "market_cap": 5879810048,
       "insiders": [
         {
           "name": "Miller Michael Thomas",
@@ -1902,118 +1719,38 @@
       "story": "EU \u2014 Two insiders bought, $186K total."
     },
     {
-      "ticker": "RYAN",
-      "insider": "ROGERS JOHN W JR",
-      "title": "Director",
-      "date": "Jun 10 '26",
-      "price": 35.16,
-      "qty": 10000,
-      "value": 350807,
-      "txn_count": 2,
-      "insider_count": 2,
-      "is_csuite": false,
-      "company": "Ryan Specialty Holdings, Inc.",
-      "sector": "Financial Services",
-      "current_price": 34.97,
-      "change_pct": -0.88,
-      "market_cap": 9231277056,
-      "insiders": [
-        {
-          "name": "ROGERS JOHN W JR",
-          "title": "Director",
-          "date": "Jun 10 '26",
-          "price": 35.16,
-          "qty": 7500,
-          "value": 263732,
-          "is_csuite": false
-        },
-        {
-          "name": "Kuczinski Anthony J",
-          "title": "Director",
-          "date": "Jun 11 '26",
-          "price": 34.83,
-          "qty": 2500,
-          "value": 87075,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 17,
-      "tier": "W",
-      "signals": [
-        "2 insiders buying",
-        "$351K total"
-      ],
-      "story": "RYAN \u2014 Two insiders bought, $351K total."
-    },
-    {
-      "ticker": "VTS",
-      "insider": "STEINBERG JOSEPH S",
-      "title": "Director",
+      "ticker": "OCGN",
+      "insider": "Johnson-Greene Treerita Essali",
+      "title": "Chief Financial Officer",
       "date": "Jun 15 '26",
-      "price": 16.16,
-      "qty": 40882,
-      "value": 660530,
+      "price": 1.23,
+      "qty": 21000,
+      "value": 25830,
       "txn_count": 1,
       "insider_count": 1,
-      "is_csuite": false,
-      "company": "Vitesse Energy, Inc.",
-      "sector": "Energy",
-      "current_price": 15.98,
-      "change_pct": -0.37,
-      "market_cap": 666564544,
+      "is_csuite": true,
+      "company": "Ocugen, Inc.",
+      "sector": "Healthcare",
+      "current_price": 1.24,
+      "change_pct": 0.81,
+      "market_cap": 419767104,
       "insiders": [
         {
-          "name": "STEINBERG JOSEPH S",
-          "title": "Director",
+          "name": "Johnson-Greene Treerita Essali",
+          "title": "Chief Financial Officer",
           "date": "Jun 15 '26",
-          "price": 16.16,
-          "qty": 40882,
-          "value": 660530,
-          "is_csuite": false
+          "price": 1.23,
+          "qty": 21000,
+          "value": 25830,
+          "is_csuite": true
         }
       ],
       "conviction_score": 15,
       "tier": "W",
       "signals": [
-        "$661K total",
-        "Activity in last 3 days"
+        "Chief Financial Officer bought"
       ],
-      "story": "VTS \u2014 STEINBERG JOSEPH S (Director) bought, $661K total."
-    },
-    {
-      "ticker": "NMM",
-      "insider": "Frangou Angeliki",
-      "title": "See Remarks",
-      "date": "Jun 16 '26",
-      "price": 73.63,
-      "qty": 6844,
-      "value": 501954,
-      "txn_count": 6,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Navios Maritime Partners L.P.",
-      "sector": "Industrials",
-      "current_price": 70.32,
-      "change_pct": -2.86,
-      "market_cap": 1998819328,
-      "insiders": [
-        {
-          "name": "Frangou Angeliki",
-          "title": "See Remarks",
-          "date": "Jun 16 '26",
-          "price": 73.63,
-          "qty": 6844,
-          "value": 501954,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 15,
-      "tier": "W",
-      "signals": [
-        "$502K total",
-        "Activity in last 3 days"
-      ],
-      "story": "NMM \u2014 Frangou Angeliki (See Remarks) bought, $502K total."
+      "story": "OCGN \u2014 The Chief Financial Officer bought."
     },
     {
       "ticker": "AMR",
@@ -2028,9 +1765,9 @@
       "is_csuite": false,
       "company": "Alpha Metallurgical Resources, Inc.",
       "sector": "Basic Materials",
-      "current_price": 185.311,
-      "change_pct": -4.17,
-      "market_cap": 2356159744,
+      "current_price": 185.77,
+      "change_pct": -3.93,
+      "market_cap": 2361995776,
       "insiders": [
         {
           "name": "Courtis Kenneth S.",
@@ -2050,74 +1787,38 @@
       "story": "AMR \u2014 Courtis Kenneth S. (Director) bought, $2.0M total."
     },
     {
-      "ticker": "LULU",
-      "insider": "Bergh Charles V",
+      "ticker": "VANI",
+      "insider": "Williams Gregg",
       "title": "Director",
       "date": "Jun 15 '26",
-      "price": 117.05,
-      "qty": 4275,
-      "value": 500384,
+      "price": 1.26,
+      "qty": 1587301,
+      "value": 1999999,
       "txn_count": 1,
       "insider_count": 1,
       "is_csuite": false,
-      "company": "lululemon athletica inc.",
-      "sector": "Consumer Cyclical",
-      "current_price": 111.77,
-      "change_pct": 0.01,
-      "market_cap": 12691920896,
+      "company": "Vivani Medical, Inc.",
+      "sector": "Healthcare",
+      "current_price": 1.15,
+      "change_pct": 0,
+      "market_cap": 99170368,
       "insiders": [
         {
-          "name": "Bergh Charles V",
+          "name": "Williams Gregg",
           "title": "Director",
           "date": "Jun 15 '26",
-          "price": 117.05,
-          "qty": 4275,
-          "value": 500384,
+          "price": 1.26,
+          "qty": 1587301,
+          "value": 1999999,
           "is_csuite": false
         }
       ],
       "conviction_score": 15,
       "tier": "W",
       "signals": [
-        "$500K total",
-        "Activity in last 3 days"
+        "$2.0M total"
       ],
-      "story": "LULU \u2014 Bergh Charles V (Director) bought, $500K total."
-    },
-    {
-      "ticker": "GLP",
-      "insider": "Global GP LLC",
-      "title": "General Partner",
-      "date": "Jun 15 '26",
-      "price": 46.69,
-      "qty": 20000,
-      "value": 964000,
-      "txn_count": 4,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Global Partners LP",
-      "sector": "Energy",
-      "current_price": 42.27,
-      "change_pct": -2.6,
-      "market_cap": 1435971456,
-      "insiders": [
-        {
-          "name": "Global GP LLC",
-          "title": "General Partner",
-          "date": "Jun 15 '26",
-          "price": 46.69,
-          "qty": 20000,
-          "value": 964000,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 15,
-      "tier": "W",
-      "signals": [
-        "$964K total",
-        "Activity in last 3 days"
-      ],
-      "story": "GLP \u2014 Global GP LLC (General Partner) bought, $964K total."
+      "story": "VANI \u2014 Williams Gregg (Director) bought, $2.0M total."
     },
     {
       "ticker": "ANIX",
@@ -2186,6 +1887,40 @@
         "$1.0M total"
       ],
       "story": "LODE \u2014 Pei Steven Yu-Tsung (Director) bought, $1.0M total."
+    },
+    {
+      "ticker": "BLND",
+      "insider": "Haveli Investments, L.P.",
+      "title": "Director",
+      "date": "Jun 15 '26",
+      "price": 1.72,
+      "qty": 1156928,
+      "value": 1991366,
+      "txn_count": 3,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Blend Labs, Inc.",
+      "sector": "Technology",
+      "current_price": 1.65,
+      "change_pct": 3.77,
+      "market_cap": 399492480,
+      "insiders": [
+        {
+          "name": "Haveli Investments, L.P.",
+          "title": "Director",
+          "date": "Jun 15 '26",
+          "price": 1.72,
+          "qty": 1156928,
+          "value": 1991366,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 15,
+      "tier": "W",
+      "signals": [
+        "$2.0M total"
+      ],
+      "story": "BLND \u2014 Haveli Investments, L.P. (Director) bought, $2.0M total."
     },
     {
       "ticker": "CRVO",
@@ -2290,6 +2025,74 @@
       "story": "KRMD \u2014 The President-Chief Commercial Off bought."
     },
     {
+      "ticker": "RMT",
+      "insider": "CLARK CHRISTOPHER D",
+      "title": "President",
+      "date": "Jun 15 '26",
+      "price": 14.12,
+      "qty": 3600,
+      "value": 50832,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "Royce Micro-Cap Trust, Inc.",
+      "sector": "Financial Services",
+      "current_price": 14.22,
+      "change_pct": 1.64,
+      "market_cap": 760464576,
+      "insiders": [
+        {
+          "name": "CLARK CHRISTOPHER D",
+          "title": "President",
+          "date": "Jun 15 '26",
+          "price": 14.12,
+          "qty": 3600,
+          "value": 50832,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 15,
+      "tier": "W",
+      "signals": [
+        "President bought"
+      ],
+      "story": "RMT \u2014 The President bought."
+    },
+    {
+      "ticker": "RVT",
+      "insider": "CLARK CHRISTOPHER D",
+      "title": "President",
+      "date": "Jun 15 '26",
+      "price": 18.16,
+      "qty": 2800,
+      "value": 50848,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "Royce Small-Cap Trust, Inc.",
+      "sector": "Financial Services",
+      "current_price": 17.94,
+      "change_pct": 1.01,
+      "market_cap": 2195206656,
+      "insiders": [
+        {
+          "name": "CLARK CHRISTOPHER D",
+          "title": "President",
+          "date": "Jun 15 '26",
+          "price": 18.16,
+          "qty": 2800,
+          "value": 50848,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 15,
+      "tier": "W",
+      "signals": [
+        "President bought"
+      ],
+      "story": "RVT \u2014 The President bought."
+    },
+    {
       "ticker": "VIRC",
       "insider": "VIRTUE ROBERT A",
       "title": "CEO",
@@ -2370,9 +2173,9 @@
       "is_csuite": true,
       "company": "Oxford Industries, Inc.",
       "sector": "Consumer Cyclical",
-      "current_price": 36.35,
-      "change_pct": 1.42,
-      "market_cap": 542739328,
+      "current_price": 36.39,
+      "change_pct": 1.53,
+      "market_cap": 543336576,
       "insiders": [
         {
           "name": "Chubb Thomas Caldecot III",
@@ -2438,9 +2241,9 @@
       "is_csuite": true,
       "company": "Hyperscale Data, Inc.",
       "sector": "Industrials",
-      "current_price": 0.3591,
-      "change_pct": -9.75,
-      "market_cap": 165763088,
+      "current_price": 0.359,
+      "change_pct": -9.78,
+      "market_cap": 165716912,
       "insiders": [
         {
           "name": "Horne William B.",
@@ -2472,9 +2275,9 @@
       "is_csuite": true,
       "company": "MSA Safety Incorporated",
       "sector": "Industrials",
-      "current_price": 164.28,
-      "change_pct": 2.55,
-      "market_cap": 6341879296,
+      "current_price": 164.39,
+      "change_pct": 2.62,
+      "market_cap": 6346125824,
       "insiders": [
         {
           "name": "BECK JULIE A",
@@ -2562,187 +2365,6 @@
       "story": "CLIK \u2014 The Chief Executive Officer bought."
     },
     {
-      "ticker": "MOBI",
-      "insider": "Curnes Nelson Bunker",
-      "title": "Chief Financial Officer",
-      "date": "Jun 09 '26",
-      "price": 12.79,
-      "qty": 5000,
-      "value": 63969,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "Mobia Medical, Inc.",
-      "sector": "Healthcare",
-      "current_price": 14.25,
-      "change_pct": -1.93,
-      "market_cap": 473798336,
-      "insiders": [
-        {
-          "name": "Curnes Nelson Bunker",
-          "title": "Chief Financial Officer",
-          "date": "Jun 09 '26",
-          "price": 12.79,
-          "qty": 5000,
-          "value": 63969,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 15,
-      "tier": "W",
-      "signals": [
-        "Chief Financial Officer bought"
-      ],
-      "story": "MOBI \u2014 The Chief Financial Officer bought."
-    },
-    {
-      "ticker": "TMCI",
-      "insider": "Treace John T.",
-      "title": "Chief Executive Officer",
-      "date": "Jun 11 '26",
-      "price": 4.04,
-      "qty": 22887,
-      "value": 92541,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "Treace Medical Concepts, Inc.",
-      "sector": "Healthcare",
-      "current_price": 4.19,
-      "change_pct": 4.49,
-      "market_cap": 271817760,
-      "insiders": [
-        {
-          "name": "Treace John T.",
-          "title": "Chief Executive Officer",
-          "date": "Jun 11 '26",
-          "price": 4.04,
-          "qty": 22887,
-          "value": 92541,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 15,
-      "tier": "W",
-      "signals": [
-        "Chief Executive Officer bought"
-      ],
-      "story": "TMCI \u2014 The Chief Executive Officer bought."
-    },
-    {
-      "ticker": "GUTS",
-      "insider": "BRADLEY WILLIAM",
-      "title": "Director",
-      "date": "Jun 10 '26",
-      "price": 0.73,
-      "qty": 103493,
-      "value": 75858,
-      "txn_count": 2,
-      "insider_count": 2,
-      "is_csuite": false,
-      "company": "Fractyl Health, Inc.",
-      "sector": "Healthcare",
-      "current_price": 0.8583,
-      "change_pct": 0.98,
-      "market_cap": 136168400,
-      "insiders": [
-        {
-          "name": "BRADLEY WILLIAM",
-          "title": "Director",
-          "date": "Jun 10 '26",
-          "price": 0.73,
-          "qty": 68493,
-          "value": 50329,
-          "is_csuite": false
-        },
-        {
-          "name": "Sheffield Ian",
-          "title": "Director",
-          "date": "Jun 10 '26",
-          "price": 0.73,
-          "qty": 35000,
-          "value": 25529,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 12,
-      "tier": "W",
-      "signals": [
-        "2 insiders buying"
-      ],
-      "story": "GUTS \u2014 Two insiders bought."
-    },
-    {
-      "ticker": "FBRT",
-      "insider": "ORTALE BUFORD H",
-      "title": "Director",
-      "date": "Jun 15 '26",
-      "price": 9.85,
-      "qty": 39597,
-      "value": 491612,
-      "txn_count": 2,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Franklin BSP Realty Trust, Inc.",
-      "sector": "Real Estate",
-      "current_price": 8.445,
-      "change_pct": 2.99,
-      "market_cap": 649952576,
-      "insiders": [
-        {
-          "name": "ORTALE BUFORD H",
-          "title": "Director",
-          "date": "Jun 15 '26",
-          "price": 9.85,
-          "qty": 39597,
-          "value": 491612,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 10,
-      "tier": "W",
-      "signals": [
-        "$492K total",
-        "Activity in last 3 days"
-      ],
-      "story": "FBRT \u2014 ORTALE BUFORD H (Director) bought, $492K total."
-    },
-    {
-      "ticker": "CTNT",
-      "insider": "Liu Huan",
-      "title": "See Remarks",
-      "date": "Jun 15 '26",
-      "price": 2.0,
-      "qty": 200000,
-      "value": 400000,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Cheetah Net Supply Chain Service Inc.",
-      "sector": "Industrials",
-      "current_price": 1.59,
-      "change_pct": 0.32,
-      "market_cap": 4705432,
-      "insiders": [
-        {
-          "name": "Liu Huan",
-          "title": "See Remarks",
-          "date": "Jun 15 '26",
-          "price": 2.0,
-          "qty": 200000,
-          "value": 400000,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 10,
-      "tier": "W",
-      "signals": [
-        "$400K total",
-        "Activity in last 3 days"
-      ],
-      "story": "CTNT \u2014 Liu Huan (See Remarks) bought, $400K total."
-    },
-    {
       "ticker": "PSUS",
       "insider": "Herring Bruce",
       "title": "Trustee",
@@ -2755,8 +2377,8 @@
       "is_csuite": false,
       "company": "Pershing Square USA, Ltd.",
       "sector": "Financial Services",
-      "current_price": 39.865,
-      "change_pct": 1.15,
+      "current_price": 39.79,
+      "change_pct": 0.96,
       "market_cap": 0,
       "insiders": [
         {
@@ -2776,6 +2398,40 @@
         "Activity in last 3 days"
       ],
       "story": "PSUS \u2014 Herring Bruce (Trustee) bought, $201K total."
+    },
+    {
+      "ticker": "VTS",
+      "insider": "STEINBERG JOSEPH S",
+      "title": "Director",
+      "date": "Jun 15 '26",
+      "price": 16.16,
+      "qty": 40882,
+      "value": 660530,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Vitesse Energy, Inc.",
+      "sector": "Energy",
+      "current_price": 16.01,
+      "change_pct": -0.19,
+      "market_cap": 667815936,
+      "insiders": [
+        {
+          "name": "STEINBERG JOSEPH S",
+          "title": "Director",
+          "date": "Jun 15 '26",
+          "price": 16.16,
+          "qty": 40882,
+          "value": 660530,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 10,
+      "tier": "W",
+      "signals": [
+        "$661K total"
+      ],
+      "story": "VTS \u2014 STEINBERG JOSEPH S (Director) bought, $661K total."
     },
     {
       "ticker": "SPOK",
@@ -2848,74 +2504,73 @@
       "story": "HNRG \u2014 Wesley Charles Ray IV (Director) bought, $250K total."
     },
     {
-      "ticker": "VRM",
-      "insider": "Mudrick Capital Management, L.",
-      "title": "Director",
-      "date": "Jun 15 '26",
-      "price": 7.22,
-      "qty": 31190,
-      "value": 225192,
-      "txn_count": 2,
+      "ticker": "NMM",
+      "insider": "Frangou Angeliki",
+      "title": "See Remarks",
+      "date": "Jun 16 '26",
+      "price": 73.63,
+      "qty": 3360,
+      "value": 249250,
+      "txn_count": 3,
       "insider_count": 1,
       "is_csuite": false,
-      "company": "Vroom, Inc.",
-      "sector": "Financial Services",
-      "current_price": 10.16,
-      "change_pct": -5.05,
-      "market_cap": 52909488,
+      "company": "Navios Maritime Partners L.P.",
+      "sector": "Industrials",
+      "current_price": 70.16,
+      "change_pct": -3.08,
+      "market_cap": 1994271488,
       "insiders": [
         {
-          "name": "Mudrick Capital Management, L.",
-          "title": "Director",
-          "date": "Jun 15 '26",
-          "price": 7.22,
-          "qty": 31190,
-          "value": 225192,
+          "name": "Frangou Angeliki",
+          "title": "See Remarks",
+          "date": "Jun 16 '26",
+          "price": 73.63,
+          "qty": 3360,
+          "value": 249250,
           "is_csuite": false
         }
       ],
       "conviction_score": 10,
       "tier": "W",
       "signals": [
-        "$225K total",
+        "$249K total",
         "Activity in last 3 days"
       ],
-      "story": "VRM \u2014 Mudrick Capital Management, L. (Director) bought, $225K total."
+      "story": "NMM \u2014 Frangou Angeliki (See Remarks) bought, $249K total."
     },
     {
-      "ticker": "SKIL",
-      "insider": "FRANKOLA JIM",
+      "ticker": "LULU",
+      "insider": "Bergh Charles V",
       "title": "Director",
       "date": "Jun 15 '26",
-      "price": 6.05,
-      "qty": 50000,
-      "value": 302730,
-      "txn_count": 2,
+      "price": 117.05,
+      "qty": 4275,
+      "value": 500384,
+      "txn_count": 1,
       "insider_count": 1,
       "is_csuite": false,
-      "company": "Skillsoft Corp.",
-      "sector": "Consumer Defensive",
-      "current_price": 7.36,
-      "change_pct": 5.9,
-      "market_cap": 66001016,
+      "company": "lululemon athletica inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 111.77,
+      "change_pct": 0.01,
+      "market_cap": 12691920896,
       "insiders": [
         {
-          "name": "FRANKOLA JIM",
+          "name": "Bergh Charles V",
           "title": "Director",
           "date": "Jun 15 '26",
-          "price": 6.05,
-          "qty": 50000,
-          "value": 302730,
+          "price": 117.05,
+          "qty": 4275,
+          "value": 500384,
           "is_csuite": false
         }
       ],
       "conviction_score": 10,
       "tier": "W",
       "signals": [
-        "$303K total",
-        "Activity in last 3 days"
+        "$500K total"
       ],
-      "story": "SKIL \u2014 FRANKOLA JIM (Director) bought, $303K total."
+      "story": "LULU \u2014 Bergh Charles V (Director) bought, $500K total."
     },
     {
       "ticker": "DINO",
@@ -2930,9 +2585,9 @@
       "is_csuite": false,
       "company": "HF Sinclair Corporation",
       "sector": "Energy",
-      "current_price": 64.48,
-      "change_pct": -2.17,
-      "market_cap": 11624161280,
+      "current_price": 64.5,
+      "change_pct": -2.14,
+      "market_cap": 11627765760,
       "insiders": [
         {
           "name": "Hardy Rhoman J",
@@ -2953,76 +2608,6 @@
       "story": "DINO \u2014 Hardy Rhoman J (Director) bought, $100K total."
     },
     {
-      "ticker": "ABTC",
-      "insider": "Busch Richard",
-      "title": "Director",
-      "date": "Jun 15 '26",
-      "price": 0.87,
-      "qty": 450000,
-      "value": 391500,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "American Bitcoin Corp",
-      "sector": "Financial Services",
-      "current_price": 0.8504,
-      "change_pct": 0.9,
-      "market_cap": 1526670464,
-      "insiders": [
-        {
-          "name": "Busch Richard",
-          "title": "Director",
-          "date": "Jun 15 '26",
-          "price": 0.87,
-          "qty": 450000,
-          "value": 391500,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 10,
-      "tier": "W",
-      "signals": [
-        "$392K total",
-        "Activity in last 3 days"
-      ],
-      "story": "ABTC \u2014 Busch Richard (Director) bought, $392K total."
-    },
-    {
-      "ticker": "MH",
-      "insider": "Moyer Philip D",
-      "title": "See Remarks",
-      "date": "Jun 15 '26",
-      "price": 11.12,
-      "qty": 22421,
-      "value": 249322,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "McGraw Hill, Inc.",
-      "sector": "Consumer Defensive",
-      "current_price": 9.65,
-      "change_pct": -4.46,
-      "market_cap": 1845814912,
-      "insiders": [
-        {
-          "name": "Moyer Philip D",
-          "title": "See Remarks",
-          "date": "Jun 15 '26",
-          "price": 11.12,
-          "qty": 22421,
-          "value": 249322,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 10,
-      "tier": "W",
-      "signals": [
-        "$249K total",
-        "Activity in last 3 days"
-      ],
-      "story": "MH \u2014 Moyer Philip D (See Remarks) bought, $249K total."
-    },
-    {
       "ticker": "PTHS",
       "insider": "Davis Todd C",
       "title": "Director",
@@ -3035,9 +2620,9 @@
       "is_csuite": false,
       "company": "Pelthos Therapeutics Inc.",
       "sector": "Healthcare",
-      "current_price": 28.56,
-      "change_pct": 5.74,
-      "market_cap": 99264416,
+      "current_price": 29.0,
+      "change_pct": 7.37,
+      "market_cap": 100793704,
       "insiders": [
         {
           "name": "Davis Todd C",
@@ -3057,41 +2642,6 @@
       "story": "PTHS \u2014 Davis Todd C (Director) bought, $1000K total."
     },
     {
-      "ticker": "GVA",
-      "insider": "Romer John Timothy",
-      "title": "Director",
-      "date": "Jun 15 '26",
-      "price": 143.65,
-      "qty": 750,
-      "value": 107040,
-      "txn_count": 2,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Granite Construction Incorporated",
-      "sector": "Industrials",
-      "current_price": 146.72,
-      "change_pct": 2.36,
-      "market_cap": 6418515968,
-      "insiders": [
-        {
-          "name": "Romer John Timothy",
-          "title": "Director",
-          "date": "Jun 15 '26",
-          "price": 143.65,
-          "qty": 750,
-          "value": 107040,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 10,
-      "tier": "W",
-      "signals": [
-        "$107K total",
-        "Activity in last 3 days"
-      ],
-      "story": "GVA \u2014 Romer John Timothy (Director) bought, $107K total."
-    },
-    {
       "ticker": "GPGI",
       "insider": "Knott Thomas R.",
       "title": "See remarks",
@@ -3104,9 +2654,9 @@
       "is_csuite": false,
       "company": "GPGI, Inc.",
       "sector": "Industrials",
-      "current_price": 14.4,
-      "change_pct": 1.98,
-      "market_cap": 4174004736,
+      "current_price": 14.42,
+      "change_pct": 2.12,
+      "market_cap": 4179802112,
       "insiders": [
         {
           "name": "Knott Thomas R.",
@@ -3255,85 +2805,111 @@
       "story": "SMMT \u2014 Two insiders bought including the Co-Chief Executive Officer, $100.0M total."
     },
     {
-      "ticker": "XRAY",
-      "insider": "Barber Michael J",
-      "title": "Director",
+      "ticker": "HLNE",
+      "insider": "Rogers Hartley R.",
+      "title": "Executive Co-Chairman",
       "date": "Jun 11 '26",
-      "price": 9.88,
-      "qty": 51746,
-      "value": 515799,
-      "txn_count": 5,
-      "insider_count": 5,
-      "is_csuite": false,
-      "company": "DENTSPLY SIRONA Inc.",
-      "sector": "Healthcare",
-      "current_price": 10.33,
-      "change_pct": 2.99,
-      "market_cap": 2069374720,
+      "price": 78.49,
+      "qty": 54573,
+      "value": 4248770,
+      "txn_count": 3,
+      "insider_count": 3,
+      "is_csuite": true,
+      "company": "Hamilton Lane Incorporated",
+      "sector": "Financial Services",
+      "current_price": 82.22,
+      "change_pct": 1.01,
+      "market_cap": 4565990400,
       "insiders": [
         {
-          "name": "Barber Michael J",
+          "name": "Rogers Hartley R.",
+          "title": "Executive Co-Chairman",
+          "date": "Jun 11 '26",
+          "price": 78.49,
+          "qty": 38290,
+          "value": 3005339,
+          "is_csuite": true
+        },
+        {
+          "name": "BERKMAN DAVID J",
           "title": "Director",
           "date": "Jun 11 '26",
-          "price": 9.88,
-          "qty": 15175,
-          "value": 150005,
+          "price": 76.27,
+          "qty": 15000,
+          "value": 1144050,
           "is_csuite": false
         },
         {
-          "name": "MCKEON BRIAN P",
-          "title": "Director",
-          "date": "Jun 12 '26",
-          "price": 10.12,
-          "qty": 10000,
-          "value": 101200,
-          "is_csuite": false
-        },
-        {
-          "name": "Gladden Brian T",
-          "title": "Director",
-          "date": "Jun 15 '26",
-          "price": 10.02,
-          "qty": 9985,
-          "value": 100000,
-          "is_csuite": false
-        },
-        {
-          "name": "HOLDEN BETSY D",
-          "title": "Director",
+          "name": "Kramer Andrea Anigati",
+          "title": "Chief Operating Officer",
           "date": "Jun 11 '26",
-          "price": 9.88,
-          "qty": 10086,
-          "value": 99692,
-          "is_csuite": false
-        },
-        {
-          "name": "HOSEIN CLYDE",
-          "title": "Director",
-          "date": "Jun 15 '26",
-          "price": 9.98,
-          "qty": 6500,
-          "value": 64902,
-          "is_csuite": false
+          "price": 77.46,
+          "qty": 1283,
+          "value": 99381,
+          "is_csuite": true
         }
       ],
       "conviction_score": 50,
       "tier": "A",
       "signals": [
-        "5 insiders buying",
-        "$516K total",
-        "Activity in last 3 days"
+        "3 insiders buying",
+        "Executive Co-Chairman bought",
+        "$4.2M total"
       ],
-      "story": "XRAY \u2014 Cluster of 5 insiders, $516K total."
+      "story": "HLNE \u2014 Cluster of 3 buyers including the Chief Operating Officer and Executive Co-Chairman, $4.2M total."
     }
   ],
   "tier_counts": {
-    "A": 4,
-    "B": 27,
-    "W": 49,
-    "total": 80
+    "A": 3,
+    "B": 26,
+    "W": 39,
+    "total": 68
   },
   "recent_feed": [
+    {
+      "ticker": "WHF",
+      "insider": "BOLDUC JOHN",
+      "title": "Director",
+      "date": "Jun 18 '26",
+      "price": 6.49,
+      "qty": 15380,
+      "value": 99816,
+      "filing": "Jun 18 08:25 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "ABT",
+      "insider": "Stratton John G",
+      "title": "Director",
+      "date": "May 07 '26",
+      "price": 86.82,
+      "qty": 2000,
+      "value": 173640,
+      "filing": "Jun 18 05:08 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "SAGT",
+      "insider": "Ng Chen Lok",
+      "title": "Chief Executive Officer",
+      "date": "Jun 18 '26",
+      "price": 1.04,
+      "qty": 1500000,
+      "value": 1560000,
+      "filing": "Jun 18 04:59 PM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "INR",
+      "insider": "Gieselman Scott",
+      "title": "Director",
+      "date": "Jun 17 '26",
+      "price": 12.94,
+      "qty": 10000,
+      "value": 129440,
+      "filing": "Jun 18 04:43 PM",
+      "is_csuite": false
+    },
     {
       "ticker": "FISV",
       "insider": "Todd Paul M",
@@ -3728,50 +3304,6 @@
       "qty": 12500,
       "value": 93125,
       "filing": "Jun 17 01:51 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "COSM",
-      "insider": "Terzis Georgios",
-      "title": "Chief Financial Officer",
-      "date": "Jun 16 '26",
-      "price": 0.25,
-      "qty": 168135,
-      "value": 42000,
-      "filing": "Jun 17 09:15 AM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "BZUN",
-      "insider": "Qiu Wenbin",
-      "title": "Chief Executive Officer",
-      "date": "Jun 16 '26",
-      "price": 2.72,
-      "qty": 10000,
-      "value": 27200,
-      "filing": "Jun 17 07:49 AM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "BZUN",
-      "insider": "Qiu Wenbin",
-      "title": "Chief Executive Officer",
-      "date": "Jun 15 '26",
-      "price": 2.79,
-      "qty": 10000,
-      "value": 27900,
-      "filing": "Jun 17 07:49 AM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "ONMD",
-      "insider": "Yu Jeffrey",
-      "title": "Chief Medical Officer",
-      "date": "Jun 16 '26",
-      "price": 0.58,
-      "qty": 172414,
-      "value": 100000,
-      "filing": "Jun 17 07:38 AM",
       "is_csuite": false
     }
   ]
