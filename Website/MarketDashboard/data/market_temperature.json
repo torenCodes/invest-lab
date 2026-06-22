@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-06-19T13:30:49.867127+00:00",
+  "scan_time": "2026-06-22T15:16:11.013016+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 81.1,
+  "composite_score": 81.0,
   "composite_label": "Extreme",
   "components": {
     "buffett": {
@@ -40,21 +40,21 @@
       "weight": 0.15
     },
     "breadth": {
-      "raw": 60.9,
-      "raw_label": "60.9% above 200-DMA",
-      "above_200dma": 305,
+      "raw": 62.1,
+      "raw_label": "62.1% above 200-DMA",
+      "above_200dma": 311,
       "total": 501,
       "score": 60,
       "label": "Frothy",
-      "description": "305 of 501 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
+      "description": "311 of 501 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
       "title": "Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
       "weight": 0.15
     },
     "fear_greed": {
-      "raw": 37.3,
-      "raw_label": "37 (Fear)",
-      "score": 37.3,
+      "raw": 35.9,
+      "raw_label": "36 (Fear)",
+      "score": 35.9,
       "label": "Fair",
       "description": "CNN's composite of 7 short-term sentiment signals (momentum, breadth, put/call ratio, junk-bond demand, volatility, etc.). High readings reflect investor euphoria \u2014 historically a contrarian sell signal.",
       "title": "Fear & Greed",
@@ -62,8 +62,8 @@
       "weight": 0.1
     },
     "vix": {
-      "raw": 16.86,
-      "raw_label": "16.9 VIX",
+      "raw": 17.5,
+      "raw_label": "17.5 VIX",
       "score": 70,
       "label": "Frothy",
       "description": "30-day expected S&P 500 volatility implied by options. Low readings (under 15) signal complacency and often coincide with frothy markets; high readings (over 30) signal fear and frequently mark short-term bottoms.",
