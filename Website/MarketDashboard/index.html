@@ -770,12 +770,24 @@
     color: var(--ink-3);
   }
   /* Cadence Watchlist table accents */
-  .cad-ticker {
+  .cad-ticker { line-height: 1.15; }
+  .cad-tk {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.01em;
+  }
+  .cad-co {
+    display: block;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.68rem;
+    color: var(--ink-3);
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 240px;
   }
   .cad-score { color: var(--accent, #38bda6); font-weight: 700; }
   .cad-tag {
@@ -1560,7 +1572,7 @@ function renderCadence() {
     const tagCls   = n.tag === 'leans-swing' ? 'cad-tag-swing' : 'cad-tag-day';
     const tagLabel = n.tag === 'leans-swing' ? 'leans swing' : 'day';
     return `<tr class="sr-row">
-      <td class="sr-ticker cad-ticker">${n.ticker}</td>
+      <td class="sr-ticker cad-ticker"><span class="cad-tk">${n.ticker}</span>${n.name ? `<span class="cad-co">${String(n.name).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span>` : ''}</td>
       <td class="sr-cell cad-score">${n.cadence_score.toFixed(1)}</td>
       <td class="sr-cell">${n.adr_pct.toFixed(1)}%</td>
       <td class="sr-cell">${n.consistency.toFixed(2)}</td>

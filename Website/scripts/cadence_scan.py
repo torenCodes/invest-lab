@@ -25,6 +25,7 @@ Run: python scripts/cadence_scan.py
 import json
 import os
 import statistics
+import re
 import time
 from collections import defaultdict
 from datetime import date, timedelta
@@ -54,6 +55,19 @@ WATCH = ["BE", "AAOI", "TE", "NVDA", "DELL", "MRVL", "AVGO", "TQQQ", "SOXL", "PL
 
 def clamp(x, lo, hi):
     return max(lo, min(hi, x))
+
+
+# Trim verbose share-class boilerplate Polygon appends to company names
+# ("Common Stock", "Class A Common Stock", "Ordinary Shares", etc.) so the
+# watchlist shows "Hut 8 Corp." instead of "Hut 8 Corp. Common Stock".
+_NAME_SUFFIX_RE = re.compile(
+    r"\s+(Class\s+[A-Z]\s+)?(Common Stock|Common Shares|Ordinary Shares?|"
+    r"Ordinary Share|American Depositary Shares?|ADS)\b.*$",
+    re.IGNORECASE,
+)
+
+def clean_name(nm):
+    return _NAME_SUFFIX_RE.sub("", (nm or "").strip()).strip()
 
 
 # ── Data: Polygon grouped daily (one call = whole market for one day) ─────────
@@ -117,6 +131,50 @@ def build_series(days):
                 "c": bar.get("c"), "v": bar.get("v"),
             })
     return series
+
+
+def fetch_name_map():
+    """Build a {ticker: company name} map from Polygon's tickers reference
+    (paginated, ~12 calls for the whole market). Grouped-daily bars give us
+    OHLCV but no names, so this is how the watchlist gets 'DigitalOcean'
+    under 'DOCN'. Cached locally for 7 days since names rarely change."""
+    cache_path = os.path.join(CACHE_DIR, "name_map.json")
+    if os.path.exists(cache_path) and (time.time() - os.path.getmtime(cache_path)) < 7 * 86400:
+        with open(cache_path) as f:
+            return json.load(f)
+
+    print("[cadence] Building ticker -> name map...")
+    names = {}
+    url = "https://api.polygon.io/v3/reference/tickers"
+    params = {"market": "stocks", "active": "true", "limit": 1000, "apiKey": POLYGON_KEY}
+    pages = 0
+    while url and pages < 25:
+        pages += 1
+        try:
+            r = requests.get(url, params=params, timeout=30)
+            if r.status_code == 429:
+                time.sleep(15)
+                continue
+            r.raise_for_status()
+            j = r.json()
+        except Exception as e:
+            print(f"[cadence] name map page {pages} failed: {e}")
+            break
+        for row in (j.get("results") or []):
+            t, nm = row.get("ticker"), row.get("name")
+            if t and nm:
+                names[t] = nm
+        url = j.get("next_url")
+        params = {"apiKey": POLYGON_KEY}   # next_url already carries the cursor/filters
+        if url:
+            time.sleep(2)
+
+    if names:
+        os.makedirs(CACHE_DIR, exist_ok=True)
+        with open(cache_path, "w") as f:
+            json.dump(names, f)
+    print(f"[cadence] Name map: {len(names)} tickers across {pages} pages")
+    return names
 
 
 # ── Scoring ───────────────────────────────────────────────────────────────────
@@ -227,10 +285,13 @@ def run():
         print(f"{i:>4} {s['ticker']:6} {s['cadence_score']:>6} {s['adr_pct']:>5} "
               f"{s['consistency']:>5} {dv:>7} ${s['price']:>7} {s['tag']}")
 
-    # Write top 60 (strip debug components for the file)
+    # Enrich the top 60 with company names (grouped-daily bars carry none)
+    name_map = fetch_name_map()
+
     out = []
     for s in scored[:60]:
         s2 = {k: v for k, v in s.items() if k != "_components"}
+        s2["name"] = clean_name(name_map.get(s2["ticker"], ""))
         out.append(s2)
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, "w") as f:

@@ -583,13 +583,12 @@
         '<div class="pv-empty">Watchlist refreshes pre-market on weekdays.</div>' +
         cta('View watchlist');
     }
-    var tagLabel = n.tag === 'leans-swing' ? 'Leans swing by price' : 'Day rhythm';
     return '<div class="pv-type">Top Cadence</div>' +
       '<div class="pv-ticker-row">' +
         '<span class="pv-ticker">' + n.ticker + '</span>' +
         '<span class="pv-pct" style="background:var(--accent-muted,#edf8f6);color:var(--accent-dark,#2a9b87);">' + fmt(n.adr_pct, 1) + '% ADR</span>' +
       '</div>' +
-      '<div class="pv-name">' + tagLabel + '</div>' +
+      '<div class="pv-name">' + (n.name || n.ticker) + '</div>' +
       '<div class="pv-price">$' + fmt(n.price, 2) + '</div>' +
       '<ul class="pv-signals">' +
         '<li>Consistency ' + fmt(n.consistency, 2) + ' — steadier near 1.0</li>' +
