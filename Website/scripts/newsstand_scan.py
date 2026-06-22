@@ -346,6 +346,128 @@ def fetch_unusual_volume(limit=10):
     return tickers
 
 
+# ── Trading Conditions (proprietary market-regime read) ──────────────────────
+
+def fetch_trading_conditions():
+    """A tactical read on whether the current backdrop favors active day/swing
+    trading. Synthesizes SPY trend + momentum, VIX (volatility), and the 10-year
+    yield into a verdict (Favorable / Mixed / Cautious / Risk-Off) with
+    color-coded signal readouts. This is the proprietary replacement for the
+    commoditized news feed — the macro interpreted for a trader, not headlines."""
+    print("[newsstand] Computing trading conditions...")
+    try:
+        import yfinance as yf
+    except ImportError:
+        print("[newsstand] yfinance unavailable, skipping trading conditions")
+        return None
+
+    def closes(sym, period):
+        try:
+            h = yf.Ticker(sym).history(period=period, auto_adjust=False)
+            return h["Close"].dropna() if h is not None and not h.empty else None
+        except Exception as e:
+            print(f"[newsstand] {sym} fetch failed: {e}")
+            return None
+
+    spy = closes("SPY", "1y")
+    vix = closes("^VIX", "2mo")
+    tnx = closes("^TNX", "2mo")
+    if spy is None or len(spy) < 50 or vix is None or len(vix) < 6:
+        print("[newsstand] insufficient data for trading conditions")
+        return None
+
+    price = float(spy.iloc[-1])
+    ma20  = float(spy.tail(20).mean())
+    ma50  = float(spy.tail(50).mean())
+    ma200 = float(spy.tail(200).mean()) if len(spy) >= 200 else None
+    ret5  = (price / float(spy.iloc[-6]) - 1.0) * 100.0
+
+    vix_level = float(vix.iloc[-1])
+    vix_chg5  = vix_level - float(vix.iloc[-6])
+
+    tnx_level = tnx_chg5 = None
+    if tnx is not None and len(tnx) >= 6:
+        tl, t5 = float(tnx.iloc[-1]), float(tnx.iloc[-6])
+        if tl > 20:           # Yahoo quotes ^TNX ~10x (43.9 -> 4.39%)
+            tl /= 10.0; t5 /= 10.0
+        tnx_level, tnx_chg5 = tl, tl - t5
+
+    signals, pts = [], 0
+
+    # ── Trend (SPY vs its moving averages) ──
+    above50, above20 = price > ma50, price > ma20
+    golden = ma200 is not None and ma50 > ma200
+    if above50 and golden:
+        t_read, t_tone, tp = "Uptrend", "good", 3
+    elif above50 or above20:
+        t_read, t_tone, tp = "Mixed trend", "neutral", 1
+    else:
+        t_read, t_tone, tp = "Downtrend", "bad", -1
+    pts += tp
+    signals.append({"label": "Market trend", "sub": "SPY vs moving averages",
+                    "value": ("Above" if above50 else "Below") + " 50-day",
+                    "read": t_read, "tone": t_tone})
+
+    # ── Momentum (SPY 1-week change) ──
+    if   ret5 >= 1.5: m_read, m_tone, mp = "Strong", "good", 2
+    elif ret5 >= 0.0: m_read, m_tone, mp = "Firm", "good", 1
+    elif ret5 >= -1.5: m_read, m_tone, mp = "Soft", "neutral", 0
+    else:             m_read, m_tone, mp = "Weak", "bad", -1
+    pts += mp
+    signals.append({"label": "5-day momentum", "sub": "SPY one-week change",
+                    "value": ("+" if ret5 >= 0 else "") + f"{ret5:.1f}%",
+                    "read": m_read, "tone": m_tone})
+
+    # ── Volatility (VIX) ──
+    rising = vix_chg5 > 1.5
+    if   vix_level > 26: v_read, v_tone, vp = "High fear", "bad", -2
+    elif vix_level >= 20: v_read, v_tone, vp = "Elevated", "neutral", 0
+    elif vix_level >= 12: v_read, v_tone, vp = ("Calm but rising" if rising else "Calm"), \
+                                               ("neutral" if rising else "good"), (0 if rising else 1)
+    else:                v_read, v_tone, vp = "Complacent", "neutral", 0
+    pts += vp
+    signals.append({"label": "Volatility (VIX)", "sub": "Implied S&P volatility",
+                    "value": f"{vix_level:.1f}", "read": v_read, "tone": v_tone})
+
+    # ── 10-year yield (rate pressure on momentum/growth) ──
+    if tnx_level is not None:
+        if tnx_chg5 is not None and tnx_chg5 >= 0.25:
+            y_read, y_tone, yp = "Rising fast", "bad", -1
+        elif tnx_chg5 is not None and tnx_chg5 <= -0.15:
+            y_read, y_tone, yp = "Easing", "good", 0
+        else:
+            y_read, y_tone, yp = "Stable", "neutral", 0
+        pts += yp
+        signals.append({"label": "10-year yield", "sub": "Rate pressure on growth",
+                        "value": f"{tnx_level:.2f}%", "read": y_read, "tone": y_tone})
+
+    if   pts >= 4: verdict = "Favorable"
+    elif pts >= 2: verdict = "Mixed"
+    elif pts >= 0: verdict = "Cautious"
+    else:          verdict = "Risk-Off"
+
+    headlines = {
+        "Favorable": "The trend is up and volatility is manageable, a constructive backdrop "
+                     "where momentum and breakout setups have room to run.",
+        "Mixed":     "The tape is sending mixed signals, so it pays to stay selective, keep "
+                     "position sizes measured, and let the cleaner setups come to you.",
+        "Cautious":  "Conditions are choppy and participation is thinning, which favors quick "
+                     "trades and tighter risk over holding momentum overnight.",
+        "Risk-Off":  "Trend and volatility are working against momentum longs, a defensive "
+                     "backdrop where smaller size and mean-reversion setups make more sense "
+                     "than chasing strength.",
+    }
+
+    print(f"[newsstand] Trading conditions: {verdict} (score {pts})")
+    return {
+        "verdict":  verdict,
+        "score":    pts,
+        "headline": headlines[verdict],
+        "signals":  signals,
+        "updated":  datetime.now(timezone.utc).isoformat(),
+    }
+
+
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 def run():
@@ -355,28 +477,28 @@ def run():
     universe = fetch_russell3000_universe()
     earnings = fetch_earnings(days_ahead=14, universe=universe)
 
-    # Respect Polygon rate limit (5 calls/min on free tier)
-    time.sleep(1)
-    news = fetch_news(limit=15)
-
     time.sleep(1)
     unusual_volume = fetch_unusual_volume(limit=15)
 
+    # Proprietary market-regime read — replaces the commoditized news feed
+    trading_conditions = fetch_trading_conditions()
+
     output = {
-        "scan_time":       start.isoformat(),
-        "next_scan_info":  NEXT_SCAN_INFO,
-        "earnings":        earnings,
-        "news":            news,
-        "unusual_volume":  unusual_volume,
+        "scan_time":          start.isoformat(),
+        "next_scan_info":     NEXT_SCAN_INFO,
+        "trading_conditions": trading_conditions,
+        "earnings":           earnings,
+        "unusual_volume":     unusual_volume,
     }
 
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, "w") as f:
         json.dump(output, f, indent=2)
 
+    tc = trading_conditions["verdict"] if trading_conditions else "n/a"
     elapsed = (datetime.now(timezone.utc) - start).seconds
-    print(f"[newsstand] Done in {elapsed}s — "
-          f"{len(earnings)} earnings, {len(news)} news, {len(unusual_volume)} volume")
+    print(f"[newsstand] Done in {elapsed}s — conditions: {tc}, "
+          f"{len(earnings)} earnings, {len(unusual_volume)} volume")
     print(f"[newsstand] Results written to {OUTPUT_FILE}")
 
 

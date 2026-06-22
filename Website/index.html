@@ -152,17 +152,17 @@
             </div>
           
           <div class="newsstand-grid">
-            <div class="newsstand-card" id="ns-news" onclick="toggleNewsstand('ns-news')">
+            <div class="newsstand-card ns-conditions-card" id="ns-conditions">
               <div class="newsstand-card-header">
-                <div class="newsstand-card-icon">📰</div>
+                <div class="newsstand-card-icon">🧭</div>
                 <div class="newsstand-card-left">
-                  <h3 class="newsstand-card-title">Market News</h3>
-                  <p class="newsstand-card-desc">Top headlines moving the market today.</p>
+                  <h3 class="newsstand-card-title">Trading Conditions</h3>
+                  <p class="newsstand-card-desc">A market-regime read for momentum traders.</p>
                 </div>
-                <span class="newsstand-chevron">▾</span>
               </div>
-              <div class="newsstand-card-preview" id="ns-news-preview"></div>
-              <div class="newsstand-card-body" id="ns-news-body"></div>
+              <div class="tc-content" id="ns-conditions-content">
+                <div class="ns-empty">Reading conditions…</div>
+              </div>
             </div>
             <div class="newsstand-card" id="ns-volume" onclick="toggleNewsstand('ns-volume')">
               <div class="newsstand-card-header">
@@ -1146,6 +1146,33 @@
 
   // ── Populate card bodies once data arrives ────────────────────────────────
 
+  // ── Trading Conditions (proprietary market-regime read) ────────────────
+  function renderConditions(tc) {
+    var el = document.getElementById('ns-conditions-content');
+    if (!el) return;
+    if (!tc) {
+      el.innerHTML = '<div class="ns-empty">Conditions unavailable — updates on weekdays.</div>';
+      return;
+    }
+    var vkey = tc.verdict.toLowerCase().replace(/[^a-z]/g, '');
+    var sigs = (tc.signals || []).map(function (s) {
+      return '<div class="tc-signal">' +
+        '<div class="tc-sig-main">' +
+          '<span class="tc-sig-label">' + s.label + '</span>' +
+          '<span class="tc-sig-sub">' + (s.sub || '') + '</span>' +
+        '</div>' +
+        '<div class="tc-sig-vals">' +
+          '<span class="tc-sig-value">' + s.value + '</span>' +
+          '<span class="tc-sig-read tc-tone-' + s.tone + '">' + s.read + '</span>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+    el.innerHTML =
+      '<div class="tc-top"><span class="tc-verdict tc-' + vkey + '">' + tc.verdict + '</span></div>' +
+      '<p class="tc-headline">' + tc.headline + '</p>' +
+      '<div class="tc-signals">' + sigs + '</div>';
+  }
+
   function populate(data) {
     nsData = data;
 
@@ -1154,16 +1181,11 @@
       return t.change_pct != null && t.change_pct > 0;
     }).slice(0, 10);
 
-    var news = data.news || [];
-
-    document.getElementById('ns-news-body').innerHTML = renderNews(news);
+    renderConditions(data.trading_conditions);
     document.getElementById('ns-volume-body').innerHTML = renderVolume(volume);
     document.getElementById('ns-earnings-body').innerHTML = renderEarnings(data.earnings);
 
     // Update card descriptions
-    var newsDesc = document.querySelector('#ns-news .newsstand-card-desc');
-    if (newsDesc && news.length) newsDesc.textContent = news.length + ' headlines — click to expand';
-
     var volDesc = document.querySelector('#ns-volume .newsstand-card-desc');
     if (volDesc) volDesc.textContent = volume.length + ' tickers — click to expand';
 
@@ -1171,24 +1193,6 @@
     if (earnDesc && data.earnings) earnDesc.textContent = data.earnings.length + ' reports — click to expand';
 
     // Preview content — inline items matching expanded format
-    var newsPrev = document.getElementById('ns-news-preview');
-    if (newsPrev && news.length) {
-      newsPrev.innerHTML = '<div class="ns-list">' + news.slice(0, 5).map(function (a) {
-        var tickers = (a.tickers || []).slice(0, 2).map(function (t) {
-          return '<span class="ns-ticker-tag">' + t + '</span>';
-        }).join('');
-        return '<div class="ns-item">' +
-          '<div class="ns-item-content">' +
-            '<div class="ns-item-title"><a href="' + a.url + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + a.title + '</a></div>' +
-            '<div class="ns-item-meta">' +
-              '<span class="ns-source">' + (a.source || '') + '</span>' +
-              '<span class="ns-time">' + timeAgo(a.published) + '</span>' +
-            '</div>' +
-          '</div>' +
-          (tickers ? '<div class="ns-item-tickers">' + tickers + '</div>' : '') +
-        '</div>';
-      }).join('') + '</div>';
-    }
 
     var volPrev = document.getElementById('ns-volume-preview');
     if (volPrev && volume.length) {
@@ -1237,7 +1241,7 @@
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(populate)
     .catch(function () {
-      ['ns-news-body', 'ns-volume-body', 'ns-earnings-body'].forEach(function (id) {
+      ['ns-conditions-content', 'ns-volume-body', 'ns-earnings-body'].forEach(function (id) {
         document.getElementById(id).innerHTML = '<div class="ns-empty">Data unavailable — check back on a weekday.</div>';
       });
     });

@@ -1662,6 +1662,54 @@ body {
   margin-top: 1rem;
 }
 
+/* ── Trading Conditions (always-on regime panel in the Newsstand) ───────── */
+.tc-content { padding: 0.4rem 0 0.1rem; }
+.tc-top { margin-bottom: 0.55rem; }
+.tc-verdict {
+  display: inline-block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 0.18rem 0.7rem;
+  border-radius: 4px;
+}
+.tc-favorable { background: #e6f6ef; color: #1a7a4a; }
+.tc-mixed     { background: var(--accent-muted); color: var(--accent-dark); }
+.tc-cautious  { background: #fbf0e2; color: #b8732a; }
+.tc-riskoff   { background: #fdecea; color: #c0392b; }
+.tc-headline {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0 0 0.6rem;
+}
+.tc-signal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--border-light);
+}
+.tc-sig-main { display: flex; flex-direction: column; min-width: 0; }
+.tc-sig-label { font-size: 0.8rem; font-weight: 600; color: var(--ink); }
+.tc-sig-sub { font-size: 0.67rem; color: var(--ink-3); margin-top: 1px; }
+.tc-sig-vals { display: flex; align-items: center; gap: 0.55rem; flex-shrink: 0; }
+.tc-sig-value { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--ink-2); white-space: nowrap; }
+.tc-sig-read {
+  font-size: 0.66rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.12rem 0.5rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.tc-tone-good    { background: #e6f6ef; color: #1a7a4a; }
+.tc-tone-neutral { background: var(--surface-2); color: var(--ink-3); }
+.tc-tone-bad     { background: #fdecea; color: #c0392b; }
+
 /* ── Newsstand card content ─────────────────────────────────────────────── */
 .ns-empty {
   font-size: 0.85rem;
