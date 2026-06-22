@@ -709,21 +709,28 @@
   }
 
   .panel-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     padding: 14px 20px;
     border-bottom: 1px solid var(--border-light);
     background: var(--surface-2);
   }
+  .panel-header-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
   .panel-icon { font-size: 1.1rem; flex-shrink: 0; }
   .panel-title { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
-  .panel-sub {
-    font-size: 0.7rem;
+  .panel-desc {
+    margin: 7px 0 0;
+    font-size: 0.75rem;
     color: var(--ink-3);
-    margin-left: auto;
-    text-align: right;
+    line-height: 1.55;
+    max-width: 96ch;
   }
+  .panel-desc strong { color: var(--ink-2); font-weight: 600; }
+  /* Cadence table: cap height to ~24 rows and scroll the rest, sticky header */
+  .cad-scroll { max-height: 1050px; overflow-y: auto; }
+  .cad-scroll thead th { position: sticky; top: 0; z-index: 1; }
 
   /* ── Sector Rotation Table ──────────────────────────────────────────────── */
   .sr-table {
@@ -1084,14 +1091,14 @@ function toggleSiteNav(btn) {
     <span id="hdr-time" style="display:none"></span>
     <div class="sidebar-section">
       <div class="sidebar-label">Navigation</div>
-      <a class="nav-item active" href="#cadence" onclick="setActive(this)">
-        <span class="nav-icon">🎯</span> Cadence Watchlist
-      </a>
-      <a class="nav-item" href="#day-trades" onclick="setActive(this)">
+      <a class="nav-item active" href="#day-trades" onclick="setActive(this)">
         <span class="nav-icon">⚡</span> In Play Today
       </a>
       <a class="nav-item" href="#market-chatter" onclick="setActive(this)">
         <span class="nav-icon">💬</span> Market Chatter
+      </a>
+      <a class="nav-item" href="#cadence" onclick="setActive(this)">
+        <span class="nav-icon">🎯</span> Cadence Watchlist
       </a>
       <a class="nav-item" href="#sector-rotation" onclick="setActive(this)">
         <span class="nav-icon">🗺️</span> Sector Rotation
@@ -1108,18 +1115,6 @@ function toggleSiteNav(btn) {
   <!-- Main content -->
   <main class="main">
 
-    <!-- Cadence Watchlist — day-trade rhythm engine (new headline) -->
-    <section id="cadence" class="full-panel">
-      <div class="panel-header">
-        <span class="panel-icon">🎯</span>
-        <span class="panel-title">Cadence Watchlist</span>
-        <span class="panel-sub">Tradeable daily rhythm across the liquid US market — click a column to sort</span>
-      </div>
-      <div id="cadence-body">
-        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading watchlist…</div></div>
-      </div>
-    </section>
-
     <!-- In Play Today — live movers from the intraday scan -->
     <section id="day-trades">
       <div class="section-header">
@@ -1131,20 +1126,6 @@ function toggleSiteNav(btn) {
         <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Waiting for scan results…</div></div>
       </div>
     </section>
-
-    <!-- Score Explainer -->
-    <div class="score-explainer">
-      <div class="score-explainer-title">How the In Play Score Works</div>
-      Each In Play nominee is scored on a 0–100 scale based on the strength of momentum signals detected during the intraday scan. A higher score means more bullish signals converged on the same ticker. The top-ranked pick is highlighted with a gold border. (This is separate from the Cadence Score above, which measures tradeable daily rhythm rather than today's move.)
-      <div class="score-explainer-grid">
-        <div class="score-explainer-item"><span>Top gainer</span><span>+13</span></div>
-        <div class="score-explainer-item"><span>High volume</span><span>+8</span></div>
-        <div class="score-explainer-item"><span>Strong move (≥5%)</span><span>+24</span></div>
-        <div class="score-explainer-item"><span>High buzz</span><span>+24</span></div>
-        <div class="score-explainer-item"><span>Yahoo trending</span><span>+19</span></div>
-        <div class="score-explainer-item"><span>Unusual volume</span><span>+13</span></div>
-      </div>
-    </div>
 
     <!-- Market Chatter -->
     <section id="market-chatter">
@@ -1158,12 +1139,28 @@ function toggleSiteNav(btn) {
       </div>
     </section>
 
+    <!-- Cadence Watchlist — day-trade rhythm engine -->
+    <section id="cadence" class="full-panel">
+      <div class="panel-header">
+        <div class="panel-header-top">
+          <span class="panel-icon">🎯</span>
+          <span class="panel-title">Cadence Watchlist</span>
+        </div>
+        <p class="panel-desc">A proprietary daily-rhythm ranking of the liquid US market, built to surface names with the kind of tradeable cadence you can learn and trade in and out of. The <strong>Cadence Score</strong> (0–100) blends average daily range, how consistent that range has been, liquidity, and price band, so a higher score means more reliable intraday movement. <strong>ADR%</strong> is the typical daily swing, <strong>Consistency</strong> is how steady that swing has been (closer to 1.0 is a steadier rhythm, lower is more erratic), and the <strong>Tag</strong> flags names whose price leans them toward swing territory. Click any column to sort.</p>
+      </div>
+      <div id="cadence-body">
+        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading watchlist…</div></div>
+      </div>
+    </section>
+
     <!-- Sector Rotation Tracker — full width -->
     <section id="sector-rotation" class="full-panel">
       <div class="panel-header">
-        <span class="panel-icon">🗺️</span>
-        <span class="panel-title">Sector Rotation</span>
-        <span class="panel-sub">SPDR ETF performance — click column header to sort</span>
+        <div class="panel-header-top">
+          <span class="panel-icon">🗺️</span>
+          <span class="panel-title">Sector Rotation</span>
+        </div>
+        <p class="panel-desc">Where money is flowing right now, tracked across the eleven SPDR sector ETFs that carve the market into technology, energy, financials, healthcare, and the rest. Each row shows that sector's return over <strong>1 day, 5 days, 1 month, and 3 months</strong>, so you can read at a glance which corners are leading and which are lagging. Sectors heating up are often where the next batch of high-cadence movers turns up, which makes this a useful map for where to go hunting. Click a sector row to expand today's scan movers within it, or click a column header to sort.</p>
       </div>
       <div id="sector-rotation-body">
         <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading sector data…</div></div>
@@ -1574,14 +1571,14 @@ function renderCadence() {
     </tr>`;
   }).join('');
 
-  el.innerHTML = `<table class="sr-table">
+  el.innerHTML = `<div class="cad-scroll"><table class="sr-table">
     <thead><tr>
       <th class="sr-th sr-th-left${tkActive}" onclick="cadenceSort('ticker')">Ticker${tkArrow}</th>
       ${numTh}
       <th class="sr-th">Tag</th>
     </tr></thead>
     <tbody>${rows}</tbody>
-  </table>`;
+  </table></div>`;
 }
 
 // ── Results renderer ───────────────────────────────────────────────────────
