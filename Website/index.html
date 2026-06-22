@@ -130,7 +130,7 @@
 
           <div class="preview-grid">
             <a class="preview-card" id="pc-day"       href="https://invest-movers-shakers.onrender.com"></a>
-            <a class="preview-card" id="pc-swing"     href="https://invest-movers-shakers.onrender.com"></a>
+            <a class="preview-card" id="pc-cadence"   href="https://invest-movers-shakers.onrender.com"></a>
             <a class="preview-card" id="pc-sector"    href="https://invest-movers-shakers.onrender.com"></a>
             <a class="preview-card" id="pc-discussed" href="https://invest-movers-shakers.onrender.com"></a>
           </div>
@@ -234,13 +234,13 @@
               <div class="dashboard-card-body">
                 <h3 class="dashboard-card-title">Movers and Shakers</h3>
                 <p class="dashboard-card-desc">
-                  Real-time scan of top movers, enriched with Reddit sentiment. Surfaces day-trade
-                  and swing-trade nominees, sector flow, and market context.
+                  Scans the entire liquid US market for tradeable daily rhythm, ranking a watchlist
+                  of day-trade names alongside today's live movers, market chatter, and sector rotation.
                 </p>
                 <div class="dashboard-card-tags">
+                  <span class="tag">Cadence</span>
                   <span class="tag">Day Trades</span>
-                  <span class="tag">Swing Trades</span>
-                  <span class="tag">Sentiment</span>
+                  <span class="tag">Sector Flow</span>
                   <span class="tag">Live</span>
                 </div>
               </div>
@@ -484,12 +484,13 @@
 
 <script>
 (function () {
-  var DATA_URL = 'https://invest-movers-shakers.onrender.com/data/results.json';
-  var DASH_URL = 'https://invest-movers-shakers.onrender.com';
+  var DATA_URL    = 'https://invest-movers-shakers.onrender.com/data/results.json';
+  var CADENCE_URL = 'https://invest-movers-shakers.onrender.com/data/cadence.json';
+  var DASH_URL    = 'https://invest-movers-shakers.onrender.com';
 
   // ── Skeleton loading state ─────────────────────────────────────────────
   function showSkeletons() {
-    ['pc-day', 'pc-swing', 'pc-sector', 'pc-discussed'].forEach(function (id) {
+    ['pc-day', 'pc-cadence', 'pc-sector', 'pc-discussed'].forEach(function (id) {
       document.getElementById(id).innerHTML =
         '<div class="pv-skel pv-skel-xs"></div>' +
         '<div class="pv-skel pv-skel-lg" style="margin-top:1.1rem"></div>' +
@@ -575,6 +576,29 @@
       cta('View sector rotation');
   }
 
+  // ── Cadence card (top day-trade rhythm name from the Cadence Watchlist) ─
+  function cadenceCard(n) {
+    if (!n) {
+      return '<div class="pv-type">Top Cadence</div>' +
+        '<div class="pv-empty">Watchlist refreshes pre-market on weekdays.</div>' +
+        cta('View watchlist');
+    }
+    var tagLabel = n.tag === 'leans-swing' ? 'Leans swing by price' : 'Day rhythm';
+    return '<div class="pv-type">Top Cadence</div>' +
+      '<div class="pv-ticker-row">' +
+        '<span class="pv-ticker">' + n.ticker + '</span>' +
+        '<span class="pv-pct" style="background:var(--accent-muted,#edf8f6);color:var(--accent-dark,#2a9b87);">' + fmt(n.adr_pct, 1) + '% ADR</span>' +
+      '</div>' +
+      '<div class="pv-name">' + tagLabel + '</div>' +
+      '<div class="pv-price">$' + fmt(n.price, 2) + '</div>' +
+      '<ul class="pv-signals">' +
+        '<li>Consistency ' + fmt(n.consistency, 2) + ' — steadier near 1.0</li>' +
+        '<li>$' + Math.round((n.dollar_vol || 0) / 1e6) + 'M average daily volume</li>' +
+      '</ul>' +
+      '<div class="pv-score"><span class="pv-score-label">Cadence Score</span> <span class="pv-score-val">' + fmt(n.cadence_score, 1) + '</span></div>' +
+      cta('View watchlist');
+  }
+
   // ── Boot ───────────────────────────────────────────────────────────────
   showSkeletons();
 
@@ -589,21 +613,33 @@
       }
 
       var day      = data.day_trades    && data.day_trades[0];
-      var swing    = data.swing_trades  && data.swing_trades[0];
       var sector   = data.sector_rotation && data.sector_rotation[0];
       var discuss  = data.reddit_cards  && data.reddit_cards[0];
 
       document.getElementById('pc-day').innerHTML      = stockCard(day,     'Day Trade',        'View day trades',   false);
-      document.getElementById('pc-swing').innerHTML    = stockCard(swing,   'Swing Trade',      'View swing trades', false);
       document.getElementById('pc-sector').innerHTML   = sectorCard(sector);
       document.getElementById('pc-discussed').innerHTML = stockCard(discuss, 'Highly Discussed', 'View all picks',    true);
     })
     .catch(function () {
       var msg = '<div class="pv-empty">Data unavailable — check back on a weekday.</div>';
-      ['pc-day', 'pc-swing', 'pc-sector', 'pc-discussed'].forEach(function (id) {
+      ['pc-day', 'pc-sector', 'pc-discussed'].forEach(function (id) {
         document.getElementById(id).innerHTML = msg;
       });
       document.getElementById('preview-ts').textContent = 'unavailable';
+    });
+
+  // Cadence pick — separate source (cadence.json), updated pre-market daily
+  fetch(CADENCE_URL + '?t=' + Date.now())
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      var top = d && d.names && d.names[0];
+      document.getElementById('pc-cadence').innerHTML = cadenceCard(top);
+    })
+    .catch(function () {
+      document.getElementById('pc-cadence').innerHTML =
+        '<div class="pv-type">Top Cadence</div>' +
+        '<div class="pv-empty">Data unavailable — check back on a weekday.</div>' +
+        cta('View watchlist');
     });
 }());
 </script>
