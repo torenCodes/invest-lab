@@ -147,8 +147,8 @@
         <!-- SIDEBAR: Newsstand -->
         <div class="broadsheet-side">
             <div class="broadsheet-side-title">
-              <h2 class="section-title">The Newsstand</h2>
-              <p class="preview-ts-line">Extra, extra!  Read all about it!</p>
+              <h2 class="section-title">Market Reading</h2>
+              <p class="preview-ts-line">The day's trading conditions and what's on the radar.</p>
             </div>
           
           <div class="newsstand-grid">
@@ -1064,37 +1064,7 @@
     return d.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' });
   }
 
-  function timeAgo(isoStr) {
-    if (!isoStr) return '';
-    var ts = (typeof isoStr === 'number' || /^\d+$/.test(isoStr))
-      ? new Date(Number(isoStr) * 1000)   // Unix seconds → ms
-      : new Date(isoStr);
-    var diff = (Date.now() - ts.getTime()) / 3600000;
-    if (diff < 1) return Math.round(diff * 60) + 'm ago';
-    if (diff < 24) return Math.round(diff) + 'h ago';
-    return Math.round(diff / 24) + 'd ago';
-  }
-
   // ── Render functions ──────────────────────────────────────────────────────
-
-  function renderNews(articles) {
-    if (!articles || !articles.length) return '<div class="ns-empty">No news data available.</div>';
-    return '<div class="ns-list">' + articles.map(function (a) {
-      var tickers = (a.tickers || []).slice(0, 4).map(function (t) {
-        return '<span class="ns-ticker-tag">' + t + '</span>';
-      }).join('');
-      return '<div class="ns-item">' +
-        '<div class="ns-item-content">' +
-          '<div class="ns-item-title"><a href="' + a.url + '" target="_blank" rel="noopener">' + a.title + '</a></div>' +
-          '<div class="ns-item-meta">' +
-            '<span class="ns-source">' + (a.source || '') + '</span>' +
-            '<span class="ns-time">' + timeAgo(a.published) + '</span>' +
-          '</div>' +
-        '</div>' +
-        (tickers ? '<div class="ns-item-tickers">' + tickers + '</div>' : '') +
-      '</div>';
-    }).join('') + '</div>';
-  }
 
   function renderVolume(tickers) {
     if (!tickers || !tickers.length) return '<div class="ns-empty">No unusual volume data available.</div>';
