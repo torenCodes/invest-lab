@@ -8,6 +8,7 @@ Usage (called by GitHub Actions after each scan):
     python scripts/archive_nominee.py --source underdogs
     python scripts/archive_nominee.py --source insider
     python scripts/archive_nominee.py --source tried-true
+    python scripts/archive_nominee.py --source patterns   # top Coil pick (coil.json)
 
 Dedup logic: the same ticker from the same source is skipped if it was
 already archived within the last DEDUP_DAYS days.
@@ -27,7 +28,7 @@ RESULTS_PATHS = {
     'underdogs':   os.path.join(WEBSITE_DIR, 'TheMarathon', 'data', 'deep_value.json'),
     'insider':     os.path.join(WEBSITE_DIR, 'InsiderBuying', 'data', 'results.json'),
     'tried-true':  os.path.join(WEBSITE_DIR, 'TheMarathon', 'data', 'consensus.json'),
-    'patterns':    os.path.join(WEBSITE_DIR, 'PatternScanner', 'data', 'results.json'),
+    'patterns':    os.path.join(WEBSITE_DIR, 'PatternScanner', 'data', 'coil.json'),
 }
 
 DEDUP_DAYS = 14  # Don't re-archive the same ticker+source within N days
@@ -188,19 +189,23 @@ def extract_tried_true(path):
 
 
 def extract_patterns(path):
+    """Top pick from the Pattern Scanner's Coil engine (coil.json). The
+    'Coiled' list is the dashboard's headline tightness-ranked watchlist, so
+    coiled[0] is the strongest setup of the day."""
     with open(path) as f:
         data = json.load(f)
 
-    setups = data.get('setups', [])
-    if not setups:
+    coiled = data.get('coiled', [])
+    if not coiled:
         return None
+    pick = coiled[0]
 
-    # Pick top Grade A, or fall back to first setup
-    grade_a = [s for s in setups if s.get('grade') == 'A']
-    pick = grade_a[0] if grade_a else setups[0]
-
-    signals = pick.get('signals', [])
-    reason = pick.get('pattern', 'Pattern setup') + ' — ' + '; '.join(signals[:2]) if signals else pick.get('pattern', 'Pattern setup')
+    bits = ['Coil ' + str(round(pick.get('coil_score', 0)))]
+    if pick.get('rs_pct') is not None:
+        bits.append('RS ' + str(pick['rs_pct']) + 'th')
+    if pick.get('band_pct') is not None:
+        bits.append(str(pick['band_pct']) + '% range')
+    reason = pick.get('pattern', 'Coiled setup') + ' — ' + ', '.join(bits)
 
     return {
         'source':      'Pattern Scanner',
@@ -208,8 +213,8 @@ def extract_patterns(path):
         'ticker':      pick['ticker'],
         'name':        pick.get('name', pick['ticker']),
         'sector':      pick.get('sector', ''),
-        'entry_price': pick.get('current_price'),
-        'score':       pick.get('score'),
+        'entry_price': pick.get('price'),
+        'score':       round(float(pick.get('coil_score', 0)), 1),
         'reason':      reason,
     }
 

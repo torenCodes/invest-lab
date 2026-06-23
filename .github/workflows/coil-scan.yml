@@ -1,11 +1,13 @@
-name: Pattern Scanner
+name: Coil Scan
 
 on:
   schedule:
-    # Weekdays ~9:40am ET and ~2:00pm ET (single entries; ~1hr drift EST vs EDT)
-    - cron: '40 13 * * 1-5'
-    - cron: '0 18 * * 1-5'
-  workflow_dispatch:         # Manual trigger button in GitHub UI
+    # Pre-market, ~7:30am ET weekdays (11:30 UTC EDT). Staggered 30 min after
+    # the Cadence scan so the two don't hammer Polygon's free tier at once.
+    # Builds the swing-setup watchlist off the last completed session
+    # (Polygon free tier serves prior-day data, not same-day).
+    - cron: '30 11 * * 1-5'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -24,10 +26,12 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install -r Website/PatternScanner/requirements-scan.txt
+        run: pip install -r Website/scripts/requirements-coil.txt
 
-      - name: Run scan
-        run: python Website/PatternScanner/scan.py
+      - name: Run Coil scan
+        run: python Website/scripts/coil_scan.py
+        env:
+          POLYGON_KEY: ${{ secrets.POLYGON_KEY }}
 
       - name: Archive top nominee
         run: python Website/scripts/archive_nominee.py --source patterns
@@ -39,7 +43,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
-          git add Website/PatternScanner/data/results.json Website/MarketDashboard/data/nominees_archive.json
-          git diff --staged --quiet || git commit -m "chore: pattern scan $(date -u +%Y-%m-%dT%H:%M)Z"
+          git add Website/PatternScanner/data/coil.json Website/MarketDashboard/data/nominees_archive.json
+          git diff --staged --quiet || git commit -m "chore: coil scan $(date -u +%Y-%m-%dT%H:%M)Z"
           git pull --rebase -Xtheirs origin ${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}

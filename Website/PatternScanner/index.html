@@ -158,7 +158,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 9px 24px;
+    padding: 11px 24px;
     font-size: 0.875rem;
     color: rgba(255,255,255,0.65);
     border-left: 2px solid transparent;
@@ -169,18 +169,22 @@
   .nav-item:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); }
   .nav-item.active { color: #38bda6; border-left-color: #38bda6; background: rgba(56,189,166,0.1); font-weight: 500; }
   .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+  .nav-item-text { display: flex; flex-direction: column; line-height: 1.2; }
+  .nav-item-sub { font-size: 0.66rem; color: rgba(255,255,255,0.38); font-weight: 400; margin-top: 2px; }
+  .nav-item.active .nav-item-sub { color: rgba(56,189,166,0.7); }
   .nav-badge {
     margin-left: auto;
     font-family: 'DM Mono', monospace;
     font-size: 0.65rem;
     font-weight: 600;
-    background: var(--green);
-    color: #fff;
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.85);
     padding: 1px 7px;
     border-radius: 20px;
     min-width: 20px;
     text-align: center;
   }
+  .nav-item.active .nav-badge { background: var(--accent); color: #08312b; }
 
   .sidebar-stat {
     padding: 6px 20px;
@@ -218,20 +222,59 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 36px;
+  }
+
+  /* ── Section header ──────────────────────────────────────────────────────── */
+  .scan-section { scroll-margin-top: 90px; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .section-title .tt-accent { color: var(--accent-dark); }
+  .section-subtitle {
+    font-size: 0.85rem;
+    color: var(--ink-3);
+    line-height: 1.4;
+    flex: 1;
+    min-width: 0;
+  }
+  .section-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent-dark);
+    background: var(--accent-muted);
+    border: 1px solid var(--accent-light);
+    padding: 2px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   /* ── Setup cards grid ────────────────────────────────────────────────────── */
   .setups-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 18px;
   }
 
   /* ── Setup card ──────────────────────────────────────────────────────────── */
-  /* Top border = brand teal (matches index.html .preview-card).
-     Watch cards keep an orange left border to flag lower-conviction picks;
-     Grade A and B cards stay clean — their badges already do the work. */
+  /* Top border = brand teal (matches index.html .preview-card). */
   .setup-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -245,12 +288,10 @@
   .setup-card:hover {
     box-shadow: var(--shadow-warm);
     transform: translateY(-2px);
-    border-top-color: var(--accent);
   }
-  .setup-card.grade-w { border-left: 3px solid var(--orange); }
 
   .card-top {
-    padding: 16px 18px 14px;
+    padding: 15px 18px 13px;
     border-bottom: 1px solid var(--border-light);
   }
 
@@ -258,33 +299,20 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 11px;
     flex-wrap: wrap;
   }
-  .grade-badge {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    font-weight: 700;
-    padding: 3px 9px;
-    border-radius: 5px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  .grade-badge.a { background: var(--green); color: #fff; }
-  .grade-badge.b { background: var(--teal); color: #fff; }
-  .grade-badge.watch { background: var(--orange); color: #fff; }
-
   .pattern-pill {
     font-size: 0.7rem;
-    font-weight: 500;
+    font-weight: 600;
     padding: 2px 9px;
     border-radius: 20px;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    color: var(--ink-2);
+    background: var(--accent-muted);
+    border: 1px solid var(--accent-light);
+    color: var(--accent-dark);
     white-space: nowrap;
   }
-  .insider-pill {
+  .rs-pill {
     font-size: 0.68rem;
     font-weight: 600;
     padding: 2px 8px;
@@ -294,14 +322,12 @@
     border: 1px solid var(--green-light);
     white-space: nowrap;
   }
-  .etf-pill {
-    font-size: 0.68rem;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 20px;
-    background: var(--blue-bg);
-    color: var(--blue);
-    border: 1px solid #c5d9f0;
+  .rank-pill {
+    margin-left: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.66rem;
+    font-weight: 500;
+    color: var(--ink-3);
     white-space: nowrap;
   }
 
@@ -330,77 +356,95 @@
     text-overflow: ellipsis;
   }
   /* ─── END unified card text styles ──────────────────────────────────────── */
-  .card-sector {
-    font-size: 0.72rem;
-    color: var(--ink-3);
-    margin-top: 2px;
-    font-style: italic;
-  }
 
-  .card-price {
-    text-align: right;
-    flex-shrink: 0;
-  }
-  .price-value {
+  /* Score block (replaces the old price block as the card's hero number) */
+  .card-score { text-align: right; flex-shrink: 0; }
+  .score-value {
     font-family: 'DM Mono', monospace;
-    font-size: 1.1rem;
+    font-size: 1.55rem;
     font-weight: 500;
     color: var(--ink);
-    line-height: 1.2;
+    line-height: 1;
   }
-  .price-change {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.82rem;
+  .score-label {
+    font-size: 0.6rem;
     font-weight: 600;
-    margin-top: 2px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-top: 3px;
   }
-  .price-change.pos { color: var(--green); }
-  .price-change.neg { color: var(--red); }
-  .price-change.flat { color: var(--ink-3); }
+  .score-bar {
+    margin-top: 6px;
+    width: 84px;
+    height: 5px;
+    border-radius: 3px;
+    background: var(--surface-2);
+    overflow: hidden;
+    margin-left: auto;
+  }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+  }
 
   /* ── Sparkline chart ─────────────────────────────────────────────────────── */
   .card-chart {
-    padding: 0 18px 4px;
+    padding: 8px 18px 2px;
     position: relative;
     overflow: hidden;
   }
   .card-chart svg {
     display: block;
     width: 100%;
-    height: 80px;
-  }
-  .card-chart-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 18px 10px;
+    height: 64px;
   }
   .chart-range-label {
     font-size: 0.62rem;
     font-family: 'DM Mono', monospace;
     color: var(--ink-3);
+    padding: 0 18px 2px;
   }
-  .card-chart-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--blue);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .card-chart-link:hover { color: #38bda6; }
 
-  /* ── Card signals (bottom) ───────────────────────────────────────────────── */
-  .card-signals {
-    padding: 12px 18px 14px;
+  /* ── Quick metrics row ───────────────────────────────────────────────────── */
+  .card-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border-light);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    margin-top: 8px;
   }
+  .metric-cell {
+    background: var(--surface);
+    padding: 9px 6px;
+    text-align: center;
+  }
+  .metric-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .metric-val.good { color: var(--green); }
+  .metric-cap {
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-top: 3px;
+  }
+
+  /* ── Card signals ────────────────────────────────────────────────────────── */
+  .card-signals { padding: 12px 18px 14px; }
   .signal-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
   }
   .signal-item {
     display: flex;
@@ -413,22 +457,10 @@
   .signal-dot {
     width: 5px; height: 5px;
     border-radius: 50%;
-    background: #38bda6;
+    background: var(--accent);
     flex-shrink: 0;
     margin-top: 5px;
   }
-  .card-chart-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    margin-top: 12px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--blue);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .card-chart-link:hover { color: #38bda6; }
 
   /* ── Expandable detail ───────────────────────────────────────────────────── */
   .card-detail {
@@ -439,32 +471,16 @@
   }
   .card-detail.open { display: block; }
 
-  .deep-dive-link {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 6px 14px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #38bda6;
-    border: 1px solid #38bda6;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.15s, color 0.15s;
-  }
-  .deep-dive-link:hover { background: #38bda6; color: #fff; }
-
   .detail-row {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     gap: 12px;
-    padding: 4px 0;
+    padding: 5px 0;
     font-size: 0.8rem;
     border-bottom: 1px solid var(--border-light);
   }
-  .detail-row:last-child { border-bottom: none; }
+  .detail-row:last-of-type { border-bottom: none; }
   .detail-label { color: var(--ink-3); }
   .detail-val {
     font-family: 'DM Mono', monospace;
@@ -478,20 +494,44 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink-3);
-    margin: 10px 0 6px;
+    margin: 12px 0 6px;
   }
+  .detail-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+  .card-chart-link, .deep-dive-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .card-chart-link {
+    color: var(--blue);
+    border: 1px solid #c5d9f0;
+    background: var(--blue-bg);
+  }
+  .card-chart-link:hover { background: var(--blue); color: #fff; }
+  .deep-dive-link {
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    border: 1px solid var(--accent);
+  }
+  .deep-dive-link:hover { background: var(--accent); color: #fff; }
 
-  /* ── Empty state ─────────────────────────────────────────────────────────── */
-  .empty-state {
-    text-align: center;
-    padding: 60px 40px;
-    color: var(--ink-3);
-  }
+  /* ── Empty / loading ─────────────────────────────────────────────────────── */
+  .empty-state { text-align: center; padding: 50px 40px; color: var(--ink-3); }
   .empty-icon { font-size: 2.5rem; margin-bottom: 12px; }
   .empty-title { font-size: 1.1rem; font-weight: 600; color: var(--ink-2); margin-bottom: 6px; }
   .empty-sub { font-size: 0.88rem; }
-
-  /* ── Loading ─────────────────────────────────────────────────────────────── */
   .loading-state {
     display: flex;
     align-items: center;
@@ -504,12 +544,33 @@
   .spinner {
     width: 18px; height: 18px;
     border: 2px solid var(--border);
-    border-top-color: #38bda6;
+    border-top-color: var(--accent);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
     flex-shrink: 0;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Glossary ────────────────────────────────────────────────────────────── */
+  .glossary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 26px;
+    box-shadow: var(--shadow-sm);
+  }
+  .glossary-label {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-3); margin-bottom: 12px;
+  }
+  .glossary-label.spaced { margin-top: 18px; }
+  .glossary-intro { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 6px 20px;
+    font-size: 0.8rem; color: var(--ink-2); line-height: 1.55;
+  }
 
   /* ── Mobile ──────────────────────────────────────────────────────────────── */
   @media (max-width: 900px) {
@@ -517,6 +578,7 @@
     .sidebar { position: static; height: auto; }
     .main { padding: 20px 16px; }
     .setups-grid { grid-template-columns: 1fr; }
+    .section-head { flex-wrap: wrap; }
   }
 </style>
 </head>
@@ -560,7 +622,7 @@
   <aside class="sidebar">
     <div class="sidebar-header">
       <div class="logo">Pattern <span>Scanner</span></div>
-      <div class="logo-sub">Technical setups — S&amp;P 500</div>
+      <div class="logo-sub">Coil Score · swing setups</div>
       <div class="sidebar-scan-status">
         <div class="pulse"></div>
         <span id="sidebar-scan-time">Loading...</span>
@@ -568,91 +630,105 @@
     </div>
 
     <div class="sidebar-section">
-      <div class="sidebar-label">Filter</div>
-      <div class="nav-item active" onclick="setFilter('all')" id="nav-all">
-        <span class="nav-icon">&#9776;</span> All Setups
-      </div>
-      <div class="nav-item" onclick="setFilter('A')" id="nav-A">
-        <span class="nav-icon">&#9650;</span> Grade A
-        <span class="nav-badge" id="sidebar-grade-a-count">—</span>
-      </div>
-      <div class="nav-item" onclick="setFilter('B')" id="nav-B">
-        <span class="nav-icon">&#9670;</span> Grade B
-      </div>
-      <div class="nav-item" onclick="setFilter('Watch')" id="nav-Watch">
-        <span class="nav-icon">&#9651;</span> Watch List
-      </div>
+      <div class="sidebar-label">Sections</div>
+      <a class="nav-item active" id="nav-coiled" onclick="jumpTo('sec-coiled')">
+        <span class="nav-icon">&#9676;</span>
+        <span class="nav-item-text">Coiled
+          <span class="nav-item-sub">Tight, wound-up setups</span>
+        </span>
+        <span class="nav-badge" id="badge-coiled">—</span>
+      </a>
+      <a class="nav-item" id="nav-leaders" onclick="jumpTo('sec-leaders')">
+        <span class="nav-icon">&#9650;</span>
+        <span class="nav-item-text">Leaders
+          <span class="nav-item-sub">Strong, constructive trends</span>
+        </span>
+        <span class="nav-badge" id="badge-leaders">—</span>
+      </a>
     </div>
 
     <div class="sidebar-section">
       <div class="sidebar-label">Scan Info</div>
       <div class="sidebar-stat">
-        <span>Total scanned</span>
+        <span>Universe scanned</span>
         <span class="sidebar-stat-val" id="sidebar-total">—</span>
       </div>
       <div class="sidebar-stat">
-        <span>Setups found</span>
-        <span class="sidebar-stat-val" id="sidebar-setups">—</span>
+        <span>Session</span>
+        <span class="sidebar-stat-val" id="sidebar-session">—</span>
       </div>
       <div class="sidebar-stat">
         <span>Schedule</span>
-        <span class="sidebar-stat-val">Weekdays 9:40am &amp; 2pm</span>
+        <span class="sidebar-stat-val">Weekdays, pre-market</span>
       </div>
     </div>
 
     <div class="sidebar-section">
-      <div class="sidebar-label">Patterns</div>
+      <div class="sidebar-label">What it measures</div>
       <div class="sidebar-note">
-        Bull Flag · VCP · BB Squeeze<br>
-        MA Crossover · Cup &amp; Handle<br>
-        High-Vol Gap
+        Trend stack · Relative strength<br>
+        Range tightness · Volume dry-up<br>
+        <span style="opacity:.65">Patterns: squeeze · VCP · bull flag</span>
       </div>
     </div>
 
     <div class="sidebar-footer">
-      Not financial advice. Pattern detection is algorithmic and may miss or generate false setups. Always do your own research before trading.
+      Not financial advice. The Coil Score is an algorithmic read of price structure and may miss or misjudge setups. Always do your own research before trading.
     </div>
   </aside>
 
   <!-- ── Main Content ──────────────────────────────────────────────────────── -->
   <main class="main">
 
-    <!-- Setup cards -->
-    <div id="setups-container">
-      <div class="loading-state">
-        <div class="spinner"></div>
-        Loading pattern data...
-      </div>
+    <div id="loading" class="loading-state">
+      <div class="spinner"></div>
+      Loading the day's setups...
     </div>
 
+    <!-- Coiled section -->
+    <section class="scan-section" id="sec-coiled" style="display:none;">
+      <div class="section-head">
+        <div class="section-title"><span class="tt-accent">Coiled</span> Setups</div>
+        <div class="section-subtitle">Tight, wound-up consolidations in an uptrend — narrow range, drying volume, energy building before the move. Ranked by Coil Score.</div>
+        <div class="section-count" id="count-coiled">—</div>
+      </div>
+      <div class="setups-grid" id="grid-coiled"></div>
+    </section>
+
+    <!-- Leaders section -->
+    <section class="scan-section" id="sec-leaders" style="display:none;">
+      <div class="section-head">
+        <div class="section-title">Market <span class="tt-accent">Leaders</span></div>
+        <div class="section-subtitle">The strongest trends that are still constructive — high relative strength, orderly range, sitting near support. Not yet extended. Ranked by Leader Score.</div>
+        <div class="section-count" id="count-leaders">—</div>
+      </div>
+      <div class="setups-grid" id="grid-leaders"></div>
+    </section>
+
     <!-- Glossary -->
-    <div id="glossary-section" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow-sm);">
-      <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px;">Understanding the Results</div>
-      <div style="font-size:0.85rem;color:var(--ink-2);line-height:1.7;margin-bottom:14px;">
-        Each setup is scored and assigned a grade based on the strength of the detected pattern and supporting technical indicators. The scanner runs daily against all S&amp;P 500 stocks.
+    <div class="glossary" id="glossary" style="display:none;">
+      <div class="glossary-label">How to read this dashboard</div>
+      <div class="glossary-intro">
+        Two complementary swing lists, both built from daily price structure across the broad liquid US market — no news, no hype, just the tape.
+        <strong>Coiled</strong> surfaces tight setups before they go; <strong>Leaders</strong> surfaces the strongest names that still offer a sensible entry. A name can earn a place on both.
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px 20px;font-size:0.82rem;color:var(--ink-2);line-height:1.6;">
-        <div><strong style="color:var(--green);">Grade A</strong> (≥65 pts) — High-confidence setup with multiple confirming signals.</div>
-        <div><strong style="color:var(--teal);">Grade B</strong> (≥45 pts) — Solid setup, worth monitoring for entry.</div>
-        <div><strong style="color:var(--orange);">Watch</strong> (≥30 pts) — Early-stage pattern forming; not yet confirmed.</div>
+      <div class="glossary-grid">
+        <div><strong style="color:var(--accent-dark);">Coil Score</strong> (0–100) — Trend stack (30) + relative strength (25) + range tightness (25) + volume dry-up (20). Higher = more wound-up.</div>
+        <div><strong style="color:var(--accent-dark);">Leader Score</strong> (0–100) — Relative strength (50) + trend (25) + constructive setup (25). Rewards strength that hasn't yet run; gates out anything parabolic, broken, or already breaking out.</div>
       </div>
-      <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin:16px 0 10px;">Pattern Glossary</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:6px 20px;font-size:0.8rem;color:var(--ink-2);line-height:1.55;">
-        <div><strong>Bull Flag</strong> — Sharp rally (flagpole) followed by a tight, downward-drifting consolidation (flag). Breakout above the flag signals continuation.</div>
-        <div><strong>VCP</strong> — Volatility Contraction Pattern. Successive tightening pullbacks on declining volume, signaling a supply/demand squeeze before breakout.</div>
-        <div><strong>BB Squeeze</strong> — Bollinger Band Squeeze. Bands narrow to historic lows, indicating compressed volatility that often precedes a strong directional move.</div>
-        <div><strong>MA Crossover</strong> — Short-term moving average crosses above a longer-term average (e.g., 20 EMA &gt; 50 SMA), signaling a momentum shift.</div>
-        <div><strong>Cup &amp; Handle</strong> — Rounded bottom (cup) followed by a shallow pullback (handle). Cup depth and handle depth measure the amplitude of each phase.</div>
-        <div><strong>High-Vol Gap</strong> — Stock gaps up on significantly higher-than-normal volume, often driven by news or earnings. Gap fill vs. continuation is key.</div>
+      <div class="glossary-label spaced">Pattern Tags</div>
+      <div class="glossary-grid">
+        <div><strong>Volatility squeeze</strong> — Range has compressed to a tight band (&lt;6%), the classic pre-breakout coil.</div>
+        <div><strong>Tight base (VCP)</strong> — Volatility Contraction Pattern: range narrowing vs the prior base as supply dries up.</div>
+        <div><strong>Bull flag</strong> — A strong run (the pole) digesting in a tight, calm consolidation (the flag).</div>
+        <div><strong>Coiled base</strong> — An uptrending name basing constructively, building the next leg.</div>
       </div>
-      <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin:16px 0 10px;">Signal Terms</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:6px 20px;font-size:0.8rem;color:var(--ink-2);line-height:1.55;">
-        <div><strong>RS Percentile</strong> — Relative strength vs. S&amp;P 500 over 3 months. Higher = outperforming more of the index.</div>
-        <div><strong>Flagpole</strong> — The initial sharp price surge before a flag consolidation begins.</div>
-        <div><strong>Handle Depth</strong> — How far price pulled back during the handle phase of a cup &amp; handle, as a percentage of the cup high.</div>
-        <div><strong>Cup Depth</strong> — The percentage decline from cup rim to bottom, measuring the correction's severity.</div>
-        <div><strong>Insider Flag</strong> — Recent open-market insider purchases detected, adding conviction to the setup.</div>
-        <div><strong>ETF Consensus</strong> — Stock appears in multiple top growth ETFs, indicating institutional overlap.</div>
+      <div class="glossary-label spaced">Metric Terms</div>
+      <div class="glossary-grid">
+        <div><strong>RS %ile</strong> — Relative strength: 3-month return ranked against the whole universe. 90+ = top decile.</div>
+        <div><strong>10-day range</strong> — Width of the recent consolidation as a % of price. Tighter = more coiled.</div>
+        <div><strong>Vol vs base</strong> — Recent 10-day volume against its 50-day average. Below 100% = volume drying up.</div>
+        <div><strong>vs 20-day</strong> — How far price sits above (or below) its 20-day average. Near zero = entry in range, not extended.</div>
       </div>
     </div>
 
@@ -680,9 +756,6 @@
 </footer>
 
 <script>
-  var allSetups = [];
-  var activeFilter = 'all';
-
   // ── The Analyst eligibility set ──────────────────────────────────────────
   // Tickers featured in The Analyst's curated 15. Only those names get a
   // Deep Dive link on their card.
@@ -701,232 +774,241 @@
     if (!ticker || !analystTickers.has(String(ticker).toUpperCase())) return '';
     return '<a href="https://invest-the-analyst.onrender.com/?ticker=' +
            encodeURIComponent(ticker) + '" class="deep-dive-link"' +
-           ' onclick="event.stopPropagation()">Deep Dive →</a>';
+           ' onclick="event.stopPropagation()">Deep Dive &rarr;</a>';
   }
 
   // ── Data fetch ─────────────────────────────────────────────────────────────
-  // Wait on analystReady so Deep Dive links appear correctly on first paint
   Promise.all([
-    fetch('/data/results.json').then(function(r) { return r.json(); }),
+    fetch('/data/coil.json?t=' + Date.now()).then(function(r) { return r.json(); }),
     analystReady,
   ])
     .then(function(arr) {
-      var data = arr[0];
-      allSetups = data.setups || [];
-      renderStats(data);
-      renderCards(activeFilter);
+      render(arr[0]);
     })
     .catch(function() {
-      document.getElementById('setups-container').innerHTML =
+      document.getElementById('loading').outerHTML =
         '<div class="empty-state"><div class="empty-icon">&#9888;</div>' +
         '<div class="empty-title">Could not load scan data</div>' +
-        '<div class="empty-sub">The scanner runs weekdays at ~9:40am ET.</div></div>';
+        '<div class="empty-sub">The scanner runs weekdays before the open.</div></div>';
     });
 
-  // ── Stats ──────────────────────────────────────────────────────────────────
-  function renderStats(data) {
-    var setups = data.setups || [];
-    var total  = setups.length;
-    var gradeA = setups.filter(function(s) { return s.grade === 'A'; }).length;
+  // ── Render both sections ─────────────────────────────────────────────────────
+  function render(data) {
+    var coiled  = data.coiled  || [];
+    var leaders = data.leaders || [];
 
-    document.getElementById('sidebar-total').textContent  = data.total_scanned || '—';
-    document.getElementById('sidebar-setups').textContent = total;
-    document.getElementById('sidebar-grade-a-count').textContent = gradeA || '—';
+    document.getElementById('loading').style.display = 'none';
 
-    // Timestamps
-    var timeStr = '—';
-    if (data.scan_time) {
-      var d = new Date(data.scan_time);
-      timeStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' +
-                d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
-    }
-    document.getElementById('sidebar-scan-time').textContent = timeStr;
+    // Sidebar / counts
+    document.getElementById('sidebar-total').textContent = (data.universe || '—').toLocaleString
+      ? Number(data.universe).toLocaleString() : (data.universe || '—');
+    document.getElementById('sidebar-session').textContent = fmtDate(data.generated);
+    document.getElementById('badge-coiled').textContent  = coiled.length;
+    document.getElementById('badge-leaders').textContent = leaders.length;
+    document.getElementById('count-coiled').textContent  = coiled.length + ' names';
+    document.getElementById('count-leaders').textContent = leaders.length + ' names';
+    document.getElementById('sidebar-scan-time').textContent = 'Session ' + fmtDate(data.generated);
+
+    fillGrid('grid-coiled', 'sec-coiled', coiled, 'coil_score', 'Coil');
+    fillGrid('grid-leaders', 'sec-leaders', leaders, 'leader_score', 'Leader');
+
+    document.getElementById('glossary').style.display = 'block';
+    setupScrollSpy();
   }
 
-  // ── Filter ─────────────────────────────────────────────────────────────────
-  function setFilter(grade) {
-    activeFilter = grade;
-
-    // Update sidebar nav
-    ['all', 'A', 'B', 'Watch'].forEach(function(g) {
-      var nav = document.getElementById('nav-' + g);
-      if (nav) nav.classList.toggle('active', g === grade);
-    });
-
-    renderCards(grade);
+  function fillGrid(gridId, sectionId, rows, scoreKey, scoreLabel) {
+    var section = document.getElementById(sectionId);
+    if (!rows.length) { section.style.display = 'none'; return; }
+    section.style.display = 'block';
+    var html = '';
+    rows.forEach(function(s, i) { html += buildCard(s, gridId + '-' + i, scoreKey, scoreLabel, i + 1); });
+    document.getElementById(gridId).innerHTML = html;
   }
 
-  // ── Render cards ───────────────────────────────────────────────────────────
-  function renderCards(grade) {
-    var filtered = grade === 'all'
-      ? allSetups
-      : allSetups.filter(function(s) { return s.grade === grade; });
-
-    var container = document.getElementById('setups-container');
-    if (!filtered.length) {
-      var msg = allSetups.length === 0
-        ? 'No setups yet — scanner runs weekdays at ~9:40am ET.'
-        : 'No ' + (grade === 'Watch' ? 'Watch' : 'Grade ' + grade) + ' setups today.';
-      container.innerHTML =
-        '<div class="empty-state"><div class="empty-icon">&#128202;</div>' +
-        '<div class="empty-title">No setups found</div>' +
-        '<div class="empty-sub">' + msg + '</div></div>';
-      return;
-    }
-
-    var html = '<div class="setups-grid">';
-    filtered.forEach(function(setup, i) {
-      html += buildCard(setup, i);
-    });
-    html += '</div>';
-    container.innerHTML = html;
-  }
-
-  // ── Sparkline SVG builder ──────────────────────────────────────────────────
-  function buildSparkline(prices, patternStart, gradeKey) {
-    if (!prices || prices.length < 2) return '';
-
-    var W = 320, H = 80, PAD = 2;
-    var n    = prices.length;
-    var pMin = Math.min.apply(null, prices);
-    var pMax = Math.max.apply(null, prices);
-    var range = pMax - pMin || 1;
-
-    function x(i) { return PAD + (i / (n - 1)) * (W - PAD * 2); }
-    function y(v) { return PAD + (1 - (v - pMin) / range) * (H - PAD * 2); }
-
-    // Build polyline points
-    var pts = [];
-    for (var i = 0; i < n; i++) {
-      pts.push(x(i).toFixed(1) + ',' + y(prices[i]).toFixed(1));
-    }
-    var polyline = pts.join(' ');
-
-    // Pattern highlight region
-    var ps = Math.max(0, Math.min(patternStart || 0, n - 2));
-    var hlX1 = x(ps).toFixed(1);
-    var hlX2 = x(n - 1).toFixed(1);
-
-    // Grade color for highlight
-    var hlColor = gradeKey === 'a' ? 'rgba(26,122,74,0.10)' :
-                  gradeKey === 'b' ? 'rgba(26,112,112,0.10)' :
-                                     'rgba(192,122,26,0.10)';
-    var lineColor = gradeKey === 'a' ? '#1a7a4a' :
-                    gradeKey === 'b' ? '#1a7070' : '#c07a1a';
-
-    // Area fill under the line
-    var areaPath = 'M' + x(0).toFixed(1) + ',' + y(prices[0]).toFixed(1);
-    for (var j = 1; j < n; j++) {
-      areaPath += 'L' + x(j).toFixed(1) + ',' + y(prices[j]).toFixed(1);
-    }
-    areaPath += 'L' + x(n-1).toFixed(1) + ',' + H + 'L' + x(0).toFixed(1) + ',' + H + 'Z';
-
-    return '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">' +
-      '<defs><linearGradient id="area-' + lineColor.replace('#','') + '" x1="0" y1="0" x2="0" y2="1">' +
-        '<stop offset="0%" stop-color="' + lineColor + '" stop-opacity="0.12"/>' +
-        '<stop offset="100%" stop-color="' + lineColor + '" stop-opacity="0.01"/>' +
-      '</linearGradient></defs>' +
-      '<rect x="' + hlX1 + '" y="0" width="' + (parseFloat(hlX2) - parseFloat(hlX1)).toFixed(1) + '" height="' + H + '" fill="' + hlColor + '" rx="2"/>' +
-      '<path d="' + areaPath + '" fill="url(#area-' + lineColor.replace('#','') + ')"/>' +
-      '<polyline points="' + polyline + '" fill="none" stroke="' + lineColor + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '<circle cx="' + x(n-1).toFixed(1) + '" cy="' + y(prices[n-1]).toFixed(1) + '" r="2.5" fill="' + lineColor + '"/>' +
-    '</svg>';
+  // ── Synthesize human-readable signals from the measured structure ─────────────
+  function buildSignals(s) {
+    var out = [];
+    if (s.perfect_stack)      out.push('Stacked uptrend — price &gt; 10 &gt; 20 &gt; 50-day');
+    else if (s.above_50dma)   out.push('Holding above the 50-day average');
+    if (s.rs_pct >= 90)       out.push('Top-decile relative strength (' + s.rs_pct + 'th %ile)');
+    else if (s.rs_pct >= 70)  out.push('Strong relative strength (' + s.rs_pct + 'th %ile)');
+    if (s.band_pct < 6)       out.push('Coiled tight — ' + s.band_pct + '% range over 10 days');
+    else if (s.band_pct < 12) out.push('Tightening range — ' + s.band_pct + '% over 10 days');
+    if (s.contraction < 0.8)  out.push('Range contracting vs the base (VCP)');
+    if (s.vol_ratio < 0.8)    out.push('Volume dried up to ' + Math.round(s.vol_ratio * 100) + '% of its base');
+    if (s.extension >= -3 && s.extension <= 6) out.push('Sitting near the 20-day — entry in range');
+    else if (s.extension > 12) out.push('Extended ' + s.extension + '% above the 20-day');
+    if (s.ret63 >= 20)        out.push('Up ' + Math.round(s.ret63) + '% over the last 3 months');
+    if (!out.length)          out.push('Constructive structure across the board');
+    return out;
   }
 
   // ── Build a single card ────────────────────────────────────────────────────
-  function buildCard(s, i) {
-    var gradeKey  = s.grade === 'Watch' ? 'w' : s.grade.toLowerCase();
-    var gradeClass = s.grade === 'Watch' ? 'grade-w' : 'grade-' + s.grade.toLowerCase();
-    var gradeLetter = s.grade;
+  function buildCard(s, id, scoreKey, scoreLabel, rank) {
+    var score = s[scoreKey] != null ? Math.round(s[scoreKey]) : 0;
+    var barW  = Math.max(0, Math.min(100, score));
 
-    var changeClass = s.change_pct > 0 ? 'pos' : s.change_pct < 0 ? 'neg' : 'flat';
-    var changeSign  = s.change_pct > 0 ? '+' : '';
-    var changePct   = s.change_pct != null ? changeSign + s.change_pct.toFixed(2) + '%' : '—';
-    var price       = s.current_price != null ? '$' + s.current_price.toFixed(2) : '—';
+    var badges = '<span class="pattern-pill">' + escHtml(s.pattern) + '</span>';
+    if (s.rs_pct >= 90) badges += ' <span class="rs-pill">RS ' + s.rs_pct + '</span>';
+    badges += '<span class="rank-pill">#' + rank + '</span>';
 
-    // Grade badge class
-    var gradeBadgeClass = gradeKey === 'a' ? 'a' : gradeKey === 'b' ? 'b' : 'watch';
-
-    // Badges row
-    var badges = '<span class="grade-badge ' + gradeBadgeClass + '">Grade ' + gradeLetter + '</span>';
-    badges += ' <span class="pattern-pill">' + escHtml(s.pattern) + '</span>';
-    if (s.insider_flag) badges += ' <span class="insider-pill">&#128100; Insider</span>';
-    if (s.etf_flag)     badges += ' <span class="etf-pill">&#128202; ETF ×' + (s.etf_count || '') + '</span>';
-
-    // Sparkline chart
-    var chartSvg = buildSparkline(s.price_history, s.pattern_start, gradeKey);
+    var chartSvg = buildSparkline(s.history);
     var chartSection = chartSvg
       ? '<div class="card-chart">' + chartSvg + '</div>' +
-        '<div class="card-chart-footer">' +
-          '<span class="chart-range-label">60-day · pattern region highlighted</span>' +
-        '</div>'
+        '<div class="chart-range-label">40-day &middot; last 10 sessions = the coil</div>'
       : '';
 
-    // Signals preview (first 3)
-    var signals = s.signals || [];
-    var signalHtml = '';
-    signals.slice(0, 3).forEach(function(sig) {
-      signalHtml += '<li class="signal-item"><span class="signal-dot"></span>' + escHtml(sig) + '</li>';
+    // Quick metrics
+    var volPct = Math.round((s.vol_ratio != null ? s.vol_ratio : 1) * 100);
+    var extStr = (s.extension > 0 ? '+' : '') + (s.extension != null ? s.extension : 0) + '%';
+    var metrics =
+      '<div class="card-metrics">' +
+        cell('$' + fmtPrice(s.price), 'Price') +
+        cell(s.rs_pct + '<span style="font-size:.6rem">th</span>', 'RS %ile', s.rs_pct >= 90) +
+        cell(s.band_pct + '%', '10-day range', s.band_pct < 8) +
+        cell(volPct + '%', 'Vol vs base', volPct < 90) +
+      '</div>';
+
+    // Signals
+    var sigs = buildSignals(s);
+    var sigPreview = '';
+    sigs.slice(0, 3).forEach(function(t) {
+      sigPreview += '<li class="signal-item"><span class="signal-dot"></span>' + t + '</li>';
+    });
+    var allSigs = '';
+    sigs.forEach(function(t) {
+      allSigs += '<li class="signal-item"><span class="signal-dot"></span>' + t + '</li>';
     });
 
-    // Expanded detail
-    var weekChange = s.week_change_pct != null
-      ? (s.week_change_pct > 0 ? '+' : '') + s.week_change_pct.toFixed(2) + '%'
-      : '—';
-    var rsPct = s.rs_pct != null ? s.rs_pct.toFixed(1) + '%' : '—';
-    var score = s.score != null ? s.score + ' pts' : '—';
+    var otherKey   = scoreKey === 'coil_score' ? 'leader_score' : 'coil_score';
+    var otherLabel = scoreKey === 'coil_score' ? 'Leader score' : 'Coil score';
+    var otherVal   = s[otherKey] ? Math.round(s[otherKey]) + ' / 100' : '—';
+    var tvUrl = 'https://www.tradingview.com/chart/?symbol=' + encodeURIComponent(s.ticker);
 
-    var allSignalsHtml = '';
-    if (signals.length > 3) {
-      allSignalsHtml = '<div class="detail-signals-title">All signals</div><ul class="signal-list">';
-      signals.forEach(function(sig) {
-        allSignalsHtml += '<li class="signal-item"><span class="signal-dot"></span>' + escHtml(sig) + '</li>';
-      });
-      allSignalsHtml += '</ul>';
-    }
-
-    return '<div class="setup-card ' + gradeClass + '" onclick="toggleCard(\'detail-' + i + '\')">' +
+    return '<div class="setup-card" onclick="toggleCard(\'' + id + '\')">' +
       '<div class="card-top">' +
         '<div class="card-badges">' + badges + '</div>' +
         '<div class="card-main">' +
           '<div class="card-identity">' +
             '<div class="card-ticker">' + escHtml(s.ticker) + '</div>' +
             '<div class="card-name">' + escHtml(s.name && s.name !== s.ticker ? s.name : '') + '</div>' +
-            '<div class="card-sector">' + escHtml(s.sector || '') + '</div>' +
           '</div>' +
-          '<div class="card-price">' +
-            '<div class="price-value">' + price + '</div>' +
-            '<div class="price-change ' + changeClass + '">' + changePct + ' today</div>' +
+          '<div class="card-score">' +
+            '<div class="score-value">' + score + '</div>' +
+            '<div class="score-label">' + scoreLabel + ' Score</div>' +
+            '<div class="score-bar"><div class="score-bar-fill" style="width:' + barW + '%"></div></div>' +
           '</div>' +
         '</div>' +
       '</div>' +
       chartSection +
-      '<div class="card-signals">' +
-        '<ul class="signal-list">' + signalHtml + '</ul>' +
-      '</div>' +
-      '<div class="card-detail" id="detail-' + i + '">' +
-        '<div class="detail-row"><span class="detail-label">Score</span><span class="detail-val">' + score + '</span></div>' +
-        '<div class="detail-row"><span class="detail-label">RS Percentile</span><span class="detail-val">' + rsPct + '</span></div>' +
-        '<div class="detail-row"><span class="detail-label">Week change</span><span class="detail-val">' + weekChange + '</span></div>' +
-        '<div class="detail-row"><span class="detail-label">Pattern</span><span class="detail-val">' + escHtml(s.pattern) + '</span></div>' +
-        allSignalsHtml +
-        deepDiveLink(s.ticker) +
+      metrics +
+      '<div class="card-signals"><ul class="signal-list">' + sigPreview + '</ul></div>' +
+      '<div class="card-detail" id="' + id + '">' +
+        '<div class="detail-row"><span class="detail-label">' + scoreLabel + ' score</span><span class="detail-val">' + score + ' / 100</span></div>' +
+        '<div class="detail-row"><span class="detail-label">' + otherLabel + '</span><span class="detail-val">' + otherVal + '</span></div>' +
+        '<div class="detail-row"><span class="detail-label">3-month return</span><span class="detail-val">' + (s.ret63 >= 0 ? '+' : '') + Math.round(s.ret63) + '%</span></div>' +
+        '<div class="detail-row"><span class="detail-label">vs 20-day average</span><span class="detail-val">' + extStr + '</span></div>' +
+        '<div class="detail-row"><span class="detail-label">Range contraction</span><span class="detail-val">' + s.contraction + '&times;</span></div>' +
+        '<div class="detail-row"><span class="detail-label">Median $ volume</span><span class="detail-val">$' + fmtVol(s.dollar_vol) + '</span></div>' +
+        '<div class="detail-signals-title">Full read</div>' +
+        '<ul class="signal-list">' + allSigs + '</ul>' +
+        '<div class="detail-actions">' +
+          '<a href="' + tvUrl + '" target="_blank" rel="noopener" class="card-chart-link" onclick="event.stopPropagation()">View chart &rarr;</a>' +
+          deepDiveLink(s.ticker) +
+        '</div>' +
       '</div>' +
     '</div>';
   }
 
+  function cell(val, cap, good) {
+    return '<div class="metric-cell"><div class="metric-val' + (good ? ' good' : '') + '">' + val +
+           '</div><div class="metric-cap">' + cap + '</div></div>';
+  }
+
+  // ── Sparkline SVG (close-only, last 10 bars highlighted as "the coil") ────────
+  function buildSparkline(prices) {
+    if (!prices || prices.length < 2) return '';
+    var W = 320, H = 64, PAD = 3;
+    var n = prices.length;
+    var pMin = Math.min.apply(null, prices);
+    var pMax = Math.max.apply(null, prices);
+    var range = pMax - pMin || 1;
+    function x(i) { return PAD + (i / (n - 1)) * (W - PAD * 2); }
+    function y(v) { return PAD + (1 - (v - pMin) / range) * (H - PAD * 2); }
+
+    var pts = [];
+    for (var i = 0; i < n; i++) pts.push(x(i).toFixed(1) + ',' + y(prices[i]).toFixed(1));
+
+    var hlStart = Math.max(0, n - 10);
+    var hlX1 = x(hlStart).toFixed(1);
+    var hlX2 = x(n - 1).toFixed(1);
+
+    var area = 'M' + x(0).toFixed(1) + ',' + y(prices[0]).toFixed(1);
+    for (var j = 1; j < n; j++) area += 'L' + x(j).toFixed(1) + ',' + y(prices[j]).toFixed(1);
+    area += 'L' + x(n - 1).toFixed(1) + ',' + H + 'L' + x(0).toFixed(1) + ',' + H + 'Z';
+
+    return '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">' +
+      '<defs><linearGradient id="coilarea" x1="0" y1="0" x2="0" y2="1">' +
+        '<stop offset="0%" stop-color="#38bda6" stop-opacity="0.14"/>' +
+        '<stop offset="100%" stop-color="#38bda6" stop-opacity="0.01"/>' +
+      '</linearGradient></defs>' +
+      '<rect x="' + hlX1 + '" y="0" width="' + (parseFloat(hlX2) - parseFloat(hlX1)).toFixed(1) + '" height="' + H + '" fill="rgba(56,189,166,0.10)"/>' +
+      '<path d="' + area + '" fill="url(#coilarea)"/>' +
+      '<polyline points="' + pts.join(' ') + '" fill="none" stroke="#2a9b87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<circle cx="' + x(n - 1).toFixed(1) + '" cy="' + y(prices[n - 1]).toFixed(1) + '" r="2.5" fill="#2a9b87"/>' +
+    '</svg>';
+  }
+
+  // ── Interactions ─────────────────────────────────────────────────────────────
   function toggleCard(id) {
     var el = document.getElementById(id);
     if (el) el.classList.toggle('open');
   }
 
+  function jumpTo(secId) {
+    var el = document.getElementById(secId);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function setupScrollSpy() {
+    var map = { 'sec-coiled': 'nav-coiled', 'sec-leaders': 'nav-leaders' };
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          Object.values(map).forEach(function(navId) {
+            document.getElementById(navId).classList.remove('active');
+          });
+          var nav = document.getElementById(map[e.target.id]);
+          if (nav) nav.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+    Object.keys(map).forEach(function(secId) {
+      var el = document.getElementById(secId);
+      if (el && el.style.display !== 'none') obs.observe(el);
+    });
+  }
+
+  // ── Helpers ──────────────────────────────────────────────────────────────────
+  function fmtDate(iso) {
+    if (!iso) return '—';
+    var d = new Date(iso + 'T00:00:00');
+    return isNaN(d) ? iso : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  }
+  function fmtPrice(p) {
+    if (p == null) return '—';
+    return p >= 100 ? Math.round(p).toString() : p.toFixed(2);
+  }
+  function fmtVol(v) {
+    if (!v) return '—';
+    if (v >= 1e9) return (v / 1e9).toFixed(1) + 'B';
+    if (v >= 1e6) return (v / 1e6).toFixed(0) + 'M';
+    return (v / 1e3).toFixed(0) + 'K';
+  }
   function escHtml(str) {
     if (!str) return '';
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 </script>
 </body>
