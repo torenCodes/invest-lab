@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-06-23T21:05:51.216135+00:00",
+  "scan_time": "2026-06-23T22:34:00.964890+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 20,
+  "total_scanned": 21,
   "day_trades": [
     {
       "ticker": "BLZE",
@@ -13,22 +13,23 @@
       "low": 9.62,
       "open": 10.31,
       "prev_close": 8.12,
-      "score": 49,
+      "score": 58,
       "signals": [
         "Top gainer (+43.6%)",
         "High volume",
         "Strong move (+43.6%)",
-        "Trending buzz (10)",
-        "Yahoo trending (#11)",
-        "Closing strong"
+        "Trending buzz (11)",
+        "Yahoo trending (#10)",
+        "Closing strong",
+        "Sector leader (Technology)"
       ],
-      "reddit_mentions": 10,
+      "reddit_mentions": 11,
       "market_cap": 487199975.21367514,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950003663676.png",
       "weburl": "https://www.backblaze.com/",
-      "yahoo_trending_rank": 11,
+      "yahoo_trending_rank": 10,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -39,7 +40,7 @@
           "surprise_pct": -8.9
         }
       },
-      "score_normalized": 69
+      "score_normalized": 82
     },
     {
       "ticker": "MAAS",
@@ -71,6 +72,43 @@
         "recent": null
       },
       "score_normalized": 58
+    },
+    {
+      "ticker": "VZ",
+      "name": "Verizon Communications Inc",
+      "sector": "Telecommunication",
+      "current_price": 46.73,
+      "change_pct": 3.0203,
+      "high": 46.85,
+      "low": 45.4,
+      "open": 45.71,
+      "prev_close": 45.36,
+      "score": 34,
+      "signals": [
+        "Top gainer (+3.0%)",
+        "High volume",
+        "Good move (+3.0%)",
+        "Yahoo trending (#18)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 3,
+      "market_cap": 195123870000.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/VZ.png",
+      "weburl": "https://www.verizon.com/",
+      "yahoo_trending_rank": 18,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 1.28,
+          "estimate": 1.23,
+          "beat": true,
+          "surprise_pct": 3.8
+        }
+      },
+      "score_normalized": 48
     }
   ],
   "swing_trades": [
@@ -84,74 +122,111 @@
       "low": 210,
       "open": 213.75,
       "prev_close": 224.43,
-      "score": 38,
+      "score": 43,
       "signals": [
         "Top gainer (+1.0%)",
         "High volume",
-        "Trending buzz (13)",
-        "Yahoo trending (#8)",
+        "High Trending buzz (20)",
+        "Yahoo trending (#1)",
         "Closing strong"
       ],
-      "reddit_mentions": 13,
+      "reddit_mentions": 20,
       "market_cap": 49287151137.838486,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CBRS.png",
       "weburl": "https://www.cerebras.ai",
-      "yahoo_trending_rank": 8,
+      "yahoo_trending_rank": 1,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 54
+      "score_normalized": 61
+    },
+    {
+      "ticker": "VZ",
+      "name": "Verizon Communications Inc",
+      "sector": "Telecommunication",
+      "current_price": 46.73,
+      "change_pct": 3.0203,
+      "high": 46.85,
+      "low": 45.4,
+      "open": 45.71,
+      "prev_close": 45.36,
+      "score": 34,
+      "signals": [
+        "Top gainer (+3.0%)",
+        "High volume",
+        "Good move (+3.0%)",
+        "Yahoo trending (#18)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 3,
+      "market_cap": 195123870000.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/VZ.png",
+      "weburl": "https://www.verizon.com/",
+      "yahoo_trending_rank": 18,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 1.28,
+          "estimate": 1.23,
+          "beat": true,
+          "surprise_pct": 3.8
+        }
+      },
+      "score_normalized": 48
     }
   ],
   "buzz_source": "trending",
   "reddit_cards": [
     {
-      "ticker": "ATLN",
-      "name": "Atlantic International Corp",
-      "sector": "Life Sciences Tools & Services",
-      "current_price": 1.33,
-      "change_pct": 202.4102,
-      "high": 1.82,
-      "low": 0.975,
-      "open": 1.18,
-      "prev_close": 0.4398,
-      "score": 55,
+      "ticker": "CBRS",
+      "name": "Cerebras Systems Inc",
+      "sector": "Semiconductors",
+      "current_price": 226.72,
+      "change_pct": 1.0204,
+      "high": 237,
+      "low": 210,
+      "open": 213.75,
+      "prev_close": 224.43,
+      "score": 43,
       "signals": [
-        "Top gainer (+202.4%)",
+        "Top gainer (+1.0%)",
         "High volume",
-        "Strong move (+202.4%)",
         "High Trending buzz (20)",
-        "Yahoo trending (#1)"
+        "Yahoo trending (#1)",
+        "Closing strong"
       ],
       "reddit_mentions": 20,
-      "market_cap": 33524554.055232562,
+      "market_cap": 49287151137.838486,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950429444666.png",
-      "weburl": "https://seqll.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CBRS.png",
+      "weburl": "https://www.cerebras.ai",
       "yahoo_trending_rank": 1,
       "mentions": 20,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 77
+      "score_normalized": 61
     },
     {
-      "ticker": "TSLA",
+      "ticker": "FDX",
       "mentions": 19,
-      "name": "Tesla Inc",
-      "sector": "Automobiles",
-      "current_price": 381.61,
-      "change_pct": -5.7869,
-      "high": 392.87,
-      "low": 379.06,
-      "open": 392.61,
-      "prev_close": 405.05,
-      "market_cap": 1521255820376.0178,
+      "name": "FedEx Corp",
+      "sector": "Logistics & Transportation",
+      "current_price": 317.24,
+      "change_pct": -3.5099,
+      "high": 327.4,
+      "low": 316.36,
+      "open": 326.01,
+      "prev_close": 328.78,
+      "market_cap": 78449130361.29723,
       "score": 0,
       "signals": [
         "Trending buzz (19 mentions)",
@@ -165,46 +240,45 @@
         "upcoming": null,
         "recent": {
           "period": "2026-03-31",
-          "actual": 0.41,
-          "estimate": 0.38,
+          "actual": 5.25,
+          "estimate": 4.18,
           "beat": true,
-          "surprise_pct": 8.7
+          "surprise_pct": 25.7
         }
       },
       "score_normalized": 0
     },
     {
-      "ticker": "MU",
-      "mentions": 18,
-      "name": "Micron Technology Inc",
-      "sector": "Semiconductors",
-      "current_price": 1051.77,
-      "change_pct": -13.1759,
-      "high": 1125,
-      "low": 1038.5,
-      "open": 1080,
-      "prev_close": 1211.38,
-      "market_cap": 1366114411802.6152,
-      "score": 0,
+      "ticker": "ATLN",
+      "name": "Atlantic International Corp",
+      "sector": "Life Sciences Tools & Services",
+      "current_price": 1.33,
+      "change_pct": 202.4102,
+      "high": 1.82,
+      "low": 0.975,
+      "open": 1.18,
+      "prev_close": 0.4398,
+      "score": 50,
       "signals": [
-        "Trending buzz (18 mentions)",
+        "Top gainer (+202.4%)",
+        "High volume",
+        "Strong move (+202.4%)",
+        "Trending buzz (18)",
         "Yahoo trending (#3)"
       ],
       "reddit_mentions": 18,
-      "is_gainer": false,
-      "is_active": false,
+      "market_cap": 33524554.055232562,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950429444666.png",
+      "weburl": "https://seqll.com/",
       "yahoo_trending_rank": 3,
+      "mentions": 18,
       "earnings_info": {
         "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 12.2,
-          "estimate": 9.58,
-          "beat": true,
-          "surprise_pct": 27.3
-        }
+        "recent": null
       },
-      "score_normalized": 0
+      "score_normalized": 70
     }
   ],
   "sector_rotation": [
@@ -286,7 +360,14 @@
       "ret_5d": -4.14,
       "ret_1m": -7.37,
       "ret_3m": NaN,
-      "top_stocks": []
+      "top_stocks": [
+        {
+          "ticker": "VZ",
+          "name": "Verizon Communications Inc",
+          "change_pct": 3.0203,
+          "price": 46.73
+        }
+      ]
     },
     {
       "ticker": "XLF",
@@ -362,153 +443,78 @@
   ],
   "reddit_feed": [
     {
-      "id": "140705466",
-      "title": "Why Tesla (TSLA) Shares Are Trading Lower Today",
+      "id": "140707069",
+      "title": "FedEx sinks as trade policy whiplash weighs on results",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "TSLA"
+        "FDX"
       ],
       "confirmed_tickers": [
-        "TSLA"
+        "FDX"
       ],
-      "hours_ago": 1.5,
-      "url": "https://finnhub.io/api/news?id=ee844d4bd4d9bd2a729b50fb54caa6e6986ce39e016d8aecd3c6cde5f21dd2b9",
+      "hours_ago": 0.8,
+      "url": "https://finnhub.io/api/news?id=02fcf9d377b04726ef125922260395101e51f9aa39540b4e37f41f73fa18f7c9",
       "is_news": true
     },
     {
-      "id": "140705449",
-      "title": "Update: US Equity Indexes Mixed Amid Hard Sell-Off in Chipmakers",
+      "id": "140706935",
+      "title": "Dow Jones Futures Rise After Nasdaq Breaks Support; FedEx, Cerebras Tumble Late With Micron Due",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "MU"
+        "FDX"
       ],
       "confirmed_tickers": [
-        "MU"
+        "FDX"
       ],
-      "hours_ago": 1.5,
-      "url": "https://finnhub.io/api/news?id=196dd9d63485a84b48aded0745f65d99d5e706387893c0c3b8d59bfa5af8b979",
+      "hours_ago": 0.9,
+      "url": "https://finnhub.io/api/news?id=1a366c879029c742124a44835692a40d9f21eeee5c31af94f5ff76e1230166e9",
       "is_news": true
     },
     {
-      "id": "140705467",
-      "title": "Tesla stock tumbles amid new probe over fatal crash into Texas home",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "TSLA"
-      ],
-      "confirmed_tickers": [
-        "TSLA"
-      ],
-      "hours_ago": 1.9,
-      "url": "https://finnhub.io/api/news?id=838d1b34e1e368bf6b0427aab85e1e5255ed0e25b6f275f715a7188a7a86f700",
-      "is_news": true
-    },
-    {
-      "id": "140705450",
-      "title": "Stocks making big moves yesterday: Shutterstock, Viavi Solutions, Micron, Palantir Technologies, and IonQ",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "MU"
-      ],
-      "confirmed_tickers": [
-        "MU"
-      ],
-      "hours_ago": 1.9,
-      "url": "https://finnhub.io/api/news?id=b92652d5ded7188a6acd55c943e5258872aba4a70c45e5887395aa5351a38451",
-      "is_news": true
-    },
-    {
-      "id": "140705126",
-      "title": "Which S&P500 stocks are moving on Tuesday?",
+      "id": "140706492",
+      "title": "These S&P500 stocks are moving in today's after hours session",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "MU"
+        "FDX"
       ],
       "confirmed_tickers": [
-        "MU"
+        "FDX"
       ],
-      "hours_ago": 2.0,
-      "url": "https://finnhub.io/api/news?id=069346933a9fc61e47fc082d338400f3b9fdc916af1d622c08044cd645169a6b",
+      "hours_ago": 1.5,
+      "url": "https://finnhub.io/api/news?id=a5ad9b996c54ba7e37bb1c8b539258ead5a6d3b10a7ede0f72bc152db5b0ab5d",
       "is_news": true
     },
     {
-      "id": "140705451",
-      "title": "Micron's AI Memory Boom Faces Key Test",
+      "id": "140706930",
+      "title": "FedEx Earnings Show Weaker Margin Amid Massive Transformation",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "MU"
+        "FDX"
       ],
       "confirmed_tickers": [
-        "MU"
+        "FDX"
       ],
-      "hours_ago": 2.0,
-      "url": "https://finnhub.io/api/news?id=b20d59d4b75cc090b7c1572a6eab3df1b8c2f3fc0e41b8ac971f0a27abef8c22",
+      "hours_ago": 1.7,
+      "url": "https://finnhub.io/api/news?id=78f08409fccafb43b2c2ba24f14b4de83bc0946af4e0d86ce2cda719c7a94fdd",
       "is_news": true
     },
     {
-      "id": "140705468",
-      "title": "Tesla Europe Registrations Jump 57% As Recovery Gains Momentum",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "TSLA"
-      ],
-      "confirmed_tickers": [
-        "TSLA"
-      ],
-      "hours_ago": 2.1,
-      "url": "https://finnhub.io/api/news?id=8c64f0dddc6756eabb97f484635af021c141268b290f77198f4807278db012c7",
-      "is_news": true
-    },
-    {
-      "id": "140705452",
-      "title": "Memory Stock Rout Hits Popular DRAM ETF",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "MU"
-      ],
-      "confirmed_tickers": [
-        "MU"
-      ],
-      "hours_ago": 2.6,
-      "url": "https://finnhub.io/api/news?id=740d883ca0667949227a1200fd4bee8e19915646097285af640ea1da211f76dd",
-      "is_news": true
-    },
-    {
-      "id": "140704587",
-      "title": "Explore the S&P500 index on Tuesday and find out which stocks are the most active in today's session.",
+      "id": "140706337",
+      "title": "FedEx (NYSE:FDX) Falls on Disappointing Outlook Despite Earnings Beat",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "TSLA"
+        "FDX"
       ],
       "confirmed_tickers": [
-        "TSLA"
+        "FDX"
       ],
-      "hours_ago": 3.0,
-      "url": "https://finnhub.io/api/news?id=38bcd9ac167f2f6b077abe8cdb9298c530469406740fc8f36cab4cd646da5bbe",
-      "is_news": true
-    },
-    {
-      "id": "140705469",
-      "title": "SPCX: Should you Buy the Dip?",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "TSLA"
-      ],
-      "confirmed_tickers": [
-        "TSLA"
-      ],
-      "hours_ago": 3.3,
-      "url": "https://finnhub.io/api/news?id=f6a3053316a018653373ca793ea15d12244a6bf5224840ee0037ff3adbf9dd5c",
+      "hours_ago": 1.9,
+      "url": "https://finnhub.io/api/news?id=d8932f0d73d10f98aaa68c5d82d32c72ed10af2ac889fefdae86fd61d86ec522",
       "is_news": true
     },
     {
@@ -522,7 +528,7 @@
       "confirmed_tickers": [
         "ATLN"
       ],
-      "hours_ago": 4.6,
+      "hours_ago": 6.1,
       "url": "https://finnhub.io/api/news?id=762db2505551bcd7f674601f34ba10c43327d4f46717d77387cf53cd1a8e30c2",
       "is_news": true
     },
@@ -537,8 +543,38 @@
       "confirmed_tickers": [
         "ATLN"
       ],
-      "hours_ago": 6.6,
+      "hours_ago": 8.1,
       "url": "https://finnhub.io/api/news?id=3dd1c8ba625e79c0fa2c83bee44cb6c5fd36b06c336633e4e2d0baf059a0ba4f",
+      "is_news": true
+    },
+    {
+      "id": "140707155",
+      "title": "Why Atlantic International (ATLN) Stock Is Up 175% On Tuesday",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "ATLN"
+      ],
+      "confirmed_tickers": [
+        "ATLN"
+      ],
+      "hours_ago": 8.5,
+      "url": "https://finnhub.io/api/news?id=310fe925e51e5c0d33e6d77186d0cb223c1638312c50cdc50a38016d37f30d72",
+      "is_news": true
+    },
+    {
+      "id": "139939274",
+      "title": "Tower Semiconductor And Axiro Semiconductor Announce Availability Of Axiro's Radar Beamforming Integrated Circuits, Buil",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "CBRS"
+      ],
+      "confirmed_tickers": [
+        "CBRS"
+      ],
+      "hours_ago": 8.6,
+      "url": "https://finnhub.io/api/news?id=bfd711be048e7c8f23aeb24ed1fdd26a1e9b4a4c316314960b348073eb1128ff",
       "is_news": true
     },
     {
@@ -552,7 +588,7 @@
       "confirmed_tickers": [
         "ATLN"
       ],
-      "hours_ago": 8.0,
+      "hours_ago": 9.5,
       "url": "https://finnhub.io/api/news?id=a1028829c37c6d89e7c1fe47b940ee08288bbcf82c1c5070ef40522e3002a20a",
       "is_news": true
     },
@@ -567,23 +603,68 @@
       "confirmed_tickers": [
         "ATLN"
       ],
-      "hours_ago": 8.6,
+      "hours_ago": 10.1,
       "url": "https://finnhub.io/api/news?id=fb8bec4bd3aa5c7c75566570c305d800867a128a44eefb7566efe188539790a6",
       "is_news": true
     },
     {
-      "id": "140703703",
-      "title": "Crude Oil Down Over 1%; US Manufacturing PMI Surges In June",
+      "id": "140704628",
+      "title": "Cerebras: Can It Turn AI Hype To Repeatable Revenue?",
       "subreddit": "Benzinga",
       "ups": 0,
       "tickers": [
-        "ATLN"
+        "CBRS"
       ],
       "confirmed_tickers": [
-        "ATLN"
+        "CBRS"
       ],
-      "hours_ago": 9.1,
-      "url": "https://finnhub.io/api/news?id=f776a81c51d8a896a1b32eccb191553e1394956cfdffe67587dca924fd9b1f01",
+      "hours_ago": 12.6,
+      "url": "https://finnhub.io/api/news?id=4cc3a7f5d6481f0d1cbb9e7b79137f2148f45cc5f2e1ca0a77a1c0f9386b39ee",
+      "is_news": true
+    },
+    {
+      "id": "140704629",
+      "title": "Cerebras Stock In The Spotlight Ahead Of First-Ever Earnings Report As A Public Company",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "CBRS"
+      ],
+      "confirmed_tickers": [
+        "CBRS"
+      ],
+      "hours_ago": 13.7,
+      "url": "https://finnhub.io/api/news?id=9406c2c2d02fa2a8293bc9e4e9bb5839edfa43a4b7f1d98f93b83e10f314e561",
+      "is_news": true
+    },
+    {
+      "id": "140702063",
+      "title": "Earnings Scheduled For June 23, 2026",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "CBRS"
+      ],
+      "confirmed_tickers": [
+        "CBRS"
+      ],
+      "hours_ago": 15.4,
+      "url": "https://finnhub.io/api/news?id=ec5f982152bd95491985aee2c42917a3a4b4def867b352f510539a077de04ea3",
+      "is_news": true
+    },
+    {
+      "id": "140694439",
+      "title": "Cerebras Systems: Down 23% Since My Sell, And Still Not Cheap",
+      "subreddit": "SeekingAlpha",
+      "ups": 0,
+      "tickers": [
+        "CBRS"
+      ],
+      "confirmed_tickers": [
+        "CBRS"
+      ],
+      "hours_ago": 31.9,
+      "url": "https://finnhub.io/api/news?id=a813c216b3c6d2635d36503f06000822dd5547097840da0eedd6531be3e1e1a5",
       "is_news": true
     }
   ]
