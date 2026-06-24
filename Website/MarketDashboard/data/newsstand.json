@@ -1,29 +1,29 @@
 {
-  "scan_time": "2026-06-24T19:00:32.272879+00:00",
+  "scan_time": "2026-06-24T21:00:32.045497+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Risk-Off",
-    "score": -2,
-    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
+    "verdict": "Mixed",
+    "score": 2,
+    "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you.",
     "signals": [
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Below 50-day",
-        "read": "Downtrend",
-        "tone": "bad"
+        "value": "Above 50-day",
+        "read": "Uptrend",
+        "tone": "good"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-2.5%",
+        "value": "-2.3%",
         "read": "Weak",
         "tone": "bad"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "19.5",
+        "value": "18.6",
         "read": "Calm but rising",
         "tone": "neutral"
       },
@@ -35,7 +35,7 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-06-24T19:00:44.361257+00:00"
+    "updated": "2026-06-24T21:00:39.917649+00:00"
   },
   "earnings": [
     {
@@ -51,35 +51,13 @@
     },
     {
       "date": "2026-06-24",
-      "symbol": "MU",
-      "eps_estimate": 20.6923,
-      "eps_actual": null,
-      "revenue_estimate": 35879744512,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 3,
-      "year": 2026
-    },
-    {
-      "date": "2026-06-24",
       "symbol": "NKE",
-      "eps_estimate": 0.1235,
+      "eps_estimate": 0.1248,
       "eps_actual": null,
-      "revenue_estimate": 10963664635,
+      "revenue_estimate": 10965756476,
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 4,
-      "year": 2026
-    },
-    {
-      "date": "2026-06-24",
-      "symbol": "JEF",
-      "eps_estimate": 1.0933,
-      "eps_actual": null,
-      "revenue_estimate": 2189859275,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 2,
       "year": 2026
     },
     {
@@ -95,41 +73,19 @@
     },
     {
       "date": "2026-06-24",
-      "symbol": "WS",
-      "eps_estimate": 0.7519,
+      "symbol": "AREC",
+      "eps_estimate": -0.085,
       "eps_actual": null,
-      "revenue_estimate": 1021760000,
+      "revenue_estimate": 0,
       "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 4,
-      "year": 2026
-    },
-    {
-      "date": "2026-06-24",
-      "symbol": "MLKN",
-      "eps_estimate": 0.5253,
-      "eps_actual": null,
-      "revenue_estimate": 993344850,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 4,
-      "year": 2026
-    },
-    {
-      "date": "2026-06-24",
-      "symbol": "FUL",
-      "eps_estimate": 1.4094,
-      "eps_actual": null,
-      "revenue_estimate": 933361341,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 2,
+      "hour": "",
+      "quarter": 1,
       "year": 2026
     },
     {
       "date": "2026-06-25",
       "symbol": "SNX",
-      "eps_estimate": 4.1636,
+      "eps_estimate": 4.182,
       "eps_actual": null,
       "revenue_estimate": 16971753271,
       "revenue_actual": null,
@@ -140,9 +96,9 @@
     {
       "date": "2026-06-25",
       "symbol": "DRI",
-      "eps_estimate": 3.6698,
+      "eps_estimate": 3.6697,
       "eps_actual": null,
-      "revenue_estimate": 3765315208,
+      "revenue_estimate": 3765477051,
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 4,
@@ -151,9 +107,9 @@
     {
       "date": "2026-06-25",
       "symbol": "CMC",
-      "eps_estimate": 1.7945,
+      "eps_estimate": 1.7728,
       "eps_actual": null,
-      "revenue_estimate": 2439610812,
+      "revenue_estimate": 2434813312,
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 3,
@@ -162,9 +118,9 @@
     {
       "date": "2026-06-25",
       "symbol": "AYI",
-      "eps_estimate": 5.2136,
+      "eps_estimate": 5.2376,
       "eps_actual": null,
-      "revenue_estimate": 1188128791,
+      "revenue_estimate": 1189138791,
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 3,
@@ -173,7 +129,7 @@
     {
       "date": "2026-06-25",
       "symbol": "WSE",
-      "eps_estimate": 0.1949,
+      "eps_estimate": 0.1925,
       "eps_actual": null,
       "revenue_estimate": 908570750,
       "revenue_actual": null,
@@ -184,9 +140,9 @@
     {
       "date": "2026-06-25",
       "symbol": "WGO",
-      "eps_estimate": 0.7738,
+      "eps_estimate": 0.7663,
       "eps_actual": null,
-      "revenue_estimate": 765730257,
+      "revenue_estimate": 763224680,
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 3,
@@ -195,9 +151,9 @@
     {
       "date": "2026-06-25",
       "symbol": "EPAC",
-      "eps_estimate": 0.5066,
+      "eps_estimate": 0.5032,
       "eps_actual": null,
-      "revenue_estimate": 168211596,
+      "revenue_estimate": 167803596,
       "revenue_actual": null,
       "hour": "",
       "quarter": 3,
@@ -261,7 +217,7 @@
     {
       "date": "2026-06-29",
       "symbol": "AVAV",
-      "eps_estimate": 1.4934,
+      "eps_estimate": 1.4937,
       "eps_actual": null,
       "revenue_estimate": 569984731,
       "revenue_actual": null,
@@ -283,9 +239,9 @@
     {
       "date": "2026-06-30",
       "symbol": "STZ",
-      "eps_estimate": 3.2848,
+      "eps_estimate": 3.2744,
       "eps_actual": null,
-      "revenue_estimate": 2425115979,
+      "revenue_estimate": 2421565536,
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 1,
@@ -439,65 +395,58 @@
     {
       "ticker": "WEN",
       "name": "Wendy's Co",
-      "price": 8.06,
-      "change_pct": 28.83,
-      "volume": "1.53B"
-    },
-    {
-      "ticker": "PLSM",
-      "name": "Pulsenmore Ltd",
-      "price": 8.31,
-      "change_pct": 143.55,
-      "volume": "53.98M"
+      "price": 7.86,
+      "change_pct": 25.66,
+      "volume": "1.50B"
     },
     {
       "ticker": "RUN",
       "name": "Sunrun Inc",
-      "price": 15.01,
-      "change_pct": 17.14,
-      "volume": "3.58B"
+      "price": 14.42,
+      "change_pct": 12.57,
+      "volume": "3.44B"
     },
     {
       "ticker": "ABSI",
       "name": "Absci Corp",
-      "price": 10.06,
-      "change_pct": 35.7,
+      "price": 10.07,
+      "change_pct": 35.96,
       "volume": "1.57B"
+    },
+    {
+      "ticker": "CWAN",
+      "name": "Clearwater Analytics Holdings Inc",
+      "price": 24.56,
+      "change_pct": 0.04,
+      "volume": "7.33B"
     },
     {
       "ticker": "CCXI",
       "name": "Churchill Capital Corp XI",
-      "price": 12.05,
-      "change_pct": 15.6,
-      "volume": "670.91M"
-    },
-    {
-      "ticker": "ICCM",
-      "name": "Icecure Medical Ltd",
-      "price": 9.11,
-      "change_pct": 48.94,
-      "volume": "25.59M"
-    },
-    {
-      "ticker": "DFTX",
-      "name": "Definium Therapeutics Inc",
-      "price": 42.86,
-      "change_pct": 18.46,
-      "volume": "4.67B"
+      "price": 11.99,
+      "change_pct": 15.07,
+      "volume": "667.84M"
     },
     {
       "ticker": "BLZE",
       "name": "Backblaze Inc",
-      "price": 11.8,
-      "change_pct": 1.2,
-      "volume": "708.00M"
+      "price": 11.97,
+      "change_pct": 2.66,
+      "volume": "718.20M"
     },
     {
-      "ticker": "TAGG",
-      "name": "T. Rowe Price QM U.S. Bond ETF",
-      "price": 42.65,
-      "change_pct": 0.51,
+      "ticker": "MUZ",
+      "name": "Defiance Daily Target 2X Short MU ETF",
+      "price": 13.61,
+      "change_pct": 0.96,
       "volume": "-"
+    },
+    {
+      "ticker": "DFTX",
+      "name": "Definium Therapeutics Inc",
+      "price": 42.13,
+      "change_pct": 16.45,
+      "volume": "4.59B"
     },
     {
       "ticker": "PRA",
@@ -507,25 +456,25 @@
       "volume": "1.29B"
     },
     {
-      "ticker": "CGSM",
-      "name": "Capital Group Short Duration Municipal Income ETF",
-      "price": 26.41,
-      "change_pct": 0.05,
+      "ticker": "TAGG",
+      "name": "T. Rowe Price QM U.S. Bond ETF",
+      "price": 42.65,
+      "change_pct": 0.51,
       "volume": "-"
-    },
-    {
-      "ticker": "INMD",
-      "name": "Inmode Ltd",
-      "price": 14.78,
-      "change_pct": 10.75,
-      "volume": "849.86M"
     },
     {
       "ticker": "SLN",
       "name": "Silence Therapeutics Plc ADR",
-      "price": 8.82,
-      "change_pct": 21.32,
-      "volume": "416.57M"
+      "price": 9.16,
+      "change_pct": 26.0,
+      "volume": "432.63M"
+    },
+    {
+      "ticker": "XOCT",
+      "name": "FT Vest U.S. Equity Enhance & Moderate Buffer ETF - October",
+      "price": 39.32,
+      "change_pct": 0.01,
+      "volume": "-"
     }
   ]
 }
