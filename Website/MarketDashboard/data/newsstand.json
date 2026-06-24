@@ -1,52 +1,43 @@
 {
-  "scan_time": "2026-06-23T23:00:29.028465+00:00",
+  "scan_time": "2026-06-24T01:00:27.321490+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
-  "trading_conditions": null,
+  "trading_conditions": {
+    "verdict": "Mixed",
+    "score": 2,
+    "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you.",
+    "signals": [
+      {
+        "label": "Market trend",
+        "sub": "SPY vs moving averages",
+        "value": "Above 50-day",
+        "read": "Uptrend",
+        "tone": "good"
+      },
+      {
+        "label": "5-day momentum",
+        "sub": "SPY one-week change",
+        "value": "-2.8%",
+        "read": "Weak",
+        "tone": "bad"
+      },
+      {
+        "label": "Volatility (VIX)",
+        "sub": "Implied S&P volatility",
+        "value": "19.5",
+        "read": "Calm but rising",
+        "tone": "neutral"
+      },
+      {
+        "label": "10-year yield",
+        "sub": "Rate pressure on growth",
+        "value": "4.49%",
+        "read": "Stable",
+        "tone": "neutral"
+      }
+    ],
+    "updated": "2026-06-24T01:00:34.794896+00:00"
+  },
   "earnings": [
-    {
-      "date": "2026-06-23",
-      "symbol": "GIS",
-      "eps_estimate": 0.8084,
-      "eps_actual": null,
-      "revenue_estimate": 4640475168,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 4,
-      "year": 2026
-    },
-    {
-      "date": "2026-06-23",
-      "symbol": "SCS",
-      "eps_estimate": 0.1717,
-      "eps_actual": null,
-      "revenue_estimate": 788608000,
-      "revenue_actual": null,
-      "hour": "",
-      "quarter": 1,
-      "year": 2027
-    },
-    {
-      "date": "2026-06-23",
-      "symbol": "LOT",
-      "eps_estimate": -0.1818,
-      "eps_actual": null,
-      "revenue_estimate": 114130000,
-      "revenue_actual": null,
-      "hour": "",
-      "quarter": 1,
-      "year": 2026
-    },
-    {
-      "date": "2026-06-23",
-      "symbol": "GRCE",
-      "eps_estimate": -0.2346,
-      "eps_actual": null,
-      "revenue_estimate": 0,
-      "revenue_actual": null,
-      "hour": "",
-      "quarter": 4,
-      "year": 2026
-    },
     {
       "date": "2026-06-24",
       "symbol": "WBA",
@@ -398,6 +389,39 @@
       "hour": "amc",
       "quarter": 4,
       "year": 2026
+    },
+    {
+      "date": "2026-07-02",
+      "symbol": "LEVI",
+      "eps_estimate": 0.2452,
+      "eps_actual": null,
+      "revenue_estimate": 1546627091,
+      "revenue_actual": null,
+      "hour": "",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-02",
+      "symbol": "LNN",
+      "eps_estimate": 1.2196,
+      "eps_actual": null,
+      "revenue_estimate": 159382040,
+      "revenue_actual": null,
+      "hour": "",
+      "quarter": 3,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-02",
+      "symbol": "PKE",
+      "eps_estimate": 0.1404,
+      "eps_actual": null,
+      "revenue_estimate": 18085060,
+      "revenue_actual": null,
+      "hour": "",
+      "quarter": 1,
+      "year": 2027
     }
   ],
   "unusual_volume": [
