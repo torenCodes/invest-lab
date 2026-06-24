@@ -20,6 +20,7 @@ import json
 import os
 import sys
 import time
+from collections import defaultdict
 from datetime import datetime, timezone
 
 # Path setup — import compute_verdict / analyze_ticker from TheAnalyst/app.py.
@@ -46,7 +47,8 @@ DASHBOARD_FAMILY = {
     "tried_true":      "tried_true",
     "underdogs":       "underdogs",
     "insider":         "insider",
-    "patterns":        "patterns",
+    "patterns_coil":   "patterns",
+    "patterns_leader": "patterns",
 }
 
 # ── Source ingestion ──────────────────────────────────────────────────────────
@@ -140,48 +142,78 @@ def gather_sources():
                 "score":      score,
             })
 
-    # ── Pattern Scanner — top 10 setups (Grade A/B only — Watch tier excluded)
-    ps = _load("PatternScanner/data/results.json")
+    # ── Pattern Scanner — top swing setups from the Coil engine.
+    # Coiled (tightness-ranked) + Leaders (constructive strength). Both lists
+    # are the same dashboard, so a name in both still counts once toward the
+    # cross-dashboard tally (like Movers day+swing).
+    ps = _load("PatternScanner/data/coil.json")
     if ps:
-        graded = [s for s in (ps.get("setups") or [])
-                  if s.get("grade") in ("A", "B")]
-        graded.sort(key=lambda x: (
-            {"A": 0, "B": 1}.get(x.get("grade", "B"), 9),
-            -(x.get("score") or 0),
-        ))
-        for s in graded[:10]:
-            pattern = s.get("pattern") or "?"
-            grade   = s.get("grade") or "?"
+        for s in (ps.get("coiled") or [])[:8]:
             add(s.get("ticker"), {
-                "source_key": "patterns",
+                "source_key": "patterns_coil",
                 "label":      "Pattern Scanner",
-                "signal":     f"{pattern} (Grade {grade})",
-                "score":      s.get("score") or 0,
+                "signal":     f"{s.get('pattern') or 'Coiled setup'} — Coil {round(s.get('coil_score') or 0)}",
+                "score":      s.get("coil_score") or 0,
+            })
+        for s in (ps.get("leaders") or [])[:8]:
+            add(s.get("ticker"), {
+                "source_key": "patterns_leader",
+                "label":      "Pattern Scanner",
+                "signal":     f"Constructive leader — Leader {round(s.get('leader_score') or 0)}, RS {s.get('rs_pct') or 0}th",
+                "score":      s.get("leader_score") or 0,
             })
 
     return surface
 
 
 def rank_and_select(surface):
-    """Sort surfaced tickers by:
-       1. Number of distinct dashboards (DASHBOARD_FAMILY) that surfaced it
-       2. Best per-source score across its tags (tiebreaker)
-    Returns the top TARGET_COUNT entries.
+    """Pick the TARGET_COUNT 'all-stars' across the whole site.
+
+    Two tiers so no single dashboard can crowd out the others (per-source
+    score scales aren't comparable — Coil runs 0-100, others differ — so a
+    raw score sort would just rank by whichever scale is biggest):
+
+      Tier 1 — names surfaced by 2+ distinct dashboards, the highest-conviction
+               all-stars, sorted by dashboard count then best score.
+      Tier 2 — single-dashboard names, filled round-robin across dashboards so
+               every dashboard earns a seat before any dashboard gets a second.
     """
     rows = []
     for ticker, tags in surface.items():
         families  = {DASHBOARD_FAMILY.get(t["source_key"], t["source_key"]) for t in tags}
-        n_dash    = len(families)
         max_score = max((t.get("score", 0) for t in tags), default=0)
         rows.append({
             "ticker":     ticker,
-            "n_dash":     n_dash,
+            "families":   families,
+            "n_dash":     len(families),
             "max_score":  max_score,
             "tags":       tags,
         })
 
-    rows.sort(key=lambda r: (-r["n_dash"], -r["max_score"]))
-    return rows[:TARGET_COUNT]
+    multi = sorted([r for r in rows if r["n_dash"] >= 2],
+                   key=lambda r: (-r["n_dash"], -r["max_score"]))
+
+    # Bucket single-dashboard names by their one family, best score first.
+    buckets = defaultdict(list)
+    for r in rows:
+        if r["n_dash"] == 1:
+            buckets[next(iter(r["families"]))].append(r)
+    for fam in buckets:
+        buckets[fam].sort(key=lambda r: -r["max_score"])
+
+    # Order families by their strongest single-source pick so the best
+    # dashboards lead each round, but every dashboard still gets a turn.
+    fam_order = sorted(buckets, key=lambda f: -buckets[f][0]["max_score"])
+
+    selected = list(multi)
+    while len(selected) < TARGET_COUNT and any(buckets.values()):
+        for fam in fam_order:
+            if buckets[fam]:
+                selected.append(buckets[fam].pop(0))
+                if len(selected) >= TARGET_COUNT:
+                    break
+
+    return selected[:TARGET_COUNT]
 
 
 # ── Per-ticker analysis ───────────────────────────────────────────────────────

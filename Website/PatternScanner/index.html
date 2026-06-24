@@ -756,34 +756,11 @@
 </footer>
 
 <script>
-  // ── The Analyst eligibility set ──────────────────────────────────────────
-  // Tickers featured in The Analyst's curated 15. Only those names get a
-  // Deep Dive link on their card.
-  var ANALYST_URL = 'https://invest-the-analyst.onrender.com/data/results.json';
-  var analystTickers = new Set();
-  var analystReady = fetch(ANALYST_URL + '?t=' + Date.now())
-    .then(function(r) { return r.ok ? r.json() : null; })
-    .then(function(d) {
-      ((d && d.tickers) || []).forEach(function(t) {
-        if (t.ticker && !t.error) analystTickers.add(String(t.ticker).toUpperCase());
-      });
-    })
-    .catch(function() { /* silent */ });
-
-  function deepDiveLink(ticker) {
-    if (!ticker || !analystTickers.has(String(ticker).toUpperCase())) return '';
-    return '<a href="https://invest-the-analyst.onrender.com/?ticker=' +
-           encodeURIComponent(ticker) + '" class="deep-dive-link"' +
-           ' onclick="event.stopPropagation()">Deep Dive &rarr;</a>';
-  }
-
   // ── Data fetch ─────────────────────────────────────────────────────────────
-  Promise.all([
-    fetch('/data/coil.json?t=' + Date.now()).then(function(r) { return r.json(); }),
-    analystReady,
-  ])
-    .then(function(arr) {
-      render(arr[0]);
+  fetch('/data/coil.json?t=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      render(data);
     })
     .catch(function() {
       document.getElementById('loading').outerHTML =
@@ -914,7 +891,6 @@
         '<ul class="signal-list">' + allSigs + '</ul>' +
         '<div class="detail-actions">' +
           '<a href="' + tvUrl + '" target="_blank" rel="noopener" class="card-chart-link" onclick="event.stopPropagation()">View chart &rarr;</a>' +
-          deepDiveLink(s.ticker) +
         '</div>' +
       '</div>' +
     '</div>';

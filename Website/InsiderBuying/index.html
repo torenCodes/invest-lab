@@ -834,25 +834,6 @@ function toggleSiteNav(btn) {
 </footer>
 
 <script>
-// ── The Analyst eligibility set ────────────────────────────────────────────────
-// Tickers featured in The Analyst's curated 15. Only those names get a
-// Deep Dive link on their card.
-const ANALYST_URL = 'https://invest-the-analyst.onrender.com/data/results.json';
-let analystTickers = new Set();
-let analystReady = fetch(ANALYST_URL + '?t=' + Date.now())
-  .then(r => r.ok ? r.json() : null)
-  .then(d => {
-    (d?.tickers || []).forEach(t => {
-      if (t.ticker && !t.error) analystTickers.add(t.ticker.toUpperCase());
-    });
-  })
-  .catch(() => { /* silent — Deep Dive simply won't appear */ });
-
-function deepDiveLink(ticker) {
-  if (!ticker || !analystTickers.has(String(ticker).toUpperCase())) return '';
-  return `<a href="https://invest-the-analyst.onrender.com/?ticker=${encodeURIComponent(ticker)}" class="deep-dive-link" onclick="event.stopPropagation()">Deep Dive →</a>`;
-}
-
 // ── Format helpers ────────────────────────────────────────────────────────────
 function fmt$(n) {
   if (!n) return '$0';
@@ -977,7 +958,6 @@ function renderNomineeCard(n, idx) {
       ${insiderRows}
       <div class="detail-row"><span class="detail-label">Market cap</span><span class="detail-val">${fmtCap(n.market_cap)}</span></div>
       <div class="detail-row"><span class="detail-label">Sector</span><span class="detail-val">${esc(n.sector)}</span></div>
-      ${deepDiveLink(n.ticker)}
     </div>
   </div>`;
 }
@@ -1110,12 +1090,9 @@ function render(d) {
 }
 
 // ── Load data ─────────────────────────────────────────────────────────────────
-// Wait on analystReady so Deep Dive links appear correctly on first paint
-Promise.all([
-  fetch('data/results.json').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }),
-  analystReady,
-])
-  .then(([data]) => render(data))
+fetch('data/results.json')
+  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(data => render(data))
   .catch(err => {
     document.getElementById('loading').innerHTML = `
       <p style="color:var(--red);font-weight:500">Could not load scan data</p>

@@ -931,11 +931,12 @@
 
   // Source key → pill class (matches CSS source-pill colors)
   function sourcePillClass(key) {
-    if (key === 'movers_day' || key === 'movers_swing') return 'movers';
-    if (key === 'tried_true')      return 'tried-true';
-    if (key === 'underdogs')       return 'underdogs';
-    if (key === 'insider_cluster' || key === 'insider_csuite') return 'insider';
-    if (key === 'patterns')        return 'patterns';
+    if (!key) return '';
+    if (key.indexOf('movers') === 0)   return 'movers';
+    if (key === 'tried_true')          return 'tried-true';
+    if (key === 'underdogs')           return 'underdogs';
+    if (key.indexOf('insider') === 0)  return 'insider';
+    if (key.indexOf('patterns') === 0) return 'patterns';
     return '';
   }
 
