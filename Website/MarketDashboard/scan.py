@@ -8,6 +8,7 @@ Run locally: python scan.py
 import csv
 import io
 import json
+import math
 import os
 import re
 import time
@@ -16,6 +17,22 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 import yfinance as yf
+
+
+def json_safe(obj):
+    """Recursively replace NaN/Infinity with None. Python's json.dump emits
+    bare NaN/Infinity tokens (valid Python-JSON) that the browser's JSON.parse
+    rejects — a single NaN silently breaks every browser consumer of
+    results.json (the dashboard itself and the homepage cards). Run the output
+    through this before serializing so the file is always strict JSON."""
+    if isinstance(obj, float):
+        return obj if math.isfinite(obj) else None
+    if isinstance(obj, dict):
+        return {k: json_safe(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [json_safe(v) for v in obj]
+    return obj
+
 
 # ── Config ────────────────────────────────────────────────────────────────────
 BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
@@ -823,6 +840,8 @@ def get_sector_rotation(scan_results=None):
                 if len(_close) <= n:
                     return None
                 ref = float(_close.iloc[-(n + 1)])
+                if not (math.isfinite(ref) and math.isfinite(_current)) or ref == 0:
+                    return None
                 return round((_current - ref) / ref * 100, 2)
 
             # Find top movers from today's scan that belong to this sector
@@ -1073,8 +1092,12 @@ def run():
     }
 
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
+    # Serialize first (allow_nan=False as a strict guard): if any NaN/Infinity
+    # slipped past json_safe it raises here, before the file is truncated, so
+    # the last-good results.json survives instead of being half-written.
+    payload = json.dumps(json_safe(output), indent=2, allow_nan=False)
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(output, f, indent=2)
+        f.write(payload)
 
     elapsed = (datetime.now(timezone.utc) - start).seconds
     print(f"[scan.py] Done in {elapsed}s — {len(day_trades)}D {len(swing_trades)}S {len(reddit_cards)}R")
