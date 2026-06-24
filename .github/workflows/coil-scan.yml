@@ -33,6 +33,9 @@ jobs:
         env:
           POLYGON_KEY: ${{ secrets.POLYGON_KEY }}
 
+      - name: Mirror coil.json to the Movers data API (CORS-enabled for the homepage)
+        run: cp Website/PatternScanner/data/coil.json Website/MarketDashboard/data/coil.json
+
       - name: Archive top nominee
         run: python Website/scripts/archive_nominee.py --source patterns
 
@@ -43,7 +46,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
-          git add Website/PatternScanner/data/coil.json Website/MarketDashboard/data/nominees_archive.json
+          git add Website/PatternScanner/data/coil.json Website/MarketDashboard/data/coil.json Website/MarketDashboard/data/nominees_archive.json
           git diff --staged --quiet || git commit -m "chore: coil scan $(date -u +%Y-%m-%dT%H:%M)Z"
           git pull --rebase -Xtheirs origin ${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}
