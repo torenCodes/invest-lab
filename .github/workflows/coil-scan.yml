@@ -2,11 +2,11 @@ name: Coil Scan
 
 on:
   schedule:
-    # Pre-market, ~7:30am ET weekdays (11:30 UTC EDT). Staggered 30 min after
-    # the Cadence scan so the two don't hammer Polygon's free tier at once.
-    # Builds the swing-setup watchlist off the last completed session
-    # (Polygon free tier serves prior-day data, not same-day).
-    - cron: '30 11 * * 1-5'
+    # ~10:30am ET weekdays (14:30 UTC EDT). Staggered 30 min after the Cadence
+    # scan so the two don't hammer Polygon's free tier at once. Moved later than
+    # pre-market so the prior session's EOD data has settled on the free tier
+    # (an early run only sees T-2; see cadence-scan.yml).
+    - cron: '30 14 * * 1-5'
   workflow_dispatch:
 
 permissions:

@@ -37,7 +37,10 @@ BASE_DIR    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Web
 OUTPUT_FILE = os.path.join(BASE_DIR, "MarketDashboard", "data", "cadence.json")
 CACHE_DIR   = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".cadence_cache")
 
-POLYGON_KEY = os.environ.get("POLYGON_KEY", "P9fRbZP9VAKhjwABMtvcS7tfcYGU6z1T")
+# `or` (not get's default): an unset GitHub Actions secret expands to an empty
+# string, which would otherwise override the hardcoded key with "" and 401 every
+# call. `or` falls back when the env var is missing OR empty.
+POLYGON_KEY = os.environ.get("POLYGON_KEY") or "P9fRbZP9VAKhjwABMtvcS7tfcYGU6z1T"
 
 LOOKBACK_DAYS = 22          # trading days of history to assemble
 SCORE_WINDOW  = 20          # use the most recent N bars for scoring
@@ -75,6 +78,12 @@ def clean_name(nm):
 def fetch_grouped(d):
     """Grouped-daily OHLCV for a single date, cached locally so re-runs are
     instant. Returns the parsed JSON dict or None."""
+    # One-time key diagnostic (a blank key in CI is the classic "No data" cause)
+    if not getattr(fetch_grouped, "_announced", False):
+        fetch_grouped._announced = True
+        k = POLYGON_KEY or ""
+        print(f"[fetch] Polygon key: {'EMPTY!' if not k else 'len ' + str(len(k)) + ' …' + k[-4:]}")
+
     cache_path = os.path.join(CACHE_DIR, f"{d.isoformat()}.json")
     if os.path.exists(cache_path):
         with open(cache_path) as f:
@@ -92,6 +101,11 @@ def fetch_grouped(d):
             time.sleep(15)
             continue
         if r.status_code != 200:
+            # Surface the first few failures so a broken key / blocked IP / quota
+            # shows up in the log instead of a silent "No data".
+            fetch_grouped._fails = getattr(fetch_grouped, "_fails", 0) + 1
+            if fetch_grouped._fails <= 4:
+                print(f"[fetch] {d} -> HTTP {r.status_code}: {r.text[:140]}")
             return None
         j = r.json()
         os.makedirs(CACHE_DIR, exist_ok=True)

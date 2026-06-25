@@ -2,10 +2,11 @@ name: Cadence Scan
 
 on:
   schedule:
-    # Pre-market, ~7:00am ET weekdays (11:00 UTC EDT). Runs before the open
-    # so a fresh day-trade watchlist is waiting, built off the last completed
-    # session (Polygon free tier serves prior-day data, not same-day).
-    - cron: '0 11 * * 1-5'
+    # ~10:00am ET weekdays (14:00 UTC EDT). Moved later than pre-market so the
+    # prior session's EOD data has settled on Polygon's free tier — the free
+    # tier serves prior-day data (never same-day), and that data isn't
+    # published until well after the close, so an early run only sees T-2.
+    - cron: '0 14 * * 1-5'
   workflow_dispatch:
 
 permissions:
