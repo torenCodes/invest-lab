@@ -17,6 +17,7 @@ dashboard scans complete and have fresh data on disk).
 """
 
 import json
+import math
 import os
 import sys
 import time
@@ -35,8 +36,32 @@ from app import analyze_ticker  # noqa: E402
 # ── Config ────────────────────────────────────────────────────────────────────
 
 OUTPUT_FILE  = os.path.join(_WEBSITE_DIR, "TheAnalyst", "data", "results.json")
+# Current #1 from each board not in the homepage's main row, written to the
+# Movers data API (CORS-enabled) for the homepage's "Other Lab Results" cards.
+LEADERS_FILE = os.path.join(_WEBSITE_DIR, "MarketDashboard", "data", "homepage_leaders.json")
 TARGET_COUNT = 15
 NEXT_SCAN_INFO = "Weekdays at 10:30am ET"
+
+
+def json_safe(obj):
+    """Recursively replace NaN/Infinity with None — bare NaN from json.dump is
+    invalid JSON and breaks browser consumers (see project-json-nan-safety).
+    analyze_ticker can emit non-finite ratios (PEG, FCF yield), so both the
+    Analyst results.json and the leaders file get scrubbed before writing."""
+    if isinstance(obj, float):
+        return obj if math.isfinite(obj) else None
+    if isinstance(obj, dict):
+        return {k: json_safe(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [json_safe(v) for v in obj]
+    return obj
+
+
+def _write_json(path, payload):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    text = json.dumps(json_safe(payload), indent=2, allow_nan=False)
+    with open(path, "w") as f:
+        f.write(text)
 
 # Dashboard "families" for cross-source dedup. Movers' day + swing lenses
 # come from the same scan, so they shouldn't double-count toward the
@@ -239,6 +264,83 @@ def analyze(ticker, tags):
     return result
 
 
+# ── Homepage "Other Lab Results" — current #1 from each un-featured board ──────
+
+def _num(x, dp=0):
+    try:
+        v = float(x)
+        if not math.isfinite(v):
+            return None
+        return round(v, dp) if dp else round(v)
+    except (TypeError, ValueError):
+        return None
+
+
+def build_homepage_leaders(analyses):
+    """One current-leader card per board not already in the homepage's main row
+    (Tried & True, Underdogs, Insider, The Analyst). Uniform card shape so the
+    homepage can render them identically: {board, ticker, name, badge, line1,
+    line2, href}."""
+    leaders = {}
+
+    tt = _load("TheMarathon/data/consensus.json")
+    if tt and (tt.get("top_10") or []):
+        p = tt["top_10"][0]
+        leaders["tried_true"] = {
+            "board":  "Tried & True",
+            "ticker": p.get("ticker"),
+            "name":   p.get("full_name") or p.get("name") or p.get("ticker"),
+            "badge":  _num(p.get("score_normalized") or p.get("score")),
+            "line1":  f"Held in {_num(p.get('etf_count')) or 0} growth ETFs",
+            "line2":  "ETF-consensus leader",
+            "href":   "https://invest-the-marathon.onrender.com/?tab=tried-true",
+        }
+
+    dv = _load("TheMarathon/data/deep_value.json")
+    if dv and (dv.get("nominees") or []):
+        p = dv["nominees"][0]
+        dd = _num(p.get("drawdown_52w"), 1)
+        leaders["underdogs"] = {
+            "board":  "The Underdogs",
+            "ticker": p.get("ticker"),
+            "name":   p.get("name") or p.get("ticker"),
+            "badge":  _num(p.get("composite_score")),
+            "line1":  f"Quality {_num(p.get('quality_score'))} · Beaten-up {_num(p.get('beaten_up_score'))}",
+            "line2":  (f"{dd}% from 52-week high" if dd is not None else "Deep-value nominee"),
+            "href":   "https://invest-the-marathon.onrender.com/?tab=underdogs",
+        }
+
+    ib = _load("InsiderBuying/data/results.json")
+    if ib and (ib.get("nominees") or []):
+        p = ib["nominees"][0]
+        sigs = p.get("signals") or []
+        leaders["insider"] = {
+            "board":  "Insider Buying",
+            "ticker": p.get("ticker"),
+            "name":   p.get("company") or p.get("ticker"),
+            "badge":  _num(p.get("conviction_score")),
+            "line1":  sigs[0] if sigs else f"Tier {p.get('tier', '?')} insider buy",
+            "line2":  sigs[1] if len(sigs) > 1 else "Open-market purchase",
+            "href":   "https://invest-insider-buying.onrender.com",
+        }
+
+    top = next((a for a in analyses if not a.get("error")), None)
+    if top:
+        fams  = {t.get("source_key", "").split("_")[0] for t in (top.get("cross_dashboard_tags") or [])}
+        n     = len(fams)
+        leaders["analyst"] = {
+            "board":  "The Analyst",
+            "ticker": top.get("ticker"),
+            "name":   top.get("company") or top.get("ticker"),
+            "badge":  top.get("verdict") or "—",
+            "line1":  f"Surfaced by {n} dashboard" + ("s" if n != 1 else ""),
+            "line2":  (f"Verdict score {_num(top.get('score'))}" if top.get("score") is not None else "Top all-star pick"),
+            "href":   "https://invest-the-analyst.onrender.com/?ticker=" + str(top.get("ticker") or ""),
+        }
+
+    return {"generated": datetime.now(timezone.utc).isoformat(), "leaders": leaders}
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def run():
@@ -267,9 +369,12 @@ def run():
         "tickers":          analyses,
     }
 
-    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-    with open(OUTPUT_FILE, "w") as f:
-        json.dump(output, f, indent=2)
+    _write_json(OUTPUT_FILE, output)
+
+    leaders = build_homepage_leaders(analyses)
+    _write_json(LEADERS_FILE, leaders)
+    got = ", ".join(sorted(leaders["leaders"])) or "none"
+    print(f"[analyst-scan] Homepage leaders: {got} -> {LEADERS_FILE}")
 
     elapsed = (datetime.now(timezone.utc) - start).seconds
     print(f"[analyst-scan] Done in {elapsed}s. Wrote {OUTPUT_FILE}")
