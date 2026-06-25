@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-06-25T13:35:33.027090+00:00",
+  "scan_time": "2026-06-25T14:15:29.327059+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 21,
   "day_trades": [
@@ -7,17 +7,17 @@
       "ticker": "BB",
       "name": "BlackBerry Ltd",
       "sector": "Technology",
-      "current_price": 10.09,
-      "change_pct": 17.0534,
-      "high": 10.3,
+      "current_price": 10.55,
+      "change_pct": 22.3898,
+      "high": 10.64,
       "low": 9.43,
       "open": 9.43,
       "prev_close": 8.62,
       "score": 58,
       "signals": [
-        "Top gainer (+17.1%)",
+        "Top gainer (+22.4%)",
         "High volume",
-        "Strong move (+17.1%)",
+        "Strong move (+22.4%)",
         "Trending buzz (18)",
         "Yahoo trending (#3)",
         "Closing strong",
@@ -46,17 +46,17 @@
       "ticker": "WYY",
       "name": "WidePoint Corp",
       "sector": "Technology",
-      "current_price": 21.67,
-      "change_pct": 22.9852,
+      "current_price": 20.31,
+      "change_pct": 15.2667,
       "high": 24.3,
-      "low": 21.1154,
+      "low": 20.2,
       "open": 24.01,
       "prev_close": 17.62,
       "score": 50,
       "signals": [
-        "Top gainer (+23.0%)",
+        "Top gainer (+15.3%)",
         "High volume",
-        "Strong move (+23.0%)",
+        "Strong move (+15.3%)",
         "Trending buzz (13)",
         "Yahoo trending (#8)"
       ],
@@ -83,17 +83,17 @@
       "ticker": "TECH",
       "name": "Bio-Techne Corp",
       "sector": "Life Sciences Tools & Services",
-      "current_price": 70.22,
-      "change_pct": 19.2696,
+      "current_price": 70.3,
+      "change_pct": 19.4055,
       "high": 70.57,
-      "low": 70.11,
+      "low": 70.08,
       "open": 70.1125,
       "prev_close": 58.875,
       "score": 41,
       "signals": [
-        "Top gainer (+19.3%)",
+        "Top gainer (+19.4%)",
         "High volume",
-        "Strong move (+19.3%)",
+        "Strong move (+19.4%)",
         "Trending activity (5)",
         "Yahoo trending (#16)"
       ],
@@ -117,58 +117,23 @@
       "score_normalized": 58
     },
     {
-      "ticker": "WAVE",
-      "name": "Eco Wave Power Global AB (publ)",
-      "sector": "Utilities",
-      "current_price": 10.05,
-      "change_pct": 11.4191,
-      "high": 11.89,
-      "low": 9.6,
-      "open": 11.88,
-      "prev_close": 9.02,
-      "score": 36,
-      "signals": [
-        "Top gainer (+11.4%)",
-        "High volume",
-        "Strong move (+11.4%)",
-        "Yahoo trending (#18)"
-      ],
-      "reddit_mentions": 3,
-      "market_cap": 43390000.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950689351276.png",
-      "weburl": "https://www.ecowavepower.com/",
-      "yahoo_trending_rank": 18,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": -0.08,
-          "estimate": -0.14,
-          "beat": true,
-          "surprise_pct": 44.0
-        }
-      },
-      "score_normalized": 51
-    },
-    {
       "ticker": "MKC",
       "name": "McCormick & Company Inc",
       "sector": "Food Products",
-      "current_price": 48.91,
-      "change_pct": 2.7521,
+      "current_price": 49.73,
+      "change_pct": 4.4748,
       "high": 50.25,
       "low": 48.5,
       "open": 48.96,
       "prev_close": 47.6,
-      "score": 31,
+      "score": 39,
       "signals": [
-        "Top gainer (+2.8%)",
+        "Top gainer (+4.5%)",
         "High volume",
-        "Moderate move (+2.8%)",
+        "Good move (+4.5%)",
         "Trending activity (9)",
-        "Yahoo trending (#12)"
+        "Yahoo trending (#12)",
+        "Closing strong"
       ],
       "reddit_mentions": 9,
       "market_cap": 12796061367.100042,
@@ -187,25 +152,63 @@
           "surprise_pct": 9.9
         }
       },
-      "score_normalized": 44
+      "score_normalized": 55
     }
   ],
   "swing_trades": [
     {
+      "ticker": "MU",
+      "name": "Micron Technology Inc",
+      "sector": "Semiconductors",
+      "current_price": 1156.6,
+      "change_pct": 10.3089,
+      "high": 1255,
+      "low": 1136.31,
+      "open": 1234.61,
+      "prev_close": 1048.51,
+      "score": 60,
+      "signals": [
+        "Top gainer (+10.3%)",
+        "High volume",
+        "Strong move (+10.3%)",
+        "High Trending buzz (20)",
+        "Yahoo trending (#1)",
+        "Sector leader (Semiconductors)"
+      ],
+      "reddit_mentions": 20,
+      "market_cap": 1182440407513.0774,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MU.png",
+      "weburl": "https://www.micron.com/",
+      "yahoo_trending_rank": 1,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 12.2,
+          "estimate": 9.58,
+          "beat": true,
+          "surprise_pct": 27.3
+        }
+      },
+      "score_normalized": 85
+    },
+    {
       "ticker": "GLW",
       "name": "Corning Inc",
       "sector": "Electrical Equipment",
-      "current_price": 223.04,
-      "change_pct": 8.3613,
-      "high": 223.57,
-      "low": 215.59,
-      "open": 218.56,
+      "current_price": 224.36,
+      "change_pct": 9.0026,
+      "high": 227.4699,
+      "low": 213.02,
+      "open": 220.125,
       "prev_close": 205.83,
       "score": 58,
       "signals": [
-        "Top gainer (+8.4%)",
+        "Top gainer (+9.0%)",
         "High volume",
-        "Strong move (+8.4%)",
+        "Strong move (+9.0%)",
         "Trending buzz (16)",
         "Yahoo trending (#5)",
         "Closing strong",
@@ -234,17 +237,17 @@
       "ticker": "QCOM",
       "name": "Qualcomm Inc",
       "sector": "Semiconductors",
-      "current_price": 216.46,
-      "change_pct": 9.65,
+      "current_price": 207.56,
+      "change_pct": 5.1416,
       "high": 221.065,
-      "low": 213.75,
+      "low": 199.82,
       "open": 221.065,
       "prev_close": 197.41,
       "score": 50,
       "signals": [
-        "Top gainer (+9.7%)",
+        "Top gainer (+5.1%)",
         "High volume",
-        "Strong move (+9.7%)",
+        "Strong move (+5.1%)",
         "Trending buzz (19)",
         "Yahoo trending (#2)"
       ],
@@ -268,20 +271,58 @@
       "score_normalized": 70
     },
     {
+      "ticker": "MKC",
+      "name": "McCormick & Company Inc",
+      "sector": "Food Products",
+      "current_price": 49.73,
+      "change_pct": 4.4748,
+      "high": 50.25,
+      "low": 48.5,
+      "open": 48.96,
+      "prev_close": 47.6,
+      "score": 39,
+      "signals": [
+        "Top gainer (+4.5%)",
+        "High volume",
+        "Good move (+4.5%)",
+        "Trending activity (9)",
+        "Yahoo trending (#12)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 9,
+      "market_cap": 12796061367.100042,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MKC.png",
+      "weburl": "https://www.mccormick.com/",
+      "yahoo_trending_rank": 12,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 0.66,
+          "estimate": 0.6,
+          "beat": true,
+          "surprise_pct": 9.9
+        }
+      },
+      "score_normalized": 55
+    },
+    {
       "ticker": "WDC",
       "name": "Western Digital Corp",
       "sector": "Technology",
-      "current_price": 699.66,
-      "change_pct": 8.6715,
+      "current_price": 665.26,
+      "change_pct": 3.3285,
       "high": 729,
-      "low": 695.4201,
+      "low": 662,
       "open": 724.82,
       "prev_close": 643.83,
-      "score": 36,
+      "score": 31,
       "signals": [
-        "Top gainer (+8.7%)",
+        "Top gainer (+3.3%)",
         "High volume",
-        "Strong move (+8.7%)",
+        "Good move (+3.3%)",
         "Yahoo trending (#17)"
       ],
       "reddit_mentions": 4,
@@ -301,60 +342,23 @@
           "surprise_pct": 12.7
         }
       },
-      "score_normalized": 51
-    },
-    {
-      "ticker": "MKC",
-      "name": "McCormick & Company Inc",
-      "sector": "Food Products",
-      "current_price": 48.91,
-      "change_pct": 2.7521,
-      "high": 50.25,
-      "low": 48.5,
-      "open": 48.96,
-      "prev_close": 47.6,
-      "score": 31,
-      "signals": [
-        "Top gainer (+2.8%)",
-        "High volume",
-        "Moderate move (+2.8%)",
-        "Trending activity (9)",
-        "Yahoo trending (#12)"
-      ],
-      "reddit_mentions": 9,
-      "market_cap": 12796061367.100042,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MKC.png",
-      "weburl": "https://www.mccormick.com/",
-      "yahoo_trending_rank": 12,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-03-31",
-          "actual": 0.66,
-          "estimate": 0.6,
-          "beat": true,
-          "surprise_pct": 9.9
-        }
-      },
       "score_normalized": 44
     },
     {
       "ticker": "STX",
       "name": "Seagate Technology Holdings PLC",
       "sector": "Technology",
-      "current_price": 1088.04,
-      "change_pct": 9.5434,
+      "current_price": 1011.78,
+      "change_pct": 1.8656,
       "high": 1111,
-      "low": 1081.54,
+      "low": 1010.25,
       "open": 1095.28,
       "prev_close": 993.25,
-      "score": 28,
+      "score": 18,
       "signals": [
-        "Top gainer (+9.5%)",
+        "Top gainer (+1.9%)",
         "High volume",
-        "Strong move (+9.5%)"
+        "Moderate move (+1.9%)"
       ],
       "reddit_mentions": 0,
       "market_cap": 222715435644.31467,
@@ -373,7 +377,7 @@
           "surprise_pct": 15.7
         }
       },
-      "score_normalized": 39
+      "score_normalized": 25
     }
   ],
   "buzz_source": "trending",
@@ -382,20 +386,19 @@
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "current_price": 1251.9,
-      "change_pct": 19.398,
-      "high": 1253,
-      "low": 1220.25,
+      "current_price": 1156.6,
+      "change_pct": 10.3089,
+      "high": 1255,
+      "low": 1136.31,
       "open": 1234.61,
       "prev_close": 1048.51,
-      "score": 63,
+      "score": 60,
       "signals": [
-        "Top gainer (+19.4%)",
+        "Top gainer (+10.3%)",
         "High volume",
-        "Strong move (+19.4%)",
+        "Strong move (+10.3%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)",
-        "Closing strong",
         "Sector leader (Semiconductors)"
       ],
       "reddit_mentions": 20,
@@ -416,23 +419,23 @@
           "surprise_pct": 27.3
         }
       },
-      "score_normalized": 89
+      "score_normalized": 85
     },
     {
       "ticker": "QCOM",
       "name": "Qualcomm Inc",
       "sector": "Semiconductors",
-      "current_price": 216.46,
-      "change_pct": 9.65,
+      "current_price": 207.56,
+      "change_pct": 5.1416,
       "high": 221.065,
-      "low": 213.75,
+      "low": 199.82,
       "open": 221.065,
       "prev_close": 197.41,
       "score": 50,
       "signals": [
-        "Top gainer (+9.7%)",
+        "Top gainer (+5.1%)",
         "High volume",
-        "Strong move (+9.7%)",
+        "Strong move (+5.1%)",
         "Trending buzz (19)",
         "Yahoo trending (#2)"
       ],
@@ -460,17 +463,17 @@
       "ticker": "BB",
       "name": "BlackBerry Ltd",
       "sector": "Technology",
-      "current_price": 10.09,
-      "change_pct": 17.0534,
-      "high": 10.3,
+      "current_price": 10.55,
+      "change_pct": 22.3898,
+      "high": 10.64,
       "low": 9.43,
       "open": 9.43,
       "prev_close": 8.62,
       "score": 58,
       "signals": [
-        "Top gainer (+17.1%)",
+        "Top gainer (+22.4%)",
         "High volume",
-        "Strong move (+17.1%)",
+        "Strong move (+22.4%)",
         "Trending buzz (18)",
         "Yahoo trending (#3)",
         "Closing strong",
@@ -499,219 +502,168 @@
   ],
   "sector_rotation": [
     {
-      "ticker": "XLK",
-      "sector": "Technology",
-      "ret_1d": 2.55,
-      "ret_5d": 1.15,
-      "ret_1m": 1.51,
-      "ret_3m": 37.43,
-      "top_stocks": [
-        {
-          "ticker": "WYY",
-          "name": "WidePoint Corp",
-          "change_pct": 22.9852,
-          "price": 21.67
-        },
-        {
-          "ticker": "MU",
-          "name": "Micron Technology Inc",
-          "change_pct": 19.398,
-          "price": 1251.9
-        },
-        {
-          "ticker": "SNDK",
-          "name": "Sandisk Corp",
-          "change_pct": 18.2647,
-          "price": 2264.13
-        }
-      ]
-    },
-    {
       "ticker": "XLI",
       "sector": "Industrials",
-      "ret_1d": 1.81,
-      "ret_5d": 2.41,
-      "ret_1m": 5.52,
-      "ret_3m": 11.4,
+      "ret_1d": 2.66,
+      "ret_5d": 3.26,
+      "ret_1m": 6.4,
+      "ret_3m": 12.33,
       "top_stocks": []
     },
     {
       "ticker": "XLV",
       "sector": "Health Care",
-      "ret_1d": 0.93,
-      "ret_5d": 3.15,
-      "ret_1m": 4.67,
-      "ret_3m": 6.3,
+      "ret_1d": 2.11,
+      "ret_5d": 4.36,
+      "ret_1m": 5.91,
+      "ret_3m": 7.55,
       "top_stocks": []
-    },
-    {
-      "ticker": "XLU",
-      "sector": "Utilities",
-      "ret_1d": 0.91,
-      "ret_5d": 4.02,
-      "ret_1m": 2.03,
-      "ret_3m": 2.21,
-      "top_stocks": [
-        {
-          "ticker": "KUST",
-          "name": "Kustom Entertainment Inc",
-          "change_pct": 73.9437,
-          "price": 2.47
-        },
-        {
-          "ticker": "WAVE",
-          "name": "Eco Wave Power Global AB (publ)",
-          "change_pct": 11.4191,
-          "price": 10.05
-        },
-        {
-          "ticker": "GLW",
-          "name": "Corning Inc",
-          "change_pct": 8.3613,
-          "price": 223.04
-        }
-      ]
     },
     {
       "ticker": "XLB",
       "sector": "Materials",
-      "ret_1d": 0.8,
-      "ret_5d": -0.49,
-      "ret_1m": 1.52,
-      "ret_3m": 4.76,
+      "ret_1d": 1.74,
+      "ret_5d": 0.43,
+      "ret_1m": 2.46,
+      "ret_3m": 5.74,
       "top_stocks": []
     },
     {
       "ticker": "XLF",
       "sector": "Financials",
-      "ret_1d": 0.35,
-      "ret_5d": 0.09,
-      "ret_1m": 4.34,
-      "ret_3m": 9.65,
+      "ret_1d": 1.37,
+      "ret_5d": 1.1,
+      "ret_1m": 5.39,
+      "ret_3m": 10.75,
       "top_stocks": []
     },
     {
-      "ticker": "XLRE",
-      "sector": "Real Estate",
-      "ret_1d": 0.29,
-      "ret_5d": 2.41,
-      "ret_1m": 0.72,
-      "ret_3m": 11.82,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLP",
-      "sector": "Cons. Staples",
-      "ret_1d": -0.34,
-      "ret_5d": 1.26,
-      "ret_1m": 1.32,
-      "ret_3m": 3.96,
+      "ticker": "XLU",
+      "sector": "Utilities",
+      "ret_1d": 0.9,
+      "ret_5d": 4.01,
+      "ret_1m": 2.02,
+      "ret_3m": 2.2,
       "top_stocks": [
         {
-          "ticker": "MKC",
-          "name": "McCormick & Company Inc",
-          "change_pct": 2.7521,
-          "price": 48.91
+          "ticker": "KUST",
+          "name": "Kustom Entertainment Inc",
+          "change_pct": 30.9859,
+          "price": 1.86
+        },
+        {
+          "ticker": "GLW",
+          "name": "Corning Inc",
+          "change_pct": 9.0026,
+          "price": 224.36
         }
       ]
     },
     {
       "ticker": "XLE",
       "sector": "Energy",
-      "ret_1d": -0.67,
-      "ret_5d": -1.97,
-      "ret_1m": -7.36,
-      "ret_3m": -11.52,
+      "ret_1d": 0.68,
+      "ret_5d": -0.63,
+      "ret_1m": -6.1,
+      "ret_3m": -10.31,
       "top_stocks": []
     },
     {
-      "ticker": "XLY",
-      "sector": "Cons. Discretionary",
-      "ret_1d": -0.96,
-      "ret_5d": -1.13,
-      "ret_1m": -4.41,
-      "ret_3m": 3.12,
+      "ticker": "XLP",
+      "sector": "Cons. Staples",
+      "ret_1d": 0.28,
+      "ret_5d": 1.9,
+      "ret_1m": 1.96,
+      "ret_3m": 4.61,
       "top_stocks": [
         {
-          "ticker": "AZI",
-          "name": "Autozi Internet Technology (Global) Ltd",
-          "change_pct": 59.6491,
-          "price": 1.82
+          "ticker": "MKC",
+          "name": "McCormick & Company Inc",
+          "change_pct": 4.4748,
+          "price": 49.73
+        }
+      ]
+    },
+    {
+      "ticker": "XLRE",
+      "sector": "Real Estate",
+      "ret_1d": -0.06,
+      "ret_5d": 2.06,
+      "ret_1m": 0.37,
+      "ret_3m": 11.43,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLK",
+      "sector": "Technology",
+      "ret_1d": -0.31,
+      "ret_5d": -1.66,
+      "ret_1m": -1.31,
+      "ret_3m": 33.6,
+      "top_stocks": [
+        {
+          "ticker": "BB",
+          "name": "BlackBerry Ltd",
+          "change_pct": 22.3898,
+          "price": 10.55
         },
         {
-          "ticker": "NEXR",
-          "name": "Nexera Technologies Ltd",
-          "change_pct": 26.9689,
-          "price": 0.7142
+          "ticker": "WYY",
+          "name": "WidePoint Corp",
+          "change_pct": 15.2667,
+          "price": 20.31
+        },
+        {
+          "ticker": "SNDK",
+          "name": "Sandisk Corp",
+          "change_pct": 13.3103,
+          "price": 2169.28
         }
       ]
     },
     {
       "ticker": "XLC",
       "sector": "Comm. Services",
-      "ret_1d": -1.26,
-      "ret_5d": -3.41,
-      "ret_1m": -8.72,
-      "ret_3m": -5.35,
+      "ret_1d": -0.34,
+      "ret_5d": -2.52,
+      "ret_1m": -7.87,
+      "ret_3m": -4.48,
       "top_stocks": [
         {
           "ticker": "IQST",
           "name": "iQSTEL Inc",
-          "change_pct": 33.3333,
-          "price": 1.44
+          "change_pct": 20.3704,
+          "price": 1.3
+        }
+      ]
+    },
+    {
+      "ticker": "XLY",
+      "sector": "Cons. Discretionary",
+      "ret_1d": -0.45,
+      "ret_5d": -0.61,
+      "ret_1m": -3.91,
+      "ret_3m": 3.66,
+      "top_stocks": [
+        {
+          "ticker": "NEXR",
+          "name": "Nexera Technologies Ltd",
+          "change_pct": 67.2711,
+          "price": 0.9409
+        },
+        {
+          "ticker": "AZI",
+          "name": "Autozi Internet Technology (Global) Ltd",
+          "change_pct": 61.4035,
+          "price": 1.84
         }
       ]
     }
   ],
   "reddit_feed": [
     {
-      "id": "140724208",
-      "title": "Stay updated with the S&P500 stocks that are on the move in today's pre-market session.",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "MU"
-      ],
-      "confirmed_tickers": [
-        "MU"
-      ],
-      "hours_ago": 1.0,
-      "url": "https://finnhub.io/api/news?id=8f67311688363f10c791e48ff7afb3d8f2ef0d0f789874bb541a26dc06763df5",
-      "is_news": true
-    },
-    {
-      "id": "140724208",
-      "title": "Stay updated with the S&P500 stocks that are on the move in today's pre-market session.",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "QCOM"
-      ],
-      "confirmed_tickers": [
-        "QCOM"
-      ],
-      "hours_ago": 1.0,
-      "url": "https://finnhub.io/api/news?id=8f67311688363f10c791e48ff7afb3d8f2ef0d0f789874bb541a26dc06763df5",
-      "is_news": true
-    },
-    {
-      "id": "140724082",
-      "title": "Memory Stock Divergence Intensifies: AI-Driven Leaders Surge as Laggards Face Earnings Scrutiny",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "MU"
-      ],
-      "confirmed_tickers": [
-        "MU"
-      ],
-      "hours_ago": 1.5,
-      "url": "https://finnhub.io/api/news?id=74eb12ef1589d504926afc51417bf778c89136e0fb19db2066e15510c182ddf4",
-      "is_news": true
-    },
-    {
-      "id": "140723846",
-      "title": "Nasdaq tech stocks set for strong rebound after Micron earnings boost",
+      "id": "140724535",
+      "title": "Micron's 19% Rally Sends AI Chip Stocks Surging",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -720,13 +672,13 @@
       "confirmed_tickers": [
         "MU"
       ],
-      "hours_ago": 1.9,
-      "url": "https://finnhub.io/api/news?id=f66a7acc5a60d5c7957a61b73d5e2f3c04f62fc96e238ddc7260b4fd6729c151",
+      "hours_ago": 0.4,
+      "url": "https://finnhub.io/api/news?id=0a41cbce41529197e073613ba9b5e069e06c701ed0170f60f98e3f9d0a47be8f",
       "is_news": true
     },
     {
-      "id": "140723847",
-      "title": "Micron\u2019s Jaw-Dropping Earnings Show It Is Leaving Nvidia Behind in the AI Boom",
+      "id": "140724455",
+      "title": "May PCE: Inflation ticks up to highest level since 2023",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -735,13 +687,13 @@
       "confirmed_tickers": [
         "MU"
       ],
-      "hours_ago": 1.9,
-      "url": "https://finnhub.io/api/news?id=7f4fb61c0b59e85b3c8cfcdd549d1ad984e94e2487a2e0720a27e6fc22067681",
+      "hours_ago": 0.4,
+      "url": "https://finnhub.io/api/news?id=8be465df7d2ab114b79ef0b55d23430cf5e4c1aa4f1163268672c5ac38e445cf",
       "is_news": true
     },
     {
-      "id": "140723810",
-      "title": "Stocks Rise Pre-Bell as Traders Assess Micron Results, Await Key Inflation Data",
+      "id": "140724537",
+      "title": "SK Hynix Unveils $29 Billion US Listing as Shares Soar Over 800%",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -750,13 +702,13 @@
       "confirmed_tickers": [
         "MU"
       ],
-      "hours_ago": 1.9,
-      "url": "https://finnhub.io/api/news?id=e07667af764c94c0a2024bfb4121f43476dfea928072e6a86f452ef38726b1c1",
+      "hours_ago": 0.4,
+      "url": "https://finnhub.io/api/news?id=7f706e2873a8bdbbcae881989dcbb0d4424d9f6a2bbef466361d665230c41af1",
       "is_news": true
     },
     {
-      "id": "140723810",
-      "title": "Stocks Rise Pre-Bell as Traders Assess Micron Results, Await Key Inflation Data",
+      "id": "140724535",
+      "title": "Micron's 19% Rally Sends AI Chip Stocks Surging",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -765,13 +717,13 @@
       "confirmed_tickers": [
         "QCOM"
       ],
-      "hours_ago": 1.9,
-      "url": "https://finnhub.io/api/news?id=e07667af764c94c0a2024bfb4121f43476dfea928072e6a86f452ef38726b1c1",
+      "hours_ago": 0.4,
+      "url": "https://finnhub.io/api/news?id=0a41cbce41529197e073613ba9b5e069e06c701ed0170f60f98e3f9d0a47be8f",
       "is_news": true
     },
     {
-      "id": "140723873",
-      "title": "WeRide GENESIS Named \u201cGenerative AI Platform of the Year,\u201d Following ATTI Simulation Innovation Award",
+      "id": "140724658",
+      "title": "Qualcomm Jumps 12% After Unveiling $15 Billion AI Data Center Target",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -780,13 +732,43 @@
       "confirmed_tickers": [
         "QCOM"
       ],
-      "hours_ago": 3.2,
-      "url": "https://finnhub.io/api/news?id=8a46e8711286f10310f4e5de593568b938452d601b43f73a2a313082c30f97fb",
+      "hours_ago": 0.4,
+      "url": "https://finnhub.io/api/news?id=f15352a4b400ca3178fa601cf0fc112e6b808682276524523ec791b75a90c076",
       "is_news": true
     },
     {
-      "id": "140723859",
-      "title": "Micron Is the New Nvidia",
+      "id": "140724077",
+      "title": "Stock Market Today: Dow Rises Ahead Of Key Inflation Data; Micron Rockets On Earnings News (Live Coverage)",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "confirmed_tickers": [
+        "MU"
+      ],
+      "hours_ago": 0.6,
+      "url": "https://finnhub.io/api/news?id=bd9109f436829c20db7c72726b1f38024719e48ed03e5003d56ef4d40a76f3e4",
+      "is_news": true
+    },
+    {
+      "id": "140724539",
+      "title": "Micron overtakes Meta, Tesla in market value amid relentless AI infrastructure demand",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "confirmed_tickers": [
+        "MU"
+      ],
+      "hours_ago": 0.6,
+      "url": "https://finnhub.io/api/news?id=20bbc2d08962f0362c9792da97eea314069ecc0c6b48fc576146ffd98886b408",
+      "is_news": true
+    },
+    {
+      "id": "140724556",
+      "title": "Qualcomm Signs Meta as Its First Data Center Customer",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -795,13 +777,13 @@
       "confirmed_tickers": [
         "QCOM"
       ],
-      "hours_ago": 3.2,
-      "url": "https://finnhub.io/api/news?id=41a629863a0e04f4fa54a5358b1fbac78d0bbd23495359714eef972fe52fd489",
+      "hours_ago": 0.9,
+      "url": "https://finnhub.io/api/news?id=3b182602bcedf0d9757a2286b518f07705bce7bf9fae08e1c36e8df7378892a8",
       "is_news": true
     },
     {
-      "id": "140723833",
-      "title": "AI Weekly: Micron boosts chip stocks, firms mull AI-related cuts",
+      "id": "140724551",
+      "title": "Qualcomm, Sandisk, Western Digital, Wendy\u2019s, and More Stocks That Explain Today\u2019s Market",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -810,8 +792,23 @@
       "confirmed_tickers": [
         "QCOM"
       ],
-      "hours_ago": 3.3,
-      "url": "https://finnhub.io/api/news?id=c97d30140852afe8cfc8f5c2dea11398f0b98b4f686db3c0cbab8941976950dc",
+      "hours_ago": 1.2,
+      "url": "https://finnhub.io/api/news?id=f1f6d8918785b83bf826b66a3e2aef8270fdcdc9af7d7a99ee8da88a6c6148d2",
+      "is_news": true
+    },
+    {
+      "id": "140724634",
+      "title": "Morgan Stanley upgrades Qualcomm after $5B data center forecast",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "QCOM"
+      ],
+      "confirmed_tickers": [
+        "QCOM"
+      ],
+      "hours_ago": 1.4,
+      "url": "https://finnhub.io/api/news?id=d384938c8b0fd2cabeb567387a2ddc87967cb64bb2c5181a61e3b2dc4a87a448",
       "is_news": true
     },
     {
@@ -825,7 +822,7 @@
       "confirmed_tickers": [
         "BB"
       ],
-      "hours_ago": 26.1,
+      "hours_ago": 26.7,
       "url": "https://finnhub.io/api/news?id=dfca3663b6ad31dd19401beaa202ff2b16d34a170123ff6e38220d9458204843",
       "is_news": true
     },
@@ -840,7 +837,7 @@
       "confirmed_tickers": [
         "BB"
       ],
-      "hours_ago": 30.0,
+      "hours_ago": 30.7,
       "url": "https://finnhub.io/api/news?id=219ced3c53885eb50ca3babbdf0857b8b9e6918eac7752892d4d33e2f771bd75",
       "is_news": true
     },
@@ -855,7 +852,7 @@
       "confirmed_tickers": [
         "BB"
       ],
-      "hours_ago": 32.0,
+      "hours_ago": 32.7,
       "url": "https://finnhub.io/api/news?id=c21e339620754aa5ecbe890cef5083ba36e4cc81280318f4b8e5c4d8742e8b04",
       "is_news": true
     },
@@ -870,7 +867,7 @@
       "confirmed_tickers": [
         "BB"
       ],
-      "hours_ago": 73.5,
+      "hours_ago": 74.1,
       "url": "https://finnhub.io/api/news?id=813db00faa2e838687517ca9cba35454efa3d99ad387205d335296cc5855fac2",
       "is_news": true
     },
@@ -885,7 +882,7 @@
       "confirmed_tickers": [
         "BB"
       ],
-      "hours_ago": 168.2,
+      "hours_ago": 168.9,
       "url": "https://finnhub.io/api/news?id=57814e5db93ae8abf83a9a73cb7b1c5497671eb8ad41e32f524fee83a2f9e82c",
       "is_news": true
     }
