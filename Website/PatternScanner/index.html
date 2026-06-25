@@ -791,6 +791,14 @@
 
     document.getElementById('glossary').style.display = 'block';
     setupScrollSpy();
+
+    // Deep-link: a homepage card may arrive at #sec-coiled / #sec-leaders.
+    // Those sections start hidden until populated, so the browser's native
+    // hash scroll misses — re-scroll now that they're rendered and visible.
+    if (location.hash) {
+      var target = document.querySelector(location.hash);
+      if (target) setTimeout(function () { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 60);
+    }
   }
 
   function fillGrid(gridId, sectionId, rows, scoreKey, scoreLabel) {

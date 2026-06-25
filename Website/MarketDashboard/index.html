@@ -708,6 +708,10 @@
     overflow: hidden;
   }
 
+  /* Deep-link landing offset so the sticky 70px site header doesn't cover
+     the section title when a homepage card jumps here via #hash. */
+  #day-trades, #cadence, #market-chatter, #sector-rotation { scroll-margin-top: 86px; }
+
   .panel-header {
     padding: 14px 20px;
     border-bottom: 1px solid var(--border-light);
@@ -1485,6 +1489,7 @@ async function loadResults() {
     $('sidebar-last-scan').textContent = `${d}, ${t}`;
 
     updateResults(data);
+    maybeScrollToHash();
   } catch (e) {
     console.warn('Load error:', e);
     pulse.className = 'pulse error';
@@ -1492,11 +1497,20 @@ async function loadResults() {
   }
 }
 
+// Deep-link from the homepage cards: sections (#day-trades, #cadence,
+// #market-chatter) fill async, so the browser's native hash scroll lands
+// before the content exists. Re-scroll once the section is populated.
+function maybeScrollToHash() {
+  if (!location.hash) return;
+  const el = document.querySelector(location.hash);
+  if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+}
+
 // ── Cadence Watchlist (day-trade rhythm engine) ────────────────────────────
 function loadCadence() {
   fetch(CADENCE_URL + '?t=' + Date.now())
     .then(r => r.ok ? r.json() : null)
-    .then(d => { cadenceData = (d && d.names) || []; renderCadence(); })
+    .then(d => { cadenceData = (d && d.names) || []; renderCadence(); maybeScrollToHash(); })
     .catch(() => {
       $('cadence-body').innerHTML =
         '<div class="empty-state">Watchlist unavailable — the Cadence scan runs pre-market on weekdays.</div>';
