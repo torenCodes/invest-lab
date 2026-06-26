@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-06-26T13:35:25.399411+00:00",
+  "scan_time": "2026-06-26T14:15:24.765878+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 18,
   "day_trades": [
@@ -7,20 +7,21 @@
       "ticker": "SLS",
       "name": "Sellas Life Sciences Group Inc",
       "sector": "Biotechnology",
-      "current_price": 10.79,
-      "change_pct": 2.4691,
-      "high": 10.89,
+      "current_price": 11.74,
+      "change_pct": 11.491,
+      "high": 11.845,
       "low": 10.3201,
-      "open": 10.379999999999999,
+      "open": 10.53,
       "prev_close": 10.53,
-      "score": 43,
+      "score": 58,
       "signals": [
-        "Top gainer (+2.5%)",
+        "Top gainer (+11.5%)",
         "High volume",
-        "Moderate move (+2.5%)",
+        "Strong move (+11.5%)",
         "Trending buzz (13)",
         "Yahoo trending (#8)",
-        "Closing strong"
+        "Closing strong",
+        "Sector leader (Biotechnology)"
       ],
       "reddit_mentions": 13,
       "market_cap": 1958923057.5245364,
@@ -39,23 +40,23 @@
           "surprise_pct": -23.8
         }
       },
-      "score_normalized": 61
+      "score_normalized": 82
     },
     {
       "ticker": "FCEL",
       "name": "Fuelcell Energy Inc",
       "sector": "Electrical Equipment",
-      "current_price": 22.19,
-      "change_pct": 12.9262,
-      "high": 22.360000000000003,
+      "current_price": 23.57,
+      "change_pct": 19.9491,
+      "high": 23.740000000000002,
       "low": 19.3312,
-      "open": 20.180000000000003,
+      "open": 19.62,
       "prev_close": 19.65,
       "score": 39,
       "signals": [
-        "Top gainer (+12.9%)",
+        "Top gainer (+19.9%)",
         "High volume",
-        "Strong move (+12.9%)",
+        "Strong move (+19.9%)",
         "Yahoo trending (#18)",
         "Closing strong"
       ],
@@ -81,19 +82,58 @@
   ],
   "swing_trades": [
     {
+      "ticker": "AAPL",
+      "name": "Apple Inc",
+      "sector": "Technology",
+      "current_price": 278.21,
+      "change_pct": 1.1121,
+      "high": 278.35,
+      "low": 274.21,
+      "open": 275.08,
+      "prev_close": 275.15,
+      "score": 48,
+      "signals": [
+        "Top gainer (+1.1%)",
+        "High volume",
+        "High Trending buzz (20)",
+        "Yahoo trending (#1)",
+        "Closing strong",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 20,
+      "market_cap": 4041225940774.9287,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AAPL.png",
+      "weburl": "https://www.apple.com/",
+      "yahoo_trending_rank": 1,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": 2.01,
+          "estimate": 1.99,
+          "beat": true,
+          "surprise_pct": 1.1
+        }
+      },
+      "score_normalized": 68
+    },
+    {
       "ticker": "MSFT",
       "name": "Microsoft Corp",
       "sector": "Technology",
-      "current_price": 357.48,
-      "change_pct": 1.3179,
-      "high": 358.11,
+      "current_price": 365.02,
+      "change_pct": 3.4549,
+      "high": 365.35,
       "low": 355.43,
       "open": 357.405,
       "prev_close": 352.83,
-      "score": 29,
+      "score": 39,
       "signals": [
-        "Top gainer (+1.3%)",
+        "Top gainer (+3.5%)",
         "High volume",
+        "Good move (+3.5%)",
         "Trending activity (8)",
         "Yahoo trending (#13)",
         "Closing strong"
@@ -115,7 +155,44 @@
           "surprise_pct": 3.1
         }
       },
-      "score_normalized": 41
+      "score_normalized": 55
+    },
+    {
+      "ticker": "MSTR",
+      "name": "Strategy Inc",
+      "sector": "Technology",
+      "current_price": 86.49,
+      "change_pct": 1.3594,
+      "high": 87.67,
+      "low": 82.33,
+      "open": 84.895,
+      "prev_close": 85.33,
+      "score": 34,
+      "signals": [
+        "Top gainer (+1.4%)",
+        "High volume",
+        "Trending buzz (10)",
+        "Yahoo trending (#11)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 10,
+      "market_cap": 29903694301.765537,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MSTR.png",
+      "weburl": "https://www.strategy.com/",
+      "yahoo_trending_rank": 11,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-03-31",
+          "actual": -38.25,
+          "estimate": -4.39,
+          "beat": false,
+          "surprise_pct": -770.4
+        }
+      },
+      "score_normalized": 48
     }
   ],
   "buzz_source": "trending",
@@ -124,15 +201,15 @@
       "ticker": "AAPL",
       "name": "Apple Inc",
       "sector": "Technology",
-      "current_price": 276.89,
-      "change_pct": 0.6324,
-      "high": 278,
+      "current_price": 278.21,
+      "change_pct": 1.1121,
+      "high": 278.35,
       "low": 274.21,
       "open": 275.08,
       "prev_close": 275.15,
       "score": 48,
       "signals": [
-        "Top gainer (+0.6%)",
+        "Top gainer (+1.1%)",
         "High volume",
         "High Trending buzz (20)",
         "Yahoo trending (#1)",
@@ -163,17 +240,17 @@
       "ticker": "ILLR",
       "name": "Triller Group Inc",
       "sector": "Financial Services",
-      "current_price": 4.55,
-      "change_pct": 49.1803,
+      "current_price": 4.8,
+      "change_pct": 57.377,
       "high": 5.2299999999999995,
       "low": 4.39,
       "open": 4.81,
       "prev_close": 3.05,
       "score": 50,
       "signals": [
-        "Top gainer (+49.2%)",
+        "Top gainer (+57.4%)",
         "High volume",
-        "Strong move (+49.2%)",
+        "Strong move (+57.4%)",
         "Trending buzz (19)",
         "Yahoo trending (#2)"
       ],
@@ -195,17 +272,17 @@
       "ticker": "TII",
       "name": "Titan Mining Corp",
       "sector": "Metals & Mining",
-      "current_price": 2.62,
-      "change_pct": 17.4888,
+      "current_price": 2.39,
+      "change_pct": 7.1749,
       "high": 2.845,
-      "low": 2.56,
+      "low": 2.36,
       "open": 2.8299999999999996,
       "prev_close": 2.23,
       "score": 50,
       "signals": [
-        "Top gainer (+17.5%)",
+        "Top gainer (+7.2%)",
         "High volume",
-        "Strong move (+17.5%)",
+        "Strong move (+7.2%)",
         "Trending buzz (18)",
         "Yahoo trending (#3)"
       ],
@@ -234,185 +311,245 @@
     {
       "ticker": "XLV",
       "sector": "Health Care",
-      "ret_1d": 1.49,
-      "ret_5d": 6.19,
-      "ret_1m": 6.62,
-      "ret_3m": 8.86,
+      "ret_1d": 2.72,
+      "ret_5d": 7.48,
+      "ret_1m": 7.92,
+      "ret_3m": 10.18,
       "top_stocks": [
         {
           "ticker": "IVF",
           "name": "INVO Fertility Inc",
-          "change_pct": 61.2903,
-          "price": 2
+          "change_pct": 75,
+          "price": 2.17
         },
         {
           "ticker": "SHPH",
           "name": "Shuttle Pharmaceuticals Holdings Inc",
-          "change_pct": 44.9735,
-          "price": 5.48
+          "change_pct": 24.8677,
+          "price": 4.72
         },
         {
-          "ticker": "CANF",
-          "name": "Can Fite Biopharma Ltd",
-          "change_pct": 14.6259,
-          "price": 3.37
+          "ticker": "SLS",
+          "name": "Sellas Life Sciences Group Inc",
+          "change_pct": 11.491,
+          "price": 11.74
         }
       ]
     },
     {
       "ticker": "XLP",
       "sector": "Cons. Staples",
-      "ret_1d": 1.24,
-      "ret_5d": 2.72,
-      "ret_1m": 1.17,
-      "ret_3m": 5.46,
+      "ret_1d": 1.11,
+      "ret_5d": 2.59,
+      "ret_1m": 1.04,
+      "ret_3m": 5.32,
       "top_stocks": [
         {
           "ticker": "SDOT",
           "name": "Sadot Group Inc",
-          "change_pct": 65.6958,
-          "price": 10.24
+          "change_pct": 73.301,
+          "price": 10.71
         }
       ]
     },
     {
       "ticker": "XLRE",
       "sector": "Real Estate",
-      "ret_1d": 0.56,
-      "ret_5d": 3.13,
-      "ret_1m": 1.35,
-      "ret_3m": 12.27,
+      "ret_1d": 0.74,
+      "ret_5d": 3.31,
+      "ret_1m": 1.53,
+      "ret_3m": 12.47,
       "top_stocks": []
     },
     {
-      "ticker": "XLU",
-      "sector": "Utilities",
-      "ret_1d": 0.48,
-      "ret_5d": 3.58,
-      "ret_1m": 2.71,
-      "ret_3m": 2.28,
+      "ticker": "XLY",
+      "sector": "Cons. Discretionary",
+      "ret_1d": 0.65,
+      "ret_5d": -2.43,
+      "ret_1m": -5.95,
+      "ret_3m": 5.04,
       "top_stocks": [
         {
-          "ticker": "FCEL",
-          "name": "Fuelcell Energy Inc",
-          "change_pct": 12.9262,
-          "price": 22.19
+          "ticker": "MCD",
+          "name": "McDonald's Corp",
+          "change_pct": 0.6615,
+          "price": 266.29
         }
       ]
     },
     {
       "ticker": "XLC",
       "sector": "Comm. Services",
-      "ret_1d": 0.18,
-      "ret_5d": -3.11,
-      "ret_1m": -8.79,
-      "ret_3m": -2.54,
+      "ret_1d": 0.44,
+      "ret_5d": -2.86,
+      "ret_1m": -8.55,
+      "ret_3m": -2.29,
       "top_stocks": []
     },
     {
-      "ticker": "XLY",
-      "sector": "Cons. Discretionary",
-      "ret_1d": 0.04,
-      "ret_5d": -3.02,
-      "ret_1m": -6.52,
-      "ret_3m": 4.41,
+      "ticker": "XLU",
+      "sector": "Utilities",
+      "ret_1d": 0.34,
+      "ret_5d": 3.44,
+      "ret_1m": 2.57,
+      "ret_3m": 2.14,
       "top_stocks": [
         {
-          "ticker": "MCD",
-          "name": "McDonald's Corp",
-          "change_pct": 0.843,
-          "price": 266.77
+          "ticker": "FCEL",
+          "name": "Fuelcell Energy Inc",
+          "change_pct": 19.9491,
+          "price": 23.57
         }
       ]
     },
     {
       "ticker": "XLF",
       "sector": "Financials",
-      "ret_1d": -0.02,
-      "ret_5d": 0.11,
-      "ret_1m": 4.29,
-      "ret_3m": 9.33,
+      "ret_1d": 0.07,
+      "ret_5d": 0.2,
+      "ret_1m": 4.39,
+      "ret_3m": 9.43,
       "top_stocks": [
         {
           "ticker": "ILLR",
           "name": "Triller Group Inc",
-          "change_pct": 49.1803,
-          "price": 4.55
+          "change_pct": 57.377,
+          "price": 4.8
         }
       ]
     },
     {
       "ticker": "XLE",
       "sector": "Energy",
-      "ret_1d": -0.05,
-      "ret_5d": 1.27,
-      "ret_1m": -4.45,
+      "ret_1d": -0.04,
+      "ret_5d": 1.28,
+      "ret_1m": -4.44,
       "ret_3m": -11.48,
       "top_stocks": []
     },
     {
       "ticker": "XLB",
       "sector": "Materials",
-      "ret_1d": -0.52,
-      "ret_5d": -0.09,
-      "ret_1m": 1.14,
-      "ret_3m": 5.44,
+      "ret_1d": -0.06,
+      "ret_5d": 0.37,
+      "ret_1m": 1.61,
+      "ret_3m": 5.94,
       "top_stocks": [
         {
           "ticker": "TII",
           "name": "Titan Mining Corp",
-          "change_pct": 17.4888,
-          "price": 2.62
+          "change_pct": 7.1749,
+          "price": 2.39
         }
       ]
     },
     {
       "ticker": "XLI",
       "sector": "Industrials",
-      "ret_1d": -1.29,
-      "ret_5d": 0.71,
-      "ret_1m": 4.53,
-      "ret_3m": 12.98,
+      "ret_1d": -0.78,
+      "ret_5d": 1.23,
+      "ret_1m": 5.07,
+      "ret_3m": 13.55,
       "top_stocks": [
         {
           "ticker": "INLF",
           "name": "INLIF Ltd",
-          "change_pct": 108.6667,
-          "price": 0.0626
+          "change_pct": 85.6667,
+          "price": 0.0557
         }
       ]
     },
     {
       "ticker": "XLK",
       "sector": "Technology",
-      "ret_1d": -2.09,
-      "ret_5d": -5.49,
-      "ret_1m": -1.9,
-      "ret_3m": 36.55,
+      "ret_1d": -1.08,
+      "ret_5d": -4.51,
+      "ret_1m": -0.89,
+      "ret_3m": 37.96,
       "top_stocks": [
         {
           "ticker": "SHPH",
           "name": "Shuttle Pharmaceuticals Holdings Inc",
-          "change_pct": 44.9735,
-          "price": 5.48
-        },
-        {
-          "ticker": "CANF",
-          "name": "Can Fite Biopharma Ltd",
-          "change_pct": 14.6259,
-          "price": 3.37
+          "change_pct": 24.8677,
+          "price": 4.72
         },
         {
           "ticker": "SLS",
           "name": "Sellas Life Sciences Group Inc",
-          "change_pct": 2.4691,
-          "price": 10.79
+          "change_pct": 11.491,
+          "price": 11.74
+        },
+        {
+          "ticker": "CANF",
+          "name": "Can Fite Biopharma Ltd",
+          "change_pct": 5.4422,
+          "price": 3.1
         }
       ]
     }
   ],
   "reddit_feed": [
     {
+      "id": "140735243",
+      "title": "Apple Should Raise Prices On iPhones",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "AAPL"
+      ],
+      "confirmed_tickers": [
+        "AAPL"
+      ],
+      "hours_ago": 0.6,
+      "url": "https://finnhub.io/api/news?id=1d6f12540e20d5eb403284e7106898fd8ec250b1a7005f6e96c5e77f0526bca7",
+      "is_news": true
+    },
+    {
+      "id": "140735250",
+      "title": "Semiconductor stocks retreat over worries about memory costs",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "AAPL"
+      ],
+      "confirmed_tickers": [
+        "AAPL"
+      ],
+      "hours_ago": 1.0,
+      "url": "https://finnhub.io/api/news?id=df999755165bbdc2cd8391bae1261414fc97e2bcfbbe6895fe809fe904f6fe60",
+      "is_news": true
+    },
+    {
+      "id": "140735267",
+      "title": "Samsung, SK Hynix Slide 9% Before $646 Billion Investment Update",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "AAPL"
+      ],
+      "confirmed_tickers": [
+        "AAPL"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://finnhub.io/api/news?id=6ced8a60dd6baab993d181aac76f4ab595d8c88d0db6ebc64d23931b4fa8b8c3",
+      "is_news": true
+    },
+    {
+      "id": "140735268",
+      "title": "Apple Hiked Prices Of Its Products Due To Soaring Memory Costs \u2014 And Dan Ives Says AAPL Can Get Away With It",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "AAPL"
+      ],
+      "confirmed_tickers": [
+        "AAPL"
+      ],
+      "hours_ago": 1.6,
+      "url": "https://finnhub.io/api/news?id=d5c17fdf90658e4f2cbe3311635f1fb8fac2e7596aa5bd74a97e67875aa32f66",
+      "is_news": true
+    },
+    {
       "id": "140734897",
       "title": "Top movers in Friday's pre-market session",
       "subreddit": "ChartMill",
@@ -423,7 +560,7 @@
       "confirmed_tickers": [
         "ILLR"
       ],
-      "hours_ago": 1.1,
+      "hours_ago": 1.8,
       "url": "https://finnhub.io/api/news?id=4348b77247e27bfacf0e5beda0e8baa46d425f51acfef14bd4da126e79a185bc",
       "is_news": true
     },
@@ -438,43 +575,13 @@
       "confirmed_tickers": [
         "TII"
       ],
-      "hours_ago": 1.1,
+      "hours_ago": 1.8,
       "url": "https://finnhub.io/api/news?id=4348b77247e27bfacf0e5beda0e8baa46d425f51acfef14bd4da126e79a185bc",
       "is_news": true
     },
     {
-      "id": "140734488",
-      "title": "Stocks Fall Pre-Bell as Tech Weakness Persists",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "AAPL"
-      ],
-      "confirmed_tickers": [
-        "AAPL"
-      ],
-      "hours_ago": 1.8,
-      "url": "https://finnhub.io/api/news?id=547ef03fb5debcb3f282909d11963e686723e29190348bcbf3d8614bb13667e1",
-      "is_news": true
-    },
-    {
-      "id": "140734489",
-      "title": "Here's Why Taiwan Semiconductor (TSM) May Be the Smartest AI Infrastructure Buy Right Now",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "AAPL"
-      ],
-      "confirmed_tickers": [
-        "AAPL"
-      ],
-      "hours_ago": 1.8,
-      "url": "https://finnhub.io/api/news?id=69fa5bce4cf936fdb5d0c14d75f12efd5b59cff20e9fc029d72f7394bdf695c5",
-      "is_news": true
-    },
-    {
-      "id": "140734510",
-      "title": "Dow Jones Futures: S&P 500 Set To Break Key Level As Techs Tumble; What To Do Now",
+      "id": "140735269",
+      "title": "Nasdaq set to take another hit from rotation out of tech before quarter-end",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -484,37 +591,7 @@
         "AAPL"
       ],
       "hours_ago": 2.0,
-      "url": "https://finnhub.io/api/news?id=2354f67860768a77109d4ea1fda3904b044ed0df38ae7c027c54f49a132a401e",
-      "is_news": true
-    },
-    {
-      "id": "140734492",
-      "title": "Ranking the FAANG Stocks From Most to Least Attractive, Based on Future Cash Flow",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "AAPL"
-      ],
-      "confirmed_tickers": [
-        "AAPL"
-      ],
-      "hours_ago": 2.2,
-      "url": "https://finnhub.io/api/news?id=684fd2161cd22030b91fb2cbced74da83b4f8757c42e9a8dbdf3c9f584396821",
-      "is_news": true
-    },
-    {
-      "id": "140734512",
-      "title": "Kospi Plunges 8% as AI Rally Faces Fresh Stress",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "AAPL"
-      ],
-      "confirmed_tickers": [
-        "AAPL"
-      ],
-      "hours_ago": 2.2,
-      "url": "https://finnhub.io/api/news?id=3c8eec08131e791764a4c06897f2d576724d7bf3ce361b3b9f84c2085afa4235",
+      "url": "https://finnhub.io/api/news?id=1f1a865c23998f7c3b813156ecbada385dd53d8427ef1b3f3a31b64fcad709be",
       "is_news": true
     },
     {
@@ -528,7 +605,7 @@
       "confirmed_tickers": [
         "ILLR"
       ],
-      "hours_ago": 16.6,
+      "hours_ago": 17.3,
       "url": "https://finnhub.io/api/news?id=1e89d9bd081e4ab4b8fbabec33835ef8051241323f8d7c6b634b5535ac50bc86",
       "is_news": true
     },
@@ -543,7 +620,7 @@
       "confirmed_tickers": [
         "ILLR"
       ],
-      "hours_ago": 19.6,
+      "hours_ago": 20.3,
       "url": "https://finnhub.io/api/news?id=57dd0b547fabe63fdb44ff56756b21f805098f228d8885b2bcd48bceedb830ca",
       "is_news": true
     },
@@ -558,7 +635,7 @@
       "confirmed_tickers": [
         "TII"
       ],
-      "hours_ago": 22.1,
+      "hours_ago": 22.8,
       "url": "https://finnhub.io/api/news?id=81cf25cf5f204a438921ee7ee2c15c433ddeba00b4428d4b49b9f11fc8d516c4",
       "is_news": true
     },
@@ -573,7 +650,7 @@
       "confirmed_tickers": [
         "ILLR"
       ],
-      "hours_ago": 25.3,
+      "hours_ago": 26.0,
       "url": "https://finnhub.io/api/news?id=f1c7c11f57c25cf9e31d1a90c3ac28cc1dbe26bbcef9a15201b39501c2b76638",
       "is_news": true
     },
@@ -588,7 +665,7 @@
       "confirmed_tickers": [
         "ILLR"
       ],
-      "hours_ago": 27.9,
+      "hours_ago": 28.6,
       "url": "https://finnhub.io/api/news?id=7316a88ccda79b3354a49965fa82f15ed81fe3722e51491463cf118f097a0143",
       "is_news": true
     },
@@ -603,7 +680,7 @@
       "confirmed_tickers": [
         "TII"
       ],
-      "hours_ago": 68.6,
+      "hours_ago": 69.2,
       "url": "https://finnhub.io/api/news?id=7b78290f385b72459e24aedc165f5bfce89a873850ac4dbd9c741a80e868b0fc",
       "is_news": true
     }
