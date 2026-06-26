@@ -1,41 +1,41 @@
 {
-  "scan_time": "2026-06-26T13:00:31.388613+00:00",
+  "scan_time": "2026-06-26T15:00:33.850359+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Mixed",
-    "score": 3,
-    "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you.",
+    "verdict": "Risk-Off",
+    "score": -2,
+    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
     "signals": [
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Above 50-day",
-        "read": "Uptrend",
-        "tone": "good"
+        "value": "Below 50-day",
+        "read": "Downtrend",
+        "tone": "bad"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.9%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "-1.9%",
+        "read": "Weak",
+        "tone": "bad"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "20.2",
-        "read": "Elevated",
+        "value": "19.3",
+        "read": "Calm but rising",
         "tone": "neutral"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.39%",
+        "value": "4.38%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-06-26T13:00:41.985491+00:00"
+    "updated": "2026-06-26T15:00:42.692011+00:00"
   },
   "earnings": [
     {
@@ -327,81 +327,81 @@
   ],
   "unusual_volume": [
     {
-      "ticker": "TECH",
-      "name": "Bio-Techne Corp",
-      "price": 70.7,
-      "change_pct": 20.08,
-      "volume": "11.07B"
+      "ticker": "WEN",
+      "name": "Wendy's Co",
+      "price": 7.64,
+      "change_pct": 4.3,
+      "volume": "1.46B"
     },
     {
-      "ticker": "BLZE",
-      "name": "Backblaze Inc",
-      "price": 13.42,
-      "change_pct": 12.11,
-      "volume": "805.20M"
+      "ticker": "SDOT",
+      "name": "Sadot Group Inc",
+      "price": 10.83,
+      "change_pct": 75.22,
+      "volume": "8.06M"
     },
     {
-      "ticker": "NTST",
-      "name": "Netstreit Corp",
-      "price": 20.76,
-      "change_pct": 1.86,
-      "volume": "2.03B"
-    },
-    {
-      "ticker": "IEZ",
-      "name": "iShares U.S. Oil Equipment & Services ETF",
-      "price": 27.44,
-      "change_pct": 2.58,
+      "ticker": "MUD",
+      "name": "Direxion Daily MU Bear 1X ETF",
+      "price": 9.73,
+      "change_pct": 4.45,
       "volume": "-"
     },
     {
-      "ticker": "WYY",
-      "name": "Widepoint Corp",
-      "price": 20.2,
-      "change_pct": 14.64,
-      "volume": "199.72M"
-    },
-    {
-      "ticker": "CCXI",
-      "name": "Churchill Capital Corp XI",
-      "price": 12.44,
-      "change_pct": 3.75,
-      "volume": "692.91M"
-    },
-    {
-      "ticker": "KYMR",
-      "name": "Kymera Therapeutics Inc",
-      "price": 116.46,
-      "change_pct": 16.61,
-      "volume": "9.58B"
-    },
-    {
-      "ticker": "CDNL",
-      "name": "Cardinal Infrastructure Group Inc",
-      "price": 91.97,
-      "change_pct": 12.24,
-      "volume": "3.94B"
-    },
-    {
-      "ticker": "FLDR",
-      "name": "Fidelity Low Duration Bond Factor ETF",
-      "price": 50.27,
-      "change_pct": 0.06,
+      "ticker": "MUZ",
+      "name": "Defiance Daily Target 2X Short MU ETF",
+      "price": 9.94,
+      "change_pct": 9.47,
       "volume": "-"
     },
     {
-      "ticker": "WAVE",
-      "name": "Eco Wave Power Global AB ADR",
-      "price": 9.92,
-      "change_pct": 9.98,
-      "volume": "57.93M"
+      "ticker": "SYNA",
+      "name": "Synaptics Inc",
+      "price": 125.95,
+      "change_pct": 0.26,
+      "volume": "4.87B"
     },
     {
-      "ticker": "JPLD",
-      "name": "JPMorgan Limited Duration Bond ETF",
-      "price": 52.16,
-      "change_pct": 0.24,
+      "ticker": "CMII",
+      "name": "Columbus Circle Capital Corp II",
+      "price": 10.13,
+      "change_pct": 1.4,
+      "volume": "317.39M"
+    },
+    {
+      "ticker": "LSCP",
+      "name": "Natixis Loomis Sayles Dynamic Core Plus ETF",
+      "price": 25.17,
+      "change_pct": 0.1,
       "volume": "-"
+    },
+    {
+      "ticker": "ACYN",
+      "name": "FT Vest Laddered Autocallable Barrier & Income ETF",
+      "price": 20.67,
+      "change_pct": 0.1,
+      "volume": "-"
+    },
+    {
+      "ticker": "HDEF",
+      "name": "Xtrackers MSCI EAFE High Dividend Yield Equity ETF",
+      "price": 32.13,
+      "change_pct": 0.34,
+      "volume": "-"
+    },
+    {
+      "ticker": "NATL",
+      "name": "NCR Atleos Corp",
+      "price": 43.48,
+      "change_pct": 0.4,
+      "volume": "3.21B"
+    },
+    {
+      "ticker": "WSE",
+      "name": "Wise Group Plc",
+      "price": 11.94,
+      "change_pct": 7.96,
+      "volume": "14.38B"
     }
   ]
 }
