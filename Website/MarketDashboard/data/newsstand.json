@@ -1,31 +1,31 @@
 {
-  "scan_time": "2026-06-27T07:00:30.934263+00:00",
+  "scan_time": "2026-06-27T09:00:27.135498+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Favorable",
-    "score": 4,
-    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
+    "verdict": "Risk-Off",
+    "score": -2,
+    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
     "signals": [
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Above 50-day",
-        "read": "Uptrend",
-        "tone": "good"
+        "value": "Below 50-day",
+        "read": "Downtrend",
+        "tone": "bad"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.9%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "-2.4%",
+        "read": "Weak",
+        "tone": "bad"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "18.9",
-        "read": "Calm",
-        "tone": "good"
+        "value": "18.4",
+        "read": "Calm but rising",
+        "tone": "neutral"
       },
       {
         "label": "10-year yield",
@@ -35,7 +35,7 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-06-27T07:00:38.679037+00:00"
+    "updated": "2026-06-27T09:00:34.050682+00:00"
   },
   "earnings": [
     {
