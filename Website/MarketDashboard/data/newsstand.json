@@ -1,31 +1,31 @@
 {
-  "scan_time": "2026-06-27T11:00:28.519723+00:00",
+  "scan_time": "2026-06-27T13:00:26.456110+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Favorable",
-    "score": 4,
-    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
+    "verdict": "Risk-Off",
+    "score": -2,
+    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
     "signals": [
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Above 50-day",
-        "read": "Uptrend",
-        "tone": "good"
+        "value": "Below 50-day",
+        "read": "Downtrend",
+        "tone": "bad"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.9%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "-2.4%",
+        "read": "Weak",
+        "tone": "bad"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "18.9",
-        "read": "Calm",
-        "tone": "good"
+        "value": "18.4",
+        "read": "Calm but rising",
+        "tone": "neutral"
       },
       {
         "label": "10-year yield",
@@ -35,7 +35,7 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-06-27T11:00:37.043869+00:00"
+    "updated": "2026-06-27T13:00:33.403255+00:00"
   },
   "earnings": [
     {
@@ -380,69 +380,5 @@
       "year": 2027
     }
   ],
-  "unusual_volume": [
-    {
-      "ticker": "SDOT",
-      "name": "Sadot Group Inc",
-      "price": 21.45,
-      "change_pct": 247.09,
-      "volume": "15.97M"
-    },
-    {
-      "ticker": "NTST",
-      "name": "Netstreit Corp",
-      "price": 21.2,
-      "change_pct": 2.12,
-      "volume": "2.06B"
-    },
-    {
-      "ticker": "HIW",
-      "name": "Highwoods Properties Inc",
-      "price": 29.9,
-      "change_pct": 2.33,
-      "volume": "3.30B"
-    },
-    {
-      "ticker": "PAY",
-      "name": "Paymentus Holdings Inc",
-      "price": 23.43,
-      "change_pct": 10.16,
-      "volume": "2.95B"
-    },
-    {
-      "ticker": "MNTN",
-      "name": "MNTN Inc",
-      "price": 9.62,
-      "change_pct": 14.52,
-      "volume": "711.11M"
-    },
-    {
-      "ticker": "DMRA",
-      "name": "Damora Therapeutics Inc",
-      "price": 25.36,
-      "change_pct": 12.36,
-      "volume": "1.56B"
-    },
-    {
-      "ticker": "HONIV",
-      "name": "Honeywell International Inc - When Issued - June 2026",
-      "price": 256.01,
-      "change_pct": 7.54,
-      "volume": "-"
-    },
-    {
-      "ticker": "ZSQR",
-      "name": "Z Squared Inc",
-      "price": 12.46,
-      "change_pct": 2.13,
-      "volume": "640.84M"
-    },
-    {
-      "ticker": "CCXI",
-      "name": "Churchill Capital Corp XI",
-      "price": 13.86,
-      "change_pct": 11.41,
-      "volume": "772.00M"
-    }
-  ]
+  "unusual_volume": []
 }
