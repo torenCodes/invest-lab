@@ -1,31 +1,31 @@
 {
-  "scan_time": "2026-06-27T09:00:27.135498+00:00",
+  "scan_time": "2026-06-27T11:00:28.519723+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Risk-Off",
-    "score": -2,
-    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
+    "verdict": "Favorable",
+    "score": 4,
+    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
     "signals": [
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Below 50-day",
-        "read": "Downtrend",
-        "tone": "bad"
+        "value": "Above 50-day",
+        "read": "Uptrend",
+        "tone": "good"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-2.4%",
-        "read": "Weak",
-        "tone": "bad"
+        "value": "-0.9%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "18.4",
-        "read": "Calm but rising",
-        "tone": "neutral"
+        "value": "18.9",
+        "read": "Calm",
+        "tone": "good"
       },
       {
         "label": "10-year yield",
@@ -35,7 +35,7 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-06-27T09:00:34.050682+00:00"
+    "updated": "2026-06-27T11:00:37.043869+00:00"
   },
   "earnings": [
     {
@@ -393,7 +393,7 @@
       "name": "Netstreit Corp",
       "price": 21.2,
       "change_pct": 2.12,
-      "volume": "2.07B"
+      "volume": "2.06B"
     },
     {
       "ticker": "HIW",
@@ -414,7 +414,7 @@
       "name": "MNTN Inc",
       "price": 9.62,
       "change_pct": 14.52,
-      "volume": "711.15M"
+      "volume": "711.11M"
     },
     {
       "ticker": "DMRA",
@@ -428,7 +428,7 @@
       "name": "Honeywell International Inc - When Issued - June 2026",
       "price": 256.01,
       "change_pct": 7.54,
-      "volume": "147.14B"
+      "volume": "-"
     },
     {
       "ticker": "ZSQR",
