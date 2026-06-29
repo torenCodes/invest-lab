@@ -4,13 +4,19 @@ Market Temperature Scan — proprietary composite market valuation gauge.
 Composite score 0-100:
   0 = Cheap, 100 = Frothy
 
-Components (each scored 0-100):
-  - Buffett Indicator (Wilshire 5000 / GDP)       — 25%  percentile over 10yr
-  - Shiller CAPE (10yr real P/E)                  — 25%  percentile over 10yr
-  - Fed Model (S&P earnings yield − 10Y Treasury) — 15%  fixed thresholds
+Components (each scored 0-100). Expanded June 2026 from a static valuation
+gauge into a market-regime composite: valuation anchors were trimmed and
+dynamic macro/internal inputs added so the reading actually moves with market
+stress and euphoria instead of pinning near the top. VIX dropped (it lives in
+the homepage's Trading Conditions panel now).
+  - Buffett Indicator (Wilshire 5000 / GDP)       — 15%  percentile over 10yr
+  - Shiller CAPE (10yr real P/E)                  — 15%  percentile over 10yr
+  - Fed Model (S&P earnings yield − 10Y Treasury) — 10%  fixed thresholds
+  - Credit spreads (ICE BofA HY OAS, FRED)        — 15%  inverted percentile over 10yr
+  - Yield curve (10Y − 2Y, FRED)                  — 10%  fixed thresholds (cycle stage)
   - Breadth (% S&P 500 above 200-DMA)             — 15%  fixed thresholds
+  - Net new highs (near 52wk high − near low)     — 10%  derived from breadth download
   - Fear & Greed (CNN sentiment composite)        — 10%  used directly (already 0-100)
-  - VIX (30-day implied S&P volatility)           — 10%  inverted threshold table
 
 Output: MarketDashboard/data/market_temperature.json
 Invoked by GitHub Actions daily. Run locally: python scripts/market_temperature_scan.py
@@ -38,13 +44,19 @@ NEXT_SCAN_INFO = "Weekdays at 6:00am ET"
 CALIB_YEARS    = 10
 
 WEIGHTS = {
-    "buffett":    0.25,
-    "shiller":    0.25,
-    "fed_model":  0.15,
-    "breadth":    0.15,
-    "fear_greed": 0.10,
-    "vix":        0.10,
+    "buffett":     0.15,
+    "shiller":     0.15,
+    "fed_model":   0.10,
+    "credit":      0.15,
+    "yield_curve": 0.10,
+    "breadth":     0.15,
+    "new_highs":   0.10,
+    "fear_greed":  0.10,
 }
+
+
+def clamp(x, lo, hi):
+    return max(lo, min(hi, x))
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -312,6 +324,66 @@ def compute_fed_model():
     }
 
 
+# ── Component: Credit spreads (ICE BofA US High Yield OAS) ───────────────────
+
+def compute_credit_spreads():
+    """High-yield credit spread — the extra yield investors demand to hold junk
+    bonds over Treasuries. TIGHT spreads = risk-on complacency (frothy); WIDE
+    spreads = stress/fear (cheap). Percentile-ranked over ~10yr then INVERTED so
+    a tight spread maps to a high (hot) score. A genuinely dynamic risk-appetite
+    read — it widens fast in selloffs."""
+    print("[market-temp] Credit spreads (HY OAS)...")
+    series = fred_series("BAMLH0A0HYM2", CALIB_YEARS)
+    if len(series) < 250:
+        print("[market-temp] Credit spreads: insufficient history")
+        return None
+    current    = series[-1][1]
+    historical = [v for _, v in series[:-1]]
+    pct = percentile_rank(historical, current)   # high pct = wide spread = fear
+    if pct is None:
+        return None
+    score = round(clamp(100.0 - pct, 0.0, 100.0), 1)   # invert: tight → hot
+    return {
+        "raw":         round(current, 2),
+        "raw_label":   f"{current:.2f}% HY OAS",
+        "percentile":  pct,
+        "score":       score,
+        "label":       label_for(score),
+        "description": "Extra yield demanded to hold high-yield (junk) bonds over Treasuries. "
+                       "Tight spreads signal risk-on complacency; wide spreads signal stress. "
+                       f"Inverted percentile over {CALIB_YEARS} years.",
+    }
+
+
+# ── Component: Yield curve (10Y − 2Y Treasury) ───────────────────────────────
+
+def compute_yield_curve():
+    """10-year minus 2-year Treasury spread. A steep positive curve is
+    early-cycle and healthy (cooler); a flat-to-inverted curve marks a late-cycle
+    market — historically stretched and prone to froth before a downturn (hotter).
+    Mapped via fixed thresholds; cycle-stage context rather than a valuation."""
+    print("[market-temp] Yield curve (10Y-2Y)...")
+    series = fred_series("T10Y2Y", 0.5)
+    if not series:
+        return None
+    spread = series[-1][1]
+    if   spread >  1.5:  score = 30   # steep — early cycle
+    elif spread >  0.75: score = 42
+    elif spread >  0.25: score = 52
+    elif spread >  0.0:  score = 60   # flat — mid/late cycle
+    elif spread > -0.5:  score = 72   # mildly inverted — late cycle
+    else:                score = 85   # deeply inverted
+    return {
+        "raw":         round(spread, 2),
+        "raw_label":   f"{spread:+.2f}% (10Y−2Y)",
+        "score":       score,
+        "label":       label_for(score),
+        "description": "10-year minus 2-year Treasury yield. A steep curve is early-cycle and "
+                       "healthy; a flat or inverted curve marks a late-cycle market that is "
+                       "historically more stretched and froth-prone.",
+    }
+
+
 # ── Component 4: Breadth (% above 200-DMA) ───────────────────────────────────
 
 def _fetch_sp500_tickers():
@@ -336,17 +408,23 @@ def _fetch_sp500_tickers():
     return tickers
 
 
-def compute_breadth():
-    print("[market-temp] Breadth (% above 200-DMA)...")
+def compute_internals():
+    """Downloads the S&P 500 once and derives TWO components:
+      - breadth:   % of stocks above their 200-day MA (trend participation)
+      - new_highs: net % near a 52-week high minus near a 52-week low (the
+                   euphoria/stress extreme — a fast-moving internal)
+    Returns {"breadth": {...}|None, "new_highs": {...}|None}."""
+    print("[market-temp] Market internals (breadth + new highs)...")
+    out = {"breadth": None, "new_highs": None}
     try:
         import yfinance as yf
     except ImportError:
         print("[market-temp] yfinance not available")
-        return None
+        return out
 
     tickers = _fetch_sp500_tickers()
     if not tickers:
-        return None
+        return out
     print(f"[market-temp] Got {len(tickers)} S&P 500 tickers")
 
     try:
@@ -355,44 +433,61 @@ def compute_breadth():
                            threads=True, auto_adjust=True)
     except Exception as e:
         print(f"[market-temp] yfinance download failed: {e}")
-        return None
+        return out
 
     above, total = 0, 0
+    near_high, near_low = 0, 0
     for t in tickers:
         try:
             closes = data[t]["Close"].dropna()
             if len(closes) < 200:
                 continue
-            ma200 = closes.iloc[-200:].mean()
-            last  = closes.iloc[-1]
             total += 1
-            if last > ma200:
+            last  = closes.iloc[-1]
+            if last > closes.iloc[-200:].mean():
                 above += 1
+            hi, lo = closes.max(), closes.min()
+            if   hi and last >= 0.95 * hi:  near_high += 1   # within 5% of 52wk high
+            elif lo and last <= 1.05 * lo:  near_low  += 1   # within 5% of 52wk low
         except Exception:
             continue
 
     if total == 0:
-        return None
+        return out
+
     pct = round(100.0 * above / total, 1)
-
-    if   pct <= 30:  score = 15
-    elif pct <= 45:  score = 30
-    elif pct <= 60:  score = 45
-    elif pct <= 75:  score = 60
-    elif pct <= 85:  score = 75
-    elif pct <= 92:  score = 87
-    else:            score = 95
-
-    return {
+    if   pct <= 30:  b_score = 15
+    elif pct <= 45:  b_score = 30
+    elif pct <= 60:  b_score = 45
+    elif pct <= 75:  b_score = 60
+    elif pct <= 85:  b_score = 75
+    elif pct <= 92:  b_score = 87
+    else:            b_score = 95
+    out["breadth"] = {
         "raw":          pct,
         "raw_label":    f"{pct}% above 200-DMA",
         "above_200dma": above,
         "total":        total,
-        "score":        score,
-        "label":        label_for(score),
+        "score":        b_score,
+        "label":        label_for(b_score),
         "description":  f"{above} of {total} S&P 500 stocks trading above their 200-day moving average. "
                         "Healthy markets see 50–75%; above 90% signals euphoric participation.",
     }
+
+    net = round(100.0 * (near_high - near_low) / total, 1)   # −100 (all at lows) .. +100 (all at highs)
+    nh_score = round(clamp(50.0 + net, 0.0, 100.0), 1)       # net 0 → 50 neutral
+    out["new_highs"] = {
+        "raw":        net,
+        "raw_label":  f"{near_high} hi / {near_low} lo",
+        "near_high":  near_high,
+        "near_low":   near_low,
+        "total":      total,
+        "score":      nh_score,
+        "label":      label_for(nh_score),
+        "description": f"{near_high} stocks near a 52-week high vs {near_low} near a 52-week low "
+                       "(within 5%). A surge of new highs signals euphoria; a wave of new lows signals stress.",
+    }
+    return out
 
 
 # ── Component 5: Fear & Greed (CNN) ──────────────────────────────────────────
@@ -436,62 +531,17 @@ def compute_fear_greed():
     }
 
 
-# ── Component 6: VIX (volatility) ────────────────────────────────────────────
-
-def compute_vix():
-    """CBOE Volatility Index — 30-day implied S&P 500 volatility.
-    Inverted relative to raw value: low VIX = complacency = frothy market;
-    high VIX = fear = often near short-term bottoms."""
-    print("[market-temp] VIX...")
-    try:
-        import yfinance as yf
-    except ImportError:
-        print("[market-temp] yfinance unavailable")
-        return None
-
-    try:
-        hist = yf.Ticker("^VIX").history(period="5d", interval="1d", auto_adjust=False)
-    except Exception as e:
-        print(f"[market-temp] VIX fetch failed: {e}")
-        return None
-    if hist is None or hist.empty:
-        return None
-
-    closes = [float(c) for c in hist["Close"].values if c == c]  # filter NaN
-    if not closes:
-        return None
-    vix = closes[-1]
-
-    # Inverse threshold table — raw VIX → 0-100 frothy/cheap score
-    if   vix < 12:  score = 95
-    elif vix < 15:  score = 85
-    elif vix < 18:  score = 70
-    elif vix < 22:  score = 50
-    elif vix < 28:  score = 30
-    elif vix < 35:  score = 15
-    else:           score = 5
-
-    return {
-        "raw":         round(vix, 2),
-        "raw_label":   f"{vix:.1f} VIX",
-        "score":       score,
-        "label":       label_for(score),
-        "description": "30-day expected S&P 500 volatility implied by options. "
-                       "Low readings (under 15) signal complacency and often coincide "
-                       "with frothy markets; high readings (over 30) signal fear and "
-                       "frequently mark short-term bottoms.",
-    }
-
-
 # ── Composite ────────────────────────────────────────────────────────────────
 
 COMPONENT_META = {
-    "buffett":    {"title": "Buffett Indicator", "subtitle": "Market Cap / GDP"},
-    "shiller":    {"title": "Shiller CAPE",      "subtitle": "10-Year Real P/E"},
-    "fed_model":  {"title": "Fed Model",         "subtitle": "Earnings Yield − 10Y"},
-    "breadth":    {"title": "Breadth",           "subtitle": "% S&P 500 > 200-DMA"},
-    "fear_greed": {"title": "Fear & Greed",      "subtitle": "CNN Sentiment Index"},
-    "vix":        {"title": "VIX",               "subtitle": "Implied Volatility"},
+    "buffett":     {"title": "Buffett Indicator", "subtitle": "Market Cap / GDP"},
+    "shiller":     {"title": "Shiller CAPE",      "subtitle": "10-Year Real P/E"},
+    "fed_model":   {"title": "Fed Model",         "subtitle": "Earnings Yield − 10Y"},
+    "credit":      {"title": "Credit Spreads",    "subtitle": "High-Yield OAS"},
+    "yield_curve": {"title": "Yield Curve",       "subtitle": "10Y − 2Y Treasury"},
+    "breadth":     {"title": "Breadth",           "subtitle": "% S&P 500 > 200-DMA"},
+    "new_highs":   {"title": "Net New Highs",     "subtitle": "52wk highs − lows"},
+    "fear_greed":  {"title": "Fear & Greed",      "subtitle": "CNN Sentiment Index"},
 }
 
 
@@ -499,13 +549,16 @@ def run():
     start = datetime.now(timezone.utc)
     print(f"[market-temp] Starting scan at {start.isoformat()}")
 
+    internals = compute_internals()
     components = {
-        "buffett":    compute_buffett(),
-        "shiller":    compute_shiller(),
-        "fed_model":  compute_fed_model(),
-        "breadth":    compute_breadth(),
-        "fear_greed": compute_fear_greed(),
-        "vix":        compute_vix(),
+        "buffett":     compute_buffett(),
+        "shiller":     compute_shiller(),
+        "fed_model":   compute_fed_model(),
+        "credit":      compute_credit_spreads(),
+        "yield_curve": compute_yield_curve(),
+        "breadth":     internals.get("breadth"),
+        "new_highs":   internals.get("new_highs"),
+        "fear_greed":  compute_fear_greed(),
     }
 
     weighted_sum, total_weight = 0.0, 0.0
