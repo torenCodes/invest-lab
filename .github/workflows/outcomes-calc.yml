@@ -2,8 +2,9 @@ name: Calculate Nominee Outcomes
 
 on:
   schedule:
-    # Every Monday at ~10am ET — runs after the morning scan has a chance to complete
-    - cron: '30 14 * * 1'
+    # Weekdays at ~10am ET — fills each nominee's 30-day outcome within a day of
+    # maturing (was Mondays-only, which left outcomes lagging up to a week).
+    - cron: '30 14 * * 1-5'
   workflow_dispatch:   # Manual trigger button in GitHub UI
 
 permissions:
