@@ -1,29 +1,29 @@
 {
-  "scan_time": "2026-06-29T13:00:30.869808+00:00",
+  "scan_time": "2026-06-29T15:00:32.424650+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Risk-Off",
-    "score": -1,
-    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
+    "verdict": "Favorable",
+    "score": 4,
+    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
     "signals": [
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Below 50-day",
-        "read": "Downtrend",
-        "tone": "bad"
+        "value": "Above 50-day",
+        "read": "Uptrend",
+        "tone": "good"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-2.4%",
-        "read": "Weak",
-        "tone": "bad"
+        "value": "-0.9%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "18.4",
+        "value": "18.5",
         "read": "Calm",
         "tone": "good"
       },
@@ -35,7 +35,7 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-06-29T13:00:39.427907+00:00"
+    "updated": "2026-06-29T15:00:40.688934+00:00"
   },
   "earnings": [
     {
@@ -382,67 +382,74 @@
   ],
   "unusual_volume": [
     {
-      "ticker": "SDOT",
-      "name": "Sadot Group Inc",
-      "price": 21.45,
-      "change_pct": 247.09,
-      "volume": "15.97M"
+      "ticker": "CMCSA",
+      "name": "Comcast Corp",
+      "price": 25.31,
+      "change_pct": 9.24,
+      "volume": "90.41B"
     },
     {
-      "ticker": "NTST",
-      "name": "Netstreit Corp",
-      "price": 21.2,
-      "change_pct": 2.12,
-      "volume": "2.07B"
+      "ticker": "UPC",
+      "name": "Universe Pharmaceuticals INC",
+      "price": 12.28,
+      "change_pct": 315.03,
+      "volume": "7.76M"
     },
     {
-      "ticker": "HIW",
-      "name": "Highwoods Properties Inc",
-      "price": 29.9,
-      "change_pct": 2.33,
-      "volume": "3.30B"
+      "ticker": "SLS",
+      "name": "SELLAS Life Sciences Group Inc",
+      "price": 14.58,
+      "change_pct": 17.68,
+      "volume": "2.71B"
     },
     {
-      "ticker": "PAY",
-      "name": "Paymentus Holdings Inc",
-      "price": 23.43,
-      "change_pct": 10.16,
-      "volume": "2.95B"
+      "ticker": "DCOY",
+      "name": "Decoy Therapeutics Inc",
+      "price": 11.11,
+      "change_pct": 101.34,
+      "volume": "5.92M"
     },
     {
-      "ticker": "MNTN",
-      "name": "MNTN Inc",
-      "price": 9.62,
-      "change_pct": 14.52,
-      "volume": "711.15M"
+      "ticker": "CHTR",
+      "name": "Charter Communications Inc",
+      "price": 151.58,
+      "change_pct": 13.42,
+      "volume": "20.99B"
     },
     {
-      "ticker": "DMRA",
-      "name": "Damora Therapeutics Inc",
-      "price": 25.36,
-      "change_pct": 12.36,
-      "volume": "1.56B"
-    },
-    {
-      "ticker": "HONIV",
-      "name": "Honeywell International Inc",
-      "price": 256.01,
-      "change_pct": 7.54,
-      "volume": "147.14B"
-    },
-    {
-      "ticker": "ZSQR",
-      "name": "Z Squared Inc",
-      "price": 12.46,
-      "change_pct": 2.13,
-      "volume": "640.84M"
+      "ticker": "IRDM",
+      "name": "Iridium Communications Inc",
+      "price": 52.4,
+      "change_pct": 20.4,
+      "volume": "5.54B"
     },
     {
       "ticker": "CCXI",
       "name": "Churchill Capital Corp XI",
-      "price": 13.86,
-      "change_pct": 11.41,
-      "volume": "772.00M"
+      "price": 15.49,
+      "change_pct": 11.8,
+      "volume": "863.07M"
+    },
+    {
+      "ticker": "LALT",
+      "name": "First Trust Multi-Strategy Alternative ETF",
+      "price": 23.92,
+      "change_pct": 0.04,
+      "volume": "-"
+    },
+    {
+      "ticker": "SPCM",
+      "name": "Tradr 2X Long SpaceX Daily ETF",
+      "price": 21.06,
+      "change_pct": 0.86,
+      "volume": "-"
+    },
+    {
+      "ticker": "BLFS",
+      "name": "Biolife Solutions Inc",
+      "price": 29.0,
+      "change_pct": 1.15,
+      "volume": "1.42B"
     }
   ]
 }
