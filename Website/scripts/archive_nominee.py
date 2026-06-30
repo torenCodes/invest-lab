@@ -29,6 +29,10 @@ RESULTS_PATHS = {
     'insider':     os.path.join(WEBSITE_DIR, 'InsiderBuying', 'data', 'results.json'),
     'tried-true':  os.path.join(WEBSITE_DIR, 'TheMarathon', 'data', 'consensus.json'),
     'patterns':    os.path.join(WEBSITE_DIR, 'PatternScanner', 'data', 'coil.json'),
+    # Phase B (data-gathering): top accelerating-chatter pick from the Movers
+    # scan — archived so its 30-day outcome builds a track record we can judge
+    # before surfacing chatter velocity as a live trading flag.
+    'chatter':     os.path.join(WEBSITE_DIR, 'MarketDashboard', 'data', 'results.json'),
 }
 
 DEDUP_DAYS = 14  # Don't re-archive the same ticker+source within N days
@@ -219,12 +223,38 @@ def extract_patterns(path):
     }
 
 
+def extract_chatter(path):
+    """Top accelerating-chatter pick from the Movers scan's `chatter_emerging`
+    list (quiet yesterday, spiking today). Archived to measure whether the
+    velocity signal precedes a move."""
+    with open(path) as f:
+        data = json.load(f)
+
+    picks = data.get('chatter_emerging') or []
+    if not picks:
+        return None
+    p = picks[0]
+    trend = p.get('trend_pct')
+    return {
+        'source':      'Chatter Watch',
+        'source_key':  'chatter',
+        'ticker':      p['ticker'],
+        'name':        p.get('name', p['ticker']),
+        'sector':      p.get('sector', ''),
+        'entry_price': p.get('current_price'),
+        'score':       trend,
+        'reason':      (f"Chatter accelerating — {p.get('mentions')} mentions, "
+                        f"up {trend}% over 24h (from {p.get('prev')})"),
+    }
+
+
 EXTRACTORS = {
     'movers':     extract_movers,
     'underdogs':  extract_underdogs,
     'insider':    extract_insider,
     'tried-true': extract_tried_true,
     'patterns':   extract_patterns,
+    'chatter':    extract_chatter,
 }
 
 

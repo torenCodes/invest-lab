@@ -612,6 +612,57 @@ def enrich_chatter(reddit_cards, apewisdom, result_map):
     return reddit_cards
 
 
+# Phase B — "Emerging Chatter" velocity signal (data-gathering, not yet surfaced)
+EMERGING_MIN_MENTIONS = 20    # real chatter floor (avoid 2->8 noise)
+EMERGING_MIN_PREV     = 3     # was at least faintly on the radar yesterday
+EMERGING_RATIO        = 2.5   # today's mentions >= 2.5x yesterday's
+
+
+def compute_emerging_chatter(apewisdom, limit=3):
+    """Surface tickers whose chatter is ACCELERATING — quiet yesterday, spiking
+    today — the 'catch it before the breakout' candidates. Distinct from the
+    most-discussed cards (already hot). Liquidity-gated, ranked by absolute new
+    attention (mentions − prev). Output is archived so calculate_outcomes can
+    measure whether the signal actually predicts a move before we ever surface
+    it as a live trading flag."""
+    cands = []
+    for t, info in apewisdom.items():
+        m, p = info["mentions"], info["prev"]
+        if m < EMERGING_MIN_MENTIONS or p < EMERGING_MIN_PREV or m < p * EMERGING_RATIO:
+            continue
+        cands.append((t, info, m - p))
+    cands.sort(key=lambda x: x[2], reverse=True)
+
+    out, checked = [], 0
+    for t, info, _jump in cands:
+        if len(out) >= limit or checked >= 12:
+            break
+        checked += 1
+        try:
+            quote   = get_stock_quote(t)
+            profile = get_company_profile(t)
+            if not quote or not profile or not profile.get("name"):
+                continue
+            mcap = (profile.get("marketCapitalization", 0) or 0) * 1_000_000
+            if mcap < MIN_MARKET_CAP:
+                continue
+            out.append({
+                "ticker":        t,
+                "name":          profile.get("name", t),
+                "sector":        profile.get("finnhubIndustry", "Unknown"),
+                "mentions":      info["mentions"],
+                "prev":          info["prev"],
+                "trend_pct":     round(100.0 * (info["mentions"] - info["prev"]) / info["prev"]),
+                "current_price": quote.get("c", 0),
+                "change_pct":    quote.get("dp", 0),
+                "market_cap":    mcap,
+            })
+            time.sleep(1.1)
+        except Exception:
+            continue
+    return out
+
+
 # ── Stock analysis ─────────────────────────────────────────────────────────────
 
 def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_label="Reddit",
@@ -1162,6 +1213,8 @@ def run():
     apewisdom   = get_apewisdom_buzz()
     chatter_map = {c["ticker"]: c for c in (day_trades + swing_trades + reddit_cards)}
     reddit_cards = enrich_chatter(reddit_cards, apewisdom, chatter_map)
+    chatter_emerging = compute_emerging_chatter(apewisdom)
+    print(f"[scan.py] Emerging chatter (accelerating): {[c['ticker'] for c in chatter_emerging]}")
 
     print("[scan.py] Fetching earnings calendar...")
     earnings_cal = get_earnings_calendar()
@@ -1231,6 +1284,7 @@ def run():
         "swing_trades":     swing_trades,
         "buzz_source":      buzz_source,
         "reddit_cards":     reddit_cards,
+        "chatter_emerging": chatter_emerging,
         "sector_rotation":  sector_rotation,
         "reddit_feed":      display_feed,
     }

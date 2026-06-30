@@ -39,6 +39,9 @@ jobs:
       - name: Archive top nominee
         run: python Website/scripts/archive_nominee.py --source movers
 
+      - name: Archive emerging-chatter pick (Phase B data-gathering)
+        run: python Website/scripts/archive_nominee.py --source chatter
+
       - name: Commit results
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
