@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-06-29T21:26:25.415562+00:00",
+  "scan_time": "2026-06-30T12:05:12.084982+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 73.4,
+  "composite_score": 73.5,
   "composite_label": "Frothy",
   "components": {
     "buffett": {
@@ -61,13 +61,13 @@
       "weight": 0.1
     },
     "breadth": {
-      "raw": 63.3,
-      "raw_label": "63.3% above 200-DMA",
+      "raw": 63.4,
+      "raw_label": "63.4% above 200-DMA",
       "above_200dma": 317,
-      "total": 501,
+      "total": 500,
       "score": 60,
       "label": "Frothy",
-      "description": "317 of 501 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
+      "description": "317 of 500 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
       "title": "Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
       "weight": 0.15
@@ -77,7 +77,7 @@
       "raw_label": "148 hi / 43 lo",
       "near_high": 148,
       "near_low": 43,
-      "total": 501,
+      "total": 500,
       "score": 71.0,
       "label": "Frothy",
       "description": "148 stocks near a 52-week high vs 43 near a 52-week low (within 5%). A surge of new highs signals euphoria; a wave of new lows signals stress.",
@@ -86,9 +86,9 @@
       "weight": 0.1
     },
     "fear_greed": {
-      "raw": 27.0,
+      "raw": 27.2,
       "raw_label": "27 (Fear)",
-      "score": 27.0,
+      "score": 27.2,
       "label": "Fair",
       "description": "CNN's composite of 7 short-term sentiment signals (momentum, breadth, put/call ratio, junk-bond demand, volatility, etc.). High readings reflect investor euphoria \u2014 historically a contrarian sell signal.",
       "title": "Fear & Greed",
