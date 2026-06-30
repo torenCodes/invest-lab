@@ -473,6 +473,145 @@ def get_company_profile(ticker):
     return _finnhub_get(url)
 
 
+# ── Social chatter sources (ApeWisdom + StockTwits) ─────────────────────────────
+
+_SOCIAL_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/125.0 Safari/537.36")
+
+CHATTER_MAX        = 6     # total Market Chatter cards (was 3, Reddit-only)
+APEWISDOM_MIN_MENT = 15    # ignore long-tail noise when pulling new names
+
+
+def get_apewisdom_buzz():
+    """ApeWisdom aggregates ticker mentions across Reddit (WSB, stocks, options,
+    …) AND reports the 24h-ago count — a broad social-mention source with a
+    built-in velocity read. Returns {ticker: {"mentions", "prev", "rank"}}."""
+    try:
+        r = requests.get("https://apewisdom.io/api/v1.0/filter/all-stocks/page/1",
+                         headers={"User-Agent": _SOCIAL_UA}, timeout=15)
+        r.raise_for_status()
+        rows = r.json().get("results", [])
+    except Exception as e:
+        print(f"[scan.py] ApeWisdom buzz failed: {e}")
+        return {}
+    out = {}
+    for row in rows:
+        t = (row.get("ticker") or "").upper().strip()
+        if not t:
+            continue
+        try:
+            out[t] = {
+                "mentions": int(row.get("mentions") or 0),
+                "prev":     int(row.get("mentions_24h_ago") or 0),
+                "rank":     int(row.get("rank") or 0),
+            }
+        except (ValueError, TypeError):
+            continue
+    print(f"[scan.py] ApeWisdom: {len(out)} tickers")
+    return out
+
+
+def get_stocktwits_sentiment(ticker):
+    """StockTwits (finance-Twitter) per-symbol stream — recent message count and
+    the bull/bear lean of sentiment-tagged messages. Returns {"msgs","bull_pct"}
+    or None. Free endpoint, best-effort."""
+    try:
+        r = requests.get(f"https://api.stocktwits.com/api/2/streams/symbol/{ticker}.json",
+                         headers={"User-Agent": _SOCIAL_UA}, timeout=6)
+        if r.status_code != 200:   # 429 rate-limit is common and returns fast
+            return None
+        msgs = r.json().get("messages", [])
+    except Exception:
+        return None
+    if not msgs:
+        return None
+    bull = bear = 0
+    for m in msgs:
+        basic = ((m.get("entities") or {}).get("sentiment") or {}).get("basic", "")
+        if basic == "Bullish":
+            bull += 1
+        elif basic == "Bearish":
+            bear += 1
+    tagged = bull + bear
+    return {
+        "msgs":     len(msgs),
+        "bull_pct": round(100.0 * bull / tagged) if tagged else None,
+    }
+
+
+def enrich_chatter(reddit_cards, apewisdom, result_map):
+    """Broaden + enrich the Market Chatter cards with the new social sources,
+    WITHOUT touching the day/swing buzz scoring (ApeWisdom counts run far larger
+    than the Reddit/Polygon scale, so they'd skew the buzz thresholds):
+      - pull in top ApeWisdom names the Reddit/news pass missed (momentum names
+        often surface there first), up to CHATTER_MAX cards;
+      - attach a `social` block to every card: broad Reddit mention count, the
+        24h mention trend (velocity), and StockTwits bull/bear sentiment."""
+    existing = {c["ticker"] for c in reddit_cards}
+
+    for t, info in sorted(apewisdom.items(), key=lambda x: x[1]["mentions"], reverse=True):
+        if len(reddit_cards) >= CHATTER_MAX:
+            break
+        if t in existing or info["mentions"] < APEWISDOM_MIN_MENT:
+            continue
+        if t in result_map:
+            card = dict(result_map[t])
+        else:
+            try:
+                quote   = get_stock_quote(t)
+                profile = get_company_profile(t)
+                if not quote or not profile or not profile.get("name"):
+                    continue
+                mcap = (profile.get("marketCapitalization", 0) or 0) * 1_000_000
+                if mcap < MIN_MARKET_CAP:
+                    continue
+                card = {
+                    "ticker":          t,
+                    "name":            profile.get("name", t),
+                    "sector":          profile.get("finnhubIndustry", "Unknown"),
+                    "current_price":   quote.get("c", 0),
+                    "change_pct":      quote.get("dp", 0),
+                    "market_cap":      mcap,
+                    "score":           0,
+                    "signals":         [],
+                    "reddit_mentions": 0,
+                    "is_gainer":       False,
+                    "is_active":       False,
+                }
+                time.sleep(1.1)
+            except Exception:
+                continue
+        card["mentions"] = card.get("mentions") or info["mentions"]
+        reddit_cards.append(card)
+        existing.add(t)
+
+    for idx, card in enumerate(reddit_cards):
+        t = card["ticker"]
+        sources, social = [], {}
+        reddit_total = card.get("reddit_mentions") or 0
+        aw = apewisdom.get(t)
+        if aw and aw["mentions"]:
+            reddit_total = max(reddit_total, aw["mentions"])
+            if aw["prev"] > 0:
+                social["trend_pct"] = round(100.0 * (aw["mentions"] - aw["prev"]) / aw["prev"])
+        if reddit_total:
+            social["reddit"] = reddit_total
+            sources.append("Reddit")
+        # StockTwits is best-effort (rate-limits hard) — only try the top cards
+        # so a slow/blocked response can't drag out the whole scan.
+        if idx < 4:
+            st = get_stocktwits_sentiment(t)
+            if st:
+                social["st_bull"] = st["bull_pct"]
+                social["st_msgs"] = st["msgs"]
+                sources.append("StockTwits")
+            time.sleep(0.4)
+        social["sources"] = sources
+        card["social"] = social
+
+    return reddit_cards
+
+
 # ── Stock analysis ─────────────────────────────────────────────────────────────
 
 def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_label="Reddit",
@@ -1018,6 +1157,11 @@ def run():
         results, buzz_lookup, universe, yahoo_cats, buzz_label, yahoo_trending,
         swing_universe=swing_universe,
     )
+
+    print("[scan.py] Enriching Market Chatter (ApeWisdom + StockTwits)...")
+    apewisdom   = get_apewisdom_buzz()
+    chatter_map = {c["ticker"]: c for c in (day_trades + swing_trades + reddit_cards)}
+    reddit_cards = enrich_chatter(reddit_cards, apewisdom, chatter_map)
 
     print("[scan.py] Fetching earnings calendar...")
     earnings_cal = get_earnings_calendar()

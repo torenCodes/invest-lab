@@ -1619,6 +1619,26 @@ function updateResults(data) {
 }
 
 // ── Market Chatter renderer ────────────────────────────────────────────────
+// 24h mention velocity — the "heating up" read from ApeWisdom
+function trendBadge(social) {
+  if (!social || social.trend_pct == null) return '<span style="color:var(--ink-3)">—</span>';
+  const t = social.trend_pct;
+  return `<span class="${t >= 0 ? 'change-up' : 'change-down'}">${t >= 0 ? '▲ +' : '▼ '}${t}%</span>`;
+}
+function trendInline(social) {
+  if (!social || social.trend_pct == null) return '';
+  const t = social.trend_pct;
+  return ` <span class="${t >= 0 ? 'change-up' : 'change-down'}" style="font-weight:600">${t >= 0 ? '↑' : '↓'}${Math.abs(t)}%</span>`;
+}
+function socialLine(social) {
+  if (!social) return '';
+  const bits = [];
+  if (social.st_bull != null) bits.push(`<strong style="color:var(--ink)">${social.st_bull}% bullish</strong> on StockTwits`);
+  if ((social.sources || []).length) bits.push(`Tracked on ${social.sources.join(', ')}`);
+  if (!bits.length) return '';
+  return `<div style="margin-top:8px;font-size:0.72rem;color:var(--ink-3)">${bits.join(' &middot; ')}</div>`;
+}
+
 function renderChatter(cards, buzzSource) {
   const el = $('chatter-content');
   const badge = $('chatter-badge');
@@ -1656,27 +1676,28 @@ function renderChatter(cards, buzzSource) {
           <div class="chatter-featured-stat-value"><span class="price-change ${fChgClass}">${fChgStr}</span></div>
         </div>
         <div class="chatter-featured-stat">
-          <div class="chatter-featured-stat-label">${srcLabel} Mentions</div>
-          <div class="chatter-featured-stat-value">${featured.reddit_mentions || featured.mentions || '—'}</div>
+          <div class="chatter-featured-stat-label">Mentions</div>
+          <div class="chatter-featured-stat-value">${(featured.social && featured.social.reddit) || featured.reddit_mentions || featured.mentions || '—'}</div>
         </div>
         <div class="chatter-featured-stat">
-          <div class="chatter-featured-stat-label">Sector</div>
-          <div class="chatter-featured-stat-value" style="font-size:0.75rem;">${featured.sector || '—'}</div>
+          <div class="chatter-featured-stat-label">24h Chatter</div>
+          <div class="chatter-featured-stat-value">${trendBadge(featured.social)}</div>
         </div>
       </div>
       <div class="chatter-featured-signals">${fSignals}</div>
+      ${socialLine(featured.social)}
     </div>`;
 
   // Ticker cloud chips
   const chipsHtml = rest.map(c => {
     const cClass = c.change_pct >= 0 ? 'change-up' : 'change-down';
     const cStr = `${c.change_pct >= 0 ? '+' : ''}${fmt(c.change_pct)}%`;
-    const mentions = c.reddit_mentions || c.mentions || 0;
+    const mentions = (c.social && c.social.reddit) || c.reddit_mentions || c.mentions || 0;
     return `<div class="chatter-chip">
       <div class="chatter-chip-ticker">${c.ticker}</div>
       <div class="chatter-chip-name">${c.name || '—'}</div>
       <div class="chatter-chip-change ${cClass}">${cStr}</div>
-      <div class="chatter-chip-mentions">${mentions} ${srcLabel.toLowerCase()} mentions</div>
+      <div class="chatter-chip-mentions">${mentions} mentions${trendInline(c.social)}</div>
     </div>`;
   }).join('');
 
