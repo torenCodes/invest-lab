@@ -1006,6 +1006,9 @@
     .nav-item.active { border-bottom-color: var(--accent); }
     .scan-progress-wrap { width: 100%; padding: 8px 12px 0; }
     .main { padding: 16px; }
+    /* Sector Rotation is a 6-column table; let it scroll horizontally on small
+       screens instead of clipping its right columns (Cadence already scrolls). */
+    #sector-rotation-body { overflow-x: auto; }
   }
 </style>
 </head>

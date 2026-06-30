@@ -684,6 +684,12 @@
     .sidebar { display: none; }
     .feed-table th:nth-child(3),
     .feed-table td:nth-child(3) { display: none; }
+    /* The card grids use minmax(300–320px,…) tracks that are wider than a
+       phone's content area — collapse to one column so cards don't spill. */
+    .cards-grid, .standouts-grid { grid-template-columns: 1fr; }
+    /* Recent-feed table is a touch too wide even with a column dropped — let it
+       scroll horizontally instead of clipping its Date column. */
+    .feed-wrap { overflow-x: auto; }
   }
 
   /* ── Site header (shared top nav) ─────────────────────────────────────────── */

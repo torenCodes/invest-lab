@@ -813,6 +813,15 @@
     .scorecard-table td:nth-child(4),
     .scorecard-table th:nth-child(6),
     .scorecard-table td:nth-child(6) { display: none; }
+    /* Three tabs + count badges don't fit a phone — tighten the buttons and
+       drop the badges so all three labels stay visible (scroll as a fallback
+       on very narrow screens). */
+    .tab-bar { overflow-x: auto; }
+    .tab-btn { padding: 9px 13px; font-size: 0.92rem; white-space: nowrap; }
+    .tab-badge { display: none; }
+    /* ETF Scorecard is a wide matrix even with two columns dropped — scroll it
+       horizontally instead of clipping the right side. */
+    .scorecard-wrap { overflow-x: auto; }
   }
 
   /* ── Site header (shared top nav) ────────────────────────────────────────── */
