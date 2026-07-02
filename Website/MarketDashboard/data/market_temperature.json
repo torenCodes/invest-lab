@@ -1,11 +1,11 @@
 {
-  "scan_time": "2026-07-01T12:29:20.863119+00:00",
+  "scan_time": "2026-07-02T12:05:24.045392+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 74.5,
+  "composite_score": 75.3,
   "composite_label": "Frothy",
   "components": {
     "buffett": {
-      "raw": 2.04,
+      "raw": 2.036,
       "raw_label": "2.0 (W5000/GDP)",
       "percentile": 93.8,
       "score": 93.8,
@@ -16,7 +16,7 @@
       "weight": 0.15
     },
     "shiller": {
-      "raw": 41.72,
+      "raw": 41.66,
       "raw_label": "41.7x CAPE",
       "percentile": 100.0,
       "score": 100.0,
@@ -27,23 +27,23 @@
       "weight": 0.15
     },
     "fed_model": {
-      "raw": -1.28,
-      "raw_label": "-1.28% spread",
-      "earnings_yield": 3.1,
-      "treasury_10y": 4.38,
-      "pe": 32.24,
+      "raw": -1.33,
+      "raw_label": "-1.33% spread",
+      "earnings_yield": 3.11,
+      "treasury_10y": 4.44,
+      "pe": 32.19,
       "score": 85,
       "label": "Extreme",
-      "description": "S&P earnings yield 3.10% vs 10Y Treasury 4.38%. Positive spread means stocks are relatively cheap vs bonds.",
+      "description": "S&P earnings yield 3.11% vs 10Y Treasury 4.44%. Positive spread means stocks are relatively cheap vs bonds.",
       "title": "Fed Model",
       "subtitle": "Earnings Yield \u2212 10Y",
       "weight": 0.1
     },
     "credit": {
-      "raw": 2.8,
-      "raw_label": "2.80% HY OAS",
-      "percentile": 16.8,
-      "score": 83.2,
+      "raw": 2.75,
+      "raw_label": "2.75% HY OAS",
+      "percentile": 12.0,
+      "score": 88.0,
       "label": "Extreme",
       "description": "Extra yield demanded to hold high-yield (junk) bonds over Treasuries. Tight spreads signal risk-on complacency; wide spreads signal stress. Inverted percentile over 10 years.",
       "title": "Credit Spreads",
@@ -51,8 +51,8 @@
       "weight": 0.15
     },
     "yield_curve": {
-      "raw": 0.3,
-      "raw_label": "+0.30% (10Y\u22122Y)",
+      "raw": 0.31,
+      "raw_label": "+0.31% (10Y\u22122Y)",
       "score": 52,
       "label": "Elevated",
       "description": "10-year minus 2-year Treasury yield. A steep curve is early-cycle and healthy; a flat or inverted curve marks a late-cycle market that is historically more stretched and froth-prone.",
@@ -61,33 +61,33 @@
       "weight": 0.1
     },
     "breadth": {
-      "raw": 62.2,
-      "raw_label": "62.2% above 200-DMA",
-      "above_200dma": 311,
+      "raw": 64.2,
+      "raw_label": "64.2% above 200-DMA",
+      "above_200dma": 321,
       "total": 500,
       "score": 60,
       "label": "Frothy",
-      "description": "311 of 500 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
+      "description": "321 of 500 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
       "title": "Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
       "weight": 0.15
     },
     "new_highs": {
-      "raw": 21.6,
-      "raw_label": "156 hi / 48 lo",
-      "near_high": 156,
-      "near_low": 48,
+      "raw": 22.8,
+      "raw_label": "142 hi / 28 lo",
+      "near_high": 142,
+      "near_low": 28,
       "total": 500,
-      "score": 71.6,
+      "score": 72.8,
       "label": "Frothy",
-      "description": "156 stocks near a 52-week high vs 48 near a 52-week low (within 5%). A surge of new highs signals euphoria; a wave of new lows signals stress.",
+      "description": "142 stocks near a 52-week high vs 28 near a 52-week low (within 5%). A surge of new highs signals euphoria; a wave of new lows signals stress.",
       "title": "Net New Highs",
       "subtitle": "52wk highs \u2212 lows",
       "weight": 0.1
     },
     "fear_greed": {
       "raw": 30.5,
-      "raw_label": "31 (Fear)",
+      "raw_label": "30 (Fear)",
       "score": 30.5,
       "label": "Fair",
       "description": "CNN's composite of 7 short-term sentiment signals (momentum, breadth, put/call ratio, junk-bond demand, volatility, etc.). High readings reflect investor euphoria \u2014 historically a contrarian sell signal.",
