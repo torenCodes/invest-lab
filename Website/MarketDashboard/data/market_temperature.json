@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-07-03T12:04:23.373816+00:00",
+  "scan_time": "2026-07-06T13:39:42.263073+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 76.1,
+  "composite_score": 76.3,
   "composite_label": "Frothy",
   "components": {
     "buffett": {
@@ -40,10 +40,10 @@
       "weight": 0.1
     },
     "credit": {
-      "raw": 2.74,
-      "raw_label": "2.74% HY OAS",
-      "percentile": 10.8,
-      "score": 89.2,
+      "raw": 2.75,
+      "raw_label": "2.75% HY OAS",
+      "percentile": 12.1,
+      "score": 87.9,
       "label": "Extreme",
       "description": "Extra yield demanded to hold high-yield (junk) bonds over Treasuries. Tight spreads signal risk-on complacency; wide spreads signal stress. Inverted percentile over 10 years.",
       "title": "Credit Spreads",
@@ -61,34 +61,34 @@
       "weight": 0.1
     },
     "breadth": {
-      "raw": 67.8,
-      "raw_label": "67.8% above 200-DMA",
-      "above_200dma": 339,
+      "raw": 66.0,
+      "raw_label": "66.0% above 200-DMA",
+      "above_200dma": 330,
       "total": 500,
       "score": 60,
       "label": "Frothy",
-      "description": "339 of 500 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
+      "description": "330 of 500 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
       "title": "Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
       "weight": 0.15
     },
     "new_highs": {
-      "raw": 27.4,
-      "raw_label": "151 hi / 14 lo",
-      "near_high": 151,
-      "near_low": 14,
+      "raw": 26.0,
+      "raw_label": "154 hi / 24 lo",
+      "near_high": 154,
+      "near_low": 24,
       "total": 500,
-      "score": 77.4,
+      "score": 76.0,
       "label": "Frothy",
-      "description": "151 stocks near a 52-week high vs 14 near a 52-week low (within 5%). A surge of new highs signals euphoria; a wave of new lows signals stress.",
+      "description": "154 stocks near a 52-week high vs 24 near a 52-week low (within 5%). A surge of new highs signals euphoria; a wave of new lows signals stress.",
       "title": "Net New Highs",
       "subtitle": "52wk highs \u2212 lows",
       "weight": 0.1
     },
     "fear_greed": {
-      "raw": 31.9,
-      "raw_label": "32 (Fear)",
-      "score": 31.9,
+      "raw": 37.5,
+      "raw_label": "37 (Fear)",
+      "score": 37.5,
       "label": "Fair",
       "description": "CNN's composite of 7 short-term sentiment signals (momentum, breadth, put/call ratio, junk-bond demand, volatility, etc.). High readings reflect investor euphoria \u2014 historically a contrarian sell signal.",
       "title": "Fear & Greed",
