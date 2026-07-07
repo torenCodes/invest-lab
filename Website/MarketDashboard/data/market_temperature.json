@@ -1,23 +1,13 @@
 {
-  "scan_time": "2026-07-06T13:39:42.263073+00:00",
+  "scan_time": "2026-07-07T12:22:56.974700+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 76.3,
+  "composite_score": 74.6,
   "composite_label": "Frothy",
   "components": {
-    "buffett": {
-      "raw": 2.036,
-      "raw_label": "2.0 (W5000/GDP)",
-      "percentile": 93.7,
-      "score": 93.7,
-      "label": "Extreme",
-      "description": "Total US market cap (Wilshire 5000) vs GDP \u2014 Warren Buffett's \"best single measure.\" Percentile-ranked over the last 10 years.",
-      "title": "Buffett Indicator",
-      "subtitle": "Market Cap / GDP",
-      "weight": 0.15
-    },
+    "buffett": null,
     "shiller": {
-      "raw": 41.6,
-      "raw_label": "41.6x CAPE",
+      "raw": 41.97,
+      "raw_label": "42.0x CAPE",
       "percentile": 100.0,
       "score": 100.0,
       "label": "Extreme",
@@ -27,23 +17,23 @@
       "weight": 0.15
     },
     "fed_model": {
-      "raw": -1.37,
-      "raw_label": "-1.37% spread",
-      "earnings_yield": 3.11,
-      "treasury_10y": 4.48,
-      "pe": 32.15,
+      "raw": -1.41,
+      "raw_label": "-1.41% spread",
+      "earnings_yield": 3.08,
+      "treasury_10y": 4.49,
+      "pe": 32.44,
       "score": 85,
       "label": "Extreme",
-      "description": "S&P earnings yield 3.11% vs 10Y Treasury 4.48%. Positive spread means stocks are relatively cheap vs bonds.",
+      "description": "S&P earnings yield 3.08% vs 10Y Treasury 4.49%. Positive spread means stocks are relatively cheap vs bonds.",
       "title": "Fed Model",
       "subtitle": "Earnings Yield \u2212 10Y",
       "weight": 0.1
     },
     "credit": {
-      "raw": 2.75,
-      "raw_label": "2.75% HY OAS",
-      "percentile": 12.1,
-      "score": 87.9,
+      "raw": 2.74,
+      "raw_label": "2.74% HY OAS",
+      "percentile": 10.8,
+      "score": 89.2,
       "label": "Extreme",
       "description": "Extra yield demanded to hold high-yield (junk) bonds over Treasuries. Tight spreads signal risk-on complacency; wide spreads signal stress. Inverted percentile over 10 years.",
       "title": "Credit Spreads",
@@ -61,40 +51,40 @@
       "weight": 0.1
     },
     "breadth": {
-      "raw": 66.0,
-      "raw_label": "66.0% above 200-DMA",
-      "above_200dma": 330,
+      "raw": 67.2,
+      "raw_label": "67.2% above 200-DMA",
+      "above_200dma": 336,
       "total": 500,
       "score": 60,
       "label": "Frothy",
-      "description": "330 of 500 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
+      "description": "336 of 500 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
       "title": "Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
       "weight": 0.15
     },
     "new_highs": {
-      "raw": 26.0,
-      "raw_label": "154 hi / 24 lo",
-      "near_high": 154,
-      "near_low": 24,
+      "raw": 28.6,
+      "raw_label": "163 hi / 20 lo",
+      "near_high": 163,
+      "near_low": 20,
       "total": 500,
-      "score": 76.0,
+      "score": 78.6,
       "label": "Frothy",
-      "description": "154 stocks near a 52-week high vs 24 near a 52-week low (within 5%). A surge of new highs signals euphoria; a wave of new lows signals stress.",
+      "description": "163 stocks near a 52-week high vs 20 near a 52-week low (within 5%). A surge of new highs signals euphoria; a wave of new lows signals stress.",
       "title": "Net New Highs",
       "subtitle": "52wk highs \u2212 lows",
       "weight": 0.1
     },
     "fear_greed": {
-      "raw": 37.5,
-      "raw_label": "37 (Fear)",
-      "score": 37.5,
-      "label": "Fair",
+      "raw": 44.5,
+      "raw_label": "45 (Fear)",
+      "score": 44.5,
+      "label": "Elevated",
       "description": "CNN's composite of 7 short-term sentiment signals (momentum, breadth, put/call ratio, junk-bond demand, volatility, etc.). High readings reflect investor euphoria \u2014 historically a contrarian sell signal.",
       "title": "Fear & Greed",
       "subtitle": "CNN Sentiment Index",
       "weight": 0.1
     }
   },
-  "coverage": 1.0
+  "coverage": 0.85
 }
