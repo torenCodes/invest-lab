@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-07-08T13:00:53.821626+00:00",
+  "scan_time": "2026-07-08T15:00:54.049018+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Favorable",
-    "score": 5,
-    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
+    "verdict": "Mixed",
+    "score": 3,
+    "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you.",
     "signals": [
       {
         "label": "Market trend",
@@ -16,26 +16,26 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "+0.9%",
-        "read": "Firm",
-        "tone": "good"
+        "value": "-0.7%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "17.4",
-        "read": "Calm",
-        "tone": "good"
+        "value": "18.0",
+        "read": "Calm but rising",
+        "tone": "neutral"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.56%",
+        "value": "4.59%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-08T13:01:01.922943+00:00"
+    "updated": "2026-07-08T15:01:02.441931+00:00"
   },
   "earnings": [
     {
@@ -547,39 +547,74 @@
   ],
   "unusual_volume": [
     {
-      "ticker": "CLRO",
-      "name": "ClearOne Inc",
-      "price": 13.84,
-      "change_pct": 97.71,
-      "volume": "37.03M"
+      "ticker": "BABA",
+      "name": "Alibaba Group Holding Ltd ADR",
+      "price": 108.64,
+      "change_pct": 10.69,
+      "volume": "260.81B"
     },
     {
-      "ticker": "CRNX",
-      "name": "Crinetics Pharmaceuticals Inc",
-      "price": 83.53,
-      "change_pct": 98.74,
-      "volume": "8.84B"
-    },
-    {
-      "ticker": "MFP",
-      "name": "Midera Food Processing Inc",
-      "price": 36.6,
-      "change_pct": 4.42,
+      "ticker": "MUD",
+      "name": "Direxion Daily MU Bear 1X ETF",
+      "price": 11.92,
+      "change_pct": 0.75,
       "volume": "-"
     },
     {
-      "ticker": "GXPC",
-      "name": "Global X PureCap MSCI Communication Services ETF",
-      "price": 30.93,
-      "change_pct": 0.45,
+      "ticker": "NVVE",
+      "name": "Nuvve Holding Corp",
+      "price": 7.65,
+      "change_pct": 47.38,
+      "volume": "4.01M"
+    },
+    {
+      "ticker": "PENG",
+      "name": "Penguin Solutions Inc",
+      "price": 72.56,
+      "change_pct": 15.71,
+      "volume": "3.68B"
+    },
+    {
+      "ticker": "SNDU",
+      "name": "T-REX 2X Long SNDK Daily Target ETF",
+      "price": 33.94,
+      "change_pct": 5.01,
       "volume": "-"
     },
     {
-      "ticker": "SVAQ",
-      "name": "Silicon Valley Acquisition Corp",
-      "price": 10.1,
-      "change_pct": 0.3,
-      "volume": "296.14M"
+      "ticker": "KC",
+      "name": "Kingsoft Cloud Holdings Ltd ADR",
+      "price": 10.44,
+      "change_pct": 10.58,
+      "volume": "3.09B"
+    },
+    {
+      "ticker": "NBIL",
+      "name": "GraniteShares 2x Long NBIS Daily ETF",
+      "price": 29.81,
+      "change_pct": 10.74,
+      "volume": "-"
+    },
+    {
+      "ticker": "CCXI",
+      "name": "Churchill Capital Corp XI",
+      "price": 15.9,
+      "change_pct": 0.25,
+      "volume": "885.63M"
+    },
+    {
+      "ticker": "BABX",
+      "name": "GraniteShares 2x Long BABA Daily ETF",
+      "price": 17.5,
+      "change_pct": 21.19,
+      "volume": "-"
+    },
+    {
+      "ticker": "SNDG",
+      "name": "Leverage Shares 2X Long SNDK Daily ETF",
+      "price": 13.24,
+      "change_pct": 4.18,
+      "volume": "-"
     }
   ]
 }
