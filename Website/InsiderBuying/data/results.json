@@ -1,9 +1,145 @@
 {
-  "scan_time": "2026-07-10T19:15:33.526286",
-  "total_transactions": 40,
-  "date_range": "Jul 02 '26 \u2013 Jul 09 '26",
+  "scan_time": "2026-07-13T14:30:40.101190",
+  "total_transactions": 57,
+  "date_range": "Jul 02 '26 \u2013 Jul 10 '26",
   "min_value": 25000,
   "nominees": [
+    {
+      "ticker": "GLOO",
+      "insider": "Beck Scott Arthur",
+      "title": "President and CEO",
+      "date": "Jul 10 '26",
+      "price": 3.25,
+      "qty": 1846153,
+      "value": 5999998,
+      "txn_count": 3,
+      "insider_count": 3,
+      "is_csuite": true,
+      "company": "Gloo Holdings, Inc.",
+      "sector": "Technology",
+      "current_price": 3.155,
+      "change_pct": 6.95,
+      "market_cap": 276290560,
+      "insiders": [
+        {
+          "name": "Beck Scott Arthur",
+          "title": "President and CEO",
+          "date": "Jul 10 '26",
+          "price": 3.25,
+          "qty": 1076923,
+          "value": 3500000,
+          "is_csuite": true
+        },
+        {
+          "name": "Green Derek Todd",
+          "title": "Director",
+          "date": "Jul 10 '26",
+          "price": 3.25,
+          "qty": 615384,
+          "value": 1999998,
+          "is_csuite": false
+        },
+        {
+          "name": "GELSINGER PATRICK P",
+          "title": "See Remarks",
+          "date": "Jul 10 '26",
+          "price": 3.25,
+          "qty": 153846,
+          "value": 500000,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 62,
+      "tier": "A",
+      "signals": [
+        "3 insiders buying",
+        "President and CEO bought",
+        "$6.0M total",
+        "Activity in last 3 days"
+      ],
+      "story": "GLOO \u2014 Cluster of 3 buyers including the President and CEO, $6.0M total."
+    },
+    {
+      "ticker": "IPX",
+      "insider": "Hannigan Todd",
+      "title": "Executive Chairman",
+      "date": "Jul 13 '26",
+      "price": 3.59,
+      "qty": 663720,
+      "value": 2378393,
+      "txn_count": 3,
+      "insider_count": 2,
+      "is_csuite": true,
+      "company": "IperionX Limited",
+      "sector": "Basic Materials",
+      "current_price": 25.25,
+      "change_pct": 0.88,
+      "market_cap": 914388544,
+      "insiders": [
+        {
+          "name": "Hannigan Todd",
+          "title": "Executive Chairman",
+          "date": "Jul 13 '26",
+          "price": 3.59,
+          "qty": 525000,
+          "value": 1881165,
+          "is_csuite": true
+        },
+        {
+          "name": "Arima Anastasios",
+          "title": "Chief Executive Officer",
+          "date": "Jul 10 '26",
+          "price": 3.58,
+          "qty": 138720,
+          "value": 497228,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 47,
+      "tier": "B",
+      "signals": [
+        "2 insiders buying",
+        "Executive Chairman bought",
+        "$2.4M total",
+        "Activity in last 3 days"
+      ],
+      "story": "IPX \u2014 Two insiders bought including the Executive Chairman, $2.4M total."
+    },
+    {
+      "ticker": "COE",
+      "insider": "Huang Jack Jiajia",
+      "title": "Chief Executive Officer",
+      "date": "Jul 08 '26",
+      "price": 16.45,
+      "qty": 2007480,
+      "value": 32800151,
+      "txn_count": 7,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "51Talk Online Education Group",
+      "sector": "Consumer Defensive",
+      "current_price": 16.53,
+      "change_pct": -1.72,
+      "market_cap": 99300920,
+      "insiders": [
+        {
+          "name": "Huang Jack Jiajia",
+          "title": "Chief Executive Officer",
+          "date": "Jul 08 '26",
+          "price": 16.45,
+          "qty": 2007480,
+          "value": 32800151,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 45,
+      "tier": "B",
+      "signals": [
+        "Chief Executive Officer bought",
+        "$32.8M total"
+      ],
+      "story": "COE \u2014 The Chief Executive Officer bought, $32.8M total."
+    },
     {
       "ticker": "UUUU",
       "insider": "Bhappu Ross R.",
@@ -17,9 +153,9 @@
       "is_csuite": true,
       "company": "Energy Fuels Inc.",
       "sector": "Energy",
-      "current_price": 13.7399,
-      "change_pct": 1.85,
-      "market_cap": 3433864192,
+      "current_price": 13.2999,
+      "change_pct": -2.06,
+      "market_cap": 3323899648,
       "insiders": [
         {
           "name": "Bhappu Ross R.",
@@ -40,50 +176,14 @@
           "is_csuite": false
         }
       ],
-      "conviction_score": 47,
+      "conviction_score": 42,
       "tier": "B",
       "signals": [
         "2 insiders buying",
         "President and CEO bought",
-        "$1.0M total",
-        "Activity in last 3 days"
+        "$1.0M total"
       ],
       "story": "UUUU \u2014 Two insiders bought including the President and CEO, $1.0M total."
-    },
-    {
-      "ticker": "COE",
-      "insider": "Huang Jack Jiajia",
-      "title": "Chief Executive Officer",
-      "date": "Jul 02 '26",
-      "price": 16.78,
-      "qty": 1444920,
-      "value": 23487345,
-      "txn_count": 4,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "51Talk Online Education Group",
-      "sector": "Consumer Defensive",
-      "current_price": 16.835,
-      "change_pct": 0.81,
-      "market_cap": 101133144,
-      "insiders": [
-        {
-          "name": "Huang Jack Jiajia",
-          "title": "Chief Executive Officer",
-          "date": "Jul 02 '26",
-          "price": 16.78,
-          "qty": 1444920,
-          "value": 23487345,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 45,
-      "tier": "B",
-      "signals": [
-        "Chief Executive Officer bought",
-        "$23.5M total"
-      ],
-      "story": "COE \u2014 The Chief Executive Officer bought, $23.5M total."
     },
     {
       "ticker": "YPF",
@@ -98,9 +198,9 @@
       "is_csuite": true,
       "company": "YPF Sociedad An\u00f3nima",
       "sector": "Energy",
-      "current_price": 47.35,
-      "change_pct": 0.66,
-      "market_cap": 18567206912,
+      "current_price": 49.2,
+      "change_pct": 3.4,
+      "market_cap": 19292643328,
       "insiders": [
         {
           "name": "Farina Matias Osvaldo",
@@ -131,6 +231,41 @@
       "story": "YPF \u2014 Two insiders bought including the Chairman of the Board/ CEO, $533K total."
     },
     {
+      "ticker": "TDIC",
+      "insider": "Seto Wai Yue",
+      "title": "Chief Executive Officer",
+      "date": "Jul 07 '26",
+      "price": 3.75,
+      "qty": 652000,
+      "value": 2445000,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "Dreamland Limited",
+      "sector": "Communication Services",
+      "current_price": 3.7,
+      "change_pct": 0.54,
+      "market_cap": 5555761,
+      "insiders": [
+        {
+          "name": "Seto Wai Yue",
+          "title": "Chief Executive Officer",
+          "date": "Jul 07 '26",
+          "price": 3.75,
+          "qty": 652000,
+          "value": 2445000,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 30,
+      "tier": "B",
+      "signals": [
+        "Chief Executive Officer bought",
+        "$2.4M total"
+      ],
+      "story": "TDIC \u2014 The Chief Executive Officer bought, $2.4M total."
+    },
+    {
       "ticker": "VWAV",
       "insider": "VisionWave Holdings, Inc.",
       "title": "Director",
@@ -143,9 +278,9 @@
       "is_csuite": false,
       "company": "VisionWave Holdings, Inc.",
       "sector": "Industrials",
-      "current_price": 4.26,
-      "change_pct": -3.18,
-      "market_cap": 117499616,
+      "current_price": 4.16,
+      "change_pct": -1.42,
+      "market_cap": 114741400,
       "insiders": [
         {
           "name": "VisionWave Holdings, Inc.",
@@ -177,9 +312,9 @@
       "is_csuite": false,
       "company": "SaverOne 2014 Ltd.",
       "sector": "Technology",
-      "current_price": 2.72,
-      "change_pct": 1.12,
-      "market_cap": 4521459,
+      "current_price": 2.61,
+      "change_pct": 0.4,
+      "market_cap": 4338605,
       "insiders": [
         {
           "name": "VisionWave Holdings, Inc.",
@@ -211,9 +346,9 @@
       "is_csuite": true,
       "company": "Total Return Securities, Inc.",
       "sector": "Unknown",
-      "current_price": 5.94,
-      "change_pct": -0.17,
-      "market_cap": 77064736,
+      "current_price": 5.92,
+      "change_pct": -0.34,
+      "market_cap": 76805256,
       "insiders": [
         {
           "name": "GOLDSTEIN PHILLIP",
@@ -243,75 +378,73 @@
       "story": "SWZ \u2014 Two insiders bought including the President and CEO."
     },
     {
+      "ticker": "NTSK",
+      "insider": "Griffith William J.G.",
+      "title": "Director",
+      "date": "Jul 08 '26",
+      "price": 11.82,
+      "qty": 610291,
+      "value": 7216081,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Netskope, Inc.",
+      "sector": "Technology",
+      "current_price": 12.32,
+      "change_pct": 0,
+      "market_cap": 4976339456,
+      "insiders": [
+        {
+          "name": "Griffith William J.G.",
+          "title": "Director",
+          "date": "Jul 08 '26",
+          "price": 11.82,
+          "qty": 610291,
+          "value": 7216081,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 22,
+      "tier": "W",
+      "signals": [
+        "$7.2M total"
+      ],
+      "story": "NTSK \u2014 Griffith William J.G. (Director) bought, $7.2M total."
+    },
+    {
       "ticker": "PRQR",
       "insider": "de Boer Daniel Anton",
       "title": "Chief Executive Officer",
-      "date": "Jul 07 '26",
-      "price": 1.59,
-      "qty": 150000,
-      "value": 238500,
-      "txn_count": 1,
+      "date": "Jul 09 '26",
+      "price": 1.74,
+      "qty": 300000,
+      "value": 499500,
+      "txn_count": 2,
       "insider_count": 1,
       "is_csuite": true,
       "company": "ProQR Therapeutics N.V.",
       "sector": "Healthcare",
-      "current_price": 1.715,
-      "change_pct": -2.56,
-      "market_cap": 242023328,
+      "current_price": 1.725,
+      "change_pct": -0.29,
+      "market_cap": 243434544,
       "insiders": [
         {
           "name": "de Boer Daniel Anton",
           "title": "Chief Executive Officer",
-          "date": "Jul 07 '26",
-          "price": 1.59,
-          "qty": 150000,
-          "value": 238500,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 25,
-      "tier": "B",
-      "signals": [
-        "Chief Executive Officer bought",
-        "$238K total",
-        "Activity in last 3 days"
-      ],
-      "story": "PRQR \u2014 The Chief Executive Officer bought, $238K total."
-    },
-    {
-      "ticker": "VIRC",
-      "insider": "VIRTUE DOUGLAS A",
-      "title": "Executive Vice President",
-      "date": "Jul 08 '26",
-      "price": 6.0,
-      "qty": 8083,
-      "value": 48474,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "Virco Mfg. Corporation",
-      "sector": "Consumer Cyclical",
-      "current_price": 6.27,
-      "change_pct": 2.79,
-      "market_cap": 98624232,
-      "insiders": [
-        {
-          "name": "VIRTUE DOUGLAS A",
-          "title": "Executive Vice President",
-          "date": "Jul 08 '26",
-          "price": 6.0,
-          "qty": 8083,
-          "value": 48474,
+          "date": "Jul 09 '26",
+          "price": 1.74,
+          "qty": 300000,
+          "value": 499500,
           "is_csuite": true
         }
       ],
       "conviction_score": 20,
       "tier": "W",
       "signals": [
-        "Executive Vice President bought",
-        "Activity in last 3 days"
+        "Chief Executive Officer bought",
+        "$500K total"
       ],
-      "story": "VIRC \u2014 The Executive Vice President bought."
+      "story": "PRQR \u2014 The Chief Executive Officer bought, $500K total."
     },
     {
       "ticker": "GRNQ",
@@ -326,9 +459,9 @@
       "is_csuite": true,
       "company": "Greenpro Capital Corp.",
       "sector": "Industrials",
-      "current_price": 1.405,
-      "change_pct": 0,
-      "market_cap": 25469368,
+      "current_price": 1.42,
+      "change_pct": 1.07,
+      "market_cap": 25741282,
       "insiders": [
         {
           "name": "LEE CHONG KUANG",
@@ -349,41 +482,6 @@
       "story": "GRNQ \u2014 The Chief Executive Officer bought, $100K total."
     },
     {
-      "ticker": "NMM",
-      "insider": "Frangou Angeliki",
-      "title": "See Remarks",
-      "date": "Jul 09 '26",
-      "price": 73.74,
-      "qty": 6831,
-      "value": 505400,
-      "txn_count": 6,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Navios Maritime Partners L.P.",
-      "sector": "Industrials",
-      "current_price": 75.54,
-      "change_pct": 2.4,
-      "market_cap": 2147195776,
-      "insiders": [
-        {
-          "name": "Frangou Angeliki",
-          "title": "See Remarks",
-          "date": "Jul 09 '26",
-          "price": 73.74,
-          "qty": 6831,
-          "value": 505400,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 15,
-      "tier": "W",
-      "signals": [
-        "$505K total",
-        "Activity in last 3 days"
-      ],
-      "story": "NMM \u2014 Frangou Angeliki (See Remarks) bought, $505K total."
-    },
-    {
       "ticker": "GGAL",
       "insider": "Moret Silvestre Vila",
       "title": "Director",
@@ -396,9 +494,9 @@
       "is_csuite": false,
       "company": "Grupo Financiero Galicia S.A.",
       "sector": "Financial Services",
-      "current_price": 53.38,
-      "change_pct": 8.08,
-      "market_cap": 9045425152,
+      "current_price": 52.94,
+      "change_pct": -1.47,
+      "market_cap": 8970864640,
       "insiders": [
         {
           "name": "Moret Silvestre Vila",
@@ -418,6 +516,40 @@
       "story": "GGAL \u2014 Moret Silvestre Vila (Director) bought, $2.1M total."
     },
     {
+      "ticker": "VIRC",
+      "insider": "VIRTUE DOUGLAS A",
+      "title": "Executive Vice President",
+      "date": "Jul 08 '26",
+      "price": 6.0,
+      "qty": 8083,
+      "value": 48474,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "Virco Mfg. Corporation",
+      "sector": "Consumer Cyclical",
+      "current_price": 6.21,
+      "change_pct": -2.36,
+      "market_cap": 97680464,
+      "insiders": [
+        {
+          "name": "VIRTUE DOUGLAS A",
+          "title": "Executive Vice President",
+          "date": "Jul 08 '26",
+          "price": 6.0,
+          "qty": 8083,
+          "value": 48474,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 15,
+      "tier": "W",
+      "signals": [
+        "Executive Vice President bought"
+      ],
+      "story": "VIRC \u2014 The Executive Vice President bought."
+    },
+    {
       "ticker": "AXIA",
       "insider": "Batista de Lima Filho Pedro",
       "title": "Director",
@@ -430,9 +562,9 @@
       "is_csuite": false,
       "company": "AXIA Energia SA",
       "sector": "Utilities",
-      "current_price": 10.5096,
-      "change_pct": 3.95,
-      "market_cap": 23636373504,
+      "current_price": 10.3916,
+      "change_pct": -0.94,
+      "market_cap": 23370989568,
       "insiders": [
         {
           "name": "Batista de Lima Filho Pedro",
@@ -465,7 +597,7 @@
       "company": "17 Education & Technology Group Inc.",
       "sector": "Consumer Defensive",
       "current_price": 2.403,
-      "change_pct": -4.64,
+      "change_pct": 0,
       "market_cap": 23276124,
       "insiders": [
         {
@@ -486,182 +618,200 @@
       "story": "YQ \u2014 The Chief Executive Officer bought."
     },
     {
-      "ticker": "WRAP",
-      "insider": "SHULMAN JOHN D",
+      "ticker": "CAI",
+      "insider": "HALBERT JON",
       "title": "Director",
-      "date": "Jul 08 '26",
-      "price": 1.1,
-      "qty": 100000,
-      "value": 110000,
+      "date": "May 15 '26",
+      "price": 14.56,
+      "qty": 68000,
+      "value": 990080,
       "txn_count": 1,
       "insider_count": 1,
       "is_csuite": false,
-      "company": "Wrap Technologies, Inc.",
-      "sector": "Technology",
-      "current_price": 2.555,
-      "change_pct": 8.26,
-      "market_cap": 142411232,
+      "company": "Caris Life Sciences, Inc.",
+      "sector": "Healthcare",
+      "current_price": 16.95,
+      "change_pct": -0.24,
+      "market_cap": 4791438336,
       "insiders": [
         {
-          "name": "SHULMAN JOHN D",
+          "name": "HALBERT JON",
           "title": "Director",
-          "date": "Jul 08 '26",
-          "price": 1.1,
-          "qty": 100000,
-          "value": 110000,
+          "date": "May 15 '26",
+          "price": 14.56,
+          "qty": 68000,
+          "value": 990080,
           "is_csuite": false
         }
       ],
       "conviction_score": 10,
       "tier": "W",
       "signals": [
-        "$110K total",
-        "Activity in last 3 days"
+        "$990K total"
       ],
-      "story": "WRAP \u2014 SHULMAN JOHN D (Director) bought, $110K total."
+      "story": "CAI \u2014 HALBERT JON (Director) bought, $990K total."
     },
     {
-      "ticker": "EVMN",
-      "insider": "KIRSCH ARTHUR S",
-      "title": "Director",
-      "date": "Jul 07 '26",
-      "price": 13.3,
-      "qty": 10000,
-      "value": 133000,
-      "txn_count": 1,
+      "ticker": "NMM",
+      "insider": "Frangou Angeliki",
+      "title": "See Remarks",
+      "date": "Jul 09 '26",
+      "price": 73.74,
+      "qty": 6831,
+      "value": 505400,
+      "txn_count": 6,
       "insider_count": 1,
       "is_csuite": false,
-      "company": "Evommune, Inc.",
-      "sector": "Healthcare",
-      "current_price": 13.235,
-      "change_pct": -2.04,
-      "market_cap": 476703136,
+      "company": "Navios Maritime Partners L.P.",
+      "sector": "Industrials",
+      "current_price": 75.76,
+      "change_pct": 0.01,
+      "market_cap": 2153449216,
       "insiders": [
         {
-          "name": "KIRSCH ARTHUR S",
-          "title": "Director",
-          "date": "Jul 07 '26",
-          "price": 13.3,
-          "qty": 10000,
-          "value": 133000,
+          "name": "Frangou Angeliki",
+          "title": "See Remarks",
+          "date": "Jul 09 '26",
+          "price": 73.74,
+          "qty": 6831,
+          "value": 505400,
           "is_csuite": false
         }
       ],
       "conviction_score": 10,
       "tier": "W",
       "signals": [
-        "$133K total",
-        "Activity in last 3 days"
+        "$505K total"
       ],
-      "story": "EVMN \u2014 KIRSCH ARTHUR S (Director) bought, $133K total."
-    },
-    {
-      "ticker": "PALI",
-      "insider": "Baltera Robert Jr.",
-      "title": "Director",
-      "date": "Jul 07 '26",
-      "price": 2.03,
-      "qty": 70000,
-      "value": 141684,
-      "txn_count": 3,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Palisade Bio, Inc.",
-      "sector": "Healthcare",
-      "current_price": 1.95,
-      "change_pct": -1.02,
-      "market_cap": 338870368,
-      "insiders": [
-        {
-          "name": "Baltera Robert Jr.",
-          "title": "Director",
-          "date": "Jul 07 '26",
-          "price": 2.03,
-          "qty": 70000,
-          "value": 141684,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 10,
-      "tier": "W",
-      "signals": [
-        "$142K total",
-        "Activity in last 3 days"
-      ],
-      "story": "PALI \u2014 Baltera Robert Jr. (Director) bought, $142K total."
+      "story": "NMM \u2014 Frangou Angeliki (See Remarks) bought, $505K total."
     }
   ],
   "standouts": [
     {
-      "ticker": "UUUU",
-      "insider": "Bhappu Ross R.",
+      "ticker": "GLOO",
+      "insider": "Beck Scott Arthur",
       "title": "President and CEO",
-      "date": "Jul 07 '26",
-      "price": 13.08,
-      "qty": 78000,
-      "value": 1018700,
-      "txn_count": 2,
-      "insider_count": 2,
+      "date": "Jul 10 '26",
+      "price": 3.25,
+      "qty": 1846153,
+      "value": 5999998,
+      "txn_count": 3,
+      "insider_count": 3,
       "is_csuite": true,
-      "company": "Energy Fuels Inc.",
-      "sector": "Energy",
-      "current_price": 13.7399,
-      "change_pct": 1.85,
-      "market_cap": 3433864192,
+      "company": "Gloo Holdings, Inc.",
+      "sector": "Technology",
+      "current_price": 3.155,
+      "change_pct": 6.95,
+      "market_cap": 276290560,
       "insiders": [
         {
-          "name": "Bhappu Ross R.",
+          "name": "Beck Scott Arthur",
           "title": "President and CEO",
-          "date": "Jul 07 '26",
-          "price": 13.08,
-          "qty": 74000,
-          "value": 967920,
+          "date": "Jul 10 '26",
+          "price": 3.25,
+          "qty": 1076923,
+          "value": 3500000,
           "is_csuite": true
         },
         {
-          "name": "HANSEN BRUCE D",
+          "name": "Green Derek Todd",
           "title": "Director",
-          "date": "Jul 08 '26",
-          "price": 12.7,
-          "qty": 4000,
-          "value": 50780,
+          "date": "Jul 10 '26",
+          "price": 3.25,
+          "qty": 615384,
+          "value": 1999998,
           "is_csuite": false
+        },
+        {
+          "name": "GELSINGER PATRICK P",
+          "title": "See Remarks",
+          "date": "Jul 10 '26",
+          "price": 3.25,
+          "qty": 153846,
+          "value": 500000,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 62,
+      "tier": "A",
+      "signals": [
+        "3 insiders buying",
+        "President and CEO bought",
+        "$6.0M total",
+        "Activity in last 3 days"
+      ],
+      "story": "GLOO \u2014 Cluster of 3 buyers including the President and CEO, $6.0M total."
+    },
+    {
+      "ticker": "IPX",
+      "insider": "Hannigan Todd",
+      "title": "Executive Chairman",
+      "date": "Jul 13 '26",
+      "price": 3.59,
+      "qty": 663720,
+      "value": 2378393,
+      "txn_count": 3,
+      "insider_count": 2,
+      "is_csuite": true,
+      "company": "IperionX Limited",
+      "sector": "Basic Materials",
+      "current_price": 25.25,
+      "change_pct": 0.88,
+      "market_cap": 914388544,
+      "insiders": [
+        {
+          "name": "Hannigan Todd",
+          "title": "Executive Chairman",
+          "date": "Jul 13 '26",
+          "price": 3.59,
+          "qty": 525000,
+          "value": 1881165,
+          "is_csuite": true
+        },
+        {
+          "name": "Arima Anastasios",
+          "title": "Chief Executive Officer",
+          "date": "Jul 10 '26",
+          "price": 3.58,
+          "qty": 138720,
+          "value": 497228,
+          "is_csuite": true
         }
       ],
       "conviction_score": 47,
       "tier": "B",
       "signals": [
         "2 insiders buying",
-        "President and CEO bought",
-        "$1.0M total",
+        "Executive Chairman bought",
+        "$2.4M total",
         "Activity in last 3 days"
       ],
-      "story": "UUUU \u2014 Two insiders bought including the President and CEO, $1.0M total."
+      "story": "IPX \u2014 Two insiders bought including the Executive Chairman, $2.4M total."
     },
     {
       "ticker": "COE",
       "insider": "Huang Jack Jiajia",
       "title": "Chief Executive Officer",
-      "date": "Jul 02 '26",
-      "price": 16.78,
-      "qty": 1444920,
-      "value": 23487345,
-      "txn_count": 4,
+      "date": "Jul 08 '26",
+      "price": 16.45,
+      "qty": 2007480,
+      "value": 32800151,
+      "txn_count": 7,
       "insider_count": 1,
       "is_csuite": true,
       "company": "51Talk Online Education Group",
       "sector": "Consumer Defensive",
-      "current_price": 16.835,
-      "change_pct": 0.81,
-      "market_cap": 101133144,
+      "current_price": 16.53,
+      "change_pct": -1.72,
+      "market_cap": 99300920,
       "insiders": [
         {
           "name": "Huang Jack Jiajia",
           "title": "Chief Executive Officer",
-          "date": "Jul 02 '26",
-          "price": 16.78,
-          "qty": 1444920,
-          "value": 23487345,
+          "date": "Jul 08 '26",
+          "price": 16.45,
+          "qty": 2007480,
+          "value": 32800151,
           "is_csuite": true
         }
       ],
@@ -669,63 +819,205 @@
       "tier": "B",
       "signals": [
         "Chief Executive Officer bought",
-        "$23.5M total"
+        "$32.8M total"
       ],
-      "story": "COE \u2014 The Chief Executive Officer bought, $23.5M total."
-    },
-    {
-      "ticker": "YPF",
-      "insider": "Farina Matias Osvaldo",
-      "title": "VP Upstream",
-      "date": "Jul 02 '26",
-      "price": 45.22,
-      "qty": 11715,
-      "value": 532930,
-      "txn_count": 2,
-      "insider_count": 2,
-      "is_csuite": true,
-      "company": "YPF Sociedad An\u00f3nima",
-      "sector": "Energy",
-      "current_price": 47.35,
-      "change_pct": 0.66,
-      "market_cap": 18567206912,
-      "insiders": [
-        {
-          "name": "Farina Matias Osvaldo",
-          "title": "VP Upstream",
-          "date": "Jul 02 '26",
-          "price": 45.22,
-          "qty": 8875,
-          "value": 401296,
-          "is_csuite": false
-        },
-        {
-          "name": "Marin Horacio Daniel",
-          "title": "Chairman of the Board/ CEO",
-          "date": "Jul 02 '26",
-          "price": 46.35,
-          "qty": 2840,
-          "value": 131634,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 37,
-      "tier": "B",
-      "signals": [
-        "2 insiders buying",
-        "Chairman of the Board/ CEO bought",
-        "$533K total"
-      ],
-      "story": "YPF \u2014 Two insiders bought including the Chairman of the Board/ CEO, $533K total."
+      "story": "COE \u2014 The Chief Executive Officer bought, $32.8M total."
     }
   ],
   "tier_counts": {
-    "A": 0,
-    "B": 7,
+    "A": 1,
+    "B": 8,
     "W": 9,
-    "total": 16
+    "total": 18
   },
   "recent_feed": [
+    {
+      "ticker": "IPX",
+      "insider": "Arima Anastasios",
+      "title": "Chief Executive Officer",
+      "date": "Jul 10 '26",
+      "price": 3.58,
+      "qty": 138720,
+      "value": 497228,
+      "filing": "Jul 13 08:38 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "IPX",
+      "insider": "Hannigan Todd",
+      "title": "Executive Chairman",
+      "date": "Jul 13 '26",
+      "price": 3.59,
+      "qty": 300000,
+      "value": 1075980,
+      "filing": "Jul 13 08:16 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "IPX",
+      "insider": "Hannigan Todd",
+      "title": "Executive Chairman",
+      "date": "Jul 10 '26",
+      "price": 3.58,
+      "qty": 225000,
+      "value": 805185,
+      "filing": "Jul 13 08:16 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "PRQR",
+      "insider": "de Boer Daniel Anton",
+      "title": "Chief Executive Officer",
+      "date": "Jul 09 '26",
+      "price": 1.74,
+      "qty": 150000,
+      "value": 261000,
+      "filing": "Jul 13 08:00 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "CAI",
+      "insider": "HALBERT JON",
+      "title": "Director",
+      "date": "May 15 '26",
+      "price": 14.56,
+      "qty": 68000,
+      "value": 990080,
+      "filing": "Jul 13 07:06 AM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "GCO",
+      "insider": "SANDFORT GREGORY A",
+      "title": "Director",
+      "date": "Jul 09 '26",
+      "price": 33.8,
+      "qty": 2958,
+      "value": 99980,
+      "filing": "Jul 13 07:00 AM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "COE",
+      "insider": "Huang Jack Jiajia",
+      "title": "Chief Executive Officer",
+      "date": "Jul 08 '26",
+      "price": 16.45,
+      "qty": 185880,
+      "value": 3057726,
+      "filing": "Jul 13 06:51 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "COE",
+      "insider": "Huang Jack Jiajia",
+      "title": "Chief Executive Officer",
+      "date": "Jul 07 '26",
+      "price": 16.72,
+      "qty": 211260,
+      "value": 3532267,
+      "filing": "Jul 13 06:51 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "COE",
+      "insider": "Huang Jack Jiajia",
+      "title": "Chief Executive Officer",
+      "date": "Jul 06 '26",
+      "price": 16.46,
+      "qty": 165420,
+      "value": 2722813,
+      "filing": "Jul 13 06:51 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "TDIC",
+      "insider": "Seto Wai Yue",
+      "title": "Chief Executive Officer",
+      "date": "Jul 07 '26",
+      "price": 3.75,
+      "qty": 652000,
+      "value": 2445000,
+      "filing": "Jul 13 06:05 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "NTSK",
+      "insider": "Griffith William J.G.",
+      "title": "Director",
+      "date": "Jul 08 '26",
+      "price": 11.82,
+      "qty": 610291,
+      "value": 7216081,
+      "filing": "Jul 10 07:37 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "PALI",
+      "insider": "Baltera Robert Jr.",
+      "title": "Director",
+      "date": "Jul 09 '26",
+      "price": 1.96,
+      "qty": 25000,
+      "value": 48900,
+      "filing": "Jul 10 06:14 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "PALI",
+      "insider": "Baltera Robert Jr.",
+      "title": "Director",
+      "date": "Jul 08 '26",
+      "price": 1.99,
+      "qty": 20000,
+      "value": 39798,
+      "filing": "Jul 10 06:14 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "GLOO",
+      "insider": "Green Derek Todd",
+      "title": "Director",
+      "date": "Jul 10 '26",
+      "price": 3.25,
+      "qty": 615384,
+      "value": 1999998,
+      "filing": "Jul 10 05:05 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "GLOO",
+      "insider": "GELSINGER PATRICK P",
+      "title": "See Remarks",
+      "date": "Jul 10 '26",
+      "price": 3.25,
+      "qty": 153846,
+      "value": 500000,
+      "filing": "Jul 10 05:03 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "GLOO",
+      "insider": "Beck Scott Arthur",
+      "title": "President and CEO",
+      "date": "Jul 10 '26",
+      "price": 3.25,
+      "qty": 1076923,
+      "value": 3500000,
+      "filing": "Jul 10 05:02 PM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "HNRG",
+      "insider": "Hudson Daniel Timothy",
+      "title": "Director",
+      "date": "Jul 09 '26",
+      "price": 16.58,
+      "qty": 5000,
+      "value": 82912,
+      "filing": "Jul 10 04:42 PM",
+      "is_csuite": false
+    },
     {
       "ticker": "NMM",
       "insider": "Frangou Angeliki",
@@ -977,193 +1269,6 @@
       "qty": 353580,
       "value": 5622607,
       "filing": "Jul 08 08:44 AM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "COE",
-      "insider": "Huang Jack Jiajia",
-      "title": "Chief Executive Officer",
-      "date": "Jun 29 '26",
-      "price": 15.22,
-      "qty": 248520,
-      "value": 3782446,
-      "filing": "Jul 08 08:44 AM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "SWZ",
-      "insider": "Dakos Andrew",
-      "title": "President and CEO",
-      "date": "Jul 02 '26",
-      "price": 5.92,
-      "qty": 5000,
-      "value": 29601,
-      "filing": "Jul 07 04:27 PM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "RIG",
-      "insider": "DEATON CHAD C",
-      "title": "Director",
-      "date": "Jul 02 '26",
-      "price": 4.95,
-      "qty": 35000,
-      "value": 173250,
-      "filing": "Jul 07 04:22 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "NMM",
-      "insider": "Frangou Angeliki",
-      "title": "See Remarks",
-      "date": "Jul 06 '26",
-      "price": 74.48,
-      "qty": 1149,
-      "value": 85579,
-      "filing": "Jul 06 09:10 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "NMM",
-      "insider": "Frangou Angeliki",
-      "title": "See Remarks",
-      "date": "Jul 02 '26",
-      "price": 73.05,
-      "qty": 1173,
-      "value": 85690,
-      "filing": "Jul 06 09:10 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "NMM",
-      "insider": "Frangou Angeliki",
-      "title": "See Remarks",
-      "date": "Jul 01 '26",
-      "price": 71.59,
-      "qty": 1189,
-      "value": 85115,
-      "filing": "Jul 06 09:10 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "PALI",
-      "insider": "Baltera Robert Jr.",
-      "title": "Director",
-      "date": "Jul 01 '26",
-      "price": 1.98,
-      "qty": 20000,
-      "value": 39600,
-      "filing": "Jul 06 07:48 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "AXIA",
-      "insider": "Batista de Lima Filho Pedro",
-      "title": "Director",
-      "date": "Jul 01 '26",
-      "price": 10.26,
-      "qty": 362600,
-      "value": 3721052,
-      "filing": "Jul 06 05:41 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "PSNY",
-      "insider": "Dubin Cynthia S",
-      "title": "Director",
-      "date": "Jul 02 '26",
-      "price": 20.72,
-      "qty": 1275,
-      "value": 26418,
-      "filing": "Jul 06 05:06 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "ZLAB",
-      "insider": "GAYNOR RICHARD",
-      "title": "Director",
-      "date": "Jul 01 '26",
-      "price": 19.05,
-      "qty": 1736,
-      "value": 33071,
-      "filing": "Jul 06 04:14 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "ABSI",
-      "insider": "Szela Mary T",
-      "title": "Director",
-      "date": "Jun 30 '26",
-      "price": 11.54,
-      "qty": 12900,
-      "value": 148866,
-      "filing": "Jul 06 04:06 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "YPF",
-      "insider": "Marin Horacio Daniel",
-      "title": "Chairman of the Board/ CEO",
-      "date": "Jul 02 '26",
-      "price": 46.35,
-      "qty": 2840,
-      "value": 131634,
-      "filing": "Jul 06 08:48 AM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "YPF",
-      "insider": "Farina Matias Osvaldo",
-      "title": "VP Upstream",
-      "date": "Jul 02 '26",
-      "price": 45.22,
-      "qty": 8875,
-      "value": 401296,
-      "filing": "Jul 06 08:29 AM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "GRNQ",
-      "insider": "LEE CHONG KUANG",
-      "title": "Chief Executive Officer",
-      "date": "Jun 30 '26",
-      "price": 1.52,
-      "qty": 65591,
-      "value": 100000,
-      "filing": "Jul 06 06:57 AM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "VWAV",
-      "insider": "VisionWave Holdings, Inc.",
-      "title": "Director",
-      "date": "Jun 16 '26",
-      "price": 3.48,
-      "qty": 326419200,
-      "value": 1135938816,
-      "filing": "Jul 06 06:07 AM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "SVRE",
-      "insider": "VisionWave Holdings, Inc.",
-      "title": "Director",
-      "date": "Jun 16 '26",
-      "price": 3.48,
-      "qty": 326419200,
-      "value": 1135938816,
-      "filing": "Jul 06 06:07 AM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "YQ",
-      "insider": "Liu Chang",
-      "title": "Chief Executive Officer",
-      "date": "Jul 02 '26",
-      "price": 2.2,
-      "qty": 18988,
-      "value": 41753,
-      "filing": "Jul 06 06:02 AM",
       "is_csuite": true
     }
   ]
