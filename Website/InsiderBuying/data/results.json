@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-07-15T18:09:29.347964",
-  "total_transactions": 55,
-  "date_range": "Jun 29 '26 \u2013 Jul 14 '26",
+  "scan_time": "2026-07-15T18:54:56.230778",
+  "total_transactions": 56,
+  "date_range": "Jun 29 '26 \u2013 Jul 13 '26",
   "min_value": 25000,
   "nominees": [
     {
@@ -323,6 +323,41 @@
         "$500K total"
       ],
       "story": "PPRQR \u2014 The Chief Executive Officer bought, $500K total."
+    },
+    {
+      "ticker": "EECAT",
+      "insider": "Rieder Richard M",
+      "title": "Portfolio Manager",
+      "date": "Jul 13 '26",
+      "price": 15.86,
+      "qty": 35734,
+      "value": 566648,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "EECAT",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Rieder Richard M",
+          "title": "Portfolio Manager",
+          "date": "Jul 13 '26",
+          "price": 15.86,
+          "qty": 35734,
+          "value": 566648,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 15,
+      "tier": "W",
+      "signals": [
+        "$567K total",
+        "Activity in last 3 days"
+      ],
+      "story": "EECAT \u2014 Rieder Richard M (Portfolio Manager) bought, $567K total."
     },
     {
       "ticker": "NNMM",
@@ -742,10 +777,21 @@
   "tier_counts": {
     "A": 1,
     "B": 6,
-    "W": 9,
-    "total": 16
+    "W": 10,
+    "total": 17
   },
   "recent_feed": [
+    {
+      "ticker": "EECAT",
+      "insider": "Rieder Richard M",
+      "title": "Portfolio Manager",
+      "date": "Jul 13 '26",
+      "price": 15.86,
+      "qty": 35734,
+      "value": 566648,
+      "filing": "Jul 15 02:40 PM",
+      "is_csuite": false
+    },
     {
       "ticker": "NNMM",
       "insider": "Frangou Angeliki",
@@ -1174,17 +1220,6 @@
       "value": 110000,
       "filing": "Jul 09 07:04 PM",
       "is_csuite": false
-    },
-    {
-      "ticker": "UUUUU",
-      "insider": "Bhappu Ross R.",
-      "title": "President and CEO",
-      "date": "Jul 07 '26",
-      "price": 13.08,
-      "qty": 74000,
-      "value": 967920,
-      "filing": "Jul 09 07:00 PM",
-      "is_csuite": true
     }
   ]
 }
