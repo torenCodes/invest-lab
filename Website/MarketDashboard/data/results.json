@@ -1,23 +1,23 @@
 {
-  "scan_time": "2026-07-15T13:35:23.186245+00:00",
+  "scan_time": "2026-07-15T14:15:26.868556+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 21,
+  "total_scanned": 22,
   "day_trades": [
     {
       "ticker": "PYPL",
       "name": "PayPal Holdings Inc",
       "sector": "Financial Services",
-      "current_price": 54.37,
-      "change_pct": 14.7773,
-      "high": 55,
-      "low": 53.58,
+      "current_price": 55.28,
+      "change_pct": 16.6983,
+      "high": 55.3,
+      "low": 53.44,
       "open": 53.9775,
       "prev_close": 47.37,
       "score": 63,
       "signals": [
-        "Top gainer (+14.8%)",
+        "Top gainer (+16.7%)",
         "High volume",
-        "Strong move (+14.8%)",
+        "Strong move (+16.7%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)",
         "Closing strong",
@@ -37,32 +37,64 @@
       "score_normalized": 89
     },
     {
-      "ticker": "AEHR",
-      "name": "Aehr Test Systems",
-      "sector": "Semiconductors",
-      "current_price": 102.28,
-      "change_pct": 42.0358,
-      "high": 106.37,
-      "low": 95,
-      "open": 98.165,
-      "prev_close": 72.01,
+      "ticker": "ELVA",
+      "name": "Electrovaya Inc",
+      "sector": "Electrical Equipment",
+      "current_price": 11.44,
+      "change_pct": 44.9937,
+      "high": 12.31,
+      "low": 10.2,
+      "open": 10.845,
+      "prev_close": 7.89,
       "score": 58,
       "signals": [
-        "Top gainer (+42.0%)",
+        "Top gainer (+45.0%)",
         "High volume",
-        "Strong move (+42.0%)",
+        "Strong move (+45.0%)",
         "Trending buzz (12)",
         "Yahoo trending (#9)",
         "Closing strong",
-        "Sector leader (Semiconductors)"
+        "Sector leader (Electrical Equipment)"
       ],
       "reddit_mentions": 12,
+      "market_cap": 547552756.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942958607976.png",
+      "weburl": "https://electrovaya.com/",
+      "yahoo_trending_rank": 9,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 82
+    },
+    {
+      "ticker": "AEHR",
+      "name": "Aehr Test Systems",
+      "sector": "Semiconductors",
+      "current_price": 96.54,
+      "change_pct": 34.0647,
+      "high": 110.2,
+      "low": 95,
+      "open": 95.8025,
+      "prev_close": 72.01,
+      "score": 55,
+      "signals": [
+        "Top gainer (+34.1%)",
+        "High volume",
+        "Strong move (+34.1%)",
+        "Trending buzz (16)",
+        "Yahoo trending (#5)",
+        "Sector leader (Semiconductors)"
+      ],
+      "reddit_mentions": 16,
       "market_cap": 2264948938.0,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AEHR.png",
       "weburl": "https://www.aehr.com/",
-      "yahoo_trending_rank": 9,
+      "yahoo_trending_rank": 5,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -73,23 +105,55 @@
           "surprise_pct": 1528.6
         }
       },
-      "score_normalized": 82
+      "score_normalized": 77
+    },
+    {
+      "ticker": "BABA",
+      "name": "Alibaba Group Holding Ltd",
+      "sector": "Retail",
+      "current_price": 120.36,
+      "change_pct": 7.1581,
+      "high": 121.22,
+      "low": 117.15,
+      "open": 117.4,
+      "prev_close": 112.32,
+      "score": 53,
+      "signals": [
+        "Top gainer (+7.2%)",
+        "High volume",
+        "Strong move (+7.2%)",
+        "Trending buzz (13)",
+        "Yahoo trending (#8)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 13,
+      "market_cap": 271012936800.71674,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BABA.png",
+      "weburl": "https://www.alibabagroup.com/",
+      "yahoo_trending_rank": 8,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 75
     },
     {
       "ticker": "LCID",
       "name": "Lucid Group Inc",
       "sector": "Automobiles",
-      "current_price": 5.04,
-      "change_pct": 9.0909,
-      "high": 5.04,
+      "current_price": 5.4,
+      "change_pct": 16.8831,
+      "high": 5.5,
       "low": 4.5475,
       "open": 4.5475,
       "prev_close": 4.62,
       "score": 53,
       "signals": [
-        "Top gainer (+9.1%)",
+        "Top gainer (+16.9%)",
         "High volume",
-        "Strong move (+9.1%)",
+        "Strong move (+16.9%)",
         "Trending buzz (15)",
         "Yahoo trending (#6)",
         "Closing strong"
@@ -106,99 +170,66 @@
         "recent": null
       },
       "score_normalized": 75
-    },
+    }
+  ],
+  "swing_trades": [
     {
       "ticker": "BABA",
       "name": "Alibaba Group Holding Ltd",
       "sector": "Retail",
-      "current_price": 119.03,
-      "change_pct": 5.974,
-      "high": 119.3,
-      "low": 116.37,
-      "open": 116.37,
+      "current_price": 120.36,
+      "change_pct": 7.1581,
+      "high": 121.22,
+      "low": 117.15,
+      "open": 117.4,
       "prev_close": 112.32,
-      "score": 44,
+      "score": 53,
       "signals": [
-        "Top gainer (+6.0%)",
+        "Top gainer (+7.2%)",
         "High volume",
-        "Strong move (+6.0%)",
-        "Trending activity (8)",
-        "Yahoo trending (#13)",
+        "Strong move (+7.2%)",
+        "Trending buzz (13)",
+        "Yahoo trending (#8)",
         "Closing strong"
       ],
-      "reddit_mentions": 8,
+      "reddit_mentions": 13,
       "market_cap": 271012936800.71674,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BABA.png",
       "weburl": "https://www.alibabagroup.com/",
-      "yahoo_trending_rank": 13,
+      "yahoo_trending_rank": 8,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 62
+      "score_normalized": 75
     },
-    {
-      "ticker": "CAG",
-      "name": "Conagra Brands Inc",
-      "sector": "Food Products",
-      "current_price": 14.44,
-      "change_pct": 2.0495,
-      "high": 14.44,
-      "low": 13.63,
-      "open": 13.7,
-      "prev_close": 14.15,
-      "score": 43,
-      "signals": [
-        "Top gainer (+2.0%)",
-        "High volume",
-        "Moderate move (+2.0%)",
-        "Trending buzz (11)",
-        "Yahoo trending (#10)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 11,
-      "market_cap": 6769885692.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CAG.png",
-      "weburl": "https://www.conagrabrands.com/",
-      "yahoo_trending_rank": 10,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 61
-    }
-  ],
-  "swing_trades": [
     {
       "ticker": "BLK",
       "name": "BlackRock Inc",
       "sector": "Financial Services",
-      "current_price": 1094.55,
-      "change_pct": 6.7395,
+      "current_price": 1098.37,
+      "change_pct": 7.1121,
       "high": 1109.99,
       "low": 1078,
-      "open": 1082.495,
+      "open": 1100,
       "prev_close": 1025.44,
-      "score": 53,
+      "score": 50,
       "signals": [
-        "Top gainer (+6.7%)",
+        "Top gainer (+7.1%)",
         "High volume",
-        "Strong move (+6.7%)",
-        "Trending buzz (16)",
-        "Yahoo trending (#5)",
-        "Closing strong"
+        "Strong move (+7.1%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)"
       ],
-      "reddit_mentions": 16,
+      "reddit_mentions": 18,
       "market_cap": 166738912310.00003,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950002356066.png",
       "weburl": "https://www.blackrock.com/",
-      "yahoo_trending_rank": 5,
+      "yahoo_trending_rank": 3,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -209,115 +240,7 @@
           "surprise_pct": 9.5
         }
       },
-      "score_normalized": 75
-    },
-    {
-      "ticker": "CRWD",
-      "name": "CrowdStrike Holdings Inc",
-      "sector": "Technology",
-      "current_price": 217.13,
-      "change_pct": 3.0371,
-      "high": 217.5,
-      "low": 210,
-      "open": 212.185,
-      "prev_close": 210.73,
-      "score": 53,
-      "signals": [
-        "Top gainer (+3.0%)",
-        "High volume",
-        "Good move (+3.0%)",
-        "Trending buzz (13)",
-        "Yahoo trending (#8)",
-        "Closing strong",
-        "Sector leader (Technology)"
-      ],
-      "reddit_mentions": 13,
-      "market_cap": 214577773164.00003,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CRWD.png",
-      "weburl": "https://ir.crowdstrike.com/",
-      "yahoo_trending_rank": 8,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.28,
-          "estimate": 0.27,
-          "beat": true,
-          "surprise_pct": 1.0
-        }
-      },
-      "score_normalized": 75
-    },
-    {
-      "ticker": "BABA",
-      "name": "Alibaba Group Holding Ltd",
-      "sector": "Retail",
-      "current_price": 119.03,
-      "change_pct": 5.974,
-      "high": 119.3,
-      "low": 116.37,
-      "open": 116.37,
-      "prev_close": 112.32,
-      "score": 44,
-      "signals": [
-        "Top gainer (+6.0%)",
-        "High volume",
-        "Strong move (+6.0%)",
-        "Trending activity (8)",
-        "Yahoo trending (#13)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 8,
-      "market_cap": 271012936800.71674,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BABA.png",
-      "weburl": "https://www.alibabagroup.com/",
-      "yahoo_trending_rank": 13,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 62
-    },
-    {
-      "ticker": "BNY",
-      "name": "Bank of New York Mellon Corp",
-      "sector": "Financial Services",
-      "current_price": 157.38,
-      "change_pct": 1.8641,
-      "high": 157.81,
-      "low": 155.5,
-      "open": 156.45,
-      "prev_close": 154.5,
-      "score": 29,
-      "signals": [
-        "Top gainer (+1.9%)",
-        "High volume",
-        "Moderate move (+1.9%)",
-        "Yahoo trending (#19)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 2,
-      "market_cap": 106045569305.00002,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BK.png",
-      "weburl": "https://www.bny.com/corporate/apac/en.html",
-      "yahoo_trending_rank": 19,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 2.46,
-          "estimate": 2.24,
-          "beat": true,
-          "surprise_pct": 9.6
-        }
-      },
-      "score_normalized": 41
+      "score_normalized": 70
     }
   ],
   "buzz_source": "trending",
@@ -326,17 +249,17 @@
       "ticker": "PYPL",
       "name": "PayPal Holdings Inc",
       "sector": "Financial Services",
-      "current_price": 54.37,
-      "change_pct": 14.7773,
-      "high": 55,
-      "low": 53.58,
+      "current_price": 55.28,
+      "change_pct": 16.6983,
+      "high": 55.3,
+      "low": 53.44,
       "open": 53.9775,
       "prev_close": 47.37,
       "score": 63,
       "signals": [
-        "Top gainer (+14.8%)",
+        "Top gainer (+16.7%)",
         "High volume",
-        "Strong move (+14.8%)",
+        "Strong move (+16.7%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)",
         "Closing strong",
@@ -351,8 +274,8 @@
       "yahoo_trending_rank": 1,
       "mentions": 20,
       "social": {
-        "trend_pct": 517,
-        "reddit": 37,
+        "trend_pct": 514,
+        "reddit": 43,
         "sources": [
           "Reddit"
         ]
@@ -367,15 +290,15 @@
       "ticker": "ASML",
       "name": "ASML Holding NV",
       "sector": "Semiconductors",
-      "current_price": 1779.77,
-      "change_pct": 0.2326,
+      "current_price": 1786.66,
+      "change_pct": 0.6206,
       "high": 1850.03,
-      "low": 1777.24,
+      "low": 1757.17,
       "open": 1850.03,
       "prev_close": 1775.64,
       "score": 35,
       "signals": [
-        "Top gainer (+0.2%)",
+        "Top gainer (+0.6%)",
         "High volume",
         "Trending buzz (19)",
         "Yahoo trending (#2)"
@@ -389,8 +312,8 @@
       "yahoo_trending_rank": 2,
       "mentions": 19,
       "social": {
-        "trend_pct": 725,
-        "reddit": 132,
+        "trend_pct": 827,
+        "reddit": 139,
         "sources": [
           "Reddit"
         ]
@@ -408,29 +331,29 @@
       "score_normalized": 49
     },
     {
-      "ticker": "JNJ",
-      "name": "Johnson & Johnson",
-      "sector": "Pharmaceuticals",
-      "current_price": 255.51,
-      "change_pct": 0.6539,
-      "high": 256.315,
-      "low": 247.695,
-      "open": 250.1,
-      "prev_close": 253.85,
-      "score": 38,
+      "ticker": "BLK",
+      "name": "BlackRock Inc",
+      "sector": "Financial Services",
+      "current_price": 1098.37,
+      "change_pct": 7.1121,
+      "high": 1109.99,
+      "low": 1078,
+      "open": 1100,
+      "prev_close": 1025.44,
+      "score": 50,
       "signals": [
-        "Top gainer (+0.7%)",
+        "Top gainer (+7.1%)",
         "High volume",
+        "Strong move (+7.1%)",
         "Trending buzz (18)",
-        "Yahoo trending (#3)",
-        "Closing strong"
+        "Yahoo trending (#3)"
       ],
       "reddit_mentions": 18,
-      "market_cap": 611072060553.9999,
+      "market_cap": 166738912310.00003,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/JNJ.png",
-      "weburl": "https://www.jnj.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950002356066.png",
+      "weburl": "https://www.blackrock.com/",
       "yahoo_trending_rank": 3,
       "mentions": 18,
       "social": {
@@ -443,30 +366,30 @@
         "upcoming": null,
         "recent": {
           "period": "2026-06-30",
-          "actual": 2.9,
-          "estimate": 2.87,
+          "actual": 13.91,
+          "estimate": 12.7,
           "beat": true,
-          "surprise_pct": 0.9
+          "surprise_pct": 9.5
         }
       },
-      "score_normalized": 54
+      "score_normalized": 70
     },
     {
       "ticker": "IBM",
       "name": "International Business Machines Corp",
       "sector": "Technology",
-      "current_price": 223.41,
-      "change_pct": 2.9207,
+      "current_price": 219.16,
+      "change_pct": 0.9628,
       "market_cap": 204020898949.0,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 804,
+      "mentions": 709,
       "social": {
-        "trend_pct": 96,
-        "reddit": 804,
+        "trend_pct": 47,
+        "reddit": 709,
         "sources": [
           "Reddit"
         ]
@@ -487,18 +410,18 @@
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "current_price": 966.06,
-      "change_pct": -1.7353,
+      "current_price": 938.85,
+      "change_pct": -4.503,
       "market_cap": 1110328905931.0,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 283,
+      "mentions": 284,
       "social": {
-        "trend_pct": -25,
-        "reddit": 283,
+        "trend_pct": -17,
+        "reddit": 284,
         "sources": [
           "Reddit"
         ]
@@ -519,18 +442,18 @@
       "ticker": "SPCX",
       "name": "Space Exploration Technologies Corp",
       "sector": "Telecommunication",
-      "current_price": 138.44,
-      "change_pct": 1.7343,
+      "current_price": 137.77,
+      "change_pct": 1.2419,
       "market_cap": 1805390585166.0,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 160,
+      "mentions": 159,
       "social": {
-        "trend_pct": -29,
-        "reddit": 160,
+        "trend_pct": -24,
+        "reddit": 159,
         "sources": [
           "Reddit"
         ]
@@ -547,222 +470,347 @@
       "ticker": "ASML",
       "name": "ASML Holding NV",
       "sector": "Semiconductors",
-      "mentions": 132,
-      "prev": 16,
-      "trend_pct": 725,
-      "current_price": 1779.77,
-      "change_pct": 0.2326,
+      "mentions": 139,
+      "prev": 15,
+      "trend_pct": 827,
+      "current_price": 1786.66,
+      "change_pct": 0.6206,
       "market_cap": 594291973986.0
     },
     {
       "ticker": "NBIS",
       "name": "Nebius Group NV",
       "sector": "Technology",
-      "mentions": 108,
+      "mentions": 92,
       "prev": 23,
-      "trend_pct": 370,
-      "current_price": 201.61,
-      "change_pct": 3.8745,
+      "trend_pct": 300,
+      "current_price": 199.59,
+      "change_pct": 2.8337,
       "market_cap": 48842832411.0
     },
     {
       "ticker": "PYPL",
       "name": "PayPal Holdings Inc",
       "sector": "Financial Services",
-      "mentions": 37,
-      "prev": 6,
-      "trend_pct": 517,
-      "current_price": 54.37,
-      "change_pct": 14.7773,
+      "mentions": 43,
+      "prev": 7,
+      "trend_pct": 514,
+      "current_price": 55.27,
+      "change_pct": 16.6772,
       "market_cap": 41785338003.99999
     }
   ],
   "sector_rotation": [
     {
-      "ticker": "XLK",
-      "sector": "Technology",
-      "ret_1d": 1.69,
-      "ret_5d": 2.88,
-      "ret_1m": 0.74,
+      "ticker": "XLC",
+      "sector": "Comm. Services",
+      "ret_1d": 1.37,
+      "ret_5d": 3.22,
+      "ret_1m": 1.45,
       "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "AEHR",
-          "name": "Aehr Test Systems",
-          "change_pct": 42.0358,
-          "price": 102.28
-        },
-        {
-          "ticker": "TGHL",
-          "name": "Growhub Ltd",
-          "change_pct": 22.728,
-          "price": 0.8116
-        },
-        {
-          "ticker": "CRWD",
-          "name": "CrowdStrike Holdings Inc",
-          "change_pct": 3.0371,
-          "price": 217.13
-        }
-      ]
+      "top_stocks": []
     },
     {
       "ticker": "XLY",
       "sector": "Cons. Discretionary",
-      "ret_1d": 0.9,
-      "ret_5d": -0.26,
-      "ret_1m": 0.87,
+      "ret_1d": 1.12,
+      "ret_5d": -0.04,
+      "ret_1m": 1.1,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "LCID",
           "name": "Lucid Group Inc",
-          "change_pct": 9.0909,
-          "price": 5.04
+          "change_pct": 16.8831,
+          "price": 5.4
         },
         {
           "ticker": "BABA",
           "name": "Alibaba Group Holding Ltd",
-          "change_pct": 5.974,
-          "price": 119.03
+          "change_pct": 7.1581,
+          "price": 120.36
         }
       ]
     },
     {
       "ticker": "XLF",
       "sector": "Financials",
-      "ret_1d": 0.67,
-      "ret_5d": 0.7,
-      "ret_1m": 7.64,
+      "ret_1d": 0.88,
+      "ret_5d": 0.92,
+      "ret_1m": 7.87,
       "ret_3m": null,
       "top_stocks": [
         {
           "ticker": "PYPL",
           "name": "PayPal Holdings Inc",
-          "change_pct": 14.7773,
-          "price": 54.37
+          "change_pct": 16.6983,
+          "price": 55.28
         },
         {
           "ticker": "BLK",
           "name": "BlackRock Inc",
-          "change_pct": 6.7395,
-          "price": 1094.55
+          "change_pct": 7.1121,
+          "price": 1098.37
         },
         {
-          "ticker": "BNY",
-          "name": "Bank of New York Mellon Corp",
-          "change_pct": 1.8641,
-          "price": 157.38
+          "ticker": "MS",
+          "name": "Morgan Stanley",
+          "change_pct": 0.5359,
+          "price": 228.89
         }
       ]
     },
     {
-      "ticker": "XLC",
-      "sector": "Comm. Services",
-      "ret_1d": 0.57,
-      "ret_5d": 2.39,
-      "ret_1m": 0.65,
+      "ticker": "XLK",
+      "sector": "Technology",
+      "ret_1d": 0.84,
+      "ret_5d": 2.02,
+      "ret_1m": -0.1,
       "ret_3m": null,
-      "top_stocks": []
+      "top_stocks": [
+        {
+          "ticker": "ERNA",
+          "name": "Ernexa Therapeutics Inc",
+          "change_pct": 37.4587,
+          "price": 8.33
+        },
+        {
+          "ticker": "AEHR",
+          "name": "Aehr Test Systems",
+          "change_pct": 34.0647,
+          "price": 96.54
+        },
+        {
+          "ticker": "VIVS",
+          "name": "VivoSim Labs Inc",
+          "change_pct": 26.9765,
+          "price": 1.06
+        }
+      ]
     },
     {
       "ticker": "XLRE",
       "sector": "Real Estate",
-      "ret_1d": 0.47,
-      "ret_5d": 1.22,
-      "ret_1m": -0.61,
+      "ret_1d": 0.73,
+      "ret_5d": 1.48,
+      "ret_1m": -0.36,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLB",
       "sector": "Materials",
-      "ret_1d": 0.21,
-      "ret_5d": -1.6,
-      "ret_1m": -0.67,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLU",
-      "sector": "Utilities",
-      "ret_1d": 0.14,
-      "ret_5d": 0.19,
-      "ret_1m": 4.6,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "KUST",
-          "name": "Kustom Entertainment Inc",
-          "change_pct": 51.4851,
-          "price": 1.53
-        }
-      ]
-    },
-    {
-      "ticker": "XLE",
-      "sector": "Energy",
-      "ret_1d": 0.13,
-      "ret_5d": 3.98,
-      "ret_1m": 0.18,
+      "ret_1d": 0.36,
+      "ret_5d": -1.46,
+      "ret_1m": -0.53,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLI",
       "sector": "Industrials",
-      "ret_1d": 0.1,
-      "ret_5d": -1.01,
-      "ret_1m": 3.33,
+      "ret_1d": -0.3,
+      "ret_5d": -1.4,
+      "ret_1m": 2.92,
+      "ret_3m": null,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLU",
+      "sector": "Utilities",
+      "ret_1d": -0.31,
+      "ret_5d": -0.26,
+      "ret_1m": 4.13,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "SOBR",
+          "name": "Sobr Safe Inc",
+          "change_pct": 68.3761,
+          "price": 1.97
+        },
+        {
+          "ticker": "ELVA",
+          "name": "Electrovaya Inc",
+          "change_pct": 44.9937,
+          "price": 11.44
+        },
+        {
+          "ticker": "KUST",
+          "name": "Kustom Entertainment Inc",
+          "change_pct": 38.6139,
+          "price": 1.4
+        }
+      ]
+    },
+    {
+      "ticker": "XLE",
+      "sector": "Energy",
+      "ret_1d": -0.32,
+      "ret_5d": 3.51,
+      "ret_1m": -0.27,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLP",
       "sector": "Cons. Staples",
-      "ret_1d": -1.47,
-      "ret_5d": -1.78,
-      "ret_1m": -1.57,
+      "ret_1d": -1.06,
+      "ret_5d": -1.38,
+      "ret_1m": -1.17,
       "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "CAG",
-          "name": "Conagra Brands Inc",
-          "change_pct": 2.0495,
-          "price": 14.44
-        }
-      ]
+      "top_stocks": []
     },
     {
       "ticker": "XLV",
       "sector": "Health Care",
-      "ret_1d": -2.29,
-      "ret_5d": -4.1,
-      "ret_1m": 2.8,
+      "ret_1d": -1.93,
+      "ret_5d": -3.73,
+      "ret_1m": 3.19,
       "ret_3m": null,
       "top_stocks": [
         {
+          "ticker": "ERNA",
+          "name": "Ernexa Therapeutics Inc",
+          "change_pct": 37.4587,
+          "price": 8.33
+        },
+        {
+          "ticker": "VIVS",
+          "name": "VivoSim Labs Inc",
+          "change_pct": 26.9765,
+          "price": 1.06
+        },
+        {
           "ticker": "GCTK",
           "name": "GlucoTrack Inc",
-          "change_pct": 4.1391,
-          "price": 0.551
-        },
-        {
-          "ticker": "JNJ",
-          "name": "Johnson & Johnson",
-          "change_pct": 0.6539,
-          "price": 255.51
-        },
-        {
-          "ticker": "ISRG",
-          "name": "Intuitive Surgical Inc",
-          "change_pct": 0.1397,
-          "price": 380.03
+          "change_pct": 4.8762,
+          "price": 0.5549
         }
       ]
     }
   ],
   "reddit_feed": [
+    {
+      "id": "140908230",
+      "title": "PayPal co-founder and Affirm CEO details his 'very high bar' for M&A",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "PYPL"
+      ],
+      "confirmed_tickers": [
+        "PYPL"
+      ],
+      "hours_ago": 0.3,
+      "url": "https://finnhub.io/api/news?id=edfe3f13342094c3f50efdbb4ac9e49008bd82ea95f5e5c2e1ef487ea13757dd",
+      "is_news": true
+    },
+    {
+      "id": "140908399",
+      "title": "BlackRock Hits Record $15.3 Trillion as Inflows Beat Estimates",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "BLK"
+      ],
+      "confirmed_tickers": [
+        "BLK"
+      ],
+      "hours_ago": 0.3,
+      "url": "https://finnhub.io/api/news?id=c40ef70314270dc4b3c70b84327bbc6ff356983e3e00d91546c3eabaf026d6c8",
+      "is_news": true
+    },
+    {
+      "id": "140908552",
+      "title": "PayPal Shares Surge Premarket on Reports of $53 Billion Takeover",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "PYPL"
+      ],
+      "confirmed_tickers": [
+        "PYPL"
+      ],
+      "hours_ago": 1.0,
+      "url": "https://finnhub.io/api/news?id=8dc2c035d8d87f2b91994b2b2ce762989a18b52aa46508c5114be35f9466ff05",
+      "is_news": true
+    },
+    {
+      "id": "140908132",
+      "title": "PayPal Soars 19% on a Reported $53B Stripe-Advent Takeover Offer: What It Means for Visa, Mastercard, and American Expre",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "PYPL"
+      ],
+      "confirmed_tickers": [
+        "PYPL"
+      ],
+      "hours_ago": 1.2,
+      "url": "https://finnhub.io/api/news?id=e18fbe9ddfb0e2940000726173b795492ff13465648c72e80e81ca1f509694cd",
+      "is_news": true
+    },
+    {
+      "id": "140908124",
+      "title": "\u2018A Huge and Risky Financial Maneuver\u2019: Experts Push Back on BlackRock CEO\u2019s $1.5 Trillion Social Security Plan",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "BLK"
+      ],
+      "confirmed_tickers": [
+        "BLK"
+      ],
+      "hours_ago": 1.2,
+      "url": "https://finnhub.io/api/news?id=7387f8858ce95e4b77e179aaec60d57b295ad0f8aad09709776ac6ebe945eb1e",
+      "is_news": true
+    },
+    {
+      "id": "140908264",
+      "title": "BlackRock Q2 Earnings Call Highlights",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "BLK"
+      ],
+      "confirmed_tickers": [
+        "BLK"
+      ],
+      "hours_ago": 1.2,
+      "url": "https://finnhub.io/api/news?id=bd72e9313e49572ed6bc5800de3220d673596f427b40fab9165a9f740072fcfb",
+      "is_news": true
+    },
+    {
+      "id": "140908402",
+      "title": "BlackRock's Crypto Assets Declined 39% In Second Quarter",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "BLK"
+      ],
+      "confirmed_tickers": [
+        "BLK"
+      ],
+      "hours_ago": 1.3,
+      "url": "https://finnhub.io/api/news?id=1e870b46b419bbe9f7667a1bbd6c5d321f5e807e8f92e60bf5a06aacd6a81ea1",
+      "is_news": true
+    },
+    {
+      "id": "140908304",
+      "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Wednesday Amid Economic Reports",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "BLK"
+      ],
+      "confirmed_tickers": [
+        "BLK"
+      ],
+      "hours_ago": 1.4,
+      "url": "https://finnhub.io/api/news?id=e84d927720a51cda0f5647a9b81ded49e0fe6c19ff9fdd33530698e4b583f60b",
+      "is_news": true
+    },
     {
       "id": "140907857",
       "title": "Get insights into the top movers in the S&P500 index of Wednesday's pre-market session.",
@@ -774,28 +822,13 @@
       "confirmed_tickers": [
         "PYPL"
       ],
-      "hours_ago": 1.0,
+      "hours_ago": 1.7,
       "url": "https://finnhub.io/api/news?id=c6c9fadccd35ba1fed87eb33657c5d3e74fc3bd0010caa0c3e6a9e822474a0f5",
       "is_news": true
     },
     {
-      "id": "140907825",
-      "title": "Wednesday's pre-market session: top gainers and losers",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "PYPL"
-      ],
-      "confirmed_tickers": [
-        "PYPL"
-      ],
-      "hours_ago": 1.1,
-      "url": "https://finnhub.io/api/news?id=ba6a9ccb2f3aec20f176ba09f36d70a4cf18335e927b538c905083dedf6119cf",
-      "is_news": true
-    },
-    {
-      "id": "140907562",
-      "title": "PayPal Surges Amid Stripe, Private Equity Takeover Report. Lowball Offer?",
+      "id": "140908554",
+      "title": "Aehr Test soars, PayPal jumps premarket on reported takeover bid",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
@@ -804,8 +837,8 @@
       "confirmed_tickers": [
         "PYPL"
       ],
-      "hours_ago": 1.6,
-      "url": "https://finnhub.io/api/news?id=0a4494f33f971078cf1c923b3a54b6e4ffb22c66e65109d3a5b1d9366b2470fa",
+      "hours_ago": 1.7,
+      "url": "https://finnhub.io/api/news?id=6abb27c95689d626244c0fb90f826f20e143bbb3f39869b704c23b2dfafab60c",
       "is_news": true
     },
     {
@@ -819,7 +852,7 @@
       "confirmed_tickers": [
         "ASML"
       ],
-      "hours_ago": 1.6,
+      "hours_ago": 2.2,
       "url": "https://finnhub.io/api/news?id=72bcdb517d5bfe2f2b6acbf772b2ba0c5833cb19e93325a0933760dfebc0257d",
       "is_news": true
     },
@@ -834,7 +867,7 @@
       "confirmed_tickers": [
         "ASML"
       ],
-      "hours_ago": 1.6,
+      "hours_ago": 2.3,
       "url": "https://finnhub.io/api/news?id=a4991ce4f683f91b710365cca22adbf8237f8b0e8a06f4416b51ca7ee2a6bae8",
       "is_news": true
     },
@@ -849,7 +882,7 @@
       "confirmed_tickers": [
         "ASML"
       ],
-      "hours_ago": 1.8,
+      "hours_ago": 2.4,
       "url": "https://finnhub.io/api/news?id=154b74416d717f261e951c7a070b470b34cfc0ccf81b8304dd02a2a9b8117613",
       "is_news": true
     },
@@ -864,7 +897,7 @@
       "confirmed_tickers": [
         "ASML"
       ],
-      "hours_ago": 1.8,
+      "hours_ago": 2.5,
       "url": "https://finnhub.io/api/news?id=7ffe3548fb5e75aadf2dbc7ef98d5a67223a39c6c8070d43592ba5452034e84a",
       "is_news": true
     },
@@ -879,113 +912,8 @@
       "confirmed_tickers": [
         "ASML"
       ],
-      "hours_ago": 1.9,
-      "url": "https://finnhub.io/api/news?id=9954e68cfb38745e396e1c2605dd0172f32ecfae551bd054d05fc8fcce988be5",
-      "is_news": true
-    },
-    {
-      "id": "140907340",
-      "title": "Dow Jones Futures: Oil Prices Hit $80 On Iran News, ASML, Morgan Stanley Lead Earnings Movers",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "JNJ"
-      ],
-      "confirmed_tickers": [
-        "JNJ"
-      ],
-      "hours_ago": 1.9,
-      "url": "https://finnhub.io/api/news?id=a4991ce4f683f91b710365cca22adbf8237f8b0e8a06f4416b51ca7ee2a6bae8",
-      "is_news": true
-    },
-    {
-      "id": "140907559",
-      "title": "Intel, Johnson & Johnson, ASML, and More Stocks That Explain Today\u2019s Market",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "PYPL"
-      ],
-      "confirmed_tickers": [
-        "PYPL"
-      ],
-      "hours_ago": 2.2,
-      "url": "https://finnhub.io/api/news?id=1fcb7f84b47d3bc10563f5ccefe5eebb163514c3e049267d25c046760da9f4a1",
-      "is_news": true
-    },
-    {
-      "id": "140907215",
-      "title": "Johnson & Johnson (NYSE:JNJ) Raises Full-Year Guidance After In-Line Q2 Results",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "JNJ"
-      ],
-      "confirmed_tickers": [
-        "JNJ"
-      ],
-      "hours_ago": 2.2,
-      "url": "https://finnhub.io/api/news?id=572fb61f26bb74b899035732346e05f98565a6037204b53e0381a10ee1e45214",
-      "is_news": true
-    },
-    {
-      "id": "140907564",
-      "title": "Stripe and Advent International make $53 billion offer for PayPal",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "PYPL"
-      ],
-      "confirmed_tickers": [
-        "PYPL"
-      ],
-      "hours_ago": 2.3,
-      "url": "https://finnhub.io/api/news?id=7f2d0780c8bf0215ee218e9adae6bf1dee4fcb06a5f5dfa54b76314e4730b4be",
-      "is_news": true
-    },
-    {
-      "id": "140907439",
-      "title": "Johnson & Johnson tops second-quarter forecasts and lifts guidance despite premarket decline (JNJ)",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "JNJ"
-      ],
-      "confirmed_tickers": [
-        "JNJ"
-      ],
-      "hours_ago": 2.4,
-      "url": "https://finnhub.io/api/news?id=76dbabe7c9bad302caf7f990b149c1d0f961308d4c92e74ca73b24759b95cb82",
-      "is_news": true
-    },
-    {
-      "id": "140907440",
-      "title": "Johnson & Johnson beats estimates but shares dip",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "JNJ"
-      ],
-      "confirmed_tickers": [
-        "JNJ"
-      ],
       "hours_ago": 2.5,
-      "url": "https://finnhub.io/api/news?id=d4fc0e49f6e84d53b084291f70ad0fbf1c7a69ea8a5e79f1be0d2c5663bcdcba",
-      "is_news": true
-    },
-    {
-      "id": "140907441",
-      "title": "How To Earn $500 A Month From Johnson & Johnson Stock Ahead Of Q2 Earnings",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "JNJ"
-      ],
-      "confirmed_tickers": [
-        "JNJ"
-      ],
-      "hours_ago": 2.8,
-      "url": "https://finnhub.io/api/news?id=ba0258ea77d7da09c8ab76bbdbc2029b8a4ec44098d830ba03fc4e837e4aab91",
+      "url": "https://finnhub.io/api/news?id=9954e68cfb38745e396e1c2605dd0172f32ecfae551bd054d05fc8fcce988be5",
       "is_news": true
     }
   ]
