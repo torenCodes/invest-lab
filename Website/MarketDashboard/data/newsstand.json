@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-07-16T11:00:49.997167+00:00",
+  "scan_time": "2026-07-16T13:00:50.994449+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
@@ -23,19 +23,19 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "16.0",
+        "value": "16.4",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.55%",
+        "value": "4.59%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-16T11:00:59.280095+00:00"
+    "updated": "2026-07-16T13:01:01.945281+00:00"
   },
   "earnings": [
     {
@@ -46,28 +46,6 @@
       "revenue_estimate": 12839068878,
       "revenue_actual": null,
       "hour": "amc",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-16",
-      "symbol": "ABT",
-      "eps_estimate": 1.2922,
-      "eps_actual": null,
-      "revenue_estimate": 12622215137,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-16",
-      "symbol": "USB",
-      "eps_estimate": 1.2909,
-      "eps_actual": null,
-      "revenue_estimate": 7658867188,
-      "revenue_actual": null,
-      "hour": "bmo",
       "quarter": 2,
       "year": 2026
     },
@@ -84,17 +62,6 @@
     },
     {
       "date": "2026-07-16",
-      "symbol": "MAN",
-      "eps_estimate": 0.9611,
-      "eps_actual": null,
-      "revenue_estimate": 4768212272,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-16",
       "symbol": "AA",
       "eps_estimate": 2.3138,
       "eps_actual": null,
@@ -106,21 +73,54 @@
     },
     {
       "date": "2026-07-16",
-      "symbol": "STT",
-      "eps_estimate": 3.3633,
+      "symbol": "ISRG",
+      "eps_estimate": 2.5503,
       "eps_actual": null,
-      "revenue_estimate": 3914917650,
+      "revenue_estimate": 2876642443,
       "revenue_actual": null,
-      "hour": "bmo",
+      "hour": "amc",
       "quarter": 2,
       "year": 2026
     },
     {
       "date": "2026-07-16",
-      "symbol": "ISRG",
-      "eps_estimate": 2.5503,
+      "symbol": "CE",
+      "eps_estimate": 2.3055,
       "eps_actual": null,
-      "revenue_estimate": 2876642443,
+      "revenue_estimate": 2827832513,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "FNB",
+      "eps_estimate": 0.4233,
+      "eps_actual": null,
+      "revenue_estimate": 472081746,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "INDB",
+      "eps_estimate": 1.8114,
+      "eps_actual": null,
+      "revenue_estimate": 262644900,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "SFNC",
+      "eps_estimate": 0.5304,
+      "eps_actual": null,
+      "revenue_estimate": 256339464,
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 2,
@@ -657,17 +657,38 @@
   ],
   "unusual_volume": [
     {
+      "ticker": "A",
+      "name": "AtaiBeckley Inc",
+      "price": 7.14,
+      "change_pct": 33.21,
+      "volume": "2.63B"
+    },
+    {
+      "ticker": "V",
+      "name": "Twin Vee PowerCats Co",
+      "price": 39.02,
+      "change_pct": 46.75,
+      "volume": "20.65M"
+    },
+    {
       "ticker": "S",
       "name": "Defiance Daily Target 2X Short TSM ETF",
-      "price": 20.47,
-      "change_pct": 8.48,
+      "price": 20.5,
+      "change_pct": 8.64,
+      "volume": "-"
+    },
+    {
+      "ticker": "T",
+      "name": "Direxion Daily TSM Bear 1X ETF",
+      "price": 8.31,
+      "change_pct": 4.07,
       "volume": "-"
     },
     {
       "ticker": "U",
       "name": "Direxion Daily UNH Bull 2X ETF",
-      "price": 62.5,
-      "change_pct": 12.49,
+      "price": 63.78,
+      "change_pct": 14.79,
       "volume": "-"
     }
   ]
