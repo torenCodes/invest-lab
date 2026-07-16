@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-07-15T18:54:56.230778",
-  "total_transactions": 56,
-  "date_range": "Jun 29 '26 \u2013 Jul 13 '26",
+  "scan_time": "2026-07-16T13:46:40.316284",
+  "total_transactions": 47,
+  "date_range": "Jul 07 '26 \u2013 Jul 15 '26",
   "min_value": 25000,
   "nominees": [
     {
@@ -105,39 +105,40 @@
       "story": "IIPX \u2014 Two insiders bought including the Executive Chairman, $2.4M total."
     },
     {
-      "ticker": "CCOE",
-      "insider": "Huang Jack Jiajia",
-      "title": "Chief Executive Officer",
-      "date": "Jul 08 '26",
-      "price": 16.45,
-      "qty": 2007480,
-      "value": 32800151,
-      "txn_count": 7,
+      "ticker": "BBOT",
+      "insider": "Kang Andrew Kai",
+      "title": "President",
+      "date": "Jul 14 '26",
+      "price": 36.71,
+      "qty": 272405,
+      "value": 9999988,
+      "txn_count": 1,
       "insider_count": 1,
       "is_csuite": true,
-      "company": "CCOE",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
+      "company": "BridgeBio Oncology Therapeutics, Inc.",
+      "sector": "Healthcare",
+      "current_price": 8.32,
+      "change_pct": -1.07,
+      "market_cap": 666491072,
       "insiders": [
         {
-          "name": "Huang Jack Jiajia",
-          "title": "Chief Executive Officer",
-          "date": "Jul 08 '26",
-          "price": 16.45,
-          "qty": 2007480,
-          "value": 32800151,
+          "name": "Kang Andrew Kai",
+          "title": "President",
+          "date": "Jul 14 '26",
+          "price": 36.71,
+          "qty": 272405,
+          "value": 9999988,
           "is_csuite": true
         }
       ],
-      "conviction_score": 45,
+      "conviction_score": 42,
       "tier": "B",
       "signals": [
-        "Chief Executive Officer bought",
-        "$32.8M total"
+        "President bought",
+        "$10.0M total",
+        "Activity in last 3 days"
       ],
-      "story": "CCOE \u2014 The Chief Executive Officer bought, $32.8M total."
+      "story": "BBOT \u2014 The President bought, $10.0M total."
     },
     {
       "ticker": "UUUUU",
@@ -183,6 +184,41 @@
         "$1.0M total"
       ],
       "story": "UUUUU \u2014 Two insiders bought including the President and CEO, $1.0M total."
+    },
+    {
+      "ticker": "CCOE",
+      "insider": "Huang Jack Jiajia",
+      "title": "Chief Executive Officer",
+      "date": "Jul 08 '26",
+      "price": 16.45,
+      "qty": 562560,
+      "value": 9312806,
+      "txn_count": 3,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "CCOE",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Huang Jack Jiajia",
+          "title": "Chief Executive Officer",
+          "date": "Jul 08 '26",
+          "price": 16.45,
+          "qty": 562560,
+          "value": 9312806,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 37,
+      "tier": "B",
+      "signals": [
+        "Chief Executive Officer bought",
+        "$9.3M total"
+      ],
+      "story": "CCOE \u2014 The Chief Executive Officer bought, $9.3M total."
     },
     {
       "ticker": "NNTSK",
@@ -290,14 +326,59 @@
       "story": "CCMC \u2014 The President and CEO bought, $504K total."
     },
     {
+      "ticker": "HHNRG",
+      "insider": "Sugg Barbara Ann",
+      "title": "Director",
+      "date": "Jul 14 '26",
+      "price": 17.13,
+      "qty": 10000,
+      "value": 168560,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": false,
+      "company": "HHNRG",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Sugg Barbara Ann",
+          "title": "Director",
+          "date": "Jul 14 '26",
+          "price": 17.13,
+          "qty": 5000,
+          "value": 85648,
+          "is_csuite": false
+        },
+        {
+          "name": "Hudson Daniel Timothy",
+          "title": "Director",
+          "date": "Jul 09 '26",
+          "price": 16.58,
+          "qty": 5000,
+          "value": 82912,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 22,
+      "tier": "W",
+      "signals": [
+        "2 insiders buying",
+        "$169K total",
+        "Activity in last 3 days"
+      ],
+      "story": "HHNRG \u2014 Two insiders bought, $169K total."
+    },
+    {
       "ticker": "PPRQR",
       "insider": "de Boer Daniel Anton",
       "title": "Chief Executive Officer",
       "date": "Jul 09 '26",
       "price": 1.74,
-      "qty": 300000,
-      "value": 499500,
-      "txn_count": 2,
+      "qty": 150000,
+      "value": 261000,
+      "txn_count": 1,
       "insider_count": 1,
       "is_csuite": true,
       "company": "PPRQR",
@@ -311,8 +392,8 @@
           "title": "Chief Executive Officer",
           "date": "Jul 09 '26",
           "price": 1.74,
-          "qty": 300000,
-          "value": 499500,
+          "qty": 150000,
+          "value": 261000,
           "is_csuite": true
         }
       ],
@@ -320,9 +401,44 @@
       "tier": "W",
       "signals": [
         "Chief Executive Officer bought",
-        "$500K total"
+        "$261K total"
       ],
-      "story": "PPRQR \u2014 The Chief Executive Officer bought, $500K total."
+      "story": "PPRQR \u2014 The Chief Executive Officer bought, $261K total."
+    },
+    {
+      "ticker": "VVANI",
+      "insider": "Williams Gregg",
+      "title": "Director",
+      "date": "Jul 15 '26",
+      "price": 1.26,
+      "qty": 793650,
+      "value": 999999,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "VVANI",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Williams Gregg",
+          "title": "Director",
+          "date": "Jul 15 '26",
+          "price": 1.26,
+          "qty": 793650,
+          "value": 999999,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 15,
+      "tier": "W",
+      "signals": [
+        "$1000K total",
+        "Activity in last 3 days"
+      ],
+      "story": "VVANI \u2014 Williams Gregg (Director) bought, $1000K total."
     },
     {
       "ticker": "EECAT",
@@ -739,48 +855,82 @@
       "story": "IIPX \u2014 Two insiders bought including the Executive Chairman, $2.4M total."
     },
     {
-      "ticker": "CCOE",
-      "insider": "Huang Jack Jiajia",
-      "title": "Chief Executive Officer",
-      "date": "Jul 08 '26",
-      "price": 16.45,
-      "qty": 2007480,
-      "value": 32800151,
-      "txn_count": 7,
+      "ticker": "BBOT",
+      "insider": "Kang Andrew Kai",
+      "title": "President",
+      "date": "Jul 14 '26",
+      "price": 36.71,
+      "qty": 272405,
+      "value": 9999988,
+      "txn_count": 1,
       "insider_count": 1,
       "is_csuite": true,
-      "company": "CCOE",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
+      "company": "BridgeBio Oncology Therapeutics, Inc.",
+      "sector": "Healthcare",
+      "current_price": 8.32,
+      "change_pct": -1.07,
+      "market_cap": 666491072,
       "insiders": [
         {
-          "name": "Huang Jack Jiajia",
-          "title": "Chief Executive Officer",
-          "date": "Jul 08 '26",
-          "price": 16.45,
-          "qty": 2007480,
-          "value": 32800151,
+          "name": "Kang Andrew Kai",
+          "title": "President",
+          "date": "Jul 14 '26",
+          "price": 36.71,
+          "qty": 272405,
+          "value": 9999988,
           "is_csuite": true
         }
       ],
-      "conviction_score": 45,
+      "conviction_score": 42,
       "tier": "B",
       "signals": [
-        "Chief Executive Officer bought",
-        "$32.8M total"
+        "President bought",
+        "$10.0M total",
+        "Activity in last 3 days"
       ],
-      "story": "CCOE \u2014 The Chief Executive Officer bought, $32.8M total."
+      "story": "BBOT \u2014 The President bought, $10.0M total."
     }
   ],
   "tier_counts": {
     "A": 1,
-    "B": 6,
-    "W": 10,
-    "total": 17
+    "B": 7,
+    "W": 12,
+    "total": 20
   },
   "recent_feed": [
+    {
+      "ticker": "VVANI",
+      "insider": "Williams Gregg",
+      "title": "Director",
+      "date": "Jul 15 '26",
+      "price": 1.26,
+      "qty": 793650,
+      "value": 999999,
+      "filing": "Jul 16 09:00 AM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "BBOT",
+      "insider": "Kang Andrew Kai",
+      "title": "President",
+      "date": "Jul 14 '26",
+      "price": 36.71,
+      "qty": 272405,
+      "value": 9999988,
+      "filing": "Jul 15 05:12 PM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "HHNRG",
+      "insider": "Sugg Barbara Ann",
+      "title": "Director",
+      "date": "Jul 14 '26",
+      "price": 17.13,
+      "qty": 5000,
+      "value": 85648,
+      "filing": "Jul 15 04:01 PM",
+      "is_csuite": false
+    },
     {
       "ticker": "EECAT",
       "insider": "Rieder Richard M",
@@ -1186,39 +1336,6 @@
       "qty": 167791,
       "value": 884259,
       "filing": "Jul 09 08:27 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "GGGAL",
-      "insider": "Moret Silvestre Vila",
-      "title": "Director",
-      "date": "Jun 29 '26",
-      "price": 5.25,
-      "qty": 10000,
-      "value": 52500,
-      "filing": "Jul 09 08:27 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "GGGAL",
-      "insider": "Moret Silvestre Vila",
-      "title": "Director",
-      "date": "Jun 26 '26",
-      "price": 5.15,
-      "qty": 125000,
-      "value": 643750,
-      "filing": "Jul 09 08:27 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "WWRAP",
-      "insider": "SHULMAN JOHN D",
-      "title": "Director",
-      "date": "Jul 08 '26",
-      "price": 1.1,
-      "qty": 100000,
-      "value": 110000,
-      "filing": "Jul 09 07:04 PM",
       "is_csuite": false
     }
   ]
