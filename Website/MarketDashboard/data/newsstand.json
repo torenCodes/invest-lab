@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-07-16T09:00:49.961027+00:00",
+  "scan_time": "2026-07-16T11:00:49.997167+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
@@ -23,7 +23,7 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "15.9",
+        "value": "16.0",
         "read": "Calm",
         "tone": "good"
       },
@@ -35,20 +35,9 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-16T09:00:58.640418+00:00"
+    "updated": "2026-07-16T11:00:59.280095+00:00"
   },
   "earnings": [
-    {
-      "date": "2026-07-16",
-      "symbol": "UNH",
-      "eps_estimate": 4.9112,
-      "eps_actual": null,
-      "revenue_estimate": 111933228083,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
     {
       "date": "2026-07-16",
       "symbol": "NFLX",
@@ -66,17 +55,6 @@
       "eps_estimate": 1.2922,
       "eps_actual": null,
       "revenue_estimate": 12622215137,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-16",
-      "symbol": "GE",
-      "eps_estimate": 1.9151,
-      "eps_actual": null,
-      "revenue_estimate": 12213441516,
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 2,
@@ -121,6 +99,28 @@
       "eps_estimate": 2.3138,
       "eps_actual": null,
       "revenue_estimate": 4057640586,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "STT",
+      "eps_estimate": 3.3633,
+      "eps_actual": null,
+      "revenue_estimate": 3914917650,
+      "revenue_actual": null,
+      "hour": "bmo",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "ISRG",
+      "eps_estimate": 2.5503,
+      "eps_actual": null,
+      "revenue_estimate": 2876642443,
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 2,
@@ -194,17 +194,6 @@
     },
     {
       "date": "2026-07-17",
-      "symbol": "XIFR",
-      "eps_estimate": 0.0372,
-      "eps_actual": null,
-      "revenue_estimate": 371382683,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-17",
       "symbol": "BTM",
       "eps_estimate": -0.5555,
       "eps_actual": null,
@@ -212,6 +201,17 @@
       "revenue_actual": null,
       "hour": "",
       "quarter": 1,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "RBCAA",
+      "eps_estimate": 1.5244,
+      "eps_actual": null,
+      "revenue_estimate": 81679000,
+      "revenue_actual": null,
+      "hour": "",
+      "quarter": 2,
       "year": 2026
     },
     {
@@ -282,23 +282,23 @@
     },
     {
       "date": "2026-07-20",
+      "symbol": "AMC",
+      "eps_estimate": -0.077,
+      "eps_actual": null,
+      "revenue_estimate": 1461054263,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-20",
       "symbol": "DPZ",
       "eps_estimate": 4.2225,
       "eps_actual": null,
       "revenue_estimate": 1191840400,
       "revenue_actual": null,
       "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-20",
-      "symbol": "ZION",
-      "eps_estimate": 1.8453,
-      "eps_actual": null,
-      "revenue_estimate": 919528276,
-      "revenue_actual": null,
-      "hour": "amc",
       "quarter": 2,
       "year": 2026
     },
@@ -659,8 +659,15 @@
     {
       "ticker": "S",
       "name": "Defiance Daily Target 2X Short TSM ETF",
-      "price": 20.21,
-      "change_pct": 7.1,
+      "price": 20.47,
+      "change_pct": 8.48,
+      "volume": "-"
+    },
+    {
+      "ticker": "U",
+      "name": "Direxion Daily UNH Bull 2X ETF",
+      "price": 62.5,
+      "change_pct": 12.49,
       "volume": "-"
     }
   ]
