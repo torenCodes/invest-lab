@@ -1,418 +1,91 @@
 {
-  "scan_time": "2026-07-16T20:09:42.842564+00:00",
+  "scan_time": "2026-07-17T13:35:25.944461+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 24,
-  "day_trades": [
+  "total_scanned": 23,
+  "day_trades": [],
+  "swing_trades": [
     {
-      "ticker": "ATAI",
-      "name": "AtaiBeckley Inc",
-      "sector": "Pharmaceuticals",
-      "current_price": 7.15,
-      "change_pct": 33.3955,
-      "high": 7.22,
-      "low": 7.02,
-      "open": 7.065,
-      "prev_close": 5.36,
-      "score": 53,
+      "ticker": "TRV",
+      "name": "Travelers Companies Inc",
+      "sector": "Insurance",
+      "current_price": 353.5,
+      "change_pct": 4.6415,
+      "high": 356.82,
+      "low": 341.52,
+      "open": 342.825,
+      "prev_close": 337.82,
+      "score": 48,
       "signals": [
-        "Top gainer (+33.4%)",
+        "Top gainer (+4.6%)",
         "High volume",
-        "Strong move (+33.4%)",
+        "Good move (+4.6%)",
         "Trending buzz (15)",
         "Yahoo trending (#6)",
         "Closing strong"
       ],
       "reddit_mentions": 15,
-      "market_cap": 1973373468.514991,
+      "market_cap": 71835628652.0,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ATAI.png",
-      "weburl": "https://www.ataibeckley.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/TRV.png",
+      "weburl": "https://www.travelers.com/",
       "yahoo_trending_rank": 6,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 75
-    },
-    {
-      "ticker": "MAN",
-      "name": "ManpowerGroup Inc",
-      "sector": "Professional Services",
-      "current_price": 51.65,
-      "change_pct": 32.368,
-      "high": 53,
-      "low": 46.78,
-      "open": 46.78,
-      "prev_close": 39.02,
-      "score": 53,
-      "signals": [
-        "Top gainer (+32.4%)",
-        "High volume",
-        "Strong move (+32.4%)",
-        "Trending buzz (12)",
-        "Yahoo trending (#9)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 12,
-      "market_cap": 1814716549.0168455,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MAN.png",
-      "weburl": "https://www.manpowergroup.com/",
-      "yahoo_trending_rank": 9,
-      "earnings_info": {
-        "upcoming": null,
         "recent": {
           "period": "2026-06-30",
-          "actual": 0.99,
-          "estimate": 0.96,
+          "actual": 10.04,
+          "estimate": 5.41,
           "beat": true,
-          "surprise_pct": 3.0
+          "surprise_pct": 85.6
         }
       },
-      "score_normalized": 75
+      "score_normalized": 68
     },
     {
-      "ticker": "ABT",
-      "name": "Abbott Laboratories",
-      "sector": "Health Care",
-      "current_price": 98.83,
-      "change_pct": 10.7091,
-      "high": 101.8699,
-      "low": 94.99,
-      "open": 95.29,
-      "prev_close": 89.27,
-      "score": 49,
+      "ticker": "O",
+      "name": "Realty Income Corp",
+      "sector": "Real Estate",
+      "current_price": 66.6,
+      "change_pct": 1.2928,
+      "high": 66.62,
+      "low": 66.25,
+      "open": 66.33500000000001,
+      "prev_close": 65.75,
+      "score": 16,
       "signals": [
-        "Top gainer (+10.7%)",
+        "Top gainer (+1.3%)",
         "High volume",
-        "Strong move (+10.7%)",
-        "Trending activity (9)",
-        "Yahoo trending (#12)",
-        "Closing strong",
-        "Sector leader (Health Care)"
-      ],
-      "reddit_mentions": 9,
-      "market_cap": 155491589377.6014,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ABT.png",
-      "weburl": "https://www.abbott.com",
-      "yahoo_trending_rank": 12,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 1.31,
-          "estimate": 1.29,
-          "beat": true,
-          "surprise_pct": 1.4
-        }
-      },
-      "score_normalized": 69
-    },
-    {
-      "ticker": "IOT",
-      "name": "Samsara Inc",
-      "sector": "Technology",
-      "current_price": 37.46,
-      "change_pct": 2.8273,
-      "high": 37.8299,
-      "low": 35.67,
-      "open": 36.92,
-      "prev_close": 36.43,
-      "score": 34,
-      "signals": [
-        "Top gainer (+2.8%)",
-        "High volume",
-        "Moderate move (+2.8%)",
-        "Trending activity (6)",
-        "Yahoo trending (#15)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 6,
-      "market_cap": 21293826186.973442,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950460108076.png",
-      "weburl": "https://www.samsara.com",
-      "yahoo_trending_rank": 15,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.17,
-          "estimate": 0.13,
-          "beat": true,
-          "surprise_pct": 29.0
-        }
-      },
-      "score_normalized": 48
-    },
-    {
-      "ticker": "BTI",
-      "name": "British American Tobacco plc",
-      "sector": "Tobacco",
-      "current_price": 63.16,
-      "change_pct": 7.543,
-      "high": 63.32,
-      "low": 59.33,
-      "open": 59.445,
-      "prev_close": 58.73,
-      "score": 31,
-      "signals": [
-        "Top gainer (+7.5%)",
-        "High volume",
-        "Strong move (+7.5%)",
         "Closing strong"
       ],
       "reddit_mentions": 0,
-      "market_cap": 94570010381.0,
+      "market_cap": 61311381393.00001,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BATS.L.png",
-      "weburl": "https://www.bat.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942959030586.png",
+      "weburl": "https://www.realtyincome.com/",
       "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 44
-    }
-  ],
-  "swing_trades": [
-    {
-      "ticker": "ABT",
-      "name": "Abbott Laboratories",
-      "sector": "Health Care",
-      "current_price": 98.83,
-      "change_pct": 10.7091,
-      "high": 101.8699,
-      "low": 94.99,
-      "open": 95.29,
-      "prev_close": 89.27,
-      "score": 49,
-      "signals": [
-        "Top gainer (+10.7%)",
-        "High volume",
-        "Strong move (+10.7%)",
-        "Trending activity (9)",
-        "Yahoo trending (#12)",
-        "Closing strong",
-        "Sector leader (Health Care)"
-      ],
-      "reddit_mentions": 9,
-      "market_cap": 155491589377.6014,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ABT.png",
-      "weburl": "https://www.abbott.com",
-      "yahoo_trending_rank": 12,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 1.31,
-          "estimate": 1.29,
-          "beat": true,
-          "surprise_pct": 1.4
-        }
-      },
-      "score_normalized": 69
-    },
-    {
-      "ticker": "UNH",
-      "name": "UnitedHealth Group Inc",
-      "sector": "Health Care",
-      "current_price": 423.38,
-      "change_pct": 1.1612,
-      "high": 461.62,
-      "low": 420.37,
-      "open": 449.39,
-      "prev_close": 418.52,
-      "score": 35,
-      "signals": [
-        "Top gainer (+1.2%)",
-        "High volume",
-        "Trending buzz (18)",
-        "Yahoo trending (#3)"
-      ],
-      "reddit_mentions": 18,
-      "market_cap": 380076574768.09094,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/UNH.png",
-      "weburl": "https://www.unitedhealthgroup.com/",
-      "yahoo_trending_rank": 3,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 6.38,
-          "estimate": 4.91,
-          "beat": true,
-          "surprise_pct": 29.9
-        }
-      },
-      "score_normalized": 49
-    },
-    {
-      "ticker": "ADBE",
-      "name": "Adobe Inc",
-      "sector": "Technology",
-      "current_price": 235.31,
-      "change_pct": 4.7871,
-      "high": 235.48,
-      "low": 222.042,
-      "open": 228.705,
-      "prev_close": 224.56,
-      "score": 34,
-      "signals": [
-        "Top gainer (+4.8%)",
-        "High volume",
-        "Good move (+4.8%)",
-        "Yahoo trending (#18)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 3,
-      "market_cap": 89262599506.69626,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ADBE.png",
-      "weburl": "https://www.adobe.com/",
-      "yahoo_trending_rank": 18,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 5.96,
-          "estimate": 5.94,
-          "beat": true,
-          "surprise_pct": 0.4
-        }
-      },
-      "score_normalized": 48
-    },
-    {
-      "ticker": "IOT",
-      "name": "Samsara Inc",
-      "sector": "Technology",
-      "current_price": 37.46,
-      "change_pct": 2.8273,
-      "high": 37.8299,
-      "low": 35.67,
-      "open": 36.92,
-      "prev_close": 36.43,
-      "score": 34,
-      "signals": [
-        "Top gainer (+2.8%)",
-        "High volume",
-        "Moderate move (+2.8%)",
-        "Trending activity (6)",
-        "Yahoo trending (#15)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 6,
-      "market_cap": 21293826186.973442,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950460108076.png",
-      "weburl": "https://www.samsara.com",
-      "yahoo_trending_rank": 15,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.17,
-          "estimate": 0.13,
-          "beat": true,
-          "surprise_pct": 29.0
-        }
-      },
-      "score_normalized": 48
-    },
-    {
-      "ticker": "BTI",
-      "name": "British American Tobacco plc",
-      "sector": "Tobacco",
-      "current_price": 63.16,
-      "change_pct": 7.543,
-      "high": 63.32,
-      "low": 59.33,
-      "open": 59.445,
-      "prev_close": 58.73,
-      "score": 31,
-      "signals": [
-        "Top gainer (+7.5%)",
-        "High volume",
-        "Strong move (+7.5%)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 94570010381.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BATS.L.png",
-      "weburl": "https://www.bat.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 44
-    },
-    {
-      "ticker": "INTU",
-      "name": "Intuit Inc",
-      "sector": "Technology",
-      "current_price": 294.79,
-      "change_pct": 5.3951,
-      "high": 298.45,
-      "low": 277.565,
-      "open": 286,
-      "prev_close": 279.7,
-      "score": 31,
-      "signals": [
-        "Top gainer (+5.4%)",
-        "High volume",
-        "Strong move (+5.4%)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 76508293365.0239,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/INTU.png",
-      "weburl": "https://www.intuit.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 12.8,
-          "estimate": 12.82,
-          "beat": false,
-          "surprise_pct": -0.2
-        }
-      },
-      "score_normalized": 44
+      "score_normalized": 23
     }
   ],
   "buzz_source": "trending",
   "reddit_cards": [
     {
-      "ticker": "ASTS",
+      "ticker": "NFLX",
       "mentions": 20,
-      "name": "AST SpaceMobile Inc",
-      "sector": "Telecommunication",
-      "current_price": 55.01,
-      "change_pct": -17.0412,
-      "high": 61.5,
-      "low": 53.33,
-      "open": 59.2,
-      "prev_close": 66.31,
-      "market_cap": 25736539287.239468,
+      "name": "Netflix Inc",
+      "sector": "Media",
+      "current_price": 66.66,
+      "change_pct": -10.343,
+      "high": 66.91000000000001,
+      "low": 65.08,
+      "open": 66.72,
+      "prev_close": 74.35,
+      "market_cap": 313072850142.0,
       "score": 0,
       "signals": [
         "Trending buzz (20 mentions)",
@@ -423,30 +96,36 @@
       "is_active": false,
       "yahoo_trending_rank": 1,
       "social": {
-        "trend_pct": 930,
-        "reddit": 484,
+        "trend_pct": 709,
+        "reddit": 445,
         "sources": [
           "Reddit"
         ]
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.8,
+          "estimate": 0.8,
+          "beat": false,
+          "surprise_pct": -0.5
+        }
       },
       "score_normalized": 0
     },
     {
-      "ticker": "HOOD",
+      "ticker": "SPCX",
       "mentions": 19,
-      "name": "Robinhood Markets Inc",
-      "sector": "Financial Services",
-      "current_price": 106.02,
-      "change_pct": -8.2396,
-      "high": 114.52,
-      "low": 105.48,
-      "open": 114.13,
-      "prev_close": 115.54,
-      "market_cap": 104136812991.2037,
+      "name": "Space Exploration Technologies Corp",
+      "sector": "Telecommunication",
+      "current_price": 125.3,
+      "change_pct": -4.4314,
+      "high": 128.2,
+      "low": 125.12,
+      "open": 126.715,
+      "prev_close": 131.11,
+      "market_cap": 1739452950750.0,
       "score": 0,
       "signals": [
         "Trending buzz (19 mentions)",
@@ -457,8 +136,8 @@
       "is_active": false,
       "yahoo_trending_rank": 2,
       "social": {
-        "trend_pct": 5,
-        "reddit": 21,
+        "trend_pct": 76,
+        "reddit": 307,
         "sources": [
           "Reddit"
         ]
@@ -470,33 +149,29 @@
       "score_normalized": 0
     },
     {
-      "ticker": "UNH",
-      "name": "UnitedHealth Group Inc",
+      "ticker": "ISRG",
+      "mentions": 18,
+      "name": "Intuitive Surgical Inc",
       "sector": "Health Care",
-      "current_price": 423.38,
-      "change_pct": 1.1612,
-      "high": 461.62,
-      "low": 420.37,
-      "open": 449.39,
-      "prev_close": 418.52,
-      "score": 35,
+      "current_price": 357.83,
+      "change_pct": -11.0606,
+      "high": 365.025,
+      "low": 353.17,
+      "open": 364.0125,
+      "prev_close": 402.33,
+      "market_cap": 142490331385.0,
+      "score": 0,
       "signals": [
-        "Top gainer (+1.2%)",
-        "High volume",
-        "Trending buzz (18)",
+        "Trending buzz (18 mentions)",
         "Yahoo trending (#3)"
       ],
       "reddit_mentions": 18,
-      "market_cap": 380076574768.09094,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/UNH.png",
-      "weburl": "https://www.unitedhealthgroup.com/",
+      "is_gainer": false,
+      "is_active": false,
       "yahoo_trending_rank": 3,
-      "mentions": 18,
       "social": {
-        "trend_pct": 220,
-        "reddit": 80,
+        "trend_pct": 1900,
+        "reddit": 20,
         "sources": [
           "Reddit"
         ]
@@ -505,30 +180,30 @@
         "upcoming": null,
         "recent": {
           "period": "2026-06-30",
-          "actual": 6.38,
-          "estimate": 4.91,
+          "actual": 2.8,
+          "estimate": 2.55,
           "beat": true,
-          "surprise_pct": 29.9
+          "surprise_pct": 9.8
         }
       },
-      "score_normalized": 49
+      "score_normalized": 0
     },
     {
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "current_price": 853.2,
-      "change_pct": -5.6487,
-      "market_cap": 1021287557017.7441,
+      "current_price": 816.36,
+      "change_pct": -4.3179,
+      "market_cap": 963598178044.0,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 736,
+      "mentions": 795,
       "social": {
-        "trend_pct": 19,
-        "reddit": 736,
+        "trend_pct": -6,
+        "reddit": 795,
         "sources": [
           "Reddit"
         ]
@@ -546,21 +221,21 @@
       "score_normalized": 0
     },
     {
-      "ticker": "MSFT",
-      "name": "Microsoft Corp",
-      "sector": "Technology",
-      "current_price": 401.1,
-      "change_pct": 1.3826,
-      "market_cap": 2938911513132.967,
+      "ticker": "ASTS",
+      "name": "AST SpaceMobile Inc",
+      "sector": "Telecommunication",
+      "current_price": 55.26,
+      "change_pct": 0.4545,
+      "market_cap": 21350731252.000004,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 248,
+      "mentions": 274,
       "social": {
-        "trend_pct": 23,
-        "reddit": 248,
+        "trend_pct": -20,
+        "reddit": 274,
         "sources": [
           "Reddit"
         ]
@@ -572,463 +247,452 @@
       "score_normalized": 0
     },
     {
-      "ticker": "TSM",
-      "name": "Taiwan Semiconductor Manufacturing Co Ltd",
-      "sector": "Semiconductors",
-      "current_price": 409.74,
-      "change_pct": -2.3219,
-      "market_cap": 62756333320312.0,
+      "ticker": "SNDK",
+      "name": "Sandisk Corp",
+      "sector": "Technology",
+      "current_price": 1345.44,
+      "change_pct": -4.6518,
+      "market_cap": 208966502554.0,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 188,
+      "mentions": 266,
       "social": {
-        "trend_pct": 189,
-        "reddit": 188,
+        "trend_pct": 13,
+        "reddit": 266,
         "sources": [
           "Reddit"
         ]
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 138.87,
-          "estimate": 24.57,
-          "beat": true,
-          "surprise_pct": 465.3
-        }
+        "recent": null
       },
       "score_normalized": 0
     }
   ],
   "chatter_emerging": [
     {
-      "ticker": "ASTS",
-      "name": "AST SpaceMobile Inc",
-      "sector": "Telecommunication",
-      "mentions": 484,
-      "prev": 47,
-      "trend_pct": 930,
-      "current_price": 55.01,
-      "change_pct": -17.0412,
-      "market_cap": 25736539287.239468
+      "ticker": "NFLX",
+      "name": "Netflix Inc",
+      "sector": "Media",
+      "mentions": 445,
+      "prev": 55,
+      "trend_pct": 709,
+      "current_price": 66.66,
+      "change_pct": -10.343,
+      "market_cap": 313072850142.0
     },
     {
-      "ticker": "TSM",
-      "name": "Taiwan Semiconductor Manufacturing Co Ltd",
-      "sector": "Semiconductors",
-      "mentions": 188,
-      "prev": 65,
-      "trend_pct": 189,
-      "current_price": 409.74,
-      "change_pct": -2.3219,
-      "market_cap": 62756333320312.0
+      "ticker": "API",
+      "name": "Agora Inc",
+      "sector": "Technology",
+      "mentions": 73,
+      "prev": 8,
+      "trend_pct": 812,
+      "current_price": 4.02,
+      "change_pct": 0.5,
+      "market_cap": 374042963.0
     },
     {
-      "ticker": "RKLB",
-      "name": "Rocket Lab Corp",
-      "sector": "Aerospace & Defense",
-      "mentions": 150,
-      "prev": 48,
-      "trend_pct": 212,
-      "current_price": 67.35,
-      "change_pct": -11.6142,
-      "market_cap": 45581327982.57329
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc",
+      "sector": "Media",
+      "mentions": 92,
+      "prev": 31,
+      "trend_pct": 197,
+      "current_price": 345.3,
+      "change_pct": -2.5842,
+      "market_cap": 4315394537599.9995
     }
   ],
   "sector_rotation": [
     {
+      "ticker": "XLE",
+      "sector": "Energy",
+      "ret_1d": 1.28,
+      "ret_5d": 4.85,
+      "ret_1m": 5.07,
+      "ret_3m": null,
+      "top_stocks": []
+    },
+    {
       "ticker": "XLP",
       "sector": "Cons. Staples",
-      "ret_1d": 2.8,
-      "ret_5d": 3.13,
-      "ret_1m": 1.08,
+      "ret_1d": 1.03,
+      "ret_5d": 3.06,
+      "ret_1m": 1.29,
       "ret_3m": null,
       "top_stocks": [
         {
-          "ticker": "BTI",
-          "name": "British American Tobacco plc",
-          "change_pct": 7.543,
-          "price": 63.16
+          "ticker": "SDOT",
+          "name": "Sadot Group Inc",
+          "change_pct": 65.6842,
+          "price": 23.61
+        },
+        {
+          "ticker": "PM",
+          "name": "Philip Morris International Inc",
+          "change_pct": 0.9482,
+          "price": 191.64
+        }
+      ]
+    },
+    {
+      "ticker": "XLU",
+      "sector": "Utilities",
+      "ret_1d": 0.82,
+      "ret_5d": 0.96,
+      "ret_1m": 2.39,
+      "ret_3m": null,
+      "top_stocks": []
+    },
+    {
+      "ticker": "XLRE",
+      "sector": "Real Estate",
+      "ret_1d": 0.35,
+      "ret_5d": 2.63,
+      "ret_1m": 2.04,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "O",
+          "name": "Realty Income Corp",
+          "change_pct": 1.2928,
+          "price": 66.6
         }
       ]
     },
     {
       "ticker": "XLV",
       "sector": "Health Care",
-      "ret_1d": 2.22,
-      "ret_5d": -0.22,
-      "ret_1m": 6.3,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "ATPC",
-          "name": "Agape ATP Corp",
-          "change_pct": 66.6667,
-          "price": 4.2
-        },
-        {
-          "ticker": "ATAI",
-          "name": "AtaiBeckley Inc",
-          "change_pct": 33.3955,
-          "price": 7.15
-        },
-        {
-          "ticker": "ABT",
-          "name": "Abbott Laboratories",
-          "change_pct": 10.7091,
-          "price": 98.83
-        }
-      ]
-    },
-    {
-      "ticker": "XLRE",
-      "sector": "Real Estate",
-      "ret_1d": 2.03,
-      "ret_5d": 2.79,
-      "ret_1m": 1.94,
+      "ret_1d": -0.06,
+      "ret_5d": 0.54,
+      "ret_1m": 6.2,
       "ret_3m": null,
       "top_stocks": []
-    },
-    {
-      "ticker": "XLE",
-      "sector": "Energy",
-      "ret_1d": 0.9,
-      "ret_5d": 3.99,
-      "ret_1m": 3.37,
-      "ret_3m": null,
-      "top_stocks": [
-        {
-          "ticker": "STAK",
-          "name": "STAK Inc",
-          "change_pct": 68.0751,
-          "price": 3.58
-        }
-      ]
     },
     {
       "ticker": "XLB",
       "sector": "Materials",
-      "ret_1d": 0.73,
-      "ret_5d": 1.21,
-      "ret_1m": -2.74,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLU",
-      "sector": "Utilities",
-      "ret_1d": 0.57,
-      "ret_5d": 0.78,
-      "ret_1m": 2.3,
+      "ret_1d": -0.18,
+      "ret_5d": -0.18,
+      "ret_1m": -3.28,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLF",
       "sector": "Financials",
-      "ret_1d": 0.34,
-      "ret_5d": 2.19,
-      "ret_1m": 6.34,
+      "ret_1d": -0.84,
+      "ret_5d": 1.01,
+      "ret_1m": 3.9,
       "ret_3m": null,
-      "top_stocks": []
+      "top_stocks": [
+        {
+          "ticker": "PMAX",
+          "name": "Powell Max Ltd",
+          "change_pct": 15.9486,
+          "price": 2.04
+        },
+        {
+          "ticker": "TRV",
+          "name": "Travelers Companies Inc",
+          "change_pct": 4.6415,
+          "price": 353.5
+        }
+      ]
     },
     {
       "ticker": "XLY",
       "sector": "Cons. Discretionary",
-      "ret_1d": 0.29,
-      "ret_5d": 0.42,
-      "ret_1m": -0.84,
+      "ret_1d": -0.97,
+      "ret_5d": -0.88,
+      "ret_1m": -1.71,
+      "ret_3m": null,
+      "top_stocks": [
+        {
+          "ticker": "FFAI",
+          "name": "Faraday Future Intelligent Electric Inc",
+          "change_pct": 12.945,
+          "price": 0.1396
+        },
+        {
+          "ticker": "YUM",
+          "name": "Yum! Brands Inc",
+          "change_pct": 0.7298,
+          "price": 153.21
+        }
+      ]
+    },
+    {
+      "ticker": "XLC",
+      "sector": "Comm. Services",
+      "ret_1d": -1.11,
+      "ret_5d": -0.22,
+      "ret_1m": -0.57,
       "ret_3m": null,
       "top_stocks": []
     },
     {
       "ticker": "XLI",
       "sector": "Industrials",
-      "ret_1d": 0.05,
-      "ret_5d": -0.53,
-      "ret_1m": 1.07,
-      "ret_3m": null,
-      "top_stocks": []
-    },
-    {
-      "ticker": "XLC",
-      "sector": "Comm. Services",
-      "ret_1d": -0.64,
-      "ret_5d": 1.94,
-      "ret_1m": 0.67,
+      "ret_1d": -1.25,
+      "ret_5d": -2.22,
+      "ret_1m": -0.85,
       "ret_3m": null,
       "top_stocks": [
         {
-          "ticker": "IQST",
-          "name": "iQSTEL Inc",
-          "change_pct": 38.4476,
-          "price": 1.22
-        },
-        {
-          "ticker": "NFLX",
-          "name": "Netflix Inc",
-          "change_pct": 0.9093,
-          "price": 74.35
+          "ticker": "CJMB",
+          "name": "Callan JMB Inc",
+          "change_pct": 44.0186,
+          "price": 1.24
         }
       ]
     },
     {
       "ticker": "XLK",
       "sector": "Technology",
-      "ret_1d": -2.27,
-      "ret_5d": -4.26,
-      "ret_1m": -7.36,
+      "ret_1d": -2.0,
+      "ret_5d": -6.36,
+      "ret_1m": -6.58,
       "ret_3m": null,
       "top_stocks": [
         {
-          "ticker": "TGHL",
-          "name": "Growhub Ltd",
-          "change_pct": 86.6176,
-          "price": 1.52
-        },
-        {
-          "ticker": "INTU",
-          "name": "Intuit Inc",
-          "change_pct": 5.3951,
-          "price": 294.79
-        },
-        {
-          "ticker": "ADBE",
-          "name": "Adobe Inc",
-          "change_pct": 4.7871,
-          "price": 235.31
+          "ticker": "ORCL",
+          "name": "Oracle Corp",
+          "change_pct": 0.0242,
+          "price": 124.24
         }
       ]
     }
   ],
   "reddit_feed": [
     {
-      "id": "140923897",
-      "title": "Explore the top gainers and losers within the S&P500 index in today's session.",
+      "id": "140931146",
+      "title": "Wondering what's happening in today's S&P500  pre-market session?",
       "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "HOOD"
+        "NFLX"
       ],
       "confirmed_tickers": [
-        "HOOD"
+        "NFLX"
       ],
-      "hours_ago": 1.1,
-      "url": "https://finnhub.io/api/news?id=eec3217290a10ec063680087ba18a7cce53e9971ec864a5f4584bc7b86e17a0c",
+      "hours_ago": 1.0,
+      "url": "https://finnhub.io/api/news?id=86e0556ece817757aa862eacb5f3d15ef387e8135c1fbd4db7811faf47716ec0",
       "is_news": true
     },
     {
-      "id": "140922655",
-      "title": "Update: Technology Slide Pushes Nasdaq, S&P 500 Lower",
-      "subreddit": "Yahoo",
+      "id": "140931146",
+      "title": "Wondering what's happening in today's S&P500  pre-market session?",
+      "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "UNH"
+        "ISRG"
       ],
       "confirmed_tickers": [
-        "UNH"
+        "ISRG"
       ],
-      "hours_ago": 2.8,
-      "url": "https://finnhub.io/api/news?id=ca0c20b4b5735b2e4ec513a8f2eea46b43a7648fa9523fd6dfae04ce1768d31d",
+      "hours_ago": 1.0,
+      "url": "https://finnhub.io/api/news?id=86e0556ece817757aa862eacb5f3d15ef387e8135c1fbd4db7811faf47716ec0",
       "is_news": true
     },
     {
-      "id": "140922656",
-      "title": "Exchange-Traded Funds, US Equities Mixed After Midday",
+      "id": "140930890",
+      "title": "Stock Market Today: Dow Slides As Netflix Plunges On Earnings; SpaceX Slides After Canceled Flight (Live Coverage)",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "UNH"
+        "SPCX"
       ],
       "confirmed_tickers": [
-        "UNH"
+        "SPCX"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://finnhub.io/api/news?id=5d31c14342e137d7b022712ef4a553450f6d1fc2b80978a45b5b29724d330384",
+      "is_news": true
+    },
+    {
+      "id": "140930742",
+      "title": "Dow Jones Futures Fall As Netflix Dives, SpaceX Scrubs Launch; Sandisk, AI Stocks Try To Halt Sell-Off",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "SPCX"
+      ],
+      "confirmed_tickers": [
+        "SPCX"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://finnhub.io/api/news?id=54ed389e55e77bef203b3c701b178b36237f53408b85b8aebc3e9ca5801b13ac",
+      "is_news": true
+    },
+    {
+      "id": "140930857",
+      "title": "Stocks Fall Pre-Bell as Chip Sell-Off Continues",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "SPCX"
+      ],
+      "confirmed_tickers": [
+        "SPCX"
+      ],
+      "hours_ago": 1.7,
+      "url": "https://finnhub.io/api/news?id=773fe71e162f429d10ad5a3920d2745e3849bcd027bbdc6ff29d14593784c1fd",
+      "is_news": true
+    },
+    {
+      "id": "140930742",
+      "title": "Dow Jones Futures Fall As Netflix Dives, SpaceX Scrubs Launch; Sandisk, AI Stocks Try To Halt Sell-Off",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "NFLX"
+      ],
+      "confirmed_tickers": [
+        "NFLX"
+      ],
+      "hours_ago": 1.9,
+      "url": "https://finnhub.io/api/news?id=54ed389e55e77bef203b3c701b178b36237f53408b85b8aebc3e9ca5801b13ac",
+      "is_news": true
+    },
+    {
+      "id": "140930893",
+      "title": "SpaceX stock drops after Starship test flight aborted",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "SPCX"
+      ],
+      "confirmed_tickers": [
+        "SPCX"
+      ],
+      "hours_ago": 2.2,
+      "url": "https://finnhub.io/api/news?id=41bcae204930de7995a2dbd6843fc7fd3ee8316802fedf19f1fab8876492fab8",
+      "is_news": true
+    },
+    {
+      "id": "140930894",
+      "title": "SpaceX Investors Rip $565 Billion Out Of Elon Musk's Hands",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "SPCX"
+      ],
+      "confirmed_tickers": [
+        "SPCX"
+      ],
+      "hours_ago": 2.2,
+      "url": "https://finnhub.io/api/news?id=1716faafb4f85cb22a7bf7eb2feba3787a68a1eb9df3ef035ce7df8621662d4c",
+      "is_news": true
+    },
+    {
+      "id": "140930799",
+      "title": "Netflix\u2019s Q2 Results, Letterboxd Talks and Ad Pivot Could Be A Game Changer For Netflix (NFLX)",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "NFLX"
+      ],
+      "confirmed_tickers": [
+        "NFLX"
+      ],
+      "hours_ago": 2.4,
+      "url": "https://finnhub.io/api/news?id=ce4536bbe7cdf1f6dfb5b604345bc5194f0c82cdf3a7705ec8394a3e0112fb37",
+      "is_news": true
+    },
+    {
+      "id": "140930829",
+      "title": "Intuitive Surgical Shares Fall as US da Vinci Procedure Growth Slows",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "ISRG"
+      ],
+      "confirmed_tickers": [
+        "ISRG"
+      ],
+      "hours_ago": 2.7,
+      "url": "https://finnhub.io/api/news?id=6f1ef315130b7325463bbc2f9917cb9a9e665a307d69bb04af1c313572833351",
+      "is_news": true
+    },
+    {
+      "id": "140930731",
+      "title": "Social Buzz: Wallstreetbets Stocks Mostly Lower Premarket Friday; Netflix, SpaceX to Decline",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "NFLX"
+      ],
+      "confirmed_tickers": [
+        "NFLX"
       ],
       "hours_ago": 2.9,
-      "url": "https://finnhub.io/api/news?id=03d23afe6aa1ffaf1339d4129ce0af726d840dae2161c20fc0ac2e552e160efe",
+      "url": "https://finnhub.io/api/news?id=101ff5a5729da23ab00c5dd33680ac8b9ff33773280dfb016fd14170c353f75b",
       "is_news": true
     },
     {
-      "id": "140922068",
-      "title": "Unusual volume S&P500 stocks in Thursday's session",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "UNH"
-      ],
-      "confirmed_tickers": [
-        "UNH"
-      ],
-      "hours_ago": 3.1,
-      "url": "https://finnhub.io/api/news?id=965c01c9b245361bdf977d67366bbe7163bdbe9e627ad9446793cc5a3843527d",
-      "is_news": true
-    },
-    {
-      "id": "140921838",
-      "title": "Which dow jones stocks are moving on Thursday?",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "UNH"
-      ],
-      "confirmed_tickers": [
-        "UNH"
-      ],
-      "hours_ago": 3.5,
-      "url": "https://finnhub.io/api/news?id=df07a669a35d66fdcea2e2bf9885d28f50fee2f0d63c29f02167df814cd1ab0a",
-      "is_news": true
-    },
-    {
-      "id": "140922657",
-      "title": "Update: US Equity Indexes Mixed as Slumping Technology Pushes Nasdaq, S&P 500 Lower",
+      "id": "140930801",
+      "title": "Netflix shares fall after weaker-than-expected third-quarter guidance disappoints investors (NFLX)",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "UNH"
+        "NFLX"
       ],
       "confirmed_tickers": [
-        "UNH"
+        "NFLX"
       ],
-      "hours_ago": 3.7,
-      "url": "https://finnhub.io/api/news?id=c2a164bd023e57a58a978285654e4f63fcb780491c6003af423d42bd1968023c",
+      "hours_ago": 3.3,
+      "url": "https://finnhub.io/api/news?id=8cfb51a1ca25fd39dd61a8d86052761bd8527856ae394da9eac1e904446b8c0b",
       "is_news": true
     },
     {
-      "id": "140921144",
-      "title": "The Smartest Dividend Stocks to Buy With $1,000 in July and Never Sell",
+      "id": "140930830",
+      "title": "Intuitive Surgical shares slide despite earnings beat as 2026 outlook underwhelms",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "HOOD"
+        "ISRG"
       ],
       "confirmed_tickers": [
-        "HOOD"
+        "ISRG"
       ],
-      "hours_ago": 5.6,
-      "url": "https://finnhub.io/api/news?id=9805ad6aef8bc4276f1425935df0726f26989a352356cb336c31593d6bb4c1fe",
+      "hours_ago": 3.4,
+      "url": "https://finnhub.io/api/news?id=ea3e4476a1afaf3efadab16596ae2c26652985e55d55a0229223f7c820ce70ac",
       "is_news": true
     },
     {
-      "id": "140919957",
-      "title": "MoonPay Acquires Crypto Deposit Firm Glide",
+      "id": "140930163",
+      "title": "2 Cash-Producing Stocks to Own for Decades and 1 We Ignore",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "HOOD"
+        "ISRG"
       ],
       "confirmed_tickers": [
-        "HOOD"
+        "ISRG"
       ],
-      "hours_ago": 6.6,
-      "url": "https://finnhub.io/api/news?id=f8c9705d559b0ec802793db66d55519e7035c46dad26b1500377eea7c97e0bfd",
+      "hours_ago": 3.8,
+      "url": "https://finnhub.io/api/news?id=7e4b8d9d8c5f2442319dfe7614fffba8fc4a02ce011646121802952ad45716d9",
       "is_news": true
     },
     {
-      "id": "140922278",
-      "title": "Chip Selloff Drags Nasdaq 100, Gold Sinks Below $4,000: Stock Market Today",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "ASTS"
-      ],
-      "confirmed_tickers": [
-        "ASTS"
-      ],
-      "hours_ago": 7.1,
-      "url": "https://finnhub.io/api/news?id=b504a98e7ae20db43681c957359e73da60aa3cc75f9fd87dee10f5fb4d8fa1b8",
-      "is_news": true
-    },
-    {
-      "id": "140922321",
-      "title": "11 Communication Services Stocks Moving In Thursday's Intraday Session",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "ASTS"
-      ],
-      "confirmed_tickers": [
-        "ASTS"
-      ],
-      "hours_ago": 7.1,
-      "url": "https://finnhub.io/api/news?id=36aa5d1c8951379bba30f6e515fe8e24ff3f0e141fd8e5c26f22e123cf4e934b",
-      "is_news": true
-    },
-    {
-      "id": "140922322",
-      "title": "Gold Falls Over 1%; UnitedHealth Posts Upbeat Earnings",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "ASTS"
-      ],
-      "confirmed_tickers": [
-        "ASTS"
-      ],
-      "hours_ago": 7.7,
-      "url": "https://finnhub.io/api/news?id=82c991e62332168cf380e3268bfe3302bd32fdb50591867530c3cf1f94f991d3",
-      "is_news": true
-    },
-    {
-      "id": "140919290",
-      "title": "Get insights into the top gainers and losers of Thursday's pre-market session.",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "ASTS"
-      ],
-      "confirmed_tickers": [
-        "ASTS"
-      ],
-      "hours_ago": 7.7,
-      "url": "https://finnhub.io/api/news?id=0673b7185da007d3209818911518d58f21616bbcf6714ef42b5d3335aa243e3f",
-      "is_news": true
-    },
-    {
-      "id": "140922323",
-      "title": "Buy ASTS, Watch SpaceX and Rocket Lab From the Launch Pad: Piper Sandler's Space Playbook",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "ASTS"
-      ],
-      "confirmed_tickers": [
-        "ASTS"
-      ],
-      "hours_ago": 8.2,
-      "url": "https://finnhub.io/api/news?id=03e7ba25c8ba3b6405f23e68ada4c995a2ebf9ccb55dce3b2515e9611254fe2a",
-      "is_news": true
-    },
-    {
-      "id": "140918199",
-      "title": "SpaceX IPO & why oil could hit $150: Robinhood Exec",
+      "id": "140928624",
+      "title": "Should You Buy Intuitive Surgical With the Stock Down 35%? Here's What History Says.",
       "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "HOOD"
+        "ISRG"
       ],
       "confirmed_tickers": [
-        "HOOD"
+        "ISRG"
       ],
-      "hours_ago": 10.2,
-      "url": "https://finnhub.io/api/news?id=bdd4fe1a4e647763b3613adb2ee1728a0fc4785157d2525a62ee13538d276730",
-      "is_news": true
-    },
-    {
-      "id": "140921566",
-      "title": "Cathie Wood Bets $16.6 Million on SpaceX as Elon Musk's Rocket Company Falls Below IPO Price",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "HOOD"
-      ],
-      "confirmed_tickers": [
-        "HOOD"
-      ],
-      "hours_ago": 21.5,
-      "url": "https://finnhub.io/api/news?id=532f15da96014e9f3d09371df9d162c4d6ada76556e2df4e5711a1e2ee968aff",
+      "hours_ago": 11.0,
+      "url": "https://finnhub.io/api/news?id=b617f233db92087a0c0448094b4adb75e4ce1c8794cd26633ad16b0544f2e52d",
       "is_news": true
     }
   ]
