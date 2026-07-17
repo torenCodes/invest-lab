@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-07-17T14:26:25.270817",
-  "total_transactions": 41,
-  "date_range": "Jul 09 '26 \u2013 Jul 15 '26",
+  "scan_time": "2026-07-17T18:06:46.972295",
+  "total_transactions": 43,
+  "date_range": "Jul 09 '26 \u2013 Jul 17 '26",
   "min_value": 25000,
   "nominees": [
     {
@@ -117,9 +117,9 @@
       "is_csuite": true,
       "company": "BridgeBio Oncology Therapeutics, Inc.",
       "sector": "Healthcare",
-      "current_price": 8.31,
-      "change_pct": 0,
-      "market_cap": 665690048,
+      "current_price": 8.44,
+      "change_pct": 1.56,
+      "market_cap": 676103936,
       "insiders": [
         {
           "name": "Kang Andrew Kai",
@@ -219,6 +219,42 @@
         "$9.3M total"
       ],
       "story": "CCOE \u2014 The Chief Executive Officer bought, $9.3M total."
+    },
+    {
+      "ticker": "EELV",
+      "insider": "BOUDREAUX GAIL",
+      "title": "President and CEO",
+      "date": "Jul 17 '26",
+      "price": 367.79,
+      "qty": 2725,
+      "value": 1002230,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "Invesco S&P Emerging Markets Low Volatility ETF",
+      "sector": "Unknown",
+      "current_price": 28.265,
+      "change_pct": -0.16,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "BOUDREAUX GAIL",
+          "title": "President and CEO",
+          "date": "Jul 17 '26",
+          "price": 367.79,
+          "qty": 2725,
+          "value": 1002230,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 35,
+      "tier": "B",
+      "signals": [
+        "President and CEO bought",
+        "$1.0M total",
+        "Activity in last 3 days"
+      ],
+      "story": "EELV \u2014 The President and CEO bought, $1.0M total."
     },
     {
       "ticker": "SSMFG",
@@ -358,6 +394,42 @@
         "$2.4M total"
       ],
       "story": "TTDIC \u2014 The Chief Executive Officer bought, $2.4M total."
+    },
+    {
+      "ticker": "GGRML",
+      "insider": "LeBlanc Jeff",
+      "title": "Chief Financial Officer",
+      "date": "Jul 16 '26",
+      "price": 0.18,
+      "qty": 1400000,
+      "value": 245280,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "GGRML",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "LeBlanc Jeff",
+          "title": "Chief Financial Officer",
+          "date": "Jul 16 '26",
+          "price": 0.18,
+          "qty": 1400000,
+          "value": 245280,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 25,
+      "tier": "B",
+      "signals": [
+        "Chief Financial Officer bought",
+        "$245K total",
+        "Activity in last 3 days"
+      ],
+      "story": "GGRML \u2014 The Chief Financial Officer bought, $245K total."
     },
     {
       "ticker": "CCMC",
@@ -864,9 +936,9 @@
       "is_csuite": true,
       "company": "BridgeBio Oncology Therapeutics, Inc.",
       "sector": "Healthcare",
-      "current_price": 8.31,
-      "change_pct": 0,
-      "market_cap": 665690048,
+      "current_price": 8.44,
+      "change_pct": 1.56,
+      "market_cap": 676103936,
       "insiders": [
         {
           "name": "Kang Andrew Kai",
@@ -890,11 +962,33 @@
   ],
   "tier_counts": {
     "A": 1,
-    "B": 9,
+    "B": 11,
     "W": 10,
-    "total": 20
+    "total": 22
   },
   "recent_feed": [
+    {
+      "ticker": "EELV",
+      "insider": "BOUDREAUX GAIL",
+      "title": "President and CEO",
+      "date": "Jul 17 '26",
+      "price": 367.79,
+      "qty": 2725,
+      "value": 1002230,
+      "filing": "Jul 17 01:50 PM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "GGRML",
+      "insider": "LeBlanc Jeff",
+      "title": "Chief Financial Officer",
+      "date": "Jul 16 '26",
+      "price": 0.18,
+      "qty": 1400000,
+      "value": 245280,
+      "filing": "Jul 17 11:12 AM",
+      "is_csuite": true
+    },
     {
       "ticker": "SSMFG",
       "insider": "SUMITOMO MITSUI FINANCIAL GROU",
@@ -1312,28 +1406,6 @@
       "value": 1999998,
       "filing": "Jul 10 05:05 PM",
       "is_csuite": false
-    },
-    {
-      "ticker": "GGLOO",
-      "insider": "GELSINGER PATRICK P",
-      "title": "See Remarks",
-      "date": "Jul 10 '26",
-      "price": 3.25,
-      "qty": 153846,
-      "value": 500000,
-      "filing": "Jul 10 05:03 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "GGLOO",
-      "insider": "Beck Scott Arthur",
-      "title": "President and CEO",
-      "date": "Jul 10 '26",
-      "price": 3.25,
-      "qty": 1076923,
-      "value": 3500000,
-      "filing": "Jul 10 05:02 PM",
-      "is_csuite": true
     }
   ]
 }
