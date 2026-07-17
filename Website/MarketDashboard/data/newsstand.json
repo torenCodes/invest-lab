@@ -1,9 +1,9 @@
 {
-  "scan_time": "2026-07-17T19:00:34.881793+00:00",
+  "scan_time": "2026-07-17T20:42:14.534180+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Risk-Off",
-    "score": -1,
+    "score": -2,
     "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
     "signals": [
       {
@@ -16,9 +16,9 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-1.4%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "-1.5%",
+        "read": "Weak",
+        "tone": "bad"
       },
       {
         "label": "Volatility (VIX)",
@@ -35,7 +35,7 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-17T19:00:54.475813+00:00"
+    "updated": "2026-07-17T20:42:23.648653+00:00"
   },
   "earnings": [
     {
@@ -613,67 +613,60 @@
   ],
   "unusual_volume": [
     {
+      "ticker": "P",
+      "name": "Invesco Optimum Yield Diversified Commodity Strategy No K-1 ETF",
+      "price": 17.25,
+      "change_pct": 1.71,
+      "volume": "-"
+    },
+    {
       "ticker": "A",
       "name": "AtaiBeckley Inc",
-      "price": 7.18,
-      "change_pct": 0.35,
-      "volume": "2.64B"
+      "price": 7.22,
+      "change_pct": 0.98,
+      "volume": "2.66B"
     },
     {
       "ticker": "S",
       "name": "Sadot Group Inc",
-      "price": 26.75,
-      "change_pct": 87.72,
-      "volume": "19.92M"
+      "price": 25.3,
+      "change_pct": 77.54,
+      "volume": "18.84M"
     },
     {
-      "ticker": "S",
-      "name": "T-REX 2X Long SNDK Daily Target ETF",
-      "price": 23.19,
-      "change_pct": 2.12,
+      "ticker": "H",
+      "name": "Harbor Commodity All-Weather Strategy ETF",
+      "price": 31.88,
+      "change_pct": 1.43,
       "volume": "-"
-    },
-    {
-      "ticker": "V",
-      "name": "Twin Vee PowerCats Co",
-      "price": 39.79,
-      "change_pct": 9.98,
-      "volume": "21.06M"
     },
     {
       "ticker": "T",
       "name": "Trevi Therapeutics Inc",
-      "price": 19.33,
-      "change_pct": 11.34,
-      "volume": "2.74B"
+      "price": 19.07,
+      "change_pct": 9.85,
+      "volume": "2.71B"
     },
     {
-      "ticker": "S",
-      "name": "Leverage Shares 2X Long SNDK Daily ETF",
-      "price": 9.12,
-      "change_pct": 0.88,
+      "ticker": "B",
+      "name": "Vanguard Intermediate-Term Bond ETF",
+      "price": 76.14,
+      "change_pct": 0.07,
       "volume": "-"
     },
     {
       "ticker": "C",
       "name": "Columbia Financial Inc",
-      "price": 23.29,
-      "change_pct": 1.48,
-      "volume": "2.42B"
+      "price": 23.42,
+      "change_pct": 2.05,
+      "volume": "2.44B"
     },
     {
-      "ticker": "B",
-      "name": "abrdn Bloomberg All Commodity Strategy K-1 Free ETF",
-      "price": 23.81,
-      "change_pct": 1.23,
+      "ticker": "J",
+      "name": "JPMorgan Municipal ETF",
+      "price": 50.21,
+      "change_pct": 0.02,
       "volume": "-"
-    },
-    {
-      "ticker": "C",
-      "name": "Cross Country Healthcares Inc",
-      "price": 13.24,
-      "change_pct": 0.04,
-      "volume": "427.90M"
     }
   ]
 }
