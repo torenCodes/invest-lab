@@ -1,29 +1,29 @@
 {
-  "scan_time": "2026-07-20T17:00:39.421756+00:00",
+  "scan_time": "2026-07-20T18:50:41.142675+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Favorable",
-    "score": 4,
-    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
+    "verdict": "Cautious",
+    "score": 0,
+    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
     "signals": [
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Above 50-day",
-        "read": "Uptrend",
-        "tone": "good"
+        "value": "Below 50-day",
+        "read": "Downtrend",
+        "tone": "bad"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.5%",
+        "value": "-0.8%",
         "read": "Soft",
         "tone": "neutral"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "17.8",
+        "value": "18.1",
         "read": "Calm",
         "tone": "good"
       },
@@ -35,7 +35,7 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-20T17:00:56.684948+00:00"
+    "updated": "2026-07-20T18:50:51.214875+00:00"
   },
   "earnings": [
     {
@@ -657,73 +657,73 @@
   ],
   "unusual_volume": [
     {
+      "ticker": "P",
+      "name": "UiPath Inc",
+      "price": 12.32,
+      "change_pct": 1.4,
+      "volume": "6.38B"
+    },
+    {
+      "ticker": "H",
+      "name": "Hecla Mining Co",
+      "price": 14.36,
+      "change_pct": 0.21,
+      "volume": "9.63B"
+    },
+    {
       "ticker": "A",
       "name": "Advanced Biomed Inc",
-      "price": 7.61,
-      "change_pct": 51.39,
-      "volume": "12.58M"
+      "price": 7.86,
+      "change_pct": 56.26,
+      "volume": "12.99M"
     },
     {
       "ticker": "C",
       "name": "Columbia Financial Inc",
-      "price": 24.14,
-      "change_pct": 3.07,
-      "volume": "2.51B"
+      "price": 24.17,
+      "change_pct": 3.2,
+      "volume": "2.52B"
     },
     {
-      "ticker": "S",
-      "name": "T-REX 2X Long SNDK Daily Target ETF",
-      "price": 23.48,
-      "change_pct": 11.92,
+      "ticker": "T",
+      "name": "21Shares Ethereum ETF",
+      "price": 9.48,
+      "change_pct": 3.1,
       "volume": "-"
     },
     {
       "ticker": "B",
       "name": "BOXABL Inc",
-      "price": 10.5,
-      "change_pct": 26.51,
-      "volume": "14.54M"
-    },
-    {
-      "ticker": "S",
-      "name": "Leverage Shares 2X Long SNDK Daily ETF",
-      "price": 9.24,
-      "change_pct": 11.73,
-      "volume": "-"
-    },
-    {
-      "ticker": "D",
-      "name": "Dominos Pizza Inc",
-      "price": 328.62,
-      "change_pct": 2.0,
-      "volume": "10.93B"
-    },
-    {
-      "ticker": "X",
-      "name": "Xencor Inc",
-      "price": 18.89,
-      "change_pct": 8.12,
-      "volume": "1.40B"
-    },
-    {
-      "ticker": "K",
-      "name": "KraneShares Mount Lucas Managed Futures Index Strategy ETF",
-      "price": 29.17,
-      "change_pct": 0.64,
-      "volume": "-"
+      "price": 10.23,
+      "change_pct": 23.19,
+      "volume": "14.15M"
     },
     {
       "ticker": "L",
       "name": "LXP Industrial Trust",
-      "price": 60.94,
-      "change_pct": 4.15,
+      "price": 60.95,
+      "change_pct": 4.18,
       "volume": "3.59B"
+    },
+    {
+      "ticker": "X",
+      "name": "Xencor Inc",
+      "price": 19.1,
+      "change_pct": 9.33,
+      "volume": "1.42B"
+    },
+    {
+      "ticker": "K",
+      "name": "KraneShares Mount Lucas Managed Futures Index Strategy ETF",
+      "price": 29.25,
+      "change_pct": 0.9,
+      "volume": "-"
     },
     {
       "ticker": "I",
       "name": "Leverage Shares 2X Long IREN Daily ETF",
-      "price": 9.11,
-      "change_pct": 38.03,
+      "price": 9.26,
+      "change_pct": 40.3,
       "volume": "-"
     }
   ]
