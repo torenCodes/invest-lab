@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-07-20T09:00:30.869289+00:00",
+  "scan_time": "2026-07-20T11:00:34.385582+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Risk-Off",
@@ -23,7 +23,7 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "18.6",
+        "value": "18.4",
         "read": "Calm",
         "tone": "good"
       },
@@ -35,20 +35,9 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-20T09:00:42.398021+00:00"
+    "updated": "2026-07-20T11:00:45.732767+00:00"
   },
   "earnings": [
-    {
-      "date": "2026-07-20",
-      "symbol": "SCHW",
-      "eps_estimate": 1.5808,
-      "eps_actual": null,
-      "revenue_estimate": 7028488653,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
     {
       "date": "2026-07-20",
       "symbol": "BKR",
@@ -117,12 +106,23 @@
     },
     {
       "date": "2026-07-20",
-      "symbol": "DPZ",
-      "eps_estimate": 4.215,
+      "symbol": "ZION",
+      "eps_estimate": 1.8453,
       "eps_actual": null,
-      "revenue_estimate": 1190541176,
+      "revenue_estimate": 919528276,
       "revenue_actual": null,
-      "hour": "bmo",
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "WTFC",
+      "eps_estimate": 3.2088,
+      "eps_actual": null,
+      "revenue_estimate": 751466272,
+      "revenue_actual": null,
+      "hour": "amc",
       "quarter": 2,
       "year": 2026
     },
@@ -205,10 +205,10 @@
     },
     {
       "date": "2026-07-21",
-      "symbol": "GPC",
-      "eps_estimate": 2.0963,
+      "symbol": "SCHW",
+      "eps_estimate": 1.5808,
       "eps_actual": null,
-      "revenue_estimate": 6492651811,
+      "revenue_estimate": 7028488653,
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 2,
@@ -244,6 +244,17 @@
       "revenue_estimate": 26220627327,
       "revenue_actual": null,
       "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "IBM",
+      "eps_estimate": 3.0119,
+      "eps_actual": null,
+      "revenue_estimate": 17903431831,
+      "revenue_actual": null,
+      "hour": "bmo",
       "quarter": 2,
       "year": 2026
     },
@@ -286,17 +297,6 @@
       "eps_estimate": 0.5152,
       "eps_actual": null,
       "revenue_estimate": 8669831808,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-22",
-      "symbol": "TXN",
-      "eps_estimate": 1.9532,
-      "eps_actual": null,
-      "revenue_estimate": 5300008481,
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 2,
@@ -469,14 +469,14 @@
     },
     {
       "date": "2026-07-24",
-      "symbol": "BAH",
-      "eps_estimate": 1.5081,
+      "symbol": "CNH",
+      "eps_estimate": 0.1054,
       "eps_actual": null,
-      "revenue_estimate": 2847741823,
+      "revenue_estimate": 4420923520,
       "revenue_actual": null,
       "hour": "bmo",
-      "quarter": 1,
-      "year": 2027
+      "quarter": 2,
+      "year": 2026
     },
     {
       "date": "2026-07-27",
@@ -484,17 +484,6 @@
       "eps_estimate": 4.4002,
       "eps_actual": null,
       "revenue_estimate": 10241731168,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-27",
-      "symbol": "PYPL",
-      "eps_estimate": 1.3029,
-      "eps_actual": null,
-      "revenue_estimate": 8637250339,
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 2,
@@ -561,6 +550,17 @@
       "eps_estimate": 0.6388,
       "eps_actual": null,
       "revenue_estimate": 3440341904,
+      "revenue_actual": null,
+      "hour": "",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "CINF",
+      "eps_estimate": 1.8781,
+      "eps_actual": null,
+      "revenue_estimate": 2978420400,
       "revenue_actual": null,
       "hour": "",
       "quarter": 2,
@@ -657,18 +657,18 @@
   ],
   "unusual_volume": [
     {
-      "ticker": "A",
-      "name": "Advanced Biomed Inc",
-      "price": 7.2,
-      "change_pct": 43.14,
-      "volume": "11.90M"
-    },
-    {
       "ticker": "I",
       "name": "iShares U.S. Healthcare ETF",
       "price": 67.93,
       "change_pct": 0.19,
       "volume": "-"
+    },
+    {
+      "ticker": "B",
+      "name": "BOXABL Inc",
+      "price": 10.92,
+      "change_pct": 31.57,
+      "volume": "15.12M"
     }
   ]
 }
