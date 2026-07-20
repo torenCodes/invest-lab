@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-07-20T13:00:34.947350+00:00",
+  "scan_time": "2026-07-20T15:00:38.597083+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Risk-Off",
-    "score": -1,
-    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
+    "verdict": "Cautious",
+    "score": 0,
+    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
     "signals": [
       {
         "label": "Market trend",
@@ -16,26 +16,26 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-1.5%",
-        "read": "Weak",
-        "tone": "bad"
+        "value": "-0.7%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "18.2",
+        "value": "18.3",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.56%",
+        "value": "4.58%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-20T13:00:59.112657+00:00"
+    "updated": "2026-07-20T15:00:55.738213+00:00"
   },
   "earnings": [
     {
@@ -659,16 +659,72 @@
     {
       "ticker": "B",
       "name": "Baiya International Group Inc",
-      "price": 7.53,
-      "change_pct": 81.88,
-      "volume": "47.44M"
+      "price": 7.92,
+      "change_pct": 91.3,
+      "volume": "49.89M"
+    },
+    {
+      "ticker": "A",
+      "name": "Advanced Biomed Inc",
+      "price": 8.97,
+      "change_pct": 78.33,
+      "volume": "14.82M"
+    },
+    {
+      "ticker": "I",
+      "name": "Defiance Daily Target 2X Long IREN ETF",
+      "price": 10.67,
+      "change_pct": 27.18,
+      "volume": "-"
+    },
+    {
+      "ticker": "C",
+      "name": "Columbia Financial Inc",
+      "price": 24.41,
+      "change_pct": 4.21,
+      "volume": "2.54B"
+    },
+    {
+      "ticker": "S",
+      "name": "T-REX 2X Long SNDK Daily Target ETF",
+      "price": 22.57,
+      "change_pct": 7.58,
+      "volume": "-"
+    },
+    {
+      "ticker": "S",
+      "name": "Sadot Group Inc",
+      "price": 32.18,
+      "change_pct": 27.19,
+      "volume": "23.95M"
     },
     {
       "ticker": "B",
       "name": "BOXABL Inc",
-      "price": 10.58,
-      "change_pct": 27.47,
-      "volume": "14.65M"
+      "price": 10.63,
+      "change_pct": 28.07,
+      "volume": "14.72M"
+    },
+    {
+      "ticker": "N",
+      "name": "GraniteShares 2x Long NBIS Daily ETF",
+      "price": 22.17,
+      "change_pct": 4.9,
+      "volume": "-"
+    },
+    {
+      "ticker": "S",
+      "name": "Leverage Shares 2X Long SNDK Daily ETF",
+      "price": 8.86,
+      "change_pct": 7.19,
+      "volume": "-"
+    },
+    {
+      "ticker": "I",
+      "name": "Tradr 2X Long IREN Daily ETF",
+      "price": 15.0,
+      "change_pct": 27.43,
+      "volume": "-"
     }
   ]
 }
