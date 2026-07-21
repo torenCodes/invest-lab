@@ -295,20 +295,6 @@
   .stock-card.premiere:hover {
     box-shadow: 0 4px 16px rgba(201,162,39,0.25), var(--shadow-md);
   }
-  .premiere-label {
-    display: inline-block;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #c9a227;
-    background: #fdf9ed;
-    border: 1px solid #e8d88c;
-    padding: 2px 8px;
-    border-radius: 3px;
-    margin-bottom: 8px;
-  }
-
   .card-top {
     padding: 18px 18px 14px;
     border-bottom: 1px solid var(--border-light);
@@ -498,59 +484,6 @@
   }
 
   /* ── Market Chatter ────────────────────────────────────────────────────── */
-  .chatter-layout {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 18px;
-    align-items: start;
-  }
-  .chatter-featured {
-    background: var(--surface);
-    border: 2px solid #c9a227;
-    border-radius: var(--radius);
-    padding: 18px;
-    box-shadow: 0 2px 12px rgba(201,162,39,0.12), var(--shadow-sm);
-  }
-  .chatter-featured-label {
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #c9a227;
-    margin-bottom: 10px;
-  }
-  .chatter-featured .card-ticker {
-    font-family: 'DM Mono', monospace;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--ink);
-  }
-  .chatter-featured .card-name {
-    font-size: 0.78rem;
-    color: var(--ink-3);
-    margin-top: 2px;
-    margin-bottom: 8px;
-  }
-  .chatter-featured-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    margin-bottom: 10px;
-  }
-  .chatter-featured-stat {
-    background: var(--bg);
-    border-radius: var(--radius-sm);
-    padding: 6px 8px;
-  }
-  .chatter-featured-stat-label { font-size: 0.62rem; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; }
-  .chatter-featured-stat-value { font-family: 'DM Mono', monospace; font-size: 0.85rem; color: var(--ink); margin-top: 1px; }
-  .chatter-featured-signals {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-top: 8px;
-  }
-
   .chatter-cloud {
     display: flex;
     flex-wrap: wrap;
@@ -591,9 +524,10 @@
     color: var(--ink-3);
     margin-top: 2px;
   }
-
-  @media (max-width: 700px) {
-    .chatter-layout { grid-template-columns: 1fr; }
+  /* The most-discussed (#1) chip: same size as the rest, gold border only. */
+  .chatter-chip.premiere {
+    border: 2px solid #c9a227;
+    box-shadow: 0 2px 12px rgba(201,162,39,0.12), var(--shadow-sm);
   }
 
   /* ── Sector Flow ───────────────────────────────────────────────────────── */
@@ -1280,13 +1214,13 @@ function renderStockCard(stock, type, idx) {
     ? `<div style="margin-bottom:6px;font-size:0.72rem;color:var(--reddit);">⬆ ${_buzzLabel} confirmed (${stock.reddit_mentions} mentions)</div>`
     : '';
 
+  // The #1 card is distinguished by the gold border alone (.premiere) — no
+  // label or size bump, so it stays the same size as its siblings.
   const premiereClass = isPremiere ? ' premiere' : '';
-  const premiereLabel = isPremiere ? '<div class="premiere-label">★ Top Pick</div>' : '';
 
   return `
   <div class="stock-card${premiereClass}" id="${cardId}" onclick="toggleDetail('${detailId}', '${cardId}')">
     <div class="card-top">
-      ${premiereLabel}
       <div class="card-header">
         <div>
           <div class="card-ticker">${stock.ticker}</div>
@@ -1620,29 +1554,14 @@ function updateResults(data) {
 
 // ── Market Chatter renderer ────────────────────────────────────────────────
 // 24h mention velocity — the "heating up" read from ApeWisdom
-function trendBadge(social) {
-  if (!social || social.trend_pct == null) return '<span style="color:var(--ink-3)">—</span>';
-  const t = social.trend_pct;
-  return `<span class="${t >= 0 ? 'change-up' : 'change-down'}">${t >= 0 ? '▲ +' : '▼ '}${t}%</span>`;
-}
 function trendInline(social) {
   if (!social || social.trend_pct == null) return '';
   const t = social.trend_pct;
   return ` <span class="${t >= 0 ? 'change-up' : 'change-down'}" style="font-weight:600">${t >= 0 ? '↑' : '↓'}${Math.abs(t)}%</span>`;
 }
-function socialLine(social) {
-  if (!social) return '';
-  const bits = [];
-  if (social.st_bull != null) bits.push(`<strong style="color:var(--ink)">${social.st_bull}% bullish</strong> on StockTwits`);
-  if ((social.sources || []).length) bits.push(`Tracked on ${social.sources.join(', ')}`);
-  if (!bits.length) return '';
-  return `<div style="margin-top:8px;font-size:0.72rem;color:var(--ink-3)">${bits.join(' &middot; ')}</div>`;
-}
-
 function renderChatter(cards, buzzSource) {
   const el = $('chatter-content');
   const badge = $('chatter-badge');
-  const srcLabel = (buzzSource === 'news' || buzzSource === 'mixed') ? 'News' : 'Reddit';
 
   if (!cards || !cards.length) {
     badge.textContent = '0 tickers';
@@ -1651,49 +1570,14 @@ function renderChatter(cards, buzzSource) {
   }
 
   badge.textContent = `${cards.length} tickers`;
-  const featured = cards[0];
-  const rest = cards.slice(1);
 
-  // Featured card
-  const fChgClass = featured.change_pct >= 0 ? 'change-up' : 'change-down';
-  const fChgStr = `${featured.change_pct >= 0 ? '+' : ''}${fmt(featured.change_pct)}%`;
-  const fSignals = (featured.signals || []).slice(0, 4).map(s =>
-    `<span class="signal-tag ${signalClass(s)}">${s}</span>`
-  ).join('');
-
-  const featuredHtml = `
-    <div class="chatter-featured">
-      <div class="chatter-featured-label">★ Most Discussed</div>
-      <div class="card-ticker">${featured.ticker}</div>
-      <div class="card-name">${featured.name || '—'}</div>
-      <div class="chatter-featured-stats">
-        <div class="chatter-featured-stat">
-          <div class="chatter-featured-stat-label">Price</div>
-          <div class="chatter-featured-stat-value">$${fmt(featured.current_price)}</div>
-        </div>
-        <div class="chatter-featured-stat">
-          <div class="chatter-featured-stat-label">Change</div>
-          <div class="chatter-featured-stat-value"><span class="price-change ${fChgClass}">${fChgStr}</span></div>
-        </div>
-        <div class="chatter-featured-stat">
-          <div class="chatter-featured-stat-label">Mentions</div>
-          <div class="chatter-featured-stat-value">${(featured.social && featured.social.reddit) || featured.reddit_mentions || featured.mentions || '—'}</div>
-        </div>
-        <div class="chatter-featured-stat">
-          <div class="chatter-featured-stat-label">24h Chatter</div>
-          <div class="chatter-featured-stat-value">${trendBadge(featured.social)}</div>
-        </div>
-      </div>
-      <div class="chatter-featured-signals">${fSignals}</div>
-      ${socialLine(featured.social)}
-    </div>`;
-
-  // Ticker cloud chips
-  const chipsHtml = rest.map(c => {
+  // Uniform chip cloud, ranked by mentions. The #1 (most-discussed) chip is the
+  // same size as the rest — distinguished by a gold border only (.premiere).
+  const chipsHtml = cards.map((c, i) => {
     const cClass = c.change_pct >= 0 ? 'change-up' : 'change-down';
     const cStr = `${c.change_pct >= 0 ? '+' : ''}${fmt(c.change_pct)}%`;
     const mentions = (c.social && c.social.reddit) || c.reddit_mentions || c.mentions || 0;
-    return `<div class="chatter-chip">
+    return `<div class="chatter-chip${i === 0 ? ' premiere' : ''}">
       <div class="chatter-chip-ticker">${c.ticker}</div>
       <div class="chatter-chip-name">${c.name || '—'}</div>
       <div class="chatter-chip-change ${cClass}">${cStr}</div>
@@ -1701,10 +1585,7 @@ function renderChatter(cards, buzzSource) {
     </div>`;
   }).join('');
 
-  el.innerHTML = `<div class="chatter-layout">
-    ${featuredHtml}
-    <div class="chatter-cloud">${chipsHtml || '<div style="color:var(--ink-3);font-size:0.82rem;">No additional tickers.</div>'}</div>
-  </div>`;
+  el.innerHTML = `<div class="chatter-cloud">${chipsHtml}</div>`;
 }
 
 // ── Boot ───────────────────────────────────────────────────────────────────
