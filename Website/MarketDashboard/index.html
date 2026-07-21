@@ -754,6 +754,53 @@
   .sr-neg-strong { color: #c0392b; background: rgba(192,57,43,0.07); }
   .sr-neutral    { color: var(--ink-3); }
 
+  /* ── Rotation overhaul: posture banner + RRG + toggle (Jul 2026) ──────────── */
+  .sr-posture {
+    display: flex; align-items: center; gap: 14px;
+    margin: 14px 16px 4px; padding: 11px 16px;
+    border: 1px solid var(--border); border-radius: var(--radius);
+  }
+  .sr-posture-on      { background: rgba(26,122,74,0.06); border-color: rgba(26,122,74,0.25); }
+  .sr-posture-off     { background: rgba(192,57,43,0.06); border-color: rgba(192,57,43,0.25); }
+  .sr-posture-neutral { background: var(--surface-2); }
+  .sr-posture-badge {
+    font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.04em; text-transform: uppercase; color: #fff;
+    padding: 4px 11px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+  }
+  .sr-posture-on  .sr-posture-badge { background: #1a7a4a; }
+  .sr-posture-off .sr-posture-badge { background: #c0392b; }
+  .sr-posture-neutral .sr-posture-badge { background: var(--ink-3); }
+  .sr-posture-text { font-size: 0.82rem; color: var(--ink); line-height: 1.4; }
+  .sr-posture-text strong { font-weight: 600; }
+  .sr-posture-detail { display: block; font-size: 0.72rem; color: var(--ink-3); margin-top: 2px; }
+
+  .rrg-wrap { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; padding: 16px; }
+  .rrg-chart { flex: 0 0 440px; max-width: 100%; }
+  .rrg-svg { width: 100%; height: auto; display: block; }
+  .rrg-qlabel { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.07em; opacity: 0.7; }
+  .rrg-dot-label { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600; }
+  .rrg-axis { font-size: 10px; fill: var(--ink-3); letter-spacing: 0.03em; }
+  .rrg-side { flex: 1; min-width: 220px; }
+  .rrg-side-title { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
+  .rrg-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; margin-bottom: 12px; }
+  .rrg-leg-item { display: flex; align-items: center; gap: 7px; font-size: 0.76rem; color: var(--ink-2); }
+  .rrg-leg-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .rrg-read { font-size: 0.76rem; color: var(--ink-3); line-height: 1.55; }
+  .rrg-read strong { color: var(--ink-2); font-weight: 600; }
+
+  .sr-toolbar { display: flex; justify-content: flex-end; padding: 2px 16px 10px; }
+  .sr-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+  .sr-toggle button {
+    border: none; background: var(--surface); color: var(--ink-3);
+    font-family: 'Barlow', sans-serif; font-size: 0.72rem; font-weight: 600;
+    padding: 5px 14px; cursor: pointer; transition: background 0.15s, color 0.15s;
+  }
+  .sr-toggle button.active { background: var(--accent, #38bda6); color: #fff; }
+  .sr-rot-in  { color: #1a7a4a; }
+  .sr-rot-out { color: #c0392b; }
+  .sr-table-wrap { overflow-x: auto; }
+
   .sr-expandable { cursor: pointer; }
   .sr-expandable:hover { background: var(--bg); }
   .sr-chevron {
@@ -1112,7 +1159,7 @@ function toggleSiteNav(btn) {
           <span class="panel-icon">🗺️</span>
           <span class="panel-title">Sector Rotation</span>
         </div>
-        <p class="panel-desc">Where money is flowing right now, tracked across the eleven SPDR sector ETFs that carve the market into technology, energy, financials, healthcare, and the rest. Each row shows that sector's return over <strong>1 day, 5 days, 1 month, and 3 months</strong>, so you can read at a glance which corners are leading and which are lagging. Sectors heating up are often where the next batch of high-cadence movers turns up, which makes this a useful map for where to go hunting. Click a sector row to expand today's scan movers within it, or click a column header to sort.</p>
+        <p class="panel-desc">Where money is actually rotating across the eleven SPDR sector ETFs — measured <strong>against the S&amp;P 500</strong>, not just on their own, since a sector up 1% while the market's up 2% is quietly losing leadership. The <strong>rotation map</strong> plots every sector by relative strength and momentum (Leading, Weakening, Lagging, Improving); the <strong>banner</strong> reads the overall risk posture from cyclicals vs defensives; and the <strong>table</strong> breaks out each sector's edge over the market across 1D–3M, whether it's rotating in or out this week, and the conviction (volume) behind the move. Toggle to absolute returns anytime. Sectors rotating in are often where the next high-cadence movers surface — click a row for today's scan movers within it, or a header to sort.</p>
       </div>
       <div id="sector-rotation-body">
         <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading sector data…</div></div>
@@ -1134,8 +1181,9 @@ let cadenceSortDir = -1;   // -1 = descending
 
 // ── State ──────────────────────────────────────────────────────────────────
 let lastScanTime = null;
-let sectorSortCol = 'ret_1d';
-let sectorSortDir = -1; // -1 = descending, 1 = ascending
+let sectorSortCol = 'rel_1m';   // default: medium-term relative strength (leadership)
+let sectorSortDir = -1;         // -1 = descending, 1 = ascending
+let sectorRetMode = 'rel';      // 'rel' = returns vs S&P 500, 'abs' = absolute
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
@@ -1296,32 +1344,151 @@ function toggleDetail(detailId, cardId) {
 }
 
 // ── Sector Rotation table ─────────────────────────────────────────────────
-function renderSectorRotation(data) {
+// Quadrant palette shared by the RRG chart and the posture read.
+const RRG_QUAD = {
+  Leading:   { color: '#1a7a4a', bg: 'rgba(26,122,74,0.07)' },
+  Weakening: { color: '#c07a1a', bg: 'rgba(192,122,26,0.07)' },
+  Lagging:   { color: '#c0392b', bg: 'rgba(192,57,43,0.07)' },
+  Improving: { color: '#1a5fa8', bg: 'rgba(26,95,168,0.07)' },
+};
+
+function renderSectorRotation(payload) {
   const el = $('sector-rotation-body');
-  if (!data || !data.length) {
+  const sectors = (payload && payload.sectors) || [];
+  if (!sectors.length) {
     el.innerHTML = '<div class="empty-state">No sector data available.</div>';
     return;
   }
+  el.innerHTML =
+    buildPostureBanner(payload.posture, payload.benchmark) +
+    buildRRG(sectors) +
+    buildSectorToolbar() +
+    `<div class="sr-table-wrap">${buildSectorTable(sectors)}</div>`;
+}
 
-  function cell(val) {
-    if (val == null) return '<td class="sr-cell sr-neutral">—</td>';
-    const cls = val >= 2  ? 'sr-pos-strong' :
-                val >  0  ? 'sr-pos' :
-                val <= -2 ? 'sr-neg-strong' : 'sr-neg';
-    const sign = val >= 0 ? '+' : '';
-    return `<td class="sr-cell ${cls}">${sign}${val.toFixed(2)}%</td>`;
-  }
+// ── Risk-on / risk-off posture banner ───────────────────────────────────────
+function buildPostureBanner(posture, benchmark) {
+  if (!posture) return '';
+  const cls = posture.label === 'Risk-on' ? 'sr-posture-on'
+            : posture.label === 'Risk-off' ? 'sr-posture-off' : 'sr-posture-neutral';
+  const read = posture.label === 'Risk-on'
+      ? 'Cyclicals are leading defensives — the market is playing offense.'
+      : posture.label === 'Risk-off'
+        ? 'Defensives are leading cyclicals — the market is playing defense.'
+        : 'Cyclicals and defensives are balanced — no clear risk posture.';
+  const lead = (posture.leaders  || []).join(' & ');
+  const lag  = (posture.laggards || []).join(' & ');
+  const spy  = benchmark && benchmark.ret_1m != null
+      ? ` &nbsp;·&nbsp; S&amp;P 1M ${benchmark.ret_1m >= 0 ? '+' : ''}${benchmark.ret_1m}%` : '';
+  return `<div class="sr-posture ${cls}">
+    <span class="sr-posture-badge">${posture.label}</span>
+    <span class="sr-posture-text"><strong>${read}</strong>
+      <span class="sr-posture-detail">Leading: ${lead} &nbsp;·&nbsp; Lagging: ${lag}${spy}</span>
+    </span>
+  </div>`;
+}
 
-  const cols = [
-    { key: 'ret_1d', label: '1D' },
-    { key: 'ret_5d', label: '5D' },
-    { key: 'ret_1m', label: '1M' },
-    { key: 'ret_3m', label: '3M' },
-  ];
+// ── Relative Rotation Graph (SVG quadrant chart) ────────────────────────────
+function buildRRG(sectors) {
+  const pts = sectors.filter(s => s.rrg && s.rrg.x != null);
+  if (pts.length < 2) return '';
+  const W = 440, H = 440, PAD = 42;
+  let dev = 1.5;
+  pts.forEach(s => {
+    dev = Math.max(dev, Math.abs(s.rrg.x - 100), Math.abs(s.rrg.y - 100));
+    (s.rrg.tail || []).forEach(t => { dev = Math.max(dev, Math.abs(t.x - 100), Math.abs(t.y - 100)); });
+  });
+  dev *= 1.18;
+  const lo = 100 - dev, hi = 100 + dev, span = hi - lo;
+  const sx = v => PAD + (v - lo) / span * (W - 2 * PAD);
+  const sy = v => PAD + (hi - v) / span * (H - 2 * PAD);
+  const cx = sx(100), cy = sy(100);
 
-  const sorted = [...data].sort((a, b) => {
-    const av = a[sectorSortCol] ?? -999;
-    const bv = b[sectorSortCol] ?? -999;
+  const rect = (x, y, w, h, q) => `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" fill="${RRG_QUAD[q].bg}"/>`;
+  const rects =
+    rect(cx, PAD, W - PAD - cx, cy - PAD, 'Leading') +
+    rect(cx, cy, W - PAD - cx, H - PAD - cy, 'Weakening') +
+    rect(PAD, cy, cx - PAD, H - PAD - cy, 'Lagging') +
+    rect(PAD, PAD, cx - PAD, cy - PAD, 'Improving');
+
+  const cross =
+    `<line x1="${PAD}" y1="${cy.toFixed(1)}" x2="${W - PAD}" y2="${cy.toFixed(1)}" stroke="var(--border)" stroke-width="1"/>` +
+    `<line x1="${cx.toFixed(1)}" y1="${PAD}" x2="${cx.toFixed(1)}" y2="${H - PAD}" stroke="var(--border)" stroke-width="1"/>`;
+
+  const ql = (x, y, anchor, q, txt) => `<text x="${x}" y="${y}" text-anchor="${anchor}" class="rrg-qlabel" fill="${RRG_QUAD[q].color}">${txt}</text>`;
+  const qlabels =
+    ql(W - PAD - 5, PAD + 13, 'end',    'Leading',   'LEADING') +
+    ql(W - PAD - 5, H - PAD - 6, 'end',  'Weakening', 'WEAKENING') +
+    ql(PAD + 5, H - PAD - 6, 'start',    'Lagging',   'LAGGING') +
+    ql(PAD + 5, PAD + 13, 'start',       'Improving', 'IMPROVING');
+
+  const marks = pts.map(s => {
+    const q = RRG_QUAD[s.rrg.quadrant] || RRG_QUAD.Lagging;
+    const tail = s.rrg.tail || [];
+    let g = '';
+    if (tail.length > 1) {
+      const p = tail.map(t => `${sx(t.x).toFixed(1)},${sy(t.y).toFixed(1)}`).join(' ');
+      g += `<polyline points="${p}" fill="none" stroke="${q.color}" stroke-width="1.3" stroke-opacity="0.35" stroke-linejoin="round"/>`;
+    }
+    const X = sx(s.rrg.x), Y = sy(s.rrg.y);
+    g += `<circle cx="${X.toFixed(1)}" cy="${Y.toFixed(1)}" r="5" fill="${q.color}"><title>${s.sector} — ${s.rrg.quadrant}</title></circle>`;
+    g += `<text x="${(X + 8).toFixed(1)}" y="${(Y + 3.5).toFixed(1)}" class="rrg-dot-label" fill="${q.color}">${s.ticker}</text>`;
+    return g;
+  }).join('');
+
+  const axis =
+    `<text x="${W / 2}" y="${H - 9}" text-anchor="middle" class="rrg-axis">Relative strength &rarr;</text>` +
+    `<text x="13" y="${H / 2}" text-anchor="middle" class="rrg-axis" transform="rotate(-90 13 ${H / 2})">Momentum &rarr;</text>`;
+
+  const svg = `<svg viewBox="0 0 ${W} ${H}" class="rrg-svg" xmlns="http://www.w3.org/2000/svg">${rects}${cross}${qlabels}${marks}${axis}</svg>`;
+
+  const leg = (q, txt) => `<span class="rrg-leg-item"><span class="rrg-leg-dot" style="background:${RRG_QUAD[q].color}"></span>${txt}</span>`;
+  const side = `<div class="rrg-side">
+    <div class="rrg-side-title">Reading the map</div>
+    <div class="rrg-legend">
+      ${leg('Leading','Leading — strong &amp; rising')}
+      ${leg('Weakening','Weakening — strong, fading')}
+      ${leg('Improving','Improving — weak, turning up')}
+      ${leg('Lagging','Lagging — weak &amp; falling')}
+    </div>
+    <div class="rrg-read">Each dot is a sector plotted by <strong>relative strength vs the S&amp;P</strong> (left&ndash;right) and <strong>momentum</strong> (down&ndash;up); the tail traces the last few weeks. Sectors tend to travel clockwise: Improving &rarr; Leading &rarr; Weakening &rarr; Lagging.</div>
+  </div>`;
+
+  return `<div class="rrg-wrap"><div class="rrg-chart">${svg}</div>${side}</div>`;
+}
+
+// ── Relative / absolute toggle ──────────────────────────────────────────────
+function buildSectorToolbar() {
+  return `<div class="sr-toolbar"><div class="sr-toggle">
+    <button class="${sectorRetMode === 'rel' ? 'active' : ''}" onclick="sectorMode('rel')">vs S&amp;P 500</button>
+    <button class="${sectorRetMode === 'abs' ? 'active' : ''}" onclick="sectorMode('abs')">Absolute</button>
+  </div></div>`;
+}
+
+// ── Reframed table ──────────────────────────────────────────────────────────
+function srCell(val) {
+  if (val == null) return '<td class="sr-cell sr-neutral">—</td>';
+  const cls = val >= 2 ? 'sr-pos-strong' : val > 0 ? 'sr-pos' : val <= -2 ? 'sr-neg-strong' : 'sr-neg';
+  return `<td class="sr-cell ${cls}">${val >= 0 ? '+' : ''}${val.toFixed(2)}%</td>`;
+}
+function srRotationCell(rot) {
+  if (!rot) return '<td class="sr-cell sr-neutral">–</td>';
+  const inn = rot > 0, n = Math.abs(rot);
+  return `<td class="sr-cell ${inn ? 'sr-rot-in' : 'sr-rot-out'}" title="Relative-strength rank moved ${n} spot${n > 1 ? 's' : ''} ${inn ? 'up' : 'down'} this week">${inn ? '▲' : '▼'} ${n}</td>`;
+}
+function srConvictionCell(rvol) {
+  if (rvol == null) return '<td class="sr-cell sr-neutral">–</td>';
+  const cls = rvol >= 1.3 ? 'sr-pos-strong' : rvol >= 1.0 ? 'sr-pos' : 'sr-neutral';
+  return `<td class="sr-cell ${cls}" title="Last session's volume vs its 20-day average">${rvol.toFixed(2)}&times;</td>`;
+}
+
+function buildSectorTable(sectors) {
+  const pre = sectorRetMode === 'rel' ? 'rel_' : 'ret_';
+  const retCols = [['1d', '1D'], ['5d', '5D'], ['1m', '1M'], ['3m', '3M']].map(([w, l]) => ({ key: pre + w, label: l }));
+  const cols = retCols.concat([{ key: 'rotation', label: 'Rotation' }, { key: 'rvol', label: 'Conviction' }]);
+
+  const sorted = [...sectors].sort((a, b) => {
+    const av = a[sectorSortCol] ?? -999, bv = b[sectorSortCol] ?? -999;
     return sectorSortDir === -1 ? bv - av : av - bv;
   });
 
@@ -1335,13 +1502,12 @@ function renderSectorRotation(data) {
     const stocks = s.top_stocks || [];
     const expandable = stocks.length > 0;
     const chevron = expandable ? `<span class="sr-chevron">&#9654;</span>` : '';
-    const expandClass = expandable ? ' sr-expandable' : '';
     const onclickAttr = expandable ? ` onclick="toggleSector(${i})"` : '';
 
-    const mainRow = `<tr class="sr-row${expandClass}" id="sr-row-${i}"${onclickAttr}>
+    const mainRow = `<tr class="sr-row${expandable ? ' sr-expandable' : ''}" id="sr-row-${i}"${onclickAttr}>
       <td class="sr-sector">${s.sector}${chevron}</td>
       <td class="sr-ticker">${s.ticker}</td>
-      ${cell(s.ret_1d)}${cell(s.ret_5d)}${cell(s.ret_1m)}${cell(s.ret_3m)}
+      ${retCols.map(c => srCell(s[c.key])).join('')}${srRotationCell(s.rotation)}${srConvictionCell(s.rvol)}
     </tr>`;
 
     if (!expandable) return mainRow;
@@ -1363,7 +1529,7 @@ function renderSectorRotation(data) {
     }).join('');
 
     const detailRow = `<tr class="sr-detail-row" id="sr-detail-${i}">
-      <td colspan="6"><div class="sr-detail-inner">
+      <td colspan="8"><div class="sr-detail-inner">
         <div class="sr-detail-label">Today's scan movers in this sector</div>
         <div class="sr-stocks">${stockCards}</div>
       </div></td>
@@ -1372,7 +1538,7 @@ function renderSectorRotation(data) {
     return mainRow + detailRow;
   }).join('');
 
-  el.innerHTML = `<table class="sr-table">
+  return `<table class="sr-table">
     <thead><tr>
       <th class="sr-th sr-th-left">Sector</th>
       <th class="sr-th sr-th-left">ETF</th>
@@ -1380,6 +1546,16 @@ function renderSectorRotation(data) {
     </tr></thead>
     <tbody>${rows}</tbody>
   </table>`;
+}
+
+function sectorMode(mode) {
+  if (mode === sectorRetMode) return;
+  // Stay on the same window when switching rel <-> abs (rel_1m <-> ret_1m).
+  if (sectorSortCol.startsWith('rel_') || sectorSortCol.startsWith('ret_')) {
+    sectorSortCol = (mode === 'rel' ? 'rel_' : 'ret_') + sectorSortCol.split('_')[1];
+  }
+  sectorRetMode = mode;
+  if (window._lastSectorData) renderSectorRotation(window._lastSectorData);
 }
 
 function toggleSector(i) {
@@ -1545,7 +1721,7 @@ function updateResults(data) {
   // Sector rotation — render once per scan cycle
   if (data.scan_time !== updateResults._lastScanTime) {
     updateResults._lastScanTime = data.scan_time;
-    if (data.sector_rotation && data.sector_rotation.length) {
+    if (data.sector_rotation && data.sector_rotation.sectors && data.sector_rotation.sectors.length) {
       window._lastSectorData = data.sector_rotation;
       renderSectorRotation(data.sector_rotation);
     }

@@ -1014,60 +1014,164 @@ SECTOR_KEYWORDS = {
 }
 
 
+# Cyclical vs defensive baskets → the risk-on / risk-off read
+CYCLICAL_ETFS  = {"XLK", "XLY", "XLF", "XLI", "XLB", "XLC"}
+DEFENSIVE_ETFS = {"XLP", "XLU", "XLV", "XLRE"}
+
+# RRG (Relative Rotation Graph) params — JdK-style, computed vs SPY
+RRG_WINDOW = 50   # z-score baseline lookback (trading days, ~10 weeks)
+RRG_MOM    = 5    # momentum lookback (~1 week)
+RRG_TAIL   = 6    # trail points, sampled weekly
+
+
+def _sector_returns(close):
+    """1D/5D/1M/3M % returns for a close-price series."""
+    cur = float(close.iloc[-1])
+    def pc(n):
+        if len(close) <= n:
+            return None
+        ref = float(close.iloc[-(n + 1)])
+        if not (math.isfinite(ref) and math.isfinite(cur)) or ref == 0:
+            return None
+        return round((cur - ref) / ref * 100, 2)
+    return {"1d": pc(1), "5d": pc(5), "1m": pc(21), "3m": pc(63)}
+
+
+def _compute_rrg(sector_close, spy_close):
+    """JdK-style Relative Rotation Graph coordinates vs SPY. Returns
+    {x: RS-Ratio, y: RS-Momentum, quadrant, tail:[{x,y}...]} — both axes
+    z-scored against the sector's own history and centered on 100:
+    (>100,>100)=Leading, (>100,<100)=Weakening, (<100,>100)=Improving,
+    (<100,<100)=Lagging. A read of relative price structure, not a claim to
+    reproduce any vendor's proprietary formula."""
+    rs = (sector_close / spy_close).dropna()   # relative-strength line
+    if len(rs) < RRG_WINDOW + RRG_MOM + 3:
+        return None
+    mean = rs.rolling(RRG_WINDOW).mean()
+    std  = rs.rolling(RRG_WINDOW).std().replace(0, 1e-9)
+    ratio = 100 + ((rs - mean) / std).clip(-3, 3)
+    mom_raw = ratio.diff(RRG_MOM)
+    mmean = mom_raw.rolling(RRG_WINDOW).mean()
+    mstd  = mom_raw.rolling(RRG_WINDOW).std().replace(0, 1e-9)
+    mom = 100 + ((mom_raw - mmean) / mstd).clip(-3, 3)
+
+    ratio, mom = ratio.dropna(), mom.dropna()
+    n = min(len(ratio), len(mom))
+    if n < 2:
+        return None
+    ratio, mom = ratio.iloc[-n:], mom.iloc[-n:]
+    x = round(float(ratio.iloc[-1]), 2)
+    y = round(float(mom.iloc[-1]), 2)
+    quadrant = ("Leading"   if x >= 100 and y >= 100 else
+                "Weakening" if x >= 100 and y <  100 else
+                "Improving" if x <  100 and y >= 100 else "Lagging")
+    start = max(0, n - 1 - RRG_TAIL * RRG_MOM)
+    tail = [{"x": round(float(ratio.iloc[i]), 2), "y": round(float(mom.iloc[i]), 2)}
+            for i in range(start, n, RRG_MOM)]
+    return {"x": x, "y": y, "quadrant": quadrant, "tail": tail}
+
+
 def get_sector_rotation(scan_results=None):
-    """Fetch 1D/5D/1M/3M % returns for all 11 SPDR sector ETFs via yfinance.
-    Optionally enriches each sector with top_stocks from today's scan results."""
-    result = []
+    """Relative-strength sector rotation vs SPY for the 11 SPDR sector ETFs.
+    Per sector: absolute + SPY-relative returns, an RRG position (RS-Ratio /
+    RS-Momentum + trail), a rotating-in/out rank shift, and a conviction
+    (relative-volume) read. Plus a market-posture (risk-on/off) summary from
+    cyclical vs defensive leadership. Optionally enriches each sector with
+    top_stocks from today's scan. Returns {sectors, posture, benchmark}."""
+    # SPY baseline (relative strength + RRG denominator)
+    spy_close, spy_ret = None, {}
+    try:
+        spy_hist = yf.Ticker("SPY").history(period="1y")
+        spy_close = spy_hist["Close"].dropna()
+        if len(spy_close) >= 2:
+            spy_ret = _sector_returns(spy_close)
+    except Exception as e:
+        print(f"[SectorRot] SPY baseline failed: {e}")
+
+    sectors = []
     for ticker, sector_name in SECTOR_ETFS:
         try:
-            hist = yf.Ticker(ticker).history(period='3mo')
+            hist = yf.Ticker(ticker).history(period="1y")
             if hist.empty or len(hist) < 2:
                 continue
-            close = hist['Close']
-            current = float(close.iloc[-1])
+            close = hist["Close"].dropna()
+            vol   = hist["Volume"].dropna()
+            abs_ret = _sector_returns(close)
 
-            def pct_change(n, _close=close, _current=current):
-                if len(_close) <= n:
-                    return None
-                ref = float(_close.iloc[-(n + 1)])
-                if not (math.isfinite(ref) and math.isfinite(_current)) or ref == 0:
-                    return None
-                return round((_current - ref) / ref * 100, 2)
+            # Relative strength vs SPY (positive = outperforming the market)
+            rel = {}
+            for w in ("1d", "5d", "1m", "3m"):
+                a, b = abs_ret.get(w), spy_ret.get(w)
+                rel[w] = round(a - b, 2) if (a is not None and b is not None) else None
 
-            # Find top movers from today's scan that belong to this sector
+            rrg = _compute_rrg(close, spy_close) if spy_close is not None else None
+
+            # Conviction: last COMPLETED session's volume vs its prior 20-day
+            # norm. The scan runs intraday, so the latest bar is a partial day —
+            # use iloc[-2] so the ratio isn't understated.
+            rvol = None
+            if len(vol) >= 22:
+                base = float(vol.iloc[-22:-2].mean())
+                if base > 0:
+                    rvol = round(float(vol.iloc[-2]) / base, 2)
+
+            # Top scan movers in this sector (unchanged drill-down)
             top_stocks = []
             if scan_results:
                 keywords = SECTOR_KEYWORDS.get(sector_name, [])
-                matches = [
-                    r for r in scan_results
-                    if any(kw in (r.get('sector') or '').lower() for kw in keywords)
-                ]
+                matches = [r for r in scan_results
+                           if any(kw in (r.get('sector') or '').lower() for kw in keywords)]
                 matches.sort(key=lambda x: x.get('change_pct', 0), reverse=True)
-                top_stocks = [
-                    {
-                        'ticker':     r['ticker'],
-                        'name':       r.get('name', r['ticker']),
-                        'change_pct': r.get('change_pct'),
-                        'price':      r.get('current_price'),
-                    }
-                    for r in matches[:3]
-                ]
+                top_stocks = [{'ticker': r['ticker'], 'name': r.get('name', r['ticker']),
+                               'change_pct': r.get('change_pct'), 'price': r.get('current_price')}
+                              for r in matches[:3]]
 
-            result.append({
-                'ticker':     ticker,
-                'sector':     sector_name,
-                'ret_1d':     pct_change(1),
-                'ret_5d':     pct_change(5),
-                'ret_1m':     pct_change(21),
-                'ret_3m':     pct_change(63),
-                'top_stocks': top_stocks,
+            sectors.append({
+                'ticker': ticker, 'sector': sector_name,
+                'ret_1d': abs_ret['1d'], 'ret_5d': abs_ret['5d'],
+                'ret_1m': abs_ret['1m'], 'ret_3m': abs_ret['3m'],
+                'rel_1d': rel['1d'], 'rel_5d': rel['5d'],
+                'rel_1m': rel['1m'], 'rel_3m': rel['3m'],
+                'rvol': rvol, 'rrg': rrg, 'top_stocks': top_stocks,
             })
         except Exception as e:
             print(f"[SectorRot] {ticker}: {e}")
 
-    result.sort(key=lambda x: (x['ret_1d'] or 0), reverse=True)
-    print(f"[SectorRot] Fetched {len(result)}/11 sectors")
-    return result
+    # Rotating in/out: recent (5D) vs medium (1M) relative-strength rank.
+    # A positive shift = the sector's rank improved recently = money rotating in.
+    def rank_by(key):
+        ordered = sorted([s for s in sectors if s[key] is not None],
+                         key=lambda s: s[key], reverse=True)
+        return {s['ticker']: i + 1 for i, s in enumerate(ordered)}
+    rank_1m, rank_5d = rank_by('rel_1m'), rank_by('rel_5d')
+    for s in sectors:
+        s['rotation'] = (rank_1m.get(s['ticker'], 0) - rank_5d.get(s['ticker'], 0)
+                         if s['ticker'] in rank_1m and s['ticker'] in rank_5d else 0)
+
+    # Market posture: cyclical vs defensive leadership (1M relative strength)
+    posture = None
+    cyc = [s['rel_1m'] for s in sectors if s['ticker'] in CYCLICAL_ETFS and s['rel_1m'] is not None]
+    dfn = [s['rel_1m'] for s in sectors if s['ticker'] in DEFENSIVE_ETFS and s['rel_1m'] is not None]
+    if cyc and dfn:
+        spread = round(sum(cyc) / len(cyc) - sum(dfn) / len(dfn), 2)
+        label = "Risk-on" if spread > 1.0 else "Risk-off" if spread < -1.0 else "Neutral"
+        ranked = sorted([s for s in sectors if s['rel_1m'] is not None],
+                        key=lambda s: s['rel_1m'], reverse=True)
+        posture = {
+            'label': label, 'spread': spread,
+            'leaders':  [s['sector'] for s in ranked[:2]],
+            'laggards': [s['sector'] for s in ranked[-2:]],
+        }
+
+    # Default order: strongest medium-term relative strength (leadership) first
+    sectors.sort(key=lambda s: (s['rel_1m'] if s['rel_1m'] is not None else -999), reverse=True)
+    print(f"[SectorRot] {len(sectors)}/11 sectors | posture={posture['label'] if posture else 'n/a'}")
+    return {
+        'sectors': sectors,
+        'posture': posture,
+        'benchmark': {'ticker': 'SPY', 'ret_1d': spy_ret.get('1d'), 'ret_5d': spy_ret.get('5d'),
+                      'ret_1m': spy_ret.get('1m'), 'ret_3m': spy_ret.get('3m')},
+    }
 
 
 # ── Supplemental data ─────────────────────────────────────────────────────────
