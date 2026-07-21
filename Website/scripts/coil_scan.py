@@ -31,7 +31,7 @@ import os
 import statistics
 import sys
 import time
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime, timezone
 
 # Reuse the proven data layer from the Cadence scan (shared cache + name map)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -47,6 +47,8 @@ MIN_BARS       = 55          # need ~50 for the 50-DMA + base windows
 MIN_PRICE      = 10.0
 MAX_PRICE      = 1000.0      # swings run higher than day names (NVDA/AVGO/DELL)
 MIN_DOLLAR_VOL = 20_000_000
+MIN_BAND_PCT   = 1.5         # reject implausibly-flat names (frozen / merger-arb, see note in score_ticker)
+TOP_N          = 24          # names published per list (Coiled / Leaders)
 
 # Names to spotlight in the sanity print (user's swing names + known leaders)
 WATCH = ["MRVL", "DELL", "NVDA", "AVGO", "TQQQ", "AAPL", "MSFT",
@@ -108,6 +110,16 @@ def score_ticker(ticker, bars):
     earlier_avg = statistics.mean(earlier) if earlier else recent_avg
     contraction = recent_avg / earlier_avg if earlier_avg else 1.0
     band = (max(highs[-10:]) - min(lows[-10:])) / price * 100   # consolidation width
+
+    # ── Liveliness gate — reject frozen / merger-arb / halted names ──
+    # A buyout target gaps once then trades pinned near the deal price in a
+    # sub-1% band (e.g. TMHC ~0.7%, NUVL ~0.5%). That reads as a "perfect coil"
+    # (max tightness + volume dry-up) and rockets to the top of the list, but it
+    # will never break out — it's done. A real setup still breathes; require a
+    # minimally realistic 10-day range so these can't masquerade as coils.
+    if band < MIN_BAND_PCT:
+        return None
+
     tight_factor = clamp((18.0 - band) / (18.0 - 6.0), 0.0, 1.0)       # <6% wide -> 1.0
     contr_factor = clamp((1.0 - contraction) / (1.0 - 0.6), 0.0, 1.0)  # <0.6 ratio -> 1.0
     tight_pts = (0.6 * tight_factor + 0.4 * contr_factor) * 25
@@ -241,11 +253,11 @@ def run():
     show("COILED (tightness-weighted)", coiled, "coil_score")
     show("LEADERS (constructive strength)", leaders, "leader_score")
 
-    # ── Output: enrich top 40 of each list with company names ──
+    # ── Output: enrich the top TOP_N of each list with company names ──
     name_map = fetch_name_map()
     def enrich(rows):
         out = []
-        for s in rows[:40]:
+        for s in rows[:TOP_N]:
             s2 = {k: v for k, v in s.items() if not k.startswith("_")}
             s2["name"] = clean_name(name_map.get(s2["ticker"], ""))
             out.append(s2)
@@ -253,8 +265,12 @@ def run():
 
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, "w") as f:
-        json.dump({"generated": max(days),
-                   "universe": len(scored),
+        # `generated` = the trading session the prices are from (lags the run by
+        # T-1 on the free tier); `scanned_at` = when this scan actually ran, so
+        # the dashboard can show freshness honestly instead of looking stale.
+        json.dump({"generated":  max(days),
+                   "scanned_at": datetime.now(timezone.utc).isoformat(),
+                   "universe":   len(scored),
                    "coiled":  enrich(coiled),
                    "leaders": enrich(leaders)}, f, indent=2)
     print(f"\n[coil] Wrote {OUTPUT_FILE} (coiled + leaders)")

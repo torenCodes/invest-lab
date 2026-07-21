@@ -654,7 +654,7 @@
         <span class="sidebar-stat-val" id="sidebar-total">—</span>
       </div>
       <div class="sidebar-stat">
-        <span>Session</span>
+        <span>Data through</span>
         <span class="sidebar-stat-val" id="sidebar-session">—</span>
       </div>
       <div class="sidebar-stat">
@@ -770,9 +770,11 @@
     });
 
   // ── Render both sections ─────────────────────────────────────────────────────
+  var MAX_PER_LIST = 24;   // names shown per category
+
   function render(data) {
-    var coiled  = data.coiled  || [];
-    var leaders = data.leaders || [];
+    var coiled  = (data.coiled  || []).slice(0, MAX_PER_LIST);
+    var leaders = (data.leaders || []).slice(0, MAX_PER_LIST);
 
     document.getElementById('loading').style.display = 'none';
 
@@ -784,7 +786,11 @@
     document.getElementById('badge-leaders').textContent = leaders.length;
     document.getElementById('count-coiled').textContent  = coiled.length + ' names';
     document.getElementById('count-leaders').textContent = leaders.length + ' names';
-    document.getElementById('sidebar-scan-time').textContent = 'Session ' + fmtDate(data.generated);
+    // Freshness: prices lag the run (T-1 on the free data tier), so show when the
+    // scan actually ran ("Updated …") and keep the data session separate below.
+    var stamp = fmtStamp(data.scanned_at);
+    document.getElementById('sidebar-scan-time').textContent =
+      stamp ? ('Updated ' + stamp) : ('Session ' + fmtDate(data.generated));
 
     fillGrid('grid-coiled', 'sec-coiled', coiled, 'coil_score', 'Coil');
     fillGrid('grid-leaders', 'sec-leaders', leaders, 'leader_score', 'Leader');
@@ -978,6 +984,11 @@
     if (!iso) return '—';
     var d = new Date(iso + 'T00:00:00');
     return isNaN(d) ? iso : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  }
+  function fmtStamp(iso) {
+    if (!iso) return null;
+    var d = new Date(iso);   // scanned_at is a full ISO datetime (the run time)
+    return isNaN(d) ? null : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
   }
   function fmtPrice(p) {
     if (p == null) return '—';
