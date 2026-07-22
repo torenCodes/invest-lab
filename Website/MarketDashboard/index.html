@@ -775,19 +775,24 @@
   .sr-posture-text strong { font-weight: 600; }
   .sr-posture-detail { display: block; font-size: 0.72rem; color: var(--ink-3); margin-top: 2px; }
 
-  .rrg-wrap { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; padding: 16px; }
-  .rrg-chart { flex: 0 0 440px; max-width: 100%; }
+  .rrg-wrap { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; padding: 16px; }
+  .rrg-chart { flex: 0 0 500px; max-width: 100%; }
   .rrg-svg { width: 100%; height: auto; display: block; }
   .rrg-qlabel { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.07em; opacity: 0.7; }
   .rrg-dot-label { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600; }
   .rrg-axis { font-size: 10px; fill: var(--ink-3); letter-spacing: 0.03em; }
-  .rrg-side { flex: 1; min-width: 220px; }
+  .rrg-side { flex: 1; min-width: 240px; }
   .rrg-side-title { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
-  .rrg-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; margin-bottom: 12px; }
-  .rrg-leg-item { display: flex; align-items: center; gap: 7px; font-size: 0.76rem; color: var(--ink-2); }
+  .rrg-quads { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; margin-bottom: 14px; }
+  .rrg-quad-block { border: 1px solid var(--border-light); border-radius: var(--radius); padding: 10px 13px; }
+  .rrg-quad-head { display: flex; align-items: center; gap: 7px; font-size: 0.8rem; font-weight: 600; color: var(--ink); }
+  .rrg-quad-desc { font-weight: 400; font-size: 0.72rem; color: var(--ink-3); }
+  .rrg-quad-members { margin-top: 6px; font-size: 0.78rem; color: var(--ink-2); line-height: 1.55; }
+  .rrg-quad-none { color: var(--ink-3); font-style: italic; }
   .rrg-leg-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
   .rrg-read { font-size: 0.76rem; color: var(--ink-3); line-height: 1.55; }
   .rrg-read strong { color: var(--ink-2); font-weight: 600; }
+  @media (max-width: 560px) { .rrg-quads { grid-template-columns: 1fr; } }
 
   .sr-toolbar { display: flex; justify-content: flex-end; padding: 2px 16px 10px; }
   .sr-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
@@ -1390,13 +1395,16 @@ function buildPostureBanner(posture, benchmark) {
 
 // ── Relative Rotation Graph (SVG quadrant chart) ────────────────────────────
 function buildRRG(sectors) {
-  const pts = sectors.filter(s => s.rrg && s.rrg.x != null);
+  // Render only the past two moves of each tail (current + 2 prior points) —
+  // the full multi-week trails turned the map into spaghetti.
+  const pts = sectors.filter(s => s.rrg && s.rrg.x != null)
+    .map(s => ({ ...s, _tail: (s.rrg.tail || []).slice(-3) }));
   if (pts.length < 2) return '';
   const W = 440, H = 440, PAD = 42;
   let dev = 1.5;
   pts.forEach(s => {
     dev = Math.max(dev, Math.abs(s.rrg.x - 100), Math.abs(s.rrg.y - 100));
-    (s.rrg.tail || []).forEach(t => { dev = Math.max(dev, Math.abs(t.x - 100), Math.abs(t.y - 100)); });
+    s._tail.forEach(t => { dev = Math.max(dev, Math.abs(t.x - 100), Math.abs(t.y - 100)); });
   });
   dev *= 1.18;
   const lo = 100 - dev, hi = 100 + dev, span = hi - lo;
@@ -1424,11 +1432,11 @@ function buildRRG(sectors) {
 
   const marks = pts.map(s => {
     const q = RRG_QUAD[s.rrg.quadrant] || RRG_QUAD.Lagging;
-    const tail = s.rrg.tail || [];
+    const tail = s._tail;
     let g = '';
     if (tail.length > 1) {
       const p = tail.map(t => `${sx(t.x).toFixed(1)},${sy(t.y).toFixed(1)}`).join(' ');
-      g += `<polyline points="${p}" fill="none" stroke="${q.color}" stroke-width="1.3" stroke-opacity="0.35" stroke-linejoin="round"/>`;
+      g += `<polyline points="${p}" fill="none" stroke="${q.color}" stroke-width="1.2" stroke-opacity="0.18" stroke-linejoin="round"/>`;
     }
     const X = sx(s.rrg.x), Y = sy(s.rrg.y);
     g += `<circle cx="${X.toFixed(1)}" cy="${Y.toFixed(1)}" r="5" fill="${q.color}"><title>${s.sector} — ${s.rrg.quadrant}</title></circle>`;
@@ -1442,16 +1450,22 @@ function buildRRG(sectors) {
 
   const svg = `<svg viewBox="0 0 ${W} ${H}" class="rrg-svg" xmlns="http://www.w3.org/2000/svg">${rects}${cross}${qlabels}${marks}${axis}</svg>`;
 
-  const leg = (q, txt) => `<span class="rrg-leg-item"><span class="rrg-leg-dot" style="background:${RRG_QUAD[q].color}"></span>${txt}</span>`;
+  // Side panel: current standings per quadrant, arranged 2x2 to mirror the map
+  // (Improving | Leading over Lagging | Weakening) — fills the space beside the
+  // chart with the read that used to require hovering every dot.
+  const quadDesc = { Leading: 'strong &amp; rising', Weakening: 'strong, fading',
+                     Improving: 'weak, turning up', Lagging: 'weak &amp; falling' };
+  const byQuad = {};
+  pts.forEach(s => { (byQuad[s.rrg.quadrant] = byQuad[s.rrg.quadrant] || []).push(s.sector); });
+  const quadBlocks = ['Improving', 'Leading', 'Lagging', 'Weakening'].map(q => `
+    <div class="rrg-quad-block" style="background:${RRG_QUAD[q].bg}">
+      <div class="rrg-quad-head"><span class="rrg-leg-dot" style="background:${RRG_QUAD[q].color}"></span>${q} <span class="rrg-quad-desc">&mdash; ${quadDesc[q]}</span></div>
+      <div class="rrg-quad-members">${(byQuad[q] || []).join(' &middot; ') || '<span class="rrg-quad-none">none today</span>'}</div>
+    </div>`).join('');
   const side = `<div class="rrg-side">
-    <div class="rrg-side-title">Reading the map</div>
-    <div class="rrg-legend">
-      ${leg('Leading','Leading — strong &amp; rising')}
-      ${leg('Weakening','Weakening — strong, fading')}
-      ${leg('Improving','Improving — weak, turning up')}
-      ${leg('Lagging','Lagging — weak &amp; falling')}
-    </div>
-    <div class="rrg-read">Each dot is a sector plotted by <strong>relative strength vs the S&amp;P</strong> (left&ndash;right) and <strong>momentum</strong> (down&ndash;up); the tail traces the last few weeks. Sectors tend to travel clockwise: Improving &rarr; Leading &rarr; Weakening &rarr; Lagging.</div>
+    <div class="rrg-side-title">Where sectors stand</div>
+    <div class="rrg-quads">${quadBlocks}</div>
+    <div class="rrg-read">Each dot is a sector plotted by <strong>relative strength vs the S&amp;P</strong> (left&ndash;right) and <strong>momentum</strong> (down&ndash;up); the short tail traces its recent path. Sectors tend to travel clockwise: Improving &rarr; Leading &rarr; Weakening &rarr; Lagging.</div>
   </div>`;
 
   return `<div class="rrg-wrap"><div class="rrg-chart">${svg}</div>${side}</div>`;
