@@ -784,11 +784,11 @@
   /* Stretch the side column to the chart's full height and let the quad
      blocks grow to fill it — no dead space beside the map. */
   .rrg-side {
-    flex: 1; min-width: 240px; padding-right: 36px;
+    flex: 1; min-width: 240px; padding-right: 50px;
     align-self: stretch; display: flex; flex-direction: column; justify-content: center;
   }
   .rrg-side-title { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
-  .rrg-quads { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; flex: 1; gap: 14px 16px; margin-bottom: 16px; }
+  .rrg-quads { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; flex: 1; gap: 14px 16px; margin-bottom: 12px; }
   .rrg-quad-block { border: 1px solid var(--border-light); border-radius: var(--radius); padding: 13px 16px; }
   .rrg-quad-head { display: flex; align-items: center; gap: 7px; font-size: 0.8rem; font-weight: 600; color: var(--ink); }
   .rrg-quad-desc { font-weight: 400; font-size: 0.72rem; color: var(--ink-3); }
@@ -1407,7 +1407,11 @@ function buildRRG(sectors) {
   const pts = sectors.filter(s => s.rrg && s.rrg.x != null)
     .map(s => ({ ...s, _tail: (s.rrg.tail || []).slice(-3) }));
   if (pts.length < 2) return '';
-  const W = 440, H = 440, PAD = 42;
+  const W = 440, H = 440;
+  // Asymmetric padding: left/bottom host the axis labels; top/right need only
+  // a sliver. A symmetric pad left ~48px of dead white above the plot, pushing
+  // the map's top edge out of line with the side panel beside it.
+  const PAD_L = 42, PAD_B = 42, PAD_T = 12, PAD_R = 14;
   let dev = 1.5;
   pts.forEach(s => {
     dev = Math.max(dev, Math.abs(s.rrg.x - 100), Math.abs(s.rrg.y - 100));
@@ -1415,27 +1419,27 @@ function buildRRG(sectors) {
   });
   dev *= 1.18;
   const lo = 100 - dev, hi = 100 + dev, span = hi - lo;
-  const sx = v => PAD + (v - lo) / span * (W - 2 * PAD);
-  const sy = v => PAD + (hi - v) / span * (H - 2 * PAD);
+  const sx = v => PAD_L + (v - lo) / span * (W - PAD_L - PAD_R);
+  const sy = v => PAD_T + (hi - v) / span * (H - PAD_T - PAD_B);
   const cx = sx(100), cy = sy(100);
 
   const rect = (x, y, w, h, q) => `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" fill="${RRG_QUAD[q].bg}"/>`;
   const rects =
-    rect(cx, PAD, W - PAD - cx, cy - PAD, 'Leading') +
-    rect(cx, cy, W - PAD - cx, H - PAD - cy, 'Weakening') +
-    rect(PAD, cy, cx - PAD, H - PAD - cy, 'Lagging') +
-    rect(PAD, PAD, cx - PAD, cy - PAD, 'Improving');
+    rect(cx, PAD_T, W - PAD_R - cx, cy - PAD_T, 'Leading') +
+    rect(cx, cy, W - PAD_R - cx, H - PAD_B - cy, 'Weakening') +
+    rect(PAD_L, cy, cx - PAD_L, H - PAD_B - cy, 'Lagging') +
+    rect(PAD_L, PAD_T, cx - PAD_L, cy - PAD_T, 'Improving');
 
   const cross =
-    `<line x1="${PAD}" y1="${cy.toFixed(1)}" x2="${W - PAD}" y2="${cy.toFixed(1)}" stroke="var(--border)" stroke-width="1"/>` +
-    `<line x1="${cx.toFixed(1)}" y1="${PAD}" x2="${cx.toFixed(1)}" y2="${H - PAD}" stroke="var(--border)" stroke-width="1"/>`;
+    `<line x1="${PAD_L}" y1="${cy.toFixed(1)}" x2="${W - PAD_R}" y2="${cy.toFixed(1)}" stroke="var(--border)" stroke-width="1"/>` +
+    `<line x1="${cx.toFixed(1)}" y1="${PAD_T}" x2="${cx.toFixed(1)}" y2="${H - PAD_B}" stroke="var(--border)" stroke-width="1"/>`;
 
   const ql = (x, y, anchor, q, txt) => `<text x="${x}" y="${y}" text-anchor="${anchor}" class="rrg-qlabel" fill="${RRG_QUAD[q].color}">${txt}</text>`;
   const qlabels =
-    ql(W - PAD - 5, PAD + 13, 'end',    'Leading',   'LEADING') +
-    ql(W - PAD - 5, H - PAD - 6, 'end',  'Weakening', 'WEAKENING') +
-    ql(PAD + 5, H - PAD - 6, 'start',    'Lagging',   'LAGGING') +
-    ql(PAD + 5, PAD + 13, 'start',       'Improving', 'IMPROVING');
+    ql(W - PAD_R - 5, PAD_T + 13, 'end',    'Leading',   'LEADING') +
+    ql(W - PAD_R - 5, H - PAD_B - 6, 'end',  'Weakening', 'WEAKENING') +
+    ql(PAD_L + 5, H - PAD_B - 6, 'start',    'Lagging',   'LAGGING') +
+    ql(PAD_L + 5, PAD_T + 13, 'start',       'Improving', 'IMPROVING');
 
   const marks = pts.map(s => {
     const q = RRG_QUAD[s.rrg.quadrant] || RRG_QUAD.Lagging;
@@ -1451,9 +1455,10 @@ function buildRRG(sectors) {
     return g;
   }).join('');
 
+  const plotCX = (PAD_L + W - PAD_R) / 2, plotCY = (PAD_T + H - PAD_B) / 2;
   const axis =
-    `<text x="${W / 2}" y="${H - 9}" text-anchor="middle" class="rrg-axis">Relative strength &rarr;</text>` +
-    `<text x="13" y="${H / 2}" text-anchor="middle" class="rrg-axis" transform="rotate(-90 13 ${H / 2})">Momentum &rarr;</text>`;
+    `<text x="${plotCX}" y="${H - 9}" text-anchor="middle" class="rrg-axis">Relative strength &rarr;</text>` +
+    `<text x="13" y="${plotCY}" text-anchor="middle" class="rrg-axis" transform="rotate(-90 13 ${plotCY})">Momentum &rarr;</text>`;
 
   const svg = `<svg viewBox="0 0 ${W} ${H}" class="rrg-svg" xmlns="http://www.w3.org/2000/svg">${rects}${cross}${qlabels}${marks}${axis}</svg>`;
 
