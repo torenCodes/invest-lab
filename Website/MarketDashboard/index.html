@@ -781,17 +781,24 @@
   .rrg-qlabel { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.07em; opacity: 0.7; }
   .rrg-dot-label { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600; }
   .rrg-axis { font-size: 10px; fill: var(--ink-3); letter-spacing: 0.03em; }
-  .rrg-side { flex: 1; min-width: 240px; }
-  .rrg-side-title { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
-  .rrg-quads { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; margin-bottom: 14px; }
-  .rrg-quad-block { border: 1px solid var(--border-light); border-radius: var(--radius); padding: 10px 13px; }
+  /* Stretch the side column to the chart's full height and let the quad
+     blocks grow to fill it — no dead space beside the map. */
+  .rrg-side {
+    flex: 1; min-width: 240px; padding-right: 36px;
+    align-self: stretch; display: flex; flex-direction: column; justify-content: center;
+  }
+  .rrg-side-title { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .rrg-quads { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; flex: 1; gap: 14px 16px; margin-bottom: 16px; }
+  .rrg-quad-block { border: 1px solid var(--border-light); border-radius: var(--radius); padding: 13px 16px; }
   .rrg-quad-head { display: flex; align-items: center; gap: 7px; font-size: 0.8rem; font-weight: 600; color: var(--ink); }
   .rrg-quad-desc { font-weight: 400; font-size: 0.72rem; color: var(--ink-3); }
-  .rrg-quad-members { margin-top: 6px; font-size: 0.78rem; color: var(--ink-2); line-height: 1.55; }
+  .rrg-quad-members { margin-top: 7px; font-size: 0.78rem; color: var(--ink-2); line-height: 1.5; }
+  .rrg-quad-member { padding: 2px 0; }
   .rrg-quad-none { color: var(--ink-3); font-style: italic; }
   .rrg-leg-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
   .rrg-read { font-size: 0.76rem; color: var(--ink-3); line-height: 1.55; }
   .rrg-read strong { color: var(--ink-2); font-weight: 600; }
+  @media (max-width: 900px) { .rrg-side { padding-right: 0; } }
   @media (max-width: 560px) { .rrg-quads { grid-template-columns: 1fr; } }
 
   .sr-toolbar { display: flex; justify-content: flex-end; padding: 2px 16px 10px; }
@@ -1460,7 +1467,7 @@ function buildRRG(sectors) {
   const quadBlocks = ['Improving', 'Leading', 'Lagging', 'Weakening'].map(q => `
     <div class="rrg-quad-block" style="background:${RRG_QUAD[q].bg}">
       <div class="rrg-quad-head"><span class="rrg-leg-dot" style="background:${RRG_QUAD[q].color}"></span>${q} <span class="rrg-quad-desc">&mdash; ${quadDesc[q]}</span></div>
-      <div class="rrg-quad-members">${(byQuad[q] || []).join(' &middot; ') || '<span class="rrg-quad-none">none today</span>'}</div>
+      <div class="rrg-quad-members">${(byQuad[q] || []).map(n => `<div class="rrg-quad-member">${n}</div>`).join('') || '<span class="rrg-quad-none">none today</span>'}</div>
     </div>`).join('');
   const side = `<div class="rrg-side">
     <div class="rrg-side-title">Where sectors stand</div>
