@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-07-23T11:00:32.910388+00:00",
+  "scan_time": "2026-07-23T13:00:36.454251+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Favorable",
-    "score": 4,
-    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
+    "verdict": "Mixed",
+    "score": 3,
+    "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you.",
     "signals": [
       {
         "label": "Market trend",
@@ -23,32 +23,21 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "17.6",
-        "read": "Calm",
-        "tone": "good"
+        "value": "18.9",
+        "read": "Calm but rising",
+        "tone": "neutral"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.66%",
+        "value": "4.71%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-23T11:00:43.803401+00:00"
+    "updated": "2026-07-23T13:00:58.404074+00:00"
   },
   "earnings": [
-    {
-      "date": "2026-07-23",
-      "symbol": "AAL",
-      "eps_estimate": 0.0346,
-      "eps_actual": null,
-      "revenue_estimate": 16874494836,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
     {
       "date": "2026-07-23",
       "symbol": "INTC",
@@ -84,28 +73,6 @@
     },
     {
       "date": "2026-07-23",
-      "symbol": "FCX",
-      "eps_estimate": 0.596,
-      "eps_actual": null,
-      "revenue_estimate": 6827932512,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-23",
-      "symbol": "UNP",
-      "eps_estimate": 3.2763,
-      "eps_actual": null,
-      "revenue_estimate": 6779916142,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-23",
       "symbol": "NEM",
       "eps_estimate": 2.0141,
       "eps_actual": null,
@@ -117,12 +84,45 @@
     },
     {
       "date": "2026-07-23",
-      "symbol": "AMP",
-      "eps_estimate": 10.8333,
+      "symbol": "AON",
+      "eps_estimate": 3.8399,
       "eps_actual": null,
-      "revenue_estimate": 4837517210,
+      "revenue_estimate": 4326476602,
       "revenue_actual": null,
       "hour": "bmo",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "BWMX",
+      "eps_estimate": 9.7535,
+      "eps_actual": null,
+      "revenue_estimate": 3958015905,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "FIX",
+      "eps_estimate": 10.5596,
+      "eps_actual": null,
+      "revenue_estimate": 3024708357,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "OVV",
+      "eps_estimate": 1.9734,
+      "eps_actual": null,
+      "revenue_estimate": 2398681320,
+      "revenue_actual": null,
+      "hour": "amc",
       "quarter": 2,
       "year": 2026
     },
@@ -655,5 +655,27 @@
       "year": 2026
     }
   ],
-  "unusual_volume": []
+  "unusual_volume": [
+    {
+      "ticker": "N",
+      "name": "Niki BioSolutions Inc",
+      "price": 9.77,
+      "change_pct": 8.68,
+      "volume": "23.76M"
+    },
+    {
+      "ticker": "A",
+      "name": "Advanced Biomed Inc",
+      "price": 14.78,
+      "change_pct": 20.65,
+      "volume": "24.42M"
+    },
+    {
+      "ticker": "L",
+      "name": "Direxion Daily LMT Bull 2X ETF",
+      "price": 34.11,
+      "change_pct": 10.21,
+      "volume": "-"
+    }
+  ]
 }
