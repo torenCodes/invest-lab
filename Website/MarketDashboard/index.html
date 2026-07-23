@@ -1413,9 +1413,10 @@ function buildRRG(sectors) {
     .map(s => ({ ...s, _tail: (s.rrg.tail || []).slice(-3) }));
   if (pts.length < 2) return '';
   const W = 440, H = 440;
-  // Slim uniform padding — the axis labels are gone, so the plot fills the
-  // canvas; the corner quadrant labels live inside the plot itself.
-  const PAD = 13;
+  // Zero padding — the plot's top edge IS the svg edge, so the map's top
+  // lines up with the standings cards beside it. The 1.18x auto-scale headroom
+  // keeps dots well inside; right-edge dot labels flip to the left instead.
+  const PAD = 0;
   let dev = 1.5;
   pts.forEach(s => {
     dev = Math.max(dev, Math.abs(s.rrg.x - 100), Math.abs(s.rrg.y - 100));
@@ -1455,7 +1456,8 @@ function buildRRG(sectors) {
     }
     const X = sx(s.rrg.x), Y = sy(s.rrg.y);
     g += `<circle cx="${X.toFixed(1)}" cy="${Y.toFixed(1)}" r="5" fill="${q.color}"><title>${s.sector} — ${s.rrg.quadrant}</title></circle>`;
-    g += `<text x="${(X + 8).toFixed(1)}" y="${(Y + 3.5).toFixed(1)}" class="rrg-dot-label" fill="${q.color}">${s.ticker}</text>`;
+    const labelLeft = X > W * 0.86;   // keep labels inside the canvas at the right edge
+    g += `<text x="${(labelLeft ? X - 8 : X + 8).toFixed(1)}" y="${(Y + 3.5).toFixed(1)}"${labelLeft ? ' text-anchor="end"' : ''} class="rrg-dot-label" fill="${q.color}">${s.ticker}</text>`;
     return g;
   }).join('');
 
