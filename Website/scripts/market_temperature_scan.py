@@ -1,22 +1,24 @@
 """
-Market Temperature Scan — proprietary composite market valuation gauge.
+Market Temperature Scan — proprietary live market-regime thermometer.
 
 Composite score 0-100:
-  0 = Cheap, 100 = Frothy
+  0 = Cold (washed out, fear), 100 = Hot (euphoric, overheated)
 
-Components (each scored 0-100). Expanded June 2026 from a static valuation
-gauge into a market-regime composite: valuation anchors were trimmed and
-dynamic macro/internal inputs added so the reading actually moves with market
-stress and euphoria instead of pinning near the top. VIX dropped (it lives in
-the homepage's Trading Conditions panel now).
-  - Buffett Indicator (Wilshire 5000 / GDP)       — 15%  percentile over 10yr
-  - Shiller CAPE (10yr real P/E)                  — 15%  percentile over 10yr
-  - Fed Model (S&P earnings yield − 10Y Treasury) — 10%  fixed thresholds
-  - Credit spreads (ICE BofA HY OAS, FRED)        — 15%  inverted percentile over 10yr
-  - Yield curve (10Y − 2Y, FRED)                  — 10%  fixed thresholds (cycle stage)
-  - Breadth (% S&P 500 above 200-DMA)             — 15%  fixed thresholds
-  - Net new highs (near 52wk high − near low)     — 10%  derived from breadth download
-  - Fear & Greed (CNN sentiment composite)        — 10%  used directly (already 0-100)
+Rebuilt July 2026 from a valuation gauge into a REGIME thermometer. The old
+valuation anchors (Buffett Indicator, Shiller CAPE, Fed Model — 40% of weight)
+move on quarters, not days, and in this era sit permanently at their ceilings,
+which pinned the composite in the mid-70s for weeks. They're gone; ~75% of the
+weight now moves day to day, and the gauge leans on the lab's own signals.
+
+Components (each scored 0-100):
+  - Risk posture (lab's Sector Rotation engine)   — 15%  cyclical vs defensive rel. strength
+  - Trend heat (SPY vs 50-DMA + 10-day thrust)    — 15%  percentile over 3yr
+  - Fast breadth (% S&P 500 above 50-DMA)         — 15%  used directly
+  - Net new highs (near 52wk high − near low)     — 15%  derived from breadth download
+  - Fear & Greed (CNN sentiment composite)        — 15%  used directly (already 0-100)
+  - Structural breadth (% S&P 500 above 200-DMA)  — 10%  fixed thresholds
+  - Credit spreads (ICE BofA HY OAS, FRED)        — 10%  inverted percentile over 10yr
+  - Yield curve (10Y − 2Y, FRED)                  —  5%  fixed thresholds (cycle stage)
 
 Output: MarketDashboard/data/market_temperature.json
 Invoked by GitHub Actions daily. Run locally: python scripts/market_temperature_scan.py
@@ -24,7 +26,6 @@ Invoked by GitHub Actions daily. Run locally: python scripts/market_temperature_
 
 import json
 import os
-import re
 import time
 from bisect import bisect_left
 from datetime import datetime, timezone, timedelta
@@ -44,14 +45,14 @@ NEXT_SCAN_INFO = "Weekdays at 6:00am ET"
 CALIB_YEARS    = 10
 
 WEIGHTS = {
-    "buffett":     0.15,
-    "shiller":     0.15,
-    "fed_model":   0.10,
-    "credit":      0.15,
-    "yield_curve": 0.10,
-    "breadth":     0.15,
-    "new_highs":   0.10,
-    "fear_greed":  0.10,
+    "risk_posture": 0.15,
+    "trend":        0.15,
+    "breadth_50":   0.15,
+    "new_highs":    0.15,
+    "fear_greed":   0.15,
+    "breadth":      0.10,
+    "credit":       0.10,
+    "yield_curve":  0.05,
 }
 
 
@@ -79,11 +80,11 @@ def percentile_rank(series, value):
 def label_for(score):
     if score is None:
         return "Unknown"
-    if score < 20:  return "Cheap"
-    if score < 40:  return "Fair"
-    if score < 60:  return "Elevated"
-    if score < 80:  return "Frothy"
-    return "Extreme"
+    if score < 20:  return "Cold"
+    if score < 40:  return "Cool"
+    if score < 60:  return "Neutral"
+    if score < 80:  return "Warm"
+    return "Hot"
 
 
 def fred_series(series_id, years_back):
@@ -117,210 +118,80 @@ def fred_series(series_id, years_back):
     return out
 
 
-def ffill_to_dates(sparse, target_dates):
-    """Forward-fill a sparse series (quarterly GDP, etc.) onto target daily dates.
-    Both inputs must be sorted ascending by date. Returns dict of date_str → value."""
-    out = {}
-    i = 0
-    last = None
-    for d in target_dates:
-        while i < len(sparse) and sparse[i][0] <= d:
-            last = sparse[i][1]
-            i += 1
-        if last is not None:
-            out[d] = last
-    return out
+# ── Component: Risk posture (the lab's own Sector Rotation read) ─────────────
+
+def compute_risk_posture():
+    """Cyclical vs defensive leadership from the Movers scan's Sector Rotation
+    engine — the average 1-month relative strength (vs SPY) of cyclical sectors
+    minus defensives, read straight from results.json in this repo. Cyclicals
+    leading = risk appetite (hot); defensives leading = de-risking (cold).
+    A ±8pt spread saturates the scale. Updated 6x/day by the market scan, so
+    this component moves every session."""
+    print("[market-temp] Risk posture (sector rotation)...")
+    path = os.path.join(BASE_DIR, "MarketDashboard", "data", "results.json")
+    try:
+        with open(path) as f:
+            posture = (json.load(f).get("sector_rotation") or {}).get("posture")
+    except Exception as e:
+        print(f"[market-temp] results.json unavailable: {e}")
+        return None
+    if not posture or posture.get("spread") is None:
+        print("[market-temp] Risk posture: no posture in results.json yet")
+        return None
+
+    spread = float(posture["spread"])
+    score  = round(clamp(50.0 + spread * 6.0, 0.0, 100.0), 1)
+    leaders = ", ".join(posture.get("leaders") or []) or "n/a"
+    return {
+        "raw":         spread,
+        "raw_label":   f"{spread:+.1f}pt {posture.get('label', '')}".strip(),
+        "score":       score,
+        "label":       label_for(score),
+        "description": "The lab's own Sector Rotation read: cyclical sectors' 1-month relative "
+                       "strength vs defensives. Cyclicals leading = risk appetite running hot; "
+                       f"defensives leading = money playing defense. Leading now: {leaders}.",
+    }
 
 
-# ── Component 1: Buffett Indicator ───────────────────────────────────────────
+# ── Component: Trend heat (S&P 500 price structure) ──────────────────────────
 
-def compute_buffett():
-    """Buffett Indicator: total US market cap vs GDP.
-
-    Data sources:
-      - Wilshire 5000 (^W5000) via yfinance — FRED discontinued its WILL5000*
-        series on June 3, 2024, so we go straight to Yahoo Finance for the
-        same index.
-      - GDP via FRED (GDP series) — quarterly, forward-filled onto monthly
-        Wilshire dates.
-
-    Score = percentile rank of the current Wilshire/GDP ratio over the
-    prior ~10 years of monthly observations, so structurally elevated
-    readings don't dominate.
-    """
-    print("[market-temp] Buffett Indicator...")
+def compute_trend_heat():
+    """Where the S&P sits vs its 50-day average plus the strength of the last
+    two weeks' move, each percentile-ranked against ~3 years of daily history
+    and averaged. The fastest-moving component — built to make the gauge
+    breathe day to day."""
+    print("[market-temp] Trend heat (SPY)...")
     try:
         import yfinance as yf
-    except ImportError:
-        print("[market-temp] yfinance unavailable")
-        return None
-
-    try:
-        hist = yf.Ticker("^W5000").history(
-            period=f"{CALIB_YEARS + 1}y", interval="1mo", auto_adjust=False
-        )
+        hist = yf.Ticker("SPY").history(period="3y", interval="1d", auto_adjust=True)
     except Exception as e:
-        print(f"[market-temp] Wilshire 5000 fetch failed: {e}")
+        print(f"[market-temp] SPY fetch failed: {e}")
         return None
-    if hist is None or len(hist) < 24:
-        print("[market-temp] Wilshire 5000: insufficient history")
-        return None
-
-    wilshire = [
-        (d.strftime("%Y-%m-%d"), float(c))
-        for d, c in zip(hist.index, hist["Close"].values)
-        if c == c  # filter NaN
-    ]
-    wilshire.sort(key=lambda x: x[0])
-
-    gdp = fred_series("GDP", CALIB_YEARS + 2)
-    if not gdp:
+    if hist is None or len(hist) < 300:
+        print("[market-temp] Trend heat: insufficient SPY history")
         return None
 
-    dates       = [d for d, _ in wilshire]
-    gdp_aligned = ffill_to_dates(gdp, dates)
-
-    ratios = [(d, w / gdp_aligned[d]) for d, w in wilshire if d in gdp_aligned]
-    if len(ratios) < 24:
-        print("[market-temp] Buffett: not enough overlapping history")
+    close = hist["Close"].dropna()
+    dist  = ((close / close.rolling(50).mean()) - 1.0).dropna() * 100   # % vs 50-DMA
+    roc10 = (close.pct_change(10).dropna()) * 100                       # 10-day thrust
+    if len(dist) < 250 or len(roc10) < 250:
         return None
 
-    current    = ratios[-1][1]
-    historical = [v for _, v in ratios[:-1]]
-    pct        = percentile_rank(historical, current)
+    d_now, r_now = float(dist.iloc[-1]), float(roc10.iloc[-1])
+    d_pct = percentile_rank([float(v) for v in dist.iloc[:-1]], d_now)
+    r_pct = percentile_rank([float(v) for v in roc10.iloc[:-1]], r_now)
+    if d_pct is None or r_pct is None:
+        return None
 
+    score = round((d_pct + r_pct) / 2.0, 1)
     return {
-        "raw":         round(current, 3),
-        "raw_label":   f"{current:.1f} (W5000/GDP)",
-        "percentile":  pct,
-        "score":       pct,
-        "label":       label_for(pct),
-        "description": "Total US market cap (Wilshire 5000) vs GDP — Warren Buffett's \"best single measure.\" "
-                       f"Percentile-ranked over the last {CALIB_YEARS} years.",
-    }
-
-
-# ── Component 2: Shiller CAPE ────────────────────────────────────────────────
-
-def _parse_multpl_table(html):
-    """multpl.com table parser — rows are (date, value)."""
-    soup = BeautifulSoup(html, "html.parser")
-    table = soup.find("table", id="datatable")
-    if not table:
-        return []
-    out = []
-    for row in table.find_all("tr")[1:]:
-        cells = row.find_all("td")
-        if len(cells) < 2:
-            continue
-        date_str = cells[0].get_text(strip=True)
-        val_str  = cells[1].get_text(strip=True).replace(",", "").replace("†", "").strip()
-        date = None
-        for fmt in ("%b %d, %Y", "%b %Y", "%B %d, %Y", "%B %Y"):
-            try:
-                date = datetime.strptime(date_str, fmt).date()
-                break
-            except ValueError:
-                continue
-        if not date:
-            continue
-        try:
-            out.append((date, float(val_str)))
-        except ValueError:
-            continue
-    return out
-
-
-def compute_shiller():
-    print("[market-temp] Shiller CAPE...")
-    try:
-        r = requests.get("https://www.multpl.com/shiller-pe/table/by-month",
-                         headers=HEADERS, timeout=20)
-        r.raise_for_status()
-    except Exception as e:
-        print(f"[market-temp] Shiller fetch failed: {e}")
-        return None
-
-    values = _parse_multpl_table(r.text)
-    values.sort(key=lambda x: x[0])
-    cutoff = datetime.now(timezone.utc).date() - timedelta(days=CALIB_YEARS * 365 + 60)
-    window = [v for d, v in values if d >= cutoff]
-
-    if len(window) < 50:
-        return None
-
-    current    = window[-1]
-    historical = window[:-1]
-    pct        = percentile_rank(historical, current)
-
-    return {
-        "raw":         round(current, 2),
-        "raw_label":   f"{current:.1f}x CAPE",
-        "percentile":  pct,
-        "score":       pct,
-        "label":       label_for(pct),
-        "description": "S&P 500 price divided by 10-year inflation-adjusted earnings. "
-                       f"Percentile-ranked over the last {CALIB_YEARS} years.",
-    }
-
-
-# ── Component 3: Fed Model (fixed thresholds) ────────────────────────────────
-
-def _fetch_sp500_pe():
-    """Scrape current S&P 500 P/E from multpl.com.
-
-    Page markup: <div id="current"><b>Current S&P 500 PE Ratio:</b> 30.35 <span>...</span></div>
-    We want the text node immediately after <b>, not a regex on the whole element
-    (which would greedily match "500" from the label).
-    """
-    try:
-        r = requests.get("https://www.multpl.com/s-p-500-pe-ratio",
-                         headers=HEADERS, timeout=15)
-        r.raise_for_status()
-        soup = BeautifulSoup(r.text, "html.parser")
-        current_el = soup.find("div", id="current")
-        if not current_el or not current_el.b:
-            return None
-        value_text = (current_el.b.next_sibling or "")
-        m = re.search(r"([0-9]+\.?[0-9]*)", str(value_text))
-        return float(m.group(1)) if m else None
-    except Exception as e:
-        print(f"[market-temp] S&P 500 PE fetch failed: {e}")
-        return None
-
-
-def compute_fed_model():
-    print("[market-temp] Fed Model...")
-    pe = _fetch_sp500_pe()
-    if not pe or pe <= 0:
-        return None
-
-    earnings_yield = 100.0 / pe
-    dgs10 = fred_series("DGS10", 0.3)
-    if not dgs10:
-        return None
-    treasury_10y = dgs10[-1][1]
-
-    spread = earnings_yield - treasury_10y
-
-    if   spread >  3.0:  score = 10
-    elif spread >  2.0:  score = 25
-    elif spread >  1.0:  score = 40
-    elif spread >  0.0:  score = 55
-    elif spread > -1.0:  score = 70
-    elif spread > -2.0:  score = 85
-    else:                score = 95
-
-    return {
-        "raw":            round(spread, 2),
-        "raw_label":      f"{spread:+.2f}% spread",
-        "earnings_yield": round(earnings_yield, 2),
-        "treasury_10y":   round(treasury_10y, 2),
-        "pe":             round(pe, 2),
-        "score":          score,
-        "label":          label_for(score),
-        "description":    f"S&P earnings yield {earnings_yield:.2f}% vs 10Y Treasury {treasury_10y:.2f}%. "
-                          "Positive spread means stocks are relatively cheap vs bonds.",
+        "raw":         round(d_now, 2),
+        "raw_label":   f"{d_now:+.1f}% vs 50-DMA",
+        "score":       score,
+        "label":       label_for(score),
+        "description": "Where the S&P trades vs its 50-day average, plus the strength of the "
+                       "last two weeks' move — percentile-ranked over three years. A stretched, "
+                       "fast-climbing tape runs hot; a broken, falling tape runs cold.",
     }
 
 
@@ -409,13 +280,15 @@ def _fetch_sp500_tickers():
 
 
 def compute_internals():
-    """Downloads the S&P 500 once and derives TWO components:
-      - breadth:   % of stocks above their 200-day MA (trend participation)
-      - new_highs: net % near a 52-week high minus near a 52-week low (the
-                   euphoria/stress extreme — a fast-moving internal)
-    Returns {"breadth": {...}|None, "new_highs": {...}|None}."""
+    """Downloads the S&P 500 once and derives THREE components:
+      - breadth_50: % of stocks above their 50-day MA (the FAST participation
+                    read — swings hard with every pullback and rally)
+      - breadth:    % of stocks above their 200-day MA (structural trend health)
+      - new_highs:  net % near a 52-week high minus near a 52-week low (the
+                    euphoria/stress extreme)
+    Returns {"breadth_50": ..., "breadth": ..., "new_highs": ...} (each dict|None)."""
     print("[market-temp] Market internals (breadth + new highs)...")
-    out = {"breadth": None, "new_highs": None}
+    out = {"breadth_50": None, "breadth": None, "new_highs": None}
     try:
         import yfinance as yf
     except ImportError:
@@ -435,7 +308,7 @@ def compute_internals():
         print(f"[market-temp] yfinance download failed: {e}")
         return out
 
-    above, total = 0, 0
+    above, above50, total = 0, 0, 0
     near_high, near_low = 0, 0
     for t in tickers:
         try:
@@ -446,6 +319,8 @@ def compute_internals():
             last  = closes.iloc[-1]
             if last > closes.iloc[-200:].mean():
                 above += 1
+            if last > closes.iloc[-50:].mean():
+                above50 += 1
             hi, lo = closes.max(), closes.min()
             if   hi and last >= 0.95 * hi:  near_high += 1   # within 5% of 52wk high
             elif lo and last <= 1.05 * lo:  near_low  += 1   # within 5% of 52wk low
@@ -454,6 +329,19 @@ def compute_internals():
 
     if total == 0:
         return out
+
+    pct50 = round(100.0 * above50 / total, 1)
+    out["breadth_50"] = {
+        "raw":         pct50,
+        "raw_label":   f"{pct50}% above 50-DMA",
+        "above_50dma": above50,
+        "total":       total,
+        "score":       round(clamp(pct50, 0.0, 100.0), 1),   # the % IS the score
+        "label":       label_for(pct50),
+        "description": f"{above50} of {total} S&P 500 stocks above their 50-day moving average — "
+                       "the fast participation read. Swings hard with every dip and rally, "
+                       "unlike its slower 200-day cousin below.",
+    }
 
     pct = round(100.0 * above / total, 1)
     if   pct <= 30:  b_score = 15
@@ -495,8 +383,8 @@ def compute_internals():
 def compute_fear_greed():
     """CNN's Fear & Greed Index — composite of 7 short-term sentiment signals.
     The published score is already 0-100 (0 = Extreme Fear, 100 = Extreme
-    Greed) and aligns directly with our Cheap → Frothy framing, so we use
-    it without transformation."""
+    Greed) and aligns directly with our Cold → Hot framing, so we use it
+    without transformation."""
     print("[market-temp] Fear & Greed...")
     url = "https://production.dataviz.cnn.io/index/fearandgreed/graphdata/"
     headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -534,14 +422,14 @@ def compute_fear_greed():
 # ── Composite ────────────────────────────────────────────────────────────────
 
 COMPONENT_META = {
-    "buffett":     {"title": "Buffett Indicator", "subtitle": "Market Cap / GDP"},
-    "shiller":     {"title": "Shiller CAPE",      "subtitle": "10-Year Real P/E"},
-    "fed_model":   {"title": "Fed Model",         "subtitle": "Earnings Yield − 10Y"},
-    "credit":      {"title": "Credit Spreads",    "subtitle": "High-Yield OAS"},
-    "yield_curve": {"title": "Yield Curve",       "subtitle": "10Y − 2Y Treasury"},
-    "breadth":     {"title": "Breadth",           "subtitle": "% S&P 500 > 200-DMA"},
-    "new_highs":   {"title": "Net New Highs",     "subtitle": "52wk highs − lows"},
-    "fear_greed":  {"title": "Fear & Greed",      "subtitle": "CNN Sentiment Index"},
+    "risk_posture": {"title": "Risk Posture",       "subtitle": "Cyclicals vs Defensives"},
+    "trend":        {"title": "Trend Heat",         "subtitle": "S&P vs 50-DMA + thrust"},
+    "breadth_50":   {"title": "Fast Breadth",       "subtitle": "% S&P 500 > 50-DMA"},
+    "new_highs":    {"title": "Net New Highs",      "subtitle": "52wk highs − lows"},
+    "fear_greed":   {"title": "Fear & Greed",       "subtitle": "CNN Sentiment Index"},
+    "breadth":      {"title": "Structural Breadth", "subtitle": "% S&P 500 > 200-DMA"},
+    "credit":       {"title": "Credit Spreads",     "subtitle": "High-Yield OAS"},
+    "yield_curve":  {"title": "Yield Curve",        "subtitle": "10Y − 2Y Treasury"},
 }
 
 
@@ -550,15 +438,16 @@ def run():
     print(f"[market-temp] Starting scan at {start.isoformat()}")
 
     internals = compute_internals()
+    # Fast movers first — this dict order is the display order on the homepage.
     components = {
-        "buffett":     compute_buffett(),
-        "shiller":     compute_shiller(),
-        "fed_model":   compute_fed_model(),
-        "credit":      compute_credit_spreads(),
-        "yield_curve": compute_yield_curve(),
-        "breadth":     internals.get("breadth"),
-        "new_highs":   internals.get("new_highs"),
-        "fear_greed":  compute_fear_greed(),
+        "risk_posture": compute_risk_posture(),
+        "trend":        compute_trend_heat(),
+        "breadth_50":   internals.get("breadth_50"),
+        "new_highs":    internals.get("new_highs"),
+        "fear_greed":   compute_fear_greed(),
+        "breadth":      internals.get("breadth"),
+        "credit":       compute_credit_spreads(),
+        "yield_curve":  compute_yield_curve(),
     }
 
     weighted_sum, total_weight = 0.0, 0.0
