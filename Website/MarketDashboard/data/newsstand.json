@@ -1,29 +1,29 @@
 {
-  "scan_time": "2026-07-23T13:00:36.454251+00:00",
+  "scan_time": "2026-07-23T15:00:40.318130+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Mixed",
-    "score": 3,
-    "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you.",
+    "verdict": "Risk-Off",
+    "score": -2,
+    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
     "signals": [
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Above 50-day",
-        "read": "Uptrend",
-        "tone": "good"
+        "value": "Below 50-day",
+        "read": "Downtrend",
+        "tone": "bad"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-1.0%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "-1.7%",
+        "read": "Weak",
+        "tone": "bad"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "18.9",
+        "value": "19.2",
         "read": "Calm but rising",
         "tone": "neutral"
       },
@@ -35,7 +35,7 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-23T13:00:58.404074+00:00"
+    "updated": "2026-07-23T15:01:00.502913+00:00"
   },
   "earnings": [
     {
@@ -657,25 +657,60 @@
   ],
   "unusual_volume": [
     {
-      "ticker": "N",
-      "name": "Niki BioSolutions Inc",
-      "price": 9.77,
-      "change_pct": 8.68,
-      "volume": "23.76M"
-    },
-    {
-      "ticker": "A",
+      "ticker": "ADVB",
       "name": "Advanced Biomed Inc",
-      "price": 14.78,
-      "change_pct": 20.65,
-      "volume": "24.42M"
+      "price": 15.44,
+      "change_pct": 26.04,
+      "volume": "9.6M"
     },
     {
-      "ticker": "L",
-      "name": "Direxion Daily LMT Bull 2X ETF",
-      "price": 34.11,
-      "change_pct": 10.21,
-      "volume": "-"
+      "ticker": "SNDU",
+      "name": "T-REX 2X Long SNDK Daily Target ETF",
+      "price": 29.91,
+      "change_pct": 3.85,
+      "volume": "5.2M"
+    },
+    {
+      "ticker": "NVCR",
+      "name": "NovoCure Ltd",
+      "price": 19.54,
+      "change_pct": 25.5,
+      "volume": "3.4M"
+    },
+    {
+      "ticker": "IMAX",
+      "name": "Imax Corp",
+      "price": 42.42,
+      "change_pct": 7.94,
+      "volume": "2.3M"
+    },
+    {
+      "ticker": "PAVS",
+      "name": "Paranovus Entertainment Technology Ltd",
+      "price": 7.67,
+      "change_pct": 97.68,
+      "volume": "2.2M"
+    },
+    {
+      "ticker": "DGX",
+      "name": "Quest Diagnostics Inc",
+      "price": 232.07,
+      "change_pct": 10.6,
+      "volume": "1.5M"
+    },
+    {
+      "ticker": "SLG",
+      "name": "SL Green Realty Corp",
+      "price": 53.55,
+      "change_pct": 6.85,
+      "volume": "1.4M"
+    },
+    {
+      "ticker": "IBX",
+      "name": "Tradr 2X Long IBM Daily ETF",
+      "price": 13.81,
+      "change_pct": 0.04,
+      "volume": "1.3M"
     }
   ]
 }
