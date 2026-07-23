@@ -304,13 +304,22 @@ def fetch_unusual_volume(limit=10):
         if len(cells) < 10:
             continue
 
+        # Finviz (Jul 2026 redesign) carries the clean symbol as a data
+        # attribute on the cell — the anchor's text is now decorated with
+        # logo/styling elements and yields only the first letter.
         ticker_cell = cells[1]
-        ticker_link = ticker_cell.find("a")
-        ticker = ticker_link.text.strip() if ticker_link else ""
+        ticker = (ticker_cell.get("data-boxover-ticker") or "").strip()
+        if not ticker:
+            ticker_link = ticker_cell.find("a")
+            href = ticker_link.get("href", "") if ticker_link else ""
+            m = re.search(r"[?&]t=([A-Za-z0-9.\-]+)", href)
+            ticker = m.group(1) if m else (ticker_link.text.strip() if ticker_link else "")
 
         name_cell = cells[2]
         name_link = name_cell.find("a")
         name = name_link.text.strip() if name_link else ""
+        if not name:
+            name = (ticker_cell.get("data-boxover-company") or "").strip()
 
         # Price is in column index 8 (0-based), change in 9
         try:
@@ -325,8 +334,17 @@ def fetch_unusual_volume(limit=10):
         except (ValueError, IndexError):
             change_pct = None
 
-        # Volume in column 6
-        volume_text = cells[6].text.strip() if len(cells) > 6 else ""
+        # Volume is the LAST column (10) in the current v=111 layout —
+        # cells[6] is Market Cap (the old code was showing caps as "volume").
+        # Finviz serves a raw share count; compact it to 95.9M style.
+        volume_text = ""
+        if len(cells) > 10:
+            raw = cells[10].text.strip().replace(",", "")
+            if raw.isdigit():
+                v = int(raw)
+                volume_text = (f"{v/1e9:.2f}B" if v >= 1e9 else
+                               f"{v/1e6:.1f}M" if v >= 1e6 else
+                               f"{v/1e3:.0f}K" if v >= 1e3 else str(v))
 
         if (ticker
                 and change_pct is not None and change_pct > 0
