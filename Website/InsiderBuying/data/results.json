@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-07-24T14:47:46.330321",
-  "total_transactions": 57,
-  "date_range": "Jul 15 '26 \u2013 Jul 22 '26",
+  "scan_time": "2026-07-24T18:19:26.456984",
+  "total_transactions": 58,
+  "date_range": "Jul 15 '26 \u2013 Jul 24 '26",
   "min_value": 25000,
   "nominees": [
     {
@@ -171,8 +171,8 @@
       "is_csuite": true,
       "company": "Invesco S&P Emerging Markets Low Volatility ETF",
       "sector": "Unknown",
-      "current_price": 28.194,
-      "change_pct": 0.37,
+      "current_price": 28.265,
+      "change_pct": 0.62,
       "market_cap": 0,
       "insiders": [
         {
@@ -608,6 +608,41 @@
       "story": "CCAG \u2014 The President and CEO bought, $511K total."
     },
     {
+      "ticker": "PPNFP",
+      "insider": "MCCABE ROBERT A JR",
+      "title": "Chief Banking Officer",
+      "date": "Jul 24 '26",
+      "price": 99.9,
+      "qty": 10013,
+      "value": 1000299,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "PPNFP",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "MCCABE ROBERT A JR",
+          "title": "Chief Banking Officer",
+          "date": "Jul 24 '26",
+          "price": 99.9,
+          "qty": 10013,
+          "value": 1000299,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 20,
+      "tier": "W",
+      "signals": [
+        "$1.0M total",
+        "Activity in last 3 days"
+      ],
+      "story": "PPNFP \u2014 MCCABE ROBERT A JR (Chief Banking Officer) bought, $1.0M total."
+    },
+    {
       "ticker": "AARTV",
       "insider": "RA CAPITAL MANAGEMENT, L.P.",
       "title": "Director",
@@ -974,10 +1009,21 @@
   "tier_counts": {
     "A": 1,
     "B": 14,
-    "W": 6,
-    "total": 21
+    "W": 7,
+    "total": 22
   },
   "recent_feed": [
+    {
+      "ticker": "PPNFP",
+      "insider": "MCCABE ROBERT A JR",
+      "title": "Chief Banking Officer",
+      "date": "Jul 24 '26",
+      "price": 99.9,
+      "qty": 10013,
+      "value": 1000299,
+      "filing": "Jul 24 12:13 PM",
+      "is_csuite": false
+    },
     {
       "ticker": "BBMR",
       "insider": "Carmel Sharon",
@@ -1405,17 +1451,6 @@
       "qty": 152472,
       "value": 1361575,
       "filing": "Jul 20 06:08 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "CCBIO",
-      "insider": "Fairmount Funds Management LLC",
-      "title": "Director",
-      "date": "Jul 16 '26",
-      "price": 14.5,
-      "qty": 853450,
-      "value": 12375025,
-      "filing": "Jul 20 05:30 PM",
       "is_csuite": false
     }
   ]
