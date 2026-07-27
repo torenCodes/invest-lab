@@ -1,13 +1,13 @@
 {
-  "scan_time": "2026-07-24T11:37:30.631314+00:00",
+  "scan_time": "2026-07-27T12:51:58.036520+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 50.2,
+  "composite_score": 49.1,
   "composite_label": "Neutral",
   "components": {
     "risk_posture": {
-      "raw": -2.93,
-      "raw_label": "-2.9pt Risk-off",
-      "score": 32.4,
+      "raw": -3.08,
+      "raw_label": "-3.1pt Risk-off",
+      "score": 31.5,
       "label": "Cool",
       "description": "The lab's own Sector Rotation read: cyclical sectors' 1-month relative strength vs defensives. Cyclicals leading = risk appetite running hot; defensives leading = money playing defense. Leading now: Energy, Health Care.",
       "title": "Risk Posture",
@@ -17,7 +17,7 @@
     "trend": {
       "raw": -0.79,
       "raw_label": "-0.8% vs 50-DMA",
-      "score": 16.3,
+      "score": 16.2,
       "label": "Cold",
       "description": "Where the S&P trades vs its 50-day average, plus the strength of the last two weeks' move \u2014 percentile-ranked over three years. A stretched, fast-climbing tape runs hot; a broken, falling tape runs cold.",
       "title": "Trend Heat",
@@ -25,13 +25,13 @@
       "weight": 0.15
     },
     "breadth_50": {
-      "raw": 59.8,
-      "raw_label": "59.8% above 50-DMA",
-      "above_50dma": 299,
+      "raw": 59.6,
+      "raw_label": "59.6% above 50-DMA",
+      "above_50dma": 298,
       "total": 500,
-      "score": 59.8,
+      "score": 59.6,
       "label": "Neutral",
-      "description": "299 of 500 S&P 500 stocks above their 50-day moving average \u2014 the fast participation read. Swings hard with every dip and rally, unlike its slower 200-day cousin below.",
+      "description": "298 of 500 S&P 500 stocks above their 50-day moving average \u2014 the fast participation read. Swings hard with every dip and rally, unlike its slower 200-day cousin below.",
       "title": "Fast Breadth",
       "subtitle": "% S&P 500 > 50-DMA",
       "weight": 0.15
@@ -50,9 +50,9 @@
       "weight": 0.15
     },
     "fear_greed": {
-      "raw": 38.8,
+      "raw": 39.4,
       "raw_label": "39 (Fear)",
-      "score": 38.8,
+      "score": 39.4,
       "label": "Cool",
       "description": "CNN's composite of 7 short-term sentiment signals (momentum, breadth, put/call ratio, junk-bond demand, volatility, etc.). High readings reflect investor euphoria \u2014 historically a contrarian sell signal.",
       "title": "Fear & Greed",
@@ -72,10 +72,10 @@
       "weight": 0.1
     },
     "credit": {
-      "raw": 2.68,
-      "raw_label": "2.68% HY OAS",
-      "percentile": 5.7,
-      "score": 94.3,
+      "raw": 2.77,
+      "raw_label": "2.77% HY OAS",
+      "percentile": 16.3,
+      "score": 83.7,
       "label": "Hot",
       "description": "Extra yield demanded to hold high-yield (junk) bonds over Treasuries. Tight spreads signal risk-on complacency; wide spreads signal stress. Inverted percentile over 10 years.",
       "title": "Credit Spreads",
@@ -83,8 +83,8 @@
       "weight": 0.1
     },
     "yield_curve": {
-      "raw": 0.34,
-      "raw_label": "+0.34% (10Y\u22122Y)",
+      "raw": 0.36,
+      "raw_label": "+0.36% (10Y\u22122Y)",
       "score": 52,
       "label": "Neutral",
       "description": "10-year minus 2-year Treasury yield. A steep curve is early-cycle and healthy; a flat or inverted curve marks a late-cycle market that is historically more stretched and froth-prone.",
