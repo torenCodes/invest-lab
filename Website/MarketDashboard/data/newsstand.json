@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-07-27T07:00:29.827908+00:00",
+  "scan_time": "2026-07-27T09:00:39.527774+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Cautious",
-    "score": 0,
-    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
+    "verdict": "Risk-Off",
+    "score": -1,
+    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
     "signals": [
       {
         "label": "Market trend",
@@ -16,26 +16,26 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.6%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "-1.7%",
+        "read": "Weak",
+        "tone": "bad"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "18.6",
+        "value": "17.6",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.68%",
+        "value": "4.70%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-27T07:00:44.612372+00:00"
+    "updated": "2026-07-27T09:00:48.896157+00:00"
   },
   "earnings": [
     {
@@ -655,83 +655,5 @@
       "year": 2026
     }
   ],
-  "unusual_volume": [
-    {
-      "ticker": "STAK",
-      "name": "Stak Inc",
-      "price": 9.27,
-      "change_pct": 602.27,
-      "volume": "67.1M"
-    },
-    {
-      "ticker": "FTXH",
-      "name": "First Trust Nasdaq Pharmaceuticals ETF",
-      "price": 38.97,
-      "change_pct": 0.37,
-      "volume": "31.3M"
-    },
-    {
-      "ticker": "RNG",
-      "name": "RingCentral Inc",
-      "price": 48.31,
-      "change_pct": 25.09,
-      "volume": "8.9M"
-    },
-    {
-      "ticker": "WKC",
-      "name": "World Kinect Corp",
-      "price": 38.14,
-      "change_pct": 5.16,
-      "volume": "4.4M"
-    },
-    {
-      "ticker": "FTXR",
-      "name": "First Trust Nasdaq Transportation ETF",
-      "price": 45.18,
-      "change_pct": 0.85,
-      "volume": "4.3M"
-    },
-    {
-      "ticker": "FLIN",
-      "name": "Franklin FTSE India ETF",
-      "price": 34.51,
-      "change_pct": 0.91,
-      "volume": "3.6M"
-    },
-    {
-      "ticker": "GRFS",
-      "name": "Grifols SA ADR",
-      "price": 7.58,
-      "change_pct": 0.53,
-      "volume": "3.1M"
-    },
-    {
-      "ticker": "LDRT",
-      "name": "iShares iBonds 1-5 Year Treasury Ladder ETF",
-      "price": 24.92,
-      "change_pct": 0.16,
-      "volume": "2.8M"
-    },
-    {
-      "ticker": "SAFT",
-      "name": "Safety Insurance Group Inc",
-      "price": 103.2,
-      "change_pct": 41.49,
-      "volume": "1.6M"
-    },
-    {
-      "ticker": "JGLO",
-      "name": "JPMorgan Global Select Equity ETF",
-      "price": 70.75,
-      "change_pct": 0.3,
-      "volume": "1.3M"
-    },
-    {
-      "ticker": "DHLX",
-      "name": "Diamond Hill Large Cap Concentrated ETF",
-      "price": 13.3,
-      "change_pct": 0.71,
-      "volume": "1.3M"
-    }
-  ]
+  "unusual_volume": []
 }
