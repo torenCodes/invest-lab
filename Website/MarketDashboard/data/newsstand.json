@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-07-27T11:00:33.670001+00:00",
+  "scan_time": "2026-07-27T13:00:33.868027+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Risk-Off",
-    "score": -1,
-    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
+    "verdict": "Cautious",
+    "score": 0,
+    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
     "signals": [
       {
         "label": "Market trend",
@@ -16,26 +16,26 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-1.7%",
-        "read": "Weak",
-        "tone": "bad"
+        "value": "-0.6%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "17.6",
+        "value": "17.7",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.70%",
+        "value": "4.65%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-27T11:00:44.319649+00:00"
+    "updated": "2026-07-27T13:00:59.490874+00:00"
   },
   "earnings": [
     {
@@ -655,5 +655,27 @@
       "year": 2026
     }
   ],
-  "unusual_volume": []
+  "unusual_volume": [
+    {
+      "ticker": "EDBL",
+      "name": "Edible Garden AG Inc",
+      "price": 7.22,
+      "change_pct": 129.94,
+      "volume": "14.5M"
+    },
+    {
+      "ticker": "FBRX",
+      "name": "Forte Biosciences Inc",
+      "price": 76.46,
+      "change_pct": 39.57,
+      "volume": "4.1M"
+    },
+    {
+      "ticker": "RACC",
+      "name": "Research Alliance Corp III",
+      "price": 11.99,
+      "change_pct": 9.0,
+      "volume": "44K"
+    }
+  ]
 }
