@@ -1,9 +1,89 @@
 {
-  "scan_time": "2026-07-24T19:12:03.225427",
-  "total_transactions": 58,
-  "date_range": "Jul 15 '26 \u2013 Jul 24 '26",
+  "scan_time": "2026-07-27T14:29:45.283672",
+  "total_transactions": 60,
+  "date_range": "Jul 16 '26 \u2013 Jul 23 '26",
   "min_value": 25000,
   "nominees": [
+    {
+      "ticker": "FFSBC",
+      "insider": "Allbaugh Larry Eugene",
+      "title": "Director",
+      "date": "Jul 22 '26",
+      "price": 44.0,
+      "qty": 142727,
+      "value": 6279988,
+      "txn_count": 6,
+      "insider_count": 6,
+      "is_csuite": false,
+      "company": "FFSBC",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Allbaugh Larry Eugene",
+          "title": "Director",
+          "date": "Jul 22 '26",
+          "price": 44.0,
+          "qty": 96591,
+          "value": 4250004,
+          "is_csuite": false
+        },
+        {
+          "name": "Perry-Smith Robert Truxtun",
+          "title": "Director",
+          "date": "Jul 22 '26",
+          "price": 44.0,
+          "qty": 31363,
+          "value": 1379972,
+          "is_csuite": false
+        },
+        {
+          "name": "Deary-Bell Shannon",
+          "title": "Director",
+          "date": "Jul 22 '26",
+          "price": 44.0,
+          "qty": 5682,
+          "value": 250008,
+          "is_csuite": false
+        },
+        {
+          "name": "Ramos Kevin Francis",
+          "title": "Director",
+          "date": "Jul 22 '26",
+          "price": 44.0,
+          "qty": 5682,
+          "value": 250008,
+          "is_csuite": false
+        },
+        {
+          "name": "Riggs Judson Teichert",
+          "title": "Director",
+          "date": "Jul 22 '26",
+          "price": 44.0,
+          "qty": 2273,
+          "value": 100012,
+          "is_csuite": false
+        },
+        {
+          "name": "Lucas Donna",
+          "title": "Director",
+          "date": "Jul 22 '26",
+          "price": 44.0,
+          "qty": 1136,
+          "value": 49984,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 57,
+      "tier": "A",
+      "signals": [
+        "6 insiders buying",
+        "$6.3M total"
+      ],
+      "story": "FFSBC \u2014 Cluster of 6 insiders, $6.3M total."
+    },
     {
       "ticker": "RRBKB",
       "insider": "Patzwahl Nancy Koskey",
@@ -58,15 +138,49 @@
           "is_csuite": false
         }
       ],
-      "conviction_score": 58,
+      "conviction_score": 53,
       "tier": "A",
       "signals": [
         "4 insiders buying",
         "President & CEO bought",
-        "$656K total",
-        "Activity in last 3 days"
+        "$656K total"
       ],
       "story": "RRBKB \u2014 Cluster of 4 buyers including the President & CEO, $656K total."
+    },
+    {
+      "ticker": "CCOE",
+      "insider": "Huang Jack Jiajia",
+      "title": "Chief Executive Officer",
+      "date": "Jul 23 '26",
+      "price": 15.76,
+      "qty": 2221320,
+      "value": 36835837,
+      "txn_count": 11,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "CCOE",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Huang Jack Jiajia",
+          "title": "Chief Executive Officer",
+          "date": "Jul 23 '26",
+          "price": 15.76,
+          "qty": 2221320,
+          "value": 36835837,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 45,
+      "tier": "B",
+      "signals": [
+        "Chief Executive Officer bought",
+        "$36.8M total"
+      ],
+      "story": "CCOE \u2014 The Chief Executive Officer bought, $36.8M total."
     },
     {
       "ticker": "BBYRN",
@@ -113,141 +227,59 @@
           "is_csuite": false
         }
       ],
-      "conviction_score": 45,
+      "conviction_score": 40,
       "tier": "B",
       "signals": [
         "3 insiders buying",
         "Chairman of the Board bought",
-        "$210K total",
-        "Activity in last 3 days"
+        "$210K total"
       ],
       "story": "BBYRN \u2014 Cluster of 3 buyers including the Chairman of the Board and Chief Executive Officer, $210K total."
     },
     {
-      "ticker": "CCOE",
-      "insider": "Huang Jack Jiajia",
-      "title": "Chief Executive Officer",
-      "date": "Jul 20 '26",
-      "price": 16.68,
-      "qty": 1117500,
-      "value": 18970851,
-      "txn_count": 8,
-      "insider_count": 1,
+      "ticker": "CCAPS",
+      "insider": "TOPOREK MICHAEL",
+      "title": "Director",
+      "date": "Mar 07 '25",
+      "price": 4.0,
+      "qty": 83500,
+      "value": 334000,
+      "txn_count": 2,
+      "insider_count": 2,
       "is_csuite": true,
-      "company": "CCOE",
+      "company": "CCAPS",
       "sector": "Unknown",
       "current_price": 0,
       "change_pct": 0,
       "market_cap": 0,
       "insiders": [
         {
-          "name": "Huang Jack Jiajia",
+          "name": "TOPOREK MICHAEL",
+          "title": "Director",
+          "date": "Mar 07 '25",
+          "price": 4.0,
+          "qty": 41750,
+          "value": 167000,
+          "is_csuite": false
+        },
+        {
+          "name": "Lipman Matthew E.",
           "title": "Chief Executive Officer",
-          "date": "Jul 20 '26",
-          "price": 16.68,
-          "qty": 1117500,
-          "value": 18970851,
+          "date": "Mar 07 '25",
+          "price": 4.0,
+          "qty": 41750,
+          "value": 167000,
           "is_csuite": true
         }
       ],
-      "conviction_score": 45,
+      "conviction_score": 32,
       "tier": "B",
       "signals": [
+        "2 insiders buying",
         "Chief Executive Officer bought",
-        "$19.0M total"
+        "$334K total"
       ],
-      "story": "CCOE \u2014 The Chief Executive Officer bought, $19.0M total."
-    },
-    {
-      "ticker": "EELV",
-      "insider": "BOUDREAUX GAIL",
-      "title": "President and CEO",
-      "date": "Jul 17 '26",
-      "price": 367.79,
-      "qty": 3725,
-      "value": 1368280,
-      "txn_count": 2,
-      "insider_count": 2,
-      "is_csuite": true,
-      "company": "Invesco S&P Emerging Markets Low Volatility ETF",
-      "sector": "Unknown",
-      "current_price": 28.1669,
-      "change_pct": 0.27,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "BOUDREAUX GAIL",
-          "title": "President and CEO",
-          "date": "Jul 17 '26",
-          "price": 367.79,
-          "qty": 2725,
-          "value": 1002230,
-          "is_csuite": true
-        },
-        {
-          "name": "PERU RAMIRO G",
-          "title": "Director",
-          "date": "Jul 17 '26",
-          "price": 366.05,
-          "qty": 1000,
-          "value": 366050,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 42,
-      "tier": "B",
-      "signals": [
-        "2 insiders buying",
-        "President and CEO bought",
-        "$1.4M total"
-      ],
-      "story": "EELV \u2014 Two insiders bought including the President and CEO, $1.4M total."
-    },
-    {
-      "ticker": "GGRML",
-      "insider": "LeBlanc Jeff",
-      "title": "Chief Financial Officer",
-      "date": "Jul 16 '26",
-      "price": 0.18,
-      "qty": 1640000,
-      "value": 301224,
-      "txn_count": 2,
-      "insider_count": 2,
-      "is_csuite": true,
-      "company": "GGRML",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "LeBlanc Jeff",
-          "title": "Chief Financial Officer",
-          "date": "Jul 16 '26",
-          "price": 0.18,
-          "qty": 1400000,
-          "value": 245280,
-          "is_csuite": true
-        },
-        {
-          "name": "Sawyer Jason David",
-          "title": "Director",
-          "date": "Jul 22 '26",
-          "price": 0.23,
-          "qty": 240000,
-          "value": 55944,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 37,
-      "tier": "B",
-      "signals": [
-        "2 insiders buying",
-        "Chief Financial Officer bought",
-        "$301K total",
-        "Activity in last 3 days"
-      ],
-      "story": "GGRML \u2014 Two insiders bought including the Chief Financial Officer, $301K total."
+      "story": "CCAPS \u2014 Two insiders bought including the Chief Executive Officer, $334K total."
     },
     {
       "ticker": "ZZSTK",
@@ -319,142 +351,39 @@
       "story": "CCBIO \u2014 Fairmount Funds Management LLC (Director) bought, $12.4M total."
     },
     {
-      "ticker": "LLILAK",
-      "insider": "FRIES MICHAEL T",
-      "title": "Executive Chairman",
-      "date": "Jun 25 '26",
-      "price": 20.39,
-      "qty": 49382,
-      "value": 1006711,
+      "ticker": "CCAG",
+      "insider": "Brase John P",
+      "title": "President and CEO",
+      "date": "Jul 17 '26",
+      "price": 14.59,
+      "qty": 35000,
+      "value": 510632,
       "txn_count": 1,
       "insider_count": 1,
       "is_csuite": true,
-      "company": "LLILAK",
+      "company": "CCAG",
       "sector": "Unknown",
       "current_price": 0,
       "change_pct": 0,
       "market_cap": 0,
       "insiders": [
         {
-          "name": "FRIES MICHAEL T",
-          "title": "Executive Chairman",
-          "date": "Jun 25 '26",
-          "price": 20.39,
-          "qty": 49382,
-          "value": 1006711,
+          "name": "Brase John P",
+          "title": "President and CEO",
+          "date": "Jul 17 '26",
+          "price": 14.59,
+          "qty": 35000,
+          "value": 510632,
           "is_csuite": true
         }
       ],
-      "conviction_score": 30,
+      "conviction_score": 25,
       "tier": "B",
       "signals": [
-        "Executive Chairman bought",
-        "$1.0M total"
+        "President and CEO bought",
+        "$511K total"
       ],
-      "story": "LLILAK \u2014 The Executive Chairman bought, $1.0M total."
-    },
-    {
-      "ticker": "LLILA",
-      "insider": "FRIES MICHAEL T",
-      "title": "Executive Chairman",
-      "date": "Jun 25 '26",
-      "price": 20.39,
-      "qty": 49382,
-      "value": 1006711,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "LLILA",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "FRIES MICHAEL T",
-          "title": "Executive Chairman",
-          "date": "Jun 25 '26",
-          "price": 20.39,
-          "qty": 49382,
-          "value": 1006711,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 30,
-      "tier": "B",
-      "signals": [
-        "Executive Chairman bought",
-        "$1.0M total"
-      ],
-      "story": "LLILA \u2014 The Executive Chairman bought, $1.0M total."
-    },
-    {
-      "ticker": "SSMFG",
-      "insider": "SUMITOMO MITSUI FINANCIAL GROU",
-      "title": "Director",
-      "date": "Jul 15 '26",
-      "price": 53.96,
-      "qty": 5906542,
-      "value": 318717006,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "SSMFG",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "SUMITOMO MITSUI FINANCIAL GROU",
-          "title": "Director",
-          "date": "Jul 15 '26",
-          "price": 53.96,
-          "qty": 5906542,
-          "value": 318717006,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 30,
-      "tier": "B",
-      "signals": [
-        "$318.7M total"
-      ],
-      "story": "SSMFG \u2014 SUMITOMO MITSUI FINANCIAL GROU (Director) bought, $318.7M total."
-    },
-    {
-      "ticker": "JJEF",
-      "insider": "SUMITOMO MITSUI FINANCIAL GROU",
-      "title": "Director",
-      "date": "Jul 15 '26",
-      "price": 53.96,
-      "qty": 5906542,
-      "value": 318717006,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "JJEF",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "SUMITOMO MITSUI FINANCIAL GROU",
-          "title": "Director",
-          "date": "Jul 15 '26",
-          "price": 53.96,
-          "qty": 5906542,
-          "value": 318717006,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 30,
-      "tier": "B",
-      "signals": [
-        "$318.7M total"
-      ],
-      "story": "JJEF \u2014 SUMITOMO MITSUI FINANCIAL GROU (Director) bought, $318.7M total."
+      "story": "CCAG \u2014 The President and CEO bought, $511K total."
     },
     {
       "ticker": "TTSM",
@@ -492,12 +421,11 @@
           "is_csuite": false
         }
       ],
-      "conviction_score": 27,
-      "tier": "B",
+      "conviction_score": 22,
+      "tier": "W",
       "signals": [
         "2 insiders buying",
-        "$659K total",
-        "Activity in last 3 days"
+        "$659K total"
       ],
       "story": "TTSM \u2014 Two insiders bought, $659K total."
     },
@@ -528,84 +456,47 @@
           "is_csuite": false
         }
       ],
-      "conviction_score": 27,
-      "tier": "B",
+      "conviction_score": 22,
+      "tier": "W",
       "signals": [
-        "$6.9M total",
-        "Activity in last 3 days"
+        "$6.9M total"
       ],
       "story": "PPBLS \u2014 RA CAPITAL MANAGEMENT, L.P. (Director) bought, $6.9M total."
     },
     {
-      "ticker": "BBMR",
-      "insider": "Carmel Sharon",
-      "title": "Chief Executive Officer",
-      "date": "Jul 22 '26",
-      "price": 1.28,
-      "qty": 82650,
-      "value": 106205,
+      "ticker": "VVMI",
+      "insider": "Schwietz John L",
+      "title": "Executive VP and CFO",
+      "date": "Jul 23 '26",
+      "price": 486.14,
+      "qty": 208,
+      "value": 101118,
       "txn_count": 1,
       "insider_count": 1,
       "is_csuite": true,
-      "company": "BBMR",
+      "company": "VVMI",
       "sector": "Unknown",
       "current_price": 0,
       "change_pct": 0,
       "market_cap": 0,
       "insiders": [
         {
-          "name": "Carmel Sharon",
-          "title": "Chief Executive Officer",
-          "date": "Jul 22 '26",
-          "price": 1.28,
-          "qty": 82650,
-          "value": 106205,
+          "name": "Schwietz John L",
+          "title": "Executive VP and CFO",
+          "date": "Jul 23 '26",
+          "price": 486.14,
+          "qty": 208,
+          "value": 101118,
           "is_csuite": true
         }
       ],
-      "conviction_score": 25,
-      "tier": "B",
+      "conviction_score": 20,
+      "tier": "W",
       "signals": [
-        "Chief Executive Officer bought",
-        "$106K total",
-        "Activity in last 3 days"
+        "Executive VP and CFO bought",
+        "$101K total"
       ],
-      "story": "BBMR \u2014 The Chief Executive Officer bought, $106K total."
-    },
-    {
-      "ticker": "CCAG",
-      "insider": "Brase John P",
-      "title": "President and CEO",
-      "date": "Jul 17 '26",
-      "price": 14.59,
-      "qty": 35000,
-      "value": 510632,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "CCAG",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "Brase John P",
-          "title": "President and CEO",
-          "date": "Jul 17 '26",
-          "price": 14.59,
-          "qty": 35000,
-          "value": 510632,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 25,
-      "tier": "B",
-      "signals": [
-        "President and CEO bought",
-        "$511K total"
-      ],
-      "story": "CCAG \u2014 The President and CEO bought, $511K total."
+      "story": "VVMI \u2014 The Executive VP and CFO bought, $101K total."
     },
     {
       "ticker": "PPNFP",
@@ -643,6 +534,75 @@
       "story": "PPNFP \u2014 MCCABE ROBERT A JR (Chief Banking Officer) bought, $1.0M total."
     },
     {
+      "ticker": "BBMR",
+      "insider": "Carmel Sharon",
+      "title": "Chief Executive Officer",
+      "date": "Jul 22 '26",
+      "price": 1.28,
+      "qty": 82650,
+      "value": 106205,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "BBMR",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Carmel Sharon",
+          "title": "Chief Executive Officer",
+          "date": "Jul 22 '26",
+          "price": 1.28,
+          "qty": 82650,
+          "value": 106205,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 20,
+      "tier": "W",
+      "signals": [
+        "Chief Executive Officer bought",
+        "$106K total"
+      ],
+      "story": "BBMR \u2014 The Chief Executive Officer bought, $106K total."
+    },
+    {
+      "ticker": "GGLSI",
+      "insider": "Patel Snehal",
+      "title": "CEO and CFO",
+      "date": "Jul 23 '26",
+      "price": 13.14,
+      "qty": 2500,
+      "value": 32850,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "GGLSI",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Patel Snehal",
+          "title": "CEO and CFO",
+          "date": "Jul 23 '26",
+          "price": 13.14,
+          "qty": 2500,
+          "value": 32850,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 15,
+      "tier": "W",
+      "signals": [
+        "CEO and CFO bought"
+      ],
+      "story": "GGLSI \u2014 The CEO and CFO bought."
+    },
+    {
       "ticker": "AARTV",
       "insider": "RA CAPITAL MANAGEMENT, L.P.",
       "title": "Director",
@@ -669,83 +629,12 @@
           "is_csuite": false
         }
       ],
-      "conviction_score": 20,
-      "tier": "W",
-      "signals": [
-        "$4.0M total",
-        "Activity in last 3 days"
-      ],
-      "story": "AARTV \u2014 RA CAPITAL MANAGEMENT, L.P. (Director) bought, $4.0M total."
-    },
-    {
-      "ticker": "CCAPS",
-      "insider": "Lipman Matthew E.",
-      "title": "Chief Executive Officer",
-      "date": "Mar 07 '25",
-      "price": 4.0,
-      "qty": 41750,
-      "value": 167000,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "CCAPS",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "Lipman Matthew E.",
-          "title": "Chief Executive Officer",
-          "date": "Mar 07 '25",
-          "price": 4.0,
-          "qty": 41750,
-          "value": 167000,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 20,
-      "tier": "W",
-      "signals": [
-        "Chief Executive Officer bought",
-        "$167K total"
-      ],
-      "story": "CCAPS \u2014 The Chief Executive Officer bought, $167K total."
-    },
-    {
-      "ticker": "NNMM",
-      "insider": "Frangou Angeliki",
-      "title": "See Remarks",
-      "date": "Jul 22 '26",
-      "price": 74.07,
-      "qty": 6785,
-      "value": 501086,
-      "txn_count": 6,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "NNMM",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "Frangou Angeliki",
-          "title": "See Remarks",
-          "date": "Jul 22 '26",
-          "price": 74.07,
-          "qty": 6785,
-          "value": 501086,
-          "is_csuite": false
-        }
-      ],
       "conviction_score": 15,
       "tier": "W",
       "signals": [
-        "$501K total",
-        "Activity in last 3 days"
+        "$4.0M total"
       ],
-      "story": "NNMM \u2014 Frangou Angeliki (See Remarks) bought, $501K total."
+      "story": "AARTV \u2014 RA CAPITAL MANAGEMENT, L.P. (Director) bought, $4.0M total."
     },
     {
       "ticker": "RRANI",
@@ -780,77 +669,89 @@
         "Chief Executive Officer bought"
       ],
       "story": "RRANI \u2014 The Chief Executive Officer bought."
-    },
-    {
-      "ticker": "AAXIA",
-      "insider": "Batista de Lima Filho Pedro",
-      "title": "Director",
-      "date": "Jul 15 '26",
-      "price": 9.67,
-      "qty": 200000,
-      "value": 1934000,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "AAXIA",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "Batista de Lima Filho Pedro",
-          "title": "Director",
-          "date": "Jul 15 '26",
-          "price": 9.67,
-          "qty": 200000,
-          "value": 1934000,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 15,
-      "tier": "W",
-      "signals": [
-        "$1.9M total"
-      ],
-      "story": "AAXIA \u2014 Batista de Lima Filho Pedro (Director) bought, $1.9M total."
-    },
-    {
-      "ticker": "PPDI",
-      "insider": "STRACKE THIBAULT CHRISTIAN",
-      "title": "",
-      "date": "Jul 15 '26",
-      "price": 16.4,
-      "qty": 100000,
-      "value": 1640000,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "373673",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "STRACKE THIBAULT CHRISTIAN",
-          "title": "",
-          "date": "Jul 15 '26",
-          "price": 16.4,
-          "qty": 100000,
-          "value": 1640000,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 15,
-      "tier": "W",
-      "signals": [
-        "$1.6M total"
-      ],
-      "story": "PPDI \u2014 STRACKE THIBAULT CHRISTIAN () bought, $1.6M total."
     }
   ],
   "standouts": [
+    {
+      "ticker": "FFSBC",
+      "insider": "Allbaugh Larry Eugene",
+      "title": "Director",
+      "date": "Jul 22 '26",
+      "price": 44.0,
+      "qty": 142727,
+      "value": 6279988,
+      "txn_count": 6,
+      "insider_count": 6,
+      "is_csuite": false,
+      "company": "FFSBC",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Allbaugh Larry Eugene",
+          "title": "Director",
+          "date": "Jul 22 '26",
+          "price": 44.0,
+          "qty": 96591,
+          "value": 4250004,
+          "is_csuite": false
+        },
+        {
+          "name": "Perry-Smith Robert Truxtun",
+          "title": "Director",
+          "date": "Jul 22 '26",
+          "price": 44.0,
+          "qty": 31363,
+          "value": 1379972,
+          "is_csuite": false
+        },
+        {
+          "name": "Deary-Bell Shannon",
+          "title": "Director",
+          "date": "Jul 22 '26",
+          "price": 44.0,
+          "qty": 5682,
+          "value": 250008,
+          "is_csuite": false
+        },
+        {
+          "name": "Ramos Kevin Francis",
+          "title": "Director",
+          "date": "Jul 22 '26",
+          "price": 44.0,
+          "qty": 5682,
+          "value": 250008,
+          "is_csuite": false
+        },
+        {
+          "name": "Riggs Judson Teichert",
+          "title": "Director",
+          "date": "Jul 22 '26",
+          "price": 44.0,
+          "qty": 2273,
+          "value": 100012,
+          "is_csuite": false
+        },
+        {
+          "name": "Lucas Donna",
+          "title": "Director",
+          "date": "Jul 22 '26",
+          "price": 44.0,
+          "qty": 1136,
+          "value": 49984,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 57,
+      "tier": "A",
+      "signals": [
+        "6 insiders buying",
+        "$6.3M total"
+      ],
+      "story": "FFSBC \u2014 Cluster of 6 insiders, $6.3M total."
+    },
     {
       "ticker": "RRBKB",
       "insider": "Patzwahl Nancy Koskey",
@@ -905,80 +806,24 @@
           "is_csuite": false
         }
       ],
-      "conviction_score": 58,
+      "conviction_score": 53,
       "tier": "A",
       "signals": [
         "4 insiders buying",
         "President & CEO bought",
-        "$656K total",
-        "Activity in last 3 days"
+        "$656K total"
       ],
       "story": "RRBKB \u2014 Cluster of 4 buyers including the President & CEO, $656K total."
-    },
-    {
-      "ticker": "BBYRN",
-      "insider": "Kennedy TJ",
-      "title": "Chairman of the Board",
-      "date": "Jul 22 '26",
-      "price": 3.53,
-      "qty": 60268,
-      "value": 209795,
-      "txn_count": 3,
-      "insider_count": 3,
-      "is_csuite": true,
-      "company": "BBYRN",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "Kennedy TJ",
-          "title": "Chairman of the Board",
-          "date": "Jul 22 '26",
-          "price": 3.53,
-          "qty": 29000,
-          "value": 102286,
-          "is_csuite": true
-        },
-        {
-          "name": "Davis Conn Q.",
-          "title": "Chief Executive Officer",
-          "date": "Jul 22 '26",
-          "price": 3.46,
-          "qty": 18768,
-          "value": 64963,
-          "is_csuite": true
-        },
-        {
-          "name": "Hughes Herbert",
-          "title": "Director",
-          "date": "Jul 23 '26",
-          "price": 3.4,
-          "qty": 12500,
-          "value": 42546,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 45,
-      "tier": "B",
-      "signals": [
-        "3 insiders buying",
-        "Chairman of the Board bought",
-        "$210K total",
-        "Activity in last 3 days"
-      ],
-      "story": "BBYRN \u2014 Cluster of 3 buyers including the Chairman of the Board and Chief Executive Officer, $210K total."
     },
     {
       "ticker": "CCOE",
       "insider": "Huang Jack Jiajia",
       "title": "Chief Executive Officer",
-      "date": "Jul 20 '26",
-      "price": 16.68,
-      "qty": 1117500,
-      "value": 18970851,
-      "txn_count": 8,
+      "date": "Jul 23 '26",
+      "price": 15.76,
+      "qty": 2221320,
+      "value": 36835837,
+      "txn_count": 11,
       "insider_count": 1,
       "is_csuite": true,
       "company": "CCOE",
@@ -990,10 +835,10 @@
         {
           "name": "Huang Jack Jiajia",
           "title": "Chief Executive Officer",
-          "date": "Jul 20 '26",
-          "price": 16.68,
-          "qty": 1117500,
-          "value": 18970851,
+          "date": "Jul 23 '26",
+          "price": 15.76,
+          "qty": 2221320,
+          "value": 36835837,
           "is_csuite": true
         }
       ],
@@ -1001,18 +846,172 @@
       "tier": "B",
       "signals": [
         "Chief Executive Officer bought",
-        "$19.0M total"
+        "$36.8M total"
       ],
-      "story": "CCOE \u2014 The Chief Executive Officer bought, $19.0M total."
+      "story": "CCOE \u2014 The Chief Executive Officer bought, $36.8M total."
     }
   ],
   "tier_counts": {
-    "A": 1,
-    "B": 14,
-    "W": 7,
-    "total": 22
+    "A": 2,
+    "B": 6,
+    "W": 8,
+    "total": 16
   },
   "recent_feed": [
+    {
+      "ticker": "PPEBO",
+      "insider": "Smith Dwight Eric",
+      "title": "Director",
+      "date": "Jul 23 '26",
+      "price": 39.81,
+      "qty": 1000,
+      "value": 39810,
+      "filing": "Jul 27 09:20 AM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "CCOE",
+      "insider": "Huang Jack Jiajia",
+      "title": "Chief Executive Officer",
+      "date": "Jul 23 '26",
+      "price": 15.76,
+      "qty": 421440,
+      "value": 6643210,
+      "filing": "Jul 27 09:04 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "CCOE",
+      "insider": "Huang Jack Jiajia",
+      "title": "Chief Executive Officer",
+      "date": "Jul 22 '26",
+      "price": 15.97,
+      "qty": 183720,
+      "value": 2934047,
+      "filing": "Jul 27 09:04 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "CCOE",
+      "insider": "Huang Jack Jiajia",
+      "title": "Chief Executive Officer",
+      "date": "Jul 21 '26",
+      "price": 16.62,
+      "qty": 498660,
+      "value": 8287729,
+      "filing": "Jul 27 09:04 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "MMKC",
+      "insider": "Conway Michael Aaron",
+      "title": "Director",
+      "date": "Jul 23 '26",
+      "price": 50.21,
+      "qty": 1100,
+      "value": 55227,
+      "filing": "Jul 27 08:26 AM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "GGLSI",
+      "insider": "Patel Snehal",
+      "title": "CEO and CFO",
+      "date": "Jul 23 '26",
+      "price": 13.14,
+      "qty": 2500,
+      "value": 32850,
+      "filing": "Jul 27 06:15 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "FFSBC",
+      "insider": "Allbaugh Larry Eugene",
+      "title": "Director",
+      "date": "Jul 22 '26",
+      "price": 44.0,
+      "qty": 96591,
+      "value": 4250004,
+      "filing": "Jul 24 04:34 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "FFSBC",
+      "insider": "Perry-Smith Robert Truxtun",
+      "title": "Director",
+      "date": "Jul 22 '26",
+      "price": 44.0,
+      "qty": 31363,
+      "value": 1379972,
+      "filing": "Jul 24 04:33 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "FFSBC",
+      "insider": "Deary-Bell Shannon",
+      "title": "Director",
+      "date": "Jul 22 '26",
+      "price": 44.0,
+      "qty": 5682,
+      "value": 250008,
+      "filing": "Jul 24 04:32 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "FFSBC",
+      "insider": "Lucas Donna",
+      "title": "Director",
+      "date": "Jul 22 '26",
+      "price": 44.0,
+      "qty": 1136,
+      "value": 49984,
+      "filing": "Jul 24 04:32 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "FFSBC",
+      "insider": "Riggs Judson Teichert",
+      "title": "Director",
+      "date": "Jul 22 '26",
+      "price": 44.0,
+      "qty": 2273,
+      "value": 100012,
+      "filing": "Jul 24 04:31 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "FFSBC",
+      "insider": "Ramos Kevin Francis",
+      "title": "Director",
+      "date": "Jul 22 '26",
+      "price": 44.0,
+      "qty": 5682,
+      "value": 250008,
+      "filing": "Jul 24 04:31 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "CCAPS",
+      "insider": "TOPOREK MICHAEL",
+      "title": "Director",
+      "date": "Mar 07 '25",
+      "price": 4.0,
+      "qty": 41750,
+      "value": 167000,
+      "filing": "Jul 24 04:27 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "VVMI",
+      "insider": "Schwietz John L",
+      "title": "Executive VP and CFO",
+      "date": "Jul 23 '26",
+      "price": 486.14,
+      "qty": 208,
+      "value": 101118,
+      "filing": "Jul 24 04:07 PM",
+      "is_csuite": true
+    },
     {
       "ticker": "PPNFP",
       "insider": "MCCABE ROBERT A JR",
@@ -1298,160 +1297,6 @@
       "value": 167000,
       "filing": "Jul 22 09:12 PM",
       "is_csuite": true
-    },
-    {
-      "ticker": "PPBLS",
-      "insider": "RA CAPITAL MANAGEMENT, L.P.",
-      "title": "Director",
-      "date": "Jul 22 '26",
-      "price": 29.77,
-      "qty": 47250,
-      "value": 1406632,
-      "filing": "Jul 22 04:55 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "PPBLS",
-      "insider": "RA CAPITAL MANAGEMENT, L.P.",
-      "title": "Director",
-      "date": "Jul 21 '26",
-      "price": 29.25,
-      "qty": 65923,
-      "value": 1928032,
-      "filing": "Jul 22 04:55 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "PPBLS",
-      "insider": "RA CAPITAL MANAGEMENT, L.P.",
-      "title": "Director",
-      "date": "Jul 20 '26",
-      "price": 27.28,
-      "qty": 131420,
-      "value": 3584887,
-      "filing": "Jul 22 04:55 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "TTSM",
-      "insider": "Lin Shyue-Shyh",
-      "title": "VP",
-      "date": "Jul 21 '26",
-      "price": 74.13,
-      "qty": 1000,
-      "value": 74130,
-      "filing": "Jul 22 06:17 AM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "TTSM",
-      "insider": "Lin Shyue-Shyh",
-      "title": "VP",
-      "date": "Jul 20 '26",
-      "price": 72.65,
-      "qty": 1000,
-      "value": 72650,
-      "filing": "Jul 22 06:17 AM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "RRANI",
-      "insider": "Imran Talat",
-      "title": "Chief Executive Officer",
-      "date": "Jul 17 '26",
-      "price": 0.72,
-      "qty": 35000,
-      "value": 25193,
-      "filing": "Jul 21 06:29 PM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "CCAG",
-      "insider": "Brase John P",
-      "title": "President and CEO",
-      "date": "Jul 17 '26",
-      "price": 14.59,
-      "qty": 35000,
-      "value": 510632,
-      "filing": "Jul 21 06:01 PM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "PPRQR",
-      "insider": "Filius Bart",
-      "title": "Director",
-      "date": "Jul 17 '26",
-      "price": 1.72,
-      "qty": 150000,
-      "value": 257925,
-      "filing": "Jul 21 08:00 AM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "TTSM",
-      "insider": "Lin Shyue-Shyh",
-      "title": "VP",
-      "date": "Jul 19 '26",
-      "price": 71.94,
-      "qty": 1000,
-      "value": 71940,
-      "filing": "Jul 21 06:44 AM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "TTSM",
-      "insider": "Lin Shyue-Shyh",
-      "title": "VP",
-      "date": "Jul 19 '26",
-      "price": 71.71,
-      "qty": 2000,
-      "value": 143420,
-      "filing": "Jul 21 06:44 AM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "ZZSTK",
-      "insider": "Heinrich Michael",
-      "title": "Executive Chairman",
-      "date": "Jul 20 '26",
-      "price": 0.75,
-      "qty": 4608575,
-      "value": 3479013,
-      "filing": "Jul 20 06:31 PM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "AANIX",
-      "insider": "Titterton Lewis H jr",
-      "title": "Director",
-      "date": "Jul 20 '26",
-      "price": 3.47,
-      "qty": 12000,
-      "value": 41640,
-      "filing": "Jul 20 06:19 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "AARTV",
-      "insider": "RA CAPITAL MANAGEMENT, L.P.",
-      "title": "Director",
-      "date": "Jul 17 '26",
-      "price": 8.95,
-      "qty": 7882,
-      "value": 70544,
-      "filing": "Jul 20 06:08 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "AARTV",
-      "insider": "RA CAPITAL MANAGEMENT, L.P.",
-      "title": "Director",
-      "date": "Jul 16 '26",
-      "price": 8.93,
-      "qty": 152472,
-      "value": 1361575,
-      "filing": "Jul 20 06:08 PM",
-      "is_csuite": false
     }
   ]
 }
