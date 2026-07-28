@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-07-28T09:00:38.544293+00:00",
+  "scan_time": "2026-07-28T11:00:45.193615+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Risk-Off",
-    "score": -1,
-    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
+    "verdict": "Cautious",
+    "score": 0,
+    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
     "signals": [
       {
         "label": "Market trend",
@@ -23,9 +23,9 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "18.8",
-        "read": "Calm but rising",
-        "tone": "neutral"
+        "value": "19.0",
+        "read": "Calm",
+        "tone": "good"
       },
       {
         "label": "10-year yield",
@@ -35,20 +35,9 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-28T09:00:46.320721+00:00"
+    "updated": "2026-07-28T11:00:59.920919+00:00"
   },
   "earnings": [
-    {
-      "date": "2026-07-28",
-      "symbol": "CNC",
-      "eps_estimate": 1.0959,
-      "eps_actual": null,
-      "revenue_estimate": 48093592432,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
     {
       "date": "2026-07-28",
       "symbol": "F",
@@ -84,17 +73,6 @@
     },
     {
       "date": "2026-07-28",
-      "symbol": "UPS",
-      "eps_estimate": 1.6784,
-      "eps_actual": null,
-      "revenue_estimate": 22027146156,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-28",
       "symbol": "KO",
       "eps_estimate": 0.9603,
       "eps_actual": null,
@@ -123,6 +101,28 @@
       "revenue_estimate": 9381224243,
       "revenue_actual": null,
       "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "PYPL",
+      "eps_estimate": 1.3029,
+      "eps_actual": null,
+      "revenue_estimate": 8637889737,
+      "revenue_actual": null,
+      "hour": "bmo",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "PCAR",
+      "eps_estimate": 1.3812,
+      "eps_actual": null,
+      "revenue_estimate": 7409387232,
+      "revenue_actual": null,
+      "hour": "bmo",
       "quarter": 2,
       "year": 2026
     },
@@ -578,5 +578,20 @@
       "year": 2026
     }
   ],
-  "unusual_volume": []
+  "unusual_volume": [
+    {
+      "ticker": "FIRY",
+      "name": "Firy Inc",
+      "price": 11.25,
+      "change_pct": 34.57,
+      "volume": "2.8M"
+    },
+    {
+      "ticker": "PMN",
+      "name": "ProMIS Neurosciences Inc",
+      "price": 13.56,
+      "change_pct": 15.7,
+      "volume": "127K"
+    }
+  ]
 }
