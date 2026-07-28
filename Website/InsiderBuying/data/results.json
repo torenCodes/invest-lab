@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-07-27T19:12:42.622745",
-  "total_transactions": 60,
-  "date_range": "Jul 16 '26 \u2013 Jul 23 '26",
+  "scan_time": "2026-07-28T14:02:53.428785",
+  "total_transactions": 56,
+  "date_range": "Jul 19 '26 \u2013 Jul 23 '26",
   "min_value": 25000,
   "nominees": [
     {
@@ -153,9 +153,9 @@
       "title": "Chief Executive Officer",
       "date": "Jul 23 '26",
       "price": 15.76,
-      "qty": 2221320,
-      "value": 36835837,
-      "txn_count": 11,
+      "qty": 1725960,
+      "value": 28355544,
+      "txn_count": 8,
       "insider_count": 1,
       "is_csuite": true,
       "company": "CCOE",
@@ -169,8 +169,8 @@
           "title": "Chief Executive Officer",
           "date": "Jul 23 '26",
           "price": 15.76,
-          "qty": 2221320,
-          "value": 36835837,
+          "qty": 1725960,
+          "value": 28355544,
           "is_csuite": true
         }
       ],
@@ -178,9 +178,9 @@
       "tier": "B",
       "signals": [
         "Chief Executive Officer bought",
-        "$36.8M total"
+        "$28.4M total"
       ],
-      "story": "CCOE \u2014 The Chief Executive Officer bought, $36.8M total."
+      "story": "CCOE \u2014 The Chief Executive Officer bought, $28.4M total."
     },
     {
       "ticker": "BBYRN",
@@ -282,73 +282,48 @@
       "story": "CCAPS \u2014 Two insiders bought including the Chief Executive Officer, $334K total."
     },
     {
-      "ticker": "ZZSTK",
-      "insider": "Heinrich Michael",
-      "title": "Executive Chairman",
-      "date": "Jul 20 '26",
-      "price": 0.75,
-      "qty": 4608575,
-      "value": 3479013,
-      "txn_count": 1,
-      "insider_count": 1,
+      "ticker": "SSCTX",
+      "insider": "Lucas Svetlana",
+      "title": "Chief Business Officer",
+      "date": "Jul 23 '26",
+      "price": 15.0,
+      "qty": 5666,
+      "value": 84990,
+      "txn_count": 2,
+      "insider_count": 2,
       "is_csuite": true,
-      "company": "ZZSTK",
+      "company": "Virtus Asset Trust - Virtus Silvant Small-Cap Growth Stock Fund",
       "sector": "Unknown",
-      "current_price": 0,
+      "current_price": 7.92,
       "change_pct": 0,
       "market_cap": 0,
       "insiders": [
         {
-          "name": "Heinrich Michael",
-          "title": "Executive Chairman",
-          "date": "Jul 20 '26",
-          "price": 0.75,
-          "qty": 4608575,
-          "value": 3479013,
+          "name": "Lucas Svetlana",
+          "title": "Chief Business Officer",
+          "date": "Jul 23 '26",
+          "price": 15.0,
+          "qty": 3000,
+          "value": 45000,
+          "is_csuite": false
+        },
+        {
+          "name": "Parrot David",
+          "title": "Chief Financial Officer",
+          "date": "Jul 23 '26",
+          "price": 15.0,
+          "qty": 2666,
+          "value": 39990,
           "is_csuite": true
         }
       ],
-      "conviction_score": 30,
+      "conviction_score": 27,
       "tier": "B",
       "signals": [
-        "Executive Chairman bought",
-        "$3.5M total"
+        "2 insiders buying",
+        "Chief Financial Officer bought"
       ],
-      "story": "ZZSTK \u2014 The Executive Chairman bought, $3.5M total."
-    },
-    {
-      "ticker": "CCBIO",
-      "insider": "Fairmount Funds Management LLC",
-      "title": "Director",
-      "date": "Jul 16 '26",
-      "price": 14.5,
-      "qty": 853450,
-      "value": 12375025,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "CCBIO",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "Fairmount Funds Management LLC",
-          "title": "Director",
-          "date": "Jul 16 '26",
-          "price": 14.5,
-          "qty": 853450,
-          "value": 12375025,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 30,
-      "tier": "B",
-      "signals": [
-        "$12.4M total"
-      ],
-      "story": "CCBIO \u2014 Fairmount Funds Management LLC (Director) bought, $12.4M total."
+      "story": "SSCTX \u2014 Two insiders bought including the Chief Financial Officer."
     },
     {
       "ticker": "CCAG",
@@ -499,41 +474,6 @@
       "story": "VVMI \u2014 The Executive VP and CFO bought, $101K total."
     },
     {
-      "ticker": "PPNFP",
-      "insider": "MCCABE ROBERT A JR",
-      "title": "Chief Banking Officer",
-      "date": "Jul 24 '26",
-      "price": 99.9,
-      "qty": 10013,
-      "value": 1000299,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "PPNFP",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "MCCABE ROBERT A JR",
-          "title": "Chief Banking Officer",
-          "date": "Jul 24 '26",
-          "price": 99.9,
-          "qty": 10013,
-          "value": 1000299,
-          "is_csuite": false
-        }
-      ],
-      "conviction_score": 20,
-      "tier": "W",
-      "signals": [
-        "$1.0M total",
-        "Activity in last 3 days"
-      ],
-      "story": "PPNFP \u2014 MCCABE ROBERT A JR (Chief Banking Officer) bought, $1.0M total."
-    },
-    {
       "ticker": "BBMR",
       "insider": "Carmel Sharon",
       "title": "Chief Executive Officer",
@@ -567,6 +507,40 @@
         "$106K total"
       ],
       "story": "BBMR \u2014 The Chief Executive Officer bought, $106K total."
+    },
+    {
+      "ticker": "MMCB",
+      "insider": "Dougherty Daniel F",
+      "title": "EVP & Chief Financial Officer",
+      "date": "Jul 23 '26",
+      "price": 89.98,
+      "qty": 1000,
+      "value": 89980,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "MMCB",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Dougherty Daniel F",
+          "title": "EVP & Chief Financial Officer",
+          "date": "Jul 23 '26",
+          "price": 89.98,
+          "qty": 1000,
+          "value": 89980,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 15,
+      "tier": "W",
+      "signals": [
+        "EVP & Chief Financial Officer bought"
+      ],
+      "story": "MMCB \u2014 The EVP & Chief Financial Officer bought."
     },
     {
       "ticker": "GGLSI",
@@ -603,14 +577,48 @@
       "story": "GGLSI \u2014 The CEO and CFO bought."
     },
     {
+      "ticker": "PPNFP",
+      "insider": "MCCABE ROBERT A JR",
+      "title": "Chief Banking Officer",
+      "date": "Jul 24 '26",
+      "price": 99.9,
+      "qty": 10013,
+      "value": 1000299,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "PPNFP",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "MCCABE ROBERT A JR",
+          "title": "Chief Banking Officer",
+          "date": "Jul 24 '26",
+          "price": 99.9,
+          "qty": 10013,
+          "value": 1000299,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 15,
+      "tier": "W",
+      "signals": [
+        "$1.0M total"
+      ],
+      "story": "PPNFP \u2014 MCCABE ROBERT A JR (Chief Banking Officer) bought, $1.0M total."
+    },
+    {
       "ticker": "AARTV",
       "insider": "RA CAPITAL MANAGEMENT, L.P.",
       "title": "Director",
       "date": "Jul 23 '26",
       "price": 9.96,
-      "qty": 424940,
-      "value": 4015433,
-      "txn_count": 5,
+      "qty": 264586,
+      "value": 2583314,
+      "txn_count": 3,
       "insider_count": 1,
       "is_csuite": false,
       "company": "AARTV",
@@ -624,17 +632,17 @@
           "title": "Director",
           "date": "Jul 23 '26",
           "price": 9.96,
-          "qty": 424940,
-          "value": 4015433,
+          "qty": 264586,
+          "value": 2583314,
           "is_csuite": false
         }
       ],
       "conviction_score": 15,
       "tier": "W",
       "signals": [
-        "$4.0M total"
+        "$2.6M total"
       ],
-      "story": "AARTV \u2014 RA CAPITAL MANAGEMENT, L.P. (Director) bought, $4.0M total."
+      "story": "AARTV \u2014 RA CAPITAL MANAGEMENT, L.P. (Director) bought, $2.6M total."
     },
     {
       "ticker": "RRANI",
@@ -669,6 +677,41 @@
         "Chief Executive Officer bought"
       ],
       "story": "RRANI \u2014 The Chief Executive Officer bought."
+    },
+    {
+      "ticker": "NNMM",
+      "insider": "Frangou Angeliki",
+      "title": "See Remarks",
+      "date": "Jul 27 '26",
+      "price": 77.64,
+      "qty": 5574,
+      "value": 420628,
+      "txn_count": 5,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "NNMM",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Frangou Angeliki",
+          "title": "See Remarks",
+          "date": "Jul 27 '26",
+          "price": 77.64,
+          "qty": 5574,
+          "value": 420628,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 10,
+      "tier": "W",
+      "signals": [
+        "$421K total",
+        "Activity in last 3 days"
+      ],
+      "story": "NNMM \u2014 Frangou Angeliki (See Remarks) bought, $421K total."
     }
   ],
   "standouts": [
@@ -821,9 +864,9 @@
       "title": "Chief Executive Officer",
       "date": "Jul 23 '26",
       "price": 15.76,
-      "qty": 2221320,
-      "value": 36835837,
-      "txn_count": 11,
+      "qty": 1725960,
+      "value": 28355544,
+      "txn_count": 8,
       "insider_count": 1,
       "is_csuite": true,
       "company": "CCOE",
@@ -837,8 +880,8 @@
           "title": "Chief Executive Officer",
           "date": "Jul 23 '26",
           "price": 15.76,
-          "qty": 2221320,
-          "value": 36835837,
+          "qty": 1725960,
+          "value": 28355544,
           "is_csuite": true
         }
       ],
@@ -846,18 +889,84 @@
       "tier": "B",
       "signals": [
         "Chief Executive Officer bought",
-        "$36.8M total"
+        "$28.4M total"
       ],
-      "story": "CCOE \u2014 The Chief Executive Officer bought, $36.8M total."
+      "story": "CCOE \u2014 The Chief Executive Officer bought, $28.4M total."
     }
   ],
   "tier_counts": {
     "A": 2,
-    "B": 6,
-    "W": 8,
-    "total": 16
+    "B": 5,
+    "W": 10,
+    "total": 17
   },
   "recent_feed": [
+    {
+      "ticker": "SSCTX",
+      "insider": "Lucas Svetlana",
+      "title": "Chief Business Officer",
+      "date": "Jul 23 '26",
+      "price": 15.0,
+      "qty": 3000,
+      "value": 45000,
+      "filing": "Jul 27 09:42 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "SSCTX",
+      "insider": "Parrot David",
+      "title": "Chief Financial Officer",
+      "date": "Jul 23 '26",
+      "price": 15.0,
+      "qty": 2666,
+      "value": 39990,
+      "filing": "Jul 27 09:20 PM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "NNMM",
+      "insider": "Frangou Angeliki",
+      "title": "See Remarks",
+      "date": "Jul 27 '26",
+      "price": 77.64,
+      "qty": 1053,
+      "value": 81750,
+      "filing": "Jul 27 09:15 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "NNMM",
+      "insider": "Frangou Angeliki",
+      "title": "See Remarks",
+      "date": "Jul 24 '26",
+      "price": 79.02,
+      "qty": 1084,
+      "value": 85657,
+      "filing": "Jul 27 09:15 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "OOVLY",
+      "insider": "Strong Gary",
+      "title": "Director",
+      "date": "Jul 27 '26",
+      "price": 32.5,
+      "qty": 2000,
+      "value": 65000,
+      "filing": "Jul 27 07:03 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "MMCB",
+      "insider": "Dougherty Daniel F",
+      "title": "EVP & Chief Financial Officer",
+      "date": "Jul 23 '26",
+      "price": 89.98,
+      "qty": 1000,
+      "value": 89980,
+      "filing": "Jul 27 06:15 PM",
+      "is_csuite": true
+    },
     {
       "ticker": "PPEBO",
       "insider": "Smith Dwight Eric",
@@ -1230,72 +1339,6 @@
       "qty": 178800,
       "value": 3080724,
       "filing": "Jul 23 07:19 AM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "TTSM",
-      "insider": "Tien Bor-Zen",
-      "title": "VP",
-      "date": "Jul 21 '26",
-      "price": 74.39,
-      "qty": 3000,
-      "value": 223170,
-      "filing": "Jul 23 06:16 AM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "TTSM",
-      "insider": "Tien Bor-Zen",
-      "title": "VP",
-      "date": "Jul 21 '26",
-      "price": 74.13,
-      "qty": 1000,
-      "value": 74130,
-      "filing": "Jul 23 06:16 AM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "NNMM",
-      "insider": "Frangou Angeliki",
-      "title": "See Remarks",
-      "date": "Jul 22 '26",
-      "price": 74.07,
-      "qty": 1121,
-      "value": 83030,
-      "filing": "Jul 22 09:15 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "NNMM",
-      "insider": "Frangou Angeliki",
-      "title": "See Remarks",
-      "date": "Jul 21 '26",
-      "price": 74.03,
-      "qty": 1149,
-      "value": 85058,
-      "filing": "Jul 22 09:15 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "NNMM",
-      "insider": "Frangou Angeliki",
-      "title": "See Remarks",
-      "date": "Jul 20 '26",
-      "price": 72.95,
-      "qty": 1167,
-      "value": 85133,
-      "filing": "Jul 22 09:15 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "CCAPS",
-      "insider": "Lipman Matthew E.",
-      "title": "Chief Executive Officer",
-      "date": "Mar 07 '25",
-      "price": 4.0,
-      "qty": 41750,
-      "value": 167000,
-      "filing": "Jul 22 09:12 PM",
       "is_csuite": true
     }
   ]
