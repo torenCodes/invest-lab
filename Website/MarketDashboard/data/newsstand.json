@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-07-28T11:00:45.193615+00:00",
+  "scan_time": "2026-07-28T13:00:42.138582+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Cautious",
@@ -23,19 +23,19 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "19.0",
+        "value": "18.6",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.64%",
+        "value": "4.63%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-28T11:00:59.920919+00:00"
+    "updated": "2026-07-28T13:01:09.060927+00:00"
   },
   "earnings": [
     {
@@ -51,32 +51,10 @@
     },
     {
       "date": "2026-07-28",
-      "symbol": "BA",
-      "eps_estimate": -0.3139,
-      "eps_actual": null,
-      "revenue_estimate": 24972653242,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-28",
       "symbol": "BG",
       "eps_estimate": 2.0079,
       "eps_actual": null,
       "revenue_estimate": 23501221600,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-28",
-      "symbol": "KO",
-      "eps_estimate": 0.9603,
-      "eps_actual": null,
-      "revenue_estimate": 13556846064,
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 2,
@@ -106,23 +84,45 @@
     },
     {
       "date": "2026-07-28",
-      "symbol": "PYPL",
-      "eps_estimate": 1.3029,
+      "symbol": "WM",
+      "eps_estimate": 2.0394,
       "eps_actual": null,
-      "revenue_estimate": 8637889737,
+      "revenue_estimate": 6902407701,
       "revenue_actual": null,
-      "hour": "bmo",
+      "hour": "amc",
       "quarter": 2,
       "year": 2026
     },
     {
       "date": "2026-07-28",
-      "symbol": "PCAR",
-      "eps_estimate": 1.3812,
+      "symbol": "OMC",
+      "eps_estimate": 2.6062,
       "eps_actual": null,
-      "revenue_estimate": 7409387232,
+      "revenue_estimate": 6559028880,
       "revenue_actual": null,
-      "hour": "bmo",
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "ACGL",
+      "eps_estimate": 2.4829,
+      "eps_actual": null,
+      "revenue_estimate": 4526795363,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "PPG",
+      "eps_estimate": 2.2777,
+      "eps_actual": null,
+      "revenue_estimate": 4408352999,
+      "revenue_actual": null,
+      "hour": "amc",
       "quarter": 2,
       "year": 2026
     },
@@ -580,18 +580,25 @@
   ],
   "unusual_volume": [
     {
+      "ticker": "DFNS",
+      "name": "T3 Defense Inc",
+      "price": 20.32,
+      "change_pct": 55.11,
+      "volume": "8.7M"
+    },
+    {
       "ticker": "FIRY",
       "name": "Firy Inc",
-      "price": 11.25,
-      "change_pct": 34.57,
-      "volume": "2.8M"
+      "price": 11.91,
+      "change_pct": 42.46,
+      "volume": "5.9M"
     },
     {
       "ticker": "PMN",
       "name": "ProMIS Neurosciences Inc",
-      "price": 13.56,
-      "change_pct": 15.7,
-      "volume": "127K"
+      "price": 13.98,
+      "change_pct": 19.28,
+      "volume": "332K"
     }
   ]
 }
