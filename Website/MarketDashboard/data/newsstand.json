@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-07-28T07:00:33.939441+00:00",
+  "scan_time": "2026-07-28T09:00:38.544293+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Cautious",
-    "score": 0,
-    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
+    "verdict": "Risk-Off",
+    "score": -1,
+    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
     "signals": [
       {
         "label": "Market trend",
@@ -23,9 +23,9 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "18.7",
-        "read": "Calm",
-        "tone": "good"
+        "value": "18.8",
+        "read": "Calm but rising",
+        "tone": "neutral"
       },
       {
         "label": "10-year yield",
@@ -35,7 +35,7 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-28T07:00:46.171473+00:00"
+    "updated": "2026-07-28T09:00:46.320721+00:00"
   },
   "earnings": [
     {
@@ -578,69 +578,5 @@
       "year": 2026
     }
   ],
-  "unusual_volume": [
-    {
-      "ticker": "DFNS",
-      "name": "T3 Defense Inc",
-      "price": 13.1,
-      "change_pct": 201.15,
-      "volume": "78.9M"
-    },
-    {
-      "ticker": "FBRX",
-      "name": "Forte Biosciences Inc",
-      "price": 76.5,
-      "change_pct": 39.65,
-      "volume": "17.5M"
-    },
-    {
-      "ticker": "SKHZ",
-      "name": "Leverage Shares 1x Short SK Hynix Daily ETF",
-      "price": 13.89,
-      "change_pct": 7.34,
-      "volume": "11.2M"
-    },
-    {
-      "ticker": "IGLB",
-      "name": "iShares 10 Year Investment Grade Corporate Bond ETF",
-      "price": 48.3,
-      "change_pct": 0.44,
-      "volume": "10.6M"
-    },
-    {
-      "ticker": "HYMB",
-      "name": "State Street SPDR Nuveen ICE High Yield Municipal Bond ETF",
-      "price": 24.97,
-      "change_pct": 0.36,
-      "volume": "5.1M"
-    },
-    {
-      "ticker": "AGPU",
-      "name": "Axe Compute Inc",
-      "price": 7.21,
-      "change_pct": 5.26,
-      "volume": "3.4M"
-    },
-    {
-      "ticker": "IMMR",
-      "name": "Immersion Corp",
-      "price": 7.74,
-      "change_pct": 18.63,
-      "volume": "2.9M"
-    },
-    {
-      "ticker": "TRAX",
-      "name": "First Tracks Biotherapeutics Inc",
-      "price": 42.03,
-      "change_pct": 18.33,
-      "volume": "2.6M"
-    },
-    {
-      "ticker": "LXFR",
-      "name": "Luxfer Holdings PLC",
-      "price": 17.12,
-      "change_pct": 0.41,
-      "volume": "2.1M"
-    }
-  ]
+  "unusual_volume": []
 }
