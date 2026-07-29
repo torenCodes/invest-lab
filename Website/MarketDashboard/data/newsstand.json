@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-07-29T11:00:33.940359+00:00",
+  "scan_time": "2026-07-29T13:00:39.387740+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Risk-Off",
-    "score": -1,
-    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
+    "verdict": "Cautious",
+    "score": 0,
+    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
     "signals": [
       {
         "label": "Market trend",
@@ -16,26 +16,26 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-1.0%",
+        "value": "-0.4%",
         "read": "Soft",
         "tone": "neutral"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "18.3",
-        "read": "Calm but rising",
-        "tone": "neutral"
+        "value": "18.7",
+        "read": "Calm",
+        "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.60%",
+        "value": "4.63%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-29T11:00:45.672869+00:00"
+    "updated": "2026-07-29T13:01:10.574059+00:00"
   },
   "earnings": [
     {
@@ -57,28 +57,6 @@
       "revenue_estimate": 61372015054,
       "revenue_actual": null,
       "hour": "amc",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-29",
-      "symbol": "PG",
-      "eps_estimate": 1.4514,
-      "eps_actual": null,
-      "revenue_estimate": 22020076748,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 4,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-29",
-      "symbol": "CBRE",
-      "eps_estimate": 1.5162,
-      "eps_actual": null,
-      "revenue_estimate": 11406648984,
-      "revenue_actual": null,
-      "hour": "bmo",
       "quarter": 2,
       "year": 2026
     },
@@ -106,23 +84,45 @@
     },
     {
       "date": "2026-07-29",
-      "symbol": "APH",
-      "eps_estimate": 1.194,
+      "symbol": "CVNA",
+      "eps_estimate": 0.4092,
       "eps_actual": null,
-      "revenue_estimate": 8321554377,
+      "revenue_estimate": 7040120692,
       "revenue_actual": null,
-      "hour": "bmo",
+      "hour": "amc",
       "quarter": 2,
       "year": 2026
     },
     {
       "date": "2026-07-29",
-      "symbol": "PAG",
-      "eps_estimate": 3.4528,
+      "symbol": "LRCX",
+      "eps_estimate": 1.7172,
       "eps_actual": null,
-      "revenue_estimate": 8060447157,
+      "revenue_estimate": 6797914072,
       "revenue_actual": null,
-      "hour": "bmo",
+      "hour": "amc",
+      "quarter": 4,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "LHX",
+      "eps_estimate": 2.8318,
+      "eps_actual": null,
+      "revenue_estimate": 5866090302,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "ORLY",
+      "eps_estimate": 0.8802,
+      "eps_actual": null,
+      "revenue_estimate": 4956886176,
+      "revenue_actual": null,
+      "hour": "amc",
       "quarter": 2,
       "year": 2026
     },
@@ -655,5 +655,27 @@
       "year": 2026
     }
   ],
-  "unusual_volume": []
+  "unusual_volume": [
+    {
+      "ticker": "SNDU",
+      "name": "T-REX 2X Long SNDK Daily Target ETF",
+      "price": 12.59,
+      "change_pct": 0.1,
+      "volume": "10.1M"
+    },
+    {
+      "ticker": "DFNS",
+      "name": "T3 Defense Inc",
+      "price": 35.37,
+      "change_pct": 47.37,
+      "volume": "3.7M"
+    },
+    {
+      "ticker": "APUS",
+      "name": "Apimeds Pharmaceuticals US Inc",
+      "price": 8.05,
+      "change_pct": 0.63,
+      "volume": "90K"
+    }
+  ]
 }
