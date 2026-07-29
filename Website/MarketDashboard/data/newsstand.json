@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-07-29T07:00:36.395826+00:00",
+  "scan_time": "2026-07-29T09:00:39.713624+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Cautious",
-    "score": 0,
-    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
+    "verdict": "Risk-Off",
+    "score": -1,
+    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
     "signals": [
       {
         "label": "Market trend",
@@ -24,8 +24,8 @@
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
         "value": "18.2",
-        "read": "Calm",
-        "tone": "good"
+        "read": "Calm but rising",
+        "tone": "neutral"
       },
       {
         "label": "10-year yield",
@@ -35,7 +35,7 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-29T07:00:51.355274+00:00"
+    "updated": "2026-07-29T09:00:47.812401+00:00"
   },
   "earnings": [
     {
@@ -655,69 +655,5 @@
       "year": 2026
     }
   ],
-  "unusual_volume": [
-    {
-      "ticker": "DFNS",
-      "name": "T3 Defense Inc",
-      "price": 24.0,
-      "change_pct": 83.21,
-      "volume": "28.6M"
-    },
-    {
-      "ticker": "FIRY",
-      "name": "Firy Inc",
-      "price": 9.84,
-      "change_pct": 17.7,
-      "volume": "21.7M"
-    },
-    {
-      "ticker": "FINA",
-      "name": "Fidelity MSCI North American Subset Index ETF",
-      "price": 24.84,
-      "change_pct": 0.09,
-      "volume": "13.7M"
-    },
-    {
-      "ticker": "KLMN",
-      "name": "Invesco MSCI North America Climate ETF",
-      "price": 30.47,
-      "change_pct": 0.18,
-      "volume": "11.2M"
-    },
-    {
-      "ticker": "ARX",
-      "name": "Accelerant Holdings",
-      "price": 14.72,
-      "change_pct": 0.75,
-      "volume": "8.7M"
-    },
-    {
-      "ticker": "ITRI",
-      "name": "Itron Inc",
-      "price": 107.02,
-      "change_pct": 26.23,
-      "volume": "6.6M"
-    },
-    {
-      "ticker": "MPLT",
-      "name": "MapLight Therapeutics Inc",
-      "price": 12.31,
-      "change_pct": 24.28,
-      "volume": "5.5M"
-    },
-    {
-      "ticker": "SUI",
-      "name": "Sun Communities Inc",
-      "price": 124.09,
-      "change_pct": 2.18,
-      "volume": "5.4M"
-    },
-    {
-      "ticker": "IEUR",
-      "name": "iShares Core MSCI Europe ETF",
-      "price": 75.48,
-      "change_pct": 0.27,
-      "volume": "3.7M"
-    }
-  ]
+  "unusual_volume": []
 }
