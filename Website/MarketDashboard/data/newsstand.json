@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-07-29T13:00:39.387740+00:00",
+  "scan_time": "2026-07-29T15:00:45.227062+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Cautious",
-    "score": 0,
-    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
+    "verdict": "Risk-Off",
+    "score": -1,
+    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
     "signals": [
       {
         "label": "Market trend",
@@ -16,26 +16,26 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.4%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "-1.8%",
+        "read": "Weak",
+        "tone": "bad"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "18.7",
+        "value": "19.9",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.63%",
+        "value": "4.64%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-29T13:01:10.574059+00:00"
+    "updated": "2026-07-29T15:01:12.151930+00:00"
   },
   "earnings": [
     {
@@ -657,25 +657,39 @@
   ],
   "unusual_volume": [
     {
-      "ticker": "SNDU",
-      "name": "T-REX 2X Long SNDK Daily Target ETF",
-      "price": 12.59,
-      "change_pct": 0.1,
-      "volume": "10.1M"
+      "ticker": "AVTR",
+      "name": "Avantor Inc",
+      "price": 13.84,
+      "change_pct": 11.43,
+      "volume": "15.7M"
+    },
+    {
+      "ticker": "SNDQ",
+      "name": "Tradr 2X Short SNDK Daily ETF",
+      "price": 60.07,
+      "change_pct": 12.91,
+      "volume": "14.6M"
+    },
+    {
+      "ticker": "CBZ",
+      "name": "Cbiz Inc",
+      "price": 54.53,
+      "change_pct": 16.76,
+      "volume": "9.0M"
     },
     {
       "ticker": "DFNS",
       "name": "T3 Defense Inc",
-      "price": 35.37,
-      "change_pct": 47.37,
-      "volume": "3.7M"
+      "price": 34.99,
+      "change_pct": 45.79,
+      "volume": "8.1M"
     },
     {
-      "ticker": "APUS",
-      "name": "Apimeds Pharmaceuticals US Inc",
-      "price": 8.05,
-      "change_pct": 0.63,
-      "volume": "90K"
+      "ticker": "TEVA",
+      "name": "Teva- Pharmaceutical Industries Ltd ADR",
+      "price": 34.31,
+      "change_pct": 8.32,
+      "volume": "7.6M"
     }
   ]
 }
