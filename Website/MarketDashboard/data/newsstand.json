@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-07-29T19:00:40.429381+00:00",
+  "scan_time": "2026-07-29T20:42:01.647854+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Cautious",
-    "score": 0,
-    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
+    "verdict": "Risk-Off",
+    "score": -2,
+    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
     "signals": [
       {
         "label": "Market trend",
@@ -16,16 +16,16 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.8%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "-2.4%",
+        "read": "Weak",
+        "tone": "bad"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "17.8",
-        "read": "Calm",
-        "tone": "good"
+        "value": "20.7",
+        "read": "Elevated",
+        "tone": "neutral"
       },
       {
         "label": "10-year yield",
@@ -35,86 +35,9 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-29T19:01:05.171478+00:00"
+    "updated": "2026-07-29T20:42:14.061089+00:00"
   },
   "earnings": [
-    {
-      "date": "2026-07-29",
-      "symbol": "MSFT",
-      "eps_estimate": 4.3274,
-      "eps_actual": null,
-      "revenue_estimate": 89373722644,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 4,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-29",
-      "symbol": "META",
-      "eps_estimate": 7.3594,
-      "eps_actual": null,
-      "revenue_estimate": 61372015054,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-29",
-      "symbol": "QCOM",
-      "eps_estimate": 2.2724,
-      "eps_actual": null,
-      "revenue_estimate": 9861081846,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 3,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-29",
-      "symbol": "SBUX",
-      "eps_estimate": 0.6743,
-      "eps_actual": null,
-      "revenue_estimate": 9340570705,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 3,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-29",
-      "symbol": "CVNA",
-      "eps_estimate": 0.4092,
-      "eps_actual": null,
-      "revenue_estimate": 7040120692,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-29",
-      "symbol": "LRCX",
-      "eps_estimate": 1.7172,
-      "eps_actual": null,
-      "revenue_estimate": 6797914072,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 4,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-29",
-      "symbol": "LHX",
-      "eps_estimate": 2.8318,
-      "eps_actual": null,
-      "revenue_estimate": 5866090302,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 2,
-      "year": 2026
-    },
     {
       "date": "2026-07-29",
       "symbol": "ORLY",
@@ -123,6 +46,83 @@
       "revenue_estimate": 4956886176,
       "revenue_actual": null,
       "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "PPC",
+      "eps_estimate": 0.6969,
+      "eps_actual": null,
+      "revenue_estimate": 4756814574,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "MGM",
+      "eps_estimate": 0.5789,
+      "eps_actual": null,
+      "revenue_estimate": 4464642592,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "MKL",
+      "eps_estimate": 31.4148,
+      "eps_actual": null,
+      "revenue_estimate": 4416149250,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "EG",
+      "eps_estimate": 14.8252,
+      "eps_actual": null,
+      "revenue_estimate": 3884473329,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "K",
+      "eps_estimate": 0.918,
+      "eps_actual": null,
+      "revenue_estimate": 3333360000,
+      "revenue_actual": null,
+      "hour": "bmo",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "APD",
+      "eps_estimate": 3.3772,
+      "eps_actual": null,
+      "revenue_estimate": 3234014142,
+      "revenue_actual": null,
+      "hour": "bmo",
+      "quarter": 3,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "AES",
+      "eps_estimate": 0.5181,
+      "eps_actual": null,
+      "revenue_estimate": 3118555790,
+      "revenue_actual": null,
+      "hour": "",
       "quarter": 2,
       "year": 2026
     },
@@ -657,81 +657,53 @@
   ],
   "unusual_volume": [
     {
-      "ticker": "KORU",
-      "name": "Direxion Daily MSCI South Korea Bull 3X ETF",
-      "price": 14.61,
-      "change_pct": 3.25,
-      "volume": "74.6M"
-    },
-    {
-      "ticker": "SNDU",
-      "name": "T-REX 2X Long SNDK Daily Target ETF",
-      "price": 13.07,
-      "change_pct": 3.93,
-      "volume": "29.1M"
-    },
-    {
-      "ticker": "SKHX",
-      "name": "Leverage Shares 2x Long SK Hynix Daily ETF",
-      "price": 10.38,
-      "change_pct": 8.53,
-      "volume": "22.8M"
+      "ticker": "AVTR",
+      "name": "Avantor Inc",
+      "price": 14.38,
+      "change_pct": 15.78,
+      "volume": "42.8M"
     },
     {
       "ticker": "DFNS",
       "name": "T3 Defense Inc",
-      "price": 57.23,
-      "change_pct": 138.44,
-      "volume": "15.0M"
+      "price": 50.22,
+      "change_pct": 109.25,
+      "volume": "19.0M"
     },
     {
       "ticker": "CBZ",
       "name": "Cbiz Inc",
-      "price": 55.02,
-      "change_pct": 17.82,
-      "volume": "12.6M"
-    },
-    {
-      "ticker": "BEX",
-      "name": "Tradr 2X Long BE Daily ETF",
-      "price": 18.09,
-      "change_pct": 14.64,
-      "volume": "8.9M"
-    },
-    {
-      "ticker": "SJNK",
-      "name": "State Street SPDR Bloomberg Short Term High Yield Bond ETF",
-      "price": 24.84,
-      "change_pct": 0.02,
-      "volume": "7.6M"
+      "price": 54.9,
+      "change_pct": 17.56,
+      "volume": "17.0M"
     },
     {
       "ticker": "SPRC",
       "name": "SciSparc Ltd",
-      "price": 8.33,
-      "change_pct": 56.29,
-      "volume": "6.1M"
-    },
-    {
-      "ticker": "SK",
-      "name": "Corgi SK hynix 2x Daily ETF",
-      "price": 17.26,
-      "change_pct": 8.55,
-      "volume": "4.6M"
+      "price": 9.09,
+      "change_pct": 70.54,
+      "volume": "7.8M"
     },
     {
       "ticker": "CAKE",
       "name": "Cheesecake Factory Inc",
-      "price": 100.67,
-      "change_pct": 13.1,
-      "volume": "4.2M"
+      "price": 101.14,
+      "change_pct": 13.63,
+      "volume": "5.4M"
     },
     {
-      "ticker": "GXPT",
-      "name": "Global X PureCap MSCI Information Technology ETF",
-      "price": 31.28,
-      "change_pct": 0.45,
-      "volume": "3.2M"
+      "ticker": "GRMN",
+      "name": "Garmin Ltd",
+      "price": 294.83,
+      "change_pct": 16.23,
+      "volume": "3.6M"
+    },
+    {
+      "ticker": "MPLT",
+      "name": "MapLight Therapeutics Inc",
+      "price": 15.02,
+      "change_pct": 22.01,
+      "volume": "3.1M"
     }
   ]
 }
