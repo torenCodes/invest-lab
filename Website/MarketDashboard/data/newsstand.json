@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-07-30T13:00:40.624457+00:00",
+  "scan_time": "2026-07-30T15:00:35.545265+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Risk-Off",
-    "score": -1,
-    "headline": "Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
+    "verdict": "Cautious",
+    "score": 0,
+    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
     "signals": [
       {
         "label": "Market trend",
@@ -16,26 +16,26 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-2.4%",
-        "read": "Weak",
-        "tone": "bad"
+        "value": "-0.4%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "19.1",
+        "value": "18.4",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.68%",
+        "value": "4.66%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-30T13:01:21.172146+00:00"
+    "updated": "2026-07-30T15:01:06.793816+00:00"
   },
   "earnings": [
     {
@@ -106,21 +106,21 @@
     },
     {
       "date": "2026-07-30",
-      "symbol": "FMCC",
-      "eps_estimate": 0.9044,
+      "symbol": "LPLA",
+      "eps_estimate": 5.51,
       "eps_actual": null,
-      "revenue_estimate": 5723763996,
+      "revenue_estimate": 5143357905,
       "revenue_actual": null,
-      "hour": "bmo",
+      "hour": "amc",
       "quarter": 2,
       "year": 2026
     },
     {
       "date": "2026-07-30",
-      "symbol": "LPLA",
-      "eps_estimate": 5.51,
+      "symbol": "EIX",
+      "eps_estimate": 1.1743,
       "eps_actual": null,
-      "revenue_estimate": 5143357905,
+      "revenue_estimate": 4857173658,
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 2,
@@ -657,18 +657,102 @@
   ],
   "unusual_volume": [
     {
-      "ticker": "AMZG",
-      "name": "Leverage Shares 2X Long AMZN Daily ETF",
-      "price": 13.55,
-      "change_pct": 6.44,
-      "volume": "77K"
+      "ticker": "SNXX",
+      "name": "Tradr 2X Long SNDK Daily ETF",
+      "price": 9.73,
+      "change_pct": 41.01,
+      "volume": "128.0M"
     },
     {
-      "ticker": "BRSV",
-      "name": "EA Bridgeway Select Small-Cap Value ETF",
-      "price": 44.26,
-      "change_pct": 0.06,
-      "volume": "22K"
+      "ticker": "MSFT",
+      "name": "Microsoft Corp",
+      "price": 444.78,
+      "change_pct": 13.89,
+      "volume": "56.0M"
+    },
+    {
+      "ticker": "KORU",
+      "name": "Direxion Daily MSCI South Korea Bull 3X ETF",
+      "price": 14.86,
+      "change_pct": 23.01,
+      "volume": "42.6M"
+    },
+    {
+      "ticker": "SNDU",
+      "name": "T-REX 2X Long SNDK Daily Target ETF",
+      "price": 15.32,
+      "change_pct": 42.38,
+      "volume": "19.7M"
+    },
+    {
+      "ticker": "BE",
+      "name": "Bloom Energy Corp",
+      "price": 206.76,
+      "change_pct": 26.27,
+      "volume": "17.5M"
+    },
+    {
+      "ticker": "SKUU",
+      "name": "GraniteShares 2x Long SK Hynix Daily ETF",
+      "price": 19.13,
+      "change_pct": 26.69,
+      "volume": "17.1M"
+    },
+    {
+      "ticker": "MSFU",
+      "name": "Direxion Daily MSFT Bull 2X ETF",
+      "price": 30.57,
+      "change_pct": 26.77,
+      "volume": "15.6M"
+    },
+    {
+      "ticker": "IRE",
+      "name": "Defiance Daily Target 2X Long IREN ETF",
+      "price": 8.87,
+      "change_pct": 50.34,
+      "volume": "9.1M"
+    },
+    {
+      "ticker": "NBIL",
+      "name": "GraniteShares 2x Long NBIS Daily ETF",
+      "price": 20.7,
+      "change_pct": 55.06,
+      "volume": "5.4M"
+    },
+    {
+      "ticker": "DFNS",
+      "name": "T3 Defense Inc",
+      "price": 81.8,
+      "change_pct": 62.88,
+      "volume": "5.4M"
+    },
+    {
+      "ticker": "PN",
+      "name": "PN Smart Energy Ltd",
+      "price": 16.62,
+      "change_pct": 55.04,
+      "volume": "5.4M"
+    },
+    {
+      "ticker": "MSFL",
+      "name": "GraniteShares 2x Long MSFT Daily ETF",
+      "price": 20.34,
+      "change_pct": 26.65,
+      "volume": "5.1M"
+    },
+    {
+      "ticker": "TAL",
+      "name": "TAL Education Group ADR",
+      "price": 11.99,
+      "change_pct": 10.12,
+      "volume": "4.9M"
+    },
+    {
+      "ticker": "BEX",
+      "name": "Tradr 2X Long BE Daily ETF",
+      "price": 22.95,
+      "change_pct": 53.0,
+      "volume": "4.7M"
     }
   ]
 }
