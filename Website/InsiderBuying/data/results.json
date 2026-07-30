@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-07-30T15:05:04.598234",
-  "total_transactions": 67,
-  "date_range": "Jul 21 '26 \u2013 Jul 28 '26",
+  "scan_time": "2026-07-30T18:17:46.013973",
+  "total_transactions": 69,
+  "date_range": "Jul 21 '26 \u2013 May 15 '26",
   "min_value": 25000,
   "nominees": [
     {
@@ -490,6 +490,42 @@
         "$2.6M total"
       ],
       "story": "SSTFS \u2014 The Chief Financial Officer bought, $2.6M total."
+    },
+    {
+      "ticker": "CCOSM",
+      "insider": "Siokas Grigorios",
+      "title": "Chief Executive Officer",
+      "date": "Jul 29 '26",
+      "price": 0.18,
+      "qty": 766284,
+      "value": 140000,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "CCOSM",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Siokas Grigorios",
+          "title": "Chief Executive Officer",
+          "date": "Jul 29 '26",
+          "price": 0.18,
+          "qty": 766284,
+          "value": 140000,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 25,
+      "tier": "B",
+      "signals": [
+        "Chief Executive Officer bought",
+        "$140K total",
+        "Activity in last 3 days"
+      ],
+      "story": "CCOSM \u2014 The Chief Executive Officer bought, $140K total."
     },
     {
       "ticker": "LLOAN",
@@ -1163,11 +1199,33 @@
   ],
   "tier_counts": {
     "A": 4,
-    "B": 5,
+    "B": 6,
     "W": 13,
-    "total": 22
+    "total": 23
   },
   "recent_feed": [
+    {
+      "ticker": "AAVBC",
+      "insider": "GILLES MICHAEL O",
+      "title": "Director",
+      "date": "May 15 '26",
+      "price": 19.04,
+      "qty": 2000,
+      "value": 38086,
+      "filing": "Jul 30 02:07 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "CCOSM",
+      "insider": "Siokas Grigorios",
+      "title": "Chief Executive Officer",
+      "date": "Jul 29 '26",
+      "price": 0.18,
+      "qty": 766284,
+      "value": 140000,
+      "filing": "Jul 30 11:09 AM",
+      "is_csuite": true
+    },
     {
       "ticker": "NNWFL",
       "insider": "Shook James",
@@ -1584,28 +1642,6 @@
       "qty": 96591,
       "value": 4250004,
       "filing": "Jul 24 04:34 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "FFSBC",
-      "insider": "Perry-Smith Robert Truxtun",
-      "title": "Director",
-      "date": "Jul 22 '26",
-      "price": 44.0,
-      "qty": 31363,
-      "value": 1379972,
-      "filing": "Jul 24 04:33 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "FFSBC",
-      "insider": "Deary-Bell Shannon",
-      "title": "Director",
-      "date": "Jul 22 '26",
-      "price": 44.0,
-      "qty": 5682,
-      "value": 250008,
-      "filing": "Jul 24 04:32 PM",
       "is_csuite": false
     }
   ]
