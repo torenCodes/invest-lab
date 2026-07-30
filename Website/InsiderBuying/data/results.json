@@ -1,6 +1,6 @@
 {
-  "scan_time": "2026-07-30T13:56:37.127502",
-  "total_transactions": 66,
+  "scan_time": "2026-07-30T15:05:04.598234",
+  "total_transactions": 67,
   "date_range": "Jul 21 '26 \u2013 Jul 28 '26",
   "min_value": 25000,
   "nominees": [
@@ -733,6 +733,41 @@
       "story": "PPNFP \u2014 MCCABE ROBERT A JR (Chief Banking Officer) bought, $1.0M total."
     },
     {
+      "ticker": "NNWFL",
+      "insider": "Shook James",
+      "title": "Director",
+      "date": "Jul 28 '26",
+      "price": 34.55,
+      "qty": 3100,
+      "value": 107105,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "NNWFL",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Shook James",
+          "title": "Director",
+          "date": "Jul 28 '26",
+          "price": 34.55,
+          "qty": 3100,
+          "value": 107105,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 10,
+      "tier": "W",
+      "signals": [
+        "$107K total",
+        "Activity in last 3 days"
+      ],
+      "story": "NNWFL \u2014 Shook James (Director) bought, $107K total."
+    },
+    {
       "ticker": "TTSM",
       "insider": "Tien Bor-Zen",
       "title": "VP",
@@ -1129,10 +1164,21 @@
   "tier_counts": {
     "A": 4,
     "B": 5,
-    "W": 12,
-    "total": 21
+    "W": 13,
+    "total": 22
   },
   "recent_feed": [
+    {
+      "ticker": "NNWFL",
+      "insider": "Shook James",
+      "title": "Director",
+      "date": "Jul 28 '26",
+      "price": 34.55,
+      "qty": 3100,
+      "value": 107105,
+      "filing": "Jul 30 10:36 AM",
+      "is_csuite": false
+    },
     {
       "ticker": "AACI",
       "insider": "MORRIS SUSAN",
@@ -1559,17 +1605,6 @@
       "price": 44.0,
       "qty": 5682,
       "value": 250008,
-      "filing": "Jul 24 04:32 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "FFSBC",
-      "insider": "Lucas Donna",
-      "title": "Director",
-      "date": "Jul 22 '26",
-      "price": 44.0,
-      "qty": 1136,
-      "value": 49984,
       "filing": "Jul 24 04:32 PM",
       "is_csuite": false
     }
