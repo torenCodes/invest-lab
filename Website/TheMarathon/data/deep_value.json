@@ -1,90 +1,38 @@
 {
-  "scanned_at": "2026-07-29T15:09:38.876579+00:00",
+  "scanned_at": "2026-07-30T15:12:28.097275+00:00",
   "next_scan_info": "Mon / Wed / Fri 9am ET",
   "nominees": [
-    {
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "sector": "Technology",
-      "industry": "Software - Infrastructure",
-      "price": 395.6,
-      "market_cap": 2938689028096,
-      "pe": 23.54762,
-      "pb": 7.0925293,
-      "roe": 0.34013999,
-      "gross_margin": 0.68309,
-      "revenue_growth": 0.183,
-      "is_financial": false,
-      "quality_score": 95,
-      "beaten_up_score": 55,
-      "recovery_bonus": 10,
-      "composite_score": 74.75,
-      "quality_signals": [
-        "Gross margin 68%",
-        "ROE 34.0%",
-        "Rev growth +18.3%"
-      ],
-      "beaten_signals": [
-        "26.6% off 52w high",
-        "YTD -16.0%",
-        "RSI 53.1"
-      ],
-      "recovery_signals": [
-        "Earnings beat +3.1%"
-      ],
-      "rsi": 53.1,
-      "drawdown_pct": 26.6,
-      "ytd_pct": -16.0,
-      "high_52w": 538.66,
-      "etf_count": 2,
-      "total_weight": 10.07,
-      "etfs_holding": [
-        {
-          "symbol": "QUAL",
-          "provider": "iShares",
-          "weight": 5.73
-        },
-        {
-          "symbol": "QQQ",
-          "provider": "Invesco",
-          "weight": 4.34
-        }
-      ],
-      "rank": 1
-    },
     {
       "ticker": "META",
       "name": "Meta Platforms, Inc.",
       "sector": "Communication Services",
       "industry": "Internet Content & Information",
-      "price": 590.56,
-      "market_cap": 1498761527296,
-      "pe": 21.493633,
-      "pb": 6.149481,
+      "price": 538.5,
+      "market_cap": 1366940975104,
+      "pe": 19.863518,
+      "pb": 5.6086154,
       "roe": 0.32930002,
       "gross_margin": 0.81941,
       "revenue_growth": 0.331,
       "is_financial": false,
       "quality_score": 90,
-      "beaten_up_score": 53,
-      "recovery_bonus": 10,
-      "composite_score": 71.7,
+      "beaten_up_score": 80,
+      "recovery_bonus": 0,
+      "composite_score": 72.5,
       "quality_signals": [
         "Gross margin 82%",
         "ROE 32.9%",
         "Rev growth +33.1%"
       ],
       "beaten_signals": [
-        "25.0% off 52w high",
-        "YTD -9.0%",
-        "RSI 42.7"
+        "31.6% off 52w high",
+        "YTD -17.1%",
+        "RSI 32.0"
       ],
-      "recovery_signals": [
-        "Earnings beat +5.6%"
-      ],
-      "rsi": 42.7,
-      "drawdown_pct": 25.0,
-      "ytd_pct": -9.0,
+      "recovery_signals": [],
+      "rsi": 32.0,
+      "drawdown_pct": 31.6,
+      "ytd_pct": -17.1,
       "high_52w": 787.42,
       "etf_count": 1,
       "total_weight": 3.72,
@@ -95,271 +43,41 @@
           "weight": 3.72
         }
       ],
-      "rank": 2
-    },
-    {
-      "ticker": "MU",
-      "name": "Micron Technology, Inc.",
-      "sector": "Technology",
-      "industry": "Semiconductors",
-      "price": 788.0,
-      "market_cap": 889961775104,
-      "pe": 17.815962,
-      "pb": 8.832596,
-      "roe": 0.66638,
-      "gross_margin": 0.72569,
-      "revenue_growth": 3.457,
-      "is_financial": false,
-      "quality_score": 90,
-      "beaten_up_score": 45,
-      "recovery_bonus": 10,
-      "composite_score": 68.5,
-      "quality_signals": [
-        "Gross margin 73%",
-        "ROE 66.6%",
-        "Rev growth +345.7%"
-      ],
-      "beaten_signals": [
-        "35.1% off 52w high",
-        "YTD +150.0%",
-        "RSI 38.3"
-      ],
-      "recovery_signals": [
-        "Earnings beat +17.3%"
-      ],
-      "rsi": 38.3,
-      "drawdown_pct": 35.1,
-      "ytd_pct": 150.0,
-      "high_52w": 1213.37,
-      "etf_count": 1,
-      "total_weight": 5.63,
-      "etfs_holding": [
-        {
-          "symbol": "QQQ",
-          "provider": "Invesco",
-          "weight": 5.63
-        }
-      ],
-      "rank": 3
-    },
-    {
-      "ticker": "LRCX",
-      "name": "Lam Research Corporation",
-      "sector": "Technology",
-      "industry": "Semiconductor Equipment & Materials",
-      "price": 260.18,
-      "market_cap": 325373558784,
-      "pe": 53.31557,
-      "pb": 30.739603,
-      "roe": 0.66762,
-      "gross_margin": 0.49979,
-      "revenue_growth": 0.238,
-      "is_financial": false,
-      "quality_score": 82,
-      "beaten_up_score": 45,
-      "recovery_bonus": 10,
-      "composite_score": 64.9,
-      "quality_signals": [
-        "Gross margin 50%",
-        "ROE 66.8%",
-        "Rev growth +23.8%"
-      ],
-      "beaten_signals": [
-        "40.0% off 52w high",
-        "YTD +40.9%",
-        "RSI 32.3"
-      ],
-      "recovery_signals": [
-        "Earnings beat +4.9%"
-      ],
-      "rsi": 32.3,
-      "drawdown_pct": 40.0,
-      "ytd_pct": 40.9,
-      "high_52w": 433.33,
-      "etf_count": 1,
-      "total_weight": 5.15,
-      "etfs_holding": [
-        {
-          "symbol": "QUAL",
-          "provider": "iShares",
-          "weight": 5.15
-        }
-      ],
-      "rank": 4
-    },
-    {
-      "ticker": "KLAC",
-      "name": "KLA Corporation",
-      "sector": "Technology",
-      "industry": "Semiconductor Equipment & Materials",
-      "price": 179.58,
-      "market_cap": 234580901888,
-      "pe": 50.87252,
-      "pb": 40.25555,
-      "roe": 0.94975996,
-      "gross_margin": 0.61446,
-      "revenue_growth": 0.115,
-      "is_financial": false,
-      "quality_score": 81,
-      "beaten_up_score": 45,
-      "recovery_bonus": 10,
-      "composite_score": 64.45,
-      "quality_signals": [
-        "Gross margin 61%",
-        "ROE 95.0%",
-        "Rev growth +11.5%"
-      ],
-      "beaten_signals": [
-        "40.5% off 52w high",
-        "YTD +41.3%",
-        "RSI 34.6"
-      ],
-      "recovery_signals": [
-        "Earnings beat +3.3%"
-      ],
-      "rsi": 34.6,
-      "drawdown_pct": 40.5,
-      "ytd_pct": 41.3,
-      "high_52w": 301.71,
-      "etf_count": 1,
-      "total_weight": 4.07,
-      "etfs_holding": [
-        {
-          "symbol": "QUAL",
-          "provider": "iShares",
-          "weight": 4.07
-        }
-      ],
-      "rank": 5
-    },
-    {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "sector": "Technology",
-      "industry": "Semiconductors",
-      "price": 192.95,
-      "market_cap": 4673131511808,
-      "pe": 29.5011,
-      "pb": 23.907955,
-      "roe": 1.14288,
-      "gross_margin": 0.74144995,
-      "revenue_growth": 0.852,
-      "is_financial": false,
-      "quality_score": 95,
-      "beaten_up_score": 25,
-      "recovery_bonus": 10,
-      "composite_score": 62.75,
-      "quality_signals": [
-        "Gross margin 74%",
-        "ROE 114.3%",
-        "Rev growth +85.2%"
-      ],
-      "beaten_signals": [
-        "18.1% off 52w high",
-        "YTD +2.3%",
-        "RSI 39.9"
-      ],
-      "recovery_signals": [
-        "Earnings beat +4.3%"
-      ],
-      "rsi": 39.9,
-      "drawdown_pct": 18.1,
-      "ytd_pct": 2.3,
-      "high_52w": 235.47,
-      "etf_count": 2,
-      "total_weight": 13.39,
-      "etfs_holding": [
-        {
-          "symbol": "QUAL",
-          "provider": "iShares",
-          "weight": 5.81
-        },
-        {
-          "symbol": "QQQ",
-          "provider": "Invesco",
-          "weight": 7.58
-        }
-      ],
-      "rank": 6
-    },
-    {
-      "ticker": "AMAT",
-      "name": "Applied Materials, Inc.",
-      "sector": "Technology",
-      "industry": "Semiconductor Equipment & Materials",
-      "price": 455.11,
-      "market_cap": 361334898688,
-      "pe": 42.813267,
-      "pb": 15.112739,
-      "roe": 0.39692003,
-      "gross_margin": 0.48956,
-      "revenue_growth": 0.114,
-      "is_financial": false,
-      "quality_score": 77,
-      "beaten_up_score": 45,
-      "recovery_bonus": 10,
-      "composite_score": 62.65,
-      "quality_signals": [
-        "Gross margin 49%",
-        "ROE 39.7%",
-        "Rev growth +11.4%"
-      ],
-      "beaten_signals": [
-        "37.1% off 52w high",
-        "YTD +69.7%",
-        "RSI 35.5"
-      ],
-      "recovery_signals": [
-        "Earnings beat +5.2%"
-      ],
-      "rsi": 35.5,
-      "drawdown_pct": 37.1,
-      "ytd_pct": 69.7,
-      "high_52w": 723.0,
-      "etf_count": 1,
-      "total_weight": 4.41,
-      "etfs_holding": [
-        {
-          "symbol": "QUAL",
-          "provider": "iShares",
-          "weight": 4.41
-        }
-      ],
-      "rank": 7
+      "rank": 1
     },
     {
       "ticker": "TMUS",
       "name": "T-Mobile US, Inc.",
       "sector": "Communication Services",
       "industry": "Telecom Services",
-      "price": 181.09,
-      "market_cap": 194244739072,
-      "pe": 18.941946,
-      "pb": 3.518947,
+      "price": 176.94,
+      "market_cap": 189798514688,
+      "pe": 18.489029,
+      "pb": 3.4383988,
       "roe": 0.17994,
       "gross_margin": 0.63054,
       "revenue_growth": 0.079,
       "is_financial": false,
       "quality_score": 66,
-      "beaten_up_score": 53,
+      "beaten_up_score": 70,
       "recovery_bonus": 10,
-      "composite_score": 60.9,
+      "composite_score": 67.7,
       "quality_signals": [
         "Gross margin 63%",
         "ROE 18.0%",
         "Rev growth +7.9%"
       ],
       "beaten_signals": [
-        "28.8% off 52w high",
-        "YTD -8.3%",
-        "RSI 47.5"
+        "30.4% off 52w high",
+        "YTD -10.4%",
+        "RSI 44.1"
       ],
       "recovery_signals": [
         "Earnings beat +13.0%"
       ],
-      "rsi": 47.5,
-      "drawdown_pct": 28.8,
-      "ytd_pct": -8.3,
+      "rsi": 44.1,
+      "drawdown_pct": 30.4,
+      "ytd_pct": -10.4,
       "high_52w": 254.22,
       "etf_count": 1,
       "total_weight": 1.93,
@@ -370,6 +88,276 @@
           "weight": 1.93
         }
       ],
+      "rank": 2
+    },
+    {
+      "ticker": "KLAC",
+      "name": "KLA Corporation",
+      "sector": "Technology",
+      "industry": "Semiconductor Equipment & Materials",
+      "price": 184.31,
+      "market_cap": 240759586816,
+      "pe": 52.360794,
+      "pb": 41.31585,
+      "roe": 0.87496,
+      "gross_margin": 0.61301,
+      "revenue_growth": 0.152,
+      "is_financial": false,
+      "quality_score": 76,
+      "beaten_up_score": 45,
+      "recovery_bonus": 10,
+      "composite_score": 62.2,
+      "quality_signals": [
+        "Gross margin 61%",
+        "ROE 87.5%",
+        "Rev growth +15.2%"
+      ],
+      "beaten_signals": [
+        "38.9% off 52w high",
+        "YTD +45.0%",
+        "RSI 38.8"
+      ],
+      "recovery_signals": [
+        "Earnings beat +3.3%"
+      ],
+      "rsi": 38.8,
+      "drawdown_pct": 38.9,
+      "ytd_pct": 45.0,
+      "high_52w": 301.71,
+      "etf_count": 1,
+      "total_weight": 4.07,
+      "etfs_holding": [
+        {
+          "symbol": "QUAL",
+          "provider": "iShares",
+          "weight": 4.07
+        }
+      ],
+      "rank": 3
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "price": 849.41,
+      "market_cap": 959323439104,
+      "pe": 19.187147,
+      "pb": 9.520988,
+      "roe": 0.66638,
+      "gross_margin": 0.72569,
+      "revenue_growth": 3.457,
+      "is_financial": false,
+      "quality_score": 90,
+      "beaten_up_score": 25,
+      "recovery_bonus": 10,
+      "composite_score": 60.5,
+      "quality_signals": [
+        "Gross margin 73%",
+        "ROE 66.6%",
+        "Rev growth +345.7%"
+      ],
+      "beaten_signals": [
+        "30.0% off 52w high",
+        "YTD +169.5%",
+        "RSI 44.9"
+      ],
+      "recovery_signals": [
+        "Earnings beat +17.3%"
+      ],
+      "rsi": 44.9,
+      "drawdown_pct": 30.0,
+      "ytd_pct": 169.5,
+      "high_52w": 1213.37,
+      "etf_count": 1,
+      "total_weight": 5.63,
+      "etfs_holding": [
+        {
+          "symbol": "QQQ",
+          "provider": "Invesco",
+          "weight": 5.63
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "ticker": "AMAT",
+      "name": "Applied Materials, Inc.",
+      "sector": "Technology",
+      "industry": "Semiconductor Equipment & Materials",
+      "price": 499.54,
+      "market_cap": 396614500352,
+      "pe": 46.905167,
+      "pb": 16.588299,
+      "roe": 0.39692003,
+      "gross_margin": 0.48956,
+      "revenue_growth": 0.114,
+      "is_financial": false,
+      "quality_score": 77,
+      "beaten_up_score": 35,
+      "recovery_bonus": 10,
+      "composite_score": 58.65,
+      "quality_signals": [
+        "Gross margin 49%",
+        "ROE 39.7%",
+        "Rev growth +11.4%"
+      ],
+      "beaten_signals": [
+        "30.9% off 52w high",
+        "YTD +86.3%",
+        "RSI 44.1"
+      ],
+      "recovery_signals": [
+        "Earnings beat +5.2%"
+      ],
+      "rsi": 44.1,
+      "drawdown_pct": 30.9,
+      "ytd_pct": 86.3,
+      "high_52w": 723.0,
+      "etf_count": 1,
+      "total_weight": 4.41,
+      "etfs_holding": [
+        {
+          "symbol": "QUAL",
+          "provider": "iShares",
+          "weight": 4.41
+        }
+      ],
+      "rank": 5
+    },
+    {
+      "ticker": "GILD",
+      "name": "Gilead Sciences, Inc.",
+      "sector": "Healthcare",
+      "industry": "Drug Manufacturers - General",
+      "price": 129.13,
+      "market_cap": 160323928064,
+      "pe": 17.568708,
+      "pb": 6.8203664,
+      "roe": 0.4336,
+      "gross_margin": 0.79367995,
+      "revenue_growth": 0.044,
+      "is_financial": false,
+      "quality_score": 77,
+      "beaten_up_score": 35,
+      "recovery_bonus": 10,
+      "composite_score": 58.65,
+      "quality_signals": [
+        "Gross margin 79%",
+        "ROE 43.4%",
+        "Rev growth +4.4%"
+      ],
+      "beaten_signals": [
+        "16.1% off 52w high",
+        "YTD +7.5%",
+        "RSI 47.0"
+      ],
+      "recovery_signals": [
+        "Earnings beat +4.0%"
+      ],
+      "rsi": 47.0,
+      "drawdown_pct": 16.1,
+      "ytd_pct": 7.5,
+      "high_52w": 153.91,
+      "etf_count": 1,
+      "total_weight": 2.01,
+      "etfs_holding": [
+        {
+          "symbol": "COWZ",
+          "provider": "Pacer",
+          "weight": 2.01
+        }
+      ],
+      "rank": 6
+    },
+    {
+      "ticker": "CMCSA",
+      "name": "Comcast Corporation",
+      "sector": "Communication Services",
+      "industry": "Telecom Services",
+      "price": 23.43,
+      "market_cap": 83126812672,
+      "pe": 7.508013,
+      "pb": 0.92548686,
+      "roe": 0.114879996,
+      "gross_margin": 0.6939,
+      "revenue_growth": -0.012,
+      "is_financial": false,
+      "quality_score": 51,
+      "beaten_up_score": 60,
+      "recovery_bonus": 10,
+      "composite_score": 56.95,
+      "quality_signals": [
+        "Gross margin 69%",
+        "ROE 11.5%",
+        "Rev growth -1.2%"
+      ],
+      "beaten_signals": [
+        "26.0% off 52w high",
+        "YTD -12.2%",
+        "RSI 49.3"
+      ],
+      "recovery_signals": [
+        "Earnings beat +4.5%"
+      ],
+      "rsi": 49.3,
+      "drawdown_pct": 26.0,
+      "ytd_pct": -12.2,
+      "high_52w": 31.68,
+      "etf_count": 1,
+      "total_weight": 2.12,
+      "etfs_holding": [
+        {
+          "symbol": "COWZ",
+          "provider": "Pacer",
+          "weight": 2.12
+        }
+      ],
+      "rank": 7
+    },
+    {
+      "ticker": "LRCX",
+      "name": "Lam Research Corporation",
+      "sector": "Technology",
+      "industry": "Semiconductor Equipment & Materials",
+      "price": 303.6,
+      "market_cap": 379673378816,
+      "pe": 57.283016,
+      "pb": 35.869568,
+      "roe": 0.66762,
+      "gross_margin": 0.49979,
+      "revenue_growth": 0.238,
+      "is_financial": false,
+      "quality_score": 82,
+      "beaten_up_score": 25,
+      "recovery_bonus": 10,
+      "composite_score": 56.9,
+      "quality_signals": [
+        "Gross margin 50%",
+        "ROE 66.8%",
+        "Rev growth +23.8%"
+      ],
+      "beaten_signals": [
+        "29.9% off 52w high",
+        "YTD +64.4%",
+        "RSI 45.9"
+      ],
+      "recovery_signals": [
+        "Earnings beat +6.0%"
+      ],
+      "rsi": 45.9,
+      "drawdown_pct": 29.9,
+      "ytd_pct": 64.4,
+      "high_52w": 433.33,
+      "etf_count": 1,
+      "total_weight": 5.15,
+      "etfs_holding": [
+        {
+          "symbol": "QUAL",
+          "provider": "iShares",
+          "weight": 5.15
+        }
+      ],
       "rank": 8
     },
     {
@@ -377,10 +365,10 @@
       "name": "Uber Technologies, Inc.",
       "sector": "Technology",
       "industry": "Software - Application",
-      "price": 69.95,
-      "market_cap": 142400323584,
-      "pe": 17.35856,
-      "pb": 5.755718,
+      "price": 68.81,
+      "market_cap": 140069568512,
+      "pe": 17.07444,
+      "pb": 5.6615105,
       "roe": 0.3531,
       "gross_margin": 0.39635,
       "revenue_growth": 0.145,
@@ -395,14 +383,14 @@
         "Rev growth +14.5%"
       ],
       "beaten_signals": [
-        "30.1% off 52w high",
-        "YTD -15.6%",
-        "RSI 45.9"
+        "31.3% off 52w high",
+        "YTD -17.0%",
+        "RSI 43.4"
       ],
       "recovery_signals": [],
-      "rsi": 45.9,
-      "drawdown_pct": 30.1,
-      "ytd_pct": -15.6,
+      "rsi": 43.4,
+      "drawdown_pct": 31.3,
+      "ytd_pct": -17.0,
       "high_52w": 100.1,
       "etf_count": 1,
       "total_weight": 2.1,
@@ -420,10 +408,10 @@
       "name": "Tesla, Inc.",
       "sector": "Consumer Cyclical",
       "industry": "Auto Manufacturers",
-      "price": 302.95,
-      "market_cap": 1196500451328,
-      "pe": 280.50574,
-      "pb": 13.523781,
+      "price": 305.0,
+      "market_cap": 1204611579904,
+      "pe": 285.04663,
+      "pb": 13.928844,
       "roe": 0.046669997,
       "gross_margin": 0.18852,
       "revenue_growth": 0.255,
@@ -438,14 +426,14 @@
         "Rev growth +25.5%"
       ],
       "beaten_signals": [
-        "38.2% off 52w high",
-        "YTD -30.9%",
-        "RSI 26.2"
+        "37.7% off 52w high",
+        "YTD -30.4%",
+        "RSI 28.8"
       ],
       "recovery_signals": [],
-      "rsi": 26.2,
-      "drawdown_pct": 38.2,
-      "ytd_pct": -30.9,
+      "rsi": 28.8,
+      "drawdown_pct": 37.7,
+      "ytd_pct": -30.4,
       "high_52w": 489.88,
       "etf_count": 1,
       "total_weight": 3.29,
@@ -463,10 +451,10 @@
       "name": "HCA Healthcare, Inc.",
       "sector": "Healthcare",
       "industry": "Medical Care Facilities",
-      "price": 410.42,
-      "market_cap": 91047378944,
-      "pe": 13.763229,
-      "pb": -14.490168,
+      "price": 397.53,
+      "market_cap": 88187977728,
+      "pe": 13.322051,
+      "pb": -13.336352,
       "roe": null,
       "gross_margin": 0.42580003,
       "revenue_growth": 0.087,
@@ -480,16 +468,16 @@
         "Rev growth +8.7%"
       ],
       "beaten_signals": [
-        "24.4% off 52w high",
-        "YTD -12.4%",
-        "RSI 58.7"
+        "26.8% off 52w high",
+        "YTD -15.2%",
+        "RSI 52.7"
       ],
       "recovery_signals": [
         "Earnings beat +1.0%"
       ],
-      "rsi": 58.7,
-      "drawdown_pct": 24.4,
-      "ytd_pct": -12.4,
+      "rsi": 52.7,
+      "drawdown_pct": 26.8,
+      "ytd_pct": -15.2,
       "high_52w": 543.23,
       "etf_count": 1,
       "total_weight": 2.15,
@@ -503,46 +491,45 @@
       "rank": 11
     },
     {
-      "ticker": "CMCSA",
-      "name": "Comcast Corporation",
-      "sector": "Communication Services",
-      "industry": "Telecom Services",
-      "price": 24.53,
-      "market_cap": 87012573184,
-      "pe": 7.858975,
-      "pb": 0.96874875,
-      "roe": 0.114879996,
-      "gross_margin": 0.6939,
-      "revenue_growth": -0.012,
+      "ticker": "BKNG",
+      "name": "Booking Holdings Inc.",
+      "sector": "Consumer Cyclical",
+      "industry": "Travel Services",
+      "price": 190.48,
+      "market_cap": 147598852096,
+      "pe": 25.096178,
+      "pb": -17.02995,
+      "roe": null,
+      "gross_margin": 0.86987,
+      "revenue_growth": 0.162,
       "is_financial": false,
-      "quality_score": 51,
-      "beaten_up_score": 48,
+      "quality_score": 67,
+      "beaten_up_score": 25,
       "recovery_bonus": 10,
-      "composite_score": 52.15,
+      "composite_score": 50.15,
       "quality_signals": [
-        "Gross margin 69%",
-        "ROE 11.5%",
-        "Rev growth -1.2%"
+        "Gross margin 87%",
+        "Rev growth +16.2%"
       ],
       "beaten_signals": [
-        "22.6% off 52w high",
-        "YTD -8.1%",
-        "RSI 58.2"
+        "16.1% off 52w high",
+        "YTD -10.1%",
+        "RSI 57.8"
       ],
       "recovery_signals": [
-        "Earnings beat +4.5%"
+        "Earnings beat +3.6%"
       ],
-      "rsi": 58.2,
-      "drawdown_pct": 22.6,
-      "ytd_pct": -8.1,
-      "high_52w": 31.68,
+      "rsi": 57.8,
+      "drawdown_pct": 16.1,
+      "ytd_pct": -10.1,
+      "high_52w": 226.92,
       "etf_count": 1,
-      "total_weight": 2.12,
+      "total_weight": 2.21,
       "etfs_holding": [
         {
           "symbol": "COWZ",
           "provider": "Pacer",
-          "weight": 2.12
+          "weight": 2.21
         }
       ],
       "rank": 12
@@ -551,6 +538,6 @@
   "meta": {
     "etfs_scanned": 4,
     "total_tickers_found": 36,
-    "candidates_qualified": 17
+    "candidates_qualified": 16
   }
 }
