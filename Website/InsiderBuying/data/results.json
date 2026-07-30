@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-07-30T18:17:46.013973",
-  "total_transactions": 69,
-  "date_range": "Jul 21 '26 \u2013 May 15 '26",
+  "scan_time": "2026-07-30T19:09:14.991115",
+  "total_transactions": 70,
+  "date_range": "Jul 21 '26 \u2013 Jul 29 '26",
   "min_value": 25000,
   "nominees": [
     {
@@ -526,6 +526,41 @@
         "Activity in last 3 days"
       ],
       "story": "CCOSM \u2014 The Chief Executive Officer bought, $140K total."
+    },
+    {
+      "ticker": "PPKBK",
+      "insider": "PANTILIONE VITO S",
+      "title": "President & CEO",
+      "date": "Jul 29 '26",
+      "price": 33.68,
+      "qty": 1300,
+      "value": 43784,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "PPKBK",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "PANTILIONE VITO S",
+          "title": "President & CEO",
+          "date": "Jul 29 '26",
+          "price": 33.68,
+          "qty": 1300,
+          "value": 43784,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 20,
+      "tier": "W",
+      "signals": [
+        "President & CEO bought",
+        "Activity in last 3 days"
+      ],
+      "story": "PPKBK \u2014 The President & CEO bought."
     },
     {
       "ticker": "LLOAN",
@@ -1200,10 +1235,21 @@
   "tier_counts": {
     "A": 4,
     "B": 6,
-    "W": 13,
-    "total": 23
+    "W": 14,
+    "total": 24
   },
   "recent_feed": [
+    {
+      "ticker": "PPKBK",
+      "insider": "PANTILIONE VITO S",
+      "title": "President & CEO",
+      "date": "Jul 29 '26",
+      "price": 33.68,
+      "qty": 1300,
+      "value": 43784,
+      "filing": "Jul 30 02:30 PM",
+      "is_csuite": true
+    },
     {
       "ticker": "AAVBC",
       "insider": "GILLES MICHAEL O",
@@ -1632,17 +1678,6 @@
       "value": 32850,
       "filing": "Jul 27 06:15 AM",
       "is_csuite": true
-    },
-    {
-      "ticker": "FFSBC",
-      "insider": "Allbaugh Larry Eugene",
-      "title": "Director",
-      "date": "Jul 22 '26",
-      "price": 44.0,
-      "qty": 96591,
-      "value": 4250004,
-      "filing": "Jul 24 04:34 PM",
-      "is_csuite": false
     }
   ]
 }
