@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-07-30T11:00:37.091035+00:00",
+  "scan_time": "2026-07-30T13:00:40.624457+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Risk-Off",
@@ -23,19 +23,19 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "19.4",
+        "value": "19.1",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.62%",
+        "value": "4.68%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-30T11:00:50.552319+00:00"
+    "updated": "2026-07-30T13:01:21.172146+00:00"
   },
   "earnings": [
     {
@@ -73,39 +73,6 @@
     },
     {
       "date": "2026-07-30",
-      "symbol": "BMY",
-      "eps_estimate": 1.6016,
-      "eps_actual": null,
-      "revenue_estimate": 11858402818,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-30",
-      "symbol": "MA",
-      "eps_estimate": 4.9086,
-      "eps_actual": null,
-      "revenue_estimate": 9340343891,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-30",
-      "symbol": "PWR",
-      "eps_estimate": 3.3328,
-      "eps_actual": null,
-      "revenue_estimate": 8699105164,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-30",
       "symbol": "LYV",
       "eps_estimate": 0.672,
       "eps_actual": null,
@@ -117,12 +84,45 @@
     },
     {
       "date": "2026-07-30",
-      "symbol": "SO",
-      "eps_estimate": 1.0312,
+      "symbol": "CTVA",
+      "eps_estimate": 2.2683,
       "eps_actual": null,
-      "revenue_estimate": 7451477732,
+      "revenue_estimate": 6713664112,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "SYK",
+      "eps_estimate": 3.5223,
+      "eps_actual": null,
+      "revenue_estimate": 6645991061,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "FMCC",
+      "eps_estimate": 0.9044,
+      "eps_actual": null,
+      "revenue_estimate": 5723763996,
       "revenue_actual": null,
       "hour": "bmo",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "LPLA",
+      "eps_estimate": 5.51,
+      "eps_actual": null,
+      "revenue_estimate": 5143357905,
+      "revenue_actual": null,
+      "hour": "amc",
       "quarter": 2,
       "year": 2026
     },
@@ -655,5 +655,20 @@
       "year": 2027
     }
   ],
-  "unusual_volume": []
+  "unusual_volume": [
+    {
+      "ticker": "AMZG",
+      "name": "Leverage Shares 2X Long AMZN Daily ETF",
+      "price": 13.55,
+      "change_pct": 6.44,
+      "volume": "77K"
+    },
+    {
+      "ticker": "BRSV",
+      "name": "EA Bridgeway Select Small-Cap Value ETF",
+      "price": 44.26,
+      "change_pct": 0.06,
+      "volume": "22K"
+    }
+  ]
 }
