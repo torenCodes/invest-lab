@@ -1,29 +1,29 @@
 {
-  "scan_time": "2026-07-31T17:00:34.909270+00:00",
+  "scan_time": "2026-07-31T18:16:58.663982+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Cautious",
-    "score": 1,
-    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
+    "verdict": "Favorable",
+    "score": 5,
+    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
     "signals": [
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Below 50-day",
-        "read": "Downtrend",
-        "tone": "bad"
+        "value": "Above 50-day",
+        "read": "Uptrend",
+        "tone": "good"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "+0.8%",
+        "value": "+0.9%",
         "read": "Firm",
         "tone": "good"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "17.0",
+        "value": "16.6",
         "read": "Calm",
         "tone": "good"
       },
@@ -35,7 +35,7 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-31T17:00:55.611825+00:00"
+    "updated": "2026-07-31T18:17:06.868162+00:00"
   },
   "earnings": [
     {
@@ -582,51 +582,65 @@
     {
       "ticker": "FCUV",
       "name": "Focus Universal Inc",
-      "price": 12.96,
-      "change_pct": 589.36,
-      "volume": "71.7M"
+      "price": 16.16,
+      "change_pct": 759.57,
+      "volume": "83.3M"
     },
     {
       "ticker": "SNDQ",
       "name": "Tradr 2X Short SNDK Daily ETF",
-      "price": 31.09,
-      "change_pct": 7.47,
-      "volume": "28.7M"
+      "price": 31.12,
+      "change_pct": 7.56,
+      "volume": "30.7M"
     },
     {
       "ticker": "REPL",
       "name": "Replimune Group Inc",
-      "price": 10.58,
-      "change_pct": 95.93,
-      "volume": "24.6M"
+      "price": 10.69,
+      "change_pct": 97.96,
+      "volume": "26.3M"
     },
     {
       "ticker": "AXTX",
       "name": "Tradr 2X Long AXTI Daily ETF",
-      "price": 7.56,
-      "change_pct": 60.85,
-      "volume": "22.8M"
+      "price": 7.33,
+      "change_pct": 55.96,
+      "volume": "24.8M"
     },
     {
       "ticker": "AMZU",
       "name": "Direxion Daily AMZN Bull 2X ETF",
-      "price": 41.67,
-      "change_pct": 29.56,
-      "volume": "9.3M"
+      "price": 41.74,
+      "change_pct": 29.79,
+      "volume": "9.8M"
     },
     {
       "ticker": "SFTX",
       "name": "Horizon International Managed Risk ETF",
-      "price": 30.4,
-      "change_pct": 0.46,
+      "price": 30.42,
+      "change_pct": 0.55,
       "volume": "7.3M"
+    },
+    {
+      "ticker": "NBIL",
+      "name": "GraniteShares 2x Long NBIS Daily ETF",
+      "price": 20.85,
+      "change_pct": 1.86,
+      "volume": "7.2M"
     },
     {
       "ticker": "SFTY",
       "name": "Horizon Managed Risk ETF",
-      "price": 30.83,
-      "change_pct": 0.26,
-      "volume": "6.9M"
+      "price": 30.86,
+      "change_pct": 0.36,
+      "volume": "7.0M"
+    },
+    {
+      "ticker": "AMBA",
+      "name": "Ambarella Inc",
+      "price": 87.03,
+      "change_pct": 17.47,
+      "volume": "6.8M"
     }
   ]
 }
