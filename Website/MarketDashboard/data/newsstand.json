@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-07-31T11:00:38.510276+00:00",
+  "scan_time": "2026-07-31T13:00:34.007307+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Cautious",
@@ -23,87 +23,21 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "16.8",
+        "value": "17.3",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.66%",
+        "value": "4.70%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-31T11:00:53.871841+00:00"
+    "updated": "2026-07-31T13:00:54.076487+00:00"
   },
   "earnings": [
-    {
-      "date": "2026-07-31",
-      "symbol": "ABBV",
-      "eps_estimate": 3.6761,
-      "eps_actual": null,
-      "revenue_estimate": 17100793241,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-31",
-      "symbol": "LYB",
-      "eps_estimate": 3.4478,
-      "eps_actual": null,
-      "revenue_estimate": 9236289702,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-31",
-      "symbol": "AN",
-      "eps_estimate": 5.6609,
-      "eps_actual": null,
-      "revenue_estimate": 7233279854,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-31",
-      "symbol": "CL",
-      "eps_estimate": 0.9753,
-      "eps_actual": null,
-      "revenue_estimate": 5518431298,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-31",
-      "symbol": "D",
-      "eps_estimate": 0.6887,
-      "eps_actual": null,
-      "revenue_estimate": 4123808826,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-31",
-      "symbol": "TROW",
-      "eps_estimate": 2.5493,
-      "eps_actual": null,
-      "revenue_estimate": 1920059393,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
     {
       "date": "2026-07-31",
       "symbol": "BEPC",
@@ -124,6 +58,72 @@
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 3,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "ATHM",
+      "eps_estimate": 2.3129,
+      "eps_actual": null,
+      "revenue_estimate": 1274347710,
+      "revenue_actual": null,
+      "hour": "",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "HUBG",
+      "eps_estimate": 0.3832,
+      "eps_actual": null,
+      "revenue_estimate": 945258622,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "NEXA",
+      "eps_estimate": 0.6242,
+      "eps_actual": null,
+      "revenue_estimate": 897032370,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "STEL",
+      "eps_estimate": 0.5406,
+      "eps_actual": null,
+      "revenue_estimate": 112362863,
+      "revenue_actual": null,
+      "hour": "",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "BTM",
+      "eps_estimate": -0.5555,
+      "eps_actual": null,
+      "revenue_estimate": 101656500,
+      "revenue_actual": null,
+      "hour": "",
+      "quarter": 1,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "ABR",
+      "eps_estimate": 0.0545,
+      "eps_actual": null,
+      "revenue_estimate": 50702000,
+      "revenue_actual": null,
+      "hour": "bmo",
+      "quarter": 2,
       "year": 2026
     },
     {
@@ -655,5 +655,27 @@
       "year": 2026
     }
   ],
-  "unusual_volume": []
+  "unusual_volume": [
+    {
+      "ticker": "FCUV",
+      "name": "Focus Universal Inc",
+      "price": 8.29,
+      "change_pct": 340.96,
+      "volume": "18.2M"
+    },
+    {
+      "ticker": "SNDU",
+      "name": "T-REX 2X Long SNDK Daily Target ETF",
+      "price": 17.59,
+      "change_pct": 7.26,
+      "volume": "6.0M"
+    },
+    {
+      "ticker": "MKLY",
+      "name": "McKinley Acquisition Corp",
+      "price": 10.27,
+      "change_pct": 0.98,
+      "volume": "70K"
+    }
+  ]
 }
