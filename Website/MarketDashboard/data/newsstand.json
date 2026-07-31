@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-07-31T13:00:34.007307+00:00",
+  "scan_time": "2026-07-31T15:00:37.415550+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Cautious",
@@ -16,26 +16,26 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "+0.5%",
+        "value": "+0.4%",
         "read": "Firm",
         "tone": "good"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "17.3",
+        "value": "17.5",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.70%",
+        "value": "4.72%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-07-31T13:00:54.076487+00:00"
+    "updated": "2026-07-31T15:01:14.403387+00:00"
   },
   "earnings": [
     {
@@ -47,17 +47,6 @@
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-07-31",
-      "symbol": "BEN",
-      "eps_estimate": 0.6781,
-      "eps_actual": null,
-      "revenue_estimate": 1779183427,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 3,
       "year": 2026
     },
     {
@@ -117,12 +106,23 @@
     },
     {
       "date": "2026-07-31",
-      "symbol": "ABR",
-      "eps_estimate": 0.0545,
+      "symbol": "AIRS",
+      "eps_estimate": 0.0068,
       "eps_actual": null,
-      "revenue_estimate": 50702000,
+      "revenue_estimate": 45020076,
       "revenue_actual": null,
       "hour": "bmo",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "FRGE",
+      "eps_estimate": -0.6212,
+      "eps_actual": null,
+      "revenue_estimate": 33879300,
+      "revenue_actual": null,
+      "hour": "",
       "quarter": 2,
       "year": 2026
     },
@@ -659,23 +659,44 @@
     {
       "ticker": "FCUV",
       "name": "Focus Universal Inc",
-      "price": 8.29,
-      "change_pct": 340.96,
-      "volume": "18.2M"
+      "price": 12.5,
+      "change_pct": 564.9,
+      "volume": "54.5M"
     },
     {
-      "ticker": "SNDU",
-      "name": "T-REX 2X Long SNDK Daily Target ETF",
-      "price": 17.59,
-      "change_pct": 7.26,
-      "volume": "6.0M"
+      "ticker": "SNDQ",
+      "name": "Tradr 2X Short SNDK Daily ETF",
+      "price": 30.67,
+      "change_pct": 6.01,
+      "volume": "23.8M"
     },
     {
-      "ticker": "MKLY",
-      "name": "McKinley Acquisition Corp",
-      "price": 10.27,
-      "change_pct": 0.98,
-      "volume": "70K"
+      "ticker": "REPL",
+      "name": "Replimune Group Inc",
+      "price": 10.89,
+      "change_pct": 101.67,
+      "volume": "18.9M"
+    },
+    {
+      "ticker": "AXTI",
+      "name": "AXT Inc",
+      "price": 58.68,
+      "change_pct": 25.01,
+      "volume": "16.7M"
+    },
+    {
+      "ticker": "MUZ",
+      "name": "Defiance Daily Target 2X Short MU ETF",
+      "price": 13.07,
+      "change_pct": 6.61,
+      "volume": "15.5M"
+    },
+    {
+      "ticker": "AMZU",
+      "name": "Direxion Daily AMZN Bull 2X ETF",
+      "price": 41.62,
+      "change_pct": 29.42,
+      "volume": "7.5M"
     }
   ]
 }
