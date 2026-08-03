@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-08-03T15:39:05.093685",
-  "total_transactions": 58,
-  "date_range": "Jul 23 '26 \u2013 Jul 31 '26",
+  "scan_time": "2026-08-03T18:51:44.395792",
+  "total_transactions": 60,
+  "date_range": "Jul 23 '26 \u2013 Jul 30 '26",
   "min_value": 25000,
   "nominees": [
     {
@@ -528,6 +528,40 @@
       "story": "CCOSM \u2014 The Chief Executive Officer bought, $210K total."
     },
     {
+      "ticker": "DDCX",
+      "insider": "Chen Melissa N",
+      "title": "Chief Executive Officer (CEO)",
+      "date": "Jul 30 '26",
+      "price": 1.25,
+      "qty": 41000,
+      "value": 51250,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "DDCX",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Chen Melissa N",
+          "title": "Chief Executive Officer (CEO)",
+          "date": "Jul 30 '26",
+          "price": 1.25,
+          "qty": 41000,
+          "value": 51250,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 15,
+      "tier": "W",
+      "signals": [
+        "Chief Executive Officer (CEO) bought"
+      ],
+      "story": "DDCX \u2014 The Chief Executive Officer (CEO) bought."
+    },
+    {
       "ticker": "AARTV",
       "insider": "RA CAPITAL MANAGEMENT, L.P.",
       "title": "Director",
@@ -731,6 +765,41 @@
         "CEO and CFO bought"
       ],
       "story": "GGLSI \u2014 The CEO and CFO bought."
+    },
+    {
+      "ticker": "BBCML",
+      "insider": "PERDUE MICHAEL J",
+      "title": "Director",
+      "date": "Jul 31 '26",
+      "price": 30.17,
+      "qty": 5000,
+      "value": 150850,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "BBCML",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "PERDUE MICHAEL J",
+          "title": "Director",
+          "date": "Jul 31 '26",
+          "price": 30.17,
+          "qty": 5000,
+          "value": 150850,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 10,
+      "tier": "W",
+      "signals": [
+        "$151K total",
+        "Activity in last 3 days"
+      ],
+      "story": "BBCML \u2014 PERDUE MICHAEL J (Director) bought, $151K total."
     }
   ],
   "standouts": [
@@ -890,10 +959,32 @@
   "tier_counts": {
     "A": 1,
     "B": 7,
-    "W": 11,
-    "total": 19
+    "W": 13,
+    "total": 21
   },
   "recent_feed": [
+    {
+      "ticker": "DDCX",
+      "insider": "Chen Melissa N",
+      "title": "Chief Executive Officer (CEO)",
+      "date": "Jul 30 '26",
+      "price": 1.25,
+      "qty": 41000,
+      "value": 51250,
+      "filing": "Aug 03 02:37 PM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "BBCML",
+      "insider": "PERDUE MICHAEL J",
+      "title": "Director",
+      "date": "Jul 31 '26",
+      "price": 30.17,
+      "qty": 5000,
+      "value": 150850,
+      "filing": "Aug 03 11:40 AM",
+      "is_csuite": false
+    },
     {
       "ticker": "RRDWR",
       "insider": "Avidan Guy",
@@ -1310,28 +1401,6 @@
       "qty": 170500,
       "value": 1962284,
       "filing": "Jul 28 07:29 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "DDRIO",
-      "insider": "Matheis Dennis",
-      "title": "Director",
-      "date": "Jul 23 '26",
-      "price": 6.93,
-      "qty": 14430,
-      "value": 100000,
-      "filing": "Jul 28 05:27 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "AARTV",
-      "insider": "RA CAPITAL MANAGEMENT, L.P.",
-      "title": "Director",
-      "date": "Jul 24 '26",
-      "price": 9.99,
-      "qty": 41319,
-      "value": 412777,
-      "filing": "Jul 28 05:24 PM",
       "is_csuite": false
     }
   ]
