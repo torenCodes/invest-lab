@@ -1,9 +1,9 @@
 {
-  "scan_time": "2026-08-04T11:00:41.402072+00:00",
+  "scan_time": "2026-08-04T13:00:34.426277+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
-    "score": 5,
+    "score": 6,
     "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
     "signals": [
       {
@@ -16,8 +16,8 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "+1.1%",
-        "read": "Firm",
+        "value": "+2.5%",
+        "read": "Strong",
         "tone": "good"
       },
       {
@@ -30,58 +30,14 @@
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.74%",
+        "value": "4.66%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-08-04T11:00:49.437300+00:00"
+    "updated": "2026-08-04T13:00:46.422288+00:00"
   },
   "earnings": [
-    {
-      "date": "2026-08-04",
-      "symbol": "MPC",
-      "eps_estimate": 13.8643,
-      "eps_actual": null,
-      "revenue_estimate": 42498879878,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-04",
-      "symbol": "ET",
-      "eps_estimate": 0.3877,
-      "eps_actual": null,
-      "revenue_estimate": 29091192537,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-04",
-      "symbol": "SYY",
-      "eps_estimate": 1.5263,
-      "eps_actual": null,
-      "revenue_estimate": 22157387807,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 4,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-04",
-      "symbol": "PFE",
-      "eps_estimate": 0.6914,
-      "eps_actual": null,
-      "revenue_estimate": 14549152363,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
     {
       "date": "2026-08-04",
       "symbol": "PRU",
@@ -106,21 +62,65 @@
     },
     {
       "date": "2026-08-04",
-      "symbol": "SUN",
-      "eps_estimate": 2.2161,
+      "symbol": "AMGN",
+      "eps_estimate": 5.7281,
       "eps_actual": null,
-      "revenue_estimate": 11119090000,
+      "revenue_estimate": 9609525845,
       "revenue_actual": null,
-      "hour": "bmo",
+      "hour": "amc",
       "quarter": 2,
       "year": 2026
     },
     {
       "date": "2026-08-04",
-      "symbol": "AMGN",
-      "eps_estimate": 5.7281,
+      "symbol": "CPNG",
+      "eps_estimate": -0.0694,
       "eps_actual": null,
-      "revenue_estimate": 9609525845,
+      "revenue_estimate": 9095457126,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "EOG",
+      "eps_estimate": 5.0582,
+      "eps_actual": null,
+      "revenue_estimate": 7871115567,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "GILD",
+      "eps_estimate": -7.3797,
+      "eps_actual": null,
+      "revenue_estimate": 7547858658,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "BKNG",
+      "eps_estimate": 2.4906,
+      "eps_actual": null,
+      "revenue_estimate": 7343699202,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "SPCX",
+      "eps_estimate": -0.2635,
+      "eps_actual": null,
+      "revenue_estimate": 7072528999,
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 2,
@@ -655,5 +655,62 @@
       "year": 2026
     }
   ],
-  "unusual_volume": []
+  "unusual_volume": [
+    {
+      "ticker": "MOVE",
+      "name": "Corvex Inc",
+      "price": 20.1,
+      "change_pct": 86.8,
+      "volume": "2.9M"
+    },
+    {
+      "ticker": "FLTW",
+      "name": "Franklin FTSE Taiwan ETF",
+      "price": 95.56,
+      "change_pct": 1.16,
+      "volume": "850K"
+    },
+    {
+      "ticker": "IYF",
+      "name": "iShares U.S. Financials ETF",
+      "price": 137.46,
+      "change_pct": 1.13,
+      "volume": "760K"
+    },
+    {
+      "ticker": "COHH",
+      "name": "Leverage Shares 2X Long COHR Daily ETF",
+      "price": 8.46,
+      "change_pct": 26.46,
+      "volume": "375K"
+    },
+    {
+      "ticker": "TSEG",
+      "name": "Leverage Shares 2X Long TSEM Daily ETF",
+      "price": 8.71,
+      "change_pct": 2.71,
+      "volume": "123K"
+    },
+    {
+      "ticker": "CATG",
+      "name": "Leverage Shares 2X Long CAT Daily ETF",
+      "price": 13.68,
+      "change_pct": 22.0,
+      "volume": "69K"
+    },
+    {
+      "ticker": "AMZO",
+      "name": "Tradr 2X Short AMZN Daily ETF",
+      "price": 12.12,
+      "change_pct": 4.57,
+      "volume": "54K"
+    },
+    {
+      "ticker": "FXP",
+      "name": "ProShares UltraShort FTSE China 50",
+      "price": 19.47,
+      "change_pct": 1.59,
+      "volume": "10K"
+    }
+  ]
 }
