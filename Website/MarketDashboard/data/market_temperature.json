@@ -1,14 +1,14 @@
 {
-  "scan_time": "2026-08-03T12:51:46.335739+00:00",
+  "scan_time": "2026-08-04T11:58:54.832235+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 52.9,
+  "composite_score": 56.9,
   "composite_label": "Neutral",
   "components": {
     "risk_posture": {
-      "raw": -2.55,
-      "raw_label": "-2.5pt Risk-off",
-      "score": 34.7,
-      "label": "Cool",
+      "raw": 1.08,
+      "raw_label": "+1.1pt Risk-on",
+      "score": 56.5,
+      "label": "Neutral",
       "description": "The lab's own Sector Rotation read: cyclical sectors' 1-month relative strength vs defensives. Cyclicals leading = risk appetite running hot; defensives leading = money playing defense. Leading now: Energy, Financials.",
       "title": "Risk Posture",
       "subtitle": "Cyclicals vs Defensives",
@@ -17,7 +17,7 @@
     "trend": {
       "raw": 0.38,
       "raw_label": "+0.4% vs 50-DMA",
-      "score": 33.6,
+      "score": 33.4,
       "label": "Cool",
       "description": "Where the S&P trades vs its 50-day average, plus the strength of the last two weeks' move \u2014 percentile-ranked over three years. A stretched, fast-climbing tape runs hot; a broken, falling tape runs cold.",
       "title": "Trend Heat",
@@ -25,13 +25,13 @@
       "weight": 0.15
     },
     "breadth_50": {
-      "raw": 62.8,
-      "raw_label": "62.8% above 50-DMA",
+      "raw": 62.9,
+      "raw_label": "62.9% above 50-DMA",
       "above_50dma": 314,
-      "total": 500,
-      "score": 62.8,
+      "total": 499,
+      "score": 62.9,
       "label": "Warm",
-      "description": "314 of 500 S&P 500 stocks above their 50-day moving average \u2014 the fast participation read. Swings hard with every dip and rally, unlike its slower 200-day cousin below.",
+      "description": "314 of 499 S&P 500 stocks above their 50-day moving average \u2014 the fast participation read. Swings hard with every dip and rally, unlike its slower 200-day cousin below.",
       "title": "Fast Breadth",
       "subtitle": "% S&P 500 > 50-DMA",
       "weight": 0.15
@@ -41,7 +41,7 @@
       "raw_label": "119 hi / 25 lo",
       "near_high": 119,
       "near_low": 25,
-      "total": 500,
+      "total": 499,
       "score": 68.8,
       "label": "Warm",
       "description": "119 stocks near a 52-week high vs 25 near a 52-week low (within 5%). A surge of new highs signals euphoria; a wave of new lows signals stress.",
@@ -50,9 +50,9 @@
       "weight": 0.15
     },
     "fear_greed": {
-      "raw": 45.1,
-      "raw_label": "45 (Neutral)",
-      "score": 45.1,
+      "raw": 50.5,
+      "raw_label": "51 (Neutral)",
+      "score": 50.5,
       "label": "Neutral",
       "description": "CNN's composite of 7 short-term sentiment signals (momentum, breadth, put/call ratio, junk-bond demand, volatility, etc.). High readings reflect investor euphoria \u2014 historically a contrarian sell signal.",
       "title": "Fear & Greed",
@@ -60,13 +60,13 @@
       "weight": 0.15
     },
     "breadth": {
-      "raw": 68.4,
-      "raw_label": "68.4% above 200-DMA",
-      "above_200dma": 342,
-      "total": 500,
+      "raw": 68.3,
+      "raw_label": "68.3% above 200-DMA",
+      "above_200dma": 341,
+      "total": 499,
       "score": 60,
       "label": "Warm",
-      "description": "342 of 500 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
+      "description": "341 of 499 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
       "title": "Structural Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
       "weight": 0.1
@@ -83,8 +83,8 @@
       "weight": 0.1
     },
     "yield_curve": {
-      "raw": 0.47,
-      "raw_label": "+0.47% (10Y\u22122Y)",
+      "raw": 0.45,
+      "raw_label": "+0.45% (10Y\u22122Y)",
       "score": 52,
       "label": "Neutral",
       "description": "10-year minus 2-year Treasury yield. A steep curve is early-cycle and healthy; a flat or inverted curve marks a late-cycle market that is historically more stretched and froth-prone.",
