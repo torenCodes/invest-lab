@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-08-03T16:42:55.275426+00:00",
+  "scan_time": "2026-08-04T16:25:14.185665+00:00",
   "next_scan_info": "Weekdays at 10:30am ET",
   "total_surfaced": 47,
   "tickers_analyzed": 15,
@@ -9,20 +9,20 @@
       "company": "NVIDIA Corporation",
       "sector": "Technology",
       "industry": "Semiconductors",
-      "price": 206.9,
-      "change_pct": 3.06,
-      "mkt_cap": 5011324534784,
+      "price": 210.44,
+      "change_pct": 1.84,
+      "mkt_cap": 5096703787008,
       "week52_low": 164.07,
       "week52_high": 236.54,
-      "pe_trailing": 31.7,
-      "pe_forward": 16.1,
+      "pe_trailing": 31.3,
+      "pe_forward": 16.3,
       "peg": 0.55,
-      "pb": 25.64,
-      "ps": 19.77,
-      "ev_ebitda": 29.1,
-      "eps_trailing": 6.52,
+      "pb": 26.07,
+      "ps": 20.11,
+      "ev_ebitda": 30.0,
+      "eps_trailing": 6.72,
       "eps_forward": 12.89,
-      "graham": 34.41,
+      "graham": 34.93,
       "rev_growth": 85.2,
       "earn_growth": 214.5,
       "gross_margin": 74.1,
@@ -38,7 +38,7 @@
       "book_val_ps": 8.07,
       "verdict": "UNDERVALUED",
       "score": 63,
-      "commentary": "NVIDIA Corporation (NVDA) appears undervalued relative to its fundamentals. Forward P/E of 16.1x is well below the Technology sector median (~28x), pricing in limited growth expectations. PEG ratio of 0.55 is below 1.0 \u2014 growth may be underpriced relative to the earnings trajectory. Trading at 6.0x the Graham Number of $34.41 \u2014 the market assigns a large franchise premium above tangible asset value. At a forward P/E of 16.1x with 85.2% revenue growth, the risk/reward skews favourably for patient long-term investors.",
+      "commentary": "NVIDIA Corporation (NVDA) appears undervalued relative to its fundamentals. Forward P/E of 16.3x is well below the Technology sector median (~28x), pricing in limited growth expectations. PEG ratio of 0.55 is below 1.0 \u2014 growth may be underpriced relative to the earnings trajectory. Trading at 6.0x the Graham Number of $34.93 \u2014 the market assigns a large franchise premium above tangible asset value. At a forward P/E of 16.3x with 85.2% revenue growth, the risk/reward skews favourably for patient long-term investors.",
       "sec_filings": {
         "10-K": {
           "date": "2026-02-25",
@@ -51,7 +51,7 @@
       },
       "cik": "0001045810",
       "summary_short": "NVIDIA Corporation operates as a data center scale AI infrastructure company in the United States, Taiwan, China, Hong Kong, Europe, and internationally. It operates through Compute & Networking, and Graphics segments. The Compute & Networking segment provides data center acceler",
-      "scanned_at": "2026-08-03T16:42:56.451859",
+      "scanned_at": "2026-08-04T16:25:15.265293",
       "recent_news": [],
       "cross_dashboard_tags": [
         {
@@ -63,22 +63,318 @@
       ]
     },
     {
+      "ticker": "GEO",
+      "company": "Geo Group Inc (The) REIT",
+      "sector": "Industrials",
+      "industry": "Security & Protection Services",
+      "price": 31.28,
+      "change_pct": -0.19,
+      "mkt_cap": null,
+      "week52_low": 12.51,
+      "week52_high": 32.25,
+      "pe_trailing": 15.6,
+      "pe_forward": 18.8,
+      "peg": 1.91,
+      "pb": 2.64,
+      "ps": null,
+      "ev_ebitda": 12.4,
+      "eps_trailing": 2.0,
+      "eps_forward": 1.66,
+      "graham": 23.1,
+      "rev_growth": 16.6,
+      "earn_growth": 106.5,
+      "gross_margin": 25.5,
+      "op_margin": 12.7,
+      "net_margin": 10.0,
+      "roe": 19.2,
+      "roa": 5.5,
+      "fcf": -55650124,
+      "fcf_yield": null,
+      "fcf_margin": -2.0,
+      "debt_equity": 111.0,
+      "current_ratio": 1.75,
+      "book_val_ps": 11.86,
+      "verdict": "FAIRLY VALUED",
+      "score": 18,
+      "commentary": "Geo Group Inc (The) REIT (GEO) appears fairly valued at current levels. P/E of 18.8x sits below the Industrials sector median (~20x). Revenue growth of 16.6% YoY is healthy. The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
+      "sec_filings": {
+        "10-K": {
+          "date": "2026-02-25",
+          "accession": "0001193125-26-071747"
+        },
+        "10-Q": {
+          "date": "2026-05-07",
+          "accession": "0001193125-26-211821"
+        }
+      },
+      "cik": "0000923796",
+      "summary_short": "The GEO Group, Inc. is a leading diversified government service provider, specializing in design, financing, development, and support services for secure facilities, processing centers, and community reentry centers in the United States, Australia, South Africa, and the United Ki",
+      "scanned_at": "2026-08-04T16:25:16.974917",
+      "recent_news": [],
+      "cross_dashboard_tags": [
+        {
+          "source_key": "patterns_coil",
+          "label": "Pattern Scanner",
+          "signal": "Bull flag \u2014 Coil 92",
+          "score": 91.6
+        },
+        {
+          "source_key": "patterns_leader",
+          "label": "Pattern Scanner",
+          "signal": "Constructive leader \u2014 Leader 98, RS 98th",
+          "score": 97.5
+        }
+      ]
+    },
+    {
+      "ticker": "TMUS",
+      "company": "T-Mobile US, Inc.",
+      "sector": "Communication Services",
+      "industry": "Telecom Services",
+      "price": 175.88,
+      "change_pct": -0.68,
+      "mkt_cap": 188666839040,
+      "week52_low": 165.66,
+      "week52_high": 261.56,
+      "pe_trailing": 17.9,
+      "pe_forward": 12.2,
+      "peg": 0.8,
+      "pb": 3.42,
+      "ps": 2.05,
+      "ev_ebitda": 8.9,
+      "eps_trailing": 9.81,
+      "eps_forward": 14.44,
+      "graham": 106.58,
+      "rev_growth": 7.9,
+      "earn_growth": 5.3,
+      "gross_margin": 63.1,
+      "op_margin": 25.2,
+      "net_margin": 11.5,
+      "roe": 18.0,
+      "roa": 6.0,
+      "fcf": 11335999488,
+      "fcf_yield": 6.0,
+      "fcf_margin": 12.3,
+      "debt_equity": 214.0,
+      "current_ratio": 0.92,
+      "book_val_ps": 51.46,
+      "verdict": "UNDERVALUED",
+      "score": 44,
+      "commentary": "T-Mobile US, Inc. (TMUS) appears undervalued relative to its fundamentals. Forward P/E of 12.2x is well below the Communication Services sector median (~20x), pricing in limited growth expectations. PEG ratio of 0.80 is below 1.0 \u2014 growth may be underpriced relative to the earnings trajectory. Debt/equity ratio of 214% is elevated \u2014 financial leverage amplifies downside risk in a higher-rate environment. At a forward P/E of 12.2x with 7.9% revenue growth, the risk/reward skews favourably for patient long-term investors.",
+      "sec_filings": {
+        "10-K": {
+          "date": "2026-02-11",
+          "accession": "0001283699-26-000010"
+        },
+        "10-Q": {
+          "date": "2026-07-23",
+          "accession": "0001283699-26-000101"
+        }
+      },
+      "cik": "0001283699",
+      "summary_short": "T-Mobile US, Inc., together with its subsidiaries, provides wireless communications services in the United States, Puerto Rico, and the United States Virgin Islands. The company offers voice, messaging, and data services to postpaid, prepaid, and wholesale and other services cust",
+      "scanned_at": "2026-08-04T16:25:18.476084",
+      "recent_news": [],
+      "cross_dashboard_tags": [
+        {
+          "source_key": "underdogs",
+          "label": "The Underdogs",
+          "signal": "Deep value rank #1",
+          "score": 67.7
+        }
+      ]
+    },
+    {
+      "ticker": "W",
+      "company": "Wayfair Inc.",
+      "sector": "Consumer Cyclical",
+      "industry": "Internet Retail",
+      "price": 116.29,
+      "change_pct": 30.21,
+      "mkt_cap": null,
+      "week52_low": 55.6,
+      "week52_high": 119.98,
+      "pe_trailing": null,
+      "pe_forward": 31.0,
+      "peg": 23.5,
+      "pb": null,
+      "ps": null,
+      "ev_ebitda": 50.0,
+      "eps_trailing": -2.35,
+      "eps_forward": 3.75,
+      "graham": null,
+      "rev_growth": 7.4,
+      "earn_growth": null,
+      "gross_margin": 30.4,
+      "op_margin": 0.4,
+      "net_margin": -2.4,
+      "roe": null,
+      "roa": 3.7,
+      "fcf": 413000000,
+      "fcf_yield": null,
+      "fcf_margin": 3.3,
+      "debt_equity": null,
+      "current_ratio": 0.76,
+      "book_val_ps": null,
+      "verdict": "OVERPRICED",
+      "score": -47,
+      "commentary": "Wayfair Inc. (W) looks richly priced relative to its underlying fundamentals. P/E of 31.0x carries a meaningful premium to the Consumer Cyclical sector (~22x). While the business quality may be high, current pricing offers limited margin of safety \u2014 position sizing and a disciplined entry point are important.",
+      "sec_filings": {
+        "10-K": {
+          "date": "2026-02-19",
+          "accession": "0001616707-26-000027"
+        },
+        "10-Q": {
+          "date": "2026-04-30",
+          "accession": "0001616707-26-000113"
+        }
+      },
+      "cik": "0001616707",
+      "summary_short": "Wayfair Inc. engages in the e-commerce business in the United States and internationally. It provides online selections of furniture, d\u00e9cor, housewares, and home improvement products through its sites comprising Wayfair, Joss & Main, AllModern, Birch Lane, Perigold, and Wayfair P",
+      "scanned_at": "2026-08-04T16:25:20.013473",
+      "recent_news": [],
+      "cross_dashboard_tags": [
+        {
+          "source_key": "movers_day",
+          "label": "Movers & Shakers",
+          "signal": "Day Trade nominee (score 53)",
+          "score": 53
+        }
+      ]
+    },
+    {
+      "ticker": "AACI",
+      "company": "Armada Acquisition Corp. III",
+      "sector": "Financial Services",
+      "industry": "Shell Companies",
+      "price": 9.99,
+      "change_pct": 0.0,
+      "mkt_cap": 339958016,
+      "week52_low": 9.74,
+      "week52_high": 10.0,
+      "pe_trailing": null,
+      "pe_forward": null,
+      "peg": null,
+      "pb": -37.14,
+      "ps": null,
+      "ev_ebitda": null,
+      "eps_trailing": null,
+      "eps_forward": null,
+      "graham": null,
+      "rev_growth": null,
+      "earn_growth": null,
+      "gross_margin": 0.0,
+      "op_margin": 0.0,
+      "net_margin": 0.0,
+      "roe": null,
+      "roa": null,
+      "fcf": null,
+      "fcf_yield": null,
+      "fcf_margin": null,
+      "debt_equity": null,
+      "current_ratio": 0.01,
+      "book_val_ps": -0.27,
+      "verdict": "FAIRLY VALUED",
+      "score": 0,
+      "commentary": "Armada Acquisition Corp. III (AACI) appears fairly valued at current levels. The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
+      "sec_filings": {
+        "10-K": {
+          "date": "2026-03-20",
+          "accession": "0001193125-26-117694"
+        },
+        "10-Q": {
+          "date": "2026-05-08",
+          "accession": "0001193125-26-214833"
+        }
+      },
+      "cik": "0002092897",
+      "summary_short": "Armada Acquisition Corp. III focuses on effecting a merger, share exchange, asset acquisition, share purchase, recapitalization, reorganization or other similar business combination with one or more businesses. The company was incorporated in 2025 and is based in Philadelphia, Pe",
+      "scanned_at": "2026-08-04T16:25:21.580625",
+      "recent_news": [],
+      "cross_dashboard_tags": [
+        {
+          "source_key": "insider",
+          "label": "Insider Buying",
+          "signal": "Tier A (score 50) \u2014 3 insiders buying \u00b7 Chief Executive Officer bought",
+          "score": 50
+        }
+      ]
+    },
+    {
+      "ticker": "AAPL",
+      "company": "Apple Inc.",
+      "sector": "Technology",
+      "industry": "Consumer Electronics",
+      "price": 306.69,
+      "change_pct": 1.08,
+      "mkt_cap": 4475451342848,
+      "week52_low": 202.16,
+      "week52_high": 344.57,
+      "pe_trailing": 35.8,
+      "pe_forward": 32.2,
+      "peg": 2.46,
+      "pb": 41.67,
+      "ps": 9.59,
+      "ev_ebitda": 26.5,
+      "eps_trailing": 8.56,
+      "eps_forward": 9.51,
+      "graham": 37.65,
+      "rev_growth": 16.4,
+      "earn_growth": 28.7,
+      "gross_margin": 48.7,
+      "op_margin": 32.6,
+      "net_margin": 27.6,
+      "roe": 148.8,
+      "roa": 27.1,
+      "fcf": 107721875456,
+      "fcf_yield": 2.4,
+      "fcf_margin": 23.1,
+      "debt_equity": 78.4,
+      "current_ratio": 1.0,
+      "book_val_ps": 7.36,
+      "verdict": "FAIRLY VALUED",
+      "score": 16,
+      "commentary": "Apple Inc. (AAPL) appears fairly valued at current levels. Revenue growth of 16.4% YoY is healthy. Net margin of 27.6% reflects exceptional pricing power and operational leverage. Trading at 8.1x the Graham Number of $37.65 \u2014 the market assigns a large franchise premium above tangible asset value. The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
+      "sec_filings": {
+        "10-K": {
+          "date": "2025-10-31",
+          "accession": "0000320193-25-000079"
+        },
+        "10-Q": {
+          "date": "2026-07-31",
+          "accession": "0000320193-26-000020"
+        }
+      },
+      "cik": "0000320193",
+      "summary_short": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and acces",
+      "scanned_at": "2026-08-04T16:25:23.085962",
+      "recent_news": [],
+      "cross_dashboard_tags": [
+        {
+          "source_key": "tried_true",
+          "label": "Tried & True",
+          "signal": "ETF consensus rank #2",
+          "score": 97.5
+        }
+      ]
+    },
+    {
       "ticker": "DVA",
       "company": "DaVita Inc.",
       "sector": "Healthcare",
       "industry": "Medical Care Facilities",
-      "price": 238.99,
-      "change_pct": -0.46,
-      "mkt_cap": 15339573248,
+      "price": 231.21,
+      "change_pct": -1.06,
+      "mkt_cap": 14839892992,
       "week52_low": 101.0,
-      "week52_high": 247.49,
-      "pe_trailing": 23.0,
-      "pe_forward": 13.9,
+      "week52_high": 244.49,
+      "pe_trailing": 22.9,
+      "pe_forward": 13.4,
       "peg": 0.75,
-      "pb": -20.94,
-      "ps": 1.11,
-      "ev_ebitda": 10.7,
-      "eps_trailing": 10.37,
+      "pb": -20.25,
+      "ps": 1.07,
+      "ev_ebitda": 10.5,
+      "eps_trailing": 10.09,
       "eps_forward": 17.22,
       "graham": null,
       "rev_growth": 6.0,
@@ -89,14 +385,14 @@
       "roe": 81.0,
       "roa": 7.5,
       "fcf": 999662976,
-      "fcf_yield": 6.5,
+      "fcf_yield": 6.7,
       "fcf_margin": 7.2,
       "debt_equity": 1261.3,
       "current_ratio": 1.42,
       "book_val_ps": -11.41,
       "verdict": "UNDERVALUED",
       "score": 47,
-      "commentary": "DaVita Inc. (DVA) appears undervalued relative to its fundamentals. Forward P/E of 13.9x is well below the Healthcare sector median (~22x), pricing in limited growth expectations. PEG ratio of 0.75 is below 1.0 \u2014 growth may be underpriced relative to the earnings trajectory. Debt/equity ratio of 1261% is elevated \u2014 financial leverage amplifies downside risk in a higher-rate environment. At a forward P/E of 13.9x with 6.0% revenue growth, the risk/reward skews favourably for patient long-term investors.",
+      "commentary": "DaVita Inc. (DVA) appears undervalued relative to its fundamentals. Forward P/E of 13.4x is well below the Healthcare sector median (~22x), pricing in limited growth expectations. PEG ratio of 0.75 is below 1.0 \u2014 growth may be underpriced relative to the earnings trajectory. Debt/equity ratio of 1261% is elevated \u2014 financial leverage amplifies downside risk in a higher-rate environment. At a forward P/E of 13.4x with 6.0% revenue growth, the risk/reward skews favourably for patient long-term investors.",
       "sec_filings": {
         "10-K": {
           "date": "2026-02-11",
@@ -109,20 +405,136 @@
       },
       "cik": "0000927066",
       "summary_short": "DaVita Inc. provides kidney dialysis services for patients suffering from chronic kidney failure in the United States. The company operates kidney dialysis centers and provides related lab services in outpatient dialysis centers. It also offers outpatient, hospital inpatient, and",
-      "scanned_at": "2026-08-03T16:42:58.085013",
+      "scanned_at": "2026-08-04T16:25:24.623360",
       "recent_news": [],
       "cross_dashboard_tags": [
         {
           "source_key": "patterns_coil",
           "label": "Pattern Scanner",
           "signal": "Bull flag \u2014 Coil 92",
-          "score": 91.9
+          "score": 92.0
         },
         {
           "source_key": "patterns_leader",
           "label": "Pattern Scanner",
-          "signal": "Constructive leader \u2014 Leader 97, RS 97th",
-          "score": 97.0
+          "signal": "Constructive leader \u2014 Leader 97, RS 98th",
+          "score": 97.2
+        }
+      ]
+    },
+    {
+      "ticker": "META",
+      "company": "Meta Platforms, Inc.",
+      "sector": "Communication Services",
+      "industry": "Internet Content & Information",
+      "price": 582.02,
+      "change_pct": -1.39,
+      "mkt_cap": 1482699571200,
+      "week52_low": 520.26,
+      "week52_high": 796.25,
+      "pe_trailing": 20.7,
+      "pe_forward": 16.7,
+      "peg": 0.83,
+      "pb": 6.06,
+      "ps": 6.5,
+      "ev_ebitda": 13.9,
+      "eps_trailing": 28.15,
+      "eps_forward": 34.9,
+      "graham": 246.6,
+      "rev_growth": 28.0,
+      "earn_growth": -13.4,
+      "gross_margin": 81.7,
+      "op_margin": 30.9,
+      "net_margin": 29.8,
+      "roe": 29.8,
+      "roa": 14.6,
+      "fcf": 21553625088,
+      "fcf_yield": 1.5,
+      "fcf_margin": 9.4,
+      "debt_equity": 43.0,
+      "current_ratio": 2.23,
+      "book_val_ps": 96.01,
+      "verdict": "UNDERVALUED",
+      "score": 48,
+      "commentary": "Meta Platforms, Inc. (META) appears undervalued relative to its fundamentals. P/E of 16.7x sits below the Communication Services sector median (~20x). PEG ratio of 0.83 is below 1.0 \u2014 growth may be underpriced relative to the earnings trajectory. Trading at 2.4x the Graham Number of $246.60 \u2014 the market assigns a large franchise premium above tangible asset value. At a forward P/E of 16.7x with 28.0% revenue growth, the risk/reward skews favourably for patient long-term investors.",
+      "sec_filings": {
+        "10-K": {
+          "date": "2026-01-29",
+          "accession": "0001628280-26-003942"
+        },
+        "10-Q": {
+          "date": "2026-07-30",
+          "accession": "0001628280-26-050705"
+        }
+      },
+      "cik": "0001326801",
+      "summary_short": "Meta Platforms, Inc. engages in the development of products that enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality (VR) headsets, and AI glasses in the United States, Canada, Europe, Asia-Pacific, and internatio",
+      "scanned_at": "2026-08-04T16:25:26.207010",
+      "recent_news": [],
+      "cross_dashboard_tags": [
+        {
+          "source_key": "underdogs",
+          "label": "The Underdogs",
+          "signal": "Deep value rank #2",
+          "score": 64.5
+        }
+      ]
+    },
+    {
+      "ticker": "CAT",
+      "company": "Caterpillar, Inc.",
+      "sector": "Industrials",
+      "industry": "Farm & Heavy Construction Machinery",
+      "price": 886.51,
+      "change_pct": 6.8,
+      "mkt_cap": null,
+      "week52_low": 405.46,
+      "week52_high": 1073.46,
+      "pe_trailing": 44.2,
+      "pe_forward": 29.1,
+      "peg": 1.91,
+      "pb": 21.88,
+      "ps": null,
+      "ev_ebitda": 29.0,
+      "eps_trailing": 20.04,
+      "eps_forward": 30.45,
+      "graham": 135.15,
+      "rev_growth": 22.2,
+      "earn_growth": 30.2,
+      "gross_margin": 28.6,
+      "op_margin": 18.2,
+      "net_margin": 13.3,
+      "roe": 51.3,
+      "roa": 8.5,
+      "fcf": 3776624896,
+      "fcf_yield": null,
+      "fcf_margin": 5.3,
+      "debt_equity": 230.8,
+      "current_ratio": 1.35,
+      "book_val_ps": 40.51,
+      "verdict": "FAIRLY VALUED",
+      "score": -11,
+      "commentary": "Caterpillar, Inc. (CAT) appears fairly valued at current levels. Revenue expanding at 22.2% YoY \u2014 robust top-line momentum. Return on equity of 51.3% demonstrates best-in-class capital efficiency. P/E of 29.1x carries a meaningful premium to the Industrials sector (~20x). The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
+      "sec_filings": {
+        "10-K": {
+          "date": "2026-02-13",
+          "accession": "0000018230-26-000008"
+        },
+        "10-Q": {
+          "date": "2026-05-06",
+          "accession": "0000018230-26-000021"
+        }
+      },
+      "cik": "0000018230",
+      "summary_short": "Caterpillar Inc. provides construction and mining equipment, off-highway diesel and natural gas engines, industrial gas turbines, and diesel-electric locomotives in the United States and internationally. The Construction Industries segment offers asphalt pavers, cold planers, com",
+      "scanned_at": "2026-08-04T16:25:27.715768",
+      "recent_news": [],
+      "cross_dashboard_tags": [
+        {
+          "source_key": "movers_swing",
+          "label": "Movers & Shakers",
+          "signal": "Swing Trade nominee (score 50)",
+          "score": 50
         }
       ]
     },
@@ -167,258 +579,136 @@
       },
       "cik": null,
       "summary_short": "Under normal circumstances, the fund invests at least 80% of its net assets in U.S.-traded equity securities of small-capitalization companies. U.S.-traded equity securities may include American Depositary Receipts (\"ADRs\"). The subadviser considers small-capitalization companies",
-      "scanned_at": "2026-08-03T16:42:59.512632",
+      "scanned_at": "2026-08-04T16:25:29.113331",
       "recent_news": [],
       "cross_dashboard_tags": [
         {
           "source_key": "insider",
           "label": "Insider Buying",
-          "signal": "Tier A (score 80) \u2014 5 insiders buying \u00b7 Chief Financial Officer bought",
-          "score": 80
+          "signal": "Tier A (score 50) \u2014 3 insiders buying \u00b7 $66.3M total",
+          "score": 50
         }
       ]
     },
     {
-      "ticker": "TMUS",
-      "company": "T-Mobile US, Inc.",
-      "sector": "Communication Services",
-      "industry": "Telecom Services",
-      "price": 176.51,
-      "change_pct": 2.2,
-      "mkt_cap": 189337255936,
-      "week52_low": 165.66,
-      "week52_high": 261.56,
-      "pe_trailing": 18.4,
-      "pe_forward": 12.2,
-      "peg": 0.8,
-      "pb": 3.43,
-      "ps": 2.05,
-      "ev_ebitda": 8.8,
-      "eps_trailing": 9.57,
-      "eps_forward": 14.44,
-      "graham": 105.26,
-      "rev_growth": 7.9,
-      "earn_growth": 5.3,
-      "gross_margin": 63.1,
-      "op_margin": 25.2,
-      "net_margin": 11.5,
-      "roe": 18.0,
-      "roa": 6.0,
-      "fcf": 11335999488,
-      "fcf_yield": 6.0,
-      "fcf_margin": 12.3,
-      "debt_equity": 214.0,
-      "current_ratio": 0.92,
-      "book_val_ps": 51.46,
-      "verdict": "UNDERVALUED",
-      "score": 44,
-      "commentary": "T-Mobile US, Inc. (TMUS) appears undervalued relative to its fundamentals. Forward P/E of 12.2x is well below the Communication Services sector median (~20x), pricing in limited growth expectations. PEG ratio of 0.80 is below 1.0 \u2014 growth may be underpriced relative to the earnings trajectory. Debt/equity ratio of 214% is elevated \u2014 financial leverage amplifies downside risk in a higher-rate environment. At a forward P/E of 12.2x with 7.9% revenue growth, the risk/reward skews favourably for patient long-term investors.",
-      "sec_filings": {
-        "10-K": {
-          "date": "2026-02-11",
-          "accession": "0001283699-26-000010"
-        },
-        "10-Q": {
-          "date": "2026-07-23",
-          "accession": "0001283699-26-000101"
-        }
-      },
-      "cik": "0001283699",
-      "summary_short": "T-Mobile US, Inc., together with its subsidiaries, provides wireless communications services in the United States, Puerto Rico, and the United States Virgin Islands. The company offers voice, messaging, and data services to postpaid, prepaid, and wholesale and other services cust",
-      "scanned_at": "2026-08-03T16:43:01.174747",
-      "recent_news": [],
-      "cross_dashboard_tags": [
-        {
-          "source_key": "underdogs",
-          "label": "The Underdogs",
-          "signal": "Deep value rank #1",
-          "score": 67.7
-        }
-      ]
-    },
-    {
-      "ticker": "CRWV",
-      "company": "CoreWeave, Inc.",
+      "ticker": "MSFT",
+      "company": "Microsoft Corporation",
       "sector": "Technology",
       "industry": "Software - Infrastructure",
-      "price": 82.6,
-      "change_pct": 15.09,
-      "mkt_cap": 45064110080,
-      "week52_low": 60.55,
-      "week52_high": 153.2,
-      "pe_trailing": null,
-      "pe_forward": -51.8,
-      "peg": null,
-      "pb": 9.23,
-      "ps": 7.24,
-      "ev_ebitda": 23.8,
-      "eps_trailing": -2.72,
-      "eps_forward": -1.6,
-      "graham": null,
-      "rev_growth": 111.6,
-      "earn_growth": null,
-      "gross_margin": 69.4,
-      "op_margin": -6.9,
-      "net_margin": -25.6,
-      "roe": -40.7,
-      "roa": -0.2,
-      "fcf": -8560327168,
-      "fcf_yield": -19.0,
-      "fcf_margin": -137.5,
-      "debt_equity": 738.5,
-      "current_ratio": 0.32,
-      "book_val_ps": 8.95,
-      "verdict": "SPECULATIVE",
-      "score": -17,
-      "commentary": "CoreWeave, Inc. (CRWV) is a pre-profitability growth story where traditional valuation metrics are secondary to the revenue trajectory. Forward P/E of -51.8x is well below the Technology sector median (~28x), pricing in limited growth expectations. Revenue expanding at 111.6% YoY \u2014 robust top-line momentum. Negative net margin (-25.6%) \u2014 the company is currently burning cash at the operating level. Investors should size positions to reflect execution risk and monitor quarterly revenue cadence and the timeline to profitability.",
-      "sec_filings": {
-        "10-K": {
-          "date": "2026-03-02",
-          "accession": "0001769628-26-000104"
-        },
-        "10-Q": {
-          "date": "2026-05-08",
-          "accession": "0001769628-26-000222"
-        }
-      },
-      "cik": "0001769628",
-      "summary_short": "CoreWeave, Inc. operates as a cloud infrastructure technology company in the United States. The company offers CoreWeave Cloud platform that comprises proprietary software and cloud services that deliver the automation and efficiency needed to manage complex artificial intelligen",
-      "scanned_at": "2026-08-03T16:43:03.014858",
-      "recent_news": [],
-      "cross_dashboard_tags": [
-        {
-          "source_key": "movers_day",
-          "label": "Movers & Shakers",
-          "signal": "Day Trade nominee (score 58)",
-          "score": 58
-        }
-      ]
-    },
-    {
-      "ticker": "AAPL",
-      "company": "Apple Inc.",
-      "sector": "Technology",
-      "industry": "Consumer Electronics",
-      "price": 307.07,
-      "change_pct": -0.6,
-      "mkt_cap": 4510119886848,
-      "week52_low": 201.68,
-      "week52_high": 344.57,
-      "pe_trailing": 35.3,
-      "pe_forward": 32.3,
-      "peg": 2.46,
-      "pb": 41.72,
-      "ps": 9.66,
-      "ev_ebitda": 27.0,
-      "eps_trailing": 8.71,
-      "eps_forward": 9.51,
-      "graham": 37.98,
-      "rev_growth": 16.4,
-      "earn_growth": 28.7,
-      "gross_margin": 48.7,
-      "op_margin": 32.6,
-      "net_margin": 27.6,
-      "roe": 148.8,
-      "roa": 27.1,
-      "fcf": 107721875456,
-      "fcf_yield": 2.4,
-      "fcf_margin": 23.1,
-      "debt_equity": 78.4,
-      "current_ratio": 1.0,
-      "book_val_ps": 7.36,
+      "price": 496.45,
+      "change_pct": 1.81,
+      "mkt_cap": 3686449283072,
+      "week52_low": 349.2,
+      "week52_high": 553.72,
+      "pe_trailing": 27.7,
+      "pe_forward": 21.2,
+      "peg": 1.52,
+      "pb": 8.33,
+      "ps": 11.11,
+      "ev_ebitda": 18.9,
+      "eps_trailing": 17.94,
+      "eps_forward": 23.47,
+      "graham": 155.06,
+      "rev_growth": 17.7,
+      "earn_growth": 31.7,
+      "gross_margin": 67.9,
+      "op_margin": 45.1,
+      "net_margin": 40.3,
+      "roe": 34.0,
+      "roa": 14.1,
+      "fcf": 16363499520,
+      "fcf_yield": 0.4,
+      "fcf_margin": 4.9,
+      "debt_equity": 29.1,
+      "current_ratio": 1.23,
+      "book_val_ps": 59.56,
       "verdict": "FAIRLY VALUED",
-      "score": 16,
-      "commentary": "Apple Inc. (AAPL) appears fairly valued at current levels. Revenue growth of 16.4% YoY is healthy. Net margin of 27.6% reflects exceptional pricing power and operational leverage. Trading at 8.1x the Graham Number of $37.98 \u2014 the market assigns a large franchise premium above tangible asset value. The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
+      "score": 21,
+      "commentary": "Microsoft Corporation (MSFT) appears fairly valued at current levels. P/E of 21.2x sits below the Technology sector median (~28x). Revenue growth of 17.7% YoY is healthy. Trading at 3.2x the Graham Number of $155.06 \u2014 the market assigns a large franchise premium above tangible asset value. The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
       "sec_filings": {
         "10-K": {
-          "date": "2025-10-31",
-          "accession": "0000320193-25-000079"
+          "date": "2026-07-29",
+          "accession": "0001193125-26-323660"
         },
         "10-Q": {
-          "date": "2026-07-31",
-          "accession": "0000320193-26-000020"
+          "date": "2026-04-29",
+          "accession": "0001193125-26-191507"
         }
       },
-      "cik": "0000320193",
-      "summary_short": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and acces",
-      "scanned_at": "2026-08-03T16:43:04.522134",
+      "cik": "0000789019",
+      "summary_short": "Microsoft Corporation, a technology company, develops and supports a portfolio of technology solutions for individuals and businesses worldwide. It operates through three segments: Productivity and Business Processes, Intelligent Cloud, and More Personal Computing. The Productivi",
+      "scanned_at": "2026-08-04T16:25:30.611411",
       "recent_news": [],
       "cross_dashboard_tags": [
         {
           "source_key": "tried_true",
           "label": "Tried & True",
-          "signal": "ETF consensus rank #2",
-          "score": 97.5
+          "signal": "ETF consensus rank #3",
+          "score": 94.8
         }
       ]
     },
     {
-      "ticker": "GEO",
-      "company": "Geo Group Inc (The) REIT",
-      "sector": "Industrials",
-      "industry": "Security & Protection Services",
-      "price": 31.56,
-      "change_pct": 2.17,
-      "mkt_cap": null,
-      "week52_low": 12.51,
-      "week52_high": 32.25,
-      "pe_trailing": 16.0,
-      "pe_forward": 19.0,
-      "peg": 1.91,
-      "pb": 2.66,
-      "ps": null,
-      "ev_ebitda": 12.3,
-      "eps_trailing": 1.97,
-      "eps_forward": 1.66,
-      "graham": 22.93,
-      "rev_growth": 16.6,
-      "earn_growth": 106.5,
-      "gross_margin": 25.5,
-      "op_margin": 12.7,
-      "net_margin": 10.0,
-      "roe": 19.2,
-      "roa": 5.5,
-      "fcf": -55650124,
-      "fcf_yield": null,
-      "fcf_margin": -2.0,
-      "debt_equity": 111.0,
-      "current_ratio": 1.75,
-      "book_val_ps": 11.86,
-      "verdict": "FAIRLY VALUED",
-      "score": 18,
-      "commentary": "Geo Group Inc (The) REIT (GEO) appears fairly valued at current levels. P/E of 19.0x sits below the Industrials sector median (~20x). Revenue growth of 16.6% YoY is healthy. The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
+      "ticker": "AMN",
+      "company": "AMN Healthcare Services, Inc.",
+      "sector": "Healthcare",
+      "industry": "Medical Care Facilities",
+      "price": 33.73,
+      "change_pct": 2.21,
+      "mkt_cap": 1308253568,
+      "week52_low": 14.87,
+      "week52_high": 36.27,
+      "pe_trailing": null,
+      "pe_forward": 31.2,
+      "peg": 1.22,
+      "pb": 1.83,
+      "ps": 0.38,
+      "ev_ebitda": 5.2,
+      "eps_trailing": -0.84,
+      "eps_forward": 1.08,
+      "graham": null,
+      "rev_growth": 99.9,
+      "earn_growth": null,
+      "gross_margin": 27.6,
+      "op_margin": 8.5,
+      "net_margin": -0.9,
+      "roe": -4.5,
+      "roa": 3.4,
+      "fcf": 671518528,
+      "fcf_yield": 51.3,
+      "fcf_margin": 19.6,
+      "debt_equity": 109.0,
+      "current_ratio": 1.09,
+      "book_val_ps": 18.44,
+      "verdict": "SPECULATIVE",
+      "score": -7,
+      "commentary": "AMN Healthcare Services, Inc. (AMN) is a pre-profitability growth story where traditional valuation metrics are secondary to the revenue trajectory. Revenue expanding at 99.9% YoY \u2014 robust top-line momentum. Free cash flow yield of 51.3% reflects strong cash generation at an attractive price. P/E of 31.2x carries a meaningful premium to the Healthcare sector (~22x). Investors should size positions to reflect execution risk and monitor quarterly revenue cadence and the timeline to profitability.",
       "sec_filings": {
         "10-K": {
-          "date": "2026-02-25",
-          "accession": "0001193125-26-071747"
+          "date": "2026-02-20",
+          "accession": "0001628280-26-009918"
         },
         "10-Q": {
-          "date": "2026-05-07",
-          "accession": "0001193125-26-211821"
+          "date": "2026-05-08",
+          "accession": "0001628280-26-032419"
         }
       },
-      "cik": "0000923796",
-      "summary_short": "The GEO Group, Inc. is a leading diversified government service provider, specializing in design, financing, development, and support services for secure facilities, processing centers, and community reentry centers in the United States, Australia, South Africa, and the United Ki",
-      "scanned_at": "2026-08-03T16:43:06.109515",
+      "cik": "0001142750",
+      "summary_short": "AMN Healthcare Services, Inc. provides technology-enabled healthcare workforce solutions and staffing services to acute and sub-acute care hospitals, and other healthcare facilities in the United States. It operates through three segments: Nurse and Allied Solutions, Physician an",
+      "scanned_at": "2026-08-04T16:25:32.224150",
       "recent_news": [],
       "cross_dashboard_tags": [
         {
+          "source_key": "patterns_coil",
+          "label": "Pattern Scanner",
+          "signal": "Tight base (VCP) \u2014 Coil 91",
+          "score": 91.2
+        },
+        {
           "source_key": "patterns_leader",
           "label": "Pattern Scanner",
-          "signal": "Constructive leader \u2014 Leader 96, RS 98th",
-          "score": 96.2
-        }
-      ]
-    },
-    {
-      "error": "Could not fetch data for CCOE: Empty response \u2014 ticker may be invalid",
-      "ticker": "CCOE",
-      "cross_dashboard_tags": [
-        {
-          "source_key": "insider",
-          "label": "Insider Buying",
-          "signal": "Tier B (score 45) \u2014 Chief Executive Officer bought \u00b7 $28.5M total",
-          "score": 45
+          "signal": "Constructive leader \u2014 Leader 97, RS 98th",
+          "score": 96.9
         }
       ]
     },
@@ -427,16 +717,16 @@
       "company": "KLA Corporation",
       "sector": "Technology",
       "industry": "Semiconductor Equipment & Materials",
-      "price": 178.95,
-      "change_pct": -2.12,
-      "mkt_cap": 233757949952,
+      "price": 194.63,
+      "change_pct": 6.5,
+      "mkt_cap": 254240342016,
       "week52_low": 83.224,
       "week52_high": 307.37,
-      "pe_trailing": 48.9,
-      "pe_forward": 27.3,
+      "pe_trailing": 53.2,
+      "pe_forward": 29.7,
       "peg": 1.75,
-      "pb": 40.11,
-      "ps": 17.21,
+      "pb": 43.63,
+      "ps": 18.72,
       "ev_ebitda": 39.6,
       "eps_trailing": 3.66,
       "eps_forward": 6.55,
@@ -455,8 +745,8 @@
       "current_ratio": 2.88,
       "book_val_ps": 4.46,
       "verdict": "FAIRLY VALUED",
-      "score": 21,
-      "commentary": "KLA Corporation (KLAC) appears fairly valued at current levels. P/E of 27.3x sits below the Technology sector median (~28x). Revenue growth of 15.2% YoY is healthy. Trading at 9.3x the Graham Number of $19.17 \u2014 the market assigns a large franchise premium above tangible asset value. The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
+      "score": 11,
+      "commentary": "KLA Corporation (KLAC) appears fairly valued at current levels. Revenue growth of 15.2% YoY is healthy. Net margin of 35.6% reflects exceptional pricing power and operational leverage. Trading at 10.2x the Graham Number of $19.17 \u2014 the market assigns a large franchise premium above tangible asset value. The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
       "sec_filings": {
         "10-K": {
           "date": "2025-08-08",
@@ -469,368 +759,84 @@
       },
       "cik": "0000319201",
       "summary_short": "KLA Corporation, together with its subsidiaries, designs, manufactures, and markets process control, process-enabling, and yield management solutions for the semiconductor and related electronics industries worldwide. The company operates through three segments: Semiconductor Pro",
-      "scanned_at": "2026-08-03T16:43:09.055898",
-      "recent_news": [],
-      "cross_dashboard_tags": [
-        {
-          "source_key": "underdogs",
-          "label": "The Underdogs",
-          "signal": "Deep value rank #2",
-          "score": 62.2
-        }
-      ]
-    },
-    {
-      "ticker": "ATKR",
-      "company": "Atkore Inc.",
-      "sector": "Industrials",
-      "industry": "Electrical Equipment & Parts",
-      "price": 93.5,
-      "change_pct": 28.16,
-      "mkt_cap": 3157408000,
-      "week52_low": 53.49,
-      "week52_high": 93.6,
-      "pe_trailing": null,
-      "pe_forward": 15.4,
-      "peg": null,
-      "pb": 2.47,
-      "ps": 1.1,
-      "ev_ebitda": 10.3,
-      "eps_trailing": -3.59,
-      "eps_forward": 6.07,
-      "graham": null,
-      "rev_growth": 4.2,
-      "earn_growth": null,
-      "gross_margin": 20.9,
-      "op_margin": 5.5,
-      "net_margin": -4.2,
-      "roe": -9.0,
-      "roa": 3.7,
-      "fcf": 254971008,
-      "fcf_yield": 8.1,
-      "fcf_margin": 8.9,
-      "debt_equity": 71.7,
-      "current_ratio": 2.64,
-      "book_val_ps": 37.93,
-      "verdict": "FAIRLY VALUED",
-      "score": -8,
-      "commentary": "Atkore Inc. (ATKR) appears fairly valued at current levels. P/E of 15.4x sits below the Industrials sector median (~20x). Free cash flow yield of 8.1% reflects strong cash generation at an attractive price. Negative net margin (-4.2%) \u2014 the company is currently burning cash at the operating level. The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
-      "sec_filings": {
-        "10-K": {
-          "date": "2025-11-26",
-          "accession": "0001628280-25-054049"
-        },
-        "10-Q": {
-          "date": "2026-05-06",
-          "accession": "0001628280-26-030764"
-        }
-      },
-      "cik": "0001666138",
-      "summary_short": "Atkore Inc. engages in the manufacture and sale of electrical, mechanical, safety, and infrastructure products and solutions in the United States and internationally. It operates through two segments, Electrical, and Safety & Infrastructure. The company offers metal electrical co",
-      "scanned_at": "2026-08-03T16:43:10.630357",
-      "recent_news": [],
-      "cross_dashboard_tags": [
-        {
-          "source_key": "movers_day",
-          "label": "Movers & Shakers",
-          "signal": "Day Trade nominee (score 53)",
-          "score": 53
-        }
-      ]
-    },
-    {
-      "ticker": "MSFT",
-      "company": "Microsoft Corporation",
-      "sector": "Technology",
-      "industry": "Software - Infrastructure",
-      "price": 488.43,
-      "change_pct": 5.1,
-      "mkt_cap": 3626858446848,
-      "week52_low": 349.2,
-      "week52_high": 553.72,
-      "pe_trailing": 27.2,
-      "pe_forward": 20.8,
-      "peg": 1.52,
-      "pb": 8.2,
-      "ps": 10.93,
-      "ev_ebitda": 18.0,
-      "eps_trailing": 17.94,
-      "eps_forward": 23.47,
-      "graham": 155.06,
-      "rev_growth": 17.7,
-      "earn_growth": 31.7,
-      "gross_margin": 67.9,
-      "op_margin": 45.1,
-      "net_margin": 40.3,
-      "roe": 34.0,
-      "roa": 14.1,
-      "fcf": 16363499520,
-      "fcf_yield": 0.5,
-      "fcf_margin": 4.9,
-      "debt_equity": 29.1,
-      "current_ratio": 1.23,
-      "book_val_ps": 59.56,
-      "verdict": "FAIRLY VALUED",
-      "score": 21,
-      "commentary": "Microsoft Corporation (MSFT) appears fairly valued at current levels. P/E of 20.8x sits below the Technology sector median (~28x). Revenue growth of 17.7% YoY is healthy. Trading at 3.1x the Graham Number of $155.06 \u2014 the market assigns a large franchise premium above tangible asset value. The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
-      "sec_filings": {
-        "10-K": {
-          "date": "2026-07-29",
-          "accession": "0001193125-26-323660"
-        },
-        "10-Q": {
-          "date": "2026-04-29",
-          "accession": "0001193125-26-191507"
-        }
-      },
-      "cik": "0000789019",
-      "summary_short": "Microsoft Corporation develops and supports software, services, devices, and solutions worldwide. The Productivity and Business Processes segment offers Microsoft 365 commercial, enterprise mobility + security, windows commercial, power BI, exchange, sharepoint, Microsoft teams, ",
-      "scanned_at": "2026-08-03T16:43:12.150326",
-      "recent_news": [],
-      "cross_dashboard_tags": [
-        {
-          "source_key": "tried_true",
-          "label": "Tried & True",
-          "signal": "ETF consensus rank #3",
-          "score": 94.8
-        }
-      ]
-    },
-    {
-      "ticker": "AMN",
-      "company": "AMN Healthcare Services, Inc.",
-      "sector": "Healthcare",
-      "industry": "Medical Care Facilities",
-      "price": 34.24,
-      "change_pct": 1.81,
-      "mkt_cap": 1328034432,
-      "week52_low": 14.87,
-      "week52_high": 36.27,
-      "pe_trailing": null,
-      "pe_forward": 31.6,
-      "peg": 1.22,
-      "pb": 1.86,
-      "ps": 0.39,
-      "ev_ebitda": 5.2,
-      "eps_trailing": -0.86,
-      "eps_forward": 1.08,
-      "graham": null,
-      "rev_growth": 99.9,
-      "earn_growth": null,
-      "gross_margin": 27.6,
-      "op_margin": 8.5,
-      "net_margin": -0.9,
-      "roe": -4.5,
-      "roa": 3.4,
-      "fcf": 671518528,
-      "fcf_yield": 50.6,
-      "fcf_margin": 19.6,
-      "debt_equity": 109.0,
-      "current_ratio": 1.09,
-      "book_val_ps": 18.44,
-      "verdict": "SPECULATIVE",
-      "score": -7,
-      "commentary": "AMN Healthcare Services, Inc. (AMN) is a pre-profitability growth story where traditional valuation metrics are secondary to the revenue trajectory. Revenue expanding at 99.9% YoY \u2014 robust top-line momentum. Free cash flow yield of 50.6% reflects strong cash generation at an attractive price. P/E of 31.6x carries a meaningful premium to the Healthcare sector (~22x). Investors should size positions to reflect execution risk and monitor quarterly revenue cadence and the timeline to profitability.",
-      "sec_filings": {
-        "10-K": {
-          "date": "2026-02-20",
-          "accession": "0001628280-26-009918"
-        },
-        "10-Q": {
-          "date": "2026-05-08",
-          "accession": "0001628280-26-032419"
-        }
-      },
-      "cik": "0001142750",
-      "summary_short": "AMN Healthcare Services, Inc. provides technology-enabled healthcare workforce solutions and staffing services to acute and sub-acute care hospitals, and other healthcare facilities in the United States. It operates through three segments: Nurse and Allied Solutions, Physician an",
-      "scanned_at": "2026-08-03T16:43:13.963461",
-      "recent_news": [],
-      "cross_dashboard_tags": [
-        {
-          "source_key": "patterns_coil",
-          "label": "Pattern Scanner",
-          "signal": "Bull flag \u2014 Coil 90",
-          "score": 89.9
-        },
-        {
-          "source_key": "patterns_leader",
-          "label": "Pattern Scanner",
-          "signal": "Constructive leader \u2014 Leader 96, RS 98th",
-          "score": 95.9
-        }
-      ]
-    },
-    {
-      "ticker": "AACI",
-      "company": "Armada Acquisition Corp. III",
-      "sector": "Financial Services",
-      "industry": "Shell Companies",
-      "price": 9.99,
-      "change_pct": 0.05,
-      "mkt_cap": 339958016,
-      "week52_low": 9.74,
-      "week52_high": 10.0,
-      "pe_trailing": null,
-      "pe_forward": null,
-      "peg": null,
-      "pb": -37.14,
-      "ps": null,
-      "ev_ebitda": null,
-      "eps_trailing": null,
-      "eps_forward": null,
-      "graham": null,
-      "rev_growth": null,
-      "earn_growth": null,
-      "gross_margin": 0.0,
-      "op_margin": 0.0,
-      "net_margin": 0.0,
-      "roe": null,
-      "roa": null,
-      "fcf": null,
-      "fcf_yield": null,
-      "fcf_margin": null,
-      "debt_equity": null,
-      "current_ratio": 0.01,
-      "book_val_ps": -0.27,
-      "verdict": "FAIRLY VALUED",
-      "score": 0,
-      "commentary": "Armada Acquisition Corp. III (AACI) appears fairly valued at current levels. The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
-      "sec_filings": {
-        "10-K": {
-          "date": "2026-03-20",
-          "accession": "0001193125-26-117694"
-        },
-        "10-Q": {
-          "date": "2026-05-08",
-          "accession": "0001193125-26-214833"
-        }
-      },
-      "cik": "0002092897",
-      "summary_short": "Armada Acquisition Corp. III focuses on effecting a merger, share exchange, asset acquisition, share purchase, recapitalization, reorganization or other similar business combination with one or more businesses. The company was incorporated in 2025 and is based in Philadelphia, Pe",
-      "scanned_at": "2026-08-03T16:43:15.783297",
-      "recent_news": [],
-      "cross_dashboard_tags": [
-        {
-          "source_key": "insider",
-          "label": "Insider Buying",
-          "signal": "Tier B (score 42) \u2014 2 insiders buying \u00b7 Chief Executive Officer bought",
-          "score": 42
-        }
-      ]
-    },
-    {
-      "ticker": "META",
-      "company": "Meta Platforms, Inc.",
-      "sector": "Communication Services",
-      "industry": "Internet Content & Information",
-      "price": 596.83,
-      "change_pct": 7.21,
-      "mkt_cap": 1520428122112,
-      "week52_low": 520.26,
-      "week52_high": 796.25,
-      "pe_trailing": 22.5,
-      "pe_forward": 17.1,
-      "peg": 0.83,
-      "pb": 6.22,
-      "ps": 6.66,
-      "ev_ebitda": 13.1,
-      "eps_trailing": 26.56,
-      "eps_forward": 34.9,
-      "graham": 239.54,
-      "rev_growth": 28.0,
-      "earn_growth": -13.4,
-      "gross_margin": 81.7,
-      "op_margin": 30.9,
-      "net_margin": 29.8,
-      "roe": 29.8,
-      "roa": 14.6,
-      "fcf": 21553625088,
-      "fcf_yield": 1.4,
-      "fcf_margin": 9.4,
-      "debt_equity": 43.0,
-      "current_ratio": 2.23,
-      "book_val_ps": 96.01,
-      "verdict": "UNDERVALUED",
-      "score": 48,
-      "commentary": "Meta Platforms, Inc. (META) appears undervalued relative to its fundamentals. P/E of 17.1x sits below the Communication Services sector median (~20x). PEG ratio of 0.83 is below 1.0 \u2014 growth may be underpriced relative to the earnings trajectory. Trading at 2.5x the Graham Number of $239.54 \u2014 the market assigns a large franchise premium above tangible asset value. At a forward P/E of 17.1x with 28.0% revenue growth, the risk/reward skews favourably for patient long-term investors.",
-      "sec_filings": {
-        "10-K": {
-          "date": "2026-01-29",
-          "accession": "0001628280-26-003942"
-        },
-        "10-Q": {
-          "date": "2026-07-30",
-          "accession": "0001628280-26-050705"
-        }
-      },
-      "cik": "0001326801",
-      "summary_short": "Meta Platforms, Inc. engages in the development of products that enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality (VR) headsets, and AI glasses in the United States, Canada, Europe, Asia-Pacific, and internatio",
-      "scanned_at": "2026-08-03T16:43:17.371469",
+      "scanned_at": "2026-08-04T16:25:33.749813",
       "recent_news": [],
       "cross_dashboard_tags": [
         {
           "source_key": "underdogs",
           "label": "The Underdogs",
           "signal": "Deep value rank #3",
-          "score": 61.7
+          "score": 58.2
         }
       ]
     },
     {
-      "ticker": "ONDS",
-      "company": "Ondas Inc.",
-      "sector": "Technology",
-      "industry": "Communication Equipment",
-      "price": 8.17,
-      "change_pct": 9.08,
-      "mkt_cap": 4655581184,
-      "week52_low": 2.25,
-      "week52_high": 15.28,
-      "pe_trailing": 90.8,
-      "pe_forward": -272.3,
-      "peg": null,
-      "pb": 3.57,
-      "ps": 48.19,
-      "ev_ebitda": -30.3,
-      "eps_trailing": 0.09,
-      "eps_forward": -0.03,
-      "graham": 2.15,
-      "rev_growth": 1079.9,
+      "ticker": "SNAP",
+      "company": "Snap Inc.",
+      "sector": "Communication Services",
+      "industry": "Internet Content & Information",
+      "price": 5.75,
+      "change_pct": 14.09,
+      "mkt_cap": 9528675328,
+      "week52_low": 3.81,
+      "week52_high": 9.545,
+      "pe_trailing": null,
+      "pe_forward": 7.8,
+      "peg": 508.87,
+      "pb": 4.68,
+      "ps": 1.56,
+      "ev_ebitda": -40.2,
+      "eps_trailing": -0.26,
+      "eps_forward": 0.74,
+      "graham": null,
+      "rev_growth": 12.1,
       "earn_growth": null,
-      "gross_margin": 44.8,
-      "op_margin": -85.1,
-      "net_margin": 251.9,
-      "roe": 42.9,
-      "roa": -4.2,
-      "fcf": -15650777,
-      "fcf_yield": -0.3,
-      "fcf_margin": -16.2,
-      "debt_equity": 1.5,
-      "current_ratio": 10.91,
-      "book_val_ps": 2.29,
-      "verdict": "UNDERVALUED",
-      "score": 28,
-      "commentary": "Ondas Inc. (ONDS) appears undervalued relative to its fundamentals. Forward P/E of -272.3x is well below the Technology sector median (~28x), pricing in limited growth expectations. Revenue expanding at 1079.9% YoY \u2014 robust top-line momentum. Free cash flow is negative \u2014 the company is currently consuming cash at the corporate level after capex, which limits flexibility for buybacks, dividends, or debt paydown. At a forward P/E of -272.3x with 1079.9% revenue growth, the risk/reward skews favourably for patient long-term investors.",
+      "gross_margin": 55.8,
+      "op_margin": -4.9,
+      "net_margin": -6.7,
+      "roe": -18.6,
+      "roa": -3.4,
+      "fcf": 673405888,
+      "fcf_yield": 7.1,
+      "fcf_margin": 11.0,
+      "debt_equity": 201.6,
+      "current_ratio": 3.52,
+      "book_val_ps": 1.23,
+      "verdict": "OVERPRICED",
+      "score": -18,
+      "commentary": "Snap Inc. (SNAP) looks richly priced relative to its underlying fundamentals. Forward P/E of 7.8x is well below the Communication Services sector median (~20x), pricing in limited growth expectations. Revenue growth of 12.1% YoY is healthy. PEG of 508.87 signals the market is pricing in very optimistic future growth. While the business quality may be high, current pricing offers limited margin of safety \u2014 position sizing and a disciplined entry point are important.",
       "sec_filings": {
         "10-K": {
-          "date": "2026-03-30",
-          "accession": "0001213900-26-035981"
+          "date": "2026-02-05",
+          "accession": "0001564408-26-000013"
         },
         "10-Q": {
-          "date": "2026-05-15",
-          "accession": "0001213900-26-057859"
+          "date": "2026-08-04",
+          "accession": "0001564408-26-000052"
         }
       },
-      "cik": "0001646188",
-      "summary_short": "Ondas Inc. provides private wireless, drone, and automated data solutions in the United States and internationally. It operates through the Ondas Networks and Ondas Autonomous Systems segments. The company offers Counter-UAS (CUAS) and site protection systems, including iron dron",
-      "scanned_at": "2026-08-03T16:43:18.946116",
+      "cik": "0001564408",
+      "summary_short": "Snap Inc. operates as a technology company in North America, Europe, and internationally. The company offers Snapchat, a visual messaging application with various tabs, such as camera, visual messaging, snap map, stories, and spotlight that enable people to communicate visually t",
+      "scanned_at": "2026-08-04T16:25:35.607591",
       "recent_news": [],
       "cross_dashboard_tags": [
         {
           "source_key": "movers_day",
           "label": "Movers & Shakers",
-          "signal": "Day Trade nominee (score 44)",
-          "score": 44
+          "signal": "Day Trade nominee (score 49)",
+          "score": 49
+        }
+      ]
+    },
+    {
+      "error": "Could not fetch data for CCOE: Empty response \u2014 ticker may be invalid",
+      "ticker": "CCOE",
+      "cross_dashboard_tags": [
+        {
+          "source_key": "insider",
+          "label": "Insider Buying",
+          "signal": "Tier B (score 45) \u2014 Chief Executive Officer bought \u00b7 $10.7M total",
+          "score": 45
         }
       ]
     }
