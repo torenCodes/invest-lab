@@ -1,6 +1,6 @@
 {
-  "scan_time": "2026-08-04T14:06:44.431918",
-  "total_transactions": 64,
+  "scan_time": "2026-08-04T15:19:22.028785",
+  "total_transactions": 66,
   "date_range": "Jul 27 '26 \u2013 Jul 31 '26",
   "min_value": 25000,
   "nominees": [
@@ -596,6 +596,40 @@
       "story": "EEQBK \u2014 Two insiders bought, $151K total."
     },
     {
+      "ticker": "CCLB",
+      "insider": "Bruno Lawrence",
+      "title": "Chairman and CEO",
+      "date": "Jul 31 '26",
+      "price": 10.78,
+      "qty": 5000,
+      "value": 53900,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "CCLB",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Bruno Lawrence",
+          "title": "Chairman and CEO",
+          "date": "Jul 31 '26",
+          "price": 10.78,
+          "qty": 5000,
+          "value": 53900,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 15,
+      "tier": "W",
+      "signals": [
+        "Chairman and CEO bought"
+      ],
+      "story": "CCLB \u2014 The Chairman and CEO bought."
+    },
+    {
       "ticker": "SSHEN",
       "insider": "VOLK JAMES J",
       "title": "SVP Finance & CFO",
@@ -1153,10 +1187,32 @@
   "tier_counts": {
     "A": 2,
     "B": 5,
-    "W": 20,
-    "total": 27
+    "W": 21,
+    "total": 28
   },
   "recent_feed": [
+    {
+      "ticker": "CCLB",
+      "insider": "Bruno Lawrence",
+      "title": "Chairman and CEO",
+      "date": "Jul 31 '26",
+      "price": 10.78,
+      "qty": 5000,
+      "value": 53900,
+      "filing": "Aug 04 10:40 AM",
+      "is_csuite": true
+    },
+    {
+      "ticker": "AARLP",
+      "insider": "McDaniel Ronna R.",
+      "title": "Director",
+      "date": "Jul 31 '26",
+      "price": 26.11,
+      "qty": 3000,
+      "value": 78345,
+      "filing": "Aug 04 10:11 AM",
+      "is_csuite": false
+    },
     {
       "ticker": "CCMCO",
       "insider": "Linker John R",
@@ -1573,28 +1629,6 @@
       "qty": 2000,
       "value": 38086,
       "filing": "Jul 30 02:07 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "CCOSM",
-      "insider": "Siokas Grigorios",
-      "title": "Chief Executive Officer",
-      "date": "Jul 29 '26",
-      "price": 0.18,
-      "qty": 766284,
-      "value": 140000,
-      "filing": "Jul 30 11:09 AM",
-      "is_csuite": true
-    },
-    {
-      "ticker": "NNWFL",
-      "insider": "Shook James",
-      "title": "Director",
-      "date": "Jul 28 '26",
-      "price": 34.55,
-      "qty": 3100,
-      "value": 107105,
-      "filing": "Jul 30 10:36 AM",
       "is_csuite": false
     }
   ]
