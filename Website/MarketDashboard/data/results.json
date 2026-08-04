@@ -1,194 +1,438 @@
 {
-  "scan_time": "2026-08-03T20:38:03.915833+00:00",
+  "scan_time": "2026-08-04T13:35:29.860006+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 23,
+  "total_scanned": 25,
   "day_trades": [
     {
-      "ticker": "ORCL",
-      "name": "Oracle Corp",
-      "sector": "Technology",
-      "current_price": 141.85,
-      "change_pct": 9.2246,
-      "high": 143.07,
-      "low": 130.21,
-      "open": 131.92,
-      "prev_close": 129.87,
-      "score": 53,
+      "ticker": "AAOI",
+      "name": "Applied Optoelectronics Inc",
+      "sector": "Communications",
+      "current_price": 130.76,
+      "change_pct": 18.6462,
+      "high": 130.88,
+      "low": 122.4275,
+      "open": 122.4275,
+      "prev_close": 110.21,
+      "score": 58,
       "signals": [
-        "Top gainer (+9.2%)",
+        "Top gainer (+18.6%)",
         "High volume",
-        "Strong move (+9.2%)",
-        "Trending buzz (17)",
-        "Yahoo trending (#4)",
-        "Closing strong"
+        "Strong move (+18.6%)",
+        "Trending buzz (16)",
+        "Yahoo trending (#5)",
+        "Closing strong",
+        "Sector leader (Communications)"
       ],
-      "reddit_mentions": 17,
-      "market_cap": 374086747857.0,
+      "reddit_mentions": 16,
+      "market_cap": 8843555358.735159,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ORCL.png",
-      "weburl": "https://www.oracle.com/",
-      "yahoo_trending_rank": 4,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AAOI.png",
+      "weburl": "https://ao-inc.com/",
+      "yahoo_trending_rank": 5,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 75
+      "score_normalized": 82
     },
     {
-      "ticker": "BX",
-      "name": "Blackstone Inc",
-      "sector": "Financial Services",
-      "current_price": 134.68,
-      "change_pct": 5.4247,
-      "high": 135.21,
-      "low": 127.54,
-      "open": 128.1,
-      "prev_close": 127.75,
-      "score": 31,
+      "ticker": "PLTR",
+      "name": "Palantir Technologies Inc",
+      "sector": "Technology",
+      "current_price": 149.96,
+      "change_pct": 19.3474,
+      "high": 149.99,
+      "low": 143.28,
+      "open": 144.9025,
+      "prev_close": 125.65,
+      "score": 58,
       "signals": [
-        "Top gainer (+5.4%)",
+        "Top gainer (+19.3%)",
         "High volume",
-        "Strong move (+5.4%)",
-        "Closing strong"
+        "Strong move (+19.3%)",
+        "Trending buzz (19)",
+        "Yahoo trending (#2)",
+        "Closing strong",
+        "Sector leader (Technology)"
       ],
-      "reddit_mentions": 0,
-      "market_cap": 158897118716.0,
+      "reddit_mentions": 19,
+      "market_cap": 301222283144.4852,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BX.png",
-      "weburl": "https://www.blackstone.com/",
-      "yahoo_trending_rank": null,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/PLTR.png",
+      "weburl": "https://www.palantir.com/",
+      "yahoo_trending_rank": 2,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.41,
+          "estimate": 0.35,
+          "beat": true,
+          "surprise_pct": 15.7
+        }
+      },
+      "score_normalized": 82
+    },
+    {
+      "ticker": "SNAP",
+      "name": "Snap Inc",
+      "sector": "Media",
+      "current_price": 5.65,
+      "change_pct": 12.1032,
+      "high": 5.6698,
+      "low": 5.27,
+      "open": 5.3825,
+      "prev_close": 5.04,
+      "score": 49,
+      "signals": [
+        "Top gainer (+12.1%)",
+        "High volume",
+        "Strong move (+12.1%)",
+        "Trending activity (8)",
+        "Yahoo trending (#13)",
+        "Closing strong",
+        "Sector leader (Media)"
+      ],
+      "reddit_mentions": 8,
+      "market_cap": 8352091704.358209,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SNAP.png",
+      "weburl": "https://snap.com/",
+      "yahoo_trending_rank": 13,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.06,
+          "estimate": 0.08,
+          "beat": false,
+          "surprise_pct": -25.4
+        }
+      },
+      "score_normalized": 69
+    },
+    {
+      "ticker": "DOCN",
+      "name": "DigitalOcean Holdings Inc",
+      "sector": "Technology",
+      "current_price": 133.92,
+      "change_pct": 5.3079,
+      "high": 137.6099,
+      "low": 118.79,
+      "open": 126.775,
+      "prev_close": 127.17,
+      "score": 44,
+      "signals": [
+        "Top gainer (+5.3%)",
+        "High volume",
+        "Strong move (+5.3%)",
+        "Trending activity (7)",
+        "Yahoo trending (#14)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 7,
+      "market_cap": 14867202608.36502,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/DOCN.png",
+      "weburl": "",
+      "yahoo_trending_rank": 14,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.45,
+          "estimate": 0.26,
+          "beat": true,
+          "surprise_pct": 71.1
+        }
+      },
+      "score_normalized": 62
+    },
+    {
+      "ticker": "POET",
+      "name": "POET Technologies Inc",
+      "sector": "Semiconductors",
+      "current_price": 8.5,
+      "change_pct": 15.4891,
+      "high": 8.53,
+      "low": 7.9725,
+      "open": 7.9725,
+      "prev_close": 7.36,
+      "score": 44,
+      "signals": [
+        "Top gainer (+15.5%)",
+        "High volume",
+        "Strong move (+15.5%)",
+        "Trending activity (9)",
+        "Yahoo trending (#12)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 9,
+      "market_cap": 1270262331.5593705,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942976532156.png",
+      "weburl": "https://www.poet-technologies.com/",
+      "yahoo_trending_rank": 12,
       "earnings_info": {
         "upcoming": null,
         "recent": null
+      },
+      "score_normalized": 62
+    },
+    {
+      "ticker": "WIX",
+      "name": "Wix.Com Ltd",
+      "sector": "Technology",
+      "current_price": 60.07,
+      "change_pct": 5.6826,
+      "high": 62.456599999999995,
+      "low": 56,
+      "open": 58.1625,
+      "prev_close": 56.84,
+      "score": 31,
+      "signals": [
+        "Top gainer (+5.7%)",
+        "High volume",
+        "Strong move (+5.7%)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 2372030000.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/WIX.png",
+      "weburl": "https://www.wix.com",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 1.39,
+          "estimate": 1.23,
+          "beat": true,
+          "surprise_pct": 12.6
+        }
       },
       "score_normalized": 44
     }
   ],
   "swing_trades": [
     {
-      "ticker": "BA",
-      "name": "Boeing Co",
-      "sector": "Aerospace & Defense",
-      "current_price": 233.49,
-      "change_pct": 8.0272,
-      "high": 234.0886,
-      "low": 219.21,
-      "open": 221,
-      "prev_close": 216.14,
-      "score": 53,
+      "ticker": "CAT",
+      "name": "Caterpillar Inc",
+      "sector": "Machinery",
+      "current_price": 918.83,
+      "change_pct": 10.6984,
+      "high": 934.9994,
+      "low": 913.91,
+      "open": 922.01,
+      "prev_close": 830.03,
+      "score": 55,
       "signals": [
-        "Top gainer (+8.0%)",
+        "Top gainer (+10.7%)",
         "High volume",
-        "Strong move (+8.0%)",
-        "Trending buzz (16)",
-        "Yahoo trending (#5)",
-        "Closing strong"
+        "Strong move (+10.7%)",
+        "High Trending buzz (20)",
+        "Yahoo trending (#1)"
       ],
-      "reddit_mentions": 16,
-      "market_cap": 170830570262.0,
+      "reddit_mentions": 20,
+      "market_cap": 382342547823.1369,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BA.png",
-      "weburl": "https://www.boeing.com",
-      "yahoo_trending_rank": 5,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CAT.png",
+      "weburl": "https://www.caterpillar.com",
+      "yahoo_trending_rank": 1,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 8.17,
+          "estimate": 6.26,
+          "beat": true,
+          "surprise_pct": 30.5
+        }
+      },
+      "score_normalized": 77
+    },
+    {
+      "ticker": "LITE",
+      "name": "Lumentum Holdings Inc",
+      "sector": "Communications",
+      "current_price": 840.72,
+      "change_pct": 7.7998,
+      "high": 856.21,
+      "low": 825.96,
+      "open": 830.6775,
+      "prev_close": 779.89,
+      "score": 50,
+      "signals": [
+        "Top gainer (+7.8%)",
+        "High volume",
+        "Strong move (+7.8%)",
+        "Trending buzz (12)",
+        "Yahoo trending (#9)"
+      ],
+      "reddit_mentions": 12,
+      "market_cap": 60675444587.835686,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/LITE.png",
+      "weburl": "https://investor.lumentum.com/",
+      "yahoo_trending_rank": 9,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 75
+      "score_normalized": 70
     },
     {
-      "ticker": "ORCL",
-      "name": "Oracle Corp",
+      "ticker": "DOCN",
+      "name": "DigitalOcean Holdings Inc",
       "sector": "Technology",
-      "current_price": 141.85,
-      "change_pct": 9.2246,
-      "high": 143.07,
-      "low": 130.21,
-      "open": 131.92,
-      "prev_close": 129.87,
-      "score": 53,
+      "current_price": 133.92,
+      "change_pct": 5.3079,
+      "high": 137.6099,
+      "low": 118.79,
+      "open": 126.775,
+      "prev_close": 127.17,
+      "score": 44,
       "signals": [
-        "Top gainer (+9.2%)",
+        "Top gainer (+5.3%)",
         "High volume",
-        "Strong move (+9.2%)",
-        "Trending buzz (17)",
-        "Yahoo trending (#4)",
+        "Strong move (+5.3%)",
+        "Trending activity (7)",
+        "Yahoo trending (#14)",
         "Closing strong"
       ],
-      "reddit_mentions": 17,
-      "market_cap": 374086747857.0,
+      "reddit_mentions": 7,
+      "market_cap": 14867202608.36502,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ORCL.png",
-      "weburl": "https://www.oracle.com/",
-      "yahoo_trending_rank": 4,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/DOCN.png",
+      "weburl": "",
+      "yahoo_trending_rank": 14,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.45,
+          "estimate": 0.26,
+          "beat": true,
+          "surprise_pct": 71.1
+        }
       },
-      "score_normalized": 75
+      "score_normalized": 62
     },
     {
-      "ticker": "VST",
-      "name": "Vistra Corp",
-      "sector": "Utilities",
-      "current_price": 155.94,
-      "change_pct": 5.2298,
-      "high": 156.955,
-      "low": 146.19,
-      "open": 148.77,
-      "prev_close": 148.19,
-      "score": 39,
+      "ticker": "MCD",
+      "name": "McDonald's Corp",
+      "sector": "Hotels, Restaurants & Leisure",
+      "current_price": 268.69,
+      "change_pct": 1.3045,
+      "high": 271.53,
+      "low": 264.9,
+      "open": 269.04,
+      "prev_close": 265.23,
+      "score": 35,
       "signals": [
-        "Top gainer (+5.2%)",
+        "Top gainer (+1.3%)",
         "High volume",
-        "Strong move (+5.2%)",
-        "Yahoo trending (#19)",
-        "Closing strong"
+        "Trending buzz (18)",
+        "Yahoo trending (#3)"
       ],
-      "reddit_mentions": 2,
-      "market_cap": 49737783718.59386,
+      "reddit_mentions": 18,
+      "market_cap": 188447479281.73398,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/VST.png",
-      "weburl": "https://www.vistracorp.com/",
-      "yahoo_trending_rank": 19,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MCD.png",
+      "weburl": "https://www.mcdonalds.com/",
+      "yahoo_trending_rank": 3,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 3.38,
+          "estimate": 3.35,
+          "beat": true,
+          "surprise_pct": 0.8
+        }
       },
-      "score_normalized": 55
+      "score_normalized": 49
     },
     {
-      "ticker": "BX",
-      "name": "Blackstone Inc",
-      "sector": "Financial Services",
-      "current_price": 134.68,
-      "change_pct": 5.4247,
-      "high": 135.21,
-      "low": 127.54,
-      "open": 128.1,
-      "prev_close": 127.75,
+      "ticker": "GLW",
+      "name": "Corning Inc",
+      "sector": "Electrical Equipment",
+      "current_price": 155.3,
+      "change_pct": 5.9056,
+      "high": 156.58,
+      "low": 153.61,
+      "open": 155.01,
+      "prev_close": 146.64,
       "score": 31,
       "signals": [
-        "Top gainer (+5.4%)",
+        "Top gainer (+5.9%)",
         "High volume",
-        "Strong move (+5.4%)",
+        "Strong move (+5.9%)",
         "Closing strong"
       ],
       "reddit_mentions": 0,
-      "market_cap": 158897118716.0,
+      "market_cap": 126313981142.51805,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BX.png",
-      "weburl": "https://www.blackstone.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/GLW.png",
+      "weburl": "https://www.corning.com/",
       "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.78,
+          "estimate": 0.76,
+          "beat": true,
+          "surprise_pct": 2.2
+        }
+      },
+      "score_normalized": 44
+    },
+    {
+      "ticker": "WIX",
+      "name": "Wix.Com Ltd",
+      "sector": "Technology",
+      "current_price": 60.07,
+      "change_pct": 5.6826,
+      "high": 62.456599999999995,
+      "low": 56,
+      "open": 58.1625,
+      "prev_close": 56.84,
+      "score": 31,
+      "signals": [
+        "Top gainer (+5.7%)",
+        "High volume",
+        "Strong move (+5.7%)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 2372030000.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/WIX.png",
+      "weburl": "https://www.wix.com",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 1.39,
+          "estimate": 1.23,
+          "beat": true,
+          "surprise_pct": 12.6
+        }
       },
       "score_normalized": 44
     }
@@ -196,108 +440,34 @@
   "buzz_source": "trending",
   "reddit_cards": [
     {
-      "ticker": "PLTR",
-      "mentions": 20,
-      "name": "Palantir Technologies Inc",
-      "sector": "Technology",
-      "current_price": 125.65,
-      "change_pct": 2.1047,
-      "high": 126.965,
-      "low": 123.6567,
-      "open": 126.7,
-      "prev_close": 123.06,
-      "market_cap": 295013244439.0,
-      "score": 0,
+      "ticker": "CAT",
+      "name": "Caterpillar Inc",
+      "sector": "Machinery",
+      "current_price": 918.83,
+      "change_pct": 10.6984,
+      "high": 934.9994,
+      "low": 913.91,
+      "open": 922.01,
+      "prev_close": 830.03,
+      "score": 55,
       "signals": [
-        "Trending buzz (20 mentions)",
+        "Top gainer (+10.7%)",
+        "High volume",
+        "Strong move (+10.7%)",
+        "High Trending buzz (20)",
         "Yahoo trending (#1)"
       ],
       "reddit_mentions": 20,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": 1,
-      "social": {
-        "trend_pct": 1327,
-        "reddit": 157,
-        "st_bull": 75,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "GME",
-      "mentions": 18,
-      "name": "GameStop Corp",
-      "sector": "Retail",
-      "current_price": 19.06,
-      "change_pct": -12.2468,
-      "high": 20.5,
-      "low": 18.545,
-      "open": 20.46,
-      "prev_close": 21.72,
-      "market_cap": 9745573721.0,
-      "score": 0,
-      "signals": [
-        "Trending buzz (18 mentions)",
-        "Yahoo trending (#3)"
-      ],
-      "reddit_mentions": 18,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": 3,
-      "social": {
-        "reddit": 18,
-        "st_bull": 65,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "ORCL",
-      "name": "Oracle Corp",
-      "sector": "Technology",
-      "current_price": 141.85,
-      "change_pct": 9.2246,
-      "high": 143.07,
-      "low": 130.21,
-      "open": 131.92,
-      "prev_close": 129.87,
-      "score": 53,
-      "signals": [
-        "Top gainer (+9.2%)",
-        "High volume",
-        "Strong move (+9.2%)",
-        "Trending buzz (17)",
-        "Yahoo trending (#4)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 17,
-      "market_cap": 374086747857.0,
+      "market_cap": 382342547823.1369,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ORCL.png",
-      "weburl": "https://www.oracle.com/",
-      "yahoo_trending_rank": 4,
-      "mentions": 17,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CAT.png",
+      "weburl": "https://www.caterpillar.com",
+      "yahoo_trending_rank": 1,
+      "mentions": 20,
       "social": {
-        "trend_pct": 280,
-        "reddit": 19,
+        "trend_pct": 3600,
+        "reddit": 37,
         "st_bull": 100,
         "st_msgs": 30,
         "sources": [
@@ -307,27 +477,48 @@
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 8.17,
+          "estimate": 6.26,
+          "beat": true,
+          "surprise_pct": 30.5
+        }
       },
-      "score_normalized": 75
+      "score_normalized": 77
     },
     {
-      "ticker": "MU",
-      "name": "Micron Technology Inc",
-      "sector": "Semiconductors",
-      "current_price": 829.5,
-      "change_pct": 0.7861,
-      "market_cap": 929524408532.0,
-      "score": 0,
-      "signals": [],
-      "reddit_mentions": 0,
-      "is_gainer": false,
-      "is_active": false,
-      "mentions": 555,
+      "ticker": "PLTR",
+      "name": "Palantir Technologies Inc",
+      "sector": "Technology",
+      "current_price": 149.96,
+      "change_pct": 19.3474,
+      "high": 149.99,
+      "low": 143.28,
+      "open": 144.9025,
+      "prev_close": 125.65,
+      "score": 58,
+      "signals": [
+        "Top gainer (+19.3%)",
+        "High volume",
+        "Strong move (+19.3%)",
+        "Trending buzz (19)",
+        "Yahoo trending (#2)",
+        "Closing strong",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 19,
+      "market_cap": 301222283144.4852,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/PLTR.png",
+      "weburl": "https://www.palantir.com/",
+      "yahoo_trending_rank": 2,
+      "mentions": 19,
       "social": {
-        "trend_pct": 603,
-        "reddit": 555,
-        "st_bull": 81,
+        "trend_pct": 834,
+        "reddit": 327,
+        "st_bull": 88,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -336,7 +527,95 @@
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.41,
+          "estimate": 0.35,
+          "beat": true,
+          "surprise_pct": 15.7
+        }
+      },
+      "score_normalized": 82
+    },
+    {
+      "ticker": "MCD",
+      "name": "McDonald's Corp",
+      "sector": "Hotels, Restaurants & Leisure",
+      "current_price": 268.69,
+      "change_pct": 1.3045,
+      "high": 271.53,
+      "low": 264.9,
+      "open": 269.04,
+      "prev_close": 265.23,
+      "score": 35,
+      "signals": [
+        "Top gainer (+1.3%)",
+        "High volume",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)"
+      ],
+      "reddit_mentions": 18,
+      "market_cap": 188447479281.73398,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MCD.png",
+      "weburl": "https://www.mcdonalds.com/",
+      "yahoo_trending_rank": 3,
+      "mentions": 18,
+      "social": {
+        "trend_pct": 900,
+        "reddit": 18,
+        "st_bull": 25,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 3.38,
+          "estimate": 3.35,
+          "beat": true,
+          "surprise_pct": 0.8
+        }
+      },
+      "score_normalized": 49
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology Inc",
+      "sector": "Semiconductors",
+      "current_price": 872.78,
+      "change_pct": 5.2176,
+      "market_cap": 936831581931.7571,
+      "score": 0,
+      "signals": [],
+      "reddit_mentions": 0,
+      "is_gainer": false,
+      "is_active": false,
+      "mentions": 594,
+      "social": {
+        "trend_pct": 162,
+        "reddit": 594,
+        "st_bull": 86,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 25.11,
+          "estimate": 21.4,
+          "beat": true,
+          "surprise_pct": 17.3
+        }
       },
       "score_normalized": 0
     },
@@ -344,25 +623,31 @@
       "ticker": "MSFT",
       "name": "Microsoft Corp",
       "sector": "Technology",
-      "current_price": 487.65,
-      "change_pct": 4.9342,
-      "market_cap": 3450799472072.0005,
+      "current_price": 486.78,
+      "change_pct": -0.1784,
+      "market_cap": 3621067228774.124,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 217,
+      "mentions": 250,
       "social": {
-        "trend_pct": 456,
-        "reddit": 217,
+        "trend_pct": 363,
+        "reddit": 250,
         "sources": [
           "Reddit"
         ]
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 4.74,
+          "estimate": 4.33,
+          "beat": true,
+          "surprise_pct": 9.5
+        }
       },
       "score_normalized": 0
     },
@@ -370,18 +655,18 @@
       "ticker": "SNDK",
       "name": "Sandisk Corp",
       "sector": "Technology",
-      "current_price": 1288.03,
-      "change_pct": 6.0255,
-      "market_cap": 179903885691.0,
+      "current_price": 1386.78,
+      "change_pct": 7.6667,
+      "market_cap": 190744056276.66318,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 170,
+      "mentions": 232,
       "social": {
-        "trend_pct": 315,
-        "reddit": 170,
+        "trend_pct": 149,
+        "reddit": 232,
         "sources": [
           "Reddit"
         ]
@@ -395,37 +680,37 @@
   ],
   "chatter_emerging": [
     {
-      "ticker": "SPCX",
-      "name": "Space Exploration Technologies Corp",
-      "sector": "Telecommunication",
-      "mentions": 153,
-      "prev": 37,
-      "trend_pct": 314,
-      "current_price": 114.53,
-      "change_pct": 5.6842,
-      "market_cap": 1437758524695.0
+      "ticker": "MU",
+      "name": "Micron Technology Inc",
+      "sector": "Semiconductors",
+      "mentions": 594,
+      "prev": 227,
+      "trend_pct": 162,
+      "current_price": 871.61,
+      "change_pct": 5.0766,
+      "market_cap": 936831581931.7571
     },
     {
-      "ticker": "RDDT",
-      "name": "Reddit Inc",
-      "sector": "Media",
-      "mentions": 127,
-      "prev": 22,
-      "trend_pct": 477,
-      "current_price": 154.71,
-      "change_pct": 9.9808,
-      "market_cap": 27080245630.000004
+      "ticker": "PLTR",
+      "name": "Palantir Technologies Inc",
+      "sector": "Technology",
+      "mentions": 327,
+      "prev": 35,
+      "trend_pct": 834,
+      "current_price": 151.18,
+      "change_pct": 20.3183,
+      "market_cap": 301222283144.4852
     },
     {
-      "ticker": "META",
-      "name": "Meta Platforms Inc",
-      "sector": "Media",
-      "mentions": 99,
-      "prev": 9,
-      "trend_pct": 1000,
-      "current_price": 590.24,
-      "change_pct": 6.0229,
-      "market_cap": 1418011917535.0
+      "ticker": "MSFT",
+      "name": "Microsoft Corp",
+      "sector": "Technology",
+      "mentions": 250,
+      "prev": 54,
+      "trend_pct": 363,
+      "current_price": 486.6,
+      "change_pct": -0.2153,
+      "market_cap": 3621067228774.124
     }
   ],
   "sector_rotation": {
@@ -433,47 +718,223 @@
       {
         "ticker": "XLE",
         "sector": "Energy",
-        "ret_1d": -1.28,
-        "ret_5d": 0.74,
-        "ret_1m": 10.47,
-        "ret_3m": 0.62,
-        "rel_1d": -2.7,
-        "rel_5d": -1.77,
-        "rel_1m": 8.74,
-        "rel_3m": -4.79,
-        "rvol": 0.77,
+        "ret_1d": -2.57,
+        "ret_5d": -0.5,
+        "ret_1m": 7.81,
+        "ret_3m": -2.86,
+        "rel_1d": -3.15,
+        "rel_5d": -3.37,
+        "rel_1m": 6.37,
+        "rel_3m": -9.27,
+        "rvol": 0.86,
         "rrg": {
-          "x": 100.6,
-          "y": 99.4,
+          "x": 99.78,
+          "y": 98.95,
+          "quadrant": "Lagging",
+          "tail": [
+            {
+              "x": 98.1,
+              "y": 98.77
+            },
+            {
+              "x": 98.31,
+              "y": 100.42
+            },
+            {
+              "x": 98.95,
+              "y": 100.97
+            },
+            {
+              "x": 99.9,
+              "y": 101.15
+            },
+            {
+              "x": 100.83,
+              "y": 100.94
+            },
+            {
+              "x": 100.54,
+              "y": 99.38
+            },
+            {
+              "x": 99.78,
+              "y": 98.95
+            }
+          ]
+        },
+        "top_stocks": [
+          {
+            "ticker": "ET",
+            "name": "Energy Transfer LP",
+            "change_pct": 1.3314,
+            "price": 20.55
+          }
+        ],
+        "rotation": -5
+      },
+      {
+        "ticker": "XLF",
+        "sector": "Financials",
+        "ret_1d": 0.22,
+        "ret_5d": -0.16,
+        "ret_1m": 2.43,
+        "ret_3m": 11.88,
+        "rel_1d": -0.36,
+        "rel_5d": -3.03,
+        "rel_1m": 0.99,
+        "rel_3m": 5.47,
+        "rvol": 0.92,
+        "rrg": {
+          "x": 100.87,
+          "y": 97.78,
           "quadrant": "Weakening",
           "tail": [
             {
-              "x": 97.63,
-              "y": 98.25
+              "x": 100.49,
+              "y": 100.39
             },
             {
-              "x": 98.74,
-              "y": 101.63
+              "x": 100.8,
+              "y": 100.19
             },
             {
-              "x": 98.23,
-              "y": 99.42
+              "x": 102.0,
+              "y": 101.2
             },
             {
-              "x": 99.86,
-              "y": 102.01
+              "x": 101.64,
+              "y": 98.96
+            },
+            {
+              "x": 101.36,
+              "y": 98.88
+            },
+            {
+              "x": 101.98,
+              "y": 100.34
+            },
+            {
+              "x": 100.87,
+              "y": 97.78
+            }
+          ]
+        },
+        "top_stocks": [],
+        "rotation": -3
+      },
+      {
+        "ticker": "XLC",
+        "sector": "Comm. Services",
+        "ret_1d": -0.32,
+        "ret_5d": 1.19,
+        "ret_1m": 0.7,
+        "ret_3m": -4.16,
+        "rel_1d": -0.9,
+        "rel_5d": -1.68,
+        "rel_1m": -0.74,
+        "rel_3m": -10.57,
+        "rvol": 1.19,
+        "rrg": {
+          "x": 99.14,
+          "y": 98.88,
+          "quadrant": "Lagging",
+          "tail": [
+            {
+              "x": 97.93,
+              "y": 99.13
+            },
+            {
+              "x": 98.55,
+              "y": 101.11
+            },
+            {
+              "x": 99.19,
+              "y": 101.06
+            },
+            {
+              "x": 99.32,
+              "y": 99.9
+            },
+            {
+              "x": 99.17,
+              "y": 99.24
+            },
+            {
+              "x": 99.65,
+              "y": 100.71
+            },
+            {
+              "x": 99.14,
+              "y": 98.88
+            }
+          ]
+        },
+        "top_stocks": [
+          {
+            "ticker": "TNMG",
+            "name": "TNL Mediagene",
+            "change_pct": 141.5105,
+            "price": 0.8634
+          },
+          {
+            "ticker": "AAOI",
+            "name": "Applied Optoelectronics Inc",
+            "change_pct": 18.6462,
+            "price": 130.76
+          },
+          {
+            "ticker": "SNAP",
+            "name": "Snap Inc",
+            "change_pct": 12.1032,
+            "price": 5.65
+          }
+        ],
+        "rotation": 0
+      },
+      {
+        "ticker": "XLRE",
+        "sector": "Real Estate",
+        "ret_1d": -1.53,
+        "ret_5d": -3.3,
+        "ret_1m": 0.45,
+        "ret_3m": 1.81,
+        "rel_1d": -2.11,
+        "rel_5d": -6.17,
+        "rel_1m": -0.99,
+        "rel_3m": -4.6,
+        "rvol": 1.63,
+        "rrg": {
+          "x": 98.94,
+          "y": 97.57,
+          "quadrant": "Lagging",
+          "tail": [
+            {
+              "x": 99.38,
+              "y": 99.38
+            },
+            {
+              "x": 100.49,
+              "y": 100.84
+            },
+            {
+              "x": 100.27,
+              "y": 99.76
+            },
+            {
+              "x": 99.68,
+              "y": 99.35
             },
             {
               "x": 100.81,
-              "y": 101.0
+              "y": 100.74
             },
             {
-              "x": 100.95,
-              "y": 99.86
+              "x": 101.88,
+              "y": 100.59
             },
             {
-              "x": 100.6,
-              "y": 99.4
+              "x": 98.94,
+              "y": 97.57
             }
           ]
         },
@@ -481,543 +942,412 @@
         "rotation": -4
       },
       {
-        "ticker": "XLF",
-        "sector": "Financials",
-        "ret_1d": 0.77,
-        "ret_5d": 0.88,
-        "ret_1m": 3.16,
-        "ret_3m": 10.9,
-        "rel_1d": -0.65,
-        "rel_5d": -1.63,
-        "rel_1m": 1.43,
-        "rel_3m": 5.49,
-        "rvol": 0.95,
+        "ticker": "XLK",
+        "sector": "Technology",
+        "ret_1d": 3.16,
+        "ret_5d": 7.35,
+        "ret_1m": 0.05,
+        "ret_3m": 13.48,
+        "rel_1d": 2.58,
+        "rel_5d": 4.48,
+        "rel_1m": -1.39,
+        "rel_3m": 7.07,
+        "rvol": 1.02,
         "rrg": {
-          "x": 101.0,
-          "y": 98.13,
-          "quadrant": "Weakening",
+          "x": 99.39,
+          "y": 102.75,
+          "quadrant": "Improving",
           "tail": [
             {
-              "x": 100.15,
-              "y": 100.29
+              "x": 101.48,
+              "y": 100.37
             },
             {
-              "x": 101.27,
-              "y": 101.23
+              "x": 100.78,
+              "y": 99.1
             },
             {
-              "x": 101.96,
-              "y": 100.59
+              "x": 99.68,
+              "y": 98.46
             },
             {
-              "x": 101.75,
-              "y": 99.17
+              "x": 99.89,
+              "y": 100.81
             },
             {
-              "x": 101.63,
-              "y": 99.17
+              "x": 99.34,
+              "y": 99.63
             },
             {
-              "x": 101.81,
-              "y": 99.6
+              "x": 97.89,
+              "y": 98.17
             },
             {
-              "x": 101.0,
-              "y": 98.13
+              "x": 99.39,
+              "y": 102.75
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "BX",
-            "name": "Blackstone Inc",
-            "change_pct": 5.4247,
-            "price": 134.68
+            "ticker": "ENSC",
+            "name": "Ensysce Biosciences Inc",
+            "change_pct": 38.0935,
+            "price": 0.3868
+          },
+          {
+            "ticker": "PLTR",
+            "name": "Palantir Technologies Inc",
+            "change_pct": 19.3474,
+            "price": 149.96
+          },
+          {
+            "ticker": "POET",
+            "name": "POET Technologies Inc",
+            "change_pct": 15.4891,
+            "price": 8.5
           }
         ],
-        "rotation": -2
-      },
-      {
-        "ticker": "XLC",
-        "sector": "Comm. Services",
-        "ret_1d": 2.86,
-        "ret_5d": 3.42,
-        "ret_1m": 1.59,
-        "ret_3m": -4.36,
-        "rel_1d": 1.44,
-        "rel_5d": 0.91,
-        "rel_1m": -0.14,
-        "rel_3m": -9.77,
-        "rvol": 0.75,
-        "rrg": {
-          "x": 99.52,
-          "y": 100.7,
-          "quadrant": "Improving",
-          "tail": [
-            {
-              "x": 98.21,
-              "y": 99.32
-            },
-            {
-              "x": 98.52,
-              "y": 100.58
-            },
-            {
-              "x": 98.87,
-              "y": 100.6
-            },
-            {
-              "x": 99.43,
-              "y": 100.91
-            },
-            {
-              "x": 99.65,
-              "y": 100.11
-            },
-            {
-              "x": 99.04,
-              "y": 98.65
-            },
-            {
-              "x": 99.52,
-              "y": 100.7
-            }
-          ]
-        },
-        "top_stocks": [],
-        "rotation": 1
-      },
-      {
-        "ticker": "XLRE",
-        "sector": "Real Estate",
-        "ret_1d": 0.24,
-        "ret_5d": -1.27,
-        "ret_1m": 1.12,
-        "ret_3m": 2.83,
-        "rel_1d": -1.18,
-        "rel_5d": -3.78,
-        "rel_1m": -0.61,
-        "rel_3m": -2.58,
-        "rvol": 1.43,
-        "rrg": {
-          "x": 99.84,
-          "y": 98.12,
-          "quadrant": "Lagging",
-          "tail": [
-            {
-              "x": 98.75,
-              "y": 98.97
-            },
-            {
-              "x": 101.49,
-              "y": 102.2
-            },
-            {
-              "x": 99.37,
-              "y": 98.25
-            },
-            {
-              "x": 100.09,
-              "y": 100.49
-            },
-            {
-              "x": 101.3,
-              "y": 100.84
-            },
-            {
-              "x": 101.84,
-              "y": 100.16
-            },
-            {
-              "x": 99.84,
-              "y": 98.12
-            }
-          ]
-        },
-        "top_stocks": [],
-        "rotation": -6
-      },
-      {
-        "ticker": "XLY",
-        "sector": "Cons. Discretionary",
-        "ret_1d": 1.83,
-        "ret_5d": 6.65,
-        "ret_1m": 0.93,
-        "ret_3m": -0.16,
-        "rel_1d": 0.41,
-        "rel_5d": 4.14,
-        "rel_1m": -0.8,
-        "rel_3m": -5.57,
-        "rvol": 1.57,
-        "rrg": {
-          "x": 100.08,
-          "y": 102.09,
-          "quadrant": "Leading",
-          "tail": [
-            {
-              "x": 98.91,
-              "y": 99.91
-            },
-            {
-              "x": 99.21,
-              "y": 100.37
-            },
-            {
-              "x": 99.37,
-              "y": 100.25
-            },
-            {
-              "x": 98.87,
-              "y": 99.25
-            },
-            {
-              "x": 98.78,
-              "y": 99.79
-            },
-            {
-              "x": 97.78,
-              "y": 98.89
-            },
-            {
-              "x": 100.08,
-              "y": 102.09
-            }
-          ]
-        },
-        "top_stocks": [],
         "rotation": 4
       },
       {
         "ticker": "XLP",
         "sector": "Cons. Staples",
-        "ret_1d": -0.22,
-        "ret_5d": -0.59,
+        "ret_1d": -1.05,
+        "ret_5d": -3.55,
         "ret_1m": -0.15,
-        "ret_3m": 1.52,
-        "rel_1d": -1.64,
-        "rel_5d": -3.1,
-        "rel_1m": -1.88,
-        "rel_3m": -3.89,
-        "rvol": 0.97,
+        "ret_3m": 1.21,
+        "rel_1d": -1.63,
+        "rel_5d": -6.42,
+        "rel_1m": -1.59,
+        "rel_3m": -5.2,
+        "rvol": 1.1,
         "rrg": {
-          "x": 99.66,
-          "y": 98.36,
+          "x": 98.97,
+          "y": 97.29,
           "quadrant": "Lagging",
           "tail": [
             {
-              "x": 98.87,
-              "y": 98.86
+              "x": 98.74,
+              "y": 98.68
             },
             {
-              "x": 100.97,
-              "y": 102.27
+              "x": 100.07,
+              "y": 101.3
             },
             {
-              "x": 99.41,
-              "y": 97.94
+              "x": 100.06,
+              "y": 99.78
             },
             {
-              "x": 99.94,
-              "y": 100.47
+              "x": 99.15,
+              "y": 98.83
             },
             {
-              "x": 100.7,
-              "y": 100.66
+              "x": 99.82,
+              "y": 100.54
             },
             {
-              "x": 101.19,
-              "y": 100.34
+              "x": 101.96,
+              "y": 101.94
             },
             {
-              "x": 99.66,
-              "y": 98.36
+              "x": 98.97,
+              "y": 97.29
             }
           ]
         },
         "top_stocks": [],
-        "rotation": -1
+        "rotation": -3
       },
       {
-        "ticker": "XLI",
-        "sector": "Industrials",
-        "ret_1d": 1.85,
-        "ret_5d": -0.02,
-        "ret_1m": -0.41,
-        "ret_3m": 6.16,
-        "rel_1d": 0.43,
-        "rel_5d": -2.53,
-        "rel_1m": -2.14,
-        "rel_3m": 0.75,
-        "rvol": 1.1,
+        "ticker": "XLY",
+        "sector": "Cons. Discretionary",
+        "ret_1d": -0.45,
+        "ret_5d": 4.62,
+        "ret_1m": -0.28,
+        "ret_3m": 0.16,
+        "rel_1d": -1.03,
+        "rel_5d": 1.75,
+        "rel_1m": -1.72,
+        "rel_3m": -6.25,
+        "rvol": 1.18,
         "rrg": {
-          "x": 100.33,
-          "y": 98.28,
-          "quadrant": "Weakening",
+          "x": 99.56,
+          "y": 100.87,
+          "quadrant": "Improving",
           "tail": [
             {
-              "x": 100.58,
-              "y": 100.88
-            },
-            {
-              "x": 101.93,
-              "y": 101.28
-            },
-            {
-              "x": 101.48,
-              "y": 98.7
-            },
-            {
-              "x": 100.47,
-              "y": 98.23
-            },
-            {
-              "x": 100.35,
+              "x": 98.5,
               "y": 99.56
             },
             {
-              "x": 101.43,
-              "y": 101.09
+              "x": 99.51,
+              "y": 101.1
             },
             {
-              "x": 100.33,
-              "y": 98.28
+              "x": 99.38,
+              "y": 99.91
+            },
+            {
+              "x": 98.65,
+              "y": 98.96
+            },
+            {
+              "x": 98.39,
+              "y": 99.57
+            },
+            {
+              "x": 98.51,
+              "y": 100.13
+            },
+            {
+              "x": 99.56,
+              "y": 100.87
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "HYFM",
-            "name": "Hydrofarm Holdings Group Inc",
-            "change_pct": 298.1481,
-            "price": 2.15
-          },
-          {
-            "ticker": "BA",
-            "name": "Boeing Co",
-            "change_pct": 8.0272,
-            "price": 233.49
+            "ticker": "MCD",
+            "name": "McDonald's Corp",
+            "change_pct": 1.3045,
+            "price": 268.69
           }
         ],
-        "rotation": 1
+        "rotation": 5
       },
       {
         "ticker": "XLV",
         "sector": "Health Care",
-        "ret_1d": -0.19,
-        "ret_5d": -0.71,
-        "ret_1m": -0.92,
-        "ret_3m": 12.26,
-        "rel_1d": -1.61,
-        "rel_5d": -3.22,
-        "rel_1m": -2.65,
-        "rel_3m": 6.85,
-        "rvol": 0.96,
+        "ret_1d": -0.59,
+        "ret_5d": -3.57,
+        "ret_1m": -0.41,
+        "ret_3m": 11.93,
+        "rel_1d": -1.17,
+        "rel_5d": -6.44,
+        "rel_1m": -1.85,
+        "rel_3m": 5.52,
+        "rvol": 1.13,
         "rrg": {
-          "x": 100.47,
+          "x": 100.16,
+          "y": 98.01,
+          "quadrant": "Weakening",
+          "tail": [
+            {
+              "x": 99.91,
+              "y": 99.25
+            },
+            {
+              "x": 102.49,
+              "y": 102.62
+            },
+            {
+              "x": 102.31,
+              "y": 99.22
+            },
+            {
+              "x": 100.76,
+              "y": 97.94
+            },
+            {
+              "x": 100.99,
+              "y": 99.93
+            },
+            {
+              "x": 102.02,
+              "y": 100.74
+            },
+            {
+              "x": 100.16,
+              "y": 98.01
+            }
+          ]
+        },
+        "top_stocks": [
+          {
+            "ticker": "ENSC",
+            "name": "Ensysce Biosciences Inc",
+            "change_pct": 38.0935,
+            "price": 0.3868
+          }
+        ],
+        "rotation": -2
+      },
+      {
+        "ticker": "XLI",
+        "sector": "Industrials",
+        "ret_1d": 0.5,
+        "ret_5d": 0.87,
+        "ret_1m": -0.8,
+        "ret_3m": 7.92,
+        "rel_1d": -0.08,
+        "rel_5d": -2.0,
+        "rel_1m": -2.24,
+        "rel_3m": 1.51,
+        "rvol": 1.34,
+        "rrg": {
+          "x": 100.26,
           "y": 98.62,
           "quadrant": "Weakening",
           "tail": [
             {
-              "x": 99.48,
+              "x": 101.06,
+              "y": 101.33
+            },
+            {
+              "x": 101.56,
+              "y": 100.3
+            },
+            {
+              "x": 101.0,
+              "y": 98.58
+            },
+            {
+              "x": 100.36,
+              "y": 98.79
+            },
+            {
+              "x": 100.14,
+              "y": 99.41
+            },
+            {
+              "x": 101.14,
+              "y": 100.94
+            },
+            {
+              "x": 100.26,
               "y": 98.62
-            },
-            {
-              "x": 103.0,
-              "y": 103.0
-            },
-            {
-              "x": 101.85,
-              "y": 98.03
-            },
-            {
-              "x": 101.4,
-              "y": 99.03
-            },
-            {
-              "x": 101.08,
-              "y": 99.37
-            },
-            {
-              "x": 101.59,
-              "y": 100.21
-            },
-            {
-              "x": 100.47,
-              "y": 98.62
-            }
-          ]
-        },
-        "top_stocks": [],
-        "rotation": 0
-      },
-      {
-        "ticker": "XLK",
-        "sector": "Technology",
-        "ret_1d": 1.53,
-        "ret_5d": 2.15,
-        "ret_1m": -1.41,
-        "ret_3m": 10.12,
-        "rel_1d": 0.11,
-        "rel_5d": -0.36,
-        "rel_1m": -3.14,
-        "rel_3m": 4.71,
-        "rvol": 0.97,
-        "rrg": {
-          "x": 98.6,
-          "y": 100.76,
-          "quadrant": "Improving",
-          "tail": [
-            {
-              "x": 101.39,
-              "y": 100.25
-            },
-            {
-              "x": 100.67,
-              "y": 99.09
-            },
-            {
-              "x": 100.15,
-              "y": 99.48
-            },
-            {
-              "x": 99.7,
-              "y": 99.63
-            },
-            {
-              "x": 98.71,
-              "y": 98.87
-            },
-            {
-              "x": 98.49,
-              "y": 100.22
-            },
-            {
-              "x": 98.6,
-              "y": 100.76
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "ORCL",
-            "name": "Oracle Corp",
-            "change_pct": 9.2246,
-            "price": 141.85
+            "ticker": "CAT",
+            "name": "Caterpillar Inc",
+            "change_pct": 10.6984,
+            "price": 918.83
           }
         ],
-        "rotation": 6
+        "rotation": 5
       },
       {
         "ticker": "XLB",
         "sector": "Materials",
-        "ret_1d": 1.15,
-        "ret_5d": -0.74,
-        "ret_1m": -1.92,
-        "ret_3m": -0.29,
-        "rel_1d": -0.27,
-        "rel_5d": -3.25,
-        "rel_1m": -3.65,
-        "rel_3m": -5.7,
-        "rvol": 1.67,
+        "ret_1d": 0.35,
+        "ret_5d": -2.2,
+        "ret_1m": -1.52,
+        "ret_3m": 1.44,
+        "rel_1d": -0.23,
+        "rel_5d": -5.07,
+        "rel_1m": -2.96,
+        "rel_3m": -4.97,
+        "rvol": 1.06,
         "rrg": {
-          "x": 98.96,
-          "y": 97.46,
+          "x": 98.83,
+          "y": 97.0,
           "quadrant": "Lagging",
           "tail": [
             {
-              "x": 99.51,
-              "y": 100.22
+              "x": 99.63,
+              "y": 99.91
             },
             {
-              "x": 100.48,
-              "y": 101.52
+              "x": 99.27,
+              "y": 99.35
             },
             {
-              "x": 99.87,
-              "y": 98.56
+              "x": 99.72,
+              "y": 100.74
             },
             {
-              "x": 98.95,
-              "y": 98.25
+              "x": 98.86,
+              "y": 98.41
             },
             {
-              "x": 99.03,
-              "y": 100.0
+              "x": 98.69,
+              "y": 99.55
             },
             {
-              "x": 101.08,
-              "y": 102.81
+              "x": 102.0,
+              "y": 103.0
             },
             {
-              "x": 98.96,
-              "y": 97.46
+              "x": 98.83,
+              "y": 97.0
             }
           ]
         },
         "top_stocks": [],
-        "rotation": 1
+        "rotation": 3
       },
       {
         "ticker": "XLU",
         "sector": "Utilities",
-        "ret_1d": 0.02,
-        "ret_5d": -2.89,
-        "ret_1m": -3.06,
-        "ret_3m": -4.1,
-        "rel_1d": -1.4,
-        "rel_5d": -5.4,
-        "rel_1m": -4.79,
-        "rel_3m": -9.51,
-        "rvol": 1.16,
+        "ret_1d": -1.31,
+        "ret_5d": -3.82,
+        "ret_1m": -3.36,
+        "ret_3m": -4.98,
+        "rel_1d": -1.89,
+        "rel_5d": -6.69,
+        "rel_1m": -4.8,
+        "rel_3m": -11.39,
+        "rvol": 1.46,
         "rrg": {
-          "x": 98.75,
-          "y": 97.03,
+          "x": 98.07,
+          "y": 97.0,
           "quadrant": "Lagging",
           "tail": [
             {
-              "x": 99.29,
-              "y": 100.43
+              "x": 99.49,
+              "y": 100.52
             },
             {
-              "x": 100.94,
-              "y": 102.14
+              "x": 100.45,
+              "y": 101.19
             },
             {
-              "x": 99.74,
-              "y": 97.68
+              "x": 100.18,
+              "y": 99.23
             },
             {
-              "x": 100.33,
-              "y": 100.73
+              "x": 100.25,
+              "y": 99.84
             },
             {
-              "x": 100.36,
-              "y": 99.72
+              "x": 99.96,
+              "y": 99.12
             },
             {
-              "x": 101.18,
-              "y": 100.82
+              "x": 100.88,
+              "y": 100.96
             },
             {
-              "x": 98.75,
-              "y": 97.03
+              "x": 98.07,
+              "y": 97.0
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "VST",
-            "name": "Vistra Corp",
-            "change_pct": 5.2298,
-            "price": 155.94
+            "ticker": "COHR",
+            "name": "Coherent Corp",
+            "change_pct": 14.9129,
+            "price": 331.11
+          },
+          {
+            "ticker": "GLW",
+            "name": "Corning Inc",
+            "change_pct": 5.9056,
+            "price": 155.3
           }
         ],
         "rotation": 0
       }
     ],
     "posture": {
-      "label": "Risk-on",
-      "spread": 1.08,
+      "label": "Neutral",
+      "spread": 0.96,
       "leaders": [
         "Energy",
         "Financials"
@@ -1029,11 +1359,237 @@
     },
     "benchmark": {
       "ticker": "SPY",
-      "ret_1d": 1.42,
-      "ret_5d": 2.51,
-      "ret_1m": 1.73,
-      "ret_3m": 5.41
+      "ret_1d": 0.58,
+      "ret_5d": 2.87,
+      "ret_1m": 1.44,
+      "ret_3m": 6.41
     }
   },
-  "reddit_feed": []
+  "reddit_feed": [
+    {
+      "id": "141108188",
+      "title": "Tuesday's pre-market session: top gainers and losers in the S&P500 index",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "CAT"
+      ],
+      "confirmed_tickers": [
+        "CAT"
+      ],
+      "hours_ago": 1.0,
+      "url": "https://finnhub.io/api/news?id=320da3d3973e6d3bdcd1cc79b9a75b0281bbd52cc3563606e540090e47e4930d",
+      "is_news": true
+    },
+    {
+      "id": "141108188",
+      "title": "Tuesday's pre-market session: top gainers and losers in the S&P500 index",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "PLTR"
+      ],
+      "confirmed_tickers": [
+        "PLTR"
+      ],
+      "hours_ago": 1.0,
+      "url": "https://finnhub.io/api/news?id=320da3d3973e6d3bdcd1cc79b9a75b0281bbd52cc3563606e540090e47e4930d",
+      "is_news": true
+    },
+    {
+      "id": "141107782",
+      "title": "Did Palantir's Big Q2 Beat Slay Worries Over OpenAI, Anthropic?",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "PLTR"
+      ],
+      "confirmed_tickers": [
+        "PLTR"
+      ],
+      "hours_ago": 1.7,
+      "url": "https://finnhub.io/api/news?id=a54e3f67b0e0b8046f682e32b7994ca93e5cd1b62b873e4ee90194bedfc1df72",
+      "is_news": true
+    },
+    {
+      "id": "141107802",
+      "title": "Skye Anderson Appointed President of McDonald\u2019s USA",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MCD"
+      ],
+      "confirmed_tickers": [
+        "MCD"
+      ],
+      "hours_ago": 1.8,
+      "url": "https://finnhub.io/api/news?id=06a9efc564e15ee3e1c4b7b36dfd02f1db998bc985a81153cac331cb2e04533e",
+      "is_news": true
+    },
+    {
+      "id": "141107803",
+      "title": "McDonald\u2019s tops EPS estimates, but revenue falls short",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MCD"
+      ],
+      "confirmed_tickers": [
+        "MCD"
+      ],
+      "hours_ago": 1.9,
+      "url": "https://finnhub.io/api/news?id=5b9e6370156ea7c6a85d6721eebbe0c0d6305a8bccd4013882c9566dba448c88",
+      "is_news": true
+    },
+    {
+      "id": "141107629",
+      "title": "Dow hits record, Palantir stock jumps 16% on Q2 earnings",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "CAT"
+      ],
+      "confirmed_tickers": [
+        "CAT"
+      ],
+      "hours_ago": 2.1,
+      "url": "https://finnhub.io/api/news?id=74fc1f955e9c6d2f10baaad1479ff1bd6b23e6b22b967ce59ef2acfe22f3b39f",
+      "is_news": true
+    },
+    {
+      "id": "141107629",
+      "title": "Dow hits record, Palantir stock jumps 16% on Q2 earnings",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "PLTR"
+      ],
+      "confirmed_tickers": [
+        "PLTR"
+      ],
+      "hours_ago": 2.1,
+      "url": "https://finnhub.io/api/news?id=74fc1f955e9c6d2f10baaad1479ff1bd6b23e6b22b967ce59ef2acfe22f3b39f",
+      "is_news": true
+    },
+    {
+      "id": "141107763",
+      "title": "Caterpillar Q2 2026 earnings: record $20.5B revenue on data centers",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "CAT"
+      ],
+      "confirmed_tickers": [
+        "CAT"
+      ],
+      "hours_ago": 2.2,
+      "url": "https://finnhub.io/api/news?id=b4ce6952bb826b83114eeba40d4132100f49e91324065b24a75067f484d9af8f",
+      "is_news": true
+    },
+    {
+      "id": "141107804",
+      "title": "McDonald's posts strong second quarter profit, names new chief of US operations",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MCD"
+      ],
+      "confirmed_tickers": [
+        "MCD"
+      ],
+      "hours_ago": 2.2,
+      "url": "https://finnhub.io/api/news?id=ccf36910f165d4a330aa0325f115642cd7df2f10ba85a56b5e978340e405f71d",
+      "is_news": true
+    },
+    {
+      "id": "141107729",
+      "title": "Palantir Technologies Earnings Buoy Wall Street Pre-Bell; Asia Mixed, Europe Up",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "CAT"
+      ],
+      "confirmed_tickers": [
+        "CAT"
+      ],
+      "hours_ago": 2.3,
+      "url": "https://finnhub.io/api/news?id=1fe3c37f53ccf0db023332a8151ccefc9ee18b306784609f54ca69c090d1e07c",
+      "is_news": true
+    },
+    {
+      "id": "141107765",
+      "title": "CAT Stock Lifts Dow Jones With Massive Earnings Beat",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "CAT"
+      ],
+      "confirmed_tickers": [
+        "CAT"
+      ],
+      "hours_ago": 2.3,
+      "url": "https://finnhub.io/api/news?id=e049e8cf90ce43ebcf58bb298150223913d454d5ba69e711a75c6d2b0307b33f",
+      "is_news": true
+    },
+    {
+      "id": "141107729",
+      "title": "Palantir Technologies Earnings Buoy Wall Street Pre-Bell; Asia Mixed, Europe Up",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "PLTR"
+      ],
+      "confirmed_tickers": [
+        "PLTR"
+      ],
+      "hours_ago": 2.3,
+      "url": "https://finnhub.io/api/news?id=1fe3c37f53ccf0db023332a8151ccefc9ee18b306784609f54ca69c090d1e07c",
+      "is_news": true
+    },
+    {
+      "id": "141107805",
+      "title": "McDonald's Q2 2026 earnings: U.S. same-store sales slow, new U.S. president named",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MCD"
+      ],
+      "confirmed_tickers": [
+        "MCD"
+      ],
+      "hours_ago": 2.3,
+      "url": "https://finnhub.io/api/news?id=c4d75d9d450f23b2917b8396d57bf3ac9e76fde9cb33c04f66da90dfe603e0bf",
+      "is_news": true
+    },
+    {
+      "id": "141107704",
+      "title": "Palantir, Coherent, Lumentum, ON Semi, and More Stocks That Explain Today\u2019s Market",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "PLTR"
+      ],
+      "confirmed_tickers": [
+        "PLTR"
+      ],
+      "hours_ago": 2.4,
+      "url": "https://finnhub.io/api/news?id=07776d0236f3946f2c170f8fda0cd3fbb105c2327497b0db323a5cb8d02913cd",
+      "is_news": true
+    },
+    {
+      "id": "141107807",
+      "title": "McDONALD'S REPORTS SECOND QUARTER 2026 RESULTS",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "MCD"
+      ],
+      "confirmed_tickers": [
+        "MCD"
+      ],
+      "hours_ago": 2.6,
+      "url": "https://finnhub.io/api/news?id=0bed90375628ad6eb721f2da7f7662542df09357066f229bfdce5f1af1e94e85",
+      "is_news": true
+    }
+  ]
 }
