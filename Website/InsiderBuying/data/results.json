@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-08-04T15:19:22.028785",
-  "total_transactions": 66,
-  "date_range": "Jul 27 '26 \u2013 Jul 31 '26",
+  "scan_time": "2026-08-04T18:38:57.396722",
+  "total_transactions": 67,
+  "date_range": "Jul 27 '26 \u2013 Aug 04 '26",
   "min_value": 25000,
   "nominees": [
     {
@@ -305,6 +305,41 @@
         "$768K total"
       ],
       "story": "BBWMX \u2014 The Chairman bought, $768K total."
+    },
+    {
+      "ticker": "TTLRY",
+      "insider": "Merton Carl A",
+      "title": "Chief Financial Officer",
+      "date": "Aug 04 '26",
+      "price": 4.62,
+      "qty": 10000,
+      "value": 46200,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "TTLRY",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Merton Carl A",
+          "title": "Chief Financial Officer",
+          "date": "Aug 04 '26",
+          "price": 4.62,
+          "qty": 10000,
+          "value": 46200,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 20,
+      "tier": "W",
+      "signals": [
+        "Chief Financial Officer bought",
+        "Activity in last 3 days"
+      ],
+      "story": "TTLRY \u2014 The Chief Financial Officer bought."
     },
     {
       "ticker": "CCMCO",
@@ -1187,10 +1222,21 @@
   "tier_counts": {
     "A": 2,
     "B": 5,
-    "W": 21,
-    "total": 28
+    "W": 22,
+    "total": 29
   },
   "recent_feed": [
+    {
+      "ticker": "TTLRY",
+      "insider": "Merton Carl A",
+      "title": "Chief Financial Officer",
+      "date": "Aug 04 '26",
+      "price": 4.62,
+      "qty": 10000,
+      "value": 46200,
+      "filing": "Aug 04 01:36 PM",
+      "is_csuite": true
+    },
     {
       "ticker": "CCLB",
       "insider": "Bruno Lawrence",
@@ -1619,17 +1665,6 @@
       "value": 43784,
       "filing": "Jul 30 02:30 PM",
       "is_csuite": true
-    },
-    {
-      "ticker": "AAVBC",
-      "insider": "GILLES MICHAEL O",
-      "title": "Director",
-      "date": "May 15 '26",
-      "price": 19.04,
-      "qty": 2000,
-      "value": 38086,
-      "filing": "Jul 30 02:07 PM",
-      "is_csuite": false
     }
   ]
 }
