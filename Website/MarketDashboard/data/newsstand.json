@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-08-05T11:00:29.896861+00:00",
+  "scan_time": "2026-08-05T13:00:38.494070+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
@@ -23,19 +23,19 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "16.5",
+        "value": "16.9",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.63%",
+        "value": "4.62%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-08-05T11:00:37.396857+00:00"
+    "updated": "2026-08-05T13:00:47.574163+00:00"
   },
   "earnings": [
     {
@@ -48,28 +48,6 @@
       "hour": "amc",
       "quarter": 1,
       "year": 2027
-    },
-    {
-      "date": "2026-08-05",
-      "symbol": "PSX",
-      "eps_estimate": 7.5136,
-      "eps_actual": null,
-      "revenue_estimate": 44153338477,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-05",
-      "symbol": "LLY",
-      "eps_estimate": 6.0661,
-      "eps_actual": null,
-      "revenue_estimate": 20932741920,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
     },
     {
       "date": "2026-08-05",
@@ -95,32 +73,54 @@
     },
     {
       "date": "2026-08-05",
-      "symbol": "UBER",
-      "eps_estimate": 0.8309,
-      "eps_actual": null,
-      "revenue_estimate": 14523853276,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-05",
-      "symbol": "GLXY",
-      "eps_estimate": -0.0262,
-      "eps_actual": null,
-      "revenue_estimate": 11648716812,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-05",
       "symbol": "MELI",
       "eps_estimate": 8.8292,
       "eps_actual": null,
       "revenue_estimate": 9860200566,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "SNDK",
+      "eps_estimate": 35.1395,
+      "eps_actual": null,
+      "revenue_estimate": 8561788200,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 4,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "OXY",
+      "eps_estimate": 1.872,
+      "eps_actual": null,
+      "revenue_estimate": 7149975001,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "XYZ",
+      "eps_estimate": 0.8751,
+      "eps_actual": null,
+      "revenue_estimate": 6549900197,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "MUSA",
+      "eps_estimate": 9.8622,
+      "eps_actual": null,
+      "revenue_estimate": 6119634748,
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 2,
@@ -657,18 +657,39 @@
   ],
   "unusual_volume": [
     {
+      "ticker": "YXT",
+      "name": "Yxt.Com Group Holding Ltd ADR",
+      "price": 9.98,
+      "change_pct": 211.94,
+      "volume": "27.5M"
+    },
+    {
       "ticker": "GTE",
       "name": "Gran Tierra Energy Inc",
-      "price": 10.0,
-      "change_pct": 46.41,
-      "volume": "4.0M"
+      "price": 10.2,
+      "change_pct": 49.34,
+      "volume": "6.2M"
     },
     {
       "ticker": "JLHL",
       "name": "Julong Holding Ltd",
-      "price": 7.35,
-      "change_pct": 35.64,
-      "volume": "2.9M"
+      "price": 7.01,
+      "change_pct": 29.34,
+      "volume": "3.4M"
+    },
+    {
+      "ticker": "DBGI",
+      "name": "Digital Brands Group Inc",
+      "price": 37.49,
+      "change_pct": 73.32,
+      "volume": "1.1M"
+    },
+    {
+      "ticker": "SHPU",
+      "name": "Direxion Daily SHOP Bull 2X ETF",
+      "price": 17.73,
+      "change_pct": 41.84,
+      "volume": "673K"
     },
     {
       "ticker": "EWJV",
@@ -676,6 +697,13 @@
       "price": 47.13,
       "change_pct": 0.89,
       "volume": "384K"
+    },
+    {
+      "ticker": "ELIL",
+      "name": "Direxion Daily LLY Bull 2X ETF",
+      "price": 28.88,
+      "change_pct": 8.74,
+      "volume": "168K"
     }
   ]
 }
