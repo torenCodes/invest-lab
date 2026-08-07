@@ -1,25 +1,65 @@
 {
-  "scan_time": "2026-08-07T13:35:31.539238+00:00",
+  "scan_time": "2026-08-07T14:10:11.293843+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 21,
   "day_trades": [
     {
+      "ticker": "TEAM",
+      "name": "Atlassian Corp",
+      "sector": "Technology",
+      "current_price": 149.57,
+      "change_pct": 35.7629,
+      "high": 151.37,
+      "low": 141.51,
+      "open": 144.9825,
+      "prev_close": 110.17,
+      "score": 58,
+      "signals": [
+        "Top gainer (+35.8%)",
+        "High volume",
+        "Strong move (+35.8%)",
+        "Trending buzz (15)",
+        "Yahoo trending (#6)",
+        "Closing strong",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 15,
+      "market_cap": 27957605482.109688,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950834860636.png",
+      "weburl": "https://www.atlassian.com/",
+      "yahoo_trending_rank": 6,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 1.87,
+          "estimate": 1.53,
+          "beat": true,
+          "surprise_pct": 22.0
+        }
+      },
+      "score_normalized": 82
+    },
+    {
       "ticker": "AAOI",
       "name": "Applied Optoelectronics Inc",
       "sector": "Communications",
-      "current_price": 133.1,
-      "change_pct": 7.1486,
-      "high": 145.1,
-      "low": 131.36,
-      "open": 142.48999999999998,
+      "current_price": 143.74,
+      "change_pct": 15.7141,
+      "high": 145.98,
+      "low": 130.5,
+      "open": 139.635,
       "prev_close": 124.22,
-      "score": 50,
+      "score": 53,
       "signals": [
-        "Top gainer (+7.1%)",
+        "Top gainer (+15.7%)",
         "High volume",
-        "Strong move (+7.1%)",
+        "Strong move (+15.7%)",
         "Trending buzz (18)",
-        "Yahoo trending (#3)"
+        "Yahoo trending (#3)",
+        "Closing strong"
       ],
       "reddit_mentions": 18,
       "market_cap": 9967756369.368856,
@@ -38,23 +78,61 @@
           "surprise_pct": 292.2
         }
       },
-      "score_normalized": 70
+      "score_normalized": 75
+    },
+    {
+      "ticker": "OKLO",
+      "name": "Oklo Inc",
+      "sector": "Utilities",
+      "current_price": 44.91,
+      "change_pct": 6.447,
+      "high": 46,
+      "low": 43.64,
+      "open": 43.64,
+      "prev_close": 42.19,
+      "score": 53,
+      "signals": [
+        "Top gainer (+6.4%)",
+        "High volume",
+        "Strong move (+6.4%)",
+        "Trending buzz (19)",
+        "Yahoo trending (#2)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 19,
+      "market_cap": 7340679819.913699,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950800337796.png",
+      "weburl": "https://oklo.com/",
+      "yahoo_trending_rank": 2,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": -0.28,
+          "estimate": -0.16,
+          "beat": false,
+          "surprise_pct": -70.6
+        }
+      },
+      "score_normalized": 75
     },
     {
       "ticker": "DOCS",
       "name": "Doximity Inc",
       "sector": "Health Care",
-      "current_price": 37.16,
-      "change_pct": 79.8645,
+      "current_price": 32.87,
+      "change_pct": 59.0997,
       "high": 40,
-      "low": 36.7425,
+      "low": 31.5,
       "open": 36.7425,
       "prev_close": 20.66,
       "score": 50,
       "signals": [
-        "Top gainer (+79.9%)",
+        "Top gainer (+59.1%)",
         "High volume",
-        "Strong move (+79.9%)",
+        "Strong move (+59.1%)",
         "Trending buzz (16)",
         "Yahoo trending (#5)"
       ],
@@ -78,133 +156,20 @@
       "score_normalized": 70
     },
     {
-      "ticker": "OKLO",
-      "name": "Oklo Inc",
-      "sector": "Utilities",
-      "current_price": 44.98,
-      "change_pct": 6.6129,
-      "high": 46,
-      "low": 44.23,
-      "open": 44.3,
-      "prev_close": 42.19,
-      "score": 50,
-      "signals": [
-        "Top gainer (+6.6%)",
-        "High volume",
-        "Strong move (+6.6%)",
-        "Trending buzz (19)",
-        "Yahoo trending (#2)"
-      ],
-      "reddit_mentions": 19,
-      "market_cap": 7340679819.913699,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950800337796.png",
-      "weburl": "https://oklo.com/",
-      "yahoo_trending_rank": 2,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": -0.28,
-          "estimate": -0.16,
-          "beat": false,
-          "surprise_pct": -70.6
-        }
-      },
-      "score_normalized": 70
-    },
-    {
-      "ticker": "MP",
-      "name": "MP Materials Corp",
-      "sector": "Metals & Mining",
-      "current_price": 50.19,
-      "change_pct": 5.6854,
-      "high": 51.3,
-      "low": 48.17,
-      "open": 49.59,
-      "prev_close": 47.49,
-      "score": 44,
-      "signals": [
-        "Top gainer (+5.7%)",
-        "High volume",
-        "Strong move (+5.7%)",
-        "Trending activity (5)",
-        "Yahoo trending (#16)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 5,
-      "market_cap": 8454274324.587979,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MP.png",
-      "weburl": "https://mpmaterials.com/",
-      "yahoo_trending_rank": 16,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": -0.01,
-          "estimate": -0.0,
-          "beat": false,
-          "surprise_pct": -127.3
-        }
-      },
-      "score_normalized": 62
-    },
-    {
-      "ticker": "WEN",
-      "name": "Wendy's Co",
-      "sector": "Hotels, Restaurants & Leisure",
-      "current_price": 7.55,
-      "change_pct": 2.1651,
-      "high": 7.7299999999999995,
-      "low": 7.06,
-      "open": 7.355,
-      "prev_close": 7.39,
-      "score": 43,
-      "signals": [
-        "Top gainer (+2.2%)",
-        "High volume",
-        "Moderate move (+2.2%)",
-        "Trending buzz (13)",
-        "Yahoo trending (#8)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 13,
-      "market_cap": 1401940000.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/WEN.png",
-      "weburl": "https://www.wendys.com/",
-      "yahoo_trending_rank": 8,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.18,
-          "estimate": 0.17,
-          "beat": true,
-          "surprise_pct": 9.0
-        }
-      },
-      "score_normalized": 61
-    },
-    {
       "ticker": "DSY",
       "name": "Big Tree Cloud Holdings Ltd",
       "sector": "Consumer products",
-      "current_price": 5.44,
-      "change_pct": 57.6812,
-      "high": 6.08,
-      "low": 5.4215,
-      "open": 6.04,
+      "current_price": 5.83,
+      "change_pct": 68.9855,
+      "high": 6.33,
+      "low": 5.32,
+      "open": 6.32,
       "prev_close": 3.45,
       "score": 41,
       "signals": [
-        "Top gainer (+57.7%)",
+        "Top gainer (+69.0%)",
         "High volume",
-        "Strong move (+57.7%)",
+        "Strong move (+69.0%)",
         "Trending activity (9)",
         "Yahoo trending (#12)"
       ],
@@ -220,101 +185,24 @@
         "recent": null
       },
       "score_normalized": 58
-    }
-  ],
-  "swing_trades": [
-    {
-      "ticker": "AAOI",
-      "name": "Applied Optoelectronics Inc",
-      "sector": "Communications",
-      "current_price": 133.1,
-      "change_pct": 7.1486,
-      "high": 145.1,
-      "low": 131.36,
-      "open": 142.48999999999998,
-      "prev_close": 124.22,
-      "score": 50,
-      "signals": [
-        "Top gainer (+7.1%)",
-        "High volume",
-        "Strong move (+7.1%)",
-        "Trending buzz (18)",
-        "Yahoo trending (#3)"
-      ],
-      "reddit_mentions": 18,
-      "market_cap": 9967756369.368856,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AAOI.png",
-      "weburl": "https://ao-inc.com/",
-      "yahoo_trending_rank": 3,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.06,
-          "estimate": 0.02,
-          "beat": true,
-          "surprise_pct": 292.2
-        }
-      },
-      "score_normalized": 70
-    },
-    {
-      "ticker": "OKLO",
-      "name": "Oklo Inc",
-      "sector": "Utilities",
-      "current_price": 44.98,
-      "change_pct": 6.6129,
-      "high": 46,
-      "low": 44.23,
-      "open": 44.3,
-      "prev_close": 42.19,
-      "score": 50,
-      "signals": [
-        "Top gainer (+6.6%)",
-        "High volume",
-        "Strong move (+6.6%)",
-        "Trending buzz (19)",
-        "Yahoo trending (#2)"
-      ],
-      "reddit_mentions": 19,
-      "market_cap": 7340679819.913699,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950800337796.png",
-      "weburl": "https://oklo.com/",
-      "yahoo_trending_rank": 2,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": -0.28,
-          "estimate": -0.16,
-          "beat": false,
-          "surprise_pct": -70.6
-        }
-      },
-      "score_normalized": 70
     },
     {
       "ticker": "MP",
       "name": "MP Materials Corp",
       "sector": "Metals & Mining",
-      "current_price": 50.19,
-      "change_pct": 5.6854,
+      "current_price": 48.65,
+      "change_pct": 2.4426,
       "high": 51.3,
       "low": 48.17,
       "open": 49.59,
       "prev_close": 47.49,
-      "score": 44,
+      "score": 31,
       "signals": [
-        "Top gainer (+5.7%)",
+        "Top gainer (+2.4%)",
         "High volume",
-        "Strong move (+5.7%)",
+        "Moderate move (+2.4%)",
         "Trending activity (5)",
-        "Yahoo trending (#16)",
-        "Closing strong"
+        "Yahoo trending (#16)"
       ],
       "reddit_mentions": 5,
       "market_cap": 8454274324.587979,
@@ -333,25 +221,131 @@
           "surprise_pct": -127.3
         }
       },
-      "score_normalized": 62
+      "score_normalized": 44
+    }
+  ],
+  "swing_trades": [
+    {
+      "ticker": "OKLO",
+      "name": "Oklo Inc",
+      "sector": "Utilities",
+      "current_price": 44.91,
+      "change_pct": 6.447,
+      "high": 46,
+      "low": 43.64,
+      "open": 43.64,
+      "prev_close": 42.19,
+      "score": 53,
+      "signals": [
+        "Top gainer (+6.4%)",
+        "High volume",
+        "Strong move (+6.4%)",
+        "Trending buzz (19)",
+        "Yahoo trending (#2)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 19,
+      "market_cap": 7340679819.913699,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950800337796.png",
+      "weburl": "https://oklo.com/",
+      "yahoo_trending_rank": 2,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": -0.28,
+          "estimate": -0.16,
+          "beat": false,
+          "surprise_pct": -70.6
+        }
+      },
+      "score_normalized": 75
+    },
+    {
+      "ticker": "TTWO",
+      "name": "Take-Two Interactive Software Inc",
+      "sector": "Media",
+      "current_price": 235.01,
+      "change_pct": 1.0926,
+      "high": 240,
+      "low": 231.068,
+      "open": 235.995,
+      "prev_close": 232.47,
+      "score": 35,
+      "signals": [
+        "Top gainer (+1.1%)",
+        "High volume",
+        "Trending buzz (11)",
+        "Yahoo trending (#10)"
+      ],
+      "reddit_mentions": 11,
+      "market_cap": 43467343153.59967,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/TTWO.png",
+      "weburl": "https://www.take2games.com/",
+      "yahoo_trending_rank": 10,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 49
+    },
+    {
+      "ticker": "MP",
+      "name": "MP Materials Corp",
+      "sector": "Metals & Mining",
+      "current_price": 48.65,
+      "change_pct": 2.4426,
+      "high": 51.3,
+      "low": 48.17,
+      "open": 49.59,
+      "prev_close": 47.49,
+      "score": 31,
+      "signals": [
+        "Top gainer (+2.4%)",
+        "High volume",
+        "Moderate move (+2.4%)",
+        "Trending activity (5)",
+        "Yahoo trending (#16)"
+      ],
+      "reddit_mentions": 5,
+      "market_cap": 8454274324.587979,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MP.png",
+      "weburl": "https://mpmaterials.com/",
+      "yahoo_trending_rank": 16,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": -0.01,
+          "estimate": -0.0,
+          "beat": false,
+          "surprise_pct": -127.3
+        }
+      },
+      "score_normalized": 44
     },
     {
       "ticker": "MSTR",
       "name": "Strategy Inc",
       "sector": "Technology",
-      "current_price": 101.95,
-      "change_pct": 5.2659,
-      "high": 102.35,
+      "current_price": 100.46,
+      "change_pct": 3.7274,
+      "high": 104.46,
       "low": 99.3025,
       "open": 99.3025,
       "prev_close": 96.85,
-      "score": 39,
+      "score": 31,
       "signals": [
-        "Top gainer (+5.3%)",
+        "Top gainer (+3.7%)",
         "High volume",
-        "Strong move (+5.3%)",
-        "Yahoo trending (#18)",
-        "Closing strong"
+        "Good move (+3.7%)",
+        "Yahoo trending (#18)"
       ],
       "reddit_mentions": 3,
       "market_cap": 37212241707.107346,
@@ -370,43 +364,7 @@
           "surprise_pct": -223.0
         }
       },
-      "score_normalized": 55
-    },
-    {
-      "ticker": "INOD",
-      "name": "Innodata Inc",
-      "sector": "Professional Services",
-      "current_price": 71.35,
-      "change_pct": 8.9646,
-      "high": 79.45,
-      "low": 69.7764,
-      "open": 75.16,
-      "prev_close": 65.48,
-      "score": 36,
-      "signals": [
-        "Top gainer (+9.0%)",
-        "High volume",
-        "Strong move (+9.0%)",
-        "Yahoo trending (#20)"
-      ],
-      "reddit_mentions": 1,
-      "market_cap": 2138272884.8262937,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942959068086.png",
-      "weburl": "https://innodata.com/",
-      "yahoo_trending_rank": 20,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.41,
-          "estimate": 0.22,
-          "beat": true,
-          "surprise_pct": 89.6
-        }
-      },
-      "score_normalized": 51
+      "score_normalized": 44
     }
   ],
   "buzz_source": "trending",
@@ -416,9 +374,9 @@
       "mentions": 20,
       "name": "Trade Desk Inc",
       "sector": "Media",
-      "current_price": 13.17,
-      "change_pct": -25.4669,
-      "high": 13.51,
+      "current_price": 14.09,
+      "change_pct": -20.2603,
+      "high": 14.1,
       "low": 12.83,
       "open": 12.955,
       "prev_close": 17.67,
@@ -433,9 +391,9 @@
       "is_active": false,
       "yahoo_trending_rank": 1,
       "social": {
-        "trend_pct": 9400,
-        "reddit": 95,
-        "st_bull": 86,
+        "trend_pct": 9600,
+        "reddit": 97,
+        "st_bull": 93,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -458,19 +416,20 @@
       "ticker": "OKLO",
       "name": "Oklo Inc",
       "sector": "Utilities",
-      "current_price": 44.98,
-      "change_pct": 6.6129,
+      "current_price": 44.91,
+      "change_pct": 6.447,
       "high": 46,
-      "low": 44.23,
-      "open": 44.3,
+      "low": 43.64,
+      "open": 43.64,
       "prev_close": 42.19,
-      "score": 50,
+      "score": 53,
       "signals": [
-        "Top gainer (+6.6%)",
+        "Top gainer (+6.4%)",
         "High volume",
-        "Strong move (+6.6%)",
+        "Strong move (+6.4%)",
         "Trending buzz (19)",
-        "Yahoo trending (#2)"
+        "Yahoo trending (#2)",
+        "Closing strong"
       ],
       "reddit_mentions": 19,
       "market_cap": 7340679819.913699,
@@ -481,9 +440,9 @@
       "yahoo_trending_rank": 2,
       "mentions": 19,
       "social": {
-        "trend_pct": 18,
+        "trend_pct": 0,
         "reddit": 19,
-        "st_bull": 67,
+        "st_bull": 92,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -500,25 +459,26 @@
           "surprise_pct": -70.6
         }
       },
-      "score_normalized": 70
+      "score_normalized": 75
     },
     {
       "ticker": "AAOI",
       "name": "Applied Optoelectronics Inc",
       "sector": "Communications",
-      "current_price": 133.1,
-      "change_pct": 7.1486,
-      "high": 145.1,
-      "low": 131.36,
-      "open": 142.48999999999998,
+      "current_price": 143.74,
+      "change_pct": 15.7141,
+      "high": 145.98,
+      "low": 130.5,
+      "open": 139.635,
       "prev_close": 124.22,
-      "score": 50,
+      "score": 53,
       "signals": [
-        "Top gainer (+7.1%)",
+        "Top gainer (+15.7%)",
         "High volume",
-        "Strong move (+7.1%)",
+        "Strong move (+15.7%)",
         "Trending buzz (18)",
-        "Yahoo trending (#3)"
+        "Yahoo trending (#3)",
+        "Closing strong"
       ],
       "reddit_mentions": 18,
       "market_cap": 9967756369.368856,
@@ -529,9 +489,9 @@
       "yahoo_trending_rank": 3,
       "mentions": 18,
       "social": {
-        "trend_pct": 247,
-        "reddit": 52,
-        "st_bull": 75,
+        "trend_pct": 260,
+        "reddit": 54,
+        "st_bull": 71,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -548,24 +508,24 @@
           "surprise_pct": 292.2
         }
       },
-      "score_normalized": 70
+      "score_normalized": 75
     },
     {
       "ticker": "HTZ",
       "name": "Hertz Global Holdings Inc",
       "sector": "Road & Rail",
-      "current_price": 2.29,
-      "change_pct": 13.3663,
+      "current_price": 2.42,
+      "change_pct": 19.802,
       "market_cap": 712659154.3076924,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 2260,
+      "mentions": 2427,
       "social": {
-        "trend_pct": 5281,
-        "reddit": 2260,
+        "trend_pct": 4479,
+        "reddit": 2427,
         "st_bull": 94,
         "st_msgs": 30,
         "sources": [
@@ -589,18 +549,18 @@
       "ticker": "SPCX",
       "name": "Space Exploration Technologies Corp",
       "sector": "Telecommunication",
-      "current_price": 118.89,
-      "change_pct": 3.4546,
+      "current_price": 122.86,
+      "change_pct": 6.9092,
       "market_cap": 1510094373276.8132,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 294,
+      "mentions": 279,
       "social": {
-        "trend_pct": -28,
-        "reddit": 294,
+        "trend_pct": -38,
+        "reddit": 279,
         "sources": [
           "Reddit"
         ]
@@ -621,18 +581,18 @@
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "current_price": 889.58,
-      "change_pct": 0.9201,
+      "current_price": 856.66,
+      "change_pct": -2.8146,
       "market_cap": 995526108966.5349,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 219,
+      "mentions": 220,
       "social": {
-        "trend_pct": -36,
-        "reddit": 219,
+        "trend_pct": -31,
+        "reddit": 220,
         "sources": [
           "Reddit"
         ]
@@ -655,33 +615,33 @@
       "ticker": "HTZ",
       "name": "Hertz Global Holdings Inc",
       "sector": "Road & Rail",
-      "mentions": 2260,
-      "prev": 42,
-      "trend_pct": 5281,
-      "current_price": 2.29,
-      "change_pct": 13.3663,
+      "mentions": 2427,
+      "prev": 53,
+      "trend_pct": 4479,
+      "current_price": 2.42,
+      "change_pct": 19.802,
       "market_cap": 712659154.3076924
     },
     {
       "ticker": "NBIS",
       "name": "Nebius Group NV",
       "sector": "Technology",
-      "mentions": 89,
-      "prev": 28,
-      "trend_pct": 218,
-      "current_price": 191.31,
-      "change_pct": 0.7531,
+      "mentions": 96,
+      "prev": 25,
+      "trend_pct": 284,
+      "current_price": 182.16,
+      "change_pct": -4.0657,
       "market_cap": 47783386190.91392
     },
     {
       "ticker": "AAOI",
       "name": "Applied Optoelectronics Inc",
       "sector": "Communications",
-      "mentions": 52,
+      "mentions": 54,
       "prev": 15,
-      "trend_pct": 247,
-      "current_price": 133.1,
-      "change_pct": 7.1486,
+      "trend_pct": 260,
+      "current_price": 143.74,
+      "change_pct": 15.7141,
       "market_cap": 9967756369.368856
     }
   ],
@@ -690,14 +650,14 @@
       {
         "ticker": "XLE",
         "sector": "Energy",
-        "ret_1d": -1.17,
-        "ret_5d": -3.48,
-        "ret_1m": 4.85,
-        "ret_3m": 3.47,
+        "ret_1d": -1.24,
+        "ret_5d": -3.54,
+        "ret_1m": 4.78,
+        "ret_3m": 3.4,
         "rel_1d": -1.5,
-        "rel_5d": -6.71,
+        "rel_5d": -6.69,
         "rel_1m": 2.27,
-        "rel_3m": -2.21,
+        "rel_3m": -2.2,
         "rvol": 0.84,
         "rrg": {
           "x": 99.6,
@@ -740,18 +700,18 @@
       {
         "ticker": "XLB",
         "sector": "Materials",
-        "ret_1d": 0.21,
-        "ret_5d": 3.67,
-        "ret_1m": 4.02,
-        "ret_3m": 2.09,
-        "rel_1d": -0.12,
-        "rel_5d": 0.44,
-        "rel_1m": 1.44,
-        "rel_3m": -3.59,
+        "ret_1d": 0.89,
+        "ret_5d": 4.37,
+        "ret_1m": 4.73,
+        "ret_3m": 2.79,
+        "rel_1d": 0.63,
+        "rel_5d": 1.22,
+        "rel_1m": 2.22,
+        "rel_3m": -2.81,
         "rvol": 0.81,
         "rrg": {
-          "x": 99.35,
-          "y": 100.1,
+          "x": 99.78,
+          "y": 100.47,
           "quadrant": "Improving",
           "tail": [
             {
@@ -779,8 +739,8 @@
               "y": 97.64
             },
             {
-              "x": 99.35,
-              "y": 100.1
+              "x": 99.78,
+              "y": 100.47
             }
           ]
         },
@@ -788,8 +748,8 @@
           {
             "ticker": "MP",
             "name": "MP Materials Corp",
-            "change_pct": 5.6854,
-            "price": 50.19
+            "change_pct": 2.4426,
+            "price": 48.65
           }
         ],
         "rotation": 0
@@ -797,18 +757,18 @@
       {
         "ticker": "XLF",
         "sector": "Financials",
-        "ret_1d": -0.68,
-        "ret_5d": 0.83,
-        "ret_1m": 3.38,
-        "ret_3m": 11.77,
-        "rel_1d": -1.01,
-        "rel_5d": -2.4,
-        "rel_1m": 0.8,
-        "rel_3m": 6.09,
+        "ret_1d": -0.29,
+        "ret_5d": 1.24,
+        "ret_1m": 3.79,
+        "ret_3m": 12.22,
+        "rel_1d": -0.55,
+        "rel_5d": -1.91,
+        "rel_1m": 1.28,
+        "rel_3m": 6.62,
         "rvol": 0.83,
         "rrg": {
-          "x": 100.42,
-          "y": 98.53,
+          "x": 100.55,
+          "y": 98.7,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -836,80 +796,30 @@
               "y": 98.69
             },
             {
-              "x": 100.42,
-              "y": 98.53
+              "x": 100.55,
+              "y": 98.7
             }
           ]
         },
         "top_stocks": [],
-        "rotation": -3
-      },
-      {
-        "ticker": "XLI",
-        "sector": "Industrials",
-        "ret_1d": 0.06,
-        "ret_5d": 2.79,
-        "ret_1m": 2.07,
-        "ret_3m": 6.51,
-        "rel_1d": -0.27,
-        "rel_5d": -0.44,
-        "rel_1m": -0.51,
-        "rel_3m": 0.83,
-        "rvol": 0.82,
-        "rrg": {
-          "x": 99.85,
-          "y": 99.34,
-          "quadrant": "Lagging",
-          "tail": [
-            {
-              "x": 102.38,
-              "y": 101.71
-            },
-            {
-              "x": 101.53,
-              "y": 98.05
-            },
-            {
-              "x": 100.51,
-              "y": 98.13
-            },
-            {
-              "x": 100.57,
-              "y": 99.78
-            },
-            {
-              "x": 101.39,
-              "y": 100.78
-            },
-            {
-              "x": 100.19,
-              "y": 98.08
-            },
-            {
-              "x": 99.85,
-              "y": 99.34
-            }
-          ]
-        },
-        "top_stocks": [],
-        "rotation": 1
+        "rotation": -4
       },
       {
         "ticker": "XLY",
         "sector": "Cons. Discretionary",
-        "ret_1d": 0.73,
-        "ret_5d": 2.47,
-        "ret_1m": 1.81,
-        "ret_3m": -0.57,
-        "rel_1d": 0.4,
-        "rel_5d": -0.76,
-        "rel_1m": -0.77,
-        "rel_3m": -6.25,
+        "ret_1d": 1.29,
+        "ret_5d": 3.04,
+        "ret_1m": 2.37,
+        "ret_3m": -0.02,
+        "rel_1d": 1.03,
+        "rel_5d": -0.11,
+        "rel_1m": -0.14,
+        "rel_3m": -5.62,
         "rvol": 0.59,
         "rrg": {
-          "x": 99.61,
-          "y": 99.65,
-          "quadrant": "Lagging",
+          "x": 99.98,
+          "y": 100.03,
+          "quadrant": "Improving",
           "tail": [
             {
               "x": 98.63,
@@ -936,8 +846,8 @@
               "y": 102.79
             },
             {
-              "x": 99.61,
-              "y": 99.65
+              "x": 99.98,
+              "y": 100.03
             }
           ]
         },
@@ -945,108 +855,39 @@
           {
             "ticker": "HCWC",
             "name": "Healthy Choice Wellness Corp",
-            "change_pct": 70.5,
-            "price": 0.341
+            "change_pct": 128.5,
+            "price": 0.457
           },
           {
             "ticker": "ABNB",
             "name": "Airbnb Inc",
-            "change_pct": 12.7341,
-            "price": 170.95
+            "change_pct": 15.9654,
+            "price": 175.85
           },
           {
             "ticker": "WEN",
             "name": "Wendy's Co",
-            "change_pct": 2.1651,
-            "price": 7.55
+            "change_pct": 1.3532,
+            "price": 7.49
           }
         ],
         "rotation": 1
       },
       {
-        "ticker": "XLK",
-        "sector": "Technology",
-        "ret_1d": 1.51,
-        "ret_5d": 7.28,
-        "ret_1m": 1.49,
-        "ret_3m": 10.99,
-        "rel_1d": 1.18,
-        "rel_5d": 4.05,
-        "rel_1m": -1.09,
-        "rel_3m": 5.31,
-        "rvol": 0.73,
-        "rrg": {
-          "x": 99.8,
-          "y": 101.97,
-          "quadrant": "Improving",
-          "tail": [
-            {
-              "x": 100.92,
-              "y": 99.83
-            },
-            {
-              "x": 100.02,
-              "y": 98.75
-            },
-            {
-              "x": 100.18,
-              "y": 100.76
-            },
-            {
-              "x": 98.67,
-              "y": 97.95
-            },
-            {
-              "x": 98.79,
-              "y": 100.81
-            },
-            {
-              "x": 98.54,
-              "y": 100.18
-            },
-            {
-              "x": 99.8,
-              "y": 101.97
-            }
-          ]
-        },
-        "top_stocks": [
-          {
-            "ticker": "TEAM",
-            "name": "Atlassian Corp",
-            "change_pct": 36.4981,
-            "price": 150.38
-          },
-          {
-            "ticker": "TWLO",
-            "name": "Twilio Inc",
-            "change_pct": 23.5611,
-            "price": 238.72
-          },
-          {
-            "ticker": "NET",
-            "name": "Cloudflare Inc",
-            "change_pct": 12.2385,
-            "price": 319.24
-          }
-        ],
-        "rotation": 5
-      },
-      {
         "ticker": "XLP",
         "sector": "Cons. Staples",
-        "ret_1d": -0.79,
-        "ret_5d": -0.72,
-        "ret_1m": 1.49,
-        "ret_3m": 1.25,
-        "rel_1d": -1.12,
-        "rel_5d": -3.95,
-        "rel_1m": -1.09,
-        "rel_3m": -4.43,
+        "ret_1d": -0.22,
+        "ret_5d": -0.15,
+        "ret_1m": 2.07,
+        "ret_3m": 1.82,
+        "rel_1d": -0.48,
+        "rel_5d": -3.3,
+        "rel_1m": -0.44,
+        "rel_3m": -3.78,
         "rvol": 0.74,
         "rrg": {
-          "x": 98.76,
-          "y": 98.71,
+          "x": 99.02,
+          "y": 98.9,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1074,29 +915,29 @@
               "y": 99.65
             },
             {
-              "x": 98.76,
-              "y": 98.71
+              "x": 99.02,
+              "y": 98.9
             }
           ]
         },
         "top_stocks": [],
-        "rotation": -2
+        "rotation": -4
       },
       {
         "ticker": "XLRE",
         "sector": "Real Estate",
-        "ret_1d": -0.04,
-        "ret_5d": -0.62,
-        "ret_1m": 1.27,
-        "ret_3m": 1.76,
-        "rel_1d": -0.37,
-        "rel_5d": -3.85,
-        "rel_1m": -1.31,
-        "rel_3m": -3.92,
+        "ret_1d": 0.59,
+        "ret_5d": 0.01,
+        "ret_1m": 1.91,
+        "ret_3m": 2.41,
+        "rel_1d": 0.33,
+        "rel_5d": -3.14,
+        "rel_1m": -0.6,
+        "rel_3m": -3.19,
         "rvol": 1.03,
         "rrg": {
-          "x": 98.79,
-          "y": 98.86,
+          "x": 99.08,
+          "y": 99.05,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1124,29 +965,79 @@
               "y": 98.15
             },
             {
-              "x": 98.79,
-              "y": 98.86
+              "x": 99.08,
+              "y": 99.05
             }
           ]
         },
         "top_stocks": [],
-        "rotation": 0
+        "rotation": -2
+      },
+      {
+        "ticker": "XLI",
+        "sector": "Industrials",
+        "ret_1d": -0.15,
+        "ret_5d": 2.58,
+        "ret_1m": 1.86,
+        "ret_3m": 6.28,
+        "rel_1d": -0.41,
+        "rel_5d": -0.57,
+        "rel_1m": -0.65,
+        "rel_3m": 0.68,
+        "rvol": 0.82,
+        "rrg": {
+          "x": 99.79,
+          "y": 99.27,
+          "quadrant": "Lagging",
+          "tail": [
+            {
+              "x": 102.38,
+              "y": 101.71
+            },
+            {
+              "x": 101.53,
+              "y": 98.05
+            },
+            {
+              "x": 100.51,
+              "y": 98.13
+            },
+            {
+              "x": 100.57,
+              "y": 99.78
+            },
+            {
+              "x": 101.39,
+              "y": 100.78
+            },
+            {
+              "x": 100.19,
+              "y": 98.08
+            },
+            {
+              "x": 99.79,
+              "y": 99.27
+            }
+          ]
+        },
+        "top_stocks": [],
+        "rotation": 3
       },
       {
         "ticker": "XLV",
         "sector": "Health Care",
-        "ret_1d": -0.86,
-        "ret_5d": 0.3,
-        "ret_1m": 0.54,
-        "ret_3m": 13.16,
-        "rel_1d": -1.19,
-        "rel_5d": -2.93,
-        "rel_1m": -2.04,
-        "rel_3m": 7.48,
+        "ret_1d": 0.19,
+        "ret_5d": 1.36,
+        "ret_1m": 1.6,
+        "ret_3m": 14.35,
+        "rel_1d": -0.07,
+        "rel_5d": -1.79,
+        "rel_1m": -0.91,
+        "rel_3m": 8.75,
         "rvol": 0.95,
         "rrg": {
-          "x": 100.04,
-          "y": 99.12,
+          "x": 100.33,
+          "y": 99.37,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -1174,8 +1065,8 @@
               "y": 99.04
             },
             {
-              "x": 100.04,
-              "y": 99.12
+              "x": 100.33,
+              "y": 99.37
             }
           ]
         },
@@ -1183,27 +1074,96 @@
           {
             "ticker": "DOCS",
             "name": "Doximity Inc",
-            "change_pct": 79.8645,
-            "price": 37.16
+            "change_pct": 59.0997,
+            "price": 32.87
           }
         ],
         "rotation": 2
       },
       {
+        "ticker": "XLK",
+        "sector": "Technology",
+        "ret_1d": 0.64,
+        "ret_5d": 6.36,
+        "ret_1m": 0.63,
+        "ret_3m": 10.04,
+        "rel_1d": 0.38,
+        "rel_5d": 3.21,
+        "rel_1m": -1.88,
+        "rel_3m": 4.44,
+        "rvol": 0.73,
+        "rrg": {
+          "x": 99.55,
+          "y": 101.68,
+          "quadrant": "Improving",
+          "tail": [
+            {
+              "x": 100.92,
+              "y": 99.83
+            },
+            {
+              "x": 100.02,
+              "y": 98.75
+            },
+            {
+              "x": 100.18,
+              "y": 100.76
+            },
+            {
+              "x": 98.67,
+              "y": 97.95
+            },
+            {
+              "x": 98.79,
+              "y": 100.81
+            },
+            {
+              "x": 98.54,
+              "y": 100.18
+            },
+            {
+              "x": 99.55,
+              "y": 101.68
+            }
+          ]
+        },
+        "top_stocks": [
+          {
+            "ticker": "TEAM",
+            "name": "Atlassian Corp",
+            "change_pct": 35.7629,
+            "price": 149.57
+          },
+          {
+            "ticker": "TWLO",
+            "name": "Twilio Inc",
+            "change_pct": 24.6532,
+            "price": 240.83
+          },
+          {
+            "ticker": "NET",
+            "name": "Cloudflare Inc",
+            "change_pct": 12.1506,
+            "price": 318.99
+          }
+        ],
+        "rotation": 8
+      },
+      {
         "ticker": "XLC",
         "sector": "Comm. Services",
-        "ret_1d": -0.31,
-        "ret_5d": 2.39,
-        "ret_1m": 0.29,
-        "ret_3m": -5.33,
-        "rel_1d": -0.64,
-        "rel_5d": -0.84,
-        "rel_1m": -2.29,
-        "rel_3m": -11.01,
+        "ret_1d": -0.2,
+        "ret_5d": 2.51,
+        "ret_1m": 0.4,
+        "ret_3m": -5.23,
+        "rel_1d": -0.46,
+        "rel_5d": -0.64,
+        "rel_1m": -2.11,
+        "rel_3m": -10.83,
         "rvol": 0.61,
         "rrg": {
-          "x": 98.62,
-          "y": 99.4,
+          "x": 98.71,
+          "y": 99.54,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1231,8 +1191,8 @@
               "y": 100.41
             },
             {
-              "x": 98.62,
-              "y": 99.4
+              "x": 98.71,
+              "y": 99.54
             }
           ]
         },
@@ -1240,14 +1200,14 @@
           {
             "ticker": "AAOI",
             "name": "Applied Optoelectronics Inc",
-            "change_pct": 7.1486,
-            "price": 133.1
+            "change_pct": 15.7141,
+            "price": 143.74
           },
           {
             "ticker": "TTWO",
             "name": "Take-Two Interactive Software Inc",
-            "change_pct": 0.6797,
-            "price": 234.05
+            "change_pct": 1.0926,
+            "price": 235.01
           }
         ],
         "rotation": 5
@@ -1255,18 +1215,18 @@
       {
         "ticker": "XLU",
         "sector": "Utilities",
-        "ret_1d": -0.7,
-        "ret_5d": -2.87,
-        "ret_1m": -4.55,
-        "ret_3m": -3.92,
-        "rel_1d": -1.03,
-        "rel_5d": -6.1,
-        "rel_1m": -7.13,
-        "rel_3m": -9.6,
+        "ret_1d": -0.14,
+        "ret_5d": -2.32,
+        "ret_1m": -4.01,
+        "ret_3m": -3.38,
+        "rel_1d": -0.4,
+        "rel_5d": -5.47,
+        "rel_1m": -6.52,
+        "rel_3m": -8.98,
         "rvol": 1.42,
         "rrg": {
-          "x": 97.61,
-          "y": 98.56,
+          "x": 97.79,
+          "y": 98.71,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1294,8 +1254,8 @@
               "y": 97.0
             },
             {
-              "x": 97.61,
-              "y": 98.56
+              "x": 97.79,
+              "y": 98.71
             }
           ]
         },
@@ -1303,8 +1263,8 @@
           {
             "ticker": "OKLO",
             "name": "Oklo Inc",
-            "change_pct": 6.6129,
-            "price": 44.98
+            "change_pct": 6.447,
+            "price": 44.91
           }
         ],
         "rotation": 1
@@ -1312,7 +1272,7 @@
     ],
     "posture": {
       "label": "Risk-on",
-      "spread": 2.49,
+      "spread": 1.9,
       "leaders": [
         "Energy",
         "Materials"
@@ -1324,10 +1284,10 @@
     },
     "benchmark": {
       "ticker": "SPY",
-      "ret_1d": 0.33,
-      "ret_5d": 3.23,
-      "ret_1m": 2.58,
-      "ret_3m": 5.68
+      "ret_1d": 0.26,
+      "ret_5d": 3.15,
+      "ret_1m": 2.51,
+      "ret_3m": 5.6
     }
   },
   "reddit_feed": [
@@ -1342,7 +1302,7 @@
       "confirmed_tickers": [
         "TTD"
       ],
-      "hours_ago": 1.0,
+      "hours_ago": 1.6,
       "url": "https://finnhub.io/api/news?id=073c54ac6a5c9a52cf67af390cc14433ee433ae80c98f88141a2bf1f9b5787c4",
       "is_news": true
     },
@@ -1357,7 +1317,7 @@
       "confirmed_tickers": [
         "TTD"
       ],
-      "hours_ago": 1.1,
+      "hours_ago": 1.7,
       "url": "https://finnhub.io/api/news?id=af1f5011bfcf70a2808b7b65522732242116123315d919c8e613827b44a6506c",
       "is_news": true
     },
@@ -1372,7 +1332,7 @@
       "confirmed_tickers": [
         "OKLO"
       ],
-      "hours_ago": 1.1,
+      "hours_ago": 1.7,
       "url": "https://finnhub.io/api/news?id=3b8f2dbea905892bc72333807158f4806e51e50563ac0167e7ec29c58249ed52",
       "is_news": true
     },
@@ -1387,7 +1347,7 @@
       "confirmed_tickers": [
         "TTD"
       ],
-      "hours_ago": 1.8,
+      "hours_ago": 2.3,
       "url": "https://finnhub.io/api/news?id=075256e9cc081bcfbb1f491a3f178ac6e6ba8c327d6836f5dcd37267fb7c910a",
       "is_news": true
     },
@@ -1402,7 +1362,7 @@
       "confirmed_tickers": [
         "TTD"
       ],
-      "hours_ago": 3.3,
+      "hours_ago": 3.9,
       "url": "https://finnhub.io/api/news?id=8f86918e0e3fba61debc769c657a4a2d685f73bf0dc6d16d63962bef50fe7fc9",
       "is_news": true
     },
@@ -1417,7 +1377,7 @@
       "confirmed_tickers": [
         "TTD"
       ],
-      "hours_ago": 3.8,
+      "hours_ago": 4.3,
       "url": "https://finnhub.io/api/news?id=67639c862a17374bf42dd785ceb5a7c838f8301defb70936a22009bdbf325fe3",
       "is_news": true
     },
@@ -1432,7 +1392,7 @@
       "confirmed_tickers": [
         "AAOI"
       ],
-      "hours_ago": 14.3,
+      "hours_ago": 14.8,
       "url": "https://finnhub.io/api/news?id=d1e7841fee6ff8b5d9c216a6fc638d9b1d3e97868f18224d220646ae600b1603",
       "is_news": true
     },
@@ -1447,7 +1407,7 @@
       "confirmed_tickers": [
         "AAOI"
       ],
-      "hours_ago": 16.9,
+      "hours_ago": 17.4,
       "url": "https://finnhub.io/api/news?id=375b016fc4dc88960ae2d58d56a332c15713fa161ec25fad6554e3a60e3741e0",
       "is_news": true
     },
@@ -1462,7 +1422,7 @@
       "confirmed_tickers": [
         "AAOI"
       ],
-      "hours_ago": 24.0,
+      "hours_ago": 24.6,
       "url": "https://finnhub.io/api/news?id=013a07d85e4f3c85426ff72cc848fa41409b0b1625a99a1e77f497d82062ffd4",
       "is_news": true
     },
@@ -1477,7 +1437,7 @@
       "confirmed_tickers": [
         "AAOI"
       ],
-      "hours_ago": 26.3,
+      "hours_ago": 26.9,
       "url": "https://finnhub.io/api/news?id=30e0aee668ef461be66f68bf7cf8f9ec747c1ad03d6bbe18d4ff44e3e9cc7649",
       "is_news": true
     },
@@ -1492,7 +1452,7 @@
       "confirmed_tickers": [
         "OKLO"
       ],
-      "hours_ago": 27.4,
+      "hours_ago": 28.0,
       "url": "https://finnhub.io/api/news?id=e62bfe84f4ce20a414c0ed8a4a1ae4b840e2ef75898370159b4afbb71cd6015f",
       "is_news": true
     },
@@ -1507,7 +1467,7 @@
       "confirmed_tickers": [
         "OKLO"
       ],
-      "hours_ago": 29.3,
+      "hours_ago": 29.9,
       "url": "https://finnhub.io/api/news?id=6fc28ee48f6ea8364ce67d077c54a1ca94af89517ca2bd680fde0f7a35d400b1",
       "is_news": true
     },
@@ -1522,7 +1482,7 @@
       "confirmed_tickers": [
         "AAOI"
       ],
-      "hours_ago": 72.5,
+      "hours_ago": 73.1,
       "url": "https://finnhub.io/api/news?id=1e75316b8eb939c532758b78983ea13b40cd299b840b2f2fc41a9614b59060f3",
       "is_news": true
     },
@@ -1537,7 +1497,7 @@
       "confirmed_tickers": [
         "OKLO"
       ],
-      "hours_ago": 81.0,
+      "hours_ago": 81.6,
       "url": "https://finnhub.io/api/news?id=dccbe8bd07dfe687961013fb1957f68e29e9263ddd664c56ec2ac959f3d2884c",
       "is_news": true
     },
@@ -1552,7 +1512,7 @@
       "confirmed_tickers": [
         "OKLO"
       ],
-      "hours_ago": 126.3,
+      "hours_ago": 126.9,
       "url": "https://finnhub.io/api/news?id=6a9e8400d7341f9a25b45a9c8952c859d2f92fe0d0bc5c12a951ccc2c8e93cbf",
       "is_news": true
     }
