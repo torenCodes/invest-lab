@@ -1,6 +1,6 @@
 {
-  "scan_time": "2026-08-10T14:15:43.206874",
-  "total_transactions": 123,
+  "scan_time": "2026-08-10T17:52:47.006588",
+  "total_transactions": 126,
   "date_range": "Jul 31 '26 \u2013 Aug 07 '26",
   "min_value": 25000,
   "nominees": [
@@ -801,6 +801,42 @@
       "story": "PPFE \u2014 Two insiders bought, $2.0M total."
     },
     {
+      "ticker": "SSON",
+      "insider": "Coker R. Howard",
+      "title": "President & CEO",
+      "date": "Aug 07 '26",
+      "price": 57.41,
+      "qty": 4345,
+      "value": 249446,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "SSON",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Coker R. Howard",
+          "title": "President & CEO",
+          "date": "Aug 07 '26",
+          "price": 57.41,
+          "qty": 4345,
+          "value": 249446,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 25,
+      "tier": "B",
+      "signals": [
+        "President & CEO bought",
+        "$249K total",
+        "Activity in last 3 days"
+      ],
+      "story": "SSON \u2014 The President & CEO bought, $249K total."
+    },
+    {
       "ticker": "PPRCT",
       "insider": "Wood Larry L",
       "title": "President, CEO",
@@ -1012,6 +1048,41 @@
       "story": "HHUN \u2014 The Chairman, President  & CEO bought, $981K total."
     },
     {
+      "ticker": "VVEON",
+      "insider": "Fabela Augie K II",
+      "title": "Director",
+      "date": "Aug 07 '26",
+      "price": 56.02,
+      "qty": 20000,
+      "value": 1120053,
+      "txn_count": 2,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "VVEON",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Fabela Augie K II",
+          "title": "Director",
+          "date": "Aug 07 '26",
+          "price": 56.02,
+          "qty": 20000,
+          "value": 1120053,
+          "is_csuite": false
+        }
+      ],
+      "conviction_score": 20,
+      "tier": "W",
+      "signals": [
+        "$1.1M total",
+        "Activity in last 3 days"
+      ],
+      "story": "VVEON \u2014 Fabela Augie K II (Director) bought, $1.1M total."
+    },
+    {
       "ticker": "RREBN",
       "insider": "Lim Jung Jae",
       "title": "CEO and Interim CFO",
@@ -1164,9 +1235,9 @@
       "is_csuite": true,
       "company": "Armada Acquisition Corp. III",
       "sector": "Financial Services",
-      "current_price": 9.99,
-      "change_pct": 0,
-      "market_cap": 339958016,
+      "current_price": 10.0,
+      "change_pct": 0.1,
+      "market_cap": 340298304,
       "insiders": [
         {
           "name": "MCCOLLAM SHARON",
@@ -2195,11 +2266,44 @@
   ],
   "tier_counts": {
     "A": 4,
-    "B": 18,
-    "W": 28,
-    "total": 50
+    "B": 19,
+    "W": 29,
+    "total": 52
   },
   "recent_feed": [
+    {
+      "ticker": "VVEON",
+      "insider": "Fabela Augie K II",
+      "title": "Director",
+      "date": "Aug 07 '26",
+      "price": 56.02,
+      "qty": 5000,
+      "value": 280113,
+      "filing": "Aug 10 12:57 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "VVEON",
+      "insider": "Fabela Augie K II",
+      "title": "Director",
+      "date": "Aug 06 '26",
+      "price": 56.0,
+      "qty": 15000,
+      "value": 839940,
+      "filing": "Aug 10 12:57 PM",
+      "is_csuite": false
+    },
+    {
+      "ticker": "SSON",
+      "insider": "Coker R. Howard",
+      "title": "President & CEO",
+      "date": "Aug 07 '26",
+      "price": 57.41,
+      "qty": 4345,
+      "value": 249446,
+      "filing": "Aug 10 12:23 PM",
+      "is_csuite": true
+    },
     {
       "ticker": "BBWFG",
       "insider": "SEIDMAN LAWRENCE B",
@@ -2606,39 +2710,6 @@
       "value": 358705,
       "filing": "Aug 06 05:04 PM",
       "is_csuite": true
-    },
-    {
-      "ticker": "BBXMT",
-      "insider": "NASSAU HENRY N",
-      "title": "Director",
-      "date": "Aug 04 '26",
-      "price": 14.34,
-      "qty": 10000,
-      "value": 143357,
-      "filing": "Aug 06 04:43 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "GGVA",
-      "insider": "HERNANDEZ CARLOS M",
-      "title": "Director",
-      "date": "Aug 06 '26",
-      "price": 123.99,
-      "qty": 400,
-      "value": 49596,
-      "filing": "Aug 06 04:33 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "BBV",
-      "insider": "Cornog William L",
-      "title": "Director",
-      "date": "Aug 06 '26",
-      "price": 11.25,
-      "qty": 50000,
-      "value": 562400,
-      "filing": "Aug 06 04:30 PM",
-      "is_csuite": false
     }
   ]
 }
