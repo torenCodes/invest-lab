@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-08-10T07:00:34.510515+00:00",
+  "scan_time": "2026-08-10T09:00:30.137273+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
@@ -23,7 +23,7 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "14.9",
+        "value": "15.5",
         "read": "Calm",
         "tone": "good"
       },
@@ -35,15 +35,15 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-08-10T07:00:42.451829+00:00"
+    "updated": "2026-08-10T09:00:36.781715+00:00"
   },
   "earnings": [
     {
       "date": "2026-08-10",
       "symbol": "KSPI",
-      "eps_estimate": 1391.9175,
+      "eps_estimate": 1393.93,
       "eps_actual": null,
-      "revenue_estimate": 1194457230000,
+      "revenue_estimate": 1128527078940,
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 2,
@@ -54,7 +54,7 @@
       "symbol": "JBS",
       "eps_estimate": 0.3194,
       "eps_actual": null,
-      "revenue_estimate": 23119502313,
+      "revenue_estimate": 23155683159,
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 2,
@@ -151,9 +151,9 @@
     {
       "date": "2026-08-11",
       "symbol": "TME",
-      "eps_estimate": 1.6242,
+      "eps_estimate": 1.6166,
       "eps_actual": null,
-      "revenue_estimate": 8846298332,
+      "revenue_estimate": 8866154144,
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 2,
@@ -162,9 +162,9 @@
     {
       "date": "2026-08-11",
       "symbol": "SE",
-      "eps_estimate": 0.8008,
+      "eps_estimate": 0.7854,
       "eps_actual": null,
-      "revenue_estimate": 7276857639,
+      "revenue_estimate": 7274540139,
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 2,
@@ -186,7 +186,7 @@
       "symbol": "ARMK",
       "eps_estimate": 0.495,
       "eps_actual": null,
-      "revenue_estimate": 5034456931,
+      "revenue_estimate": 5035096380,
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 3,
@@ -216,6 +216,17 @@
     },
     {
       "date": "2026-08-12",
+      "symbol": "TBBB",
+      "eps_estimate": -3.6669,
+      "eps_actual": null,
+      "revenue_estimate": 25485452964,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-12",
       "symbol": "VIPS",
       "eps_estimate": 3.9617,
       "eps_actual": null,
@@ -227,19 +238,8 @@
     },
     {
       "date": "2026-08-12",
-      "symbol": "TBBB",
-      "eps_estimate": -3.6669,
-      "eps_actual": null,
-      "revenue_estimate": 25370068065,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-12",
       "symbol": "PFGC",
-      "eps_estimate": 1.6312,
+      "eps_estimate": 1.6338,
       "eps_actual": null,
       "revenue_estimate": 18447831271,
       "revenue_actual": null,
@@ -271,17 +271,6 @@
     },
     {
       "date": "2026-08-12",
-      "symbol": "BHF",
-      "eps_estimate": 4.9078,
-      "eps_actual": null,
-      "revenue_estimate": 2250358780,
-      "revenue_actual": null,
-      "hour": "amc",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-12",
       "symbol": "COHR",
       "eps_estimate": 1.6474,
       "eps_actual": null,
@@ -294,20 +283,31 @@
     {
       "date": "2026-08-12",
       "symbol": "REZI",
-      "eps_estimate": 0.697,
+      "eps_estimate": 0.6885,
       "eps_actual": null,
-      "revenue_estimate": 1975740000,
+      "revenue_estimate": 1973700000,
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 2,
       "year": 2026
     },
     {
+      "date": "2026-08-12",
+      "symbol": "DAO",
+      "eps_estimate": 0.508,
+      "eps_actual": null,
+      "revenue_estimate": 1652816520,
+      "revenue_actual": null,
+      "hour": "bmo",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
       "date": "2026-08-13",
       "symbol": "AMAT",
-      "eps_estimate": 3.462,
+      "eps_estimate": 3.4544,
       "eps_actual": null,
-      "revenue_estimate": 9168915088,
+      "revenue_estimate": 9175728984,
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 3,
@@ -349,9 +349,9 @@
     {
       "date": "2026-08-13",
       "symbol": "TPR",
-      "eps_estimate": 1.2888,
+      "eps_estimate": 1.2964,
       "eps_actual": null,
-      "revenue_estimate": 1888597788,
+      "revenue_estimate": 1894560828,
       "revenue_actual": null,
       "hour": "bmo",
       "quarter": 4,
@@ -589,97 +589,5 @@
       "year": 2026
     }
   ],
-  "unusual_volume": [
-    {
-      "ticker": "DOCS",
-      "name": "Doximity Inc",
-      "price": 27.4,
-      "change_pct": 32.62,
-      "volume": "65.3M"
-    },
-    {
-      "ticker": "IEF",
-      "name": "iShares 7-10 Year Treasury Bond ETF",
-      "price": 93.17,
-      "change_pct": 0.24,
-      "volume": "55.0M"
-    },
-    {
-      "ticker": "DV",
-      "name": "DoubleVerify Holdings Inc",
-      "price": 13.21,
-      "change_pct": 12.81,
-      "volume": "38.4M"
-    },
-    {
-      "ticker": "MB",
-      "name": "Masterbeef Group",
-      "price": 8.92,
-      "change_pct": 137.87,
-      "volume": "32.0M"
-    },
-    {
-      "ticker": "SPAB",
-      "name": "State Street SPDR Portfolio Aggregate Bond ETF",
-      "price": 25.16,
-      "change_pct": 0.24,
-      "volume": "20.9M"
-    },
-    {
-      "ticker": "DYNF",
-      "name": "iShares U.S. Equity Factor Rotation Active ETF",
-      "price": 69.99,
-      "change_pct": 0.65,
-      "volume": "14.7M"
-    },
-    {
-      "ticker": "VATE",
-      "name": "Innovate Corp",
-      "price": 12.11,
-      "change_pct": 63.43,
-      "volume": "14.3M"
-    },
-    {
-      "ticker": "SPCU",
-      "name": "Defiance Daily Target 2X Long SPCX ETF",
-      "price": 11.11,
-      "change_pct": 31.64,
-      "volume": "14.2M"
-    },
-    {
-      "ticker": "SPCF",
-      "name": "ProShares Ultra SpaceX ETF",
-      "price": 13.86,
-      "change_pct": 31.37,
-      "volume": "12.3M"
-    },
-    {
-      "ticker": "SPAX",
-      "name": "T-REX 2X Long SPCX Daily Target ETF",
-      "price": 8.39,
-      "change_pct": 31.92,
-      "volume": "10.5M"
-    },
-    {
-      "ticker": "BBJP",
-      "name": "JPMorgan BetaBuilders Japan ETF",
-      "price": 78.2,
-      "change_pct": 1.78,
-      "volume": "9.5M"
-    },
-    {
-      "ticker": "LOFF",
-      "name": "Direxion Daily SpaceX Bull 2X ETF",
-      "price": 13.86,
-      "change_pct": 31.0,
-      "volume": "9.2M"
-    },
-    {
-      "ticker": "RCEL",
-      "name": "AVITA Medical Inc",
-      "price": 7.77,
-      "change_pct": 63.58,
-      "volume": "7.3M"
-    }
-  ]
+  "unusual_volume": []
 }
