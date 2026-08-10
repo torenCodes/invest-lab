@@ -1,23 +1,23 @@
 {
-  "scan_time": "2026-08-10T13:35:23.073141+00:00",
+  "scan_time": "2026-08-10T14:15:23.700389+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 24,
+  "total_scanned": 22,
   "day_trades": [
     {
       "ticker": "ACHR",
       "name": "Archer Aviation Inc",
       "sector": "Aerospace & Defense",
-      "current_price": 6.31,
-      "change_pct": 12.8801,
-      "high": 6.5,
+      "current_price": 6.8,
+      "change_pct": 21.6458,
+      "high": 6.87,
       "low": 6.005,
       "open": 6.005,
       "prev_close": 5.59,
       "score": 58,
       "signals": [
-        "Top gainer (+12.9%)",
+        "Top gainer (+21.6%)",
         "High volume",
-        "Strong move (+12.9%)",
+        "Strong move (+21.6%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)",
         "Closing strong"
@@ -36,31 +36,64 @@
       "score_normalized": 82
     },
     {
+      "ticker": "SMCI",
+      "name": "Super Micro Computer Inc",
+      "sector": "Technology",
+      "current_price": 32.95,
+      "change_pct": 5.8465,
+      "high": 33.395599999999995,
+      "low": 31.66,
+      "open": 31.975,
+      "prev_close": 31.13,
+      "score": 58,
+      "signals": [
+        "Top gainer (+5.8%)",
+        "High volume",
+        "Strong move (+5.8%)",
+        "Trending buzz (19)",
+        "Yahoo trending (#2)",
+        "Closing strong",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 19,
+      "market_cap": 20137155473.877808,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SMCI.png",
+      "weburl": "https://www.supermicro.com/en/",
+      "yahoo_trending_rank": 2,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 82
+    },
+    {
       "ticker": "ABCL",
       "name": "Abcellera Biologics Inc",
       "sector": "Life Sciences Tools & Services",
-      "current_price": 8.93,
-      "change_pct": 28.86,
-      "high": 9.049999999999999,
-      "low": 8.4,
-      "open": 8.77,
+      "current_price": 9.3,
+      "change_pct": 34.1991,
+      "high": 9.765,
+      "low": 8.095,
+      "open": 8.095,
       "prev_close": 6.93,
       "score": 53,
       "signals": [
-        "Top gainer (+28.9%)",
+        "Top gainer (+34.2%)",
         "High volume",
-        "Strong move (+28.9%)",
-        "Trending buzz (16)",
-        "Yahoo trending (#5)",
+        "Strong move (+34.2%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)",
         "Closing strong"
       ],
-      "reddit_mentions": 16,
+      "reddit_mentions": 18,
       "market_cap": 2124817629.202144,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ABCL.png",
       "weburl": "https://www.abcellera.com/",
-      "yahoo_trending_rank": 5,
+      "yahoo_trending_rank": 3,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -74,22 +107,62 @@
       "score_normalized": 75
     },
     {
+      "ticker": "P",
+      "name": "Everpure Inc",
+      "sector": "Technology",
+      "current_price": 101.93,
+      "change_pct": 13.1927,
+      "high": 102.2,
+      "low": 92.755,
+      "open": 92.755,
+      "prev_close": 90.05,
+      "score": 31,
+      "signals": [
+        "Top gainer (+13.2%)",
+        "High volume",
+        "Strong move (+13.2%)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 29933065377.021545,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/PSTG.png",
+      "weburl": "https://www.purestorage.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.47,
+          "estimate": 0.4,
+          "beat": true,
+          "surprise_pct": 16.4
+        }
+      },
+      "score_normalized": 44
+    }
+  ],
+  "swing_trades": [
+    {
       "ticker": "SMCI",
       "name": "Super Micro Computer Inc",
       "sector": "Technology",
-      "current_price": 32.51,
-      "change_pct": 4.433,
+      "current_price": 32.95,
+      "change_pct": 5.8465,
       "high": 33.395599999999995,
       "low": 31.66,
       "open": 31.975,
       "prev_close": 31.13,
-      "score": 45,
+      "score": 58,
       "signals": [
-        "Top gainer (+4.4%)",
+        "Top gainer (+5.8%)",
         "High volume",
-        "Good move (+4.4%)",
+        "Strong move (+5.8%)",
         "Trending buzz (19)",
-        "Yahoo trending (#2)"
+        "Yahoo trending (#2)",
+        "Closing strong",
+        "Sector leader (Technology)"
       ],
       "reddit_mentions": 19,
       "market_cap": 20137155473.877808,
@@ -102,102 +175,33 @@
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 63
+      "score_normalized": 82
     },
-    {
-      "ticker": "HPE",
-      "name": "Hewlett Packard Enterprise Co",
-      "sector": "Technology",
-      "current_price": 55.11,
-      "change_pct": 3.5513,
-      "high": 56.463,
-      "low": 54.77,
-      "open": 55.41,
-      "prev_close": 53.22,
-      "score": 31,
-      "signals": [
-        "Top gainer (+3.6%)",
-        "High volume",
-        "Good move (+3.6%)",
-        "Yahoo trending (#20)"
-      ],
-      "reddit_mentions": 1,
-      "market_cap": 70474110212.14113,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HPE.png",
-      "weburl": "https://www.hpe.com/",
-      "yahoo_trending_rank": 20,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.79,
-          "estimate": 0.54,
-          "beat": true,
-          "surprise_pct": 46.4
-        }
-      },
-      "score_normalized": 44
-    },
-    {
-      "ticker": "SLN",
-      "name": "Silence Therapeutics PLC",
-      "sector": "Biotechnology",
-      "current_price": 16.13,
-      "change_pct": 34.9791,
-      "high": 17.01,
-      "low": 15.32,
-      "open": 15.32,
-      "prev_close": 11.95,
-      "score": 28,
-      "signals": [
-        "Top gainer (+35.0%)",
-        "High volume",
-        "Strong move (+35.0%)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 548870000.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942958956146.png",
-      "weburl": "https://www.silence-therapeutics.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 39
-    }
-  ],
-  "swing_trades": [
     {
       "ticker": "VRTX",
       "name": "Vertex Pharmaceuticals Inc",
       "sector": "Biotechnology",
-      "current_price": 533.92,
-      "change_pct": 7.63,
+      "current_price": 526.09,
+      "change_pct": 6.0516,
       "high": 546.17,
       "low": 517.75,
       "open": 517.75,
       "prev_close": 496.07,
-      "score": 49,
+      "score": 50,
       "signals": [
-        "Top gainer (+7.6%)",
+        "Top gainer (+6.1%)",
         "High volume",
-        "Strong move (+7.6%)",
-        "Trending activity (5)",
-        "Yahoo trending (#16)",
-        "Closing strong",
-        "Sector leader (Biotechnology)"
+        "Strong move (+6.1%)",
+        "Trending buzz (14)",
+        "Yahoo trending (#7)"
       ],
-      "reddit_mentions": 5,
+      "reddit_mentions": 14,
       "market_cap": 121090567393.99998,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/VRTX.png",
       "weburl": "https://www.vrtx.com/",
-      "yahoo_trending_rank": 16,
+      "yahoo_trending_rank": 7,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -208,63 +212,32 @@
           "surprise_pct": -2.0
         }
       },
-      "score_normalized": 69
-    },
-    {
-      "ticker": "SMCI",
-      "name": "Super Micro Computer Inc",
-      "sector": "Technology",
-      "current_price": 32.51,
-      "change_pct": 4.433,
-      "high": 33.395599999999995,
-      "low": 31.66,
-      "open": 31.975,
-      "prev_close": 31.13,
-      "score": 45,
-      "signals": [
-        "Top gainer (+4.4%)",
-        "High volume",
-        "Good move (+4.4%)",
-        "Trending buzz (19)",
-        "Yahoo trending (#2)"
-      ],
-      "reddit_mentions": 19,
-      "market_cap": 20137155473.877808,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SMCI.png",
-      "weburl": "https://www.supermicro.com/en/",
-      "yahoo_trending_rank": 2,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 63
+      "score_normalized": 70
     },
     {
       "ticker": "META",
       "name": "Meta Platforms Inc",
       "sector": "Media",
-      "current_price": 598.55,
-      "change_pct": 1.0893,
+      "current_price": 598.93,
+      "change_pct": 1.1535,
       "high": 604.4699,
-      "low": 596.205,
+      "low": 593.6501,
       "open": 596.205,
       "prev_close": 592.1,
       "score": 35,
       "signals": [
-        "Top gainer (+1.1%)",
+        "Top gainer (+1.2%)",
         "High volume",
-        "Trending buzz (17)",
-        "Yahoo trending (#4)"
+        "Trending buzz (12)",
+        "Yahoo trending (#9)"
       ],
-      "reddit_mentions": 17,
+      "reddit_mentions": 12,
       "market_cap": 1508378444349.6836,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/FB.png",
       "weburl": "https://www.meta.com/",
-      "yahoo_trending_rank": 4,
+      "yahoo_trending_rank": 9,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -276,79 +249,6 @@
         }
       },
       "score_normalized": 49
-    },
-    {
-      "ticker": "HPE",
-      "name": "Hewlett Packard Enterprise Co",
-      "sector": "Technology",
-      "current_price": 55.11,
-      "change_pct": 3.5513,
-      "high": 56.463,
-      "low": 54.77,
-      "open": 55.41,
-      "prev_close": 53.22,
-      "score": 31,
-      "signals": [
-        "Top gainer (+3.6%)",
-        "High volume",
-        "Good move (+3.6%)",
-        "Yahoo trending (#20)"
-      ],
-      "reddit_mentions": 1,
-      "market_cap": 70474110212.14113,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HPE.png",
-      "weburl": "https://www.hpe.com/",
-      "yahoo_trending_rank": 20,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.79,
-          "estimate": 0.54,
-          "beat": true,
-          "surprise_pct": 46.4
-        }
-      },
-      "score_normalized": 44
-    },
-    {
-      "ticker": "AXSM",
-      "name": "Axsome Therapeutics Inc",
-      "sector": "Pharmaceuticals",
-      "current_price": 218.51,
-      "change_pct": 2.7122,
-      "high": 219.5,
-      "low": 210,
-      "open": 215.89,
-      "prev_close": 212.74,
-      "score": 29,
-      "signals": [
-        "Top gainer (+2.7%)",
-        "High volume",
-        "Moderate move (+2.7%)",
-        "Yahoo trending (#19)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 2,
-      "market_cap": 10947550955.38895,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AXSM.png",
-      "weburl": "https://www.axsome.com/",
-      "yahoo_trending_rank": 19,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": -0.99,
-          "estimate": -0.86,
-          "beat": false,
-          "surprise_pct": -14.9
-        }
-      },
-      "score_normalized": 41
     }
   ],
   "buzz_source": "trending",
@@ -357,17 +257,17 @@
       "ticker": "ACHR",
       "name": "Archer Aviation Inc",
       "sector": "Aerospace & Defense",
-      "current_price": 6.31,
-      "change_pct": 12.8801,
-      "high": 6.5,
+      "current_price": 6.8,
+      "change_pct": 21.6458,
+      "high": 6.87,
       "low": 6.005,
       "open": 6.005,
       "prev_close": 5.59,
       "score": 58,
       "signals": [
-        "Top gainer (+12.9%)",
+        "Top gainer (+21.6%)",
         "High volume",
-        "Strong move (+12.9%)",
+        "Strong move (+21.6%)",
         "High Trending buzz (20)",
         "Yahoo trending (#1)",
         "Closing strong"
@@ -381,9 +281,9 @@
       "yahoo_trending_rank": 1,
       "mentions": 20,
       "social": {
-        "trend_pct": 2700,
-        "reddit": 28,
-        "st_bull": 50,
+        "trend_pct": 2900,
+        "reddit": 30,
+        "st_bull": 94,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -400,19 +300,21 @@
       "ticker": "SMCI",
       "name": "Super Micro Computer Inc",
       "sector": "Technology",
-      "current_price": 32.51,
-      "change_pct": 4.433,
+      "current_price": 32.95,
+      "change_pct": 5.8465,
       "high": 33.395599999999995,
       "low": 31.66,
       "open": 31.975,
       "prev_close": 31.13,
-      "score": 45,
+      "score": 58,
       "signals": [
-        "Top gainer (+4.4%)",
+        "Top gainer (+5.8%)",
         "High volume",
-        "Good move (+4.4%)",
+        "Strong move (+5.8%)",
         "Trending buzz (19)",
-        "Yahoo trending (#2)"
+        "Yahoo trending (#2)",
+        "Closing strong",
+        "Sector leader (Technology)"
       ],
       "reddit_mentions": 19,
       "market_cap": 20137155473.877808,
@@ -423,7 +325,7 @@
       "yahoo_trending_rank": 2,
       "mentions": 19,
       "social": {
-        "trend_pct": -11,
+        "trend_pct": 0,
         "reddit": 19,
         "st_bull": 100,
         "st_msgs": 30,
@@ -436,38 +338,38 @@
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 63
+      "score_normalized": 82
     },
     {
-      "ticker": "PLUG",
-      "name": "Plug Power Inc",
-      "sector": "Electrical Equipment",
-      "current_price": 2.24,
-      "change_pct": 2.7523,
-      "high": 2.285,
-      "low": 2.2,
-      "open": 2.285,
-      "prev_close": 2.18,
-      "score": 45,
+      "ticker": "ABCL",
+      "name": "Abcellera Biologics Inc",
+      "sector": "Life Sciences Tools & Services",
+      "current_price": 9.3,
+      "change_pct": 34.1991,
+      "high": 9.765,
+      "low": 8.095,
+      "open": 8.095,
+      "prev_close": 6.93,
+      "score": 53,
       "signals": [
-        "Top gainer (+2.8%)",
+        "Top gainer (+34.2%)",
         "High volume",
-        "Moderate move (+2.8%)",
+        "Strong move (+34.2%)",
         "Trending buzz (18)",
         "Yahoo trending (#3)",
-        "Sector leader (Electrical Equipment)"
+        "Closing strong"
       ],
       "reddit_mentions": 18,
-      "market_cap": 3041250522.1545897,
+      "market_cap": 2124817629.202144,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/PLUG.png",
-      "weburl": "https://www.plugpower.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ABCL.png",
+      "weburl": "https://www.abcellera.com/",
       "yahoo_trending_rank": 3,
       "mentions": 18,
       "social": {
         "reddit": 18,
-        "st_bull": 100,
+        "st_bull": 85,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -476,26 +378,32 @@
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-06-30",
+          "actual": -0.18,
+          "estimate": -0.15,
+          "beat": false,
+          "surprise_pct": -23.5
+        }
       },
-      "score_normalized": 63
+      "score_normalized": 75
     },
     {
       "ticker": "HTZ",
       "name": "Hertz Global Holdings Inc",
       "sector": "Road & Rail",
-      "current_price": 2.51,
-      "change_pct": 10.5727,
+      "current_price": 2.25,
+      "change_pct": -0.8811,
       "market_cap": 800859566.8217821,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 188,
+      "mentions": 270,
       "social": {
-        "trend_pct": 408,
-        "reddit": 188,
+        "trend_pct": 694,
+        "reddit": 270,
         "st_bull": 100,
         "st_msgs": 30,
         "sources": [
@@ -516,53 +424,21 @@
       "score_normalized": 0
     },
     {
-      "ticker": "SPCX",
-      "name": "Space Exploration Technologies Corp",
-      "sector": "Telecommunication",
-      "current_price": 132.67,
-      "change_pct": -0.3306,
-      "market_cap": 1765743183931.833,
-      "score": 0,
-      "signals": [],
-      "reddit_mentions": 0,
-      "is_gainer": false,
-      "is_active": false,
-      "mentions": 111,
-      "social": {
-        "trend_pct": 68,
-        "reddit": 111,
-        "sources": [
-          "Reddit"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": -0.09,
-          "estimate": -0.26,
-          "beat": true,
-          "surprise_pct": 65.8
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "current_price": 861.67,
-      "change_pct": -1.8118,
+      "current_price": 888.33,
+      "change_pct": 1.2261,
       "market_cap": 991121440344.4116,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 104,
+      "mentions": 120,
       "social": {
-        "trend_pct": 93,
-        "reddit": 104,
+        "trend_pct": 122,
+        "reddit": 120,
         "sources": [
           "Reddit"
         ]
@@ -578,6 +454,38 @@
         }
       },
       "score_normalized": 0
+    },
+    {
+      "ticker": "SPCX",
+      "name": "Space Exploration Technologies Corp",
+      "sector": "Telecommunication",
+      "current_price": 132.48,
+      "change_pct": -0.4733,
+      "market_cap": 1765743183931.833,
+      "score": 0,
+      "signals": [],
+      "reddit_mentions": 0,
+      "is_gainer": false,
+      "is_active": false,
+      "mentions": 115,
+      "social": {
+        "trend_pct": 80,
+        "reddit": 115,
+        "sources": [
+          "Reddit"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": -0.09,
+          "estimate": -0.26,
+          "beat": true,
+          "surprise_pct": 65.8
+        }
+      },
+      "score_normalized": 0
     }
   ],
   "chatter_emerging": [
@@ -585,34 +493,34 @@
       "ticker": "HTZ",
       "name": "Hertz Global Holdings Inc",
       "sector": "Road & Rail",
-      "mentions": 188,
-      "prev": 37,
-      "trend_pct": 408,
-      "current_price": 2.51,
-      "change_pct": 10.5727,
+      "mentions": 270,
+      "prev": 34,
+      "trend_pct": 694,
+      "current_price": 2.25,
+      "change_pct": -0.8811,
       "market_cap": 800859566.8217821
     },
     {
       "ticker": "ASTS",
       "name": "AST SpaceMobile Inc",
       "sector": "Telecommunication",
-      "mentions": 55,
+      "mentions": 61,
       "prev": 17,
-      "trend_pct": 224,
-      "current_price": 71.05,
-      "change_pct": -1.2371,
+      "trend_pct": 259,
+      "current_price": 70.94,
+      "change_pct": -1.39,
       "market_cap": 27921680913.042755
     },
     {
-      "ticker": "META",
-      "name": "Meta Platforms Inc",
-      "sector": "Media",
-      "mentions": 29,
-      "prev": 8,
-      "trend_pct": 262,
-      "current_price": 598.55,
-      "change_pct": 1.0893,
-      "market_cap": 1508378444349.6836
+      "ticker": "SNDK",
+      "name": "Sandisk Corp",
+      "sector": "Technology",
+      "mentions": 61,
+      "prev": 24,
+      "trend_pct": 154,
+      "current_price": 1269.7,
+      "change_pct": 4.7426,
+      "market_cap": 179515890739.83188
     }
   ],
   "sector_rotation": {
@@ -620,18 +528,18 @@
       {
         "ticker": "XLE",
         "sector": "Energy",
-        "ret_1d": 2.22,
-        "ret_5d": -0.03,
-        "ret_1m": 6.71,
-        "ret_3m": 6.28,
-        "rel_1d": 2.28,
-        "rel_5d": -2.02,
-        "rel_1m": 4.35,
-        "rel_3m": 1.25,
+        "ret_1d": 2.98,
+        "ret_5d": 0.72,
+        "ret_1m": 7.51,
+        "ret_3m": 7.08,
+        "rel_1d": 2.86,
+        "rel_5d": -1.46,
+        "rel_1m": 4.96,
+        "rel_3m": 1.85,
         "rvol": 0.7,
         "rrg": {
-          "x": 100.14,
-          "y": 99.4,
+          "x": 100.29,
+          "y": 99.56,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -659,79 +567,29 @@
               "y": 99.4
             },
             {
-              "x": 100.14,
-              "y": 99.4
+              "x": 100.29,
+              "y": 99.56
             }
           ]
         },
         "top_stocks": [],
-        "rotation": -6
-      },
-      {
-        "ticker": "XLF",
-        "sector": "Financials",
-        "ret_1d": 0.32,
-        "ret_5d": 0.71,
-        "ret_1m": 3.72,
-        "ret_3m": 13.17,
-        "rel_1d": 0.38,
-        "rel_5d": -1.28,
-        "rel_1m": 1.36,
-        "rel_3m": 8.14,
-        "rvol": 0.62,
-        "rrg": {
-          "x": 100.51,
-          "y": 98.97,
-          "quadrant": "Weakening",
-          "tail": [
-            {
-              "x": 101.27,
-              "y": 101.23
-            },
-            {
-              "x": 101.96,
-              "y": 100.59
-            },
-            {
-              "x": 101.75,
-              "y": 99.17
-            },
-            {
-              "x": 101.63,
-              "y": 99.17
-            },
-            {
-              "x": 101.81,
-              "y": 99.6
-            },
-            {
-              "x": 101.0,
-              "y": 98.13
-            },
-            {
-              "x": 100.51,
-              "y": 98.97
-            }
-          ]
-        },
-        "top_stocks": [],
-        "rotation": -3
+        "rotation": -5
       },
       {
         "ticker": "XLV",
         "sector": "Health Care",
-        "ret_1d": 0.59,
-        "ret_5d": 2.72,
-        "ret_1m": 3.62,
-        "ret_3m": 16.66,
-        "rel_1d": 0.65,
-        "rel_5d": 0.73,
-        "rel_1m": 1.26,
-        "rel_3m": 11.63,
+        "ret_1d": 0.71,
+        "ret_5d": 2.85,
+        "ret_1m": 3.74,
+        "ret_3m": 16.8,
+        "rel_1d": 0.59,
+        "rel_5d": 0.67,
+        "rel_1m": 1.19,
+        "rel_3m": 11.57,
         "rvol": 0.8,
         "rrg": {
-          "x": 100.53,
-          "y": 99.94,
+          "x": 100.51,
+          "y": 99.92,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -759,8 +617,8 @@
               "y": 98.62
             },
             {
-              "x": 100.53,
-              "y": 99.94
+              "x": 100.51,
+              "y": 99.92
             }
           ]
         },
@@ -768,39 +626,83 @@
           {
             "ticker": "ZJYL",
             "name": "Jin Medical International Ltd",
-            "change_pct": 55.814,
-            "price": 3.35
-          },
-          {
-            "ticker": "SLN",
-            "name": "Silence Therapeutics PLC",
-            "change_pct": 34.9791,
-            "price": 16.13
+            "change_pct": 60.4651,
+            "price": 3.45
           },
           {
             "ticker": "VRTX",
             "name": "Vertex Pharmaceuticals Inc",
-            "change_pct": 7.63,
-            "price": 533.92
+            "change_pct": 6.0516,
+            "price": 526.09
           }
         ],
-        "rotation": 0
+        "rotation": -1
+      },
+      {
+        "ticker": "XLF",
+        "sector": "Financials",
+        "ret_1d": 0.27,
+        "ret_5d": 0.65,
+        "ret_1m": 3.67,
+        "ret_3m": 13.11,
+        "rel_1d": 0.15,
+        "rel_5d": -1.53,
+        "rel_1m": 1.12,
+        "rel_3m": 7.88,
+        "rvol": 0.62,
+        "rrg": {
+          "x": 100.44,
+          "y": 98.88,
+          "quadrant": "Weakening",
+          "tail": [
+            {
+              "x": 101.27,
+              "y": 101.23
+            },
+            {
+              "x": 101.96,
+              "y": 100.59
+            },
+            {
+              "x": 101.75,
+              "y": 99.17
+            },
+            {
+              "x": 101.63,
+              "y": 99.17
+            },
+            {
+              "x": 101.81,
+              "y": 99.6
+            },
+            {
+              "x": 101.0,
+              "y": 98.13
+            },
+            {
+              "x": 100.44,
+              "y": 98.88
+            }
+          ]
+        },
+        "top_stocks": [],
+        "rotation": -4
       },
       {
         "ticker": "XLB",
         "sector": "Materials",
-        "ret_1d": -0.38,
-        "ret_5d": 3.23,
-        "ret_1m": 3.48,
-        "ret_3m": 2.46,
-        "rel_1d": -0.32,
-        "rel_5d": 1.24,
-        "rel_1m": 1.12,
-        "rel_3m": -2.57,
+        "ret_1d": -0.26,
+        "ret_5d": 3.35,
+        "ret_1m": 3.6,
+        "ret_3m": 2.57,
+        "rel_1d": -0.38,
+        "rel_5d": 1.17,
+        "rel_1m": 1.05,
+        "rel_3m": -2.66,
         "rvol": 1.19,
         "rrg": {
-          "x": 99.64,
-          "y": 100.5,
+          "x": 99.6,
+          "y": 100.46,
           "quadrant": "Improving",
           "tail": [
             {
@@ -828,36 +730,29 @@
               "y": 97.46
             },
             {
-              "x": 99.64,
-              "y": 100.5
+              "x": 99.6,
+              "y": 100.46
             }
           ]
         },
-        "top_stocks": [
-          {
-            "ticker": "HUDI",
-            "name": "Huadi International Group Co., Ltd.",
-            "change_pct": 28.3045,
-            "price": 0.927
-          }
-        ],
+        "top_stocks": [],
         "rotation": 2
       },
       {
         "ticker": "XLI",
         "sector": "Industrials",
-        "ret_1d": -0.01,
-        "ret_5d": 1.09,
-        "ret_1m": 1.78,
-        "ret_3m": 7.17,
-        "rel_1d": 0.05,
-        "rel_5d": -0.9,
-        "rel_1m": -0.58,
-        "rel_3m": 2.14,
+        "ret_1d": 0.01,
+        "ret_5d": 1.11,
+        "ret_1m": 1.8,
+        "ret_3m": 7.19,
+        "rel_1d": -0.11,
+        "rel_5d": -1.07,
+        "rel_1m": -0.75,
+        "rel_3m": 1.96,
         "rvol": 0.91,
         "rrg": {
-          "x": 99.78,
-          "y": 99.13,
+          "x": 99.71,
+          "y": 99.04,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -885,8 +780,8 @@
               "y": 98.28
             },
             {
-              "x": 99.78,
-              "y": 99.13
+              "x": 99.71,
+              "y": 99.04
             }
           ]
         },
@@ -894,8 +789,8 @@
           {
             "ticker": "ACHR",
             "name": "Archer Aviation Inc",
-            "change_pct": 12.8801,
-            "price": 6.31
+            "change_pct": 21.6458,
+            "price": 6.8
           }
         ],
         "rotation": 1
@@ -903,18 +798,18 @@
       {
         "ticker": "XLY",
         "sector": "Cons. Discretionary",
-        "ret_1d": -0.68,
-        "ret_5d": 0.71,
-        "ret_1m": 1.54,
-        "ret_3m": -0.76,
-        "rel_1d": -0.62,
-        "rel_5d": -1.28,
-        "rel_1m": -0.82,
-        "rel_3m": -5.79,
+        "ret_1d": -0.62,
+        "ret_5d": 0.77,
+        "ret_1m": 1.6,
+        "ret_3m": -0.71,
+        "rel_1d": -0.74,
+        "rel_5d": -1.41,
+        "rel_1m": -0.95,
+        "rel_3m": -5.94,
         "rvol": 0.64,
         "rrg": {
-          "x": 99.56,
-          "y": 99.37,
+          "x": 99.48,
+          "y": 99.29,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -942,8 +837,8 @@
               "y": 102.09
             },
             {
-              "x": 99.56,
-              "y": 99.37
+              "x": 99.48,
+              "y": 99.29
             }
           ]
         },
@@ -951,33 +846,27 @@
           {
             "ticker": "JWEL",
             "name": "Jowell Global Ltd",
-            "change_pct": 143.2258,
-            "price": 3.77
-          },
-          {
-            "ticker": "GME",
-            "name": "GameStop Corp",
-            "change_pct": 1.1482,
-            "price": 19.38
+            "change_pct": 128.3871,
+            "price": 3.54
           }
         ],
-        "rotation": 0
+        "rotation": 1
       },
       {
         "ticker": "XLK",
         "sector": "Technology",
-        "ret_1d": -0.2,
-        "ret_5d": 5.37,
-        "ret_1m": 0.98,
-        "ret_3m": 7.01,
-        "rel_1d": -0.14,
-        "rel_5d": 3.38,
-        "rel_1m": -1.38,
-        "rel_3m": 1.98,
+        "ret_1d": 0.34,
+        "ret_5d": 5.94,
+        "ret_1m": 1.52,
+        "ret_3m": 7.59,
+        "rel_1d": 0.22,
+        "rel_5d": 3.76,
+        "rel_1m": -1.03,
+        "rel_3m": 2.36,
         "rvol": 0.7,
         "rrg": {
-          "x": 99.66,
-          "y": 101.65,
+          "x": 99.77,
+          "y": 101.78,
           "quadrant": "Improving",
           "tail": [
             {
@@ -1005,29 +894,29 @@
               "y": 100.76
             },
             {
-              "x": 99.66,
-              "y": 101.65
+              "x": 99.77,
+              "y": 101.78
             }
           ]
         },
         "top_stocks": [
           {
+            "ticker": "SCKT",
+            "name": "Socket Mobile Inc",
+            "change_pct": 368.7905,
+            "price": 1.81
+          },
+          {
             "ticker": "AUUD",
             "name": "Auddia Inc",
-            "change_pct": 75.1399,
-            "price": 1.44
+            "change_pct": 52.0311,
+            "price": 1.25
           },
           {
-            "ticker": "SLN",
-            "name": "Silence Therapeutics PLC",
-            "change_pct": 34.9791,
-            "price": 16.13
-          },
-          {
-            "ticker": "VRTX",
-            "name": "Vertex Pharmaceuticals Inc",
-            "change_pct": 7.63,
-            "price": 533.92
+            "ticker": "P",
+            "name": "Everpure Inc",
+            "change_pct": 13.1927,
+            "price": 101.93
           }
         ],
         "rotation": 6
@@ -1035,18 +924,18 @@
       {
         "ticker": "XLP",
         "sector": "Cons. Staples",
-        "ret_1d": -0.65,
-        "ret_5d": -0.34,
-        "ret_1m": 0.53,
-        "ret_3m": 1.16,
-        "rel_1d": -0.59,
-        "rel_5d": -2.33,
-        "rel_1m": -1.83,
-        "rel_3m": -3.87,
+        "ret_1d": -0.83,
+        "ret_5d": -0.53,
+        "ret_1m": 0.34,
+        "ret_3m": 0.97,
+        "rel_1d": -0.95,
+        "rel_5d": -2.71,
+        "rel_1m": -2.21,
+        "rel_3m": -4.26,
         "rvol": 0.51,
         "rrg": {
-          "x": 98.75,
-          "y": 99.27,
+          "x": 98.6,
+          "y": 99.16,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1074,8 +963,8 @@
               "y": 98.36
             },
             {
-              "x": 98.75,
-              "y": 99.27
+              "x": 98.6,
+              "y": 99.16
             }
           ]
         },
@@ -1083,8 +972,8 @@
           {
             "ticker": "STKH",
             "name": "Steakholder Foods Ltd",
-            "change_pct": 121.8085,
-            "price": 4.17
+            "change_pct": 201.5957,
+            "price": 5.67
           }
         ],
         "rotation": -1
@@ -1092,18 +981,18 @@
       {
         "ticker": "XLRE",
         "sector": "Real Estate",
-        "ret_1d": -1.0,
-        "ret_5d": -1.44,
-        "ret_1m": 0.18,
-        "ret_3m": 1.15,
-        "rel_1d": -0.94,
-        "rel_5d": -3.43,
-        "rel_1m": -2.18,
-        "rel_3m": -3.88,
+        "ret_1d": -1.55,
+        "ret_5d": -1.98,
+        "ret_1m": -0.37,
+        "ret_3m": 0.59,
+        "rel_1d": -1.67,
+        "rel_5d": -4.16,
+        "rel_1m": -2.92,
+        "rel_3m": -4.64,
         "rvol": 0.79,
         "rrg": {
-          "x": 98.5,
-          "y": 99.04,
+          "x": 98.23,
+          "y": 98.85,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1131,8 +1020,8 @@
               "y": 98.12
             },
             {
-              "x": 98.5,
-              "y": 99.04
+              "x": 98.23,
+              "y": 98.85
             }
           ]
         },
@@ -1142,18 +1031,18 @@
       {
         "ticker": "XLC",
         "sector": "Comm. Services",
-        "ret_1d": -0.17,
-        "ret_5d": -0.25,
-        "ret_1m": -0.52,
-        "ret_3m": -4.78,
-        "rel_1d": -0.11,
-        "rel_5d": -2.24,
-        "rel_1m": -2.88,
-        "rel_3m": -9.81,
+        "ret_1d": -0.42,
+        "ret_5d": -0.5,
+        "ret_1m": -0.77,
+        "ret_3m": -5.02,
+        "rel_1d": -0.54,
+        "rel_5d": -2.68,
+        "rel_1m": -3.32,
+        "rel_3m": -10.25,
         "rvol": 0.51,
         "rrg": {
-          "x": 98.63,
-          "y": 98.43,
+          "x": 98.42,
+          "y": 98.11,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1181,8 +1070,8 @@
               "y": 100.7
             },
             {
-              "x": 98.63,
-              "y": 98.43
+              "x": 98.42,
+              "y": 98.11
             }
           ]
         },
@@ -1190,8 +1079,8 @@
           {
             "ticker": "META",
             "name": "Meta Platforms Inc",
-            "change_pct": 1.0893,
-            "price": 598.55
+            "change_pct": 1.1535,
+            "price": 598.93
           }
         ],
         "rotation": 2
@@ -1199,18 +1088,18 @@
       {
         "ticker": "XLU",
         "sector": "Utilities",
-        "ret_1d": -0.69,
-        "ret_5d": -2.37,
-        "ret_1m": -4.62,
-        "ret_3m": -2.53,
-        "rel_1d": -0.63,
-        "rel_5d": -4.36,
-        "rel_1m": -6.98,
-        "rel_3m": -7.56,
+        "ret_1d": -1.09,
+        "ret_5d": -2.76,
+        "ret_1m": -5.01,
+        "ret_3m": -2.93,
+        "rel_1d": -1.21,
+        "rel_5d": -4.94,
+        "rel_1m": -7.56,
+        "rel_3m": -8.16,
         "rvol": 0.96,
         "rrg": {
-          "x": 97.82,
-          "y": 99.25,
+          "x": 97.66,
+          "y": 99.12,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1238,23 +1127,17 @@
               "y": 97.03
             },
             {
-              "x": 97.82,
-              "y": 99.25
+              "x": 97.66,
+              "y": 99.12
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "HYLN",
-            "name": "Hyliion Holdings Corp",
-            "change_pct": 6.4599,
-            "price": 4.12
-          },
-          {
             "ticker": "PLUG",
             "name": "Plug Power Inc",
-            "change_pct": 2.7523,
-            "price": 2.24
+            "change_pct": 1.3761,
+            "price": 2.21
           }
         ],
         "rotation": 0
@@ -1262,10 +1145,10 @@
     ],
     "posture": {
       "label": "Risk-on",
-      "spread": 1.9,
+      "spread": 2.23,
       "leaders": [
         "Energy",
-        "Financials"
+        "Health Care"
       ],
       "laggards": [
         "Comm. Services",
@@ -1274,10 +1157,10 @@
     },
     "benchmark": {
       "ticker": "SPY",
-      "ret_1d": -0.06,
-      "ret_5d": 1.99,
-      "ret_1m": 2.36,
-      "ret_3m": 5.03
+      "ret_1d": 0.12,
+      "ret_5d": 2.18,
+      "ret_1m": 2.55,
+      "ret_3m": 5.23
     }
   },
   "reddit_feed": [
@@ -1292,7 +1175,7 @@
       "confirmed_tickers": [
         "SMCI"
       ],
-      "hours_ago": 1.9,
+      "hours_ago": 2.5,
       "url": "https://finnhub.io/api/news?id=9273470f1c28199053583483cbf4314c9d12dcfb25852f4ee074e25f25140a9b",
       "is_news": true
     },
@@ -1307,7 +1190,7 @@
       "confirmed_tickers": [
         "SMCI"
       ],
-      "hours_ago": 2.0,
+      "hours_ago": 2.7,
       "url": "https://finnhub.io/api/news?id=e75d148fb2a23b8597f9a83ccf923ce8cefb9679498790bb97e953e619cfb7d6",
       "is_news": true
     },
@@ -1322,7 +1205,7 @@
       "confirmed_tickers": [
         "SMCI"
       ],
-      "hours_ago": 2.3,
+      "hours_ago": 3.0,
       "url": "https://finnhub.io/api/news?id=f8e1e008e61b5afa0ef040583b37dba934fdba20d9b4edac3312e53a3a7b1aee",
       "is_news": true
     },
@@ -1337,7 +1220,7 @@
       "confirmed_tickers": [
         "SMCI"
       ],
-      "hours_ago": 19.6,
+      "hours_ago": 20.3,
       "url": "https://finnhub.io/api/news?id=2196833fa2503ed504da0c249a27b5be9767ce315027ef77e4e98a6a285cd27d",
       "is_news": true
     },
@@ -1352,7 +1235,7 @@
       "confirmed_tickers": [
         "SMCI"
       ],
-      "hours_ago": 27.8,
+      "hours_ago": 28.4,
       "url": "https://finnhub.io/api/news?id=95f0958102e02edefbe1f48d2887398b026e1a4d7647f8add9f03ded9ee57d68",
       "is_news": true
     },
@@ -1367,38 +1250,83 @@
       "confirmed_tickers": [
         "ACHR"
       ],
-      "hours_ago": 34.4,
+      "hours_ago": 35.1,
       "url": "https://finnhub.io/api/news?id=deff1d4247207aac2c94f55973825d0ce38ade9e08234210a6c7618171e2655c",
       "is_news": true
     },
     {
-      "id": "141164926",
-      "title": "Wall Street Week Ahead",
-      "subreddit": "SeekingAlpha",
+      "id": "141152068",
+      "title": "Get insights into the top gainers and losers of Friday's after-hours session.",
+      "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "PLUG"
+        "ABCL"
       ],
       "confirmed_tickers": [
-        "PLUG"
+        "ABCL"
       ],
-      "hours_ago": 34.4,
-      "url": "https://finnhub.io/api/news?id=deff1d4247207aac2c94f55973825d0ce38ade9e08234210a6c7618171e2655c",
+      "hours_ago": 65.3,
+      "url": "https://finnhub.io/api/news?id=3d556a40d067974803a83c853158956fcb5e18a09b773b16e140def47a387d02",
       "is_news": true
     },
     {
-      "id": "141158812",
-      "title": "Cisco, Tencent Headline Muted Earnings Week",
-      "subreddit": "SeekingAlpha",
+      "id": "141152816",
+      "title": "12 Health Care Stocks Moving In Friday's After-Market Session",
+      "subreddit": "Benzinga",
       "ups": 0,
       "tickers": [
-        "PLUG"
+        "ABCL"
       ],
       "confirmed_tickers": [
-        "PLUG"
+        "ABCL"
       ],
-      "hours_ago": 50.6,
-      "url": "https://finnhub.io/api/news?id=92ebcf9e88eb5cc5530a414cce8df0a9c9e063c37e41df80756b63479a5d5bdc",
+      "hours_ago": 69.2,
+      "url": "https://finnhub.io/api/news?id=c8ffe66259cc7e67e6477ca2487ada24478641f4d3305a4ceffaada608561c83",
+      "is_news": true
+    },
+    {
+      "id": "141162338",
+      "title": "AbCellera To Release Top-Line Data From Phase 2 Trial Evaluating ABCL635 For Treatment Of Moderate-To-Severe Vasomotor S",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "ABCL"
+      ],
+      "confirmed_tickers": [
+        "ABCL"
+      ],
+      "hours_ago": 69.7,
+      "url": "https://finnhub.io/api/news?id=449f5a7158e5a843cf3ff385b167a0e7e7eddb5c8b0914f95db6ffc4e64c1dcb",
+      "is_news": true
+    },
+    {
+      "id": "141139159",
+      "title": "Stifel Maintains Buy on AbCellera Biologics, Raises Price Target to $9",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "ABCL"
+      ],
+      "confirmed_tickers": [
+        "ABCL"
+      ],
+      "hours_ago": 100.0,
+      "url": "https://finnhub.io/api/news?id=ddeeff7f0d1df0d3911fd311f50d42de6d109ddce6d6452bb1cc07f5332d6ffb",
+      "is_news": true
+    },
+    {
+      "id": "141139160",
+      "title": "Cantor Fitzgerald Maintains Overweight on AbCellera Biologics, Raises Price Target to $12",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "ABCL"
+      ],
+      "confirmed_tickers": [
+        "ABCL"
+      ],
+      "hours_ago": 102.0,
+      "url": "https://finnhub.io/api/news?id=72cda2348b5ca9a303e8ea867ec7fcb127cca8cb32b754f86feca818335b0215",
       "is_news": true
     },
     {
@@ -1412,7 +1340,7 @@
       "confirmed_tickers": [
         "ACHR"
       ],
-      "hours_ago": 141.8,
+      "hours_ago": 142.5,
       "url": "https://finnhub.io/api/news?id=3df02847df4fafbf88398f31a71c47ea6e80ffdd2a9dda0bd10b370e871d12e3",
       "is_news": true
     }
