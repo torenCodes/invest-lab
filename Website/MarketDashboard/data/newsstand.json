@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-08-10T11:00:44.689068+00:00",
+  "scan_time": "2026-08-10T13:00:31.788520+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
@@ -23,19 +23,19 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "15.5",
+        "value": "15.4",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.66%",
+        "value": "4.67%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-08-10T11:00:54.185110+00:00"
+    "updated": "2026-08-10T13:00:44.862101+00:00"
   },
   "earnings": [
     {
@@ -57,17 +57,6 @@
       "revenue_estimate": 23155683159,
       "revenue_actual": null,
       "hour": "amc",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-10",
-      "symbol": "FERG",
-      "eps_estimate": 3.3541,
-      "eps_actual": null,
-      "revenue_estimate": 8841683982,
-      "revenue_actual": null,
-      "hour": "bmo",
       "quarter": 2,
       "year": 2026
     },
@@ -125,6 +114,17 @@
       "hour": "",
       "quarter": 2,
       "year": 2027
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "SEM",
+      "eps_estimate": 0.3105,
+      "eps_actual": null,
+      "revenue_estimate": 1411268960,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
     },
     {
       "date": "2026-08-11",
@@ -589,5 +589,34 @@
       "year": 2026
     }
   ],
-  "unusual_volume": []
+  "unusual_volume": [
+    {
+      "ticker": "ABCL",
+      "name": "AbCellera Biologics Inc",
+      "price": 9.0,
+      "change_pct": 29.87,
+      "volume": "8.2M"
+    },
+    {
+      "ticker": "SLN",
+      "name": "Silence Therapeutics Plc ADR",
+      "price": 16.05,
+      "change_pct": 34.3,
+      "volume": "4.7M"
+    },
+    {
+      "ticker": "HZO",
+      "name": "Marinemax Inc",
+      "price": 51.94,
+      "change_pct": 45.57,
+      "volume": "1.6M"
+    },
+    {
+      "ticker": "VREX",
+      "name": "Varex Imaging Corp",
+      "price": 18.4,
+      "change_pct": 48.27,
+      "volume": "1.3M"
+    }
+  ]
 }
