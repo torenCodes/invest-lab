@@ -1,6 +1,6 @@
 {
-  "scan_time": "2026-08-12T17:57:46.270279",
-  "total_transactions": 176,
+  "scan_time": "2026-08-12T18:47:29.018061",
+  "total_transactions": 177,
   "date_range": "Jul 28 '26 \u2013 Aug 11 '26",
   "min_value": 25000,
   "nominees": [
@@ -370,9 +370,9 @@
       "is_csuite": true,
       "company": "CCC Intelligent Solutions Holdings Inc.",
       "sector": "Technology",
-      "current_price": 6.805,
-      "change_pct": -0.95,
-      "market_cap": 4008108800,
+      "current_price": 6.865,
+      "change_pct": -0.07,
+      "market_cap": 4043448320,
       "insiders": [
         {
           "name": "Cowan Alister",
@@ -1159,6 +1159,42 @@
       "story": "PPFE \u2014 Two insiders bought, $2.0M total."
     },
     {
+      "ticker": "CCIA",
+      "insider": "Stenberg Jon",
+      "title": "President & CEO",
+      "date": "Aug 11 '26",
+      "price": 3.65,
+      "qty": 62000,
+      "value": 243425,
+      "txn_count": 2,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "CCIA",
+      "sector": "Unknown",
+      "current_price": 0,
+      "change_pct": 0,
+      "market_cap": 0,
+      "insiders": [
+        {
+          "name": "Stenberg Jon",
+          "title": "President & CEO",
+          "date": "Aug 11 '26",
+          "price": 3.65,
+          "qty": 62000,
+          "value": 243425,
+          "is_csuite": true
+        }
+      ],
+      "conviction_score": 25,
+      "tier": "B",
+      "signals": [
+        "President & CEO bought",
+        "$243K total",
+        "Activity in last 3 days"
+      ],
+      "story": "CCIA \u2014 The President & CEO bought, $243K total."
+    },
+    {
       "ticker": "MMTDR",
       "insider": "Foran Joseph Wm",
       "title": "Chairman and CEO",
@@ -1301,42 +1337,6 @@
         "Activity in last 3 days"
       ],
       "story": "SSUNS \u2014 The Executive Chairman bought, $373K total."
-    },
-    {
-      "ticker": "CCIA",
-      "insider": "Stenberg Jon",
-      "title": "President & CEO",
-      "date": "Aug 10 '26",
-      "price": 3.99,
-      "qty": 50000,
-      "value": 199630,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "CCIA",
-      "sector": "Unknown",
-      "current_price": 0,
-      "change_pct": 0,
-      "market_cap": 0,
-      "insiders": [
-        {
-          "name": "Stenberg Jon",
-          "title": "President & CEO",
-          "date": "Aug 10 '26",
-          "price": 3.99,
-          "qty": 50000,
-          "value": 199630,
-          "is_csuite": true
-        }
-      ],
-      "conviction_score": 25,
-      "tier": "B",
-      "signals": [
-        "President & CEO bought",
-        "$200K total",
-        "Activity in last 3 days"
-      ],
-      "story": "CCIA \u2014 The President & CEO bought, $200K total."
     },
     {
       "ticker": "BBCML",
@@ -3331,6 +3331,17 @@
   },
   "recent_feed": [
     {
+      "ticker": "CCIA",
+      "insider": "Stenberg Jon",
+      "title": "President & CEO",
+      "date": "Aug 11 '26",
+      "price": 3.65,
+      "qty": 12000,
+      "value": 43795,
+      "filing": "Aug 12 02:42 PM",
+      "is_csuite": true
+    },
+    {
       "ticker": "AATO",
       "insider": "WARE WILLIAM JAMES",
       "title": "Director",
@@ -3756,17 +3767,6 @@
       "price": 16.97,
       "qty": 103328,
       "value": 1753817,
-      "filing": "Aug 11 04:27 PM",
-      "is_csuite": false
-    },
-    {
-      "ticker": "MMGY",
-      "insider": "Ropp Ralph Lewis",
-      "title": "Director",
-      "date": "Aug 07 '26",
-      "price": 24.62,
-      "qty": 5000,
-      "value": 123125,
       "filing": "Aug 11 04:27 PM",
       "is_csuite": false
     }
