@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-08-12T11:00:28.790544+00:00",
+  "scan_time": "2026-08-12T13:00:41.773191+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
@@ -23,19 +23,19 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "15.4",
+        "value": "15.1",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.68%",
+        "value": "4.65%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-08-12T11:00:36.369519+00:00"
+    "updated": "2026-08-12T13:00:51.037492+00:00"
   },
   "earnings": [
     {
@@ -58,17 +58,6 @@
       "revenue_actual": null,
       "hour": "",
       "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-12",
-      "symbol": "PFGC",
-      "eps_estimate": 1.6338,
-      "eps_actual": null,
-      "revenue_estimate": 18447831271,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 4,
       "year": 2026
     },
     {
@@ -106,17 +95,6 @@
     },
     {
       "date": "2026-08-12",
-      "symbol": "EAT",
-      "eps_estimate": 3.1175,
-      "eps_actual": null,
-      "revenue_estimate": 1549310962,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 4,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-12",
       "symbol": "GO",
       "eps_estimate": 0.128,
       "eps_actual": null,
@@ -125,6 +103,28 @@
       "hour": "amc",
       "quarter": 2,
       "year": 2026
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "EQPT",
+      "eps_estimate": -0.0762,
+      "eps_actual": null,
+      "revenue_estimate": 1175270071,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "ENS",
+      "eps_estimate": 2.8549,
+      "eps_actual": null,
+      "revenue_estimate": 937229500,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 1,
+      "year": 2027
     },
     {
       "date": "2026-08-13",
@@ -591,11 +591,18 @@
   ],
   "unusual_volume": [
     {
-      "ticker": "BSJS",
-      "name": "Invesco BulletShares 2028 High Yield Corporate Bond ETF",
-      "price": 21.82,
-      "change_pct": 0.09,
-      "volume": "214K"
+      "ticker": "EETH",
+      "name": "ProShares Ether ETF",
+      "price": 23.26,
+      "change_pct": 1.82,
+      "volume": "50K"
+    },
+    {
+      "ticker": "WDCC",
+      "name": "Corgi WDC 2x Daily ETF",
+      "price": 14.35,
+      "change_pct": 11.08,
+      "volume": "13K"
     }
   ]
 }
