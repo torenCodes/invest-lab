@@ -97,7 +97,23 @@ def fetch_transactions():
             if len(cols) < 9:
                 continue
             try:
-                ticker   = cols[0].get_text(strip=True).upper()
+                # Finviz renders a logo placeholder holding the ticker's FIRST
+                # LETTER next to the ticker link, so get_text() on the cell
+                # concatenates them — "ATMU" came through as "AATMU", which then
+                # failed every downstream lookup and polluted The Analyst with
+                # phantom tickers. Read the clean symbol off the cell's data
+                # attribute instead, falling back to the link's href/text.
+                tcell    = cols[0]
+                ticker   = (tcell.get("data-boxover-ticker") or "").strip().upper()
+                if not ticker:
+                    link = tcell.find("a")
+                    href = link.get("href", "") if link else ""
+                    m    = re.search(r"[?&]t=([A-Za-z0-9.\-]+)", href)
+                    ticker = (m.group(1) if m else
+                              (link.get_text(strip=True) if link else "")).upper()
+                # Finviz also carries the company name — keep it as a fallback so
+                # a yfinance miss doesn't leave the card showing a bare ticker.
+                fv_company = (tcell.get("data-boxover-company") or "").strip()
                 insider  = cols[1].get_text(strip=True)
                 title    = cols[2].get_text(strip=True)
                 date     = cols[3].get_text(strip=True)
@@ -116,15 +132,16 @@ def fetch_transactions():
                     continue
 
                 transactions.append({
-                    "ticker":    ticker,
-                    "insider":   insider,
-                    "title":     title,
-                    "date":      date,
-                    "price":     price,
-                    "qty":       qty,
-                    "value":     value,
-                    "filing":    filing,
-                    "is_csuite": is_csuite(title),
+                    "ticker":     ticker,
+                    "fv_company": fv_company,
+                    "insider":    insider,
+                    "title":      title,
+                    "date":       date,
+                    "price":      price,
+                    "qty":        qty,
+                    "value":      value,
+                    "filing":     filing,
+                    "is_csuite":  is_csuite(title),
                 })
             except Exception:
                 continue
@@ -226,6 +243,9 @@ def _roll_up_by_ticker(transactions, enrichment):
         insiders.sort(key=lambda x: x["value"], reverse=True)
         top = insiders[0]
         enr = enrichment.get(ticker, {})
+        # Finviz's own company name, used when yfinance returns nothing usable
+        # (its fallback is the bare ticker, which reads as a broken card).
+        fv_name = next((t.get("fv_company") for t in g["txns"] if t.get("fv_company")), "")
 
         rows.append({
             "ticker":         ticker,
@@ -238,7 +258,8 @@ def _roll_up_by_ticker(transactions, enrichment):
             "txn_count":      len(g["txns"]),
             "insider_count":  len(insiders),
             "is_csuite":      any(i["is_csuite"] for i in insiders),
-            "company":        enr.get("name", ticker),
+            "company":        (enr.get("name") if enr.get("name") and enr.get("name") != ticker
+                               else (fv_name or ticker)),
             "sector":         enr.get("sector", "Unknown"),
             "current_price":  enr.get("current_price", 0),
             "change_pct":     enr.get("change_pct", 0),

@@ -361,6 +361,17 @@ def run():
         analyses.append(analyze(row["ticker"], row["tags"]))
         time.sleep(1)   # be nice to yfinance
 
+    # Never publish a card that failed to analyze. A ticker only reaches this
+    # board because another dashboard surfaced it, so an error here means the
+    # upstream symbol was bad — and a public "could not fetch data" card is
+    # worse than a shorter list. (Jul 2026: a Finviz parsing bug fed phantom
+    # tickers in from Insider Buying and 3 of 15 cards rendered as errors.)
+    failed = [a for a in analyses if a.get("error")]
+    if failed:
+        print(f"[analyst-scan] Dropping {len(failed)} card(s) that failed to "
+              f"analyze: {', '.join(a['ticker'] for a in failed)}")
+    analyses = [a for a in analyses if not a.get("error")]
+
     output = {
         "scan_time":        start.isoformat(),
         "next_scan_info":   NEXT_SCAN_INFO,

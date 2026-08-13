@@ -1233,12 +1233,24 @@ def get_earnings_calendar():
 
 
 def get_finviz_movers():
+    """Tickers on Finviz's unusual-volume screener — feeds the +8 'Unusual
+    volume (Finviz)' scoring signal.
+
+    Finviz's redesign moved links from `quote.ashx?t=` to `stock?t=`, so the
+    old regex silently matched nothing and the signal was dead for every scan
+    (no error — just a permanently empty list). Match the `data-boxover-ticker`
+    attribute instead: it carries the clean symbol and is the same attribute
+    the insider and newsstand scans now rely on."""
     try:
-        headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
-        url = "https://finviz.com/screener.ashx?v=111&s=ta_unusualvolume&o=-volume"
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                                 "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
+        url = "https://finviz.com/screener.ashx?v=111&s=ta_unusualvolume&o=-volume&f=sh_price_o5"
         resp = requests.get(url, headers=headers, timeout=10)
-        tickers = re.findall(r'quote\.ashx\?t=([A-Z]{1,5})[&\"]', resp.text)[:20]
-        return list(dict.fromkeys(tickers))
+        tickers = re.findall(r'data-boxover-ticker="([A-Z0-9.\-]{1,6})"', resp.text)[:20]
+        tickers = list(dict.fromkeys(tickers))
+        if not tickers:
+            print("[Finviz] No tickers parsed — markup may have changed again")
+        return tickers
     except Exception as e:
         print(f"[Finviz] Error: {e}")
         return []
