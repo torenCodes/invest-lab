@@ -6,6 +6,8 @@
 
 > Built as a personal research tool and an exercise in end-to-end data engineering: collection → scoring → publication → **measured outcomes**. Educational only — not financial advice.
 
+![The Invest Lab homepage — proprietary gauges, daily scan results, and market conditions](docs/screenshots/homepage.png)
+
 ---
 
 ## What it does
@@ -19,6 +21,22 @@ Every weekday, without anyone touching it, the platform pulls market data from s
 | **[Insider Buying](https://invest-insider-buying.onrender.com)** | Cluster buys, C-suite purchases, high-conviction insider activity |
 | **[Pattern Scanner](https://invest-patterns.onrender.com)** | Coiled swing setups and constructive market leaders |
 | **[The Analyst](https://invest-the-analyst.onrender.com)** | Daily "all-star" board — top names across every dashboard, with fundamental valuation verdicts |
+
+---
+
+## A look inside
+
+**Movers & Shakers** — the intraday scanner. Momentum candidates scored 0–100, a chatter panel tracking mention *velocity* across Reddit and StockTwits, and the Cadence Watchlist ranking stocks by how tradeable their daily rhythm is.
+
+![Movers & Shakers dashboard](docs/screenshots/movers-shakers.png)
+
+**Pattern Scanner** — the Coil Score engine. It hunts for stocks wound tight before a move: narrowing range, drying volume, intact uptrend. Each card carries a 40-day sparkline with the consolidation window shaded.
+
+![Pattern Scanner dashboard](docs/screenshots/pattern-scanner.png)
+
+**The Analyst** — the cross-dashboard board. Names surfaced by any other engine get run through a fundamental valuation model that produces a −100…+100 verdict score and writes the reasoning in plain English.
+
+![The Analyst dashboard](docs/screenshots/the-analyst.png)
 
 ---
 
