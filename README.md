@@ -77,25 +77,34 @@ GitHub Actions (10 scheduled workflows)
 
 ## Repository layout
 
+Everything the site is made of lives under `Website/`; the repository root holds
+only deployment and automation config.
+
 ```
-├── index.html            # Homepage — lab results, market reading, track record
-├── blog.html  ·  Blog/   # Research write-ups (markdown + manifest)
-├── styles.css            # Shared design system
-├── scripts/              # Scheduled scan engines (the data pipeline)
-│   ├── coil_scan.py            # Coil Score — swing setups
-│   ├── cadence_scan.py         # Cadence Score — day-trade rhythm
-│   ├── market_temperature_scan.py
-│   ├── analyst_scan.py         # Cross-dashboard "all-star" selection
-│   ├── newsstand_scan.py       # Trading conditions, unusual volume, earnings
-│   ├── archive_nominee.py      # Records each scan's top pick
-│   └── calculate_outcomes.py   # Fills 30-day outcomes → track record
-├── MarketDashboard/      # Movers & Shakers (Flask + scan)
-├── TheMarathon/          # Tried & True · Underdogs · ETF Scorecard
-├── InsiderBuying/        #
-├── PatternScanner/       # Coil Score dashboard
-├── TheAnalyst/           # Daily all-star board
-└── .github/workflows/    # The schedule that drives everything
+├── Website/                    # the platform itself
+│   ├── index.html              #   homepage — lab results, market reading, track record
+│   ├── blog.html  ·  Blog/     #   research write-ups (markdown + manifest)
+│   ├── styles.css              #   shared design system
+│   ├── scripts/                #   scheduled scan engines — the data pipeline
+│   │   ├── coil_scan.py                # Coil Score — swing setups
+│   │   ├── cadence_scan.py             # Cadence Score — day-trade rhythm
+│   │   ├── market_temperature_scan.py  # market regime thermometer
+│   │   ├── analyst_scan.py             # cross-dashboard "all-star" selection
+│   │   ├── newsstand_scan.py           # trading conditions, unusual volume, earnings
+│   │   ├── archive_nominee.py          # records each scan's top pick
+│   │   └── calculate_outcomes.py       # fills 30-day outcomes → track record
+│   ├── MarketDashboard/        #   Movers & Shakers (Flask app + scan)
+│   ├── TheMarathon/            #   Tried & True · Underdogs · ETF Scorecard
+│   ├── InsiderBuying/          #   insider purchase clusters
+│   ├── PatternScanner/         #   Coil Score dashboard
+│   └── TheAnalyst/             #   daily all-star board
+├── .github/workflows/          # the schedule that drives everything
+└── render.yaml                 # deployment map for the five Render services
 ```
+
+Each dashboard folder is self-contained — its own `index.html`, its `scan.py`
+where applicable, and a `data/` folder holding the JSON its scans produce. That
+is what lets Render deploy them as five independent services from one repo.
 
 ---
 
