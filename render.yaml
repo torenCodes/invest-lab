@@ -1,5 +1,18 @@
+# Render service map for The Invest Lab.
+#
+# NOTE: this file is DOCUMENTATION, not a live Blueprint. The five services
+# below were created by hand in the Render dashboard, which remains the source
+# of truth for their settings (including the CORS header rule on the Movers
+# service — Render static sites ignore `_headers` files, so the Movers Flask
+# app is the CORS-enabled data API the homepage fetches from).
+#
+# Keep this file in sync by hand when a service changes.
+
 services:
 
+  # The only dynamic service. Serves the Movers & Shakers dashboard AND acts as
+  # the CORS-enabled JSON API for the homepage (results, cadence, coil,
+  # newsstand, market temperature, homepage leaders, nominees archive).
   - type: web
     name: invest-movers-shakers
     runtime: python
@@ -7,20 +20,12 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python app.py
 
-  - type: web
-    name: invest-tried-true
-    runtime: python
-    rootDir: Website/TriedAndTrue
-    buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
-
-  # The Analyst migrated from live Flask (type: web) to a Static Site that
-  # serves index.html and reads pre-computed deep-dive analyses from
-  # data/results.json. The cross-dashboard scan that produces that file is
-  # Website/scripts/analyst_scan.py, run on a daily GitHub Actions schedule.
+  # Static dashboards. Each reads pre-computed JSON from its own data/ folder,
+  # written by the GitHub Actions scans in Website/scripts/ and committed to
+  # the repo, which triggers the Render auto-deploy.
   - type: static
-    name: invest-the-analyst
-    rootDir: Website/TheAnalyst
+    name: invest-the-marathon
+    rootDir: Website/TheMarathon
     staticPublishPath: .
     buildCommand: ""
 
@@ -31,19 +36,17 @@ services:
     buildCommand: ""
 
   - type: static
-    name: invest-underdogs
-    rootDir: Website/Underdogs
-    staticPublishPath: .
-    buildCommand: ""
-
-  - type: static
-    name: invest-the-marathon
-    rootDir: Website/TheMarathon
-    staticPublishPath: .
-    buildCommand: ""
-
-  - type: static
     name: invest-patterns
     rootDir: Website/PatternScanner
     staticPublishPath: .
     buildCommand: ""
+
+  - type: static
+    name: invest-the-analyst
+    rootDir: Website/TheAnalyst
+    staticPublishPath: .
+    buildCommand: ""
+
+# Retired: invest-tried-true and invest-underdogs were merged into The Marathon
+# (tabs) in April 2026 and deleted from Render. Their legacy folders keep only
+# scan.py, which still feeds TheMarathon/data/ via GitHub Actions.

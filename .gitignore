@@ -21,17 +21,31 @@ env/
 git token.txt
 
 # ── Auto-generated scan caches (rebuilt on each run) ──────────────────────────
+# Patterns are path-agnostic so they survive the repo restructure.
 scan_results.json
 results.json
-# Cadence scan's local grouped-daily bar cache (~50MB, dev-only, rebuilt in CI)
-Website/scripts/.cadence_cache/
-# GitHub Actions commits these files on each scan run — must not be ignored
-!Website/MarketDashboard/data/results.json
-!Website/TriedAndTrue/data/results.json
-!Website/InsiderBuying/data/results.json
-!Website/Underdogs/data/results.json
-!Website/PatternScanner/data/results.json
-!Website/TheAnalyst/data/results.json
+# Cadence/Coil shared grouped-daily bar cache (~50MB, dev-only, rebuilt in CI)
+.cadence_cache/
+# GitHub Actions commits each dashboard's scan output — must not be ignored
+!**/data/results.json
+
+# ── Internal working notes (kept locally, not published) ──────────────────────
+CONTEXT.md
+PROGRESS.md
+PROJECT_OVERVIEW.md
+UPDATE_PLAN.md
+MONETIZATION.md
+INSPIRATION.md
+EDITS.md
+SITE_NAVIGATION.md
+WRITING_STYLE.md
+
+# ── Local-only working folders ────────────────────────────────────────────────
+backup/
+images/old/
+images/source/
+images/fromAI/
+.claude/
 
 # ── IDE ───────────────────────────────────────────────────────────────────────
 .idea/
@@ -46,3 +60,18 @@ desktop.ini
 
 # ── Logs ──────────────────────────────────────────────────────────────────────
 *.log
+
+# ── Sibling projects — each lives in (or will get) its own repo, not this one ─
+# NOTE: these are only needed while the repo root is "Coding Projects". Once the
+# site folder becomes the repo root, these siblings fall outside the repo and
+# these lines can be deleted.
+/Football/
+/Options/
+/MarketMailer/
+/Quant/
+/Tests/
+/Tutorials/
+/StockAnalyzer/
+/RetailRecon/
+/Trading/
+/nvda_options_analysis.html
