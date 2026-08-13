@@ -42,9 +42,11 @@ WRITING_STYLE.md
 
 # ── Local-only working folders ────────────────────────────────────────────────
 backup/
-images/old/
-images/source/
-images/fromAI/
+# A slash in the middle of a pattern anchors it to the repo root, so these use
+# **/ to keep matching after the site folder becomes the root.
+**/images/old/
+**/images/source/
+**/images/fromAI/
 .claude/
 
 # ── IDE ───────────────────────────────────────────────────────────────────────
