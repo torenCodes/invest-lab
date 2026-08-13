@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-08-13T11:00:32.834002+00:00",
+  "scan_time": "2026-08-13T13:00:30.413839+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
@@ -23,19 +23,19 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "14.6",
+        "value": "14.5",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.68%",
+        "value": "4.66%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-08-13T11:00:41.965281+00:00"
+    "updated": "2026-08-13T13:00:39.634409+00:00"
   },
   "earnings": [
     {
@@ -84,28 +84,6 @@
     },
     {
       "date": "2026-08-13",
-      "symbol": "TPR",
-      "eps_estimate": 1.2964,
-      "eps_actual": null,
-      "revenue_estimate": 1894560828,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 4,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-13",
-      "symbol": "BN",
-      "eps_estimate": 0.6695,
-      "eps_actual": null,
-      "revenue_estimate": 1716992490,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-13",
       "symbol": "GMRS",
       "eps_estimate": 0.3314,
       "eps_actual": null,
@@ -117,12 +95,34 @@
     },
     {
       "date": "2026-08-13",
-      "symbol": "ARCO",
-      "eps_estimate": 0.1377,
+      "symbol": "KLC",
+      "eps_estimate": 0.1039,
       "eps_actual": null,
-      "revenue_estimate": 1315597530,
+      "revenue_estimate": 704962628,
       "revenue_actual": null,
-      "hour": "bmo",
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "GLOB",
+      "eps_estimate": 1.5335,
+      "eps_actual": null,
+      "revenue_estimate": 625323495,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "CAAP",
+      "eps_estimate": 0.5554,
+      "eps_actual": null,
+      "revenue_estimate": 519746355,
+      "revenue_actual": null,
+      "hour": "",
       "quarter": 2,
       "year": 2026
     },
@@ -589,5 +589,41 @@
       "year": 2026
     }
   ],
-  "unusual_volume": []
+  "unusual_volume": [
+    {
+      "ticker": "FGI",
+      "name": "FGI Industries Ltd",
+      "price": 9.0,
+      "change_pct": 90.27,
+      "volume": "31.2M"
+    },
+    {
+      "ticker": "ARX",
+      "name": "Accelerant Holdings",
+      "price": 19.67,
+      "change_pct": 44.53,
+      "volume": "12.4M"
+    },
+    {
+      "ticker": "LNSR",
+      "name": "LENSAR Inc",
+      "price": 7.43,
+      "change_pct": 18.13,
+      "volume": "739K"
+    },
+    {
+      "ticker": "CBRZ",
+      "name": "Tradr 2X Short CBRS Daily ETF",
+      "price": 9.02,
+      "change_pct": 33.83,
+      "volume": "460K"
+    },
+    {
+      "ticker": "IND",
+      "name": "Xtrackers Nifty 500 India ETF",
+      "price": 23.26,
+      "change_pct": 0.69,
+      "volume": "10K"
+    }
+  ]
 }
