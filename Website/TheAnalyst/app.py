@@ -32,7 +32,8 @@ PRESCAN_TICKERS = ["AAPL", "MSFT", "NVDA"]
 # SEC EDGAR requires a descriptive User-Agent per their access policy
 SEC_HEADERS = {"User-Agent": "TheInvestLab personal-research@example.com"}
 
-POLYGON_API_KEY = os.environ.get("POLYGON_KEY", "P9fRbZP9VAKhjwABMtvcS7tfcYGU6z1T")
+# Environment only — no committed fallback (see scan.py note).
+POLYGON_API_KEY = os.environ.get("POLYGON_KEY", "")
 
 # Approximate sector-median trailing P/E benchmarks
 SECTOR_PE = {

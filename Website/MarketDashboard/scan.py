@@ -38,8 +38,11 @@ def json_safe(obj):
 BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(BASE_DIR, "data", "results.json")
 
-FINNHUB_API_KEY = os.environ.get("FINNHUB_KEY", "d6703v9r01qmckkbjg6gd6703v9r01qmckkbjg70")
-POLYGON_API_KEY = os.environ.get("POLYGON_KEY", "P9fRbZP9VAKhjwABMtvcS7tfcYGU6z1T")
+# API keys come from the environment only — GitHub Actions secrets in CI, or
+# your shell when running locally. Never commit a literal fallback: an unset
+# secret should fail loudly, not silently authenticate with a leaked key.
+FINNHUB_API_KEY = os.environ.get("FINNHUB_KEY", "")
+POLYGON_API_KEY = os.environ.get("POLYGON_KEY", "")
 
 DAY_TRADE_MIN_PRICE   = 5.0
 DAY_TRADE_MAX_PRICE   = 150.0

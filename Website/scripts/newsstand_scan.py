@@ -23,8 +23,9 @@ from bs4 import BeautifulSoup
 BASE_DIR    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_FILE = os.path.join(BASE_DIR, "MarketDashboard", "data", "newsstand.json")
 
-FINNHUB_KEY = os.environ.get("FINNHUB_KEY", "d6703v9r01qmckkbjg6gd6703v9r01qmckkbjg70")
-POLYGON_KEY = os.environ.get("POLYGON_KEY", "P9fRbZP9VAKhjwABMtvcS7tfcYGU6z1T")
+# Environment only — no committed fallback (see MarketDashboard/scan.py note).
+FINNHUB_KEY = os.environ.get("FINNHUB_KEY", "")
+POLYGON_KEY = os.environ.get("POLYGON_KEY", "")
 
 NEXT_SCAN_INFO = "Weekdays at 10:30am, 1pm, 4pm ET"
 

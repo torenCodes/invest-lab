@@ -24,7 +24,8 @@ OUTPUT_FILE    = os.path.join(BASE_DIR, "..", "TheMarathon", "data", "deep_value
 INSIDER_FILE   = os.path.join(BASE_DIR, "..", "InsiderBuying", "data", "results.json")
 NEXT_SCAN_INFO = "Mon / Wed / Fri 9am ET"
 
-FINNHUB_KEY = os.environ.get("FINNHUB_KEY", "d6703v9r01qmckkbjg6gd6703v9r01qmckkbjg70")
+# Environment only — no committed fallback (see MarketDashboard/scan.py note).
+FINNHUB_KEY = os.environ.get("FINNHUB_KEY", "")
 
 ETF_UNIVERSE = [
     {'symbol': 'QUAL', 'name': 'MSCI USA Quality Factor', 'provider': 'iShares', 'category': 'Quality'},

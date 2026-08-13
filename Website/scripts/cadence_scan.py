@@ -37,10 +37,11 @@ BASE_DIR    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Web
 OUTPUT_FILE = os.path.join(BASE_DIR, "MarketDashboard", "data", "cadence.json")
 CACHE_DIR   = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".cadence_cache")
 
-# `or` (not get's default): an unset GitHub Actions secret expands to an empty
-# string, which would otherwise override the hardcoded key with "" and 401 every
-# call. `or` falls back when the env var is missing OR empty.
-POLYGON_KEY = os.environ.get("POLYGON_KEY") or "P9fRbZP9VAKhjwABMtvcS7tfcYGU6z1T"
+# Environment only — no committed fallback (see MarketDashboard/scan.py note).
+# An unset GitHub Actions secret expands to an empty string rather than being
+# absent, which is why every scan that reads this also prints the key length up
+# front: a blank key 401s on every call and used to surface only as "No data".
+POLYGON_KEY = os.environ.get("POLYGON_KEY", "")
 
 LOOKBACK_DAYS = 22          # trading days of history to assemble
 SCORE_WINDOW  = 20          # use the most recent N bars for scoring
