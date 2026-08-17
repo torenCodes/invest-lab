@@ -333,7 +333,10 @@
               .then(function(posts) {
                 var container = document.getElementById('blog-sidebar-stack');
                 var html = '';
-                posts.forEach(function(post) {
+                // Cap the sidebar at the 4 most recent posts (posts.json is
+                // ordered newest-first) so the column stays roughly level with
+                // the dashboards grid beside it. "View all posts" covers the rest.
+                posts.slice(0, 4).forEach(function(post) {
                   var tag = (post.tags && post.tags[0]) || '';
                   html += '<a href="blog.html?post=' + post.slug + '" class="blog-card blog-card--sidebar">'
                     + '<div class="blog-card-meta">'
