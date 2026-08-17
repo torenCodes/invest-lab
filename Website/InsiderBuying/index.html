@@ -424,6 +424,31 @@
   .metric-value.down { color: var(--red);   }
 
   /* ── Card expand hint ──────────────────────────────────────────────────────── */
+  /* ── Lab history line (on every card so heights stay uniform) ───────────── */
+  .flagged-note {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    padding-top: 9px;
+    border-top: 1px dashed var(--border);
+    font-size: 0.71rem;
+    color: var(--ink-3);
+    line-height: 1.35;
+    flex-wrap: wrap;
+  }
+  .flagged-note .fn-up { color: var(--green); font-weight: 600; }
+  .flagged-note .fn-dn { color: var(--red);   font-weight: 600; }
+  .flagged-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #c9a227;
+    flex-shrink: 0;
+  }
+  .flagged-note--none, .flagged-note--past { opacity: 0.75; }
+  .flagged-note--none .flagged-dot { background: var(--border); }
+  .flagged-note--past .flagged-dot { background: var(--ink-3); opacity: 0.6; }
+
   .card-expand-hint {
     padding: 6px 18px 10px;
     font-size: 0.68rem;
@@ -957,6 +982,7 @@ function renderNomineeCard(n, idx) {
         <span class="tag tag-sector">${esc(n.sector)}</span>
       </div>
       <div class="conviction-signals">${pills}</div>
+      ${flaggedNote(n.ticker, n.current_price)}
     </div>
     <div class="card-expand-hint"><span class="hint-show">Click to see buyers ▾</span><span class="hint-hide">▴ Collapse</span></div>
     <div class="card-detail" id="${detailId}">
@@ -1096,9 +1122,74 @@ function render(d) {
 }
 
 // ── Load data ─────────────────────────────────────────────────────────────────
-fetch('data/results.json')
-  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-  .then(data => render(data))
+// ── Lab history line — the lab's own prior calls on this name ────────────────
+// The nominee archive lives on the Movers service, which is the CORS-enabled
+// data API (static sites here cannot serve cross-origin JSON). Every card gets
+// this line so heights stay uniform. A since-return is only shown while a prior
+// call is still live for this board's horizon; an insider thesis plays out over
+// months, so the window is generous. Past it the line shows recurrence instead,
+// which stays useful without implying a trade nobody took.
+const ARCHIVE_URL = 'https://invest-movers-shakers.onrender.com/data/nominees_archive.json';
+const FLAG_HORIZON_DAYS = 180;
+let _flagged = {};
+
+function loadFlagged() {
+  return fetch(ARCHIVE_URL + '?t=' + Date.now())
+    .then(r => (r.ok ? r.json() : null))
+    .then(d => {
+      if (!d || !Array.isArray(d.nominees)) return;
+      const today = new Date().toISOString().slice(0, 10);
+      const map = {};
+      d.nominees.forEach(n => {
+        if (!n.ticker || !n.entry_price || !n.date_flagged) return;
+        if (n.date_flagged >= today) return;
+        (map[n.ticker] = map[n.ticker] || []).push(n);
+      });
+      Object.keys(map).forEach(t =>
+        map[t].sort((a, b) => b.date_flagged.localeCompare(a.date_flagged)));
+      _flagged = map;
+    })
+    .catch(() => { /* archive is a bonus — never block the board */ });
+}
+
+function _flagDate(iso) {
+  return new Date(iso + 'T12:00:00Z').toLocaleDateString([], { month: 'short', day: 'numeric' });
+}
+
+function flaggedNote(ticker, price) {
+  const wrap = (cls, inner, title) =>
+    `<div class="flagged-note${cls}"${title ? ` title="${title}"` : ''}>` +
+    `<span class="flagged-dot"></span>${inner}</div>`;
+  const hist = _flagged[ticker];
+  if (!hist || !hist.length) {
+    return wrap(' flagged-note--none', 'First time as a top pick',
+                'Not previously the top pick of a scan');
+  }
+  const latest = hist[0];
+  const days = Math.round((Date.now() - new Date(latest.date_flagged + 'T12:00:00Z')) / 86400000);
+  if (days <= FLAG_HORIZON_DAYS && price && latest.entry_price) {
+    const pct = ((price - latest.entry_price) / latest.entry_price) * 100;
+    if (isFinite(pct)) {
+      return wrap('', `Flagged ${_flagDate(latest.date_flagged)} at ${fmtPrice(latest.entry_price)} ` +
+        `<span class="${pct >= 0 ? 'fn-up' : 'fn-dn'}">${pct >= 0 ? '+' : ''}` +
+        `${(Math.round(pct * 10) / 10).toFixed(1)}%</span> since`,
+        `Flagged by ${latest.source} on ${latest.date_flagged}`);
+    }
+  }
+  const n = hist.length;
+  return wrap(' flagged-note--past',
+    n === 1 ? `Flagged once before, back on ${_flagDate(latest.date_flagged)}`
+            : `Flagged ${n} times before, last on ${_flagDate(latest.date_flagged)}`,
+    `Outside this board's ${FLAG_HORIZON_DAYS}-day window, so no since-return is shown`);
+}
+
+// Archive first, so the first paint already carries the history line.
+Promise.all([
+  fetch('data/results.json')
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }),
+  loadFlagged()
+])
+  .then(results => render(results[0]))
   .catch(err => {
     document.getElementById('loading').innerHTML = `
       <p style="color:var(--red);font-weight:500">Could not load scan data</p>
