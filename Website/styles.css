@@ -498,10 +498,14 @@ body {
 
 @media (max-width: 900px) {
   .broadsheet {
-    grid-template-columns: 1fr;
+    /* minmax(0,…) lets the single column shrink below its content's min-content
+       (a wide child like the Unusual Volume table was forcing it past the
+       viewport, pushing the cards off-screen on phones). */
+    grid-template-columns: minmax(0, 1fr);
   }
   .broadsheet-main {
     padding-right: 0;
+    min-width: 0;
   }
   .broadsheet-side {
     border-left: none;
@@ -1800,6 +1804,20 @@ body {
 .ns-up           { color: #1a7a4a; font-weight: 600; }
 .ns-dn           { color: #c0392b; font-weight: 600; }
 
+/* Narrow phones: drop the wide company-name column from the full Unusual Volume
+   table (in .newsstand-card-body — NOT the 3-col inline preview) so it fits the
+   card instead of forcing it past the screen edge. Ticker carries the identity;
+   price / change / volume are the data that matters here. */
+@media (max-width: 480px) {
+  .newsstand-card-body .ns-table th:nth-child(2),
+  .newsstand-card-body .ns-table td:nth-child(2) { display: none; }
+  /* Robustness for very small (≈320px) screens: let the card header text shrink
+     and wrap, and let a still-too-wide table scroll inside its own card rather
+     than pushing the whole page past the edge. */
+  .newsstand-card-left { min-width: 0; flex-shrink: 1; }
+  .newsstand-card-body { overflow-x: auto; }
+}
+
 /* Earnings */
 .ns-date-group { margin-bottom: 1rem; }
 .ns-date-group:last-child { margin-bottom: 0; }
@@ -2056,6 +2074,7 @@ body {
 .methodology-image {
   flex: 0 0 33%;
   max-width: 33%;
+  padding-top: 10px;
 }
 .methodology-image img {
   width: 100%;
@@ -2113,7 +2132,7 @@ body {
 /* Track-record winners / losers two-column */
 .track-record-detail {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 .track-record-detail-col {
@@ -2160,6 +2179,9 @@ body {
   color: var(--ink-3);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .track-record-detail-pct {
   font-family: 'DM Mono', monospace;
@@ -2177,6 +2199,10 @@ body {
   padding: 0.4rem 0.5rem;
 }
 
+/* Three winner/miss columns get cramped on tablets — stack them */
+@media (max-width: 920px) {
+  .track-record-detail  { grid-template-columns: 1fr; }
+}
 @media (max-width: 700px) {
   .track-stats          { grid-template-columns: repeat(2, 1fr); }
   .track-record-detail  { grid-template-columns: 1fr; }

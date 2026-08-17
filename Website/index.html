@@ -72,7 +72,7 @@
   <section class="hero">
     <div class="container hero-container">
       <div class="hero-content">
-        <h1 class="hero-headline">Finding the signal<br>in market noise.</h1>
+        <h1 class="hero-headline">Finding the signal in market noise.</h1>
         <p class="hero-body">
           A personal research platform for identifying high-quality stocks and the
           investing themes worth your attention, drawing on real-time market data,
@@ -85,7 +85,7 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="images/headset.jpg" alt="Trader viewing a rising stock chart through an augmented-reality headset" class="hero-img">
+        <img src="images/charts.jpg" alt="Trader viewing a rising stock chart through an augmented-reality headset" class="hero-img">
       </div>
     </div>
     <div class="hero-bg-accent"></div>
@@ -100,47 +100,46 @@
           <div class="preview-header">
             <div>
               <h2 class="section-title">Today's Lab Results</h2>
-              <p class="preview-ts-line">From the latest Movers &amp; Shakers scan — <span id="preview-ts">loading…</span></p>
+              <p class="preview-ts-line">Fresh from the lab's daily scans — <span id="preview-ts">loading…</span></p>
             </div>            
           </div>          
 
-          <!-- ─── Market Temperature (temporary placement — compartmentalized, safe to move) ─── -->
-          <section class="market-temp" id="market-temperature" aria-labelledby="mt-title">
-            <div class="mt-strip" id="mt-strip" role="button" tabindex="0" aria-expanded="false">
-              <div class="mt-strip-left">
-                <span class="mt-eyebrow">Proprietary Gauge</span>
-                <span class="mt-title" id="mt-title">Market Temperature</span>
-                <span class="mt-meta" id="mt-meta">loading…</span>
-              </div>
-              <div class="mt-strip-gauge">
-                <div class="mt-gauge-track"><div class="mt-gauge-fill" id="mt-gauge-fill" style="width:0%"></div></div>
-                <div class="mt-gauge-row">
-                  <span class="mt-gauge-score" id="mt-score">—</span>
-                  <span class="mt-gauge-verdict" id="mt-verdict">loading…</span>
-                </div>
-              </div>
-              <span class="mt-chevron" id="mt-chevron" aria-hidden="true">▾</span>
-            </div>
-            <div class="mt-body" id="mt-body" hidden>
-              <div class="mt-components" id="mt-components"></div>
-              <p class="mt-footnote">Composite of six signals, weighted: Buffett Indicator (25%) &amp; Shiller CAPE (25%) are percentile-ranked against their own 10-year history so structurally elevated readings don't dominate; Fed Model (15%) &amp; Breadth (15%) use fixed threshold bands; Fear &amp; Greed (10%) and VIX (10%) capture short-term sentiment and implied volatility. Updated weekdays around 6:00am ET. Educational only — not investment advice.</p>
-            </div>
-          </section>
-          <!-- ─── /Market Temperature ─── -->
-
           <div class="preview-grid">
-            <a class="preview-card" id="pc-day"       href="https://invest-movers-shakers.onrender.com"></a>
-            <a class="preview-card" id="pc-cadence"   href="https://invest-movers-shakers.onrender.com"></a>
-            <a class="preview-card" id="pc-sector"    href="https://invest-movers-shakers.onrender.com"></a>
-            <a class="preview-card" id="pc-discussed" href="https://invest-movers-shakers.onrender.com"></a>
+            <a class="preview-card" id="pc-daytrade"  href="https://invest-movers-shakers.onrender.com/#day-trades"></a>
+            <a class="preview-card" id="pc-cadence"   href="https://invest-movers-shakers.onrender.com/#cadence"></a>
+            <a class="preview-card" id="pc-coil"      href="https://invest-patterns.onrender.com/#sec-coiled"></a>
+            <a class="preview-card" id="pc-discussed" href="https://invest-movers-shakers.onrender.com/#market-chatter"></a>
           </div>
 
           <div class="archive-inline" id="track-record">
             <h3 class="archive-inline-title">Other Lab Results</h3>
+            <!-- ─── Market Temperature (strategic valuation/regime backdrop) ─── -->
+            <section class="market-temp" id="market-temperature" aria-labelledby="mt-title">
+              <div class="mt-strip" id="mt-strip" role="button" tabindex="0" aria-expanded="false">
+                <div class="mt-strip-left">
+                  <span class="mt-eyebrow">Proprietary Gauge</span>
+                  <span class="mt-title" id="mt-title">Market Temperature</span>
+                  <span class="mt-meta" id="mt-meta">loading…</span>
+                </div>
+                <div class="mt-strip-gauge">
+                  <div class="mt-gauge-track"><div class="mt-gauge-fill" id="mt-gauge-fill" style="width:0%"></div></div>
+                  <div class="mt-gauge-row">
+                    <span class="mt-gauge-score" id="mt-score">—</span>
+                    <span class="mt-gauge-verdict" id="mt-verdict">loading…</span>
+                  </div>
+                </div>
+                <span class="mt-chevron" id="mt-chevron" aria-hidden="true">▾</span>
+              </div>
+              <div class="mt-body" id="mt-body" hidden>
+                <div class="mt-components" id="mt-components"></div>
+                <p class="mt-footnote">A live regime thermometer — Cold to Hot — built mostly from signals that move every session: Risk Posture (15%) comes from the lab's own Sector Rotation engine (cyclicals vs defensives); Trend Heat (15%) reads the S&amp;P against its 50-day average and recent thrust; Fast Breadth (15%) and Net New Highs (15%) track participation; Fear &amp; Greed (15%) adds sentiment. Structural Breadth (10%), Credit Spreads (10%, inverted), and the Yield Curve (5%) anchor the slower regime backdrop. Updated weekdays around 6:00am ET. Educational only — not investment advice.</p>
+              </div>
+            </section>
+            <!-- ─── /Market Temperature ─── -->
             <div class="track-record-grid" id="track-record-grid">
               <!-- Populated by JS from nominees_archive.json -->
             </div>
-            <p class="track-record-footnote" id="track-record-footnote">Past nominees are shown for informational purposes only. Nothing here is financial advice.</p>
+            <p class="track-record-footnote" id="track-record-footnote">Each board's current top pick, refreshed daily. Not financial advice.</p>
           </div>
         </div>
 
@@ -409,8 +408,14 @@
 
       <div class="track-record-detail">
         <div class="track-record-detail-col">
-          <div class="track-record-detail-title">Top winners</div>
+          <div class="track-record-detail-title">Recent winners</div>
           <ul class="track-record-detail-list" id="ts-winners">
+            <li class="track-record-detail-loading">Loading…</li>
+          </ul>
+        </div>
+        <div class="track-record-detail-col">
+          <div class="track-record-detail-title">Hall of fame · best ever</div>
+          <ul class="track-record-detail-list" id="ts-hof">
             <li class="track-record-detail-loading">Loading…</li>
           </ul>
         </div>
@@ -423,7 +428,7 @@
       </div>
 
       <p class="track-record-footnote" style="margin-top:1.5rem;">
-        Outcomes are calculated 30 calendar days after a nominee is flagged. Pending nominees are excluded from the stats above. Past performance is not predictive of future results — these are educational records of the lab's process, not investment advice.
+        <strong>Recent winners</strong> are the latest picks to clear their 30-day mark in the green; <strong>Hall of fame</strong> and <strong>Worst misses</strong> are the best and worst 30-day outcomes since inception. Each outcome is a point-in-time snapshot taken 30 calendar days after a nominee is flagged — not the stock's current price — so an older entry reflects how the pick did at that horizon, not where it trades today. The headline stats above count <em>all</em> outcomes (wins and losses). Pending nominees are excluded. Past performance is not predictive of future results — educational records of the lab's process, not investment advice.
       </p>
 
     </div>
@@ -454,7 +459,7 @@
         </div>
 
         <div class="about-image">
-          <img src="images/charts.jpg" alt="A person studying a wall of stock charts, pointing at a rising green one">
+          <img src="images/headset.jpg" alt="A person studying a wall of stock charts, pointing at a rising green one">
         </div>
 
         <p class="about-disclaimer">
@@ -486,11 +491,57 @@
 (function () {
   var DATA_URL    = 'https://invest-movers-shakers.onrender.com/data/results.json';
   var CADENCE_URL = 'https://invest-movers-shakers.onrender.com/data/cadence.json';
+  // Served from the Movers Flask app (the homepage's CORS-enabled data API),
+  // mirrored there by the coil scan. The Pattern Scanner static site can't set
+  // CORS headers (Render ignores _headers files on static sites), so we fetch
+  // the mirror here the same way the Cadence card fetches cadence.json.
+  var COIL_URL    = 'https://invest-movers-shakers.onrender.com/data/coil.json';
   var DASH_URL    = 'https://invest-movers-shakers.onrender.com';
+
+  // ── Resilient fetch: retry transient failures (a Render static site that
+  // is mid-redeploy briefly 502s — bot scans push every ~10 min), then fall
+  // back to the last-good payload cached in localStorage so the cards never
+  // go blank. ─────────────────────────────────────────────────────────────
+  function fetchJSONRetry(url, tries, delay) {
+    tries = tries || 3; delay = delay || 800;
+    function attempt(n) {
+      return fetch(url + '?t=' + Date.now())
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then(function (txt) {
+          // Tolerate non-standard tokens: Python's json.dump emits bare
+          // NaN/Infinity (valid Python-JSON, rejected by JSON.parse), which
+          // would otherwise blank the cards on an otherwise-healthy 200.
+          return JSON.parse(txt.replace(/\bNaN\b/g, 'null').replace(/-?\bInfinity\b/g, 'null'));
+        })
+        .catch(function (e) {
+          if (n < tries) {
+            return new Promise(function (res) { setTimeout(res, delay); })
+              .then(function () { return attempt(n + 1); });
+          }
+          throw e;
+        });
+    }
+    return attempt(1);
+  }
+
+  // Resolves { data, stale }. stale=true means served from the localStorage
+  // cache after the live fetch ultimately failed. Rejects only when the
+  // fetch fails AND there is no cached copy to fall back on.
+  function cachedFetch(url, key) {
+    return fetchJSONRetry(url).then(function (data) {
+      try { localStorage.setItem(key, JSON.stringify(data)); } catch (e) {}
+      return { data: data, stale: false };
+    }).catch(function (e) {
+      var raw = null;
+      try { raw = localStorage.getItem(key); } catch (e2) {}
+      if (raw) return { data: JSON.parse(raw), stale: true };
+      throw e;
+    });
+  }
 
   // ── Skeleton loading state ─────────────────────────────────────────────
   function showSkeletons() {
-    ['pc-day', 'pc-cadence', 'pc-sector', 'pc-discussed'].forEach(function (id) {
+    ['pc-daytrade', 'pc-cadence', 'pc-coil', 'pc-discussed'].forEach(function (id) {
       document.getElementById(id).innerHTML =
         '<div class="pv-skel pv-skel-xs"></div>' +
         '<div class="pv-skel pv-skel-lg" style="margin-top:1.1rem"></div>' +
@@ -598,47 +649,80 @@
       cta('View watchlist');
   }
 
+  // ── Coil card (top swing setup from the Pattern Scanner's Coiled list) ──
+  function coilCard(n) {
+    if (!n) {
+      return '<div class="pv-type">Top Coil</div>' +
+        '<div class="pv-empty">Setups refresh pre-market on weekdays.</div>' +
+        cta('View setups');
+    }
+    return '<div class="pv-type">Top Coil</div>' +
+      '<div class="pv-ticker-row">' +
+        '<span class="pv-ticker">' + n.ticker + '</span>' +
+        '<span class="pv-pct" style="background:var(--accent-muted,#edf8f6);color:var(--accent-dark,#2a9b87);">' + fmt(n.band_pct, 1) + '% range</span>' +
+      '</div>' +
+      '<div class="pv-name">' + (n.name || n.ticker) + '</div>' +
+      '<div class="pv-price">$' + fmt(n.price, 2) + '</div>' +
+      '<ul class="pv-signals">' +
+        '<li>' + (n.pattern || 'Coiled setup') + ' — ' + Math.round(n.rs_pct || 0) + 'th pct RS</li>' +
+        '<li>Volume at ' + Math.round((n.vol_ratio || 1) * 100) + '% of its base</li>' +
+      '</ul>' +
+      '<div class="pv-score"><span class="pv-score-label">Coil Score</span> <span class="pv-score-val">' + fmt(n.coil_score, 1) + '</span></div>' +
+      cta('View setups');
+  }
+
   // ── Boot ───────────────────────────────────────────────────────────────
   showSkeletons();
 
-  fetch(DATA_URL + '?t=' + Date.now())
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (data) {
+  // Movers results.json — feeds the Top Day Trade + Highly Discussed cards
+  cachedFetch(DATA_URL, 'il_results')
+    .then(function (res) {
+      var data = res.data;
       if (data.scan_time) {
         var d  = new Date(data.scan_time);
         var ds = d.toLocaleDateString([], { month: 'short', day: 'numeric' });
         var ts = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        document.getElementById('preview-ts').textContent = ds + ' at ' + ts;
+        document.getElementById('preview-ts').textContent = ds + ' at ' + ts + (res.stale ? ' (cached)' : '');
       }
 
-      var day      = data.day_trades    && data.day_trades[0];
-      var sector   = data.sector_rotation && data.sector_rotation[0];
-      var discuss  = data.reddit_cards  && data.reddit_cards[0];
+      var day     = data.day_trades   && data.day_trades[0];
+      var discuss = data.reddit_cards && data.reddit_cards[0];
 
-      document.getElementById('pc-day').innerHTML      = stockCard(day,     'Day Trade',        'View day trades',   false);
-      document.getElementById('pc-sector').innerHTML   = sectorCard(sector);
-      document.getElementById('pc-discussed').innerHTML = stockCard(discuss, 'Highly Discussed', 'View all picks',    true);
+      document.getElementById('pc-daytrade').innerHTML  = stockCard(day, 'Top Day Trade', 'View day trades', false);
+      document.getElementById('pc-discussed').innerHTML = stockCard(discuss, 'Highly Discussed', 'View all picks', true);
     })
     .catch(function () {
       var msg = '<div class="pv-empty">Data unavailable — check back on a weekday.</div>';
-      ['pc-day', 'pc-sector', 'pc-discussed'].forEach(function (id) {
+      ['pc-daytrade', 'pc-discussed'].forEach(function (id) {
         document.getElementById(id).innerHTML = msg;
       });
       document.getElementById('preview-ts').textContent = 'unavailable';
     });
 
-  // Cadence pick — separate source (cadence.json), updated pre-market daily
-  fetch(CADENCE_URL + '?t=' + Date.now())
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (d) {
-      var top = d && d.names && d.names[0];
+  // Top Cadence (day) — cadence.json, refreshed pre-market daily
+  cachedFetch(CADENCE_URL, 'il_cadence')
+    .then(function (res) {
+      var top = res.data && res.data.names && res.data.names[0];
       document.getElementById('pc-cadence').innerHTML = cadenceCard(top);
     })
     .catch(function () {
       document.getElementById('pc-cadence').innerHTML =
         '<div class="pv-type">Top Cadence</div>' +
-        '<div class="pv-empty">Data unavailable — check back on a weekday.</div>' +
+        '<div class="pv-empty">Watchlist refreshes pre-market on weekdays.</div>' +
         cta('View watchlist');
+    });
+
+  // Top Coil (swing) — coil.json from the Pattern Scanner, refreshed pre-market
+  cachedFetch(COIL_URL, 'il_coil')
+    .then(function (res) {
+      var top = res.data && res.data.coiled && res.data.coiled[0];
+      document.getElementById('pc-coil').innerHTML = coilCard(top);
+    })
+    .catch(function () {
+      document.getElementById('pc-coil').innerHTML =
+        '<div class="pv-type">Top Coil</div>' +
+        '<div class="pv-empty">Setups refresh pre-market on weekdays.</div>' +
+        cta('View setups');
     });
 }());
 </script>
@@ -731,13 +815,15 @@
 </script>
 
 <script>
-// ── Past Nominees — load from nominees_archive.json via GitHub raw URL ────────
+// ── Other Lab Results — current #1 from each board not in the main row ───────
+// (Tried & True, The Underdogs, Insider Buying, The Analyst). Served from the
+// CORS-enabled Movers data API; refreshed daily by the Analyst scan. The
+// archive/outcomes view lives in the Lab Methodology & Track Record section.
 (function () {
-  var ARCHIVE_URL = 'https://invest-movers-shakers.onrender.com/data/nominees_archive.json';
-  var grid     = document.getElementById('track-record-grid');
-  var footnote = document.getElementById('track-record-footnote');
+  var LEADERS_URL = 'https://invest-movers-shakers.onrender.com/data/homepage_leaders.json';
+  var grid  = document.getElementById('track-record-grid');
+  var ORDER = ['tried_true', 'underdogs', 'insider', 'analyst'];
 
-  // ── Skeleton loaders ──────────────────────────────────────────────────────
   var skelCard =
     '<div class="track-record-card">' +
       '<div class="pv-skel pv-skel-xs"></div>' +
@@ -747,100 +833,48 @@
     '</div>';
   grid.innerHTML = skelCard + skelCard + skelCard + skelCard;
 
-  // ── Helpers ───────────────────────────────────────────────────────────────
-  function fmtDate(dateStr) {
-    var d = new Date(dateStr + 'T12:00:00Z');
-    return d.toLocaleDateString([], { month: 'short', year: 'numeric' });
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  // Marathon-routed sources include the ?tab= deep-link so the card lands on
-  // the matching tab inside the Marathon dashboard.
-  var DASH_URLS = {
-    'movers':     'https://invest-movers-shakers.onrender.com',
-    'underdogs':  'https://invest-the-marathon.onrender.com/?tab=underdogs',
-    'insider':    'https://invest-insider-buying.onrender.com',
-    'tried-true': 'https://invest-the-marathon.onrender.com/?tab=tried-true',
-    'patterns':   'https://invest-patterns.onrender.com',
-    'marathon':   'https://invest-the-marathon.onrender.com'
-  };
+  // Right-aligned accent pill — holds a score (Tried&True / Underdogs / Insider)
+  // or a verdict label (The Analyst). Inline-styled so it needs no shared CSS.
+  function badgePill(badge) {
+    if (badge === null || badge === undefined || badge === '') return '';
+    return '<span style="margin-left:auto;font-family:\'DM Mono\',monospace;' +
+      'font-size:0.68rem;font-weight:600;color:#2a9b87;background:#edf8f6;' +
+      'border:1px solid #b8e8e0;padding:1px 8px;border-radius:20px;white-space:nowrap;">' +
+      esc(badge) + '</span>';
+  }
 
-  function nomineeCard(n) {
-    var pct          = n.outcome_pct;
-    var isPending    = pct === null;
-    var outcomeClass = isPending    ? 'track-record-outcome-tbd'
-                     : pct >= 0    ? 'track-record-outcome-up'
-                     :               'track-record-outcome-down';
-    var outcomeText  = isPending          ? 'Pending'
-                     : (pct >= 0 ? '+' : '') + pct.toFixed(1) + '%';
-    var dateLine     = 'Flagged: ' + fmtDate(n.date_flagged) +
-                       (n.outcome_date ? ' &middot; Outcome: ' + fmtDate(n.outcome_date)
-                                       : ' &middot; 30-day window');
-    var href = DASH_URLS[n.source_key] || '#';
-
-    return '<a href="' + href + '" class="track-record-card">' +
-      '<div class="track-record-source">' + n.source + '</div>' +
+  function leaderCard(c) {
+    var line2 = c.line2
+      ? '<div class="track-record-date" style="opacity:.72;margin-top:1px">' + esc(c.line2) + '</div>'
+      : '';
+    return '<a href="' + esc(c.href || '#') + '" class="track-record-card">' +
+      '<div class="track-record-source">' + esc(c.board) + '</div>' +
       '<div class="track-record-ticker-row">' +
-        '<span class="track-record-ticker">' + n.ticker + '</span>' +
-        '<span class="track-record-outcome ' + outcomeClass + '">' + outcomeText + '</span>' +
+        '<span class="track-record-ticker">' + esc(c.ticker) + '</span>' + badgePill(c.badge) +
       '</div>' +
-      '<div class="track-record-name">' + (n.name || '') + '</div>' +
-      '<div class="track-record-date">' + dateLine + '</div>' +
+      '<div class="track-record-name">' + esc(c.name) + '</div>' +
+      '<div class="track-record-date">' + esc(c.line1) + '</div>' + line2 +
     '</a>';
   }
 
-  // ── Fetch & render ────────────────────────────────────────────────────────
-  fetch(ARCHIVE_URL + '?t=' + Date.now())
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (data) {
-      var all = data.nominees || [];
-
-      if (all.length === 0) {
-        grid.innerHTML = '<div class="pv-empty" style="grid-column:1/-1">' +
-          'Track record is building — nominees are recorded after each scan and ' +
-          'outcomes are calculated after 30 days.' +
-          '</div>';
-        if (footnote) footnote.style.display = 'none';
-        return;
-      }
-
-      // Sort newest-first
-      all.sort(function (a, b) {
-        return new Date(b.date_flagged) - new Date(a.date_flagged);
-      });
-
-      // Show one card per non-Movers dashboard. Movers & Shakers already
-      // gets four dedicated preview cards above (Day Trade / Swing Trade /
-      // Leading Sector / Highly Discussed), so re-surfacing Movers picks
-      // here would double-dip on the same dashboard. The four target
-      // sources below correspond to Tried & True, The Underdogs, Insider
-      // Buying, and Pattern Scanner.
-      //
-      // For each target source we prefer the most recent completed
-      // nominee (outcome filled in); if a source has no completed picks
-      // yet, fall back to its most recent pending one so the card slot
-      // doesn't go empty just because outcomes haven't matured.
-      var TARGET_SOURCES = ['tried-true', 'underdogs', 'insider', 'patterns'];
-      var display = [];
-
-      TARGET_SOURCES.forEach(function (src) {
-        var fromSrc       = all.filter(function (n) { return n.source_key === src; });
-        var completedSrc  = fromSrc.filter(function (n) { return n.outcome_pct !== null; });
-        var pick = completedSrc[0] || fromSrc[0];
-        if (pick) display.push(pick);
-      });
-
-      // Sort the final selection newest-first for display
-      display.sort(function (a, b) {
-        return new Date(b.date_flagged) - new Date(a.date_flagged);
-      });
-
-      grid.innerHTML = display.map(nomineeCard).join('');
+  fetch(LEADERS_URL + '?t=' + Date.now())
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(function (txt) {
+      var data = JSON.parse(txt.replace(/\bNaN\b/g, 'null').replace(/-?\bInfinity\b/g, 'null'));
+      var L = (data && data.leaders) || {};
+      var cards = ORDER.map(function (k) { return L[k]; }).filter(Boolean);
+      if (!cards.length) throw new Error('no leaders');
+      grid.innerHTML = cards.map(leaderCard).join('');
     })
     .catch(function () {
       grid.innerHTML = '<div class="pv-empty" style="grid-column:1/-1">' +
-        'Nominee data unavailable — check back soon.' +
+        'Board leaders unavailable — refreshed pre-market on weekdays.' +
         '</div>';
-      if (footnote) footnote.style.display = 'none';
     });
 }());
 </script>
@@ -866,6 +900,7 @@
       'insider':    'https://invest-insider-buying.onrender.com',
       'tried-true': 'https://invest-the-marathon.onrender.com/?tab=tried-true',
       'patterns':   'https://invest-patterns.onrender.com',
+      'chatter':    'https://invest-movers-shakers.onrender.com/#market-chatter',
       'marathon':   'https://invest-the-marathon.onrender.com'
     };
     return map[sourceKey] || '#';
@@ -874,7 +909,12 @@
   fetch(ARCHIVE_URL + '?t=' + Date.now())
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (data) {
-      var all       = data.nominees || [];
+      // Experimental "Chatter Watch" (source_key 'chatter') is kept OUT of the
+      // public Track Record + headline stats while its signal is unproven — it's
+      // still archived and its 30-day outcomes are computed, just evaluated
+      // privately for now. Remove this filter (and give it a display) once the
+      // chatter-velocity signal earns promotion. See project-coil… / dashboards ref.
+      var all       = (data.nominees || []).filter(function (n) { return n.source_key !== 'chatter'; });
       var completed = all.filter(function (n) { return n.outcome_pct !== null; });
 
       var total     = all.length;
@@ -896,6 +936,12 @@
         document.getElementById('ts-positive').style.color = pctPositive >= 50 ? 'var(--accent-dark)' : '#c0392b';
       }
 
+      function fmtShortDate(s) {
+        if (!s) return '';
+        var d = new Date(s + 'T12:00:00Z');
+        return isNaN(d) ? '' : d.toLocaleDateString([], { month: 'short', day: 'numeric' });
+      }
+
       function renderList(elId, items) {
         var ul = document.getElementById(elId);
         if (!ul) return;
@@ -907,27 +953,42 @@
           var href = dashUrlFor(n.source_key);
           var pct  = fmtPct(n.outcome_pct);
           var pctCls = n.outcome_pct >= 0 ? 'pos' : 'neg';
+          // Date first so it isn't truncated — it's the key context (recency
+          // for "Recent outcomes", and "this is a dated snapshot" for old wins).
+          var meta = fmtShortDate(n.outcome_date) + (n.source ? ' · ' + n.source : '');
           return '<li>' +
             '<a href="' + href + '" class="track-record-detail-row">' +
               '<span class="track-record-detail-ticker">' + (n.ticker || '?') + '</span>' +
-              '<span class="track-record-detail-source">' + (n.source || '') + '</span>' +
+              '<span class="track-record-detail-source">' + meta + '</span>' +
               '<span class="track-record-detail-pct ' + pctCls + '">' + pct + '</span>' +
             '</a>' +
           '</li>';
         }).join('');
       }
 
-      var winners = completed.slice().sort(function (a, b) { return b.outcome_pct - a.outcome_pct; }).slice(0, 5);
-      var losers  = completed.slice().sort(function (a, b) { return a.outcome_pct - b.outcome_pct; }).slice(0, 5);
-      renderList('ts-winners', winners);
-      renderList('ts-losers',  losers);
+      // Recent winners: the latest positive outcomes — shows what's working now
+      // (turns over as new picks mature; daily outcomes keep it fresh).
+      var recentWinners = completed.filter(function (n) { return n.outcome_pct > 0; })
+        .sort(function (a, b) { return (b.outcome_date || '').localeCompare(a.outcome_date || ''); })
+        .slice(0, 5);
+      // Hall of fame: the best 30-day outcomes since inception.
+      var hof = completed.slice().sort(function (a, b) {
+        return b.outcome_pct - a.outcome_pct;
+      }).slice(0, 5);
+      // Worst misses: the biggest losses since inception — kept for honesty.
+      var misses = completed.slice().sort(function (a, b) {
+        return a.outcome_pct - b.outcome_pct;
+      }).slice(0, 5);
+      renderList('ts-winners', recentWinners);
+      renderList('ts-hof',     hof);
+      renderList('ts-losers',  misses);
     })
     .catch(function () {
       ['ts-total','ts-completed','ts-positive','ts-avg'].forEach(function (id) {
         var el = document.getElementById(id);
         if (el) el.textContent = '—';
       });
-      ['ts-winners','ts-losers'].forEach(function (id) {
+      ['ts-winners','ts-hof','ts-losers'].forEach(function (id) {
         var el = document.getElementById(id);
         if (el) el.innerHTML = '<li class="track-record-detail-empty">Track record data unavailable.</li>';
       });
@@ -952,13 +1013,15 @@
   var compsEl   = document.getElementById('mt-components');
 
   function verdictClass(label) {
+    // Temperature labels (Jul 2026 regime rebuild); legacy valuation labels
+    // kept so the page renders old data during the transition.
     switch (label) {
-      case 'Cheap':    return 'mt-v-cheap';
-      case 'Fair':     return 'mt-v-fair';
-      case 'Elevated': return 'mt-v-elevated';
-      case 'Frothy':   return 'mt-v-frothy';
-      case 'Extreme':  return 'mt-v-extreme';
-      default:         return 'mt-v-unknown';
+      case 'Cold':    case 'Cheap':    return 'mt-v-cheap';
+      case 'Cool':    case 'Fair':     return 'mt-v-fair';
+      case 'Neutral': case 'Elevated': return 'mt-v-elevated';
+      case 'Warm':    case 'Frothy':   return 'mt-v-frothy';
+      case 'Hot':     case 'Extreme':  return 'mt-v-extreme';
+      default:                         return 'mt-v-unknown';
     }
   }
 
@@ -1009,12 +1072,18 @@
 
   function titleFor(key) {
     return ({
-      buffett:    'Buffett Indicator',
-      shiller:    'Shiller CAPE',
-      fed_model:  'Fed Model',
-      breadth:    'Breadth',
-      fear_greed: 'Fear & Greed',
-      vix:        'VIX'
+      risk_posture: 'Risk Posture',
+      trend:        'Trend Heat',
+      breadth_50:   'Fast Breadth',
+      new_highs:    'Net New Highs',
+      fear_greed:   'Fear & Greed',
+      breadth:      'Structural Breadth',
+      credit:       'Credit Spreads',
+      yield_curve:  'Yield Curve',
+      // legacy keys — so old data renders cleanly until the new scan lands
+      buffett:      'Buffett Indicator',
+      shiller:      'Shiller CAPE',
+      fed_model:    'Fed Model'
     })[key] || key;
   }
 
@@ -1028,9 +1097,11 @@
     fillEl.style.width    = (score != null ? Math.max(0, Math.min(100, score)) : 0) + '%';
     metaEl.textContent    = data.scan_time ? 'Updated ' + fmtTs(data.scan_time) : '';
 
-    var keys = ['buffett', 'shiller', 'fed_model', 'breadth', 'fear_greed', 'vix'];
-    compsEl.innerHTML = keys.map(function (k) {
-      return renderComponent(k, (data.components || {})[k]);
+    // Data-driven: render whatever components the scan emitted, in its order
+    // (fast movers first) — works with both the old and new composition.
+    var comps = data.components || {};
+    compsEl.innerHTML = Object.keys(comps).map(function (k) {
+      return renderComponent(k, comps[k]);
     }).join('');
   }
 
