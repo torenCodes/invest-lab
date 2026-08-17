@@ -1,3 +1,10 @@
+@charset "UTF-8";
+/* ^ MUST stay the very first thing in this file, before any comment or blank
+   line, or browsers ignore it. The host serves this stylesheet as plain
+   "text/css" with no charset parameter, so without this declaration the
+   browser falls back to a legacy encoding and multi-byte characters render as
+   mojibake. The list bullets below appeared as "a-" for exactly that reason. */
+
 /* ── Reset & Base ───────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1058,7 +1065,7 @@ body {
 }
 
 .pv-signals li::before {
-  content: '▸';
+  content: "\25B8";
   color: var(--accent);
   font-size: 0.62rem;
   margin-top: 0.18rem;
@@ -1387,7 +1394,7 @@ body {
 }
 
 .blog-body ul li::before {
-  content: '▸';
+  content: "\25B8";
   color: var(--accent);
   font-size: 0.7rem;
   position: absolute;
