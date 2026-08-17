@@ -321,6 +321,12 @@
     background: #c9a227;
     flex-shrink: 0;
   }
+  /* Context states — present so every card is the same height, but visually
+     quieter than a live "since" result so they don't compete for attention. */
+  .flagged-note--none,
+  .flagged-note--past { color: var(--ink-3); opacity: 0.75; }
+  .flagged-note--none .flagged-dot { background: var(--border); }
+  .flagged-note--past .flagged-dot { background: var(--ink-3); opacity: 0.6; }
 
   .card-header {
     display: flex;
@@ -1274,14 +1280,18 @@ function renderEarningsCallout(stock) {
 }
 
 // ── Stock card renderer ────────────────────────────────────────────────────
-// ── "Previously flagged" — the lab's own receipts, on the card ──────────────
+// ── "Lab history" line — the lab's own prior calls, on every card ───────────
 // nominees_archive.json records the top pick from every scan with its entry
-// price and date. When a name on today's board was flagged on an EARLIER day,
-// show when it was called and what it has done since. Deliberately uses the
-// MOST RECENT prior flag rather than the earliest, which would cherry-pick the
-// flattering entry, and same-day flags are skipped because "since" means
-// nothing yet.
-let _flagged = {};
+// price and date. Every card gets this line so they stay the same height, and
+// what it says depends on how recent the prior call was RELATIVE TO THE BOARD'S
+// HORIZON. A "since" return only makes sense while the call is still live for
+// that style of trade: showing a five-month-old result on an intraday card
+// implies a hold nobody on that board would have taken. Past the horizon the
+// line switches to how often the name recurs, which stays useful without
+// pretending to be a tradeable return.
+const FLAG_HORIZON_DAYS = { day: 14, swing: 90 };
+
+let _flagged = {};   // ticker -> prior calls, newest first
 
 function loadFlagged() {
   return fetch('/data/nominees_archive.json?t=' + Date.now())
@@ -1293,26 +1303,53 @@ function loadFlagged() {
       d.nominees.forEach(n => {
         if (!n.ticker || !n.entry_price || !n.date_flagged) return;
         if (n.date_flagged >= today) return;            // no history to measure yet
-        const prev = map[n.ticker];
-        if (!prev || n.date_flagged > prev.date_flagged) map[n.ticker] = n;
+        (map[n.ticker] = map[n.ticker] || []).push(n);
       });
+      Object.keys(map).forEach(t =>
+        map[t].sort((a, b) => b.date_flagged.localeCompare(a.date_flagged)));
       _flagged = map;
     })
     .catch(() => { /* archive is a bonus — never block the board on it */ });
 }
 
-function flaggedNote(ticker, currentPrice) {
-  const f = _flagged[ticker];
-  if (!f || !currentPrice || !f.entry_price) return '';
-  const pct = ((currentPrice - f.entry_price) / f.entry_price) * 100;
-  if (!isFinite(pct)) return '';
-  const cls  = pct >= 0 ? 'change-up' : 'change-down';
-  const when = new Date(f.date_flagged + 'T12:00:00Z')
-    .toLocaleDateString([], { month: 'short', day: 'numeric' });
-  return `<div class="flagged-note" title="Flagged by ${f.source} on ${f.date_flagged} at $${fmt(f.entry_price)}">
-      <span class="flagged-dot"></span>Flagged ${when} at $${fmt(f.entry_price)}
-      <span class="${cls}">${pct >= 0 ? '+' : ''}${(Math.round(pct * 10) / 10).toFixed(1)}%</span> since
-    </div>`;
+function _flagDate(iso) {
+  return new Date(iso + 'T12:00:00Z').toLocaleDateString([], { month: 'short', day: 'numeric' });
+}
+
+function flaggedNote(ticker, currentPrice, type) {
+  const wrap = (cls, inner, title) =>
+    `<div class="flagged-note${cls}"${title ? ` title="${title}"` : ''}>` +
+    `<span class="flagged-dot"></span>${inner}</div>`;
+
+  const hist = _flagged[ticker];
+  if (!hist || !hist.length) {
+    // The archive holds top picks only, so absence means "not previously a top
+    // pick" rather than "never appeared". Worded to say exactly that.
+    return wrap(' flagged-note--none', 'First time as a top pick',
+                'This name has not been the top pick of a previous scan');
+  }
+
+  const latest  = hist[0];
+  const horizon = FLAG_HORIZON_DAYS[type] || 30;
+  const days    = Math.round((Date.now() - new Date(latest.date_flagged + 'T12:00:00Z')) / 86400000);
+
+  if (days <= horizon && currentPrice && latest.entry_price) {
+    const pct = ((currentPrice - latest.entry_price) / latest.entry_price) * 100;
+    if (isFinite(pct)) {
+      const cls = pct >= 0 ? 'change-up' : 'change-down';
+      return wrap('', `Flagged ${_flagDate(latest.date_flagged)} at $${fmt(latest.entry_price)} ` +
+        `<span class="${cls}">${pct >= 0 ? '+' : ''}${(Math.round(pct * 10) / 10).toFixed(1)}%</span> since`,
+        `Flagged by ${latest.source} on ${latest.date_flagged}`);
+    }
+  }
+
+  // Older than this board's horizon: recurrence, not a stale return.
+  const n = hist.length;
+  const label = n === 1
+    ? `Flagged once before, back on ${_flagDate(latest.date_flagged)}`
+    : `Flagged ${n} times before, last on ${_flagDate(latest.date_flagged)}`;
+  return wrap(' flagged-note--past', label,
+              `Outside this board's ${horizon}-day window, so no since-return is shown`);
 }
 
 function renderStockCard(stock, type, idx) {
@@ -1363,7 +1400,7 @@ function renderStockCard(stock, type, idx) {
         <span class="score-label">Score ${normScore}/100</span>
         <div class="score-track"><div class="score-fill" style="width:${normScore}%"></div></div>
       </div>
-      ${flaggedNote(stock.ticker, stock.current_price)}
+      ${flaggedNote(stock.ticker, stock.current_price, type)}
     </div>
     <div class="card-signals">${signals || '<span style="font-size:0.72rem;color:var(--ink-3);">No signals</span>'}</div>
     <div class="card-detail" id="${detailId}">
