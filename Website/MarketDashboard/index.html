@@ -300,6 +300,28 @@
     border-bottom: 1px solid var(--border-light);
   }
 
+  /* "Previously flagged" receipt line — the lab's own prior call on this name */
+  .flagged-note {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 9px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border);
+    font-size: 0.71rem;
+    color: var(--ink-3);
+    line-height: 1.35;
+    flex-wrap: wrap;
+  }
+  .flagged-note .change-up,
+  .flagged-note .change-down { font-weight: 600; }
+  .flagged-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #c9a227;
+    flex-shrink: 0;
+  }
+
   .card-header {
     display: flex;
     justify-content: space-between;
@@ -1252,6 +1274,47 @@ function renderEarningsCallout(stock) {
 }
 
 // ── Stock card renderer ────────────────────────────────────────────────────
+// ── "Previously flagged" — the lab's own receipts, on the card ──────────────
+// nominees_archive.json records the top pick from every scan with its entry
+// price and date. When a name on today's board was flagged on an EARLIER day,
+// show when it was called and what it has done since. Deliberately uses the
+// MOST RECENT prior flag rather than the earliest, which would cherry-pick the
+// flattering entry, and same-day flags are skipped because "since" means
+// nothing yet.
+let _flagged = {};
+
+function loadFlagged() {
+  return fetch('/data/nominees_archive.json?t=' + Date.now())
+    .then(r => (r.ok ? r.json() : null))
+    .then(d => {
+      if (!d || !Array.isArray(d.nominees)) return;
+      const today = new Date().toISOString().slice(0, 10);
+      const map = {};
+      d.nominees.forEach(n => {
+        if (!n.ticker || !n.entry_price || !n.date_flagged) return;
+        if (n.date_flagged >= today) return;            // no history to measure yet
+        const prev = map[n.ticker];
+        if (!prev || n.date_flagged > prev.date_flagged) map[n.ticker] = n;
+      });
+      _flagged = map;
+    })
+    .catch(() => { /* archive is a bonus — never block the board on it */ });
+}
+
+function flaggedNote(ticker, currentPrice) {
+  const f = _flagged[ticker];
+  if (!f || !currentPrice || !f.entry_price) return '';
+  const pct = ((currentPrice - f.entry_price) / f.entry_price) * 100;
+  if (!isFinite(pct)) return '';
+  const cls  = pct >= 0 ? 'change-up' : 'change-down';
+  const when = new Date(f.date_flagged + 'T12:00:00Z')
+    .toLocaleDateString([], { month: 'short', day: 'numeric' });
+  return `<div class="flagged-note" title="Flagged by ${f.source} on ${f.date_flagged} at $${fmt(f.entry_price)}">
+      <span class="flagged-dot"></span>Flagged ${when} at $${fmt(f.entry_price)}
+      <span class="${cls}">${pct >= 0 ? '+' : ''}${(Math.round(pct * 10) / 10).toFixed(1)}%</span> since
+    </div>`;
+}
+
 function renderStockCard(stock, type, idx) {
   const normScore = stock.score_normalized != null ? stock.score_normalized : Math.min(Math.round(stock.score / 63 * 100), 100);
   const chgClass  = stock.change_pct >= 0 ? 'change-up' : 'change-down';
@@ -1300,6 +1363,7 @@ function renderStockCard(stock, type, idx) {
         <span class="score-label">Score ${normScore}/100</span>
         <div class="score-track"><div class="score-fill" style="width:${normScore}%"></div></div>
       </div>
+      ${flaggedNote(stock.ticker, stock.current_price)}
     </div>
     <div class="card-signals">${signals || '<span style="font-size:0.72rem;color:var(--ink-3);">No signals</span>'}</div>
     <div class="card-detail" id="${detailId}">
@@ -1790,7 +1854,9 @@ function renderChatter(cards, buzzSource) {
 }
 
 // ── Boot ───────────────────────────────────────────────────────────────────
-loadResults();
+// Archive first, so the very first render already has the "flagged" receipts.
+// It never rejects, so a missing archive just means no notes rather than no board.
+loadFlagged().then(loadResults);
 loadCadence();
 setInterval(loadResults, 5 * 60 * 1000);  // auto-refresh every 5 min
 </script>
