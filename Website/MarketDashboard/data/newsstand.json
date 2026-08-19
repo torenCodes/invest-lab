@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-08-19T11:00:36.893249+00:00",
+  "scan_time": "2026-08-19T13:00:30.476670+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
@@ -23,32 +23,21 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "15.8",
+        "value": "15.4",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.71%",
+        "value": "4.64%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-08-19T11:00:47.010461+00:00"
+    "updated": "2026-08-19T13:00:39.968437+00:00"
   },
   "earnings": [
-    {
-      "date": "2026-08-19",
-      "symbol": "TJX",
-      "eps_estimate": 1.2036,
-      "eps_actual": null,
-      "revenue_estimate": 15344410860,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2027
-    },
     {
       "date": "2026-08-19",
       "symbol": "ROST",
@@ -59,39 +48,6 @@
       "hour": "",
       "quarter": 2,
       "year": 2027
-    },
-    {
-      "date": "2026-08-19",
-      "symbol": "ADI",
-      "eps_estimate": 3.3681,
-      "eps_actual": null,
-      "revenue_estimate": 3958820462,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 3,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-19",
-      "symbol": "VIK",
-      "eps_estimate": 1.2712,
-      "eps_actual": null,
-      "revenue_estimate": 2165925375,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-19",
-      "symbol": "ZIM",
-      "eps_estimate": -0.3283,
-      "eps_actual": null,
-      "revenue_estimate": 1571601743,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
     },
     {
       "date": "2026-08-19",
@@ -124,6 +80,50 @@
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 4,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "JBSS",
+      "eps_estimate": 1.196,
+      "eps_actual": null,
+      "revenue_estimate": 280365870,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 4,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "WOLF",
+      "eps_estimate": -2.499,
+      "eps_actual": null,
+      "revenue_estimate": 228964500,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 4,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "BULL",
+      "eps_estimate": 0.034,
+      "eps_actual": null,
+      "revenue_estimate": 187267583,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "ALVO",
+      "eps_estimate": -0.0275,
+      "eps_actual": null,
+      "revenue_estimate": 113230200,
+      "revenue_actual": null,
+      "hour": "",
+      "quarter": 2,
       "year": 2026
     },
     {
@@ -602,32 +602,88 @@
   ],
   "unusual_volume": [
     {
+      "ticker": "MRNA",
+      "name": "Moderna Inc",
+      "price": 118.7,
+      "change_pct": 88.53,
+      "volume": "19.1M"
+    },
+    {
       "ticker": "TNON",
       "name": "Tenon Medical Inc",
-      "price": 11.79,
-      "change_pct": 116.28,
-      "volume": "6.2M"
+      "price": 10.81,
+      "change_pct": 98.42,
+      "volume": "14.3M"
     },
     {
       "ticker": "RDAC",
       "name": "Rising Dragon Acquisition Corp",
-      "price": 16.81,
-      "change_pct": 187.35,
-      "volume": "4.6M"
+      "price": 13.28,
+      "change_pct": 127.01,
+      "volume": "5.9M"
+    },
+    {
+      "ticker": "FBRX",
+      "name": "Forte Biosciences Inc",
+      "price": 76.9,
+      "change_pct": 0.03,
+      "volume": "2.1M"
+    },
+    {
+      "ticker": "ARCT",
+      "name": "Arcturus Therapeutics Holdings Inc",
+      "price": 9.86,
+      "change_pct": 20.1,
+      "volume": "1.3M"
+    },
+    {
+      "ticker": "BNTX",
+      "name": "BioNTech SE ADR",
+      "price": 107.13,
+      "change_pct": 15.5,
+      "volume": "1.1M"
+    },
+    {
+      "ticker": "MRNY",
+      "name": "YieldMax MRNA Option Income Strategy ETF",
+      "price": 27.64,
+      "change_pct": 77.18,
+      "volume": "937K"
+    },
+    {
+      "ticker": "ALH",
+      "name": "Alliance Laundry Holdings Inc",
+      "price": 24.25,
+      "change_pct": 1.04,
+      "volume": "707K"
+    },
+    {
+      "ticker": "MRNX",
+      "name": "Defiance Daily Target 2X Long MRNA ETF",
+      "price": 86.87,
+      "change_pct": 177.27,
+      "volume": "403K"
     },
     {
       "ticker": "ASPC",
       "name": "A SPAC III Acquisition Corp",
-      "price": 10.71,
-      "change_pct": 0.83,
-      "volume": "146K"
+      "price": 10.98,
+      "change_pct": 3.35,
+      "volume": "152K"
     },
     {
-      "ticker": "AFJK",
-      "name": "Aimei Health Technology Co Ltd",
-      "price": 12.25,
-      "change_pct": 2.08,
-      "volume": "32K"
+      "ticker": "MRVX",
+      "name": "Corgi MRVL 2x Daily ETF",
+      "price": 26.0,
+      "change_pct": 17.44,
+      "volume": "15K"
+    },
+    {
+      "ticker": "ADIU",
+      "name": "Leverage Shares 2X Long ADI Daily ETF",
+      "price": 11.34,
+      "change_pct": 2.72,
+      "volume": "14K"
     }
   ]
 }
