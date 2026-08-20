@@ -25,8 +25,16 @@ from bs4 import BeautifulSoup
 BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(BASE_DIR, "data", "results.json")
 MIN_VALUE   = 25_000
+LOOKBACK_DAYS = 30
 
-HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
+# Purchases only (xp=1). cnt must be large: the default page size truncates.
+OPENINSIDER_URL = (
+    "http://openinsider.com/screener?s=&o=&pl=&ph=&ll=&lh=&fd={days}&fdr=&td=0&tdr="
+    "&fdlyl=&fdlyh=&daysago=&xp=1&vl=&vh=&ocl=&och=&sic1=-1&sicl=100&sich=9999&grp=0"
+    "&nfl=&nfh=&nil=&nih=&nol=&noh=&v2l=&v2h=&oc2l=&oc2h=&sortcol=0&cnt=5000&page=1")
+
+HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                         "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
 
 # Word-boundary regex — substring matching was incorrectly flagging titles
 # like "Director" as C-suite because the substring "cto" appears in
@@ -62,96 +70,112 @@ def is_csuite(title):
 
 # ── Fetch transactions ────────────────────────────────────────────────────────
 
-def fetch_transactions():
-    """Scrape Finviz insider trading page and return list of purchase transactions."""
-    url = (
-        "https://finviz.com/insidertrading.ashx"
-        "?or=-10&tv=25000&tc=1&o=-filedate&cnt=500"
-    )
+def _cell(html):
+    """Strip tags from one table cell."""
+    return re.sub(r"<[^>]+>", "", html).replace(" ", " ").strip()
+
+
+def _money(s):
+    """'+$86,500' -> 86500.0"""
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=15)
-        if resp.status_code != 200:
-            print(f"[Finviz] HTTP {resp.status_code}")
-            return []
+        return abs(float(re.sub(r"[^0-9.\-]", "", s or "") or 0))
+    except ValueError:
+        return 0.0
 
-        soup   = BeautifulSoup(resp.text, "html.parser")
-        tables = soup.find_all("table")
 
-        # Find the data table (has 'Ticker' as first header)
-        data_table = None
-        for t in tables:
-            headers = [th.get_text(strip=True) for th in t.find_all(["th", "td"])[:3]]
-            if headers and headers[0] == "Ticker":
-                data_table = t
+def _pct_own(s):
+    """OpenInsider's delta-own column: '+9%', '>999%', 'New'. Returns a float
+    percent, treating a brand new position as the strongest possible signal."""
+    t = (s or "").strip()
+    if not t:
+        return None
+    if "new" in t.lower():
+        return 999.0
+    try:
+        return abs(float(re.sub(r"[^0-9.\-]", "", t) or 0))
+    except ValueError:
+        return None
+
+
+def fetch_transactions():
+    """Open-market insider PURCHASES from OpenInsider's screener.
+
+    Replaced the Finviz scrape in Aug 2026. Both ultimately serve SEC Form 4
+    data, but this source carries two fields Finviz does not, and they are the
+    ones that separate a token purchase from real conviction:
+
+        Owned  - shares the insider holds after the trade
+        <Own   - how much that trade INCREASED their position
+
+    A director adding $50k to a $10m stake is noise. A CFO increasing their
+    holding by 80% is a statement, and only the second column can tell them
+    apart. The ticker is read from the link href rather than the cell text,
+    because the cell wraps a JS tooltip whose payload contains angle brackets
+    and defeats tag-stripping (the same trap that had Finviz reporting AATMU
+    for ATMU).
+    """
+    url = OPENINSIDER_URL.format(days=LOOKBACK_DAYS)
+    html = None
+    for attempt in range(4):
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=90)
+            if resp.status_code == 200:
+                html = resp.text
                 break
+            print(f"[OpenInsider] HTTP {resp.status_code} (attempt {attempt + 1})")
+        except Exception as e:
+            print(f"[OpenInsider] attempt {attempt + 1} failed: {str(e)[:70]}")
+        time.sleep(5 * (attempt + 1))
 
-        if not data_table:
-            print("[Finviz] Data table not found")
-            return []
-
-        rows = data_table.find_all("tr")[1:]  # skip header row
-        transactions = []
-
-        for row in rows:
-            cols = row.find_all("td")
-            if len(cols) < 9:
-                continue
-            try:
-                # Finviz renders a logo placeholder holding the ticker's FIRST
-                # LETTER next to the ticker link, so get_text() on the cell
-                # concatenates them — "ATMU" came through as "AATMU", which then
-                # failed every downstream lookup and polluted The Analyst with
-                # phantom tickers. Read the clean symbol off the cell's data
-                # attribute instead, falling back to the link's href/text.
-                tcell    = cols[0]
-                ticker   = (tcell.get("data-boxover-ticker") or "").strip().upper()
-                if not ticker:
-                    link = tcell.find("a")
-                    href = link.get("href", "") if link else ""
-                    m    = re.search(r"[?&]t=([A-Za-z0-9.\-]+)", href)
-                    ticker = (m.group(1) if m else
-                              (link.get_text(strip=True) if link else "")).upper()
-                # Finviz also carries the company name — keep it as a fallback so
-                # a yfinance miss doesn't leave the card showing a bare ticker.
-                fv_company = (tcell.get("data-boxover-company") or "").strip()
-                insider  = cols[1].get_text(strip=True)
-                title    = cols[2].get_text(strip=True)
-                date     = cols[3].get_text(strip=True)
-                txn_type = cols[4].get_text(strip=True)
-                price    = parse_float(cols[5].get_text(strip=True))
-                qty      = parse_int(cols[6].get_text(strip=True))
-                value    = parse_int(cols[7].get_text(strip=True))
-                filing   = cols[9].get_text(strip=True) if len(cols) > 9 else ""
-
-                # Only open-market purchases above minimum
-                if txn_type.lower() not in ("buy", "purchase"):
-                    continue
-                if value < MIN_VALUE:
-                    continue
-                if not ticker or not insider:
-                    continue
-
-                transactions.append({
-                    "ticker":     ticker,
-                    "fv_company": fv_company,
-                    "insider":    insider,
-                    "title":      title,
-                    "date":       date,
-                    "price":      price,
-                    "qty":        qty,
-                    "value":      value,
-                    "filing":     filing,
-                    "is_csuite":  is_csuite(title),
-                })
-            except Exception:
-                continue
-
-        print(f"[Finviz] {len(transactions)} purchase transactions (>= ${MIN_VALUE:,})")
-        return transactions
-
-    except Exception as e:
-        print(f"[Finviz] Error: {e}")
+    if not html:
+        print("[OpenInsider] No data after retries")
         return []
+
+    transactions = []
+    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.S):
+        cells = re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S)
+        if len(cells) < 13:
+            continue
+        m = re.search(r'href="/([A-Z][A-Z0-9.\-]{0,6})"', cells[3])
+        if not m:
+            continue
+        try:
+            ticker  = m.group(1).upper()
+            trade   = _cell(cells[2])                       # already ISO: 2026-08-18
+            insider = _cell(cells[5])
+            title   = _cell(cells[6])
+            ttype   = _cell(cells[7])
+            if not ttype.upper().startswith("P"):           # purchases only
+                continue
+            price = _money(_cell(cells[8]))
+            qty   = int(_money(_cell(cells[9])))
+            owned = int(_money(_cell(cells[10])))
+            value = _money(_cell(cells[12]))
+            if value < MIN_VALUE or price <= 0:
+                continue
+            transactions.append({
+                "ticker":     ticker,
+                "company":    _cell(cells[4]),
+                "insider":    insider,
+                "title":      title,
+                "date":       trade,
+                "price":      price,
+                "qty":        qty,
+                "owned":      owned,
+                "delta_own":  _pct_own(_cell(cells[11])),
+                "value":      value,
+                "filing":     _cell(cells[1])[:10],
+                "is_csuite":  is_csuite(title),
+            })
+        except Exception:
+            continue
+
+    if not transactions:
+        print("[OpenInsider] Parsed 0 transactions - the markup may have changed")
+    else:
+        print(f"[OpenInsider] {len(transactions)} purchases >= ${MIN_VALUE:,} "
+              f"over {LOOKBACK_DAYS} days")
+    return transactions
 
 
 # ── Enrich tickers ────────────────────────────────────────────────────────────
@@ -239,13 +263,24 @@ def _roll_up_by_ticker(transactions, enrichment):
                 "qty":       sub["qty"],
                 "value":     sub["value"],
                 "is_csuite": base["is_csuite"],
+                "owned":     base.get("owned"),
+                "delta_own": max((t.get("delta_own") or 0) for t in sub["txns"]) or None,
             })
         insiders.sort(key=lambda x: x["value"], reverse=True)
         top = insiders[0]
         enr = enrichment.get(ticker, {})
-        # Finviz's own company name, used when yfinance returns nothing usable
+
+        # Volume-weighted price the insiders actually paid, and where the stock
+        # trades against it. Buying below their cost is a genuinely useful edge:
+        # the people with the best information paid MORE than you would today.
+        spent  = sum(t["value"] for t in g["txns"])
+        shares = sum(t["qty"] for t in g["txns"]) or 0
+        avg_cost = round(spent / shares, 2) if shares else None
+        cur = enr.get("current_price") or 0
+        vs_insider = round((cur - avg_cost) / avg_cost * 100, 1) if (avg_cost and cur) else None
+        # The source's own company name, used when yfinance returns nothing usable
         # (its fallback is the bare ticker, which reads as a broken card).
-        fv_name = next((t.get("fv_company") for t in g["txns"] if t.get("fv_company")), "")
+        fv_name = next((t.get("company") for t in g["txns"] if t.get("company")), "")
 
         rows.append({
             "ticker":         ticker,
@@ -264,6 +299,9 @@ def _roll_up_by_ticker(transactions, enrichment):
             "current_price":  enr.get("current_price", 0),
             "change_pct":     enr.get("change_pct", 0),
             "market_cap":     enr.get("market_cap", 0),
+            "insider_avg_cost": avg_cost,
+            "vs_insider_pct":   vs_insider,
+            "max_delta_own":    max((i.get("delta_own") or 0) for i in insiders) or None,
             "insiders":       insiders,
         })
     return rows
@@ -283,60 +321,136 @@ TIER_B_CUTOFF = 25
 TIER_W_CUTOFF = 10
 
 
-def _parse_finviz_date(s):
-    """'Apr 28 '26' or 'May 02 '26' -> datetime. Used for recency checks."""
+# Role hierarchy. A CEO putting their own money in is the strongest single
+# voice; a 10% holder is often a fund rebalancing and says little about the
+# business, so it earns almost nothing here.
+ROLE_POINTS = [
+    (("CHIEF EXECUTIVE", "CEO"),                       25, "CEO"),
+    (("CHIEF FINANCIAL", "CFO"),                       22, "CFO"),
+    (("CHAIRMAN", "CHAIR"),                            18, "Chairman"),
+    (("PRESIDENT",),                                   18, "President"),
+    (("CHIEF OPERATING", "COO", "CHIEF TECHNOLOGY",
+      "CTO", "CHIEF MEDICAL", "CHIEF SCIENTIFIC",
+      "CHIEF BANKING", "CHIEF ACCOUNTING", "OFFICER"), 14, "Officer"),
+    (("DIRECTOR",),                                    10, "Director"),
+    (("10%", "TEN PERCENT", "BENEFICIAL"),              4, "10% owner"),
+]
+
+
+def _role_points(title):
+    t = (title or "").upper()
+    for keys, pts, label in ROLE_POINTS:
+        if any(k in t for k in keys):
+            return pts, label
+    return 6, "Insider"
+
+
+def _parse_trade_date(s):
+    """OpenInsider supplies ISO dates. The old Finviz format is still accepted
+    so a cached or hand-edited file does not break the scan."""
     if not s:
         return None
-    try:
-        return datetime.strptime(s, "%b %d '%y")
-    except ValueError:
-        return None
+    for fmt in ("%Y-%m-%d", "%b %d '%y"):
+        try:
+            return datetime.strptime(s.strip()[:10] if fmt == "%Y-%m-%d" else s.strip(), fmt)
+        except ValueError:
+            continue
+    return None
 
 
 def _conviction_score(row, today=None):
-    """Score a deduped ticker row across four dimensions. Returns
-    (score, list_of_signal_tags). Tunable; keep weights conservative so
-    Tier A really means high-conviction (multi-dimensional)."""
+    """Score a deduped ticker row 0-100 and return (score, signal tags).
+
+    Six dimensions, weighted by how much each has historically distinguished
+    an informative purchase from a routine one:
+
+        cluster      25   several insiders acting together
+        role         25   who bought, CEO down to 10% holder
+        conviction   20   how much they grew their OWN position
+        size         15   dollars, scaled against company size
+        recency      10   how fresh the signal is
+        entry         5   whether the stock is still near their price
+
+    The position-growth dimension is the one the previous Finviz-based version
+    could not see at all, and it is often the most telling: a director adding
+    $50k to a $10m stake is noise next to a CFO lifting their holding by 80%.
+    """
     today = today or datetime.now()
     signals = []
-    score   = 0
+    score = 0.0
 
-    # Distinct insiders — multi-insider buying is the strongest cluster signal
+    # ── Cluster (25) ──
     n_ins = row["insider_count"]
-    if   n_ins >= 5: score += 35; signals.append(f"{n_ins} insiders buying")
-    elif n_ins == 4: score += 28; signals.append("4 insiders buying")
-    elif n_ins == 3: score += 20; signals.append("3 insiders buying")
-    elif n_ins == 2: score += 12; signals.append("2 insiders buying")
-    # 1 insider = no cluster bonus (still in pool via other signals)
+    if   n_ins >= 5: score += 25; signals.append(f"{n_ins} insiders buying")
+    elif n_ins == 4: score += 21; signals.append("4 insiders buying")
+    elif n_ins == 3: score += 17; signals.append("3 insiders buying")
+    elif n_ins == 2: score += 11; signals.append("2 insiders buying")
+    else:            score += 3
 
-    # C-suite presence
-    if row["is_csuite"]:
-        # Identify the top C-suite buyer for the signal label
-        top_csuite = next((i for i in row["insiders"] if i["is_csuite"]), None)
-        if top_csuite:
-            score += 15
-            title = top_csuite["title"]
-            signals.append(f"{title} bought")
+    # ── Role quality (25), taking the most senior buyer ──
+    best_pts, best_label, best_title = 0, "", ""
+    for i in row["insiders"]:
+        pts, label = _role_points(i.get("title"))
+        if pts > best_pts:
+            best_pts, best_label, best_title = pts, label, (i.get("title") or "")
+    score += best_pts
+    # Titles arrive already well-formed ("CEO", "CFO, Treasurer", "COB, CEO"),
+    # so leave the casing alone — .title() turned CEO into "Ceo". Keep only the
+    # primary role, since some insiders list four of them.
+    primary = (best_title.split(",")[0].strip() if best_title else "")
+    if best_pts >= 18:
+        signals.append(f"{primary} bought" if primary else f"{best_label} bought")
+    elif best_pts >= 10:
+        signals.append(f"{best_label} bought")
+    # Both of the top two seats buying is a distinct, stronger message
+    titles_all = " ".join((i.get("title") or "") for i in row["insiders"]).upper()
+    if any(k in titles_all for k in ("CEO", "CHIEF EXECUTIVE")) and        any(k in titles_all for k in ("CFO", "CHIEF FINANCIAL")):
+        score += 4
+        signals.append("CEO and CFO both buying")
 
-    # Dollar volume tier
+    # ── Position growth (20) — the new dimension ──
+    deltas = [i.get("delta_own") for i in row["insiders"] if i.get("delta_own") is not None]
+    max_delta = max(deltas) if deltas else None
+    if max_delta is not None:
+        if   max_delta >= 100: score += 20; signals.append("Insider more than doubled their stake")
+        elif max_delta >=  50: score += 17; signals.append(f"Position up {max_delta:.0f}%")
+        elif max_delta >=  25: score += 13; signals.append(f"Position up {max_delta:.0f}%")
+        elif max_delta >=  10: score += 9;  signals.append(f"Position up {max_delta:.0f}%")
+        elif max_delta >=   5: score += 5
+        else:                  score += 2
+
+    # ── Size (15), judged against market cap where we know it ──
     v = row["value"]
-    if   v >= 10_000_000: score += 30; signals.append(f"${v/1e6:.1f}M total")
-    elif v >=  5_000_000: score += 22; signals.append(f"${v/1e6:.1f}M total")
-    elif v >=  1_000_000: score += 15; signals.append(f"${v/1e6:.1f}M total")
-    elif v >=    500_000: score += 10; signals.append(f"${v/1e3:.0f}K total")
-    elif v >=    100_000: score +=  5; signals.append(f"${v/1e3:.0f}K total")
+    cap = row.get("market_cap") or 0
+    if   v >= 10_000_000: score += 11; signals.append(f"${v/1e6:.1f}M total")
+    elif v >=  5_000_000: score += 9;  signals.append(f"${v/1e6:.1f}M total")
+    elif v >=  1_000_000: score += 7;  signals.append(f"${v/1e6:.1f}M total")
+    elif v >=    250_000: score += 4;  signals.append(f"${v/1e3:.0f}K total")
+    elif v >=    100_000: score += 2
+    if cap > 0:
+        # Relative to company size a modest cheque can still be a big statement
+        rel = v / cap
+        if   rel >= 0.01:  score += 4; signals.append("Large relative to market cap")
+        elif rel >= 0.003: score += 2
 
-    # Recency — most-recent insider buy within last 3 days
-    dates = [_parse_finviz_date(i["date"]) for i in row["insiders"]]
+    # ── Recency (10) ──
+    dates = [_parse_trade_date(i.get("date")) for i in row["insiders"]]
     dates = [d for d in dates if d]
     if dates:
-        most_recent = max(dates)
-        age_days = (today - most_recent).days
-        if age_days <= 3:
-            score += 5
-            signals.append("Activity in last 3 days")
+        age = (today - max(dates)).days
+        if   age <= 2:  score += 10; signals.append("Bought in the last 2 days")
+        elif age <= 5:  score += 8;  signals.append("Bought this week")
+        elif age <= 10: score += 5
+        elif age <= 20: score += 2
 
-    return score, signals
+    # ── Entry advantage (5) — can you still buy near their price? ──
+    vs = row.get("vs_insider_pct")
+    if vs is not None:
+        if   vs <= -5: score += 5; signals.append(f"Trading {abs(vs):.0f}% below insider cost")
+        elif vs <= 0:  score += 4; signals.append("Still below insider cost")
+        elif vs <= 8:  score += 2
+
+    return round(min(score, 100.0), 1), signals
 
 
 def _build_story(row, signals):

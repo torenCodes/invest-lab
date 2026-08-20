@@ -449,6 +449,11 @@
   .flagged-note--none .flagged-dot { background: var(--border); }
   .flagged-note--past .flagged-dot { background: var(--ink-3); opacity: 0.6; }
 
+  /* New conviction metrics from the SEC-derived rebuild */
+  .tag-delta { background: #f3ecfd; color: #6b3fa0; }
+  .tag-below { background: var(--green-bg, #edf7f2); color: var(--green, #1a7a4a); font-weight: 600; }
+  .tag-above { background: var(--surface-2, #f5f4f0); color: var(--ink-3, #8a8a82); }
+
   .card-expand-hint {
     padding: 6px 18px 10px;
     font-size: 0.68rem;
@@ -837,7 +842,9 @@ function toggleSiteNav(btn) {
     <div class="sidebar-section">
       <div class="sidebar-label">How it works</div>
       <div class="sidebar-note">
-        Every ticker is scored on four dimensions: distinct insiders, C-suite presence, dollar volume, and recency. Tier A = high conviction (multi-signal). Tier B = solid. Watch = single signal. Open-market purchases only; option exercises excluded.
+        Every ticker is scored across six dimensions, weighted by how much each one separates an informative purchase from a routine one: how many insiders bought together (25), how senior they are (25), how much they grew their own position (20), the size of the buy against the company (15), how recent it is (10), and whether the stock still trades near what they paid (5).
+        <br><br>
+        Tier A = high conviction across several dimensions. Tier B = solid. Watch = a single signal. Open-market purchases only, so option exercises and scheduled sales are excluded.
       </div>
     </div>
     <div class="sidebar-footer">Not financial advice. For personal educational use only.</div>
@@ -977,6 +984,8 @@ function renderNomineeCard(n, idx) {
       </div>
       <div class="card-tags">
         <span class="tier-badge ${tierClass(tier)}">${tierLabel(tier)} · ${n.conviction_score}</span>
+        ${n.max_delta_own ? `<span class="tag tag-delta" title="Largest increase any single insider made to their own position">${n.max_delta_own >= 999 ? 'New position' : '+' + Math.round(n.max_delta_own) + '% position'}</span>` : ''}
+        ${n.vs_insider_pct != null ? `<span class="tag ${n.vs_insider_pct <= 0 ? 'tag-below' : 'tag-above'}" title="Where the stock trades against the volume-weighted price the insiders paid${n.insider_avg_cost ? ' ($' + n.insider_avg_cost + ')' : ''}">${n.vs_insider_pct <= 0 ? Math.abs(n.vs_insider_pct).toFixed(1) + '% below insider cost' : n.vs_insider_pct.toFixed(1) + '% above insider cost'}</span>` : ''}
         <span class="tag tag-cluster">${n.insider_count} insider${n.insider_count === 1 ? '' : 's'}</span>
         <span class="tag tag-big">${fmt$(n.value)} total</span>
         <span class="tag tag-sector">${esc(n.sector)}</span>
