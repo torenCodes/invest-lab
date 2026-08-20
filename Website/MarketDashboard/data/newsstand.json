@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-08-20T11:00:27.503832+00:00",
+  "scan_time": "2026-08-20T13:00:30.596616+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
@@ -23,32 +23,21 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "15.1",
+        "value": "16.0",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.65%",
+        "value": "4.70%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-08-20T11:00:34.854005+00:00"
+    "updated": "2026-08-20T13:00:39.684323+00:00"
   },
   "earnings": [
-    {
-      "date": "2026-08-20",
-      "symbol": "WMT",
-      "eps_estimate": 0.7493,
-      "eps_actual": null,
-      "revenue_estimate": 188787837469,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2027
-    },
     {
       "date": "2026-08-20",
       "symbol": "SPR",
@@ -69,17 +58,6 @@
       "revenue_actual": null,
       "hour": "amc",
       "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-20",
-      "symbol": "SCSC",
-      "eps_estimate": 1.1636,
-      "eps_actual": null,
-      "revenue_estimate": 818104596,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 4,
       "year": 2026
     },
     {
@@ -106,17 +84,6 @@
     },
     {
       "date": "2026-08-20",
-      "symbol": "NMM",
-      "eps_estimate": 4.6151,
-      "eps_actual": null,
-      "revenue_estimate": 365383407,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2026
-    },
-    {
-      "date": "2026-08-20",
       "symbol": "BKE",
       "eps_estimate": 0.8333,
       "eps_actual": null,
@@ -125,6 +92,39 @@
       "hour": "",
       "quarter": 2,
       "year": 2027
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "PSEC",
+      "eps_estimate": 0.1122,
+      "eps_actual": null,
+      "revenue_estimate": 152796000,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 4,
+      "year": 2026
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "DOMO",
+      "eps_estimate": 0.0022,
+      "eps_actual": null,
+      "revenue_estimate": 79787460,
+      "revenue_actual": null,
+      "hour": "",
+      "quarter": 2,
+      "year": 2027
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "PDEX",
+      "eps_estimate": 0.6834,
+      "eps_actual": null,
+      "revenue_estimate": 19584000,
+      "revenue_actual": null,
+      "hour": "",
+      "quarter": 4,
+      "year": 2026
     },
     {
       "date": "2026-08-21",
@@ -580,32 +580,25 @@
   ],
   "unusual_volume": [
     {
-      "ticker": "SGLY",
-      "name": "Singularity Future Technology Ltd",
-      "price": 7.39,
-      "change_pct": 147.98,
-      "volume": "9.8M"
-    },
-    {
       "ticker": "PUR",
       "name": "Defiance Daily Target 2X Long PURR ETF",
-      "price": 26.05,
-      "change_pct": 15.47,
-      "volume": "100K"
-    },
-    {
-      "ticker": "SLON",
-      "name": "ProShares Ultra Solana ETF",
-      "price": 24.4,
-      "change_pct": 12.12,
-      "volume": "51K"
+      "price": 23.8,
+      "change_pct": 5.49,
+      "volume": "143K"
     },
     {
       "ticker": "EETH",
       "name": "ProShares Ether ETF",
-      "price": 27.75,
-      "change_pct": 8.61,
-      "volume": "39K"
+      "price": 27.88,
+      "change_pct": 9.12,
+      "volume": "101K"
+    },
+    {
+      "ticker": "SLON",
+      "name": "ProShares Ultra Solana ETF",
+      "price": 24.1,
+      "change_pct": 10.76,
+      "volume": "92K"
     }
   ]
 }
