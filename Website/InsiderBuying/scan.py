@@ -180,8 +180,38 @@ def fetch_transactions():
 
 # ── Enrich tickers ────────────────────────────────────────────────────────────
 
+# Blank-check vehicles. A SPAC sponsor buying units is not the signal this board
+# is looking for: there is no operating business to have an opinion about, and
+# the purchase is usually structural rather than a view on value. Caught two
+# ways because neither alone is enough — Churchill Capital Corp XIII has no
+# giveaway word in its name, and some SPACs trade under a plain 4-letter symbol.
+_SPAC_NAME = re.compile(r"\b(acquisition|merger|blank check)\b", re.I)
+_UNIT_TICKER = re.compile(r"^[A-Z]{4}[UW]$")
+
+
+def _yf_symbol(ticker):
+    """Yahoo writes share classes with a dash, the filings use a dot. Without
+    this, BRK.B silently resolved to nothing and Berkshire Hathaway was dropped
+    from the board as 'unpriceable'."""
+    return (ticker or "").replace(".", "-")
+
+
+def is_investable(ticker, company, info):
+    """Should this name appear on the board at all? Returns (ok, reason)."""
+    if _SPAC_NAME.search(company or "") or _UNIT_TICKER.match(ticker or ""):
+        return False, "blank-check vehicle"
+    qt = (info or {}).get("quoteType") or ""
+    if qt and qt.upper() != "EQUITY":
+        return False, f"not an operating company ({qt.lower()})"
+    px = (info or {}).get("currentPrice") or (info or {}).get("regularMarketPrice") or 0
+    if not px:
+        return False, "no quote available"
+    return True, ""
+
+
 def enrich_tickers(tickers):
-    """Fetch current price, change%, market cap, sector via yfinance."""
+    """Fetch current price, change%, market cap, sector via yfinance, and mark
+    anything that should not be scored as a nominee."""
     import yfinance as yf
 
     enriched = {}
@@ -190,24 +220,29 @@ def enrich_tickers(tickers):
     for i in range(0, len(tickers), batch_size):
         batch = tickers[i:i + batch_size]
         try:
-            data = yf.Tickers(" ".join(batch))
+            data = yf.Tickers(" ".join(_yf_symbol(t) for t in batch))
             for ticker in batch:
                 try:
-                    info = data.tickers[ticker].info
+                    info = data.tickers[_yf_symbol(ticker)].info
                     change_pct = info.get("regularMarketChangePercent", 0) or 0
+                    name = info.get("longName") or info.get("shortName") or ticker
+                    ok, reason = is_investable(ticker, name, info)
                     enriched[ticker] = {
                         "current_price": info.get("currentPrice") or info.get("regularMarketPrice") or 0,
                         "change_pct":    round(change_pct, 2),
                         "market_cap":    info.get("marketCap") or 0,
                         "sector":        info.get("sector") or "Unknown",
                         "industry":      info.get("industry") or "",
-                        "name":          info.get("longName") or info.get("shortName") or ticker,
+                        "name":          name,
+                        "investable":    ok,
+                        "exclude_reason": reason,
                     }
                 except Exception:
                     enriched[ticker] = {
                         "current_price": 0, "change_pct": 0,
                         "market_cap": 0, "sector": "Unknown",
                         "industry": "", "name": ticker,
+                        "investable": False, "exclude_reason": "no quote available",
                     }
         except Exception as e:
             print(f"[yfinance] Batch error: {e}")
@@ -216,6 +251,7 @@ def enrich_tickers(tickers):
                     "current_price": 0, "change_pct": 0,
                     "market_cap": 0, "sector": "Unknown",
                     "industry": "", "name": ticker,
+                    "investable": False, "exclude_reason": "no quote available",
                 }
         time.sleep(0.5)
 
@@ -498,7 +534,15 @@ def build_nominees(transactions, enrichment):
 
     today = datetime.now()
     scored = []
+    excluded = []
     for r in rows:
+        # Quality gate before scoring, so blank-check vehicles and unquotable
+        # symbols cannot occupy a slot on the board. Logged rather than silently
+        # dropped, so a bad rule shows up in the run output.
+        enr = enrichment.get(r["ticker"], {})
+        if enr.get("investable") is False:
+            excluded.append((r["ticker"], r.get("company", ""), enr.get("exclude_reason", "excluded")))
+            continue
         score, signals = _conviction_score(r, today=today)
         if score < TIER_W_CUTOFF:
             continue
@@ -512,6 +556,11 @@ def build_nominees(transactions, enrichment):
         scored.append(r)
 
     scored.sort(key=lambda x: x["conviction_score"], reverse=True)
+
+    if excluded:
+        print(f"[scan.py] Excluded {len(excluded)} non-investable names:")
+        for tk, name, why in excluded[:12]:
+            print(f"[scan.py]   {tk:<7} {name[:38]:<38} {why}")
 
     standouts = scored[:3]
     tier_counts = {
