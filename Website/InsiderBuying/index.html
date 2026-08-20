@@ -454,6 +454,65 @@
   .tag-below { background: var(--green-bg, #edf7f2); color: var(--green, #1a7a4a); font-weight: 600; }
   .tag-above { background: var(--surface-2, #f5f4f0); color: var(--ink-3, #8a8a82); }
 
+  /* ── Tabs (Corporate / Politician) — mirrors The Marathon's pattern ─────── */
+  .tab-bar {
+    display: flex; gap: 4px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 26px;
+  }
+  .tab-btn {
+    background: none; border: none; cursor: pointer;
+    font-family: 'Barlow', sans-serif; font-size: 1rem; font-weight: 600;
+    color: var(--ink-3); padding: 11px 20px;
+    border-bottom: 2px solid transparent; transition: color .15s, border-color .15s;
+  }
+  .tab-btn:hover { color: var(--ink); }
+  .tab-btn.active { color: var(--accent-dark); border-bottom-color: var(--accent); }
+  .tab-btn .tab-count {
+    font-family: 'DM Mono', monospace; font-size: .72rem;
+    color: var(--ink-3); margin-left: 6px;
+  }
+  .tab-panel[hidden] { display: none; }
+
+  /* ── Capitol Flow ────────────────────────────────────────────────────────── */
+  .cap-caveat {
+    background: var(--orange-bg, #fef5ec);
+    border: 1px solid #f0d9b8;
+    border-radius: var(--radius);
+    padding: 14px 18px; margin-bottom: 26px;
+    font-size: .82rem; color: var(--ink-2); line-height: 1.6;
+  }
+  .cap-caveat strong { color: var(--ink); }
+  .cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .cap-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  .cap-table th {
+    text-align: left; padding: 8px 10px; font-size: .68rem; font-weight: 600;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3);
+    border-bottom: 1px solid var(--border); background: var(--surface-2);
+  }
+  .cap-table td { padding: 9px 10px; border-bottom: 1px solid var(--border-light); }
+  .cap-table tr:last-child td { border-bottom: none; }
+  .cap-tk { font-family: 'DM Mono', monospace; font-weight: 600; color: var(--ink); }
+  .cap-members { font-size: .74rem; color: var(--ink-3); }
+  .cap-count {
+    display: inline-block; min-width: 20px; text-align: center;
+    font-family: 'DM Mono', monospace; font-weight: 600; font-size: .78rem;
+    padding: 1px 7px; border-radius: 20px;
+  }
+  .cap-count-buy  { background: var(--green-bg); color: var(--green); }
+  .cap-count-sell { background: var(--red-bg);   color: var(--red); }
+  .cap-panel {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden;
+  }
+  .cap-panel-head {
+    padding: 13px 18px; border-bottom: 1px solid var(--border-light);
+    background: var(--surface-2);
+  }
+  .cap-panel-title { font-size: .9rem; font-weight: 600; color: var(--ink); }
+  .cap-panel-sub { font-size: .74rem; color: var(--ink-3); margin-top: 2px; }
+  @media (max-width: 900px) { .cap-grid { grid-template-columns: 1fr; } }
+
   .card-expand-hint {
     padding: 6px 18px 10px;
     font-size: 0.68rem;
@@ -811,7 +870,8 @@ function toggleSiteNav(btn) {
     <span id="stat-total" style="display:none"></span>
     <span id="stat-range" style="display:none"></span>
     <div class="sidebar-section">
-      <div class="sidebar-label">Filter by tier</div>
+      <div class="sidebar-label" id="side-filter-label">Filter by tier</div>
+      <div id="sidebar-corporate">
       <div class="nav-item active" onclick="setFilter('all')" id="nav-all">
         <span class="nav-icon">☰</span> All Nominees
         <span class="nav-badge" id="badge-all">—</span>
@@ -831,6 +891,20 @@ function toggleSiteNav(btn) {
       <a class="nav-item" href="#feed">
         <span class="nav-icon">📋</span> Recent Feed
       </a>
+      </div>
+      <div id="sidebar-politician" hidden>
+        <div class="nav-item active" onclick="setCapFilter('bought')" id="capnav-bought">
+          <span class="nav-icon">▲</span> Most Bought
+          <span class="nav-badge" id="capbadge-bought">—</span>
+        </div>
+        <div class="nav-item" onclick="setCapFilter('sold')" id="capnav-sold">
+          <span class="nav-icon">▼</span> Most Sold
+          <span class="nav-badge" id="capbadge-sold">—</span>
+        </div>
+        <a class="nav-item" href="#cap-feed">
+          <span class="nav-icon">📋</span> Recent Filings
+        </a>
+      </div>
     </div>
 
     <div class="sidebar-section scan-progress-wrap">
@@ -840,11 +914,16 @@ function toggleSiteNav(btn) {
     </div>
 
     <div class="sidebar-section">
-      <div class="sidebar-label">How it works</div>
-      <div class="sidebar-note">
+      <div class="sidebar-label" id="side-how-label">How it works</div>
+      <div class="sidebar-note" id="side-how-corporate">
         Every ticker is scored across six dimensions, weighted by how much each one separates an informative purchase from a routine one: how many insiders bought together (25), how senior they are (25), how much they grew their own position (20), the size of the buy against the company (15), how recent it is (10), and whether the stock still trades near what they paid (5).
         <br><br>
         Tier A = high conviction across several dimensions. Tier B = solid. Watch = a single signal. Open-market purchases only, so option exercises and scheduled sales are excluded.
+      </div>
+      <div class="sidebar-note" id="side-how-politician" hidden>
+        Periodic Transaction Reports filed with the Clerk of the House, parsed straight from the PDFs. Names are ranked by how many different members traded them rather than by dollars, because members disclose only a broad range and a midpoint is a poor measure of size.
+        <br><br>
+        Disclosure runs 30 to 45 days behind the trade, so treat this as a read on themes and attention rather than a signal to act on. House only, since the Senate publishes no bulk file.
       </div>
     </div>
     <div class="sidebar-footer">Not financial advice. For personal educational use only.</div>
@@ -1107,6 +1186,16 @@ function render(d) {
 
   // Main content
   document.getElementById('main').innerHTML = `
+    <div class="tab-bar">
+      <button class="tab-btn" id="tabbtn-corporate" onclick="switchTab('corporate')">
+        Corporate<span class="tab-count">${allNominees.length}</span>
+      </button>
+      <button class="tab-btn" id="tabbtn-politician" onclick="switchTab('politician')">
+        Politician<span class="tab-count" id="tabcount-politician"></span>
+      </button>
+    </div>
+
+    <div class="tab-panel" id="tab-corporate">
 
     ${renderStandouts(d.standouts)}
 
@@ -1127,8 +1216,174 @@ function render(d) {
       </div>
       ${renderFeed(d.recent_feed)}
     </section>
+    </div>
+
+    <div class="tab-panel" id="tab-politician" hidden>
+      <div id="capitol-content">
+        <div class="loading-wrap"><div class="spinner"></div>Loading congressional filings…</div>
+      </div>
+    </div>
   `;
+  applyTab(activeTab);
 }
+
+// ── Tabs ──────────────────────────────────────────────────────────────────────
+// Corporate and Politician are both "insiders" in the meaningful sense, but they
+// run on completely different clocks: a Form 4 is due in 2 business days while a
+// congressional PTR allows 30-45. They share a page, never a ranking.
+var activeTab = (new URLSearchParams(location.search).get('tab') === 'politician')
+  ? 'politician' : 'corporate';
+var capitolData = null;
+var capFilter = 'bought';
+
+function applyTab(tab) {
+  activeTab = tab;
+  ['corporate', 'politician'].forEach(function (t) {
+    var panel = document.getElementById('tab-' + t);
+    var btn   = document.getElementById('tabbtn-' + t);
+    var side  = document.getElementById('sidebar-' + t);
+    if (panel) panel.hidden = (t !== tab);
+    if (btn)   btn.classList.toggle('active', t === tab);
+    if (side)  side.hidden = (t !== tab);   // filters follow the tab
+  });
+  // The sidebar copy is written for one board or the other, so it swaps too —
+  // "Filter by tier" is meaningless next to a list of congressional filings.
+  var fl = document.getElementById('side-filter-label');
+  var hc = document.getElementById('side-how-corporate');
+  var hp = document.getElementById('side-how-politician');
+  if (fl) fl.textContent = (tab === 'politician') ? 'Congressional flow' : 'Filter by tier';
+  if (hc) hc.hidden = (tab === 'politician');
+  if (hp) hp.hidden = (tab !== 'politician');
+  if (tab === 'politician' && !capitolData) loadCapitol();
+}
+
+function switchTab(tab) {
+  applyTab(tab);
+  var u = new URL(location);
+  u.searchParams.set('tab', tab);
+  history.replaceState({}, '', u);   // deep-linkable, same as The Marathon
+}
+
+function setCapFilter(which) {
+  capFilter = which;
+  ['bought', 'sold'].forEach(function (w) {
+    var el = document.getElementById('capnav-' + w);
+    if (el) el.classList.toggle('active', w === which);
+  });
+  if (capitolData) renderCapitol(capitolData);
+}
+
+function loadCapitol() {
+  fetch('data/capitol_flow.json?t=' + Date.now())
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (d) {
+      capitolData = d;
+      var c = document.getElementById('tabcount-politician');
+      if (c) c.textContent = d.transactions || '';
+      var bb = document.getElementById('capbadge-bought');
+      var sb = document.getElementById('capbadge-sold');
+      if (bb) bb.textContent = (d.top_bought || []).length;
+      if (sb) sb.textContent = (d.top_sold || []).length;
+      renderCapitol(d);
+    })
+    .catch(function (e) {
+      document.getElementById('capitol-content').innerHTML =
+        '<div class="cap-caveat">Congressional filings are not available right now (' + esc(e.message) + ').</div>';
+    });
+}
+
+function capRows(list, kind) {
+  if (!list || !list.length) return '<tr><td colspan="4" style="color:var(--ink-3)">Nothing in this window.</td></tr>';
+  return list.map(function (r) {
+    return '<tr>' +
+      '<td><span class="cap-tk">' + esc(r.ticker) + '</span></td>' +
+      '<td><span class="cap-count cap-count-' + (kind === 'bought' ? 'buy' : 'sell') + '">' + r.members + '</span></td>' +
+      '<td>' + r.trades + '</td>' +
+      '<td class="cap-members">' + esc((r.member_names || []).join(', ')) + '</td>' +
+    '</tr>';
+  }).join('');
+}
+
+function renderCapitol(d) {
+  var showing = capFilter === 'sold' ? d.top_sold : d.top_bought;
+  var label   = capFilter === 'sold' ? 'Sold' : 'Bought';
+  var recent  = (d.recent || []).slice(0, 40);
+
+  document.getElementById('capitol-content').innerHTML =
+    '<div class="cap-caveat">' +
+      '<strong>Read this as a theme, not a trade.</strong> Members disclose under the STOCK Act ' +
+      'with a legal window of 30 to 45 days, and the median lag in this data is <strong>' +
+      (d.median_disclosure_lag_days != null ? d.median_disclosure_lag_days : '—') + ' days</strong>. ' +
+      'Whatever moved the stock has usually already moved it. Amounts are disclosed as ranges ' +
+      'rather than figures, so every total here uses the midpoint of a band and is an estimate. ' +
+      'House of Representatives only, because the Senate publishes no bulk download.' +
+    '</div>' +
+
+    '<section>' +
+      '<div class="section-header">' +
+        '<h2 class="section-title">Most ' + label + '</h2>' +
+        '<span class="section-subtitle">Last ' + (d.window_days || 90) + ' days, ranked by how many different members traded it</span>' +
+        '<span class="section-badge">' + (showing || []).length + ' names</span>' +
+      '</div>' +
+      '<div class="cap-panel">' +
+        '<table class="cap-table"><thead><tr>' +
+          '<th>Ticker</th><th>Members</th><th>Trades</th><th>Who</th>' +
+        '</tr></thead><tbody>' + capRows(showing, capFilter) + '</tbody></table>' +
+      '</div>' +
+    '</section>' +
+
+    '<section style="margin-top:30px">' +
+      '<div class="section-header">' +
+        '<h2 class="section-title">Filing Activity</h2>' +
+        '<span class="section-subtitle">' + (d.filings_with_trades || 0) + ' of ' + (d.filings_total || 0) +
+          ' reports listed tickered assets</span>' +
+      '</div>' +
+      '<div class="cap-grid">' +
+        '<div class="cap-panel">' +
+          '<div class="cap-panel-head"><div class="cap-panel-title">Most active members</div>' +
+          '<div class="cap-panel-sub">By number of disclosed trades</div></div>' +
+          '<table class="cap-table"><tbody>' +
+            (d.most_active || []).map(function (m) {
+              return '<tr><td>' + esc(m.member) + '</td><td style="text-align:right">' + m.trades + '</td></tr>';
+            }).join('') +
+          '</tbody></table>' +
+        '</div>' +
+        '<div class="cap-panel">' +
+          '<div class="cap-panel-head"><div class="cap-panel-title">What they traded</div>' +
+          '<div class="cap-panel-sub">Instrument mix across the window</div></div>' +
+          '<table class="cap-table"><tbody>' +
+            (d.asset_mix || []).map(function (a) {
+              return '<tr><td>' + esc(a.type) + '</td><td style="text-align:right">' + a.trades + '</td></tr>';
+            }).join('') +
+          '</tbody></table>' +
+        '</div>' +
+      '</div>' +
+    '</section>' +
+
+    '<section id="cap-feed" style="margin-top:30px">' +
+      '<div class="section-header">' +
+        '<h2 class="section-title">Recent Filings</h2>' +
+        '<span class="section-subtitle">Newest disclosed trades first</span>' +
+        '<span class="section-badge">' + recent.length + ' shown</span>' +
+      '</div>' +
+      '<div class="cap-panel"><table class="cap-table"><thead><tr>' +
+        '<th>Traded</th><th>Member</th><th>Ticker</th><th>Type</th><th>Disclosed range</th>' +
+      '</tr></thead><tbody>' +
+        recent.map(function (t) {
+          var kind = t.code === 'P' ? 'buy' : 'sell';
+          var word = t.code === 'P' ? 'Buy' : (t.code === 'S' ? 'Sell' : 'Exch');
+          return '<tr>' +
+            '<td class="cap-members">' + esc(t.trade_date) + '</td>' +
+            '<td>' + esc(t.member) + '</td>' +
+            '<td><span class="cap-tk">' + esc(t.ticker) + '</span></td>' +
+            '<td><span class="cap-count cap-count-' + kind + '">' + word + '</span></td>' +
+            '<td class="cap-members">$' + Number(t.amount_low).toLocaleString() + ' – $' + Number(t.amount_high).toLocaleString() + '</td>' +
+          '</tr>';
+        }).join('') +
+      '</tbody></table></div>' +
+    '</section>';
+}
+
 
 // ── Load data ─────────────────────────────────────────────────────────────────
 // ── Lab history line — the lab's own prior calls on this name ────────────────

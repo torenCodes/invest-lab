@@ -1,0 +1,46 @@
+name: Capitol Flow Scan
+
+on:
+  schedule:
+    # Twice a week. Periodic Transaction Reports trickle in rather than arriving
+    # on a daily cadence, and disclosure already runs weeks behind the trade, so
+    # scanning more often would spend requests on house.gov for no new signal.
+    - cron: '0 12 * * 2'   # Tuesday ~8am ET
+    - cron: '0 12 * * 5'   # Friday  ~8am ET
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pypdf
+
+      # Filings already parsed are cached in Website/data/capitol_cache.json and
+      # are never re-fetched, so a normal run only pulls the handful of new PTRs.
+      - name: Run Capitol Flow scan
+        run: python Website/scripts/capitol_flow_scan.py
+
+      - name: Commit results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          git add Website/InsiderBuying/data/capitol_flow.json Website/data/capitol_cache.json
+          git diff --staged --quiet || git commit -m "chore: capitol flow scan $(date -u +%Y-%m-%dT%H:%M)Z"
+          git pull --rebase -Xtheirs origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref_name }}

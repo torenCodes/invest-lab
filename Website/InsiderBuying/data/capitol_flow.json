@@ -1,0 +1,2164 @@
+{
+ "scan_time": "2026-08-20T22:34:43.199173+00:00",
+ "source": "US House Clerk \u2014 Periodic Transaction Reports",
+ "filings_total": 359,
+ "filings_with_trades": 219,
+ "transactions": 2526,
+ "window_days": 90,
+ "median_disclosure_lag_days": 18,
+ "caveats": {
+  "lag": "The STOCK Act allows 30-45 days between a trade and its disclosure, so this is a thematic read rather than a timing signal.",
+  "amounts": "Members disclose a range, not a figure. Totals use the midpoint of each band and are estimates only.",
+  "coverage": "House of Representatives only. The Senate portal has no bulk download."
+ },
+ "top_bought": [
+  {
+   "ticker": "SPCX",
+   "trades": 7,
+   "est_amount": 239000,
+   "members": 6,
+   "member_names": [
+    "Daniel Meuser",
+    "Gilbert Cisneros",
+    "Jared Moskowitz",
+    "John James",
+    "John McGuire",
+    "William R. Timmons"
+   ]
+  },
+  {
+   "ticker": "MSFT",
+   "trades": 6,
+   "est_amount": 48000,
+   "members": 3,
+   "member_names": [
+    "Cleo Fields",
+    "David J. Taylor",
+    "Jared Moskowitz"
+   ]
+  },
+  {
+   "ticker": "UBER",
+   "trades": 2,
+   "est_amount": 758000,
+   "members": 2,
+   "member_names": [
+    "Dan Newhouse",
+    "Nancy Pelosi"
+   ]
+  },
+  {
+   "ticker": "KVUE",
+   "trades": 4,
+   "est_amount": 390500,
+   "members": 2,
+   "member_names": [
+    "Gilbert Cisneros",
+    "Kevin Hern"
+   ]
+  },
+  {
+   "ticker": "T",
+   "trades": 2,
+   "est_amount": 83000,
+   "members": 2,
+   "member_names": [
+    "David J. Taylor",
+    "Tim Moore"
+   ]
+  },
+  {
+   "ticker": "BRK.B",
+   "trades": 3,
+   "est_amount": 48500,
+   "members": 2,
+   "member_names": [
+    "Maria Elvira Salazar",
+    "Richard Dean Dr McCormick"
+   ]
+  },
+  {
+   "ticker": "CMCSA",
+   "trades": 2,
+   "est_amount": 40500,
+   "members": 2,
+   "member_names": [
+    "Gilbert Cisneros",
+    "Mike Kelly"
+   ]
+  },
+  {
+   "ticker": "GOOGL",
+   "trades": 4,
+   "est_amount": 32000,
+   "members": 2,
+   "member_names": [
+    "David J. Taylor",
+    "Michael Rulli"
+   ]
+  },
+  {
+   "ticker": "AMAT",
+   "trades": 4,
+   "est_amount": 32000,
+   "members": 2,
+   "member_names": [
+    "Jared Moskowitz",
+    "John J Mr McGuire"
+   ]
+  },
+  {
+   "ticker": "NVDA",
+   "trades": 4,
+   "est_amount": 32000,
+   "members": 2,
+   "member_names": [
+    "Cleo Fields",
+    "Michael Rulli"
+   ]
+  },
+  {
+   "ticker": "MNST",
+   "trades": 3,
+   "est_amount": 24000,
+   "members": 2,
+   "member_names": [
+    "Jared Moskowitz",
+    "Josh Gottheimer"
+   ]
+  },
+  {
+   "ticker": "META",
+   "trades": 3,
+   "est_amount": 24000,
+   "members": 2,
+   "member_names": [
+    "Jared Moskowitz",
+    "John McGuire"
+   ]
+  },
+  {
+   "ticker": "ABT",
+   "trades": 3,
+   "est_amount": 24000,
+   "members": 2,
+   "member_names": [
+    "Gilbert Cisneros",
+    "Richard Dean Dr McCormick"
+   ]
+  },
+  {
+   "ticker": "ZTS",
+   "trades": 3,
+   "est_amount": 24000,
+   "members": 2,
+   "member_names": [
+    "Byron Donalds",
+    "Gilbert Cisneros"
+   ]
+  },
+  {
+   "ticker": "AAPL",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "Ed Case",
+    "Gilbert Cisneros"
+   ]
+  },
+  {
+   "ticker": "AVGO",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "David J. Taylor",
+    "Richard W. Allen"
+   ]
+  },
+  {
+   "ticker": "AMD",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "Gilbert Cisneros",
+    "Richard W. Allen"
+   ]
+  },
+  {
+   "ticker": "ACN",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "Dan Newhouse",
+    "Gilbert Cisneros"
+   ]
+  },
+  {
+   "ticker": "APH",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "Dan Newhouse",
+    "Rick Larsen"
+   ]
+  },
+  {
+   "ticker": "FIS",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "Dan Newhouse",
+    "Gilbert Cisneros"
+   ]
+  },
+  {
+   "ticker": "MU",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "Dan Newhouse",
+    "Michael Rulli"
+   ]
+  },
+  {
+   "ticker": "HD",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "Jared Moskowitz",
+    "Lloyd Doggett"
+   ]
+  },
+  {
+   "ticker": "INTC",
+   "trades": 1,
+   "est_amount": 3000000,
+   "members": 1,
+   "member_names": [
+    "Nancy Pelosi"
+   ]
+  },
+  {
+   "ticker": "MDB",
+   "trades": 1,
+   "est_amount": 375000,
+   "members": 1,
+   "member_names": [
+    "Gilbert Cisneros"
+   ]
+  },
+  {
+   "ticker": "OGN",
+   "trades": 1,
+   "est_amount": 175000,
+   "members": 1,
+   "member_names": [
+    "Kevin Hern"
+   ]
+  }
+ ],
+ "top_sold": [
+  {
+   "ticker": "MSFT",
+   "trades": 6,
+   "est_amount": 814500,
+   "members": 5,
+   "member_names": [
+    "Gilbert Cisneros",
+    "Matthew Robert Van Epps",
+    "Michael Rulli",
+    "Richard Dean Dr McCormick",
+    "Thomas H. Kean"
+   ]
+  },
+  {
+   "ticker": "ABT",
+   "trades": 6,
+   "est_amount": 72500,
+   "members": 5,
+   "member_names": [
+    "Josh Gottheimer",
+    "Mike Kelly",
+    "Richard Dean Dr McCormick",
+    "Richard W. Allen",
+    "Rick Larsen"
+   ]
+  },
+  {
+   "ticker": "NVDA",
+   "trades": 4,
+   "est_amount": 56500,
+   "members": 4,
+   "member_names": [
+    "Dan Newhouse",
+    "Daniel Meuser",
+    "Matthew Robert Van Epps",
+    "Sam T. Liccardo"
+   ]
+  },
+  {
+   "ticker": "AAPL",
+   "trades": 5,
+   "est_amount": 40000,
+   "members": 4,
+   "member_names": [
+    "Daniel Crenshaw",
+    "Matthew Robert Van Epps",
+    "Michael Rulli",
+    "Richard Dean Dr McCormick"
+   ]
+  },
+  {
+   "ticker": "AMZN",
+   "trades": 4,
+   "est_amount": 32000,
+   "members": 4,
+   "member_names": [
+    "Daniel Crenshaw",
+    "David J. Taylor",
+    "Matthew Robert Van Epps",
+    "Michael Rulli"
+   ]
+  },
+  {
+   "ticker": "GOOGL",
+   "trades": 5,
+   "est_amount": 64500,
+   "members": 3,
+   "member_names": [
+    "Dan Newhouse",
+    "Matthew Robert Van Epps",
+    "Thomas H. Kean"
+   ]
+  },
+  {
+   "ticker": "INTU",
+   "trades": 3,
+   "est_amount": 48500,
+   "members": 3,
+   "member_names": [
+    "Dan Newhouse",
+    "Josh Gottheimer",
+    "Richard W. Allen"
+   ]
+  },
+  {
+   "ticker": "BLK",
+   "trades": 5,
+   "est_amount": 40000,
+   "members": 3,
+   "member_names": [
+    "John J Mr McGuire",
+    "John McGuire",
+    "Richard Dean Dr McCormick"
+   ]
+  },
+  {
+   "ticker": "UNH",
+   "trades": 5,
+   "est_amount": 40000,
+   "members": 3,
+   "member_names": [
+    "Dan Newhouse",
+    "Maria Elvira Salazar",
+    "Richard Dean Dr McCormick"
+   ]
+  },
+  {
+   "ticker": "SPGI",
+   "trades": 5,
+   "est_amount": 40000,
+   "members": 3,
+   "member_names": [
+    "Jared Moskowitz",
+    "Rick Larsen",
+    "Thomas H. Kean"
+   ]
+  },
+  {
+   "ticker": "CCI",
+   "trades": 3,
+   "est_amount": 24000,
+   "members": 3,
+   "member_names": [
+    "Josh Gottheimer",
+    "Michael Rulli",
+    "Robert J. Wittman"
+   ]
+  },
+  {
+   "ticker": "MKL",
+   "trades": 6,
+   "est_amount": 48000,
+   "members": 2,
+   "member_names": [
+    "April McClain Delaney",
+    "Thomas H. Kean"
+   ]
+  },
+  {
+   "ticker": "HD",
+   "trades": 2,
+   "est_amount": 40500,
+   "members": 2,
+   "member_names": [
+    "James A. Himes",
+    "Richard Dean Dr McCormick"
+   ]
+  },
+  {
+   "ticker": "PEP",
+   "trades": 2,
+   "est_amount": 40500,
+   "members": 2,
+   "member_names": [
+    "Mike Kelly",
+    "Richard Dean Dr McCormick"
+   ]
+  },
+  {
+   "ticker": "XOM",
+   "trades": 2,
+   "est_amount": 40500,
+   "members": 2,
+   "member_names": [
+    "James A. Himes",
+    "Matthew Robert Van Epps"
+   ]
+  },
+  {
+   "ticker": "ADI",
+   "trades": 4,
+   "est_amount": 32000,
+   "members": 2,
+   "member_names": [
+    "Richard Dean Dr McCormick",
+    "Thomas H. Kean"
+   ]
+  },
+  {
+   "ticker": "JNJ",
+   "trades": 3,
+   "est_amount": 24000,
+   "members": 2,
+   "member_names": [
+    "Richard Dean Dr McCormick",
+    "Thomas H. Kean"
+   ]
+  },
+  {
+   "ticker": "MPC",
+   "trades": 3,
+   "est_amount": 24000,
+   "members": 2,
+   "member_names": [
+    "Dan Newhouse",
+    "David J. Taylor"
+   ]
+  },
+  {
+   "ticker": "IBM",
+   "trades": 3,
+   "est_amount": 24000,
+   "members": 2,
+   "member_names": [
+    "Josh Gottheimer",
+    "Matthew Robert Van Epps"
+   ]
+  },
+  {
+   "ticker": "PANW",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "Dan Newhouse",
+    "John J Mr McGuire"
+   ]
+  },
+  {
+   "ticker": "BAC",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "James A. Himes",
+    "Laurel Lee"
+   ]
+  },
+  {
+   "ticker": "LLY",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "Dan Newhouse",
+    "Michael Rulli"
+   ]
+  },
+  {
+   "ticker": "GE",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "Laurel Lee",
+    "Matthew Robert Van Epps"
+   ]
+  },
+  {
+   "ticker": "INTC",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "Dwight Evans",
+    "Matthew Robert Van Epps"
+   ]
+  },
+  {
+   "ticker": "META",
+   "trades": 2,
+   "est_amount": 16000,
+   "members": 2,
+   "member_names": [
+    "Daniel Crenshaw",
+    "Matthew Robert Van Epps"
+   ]
+  }
+ ],
+ "most_active": [
+  {
+   "member": "April McClain Delaney",
+   "trades": 94
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "trades": 82
+  },
+  {
+   "member": "Richard Dean Dr McCormick",
+   "trades": 41
+  },
+  {
+   "member": "Dan Newhouse",
+   "trades": 31
+  },
+  {
+   "member": "Thomas H. Kean",
+   "trades": 26
+  },
+  {
+   "member": "Josh Gottheimer",
+   "trades": 23
+  },
+  {
+   "member": "David J. Taylor",
+   "trades": 19
+  },
+  {
+   "member": "Kevin Hern",
+   "trades": 18
+  },
+  {
+   "member": "Maria Elvira Salazar",
+   "trades": 17
+  },
+  {
+   "member": "Jared Moskowitz",
+   "trades": 16
+  },
+  {
+   "member": "Matthew Robert Van Epps",
+   "trades": 13
+  },
+  {
+   "member": "Michael Rulli",
+   "trades": 10
+  }
+ ],
+ "asset_mix": [
+  {
+   "type": "Stock",
+   "trades": 469
+  },
+  {
+   "type": "Other",
+   "trades": 6
+  },
+  {
+   "type": "Options",
+   "trades": 5
+  }
+ ],
+ "recent": [
+  {
+   "ticker": "SONY",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-12-26",
+   "notify_date": "2026-01-21",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Steve Cohen",
+   "state": "TN09",
+   "doc": "20033889"
+  },
+  {
+   "ticker": "AAPL",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-08-13",
+   "notify_date": "2026-08-18",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Ed Case",
+   "state": "HI01",
+   "doc": "20035275"
+  },
+  {
+   "ticker": "PINS",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-07",
+   "notify_date": "2026-08-07",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Christian D. Menefee",
+   "state": "TX18",
+   "doc": "20035157"
+  },
+  {
+   "ticker": "CCI",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-06",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Michael Rulli",
+   "state": "OH06",
+   "doc": "20035147"
+  },
+  {
+   "ticker": "CMCSA",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-05",
+   "notify_date": "2026-08-05",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20035134"
+  },
+  {
+   "ticker": "DEO",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-05",
+   "notify_date": "2026-08-05",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20035134"
+  },
+  {
+   "ticker": "EL",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-05",
+   "notify_date": "2026-08-05",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20035134"
+  },
+  {
+   "ticker": "KVUE",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-05",
+   "notify_date": "2026-08-05",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20035134"
+  },
+  {
+   "ticker": "MDLZ",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-05",
+   "notify_date": "2026-08-05",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20035134"
+  },
+  {
+   "ticker": "OGN",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-05",
+   "notify_date": "2026-08-05",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20035134"
+  },
+  {
+   "ticker": "VSNT",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-05",
+   "notify_date": "2026-08-05",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20035134"
+  },
+  {
+   "ticker": "OGN",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-05",
+   "notify_date": "2026-08-05",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20035196"
+  },
+  {
+   "ticker": "VSNT",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-05",
+   "notify_date": "2026-08-05",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20035196"
+  },
+  {
+   "ticker": "CHRW",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-31",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "CPAY",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-31",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "FWONK",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-31",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "LTH",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-31",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "STE",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-31",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "PANW",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-31",
+   "notify_date": "2026-08-07",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "John J Mr McGuire",
+   "state": "VA05",
+   "doc": "20035180"
+  },
+  {
+   "ticker": "BWXT",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "CPAY",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "ENTG",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "LTH",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "SCI",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "SGI",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "ABT",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "APD",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "AWK",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "ADI",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "AAPL",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-05",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "ADP",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "BRK.B",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "BLK",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "CSCO",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "COST",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "EMR",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "HD",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "ITW",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "ICE",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "JNJ",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "LHX",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "MCD",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "MDT",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-13",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "MSFT",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "NEE",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "PEP",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "PG",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "O",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "UNH",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "V",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "WMT",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-30",
+   "notify_date": "2026-08-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Richard Dean Dr McCormick",
+   "state": "GA06",
+   "doc": "20035204"
+  },
+  {
+   "ticker": "FWONK",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-29",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "LTH",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-29",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "MKL",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-29",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "STE",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-29",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "CHRW",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "CLH",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "CPAY",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "FWONK",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "LTH",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "MKL",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "TDG",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "WAB",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "BRK.B",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Maria Elvira Salazar",
+   "state": "FL27",
+   "doc": "20035138"
+  },
+  {
+   "ticker": "BRK.B",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Maria Elvira Salazar",
+   "state": "FL27",
+   "doc": "20035138"
+  },
+  {
+   "ticker": "CARR",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Maria Elvira Salazar",
+   "state": "FL27",
+   "doc": "20035138"
+  },
+  {
+   "ticker": "CARR",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Maria Elvira Salazar",
+   "state": "FL27",
+   "doc": "20035138"
+  },
+  {
+   "ticker": "BWXT",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-27",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "CHRW",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-27",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "CLH",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-27",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "LTH",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-27",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "MKL",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-27",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "SCI",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-27",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "STE",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-27",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "TSCO",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-27",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "BWXT",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "CHRW",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "CLH",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "FWONK",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "LTH",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "MKL",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "MLM",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "STE",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "GOOGM",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Josh Gottheimer",
+   "state": "NJ05",
+   "doc": "20035186"
+  },
+  {
+   "ticker": "GOOGN",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Josh Gottheimer",
+   "state": "NJ05",
+   "doc": "20035186"
+  },
+  {
+   "ticker": "OGN",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-05",
+   "amount_low": 100001,
+   "amount_high": 250000,
+   "amount_mid": 175000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20035134"
+  },
+  {
+   "ticker": "ARCC",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-07-24",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Pete Sessions",
+   "state": "TX17",
+   "doc": "20035068"
+  },
+  {
+   "ticker": "AVGO",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035146"
+  },
+  {
+   "ticker": "FITB",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035146"
+  },
+  {
+   "ticker": "FITB",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035146"
+  },
+  {
+   "ticker": "KR",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035146"
+  },
+  {
+   "ticker": "KR",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035146"
+  },
+  {
+   "ticker": "MPC",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035146"
+  },
+  {
+   "ticker": "MPC",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035146"
+  },
+  {
+   "ticker": "MSFT",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035146"
+  },
+  {
+   "ticker": "MSFT",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035146"
+  },
+  {
+   "ticker": "HUBB",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-23",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "FWONK",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-23",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "VIK",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-23",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "WAB",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-23",
+   "notify_date": "2026-08-01",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "GOOGN",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-23",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Josh Gottheimer",
+   "state": "NJ05",
+   "doc": "20035186"
+  },
+  {
+   "ticker": "CCI",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-23",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Josh Gottheimer",
+   "state": "NJ05",
+   "doc": "20035186"
+  },
+  {
+   "ticker": "CHRW",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-22",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "FWONK",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-22",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "GOOGL",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-22",
+   "notify_date": "2026-08-07",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Thomas H. Kean",
+   "state": "NJ07",
+   "doc": "20035273"
+  },
+  {
+   "ticker": "SYK",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-22",
+   "notify_date": "2026-08-07",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Thomas H. Kean",
+   "state": "NJ07",
+   "doc": "20035273"
+  },
+  {
+   "ticker": "LTH",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-21",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "LYV",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-21",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "NVDA",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-21",
+   "notify_date": "2026-07-22",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Sam T. Liccardo",
+   "state": "CA16",
+   "doc": "20034736"
+  },
+  {
+   "ticker": "CHRW",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-20",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "LTH",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-20",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "LYV",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-20",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "MLM",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-20",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "SCI",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-20",
+   "notify_date": "2026-08-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "April McClain Delaney",
+   "state": "MD06",
+   "doc": "20035118"
+  },
+  {
+   "ticker": "NICE",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-20",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Josh Gottheimer",
+   "state": "NJ05",
+   "doc": "20035186"
+  },
+  {
+   "ticker": "SAIL",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-20",
+   "notify_date": "2026-08-06",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Josh Gottheimer",
+   "state": "NJ05",
+   "doc": "20035186"
+  },
+  {
+   "ticker": "EL",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-20",
+   "notify_date": "2026-08-05",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20035134"
+  },
+  {
+   "ticker": "KVUE",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-20",
+   "notify_date": "2026-08-05",
+   "amount_low": 100001,
+   "amount_high": 250000,
+   "amount_mid": 175000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20035134"
+  },
+  {
+   "ticker": "BAC",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-20",
+   "notify_date": "2026-07-20",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "James A. Himes",
+   "state": "CT04",
+   "doc": "20035047"
+  },
+  {
+   "ticker": "XOM",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-07-20",
+   "notify_date": "2026-07-20",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "James A. Himes",
+   "state": "CT04",
+   "doc": "20035047"
+  }
+ ]
+}
