@@ -25,6 +25,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r Website/scripts/requirements-market-temperature.txt
 
+      # Must run BEFORE the temperature scan, which reads insider_pulse.json as
+      # one of its components. The five-year history is committed, so this only
+      # refreshes the current window unless the history file is missing.
+      - name: Run insider pulse scan
+        run: python Website/scripts/insider_pulse_scan.py
+
       - name: Run market temperature scan
         run: python Website/scripts/market_temperature_scan.py
         env:
@@ -37,7 +43,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
-          git add Website/MarketDashboard/data/market_temperature.json
-          git diff --staged --quiet || git commit -m "chore: market temperature scan $(date -u +%Y-%m-%dT%H:%M)Z"
+          git add Website/MarketDashboard/data/market_temperature.json Website/MarketDashboard/data/insider_pulse.json Website/data/insider_history.json
+          git diff --staged --quiet || git commit -m "chore: temperature + insider pulse scan $(date -u +%Y-%m-%dT%H:%M)Z"
           git pull --rebase -Xtheirs origin ${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}

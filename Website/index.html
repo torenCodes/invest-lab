@@ -132,7 +132,7 @@
               </div>
               <div class="mt-body" id="mt-body" hidden>
                 <div class="mt-components" id="mt-components"></div>
-                <p class="mt-footnote">A live regime thermometer — Cold to Hot — built mostly from signals that move every session: Risk Posture (15%) comes from the lab's own Sector Rotation engine (cyclicals vs defensives); Trend Heat (15%) reads the S&amp;P against its 50-day average and recent thrust; Fast Breadth (15%) and Net New Highs (15%) track participation; Fear &amp; Greed (15%) adds sentiment. Structural Breadth (10%), Credit Spreads (10%, inverted), and the Yield Curve (5%) anchor the slower regime backdrop. Updated weekdays around 6:00am ET. Educational only — not investment advice.</p>
+                <p class="mt-footnote">A live regime thermometer — Cold to Hot — built mostly from signals that move every session: Risk Posture (15%) comes from the lab's own Sector Rotation engine (cyclicals vs defensives); Trend Heat (15%) reads the S&amp;P against its 50-day average and recent thrust; Fast Breadth (10%) and Net New Highs (10%) track participation; Fear &amp; Greed (15%) adds sentiment. <strong>Insider Breadth (10%)</strong> is the contrarian input, built from SEC Form 4 filings — it counts how many companies saw open-market buying by their own executives versus selling, ranked against five years of history and inverted, because insiders buy weakness and go quiet into strength. Structural Breadth (10%), Credit Spreads (10%, inverted), and the Yield Curve (5%) anchor the slower regime backdrop. Updated weekdays around 6:00am ET. Educational only — not investment advice.</p>
               </div>
             </section>
             <!-- ─── /Market Temperature ─── -->
@@ -1077,6 +1077,7 @@
     return ({
       risk_posture: 'Risk Posture',
       trend:        'Trend Heat',
+      insider:      'Insider Breadth',
       breadth_50:   'Fast Breadth',
       new_highs:    'Net New Highs',
       fear_greed:   'Fear & Greed',

@@ -13,12 +13,17 @@ weight now moves day to day, and the gauge leans on the lab's own signals.
 Components (each scored 0-100):
   - Risk posture (lab's Sector Rotation engine)   — 15%  cyclical vs defensive rel. strength
   - Trend heat (SPY vs 50-DMA + 10-day thrust)    — 15%  percentile over 3yr
-  - Fast breadth (% S&P 500 above 50-DMA)         — 15%  used directly
-  - Net new highs (near 52wk high − near low)     — 15%  derived from breadth download
   - Fear & Greed (CNN sentiment composite)        — 15%  used directly (already 0-100)
+  - Fast breadth (% S&P 500 above 50-DMA)         — 10%  used directly
+  - Net new highs (near 52wk high − near low)     — 10%  derived from breadth download
+  - Insider breadth (SEC Form 4, buying vs sell)  — 10%  INVERTED percentile over 5yr
   - Structural breadth (% S&P 500 above 200-DMA)  — 10%  fixed thresholds
   - Credit spreads (ICE BofA HY OAS, FRED)        — 10%  inverted percentile over 10yr
   - Yield curve (10Y − 2Y, FRED)                  —  5%  fixed thresholds (cycle stage)
+
+Aug 2026: added insider breadth, the one contrarian input — corporate insiders
+buy weakness and go quiet into strength, so the reading is inverted. It comes
+from insider_pulse_scan.py, which must run BEFORE this scan.
 
 Output: MarketDashboard/data/market_temperature.json
 Invoked by GitHub Actions daily. Run locally: python scripts/market_temperature_scan.py
@@ -44,12 +49,18 @@ FRED_BASE    = "https://api.stlouisfed.org/fred/series/observations"
 NEXT_SCAN_INFO = "Weekdays at 6:00am ET"
 CALIB_YEARS    = 10
 
+# Price and participation signals (trend, breadth_50, new_highs, breadth) were
+# 55% of the gauge and are heavily correlated with one another. Trimmed two of
+# them by 5 points each to make room for insider breadth, which is genuinely
+# orthogonal: it is the revealed preference of the people who know their own
+# companies best, and it moves on a different clock than price.
 WEIGHTS = {
     "risk_posture": 0.15,
     "trend":        0.15,
-    "breadth_50":   0.15,
-    "new_highs":    0.15,
     "fear_greed":   0.15,
+    "breadth_50":   0.10,
+    "new_highs":    0.10,
+    "insider":      0.10,
     "breadth":      0.10,
     "credit":       0.10,
     "yield_curve":  0.05,
@@ -150,6 +161,50 @@ def compute_risk_posture():
         "description": "The lab's own Sector Rotation read: cyclical sectors' 1-month relative "
                        "strength vs defensives. Cyclicals leading = risk appetite running hot; "
                        f"defensives leading = money playing defense. Leading now: {leaders}.",
+    }
+
+
+# ── Component: Insider breadth (corporate insiders' revealed preference) ─────
+
+def compute_insider_breadth():
+    """Share of companies with insider activity where that activity was BUYING,
+    percentile-ranked against five years of its own history. Produced by
+    insider_pulse_scan.py from SEC Form 345 data.
+
+    INVERTED on purpose. Insiders buy their own stock when it looks cheap to the
+    people who know it best, which happens in washed-out markets, and they stop
+    buying when things feel expensive. So heavy insider buying is a COLD reading
+    and an absence of buying is a HOT one. That makes this the only genuinely
+    contrarian input in the gauge.
+
+    Counts companies rather than dollars, because a single mis-keyed filing can
+    otherwise dominate an entire quarter (see the scan's header for the case
+    that motivated it)."""
+    print("[market-temp] Insider breadth...")
+    path = os.path.join(BASE_DIR, "MarketDashboard", "data", "insider_pulse.json")
+    try:
+        with open(path) as f:
+            d = json.load(f)
+    except Exception as e:
+        print(f"[market-temp] insider_pulse.json unavailable: {e}")
+        return None
+
+    pct = d.get("percentile")
+    cur = d.get("current") or {}
+    if pct is None or not cur:
+        return None
+
+    score = round(clamp(100.0 - float(pct), 0.0, 100.0), 1)   # invert
+    return {
+        "raw":         cur.get("breadth"),
+        "raw_label":   f"{cur.get('buy_cos')} buying / {cur.get('sell_cos')} selling",
+        "percentile":  pct,
+        "score":       score,
+        "label":       label_for(score),
+        "description": f"{cur.get('buy_cos')} companies saw open-market insider buying against "
+                       f"{cur.get('sell_cos')} with selling over the last {d.get('window_days', 30)} days. "
+                       f"That breadth sits at the {pct}th percentile of the past five years. "
+                       "Inverted here, because insiders buy weakness and go quiet into strength.",
     }
 
 
@@ -424,6 +479,7 @@ def compute_fear_greed():
 COMPONENT_META = {
     "risk_posture": {"title": "Risk Posture",       "subtitle": "Cyclicals vs Defensives"},
     "trend":        {"title": "Trend Heat",         "subtitle": "S&P vs 50-DMA + thrust"},
+    "insider":      {"title": "Insider Breadth",    "subtitle": "Buying vs selling companies"},
     "breadth_50":   {"title": "Fast Breadth",       "subtitle": "% S&P 500 > 50-DMA"},
     "new_highs":    {"title": "Net New Highs",      "subtitle": "52wk highs − lows"},
     "fear_greed":   {"title": "Fear & Greed",       "subtitle": "CNN Sentiment Index"},
@@ -442,6 +498,7 @@ def run():
     components = {
         "risk_posture": compute_risk_posture(),
         "trend":        compute_trend_heat(),
+        "insider":      compute_insider_breadth(),
         "breadth_50":   internals.get("breadth_50"),
         "new_highs":    internals.get("new_highs"),
         "fear_greed":   compute_fear_greed(),
