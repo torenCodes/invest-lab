@@ -1,23 +1,55 @@
 {
-  "scan_time": "2026-08-21T13:35:20.567291+00:00",
+  "scan_time": "2026-08-21T13:41:17.557310+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 19,
   "day_trades": [
     {
+      "ticker": "USDE",
+      "name": "Stablecoinx Inc",
+      "sector": "Technology",
+      "current_price": 5.05,
+      "change_pct": 26.25,
+      "high": 5.16,
+      "low": 4.46,
+      "open": 5.085,
+      "prev_close": 4,
+      "score": 53,
+      "signals": [
+        "Top gainer (+26.2%)",
+        "High volume",
+        "Strong move (+26.2%)",
+        "Yahoo trending (#5)",
+        "Unusual volume (Finviz)",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 102767345.65048544,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "",
+      "weburl": "https://stablecoinx.com",
+      "yahoo_trending_rank": 5,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 75
+    },
+    {
       "ticker": "FCX",
       "name": "Freeport-McMoRan Inc",
       "sector": "Metals & Mining",
-      "current_price": 75.42,
-      "change_pct": 5.8972,
-      "high": 76.125,
+      "current_price": 76.05,
+      "change_pct": 6.7818,
+      "high": 76.41,
       "low": 73.61,
       "open": 73.61,
       "prev_close": 71.22,
       "score": 48,
       "signals": [
-        "Top gainer (+5.9%)",
+        "Top gainer (+6.8%)",
         "High volume",
-        "Strong move (+5.9%)",
+        "Strong move (+6.8%)",
         "Yahoo trending (#8)",
         "Closing strong",
         "Sector leader (Metals & Mining)"
@@ -42,20 +74,58 @@
       "score_normalized": 68
     },
     {
+      "ticker": "BJ",
+      "name": "BJ's Wholesale Club Holdings Inc",
+      "sector": "Retail",
+      "current_price": 94.54,
+      "change_pct": 3.5487,
+      "high": 95.85,
+      "low": 92.53,
+      "open": 93.14,
+      "prev_close": 91.3,
+      "score": 43,
+      "signals": [
+        "Top gainer (+3.5%)",
+        "High volume",
+        "Good move (+3.5%)",
+        "Yahoo trending (#6)",
+        "Closing strong",
+        "Sector leader (Retail)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 11658460945.73156,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BJ.png",
+      "weburl": "https://www.bjs.com/",
+      "yahoo_trending_rank": 6,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 1.1,
+          "estimate": 1.06,
+          "beat": true,
+          "surprise_pct": 3.7
+        }
+      },
+      "score_normalized": 61
+    },
+    {
       "ticker": "MARA",
       "name": "MARA Holdings Inc",
       "sector": "Technology",
-      "current_price": 12.1,
-      "change_pct": 8.5202,
-      "high": 12.1,
+      "current_price": 12.11,
+      "change_pct": 8.6099,
+      "high": 12.1553,
       "low": 11.5901,
       "open": 11.655,
       "prev_close": 11.15,
       "score": 39,
       "signals": [
-        "Top gainer (+8.5%)",
+        "Top gainer (+8.6%)",
         "High volume",
-        "Strong move (+8.5%)",
+        "Strong move (+8.6%)",
         "Yahoo trending (#15)",
         "Closing strong"
       ],
@@ -79,20 +149,57 @@
       "score_normalized": 55
     },
     {
+      "ticker": "AU",
+      "name": "Anglogold Ashanti PLC",
+      "sector": "Metals & Mining",
+      "current_price": 120.45,
+      "change_pct": 4.6118,
+      "high": 120.7182,
+      "low": 118.1,
+      "open": 118.1,
+      "prev_close": 115.14,
+      "score": 34,
+      "signals": [
+        "Top gainer (+4.6%)",
+        "High volume",
+        "Good move (+4.6%)",
+        "Yahoo trending (#14)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 58146561370.04145,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950866052006.png",
+      "weburl": "https://www.anglogoldashanti.com/",
+      "yahoo_trending_rank": 14,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 1.98,
+          "estimate": 2.25,
+          "beat": false,
+          "surprise_pct": -11.9
+        }
+      },
+      "score_normalized": 48
+    },
+    {
       "ticker": "LUNR",
       "name": "Intuitive Machines Inc",
       "sector": "Aerospace & Defense",
-      "current_price": 18.73,
-      "change_pct": 4.4618,
+      "current_price": 18.7,
+      "change_pct": 4.2945,
       "high": 18.92,
       "low": 18.455,
       "open": 18.455,
       "prev_close": 17.93,
       "score": 34,
       "signals": [
-        "Top gainer (+4.5%)",
+        "Top gainer (+4.3%)",
         "High volume",
-        "Good move (+4.5%)",
+        "Good move (+4.3%)",
         "Yahoo trending (#19)",
         "Closing strong"
       ],
@@ -114,115 +221,6 @@
         }
       },
       "score_normalized": 48
-    },
-    {
-      "ticker": "AU",
-      "name": "Anglogold Ashanti PLC",
-      "sector": "Metals & Mining",
-      "current_price": 118.78,
-      "change_pct": 3.1614,
-      "high": 119.86,
-      "low": 118.14,
-      "open": 119.44000000000001,
-      "prev_close": 115.14,
-      "score": 31,
-      "signals": [
-        "Top gainer (+3.2%)",
-        "High volume",
-        "Good move (+3.2%)",
-        "Yahoo trending (#14)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 58146561370.04145,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950866052006.png",
-      "weburl": "https://www.anglogoldashanti.com/",
-      "yahoo_trending_rank": 14,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 1.98,
-          "estimate": 2.25,
-          "beat": false,
-          "surprise_pct": -11.9
-        }
-      },
-      "score_normalized": 44
-    },
-    {
-      "ticker": "BJ",
-      "name": "BJ's Wholesale Club Holdings Inc",
-      "sector": "Retail",
-      "current_price": 93.75,
-      "change_pct": 2.6835,
-      "high": 95.85,
-      "low": 92.53,
-      "open": 93.14,
-      "prev_close": 91.3,
-      "score": 30,
-      "signals": [
-        "Top gainer (+2.7%)",
-        "High volume",
-        "Moderate move (+2.7%)",
-        "Yahoo trending (#6)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 11658460945.73156,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BJ.png",
-      "weburl": "https://www.bjs.com/",
-      "yahoo_trending_rank": 6,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 1.1,
-          "estimate": 1.06,
-          "beat": true,
-          "surprise_pct": 3.7
-        }
-      },
-      "score_normalized": 42
-    },
-    {
-      "ticker": "FLO",
-      "name": "Flowers Foods Inc",
-      "sector": "Food Products",
-      "current_price": 7.22,
-      "change_pct": 1.6901,
-      "high": 7.23,
-      "low": 6.81,
-      "open": 6.8475,
-      "prev_close": 7.1,
-      "score": 29,
-      "signals": [
-        "Top gainer (+1.7%)",
-        "High volume",
-        "Moderate move (+1.7%)",
-        "Yahoo trending (#12)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 1505152014.088472,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/FLO.png",
-      "weburl": "https://www.flowersfoods.com/",
-      "yahoo_trending_rank": 12,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.21,
-          "estimate": 0.23,
-          "beat": false,
-          "surprise_pct": -7.4
-        }
-      },
-      "score_normalized": 41
     }
   ],
   "swing_trades": [
@@ -230,17 +228,17 @@
       "ticker": "FCX",
       "name": "Freeport-McMoRan Inc",
       "sector": "Metals & Mining",
-      "current_price": 75.42,
-      "change_pct": 5.8972,
-      "high": 76.125,
+      "current_price": 76.05,
+      "change_pct": 6.7818,
+      "high": 76.41,
       "low": 73.61,
       "open": 73.61,
       "prev_close": 71.22,
       "score": 48,
       "signals": [
-        "Top gainer (+5.9%)",
+        "Top gainer (+6.8%)",
         "High volume",
-        "Strong move (+5.9%)",
+        "Strong move (+6.8%)",
         "Yahoo trending (#8)",
         "Closing strong",
         "Sector leader (Metals & Mining)"
@@ -265,94 +263,23 @@
       "score_normalized": 68
     },
     {
-      "ticker": "ROST",
-      "name": "Ross Stores Inc",
-      "sector": "Retail",
-      "current_price": 238.56,
-      "change_pct": 4.1792,
-      "high": 243.86,
-      "low": 236.01,
-      "open": 243.85999999999999,
-      "prev_close": 228.99,
-      "score": 40,
-      "signals": [
-        "Top gainer (+4.2%)",
-        "High volume",
-        "Good move (+4.2%)",
-        "Yahoo trending (#4)",
-        "Sector leader (Retail)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 73455657272.67148,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ROST.png",
-      "weburl": "https://www.rossstores.com/",
-      "yahoo_trending_rank": 4,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 2.02,
-          "estimate": 1.76,
-          "beat": true,
-          "surprise_pct": 14.5
-        }
-      },
-      "score_normalized": 56
-    },
-    {
-      "ticker": "AU",
-      "name": "Anglogold Ashanti PLC",
-      "sector": "Metals & Mining",
-      "current_price": 118.78,
-      "change_pct": 3.1614,
-      "high": 119.86,
-      "low": 118.14,
-      "open": 119.44000000000001,
-      "prev_close": 115.14,
-      "score": 31,
-      "signals": [
-        "Top gainer (+3.2%)",
-        "High volume",
-        "Good move (+3.2%)",
-        "Yahoo trending (#14)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 58146561370.04145,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950866052006.png",
-      "weburl": "https://www.anglogoldashanti.com/",
-      "yahoo_trending_rank": 14,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 1.98,
-          "estimate": 2.25,
-          "beat": false,
-          "surprise_pct": -11.9
-        }
-      },
-      "score_normalized": 44
-    },
-    {
       "ticker": "BJ",
       "name": "BJ's Wholesale Club Holdings Inc",
       "sector": "Retail",
-      "current_price": 93.75,
-      "change_pct": 2.6835,
+      "current_price": 94.54,
+      "change_pct": 3.5487,
       "high": 95.85,
       "low": 92.53,
       "open": 93.14,
       "prev_close": 91.3,
-      "score": 30,
+      "score": 43,
       "signals": [
-        "Top gainer (+2.7%)",
+        "Top gainer (+3.5%)",
         "High volume",
-        "Moderate move (+2.7%)",
-        "Yahoo trending (#6)"
+        "Good move (+3.5%)",
+        "Yahoo trending (#6)",
+        "Closing strong",
+        "Sector leader (Retail)"
       ],
       "reddit_mentions": 0,
       "market_cap": 11658460945.73156,
@@ -371,7 +298,80 @@
           "surprise_pct": 3.7
         }
       },
-      "score_normalized": 42
+      "score_normalized": 61
+    },
+    {
+      "ticker": "ROST",
+      "name": "Ross Stores Inc",
+      "sector": "Retail",
+      "current_price": 239.88,
+      "change_pct": 4.7557,
+      "high": 246.255,
+      "low": 236.01,
+      "open": 246.255,
+      "prev_close": 228.99,
+      "score": 35,
+      "signals": [
+        "Top gainer (+4.8%)",
+        "High volume",
+        "Good move (+4.8%)",
+        "Yahoo trending (#4)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 73455657272.67148,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ROST.png",
+      "weburl": "https://www.rossstores.com/",
+      "yahoo_trending_rank": 4,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 2.02,
+          "estimate": 1.76,
+          "beat": true,
+          "surprise_pct": 14.5
+        }
+      },
+      "score_normalized": 49
+    },
+    {
+      "ticker": "AU",
+      "name": "Anglogold Ashanti PLC",
+      "sector": "Metals & Mining",
+      "current_price": 120.45,
+      "change_pct": 4.6118,
+      "high": 120.7182,
+      "low": 118.1,
+      "open": 118.1,
+      "prev_close": 115.14,
+      "score": 34,
+      "signals": [
+        "Top gainer (+4.6%)",
+        "High volume",
+        "Good move (+4.6%)",
+        "Yahoo trending (#14)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 58146561370.04145,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950866052006.png",
+      "weburl": "https://www.anglogoldashanti.com/",
+      "yahoo_trending_rank": 14,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 1.98,
+          "estimate": 2.25,
+          "beat": false,
+          "surprise_pct": -11.9
+        }
+      },
+      "score_normalized": 48
     }
   ],
   "buzz_source": "news",
@@ -381,8 +381,8 @@
       "mentions": 8,
       "name": "Alphabet Inc",
       "sector": "Media",
-      "current_price": 338.82,
-      "change_pct": 0.1833,
+      "current_price": 339.65,
+      "change_pct": 0.4287,
       "high": 340.28,
       "low": 337.81,
       "open": 339.715,
@@ -397,8 +397,8 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 7,
-        "reddit": 47,
+        "trend_pct": 9,
+        "reddit": 48,
         "st_bull": 60,
         "st_msgs": 30,
         "sources": [
@@ -423,8 +423,8 @@
       "mentions": 8,
       "name": "Alphabet Inc",
       "sector": "Media",
-      "current_price": 341.51,
-      "change_pct": 0.2466,
+      "current_price": 342.3,
+      "change_pct": 0.4785,
       "high": 342.59,
       "low": 340.4,
       "open": 342.1225,
@@ -439,9 +439,9 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 2,
-        "reddit": 43,
-        "st_bull": 70,
+        "trend_pct": 0,
+        "reddit": 42,
+        "st_bull": 60,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -465,11 +465,11 @@
       "mentions": 8,
       "name": "Alphabet Inc",
       "sector": "Media",
-      "current_price": 48.67,
-      "change_pct": 0.1028,
-      "high": 48.98,
+      "current_price": 48.76,
+      "change_pct": 0.2879,
+      "high": 48.97,
       "low": 48.65,
-      "open": 48.97,
+      "open": 48.83,
       "prev_close": 48.62,
       "market_cap": 4166394100000.0,
       "score": 0,
@@ -502,19 +502,19 @@
       "ticker": "MRNA",
       "name": "Moderna Inc",
       "sector": "Biotechnology",
-      "current_price": 144.59,
-      "change_pct": 8.4533,
+      "current_price": 143.5,
+      "change_pct": 7.6358,
       "market_cap": 53226127726.9547,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 232,
+      "mentions": 229,
       "social": {
-        "trend_pct": -71,
-        "reddit": 232,
-        "st_bull": 79,
+        "trend_pct": -72,
+        "reddit": 229,
+        "st_bull": 86,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -537,18 +537,18 @@
       "ticker": "RDDT",
       "name": "Reddit Inc",
       "sector": "Media",
-      "current_price": 153.04,
-      "change_pct": 1.8162,
+      "current_price": 153.77,
+      "change_pct": 2.3019,
       "market_cap": 28919122268.451584,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 190,
+      "mentions": 187,
       "social": {
-        "trend_pct": 124,
-        "reddit": 190,
+        "trend_pct": 120,
+        "reddit": 187,
         "sources": [
           "Reddit"
         ]
@@ -569,18 +569,18 @@
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "current_price": 980.72,
-      "change_pct": 0.6558,
+      "current_price": 976.86,
+      "change_pct": 0.2597,
       "market_cap": 1100401523456.7288,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 153,
+      "mentions": 151,
       "social": {
-        "trend_pct": -7,
-        "reddit": 153,
+        "trend_pct": -8,
+        "reddit": 151,
         "sources": [
           "Reddit"
         ]
@@ -600,25 +600,14 @@
   ],
   "chatter_emerging": [
     {
-      "ticker": "SMCI",
-      "name": "Super Micro Computer Inc",
-      "sector": "Technology",
-      "mentions": 20,
-      "prev": 3,
-      "trend_pct": 567,
-      "current_price": 36.93,
-      "change_pct": 1.1781,
-      "market_cap": 23610865164.54347
-    },
-    {
       "ticker": "ONDS",
       "name": "Ondas Inc",
       "sector": "Communications",
       "mentions": 22,
       "prev": 7,
       "trend_pct": 214,
-      "current_price": 8.49,
-      "change_pct": 1.3126,
+      "current_price": 8.62,
+      "change_pct": 2.864,
       "market_cap": 4781228128.997753
     }
   ],
@@ -627,18 +616,18 @@
       {
         "ticker": "XLE",
         "sector": "Energy",
-        "ret_1d": 0.71,
-        "ret_5d": 3.7,
-        "ret_1m": 8.12,
-        "ret_3m": 9.36,
-        "rel_1d": 0.43,
-        "rel_5d": 5.19,
-        "rel_1m": 4.52,
-        "rel_3m": 6.13,
+        "ret_1d": 0.4,
+        "ret_5d": 3.38,
+        "ret_1m": 7.79,
+        "ret_3m": 9.03,
+        "rel_1d": 0.08,
+        "rel_5d": 4.83,
+        "rel_1m": 4.15,
+        "rel_3m": 5.76,
         "rvol": 0.88,
         "rrg": {
-          "x": 102.11,
-          "y": 100.58,
+          "x": 102.04,
+          "y": 100.51,
           "quadrant": "Leading",
           "tail": [
             {
@@ -666,29 +655,29 @@
               "y": 101.58
             },
             {
-              "x": 102.11,
-              "y": 100.58
+              "x": 102.04,
+              "y": 100.51
             }
           ]
         },
         "top_stocks": [],
-        "rotation": 0
+        "rotation": -1
       },
       {
         "ticker": "XLY",
         "sector": "Cons. Discretionary",
-        "ret_1d": 0.15,
-        "ret_5d": -1.14,
-        "ret_1m": 7.44,
-        "ret_3m": -1.36,
-        "rel_1d": -0.13,
-        "rel_5d": 0.35,
+        "ret_1d": 0.18,
+        "ret_5d": -1.11,
+        "ret_1m": 7.48,
+        "ret_3m": -1.33,
+        "rel_1d": -0.14,
+        "rel_5d": 0.34,
         "rel_1m": 3.84,
-        "rel_3m": -4.59,
+        "rel_3m": -4.6,
         "rvol": 0.74,
         "rrg": {
           "x": 99.3,
-          "y": 100.35,
+          "y": 100.34,
           "quadrant": "Improving",
           "tail": [
             {
@@ -717,7 +706,7 @@
             },
             {
               "x": 99.3,
-              "y": 100.35
+              "y": 100.34
             }
           ]
         },
@@ -725,14 +714,14 @@
           {
             "ticker": "ROST",
             "name": "Ross Stores Inc",
-            "change_pct": 4.1792,
-            "price": 238.56
+            "change_pct": 4.7557,
+            "price": 239.88
           },
           {
             "ticker": "BJ",
             "name": "BJ's Wholesale Club Holdings Inc",
-            "change_pct": 2.6835,
-            "price": 93.75
+            "change_pct": 3.5487,
+            "price": 94.54
           }
         ],
         "rotation": -4
@@ -740,18 +729,18 @@
       {
         "ticker": "XLV",
         "sector": "Health Care",
-        "ret_1d": 0.3,
-        "ret_5d": 3.31,
-        "ret_1m": 7.1,
-        "ret_3m": 17.22,
-        "rel_1d": 0.02,
-        "rel_5d": 4.8,
-        "rel_1m": 3.5,
-        "rel_3m": 13.99,
+        "ret_1d": 0.5,
+        "ret_5d": 3.52,
+        "ret_1m": 7.32,
+        "ret_3m": 17.46,
+        "rel_1d": 0.18,
+        "rel_5d": 4.97,
+        "rel_1m": 3.68,
+        "rel_3m": 14.19,
         "rvol": 1.01,
         "rrg": {
-          "x": 101.68,
-          "y": 101.1,
+          "x": 101.73,
+          "y": 101.14,
           "quadrant": "Leading",
           "tail": [
             {
@@ -779,8 +768,8 @@
               "y": 99.82
             },
             {
-              "x": 101.68,
-              "y": 101.1
+              "x": 101.73,
+              "y": 101.14
             }
           ]
         },
@@ -788,39 +777,39 @@
           {
             "ticker": "HOWL",
             "name": "Werewolf Therapeutics Inc",
-            "change_pct": 131.2384,
-            "price": 0.9971
+            "change_pct": 120.5473,
+            "price": 0.951
           },
           {
             "ticker": "JUNS",
             "name": "Jupiter Neurosciences Inc",
-            "change_pct": 61.3153,
-            "price": 8.34
+            "change_pct": 55.5126,
+            "price": 8.04
           },
           {
-            "ticker": "GOSS",
-            "name": "Gossamer Bio Inc",
-            "change_pct": 1.2063,
-            "price": 0.1594
+            "ticker": "IOVA",
+            "name": "Iovance Biotherapeutics Inc",
+            "change_pct": 1.7798,
+            "price": 9.15
           }
         ],
-        "rotation": 1
+        "rotation": 2
       },
       {
         "ticker": "XLB",
         "sector": "Materials",
-        "ret_1d": 1.26,
-        "ret_5d": 1.03,
-        "ret_1m": 5.55,
-        "ret_3m": 6.51,
-        "rel_1d": 0.98,
-        "rel_5d": 2.52,
-        "rel_1m": 1.95,
-        "rel_3m": 3.28,
+        "ret_1d": 1.68,
+        "ret_5d": 1.45,
+        "ret_1m": 5.99,
+        "ret_3m": 6.96,
+        "rel_1d": 1.36,
+        "rel_5d": 2.9,
+        "rel_1m": 2.35,
+        "rel_3m": 3.69,
         "rvol": 0.83,
         "rrg": {
-          "x": 100.71,
-          "y": 101.2,
+          "x": 100.93,
+          "y": 101.37,
           "quadrant": "Leading",
           "tail": [
             {
@@ -848,8 +837,8 @@
               "y": 99.36
             },
             {
-              "x": 100.71,
-              "y": 101.2
+              "x": 100.93,
+              "y": 101.37
             }
           ]
         },
@@ -857,20 +846,20 @@
           {
             "ticker": "FCX",
             "name": "Freeport-McMoRan Inc",
-            "change_pct": 5.8972,
-            "price": 75.42
+            "change_pct": 6.7818,
+            "price": 76.05
           },
           {
             "ticker": "AU",
             "name": "Anglogold Ashanti PLC",
-            "change_pct": 3.1614,
-            "price": 118.78
+            "change_pct": 4.6118,
+            "price": 120.45
           },
           {
             "ticker": "BTG",
             "name": "B2Gold Corp",
-            "change_pct": 2.0446,
-            "price": 5.49
+            "change_pct": 2.2305,
+            "price": 5.5
           }
         ],
         "rotation": 1
@@ -878,19 +867,19 @@
       {
         "ticker": "XLC",
         "sector": "Comm. Services",
-        "ret_1d": 0.16,
-        "ret_5d": -1.85,
-        "ret_1m": 5.2,
-        "ret_3m": -4.26,
-        "rel_1d": -0.12,
-        "rel_5d": -0.36,
-        "rel_1m": 1.6,
-        "rel_3m": -7.49,
+        "ret_1d": 0.38,
+        "ret_5d": -1.64,
+        "ret_1m": 5.43,
+        "ret_3m": -4.06,
+        "rel_1d": 0.06,
+        "rel_5d": -0.19,
+        "rel_1m": 1.79,
+        "rel_3m": -7.33,
         "rvol": 0.64,
         "rrg": {
-          "x": 99.41,
-          "y": 99.85,
-          "quadrant": "Lagging",
+          "x": 99.52,
+          "y": 100.03,
+          "quadrant": "Improving",
           "tail": [
             {
               "x": 99.2,
@@ -917,98 +906,29 @@
               "y": 101.14
             },
             {
-              "x": 99.41,
-              "y": 99.85
+              "x": 99.52,
+              "y": 100.03
             }
           ]
         },
         "top_stocks": [],
-        "rotation": -4
-      },
-      {
-        "ticker": "XLK",
-        "sector": "Technology",
-        "ret_1d": 0.33,
-        "ret_5d": -3.32,
-        "ret_1m": 2.95,
-        "ret_3m": 2.98,
-        "rel_1d": 0.05,
-        "rel_5d": -1.83,
-        "rel_1m": -0.65,
-        "rel_3m": -0.25,
-        "rvol": 0.61,
-        "rrg": {
-          "x": 99.48,
-          "y": 99.4,
-          "quadrant": "Lagging",
-          "tail": [
-            {
-              "x": 100.18,
-              "y": 100.76
-            },
-            {
-              "x": 98.67,
-              "y": 97.95
-            },
-            {
-              "x": 98.79,
-              "y": 100.81
-            },
-            {
-              "x": 98.54,
-              "y": 100.18
-            },
-            {
-              "x": 99.69,
-              "y": 101.84
-            },
-            {
-              "x": 100.09,
-              "y": 100.81
-            },
-            {
-              "x": 99.48,
-              "y": 99.4
-            }
-          ]
-        },
-        "top_stocks": [
-          {
-            "ticker": "HOWL",
-            "name": "Werewolf Therapeutics Inc",
-            "change_pct": 131.2384,
-            "price": 0.9971
-          },
-          {
-            "ticker": "USDE",
-            "name": "Stablecoinx Inc",
-            "change_pct": 12.5,
-            "price": 4.5
-          },
-          {
-            "ticker": "MARA",
-            "name": "MARA Holdings Inc",
-            "change_pct": 8.5202,
-            "price": 12.1
-          }
-        ],
-        "rotation": -5
+        "rotation": -3
       },
       {
         "ticker": "XLF",
         "sector": "Financials",
-        "ret_1d": 0.62,
-        "ret_5d": -1.47,
-        "ret_1m": 2.64,
-        "ret_3m": 11.17,
-        "rel_1d": 0.34,
-        "rel_5d": 0.02,
-        "rel_1m": -0.96,
-        "rel_3m": 7.94,
+        "ret_1d": 0.9,
+        "ret_5d": -1.19,
+        "ret_1m": 2.93,
+        "ret_3m": 11.48,
+        "rel_1d": 0.58,
+        "rel_5d": 0.26,
+        "rel_1m": -0.71,
+        "rel_3m": 8.21,
         "rvol": 1.02,
         "rrg": {
-          "x": 100.3,
-          "y": 99.64,
+          "x": 100.42,
+          "y": 99.82,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -1036,29 +956,98 @@
               "y": 99.71
             },
             {
-              "x": 100.3,
-              "y": 99.64
+              "x": 100.42,
+              "y": 99.82
             }
           ]
         },
         "top_stocks": [],
-        "rotation": 0
+        "rotation": -1
+      },
+      {
+        "ticker": "XLK",
+        "sector": "Technology",
+        "ret_1d": 0.17,
+        "ret_5d": -3.47,
+        "ret_1m": 2.79,
+        "ret_3m": 2.82,
+        "rel_1d": -0.15,
+        "rel_5d": -2.02,
+        "rel_1m": -0.85,
+        "rel_3m": -0.45,
+        "rvol": 0.61,
+        "rrg": {
+          "x": 99.41,
+          "y": 99.3,
+          "quadrant": "Lagging",
+          "tail": [
+            {
+              "x": 100.18,
+              "y": 100.76
+            },
+            {
+              "x": 98.67,
+              "y": 97.95
+            },
+            {
+              "x": 98.79,
+              "y": 100.81
+            },
+            {
+              "x": 98.54,
+              "y": 100.18
+            },
+            {
+              "x": 99.69,
+              "y": 101.84
+            },
+            {
+              "x": 100.09,
+              "y": 100.81
+            },
+            {
+              "x": 99.41,
+              "y": 99.3
+            }
+          ]
+        },
+        "top_stocks": [
+          {
+            "ticker": "HOWL",
+            "name": "Werewolf Therapeutics Inc",
+            "change_pct": 120.5473,
+            "price": 0.951
+          },
+          {
+            "ticker": "USDE",
+            "name": "Stablecoinx Inc",
+            "change_pct": 26.25,
+            "price": 5.05
+          },
+          {
+            "ticker": "MARA",
+            "name": "MARA Holdings Inc",
+            "change_pct": 8.6099,
+            "price": 12.11
+          }
+        ],
+        "rotation": -4
       },
       {
         "ticker": "XLP",
         "sector": "Cons. Staples",
-        "ret_1d": 0.04,
-        "ret_5d": -0.85,
-        "ret_1m": 2.58,
-        "ret_3m": 1.52,
-        "rel_1d": -0.24,
-        "rel_5d": 0.64,
-        "rel_1m": -1.02,
-        "rel_3m": -1.71,
+        "ret_1d": 0.22,
+        "ret_5d": -0.67,
+        "ret_1m": 2.76,
+        "ret_3m": 1.7,
+        "rel_1d": -0.1,
+        "rel_5d": 0.78,
+        "rel_1m": -0.88,
+        "rel_3m": -1.57,
         "rvol": 1.07,
         "rrg": {
-          "x": 99.49,
-          "y": 100.27,
+          "x": 99.56,
+          "y": 100.33,
           "quadrant": "Improving",
           "tail": [
             {
@@ -1086,8 +1075,8 @@
               "y": 100.08
             },
             {
-              "x": 99.49,
-              "y": 100.27
+              "x": 99.56,
+              "y": 100.33
             }
           ]
         },
@@ -1095,8 +1084,8 @@
           {
             "ticker": "FLO",
             "name": "Flowers Foods Inc",
-            "change_pct": 1.6901,
-            "price": 7.22
+            "change_pct": 2.2535,
+            "price": 7.26
           }
         ],
         "rotation": 3
@@ -1104,17 +1093,17 @@
       {
         "ticker": "XLRE",
         "sector": "Real Estate",
-        "ret_1d": 0.17,
-        "ret_5d": -0.25,
-        "ret_1m": 0.46,
-        "ret_3m": 2.36,
-        "rel_1d": -0.11,
-        "rel_5d": 1.24,
-        "rel_1m": -3.14,
+        "ret_1d": 0.2,
+        "ret_5d": -0.22,
+        "ret_1m": 0.49,
+        "ret_3m": 2.4,
+        "rel_1d": -0.12,
+        "rel_5d": 1.23,
+        "rel_1m": -3.15,
         "rel_3m": -0.87,
         "rvol": 0.78,
         "rrg": {
-          "x": 99.55,
+          "x": 99.54,
           "y": 100.55,
           "quadrant": "Improving",
           "tail": [
@@ -1143,7 +1132,7 @@
               "y": 99.98
             },
             {
-              "x": 99.55,
+              "x": 99.54,
               "y": 100.55
             }
           ]
@@ -1154,18 +1143,18 @@
       {
         "ticker": "XLI",
         "sector": "Industrials",
-        "ret_1d": 0.43,
-        "ret_5d": -3.2,
-        "ret_1m": -0.77,
-        "ret_3m": 6.13,
-        "rel_1d": 0.15,
-        "rel_5d": -1.71,
-        "rel_1m": -4.37,
-        "rel_3m": 2.9,
+        "ret_1d": 0.38,
+        "ret_5d": -3.24,
+        "ret_1m": -0.81,
+        "ret_3m": 6.08,
+        "rel_1d": 0.06,
+        "rel_5d": -1.79,
+        "rel_1m": -4.45,
+        "rel_3m": 2.81,
         "rvol": 1.03,
         "rrg": {
-          "x": 98.39,
-          "y": 98.56,
+          "x": 98.34,
+          "y": 98.51,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1193,8 +1182,8 @@
               "y": 99.67
             },
             {
-              "x": 98.39,
-              "y": 98.56
+              "x": 98.34,
+              "y": 98.51
             }
           ]
         },
@@ -1202,8 +1191,8 @@
           {
             "ticker": "LUNR",
             "name": "Intuitive Machines Inc",
-            "change_pct": 4.4618,
-            "price": 18.73
+            "change_pct": 4.2945,
+            "price": 18.7
           }
         ],
         "rotation": 0
@@ -1211,18 +1200,18 @@
       {
         "ticker": "XLU",
         "sector": "Utilities",
-        "ret_1d": -0.46,
-        "ret_5d": -1.67,
-        "ret_1m": -5.67,
-        "ret_3m": -2.56,
-        "rel_1d": -0.74,
-        "rel_5d": -0.18,
-        "rel_1m": -9.27,
-        "rel_3m": -5.79,
+        "ret_1d": -0.55,
+        "ret_5d": -1.76,
+        "ret_1m": -5.76,
+        "ret_3m": -2.65,
+        "rel_1d": -0.87,
+        "rel_5d": -0.31,
+        "rel_1m": -9.4,
+        "rel_3m": -5.92,
         "rvol": 0.85,
         "rrg": {
-          "x": 98.67,
-          "y": 100.16,
+          "x": 98.64,
+          "y": 100.13,
           "quadrant": "Improving",
           "tail": [
             {
@@ -1250,18 +1239,18 @@
               "y": 100.57
             },
             {
-              "x": 98.67,
-              "y": 100.16
+              "x": 98.64,
+              "y": 100.13
             }
           ]
         },
         "top_stocks": [],
-        "rotation": 3
+        "rotation": 2
       }
     ],
     "posture": {
       "label": "Risk-on",
-      "spread": 2.72,
+      "spread": 2.77,
       "leaders": [
         "Energy",
         "Cons. Discretionary"
@@ -1273,10 +1262,10 @@
     },
     "benchmark": {
       "ticker": "SPY",
-      "ret_1d": 0.28,
-      "ret_5d": -1.49,
-      "ret_1m": 3.6,
-      "ret_3m": 3.23
+      "ret_1d": 0.32,
+      "ret_5d": -1.45,
+      "ret_1m": 3.64,
+      "ret_3m": 3.27
     }
   },
   "reddit_feed": [
@@ -1292,7 +1281,7 @@
         "GOOGM",
         "GOOGN"
       ],
-      "hours_ago": 1.1,
+      "hours_ago": 1.2,
       "url": "https://www.fool.com/investing/2026/08/21/berkshire-sold-all-of-its-domino-s-stock-i-didn-t-here-s-why/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1313,7 +1302,7 @@
         "GOOGM",
         "GOOGN"
       ],
-      "hours_ago": 2.1,
+      "hours_ago": 2.2,
       "url": "https://www.fool.com/investing/2026/08/21/new-member-sp-500-up-365-ipo-reddit/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1335,7 +1324,7 @@
         "GOOGL",
         "GOOGM"
       ],
-      "hours_ago": 2.3,
+      "hours_ago": 2.4,
       "url": "https://www.fool.com/investing/2026/08/21/should-you-buy-datadog-stock-right-now/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1356,7 +1345,7 @@
         "GOOGN",
         "MTSUY"
       ],
-      "hours_ago": 4.5,
+      "hours_ago": 4.6,
       "url": "https://www.fool.com/investing/2026/08/21/warren-buffett-greg-abel-transform-brka-43-billion/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1377,7 +1366,7 @@
         "GOOGN",
         "TSM"
       ],
-      "hours_ago": 5.5,
+      "hours_ago": 5.6,
       "url": "https://www.fool.com/investing/2026/08/21/examine-top-holding-17-billionaire-3-common-stocks/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1398,7 +1387,7 @@
         "GOOGM",
         "GOOGN"
       ],
-      "hours_ago": 10.3,
+      "hours_ago": 10.4,
       "url": "https://www.fool.com/investing/2026/08/20/google-s-marvell-warrant-doesn-t-fully-vest-until-google-buys-usd120-billion-of-chips/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1419,7 +1408,7 @@
         "GOOG",
         "GOOGL"
       ],
-      "hours_ago": 19.8,
+      "hours_ago": 19.9,
       "url": "https://www.fool.com/investing/2026/08/20/billionaire-bill-ackman-just-sold-25-of-his-stake/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
