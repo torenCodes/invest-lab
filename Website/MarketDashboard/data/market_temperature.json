@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-08-20T21:35:21.600801+00:00",
+  "scan_time": "2026-08-21T10:22:08.290255+00:00",
   "next_scan_info": "Weekdays at 6:00am ET",
-  "composite_score": 58.1,
+  "composite_score": 57.8,
   "composite_label": "Neutral",
   "components": {
     "risk_posture": {
@@ -25,24 +25,24 @@
       "weight": 0.15
     },
     "insider": {
-      "raw": 0.2538,
-      "raw_label": "447 buying / 1314 selling",
-      "percentile": 14.5,
-      "score": 85.5,
+      "raw": 0.2546,
+      "raw_label": "453 buying / 1326 selling",
+      "percentile": 15.3,
+      "score": 84.7,
       "label": "Hot",
-      "description": "447 companies saw open-market insider buying against 1314 with selling over the last 30 days. That breadth sits at the 14.5th percentile of the past five years. Inverted here, because insiders buy weakness and go quiet into strength.",
+      "description": "453 companies saw open-market insider buying against 1326 with selling over the last 30 days. That breadth sits at the 15.3th percentile of the past five years. Inverted here, because insiders buy weakness and go quiet into strength.",
       "title": "Insider Breadth",
       "subtitle": "Buying vs selling companies",
       "weight": 0.1
     },
     "breadth_50": {
-      "raw": 55.5,
-      "raw_label": "55.5% above 50-DMA",
-      "above_50dma": 278,
-      "total": 501,
-      "score": 55.5,
+      "raw": 54.6,
+      "raw_label": "54.6% above 50-DMA",
+      "above_50dma": 273,
+      "total": 500,
+      "score": 54.6,
       "label": "Neutral",
-      "description": "278 of 501 S&P 500 stocks above their 50-day moving average \u2014 the fast participation read. Swings hard with every dip and rally, unlike its slower 200-day cousin below.",
+      "description": "273 of 500 S&P 500 stocks above their 50-day moving average \u2014 the fast participation read. Swings hard with every dip and rally, unlike its slower 200-day cousin below.",
       "title": "Fast Breadth",
       "subtitle": "% S&P 500 > 50-DMA",
       "weight": 0.1
@@ -52,7 +52,7 @@
       "raw_label": "102 hi / 27 lo",
       "near_high": 102,
       "near_low": 27,
-      "total": 501,
+      "total": 500,
       "score": 65.0,
       "label": "Warm",
       "description": "102 stocks near a 52-week high vs 27 near a 52-week low (within 5%). A surge of new highs signals euphoria; a wave of new lows signals stress.",
@@ -61,9 +61,9 @@
       "weight": 0.1
     },
     "fear_greed": {
-      "raw": 52.5,
+      "raw": 52.1,
       "raw_label": "52 (Neutral)",
-      "score": 52.5,
+      "score": 52.1,
       "label": "Neutral",
       "description": "CNN's composite of 7 short-term sentiment signals (momentum, breadth, put/call ratio, junk-bond demand, volatility, etc.). High readings reflect investor euphoria \u2014 historically a contrarian sell signal.",
       "title": "Fear & Greed",
@@ -71,13 +71,13 @@
       "weight": 0.15
     },
     "breadth": {
-      "raw": 72.7,
-      "raw_label": "72.7% above 200-DMA",
-      "above_200dma": 364,
-      "total": 501,
+      "raw": 73.2,
+      "raw_label": "73.2% above 200-DMA",
+      "above_200dma": 366,
+      "total": 500,
       "score": 60,
       "label": "Warm",
-      "description": "364 of 501 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
+      "description": "366 of 500 S&P 500 stocks trading above their 200-day moving average. Healthy markets see 50\u201375%; above 90% signals euphoric participation.",
       "title": "Structural Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
       "weight": 0.1
