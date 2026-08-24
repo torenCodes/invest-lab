@@ -232,6 +232,10 @@ def enrich_tickers(tickers):
                         "change_pct":    round(change_pct, 2),
                         "market_cap":    info.get("marketCap") or 0,
                         "sector":        info.get("sector") or "Unknown",
+                        # Price context — the dimension the backtest found does
+                        # most of the work. Both come free with the quote.
+                        "week52_high":   info.get("fiftyTwoWeekHigh") or 0,
+                        "week52_low":    info.get("fiftyTwoWeekLow") or 0,
                         "industry":      info.get("industry") or "",
                         "name":          name,
                         "investable":    ok,
@@ -241,7 +245,7 @@ def enrich_tickers(tickers):
                     enriched[ticker] = {
                         "current_price": 0, "change_pct": 0,
                         "market_cap": 0, "sector": "Unknown",
-                        "industry": "", "name": ticker,
+                        "industry": "", "name": ticker, "week52_high": 0, "week52_low": 0,
                         "investable": False, "exclude_reason": "no quote available",
                     }
         except Exception as e:
@@ -250,7 +254,7 @@ def enrich_tickers(tickers):
                 enriched[ticker] = {
                     "current_price": 0, "change_pct": 0,
                     "market_cap": 0, "sector": "Unknown",
-                    "industry": "", "name": ticker,
+                    "industry": "", "name": ticker, "week52_high": 0, "week52_low": 0,
                     "investable": False, "exclude_reason": "no quote available",
                 }
         time.sleep(0.5)
@@ -335,6 +339,8 @@ def _roll_up_by_ticker(transactions, enrichment):
             "current_price":  enr.get("current_price", 0),
             "change_pct":     enr.get("change_pct", 0),
             "market_cap":     enr.get("market_cap", 0),
+            "week52_high":    enr.get("week52_high", 0),
+            "week52_low":     enr.get("week52_low", 0),
             "insider_avg_cost": avg_cost,
             "vs_insider_pct":   vs_insider,
             "max_delta_own":    max((i.get("delta_own") or 0) for i in insiders) or None,
@@ -352,8 +358,12 @@ def _roll_up_by_ticker(transactions, enrichment):
 # Pattern Scanner UX so users get one coherent leaderboard with a sidebar
 # filter chip per tier.
 
-TIER_A_CUTOFF = 50
-TIER_B_CUTOFF = 25
+# Recalibrated Aug 2026 alongside the evidence-based rewrite. The new model
+# distributes scores differently, and at the old cutoffs 41% of the board
+# qualified as Tier A, which makes the label meaningless. These land Tier A at
+# roughly the top 15% and Tier B in the middle, so the tiers stay informative.
+TIER_A_CUTOFF = 62
+TIER_B_CUTOFF = 40
 TIER_W_CUTOFF = 10
 
 
@@ -397,79 +407,113 @@ def _parse_trade_date(s):
 def _conviction_score(row, today=None):
     """Score a deduped ticker row 0-100 and return (score, signal tags).
 
-    Six dimensions, weighted by how much each has historically distinguished
-    an informative purchase from a routine one:
+    REWRITTEN AUG 2026 FROM BACKTEST EVIDENCE, not judgement. The previous
+    weights were my informed guesses. Measuring them against 22,600 historical
+    buying clusters over five years (insider_backtest.py, benchmarked to IWM
+    because this universe is small-cap and SPY flattered nothing) showed the old
+    model was ranking names almost exactly backwards: clusters scoring 70-84 ran
+    -2.84% against the index at a 39.9% win rate, worse than clusters scoring
+    under 40.
 
-        cluster      25   several insiders acting together
-        role         25   who bought, CEO down to 10% holder
-        conviction   20   how much they grew their OWN position
-        size         15   dollars, scaled against company size
-        recency      10   how fresh the signal is
-        entry         5   whether the stock is still near their price
+    What the measurement actually found:
 
-    The position-growth dimension is the one the previous Finviz-based version
-    could not see at all, and it is often the most telling: a director adding
-    $50k to a $10m stake is noise next to a CFO lifting their holding by 80%.
+      PRICE CONTEXT dominates and nothing else came close. Purchases with the
+      stock near its 52-week highs returned +0.79% with a 49.9% win rate;
+      purchases with it down more than 50% returned -3.17% at 40.1%. Monotonic
+      across every bucket. It had a weight of ZERO in the old model.
+
+      CLUSTER SIZE was a confound. Big clusters looked bad only because they
+      concentrate in distressed companies — hold price context constant and the
+      penalty vanishes. Better still, tight clusters of 3+ insiders in names not
+      deeply drawn down produced a 50.9% win rate, the only bucket in the whole
+      study above a coin flip. So cluster is scored, but GATED on price health:
+      several executives moving together means something when the business is
+      sound and means management defending a falling knife when it is not.
+
+      SENIORITY was real but inverted. CFO-led buying beat the index in every
+      price band (+1.28% near highs); CEO-led buying trailed in every band
+      (-0.38% near highs, -3.24% when deeply down). CEO now scores below CFO,
+      officers and directors, which reads oddly and is what the data says.
+
+      DOLLAR SIZE showed no signal in any bucket, so it drops from 15 to 5.
+
+    Recency and entry-vs-insider-cost cannot be judged by a backtest — every
+    cluster is equally fresh at its own moment — so they keep modest weights on
+    operational grounds rather than evidence.
+
+    Effects are modest and drawn from one regime. 2021-2026 rewarded momentum
+    over contrarian buying, and a sustained value cycle could invert the price
+    context finding. This ranks candidates for research; it does not forecast.
     """
     today = today or datetime.now()
     signals = []
     score = 0.0
 
-    # ── Cluster (25) ──
+    # ── Price context (35) — the validated backbone ──
+    price = row.get("current_price") or 0
+    hi, lo = row.get("week52_high") or 0, row.get("week52_low") or 0
+    healthy = True          # gates the cluster score below
+    if price and hi and lo and hi > lo:
+        drawdown = (price / hi - 1.0) * 100.0          # 0 = at the high
+        pos52    = (price - lo) / (hi - lo) * 100.0    # 100 = at the high
+
+        if   drawdown > -10: score += 20; signals.append("Trading near its 52-week high")
+        elif drawdown > -25: score += 15
+        elif drawdown > -50: score += 8
+        else:                score += 0; signals.append("Down over 50% from its high")
+        healthy = drawdown > -25
+
+        if   pos52 >= 75: score += 15; signals.append("Top quartile of its 52-week range")
+        elif pos52 >= 50: score += 11
+        elif pos52 >= 25: score += 5
+        else:             score += 0
+    else:
+        score += 12         # unknown price context — neither rewarded nor punished
+
+    # ── Cluster (15), gated on price health ──
     n_ins = row["insider_count"]
-    if   n_ins >= 5: score += 25; signals.append(f"{n_ins} insiders buying")
-    elif n_ins == 4: score += 21; signals.append("4 insiders buying")
-    elif n_ins == 3: score += 17; signals.append("3 insiders buying")
-    elif n_ins == 2: score += 11; signals.append("2 insiders buying")
-    else:            score += 3
+    if n_ins >= 5:   base, note = 15, f"{n_ins} insiders buying together"
+    elif n_ins == 4: base, note = 13, "4 insiders buying together"
+    elif n_ins == 3: base, note = 12, "3 insiders buying together"
+    elif n_ins == 2: base, note = 8,  "2 insiders buying"
+    else:            base, note = 4,  None
+    if not healthy and n_ins >= 2:
+        base = round(base * 0.35)      # crowd-buying a broken chart is not conviction
+        note = f"{n_ins} insiders buying, but the stock is well off its highs"
+    score += base
+    if note:
+        signals.append(note)
 
-    # ── Role quality (25), taking the most senior buyer ──
-    best_pts, best_label, best_title = 0, "", ""
+    # ── Role (20) — follows the conditional evidence, CFO over CEO ──
+    best_pts, best_title = 0, ""
     for i in row["insiders"]:
-        pts, label = _role_points(i.get("title"))
+        t = (i.get("title") or "").upper()
+        if   any(k in t for k in ("CHIEF FINANCIAL", "CFO")):        pts = 20
+        elif any(k in t for k in ("CHIEF OPERATING", "COO", "CHIEF TECHNOLOGY",
+                                  "CTO", "CHIEF BANKING", "OFFICER")): pts = 16
+        elif "DIRECTOR" in t:                                        pts = 14
+        elif any(k in t for k in ("CHAIRMAN", "CHAIR", "PRESIDENT")): pts = 11
+        elif any(k in t for k in ("CHIEF EXECUTIVE", "CEO")):        pts = 10
+        elif any(k in t for k in ("10%", "TEN PERCENT", "BENEFICIAL")): pts = 4
+        else:                                                        pts = 8
         if pts > best_pts:
-            best_pts, best_label, best_title = pts, label, (i.get("title") or "")
+            best_pts, best_title = pts, (i.get("title") or "")
     score += best_pts
-    # Titles arrive already well-formed ("CEO", "CFO, Treasurer", "COB, CEO"),
-    # so leave the casing alone — .title() turned CEO into "Ceo". Keep only the
-    # primary role, since some insiders list four of them.
-    primary = (best_title.split(",")[0].strip() if best_title else "")
-    if best_pts >= 18:
-        signals.append(f"{primary} bought" if primary else f"{best_label} bought")
-    elif best_pts >= 10:
-        signals.append(f"{best_label} bought")
-    # Both of the top two seats buying is a distinct, stronger message
-    titles_all = " ".join((i.get("title") or "") for i in row["insiders"]).upper()
-    if any(k in titles_all for k in ("CEO", "CHIEF EXECUTIVE")) and        any(k in titles_all for k in ("CFO", "CHIEF FINANCIAL")):
-        score += 4
-        signals.append("CEO and CFO both buying")
+    primary = best_title.split(",")[0].strip()
+    if primary and best_pts >= 14:
+        signals.append(f"{primary} bought")
 
-    # ── Position growth (20) — the new dimension ──
+    # ── Position growth (10) ──
     deltas = [i.get("delta_own") for i in row["insiders"] if i.get("delta_own") is not None]
     max_delta = max(deltas) if deltas else None
     if max_delta is not None:
-        if   max_delta >= 100: score += 20; signals.append("Insider more than doubled their stake")
-        elif max_delta >=  50: score += 17; signals.append(f"Position up {max_delta:.0f}%")
-        elif max_delta >=  25: score += 13; signals.append(f"Position up {max_delta:.0f}%")
-        elif max_delta >=  10: score += 9;  signals.append(f"Position up {max_delta:.0f}%")
-        elif max_delta >=   5: score += 5
-        else:                  score += 2
+        if   max_delta >= 100: score += 7; signals.append("Insider more than doubled their stake")
+        elif max_delta >= 25:  score += 10; signals.append(f"Position up {max_delta:.0f}%")
+        elif max_delta >= 5:   score += 10; signals.append(f"Position up {max_delta:.0f}%")
+        else:                  score += 5
 
-    # ── Size (15), judged against market cap where we know it ──
-    v = row["value"]
-    cap = row.get("market_cap") or 0
-    if   v >= 10_000_000: score += 11; signals.append(f"${v/1e6:.1f}M total")
-    elif v >=  5_000_000: score += 9;  signals.append(f"${v/1e6:.1f}M total")
-    elif v >=  1_000_000: score += 7;  signals.append(f"${v/1e6:.1f}M total")
-    elif v >=    250_000: score += 4;  signals.append(f"${v/1e3:.0f}K total")
-    elif v >=    100_000: score += 2
-    if cap > 0:
-        # Relative to company size a modest cheque can still be a big statement
-        rel = v / cap
-        if   rel >= 0.01:  score += 4; signals.append("Large relative to market cap")
-        elif rel >= 0.003: score += 2
-
-    # ── Recency (10) ──
+    # ── Recency (10) — untested by backtest, kept because a stale signal is
+    #    useless in practice regardless of what history says ──
     dates = [_parse_trade_date(i.get("date")) for i in row["insiders"]]
     dates = [d for d in dates if d]
     if dates:
@@ -479,7 +523,13 @@ def _conviction_score(row, today=None):
         elif age <= 10: score += 5
         elif age <= 20: score += 2
 
-    # ── Entry advantage (5) — can you still buy near their price? ──
+    # ── Size (5) — no measurable signal, kept only as a liquidity sanity check ──
+    v = row["value"]
+    if   v >= 1_000_000: score += 5; signals.append(f"${v/1e6:.1f}M total")
+    elif v >= 250_000:   score += 4; signals.append(f"${v/1e3:.0f}K total")
+    elif v >= 100_000:   score += 2
+
+    # ── Entry advantage (5) — untested, but a real practical edge ──
     vs = row.get("vs_insider_pct")
     if vs is not None:
         if   vs <= -5: score += 5; signals.append(f"Trading {abs(vs):.0f}% below insider cost")

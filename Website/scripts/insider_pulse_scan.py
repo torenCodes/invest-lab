@@ -76,6 +76,35 @@ TOP_TITLES = ("CEO", "CHIEF EXECUTIVE", "CFO", "CHIEF FINANCIAL",
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
+# Filers type the ticker by hand and the SEC does not validate it, so ~0.8% of
+# symbols arrive as free text: "(SIRI)", "NYSE: KRC", "MOGA/MOGB", "BFA, BFB",
+# even "N O G" for NOG. Left raw these count as separate companies and quietly
+# inflate the breadth denominator.
+_EXCH_RE  = re.compile(r"^\(?\s*(?:NYSE\s*AMERICAN|NYSEAMERICAN|NASDAQ|NYSE|AMEX|OTC|CBOE)\s*[:\-]\s*", re.I)
+_CLEAN_RE = re.compile(r"^[A-Z][A-Z0-9.\-]{0,6}$")
+
+
+def norm_symbol(raw):
+    """Best-effort clean ticker, or None if it cannot be trusted."""
+    s = (raw or "").strip().upper()
+    if not s or s in ("NONE", "N/A"):
+        return None
+    s = s.strip("\"' 	")
+    s = _EXCH_RE.sub("", s)
+    s = s.strip("()[]{} 	\"'")
+    if _CLEAN_RE.match(s):
+        return s
+    parts = s.replace(",", " ").replace("/", " ").split()
+    if len(parts) > 1 and all(len(p) == 1 for p in parts):
+        joined = "".join(parts)
+        return joined if _CLEAN_RE.match(joined) else None
+    if parts:
+        first = parts[0].strip("()[]{} \"'")
+        if _CLEAN_RE.match(first):
+            return first
+    return None
+
+
 def clamp(x, lo, hi):
     return max(lo, min(hi, x))
 
@@ -154,8 +183,8 @@ def transactions_from_zip(raw):
 
     issuer = {}
     for r in rows("SUBMISSION.tsv"):
-        sym = (r.get("ISSUERTRADINGSYMBOL") or "").strip().upper()
-        if sym and sym not in ("NONE", "N/A"):
+        sym = norm_symbol(r.get("ISSUERTRADINGSYMBOL"))
+        if sym:
             issuer[r["ACCESSION_NUMBER"]] = sym
 
     titles = collections.defaultdict(list)

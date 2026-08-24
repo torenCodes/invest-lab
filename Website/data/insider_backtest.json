@@ -1,0 +1,252 @@
+{
+ "generated": "2026-08-24T19:20:04.176625+00:00",
+ "horizon_days": 60,
+ "benchmark": "IWM",
+ "clusters_measured": 22600,
+ "clusters_total": 32858,
+ "excluded": {
+  "no history": 6228,
+  "below price floor": 4001,
+  "no price at entry": 23,
+  "window not yet complete": 6
+ },
+ "overall": {
+  "label": "all clusters (60d)",
+  "n": 22600,
+  "avg_excess": -0.31,
+  "median_excess": -0.99,
+  "win_rate": 46.8
+ },
+ "by_score": [
+  {
+   "label": "score <40",
+   "n": 15202,
+   "avg_excess": -0.26,
+   "median_excess": -0.86,
+   "win_rate": 47.0
+  },
+  {
+   "label": "40-54",
+   "n": 4821,
+   "avg_excess": 0.04,
+   "median_excess": -0.73,
+   "win_rate": 47.8
+  },
+  {
+   "label": "55-69",
+   "n": 1965,
+   "avg_excess": -0.73,
+   "median_excess": -1.69,
+   "win_rate": 44.4
+  },
+  {
+   "label": "70-84",
+   "n": 612,
+   "avg_excess": -2.84,
+   "median_excess": -3.64,
+   "win_rate": 39.9
+  },
+  {
+   "label": "85+",
+   "n": 0
+  }
+ ],
+ "by_dimension": {
+  "cluster_size": [
+   {
+    "label": "1 insider",
+    "n": 14098,
+    "avg_excess": -0.05,
+    "median_excess": -0.81,
+    "win_rate": 47.2
+   },
+   {
+    "label": "2",
+    "n": 4052,
+    "avg_excess": -0.56,
+    "median_excess": -0.94,
+    "win_rate": 46.6
+   },
+   {
+    "label": "3-4",
+    "n": 2701,
+    "avg_excess": -0.77,
+    "median_excess": -1.42,
+    "win_rate": 46.1
+   },
+   {
+    "label": "5+",
+    "n": 1749,
+    "avg_excess": -1.08,
+    "median_excess": -1.78,
+    "win_rate": 44.3
+   }
+  ],
+  "seniority": [
+   {
+    "label": "other",
+    "n": 3213,
+    "avg_excess": -1.29,
+    "median_excess": -1.31,
+    "win_rate": 45.5
+   },
+   {
+    "label": "director",
+    "n": 11468,
+    "avg_excess": 0.4,
+    "median_excess": -0.48,
+    "win_rate": 48.3
+   },
+   {
+    "label": "chair/pres",
+    "n": 1205,
+    "avg_excess": -0.9,
+    "median_excess": -0.91,
+    "win_rate": 47.9
+   },
+   {
+    "label": "CFO",
+    "n": 1391,
+    "avg_excess": 0.61,
+    "median_excess": -0.48,
+    "win_rate": 48.5
+   },
+   {
+    "label": "CEO",
+    "n": 5323,
+    "avg_excess": -1.35,
+    "median_excess": -2.02,
+    "win_rate": 43.5
+   }
+  ],
+  "position_growth": [
+   {
+    "label": "<5%",
+    "n": 9053,
+    "avg_excess": -0.57,
+    "median_excess": -1.17,
+    "win_rate": 46.2
+   },
+   {
+    "label": "5-24%",
+    "n": 5233,
+    "avg_excess": 0.16,
+    "median_excess": -0.49,
+    "win_rate": 48.2
+   },
+   {
+    "label": "25-99%",
+    "n": 3174,
+    "avg_excess": -0.02,
+    "median_excess": -0.79,
+    "win_rate": 47.6
+   },
+   {
+    "label": "100%+",
+    "n": 5140,
+    "avg_excess": -0.49,
+    "median_excess": -1.26,
+    "win_rate": 45.7
+   }
+  ],
+  "dollar_size": [
+   {
+    "label": "<$100k",
+    "n": 11768,
+    "avg_excess": -0.37,
+    "median_excess": -0.77,
+    "win_rate": 47.2
+   },
+   {
+    "label": "$100k-1M",
+    "n": 7243,
+    "avg_excess": -0.07,
+    "median_excess": -0.91,
+    "win_rate": 47.3
+   },
+   {
+    "label": "$1-10M",
+    "n": 2616,
+    "avg_excess": -0.74,
+    "median_excess": -1.78,
+    "win_rate": 44.6
+   },
+   {
+    "label": "$10M+",
+    "n": 973,
+    "avg_excess": -0.2,
+    "median_excess": -2.77,
+    "win_rate": 43.4
+   }
+  ],
+  "pos_52wk": [
+   {
+    "label": "bottom quartile",
+    "n": 8834,
+    "avg_excess": -1.41,
+    "median_excess": -2.29,
+    "win_rate": 44.4
+   },
+   {
+    "label": "25-50",
+    "n": 4290,
+    "avg_excess": -0.62,
+    "median_excess": -1.45,
+    "win_rate": 44.6
+   },
+   {
+    "label": "50-75",
+    "n": 4448,
+    "avg_excess": 0.43,
+    "median_excess": -0.26,
+    "win_rate": 48.8
+   },
+   {
+    "label": "top quartile",
+    "n": 5028,
+    "avg_excess": 1.23,
+    "median_excess": 0.3,
+    "win_rate": 50.9
+   }
+  ],
+  "drawdown": [
+   {
+    "label": "down >50%",
+    "n": 3878,
+    "avg_excess": -3.17,
+    "median_excess": -6.52,
+    "win_rate": 40.1
+   },
+   {
+    "label": "down 25-50%",
+    "n": 5838,
+    "avg_excess": -0.09,
+    "median_excess": -1.21,
+    "win_rate": 46.8
+   },
+   {
+    "label": "down 10-25%",
+    "n": 6178,
+    "avg_excess": 0.09,
+    "median_excess": -0.65,
+    "win_rate": 47.5
+   },
+   {
+    "label": "near highs",
+    "n": 6706,
+    "avg_excess": 0.79,
+    "median_excess": -0.02,
+    "win_rate": 49.9
+   }
+  ]
+ },
+ "method": {
+  "entry": "filing date, not trade date \u2014 you cannot act before disclosure",
+  "return": "stock return minus IWM over the same 60-day window",
+  "survivorship": "tickers without price history are counted in `excluded`, not dropped silently",
+  "untested": [
+   "recency",
+   "entry vs insider cost"
+  ]
+ }
+}
