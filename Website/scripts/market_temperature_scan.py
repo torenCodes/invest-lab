@@ -54,15 +54,25 @@ CALIB_YEARS    = 10
 # them by 5 points each to make room for insider breadth, which is genuinely
 # orthogonal: it is the revealed preference of the people who know their own
 # companies best, and it moves on a different clock than price.
+# Aug 2026 rebalance. Insider breadth drops 10 -> 5: testing it against forward
+# S&P returns showed the contrarian direction is right (quiet insiders precede
+# weaker markets) but the relationship is non-monotonic and rests on roughly 19
+# INDEPENDENT observations once overlapping windows are accounted for. That is
+# far too thin to carry a tenth of the gauge.
+# Structural breadth also drops 10 -> 5, being the slowest-moving of the three
+# participation measures and largely saying what Fast Breadth already says.
+# The freed weight funds Growth vs Value, which adds a style dimension the gauge
+# had no read on at all.
 WEIGHTS = {
     "risk_posture": 0.15,
     "trend":        0.15,
     "fear_greed":   0.15,
     "breadth_50":   0.10,
     "new_highs":    0.10,
-    "insider":      0.10,
-    "breadth":      0.10,
     "credit":       0.10,
+    "growth_value": 0.10,
+    "breadth":      0.05,
+    "insider":      0.05,
     "yield_curve":  0.05,
 }
 
@@ -197,14 +207,79 @@ def compute_insider_breadth():
     score = round(clamp(100.0 - float(pct), 0.0, 100.0), 1)   # invert
     return {
         "raw":         cur.get("breadth"),
-        "raw_label":   f"{cur.get('buy_cos')} buying / {cur.get('sell_cos')} selling",
+        "raw_label":   ("insiders quiet" if pct is not None and pct < 40 else
+                        "insiders active" if pct is not None and pct > 60 else "middling")
+                       + f" — {cur.get('buy_cos')} buying / {cur.get('sell_cos')} selling",
         "percentile":  pct,
         "score":       score,
         "label":       label_for(score),
         "description": f"{cur.get('buy_cos')} companies saw open-market insider buying against "
                        f"{cur.get('sell_cos')} with selling over the last {d.get('window_days', 30)} days. "
                        f"That breadth sits at the {pct}th percentile of the past five years. "
-                       "Inverted here, because insiders buy weakness and go quiet into strength.",
+                       "Inverted here, because insiders buy weakness and go quiet into strength, "
+                       "so a quiet tape reads as the hotter, later-stage condition. Tested against "
+                       "forward S&P returns the direction holds, but on a small and non-monotonic "
+                       "sample, which is why this carries only 5% of the gauge.",
+    }
+
+
+# ── Component: Growth vs Value (which style the market is paying for) ────────
+
+def compute_growth_value():
+    """Russell 1000 Growth against Russell 1000 Value (IWF / IWD).
+
+    The gauge had no read on STYLE. Growth leading value is the signature of a
+    market paying up for future earnings and tolerating long duration risk,
+    which is a hot condition; value leading is the market retreating to cash
+    flows it can see today. Scored on both where the ratio sits against its own
+    three-year history and how it has moved over the last quarter, because a
+    stretched ratio that is already rolling over says something different from
+    one still climbing.
+
+    Not a duplicate of Risk Posture, which measures cyclical versus defensive
+    SECTORS. The two genuinely diverge — at the time of writing sector rotation
+    reads risk-on while growth is down double digits against value."""
+    print("[market-temp] Growth vs Value...")
+    try:
+        import yfinance as yf
+        d = yf.download("IWF IWD", period="3y", interval="1d", auto_adjust=True,
+                        group_by="ticker", progress=False, threads=False)
+        g = d["IWF"]["Close"].dropna()
+        v = d["IWD"]["Close"].dropna()
+    except Exception as e:
+        print(f"[market-temp] Growth/Value fetch failed: {e}")
+        return None
+
+    ratio = (g / v.reindex(g.index)).dropna()
+    if len(ratio) < 200:
+        print("[market-temp] Growth/Value: insufficient history")
+        return None
+
+    vals = [float(x) for x in ratio.values]
+    cur  = vals[-1]
+    level_pct = percentile_rank(vals[:-1], cur)
+
+    lookback = 63 if len(vals) > 63 else len(vals) - 1
+    chg = (cur / vals[-1 - lookback] - 1.0) * 100.0
+    changes = [(vals[i] / vals[i - lookback] - 1.0) * 100.0
+               for i in range(lookback, len(vals))]
+    mom_pct = percentile_rank(changes[:-1], chg)
+
+    if level_pct is None or mom_pct is None:
+        return None
+    score = round(clamp((level_pct + mom_pct) / 2.0, 0.0, 100.0), 1)
+    leader = "Growth" if chg > 0 else "Value"
+    return {
+        "raw":         round(cur, 4),
+        "raw_label":   f"{leader} leading, {chg:+.1f}% in 3mo",
+        "percentile":  level_pct,
+        "score":       score,
+        "label":       label_for(score),
+        "description": f"Russell 1000 Growth against Russell 1000 Value. The ratio sits at the "
+                       f"{level_pct}th percentile of the last three years and has moved {chg:+.1f}% "
+                       "over the past quarter. Growth pulling ahead means the market is paying up "
+                       "for future earnings, which runs hot; value leading means it is retreating "
+                       "to cash flows it can see today.",
     }
 
 
@@ -480,6 +555,7 @@ COMPONENT_META = {
     "risk_posture": {"title": "Risk Posture",       "subtitle": "Cyclicals vs Defensives"},
     "trend":        {"title": "Trend Heat",         "subtitle": "S&P vs 50-DMA + thrust"},
     "insider":      {"title": "Insider Breadth",    "subtitle": "Buying vs selling companies"},
+    "growth_value": {"title": "Growth vs Value",    "subtitle": "IWF / IWD style ratio"},
     "breadth_50":   {"title": "Fast Breadth",       "subtitle": "% S&P 500 > 50-DMA"},
     "new_highs":    {"title": "Net New Highs",      "subtitle": "52wk highs − lows"},
     "fear_greed":   {"title": "Fear & Greed",       "subtitle": "CNN Sentiment Index"},
@@ -499,6 +575,7 @@ def run():
         "risk_posture": compute_risk_posture(),
         "trend":        compute_trend_heat(),
         "insider":      compute_insider_breadth(),
+        "growth_value": compute_growth_value(),
         "breadth_50":   internals.get("breadth_50"),
         "new_highs":    internals.get("new_highs"),
         "fear_greed":   compute_fear_greed(),
