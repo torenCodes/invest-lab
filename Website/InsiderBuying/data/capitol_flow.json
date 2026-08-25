@@ -1,9 +1,9 @@
 {
- "scan_time": "2026-08-21T12:19:18.999285+00:00",
+ "scan_time": "2026-08-25T12:41:43.933178+00:00",
  "source": "US House Clerk \u2014 Periodic Transaction Reports",
- "filings_total": 359,
- "filings_with_trades": 219,
- "transactions": 2526,
+ "filings_total": 364,
+ "filings_with_trades": 222,
+ "transactions": 2539,
  "window_days": 90,
  "median_disclosure_lag_days": 18,
  "caveats": {
@@ -78,6 +78,16 @@
    ]
   },
   {
+   "ticker": "GOOGL",
+   "trades": 6,
+   "est_amount": 48000,
+   "members": 2,
+   "member_names": [
+    "David J. Taylor",
+    "Michael Rulli"
+   ]
+  },
+  {
    "ticker": "CMCSA",
    "trades": 2,
    "est_amount": 40500,
@@ -85,16 +95,6 @@
    "member_names": [
     "Gilbert Cisneros",
     "Mike Kelly"
-   ]
-  },
-  {
-   "ticker": "GOOGL",
-   "trades": 4,
-   "est_amount": 32000,
-   "members": 2,
-   "member_names": [
-    "David J. Taylor",
-    "Michael Rulli"
    ]
   },
   {
@@ -238,9 +238,18 @@
    ]
   },
   {
+   "ticker": "BE",
+   "trades": 4,
+   "est_amount": 7500000,
+   "members": 1,
+   "member_names": [
+    "Nancy Pelosi"
+   ]
+  },
+  {
    "ticker": "INTC",
-   "trades": 1,
-   "est_amount": 3000000,
+   "trades": 4,
+   "est_amount": 4875000,
    "members": 1,
    "member_names": [
     "Nancy Pelosi"
@@ -254,24 +263,16 @@
    "member_names": [
     "Gilbert Cisneros"
    ]
-  },
-  {
-   "ticker": "OGN",
-   "trades": 1,
-   "est_amount": 175000,
-   "members": 1,
-   "member_names": [
-    "Kevin Hern"
-   ]
   }
  ],
  "top_sold": [
   {
    "ticker": "MSFT",
-   "trades": 6,
-   "est_amount": 814500,
-   "members": 5,
+   "trades": 7,
+   "est_amount": 847000,
+   "members": 6,
    "member_names": [
+    "David J. Taylor",
     "Gilbert Cisneros",
     "Matthew Robert Van Epps",
     "Michael Rulli",
@@ -537,7 +538,7 @@
  "most_active": [
   {
    "member": "April McClain Delaney",
-   "trades": 92
+   "trades": 91
   },
   {
    "member": "Gilbert Cisneros",
@@ -556,12 +557,12 @@
    "trades": 26
   },
   {
-   "member": "Josh Gottheimer",
-   "trades": 21
+   "member": "David J. Taylor",
+   "trades": 24
   },
   {
-   "member": "David J. Taylor",
-   "trades": 19
+   "member": "Josh Gottheimer",
+   "trades": 21
   },
   {
    "member": "Kevin Hern",
@@ -587,15 +588,15 @@
  "asset_mix": [
   {
    "type": "Stock",
-   "trades": 464
+   "trades": 473
+  },
+  {
+   "type": "Options",
+   "trades": 8
   },
   {
    "type": "Other",
    "trades": 6
-  },
-  {
-   "type": "Options",
-   "trades": 5
   }
  ],
  "recent": [
@@ -613,6 +614,32 @@
    "doc": "20033889"
   },
   {
+   "ticker": "T",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-14",
+   "notify_date": "2026-08-14",
+   "amount_low": 50001,
+   "amount_high": 100000,
+   "amount_mid": 75000,
+   "member": "Tim Moore",
+   "state": "NC14",
+   "doc": "20035291"
+  },
+  {
+   "ticker": "IBP",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-08-14",
+   "notify_date": "2026-08-20",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035289"
+  },
+  {
    "ticker": "AAPL",
    "asset_type": "ST",
    "code": "P",
@@ -624,6 +651,58 @@
    "member": "Ed Case",
    "state": "HI01",
    "doc": "20035275"
+  },
+  {
+   "ticker": "GOOGL",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-08-11",
+   "notify_date": "2026-08-20",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035289"
+  },
+  {
+   "ticker": "GOOGL",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-08-11",
+   "notify_date": "2026-08-20",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035289"
+  },
+  {
+   "ticker": "MSFT",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-11",
+   "notify_date": "2026-08-20",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035289"
+  },
+  {
+   "ticker": "PG",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-08-11",
+   "notify_date": "2026-08-20",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035289"
   },
   {
    "ticker": "PINS",
@@ -1471,6 +1550,32 @@
    "doc": "20035138"
   },
   {
+   "ticker": "BE",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-07-28",
+   "amount_low": 500001,
+   "amount_high": 1000000,
+   "amount_mid": 750000,
+   "member": "Nancy Pelosi",
+   "state": "CA11",
+   "doc": "20035143"
+  },
+  {
+   "ticker": "BE",
+   "asset_type": "OP",
+   "code": "P",
+   "trade_date": "2026-07-28",
+   "notify_date": "2026-07-28",
+   "amount_low": 500001,
+   "amount_high": 1000000,
+   "amount_mid": 750000,
+   "member": "Nancy Pelosi",
+   "state": "CA11",
+   "doc": "20035143"
+  },
+  {
    "ticker": "BWXT",
    "asset_type": "ST",
    "code": "P",
@@ -1573,6 +1678,19 @@
    "member": "April McClain Delaney",
    "state": "MD06",
    "doc": "20035118"
+  },
+  {
+   "ticker": "INTC",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-27",
+   "notify_date": "2026-07-27",
+   "amount_low": 500001,
+   "amount_high": 1000000,
+   "amount_mid": 750000,
+   "member": "Nancy Pelosi",
+   "state": "CA11",
+   "doc": "20035143"
   },
   {
    "ticker": "BWXT",
@@ -1848,6 +1966,58 @@
    "doc": "20035146"
   },
   {
+   "ticker": "BE",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-07-24",
+   "amount_low": 1000001,
+   "amount_high": 5000000,
+   "amount_mid": 3000000,
+   "member": "Nancy Pelosi",
+   "state": "CA11",
+   "doc": "20035143"
+  },
+  {
+   "ticker": "BE",
+   "asset_type": "OP",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-07-24",
+   "amount_low": 1000001,
+   "amount_high": 5000000,
+   "amount_mid": 3000000,
+   "member": "Nancy Pelosi",
+   "state": "CA11",
+   "doc": "20035143"
+  },
+  {
+   "ticker": "INTC",
+   "asset_type": "OP",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-07-24",
+   "amount_low": 250001,
+   "amount_high": 500000,
+   "amount_mid": 375000,
+   "member": "Nancy Pelosi",
+   "state": "CA11",
+   "doc": "20035143"
+  },
+  {
+   "ticker": "INTC",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-07-24",
+   "notify_date": "2026-07-24",
+   "amount_low": 500001,
+   "amount_high": 1000000,
+   "amount_mid": 750000,
+   "member": "Nancy Pelosi",
+   "state": "CA11",
+   "doc": "20035143"
+  },
+  {
    "ticker": "HUBB",
    "asset_type": "ST",
    "code": "P",
@@ -1989,175 +2159,6 @@
    "member": "April McClain Delaney",
    "state": "MD06",
    "doc": "20035118"
-  },
-  {
-   "ticker": "LYV",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-07-21",
-   "notify_date": "2026-08-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "April McClain Delaney",
-   "state": "MD06",
-   "doc": "20035118"
-  },
-  {
-   "ticker": "NVDA",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-07-21",
-   "notify_date": "2026-07-22",
-   "amount_low": 15001,
-   "amount_high": 50000,
-   "amount_mid": 32500,
-   "member": "Sam T. Liccardo",
-   "state": "CA16",
-   "doc": "20034736"
-  },
-  {
-   "ticker": "CHRW",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-07-20",
-   "notify_date": "2026-08-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "April McClain Delaney",
-   "state": "MD06",
-   "doc": "20035118"
-  },
-  {
-   "ticker": "LTH",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-07-20",
-   "notify_date": "2026-08-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "April McClain Delaney",
-   "state": "MD06",
-   "doc": "20035118"
-  },
-  {
-   "ticker": "LYV",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-07-20",
-   "notify_date": "2026-08-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "April McClain Delaney",
-   "state": "MD06",
-   "doc": "20035118"
-  },
-  {
-   "ticker": "MLM",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-07-20",
-   "notify_date": "2026-08-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "April McClain Delaney",
-   "state": "MD06",
-   "doc": "20035118"
-  },
-  {
-   "ticker": "SCI",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-07-20",
-   "notify_date": "2026-08-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "April McClain Delaney",
-   "state": "MD06",
-   "doc": "20035118"
-  },
-  {
-   "ticker": "NICE",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-07-20",
-   "notify_date": "2026-08-06",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Josh Gottheimer",
-   "state": "NJ05",
-   "doc": "20035186"
-  },
-  {
-   "ticker": "SAIL",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-07-20",
-   "notify_date": "2026-08-06",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Josh Gottheimer",
-   "state": "NJ05",
-   "doc": "20035186"
-  },
-  {
-   "ticker": "EL",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-07-20",
-   "notify_date": "2026-08-05",
-   "amount_low": 15001,
-   "amount_high": 50000,
-   "amount_mid": 32500,
-   "member": "Kevin Hern",
-   "state": "OK01",
-   "doc": "20035134"
-  },
-  {
-   "ticker": "KVUE",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-07-20",
-   "notify_date": "2026-08-05",
-   "amount_low": 100001,
-   "amount_high": 250000,
-   "amount_mid": 175000,
-   "member": "Kevin Hern",
-   "state": "OK01",
-   "doc": "20035134"
-  },
-  {
-   "ticker": "BAC",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-07-20",
-   "notify_date": "2026-07-20",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "James A. Himes",
-   "state": "CT04",
-   "doc": "20035047"
-  },
-  {
-   "ticker": "XOM",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-07-20",
-   "notify_date": "2026-07-20",
-   "amount_low": 15001,
-   "amount_high": 50000,
-   "amount_mid": 32500,
-   "member": "James A. Himes",
-   "state": "CT04",
-   "doc": "20035047"
   }
  ]
 }
