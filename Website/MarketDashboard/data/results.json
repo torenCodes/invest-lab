@@ -1,24 +1,24 @@
 {
-  "scan_time": "2026-08-25T14:15:23.200233+00:00",
+  "scan_time": "2026-08-25T14:22:55.102759+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 23,
+  "total_scanned": 22,
   "day_trades": [
     {
       "ticker": "KURA",
       "name": "Kura Oncology Inc",
       "sector": "Biotechnology",
-      "current_price": 13.45,
-      "change_pct": 8.4677,
+      "current_price": 13.44,
+      "change_pct": 8.3871,
       "high": 13.738,
       "low": 12.85,
       "open": 13.42,
       "prev_close": 12.4,
       "score": 44,
       "signals": [
-        "Top gainer (+8.5%)",
+        "Top gainer (+8.4%)",
         "High volume",
-        "Strong move (+8.5%)",
-        "Yahoo trending (#16)",
+        "Strong move (+8.4%)",
+        "Yahoo trending (#14)",
         "Closing strong",
         "Sector leader (Biotechnology)"
       ],
@@ -28,7 +28,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/KURA.png",
       "weburl": "https://www.kuraoncology.com/",
-      "yahoo_trending_rank": 16,
+      "yahoo_trending_rank": 14,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -45,18 +45,18 @@
       "ticker": "BNS",
       "name": "Bank of Nova Scotia",
       "sector": "Banking",
-      "current_price": 90.67,
-      "change_pct": 4.3864,
-      "high": 91.07,
+      "current_price": 91.24,
+      "change_pct": 5.0426,
+      "high": 91.4,
       "low": 88.46,
       "open": 89.51,
       "prev_close": 86.86,
-      "score": 34,
+      "score": 39,
       "signals": [
-        "Top gainer (+4.4%)",
+        "Top gainer (+5.0%)",
         "High volume",
-        "Good move (+4.4%)",
-        "Yahoo trending (#20)",
+        "Strong move (+5.0%)",
+        "Yahoo trending (#16)",
         "Closing strong"
       ],
       "reddit_mentions": 0,
@@ -65,7 +65,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BNS.TO.png",
       "weburl": "https://www.scotiabank.com/",
-      "yahoo_trending_rank": 20,
+      "yahoo_trending_rank": 16,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -76,56 +76,99 @@
           "surprise_pct": 3.3
         }
       },
-      "score_normalized": 48
+      "score_normalized": 55
     },
     {
-      "ticker": "FLNC",
-      "name": "Fluence Energy Inc",
-      "sector": "Electrical Equipment",
-      "current_price": 11.14,
-      "change_pct": 2.5783,
-      "high": 11.86,
-      "low": 11.05,
-      "open": 11.435,
-      "prev_close": 10.86,
-      "score": 26,
+      "ticker": "NVTS",
+      "name": "Navitas Semiconductor Corp",
+      "sector": "Semiconductors",
+      "current_price": 12.61,
+      "change_pct": 3.1071,
+      "high": 13.45,
+      "low": 12.49,
+      "open": 12.88,
+      "prev_close": 12.23,
+      "score": 31,
       "signals": [
-        "Top gainer (+2.6%)",
+        "Top gainer (+3.1%)",
         "High volume",
-        "Moderate move (+2.6%)",
-        "Yahoo trending (#17)"
+        "Good move (+3.1%)",
+        "Yahoo trending (#20)"
       ],
       "reddit_mentions": 0,
-      "market_cap": 2004716609.994709,
+      "market_cap": 3193173269.2636857,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950813769926.png",
-      "weburl": "https://fluenceenergy.com",
-      "yahoo_trending_rank": 17,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950785244176.png",
+      "weburl": "https://navitassemi.com/",
+      "yahoo_trending_rank": 20,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-06-30",
+          "actual": -0.04,
+          "estimate": -0.04,
+          "beat": true,
+          "surprise_pct": 8.0
+        }
       },
-      "score_normalized": 37
+      "score_normalized": 44
     }
   ],
   "swing_trades": [
     {
+      "ticker": "BNS",
+      "name": "Bank of Nova Scotia",
+      "sector": "Banking",
+      "current_price": 91.24,
+      "change_pct": 5.0426,
+      "high": 91.4,
+      "low": 88.46,
+      "open": 89.51,
+      "prev_close": 86.86,
+      "score": 39,
+      "signals": [
+        "Top gainer (+5.0%)",
+        "High volume",
+        "Strong move (+5.0%)",
+        "Yahoo trending (#16)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 148606630951.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BNS.TO.png",
+      "weburl": "https://www.scotiabank.com/",
+      "yahoo_trending_rank": 16,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 2.02,
+          "estimate": 1.96,
+          "beat": true,
+          "surprise_pct": 3.3
+        }
+      },
+      "score_normalized": 55
+    },
+    {
       "ticker": "BE",
       "name": "Bloom Energy Corp",
       "sector": "Electrical Equipment",
-      "current_price": 212.39,
-      "change_pct": 4.1025,
+      "current_price": 210.55,
+      "change_pct": 3.2007,
       "high": 217.5,
-      "low": 210.3,
+      "low": 209.83,
       "open": 214.7125,
       "prev_close": 204.02,
       "score": 35,
       "signals": [
-        "Top gainer (+4.1%)",
+        "Top gainer (+3.2%)",
         "High volume",
-        "Good move (+4.1%)",
-        "Yahoo trending (#4)"
+        "Good move (+3.2%)",
+        "Yahoo trending (#8)"
       ],
       "reddit_mentions": 0,
       "market_cap": 60089467761.975685,
@@ -133,7 +176,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BE.png",
       "weburl": "https://www.bloomenergy.com/",
-      "yahoo_trending_rank": 4,
+      "yahoo_trending_rank": 8,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -145,43 +188,6 @@
         }
       },
       "score_normalized": 49
-    },
-    {
-      "ticker": "BNS",
-      "name": "Bank of Nova Scotia",
-      "sector": "Banking",
-      "current_price": 90.67,
-      "change_pct": 4.3864,
-      "high": 91.07,
-      "low": 88.46,
-      "open": 89.51,
-      "prev_close": 86.86,
-      "score": 34,
-      "signals": [
-        "Top gainer (+4.4%)",
-        "High volume",
-        "Good move (+4.4%)",
-        "Yahoo trending (#20)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 148606630951.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BNS.TO.png",
-      "weburl": "https://www.scotiabank.com/",
-      "yahoo_trending_rank": 20,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 2.02,
-          "estimate": 1.96,
-          "beat": true,
-          "surprise_pct": 3.3
-        }
-      },
-      "score_normalized": 48
     }
   ],
   "buzz_source": "news",
@@ -191,8 +197,8 @@
       "mentions": 13,
       "name": "NVIDIA Corp",
       "sector": "Semiconductors",
-      "current_price": 213.42,
-      "change_pct": 2.3695,
+      "current_price": 213.26,
+      "change_pct": 2.2928,
       "high": 214.73,
       "low": 210.11,
       "open": 210.7825,
@@ -207,9 +213,9 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 100,
-        "reddit": 334,
-        "st_bull": 82,
+        "trend_pct": 94,
+        "reddit": 324,
+        "st_bull": 92,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -233,10 +239,10 @@
       "mentions": 6,
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "current_price": 924.04,
-      "change_pct": 1.4949,
+      "current_price": 918.68,
+      "change_pct": 0.9062,
       "high": 946.67,
-      "low": 923.5001,
+      "low": 918.37,
       "open": 925.4875,
       "prev_close": 910.43,
       "market_cap": 1028233360607.4456,
@@ -249,9 +255,9 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 161,
-        "reddit": 159,
-        "st_bull": 100,
+        "trend_pct": 159,
+        "reddit": 158,
+        "st_bull": 90,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -275,10 +281,10 @@
       "mentions": 5,
       "name": "Alphabet Inc",
       "sector": "Media",
-      "current_price": 344.93,
-      "change_pct": 0.0987,
+      "current_price": 343.49,
+      "change_pct": -0.3192,
       "high": 346.7,
-      "low": 343.75,
+      "low": 343.2,
       "open": 345.215,
       "prev_close": 344.59,
       "market_cap": 4256773800000.0,
@@ -291,8 +297,8 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 189,
-        "reddit": 26,
+        "trend_pct": 178,
+        "reddit": 25,
         "st_bull": 86,
         "st_msgs": 30,
         "sources": [
@@ -316,18 +322,18 @@
       "ticker": "SNDK",
       "name": "Sandisk Corp",
       "sector": "Technology",
-      "current_price": 1511.05,
-      "change_pct": 1.2008,
+      "current_price": 1499.22,
+      "change_pct": 0.4085,
       "market_cap": 218621140738.51376,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 95,
+      "mentions": 94,
       "social": {
-        "trend_pct": 90,
-        "reddit": 95,
+        "trend_pct": 88,
+        "reddit": 94,
         "st_bull": 93,
         "st_msgs": 30,
         "sources": [
@@ -351,18 +357,18 @@
       "ticker": "MSTR",
       "name": "Strategy Inc",
       "sector": "Technology",
-      "current_price": 124.4,
-      "change_pct": 1.4434,
+      "current_price": 124.37,
+      "change_pct": 1.4189,
       "market_cap": 47117574322.66448,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 70,
+      "mentions": 68,
       "social": {
-        "trend_pct": 17,
-        "reddit": 70,
+        "trend_pct": 13,
+        "reddit": 68,
         "sources": [
           "Reddit"
         ]
@@ -417,33 +423,33 @@
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "mentions": 159,
+      "mentions": 158,
       "prev": 61,
-      "trend_pct": 161,
-      "current_price": 924.04,
-      "change_pct": 1.4949,
+      "trend_pct": 159,
+      "current_price": 918.68,
+      "change_pct": 0.9062,
       "market_cap": 1028233360607.4456
     },
     {
       "ticker": "ASTS",
       "name": "AST SpaceMobile Inc",
       "sector": "Telecommunication",
-      "mentions": 41,
-      "prev": 10,
-      "trend_pct": 310,
-      "current_price": 61.28,
-      "change_pct": -1.7161,
+      "mentions": 42,
+      "prev": 11,
+      "trend_pct": 282,
+      "current_price": 61.1,
+      "change_pct": -2.0048,
       "market_cap": 24264593892.927895
     },
     {
       "ticker": "BE",
       "name": "Bloom Energy Corp",
       "sector": "Electrical Equipment",
-      "mentions": 34,
+      "mentions": 35,
       "prev": 5,
-      "trend_pct": 580,
-      "current_price": 212.39,
-      "change_pct": 4.1025,
+      "trend_pct": 600,
+      "current_price": 209.88,
+      "change_pct": 2.8723,
       "market_cap": 60089467761.975685
     }
   ],
@@ -452,18 +458,18 @@
       {
         "ticker": "XLE",
         "sector": "Energy",
-        "ret_1d": -0.82,
-        "ret_5d": -1.71,
-        "ret_1m": 7.25,
-        "ret_3m": 8.97,
-        "rel_1d": -1.07,
-        "rel_5d": -1.44,
-        "rel_1m": 3.7,
-        "rel_3m": 6.74,
+        "ret_1d": -0.78,
+        "ret_5d": -1.66,
+        "ret_1m": 7.3,
+        "ret_3m": 9.03,
+        "rel_1d": -0.98,
+        "rel_5d": -1.34,
+        "rel_1m": 3.79,
+        "rel_3m": 6.85,
         "rvol": 0.86,
         "rrg": {
-          "x": 101.39,
-          "y": 98.99,
+          "x": 101.41,
+          "y": 99.01,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -491,8 +497,8 @@
               "y": 100.8
             },
             {
-              "x": 101.39,
-              "y": 98.99
+              "x": 101.41,
+              "y": 99.01
             }
           ]
         },
@@ -502,18 +508,18 @@
       {
         "ticker": "XLV",
         "sector": "Health Care",
-        "ret_1d": -0.01,
-        "ret_5d": 2.92,
-        "ret_1m": 6.9,
-        "ret_3m": 18.14,
-        "rel_1d": -0.26,
-        "rel_5d": 3.19,
-        "rel_1m": 3.35,
-        "rel_3m": 15.91,
+        "ret_1d": 0.32,
+        "ret_5d": 3.26,
+        "ret_1m": 7.26,
+        "ret_3m": 18.53,
+        "rel_1d": 0.12,
+        "rel_5d": 3.58,
+        "rel_1m": 3.75,
+        "rel_3m": 16.35,
         "rvol": 0.6,
         "rrg": {
-          "x": 101.76,
-          "y": 100.37,
+          "x": 101.87,
+          "y": 100.47,
           "quadrant": "Leading",
           "tail": [
             {
@@ -541,8 +547,8 @@
               "y": 100.24
             },
             {
-              "x": 101.76,
-              "y": 100.37
+              "x": 101.87,
+              "y": 100.47
             }
           ]
         },
@@ -550,20 +556,20 @@
           {
             "ticker": "AMIX",
             "name": "Autonomix Medical Inc",
-            "change_pct": 76.5363,
-            "price": 9.48
+            "change_pct": 54.0037,
+            "price": 8.27
           },
           {
             "ticker": "TENX",
             "name": "Tenax Therapeutics Inc",
-            "change_pct": 20.5405,
-            "price": 2.23
+            "change_pct": 19.4595,
+            "price": 2.21
           },
           {
             "ticker": "KURA",
             "name": "Kura Oncology Inc",
-            "change_pct": 8.4677,
-            "price": 13.45
+            "change_pct": 8.3871,
+            "price": 13.44
           }
         ],
         "rotation": 1
@@ -571,18 +577,18 @@
       {
         "ticker": "XLY",
         "sector": "Cons. Discretionary",
-        "ret_1d": -0.27,
-        "ret_5d": 1.39,
-        "ret_1m": 6.44,
-        "ret_3m": -1.04,
-        "rel_1d": -0.52,
-        "rel_5d": 1.66,
-        "rel_1m": 2.89,
-        "rel_3m": -3.27,
+        "ret_1d": -0.17,
+        "ret_5d": 1.5,
+        "ret_1m": 6.55,
+        "ret_3m": -0.93,
+        "rel_1d": -0.37,
+        "rel_5d": 1.82,
+        "rel_1m": 3.04,
+        "rel_3m": -3.11,
         "rvol": 0.71,
         "rrg": {
-          "x": 99.89,
-          "y": 101.05,
+          "x": 99.98,
+          "y": 101.14,
           "quadrant": "Improving",
           "tail": [
             {
@@ -610,8 +616,8 @@
               "y": 98.73
             },
             {
-              "x": 99.89,
-              "y": 101.05
+              "x": 99.98,
+              "y": 101.14
             }
           ]
         },
@@ -621,18 +627,18 @@
       {
         "ticker": "XLC",
         "sector": "Comm. Services",
-        "ret_1d": 0.23,
-        "ret_5d": 1.9,
-        "ret_1m": 4.57,
-        "ret_3m": -2.32,
-        "rel_1d": -0.02,
-        "rel_5d": 2.17,
-        "rel_1m": 1.02,
-        "rel_3m": -4.55,
+        "ret_1d": 0.21,
+        "ret_5d": 1.88,
+        "ret_1m": 4.55,
+        "ret_3m": -2.34,
+        "rel_1d": 0.01,
+        "rel_5d": 2.2,
+        "rel_1m": 1.04,
+        "rel_3m": -4.52,
         "rvol": 0.81,
         "rrg": {
-          "x": 100.45,
-          "y": 102.13,
+          "x": 100.47,
+          "y": 102.15,
           "quadrant": "Leading",
           "tail": [
             {
@@ -660,8 +666,8 @@
               "y": 99.94
             },
             {
-              "x": 100.45,
-              "y": 102.13
+              "x": 100.47,
+              "y": 102.15
             }
           ]
         },
@@ -669,8 +675,8 @@
           {
             "ticker": "TNMG",
             "name": "TNL Mediagene",
-            "change_pct": 54.8517,
-            "price": 0.616
+            "change_pct": 51.3826,
+            "price": 0.6022
           }
         ],
         "rotation": 1
@@ -678,18 +684,18 @@
       {
         "ticker": "XLK",
         "sector": "Technology",
-        "ret_1d": 0.95,
-        "ret_5d": -2.08,
-        "ret_1m": 4.28,
-        "ret_3m": -1.71,
-        "rel_1d": 0.7,
-        "rel_5d": -1.81,
-        "rel_1m": 0.73,
-        "rel_3m": -3.94,
+        "ret_1d": 0.69,
+        "ret_5d": -2.33,
+        "ret_1m": 4.01,
+        "ret_3m": -1.96,
+        "rel_1d": 0.49,
+        "rel_5d": -2.01,
+        "rel_1m": 0.5,
+        "rel_3m": -4.14,
         "rvol": 0.82,
         "rrg": {
-          "x": 99.14,
-          "y": 99.55,
+          "x": 99.06,
+          "y": 99.45,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -717,8 +723,8 @@
               "y": 100.42
             },
             {
-              "x": 99.14,
-              "y": 99.55
+              "x": 99.06,
+              "y": 99.45
             }
           ]
         },
@@ -726,20 +732,20 @@
           {
             "ticker": "AIXI",
             "name": "Xiao-I Corp",
-            "change_pct": 205.9441,
-            "price": 1.4
+            "change_pct": 240.9091,
+            "price": 1.56
           },
           {
             "ticker": "DAIC",
             "name": "CID HoldCo Inc",
-            "change_pct": 151.4451,
-            "price": 4.35
+            "change_pct": 93.0636,
+            "price": 3.34
           },
           {
             "ticker": "DFNS",
             "name": "T3 Defense Inc",
-            "change_pct": 29.1553,
-            "price": 14.22
+            "change_pct": 22.8883,
+            "price": 13.53
           }
         ],
         "rotation": -5
@@ -747,18 +753,18 @@
       {
         "ticker": "XLB",
         "sector": "Materials",
-        "ret_1d": -0.58,
-        "ret_5d": 2.88,
-        "ret_1m": 3.66,
-        "ret_3m": 4.86,
-        "rel_1d": -0.83,
-        "rel_5d": 3.15,
-        "rel_1m": 0.11,
-        "rel_3m": 2.63,
+        "ret_1d": -0.43,
+        "ret_5d": 3.03,
+        "ret_1m": 3.81,
+        "ret_3m": 5.02,
+        "rel_1d": -0.63,
+        "rel_5d": 3.35,
+        "rel_1m": 0.3,
+        "rel_3m": 2.84,
         "rvol": 1.13,
         "rrg": {
-          "x": 100.86,
-          "y": 101.31,
+          "x": 100.97,
+          "y": 101.39,
           "quadrant": "Leading",
           "tail": [
             {
@@ -786,8 +792,8 @@
               "y": 98.8
             },
             {
-              "x": 100.86,
-              "y": 101.31
+              "x": 100.97,
+              "y": 101.39
             }
           ]
         },
@@ -797,18 +803,18 @@
       {
         "ticker": "XLF",
         "sector": "Financials",
-        "ret_1d": -0.18,
-        "ret_5d": 0.48,
-        "ret_1m": 2.17,
-        "ret_3m": 12.48,
-        "rel_1d": -0.43,
-        "rel_5d": 0.75,
-        "rel_1m": -1.38,
-        "rel_3m": 10.25,
+        "ret_1d": -0.14,
+        "ret_5d": 0.52,
+        "ret_1m": 2.22,
+        "ret_3m": 12.52,
+        "rel_1d": -0.34,
+        "rel_5d": 0.84,
+        "rel_1m": -1.29,
+        "rel_3m": 10.34,
         "rvol": 1.04,
         "rrg": {
-          "x": 100.87,
-          "y": 100.27,
+          "x": 100.91,
+          "y": 100.34,
           "quadrant": "Leading",
           "tail": [
             {
@@ -836,8 +842,8 @@
               "y": 99.84
             },
             {
-              "x": 100.87,
-              "y": 100.27
+              "x": 100.91,
+              "y": 100.34
             }
           ]
         },
@@ -845,8 +851,8 @@
           {
             "ticker": "BNS",
             "name": "Bank of Nova Scotia",
-            "change_pct": 4.3864,
-            "price": 90.67
+            "change_pct": 5.0426,
+            "price": 91.24
           }
         ],
         "rotation": 0
@@ -854,18 +860,18 @@
       {
         "ticker": "XLP",
         "sector": "Cons. Staples",
-        "ret_1d": -1.25,
-        "ret_5d": 0.91,
-        "ret_1m": 1.17,
-        "ret_3m": 3.98,
-        "rel_1d": -1.5,
-        "rel_5d": 1.18,
-        "rel_1m": -2.38,
-        "rel_3m": 1.75,
+        "ret_1d": -0.96,
+        "ret_5d": 1.2,
+        "ret_1m": 1.46,
+        "ret_3m": 4.28,
+        "rel_1d": -1.16,
+        "rel_5d": 1.52,
+        "rel_1m": -2.05,
+        "rel_3m": 2.1,
         "rvol": 0.84,
         "rrg": {
-          "x": 100.08,
-          "y": 100.53,
+          "x": 100.25,
+          "y": 100.66,
           "quadrant": "Leading",
           "tail": [
             {
@@ -893,29 +899,36 @@
               "y": 100.34
             },
             {
-              "x": 100.08,
-              "y": 100.53
+              "x": 100.25,
+              "y": 100.66
             }
           ]
         },
-        "top_stocks": [],
+        "top_stocks": [
+          {
+            "ticker": "WVVIP",
+            "name": "Willamette Valley Vineyards Inc",
+            "change_pct": 193.2075,
+            "price": 7.77
+          }
+        ],
         "rotation": 2
       },
       {
         "ticker": "XLRE",
         "sector": "Real Estate",
-        "ret_1d": -0.31,
-        "ret_5d": 1.25,
-        "ret_1m": -1.25,
-        "ret_3m": 1.96,
-        "rel_1d": -0.56,
-        "rel_5d": 1.52,
-        "rel_1m": -4.8,
-        "rel_3m": -0.27,
+        "ret_1d": -0.07,
+        "ret_5d": 1.5,
+        "ret_1m": -1.01,
+        "ret_3m": 2.21,
+        "rel_1d": -0.27,
+        "rel_5d": 1.82,
+        "rel_1m": -4.52,
+        "rel_3m": 0.03,
         "rvol": 0.72,
         "rrg": {
-          "x": 99.59,
-          "y": 100.63,
+          "x": 99.71,
+          "y": 100.72,
           "quadrant": "Improving",
           "tail": [
             {
@@ -943,8 +956,8 @@
               "y": 100.39
             },
             {
-              "x": 99.59,
-              "y": 100.63
+              "x": 99.71,
+              "y": 100.72
             }
           ]
         },
@@ -954,18 +967,18 @@
       {
         "ticker": "XLI",
         "sector": "Industrials",
-        "ret_1d": 0.18,
-        "ret_5d": -2.31,
-        "ret_1m": -2.11,
-        "ret_3m": 3.14,
-        "rel_1d": -0.07,
-        "rel_5d": -2.04,
-        "rel_1m": -5.66,
-        "rel_3m": 0.91,
+        "ret_1d": 0.06,
+        "ret_5d": -2.44,
+        "ret_1m": -2.24,
+        "ret_3m": 3.01,
+        "rel_1d": -0.14,
+        "rel_5d": -2.12,
+        "rel_1m": -5.75,
+        "rel_3m": 0.83,
         "rvol": 0.85,
         "rrg": {
-          "x": 98.06,
-          "y": 98.78,
+          "x": 98.01,
+          "y": 98.73,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -993,8 +1006,8 @@
               "y": 99.02
             },
             {
-              "x": 98.06,
-              "y": 98.78
+              "x": 98.01,
+              "y": 98.73
             }
           ]
         },
@@ -1004,18 +1017,18 @@
       {
         "ticker": "XLU",
         "sector": "Utilities",
-        "ret_1d": 0.05,
-        "ret_5d": -1.77,
-        "ret_1m": -5.34,
-        "ret_3m": -4.0,
-        "rel_1d": -0.2,
-        "rel_5d": -1.5,
-        "rel_1m": -8.89,
-        "rel_3m": -6.23,
+        "ret_1d": 0.08,
+        "ret_5d": -1.74,
+        "ret_1m": -5.31,
+        "ret_3m": -3.97,
+        "rel_1d": -0.12,
+        "rel_5d": -1.42,
+        "rel_1m": -8.82,
+        "rel_3m": -6.15,
         "rvol": 0.97,
         "rrg": {
-          "x": 98.6,
-          "y": 99.92,
+          "x": 98.62,
+          "y": 99.94,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1043,8 +1056,8 @@
               "y": 100.45
             },
             {
-              "x": 98.6,
-              "y": 99.92
+              "x": 98.62,
+              "y": 99.94
             }
           ]
         },
@@ -1052,20 +1065,14 @@
           {
             "ticker": "PRZO",
             "name": "Parazero Technologies Ltd",
-            "change_pct": 33.9246,
-            "price": 0.8381
+            "change_pct": 26.1106,
+            "price": 0.7892
           },
           {
             "ticker": "BE",
             "name": "Bloom Energy Corp",
-            "change_pct": 4.1025,
-            "price": 212.39
-          },
-          {
-            "ticker": "FLNC",
-            "name": "Fluence Energy Inc",
-            "change_pct": 2.5783,
-            "price": 11.14
+            "change_pct": 3.2007,
+            "price": 210.55
           }
         ],
         "rotation": 2
@@ -1073,7 +1080,7 @@
     ],
     "posture": {
       "label": "Risk-on",
-      "spread": 2.8,
+      "spread": 2.55,
       "leaders": [
         "Energy",
         "Health Care"
@@ -1085,10 +1092,10 @@
     },
     "benchmark": {
       "ticker": "SPY",
-      "ret_1d": 0.25,
-      "ret_5d": -0.27,
-      "ret_1m": 3.55,
-      "ret_3m": 2.23
+      "ret_1d": 0.2,
+      "ret_5d": -0.32,
+      "ret_1m": 3.51,
+      "ret_3m": 2.18
     }
   },
   "reddit_feed": [
@@ -1104,7 +1111,7 @@
         "MSFT",
         "GOOG"
       ],
-      "hours_ago": 2.8,
+      "hours_ago": 2.9,
       "url": "https://www.fool.com/investing/2026/08/25/investors-glorious-growth-etf-buy-hold-mgk/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1124,7 +1131,7 @@
         "GOOGL",
         "GOOGM"
       ],
-      "hours_ago": 3.0,
+      "hours_ago": 3.1,
       "url": "https://www.fool.com/investing/2026/08/25/is-broadcom-in-trouble-now-that-alphabet-is-gettin/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1143,7 +1150,7 @@
         "GOOG",
         "GOOGL"
       ],
-      "hours_ago": 6.0,
+      "hours_ago": 6.1,
       "url": "https://www.fool.com/investing/2026/08/25/sp-500-biggest-stocks-bigger-etf-buy-to-diversify/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1163,7 +1170,7 @@
         "AAPL",
         "AMD"
       ],
-      "hours_ago": 6.9,
+      "hours_ago": 7.0,
       "url": "https://www.fool.com/investing/2026/08/25/prediction-tsmc-stock-will-soar-after-aug-26-thanks-to-nvidia-s-historic-quarter/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1182,7 +1189,7 @@
         "JPMpC",
         "JPMpD"
       ],
-      "hours_ago": 10.7,
+      "hours_ago": 10.8,
       "url": "https://www.fool.com/investing/2026/08/24/jensen-huang-told-investors-to-buy-at-a-discount-o/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1201,7 +1208,7 @@
         "STX",
         "WDC"
       ],
-      "hours_ago": 16.8,
+      "hours_ago": 16.9,
       "url": "https://www.fool.com/investing/2026/08/24/samsung-just-authorized-its-largest-shareholder-return-ever-every-major-memory-stock-fell-monday/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1219,7 +1226,7 @@
         "MU",
         "EXPE"
       ],
-      "hours_ago": 17.0,
+      "hours_ago": 17.1,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/08/24/stock-market-today-aug-24-nvidia-extends-losses-as-tech-stocks-retreat/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1239,7 +1246,7 @@
         "GOOGL",
         "GOOGM"
       ],
-      "hours_ago": 18.2,
+      "hours_ago": 18.3,
       "url": "https://www.fool.com/investing/2026/08/24/amazon-is-lagging-the-sp-500-in-2026-this-is-the-o/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1254,7 +1261,7 @@
       "tickers": [
         "MU"
       ],
-      "hours_ago": 20.0,
+      "hours_ago": 20.1,
       "url": "https://www.fool.com/investing/2026/08/24/micron-s-customers-are-putting-up-usd22-billion-and-its-ceo-says-data-centers-want-50-more-memory-than-it-can-ship/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
