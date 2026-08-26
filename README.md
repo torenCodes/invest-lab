@@ -18,7 +18,7 @@ Every weekday, without anyone touching it, the platform pulls market data from s
 |---|---|
 | **[Movers & Shakers](https://invest-movers-shakers.onrender.com)** | Day/swing candidates, sector rotation, social chatter velocity |
 | **[The Marathon](https://invest-the-marathon.onrender.com)** | Long-term holds: ETF consensus, deep value, fund scorecards |
-| **[Insider Buying](https://invest-insider-buying.onrender.com)** | Cluster buys, C-suite purchases, high-conviction insider activity |
+| **[Insider Buying](https://invest-insider-buying.onrender.com)** | Corporate insider purchases scored on a backtested model, plus a Congress tab built from House filings |
 | **[Pattern Scanner](https://invest-patterns.onrender.com)** | Coiled swing setups and constructive market leaders |
 | **[The Analyst](https://invest-the-analyst.onrender.com)** | Daily "all-star" board — top names across every dashboard, with fundamental valuation verdicts |
 
@@ -37,6 +37,22 @@ Every weekday, without anyone touching it, the platform pulls market data from s
 **The Analyst** — the cross-dashboard board. Names surfaced by any other engine get run through a fundamental valuation model that produces a −100…+100 verdict score and writes the reasoning in plain English.
 
 ![The Analyst dashboard](docs/screenshots/the-analyst.png)
+
+**Insider Buying** — two boards in one. *Corporate* scores open-market executive purchases; *Politician* is built from the House Clerk's own Periodic Transaction Reports, parsed straight out of the filing PDFs.
+
+---
+
+## The part I am most willing to be judged on
+
+I built the insider conviction model on informed judgement, then measured it — and it was wrong.
+
+`insider_backtest.py` reconstructs **22,600 historical insider buying clusters** from five years of SEC Form 4 filings, scores each using only what was knowable that day, and compares the forward 60-day return against a size-matched benchmark. Entry is the *filing* date, never the trade date, because you cannot act on a form you cannot see.
+
+The result was uncomfortable. The model had been ranking names close to backwards: clusters scoring 70–84 trailed the index by 2.84% at a 39.9% win rate, worse than clusters scoring under 40. Price context, which carried **zero** weight, turned out to be the only dimension that separated outcomes consistently. Cluster size — which I had weighted most heavily — was a confound rather than a signal; it only looked bad because large clusters concentrate in distressed companies.
+
+So the model was rebuilt around the evidence, the weak dimensions were cut, and [the methodology panel says so publicly](https://invest-insider-buying.onrender.com). The effects are modest and drawn from a single market regime, and it says that too.
+
+Getting this wrong in public was more useful than getting it right quietly.
 
 ---
 
@@ -63,18 +79,20 @@ Percentile ranks, z-scores, and relative-strength comparisons against a benchmar
 |---|---|---|
 | **Coil Score** | How wound-up is this setup before it moves? | Trend stack, relative strength, range tightness, volume dry-up |
 | **Cadence Score** | Does this stock have a *tradeable daily rhythm*? | Average daily range, consistency, liquidity, price band |
-| **Market Temperature** | Live market regime, Cold → Hot | Risk posture, trend heat, breadth, new highs, sentiment, credit spreads |
+| **Market Temperature** | Live market regime, Cold → Hot | Ten inputs: risk posture, trend heat, breadth, new highs, sentiment, growth vs value, insider breadth, credit, yield curve |
 | **Sector Rotation** | Where is money actually flowing? | Relative strength vs S&P, momentum quadrants (RRG), conviction volume |
 | **Verdict Score** | Is this fundamentally cheap or expensive? | P/E vs sector, PEG, growth, margins, FCF yield, Graham number |
+| **Insider Conviction** | Is this insider purchase informative? | Price context, cluster size, role seniority, position growth — **weights set by backtest, not judgement** |
 
 ---
 
 ## Architecture
 
 ```
-GitHub Actions (10 scheduled workflows)
+GitHub Actions (11 scheduled workflows)
         │
-        ├─ Pull: Polygon · Finnhub · yfinance · FRED · Reddit/ApeWisdom · SEC EDGAR
+        ├─ Pull: Polygon · Finnhub · yfinance · FRED · Reddit/ApeWisdom
+        │        SEC EDGAR · House Clerk disclosures · OpenInsider
         ├─ Score: proprietary engines (Python)
         └─ Commit JSON  ──────────────┐
                                       │ push triggers auto-deploy
@@ -109,15 +127,18 @@ only deployment and automation config.
 │   │   ├── market_temperature_scan.py  # market regime thermometer
 │   │   ├── analyst_scan.py             # cross-dashboard "all-star" selection
 │   │   ├── newsstand_scan.py           # trading conditions, unusual volume, earnings
+│   │   ├── insider_pulse_scan.py       # market-wide insider buy/sell breadth
+│   │   ├── insider_backtest.py         # research harness — measures the conviction model
+│   │   ├── capitol_flow_scan.py        # House PTR filings → congressional trades
 │   │   ├── archive_nominee.py          # records each scan's top pick
 │   │   └── calculate_outcomes.py       # fills 30-day outcomes → track record
 │   ├── MarketDashboard/        #   Movers & Shakers (Flask app + scan)
 │   ├── TheMarathon/            #   Tried & True · Underdogs · ETF Scorecard
-│   ├── InsiderBuying/          #   insider purchase clusters
+│   ├── InsiderBuying/          #   Corporate + Politician tabs
 │   ├── PatternScanner/         #   Coil Score dashboard
 │   └── TheAnalyst/             #   daily all-star board
 ├── .github/workflows/          # the schedule that drives everything
-└── render.yaml                 # deployment map for the five Render services
+└── render.yaml                 # reference map of the five Render services
 ```
 
 Each dashboard folder is self-contained — its own `index.html`, its `scan.py`
