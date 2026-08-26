@@ -16,14 +16,16 @@ Components (each scored 0-100):
   - Fear & Greed (CNN sentiment composite)        — 15%  used directly (already 0-100)
   - Fast breadth (% S&P 500 above 50-DMA)         — 10%  used directly
   - Net new highs (near 52wk high − near low)     — 10%  derived from breadth download
-  - Insider breadth (SEC Form 4, buying vs sell)  — 10%  INVERTED percentile over 5yr
-  - Structural breadth (% S&P 500 above 200-DMA)  — 10%  fixed thresholds
   - Credit spreads (ICE BofA HY OAS, FRED)        — 10%  inverted percentile over 10yr
+  - Growth vs Value (IWF / IWD style ratio)       — 10%  level + momentum percentile, 3yr
+  - Structural breadth (% S&P 500 above 200-DMA)  —  5%  fixed thresholds
+  - Insider breadth (SEC Form 4, buying vs sell)  —  5%  INVERTED percentile over 5yr
   - Yield curve (10Y − 2Y, FRED)                  —  5%  fixed thresholds (cycle stage)
 
-Aug 2026: added insider breadth, the one contrarian input — corporate insiders
-buy weakness and go quiet into strength, so the reading is inverted. It comes
-from insider_pulse_scan.py, which must run BEFORE this scan.
+Insider breadth is the one contrarian input — executives buy weakness and go
+quiet into strength, so it is inverted. It comes from insider_pulse_scan.py,
+which must run BEFORE this scan. Weighted at only 5%: tested against forward
+S&P returns the direction holds, but on ~19 independent observations.
 
 Output: MarketDashboard/data/market_temperature.json
 Invoked by GitHub Actions daily. Run locally: python scripts/market_temperature_scan.py
@@ -207,19 +209,18 @@ def compute_insider_breadth():
     score = round(clamp(100.0 - float(pct), 0.0, 100.0), 1)   # invert
     return {
         "raw":         cur.get("breadth"),
-        "raw_label":   ("insiders quiet" if pct is not None and pct < 40 else
-                        "insiders active" if pct is not None and pct > 60 else "middling")
-                       + f" — {cur.get('buy_cos')} buying / {cur.get('sell_cos')} selling",
+        "raw_label":   ("Quiet" if pct is not None and pct < 40 else
+                        "Active" if pct is not None and pct > 60 else "Middling")
+                       + f" · {cur.get('buy_cos')} of {(cur.get('buy_cos') or 0) + (cur.get('sell_cos') or 0):,} buying",
         "percentile":  pct,
         "score":       score,
         "label":       label_for(score),
-        "description": f"{cur.get('buy_cos')} companies saw open-market insider buying against "
-                       f"{cur.get('sell_cos')} with selling over the last {d.get('window_days', 30)} days. "
-                       f"That breadth sits at the {pct}th percentile of the past five years. "
-                       "Inverted here, because insiders buy weakness and go quiet into strength, "
-                       "so a quiet tape reads as the hotter, later-stage condition. Tested against "
-                       "forward S&P returns the direction holds, but on a small and non-monotonic "
-                       "sample, which is why this carries only 5% of the gauge.",
+        "description": f"Of the companies with insider activity in the last "
+                       f"{d.get('window_days', 30)} days, {cur.get('buy_cos')} saw buying and "
+                       f"{cur.get('sell_cos')} saw selling — the {pct}th percentile of five years. "
+                       "Inverted, because insiders buy weakness and go quiet into strength, so a "
+                       "quiet tape is the later-stage read. Weighted at only 5%: the supporting "
+                       "sample is thin.",
     }
 
 
@@ -275,11 +276,10 @@ def compute_growth_value():
         "percentile":  level_pct,
         "score":       score,
         "label":       label_for(score),
-        "description": f"Russell 1000 Growth against Russell 1000 Value. The ratio sits at the "
-                       f"{level_pct}th percentile of the last three years and has moved {chg:+.1f}% "
-                       "over the past quarter. Growth pulling ahead means the market is paying up "
-                       "for future earnings, which runs hot; value leading means it is retreating "
-                       "to cash flows it can see today.",
+        "description": f"Russell 1000 Growth against Value: the {level_pct}th percentile of three "
+                       f"years, {chg:+.1f}% over the past quarter. Growth ahead means the market is "
+                       "paying up for future earnings, which runs hot; value ahead means it is "
+                       "retreating to cash flows it can see today.",
     }
 
 

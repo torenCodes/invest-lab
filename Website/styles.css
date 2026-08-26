@@ -982,7 +982,7 @@ body {
   min-height: 240px;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.4rem;
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
   /* Root element is <a> (whole card is clickable) — reset anchor defaults */
@@ -2377,20 +2377,33 @@ body {
 }
 .mt-comp--missing { opacity: 0.6; }
 
+/* The right column used to be flex-shrink: 0, so a longer readout claimed the
+   full width and crushed the title and subtitle beside it — the subtitle ended
+   up wrapping one word per line. Both columns can now shrink, and the head
+   wraps rather than compressing, so this holds at any card width instead of
+   only for short labels. */
 .mt-comp-head {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 0.6rem;
+  gap: 0.35rem 0.6rem;
   margin-bottom: 0.5rem;
 }
-.mt-comp-head-left { display: flex; flex-direction: column; min-width: 0; }
+.mt-comp-head-left {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1 9rem;
+}
 .mt-comp-head-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 0.25rem;
-  flex-shrink: 0;
+  min-width: 0;
+  flex: 0 1 auto;
+  text-align: right;
 }
 
 .mt-comp-title {
@@ -2411,7 +2424,9 @@ body {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--ink-2);
+  overflow-wrap: anywhere;   /* wrap a long readout instead of overflowing */
 }
+.mt-comp-title { overflow-wrap: anywhere; }
 .mt-comp-badge {
   font-size: 0.7rem;
   font-weight: 600;
