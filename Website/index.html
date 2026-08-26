@@ -579,13 +579,18 @@
         cta(ctaLabel);
     }
 
+    // Two bullets maximum, so all four cards stay the same height. Cadence and
+    // Coil already emit exactly two, so this is the only builder that could run
+    // long. On the discussed card the discussion line is the whole point, so it
+    // reserves a slot rather than being pushed off the end.
     var signals = (stock.signals || []);
     if (hideRedditSignals) {
-      signals = signals.filter(function (s) { return !/reddit/i.test(s); }).slice(0, 2);
+      signals = signals.filter(function (s) { return !/reddit/i.test(s); });
       var mentions = stock.mentions || stock.reddit_mentions || 0;
+      signals = signals.slice(0, mentions > 0 ? 1 : 2);
       if (mentions > 0) signals.push('High investor discussion activity');
     } else {
-      signals = signals.slice(0, 3);
+      signals = signals.slice(0, 2);
     }
 
     var pct = stock.change_pct || 0;

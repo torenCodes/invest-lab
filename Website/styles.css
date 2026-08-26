@@ -1052,7 +1052,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.28rem;   /* tightened with the two-bullet cap */
 }
 
 .pv-signals li {
@@ -1061,7 +1061,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 0.4rem;
-  line-height: 1.4;
+  line-height: 1.34;
 }
 
 .pv-signals li::before {
