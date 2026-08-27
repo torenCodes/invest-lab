@@ -1,24 +1,24 @@
 {
-  "scan_time": "2026-08-27T13:35:22.989481+00:00",
+  "scan_time": "2026-08-27T14:15:33.880981+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 21,
+  "total_scanned": 22,
   "day_trades": [
     {
       "ticker": "DG",
       "name": "Dollar General Corp",
       "sector": "Retail",
-      "current_price": 128.06,
-      "change_pct": 4.3004,
-      "high": 128.22,
+      "current_price": 131.35,
+      "change_pct": 6.98,
+      "high": 132.4999,
       "low": 124.5,
-      "open": 127.85000000000001,
+      "open": 124.94,
       "prev_close": 122.78,
-      "score": 43,
+      "score": 48,
       "signals": [
-        "Top gainer (+4.3%)",
+        "Top gainer (+7.0%)",
         "High volume",
-        "Good move (+4.3%)",
-        "Yahoo trending (#5)",
+        "Strong move (+7.0%)",
+        "Yahoo trending (#6)",
         "Closing strong",
         "Sector leader (Retail)"
       ],
@@ -28,7 +28,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/DG.png",
       "weburl": "https://www.dollargeneral.com/",
-      "yahoo_trending_rank": 5,
+      "yahoo_trending_rank": 6,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -39,40 +39,40 @@
           "surprise_pct": 3.0
         }
       },
-      "score_normalized": 61
+      "score_normalized": 68
     },
     {
-      "ticker": "INFQ",
-      "name": "Infleqtion Inc",
+      "ticker": "RBRK",
+      "name": "Rubrik Inc",
       "sector": "Technology",
-      "current_price": 13.98,
-      "change_pct": 3.3259,
-      "high": 14.53,
-      "low": 13.92,
-      "open": 14.085,
-      "prev_close": 13.53,
+      "current_price": 106.03,
+      "change_pct": 10.2986,
+      "high": 106.5,
+      "low": 101.5001,
+      "open": 101.57,
+      "prev_close": 96.13,
       "score": 31,
       "signals": [
-        "Top gainer (+3.3%)",
+        "Top gainer (+10.3%)",
         "High volume",
-        "Good move (+3.3%)",
-        "Yahoo trending (#19)"
+        "Strong move (+10.3%)",
+        "Closing strong"
       ],
       "reddit_mentions": 0,
-      "market_cap": 3049080740.2429504,
+      "market_cap": 19786271330.003235,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/960000317216.png",
-      "weburl": "https://infleqtion.com/",
-      "yahoo_trending_rank": 19,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950458187056.png",
+      "weburl": "https://www.rubrik.com/",
+      "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-06-30",
-          "actual": -0.06,
-          "estimate": -0.05,
-          "beat": false,
-          "surprise_pct": -17.6
+          "actual": 0.16,
+          "estimate": -0.03,
+          "beat": true,
+          "surprise_pct": 598.4
         }
       },
       "score_normalized": 44
@@ -80,24 +80,63 @@
   ],
   "swing_trades": [
     {
+      "ticker": "DG",
+      "name": "Dollar General Corp",
+      "sector": "Retail",
+      "current_price": 131.35,
+      "change_pct": 6.98,
+      "high": 132.4999,
+      "low": 124.5,
+      "open": 124.94,
+      "prev_close": 122.78,
+      "score": 48,
+      "signals": [
+        "Top gainer (+7.0%)",
+        "High volume",
+        "Strong move (+7.0%)",
+        "Yahoo trending (#6)",
+        "Closing strong",
+        "Sector leader (Retail)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 27083627990.53973,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/DG.png",
+      "weburl": "https://www.dollargeneral.com/",
+      "yahoo_trending_rank": 6,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 2.0,
+          "estimate": 1.94,
+          "beat": true,
+          "surprise_pct": 3.0
+        }
+      },
+      "score_normalized": 68
+    },
+    {
       "ticker": "NVDA",
       "name": "NVIDIA Corp",
       "sector": "Semiconductors",
-      "current_price": 222.55,
-      "change_pct": 6.148,
-      "high": 225.5,
-      "low": 221.22,
+      "current_price": 225.53,
+      "change_pct": 7.5694,
+      "high": 225.94,
+      "low": 220.9,
       "open": 222.345,
       "prev_close": 209.66,
-      "score": 45,
+      "score": 48,
       "signals": [
-        "Top gainer (+6.1%)",
+        "Top gainer (+7.6%)",
         "High volume",
-        "Strong move (+6.1%)",
+        "Strong move (+7.6%)",
+        "News activity (3)",
         "Yahoo trending (#1)",
-        "Sector leader (Semiconductors)"
+        "Closing strong"
       ],
-      "reddit_mentions": 2,
+      "reddit_mentions": 3,
       "market_cap": 5073772072677.869,
       "is_gainer": true,
       "is_active": true,
@@ -114,62 +153,60 @@
           "surprise_pct": 4.3
         }
       },
-      "score_normalized": 63
+      "score_normalized": 68
     },
     {
-      "ticker": "DG",
-      "name": "Dollar General Corp",
-      "sector": "Retail",
-      "current_price": 128.06,
-      "change_pct": 4.3004,
-      "high": 128.22,
-      "low": 124.5,
-      "open": 127.85000000000001,
-      "prev_close": 122.78,
-      "score": 43,
+      "ticker": "RBRK",
+      "name": "Rubrik Inc",
+      "sector": "Technology",
+      "current_price": 106.03,
+      "change_pct": 10.2986,
+      "high": 106.5,
+      "low": 101.5001,
+      "open": 101.57,
+      "prev_close": 96.13,
+      "score": 31,
       "signals": [
-        "Top gainer (+4.3%)",
+        "Top gainer (+10.3%)",
         "High volume",
-        "Good move (+4.3%)",
-        "Yahoo trending (#5)",
-        "Closing strong",
-        "Sector leader (Retail)"
+        "Strong move (+10.3%)",
+        "Closing strong"
       ],
       "reddit_mentions": 0,
-      "market_cap": 27083627990.53973,
+      "market_cap": 19786271330.003235,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/DG.png",
-      "weburl": "https://www.dollargeneral.com/",
-      "yahoo_trending_rank": 5,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950458187056.png",
+      "weburl": "https://www.rubrik.com/",
+      "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-06-30",
-          "actual": 2.0,
-          "estimate": 1.94,
+          "actual": 0.16,
+          "estimate": -0.03,
           "beat": true,
-          "surprise_pct": 3.0
+          "surprise_pct": 598.4
         }
       },
-      "score_normalized": 61
+      "score_normalized": 44
     },
     {
       "ticker": "RVMD",
       "name": "Revolution Medicines Inc",
       "sector": "Biotechnology",
-      "current_price": 219.54,
-      "change_pct": 1.9031,
-      "high": 224.24,
+      "current_price": 220.52,
+      "change_pct": 2.358,
+      "high": 224.31,
       "low": 217.87,
       "open": 221.06,
       "prev_close": 215.44,
-      "score": 30,
+      "score": 26,
       "signals": [
-        "Top gainer (+1.9%)",
+        "Top gainer (+2.4%)",
         "High volume",
-        "Moderate move (+1.9%)",
-        "Yahoo trending (#7)"
+        "Moderate move (+2.4%)",
+        "Yahoo trending (#11)"
       ],
       "reddit_mentions": 0,
       "market_cap": 46176640636.769424,
@@ -177,7 +214,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950445065986.png",
       "weburl": "https://www.revmed.com/",
-      "yahoo_trending_rank": 7,
+      "yahoo_trending_rank": 11,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -188,82 +225,95 @@
           "surprise_pct": -51.7
         }
       },
-      "score_normalized": 42
-    },
-    {
-      "ticker": "TD",
-      "name": "Toronto-Dominion Bank",
-      "sector": "Banking",
-      "current_price": 120.84,
-      "change_pct": 1.1806,
-      "high": 121,
-      "low": 119.11,
-      "open": 120.78,
-      "prev_close": 119.43,
-      "score": 24,
-      "signals": [
-        "Top gainer (+1.2%)",
-        "High volume",
-        "Yahoo trending (#20)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 278344461334.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/TD.TO.png",
-      "weburl": "https://www.td.com/",
-      "yahoo_trending_rank": 20,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 2.38,
-          "estimate": 2.33,
-          "beat": true,
-          "surprise_pct": 2.3
-        }
-      },
-      "score_normalized": 34
-    },
-    {
-      "ticker": "MRVL",
-      "name": "Marvell Technology Inc",
-      "sector": "Semiconductors",
-      "current_price": 248.58,
-      "change_pct": 1.4157,
-      "high": 254.6,
-      "low": 247.38,
-      "open": 254.595,
-      "prev_close": 245.11,
-      "score": 21,
-      "signals": [
-        "Top gainer (+1.4%)",
-        "High volume",
-        "Yahoo trending (#12)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 214659111188.44724,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MRVL.png",
-      "weburl": "https://www.marvell.com/",
-      "yahoo_trending_rank": 12,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.8,
-          "estimate": 0.81,
-          "beat": false,
-          "surprise_pct": -0.9
-        }
-      },
-      "score_normalized": 30
+      "score_normalized": 37
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
+    {
+      "ticker": "AMZN",
+      "mentions": 6,
+      "name": "Amazon.com Inc",
+      "sector": "Retail",
+      "current_price": 257.46,
+      "change_pct": -1.0834,
+      "high": 259.66,
+      "low": 255.58,
+      "open": 259.615,
+      "prev_close": 260.28,
+      "market_cap": 2807461899604.243,
+      "score": 0,
+      "signals": [
+        "News buzz (6 mentions)"
+      ],
+      "reddit_mentions": 6,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": 73,
+        "reddit": 38,
+        "st_bull": 83,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 1.97,
+          "estimate": 1.86,
+          "beat": true,
+          "surprise_pct": 6.1
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "MSFT",
+      "mentions": 5,
+      "name": "Microsoft Corp",
+      "sector": "Technology",
+      "current_price": 504.14,
+      "change_pct": 1.5654,
+      "high": 504.18,
+      "low": 490.08,
+      "open": 493.265,
+      "prev_close": 496.37,
+      "market_cap": 3685817911186.995,
+      "score": 0,
+      "signals": [
+        "News buzz (5 mentions)"
+      ],
+      "reddit_mentions": 5,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": 205,
+        "reddit": 64,
+        "st_bull": 61,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 4.74,
+          "estimate": 4.33,
+          "beat": true,
+          "surprise_pct": 9.5
+        }
+      },
+      "score_normalized": 0
+    },
     {
       "ticker": "TTDKY",
       "mentions": 5,
@@ -306,118 +356,36 @@
       "score_normalized": 0
     },
     {
-      "ticker": "AMZN",
-      "mentions": 4,
-      "name": "Amazon.com Inc",
-      "sector": "Retail",
-      "current_price": 257.98,
-      "change_pct": -0.8837,
-      "high": 259.66,
-      "low": 257.62,
-      "open": 259.615,
-      "prev_close": 260.28,
-      "market_cap": 2807461899604.243,
-      "score": 0,
-      "signals": [
-        "News buzz (4 mentions)"
-      ],
-      "reddit_mentions": 4,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "trend_pct": 43,
-        "reddit": 33,
-        "st_bull": 71,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 1.97,
-          "estimate": 1.86,
-          "beat": true,
-          "surprise_pct": 6.1
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "MMM",
-      "mentions": 3,
-      "name": "3M Co",
-      "sector": "Industrial Conglomerates",
-      "current_price": 177.56,
-      "change_pct": -1.3556,
-      "high": 180,
-      "low": 176.91,
-      "open": 178.55,
-      "prev_close": 180,
-      "market_cap": 92830031652.78474,
-      "score": 0,
-      "signals": [
-        "News buzz (3 mentions)"
-      ],
-      "reddit_mentions": 3,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "reddit": 3,
-        "st_bull": 83,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 2.4,
-          "estimate": 2.27,
-          "beat": true,
-          "surprise_pct": 5.8
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "NVDA",
       "name": "NVIDIA Corp",
       "sector": "Semiconductors",
-      "current_price": 222.55,
-      "change_pct": 6.148,
-      "high": 225.5,
-      "low": 221.22,
+      "current_price": 225.53,
+      "change_pct": 7.5694,
+      "high": 225.94,
+      "low": 220.9,
       "open": 222.345,
       "prev_close": 209.66,
-      "score": 45,
+      "score": 48,
       "signals": [
-        "Top gainer (+6.1%)",
+        "Top gainer (+7.6%)",
         "High volume",
-        "Strong move (+6.1%)",
+        "Strong move (+7.6%)",
+        "News activity (3)",
         "Yahoo trending (#1)",
-        "Sector leader (Semiconductors)"
+        "Closing strong"
       ],
-      "reddit_mentions": 2,
+      "reddit_mentions": 3,
       "market_cap": 5073772072677.869,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942959144056.png",
       "weburl": "https://www.nvidia.com/",
       "yahoo_trending_rank": 1,
-      "mentions": 1668,
+      "mentions": 1701,
       "social": {
-        "trend_pct": 245,
-        "reddit": 1668,
-        "st_bull": 70,
+        "trend_pct": 250,
+        "reddit": 1701,
+        "st_bull": 89,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -434,56 +402,24 @@
           "surprise_pct": 4.3
         }
       },
-      "score_normalized": 63
-    },
-    {
-      "ticker": "META",
-      "name": "Meta Platforms Inc",
-      "sector": "Media",
-      "current_price": 570.57,
-      "change_pct": -0.9668,
-      "market_cap": 1467720152594.6423,
-      "score": 0,
-      "signals": [],
-      "reddit_mentions": 0,
-      "is_gainer": false,
-      "is_active": false,
-      "mentions": 203,
-      "social": {
-        "trend_pct": 178,
-        "reddit": 203,
-        "sources": [
-          "Reddit"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 6.18,
-          "estimate": 7.36,
-          "beat": false,
-          "surprise_pct": -16.0
-        }
-      },
-      "score_normalized": 0
+      "score_normalized": 68
     },
     {
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "current_price": 950.08,
-      "change_pct": 1.2447,
+      "current_price": 924.79,
+      "change_pct": -1.4503,
       "market_cap": 1059822420235.0096,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 184,
+      "mentions": 231,
       "social": {
-        "trend_pct": 114,
-        "reddit": 184,
+        "trend_pct": 178,
+        "reddit": 231,
         "sources": [
           "Reddit"
         ]
@@ -499,6 +435,38 @@
         }
       },
       "score_normalized": 0
+    },
+    {
+      "ticker": "META",
+      "name": "Meta Platforms Inc",
+      "sector": "Media",
+      "current_price": 583.67,
+      "change_pct": 1.307,
+      "market_cap": 1467720152594.6423,
+      "score": 0,
+      "signals": [],
+      "reddit_mentions": 0,
+      "is_gainer": false,
+      "is_active": false,
+      "mentions": 146,
+      "social": {
+        "trend_pct": 4,
+        "reddit": 146,
+        "sources": [
+          "Reddit"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 6.18,
+          "estimate": 7.36,
+          "beat": false,
+          "surprise_pct": -16.0
+        }
+      },
+      "score_normalized": 0
     }
   ],
   "chatter_emerging": [
@@ -506,33 +474,33 @@
       "ticker": "NVDA",
       "name": "NVIDIA Corp",
       "sector": "Semiconductors",
-      "mentions": 1668,
-      "prev": 483,
-      "trend_pct": 245,
-      "current_price": 222.55,
-      "change_pct": 6.148,
+      "mentions": 1701,
+      "prev": 486,
+      "trend_pct": 250,
+      "current_price": 225.53,
+      "change_pct": 7.5694,
       "market_cap": 5073772072677.869
     },
     {
-      "ticker": "META",
-      "name": "Meta Platforms Inc",
-      "sector": "Media",
-      "mentions": 203,
-      "prev": 73,
+      "ticker": "MU",
+      "name": "Micron Technology Inc",
+      "sector": "Semiconductors",
+      "mentions": 231,
+      "prev": 83,
       "trend_pct": 178,
-      "current_price": 570.57,
-      "change_pct": -0.9668,
-      "market_cap": 1467720152594.6423
+      "current_price": 924.79,
+      "change_pct": -1.4503,
+      "market_cap": 1059822420235.0096
     },
     {
       "ticker": "CRM",
       "name": "Salesforce Inc",
       "sector": "Technology",
-      "mentions": 108,
-      "prev": 22,
-      "trend_pct": 391,
-      "current_price": 235,
-      "change_pct": 14.2885,
+      "mentions": 133,
+      "prev": 21,
+      "trend_pct": 533,
+      "current_price": 248.18,
+      "change_pct": 20.6984,
       "market_cap": 168402781999.31937
     }
   ],
@@ -541,19 +509,19 @@
       {
         "ticker": "XLK",
         "sector": "Technology",
-        "ret_1d": 1.73,
-        "ret_5d": 1.59,
-        "ret_1m": 11.67,
-        "ret_3m": -0.33,
-        "rel_1d": 1.51,
-        "rel_5d": 0.91,
-        "rel_1m": 6.42,
-        "rel_3m": -2.33,
+        "ret_1d": 2.41,
+        "ret_5d": 2.26,
+        "ret_1m": 12.41,
+        "ret_3m": 0.33,
+        "rel_1d": 2.04,
+        "rel_5d": 1.43,
+        "rel_1m": 7.0,
+        "rel_3m": -1.83,
         "rvol": 0.61,
         "rrg": {
-          "x": 99.95,
-          "y": 100.87,
-          "quadrant": "Improving",
+          "x": 100.15,
+          "y": 101.11,
+          "quadrant": "Leading",
           "tail": [
             {
               "x": 98.77,
@@ -580,8 +548,8 @@
               "y": 99.35
             },
             {
-              "x": 99.95,
-              "y": 100.87
+              "x": 100.15,
+              "y": 101.11
             }
           ]
         },
@@ -589,39 +557,39 @@
           {
             "ticker": "PPCB",
             "name": "Propanc Biopharma Inc",
-            "change_pct": 216.8224,
-            "price": 3.39
+            "change_pct": 195.3271,
+            "price": 3.16
           },
           {
             "ticker": "OKTA",
             "name": "Okta Inc",
-            "change_pct": 21.9089,
-            "price": 163.87
+            "change_pct": 23.2183,
+            "price": 165.63
           },
           {
-            "ticker": "CRWD",
-            "name": "CrowdStrike Holdings Inc",
-            "change_pct": 14.5576,
-            "price": 216.72
+            "ticker": "CRM",
+            "name": "Salesforce Inc",
+            "change_pct": 20.4066,
+            "price": 247.58
           }
         ],
-        "rotation": -2
+        "rotation": 0
       },
       {
         "ticker": "XLE",
         "sector": "Energy",
-        "ret_1d": -0.18,
-        "ret_5d": -2.24,
-        "ret_1m": 6.26,
-        "ret_3m": 10.22,
-        "rel_1d": -0.4,
-        "rel_5d": -2.92,
-        "rel_1m": 1.01,
-        "rel_3m": 8.22,
+        "ret_1d": -0.98,
+        "ret_5d": -3.03,
+        "ret_1m": 5.4,
+        "ret_3m": 9.33,
+        "rel_1d": -1.35,
+        "rel_5d": -3.86,
+        "rel_1m": -0.01,
+        "rel_3m": 7.17,
         "rvol": 0.93,
         "rrg": {
-          "x": 101.13,
-          "y": 98.76,
+          "x": 100.93,
+          "y": 98.57,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -649,8 +617,8 @@
               "y": 100.99
             },
             {
-              "x": 101.13,
-              "y": 98.76
+              "x": 100.93,
+              "y": 98.57
             }
           ]
         },
@@ -660,18 +628,18 @@
       {
         "ticker": "XLY",
         "sector": "Cons. Discretionary",
-        "ret_1d": -0.81,
-        "ret_5d": -0.4,
-        "ret_1m": 4.13,
-        "ret_3m": -4.6,
-        "rel_1d": -1.03,
-        "rel_5d": -1.08,
-        "rel_1m": -1.12,
-        "rel_3m": -6.6,
+        "ret_1d": -0.73,
+        "ret_5d": -0.32,
+        "ret_1m": 4.21,
+        "ret_3m": -4.53,
+        "rel_1d": -1.1,
+        "rel_5d": -1.15,
+        "rel_1m": -1.2,
+        "rel_3m": -6.69,
         "rvol": 0.52,
         "rrg": {
-          "x": 98.78,
-          "y": 99.34,
+          "x": 98.74,
+          "y": 99.29,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -699,8 +667,8 @@
               "y": 100.42
             },
             {
-              "x": 98.78,
-              "y": 99.34
+              "x": 98.74,
+              "y": 99.29
             }
           ]
         },
@@ -708,33 +676,33 @@
           {
             "ticker": "WNW",
             "name": "Meiwu Technology Company Ltd",
-            "change_pct": 32.2581,
-            "price": 3.28
+            "change_pct": 41.9355,
+            "price": 3.52
           },
           {
             "ticker": "DG",
             "name": "Dollar General Corp",
-            "change_pct": 4.3004,
-            "price": 128.06
+            "change_pct": 6.98,
+            "price": 131.35
           }
         ],
-        "rotation": -6
+        "rotation": -3
       },
       {
         "ticker": "XLV",
         "sector": "Health Care",
-        "ret_1d": -0.67,
-        "ret_5d": -0.01,
-        "ret_1m": 3.69,
-        "ret_3m": 14.75,
-        "rel_1d": -0.89,
-        "rel_5d": -0.69,
-        "rel_1m": -1.56,
-        "rel_3m": 12.75,
+        "ret_1d": -1.01,
+        "ret_5d": -0.35,
+        "ret_1m": 3.33,
+        "ret_3m": 14.35,
+        "rel_1d": -1.38,
+        "rel_5d": -1.18,
+        "rel_1m": -2.08,
+        "rel_3m": 12.19,
         "rvol": 0.6,
         "rrg": {
-          "x": 101.15,
-          "y": 99.31,
+          "x": 100.99,
+          "y": 99.18,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -762,8 +730,8 @@
               "y": 101.01
             },
             {
-              "x": 101.15,
-              "y": 99.31
+              "x": 100.99,
+              "y": 99.18
             }
           ]
         },
@@ -771,20 +739,20 @@
           {
             "ticker": "PPCB",
             "name": "Propanc Biopharma Inc",
-            "change_pct": 216.8224,
-            "price": 3.39
+            "change_pct": 195.3271,
+            "price": 3.16
           },
           {
             "ticker": "VNRX",
             "name": "VolitionRX Ltd",
-            "change_pct": 102.0047,
-            "price": 0.6852
+            "change_pct": 89.9469,
+            "price": 0.6443
           },
           {
-            "ticker": "RVMD",
-            "name": "Revolution Medicines Inc",
-            "change_pct": 1.9031,
-            "price": 219.54
+            "ticker": "VEEV",
+            "name": "Veeva Systems Inc",
+            "change_pct": 20.2197,
+            "price": 294.43
           }
         ],
         "rotation": -3
@@ -792,18 +760,18 @@
       {
         "ticker": "XLB",
         "sector": "Materials",
-        "ret_1d": -0.7,
-        "ret_5d": 1.67,
-        "ret_1m": 3.01,
-        "ret_3m": 4.16,
-        "rel_1d": -0.92,
-        "rel_5d": 0.99,
-        "rel_1m": -2.24,
-        "rel_3m": 2.16,
+        "ret_1d": -0.95,
+        "ret_5d": 1.41,
+        "ret_1m": 2.74,
+        "ret_3m": 3.89,
+        "rel_1d": -1.32,
+        "rel_5d": 0.58,
+        "rel_1m": -2.67,
+        "rel_3m": 1.73,
         "rvol": 0.62,
         "rrg": {
-          "x": 100.69,
-          "y": 100.3,
+          "x": 100.46,
+          "y": 100.13,
           "quadrant": "Leading",
           "tail": [
             {
@@ -831,8 +799,8 @@
               "y": 101.1
             },
             {
-              "x": 100.69,
-              "y": 100.3
+              "x": 100.46,
+              "y": 100.13
             }
           ]
         },
@@ -840,77 +808,20 @@
         "rotation": 3
       },
       {
-        "ticker": "XLF",
-        "sector": "Financials",
-        "ret_1d": -0.34,
-        "ret_5d": 1.95,
-        "ret_1m": 2.43,
-        "ret_3m": 13.64,
-        "rel_1d": -0.56,
-        "rel_5d": 1.27,
-        "rel_1m": -2.82,
-        "rel_3m": 11.64,
-        "rvol": 0.67,
-        "rrg": {
-          "x": 100.59,
-          "y": 100.58,
-          "quadrant": "Leading",
-          "tail": [
-            {
-              "x": 101.85,
-              "y": 100.17
-            },
-            {
-              "x": 101.48,
-              "y": 98.67
-            },
-            {
-              "x": 101.49,
-              "y": 99.34
-            },
-            {
-              "x": 100.73,
-              "y": 98.52
-            },
-            {
-              "x": 100.47,
-              "y": 99.31
-            },
-            {
-              "x": 100.18,
-              "y": 99.38
-            },
-            {
-              "x": 100.59,
-              "y": 100.58
-            }
-          ]
-        },
-        "top_stocks": [
-          {
-            "ticker": "TD",
-            "name": "Toronto-Dominion Bank",
-            "change_pct": 1.1806,
-            "price": 120.84
-          }
-        ],
-        "rotation": 5
-      },
-      {
         "ticker": "XLC",
         "sector": "Comm. Services",
-        "ret_1d": -0.89,
-        "ret_5d": 0.84,
-        "ret_1m": 1.92,
-        "ret_3m": -4.09,
-        "rel_1d": -1.11,
-        "rel_5d": 0.16,
-        "rel_1m": -3.33,
-        "rel_3m": -6.09,
+        "ret_1d": -0.47,
+        "ret_5d": 1.26,
+        "ret_1m": 2.35,
+        "ret_3m": -3.68,
+        "rel_1d": -0.84,
+        "rel_5d": 0.43,
+        "rel_1m": -3.06,
+        "rel_3m": -5.84,
         "rvol": 0.76,
         "rrg": {
-          "x": 99.65,
-          "y": 100.06,
+          "x": 99.85,
+          "y": 100.34,
           "quadrant": "Improving",
           "tail": [
             {
@@ -938,30 +849,80 @@
               "y": 100.44
             },
             {
-              "x": 99.65,
-              "y": 100.06
+              "x": 99.85,
+              "y": 100.34
             }
           ]
         },
         "top_stocks": [],
-        "rotation": 3
+        "rotation": 2
+      },
+      {
+        "ticker": "XLF",
+        "sector": "Financials",
+        "ret_1d": -0.88,
+        "ret_5d": 1.4,
+        "ret_1m": 1.88,
+        "ret_3m": 13.02,
+        "rel_1d": -1.25,
+        "rel_5d": 0.57,
+        "rel_1m": -3.53,
+        "rel_3m": 10.86,
+        "rvol": 0.67,
+        "rrg": {
+          "x": 100.22,
+          "y": 99.97,
+          "quadrant": "Weakening",
+          "tail": [
+            {
+              "x": 101.85,
+              "y": 100.17
+            },
+            {
+              "x": 101.48,
+              "y": 98.67
+            },
+            {
+              "x": 101.49,
+              "y": 99.34
+            },
+            {
+              "x": 100.73,
+              "y": 98.52
+            },
+            {
+              "x": 100.47,
+              "y": 99.31
+            },
+            {
+              "x": 100.18,
+              "y": 99.38
+            },
+            {
+              "x": 100.22,
+              "y": 99.97
+            }
+          ]
+        },
+        "top_stocks": [],
+        "rotation": 4
       },
       {
         "ticker": "XLI",
         "sector": "Industrials",
-        "ret_1d": -0.22,
-        "ret_5d": 0.1,
-        "ret_1m": 1.86,
-        "ret_3m": 3.79,
-        "rel_1d": -0.44,
-        "rel_5d": -0.58,
-        "rel_1m": -3.39,
-        "rel_3m": 1.79,
+        "ret_1d": -1.02,
+        "ret_5d": -0.71,
+        "ret_1m": 1.04,
+        "ret_3m": 2.95,
+        "rel_1d": -1.39,
+        "rel_5d": -1.54,
+        "rel_1m": -4.37,
+        "rel_3m": 0.79,
         "rvol": 1.32,
         "rrg": {
-          "x": 98.22,
-          "y": 100.05,
-          "quadrant": "Improving",
+          "x": 97.73,
+          "y": 99.51,
+          "quadrant": "Lagging",
           "tail": [
             {
               "x": 100.35,
@@ -988,79 +949,29 @@
               "y": 98.76
             },
             {
-              "x": 98.22,
-              "y": 100.05
+              "x": 97.73,
+              "y": 99.51
             }
           ]
         },
         "top_stocks": [],
-        "rotation": 3
-      },
-      {
-        "ticker": "XLRE",
-        "sector": "Real Estate",
-        "ret_1d": -0.16,
-        "ret_5d": -0.13,
-        "ret_1m": -2.05,
-        "ret_3m": 2.26,
-        "rel_1d": -0.38,
-        "rel_5d": -0.81,
-        "rel_1m": -7.3,
-        "rel_3m": 0.26,
-        "rvol": 0.63,
-        "rrg": {
-          "x": 99.31,
-          "y": 99.83,
-          "quadrant": "Lagging",
-          "tail": [
-            {
-              "x": 100.98,
-              "y": 101.31
-            },
-            {
-              "x": 101.2,
-              "y": 99.92
-            },
-            {
-              "x": 100.92,
-              "y": 99.38
-            },
-            {
-              "x": 98.92,
-              "y": 98.51
-            },
-            {
-              "x": 98.71,
-              "y": 99.8
-            },
-            {
-              "x": 99.57,
-              "y": 100.65
-            },
-            {
-              "x": 99.31,
-              "y": 99.83
-            }
-          ]
-        },
-        "top_stocks": [],
-        "rotation": 1
+        "rotation": -1
       },
       {
         "ticker": "XLP",
         "sector": "Cons. Staples",
-        "ret_1d": -1.03,
-        "ret_5d": 0.07,
-        "ret_1m": -2.27,
-        "ret_3m": 1.83,
-        "rel_1d": -1.25,
-        "rel_5d": -0.61,
-        "rel_1m": -7.52,
-        "rel_3m": -0.17,
+        "ret_1d": -1.21,
+        "ret_5d": -0.11,
+        "ret_1m": -2.44,
+        "ret_3m": 1.65,
+        "rel_1d": -1.58,
+        "rel_5d": -0.94,
+        "rel_1m": -7.85,
+        "rel_3m": -0.51,
         "rvol": 0.73,
         "rrg": {
-          "x": 99.33,
-          "y": 99.79,
+          "x": 99.16,
+          "y": 99.66,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1088,8 +999,8 @@
               "y": 100.39
             },
             {
-              "x": 99.33,
-              "y": 99.79
+              "x": 99.16,
+              "y": 99.66
             }
           ]
         },
@@ -1097,20 +1008,70 @@
         "rotation": 4
       },
       {
+        "ticker": "XLRE",
+        "sector": "Real Estate",
+        "ret_1d": -0.67,
+        "ret_5d": -0.64,
+        "ret_1m": -2.55,
+        "ret_3m": 1.74,
+        "rel_1d": -1.04,
+        "rel_5d": -1.47,
+        "rel_1m": -7.96,
+        "rel_3m": -0.42,
+        "rvol": 0.63,
+        "rrg": {
+          "x": 99.03,
+          "y": 99.62,
+          "quadrant": "Lagging",
+          "tail": [
+            {
+              "x": 100.98,
+              "y": 101.31
+            },
+            {
+              "x": 101.2,
+              "y": 99.92
+            },
+            {
+              "x": 100.92,
+              "y": 99.38
+            },
+            {
+              "x": 98.92,
+              "y": 98.51
+            },
+            {
+              "x": 98.71,
+              "y": 99.8
+            },
+            {
+              "x": 99.57,
+              "y": 100.65
+            },
+            {
+              "x": 99.03,
+              "y": 99.62
+            }
+          ]
+        },
+        "top_stocks": [],
+        "rotation": 2
+      },
+      {
         "ticker": "XLU",
         "sector": "Utilities",
-        "ret_1d": -1.23,
-        "ret_5d": -1.82,
-        "ret_1m": -4.31,
-        "ret_3m": -3.09,
-        "rel_1d": -1.45,
-        "rel_5d": -2.5,
-        "rel_1m": -9.56,
-        "rel_3m": -5.09,
+        "ret_1d": -1.13,
+        "ret_5d": -1.71,
+        "ret_1m": -4.21,
+        "ret_3m": -2.99,
+        "rel_1d": -1.5,
+        "rel_5d": -2.54,
+        "rel_1m": -9.62,
+        "rel_3m": -5.15,
         "rvol": 0.59,
         "rrg": {
-          "x": 98.47,
-          "y": 99.75,
+          "x": 98.46,
+          "y": 99.74,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1138,8 +1099,8 @@
               "y": 100.51
             },
             {
-              "x": 98.47,
-              "y": 99.75
+              "x": 98.46,
+              "y": 99.74
             }
           ]
         },
@@ -1149,25 +1110,78 @@
     ],
     "posture": {
       "label": "Risk-on",
-      "spread": 5.4,
+      "spread": 5.57,
       "leaders": [
         "Technology",
         "Energy"
       ],
       "laggards": [
-        "Cons. Staples",
+        "Real Estate",
         "Utilities"
       ]
     },
     "benchmark": {
       "ticker": "SPY",
-      "ret_1d": 0.22,
-      "ret_5d": 0.68,
-      "ret_1m": 5.25,
-      "ret_3m": 2.0
+      "ret_1d": 0.37,
+      "ret_5d": 0.83,
+      "ret_1m": 5.41,
+      "ret_3m": 2.16
     }
   },
   "reddit_feed": [
+    {
+      "id": "a42a9382d793119b19d16fcb203001e1c49398d1ac7e546c22667e3f1ce731af",
+      "title": "The $300,000 job nobody certifies: AIU.ac launches first standard for the Forward Deployed Engineer",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "MSFT"
+      ],
+      "hours_ago": 0.5,
+      "url": "https://www.globenewswire.com/news-release/2026/08/27/3352125/0/en/the-300-000-job-nobody-certifies-aiu-ac-launches-first-standard-for-the-forward-deployed-engineer.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "MSFT"
+      ]
+    },
+    {
+      "id": "ff17f96848293e0298cc052c1c1d1c9aab2c284276abcafb0585125c00fa6135",
+      "title": "MAGS Is Treading Water This Year. Here's Why the Smartest Investors Are Still Buying.",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "MAGS",
+        "NVDA",
+        "MSFT",
+        "AMZN",
+        "GOOG"
+      ],
+      "hours_ago": 1.1,
+      "url": "https://www.fool.com/investing/2026/08/27/mags-treading-water-2026-why-smart-invest/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA",
+        "MSFT",
+        "AMZN"
+      ]
+    },
+    {
+      "id": "4fdf606e083b9bed428aaf57161c7c70e52472ea30a68715659b7b5a7157f732",
+      "title": "Insider at Iconic Retailer Dumps Stock Valued at Over $150,000, Following 70% Rally",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "TGT",
+        "AMZN",
+        "WMT"
+      ],
+      "hours_ago": 1.2,
+      "url": "https://www.fool.com/coverage/filings/2026/08/27/insider-at-iconic-retailer-dumps-stock-valued-at-over-usd150-000-following-70-rally/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMZN"
+      ]
+    },
     {
       "id": "aea446ec5be8ef7bf40be3770ebfe8eca6ab3f26708d461b505a423ca331f6b0",
       "title": "Defiance ETFs Melancarkan CAPA, ETF Kapasitor dan MLCC Pertama yang Disenaraikan di A.S.",
@@ -1178,7 +1192,7 @@
         "TTDKY",
         "KYOAY"
       ],
-      "hours_ago": 1.9,
+      "hours_ago": 2.6,
       "url": "https://www.globenewswire.com/news-release/2026/08/27/3351925/0/ms/defiance-etfs-melancarkan-capa-etf-kapasitor-dan-mlcc-pertama-yang-disenaraikan-di-a-s.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1194,7 +1208,7 @@
         "TTDKY",
         "KYOAY"
       ],
-      "hours_ago": 1.9,
+      "hours_ago": 2.6,
       "url": "https://www.globenewswire.com/news-release/2026/08/27/3351925/0/ko/defiance-etfs-%EB%AF%B8%EA%B5%AD-%EC%B5%9C%EC%B4%88-%EC%BB%A4%ED%8C%A8%EC%8B%9C%ED%84%B0-mlcc-etf-capa-%EC%B6%9C%EC%8B%9C.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1210,7 +1224,7 @@
         "QTUM",
         "TTDKY"
       ],
-      "hours_ago": 1.9,
+      "hours_ago": 2.6,
       "url": "https://www.globenewswire.com/news-release/2026/08/27/3351925/0/zh-hans/defiance-etfs-%E6%8E%A8%E5%87%BA-capa-%E7%BE%8E%E5%9B%BD%E9%A6%96%E5%8F%AA%E4%B8%8A%E5%B8%82%E7%9A%84%E7%94%B5%E5%AE%B9%E5%99%A8%E5%8F%8A-mlcc-%E4%B8%BB%E9%A2%98etf.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1227,7 +1241,7 @@
         "TTDKY",
         "KYOAY"
       ],
-      "hours_ago": 1.9,
+      "hours_ago": 2.6,
       "url": "https://www.globenewswire.com/news-release/2026/08/27/3351925/0/ja/%E3%83%87%E3%82%A3%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%83%B3%E3%82%B9etfs-%E7%B1%B3%E5%9B%BD%E4%B8%8A%E5%A0%B4%E5%88%9D%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%87%E3%83%B3%E3%82%B5-mlcc-etf%E3%81%A7%E3%81%82%E3%82%8Bcapa%E3%82%92%E3%83%AD%E3%83%BC%E3%83%B3%E3%83%81.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1244,65 +1258,11 @@
         "TTDKY",
         "KYOAY"
       ],
-      "hours_ago": 1.9,
+      "hours_ago": 2.6,
       "url": "https://www.globenewswire.com/news-release/2026/08/27/3351925/0/zh-hant/defiance-etfs-%E6%8E%A8%E5%87%BA%E9%A6%96%E9%9A%BB%E5%9C%A8%E7%BE%8E%E5%9C%8B%E4%B8%8A%E5%B8%82%E7%9A%84%E9%9B%BB%E5%AE%B9%E5%99%A8%E5%8F%8A%E5%A4%9A%E5%B1%A4%E9%99%B6%E7%93%B7%E9%9B%BB%E5%AE%B9%E5%99%A8%E4%BA%A4%E6%98%93%E6%89%80%E8%B2%B7%E8%B3%A3%E5%9F%BA%E9%87%91-capa.html",
       "is_news": true,
       "confirmed_tickers": [
         "TTDKY"
-      ]
-    },
-    {
-      "id": "99500dde55c8eb23121e94035dd8469547f29d1cfce200f31eb6e7e4265f84b9",
-      "title": "Fluoropolymer Tubing Industry Insights Report 2026: Total Revenue to Grow by $350 Million Reaching $1.13 Billion by 2032",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "MMM",
-        "PH",
-        "TEL",
-        "SMGZY",
-        "TFX"
-      ],
-      "hours_ago": 2.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/27/3351872/28124/en/fluoropolymer-tubing-industry-insights-report-2026-total-revenue-to-grow-by-350-million-reaching-1-13-billion-by-2032.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MMM"
-      ]
-    },
-    {
-      "id": "b443fc962d037bf99182e00551f925a60e65d2967de6e908fc424c9198284fec",
-      "title": "Global HVAC Filters Market Forecast to 2031 | Europe Emerges as a Fast-Growing HVAC Filters Market",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "DCI",
-        "PH",
-        "MMM"
-      ],
-      "hours_ago": 2.7,
-      "url": "https://www.globenewswire.com/news-release/2026/08/27/3351870/28124/en/global-hvac-filters-market-forecast-to-2031-europe-emerges-as-a-fast-growing-hvac-filters-market.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MMM"
-      ]
-    },
-    {
-      "id": "f420fd919ebf1a7ec6b5ca161c162359f271a263c3987b9c90611bbecb393e12",
-      "title": "Painting Masking Tapes Market Forecast 2026-2032 | Investment Priorities Include Low-Residue Adhesives, Recyclable or Re",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "MMM",
-        "AVY",
-        "HENOY",
-        "NDEKY"
-      ],
-      "hours_ago": 2.8,
-      "url": "https://www.globenewswire.com/news-release/2026/08/27/3351864/28124/en/painting-masking-tapes-market-forecast-2026-2032-investment-priorities-include-low-residue-adhesives-recyclable-or-responsibly-sourced-backings-automated-inspection.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MMM"
       ]
     },
     {
@@ -1317,11 +1277,12 @@
         "NVDA",
         "MSFT"
       ],
-      "hours_ago": 3.4,
+      "hours_ago": 4.1,
       "url": "https://www.fool.com/investing/2026/08/27/this-earnings-season-confirmed-the-ai-power-bottle/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "NVDA"
+        "NVDA",
+        "MSFT"
       ]
     },
     {
@@ -1334,10 +1295,11 @@
         "AMZN",
         "AAPL"
       ],
-      "hours_ago": 4.1,
+      "hours_ago": 4.8,
       "url": "https://www.fool.com/investing/2026/08/27/warren-buffett-says-this-1-move-is-the-key-to-surv/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
+        "MSFT",
         "AMZN"
       ]
     },
@@ -1351,31 +1313,12 @@
         "SNDK",
         "AMZN"
       ],
-      "hours_ago": 4.3,
+      "hours_ago": 4.9,
       "url": "https://www.fool.com/investing/2026/08/27/3-juggernaut-stocks-to-hold-for-the-next-10-years/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "NVDA",
         "AMZN"
-      ]
-    },
-    {
-      "id": "e6bdce2c77035d290f80d9b1e24585ada8d6116391c149950aa51f7090e14ff9",
-      "title": "44% of Billionaire Bill Ackman's Portfolio at Pershing Square Is Concentrated in Just 4 AI Stocks",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "UBER",
-        "MSFT",
-        "AMZN",
-        "META"
-      ],
-      "hours_ago": 4.5,
-      "url": "https://www.fool.com/investing/2026/08/27/44-billionaire-bill-ackman-portfolio-4-ai-stocks/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "AMZN",
-        "META"
       ]
     }
   ]
