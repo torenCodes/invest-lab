@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-08-27T11:00:32.569153+00:00",
+  "scan_time": "2026-08-27T13:00:35.587305+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
@@ -23,43 +23,21 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "14.9",
+        "value": "15.1",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.66%",
+        "value": "4.67%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-08-27T11:00:42.688976+00:00"
+    "updated": "2026-08-27T13:00:44.789424+00:00"
   },
   "earnings": [
-    {
-      "date": "2026-08-27",
-      "symbol": "DG",
-      "eps_estimate": 2.0559,
-      "eps_actual": null,
-      "revenue_estimate": 11532252077,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2027
-    },
-    {
-      "date": "2026-08-27",
-      "symbol": "BBY",
-      "eps_estimate": 1.3547,
-      "eps_actual": null,
-      "revenue_estimate": 9627351471,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2027
-    },
     {
       "date": "2026-08-27",
       "symbol": "BILI",
@@ -125,6 +103,28 @@
       "hour": "amc",
       "quarter": 2,
       "year": 2027
+    },
+    {
+      "date": "2026-08-27",
+      "symbol": "ADSK",
+      "eps_estimate": 3.1811,
+      "eps_actual": null,
+      "revenue_estimate": 2050834684,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 2,
+      "year": 2027
+    },
+    {
+      "date": "2026-08-27",
+      "symbol": "AFRM",
+      "eps_estimate": 0.3504,
+      "eps_actual": null,
+      "revenue_estimate": 1128021784,
+      "revenue_actual": null,
+      "hour": "amc",
+      "quarter": 4,
+      "year": 2026
     },
     {
       "date": "2026-08-31",
@@ -567,5 +567,20 @@
       "year": 2026
     }
   ],
-  "unusual_volume": []
+  "unusual_volume": [
+    {
+      "ticker": "BRNX",
+      "name": "BrenX Ltd",
+      "price": 7.19,
+      "change_pct": 15.22,
+      "volume": "3.2M"
+    },
+    {
+      "ticker": "TVIV",
+      "name": "Texas Ventures Acquisition IV Corp",
+      "price": 9.91,
+      "change_pct": 0.1,
+      "volume": "48K"
+    }
+  ]
 }
