@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-08-28T01:32:46.155165+00:00",
+  "scan_time": "2026-08-28T03:33:55.495927+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 21,
+  "total_scanned": 20,
   "day_trades": [
     {
       "ticker": "MSTR",
@@ -13,13 +13,14 @@
       "low": 124.465,
       "open": 126.77,
       "prev_close": 123.19,
-      "score": 43,
+      "score": 48,
       "signals": [
         "Top gainer (+11.5%)",
         "High volume",
         "Strong move (+11.5%)",
-        "Yahoo trending (#6)",
-        "Closing strong"
+        "Yahoo trending (#4)",
+        "Closing strong",
+        "Sector leader (Technology)"
       ],
       "reddit_mentions": 0,
       "market_cap": 52792586154.88595,
@@ -27,18 +28,12 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MSTR.png",
       "weburl": "https://www.strategy.com/",
-      "yahoo_trending_rank": 6,
+      "yahoo_trending_rank": 4,
       "earnings_info": {
         "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": -24.77,
-          "estimate": -7.67,
-          "beat": false,
-          "surprise_pct": -223.0
-        }
+        "recent": null
       },
-      "score_normalized": 61
+      "score_normalized": 68
     },
     {
       "ticker": "RBRK",
@@ -55,7 +50,7 @@
         "Top gainer (+11.3%)",
         "High volume",
         "Strong move (+11.3%)",
-        "Yahoo trending (#4)",
+        "Yahoo trending (#5)",
         "Closing strong"
       ],
       "reddit_mentions": 1,
@@ -64,7 +59,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950458187056.png",
       "weburl": "https://www.rubrik.com/",
-      "yahoo_trending_rank": 4,
+      "yahoo_trending_rank": 5,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -76,6 +71,43 @@
         }
       },
       "score_normalized": 61
+    },
+    {
+      "ticker": "ASST",
+      "name": "Strive Inc",
+      "sector": "Health Care",
+      "current_price": 23.12,
+      "change_pct": 7.5349,
+      "high": 24.3799,
+      "low": 21.85,
+      "open": 22.45,
+      "prev_close": 21.5,
+      "score": 39,
+      "signals": [
+        "Top gainer (+7.5%)",
+        "High volume",
+        "Strong move (+7.5%)",
+        "Yahoo trending (#20)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 1989178171.3860464,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950833079456.png",
+      "weburl": "https://investors.strive.com/",
+      "yahoo_trending_rank": 20,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": -3.65,
+          "estimate": 1.99,
+          "beat": false,
+          "surprise_pct": -283.8
+        }
+      },
+      "score_normalized": 55
     },
     {
       "ticker": "BB",
@@ -129,7 +161,7 @@
         "Top gainer (+13.3%)",
         "High volume",
         "Strong move (+13.3%)",
-        "Yahoo trending (#12)",
+        "Yahoo trending (#13)",
         "Closing strong"
       ],
       "reddit_mentions": 0,
@@ -138,7 +170,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950400570346.png",
       "weburl": "https://www.figma.com/",
-      "yahoo_trending_rank": 12,
+      "yahoo_trending_rank": 13,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -166,7 +198,7 @@
         "Top gainer (+10.7%)",
         "High volume",
         "Strong move (+10.7%)",
-        "Yahoo trending (#14)",
+        "Yahoo trending (#18)",
         "Closing strong"
       ],
       "reddit_mentions": 0,
@@ -175,7 +207,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/S.png",
       "weburl": "https://www.sentinelone.com/",
-      "yahoo_trending_rank": 14,
+      "yahoo_trending_rank": 18,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -187,83 +219,9 @@
         }
       },
       "score_normalized": 55
-    },
-    {
-      "ticker": "ESTC",
-      "name": "Elastic NV",
-      "sector": "Technology",
-      "current_price": 83.74,
-      "change_pct": 5.6656,
-      "high": 85.78,
-      "low": 82,
-      "open": 82.645,
-      "prev_close": 79.25,
-      "score": 36,
-      "signals": [
-        "Top gainer (+5.7%)",
-        "High volume",
-        "Strong move (+5.7%)",
-        "Yahoo trending (#11)"
-      ],
-      "reddit_mentions": 2,
-      "market_cap": 8704909466.085299,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ESTC.png",
-      "weburl": "https://www.elastic.co/",
-      "yahoo_trending_rank": 11,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.61,
-          "estimate": 0.57,
-          "beat": true,
-          "surprise_pct": 7.3
-        }
-      },
-      "score_normalized": 51
     }
   ],
   "swing_trades": [
-    {
-      "ticker": "ADSK",
-      "name": "Autodesk Inc",
-      "sector": "Technology",
-      "current_price": 270.58,
-      "change_pct": 6.2056,
-      "high": 271.72,
-      "low": 260.29,
-      "open": 261.47,
-      "prev_close": 254.77,
-      "score": 48,
-      "signals": [
-        "Top gainer (+6.2%)",
-        "High volume",
-        "Strong move (+6.2%)",
-        "Yahoo trending (#7)",
-        "Closing strong",
-        "Sector leader (Technology)"
-      ],
-      "reddit_mentions": 2,
-      "market_cap": 57092380956.91243,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ADSK.png",
-      "weburl": "https://www.autodesk.com/",
-      "yahoo_trending_rank": 7,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 2.99,
-          "estimate": 2.9,
-          "beat": true,
-          "surprise_pct": 3.1
-        }
-      },
-      "score_normalized": 68
-    },
     {
       "ticker": "MSTR",
       "name": "Strategy Inc",
@@ -274,13 +232,14 @@
       "low": 124.465,
       "open": 126.77,
       "prev_close": 123.19,
-      "score": 43,
+      "score": 48,
       "signals": [
         "Top gainer (+11.5%)",
         "High volume",
         "Strong move (+11.5%)",
-        "Yahoo trending (#6)",
-        "Closing strong"
+        "Yahoo trending (#4)",
+        "Closing strong",
+        "Sector leader (Technology)"
       ],
       "reddit_mentions": 0,
       "market_cap": 52792586154.88595,
@@ -288,18 +247,12 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/MSTR.png",
       "weburl": "https://www.strategy.com/",
-      "yahoo_trending_rank": 6,
+      "yahoo_trending_rank": 4,
       "earnings_info": {
         "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": -24.77,
-          "estimate": -7.67,
-          "beat": false,
-          "surprise_pct": -223.0
-        }
+        "recent": null
       },
-      "score_normalized": 61
+      "score_normalized": 68
     },
     {
       "ticker": "RBRK",
@@ -316,7 +269,7 @@
         "Top gainer (+11.3%)",
         "High volume",
         "Strong move (+11.3%)",
-        "Yahoo trending (#4)",
+        "Yahoo trending (#5)",
         "Closing strong"
       ],
       "reddit_mentions": 1,
@@ -325,7 +278,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950458187056.png",
       "weburl": "https://www.rubrik.com/",
-      "yahoo_trending_rank": 4,
+      "yahoo_trending_rank": 5,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -337,6 +290,80 @@
         }
       },
       "score_normalized": 61
+    },
+    {
+      "ticker": "ADSK",
+      "name": "Autodesk Inc",
+      "sector": "Technology",
+      "current_price": 270.58,
+      "change_pct": 6.2056,
+      "high": 271.72,
+      "low": 260.29,
+      "open": 261.47,
+      "prev_close": 254.77,
+      "score": 39,
+      "signals": [
+        "Top gainer (+6.2%)",
+        "High volume",
+        "Strong move (+6.2%)",
+        "Yahoo trending (#11)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 1,
+      "market_cap": 57092380956.91243,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ADSK.png",
+      "weburl": "https://www.autodesk.com/",
+      "yahoo_trending_rank": 11,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 2.99,
+          "estimate": 2.9,
+          "beat": true,
+          "surprise_pct": 3.1
+        }
+      },
+      "score_normalized": 55
+    },
+    {
+      "ticker": "ASST",
+      "name": "Strive Inc",
+      "sector": "Health Care",
+      "current_price": 23.12,
+      "change_pct": 7.5349,
+      "high": 24.3799,
+      "low": 21.85,
+      "open": 22.45,
+      "prev_close": 21.5,
+      "score": 39,
+      "signals": [
+        "Top gainer (+7.5%)",
+        "High volume",
+        "Strong move (+7.5%)",
+        "Yahoo trending (#20)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 1989178171.3860464,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950833079456.png",
+      "weburl": "https://investors.strive.com/",
+      "yahoo_trending_rank": 20,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": -3.65,
+          "estimate": 1.99,
+          "beat": false,
+          "surprise_pct": -283.8
+        }
+      },
+      "score_normalized": 55
     },
     {
       "ticker": "S",
@@ -353,7 +380,7 @@
         "Top gainer (+10.7%)",
         "High volume",
         "Strong move (+10.7%)",
-        "Yahoo trending (#14)",
+        "Yahoo trending (#18)",
         "Closing strong"
       ],
       "reddit_mentions": 0,
@@ -362,7 +389,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/S.png",
       "weburl": "https://www.sentinelone.com/",
-      "yahoo_trending_rank": 14,
+      "yahoo_trending_rank": 18,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -390,7 +417,7 @@
         "Top gainer (+5.7%)",
         "High volume",
         "Strong move (+5.7%)",
-        "Yahoo trending (#11)"
+        "Yahoo trending (#15)"
       ],
       "reddit_mentions": 2,
       "market_cap": 8704909466.085299,
@@ -398,7 +425,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ESTC.png",
       "weburl": "https://www.elastic.co/",
-      "yahoo_trending_rank": 11,
+      "yahoo_trending_rank": 15,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -410,46 +437,93 @@
         }
       },
       "score_normalized": 51
-    },
-    {
-      "ticker": "IREN",
-      "name": "IREN Ltd",
-      "sector": "Technology",
-      "current_price": 40.53,
-      "change_pct": 2.4002,
-      "high": 41.52,
-      "low": 40.31,
-      "open": 40.65,
-      "prev_close": 39.58,
-      "score": 30,
-      "signals": [
-        "Top gainer (+2.4%)",
-        "High volume",
-        "Moderate move (+2.4%)",
-        "Yahoo trending (#2)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 14463434532.344112,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950792146376.png",
-      "weburl": "https://iren.com/",
-      "yahoo_trending_rank": 2,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": -0.41,
-          "estimate": -0.53,
-          "beat": true,
-          "surprise_pct": 22.2
-        }
-      },
-      "score_normalized": 42
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
+    {
+      "ticker": "CRM",
+      "mentions": 2,
+      "name": "Salesforce Inc",
+      "sector": "Technology",
+      "current_price": 252.05,
+      "change_pct": 22.5805,
+      "high": 254.48,
+      "low": 230.05,
+      "open": 230.05,
+      "prev_close": 205.62,
+      "market_cap": 206428945098.00626,
+      "score": 0,
+      "signals": [
+        "News buzz (2 mentions)"
+      ],
+      "reddit_mentions": 2,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": 2,
+        "reddit": 104,
+        "st_bull": 57,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 3.88,
+          "estimate": 3.15,
+          "beat": true,
+          "surprise_pct": 23.2
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "SNAL",
+      "mentions": 2,
+      "name": "Snail Inc",
+      "sector": "Media",
+      "current_price": 2.95,
+      "change_pct": -0.3378,
+      "high": 2.97,
+      "low": 2.83,
+      "open": 2.91,
+      "prev_close": 2.96,
+      "market_cap": 26419642.888513517,
+      "score": 0,
+      "signals": [
+        "News buzz (2 mentions)"
+      ],
+      "reddit_mentions": 2,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "reddit": 2,
+        "st_bull": 75,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": -0.36,
+          "estimate": 1.58,
+          "beat": false,
+          "surprise_pct": -122.8
+        }
+      },
+      "score_normalized": 0
+    },
     {
       "ticker": "MVST",
       "mentions": 2,
@@ -492,88 +566,6 @@
       "score_normalized": 0
     },
     {
-      "ticker": "PLAB",
-      "mentions": 2,
-      "name": "Photronics Inc",
-      "sector": "Semiconductors",
-      "current_price": 30.26,
-      "change_pct": 0.0331,
-      "high": 31.1,
-      "low": 29.46,
-      "open": 30.115,
-      "prev_close": 30.25,
-      "market_cap": 1784241541.9933884,
-      "score": 0,
-      "signals": [
-        "News buzz (2 mentions)"
-      ],
-      "reddit_mentions": 2,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "reddit": 2,
-        "st_bull": 96,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.42,
-          "estimate": 0.55,
-          "beat": false,
-          "surprise_pct": -23.7
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "OKLO",
-      "mentions": 2,
-      "name": "Oklo Inc",
-      "sector": "Utilities",
-      "current_price": 42.53,
-      "change_pct": 2.2356,
-      "high": 43.89,
-      "low": 41.1,
-      "open": 42,
-      "prev_close": 41.6,
-      "market_cap": 7911330552.264422,
-      "score": 0,
-      "signals": [
-        "News buzz (2 mentions)"
-      ],
-      "reddit_mentions": 2,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "reddit": 2,
-        "st_bull": 86,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": -0.28,
-          "estimate": -0.16,
-          "beat": false,
-          "surprise_pct": -71.3
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "NVDA",
       "name": "NVIDIA Corp",
       "sector": "Semiconductors",
@@ -585,11 +577,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 838,
+      "mentions": 792,
       "social": {
-        "trend_pct": -46,
-        "reddit": 838,
-        "st_bull": 73,
+        "trend_pct": -49,
+        "reddit": 792,
+        "st_bull": 71,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -620,10 +612,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 563,
+      "mentions": 565,
       "social": {
-        "trend_pct": 924,
-        "reddit": 563,
+        "trend_pct": 797,
+        "reddit": 565,
         "sources": [
           "Reddit"
         ]
@@ -652,10 +644,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 403,
+      "mentions": 393,
       "social": {
-        "trend_pct": 178,
-        "reddit": 403,
+        "trend_pct": 152,
+        "reddit": 393,
         "sources": [
           "Reddit"
         ]
@@ -678,9 +670,9 @@
       "ticker": "MRVL",
       "name": "Marvell Technology Inc",
       "sector": "Semiconductors",
-      "mentions": 563,
-      "prev": 55,
-      "trend_pct": 924,
+      "mentions": 565,
+      "prev": 63,
+      "trend_pct": 797,
       "current_price": 241.45,
       "change_pct": -1.4932,
       "market_cap": 211453802263.45862
@@ -689,9 +681,9 @@
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "mentions": 403,
-      "prev": 145,
-      "trend_pct": 178,
+      "mentions": 393,
+      "prev": 156,
+      "trend_pct": 152,
       "current_price": 935.39,
       "change_pct": -0.3208,
       "market_cap": 1056423007870.6732
@@ -700,9 +692,9 @@
       "ticker": "IREN",
       "name": "IREN Ltd",
       "sector": "Technology",
-      "mentions": 251,
-      "prev": 32,
-      "trend_pct": 684,
+      "mentions": 257,
+      "prev": 36,
+      "trend_pct": 614,
       "current_price": 40.53,
       "change_pct": 2.4002,
       "market_cap": 14463434532.344112
@@ -938,6 +930,12 @@
             "name": "Propanc Biopharma Inc",
             "change_pct": 108.4112,
             "price": 2.23
+          },
+          {
+            "ticker": "ASST",
+            "name": "Strive Inc",
+            "change_pct": 7.5349,
+            "price": 23.12
           }
         ],
         "rotation": -2
@@ -1322,6 +1320,51 @@
   },
   "reddit_feed": [
     {
+      "id": "32391b5ebd5afb76fe87cc2b88ede708ec94b078c45be3f9066ff95b5af26b9f",
+      "title": "Salesforce Stock Just Soared. Thank Anthropic.",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "CRM"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://www.fool.com/investing/2026/08/27/salesforce-stock-just-soared-but-investment-gains-delivered-usd2-53-of-its-usd5-90-in-per-share-profit/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "CRM"
+      ]
+    },
+    {
+      "id": "7bd344d9a73c5cf8d35a9a7d49ad5bfe40d3c6acab2c26f9de70af906ccfb5e5",
+      "title": "Snail Games \u4e8e Gamescom 2026 \u6e38\u620f\u5c55\u4e0a\u84c4\u52bf\u5f85\u53d1\uff1aIP \u62d3\u5c55\u3001\u5185\u90e8\u7814\u53d1\u4e0e\u65b0\u4f5c\u524d\u77bb",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "SNAL"
+      ],
+      "hours_ago": 1.9,
+      "url": "https://www.globenewswire.com/news-release/2026/08/28/3352477/0/zh-hans/snail-games-%E4%BA%8E-gamescom-2026-%E6%B8%B8%E6%88%8F%E5%B1%95%E4%B8%8A%E8%93%84%E5%8A%BF%E5%BE%85%E5%8F%91-ip-%E6%8B%93%E5%B1%95-%E5%86%85%E9%83%A8%E7%A0%94%E5%8F%91%E4%B8%8E%E6%96%B0%E4%BD%9C%E5%89%8D%E7%9E%BB.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "SNAL"
+      ]
+    },
+    {
+      "id": "6529cc92a6f18d66079aa8244ed48abd6c110c268c4b4cc0e21b7b2ca5a4ab1e",
+      "title": "Snail Games \u5728 Gamescom 2026 \u4e0a\u91cd\u9ede\u5c55\u793a IP \u64f4\u5c55\u3001\u5167\u90e8\u958b\u767c\u53ca\u77da\u76ee\u65b0\u4f5c",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "SNAL"
+      ],
+      "hours_ago": 1.9,
+      "url": "https://www.globenewswire.com/news-release/2026/08/28/3352477/0/zh-hant/snail-games-%E5%9C%A8-gamescom-2026-%E4%B8%8A%E9%87%8D%E9%BB%9E%E5%B1%95%E7%A4%BA-ip-%E6%93%B4%E5%B1%95-%E5%85%A7%E9%83%A8%E9%96%8B%E7%99%BC%E5%8F%8A%E7%9F%9A%E7%9B%AE%E6%96%B0%E4%BD%9C.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "SNAL"
+      ]
+    },
+    {
       "id": "6f925d92d388af982d3b6d7ee0e4ed059cc94f82c45ade82757c5a9a0c5dd0fa",
       "title": "WIX FINAL DEADLINE: ROSEN, A LONGSTANDING FIRM, Encourages Wix.com Ltd. Investors with Losses in Excess of $100K to Secu",
       "subreddit": "GlobeNewswire Inc.",
@@ -1331,12 +1374,11 @@
         "MVST",
         "PLAB"
       ],
-      "hours_ago": 0.7,
+      "hours_ago": 2.8,
       "url": "https://www.globenewswire.com/news-release/2026/08/28/3352474/673/en/wix-final-deadline-rosen-a-longstanding-firm-encourages-wix-com-ltd-investors-with-losses-in-excess-of-100k-to-secure-counsel-before-important-deadline-in-securities-class-action-w.html",
       "is_news": true,
       "confirmed_tickers": [
-        "MVST",
-        "PLAB"
+        "MVST"
       ]
     },
     {
@@ -1347,65 +1389,11 @@
       "tickers": [
         "MVST"
       ],
-      "hours_ago": 1.2,
+      "hours_ago": 3.2,
       "url": "https://www.globenewswire.com/news-release/2026/08/28/3352472/673/en/mvst-deadline-alert-rosen-a-globally-respected-law-firm-encourages-microvast-holdings-inc-investors-with-losses-in-excess-of-100k-to-secure-counsel-before-important-deadline-in-sec.html",
       "is_news": true,
       "confirmed_tickers": [
         "MVST"
-      ]
-    },
-    {
-      "id": "4d66fd1f91ec94c3c145e7e95cc0c362d2a8899b832e96593ac0645e1646b225",
-      "title": "Oklo and NuScale Power Have Shed a Combined 85.3% This Year. Why Are Nuclear Stocks Falling?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "OKLO",
-        "SMR",
-        "BAC",
-        "BACpB",
-        "BACpE"
-      ],
-      "hours_ago": 1.5,
-      "url": "https://www.fool.com/investing/2026/08/27/oklo-and-nuscale-power-have-shed-a-combined-853-th/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "OKLO"
-      ]
-    },
-    {
-      "id": "880d0c23b5747ce10343cfea2c3d0df6eba60d17472f43a2f9aae518f596a9e1",
-      "title": "PLAB IMPORTANT DEADLINE: ROSEN, TOP RANKED GLOBAL COUNSEL, Encourages Photronics, Inc. Investors with Losses in Excess o",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "PLAB",
-        "UWMC",
-        "CCOI"
-      ],
-      "hours_ago": 2.4,
-      "url": "https://www.globenewswire.com/news-release/2026/08/27/3352463/673/en/plab-important-deadline-rosen-top-ranked-global-counsel-encourages-photronics-inc-investors-with-losses-in-excess-of-100k-to-secure-counsel-before-important-september-4-deadline-in.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "PLAB"
-      ]
-    },
-    {
-      "id": "8b2f443608f93c2e7a4e361da37f691a6a7a770935ecf42a90d74757b3c1ba12",
-      "title": "Oklo's Meta Deal Calls For a 1.2-Gigawatt Reactor in Ohio. Here's When It's Slated to Come Online.",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "OKLO",
-        "META",
-        "MSFT",
-        "CEG"
-      ],
-      "hours_ago": 4.0,
-      "url": "https://www.fool.com/investing/2026/08/27/oklos-meta-deal-calls-for-a-12-gigawatt-reactor-in/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "OKLO"
       ]
     }
   ]
