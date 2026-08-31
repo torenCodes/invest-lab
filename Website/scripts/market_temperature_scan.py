@@ -170,9 +170,8 @@ def compute_risk_posture():
         "raw_label":   f"{spread:+.1f}pt {posture.get('label', '')}".strip(),
         "score":       score,
         "label":       label_for(score),
-        "description": "The lab's own Sector Rotation read: cyclical sectors' 1-month relative "
-                       "strength vs defensives. Cyclicals leading = risk appetite running hot; "
-                       f"defensives leading = money playing defense. Leading now: {leaders}.",
+        "description": "Cyclical sectors' 1-month strength against defensives, from the lab's own "
+                       "Sector Rotation engine. Cyclicals leading means risk appetite is on.",
     }
 
 
@@ -215,12 +214,11 @@ def compute_insider_breadth():
         "percentile":  pct,
         "score":       score,
         "label":       label_for(score),
-        "description": f"Of the companies with insider activity in the last "
-                       f"{d.get('window_days', 30)} days, {cur.get('buy_cos')} saw buying and "
-                       f"{cur.get('sell_cos')} saw selling — the {pct}th percentile of five years. "
-                       "Inverted, because insiders buy weakness and go quiet into strength, so a "
-                       "quiet tape is the later-stage read. Weighted at only 5%: the supporting "
-                       "sample is thin.",
+        # No counts here — raw_label already carries "529 of 1,962 buying". This
+        # explains the inversion instead, which is the part that is not obvious.
+        "description": "Share of Form 4 filers that were buying, ranked against five years. "
+                       "Inverted: insiders buy weakness and go quiet into strength, so a "
+                       "quiet tape reads hot.",
     }
 
 
@@ -276,10 +274,9 @@ def compute_growth_value():
         "percentile":  level_pct,
         "score":       score,
         "label":       label_for(score),
-        "description": f"Russell 1000 Growth against Value: the {level_pct}th percentile of three "
-                       f"years, {chg:+.1f}% over the past quarter. Growth ahead means the market is "
-                       "paying up for future earnings, which runs hot; value ahead means it is "
-                       "retreating to cash flows it can see today.",
+        "description": f"Russell 1000 Growth against Value: {level_pct}th percentile of three years, "
+                       f"{chg:+.1f}% this quarter. Growth leading means investors are paying up "
+                       f"for future earnings.",
     }
 
 
@@ -319,9 +316,8 @@ def compute_trend_heat():
         "raw_label":   f"{d_now:+.1f}% vs 50-DMA",
         "score":       score,
         "label":       label_for(score),
-        "description": "Where the S&P trades vs its 50-day average, plus the strength of the "
-                       "last two weeks' move — percentile-ranked over three years. A stretched, "
-                       "fast-climbing tape runs hot; a broken, falling tape runs cold.",
+        "description": "The S&P against its 50-day average plus the last two weeks' thrust, "
+                       "percentile-ranked over three years.",
     }
 
 
@@ -350,9 +346,8 @@ def compute_credit_spreads():
         "percentile":  pct,
         "score":       score,
         "label":       label_for(score),
-        "description": "Extra yield demanded to hold high-yield (junk) bonds over Treasuries. "
-                       "Tight spreads signal risk-on complacency; wide spreads signal stress. "
-                       f"Inverted percentile over {CALIB_YEARS} years.",
+        "description": "Extra yield demanded to hold junk bonds over Treasuries. Tight means "
+                       "complacency, wide means stress. Inverted, so tight scores hot.",
     }
 
 
@@ -379,9 +374,8 @@ def compute_yield_curve():
         "raw_label":   f"{spread:+.2f}% (10Y−2Y)",
         "score":       score,
         "label":       label_for(score),
-        "description": "10-year minus 2-year Treasury yield. A steep curve is early-cycle and "
-                       "healthy; a flat or inverted curve marks a late-cycle market that is "
-                       "historically more stretched and froth-prone.",
+        "description": "10-year minus 2-year Treasury. A steep curve is early-cycle and healthy; "
+                       "flat or inverted marks a late-cycle market.",
     }
 
 
@@ -468,9 +462,8 @@ def compute_internals():
         "total":       total,
         "score":       round(clamp(pct50, 0.0, 100.0), 1),   # the % IS the score
         "label":       label_for(pct50),
-        "description": f"{above50} of {total} S&P 500 stocks above their 50-day moving average — "
-                       "the fast participation read. Swings hard with every dip and rally, "
-                       "unlike its slower 200-day cousin below.",
+        "description": f"{above50} of {total} S&P 500 stocks above their 50-day average — the fast "
+                       "participation read, which swings with every dip and rally.",
     }
 
     pct = round(100.0 * above / total, 1)
@@ -488,8 +481,8 @@ def compute_internals():
         "total":        total,
         "score":        b_score,
         "label":        label_for(b_score),
-        "description":  f"{above} of {total} S&P 500 stocks trading above their 200-day moving average. "
-                        "Healthy markets see 50–75%; above 90% signals euphoric participation.",
+        "description": f"{above} of {total} S&P 500 stocks above their 200-day average. Healthy "
+                        "markets run 50–75%; above 90% is euphoric.",
     }
 
     net = round(100.0 * (near_high - near_low) / total, 1)   # −100 (all at lows) .. +100 (all at highs)
@@ -502,8 +495,8 @@ def compute_internals():
         "total":      total,
         "score":      nh_score,
         "label":      label_for(nh_score),
-        "description": f"{near_high} stocks near a 52-week high vs {near_low} near a 52-week low "
-                       "(within 5%). A surge of new highs signals euphoria; a wave of new lows signals stress.",
+        "description": f"{near_high} stocks near a 52-week high vs {near_low} near a low, within 5%. "
+                       "A surge of highs signals euphoria, a wave of lows signals stress.",
     }
     return out
 
@@ -542,10 +535,8 @@ def compute_fear_greed():
         "raw_label":   f"{round(score)} ({rating})",
         "score":       round(score, 1),
         "label":       label_for(score),
-        "description": "CNN's composite of 7 short-term sentiment signals (momentum, "
-                       "breadth, put/call ratio, junk-bond demand, volatility, etc.). "
-                       "High readings reflect investor euphoria — historically a "
-                       "contrarian sell signal.",
+        "description": "CNN's composite of seven short-term sentiment signals — momentum, breadth, "
+                       "put/call, junk demand and volatility.",
     }
 
 
@@ -563,6 +554,63 @@ COMPONENT_META = {
     "credit":       {"title": "Credit Spreads",     "subtitle": "High-Yield OAS"},
     "yield_curve":  {"title": "Yield Curve",        "subtitle": "10Y − 2Y Treasury"},
 }
+
+# ── Grouping (Aug 2026) ──────────────────────────────────────────────────────
+# The gauge moved from the wide main column into the 420px Market Reading
+# sidebar. Ten components at ~180px each stacked to roughly 2,100px of expanded
+# card there, so they now roll up into four themes. The weights bucket exactly:
+# 40 / 25 / 20 / 15 = 100, no fudging. Group order is display order.
+GROUPS = [
+    ("trend_participation", "Trend & Participation",
+     "Is the market rising, and are enough stocks taking part?",
+     ["trend", "breadth_50", "new_highs", "breadth"]),
+    ("risk_appetite", "Risk Appetite",
+     "Where money is positioned — offense or defense.",
+     ["risk_posture", "growth_value"]),
+    ("sentiment", "Sentiment",
+     "What investors feel, and what insiders are quietly doing.",
+     ["fear_greed", "insider"]),
+    ("credit_rates", "Credit & Rates",
+     "The slower backdrop: funding stress and cycle stage.",
+     ["credit", "yield_curve"]),
+]
+
+
+def build_groups(components):
+    """Roll the components into their four themes.
+
+    A group's score is the weighted mean of whichever of its members returned
+    data, and its weight is the sum of those members' weights — so a group
+    degrades the same way the composite does when a feed is down, rather than
+    silently scoring a missing input as zero.
+    """
+    out = []
+    for key, title, blurb, members in GROUPS:
+        wsum = tsum = 0.0
+        live, missing = [], []
+        for m in members:
+            comp = components.get(m)
+            if comp and comp.get("score") is not None:
+                wsum += comp["score"] * WEIGHTS[m]
+                tsum += WEIGHTS[m]
+                live.append(m)
+            else:
+                missing.append(m)
+        out.append({
+            "key":      key,
+            "title":    title,
+            "blurb":    blurb,
+            "score":    round(wsum / tsum, 1) if tsum > 0 else None,
+            "label":    label_for(round(wsum / tsum, 1)) if tsum > 0 else None,
+            # Nominal weight is what this group is WORTH; live weight is what
+            # actually contributed. They differ only when a feed failed.
+            "weight":         round(sum(WEIGHTS[m] for m in members), 2),
+            "weight_live":    round(tsum, 2),
+            "members":        members,
+            "members_live":   live,
+            "members_missing": missing,
+        })
+    return out
 
 
 def run():
@@ -593,11 +641,17 @@ def run():
     composite_score = round(weighted_sum / total_weight, 1) if total_weight > 0 else None
     composite_label = label_for(composite_score)
 
-    # Merge meta (title/subtitle) into each component for frontend convenience
+    # Merge meta (title/subtitle) into each component for frontend convenience,
+    # plus the group it belongs to so the sidebar can nest it without needing
+    # its own copy of the mapping.
+    group_of = {m: key for key, _t, _b, members in GROUPS for m in members}
     for k, comp in components.items():
         if comp:
             comp.update(COMPONENT_META[k])
             comp["weight"] = WEIGHTS[k]
+            comp["group"]  = group_of.get(k)
+
+    groups = build_groups(components)
 
     output = {
         "scan_time":        start.isoformat(),
@@ -605,6 +659,7 @@ def run():
         "composite_score":  composite_score,
         "composite_label":  composite_label,
         "components":       components,
+        "groups":           groups,
         "coverage":         round(total_weight, 2),
     }
 
@@ -615,6 +670,10 @@ def run():
     elapsed = (datetime.now(timezone.utc) - start).seconds
     print(f"[market-temp] Done in {elapsed}s — composite {composite_score} ({composite_label}), "
           f"coverage {total_weight:.2f}")
+    for g in groups:
+        gap = (" [missing: " + ", ".join(g["members_missing"]) + "]") if g["members_missing"] else ""
+        print(f"[market-temp]   {g['title']:<24} {str(g['score']):>6} "
+              f"{str(g['label'] or '-'):<8} w={g['weight']:.2f}{gap}")
     print(f"[market-temp] Wrote {OUTPUT_FILE}")
 
 
