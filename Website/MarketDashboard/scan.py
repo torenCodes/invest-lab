@@ -450,20 +450,88 @@ def get_yahoo_trending():
 
 # ── Finnhub ────────────────────────────────────────────────────────────────────
 
-def _finnhub_get(url, retries=2):
-    """GET a Finnhub URL with simple 429 backoff."""
+# Tally of why Finnhub calls failed, printed once in the run summary. Without
+# it a partial outage is invisible: the scan completes, writes valid JSON, and
+# the homepage just quietly loses cards.
+_FINNHUB_FAILS = {}
+
+
+def _redact(url):
+    """Never let an API key reach a log line."""
+    return re.sub(r"token=[^&\s]+", "token=***", url)
+
+
+def _note_finnhub_fail(reason):
+    _FINNHUB_FAILS[reason] = _FINNHUB_FAILS.get(reason, 0) + 1
+    # Loud on the first occurrence, then counted quietly so 500 dead lookups
+    # do not bury the rest of the log.
+    if _FINNHUB_FAILS[reason] == 1:
+        print(f"[Finnhub] FAILING — {reason}")
+
+
+def _finnhub_get(url, retries=2, timeout=5):
+    """GET a Finnhub URL, returning None on ANY failure.
+
+    This used to `return resp.json()` for every status other than 429. Finnhub
+    answers a bad or exhausted key with HTTP 401 and body
+    {"error": "Invalid API key."} — a TRUTHY dict — so callers' `if not quote`
+    guards passed it through, `quote.get("dp", 0)` gave 0 and
+    `profile.get("name")` gave None, and every card was dropped. On 2026-08-31
+    that emptied Top Day Trade, Highly Discussed and the swing list at once,
+    with nothing in the log to say why.
+
+    Same failure shape as the old empty-POLYGON_KEY bug: a credential problem
+    degrading into plausible-looking empty results instead of an error. A
+    credential failure must never be indistinguishable from "no data today".
+    """
+    if not FINNHUB_API_KEY:
+        _note_finnhub_fail("FINNHUB_KEY is empty — the secret is missing from this run")
+        return None
+
     for attempt in range(retries + 1):
         try:
-            resp = requests.get(url, timeout=5)
-            if resp.status_code == 429:
-                wait = 10 * (attempt + 1)
-                print(f"[Finnhub] 429 — waiting {wait}s...")
-                time.sleep(wait)
-                continue
-            return resp.json()
-        except Exception:
+            resp = requests.get(url, timeout=timeout)
+        except Exception as e:
+            _note_finnhub_fail(f"request error: {type(e).__name__}")
             return None
+
+        if resp.status_code == 429:
+            wait = 10 * (attempt + 1)
+            print(f"[Finnhub] 429 rate-limited — waiting {wait}s "
+                  f"(attempt {attempt + 1}/{retries + 1})")
+            time.sleep(wait)
+            continue
+
+        if resp.status_code != 200:
+            _note_finnhub_fail(
+                f"HTTP {resp.status_code} — {resp.text[:100].strip()} "
+                f"[{_redact(url)}]")
+            return None
+
+        try:
+            data = resp.json()
+        except Exception:
+            _note_finnhub_fail(f"HTTP 200 but body was not JSON [{_redact(url)}]")
+            return None
+
+        # A 200 can still carry an error envelope, and a dict with an "error"
+        # key is truthy — exactly the trap this function exists to close.
+        if isinstance(data, dict) and data.get("error"):
+            _note_finnhub_fail(f"error in 200 body: {str(data['error'])[:100]}")
+            return None
+
+        return data
+
+    _note_finnhub_fail(f"gave up after {retries + 1} attempts (429 backoff exhausted)")
     return None
+
+
+def finnhub_failure_summary():
+    """One-line-per-reason recap for the end of a run. Empty when all is well."""
+    if not _FINNHUB_FAILS:
+        return []
+    return [f"{count:>5}x  {reason}" for reason, count in
+            sorted(_FINNHUB_FAILS.items(), key=lambda kv: -kv[1])]
 
 
 def get_stock_quote(ticker):
@@ -1188,8 +1256,13 @@ def get_sector_rotation(scan_results=None):
 def get_market_news():
     try:
         url = f"https://finnhub.io/api/v1/news?category=general&token={FINNHUB_API_KEY}"
-        resp = requests.get(url, timeout=8)
-        items = resp.json()[:12]
+        # Via _finnhub_get so a 401/429 is logged rather than blowing up on
+        # dict slicing inside the bare except below. Keeps the original 8s
+        # timeout - these payloads are larger than a single quote.
+        data = _finnhub_get(url, timeout=8)
+        if not isinstance(data, list):
+            return []
+        items = data[:12]
         news = []
         seen = set()
         for item in items:
@@ -1215,8 +1288,13 @@ def get_earnings_calendar():
         today       = datetime.now().strftime("%Y-%m-%d")
         five_days   = (datetime.now() + timedelta(days=5)).strftime("%Y-%m-%d")
         url = f"https://finnhub.io/api/v1/calendar/earnings?from={today}&to={five_days}&token={FINNHUB_API_KEY}"
-        resp = requests.get(url, timeout=8)
-        items = resp.json().get("earningsCalendar", [])[:30]
+        # Was resp.json().get("earningsCalendar", []) — on a 401 the error
+        # envelope has no such key, so this returned [] and the calendar simply
+        # vanished with no error anywhere. Keeps the original 8s timeout.
+        data = _finnhub_get(url, timeout=8)
+        if not isinstance(data, dict):
+            return []
+        items = data.get("earningsCalendar", [])[:30]
         earnings = []
         for item in items:
             earnings.append({
@@ -1418,6 +1496,21 @@ def run():
 
     elapsed = (datetime.now(timezone.utc) - start).seconds
     print(f"[scan.py] Done in {elapsed}s — {len(day_trades)}D {len(swing_trades)}S {len(reddit_cards)}R")
+
+    # An empty board is a normal outcome on a red tape, but it is also what a
+    # dead API key looks like. Say which, every run, so the two are never
+    # confused again.
+    fails = finnhub_failure_summary()
+    if fails:
+        print(f"[scan.py] !! FINNHUB DEGRADED — {sum(_FINNHUB_FAILS.values())} failed calls:")
+        for line in fails:
+            print(f"[scan.py]    {line}")
+        if not (day_trades or swing_trades or reddit_cards):
+            print("[scan.py] !! Board is EMPTY and Finnhub was failing — treat the "
+                  "empty result as unproven, not as 'no candidates today'.")
+    else:
+        print("[scan.py] Finnhub: all calls OK")
+
     print(f"[scan.py] Results written to {OUTPUT_FILE}")
 
 
