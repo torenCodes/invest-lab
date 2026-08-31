@@ -367,6 +367,138 @@ def fetch_unusual_volume(limit=10):
 
 # ── Trading Conditions (proprietary market-regime read) ──────────────────────
 
+SECTOR_ETFS = ["XLK", "XLY", "XLF", "XLI", "XLB", "XLC", "XLP", "XLU", "XLV", "XLRE", "XLE"]
+
+
+def _todays_tape(spy_h, yf):
+    """What is the tape doing RIGHT NOW, as opposed to this month?
+
+    Every other input on this card is slow by construction. Trend is price
+    against the 50-day, momentum is a 5-day lookback, VIX and the 10-year
+    barely twitch on a single session. On 2026-08-31 that produced "Favorable"
+    while SPY was down 0.56%, pinned at 10% of its daily range, with 10 of 11
+    sector ETFs red — every input was technically right and the verdict was
+    still wrong, because nothing in it measured today.
+
+    Reads three things off the current session:
+      • direction  — close against the prior session's close
+      • conviction — where in the day's range price is sitting. Near the low
+        means sellers held control into the print; near the high means buyers
+        absorbed the move. A -0.5% day off the lows is a different tape from
+        a -0.5% day at the lows.
+      • breadth    — how many sector ETFs are green. Separates "one mega-cap
+        dragged the index" from "everything is being sold".
+
+    Note the deliberate contrast with _participation(), which DROPS today's
+    bar: volume needs a completed session to mean anything, direction does
+    not. Same frame, opposite treatment, on purpose.
+
+    Outside market hours this describes the most recent completed session,
+    which is still the honest answer to "what is the tape doing".
+    """
+    try:
+        import numpy as np
+    except ImportError:
+        return None
+
+    try:
+        df = spy_h.dropna(subset=["Close"])
+        if len(df) < 2:
+            return None
+        cur, prev = df.iloc[-1], df.iloc[-2]
+        last  = float(cur["Close"])
+        prevc = float(prev["Close"])
+        hi, lo, op = float(cur["High"]), float(cur["Low"]), float(cur["Open"])
+        if not all(np.isfinite(x) for x in (last, prevc, hi, lo, op)) or prevc <= 0:
+            return None
+    except Exception as e:
+        print(f"[newsstand] session read failed: {e}")
+        return None
+
+    chg      = (last / prevc - 1.0) * 100.0
+    from_open = (last / op - 1.0) * 100.0 if op > 0 else 0.0
+    rng_pos  = (last - lo) / (hi - lo) if hi > lo else 0.5
+
+    session_date = df.index[-1]
+    try:
+        is_live = session_date.date() == datetime.now().date()
+    except Exception:
+        is_live = False
+
+    # ── Direction is the backbone of the score ──
+    if   chg >=  0.75: pts = 2
+    elif chg >=  0.25: pts = 1
+    elif chg >= -0.25: pts = 0
+    elif chg >= -0.75: pts = -1
+    else:              pts = -2
+
+    # ── Conviction: where in the range did it settle ──
+    if   rng_pos <= 0.25: pts -= 1
+    elif rng_pos >= 0.75: pts += 1
+
+    # ── Breadth across the sector ETFs ──
+    green = total = None
+    try:
+        b = yf.download(SECTOR_ETFS, period="5d", interval="1d",
+                        progress=False, auto_adjust=False)["Close"]
+        cur_row, prev_row = b.iloc[-1], b.iloc[-2]
+        green = total = 0
+        for t in SECTOR_ETFS:
+            try:
+                a, p = float(cur_row[t]), float(prev_row[t])
+                if not (np.isfinite(a) and np.isfinite(p) and p > 0):
+                    continue
+                total += 1
+                if a >= p:
+                    green += 1
+            except Exception:
+                continue
+        if total:
+            frac = green / total
+            if   frac <= 0.20: pts -= 1        # near-universal selling
+            elif frac >= 0.80: pts += 1        # near-universal buying
+        else:
+            green = total = None
+    except Exception as e:
+        print(f"[newsstand] sector breadth unavailable: {e}")
+        green = total = None
+
+    pts = max(-3, min(3, pts))
+
+    if   pts >=  2: read, tone = "Strong", "good"
+    elif pts ==  1: read, tone = "Firm", "good"
+    elif pts ==  0: read, tone = "Flat", "neutral"
+    elif pts == -1: read, tone = "Soft", "neutral"
+    else:           read, tone = "Weak", "bad"
+
+    where = ("at the lows" if rng_pos <= 0.25 else
+             "at the highs" if rng_pos >= 0.75 else
+             "mid-range")
+    bits = [f"{chg:+.2f}% vs prior close", f"{where} ({rng_pos * 100:.0f}% of range)"]
+    if total:
+        bits.append(f"{green}/{total} sectors green")
+    if not is_live:
+        bits.append("last completed session")
+
+    return {
+        "points": pts,
+        "signal": {
+            "label": "Today's tape",
+            "sub":   "Session move + breadth",
+            "value": f"{chg:+.2f}%",
+            "read":  read,
+            "tone":  tone,
+        },
+        "detail":        " · ".join(bits),
+        "change_pct":    round(chg, 2),
+        "from_open_pct": round(from_open, 2),
+        "range_pos":     round(rng_pos, 3),
+        "sectors_green": green,
+        "sectors_total": total,
+        "live":          bool(is_live),
+    }
+
+
 def _participation(vol):
     """Is there enough volume in the tape to trade, and is that normal for the
     calendar? Returns a signal dict, a score contribution and a headline clause.
@@ -552,6 +684,12 @@ def fetch_trading_conditions():
 
     signals, pts = [], 0
 
+    # ── Today's tape — FIRST, because it is the only input that measures now ──
+    tape = _todays_tape(spy_h, yf) if spy_h is not None else None
+    if tape:
+        pts += tape["points"]
+        signals.append(tape["signal"])
+
     # ── Trend (SPY vs its moving averages) ──
     above50, above20 = price > ma50, price > ma20
     golden = ma200 is not None and ma50 > ma200
@@ -605,14 +743,15 @@ def fetch_trading_conditions():
         signals.append({"label": "10-year yield", "sub": "Rate pressure on growth",
                         "value": f"{tnx_level:.2f}%", "read": y_read, "tone": y_tone})
 
-    # Bands shifted up one when Participation joined: it adds +1 at the top and
-    # can take 2 off, so a perfect trend/momentum/VIX read on a thin tape now
-    # lands on Mixed instead of Favorable. Low volume can demote the verdict,
-    # which is the point of having it.
-    if   pts >= 5: verdict = "Favorable"
-    elif pts >= 3: verdict = "Mixed"
-    elif pts >= 0: verdict = "Cautious"
-    else:          verdict = "Risk-Off"
+    # Range is now roughly -10..+10: trend 3, momentum 2, VIX 1, yield 0,
+    # participation -2..+1, today's tape -3..+3. The bands are set so that a
+    # calm uptrend on a flat day still reads Favorable, while a broad decline
+    # drags it to Cautious no matter how healthy the monthly trend looks —
+    # which was the whole failure this replaces.
+    if   pts >=  5: verdict = "Favorable"
+    elif pts >=  2: verdict = "Mixed"
+    elif pts >= -1: verdict = "Cautious"
+    else:           verdict = "Risk-Off"
 
     headlines = {
         "Favorable": "The trend is up and volatility is manageable, a constructive backdrop "
@@ -627,10 +766,27 @@ def fetch_trading_conditions():
     }
 
     headline = headlines[verdict]
+
+    # Today's tape leads the headline when it disagrees with the slow inputs —
+    # that disagreement is exactly the information a trader needs at 10:30am.
+    if tape and tape["points"] <= -2:
+        broad = (f", with only {tape['sectors_green']} of {tape['sectors_total']} sectors green"
+                 if tape.get("sectors_total") else "")
+        headline = (f"Today's tape is working against the longer-term trend: SPY "
+                    f"{tape['change_pct']:+.2f}% and "
+                    f"{'holding near the session low' if tape['range_pos'] <= 0.25 else 'off its highs'}"
+                    f"{broad}. " + headline)
+    elif tape and tape["points"] >= 2:
+        headline = (f"Today's tape is confirming the trend: SPY {tape['change_pct']:+.2f}% "
+                    f"and closing strong. " + headline)
+
     if part and part.get("clause"):
         headline += " " + part["clause"]
 
     print(f"[newsstand] Trading conditions: {verdict} (score {pts})")
+    if tape:
+        print(f"[newsstand]   today's tape {tape['signal']['read']} "
+              f"({tape['detail']}), {tape['points']:+d}pt")
     if part:
         print(f"[newsstand]   participation {part['signal']['read']} "
               f"{part['signal']['value']} ({part['detail']}), {part['direction']}, "
@@ -643,6 +799,16 @@ def fetch_trading_conditions():
         "signals":  signals,
         "updated":  datetime.now(timezone.utc).isoformat(),
     }
+    if tape:
+        out["session"] = {
+            "change_pct":    tape["change_pct"],
+            "from_open_pct": tape["from_open_pct"],
+            "range_pos":     tape["range_pos"],
+            "sectors_green": tape["sectors_green"],
+            "sectors_total": tape["sectors_total"],
+            "live":          tape["live"],
+            "detail":        tape["detail"],
+        }
     if part:
         out["participation"] = {
             "ratio":     part["ratio"],
