@@ -1,29 +1,537 @@
 {
-  "scan_time": "2026-08-31T13:35:27.217214+00:00",
+  "scan_time": "2026-08-31T14:15:33.716372+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 21,
-  "day_trades": [],
-  "swing_trades": [],
+  "total_scanned": 22,
+  "day_trades": [
+    {
+      "ticker": "MOVE",
+      "name": "Corvex, Inc",
+      "sector": "Technology",
+      "current_price": 11.51,
+      "change_pct": 3.1362,
+      "high": 11.81,
+      "low": 10.685,
+      "open": 11.435,
+      "prev_close": 11.16,
+      "score": 47,
+      "signals": [
+        "Top gainer (+3.1%)",
+        "High volume",
+        "Good move (+3.1%)",
+        "Yahoo trending (#13)",
+        "Unusual volume (Finviz)",
+        "Closing strong",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 317667523.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950627266756.png",
+      "weburl": "https://movanohealth.com/",
+      "yahoo_trending_rank": 13,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 66
+    },
+    {
+      "ticker": "SLB",
+      "name": "SLB NV",
+      "sector": "Energy",
+      "current_price": 57.35,
+      "change_pct": 4.2538,
+      "high": 57.42,
+      "low": 54.6677,
+      "open": 54.82,
+      "prev_close": 55.01,
+      "score": 43,
+      "signals": [
+        "Top gainer (+4.3%)",
+        "High volume",
+        "Good move (+4.3%)",
+        "Yahoo trending (#7)",
+        "Closing strong",
+        "Sector leader (Energy)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 84603586836.19542,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SLB.png",
+      "weburl": "https://www.slb.com/",
+      "yahoo_trending_rank": 7,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.55,
+          "estimate": 0.52,
+          "beat": true,
+          "surprise_pct": 6.0
+        }
+      },
+      "score_normalized": 61
+    },
+    {
+      "ticker": "SNAP",
+      "name": "Snap Inc",
+      "sector": "Media",
+      "current_price": 5.44,
+      "change_pct": 2.0638,
+      "high": 5.59,
+      "low": 5.33,
+      "open": 5.359999999999999,
+      "prev_close": 5.33,
+      "score": 35,
+      "signals": [
+        "Top gainer (+2.1%)",
+        "High volume",
+        "Moderate move (+2.1%)",
+        "Yahoo trending (#9)",
+        "Sector leader (Media)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 9183203789.12195,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SNAP.png",
+      "weburl": "https://snap.com/",
+      "yahoo_trending_rank": 9,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.13,
+          "estimate": 0.08,
+          "beat": true,
+          "surprise_pct": 61.7
+        }
+      },
+      "score_normalized": 49
+    }
+  ],
+  "swing_trades": [
+    {
+      "ticker": "SLB",
+      "name": "SLB NV",
+      "sector": "Energy",
+      "current_price": 57.35,
+      "change_pct": 4.2538,
+      "high": 57.42,
+      "low": 54.6677,
+      "open": 54.82,
+      "prev_close": 55.01,
+      "score": 43,
+      "signals": [
+        "Top gainer (+4.3%)",
+        "High volume",
+        "Good move (+4.3%)",
+        "Yahoo trending (#7)",
+        "Closing strong",
+        "Sector leader (Energy)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 84603586836.19542,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SLB.png",
+      "weburl": "https://www.slb.com/",
+      "yahoo_trending_rank": 7,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.55,
+          "estimate": 0.52,
+          "beat": true,
+          "surprise_pct": 6.0
+        }
+      },
+      "score_normalized": 61
+    },
+    {
+      "ticker": "CVX",
+      "name": "Chevron Corp",
+      "sector": "Energy",
+      "current_price": 201.9,
+      "change_pct": 1.0662,
+      "high": 202.745,
+      "low": 199.555,
+      "open": 202.745,
+      "prev_close": 199.77,
+      "score": 25,
+      "signals": [
+        "Top gainer (+1.1%)",
+        "High volume",
+        "Yahoo trending (#10)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 398078397996.0577,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CVX.png",
+      "weburl": "https://www.chevron.com/",
+      "yahoo_trending_rank": 10,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 6.06,
+          "estimate": 5.62,
+          "beat": true,
+          "surprise_pct": 7.9
+        }
+      },
+      "score_normalized": 35
+    },
+    {
+      "ticker": "AON",
+      "name": "Aon PLC",
+      "sector": "Insurance",
+      "current_price": 355.44,
+      "change_pct": 1.6821,
+      "high": 358.7119,
+      "low": 349.76,
+      "open": 350.12,
+      "prev_close": 349.56,
+      "score": 21,
+      "signals": [
+        "Top gainer (+1.7%)",
+        "High volume",
+        "Moderate move (+1.7%)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 75626962233.52008,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AON.png",
+      "weburl": "https://www.aon.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 3.81,
+          "estimate": 3.84,
+          "beat": false,
+          "surprise_pct": -0.8
+        }
+      },
+      "score_normalized": 30
+    },
+    {
+      "ticker": "PSX",
+      "name": "Phillips 66",
+      "sector": "Energy",
+      "current_price": 244.05,
+      "change_pct": 1.7681,
+      "high": 244.655,
+      "low": 239.87,
+      "open": 241.23,
+      "prev_close": 239.81,
+      "score": 21,
+      "signals": [
+        "Top gainer (+1.8%)",
+        "High volume",
+        "Moderate move (+1.8%)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 97301246581.93736,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/PSX.png",
+      "weburl": "https://www.phillips66.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 9.41,
+          "estimate": 7.51,
+          "beat": true,
+          "surprise_pct": 25.2
+        }
+      },
+      "score_normalized": 30
+    }
+  ],
   "buzz_source": "news",
-  "reddit_cards": [],
-  "chatter_emerging": [],
+  "reddit_cards": [
+    {
+      "ticker": "NVDA",
+      "mentions": 4,
+      "name": "NVIDIA Corp",
+      "sector": "Semiconductors",
+      "current_price": 217.59,
+      "change_pct": -4.5574,
+      "high": 229.26,
+      "low": 216.81,
+      "open": 223.06,
+      "prev_close": 227.98,
+      "market_cap": 5235483901884.666,
+      "score": 0,
+      "signals": [
+        "News buzz (4 mentions)"
+      ],
+      "reddit_mentions": 4,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": 72,
+        "reddit": 67,
+        "st_bull": 100,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 1.87,
+          "estimate": 1.79,
+          "beat": true,
+          "surprise_pct": 4.3
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "AMZN",
+      "mentions": 3,
+      "name": "Amazon.com Inc",
+      "sector": "Retail",
+      "current_price": 266.47,
+      "change_pct": 3.9842,
+      "high": 267.56,
+      "low": 257.78,
+      "open": 262.16,
+      "prev_close": 256.26,
+      "market_cap": 2871964195734.731,
+      "score": 0,
+      "signals": [
+        "News buzz (3 mentions)"
+      ],
+      "reddit_mentions": 3,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": 350,
+        "reddit": 9,
+        "st_bull": 100,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 1.97,
+          "estimate": 1.86,
+          "beat": true,
+          "surprise_pct": 6.1
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "JPM",
+      "mentions": 3,
+      "name": "JPMorgan Chase & Co",
+      "sector": "Banking",
+      "current_price": 357.66,
+      "change_pct": 0.9711,
+      "high": 358.73,
+      "low": 354.22,
+      "open": 355.7875,
+      "prev_close": 354.22,
+      "market_cap": 949464269442.273,
+      "score": 0,
+      "signals": [
+        "News buzz (3 mentions)"
+      ],
+      "reddit_mentions": 3,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "reddit": 3,
+        "st_bull": 56,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 6.14,
+          "estimate": 5.91,
+          "beat": true,
+          "surprise_pct": 4.0
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology Inc",
+      "sector": "Semiconductors",
+      "current_price": 932.9,
+      "change_pct": -0.2662,
+      "market_cap": 1050395087222.2688,
+      "score": 0,
+      "signals": [],
+      "reddit_mentions": 0,
+      "is_gainer": false,
+      "is_active": false,
+      "mentions": 82,
+      "social": {
+        "trend_pct": 105,
+        "reddit": 82,
+        "st_bull": 77,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 25.11,
+          "estimate": 21.4,
+          "beat": true,
+          "surprise_pct": 17.3
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "NB",
+      "name": "NioCorp Developments Ltd",
+      "sector": "Metals & Mining",
+      "current_price": 4.15,
+      "change_pct": -5.0343,
+      "market_cap": 605642118.0045767,
+      "score": 0,
+      "signals": [],
+      "reddit_mentions": 0,
+      "is_gainer": false,
+      "is_active": false,
+      "mentions": 38,
+      "social": {
+        "trend_pct": 1167,
+        "reddit": 38,
+        "sources": [
+          "Reddit"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla Inc",
+      "sector": "Automobiles",
+      "current_price": 348.79,
+      "change_pct": -1.6967,
+      "market_cap": 1372842991155.5269,
+      "score": 0,
+      "signals": [],
+      "reddit_mentions": 0,
+      "is_gainer": false,
+      "is_active": false,
+      "mentions": 33,
+      "social": {
+        "trend_pct": 725,
+        "reddit": 33,
+        "sources": [
+          "Reddit"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.33,
+          "estimate": 0.52,
+          "beat": false,
+          "surprise_pct": -36.4
+        }
+      },
+      "score_normalized": 0
+    }
+  ],
+  "chatter_emerging": [
+    {
+      "ticker": "NB",
+      "name": "NioCorp Developments Ltd",
+      "sector": "Metals & Mining",
+      "mentions": 38,
+      "prev": 3,
+      "trend_pct": 1167,
+      "current_price": 4.15,
+      "change_pct": -5.0343,
+      "market_cap": 605642118.0045767
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla Inc",
+      "sector": "Automobiles",
+      "mentions": 33,
+      "prev": 4,
+      "trend_pct": 725,
+      "current_price": 348.79,
+      "change_pct": -1.6967,
+      "market_cap": 1372842991155.5269
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc",
+      "sector": "Semiconductors",
+      "mentions": 26,
+      "prev": 7,
+      "trend_pct": 271,
+      "current_price": 368.83,
+      "change_pct": -0.7294,
+      "market_cap": 1753929511939.874
+    }
+  ],
   "sector_rotation": {
     "sectors": [
       {
         "ticker": "XLE",
         "sector": "Energy",
-        "ret_1d": 2.42,
-        "ret_5d": 1.72,
-        "ret_1m": 7.8,
-        "ret_3m": 12.84,
-        "rel_1d": 2.84,
-        "rel_5d": 1.37,
-        "rel_1m": 5.24,
-        "rel_3m": 11.58,
+        "ret_1d": 1.77,
+        "ret_5d": 1.08,
+        "ret_1m": 7.12,
+        "ret_3m": 12.13,
+        "rel_1d": 2.26,
+        "rel_5d": 0.8,
+        "rel_1m": 4.63,
+        "rel_3m": 10.94,
         "rvol": 0.79,
         "rrg": {
-          "x": 101.71,
-          "y": 99.71,
+          "x": 101.59,
+          "y": 99.58,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -51,30 +559,49 @@
               "y": 99.8
             },
             {
-              "x": 101.71,
-              "y": 99.71
+              "x": 101.59,
+              "y": 99.58
             }
           ]
         },
-        "top_stocks": [],
+        "top_stocks": [
+          {
+            "ticker": "SLB",
+            "name": "SLB NV",
+            "change_pct": 4.2538,
+            "price": 57.35
+          },
+          {
+            "ticker": "PSX",
+            "name": "Phillips 66",
+            "change_pct": 1.7681,
+            "price": 244.05
+          },
+          {
+            "ticker": "CVX",
+            "name": "Chevron Corp",
+            "change_pct": 1.0662,
+            "price": 201.9
+          }
+        ],
         "rotation": -1
       },
       {
         "ticker": "XLK",
         "sector": "Technology",
-        "ret_1d": -0.11,
-        "ret_5d": 3.02,
-        "ret_1m": 5.78,
-        "ret_3m": -5.14,
-        "rel_1d": 0.31,
-        "rel_5d": 2.67,
-        "rel_1m": 3.22,
-        "rel_3m": -6.4,
+        "ret_1d": 0.03,
+        "ret_5d": 3.16,
+        "ret_1m": 5.93,
+        "ret_3m": -5.01,
+        "rel_1d": 0.52,
+        "rel_5d": 2.88,
+        "rel_1m": 3.44,
+        "rel_3m": -6.2,
         "rvol": 0.92,
         "rrg": {
-          "x": 99.99,
-          "y": 101.59,
-          "quadrant": "Improving",
+          "x": 100.08,
+          "y": 101.69,
+          "quadrant": "Leading",
           "tail": [
             {
               "x": 98.71,
@@ -101,29 +628,48 @@
               "y": 98.26
             },
             {
-              "x": 99.99,
-              "y": 101.59
+              "x": 100.08,
+              "y": 101.69
             }
           ]
         },
-        "top_stocks": [],
+        "top_stocks": [
+          {
+            "ticker": "AIM",
+            "name": "AIM ImmunoTech Inc",
+            "change_pct": 3.76,
+            "price": 0.2594
+          },
+          {
+            "ticker": "MOVE",
+            "name": "Corvex, Inc",
+            "change_pct": 3.1362,
+            "price": 11.51
+          },
+          {
+            "ticker": "RZLV",
+            "name": "Rezolve AI PLC",
+            "change_pct": 1.7007,
+            "price": 2.99
+          }
+        ],
         "rotation": 1
       },
       {
         "ticker": "XLB",
         "sector": "Materials",
-        "ret_1d": 0.11,
-        "ret_5d": -0.63,
-        "ret_1m": 5.57,
-        "ret_3m": 4.95,
-        "rel_1d": 0.53,
-        "rel_5d": -0.98,
-        "rel_1m": 3.01,
-        "rel_3m": 3.69,
+        "ret_1d": -0.37,
+        "ret_5d": -1.11,
+        "ret_1m": 5.07,
+        "ret_3m": 4.44,
+        "rel_1d": 0.12,
+        "rel_5d": -1.39,
+        "rel_1m": 2.58,
+        "rel_3m": 3.25,
         "rvol": 1.24,
         "rrg": {
-          "x": 100.79,
-          "y": 99.5,
+          "x": 100.54,
+          "y": 99.32,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -151,29 +697,29 @@
               "y": 101.65
             },
             {
-              "x": 100.79,
-              "y": 99.5
+              "x": 100.54,
+              "y": 99.32
             }
           ]
         },
         "top_stocks": [],
-        "rotation": -1
+        "rotation": -2
       },
       {
         "ticker": "XLV",
         "sector": "Health Care",
-        "ret_1d": -0.62,
-        "ret_5d": -2.63,
-        "ret_1m": 4.65,
-        "ret_3m": 15.57,
-        "rel_1d": -0.2,
-        "rel_5d": -2.98,
-        "rel_1m": 2.09,
-        "rel_3m": 14.31,
+        "ret_1d": -0.39,
+        "ret_5d": -2.4,
+        "ret_1m": 4.89,
+        "ret_3m": 15.84,
+        "rel_1d": 0.1,
+        "rel_5d": -2.68,
+        "rel_1m": 2.4,
+        "rel_3m": 14.65,
         "rvol": 0.55,
         "rrg": {
-          "x": 100.74,
-          "y": 98.83,
+          "x": 100.85,
+          "y": 98.92,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -201,30 +747,43 @@
               "y": 101.24
             },
             {
-              "x": 100.74,
-              "y": 98.83
+              "x": 100.85,
+              "y": 98.92
             }
           ]
         },
-        "top_stocks": [],
-        "rotation": -5
+        "top_stocks": [
+          {
+            "ticker": "RDHL",
+            "name": "Redhill Biopharma Ltd",
+            "change_pct": 5.0794,
+            "price": 0.662
+          },
+          {
+            "ticker": "AIM",
+            "name": "AIM ImmunoTech Inc",
+            "change_pct": 3.76,
+            "price": 0.2594
+          }
+        ],
+        "rotation": -4
       },
       {
         "ticker": "XLC",
         "sector": "Comm. Services",
-        "ret_1d": -0.66,
-        "ret_5d": -0.07,
-        "ret_1m": 3.7,
-        "ret_3m": -2.66,
-        "rel_1d": -0.24,
-        "rel_5d": -0.42,
-        "rel_1m": 1.14,
-        "rel_3m": -3.92,
+        "ret_1d": -1.36,
+        "ret_5d": -0.77,
+        "ret_1m": 2.97,
+        "ret_3m": -3.35,
+        "rel_1d": -0.87,
+        "rel_5d": -1.05,
+        "rel_1m": 0.48,
+        "rel_3m": -4.54,
         "rvol": 0.86,
         "rrg": {
-          "x": 100.23,
-          "y": 99.47,
-          "quadrant": "Weakening",
+          "x": 99.78,
+          "y": 98.82,
+          "quadrant": "Lagging",
           "tail": [
             {
               "x": 99.65,
@@ -251,29 +810,42 @@
               "y": 102.6
             },
             {
-              "x": 100.23,
-              "y": 99.47
+              "x": 99.78,
+              "y": 98.82
             }
           ]
         },
-        "top_stocks": [],
-        "rotation": 2
+        "top_stocks": [
+          {
+            "ticker": "SNAP",
+            "name": "Snap Inc",
+            "change_pct": 2.0638,
+            "price": 5.44
+          },
+          {
+            "ticker": "TTD",
+            "name": "Trade Desk Inc",
+            "change_pct": 1.2668,
+            "price": 13.59
+          }
+        ],
+        "rotation": 1
       },
       {
         "ticker": "XLF",
         "sector": "Financials",
-        "ret_1d": -0.52,
-        "ret_5d": -0.72,
-        "ret_1m": 1.51,
-        "ret_3m": 12.78,
-        "rel_1d": -0.1,
-        "rel_5d": -1.07,
-        "rel_1m": -1.05,
-        "rel_3m": 11.52,
+        "ret_1d": -0.55,
+        "ret_5d": -0.76,
+        "ret_1m": 1.48,
+        "ret_3m": 12.74,
+        "rel_1d": -0.06,
+        "rel_5d": -1.04,
+        "rel_1m": -1.01,
+        "rel_3m": 11.55,
         "rvol": 0.9,
         "rrg": {
-          "x": 100.41,
-          "y": 98.77,
+          "x": 100.43,
+          "y": 98.8,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -301,23 +873,30 @@
               "y": 101.39
             },
             {
-              "x": 100.41,
-              "y": 98.77
+              "x": 100.43,
+              "y": 98.8
             }
           ]
         },
-        "top_stocks": [],
-        "rotation": 1
+        "top_stocks": [
+          {
+            "ticker": "AON",
+            "name": "Aon PLC",
+            "change_pct": 1.6821,
+            "price": 355.44
+          }
+        ],
+        "rotation": 3
       },
       {
         "ticker": "XLY",
         "sector": "Cons. Discretionary",
-        "ret_1d": -0.52,
-        "ret_5d": -1.44,
-        "ret_1m": 0.44,
-        "ret_3m": -1.15,
+        "ret_1d": -0.59,
+        "ret_5d": -1.5,
+        "ret_1m": 0.37,
+        "ret_3m": -1.22,
         "rel_1d": -0.1,
-        "rel_5d": -1.79,
+        "rel_5d": -1.78,
         "rel_1m": -2.12,
         "rel_3m": -2.41,
         "rvol": 0.75,
@@ -362,18 +941,18 @@
       {
         "ticker": "XLP",
         "sector": "Cons. Staples",
-        "ret_1d": -0.18,
-        "ret_5d": -2.46,
-        "ret_1m": 0.29,
-        "ret_3m": 4.71,
-        "rel_1d": 0.24,
-        "rel_5d": -2.81,
-        "rel_1m": -2.27,
-        "rel_3m": 3.45,
+        "ret_1d": -0.37,
+        "ret_5d": -2.65,
+        "ret_1m": 0.1,
+        "ret_3m": 4.51,
+        "rel_1d": 0.12,
+        "rel_5d": -2.93,
+        "rel_1m": -2.39,
+        "rel_3m": 3.32,
         "rvol": 0.74,
         "rrg": {
-          "x": 99.41,
-          "y": 98.84,
+          "x": 99.35,
+          "y": 98.79,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -401,79 +980,29 @@
               "y": 101.85
             },
             {
-              "x": 99.41,
-              "y": 98.84
+              "x": 99.35,
+              "y": 98.79
             }
           ]
         },
         "top_stocks": [],
-        "rotation": 0
-      },
-      {
-        "ticker": "XLI",
-        "sector": "Industrials",
-        "ret_1d": -0.75,
-        "ret_5d": -1.78,
-        "ret_1m": -2.24,
-        "ret_3m": 2.23,
-        "rel_1d": -0.33,
-        "rel_5d": -2.13,
-        "rel_1m": -4.8,
-        "rel_3m": 0.97,
-        "rvol": 1.37,
-        "rrg": {
-          "x": 97.56,
-          "y": 99.74,
-          "quadrant": "Lagging",
-          "tail": [
-            {
-              "x": 100.35,
-              "y": 99.56
-            },
-            {
-              "x": 101.43,
-              "y": 101.09
-            },
-            {
-              "x": 100.33,
-              "y": 98.28
-            },
-            {
-              "x": 99.63,
-              "y": 98.95
-            },
-            {
-              "x": 99.83,
-              "y": 100.09
-            },
-            {
-              "x": 98.03,
-              "y": 98.06
-            },
-            {
-              "x": 97.56,
-              "y": 99.74
-            }
-          ]
-        },
-        "top_stocks": [],
-        "rotation": 2
+        "rotation": -1
       },
       {
         "ticker": "XLRE",
         "sector": "Real Estate",
-        "ret_1d": -1.11,
-        "ret_5d": -2.97,
-        "ret_1m": -2.41,
-        "ret_3m": 2.54,
-        "rel_1d": -0.69,
-        "rel_5d": -3.32,
-        "rel_1m": -4.97,
-        "rel_3m": 1.28,
+        "ret_1d": -1.1,
+        "ret_5d": -2.96,
+        "ret_1m": -2.4,
+        "ret_3m": 2.55,
+        "rel_1d": -0.61,
+        "rel_5d": -3.24,
+        "rel_1m": -4.89,
+        "rel_3m": 1.36,
         "rvol": 0.74,
         "rrg": {
-          "x": 98.5,
-          "y": 99.01,
+          "x": 98.53,
+          "y": 99.03,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -501,29 +1030,92 @@
               "y": 100.92
             },
             {
-              "x": 98.5,
-              "y": 99.01
+              "x": 98.53,
+              "y": 99.03
             }
           ]
         },
         "top_stocks": [],
-        "rotation": -1
+        "rotation": -2
+      },
+      {
+        "ticker": "XLI",
+        "sector": "Industrials",
+        "ret_1d": -1.04,
+        "ret_5d": -2.07,
+        "ret_1m": -2.52,
+        "ret_3m": 1.93,
+        "rel_1d": -0.55,
+        "rel_5d": -2.35,
+        "rel_1m": -5.01,
+        "rel_3m": 0.74,
+        "rvol": 1.37,
+        "rrg": {
+          "x": 97.47,
+          "y": 99.64,
+          "quadrant": "Lagging",
+          "tail": [
+            {
+              "x": 100.35,
+              "y": 99.56
+            },
+            {
+              "x": 101.43,
+              "y": 101.09
+            },
+            {
+              "x": 100.33,
+              "y": 98.28
+            },
+            {
+              "x": 99.63,
+              "y": 98.95
+            },
+            {
+              "x": 99.83,
+              "y": 100.09
+            },
+            {
+              "x": 98.03,
+              "y": 98.06
+            },
+            {
+              "x": 97.47,
+              "y": 99.64
+            }
+          ]
+        },
+        "top_stocks": [
+          {
+            "ticker": "NCRA",
+            "name": "Nocera Inc",
+            "change_pct": 9.1429,
+            "price": 1.91
+          },
+          {
+            "ticker": "DPRO",
+            "name": "Draganfly Inc",
+            "change_pct": 2.5172,
+            "price": 4.48
+          }
+        ],
+        "rotation": 3
       },
       {
         "ticker": "XLU",
         "sector": "Utilities",
-        "ret_1d": -1.76,
-        "ret_5d": -2.87,
-        "ret_1m": -5.34,
-        "ret_3m": -1.98,
-        "rel_1d": -1.34,
-        "rel_5d": -3.22,
-        "rel_1m": -7.9,
-        "rel_3m": -3.24,
+        "ret_1d": -1.71,
+        "ret_5d": -2.82,
+        "ret_1m": -5.3,
+        "ret_3m": -1.93,
+        "rel_1d": -1.22,
+        "rel_5d": -3.1,
+        "rel_1m": -7.79,
+        "rel_3m": -3.12,
         "rvol": 1.03,
         "rrg": {
-          "x": 98.15,
-          "y": 99.68,
+          "x": 98.17,
+          "y": 99.7,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -551,8 +1143,8 @@
               "y": 100.04
             },
             {
-              "x": 98.15,
-              "y": 99.68
+              "x": 98.17,
+              "y": 99.7
             }
           ]
         },
@@ -562,74 +1154,43 @@
     ],
     "posture": {
       "label": "Risk-on",
-      "spread": 3.16,
+      "spread": 2.89,
       "leaders": [
         "Energy",
         "Technology"
       ],
       "laggards": [
-        "Real Estate",
+        "Industrials",
         "Utilities"
       ]
     },
     "benchmark": {
       "ticker": "SPY",
-      "ret_1d": -0.42,
-      "ret_5d": 0.35,
-      "ret_1m": 2.56,
-      "ret_3m": 1.26
+      "ret_1d": -0.49,
+      "ret_5d": 0.28,
+      "ret_1m": 2.49,
+      "ret_3m": 1.19
     }
   },
   "reddit_feed": [
     {
-      "id": "a311af1401d919a2f1e5a54c746cf2b19f5326452350cb9d5cb747e4e26285b7",
-      "title": "WISE at Work: Early Results Show Paychex AI Is Reducing Payroll Errors and Improving Service Efficiency at Scale",
+      "id": "cdb240c2beb7829c954b56610d5e2cfb459ca6bb0930b40725d9849ae4875366",
+      "title": "Blockchain Market Surges to $610.96 billion at a CAGR 62.4% by 2031 | Report by MarketsandMarkets\u2122",
       "subreddit": "GlobeNewswire Inc.",
       "ups": 0,
       "tickers": [
-        "PAYX"
+        "AMZN",
+        "IBM",
+        "ORCL",
+        "GOOG",
+        "GOOGL"
       ],
-      "hours_ago": 0.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353324/0/en/wise-at-work-early-results-show-paychex-ai-is-reducing-payroll-errors-and-improving-service-efficiency-at-scale.html",
-      "is_news": true
-    },
-    {
-      "id": "89c9e7d4e516647e23c064ed9fe12f2377ac9a9fc06a61dd0808235e27d213a4",
-      "title": "Fortinet Launches Free High School Cybersecurity Curriculum to Build the Next Generation of Cyber Defenders",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "FTNT"
-      ],
-      "hours_ago": 0.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353331/0/en/fortinet-launches-free-high-school-cybersecurity-curriculum-to-build-the-next-generation-of-cyber-defenders.html",
-      "is_news": true
-    },
-    {
-      "id": "f204449514e13c5535c135f65c13bbaa085d124222218fea2584c15acad72a52",
-      "title": "Qualcomm vs. Sandisk: Comparing Gradual Revenue Contraction Against Rapid Revenue Acceleration",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "QCOM",
-        "SNDK"
-      ],
-      "hours_ago": 1.1,
-      "url": "https://www.fool.com/coverage/charts/2026/08/31/qualcomm-vs-sandisk-comparing-gradual-revenue-contraction-against-rapid-revenue-acceleration/?source=iedfolrf0000001",
-      "is_news": true
-    },
-    {
-      "id": "66ec1ba6cc58f2be3ca77aa3a15400941e64f7c7c956a55bf5228a8fc97a8553",
-      "title": "Is Occidental Petroleum a Bargain or a Value Trap Right Now?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "OXY",
-        "SHEL"
-      ],
-      "hours_ago": 1.1,
-      "url": "https://www.fool.com/investing/2026/08/31/is-occidental-petroleum-a-bargain-or-a-value-trap/?source=iedfolrf0000001",
-      "is_news": true
+      "hours_ago": 0.3,
+      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353407/0/en/blockchain-market-surges-to-610-96-billion-at-a-cagr-62-4-by-2031-report-by-marketsandmarkets.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMZN"
+      ]
     },
     {
       "id": "a9a54f9a812eb01b2ef5379c44d0e31ff2f84f54fee3ae76a93db58560e6a5a4",
@@ -643,9 +1204,12 @@
         "MSFT",
         "NVDA"
       ],
-      "hours_ago": 1.3,
+      "hours_ago": 2.0,
       "url": "https://www.fool.com/coverage/etfs/2026/08/31/vanguard-growth-etfs-compared-should-you-go-for-megacap-or-small-cap-growth-stocks-to-finish-2026/?source=iedfolrf0000001",
-      "is_news": true
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
     },
     {
       "id": "c79cca05346cc1c1cabb9f0f17ab1358c88c39cc5d72fc8c5cd64380ca310cba",
@@ -659,93 +1223,12 @@
         "AMZN",
         "CCZ"
       ],
-      "hours_ago": 1.5,
+      "hours_ago": 2.1,
       "url": "https://www.fool.com/investing/2026/08/31/did-apple-go-too-far-this-time/?source=iedfolrf0000001",
-      "is_news": true
-    },
-    {
-      "id": "edd8500e3855e5a8bfedb81c40e709b791ede9ab69ddaa45a63eada16802ca0e",
-      "title": "Kalaris to Present at Morgan Stanley 24th Annual Global Healthcare Conference",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "KLRS"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353242/0/en/kalaris-to-present-at-morgan-stanley-24th-annual-global-healthcare-conference.html",
-      "is_news": true
-    },
-    {
-      "id": "e19a587cc666e6056a3da68dd3a154100df9ab8de36207f86dbf2530341182f7",
-      "title": "Aqua Metals and WMC Sign LOI Covering 100% of Planned Lithium Carbonate Output from First Commercial-Scale AquaRefining\u2122",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "AQMS"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353243/36806/en/aqua-metals-and-wmc-sign-loi-covering-100-of-planned-lithium-carbonate-output-from-first-commercial-scale-aquarefining-facility.html",
-      "is_news": true
-    },
-    {
-      "id": "db7275ab67e8c95ab1713e96320864ea7eb731fdf5848afde3b44c8dfd526b89",
-      "title": "CPS Technologies Secures Initial Defense Order for Tungsten Components",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "CPSH"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353241/0/en/cps-technologies-secures-initial-defense-order-for-tungsten-components.html",
-      "is_news": true
-    },
-    {
-      "id": "7d6345bd2cc65cd86be5f4fcc587b31cc44b19cfb708b28de6e682a4a44e8a9d",
-      "title": "Array Partners with Narmi to Embed Comprehensive Consumer Financial Tools into Digital Banking",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "ARRY"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353240/0/en/array-partners-with-narmi-to-embed-comprehensive-consumer-financial-tools-into-digital-banking.html",
-      "is_news": true
-    },
-    {
-      "id": "6068dbcbd17d519841f9ffa832ede1fac854c67b2ffcd3162a8a00e4a2891cdc",
-      "title": "OnKure Therapeutics to Participate in the Morgan Stanley Global Healthcare Conference",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "OKUR"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353237/0/en/onkure-therapeutics-to-participate-in-the-morgan-stanley-global-healthcare-conference.html",
-      "is_news": true
-    },
-    {
-      "id": "48401235ea4ef76b09b4d0ed1f88aa64af9e07957b86c8844d92e13789139593",
-      "title": "Gentex Announces Third Quarter 2026 Cash Dividend",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "GNTX"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353245/32299/en/gentex-announces-third-quarter-2026-cash-dividend.html",
-      "is_news": true
-    },
-    {
-      "id": "44db0484b6494bccca9b9eee9a9a71285ec442d8f22cac775f6fbabc495fdf5e",
-      "title": "Elicio Therapeutics to Participate at the H.C. Wainwright 28th Annual Global Investment Conference",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "ELTX"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353238/0/en/elicio-therapeutics-to-participate-at-the-h-c-wainwright-28th-annual-global-investment-conference.html",
-      "is_news": true
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMZN"
+      ]
     },
     {
       "id": "ccc572e81143c0f23e4b40d16f2036d61700dacc3bf24b723343df3bcd4e17a7",
@@ -759,9 +1242,12 @@
         "GS",
         "GSpA"
       ],
-      "hours_ago": 2.1,
+      "hours_ago": 2.8,
       "url": "https://www.fool.com/investing/2026/08/31/prediction-this-ai-infrastructure-stock-will-soar/?source=iedfolrf0000001",
-      "is_news": true
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
     },
     {
       "id": "b37fb56b1597f8ba9702b0cdbc61b1391847be6404d8f0eac3838306ead23001",
@@ -775,78 +1261,13 @@
         "SNDK",
         "GOOG"
       ],
-      "hours_ago": 2.5,
+      "hours_ago": 3.2,
       "url": "https://www.fool.com/investing/2026/08/31/billionaire-david-tepper-overweight-ai-sell-sndk/?source=iedfolrf0000001",
-      "is_news": true
-    },
-    {
-      "id": "e6efdad0fd4452214d2abb2e414fc7f32e4202965c5ee981015529b03ebcebed",
-      "title": "Beam Therapeutics to Participate in Upcoming September 2026 Investor Conferences",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "BEAM"
-      ],
-      "hours_ago": 2.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353154/0/en/beam-therapeutics-to-participate-in-upcoming-september-2026-investor-conferences.html",
-      "is_news": true
-    },
-    {
-      "id": "deabff5e036b7ca6d7deaec487a2f743a0c8172eaf5fa4dd04261048b3784962",
-      "title": "UMH PROPERTIES, INC. SECURES NEW FANNIE MAE MORTGAGE",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "WFC",
-        "WFCpA",
-        "WFCpC",
-        "WFCpD",
-        "WFCpL"
-      ],
-      "hours_ago": 2.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353160/0/en/umh-properties-inc-secures-new-fannie-mae-mortgage.html",
-      "is_news": true
-    },
-    {
-      "id": "c85beb30428735148737b3a8b99c3d5033e753dedfc739e789373f82e65a8b0f",
-      "title": "Lead Plaintiff Deadlines in Shareholder Class Action Lawsuits Against Photronics, Inc. (PLAB), Planet Fitness, Inc. (PLN",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "PLAB",
-        "PLNT",
-        "MVST"
-      ],
-      "hours_ago": 2.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353157/0/en/lead-plaintiff-deadlines-in-shareholder-class-action-lawsuits-against-photronics-inc-plab-planet-fitness-inc-plnt-and-microvast-holdings-inc-mvst-announced-by-holzer-holzer-llc.html",
-      "is_news": true
-    },
-    {
-      "id": "c745762a88683e908fedeed89379a2e61b114a93951f009feca814598712fc23",
-      "title": "Origin Agritech Establishes R&D Center in Guizhou with Biotech Unit and State-Backed Seed Joint Venture",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "SEED"
-      ],
-      "hours_ago": 2.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353155/0/en/origin-agritech-establishes-r-d-center-in-guizhou-with-biotech-unit-and-state-backed-seed-joint-venture.html",
-      "is_news": true
-    },
-    {
-      "id": "c312c1d3909cecd6bb7f09431f0a105046c492947fd12753c9dc7256d5f238d2",
-      "title": "Lead Plaintiff Deadlines in Shareholder Class Action Lawsuits Against Alarum Technologies Ltd. (ALAR), Blaize Holdings, ",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "ALAR",
-        "BZAI",
-        "BZAIW",
-        "HDB"
-      ],
-      "hours_ago": 2.6,
-      "url": "https://www.globenewswire.com/news-release/2026/08/31/3353163/0/en/lead-plaintiff-deadlines-in-shareholder-class-action-lawsuits-against-alarum-technologies-ltd-alar-blaize-holdings-inc-bzai-and-hdfc-bank-limited-hdb-announced-by-holzer-holzer-llc.html",
-      "is_news": true
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA",
+        "AMZN"
+      ]
     }
   ]
 }
