@@ -367,10 +367,141 @@ def fetch_unusual_volume(limit=10):
 
 # ── Trading Conditions (proprietary market-regime read) ──────────────────────
 
+def _participation(vol):
+    """Is there enough volume in the tape to trade, and is that normal for the
+    calendar? Returns a signal dict, a score contribution and a headline clause.
+
+    Volume is strongly seasonal. Ten years of our own SPY data puts the week
+    after Christmas ~35% and late August ~9% below what a normal week runs
+    against its own 50-day average, so a naive "volume is light" read would cry
+    wolf every summer and every holiday. We therefore report two things: the
+    ABSOLUTE thinness a trader has to deal with today, which is what sets the
+    score, and how that compares with the same ISO week in prior years, which
+    is what explains it.
+
+    The seasonal expectation is the median of the SAME 5d/50d statistic in that
+    week of earlier years. An earlier draft compared the 5d/50d ratio against an
+    index built on the annual median; those are two different baselines and the
+    quotient meant nothing.
+
+    Today's bar is always dropped. The morning scan runs an hour after the open
+    with the session a fraction complete, and a partial bar reads as a volume
+    collapse. Using completed sessions only also keeps the card stable across
+    all three daily runs instead of drifting as the day fills in.
+    """
+    try:
+        import numpy as np
+    except ImportError:
+        return None
+
+    v = vol.dropna()
+    if len(v) < 60:
+        return None
+    try:
+        if v.index[-1].date() == datetime.now().date():
+            v = v.iloc[:-1]
+    except Exception:
+        pass
+    if len(v) < 60:
+        return None
+
+    recent5 = float(v.tail(5).mean())
+    prior5  = float(v.tail(10).head(5).mean())
+    base50  = float(v.tail(50).mean())
+    if not np.isfinite(recent5) or not np.isfinite(base50) or base50 <= 0:
+        return None
+    raw = recent5 / base50
+
+    # ── What does this calendar week normally look like? ──
+    expected = adjusted = None
+    try:
+        ratio = (v.rolling(5).mean() / v.rolling(50).mean()).dropna()
+        iso   = ratio.index.isocalendar()
+        wk    = np.asarray(iso["week"], dtype=int)
+        yr    = np.asarray(ratio.index.year, dtype=int)
+        cur_w, cur_y = int(wk[-1]), int(yr[-1])
+        prior = ratio.to_numpy()[(yr < cur_y) & (wk == cur_w)]
+        if len(prior) >= 10:                      # ~2 full weeks of prior years
+            expected = float(np.median(prior))
+            if expected > 0:
+                adjusted = raw / expected
+    except Exception as e:
+        print(f"[newsstand] seasonal baseline unavailable: {e}")
+
+    # ── Absolute band drives the score: thin is thin, whatever the month ──
+    if   raw >= 1.10: read, tone, pts = "Heavy", "good", 1
+    elif raw >= 0.92: read, tone, pts = "Normal", "neutral", 0
+    elif raw >= 0.80: read, tone, pts = "Light", "neutral", -1
+    else:             read, tone, pts = "Thin", "bad", -2
+
+    # ── Seasonal context adjusts the wording, and softens by at most a notch ──
+    note = None
+    if adjusted is not None:
+        if adjusted < 0.80:
+            note = "unusually light even for this week of the year"
+        elif adjusted > 1.20:
+            note = "busier than this week normally runs"
+        elif pts < 0:
+            # Below its 50-day norm, but only as far below as this week usually
+            # sits. A slow tape to plan around, not a signal that anything broke.
+            pts += 1
+            tone = "neutral"
+            note = "about normal for this week of the year"
+
+    drift = (recent5 / prior5 - 1.0) if prior5 else 0.0
+    if   drift >= 0.10:  direction = "building"
+    elif drift <= -0.10: direction = "fading"
+    else:                direction = "steady"
+
+    last = v.index[-1]
+    when = "early" if last.day <= 10 else ("mid" if last.day <= 20 else "late")
+    season_label = f"{when} {last.strftime('%B')}"
+
+    # ── One sentence appended to the verdict headline ──
+    clause = None
+    if read in ("Thin", "Light"):
+        if note and note.startswith("unusually"):
+            clause = (f"Participation is unusually light even for {season_label} and still "
+                      f"{direction}, so expect wider spreads, slower fills and more failed "
+                      f"breakouts than the verdict alone implies.")
+        else:
+            clause = (f"Volume is under its 50-day norm, though that is ordinary for "
+                      f"{season_label} — plan for a slow tape rather than reading it as a warning.")
+    elif read == "Heavy":
+        clause = ("Volume is running above its 50-day norm, so there is real participation "
+                  "behind these moves rather than a thin-tape drift.")
+
+    detail = f"{recent5 / 1e6:.0f}M vs {base50 / 1e6:.0f}M avg"
+    if note:
+        detail += f" · {note}"
+
+    return {
+        "points": pts,
+        "clause": clause,
+        "signal": {
+            "label": "Participation",
+            # Kept to the length of its sibling subs on purpose: .tc-sig-vals is
+            # flex-shrink:0, the same shape that crushed the Market Temperature
+            # heads, so the left column is the one that has to give.
+            "sub":   "Volume vs 50-day norm",
+            "value": f"{(raw - 1) * 100:+.0f}%",
+            "read":  read,
+            "tone":  tone,
+        },
+        "detail":    detail,
+        "ratio":     round(raw, 3),
+        "expected":  round(expected, 3) if expected is not None else None,
+        "adjusted":  round(adjusted, 3) if adjusted is not None else None,
+        "direction": direction,
+        "drift_pct": round(drift * 100, 1),
+    }
+
+
 def fetch_trading_conditions():
     """A tactical read on whether the current backdrop favors active day/swing
-    trading. Synthesizes SPY trend + momentum, VIX (volatility), and the 10-year
-    yield into a verdict (Favorable / Mixed / Cautious / Risk-Off) with
+    trading. Synthesizes SPY trend + momentum, participation (volume, adjusted
+    for how thin that calendar week normally runs), VIX (volatility), and the
+    10-year yield into a verdict (Favorable / Mixed / Cautious / Risk-Off) with
     color-coded signal readouts. This is the proprietary replacement for the
     commoditized news feed — the macro interpreted for a trader, not headlines."""
     print("[newsstand] Computing trading conditions...")
@@ -380,15 +511,23 @@ def fetch_trading_conditions():
         print("[newsstand] yfinance unavailable, skipping trading conditions")
         return None
 
-    def closes(sym, period):
+    def frame(sym, period):
         try:
             h = yf.Ticker(sym).history(period=period, auto_adjust=False)
-            return h["Close"].dropna() if h is not None and not h.empty else None
+            return h if h is not None and not h.empty else None
         except Exception as e:
             print(f"[newsstand] {sym} fetch failed: {e}")
             return None
 
-    spy = closes("SPY", "1y")
+    def closes(sym, period):
+        h = frame(sym, period)
+        return h["Close"].dropna() if h is not None else None
+
+    # 10y of SPY so the participation read can learn what a given calendar week
+    # normally looks like. Every trend/momentum read below uses .tail() or
+    # .iloc[-n], so the longer window leaves those numbers unchanged.
+    spy_h = frame("SPY", "10y")
+    spy = spy_h["Close"].dropna() if spy_h is not None else None
     vix = closes("^VIX", "2mo")
     tnx = closes("^TNX", "2mo")
     if spy is None or len(spy) < 50 or vix is None or len(vix) < 6:
@@ -437,6 +576,12 @@ def fetch_trading_conditions():
                     "value": ("+" if ret5 >= 0 else "") + f"{ret5:.1f}%",
                     "read": m_read, "tone": m_tone})
 
+    # ── Participation (is there volume behind the move?) ──
+    part = _participation(spy_h["Volume"]) if spy_h is not None and "Volume" in spy_h else None
+    if part:
+        pts += part["points"]
+        signals.append(part["signal"])
+
     # ── Volatility (VIX) ──
     rising = vix_chg5 > 1.5
     if   vix_level > 26: v_read, v_tone, vp = "High fear", "bad", -2
@@ -460,8 +605,12 @@ def fetch_trading_conditions():
         signals.append({"label": "10-year yield", "sub": "Rate pressure on growth",
                         "value": f"{tnx_level:.2f}%", "read": y_read, "tone": y_tone})
 
-    if   pts >= 4: verdict = "Favorable"
-    elif pts >= 2: verdict = "Mixed"
+    # Bands shifted up one when Participation joined: it adds +1 at the top and
+    # can take 2 off, so a perfect trend/momentum/VIX read on a thin tape now
+    # lands on Mixed instead of Favorable. Low volume can demote the verdict,
+    # which is the point of having it.
+    if   pts >= 5: verdict = "Favorable"
+    elif pts >= 3: verdict = "Mixed"
     elif pts >= 0: verdict = "Cautious"
     else:          verdict = "Risk-Off"
 
@@ -477,14 +626,33 @@ def fetch_trading_conditions():
                      "than chasing strength.",
     }
 
+    headline = headlines[verdict]
+    if part and part.get("clause"):
+        headline += " " + part["clause"]
+
     print(f"[newsstand] Trading conditions: {verdict} (score {pts})")
-    return {
+    if part:
+        print(f"[newsstand]   participation {part['signal']['read']} "
+              f"{part['signal']['value']} ({part['detail']}), {part['direction']}, "
+              f"{part['points']:+d}pt")
+
+    out = {
         "verdict":  verdict,
         "score":    pts,
-        "headline": headlines[verdict],
+        "headline": headline,
         "signals":  signals,
         "updated":  datetime.now(timezone.utc).isoformat(),
     }
+    if part:
+        out["participation"] = {
+            "ratio":     part["ratio"],
+            "expected":  part["expected"],
+            "adjusted":  part["adjusted"],
+            "direction": part["direction"],
+            "drift_pct": part["drift_pct"],
+            "detail":    part["detail"],
+        }
+    return out
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
