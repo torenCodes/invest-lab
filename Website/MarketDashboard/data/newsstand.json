@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-08-31T01:00:30.192341+00:00",
+  "scan_time": "2026-08-31T14:30:36.746447+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Favorable",
-    "score": 5,
-    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
+    "verdict": "Mixed",
+    "score": 3,
+    "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you. Participation is unusually light even for late August and still fading, so expect wider spreads, slower fills and more failed breakouts than the verdict alone implies.",
     "signals": [
       {
         "label": "Market trend",
@@ -16,39 +16,43 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "+0.5%",
+        "value": "+0.2%",
         "read": "Firm",
         "tone": "good"
       },
       {
+        "label": "Participation",
+        "sub": "Volume vs 50-day norm",
+        "value": "-32%",
+        "read": "Thin",
+        "tone": "bad"
+      },
+      {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "14.4",
+        "value": "15.3",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.72%",
+        "value": "4.76%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-08-31T01:00:40.418939+00:00"
+    "updated": "2026-08-31T14:30:55.197020+00:00",
+    "participation": {
+      "ratio": 0.68,
+      "expected": 0.911,
+      "adjusted": 0.747,
+      "direction": "fading",
+      "drift_pct": -21.4,
+      "detail": "32M vs 47M avg \u00b7 unusually light even for this week of the year"
+    }
   },
   "earnings": [
-    {
-      "date": "2026-08-31",
-      "symbol": "SAIC",
-      "eps_estimate": 2.3546,
-      "eps_actual": null,
-      "revenue_estimate": 1801506211,
-      "revenue_actual": null,
-      "hour": "bmo",
-      "quarter": 2,
-      "year": 2027
-    },
     {
       "date": "2026-08-31",
       "symbol": "FRO",
@@ -536,74 +540,53 @@
   ],
   "unusual_volume": [
     {
-      "ticker": "AFRM",
-      "name": "Affirm Holdings Inc",
-      "price": 77.76,
-      "change_pct": 0.35,
-      "volume": "29.1M"
+      "ticker": "WETO",
+      "name": "Wetour Robotics Ltd",
+      "price": 11.0,
+      "change_pct": 92.31,
+      "volume": "16.7M"
     },
     {
-      "ticker": "TENB",
-      "name": "Tenable Holdings Inc",
-      "price": 37.67,
-      "change_pct": 0.13,
-      "volume": "24.0M"
-    },
-    {
-      "ticker": "SOLS",
-      "name": "Solstice Advanced Materials Inc",
-      "price": 63.53,
-      "change_pct": 12.76,
-      "volume": "16.5M"
-    },
-    {
-      "ticker": "ZSL",
-      "name": "ProShares UltraShort Silver -2x Shares",
-      "price": 23.24,
-      "change_pct": 8.95,
-      "volume": "11.1M"
-    },
-    {
-      "ticker": "ESTC",
-      "name": "Elastic N.V",
-      "price": 99.91,
-      "change_pct": 19.31,
-      "volume": "10.1M"
+      "ticker": "MOVE",
+      "name": "Corvex Inc",
+      "price": 11.64,
+      "change_pct": 1.31,
+      "volume": "6.0M"
     },
     {
       "ticker": "GDXD",
       "name": "MicroSectors Gold Miners -3X Inverse Leveraged ETNs",
-      "price": 16.69,
-      "change_pct": 12.01,
-      "volume": "7.5M"
+      "price": 17.92,
+      "change_pct": 7.37,
+      "volume": "1.8M"
     },
     {
-      "ticker": "DUST",
-      "name": "Direxion Daily Gold Miners Index Bear 2X ETF",
-      "price": 32.36,
-      "change_pct": 7.76,
-      "volume": "4.3M"
+      "ticker": "PXJ",
+      "name": "Invesco Oil & Gas Services ETF",
+      "price": 46.96,
+      "change_pct": 1.7,
+      "volume": "904K"
     },
     {
-      "ticker": "APPX",
-      "name": "Tradr 2X Long APP Daily ETF",
-      "price": 13.34,
-      "change_pct": 3.25,
-      "volume": "3.2M"
+      "ticker": "CHA",
+      "name": "Chagee Holdings Ltd ADR",
+      "price": 11.82,
+      "change_pct": 9.47,
+      "volume": "861K"
     },
     {
-      "ticker": "JDST",
-      "name": "Direxion Daily Junior Gold Miners Index Bear 2X ETF",
-      "price": 21.03,
-      "change_pct": 8.74,
-      "volume": "2.3M"
+      "ticker": "GPRK",
+      "name": "Geopark Limited",
+      "price": 10.91,
+      "change_pct": 11.04,
+      "volume": "657K"
     },
     {
-      "ticker": "BBW",
-      "name": "Build A Bear Workshop Inc",
-      "price": 29.85,
-      "change_pct": 4.96,
-      "volume": "2.2M"
+      "ticker": "SAIC",
+      "name": "Science Applications International Corp",
+      "price": 128.68,
+      "change_pct": 2.16,
+      "volume": "622K"
     }
   ]
 }
