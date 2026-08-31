@@ -2485,6 +2485,26 @@ body {
   .mt-components { grid-template-columns: 1fr; }
 }
 
+/* ─── Trading Conditions accordion (Aug 2026) ─────────────────────────────
+   Pairs with Macro Temperature below it: one panel open at a time, so the
+   Market Reading rail keeps roughly the same height whichever you are reading.
+   Collapsing keeps .tc-top (the verdict chip) visible — a collapsed card
+   should still answer the question it exists to answer. */
+.ns-conditions-card .newsstand-card-header {
+  cursor: pointer;
+  user-select: none;
+}
+.ns-conditions-card .newsstand-card-header:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.ns-conditions-card.tc-collapsed .tc-headline,
+.ns-conditions-card.tc-collapsed .tc-signals {
+  display: none;
+}
+.ns-conditions-card.tc-collapsed .tc-content { padding-bottom: 0.15rem; }
+.ns-conditions-card.tc-collapsed .tc-top { margin-bottom: 0; }
+
 /* ─── Sidebar variant (Aug 2026) ──────────────────────────────────────────
    Macro Temperature moved from the 749px main column into the 420px Market
    Reading rail. Three columns of strip no longer fit, and ten flat component
@@ -2555,6 +2575,22 @@ body {
   padding: 1px 3px;
   border-radius: 3px;
   background: none;
+}
+
+/* The accordion alone was not enough. Collapsing Trading Conditions frees
+   ~500px, but the expanded gauge is ~1,800px, so the rail still went 1,026 ->
+   2,038px and shoved the page around — the thing this was meant to stop.
+   Capping the body and letting it scroll in place keeps the rail near its
+   resting height whichever panel is open.
+   Released on narrow screens: there the rail is full width, the page scrolls
+   naturally, and a nested scroll area is only in the way. */
+.mt-in-side .mt-body {
+  max-height: 68vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+@media (max-width: 900px) {
+  .mt-in-side .mt-body { max-height: none; overflow-y: visible; }
 }
 
 /* Expanded: components nested under their theme.

@@ -16,13 +16,16 @@
   <meta property="og:url" content="https://theinvestlab.com/">
   <meta property="og:title" content="The Invest Lab — Market Intelligence">
   <meta property="og:description" content="A personal stock research platform — identifying high-quality trading opportunities through real-time data, sentiment analysis, and disciplined screening.">
-  <meta property="og:image" content="https://theinvestlab.com/images/favicon.png">
+  <meta property="og:image" content="https://theinvestlab.com/images/charts.jpg">
+  <meta property="og:image:width" content="1152">
+  <meta property="og:image:height" content="768">
+  <meta property="og:image:alt" content="Analyst in front of a wall of stock charts">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Invest Lab — Market Intelligence">
   <meta name="twitter:description" content="A personal stock research platform — identifying high-quality trading opportunities through real-time data, sentiment analysis, and disciplined screening.">
-  <meta name="twitter:image" content="https://theinvestlab.com/images/favicon.png">
+  <meta name="twitter:image" content="https://theinvestlab.com/images/charts.jpg">
 
   <!-- JSON-LD: Organization -->
   <script type="application/ld+json">
@@ -47,7 +50,7 @@
   <header class="site-header">
     <nav class="nav container">
       <a href="#" class="nav-logo">
-        <img src="images/logo.png" alt="The Invest Lab" class="nav-logo-img">
+        <img src="images/logo.png" alt="The Invest Lab" class="nav-logo-img" width="521" height="521">
         <span class="logo-text">The Invest Lab</span>
       </a>
       <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
@@ -85,7 +88,7 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="images/charts.jpg" alt="Trader viewing a rising stock chart through an augmented-reality headset" class="hero-img">
+        <img src="images/charts.jpg" alt="Analyst in front of a wall of stock charts, pointing at a rising green one" class="hero-img" width="1152" height="768" fetchpriority="high" decoding="async">
       </div>
     </div>
     <div class="hero-bg-accent"></div>
@@ -130,12 +133,13 @@
           
           <div class="newsstand-grid">
             <div class="newsstand-card ns-conditions-card" id="ns-conditions">
-              <div class="newsstand-card-header">
+              <div class="newsstand-card-header" id="tc-header" role="button" tabindex="0" aria-expanded="true" aria-controls="ns-conditions-content">
                 <div class="newsstand-card-icon">🧭</div>
                 <div class="newsstand-card-left">
                   <h3 class="newsstand-card-title">Trading Conditions</h3>
                   <p class="newsstand-card-desc">A market-regime read for momentum traders.</p>
                 </div>
+                <span class="newsstand-chevron" id="tc-chevron" aria-hidden="true">▴</span>
               </div>
               <div class="tc-content" id="ns-conditions-content">
                 <div class="ns-empty">Reading conditions…</div>
@@ -352,7 +356,7 @@
 
       <div class="methodology-intro">
         <div class="methodology-image">
-          <img src="images/lab.jpg" alt="Lab bench with a stock chart on a tablet among scientific instruments">
+          <img src="images/lab.jpg" alt="Tablet on a laboratory bench showing a rising candlestick chart, beside a microscope, flask and pipettes" loading="lazy" decoding="async" width="1152" height="768">
         </div>
         <div class="methodology-text">
           <p>The Invest Lab runs five proprietary screens each weekday focused on
@@ -442,7 +446,7 @@
         </div>
 
         <div class="about-image">
-          <img src="images/headset.jpg" alt="A person studying a wall of stock charts, pointing at a rising green one">
+          <img src="images/labcoat.jpg" alt="Researcher in a lab coat holding a device that projects a rising stock chart, with a notebook under one arm" loading="lazy" decoding="async" width="800" height="533">
         </div>
 
         <p class="about-disclaimer">
@@ -459,7 +463,7 @@
     <div class="container">
       <div class="footer-inner">
         <span class="footer-logo">
-          <img src="images/logo.png" alt="The Invest Lab" class="footer-logo-img">
+          <img src="images/logo.png" alt="The Invest Lab" class="footer-logo-img" width="521" height="521" loading="lazy">
           The Invest Lab
         </span>
         <p class="footer-disclaimer">Not financial advice. For personal educational use only.</p>
@@ -1028,11 +1032,28 @@
     } catch (e) { return ''; }
   }
 
-  function setExpanded(open) {
+  // Accordion with Trading Conditions above it. Expanded, this card runs well
+  // over a thousand pixels, which shoved the whole page layout around. Only one
+  // of the two panels is open at a time, so the rail's height stays roughly
+  // fixed whichever one you are reading. Closing this one hands the default
+  // state back to Trading Conditions rather than leaving the rail empty.
+  function setExpanded(open, silent) {
     body.hidden = !open;
     strip.setAttribute('aria-expanded', open ? 'true' : 'false');
     chevron.textContent = open ? '▴' : '▾';
+    if (!silent) {
+      document.dispatchEvent(new CustomEvent('lab:panel', {
+        detail: { id: 'macro-temp', open: open }
+      }));
+    }
   }
+
+  // Another panel opened — stand down without echoing the event back.
+  document.addEventListener('lab:panel', function (e) {
+    if (e.detail && e.detail.id !== 'macro-temp' && e.detail.open && !body.hidden) {
+      setExpanded(false, true);
+    }
+  });
 
   strip.addEventListener('click', function () {
     setExpanded(body.hidden);
@@ -1190,6 +1211,47 @@
   function populate(data) {
     renderConditions(data.trading_conditions);
   }
+
+  // ── Accordion with Macro Temperature ──────────────────────────────────────
+  // Expanded by default. Collapsing hides the headline and the signal rows but
+  // deliberately keeps the verdict chip visible, so a collapsed card still
+  // answers the one question it exists to answer.
+  (function () {
+    var card   = document.getElementById('ns-conditions');
+    var header = document.getElementById('tc-header');
+    var chev   = document.getElementById('tc-chevron');
+    if (!card || !header) return;
+
+    function setOpen(open, silent) {
+      card.classList.toggle('tc-collapsed', !open);
+      header.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (chev) chev.textContent = open ? '▴' : '▾';
+      if (!silent) {
+        document.dispatchEvent(new CustomEvent('lab:panel', {
+          detail: { id: 'trading-conditions', open: open }
+        }));
+      }
+    }
+
+    document.addEventListener('lab:panel', function (e) {
+      if (!e.detail || e.detail.id === 'trading-conditions') return;
+      if (e.detail.open) {
+        setOpen(false, true);            // the other panel opened — stand down
+      } else {
+        setOpen(true, true);             // it closed — take the default state back
+      }
+    });
+
+    header.addEventListener('click', function () {
+      setOpen(card.classList.contains('tc-collapsed'));
+    });
+    header.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setOpen(card.classList.contains('tc-collapsed'));
+      }
+    });
+  }());
 
   // ── Fetch ──────────────────────────────────────────────────────────────────
 
