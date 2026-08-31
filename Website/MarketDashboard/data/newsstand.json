@@ -1,17 +1,17 @@
 {
-  "scan_time": "2026-08-31T18:30:36.064606+00:00",
+  "scan_time": "2026-08-31T20:30:32.636589+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Cautious",
-    "score": 1,
-    "headline": "Today's tape is working against the longer-term trend: SPY -0.39% and off its highs, with only 2 of 11 sectors green. Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight. Participation is unusually light even for late August and still fading, so expect wider spreads, slower fills and more failed breakouts than the verdict alone implies.",
+    "verdict": "Mixed",
+    "score": 2,
+    "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you. Participation is unusually light even for late August and still fading, so expect wider spreads, slower fills and more failed breakouts than the verdict alone implies.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.39%",
-        "read": "Weak",
-        "tone": "bad"
+        "value": "-0.53%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Market trend",
@@ -23,7 +23,7 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "+0.4%",
+        "value": "+0.2%",
         "read": "Firm",
         "tone": "good"
       },
@@ -37,7 +37,7 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "15.1",
+        "value": "14.9",
         "read": "Calm",
         "tone": "good"
       },
@@ -49,23 +49,23 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-08-31T18:30:40.317833+00:00",
+    "updated": "2026-08-31T20:30:34.751500+00:00",
     "session": {
-      "change_pct": -0.39,
-      "from_open_pct": -0.13,
-      "range_pos": 0.561,
-      "sectors_green": 2,
+      "change_pct": -0.53,
+      "from_open_pct": -0.04,
+      "range_pos": 0.712,
+      "sectors_green": 3,
       "sectors_total": 11,
       "live": true,
-      "detail": "-0.39% vs prior close \u00b7 mid-range (56% of range) \u00b7 2/11 sectors green"
+      "detail": "-0.53% vs prior close \u00b7 mid-range (71% of range) \u00b7 3/11 sectors green"
     },
     "participation": {
-      "ratio": 0.68,
+      "ratio": 0.677,
       "expected": 0.911,
-      "adjusted": 0.747,
+      "adjusted": 0.743,
       "direction": "fading",
-      "drift_pct": -21.4,
-      "detail": "32M vs 47M avg \u00b7 unusually light even for this week of the year"
+      "drift_pct": -16.9,
+      "detail": "32M vs 48M avg \u00b7 unusually light even for this week of the year"
     }
   }
 }
