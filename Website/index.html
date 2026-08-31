@@ -113,29 +113,7 @@
 
           <div class="archive-inline" id="track-record">
             <h3 class="archive-inline-title">Other Lab Results</h3>
-            <!-- ─── Market Temperature (strategic valuation/regime backdrop) ─── -->
-            <section class="market-temp" id="market-temperature" aria-labelledby="mt-title">
-              <div class="mt-strip" id="mt-strip" role="button" tabindex="0" aria-expanded="false">
-                <div class="mt-strip-left">
-                  <span class="mt-eyebrow">Proprietary Gauge</span>
-                  <span class="mt-title" id="mt-title">Market Temperature</span>
-                  <span class="mt-meta" id="mt-meta">loading…</span>
-                </div>
-                <div class="mt-strip-gauge">
-                  <div class="mt-gauge-track"><div class="mt-gauge-fill" id="mt-gauge-fill" style="width:0%"></div></div>
-                  <div class="mt-gauge-row">
-                    <span class="mt-gauge-score" id="mt-score">—</span>
-                    <span class="mt-gauge-verdict" id="mt-verdict">loading…</span>
-                  </div>
-                </div>
-                <span class="mt-chevron" id="mt-chevron" aria-hidden="true">▾</span>
-              </div>
-              <div class="mt-body" id="mt-body" hidden>
-                <div class="mt-components" id="mt-components"></div>
-                <p class="mt-footnote">A live regime thermometer — Cold to Hot — built mostly from signals that move every session. Risk Posture (15%) comes from the lab's own Sector Rotation engine; Trend Heat (15%) reads the S&amp;P against its 50-day average and recent thrust; Fear &amp; Greed (15%) adds sentiment. Fast Breadth (10%) and Net New Highs (10%) track participation. <strong>Growth vs Value (10%)</strong> watches which style the market is paying for, since growth leading means investors are paying up for future earnings while value leading means they are retreating to cash flows they can see today. Credit Spreads (10%, inverted) and Structural Breadth (5%) anchor the slower backdrop, and the Yield Curve (5%) marks cycle stage. <strong>Insider Breadth (5%)</strong> is the contrarian input, built from SEC Form 4 filings and inverted because executives buy weakness and go quiet into strength — it carries a deliberately small weight, since testing it against forward returns supported the direction but on a thin, non-monotonic sample. Updated weekdays around 6:00am ET. Educational only — not investment advice.</p>
-              </div>
-            </section>
-            <!-- ─── /Market Temperature ─── -->
+            <!-- Macro Temperature moved into the Market Reading sidebar (Aug 2026) -->
             <div class="track-record-grid" id="track-record-grid">
               <!-- Populated by JS from nominees_archive.json -->
             </div>
@@ -163,30 +141,32 @@
                 <div class="ns-empty">Reading conditions…</div>
               </div>
             </div>
-            <div class="newsstand-card" id="ns-volume" onclick="toggleNewsstand('ns-volume')">
-              <div class="newsstand-card-header">
-                <div class="newsstand-card-icon">📊</div>
-                <div class="newsstand-card-left">
-                  <h3 class="newsstand-card-title">Unusual Volume</h3>
-                  <p class="newsstand-card-desc">Stocks with abnormal trading activity.</p>
+            <!-- ─── Macro Temperature — the regime behind today's conditions ─── -->
+            <section class="market-temp mt-in-side" id="market-temperature" aria-labelledby="mt-title">
+              <div class="mt-strip" id="mt-strip" role="button" tabindex="0" aria-expanded="false">
+                <div class="mt-strip-left">
+                  <span class="mt-eyebrow">Proprietary Gauge</span>
+                  <span class="mt-title" id="mt-title">Macro Temperature</span>
+                  <span class="mt-meta" id="mt-meta">loading…</span>
                 </div>
-                <span class="newsstand-chevron">▾</span>
-              </div>
-              <div class="newsstand-card-preview" id="ns-volume-preview"></div>
-              <div class="newsstand-card-body" id="ns-volume-body"></div>
-            </div>
-            <div class="newsstand-card" id="ns-earnings" onclick="toggleNewsstand('ns-earnings')">
-              <div class="newsstand-card-header">
-                <div class="newsstand-card-icon">📅</div>
-                <div class="newsstand-card-left">
-                  <h3 class="newsstand-card-title">Earnings Calendar</h3>
-                  <p class="newsstand-card-desc">Notable earnings in the next 14 days.</p>
+                <div class="mt-strip-gauge">
+                  <div class="mt-gauge-track"><div class="mt-gauge-fill" id="mt-gauge-fill" style="width:0%"></div></div>
+                  <div class="mt-gauge-row">
+                    <span class="mt-gauge-score" id="mt-score">—</span>
+                    <span class="mt-gauge-verdict" id="mt-verdict">loading…</span>
+                  </div>
                 </div>
-                <span class="newsstand-chevron">▾</span>
+                <span class="mt-chevron" id="mt-chevron" aria-hidden="true">▾</span>
               </div>
-              <div class="newsstand-card-preview" id="ns-earnings-preview"></div>
-              <div class="newsstand-card-body" id="ns-earnings-body"></div>
-            </div>
+              <!-- Four theme bars, always visible: the composite alone hides a lot,
+                   e.g. a Neutral 55 that is three neutral legs and one running Hot. -->
+              <div class="mt-groups" id="mt-groups"></div>
+              <div class="mt-body" id="mt-body" hidden>
+                <div class="mt-components" id="mt-components"></div>
+                <p class="mt-footnote">Ten signals, grouped into four themes and weighted 40 / 25 / 20 / 15. Most move every session. Two are deliberately contrarian and inverted: <strong>Credit Spreads</strong>, where tight means complacency, and <strong>Insider Breadth</strong>, because executives buy weakness and go quiet into strength — it carries only 5% since testing supported the direction on a thin sample. Weekdays around 6:00am ET. Educational only — not investment advice.</p>
+              </div>
+            </section>
+            <!-- ─── /Macro Temperature ─── -->
           </div>
         </div>
 
@@ -1019,6 +999,7 @@
   var metaEl    = document.getElementById('mt-meta');
   var fillEl    = document.getElementById('mt-gauge-fill');
   var compsEl   = document.getElementById('mt-components');
+  var groupsEl  = document.getElementById('mt-groups');
 
   function verdictClass(label) {
     // Temperature labels (Jul 2026 regime rebuild); legacy valuation labels
@@ -1078,6 +1059,20 @@
            '</div>';
   }
 
+  function renderGroupBar(g) {
+    var has = g.score != null;
+    var pct = has ? Math.max(0, Math.min(100, g.score)) : 0;
+    return '<div class="mt-group">' +
+             '<span class="mt-group-name">' + (g.title || g.key) + '</span>' +
+             '<span class="mt-group-track">' +
+               '<span class="mt-group-fill" style="width:' + pct + '%"></span>' +
+             '</span>' +
+             '<span class="mt-group-score ' + verdictClass(g.label) + '">' +
+               (has ? Math.round(g.score) : '—') +
+             '</span>' +
+           '</div>';
+  }
+
   function titleFor(key) {
     return ({
       risk_posture: 'Risk Posture',
@@ -1109,10 +1104,36 @@
 
     // Data-driven: render whatever components the scan emitted, in its order
     // (fast movers first) — works with both the old and new composition.
-    var comps = data.components || {};
-    compsEl.innerHTML = Object.keys(comps).map(function (k) {
-      return renderComponent(k, comps[k]);
-    }).join('');
+    var comps  = data.components || {};
+    var groups = data.groups || [];
+
+    if (groupsEl) {
+      groupsEl.innerHTML = groups.map(renderGroupBar).join('');
+    }
+
+    if (groups.length) {
+      // Ten flat bars did not fit the sidebar, so components nest under their
+      // theme. Members are rendered even when null so a dead feed still shows
+      // as "unavailable" rather than silently vanishing from the list.
+      compsEl.innerHTML = groups.map(function (g) {
+        return '<div class="mt-group-block">' +
+                 '<div class="mt-group-head">' +
+                   '<span class="mt-group-head-title">' + g.title + '</span>' +
+                   '<span class="mt-group-head-weight">' + Math.round((g.weight || 0) * 100) + '%</span>' +
+                 '</div>' +
+                 '<p class="mt-group-blurb">' + (g.blurb || '') + '</p>' +
+                 (g.members || []).map(function (k) {
+                   return renderComponent(k, comps[k]);
+                 }).join('') +
+               '</div>';
+      }).join('');
+    } else {
+      // Pre-grouping payload — the scan runs weekdays ~6am ET, so the page has
+      // to keep working on the old JSON until the first grouped run lands.
+      compsEl.innerHTML = Object.keys(comps).map(function (k) {
+        return renderComponent(k, comps[k]);
+      }).join('');
+    }
   }
 
   fetch(MT_URL, { cache: 'no-cache' })
@@ -1129,71 +1150,7 @@
 // ── Newsstand — expandable cards ────────────────────────────────────────────
 (function () {
   var NS_URL = 'https://invest-movers-shakers.onrender.com/data/newsstand.json';
-  var nsData = null;
-
-  function fmt(v, dp) { return v != null ? parseFloat(v).toFixed(dp) : '—'; }
-
-  function fmtRevenue(v) {
-    if (v == null || v === 0) return '';
-    if (v >= 1e9) return '$' + (v / 1e9).toFixed(1) + 'B';
-    if (v >= 1e6) return '$' + (v / 1e6).toFixed(0) + 'M';
-    return '$' + v.toLocaleString();
-  }
-
-  function fmtDate(dateStr) {
-    var d = new Date(dateStr + 'T12:00:00Z');
-    return d.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' });
-  }
-
   // ── Render functions ──────────────────────────────────────────────────────
-
-  function renderVolume(tickers) {
-    if (!tickers || !tickers.length) return '<div class="ns-empty">No unusual volume data available.</div>';
-    return '<table class="ns-table"><thead><tr>' +
-      '<th>Ticker</th><th>Name</th><th>Price</th><th>Change</th><th>Volume</th>' +
-    '</tr></thead><tbody>' + tickers.map(function (t) {
-      var chgClass = t.change_pct >= 0 ? 'ns-up' : 'ns-dn';
-      var chgSign = t.change_pct >= 0 ? '+' : '';
-      return '<tr>' +
-        '<td class="ns-ticker-cell">' + t.ticker + '</td>' +
-        '<td class="ns-name-cell">' + (t.name || '') + '</td>' +
-        '<td>$' + fmt(t.price, 2) + '</td>' +
-        '<td class="' + chgClass + '">' + chgSign + fmt(t.change_pct, 2) + '%</td>' +
-        '<td>' + (t.volume || '') + '</td>' +
-      '</tr>';
-    }).join('') + '</tbody></table>';
-  }
-
-  function renderEarnings(earnings) {
-    if (!earnings || !earnings.length) return '<div class="ns-empty">No upcoming earnings data available.</div>';
-
-    // Group by date
-    var byDate = {};
-    earnings.forEach(function (e) {
-      var d = e.date || 'Unknown';
-      if (!byDate[d]) byDate[d] = [];
-      byDate[d].push(e);
-    });
-
-    var html = '';
-    Object.keys(byDate).sort().forEach(function (date) {
-      html += '<div class="ns-date-group">' +
-        '<div class="ns-date-label">' + fmtDate(date) + '</div>' +
-        '<div class="ns-earnings-row">' +
-        byDate[date].map(function (e) {
-          var timing = e.hour === 'bmo' ? 'Pre-market' : e.hour === 'amc' ? 'After-close' : '';
-          var rev = fmtRevenue(e.revenue_estimate);
-          return '<div class="ns-earnings-chip">' +
-            '<span class="ns-earnings-sym">' + e.symbol + '</span>' +
-            (timing ? '<span class="ns-earnings-time">' + timing + '</span>' : '') +
-            '<span class="ns-earnings-est">EPS est: ' + fmt(e.eps_estimate, 2) + '</span>' +
-            (rev ? '<span class="ns-earnings-rev">Rev est: ' + rev + '</span>' : '') +
-          '</div>';
-        }).join('') +
-        '</div></div>';
-    });
-    return html;
-  }
 
   // ── Populate card bodies once data arrives ────────────────────────────────
 
@@ -1225,65 +1182,7 @@
   }
 
   function populate(data) {
-    nsData = data;
-
-    // Filter unusual volume: positive change only, cap at 10
-    var volume = (data.unusual_volume || []).filter(function (t) {
-      return t.change_pct != null && t.change_pct > 0;
-    }).slice(0, 10);
-
     renderConditions(data.trading_conditions);
-    document.getElementById('ns-volume-body').innerHTML = renderVolume(volume);
-    document.getElementById('ns-earnings-body').innerHTML = renderEarnings(data.earnings);
-
-    // Update card descriptions
-    var volDesc = document.querySelector('#ns-volume .newsstand-card-desc');
-    if (volDesc) volDesc.textContent = volume.length + ' tickers — click to expand';
-
-    var earnDesc = document.querySelector('#ns-earnings .newsstand-card-desc');
-    if (earnDesc && data.earnings) earnDesc.textContent = data.earnings.length + ' reports — click to expand';
-
-    // Preview content — inline items matching expanded format
-
-    var volPrev = document.getElementById('ns-volume-preview');
-    if (volPrev && volume.length) {
-      volPrev.innerHTML = '<table class="ns-table"><thead><tr>' +
-        '<th>Ticker</th><th>Price</th><th>Change</th>' +
-      '</tr></thead><tbody>' + volume.slice(0, 7).map(function (t) {
-        return '<tr>' +
-          '<td class="ns-ticker-cell">' + t.ticker + '</td>' +
-          '<td>$' + fmt(t.price, 2) + '</td>' +
-          '<td class="ns-up">+' + fmt(t.change_pct, 2) + '%</td>' +
-        '</tr>';
-      }).join('') + '</tbody></table>';
-    }
-
-    var earnPrev = document.getElementById('ns-earnings-preview');
-    if (earnPrev && data.earnings && data.earnings.length) {
-      // Group first few by date and show as chips
-      var first8 = data.earnings.slice(0, 8);
-      var byDate = {};
-      first8.forEach(function (e) {
-        var d = e.date || 'Unknown';
-        if (!byDate[d]) byDate[d] = [];
-        byDate[d].push(e);
-      });
-      var html = '';
-      Object.keys(byDate).sort().slice(0, 2).forEach(function (date) {
-        html += '<div class="ns-date-group" style="margin-bottom:0.6rem">' +
-          '<div class="ns-date-label">' + fmtDate(date) + '</div>' +
-          '<div class="ns-earnings-row">' +
-          byDate[date].slice(0, 4).map(function (e) {
-            var timing = e.hour === 'bmo' ? 'Pre-market' : e.hour === 'amc' ? 'After-close' : '';
-            return '<div class="ns-earnings-chip">' +
-              '<span class="ns-earnings-sym">' + e.symbol + '</span>' +
-              (timing ? '<span class="ns-earnings-time">' + timing + '</span>' : '') +
-            '</div>';
-          }).join('') +
-          '</div></div>';
-      });
-      earnPrev.innerHTML = html;
-    }
   }
 
   // ── Fetch ──────────────────────────────────────────────────────────────────
@@ -1292,17 +1191,11 @@
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(populate)
     .catch(function () {
-      ['ns-conditions-content', 'ns-volume-body', 'ns-earnings-body'].forEach(function (id) {
-        document.getElementById(id).innerHTML = '<div class="ns-empty">Data unavailable — check back on a weekday.</div>';
-      });
+      var el = document.getElementById('ns-conditions-content');
+      if (el) el.innerHTML = '<div class="ns-empty">Data unavailable — check back on a weekday.</div>';
     });
 }());
 
-function toggleNewsstand(cardId) {
-  var card = document.getElementById(cardId);
-  if (!card) return;
-  card.classList.toggle('ns-open');
-}
 </script>
 </body>
 </html>

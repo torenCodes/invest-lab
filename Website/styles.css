@@ -2485,4 +2485,119 @@ body {
   .mt-components { grid-template-columns: 1fr; }
 }
 
+/* ─── Sidebar variant (Aug 2026) ──────────────────────────────────────────
+   Macro Temperature moved from the 749px main column into the 420px Market
+   Reading rail. Three columns of strip no longer fit, and ten flat component
+   cards stacked to ~2,100px, so the gauge drops to its own row and the
+   components nest under four theme bars. */
+
+.mt-in-side { margin: 0; }
+
+/* Strip: title + chevron on row 1, gauge spanning row 2. Both columns are
+   allowed to shrink — .mt-strip-left already carries min-width: 0 — so a
+   longer verdict can never crush the title the way it did on .mt-comp-head. */
+.mt-in-side .mt-strip {
+  grid-template-columns: minmax(0, 1fr) 24px;
+  gap: 0.5rem 0.75rem;
+  padding: 0.85rem 1rem;
+}
+.mt-in-side .mt-strip-gauge {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  align-items: stretch;
+}
+.mt-in-side .mt-gauge-track { width: 100%; }
+.mt-in-side .mt-chevron { grid-column: 2; grid-row: 1; align-self: center; }
+
+/* Four theme bars, always visible under the strip */
+/* Collapses to nothing on a pre-grouping payload, so the fallback does not
+   show a bordered empty strip under the gauge. */
+.mt-groups:empty { display: none; }
+
+.mt-groups {
+  border-top: 1px solid #eceae3;
+  padding: 0.6rem 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+}
+.mt-group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 90px 26px;
+  align-items: center;
+  gap: 0.6rem;
+}
+.mt-group-name {
+  font-size: 0.72rem;
+  color: var(--ink-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mt-group-track {
+  height: 5px;
+  background: #ecebe4;
+  border-radius: 3px;
+  overflow: hidden;
+}
+/* Same gradient as .mt-comp-bar-fill — a group scoring Hot must not render as
+   a cool teal bar directly above component bars that run teal-to-red. */
+.mt-group-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, #c9c28a 50%, #d16a5a 100%);
+  border-radius: 3px;
+}
+.mt-group-score {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  text-align: right;
+  padding: 1px 3px;
+  border-radius: 3px;
+  background: none;
+}
+
+/* Expanded: components nested under their theme.
+   The per-component paragraph is hidden here. Each ran ~72px in this column —
+   720px across ten, most of the reason the expanded card measured 2,490px —
+   and it was written for the wide two-column grid. The group blurb carries the
+   "why" instead; every component still shows its own title, reading and bar. */
+.mt-in-side .mt-comp-desc { display: none; }
+.mt-in-side .mt-comp { padding: 0.6rem 0.7rem 0.7rem; }
+.mt-in-side .mt-comp-head { gap: 0.3rem 0.5rem; }
+.mt-in-side .mt-comp-bar { margin-top: 0.45rem; }
+
+.mt-in-side .mt-components { grid-template-columns: 1fr; gap: 0.5rem; }
+.mt-group-block { display: flex; flex-direction: column; gap: 0.5rem; }
+.mt-group-block + .mt-group-block {
+  border-top: 1px solid #eceae3;
+  padding-top: 0.85rem;
+}
+.mt-group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.mt-group-head-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.mt-group-head-weight {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--ink-3);
+  flex-shrink: 0;
+}
+.mt-group-blurb {
+  margin: -0.25rem 0 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+
 /* ═════ /Market Temperature ═════ */

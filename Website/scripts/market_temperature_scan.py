@@ -560,18 +560,27 @@ COMPONENT_META = {
 # sidebar. Ten components at ~180px each stacked to roughly 2,100px of expanded
 # card there, so they now roll up into four themes. The weights bucket exactly:
 # 40 / 25 / 20 / 15 = 100, no fudging. Group order is display order.
+#
+# The blurbs carry the "why" for the whole theme. In the sidebar the
+# per-component paragraphs are hidden — they were written for a 749px
+# two-column grid and cost ~72px each, 720px across ten, which is most of why
+# the expanded card was too tall. Each component still shows its own reading.
 GROUPS = [
     ("trend_participation", "Trend & Participation",
-     "Is the market rising, and are enough stocks taking part?",
+     "Is the market rising, and are enough stocks coming with it? Trend heat "
+     "plus three breadth reads, fast to slow.",
      ["trend", "breadth_50", "new_highs", "breadth"]),
     ("risk_appetite", "Risk Appetite",
-     "Where money is positioned — offense or defense.",
+     "Where money is positioned. Cyclicals against defensives, and whether "
+     "investors are paying up for growth or retreating to value.",
      ["risk_posture", "growth_value"]),
     ("sentiment", "Sentiment",
-     "What investors feel, and what insiders are quietly doing.",
+     "What investors say they feel, against what insiders quietly do. The "
+     "insider leg is inverted — they buy weakness and go quiet into strength.",
      ["fear_greed", "insider"]),
     ("credit_rates", "Credit & Rates",
-     "The slower backdrop: funding stress and cycle stage.",
+     "The slower backdrop. Tight credit spreads signal complacency, so that "
+     "leg is inverted too, and the curve marks cycle stage.",
      ["credit", "yield_curve"]),
 ]
 
