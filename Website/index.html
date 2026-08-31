@@ -717,7 +717,13 @@
 
 <script>
 (function () {
-  var DATA_URL = 'https://invest-the-marathon.onrender.com/data/deep_value.json';
+  // Read from Movers, not the Marathon. The Marathon is a Render STATIC site and
+  // cannot send Access-Control-Allow-Origin (Render ignores _headers files), so
+  // this fetch was CORS-blocked and all four Underdogs cards read "Data
+  // unavailable". Movers is the Flask service and the only CORS-enabled origin;
+  // the underdogs workflow mirrors deep_value.json into its data dir.
+  // DASH_URL stays on the Marathon — that is a link target, not a fetch.
+  var DATA_URL = 'https://invest-movers-shakers.onrender.com/data/deep_value.json';
   var DASH_URL = 'https://invest-the-marathon.onrender.com';
 
   function showSkeletons() {
