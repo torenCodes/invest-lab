@@ -3,8 +3,9 @@ name: Newsstand Scan
 on:
   schedule:
     # THIS IS NOT THE REAL SCHEDULE. cron-job.org dispatches this workflow, on
-    # a market-hours cadence (10:30am / 12:00 / 1:30 / 3:00 / 4:30pm ET,
-    # weekdays), because GitHub's cron queue runs 15-60min late through the US
+    # a market-hours cadence — cron '30 10,12,14,16 * * 1-5' in the
+    # America/New_York timezone, i.e. 10:30am / 12:30 / 2:30 / 4:30pm ET —
+    # because GitHub's cron queue runs 15-60min late through the US
     # morning. Check cron-job.org before trusting anything written here: the
     # previous version of this comment claimed "3x/day weekdays" while the job
     # was actually firing every 2 hours, around the clock, 7 days a week —
