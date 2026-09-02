@@ -1,17 +1,17 @@
 {
-  "scan_time": "2026-09-01T23:34:55.782173+00:00",
+  "scan_time": "2026-09-02T14:30:35.875585+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Cautious",
-    "score": 1,
-    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight. Participation is unusually light even for late August and still fading, so expect wider spreads, slower fills and more failed breakouts than the verdict alone implies.",
+    "verdict": "Mixed",
+    "score": 4,
+    "headline": "Today's tape is confirming the trend: SPY +0.45% and closing strong. The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you. Participation is unusually light even for early September and still steady, so expect wider spreads, slower fills and more failed breakouts than the verdict alone implies.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.69%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "+0.45%",
+        "read": "Strong",
+        "tone": "good"
       },
       {
         "label": "Market trend",
@@ -23,49 +23,49 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.5%",
+        "value": "-0.1%",
         "read": "Soft",
         "tone": "neutral"
       },
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "-28%",
+        "value": "-22%",
         "read": "Thin",
         "tone": "bad"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "16.3",
+        "value": "15.6",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.80%",
+        "value": "4.79%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-09-01T23:34:57.952308+00:00",
+    "updated": "2026-09-02T14:30:38.043248+00:00",
     "session": {
-      "change_pct": -0.69,
-      "from_open_pct": -0.03,
-      "range_pos": 0.443,
-      "sectors_green": 4,
+      "change_pct": 0.45,
+      "from_open_pct": 0.36,
+      "range_pos": 0.894,
+      "sectors_green": 7,
       "sectors_total": 11,
       "live": true,
-      "detail": "-0.69% vs prior close \u00b7 mid-range (44% of range) \u00b7 4/11 sectors green"
+      "detail": "+0.45% vs prior close \u00b7 at the highs (89% of range) \u00b7 7/11 sectors green"
     },
     "participation": {
-      "ratio": 0.72,
+      "ratio": 0.781,
       "expected": 0.979,
-      "adjusted": 0.736,
-      "direction": "fading",
-      "drift_pct": -17.4,
-      "detail": "33M vs 46M avg \u00b7 unusually light even for this week of the year"
+      "adjusted": 0.798,
+      "direction": "steady",
+      "drift_pct": -2.7,
+      "detail": "36M vs 46M avg \u00b7 unusually light even for this week of the year"
     }
   }
 }
