@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-09-07T14:15:22.093306+00:00",
+  "scan_time": "2026-09-07T18:04:12.640198+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 0,
   "day_trades": [],
@@ -7,17 +7,17 @@
   "buzz_source": "news",
   "reddit_cards": [
     {
-      "ticker": "AZN",
+      "ticker": "DELL",
       "mentions": 3,
-      "name": "AstraZeneca PLC",
-      "sector": "Pharmaceuticals",
-      "current_price": 162.73,
-      "change_pct": -1.2381,
-      "high": 163.78,
-      "low": 161.13,
-      "open": 162.82999999999998,
-      "prev_close": 164.77,
-      "market_cap": 188371811439.0,
+      "name": "Dell Technologies Inc",
+      "sector": "Technology",
+      "current_price": 524.18,
+      "change_pct": 1.5085,
+      "high": 534.99,
+      "low": 510.15,
+      "open": 513.79,
+      "prev_close": 516.39,
+      "market_cap": 339790035461.95935,
       "score": 0,
       "signals": [
         "News buzz (3 mentions)"
@@ -27,7 +27,91 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
+        "trend_pct": 200,
         "reddit": 3,
+        "st_bull": 62,
+        "st_msgs": 29,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 4.86,
+          "estimate": 3.0,
+          "beat": true,
+          "surprise_pct": 62.1
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "NVDA",
+      "mentions": 3,
+      "name": "NVIDIA Corp",
+      "sector": "Semiconductors",
+      "current_price": 230.4,
+      "change_pct": 0.8536,
+      "high": 234.76,
+      "low": 229.63,
+      "open": 231.1,
+      "prev_close": 228.45,
+      "market_cap": 5551675925838.097,
+      "score": 0,
+      "signals": [
+        "News buzz (3 mentions)"
+      ],
+      "reddit_mentions": 3,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": 10,
+        "reddit": 32,
+        "st_bull": 94,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 1.87,
+          "estimate": 1.79,
+          "beat": true,
+          "surprise_pct": 4.3
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "FTK",
+      "mentions": 2,
+      "name": "Flotek Industries Inc",
+      "sector": "Chemicals",
+      "current_price": 23.55,
+      "change_pct": -0.8003,
+      "high": 24.1,
+      "low": 22.95,
+      "open": 23.650000000000002,
+      "prev_close": 23.74,
+      "market_cap": 852628878.3723674,
+      "score": 0,
+      "signals": [
+        "News buzz (2 mentions)"
+      ],
+      "reddit_mentions": 2,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "reddit": 2,
         "st_bull": 100,
         "st_msgs": 30,
         "sources": [
@@ -39,92 +123,10 @@
         "upcoming": null,
         "recent": {
           "period": "2026-06-30",
-          "actual": 2.63,
-          "estimate": 2.55,
+          "actual": 0.26,
+          "estimate": 0.13,
           "beat": true,
-          "surprise_pct": 3.1
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "PFE",
-      "mentions": 3,
-      "name": "Pfizer Inc",
-      "sector": "Pharmaceuticals",
-      "current_price": 28.46,
-      "change_pct": -1.2149,
-      "high": 28.69,
-      "low": 28.38,
-      "open": 28.59,
-      "prev_close": 28.81,
-      "market_cap": 162155703512.69177,
-      "score": 0,
-      "signals": [
-        "News buzz (3 mentions)"
-      ],
-      "reddit_mentions": 3,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "reddit": 3,
-        "st_bull": 80,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 0.77,
-          "estimate": 0.69,
-          "beat": true,
-          "surprise_pct": 11.4
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "NVS",
-      "mentions": 3,
-      "name": "Novartis AG",
-      "sector": "Pharmaceuticals",
-      "current_price": 160.02,
-      "change_pct": -1.8824,
-      "high": 160.93,
-      "low": 159.625,
-      "open": 159.91,
-      "prev_close": 163.09,
-      "market_cap": 240387749638.0,
-      "score": 0,
-      "signals": [
-        "News buzz (3 mentions)"
-      ],
-      "reddit_mentions": 3,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "reddit": 3,
-        "st_bull": 86,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 2.41,
-          "estimate": 2.31,
-          "beat": true,
-          "surprise_pct": 4.2
+          "surprise_pct": 98.0
         }
       },
       "score_normalized": 0
@@ -141,10 +143,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 208,
+      "mentions": 271,
       "social": {
-        "trend_pct": 2500,
-        "reddit": 208,
+        "trend_pct": 2911,
+        "reddit": 271,
         "st_bull": 100,
         "st_msgs": 30,
         "sources": [
@@ -165,21 +167,21 @@
       "score_normalized": 0
     },
     {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corp",
-      "sector": "Semiconductors",
-      "current_price": 230.4,
-      "change_pct": 0.8536,
-      "market_cap": 5551675925838.097,
+      "ticker": "DTE",
+      "name": "DTE Energy Co",
+      "sector": "Utilities",
+      "current_price": 136.11,
+      "change_pct": -0.7004,
+      "market_cap": 28316624510.10375,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 31,
+      "mentions": 34,
       "social": {
-        "trend_pct": 3,
-        "reddit": 31,
+        "trend_pct": 26,
+        "reddit": 34,
         "sources": [
           "Reddit"
         ]
@@ -188,10 +190,10 @@
         "upcoming": null,
         "recent": {
           "period": "2026-06-30",
-          "actual": 1.87,
-          "estimate": 1.79,
+          "actual": 1.32,
+          "estimate": 1.18,
           "beat": true,
-          "surprise_pct": 4.3
+          "surprise_pct": 11.8
         }
       },
       "score_normalized": 0
@@ -208,10 +210,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 29,
+      "mentions": 26,
       "social": {
-        "trend_pct": 93,
-        "reddit": 29,
+        "trend_pct": 30,
+        "reddit": 26,
         "sources": [
           "Reddit"
         ]
@@ -234,9 +236,9 @@
       "ticker": "AGI",
       "name": "Alamos Gold Inc",
       "sector": "Metals & Mining",
-      "mentions": 208,
-      "prev": 8,
-      "trend_pct": 2500,
+      "mentions": 271,
+      "prev": 9,
+      "trend_pct": 2911,
       "current_price": 36.98,
       "change_pct": -1.8838,
       "market_cap": 21775804288.0
@@ -245,9 +247,9 @@
       "ticker": "NOW",
       "name": "ServiceNow Inc",
       "sector": "Technology",
-      "mentions": 26,
-      "prev": 3,
-      "trend_pct": 767,
+      "mentions": 24,
+      "prev": 5,
+      "trend_pct": 380,
       "current_price": 141.29,
       "change_pct": -2.9535,
       "market_cap": 146062836325.62936
@@ -828,99 +830,120 @@
   },
   "reddit_feed": [
     {
-      "id": "bee5ef981dce1117e6b38a6134d3a4d3fa84630fcc2691d719fd7770798b796c",
-      "title": "AstraZeneca Secures FDA Nod for New Breast Cancer Therapy Etcamah",
-      "subreddit": "Zacks Investment Research",
+      "id": "e46031f4d81e6b34cfafc92693a2654fbbf87e83cbd04d209f2b8982f9e4b5a2",
+      "title": "Deadline Alert: Flotek Industries, Inc. (FTK) Shareholders Who Lost Money Urged To Contact Glancy Prongay Wolke & Rotter",
+      "subreddit": "GlobeNewswire Inc.",
       "ups": 0,
       "tickers": [
-        "AZN",
-        "PFE",
-        "NVS",
-        "LLY",
-        "GH"
+        "FTK"
       ],
-      "hours_ago": 1.6,
-      "url": "https://www.zacks.com/stock/news/2985718/astrazeneca-secures-fda-nod-for-new-breast-cancer-therapy-etcamah?cid=CS-ZC-FT-analyst_blog|company_news_medical_sector-2985718",
+      "hours_ago": 1.3,
+      "url": "https://www.globenewswire.com/news-release/2026/09/07/3357225/34548/en/deadline-alert-flotek-industries-inc-ftk-shareholders-who-lost-money-urged-to-contact-glancy-prongay-wolke-rotter-llp-about-securities-fraud-lawsuit.html",
       "is_news": true,
       "confirmed_tickers": [
-        "AZN",
-        "PFE",
-        "NVS"
+        "FTK"
       ]
     },
     {
-      "id": "18ad1f17f77393a044e5a635179e60fda7574e604b40134fd219029081025482",
-      "title": "Nebius Stock Up 254% in a Year: Should You Buy, Hold or Sell?",
+      "id": "d4e923ca32b570b4a0c4b248e45db949f7f072b91bb1b84c886260da4425d5e8",
+      "title": "Should You Buy NetApp Stock as AI Growth Meets a Premium Valuation?",
       "subreddit": "Zacks Investment Research",
       "ups": 0,
       "tickers": [
-        "NBIS",
-        "NVDA",
-        "MSFT",
-        "CRWV"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://www.zacks.com/stock/news/2985716/nebius-stock-up-254-in-a-year-should-you-buy-hold-or-sell?cid=CS-ZC-FT-analyst_blog|most_popular_stocks-2985716",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "ca42fee40502b88cba95b43954e492e4c1ae8229e8ebed472189717fa0e1c813",
-      "title": "Buy These 5 Semiconductor Stocks as Sales Skyrocket on Solid AI Demand",
-      "subreddit": "Zacks Investment Research",
-      "ups": 0,
-      "tickers": [
-        "ADI",
-        "TSM",
-        "TXN",
-        "NVDA",
-        "ACMR"
+        "NTAP",
+        "DELL",
+        "HPE",
+        "HPEpC"
       ],
       "hours_ago": 1.7,
-      "url": "https://www.zacks.com/stock/news/2985713/buy-these-5-semiconductor-stocks-as-sales-skyrocket-on-solid-ai-demand?cid=CS-ZC-FT-analyst_blog|investment_ideas-2985713",
+      "url": "https://www.zacks.com/stock/news/2986067/should-you-buy-netapp-stock-as-ai-growth-meets-a-premium-valuation?cid=CS-ZC-FT-analyst_blog_plus|zer_report_insights-2986067",
       "is_news": true,
       "confirmed_tickers": [
-        "NVDA"
+        "DELL"
       ]
     },
     {
-      "id": "da115e42010116af85c5240a433526266f26996217c32f48b6168d337d97620e",
-      "title": "AI in Pharmaceutical Market to Hit USD 48.43 Billion by 2035, Growing at 31.76% CAGR \u2013 SNS Insider",
-      "subreddit": "GlobeNewswire Inc.",
+      "id": "0d9a63516012bca4dd4e7280ad9d1010d6600d44138f4724c92a044b53f03bcb",
+      "title": "NTAP Stock Up 14.8% in 3 Months Can AI Momentum Keep It Climbing?",
+      "subreddit": "Zacks Investment Research",
       "ups": 0,
       "tickers": [
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN",
-        "NVDA"
+        "NTAP",
+        "DELL",
+        "HPE",
+        "HPEpC"
       ],
       "hours_ago": 1.8,
-      "url": "https://www.globenewswire.com/news-release/2026/09/07/3357102/0/en/ai-in-pharmaceutical-market-to-hit-usd-48-43-billion-by-2035-growing-at-31-76-cagr-sns-insider.html",
+      "url": "https://www.zacks.com/stock/news/2986063/ntap-stock-up-14-8-in-3-months-can-ai-momentum-keep-it-climbing?cid=CS-ZC-FT-analyst_blog_plus|zer_report_insights-2986063",
+      "is_news": true,
+      "confirmed_tickers": [
+        "DELL"
+      ]
+    },
+    {
+      "id": "596ebef056e3afe7c23b93b83c2d94e774443b40dad6ca250c3770bc18eb62b2",
+      "title": "Not Nvidia. Not Micron. This Is My Top AI Infrastructure Stock to Buy Right Now (Hint: It Can Double Within 3 Years)",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "DELL",
+        "NVDA",
+        "MU"
+      ],
+      "hours_ago": 2.0,
+      "url": "https://www.fool.com/investing/2026/09/07/not-nvidia-not-micron-this-is-my-top-ai-infrastructure-stock-to-buy-right-now-hint-it-can-double-within-3-years/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "DELL",
+        "NVDA"
+      ]
+    },
+    {
+      "id": "6b8b11836a92751e7364a010dce3a2c1c55a4cfa025d86636006a6823b9f3bd4",
+      "title": "Is Adobe's Stock Heading for $300?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "ADBE",
+        "AAPL",
+        "NVDA"
+      ],
+      "hours_ago": 2.0,
+      "url": "https://www.fool.com/investing/2026/09/07/is-adobe-s-stock-heading-for-300/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "NVDA"
       ]
     },
     {
-      "id": "5d02b6128f18e85ad8abf2dfda1781ddb2c5ff6568336c9b0d9df2235e75f694",
-      "title": "Drug Repurposing Market to Reach USD 50.91 Billion by 2035, Expanding at 3.93% CAGR | SNS Insider",
+      "id": "12ffea6c0d756f8adcb8b9d46b4b9acb7aaed30d12ded2fc843101ca6f933838",
+      "title": "Bronstein, Gewirtz & Grossman LLC Urges Flotek Industries, Inc. Investors to Act: Class Action Filed Alleging Investor H",
       "subreddit": "GlobeNewswire Inc.",
       "ups": 0,
       "tickers": [
-        "ABBV",
-        "AMGN",
-        "LLY",
-        "GSK",
-        "NVS"
+        "FTK"
       ],
-      "hours_ago": 3.4,
-      "url": "https://www.globenewswire.com/news-release/2026/09/07/3357068/0/en/drug-repurposing-market-to-reach-usd-50-91-billion-by-2035-expanding-at-3-93-cagr-sns-insider.html",
+      "hours_ago": 2.1,
+      "url": "https://www.globenewswire.com/news-release/2026/09/07/3357198/9788/en/bronstein-gewirtz-grossman-llc-urges-flotek-industries-inc-investors-to-act-class-action-filed-alleging-investor-harm.html",
       "is_news": true,
       "confirmed_tickers": [
-        "NVS"
+        "FTK"
+      ]
+    },
+    {
+      "id": "0f254893d5aff6db27bd0c98801a071b641f5842ef5c67004b315aeaea2e33a2",
+      "title": "10 Seconds of Video in 4 Seconds: Yoroll Launches H3 Superfast and YoLive",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "NVDA",
+        "MMXGY"
+      ],
+      "hours_ago": 2.1,
+      "url": "https://www.globenewswire.com/news-release/2026/09/07/3357194/0/en/10-seconds-of-video-in-4-seconds-yoroll-launches-h3-superfast-and-yolive.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
       ]
     }
   ]
