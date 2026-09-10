@@ -1,29 +1,29 @@
 {
-  "scan_time": "2026-09-10T14:30:37.451412+00:00",
+  "scan_time": "2026-09-10T16:30:33.869068+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Mixed",
-    "score": 2,
-    "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you. Volume is under its 50-day norm, though that is ordinary for early September \u2014 plan for a slow tape rather than reading it as a warning.",
+    "verdict": "Risk-Off",
+    "score": -3,
+    "headline": "Today's tape is working against the longer-term trend: SPY -0.55% and off its highs, with only 2 of 11 sectors green. Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength. Volume is under its 50-day norm, though that is ordinary for early September \u2014 plan for a slow tape rather than reading it as a warning.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.49%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "-0.55%",
+        "read": "Weak",
+        "tone": "bad"
       },
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Above 50-day",
-        "read": "Uptrend",
-        "tone": "good"
+        "value": "Below 50-day",
+        "read": "Downtrend",
+        "tone": "bad"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.8%",
+        "value": "-0.9%",
         "read": "Soft",
         "tone": "neutral"
       },
@@ -37,7 +37,7 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "17.8",
+        "value": "17.6",
         "read": "Calm but rising",
         "tone": "neutral"
       },
@@ -49,15 +49,15 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-09-10T14:30:40.756977+00:00",
+    "updated": "2026-09-10T16:30:38.938235+00:00",
     "session": {
-      "change_pct": -0.49,
-      "from_open_pct": 0.09,
-      "range_pos": 0.591,
-      "sectors_green": 4,
+      "change_pct": -0.55,
+      "from_open_pct": 0.02,
+      "range_pos": 0.449,
+      "sectors_green": 2,
       "sectors_total": 11,
       "live": true,
-      "detail": "-0.49% vs prior close \u00b7 mid-range (59% of range) \u00b7 4/11 sectors green"
+      "detail": "-0.55% vs prior close \u00b7 mid-range (45% of range) \u00b7 2/11 sectors green"
     },
     "participation": {
       "ratio": 0.847,
