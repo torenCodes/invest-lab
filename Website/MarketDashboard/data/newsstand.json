@@ -1,24 +1,24 @@
 {
-  "scan_time": "2026-09-10T23:25:23.913189+00:00",
+  "scan_time": "2026-09-11T14:30:42.118566+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Risk-Off",
-    "score": -3,
-    "headline": "Today's tape is working against the longer-term trend: SPY -0.60% and off its highs, with only 2 of 11 sectors green. Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength. Volume is under its 50-day norm, though that is ordinary for early September \u2014 plan for a slow tape rather than reading it as a warning.",
+    "verdict": "Favorable",
+    "score": 7,
+    "headline": "Today's tape is confirming the trend: SPY +0.99% and closing strong. The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run. Volume is under its 50-day norm, though that is ordinary for early September \u2014 plan for a slow tape rather than reading it as a warning.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.60%",
-        "read": "Weak",
-        "tone": "bad"
+        "value": "+0.99%",
+        "read": "Strong",
+        "tone": "good"
       },
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Below 50-day",
-        "read": "Downtrend",
-        "tone": "bad"
+        "value": "Above 50-day",
+        "read": "Uptrend",
+        "tone": "good"
       },
       {
         "label": "5-day momentum",
@@ -30,42 +30,42 @@
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "-15%",
+        "value": "-9%",
         "read": "Light",
         "tone": "neutral"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "17.8",
-        "read": "Calm but rising",
-        "tone": "neutral"
+        "value": "16.0",
+        "read": "Calm",
+        "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.94%",
+        "value": "4.93%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-09-10T23:25:28.202787+00:00",
+    "updated": "2026-09-11T14:30:46.198745+00:00",
     "session": {
-      "change_pct": -0.6,
-      "from_open_pct": -0.03,
-      "range_pos": 0.345,
-      "sectors_green": 2,
+      "change_pct": 0.99,
+      "from_open_pct": 0.09,
+      "range_pos": 0.534,
+      "sectors_green": 11,
       "sectors_total": 11,
       "live": true,
-      "detail": "-0.60% vs prior close \u00b7 mid-range (34% of range) \u00b7 2/11 sectors green"
+      "detail": "+0.99% vs prior close \u00b7 mid-range (53% of range) \u00b7 11/11 sectors green"
     },
     "participation": {
-      "ratio": 0.847,
+      "ratio": 0.913,
       "expected": 1.048,
-      "adjusted": 0.809,
+      "adjusted": 0.871,
       "direction": "steady",
-      "drift_pct": 2.6,
-      "detail": "37M vs 44M avg \u00b7 about normal for this week of the year"
+      "drift_pct": 9.4,
+      "detail": "40M vs 43M avg \u00b7 about normal for this week of the year"
     }
   }
 }
