@@ -1,17 +1,17 @@
 {
-  "scan_time": "2026-09-14T14:30:37.507987+00:00",
+  "scan_time": "2026-09-14T16:30:33.383075+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Cautious",
-    "score": 1,
-    "headline": "Today's tape is working against the longer-term trend: SPY -0.70% and holding near the session low, with only 5 of 11 sectors green. Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
+    "verdict": "Mixed",
+    "score": 4,
+    "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.70%",
-        "read": "Weak",
-        "tone": "bad"
+        "value": "-0.28%",
+        "read": "Flat",
+        "tone": "neutral"
       },
       {
         "label": "Market trend",
@@ -23,7 +23,7 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-1.5%",
+        "value": "-1.0%",
         "read": "Soft",
         "tone": "neutral"
       },
@@ -37,27 +37,27 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "17.2",
-        "read": "Calm but rising",
-        "tone": "neutral"
+        "value": "16.8",
+        "read": "Calm",
+        "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "5.00%",
+        "value": "4.95%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-09-14T14:30:40.653605+00:00",
+    "updated": "2026-09-14T16:30:35.812294+00:00",
     "session": {
-      "change_pct": -0.7,
-      "from_open_pct": -0.01,
-      "range_pos": 0.247,
+      "change_pct": -0.28,
+      "from_open_pct": 0.41,
+      "range_pos": 0.901,
       "sectors_green": 5,
       "sectors_total": 11,
       "live": true,
-      "detail": "-0.70% vs prior close \u00b7 at the lows (25% of range) \u00b7 5/11 sectors green"
+      "detail": "-0.28% vs prior close \u00b7 at the highs (90% of range) \u00b7 5/11 sectors green"
     },
     "participation": {
       "ratio": 0.923,
