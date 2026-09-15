@@ -1,17 +1,17 @@
 {
-  "scan_time": "2026-09-14T20:30:32.926733+00:00",
+  "scan_time": "2026-09-15T00:00:28.254131+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Mixed",
-    "score": 2,
+    "score": 4,
     "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.45%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "+0.85%",
+        "read": "Firm",
+        "tone": "good"
       },
       {
         "label": "Market trend",
@@ -23,14 +23,14 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-1.2%",
+        "value": "-1.1%",
         "read": "Soft",
         "tone": "neutral"
       },
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "-8%",
+        "value": "-3%",
         "read": "Normal",
         "tone": "neutral"
       },
@@ -49,23 +49,23 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-09-14T20:30:35.657538+00:00",
+    "updated": "2026-09-15T00:00:32.272097+00:00",
     "session": {
-      "change_pct": -0.45,
-      "from_open_pct": 0.25,
-      "range_pos": 0.528,
-      "sectors_green": 3,
-      "sectors_total": 11,
-      "live": true,
-      "detail": "-0.45% vs prior close \u00b7 mid-range (53% of range) \u00b7 3/11 sectors green"
+      "change_pct": 0.85,
+      "from_open_pct": -0.06,
+      "range_pos": 0.248,
+      "sectors_green": null,
+      "sectors_total": null,
+      "live": false,
+      "detail": "+0.85% vs prior close \u00b7 at the lows (25% of range) \u00b7 last completed session"
     },
     "participation": {
-      "ratio": 0.923,
-      "expected": 1.048,
-      "adjusted": 0.881,
-      "direction": "steady",
-      "drift_pct": 5.3,
-      "detail": "40M vs 43M avg"
+      "ratio": 0.973,
+      "expected": 1.096,
+      "adjusted": 0.887,
+      "direction": "building",
+      "drift_pct": 11.9,
+      "detail": "42M vs 43M avg"
     }
   }
 }
