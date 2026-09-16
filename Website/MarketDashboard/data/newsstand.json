@@ -1,29 +1,29 @@
 {
-  "scan_time": "2026-09-16T18:30:34.647511+00:00",
+  "scan_time": "2026-09-16T20:30:32.978589+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Favorable",
-    "score": 5,
-    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
+    "verdict": "Cautious",
+    "score": -1,
+    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "+0.28%",
-        "read": "Firm",
-        "tone": "good"
+        "value": "-0.44%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Above 50-day",
-        "read": "Uptrend",
-        "tone": "good"
+        "value": "Below 50-day",
+        "read": "Downtrend",
+        "tone": "bad"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.4%",
+        "value": "-1.1%",
         "read": "Soft",
         "tone": "neutral"
       },
@@ -37,30 +37,30 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "16.7",
+        "value": "17.7",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.96%",
+        "value": "5.01%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-09-16T18:30:38.800488+00:00",
+    "updated": "2026-09-16T20:30:37.049187+00:00",
     "session": {
-      "change_pct": 0.28,
-      "from_open_pct": 0.0,
-      "range_pos": 0.269,
-      "sectors_green": 7,
+      "change_pct": -0.44,
+      "from_open_pct": -0.72,
+      "range_pos": 0.369,
+      "sectors_green": 3,
       "sectors_total": 11,
       "live": true,
-      "detail": "+0.28% vs prior close \u00b7 mid-range (27% of range) \u00b7 7/11 sectors green"
+      "detail": "-0.44% vs prior close \u00b7 mid-range (37% of range) \u00b7 3/11 sectors green"
     },
     "participation": {
-      "ratio": 0.983,
+      "ratio": 0.984,
       "expected": 1.096,
       "adjusted": 0.897,
       "direction": "steady",
