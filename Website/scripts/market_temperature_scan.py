@@ -28,7 +28,7 @@ which must run BEFORE this scan. Weighted at only 5%: tested against forward
 S&P returns the direction holds, but on ~19 independent observations.
 
 Output: MarketDashboard/data/market_temperature.json
-Invoked by GitHub Actions daily. Run locally: python scripts/market_temperature_scan.py
+Invoked by GitHub Actions twice each weekday morning, ~9:50am and ~10:50am ET. Run locally: python scripts/market_temperature_scan.py
 """
 
 import json
@@ -48,7 +48,7 @@ OUTPUT_FILE = os.path.join(BASE_DIR, "MarketDashboard", "data", "market_temperat
 FRED_API_KEY = os.environ.get("FRED_API_KEY", "")
 FRED_BASE    = "https://api.stlouisfed.org/fred/series/observations"
 
-NEXT_SCAN_INFO = "Weekdays at 6:00am ET"
+NEXT_SCAN_INFO = "Weekdays at 9:50am and 10:50am ET"
 CALIB_YEARS    = 10
 
 # Price and participation signals (trend, breadth_50, new_highs, breadth) were

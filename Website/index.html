@@ -167,7 +167,7 @@
               <div class="mt-groups" id="mt-groups"></div>
               <div class="mt-body" id="mt-body" hidden>
                 <div class="mt-components" id="mt-components"></div>
-                <p class="mt-footnote">Ten signals, grouped into four themes and weighted 40 / 25 / 20 / 15. Most move every session. Two are deliberately contrarian and inverted: <strong>Credit Spreads</strong>, where tight means complacency, and <strong>Insider Breadth</strong>, because executives buy weakness and go quiet into strength — it carries only 5% since testing supported the direction on a thin sample. Weekdays around 6:00am ET. Educational only — not investment advice.</p>
+                <p class="mt-footnote">Ten signals, grouped into four themes and weighted 40 / 25 / 20 / 15. Most move every session. Two are deliberately contrarian and inverted: <strong>Credit Spreads</strong>, where tight means complacency, and <strong>Insider Breadth</strong>, because executives buy weakness and go quiet into strength — it carries only 5% since testing supported the direction on a thin sample. Weekdays at 9:50am and 10:50am ET. Educational only — not investment advice.</p>
               </div>
             </section>
             <!-- ─── /Macro Temperature ─── -->
@@ -1155,8 +1155,8 @@
                '</div>';
       }).join('');
     } else {
-      // Pre-grouping payload — the scan runs weekdays ~6am ET, so the page has
-      // to keep working on the old JSON until the first grouped run lands.
+      // Pre-grouping payload — kept so the page still renders if a scan
+      // ever writes the old flat shape again.
       compsEl.innerHTML = Object.keys(comps).map(function (k) {
         return renderComponent(k, comps[k]);
       }).join('');

@@ -2,8 +2,21 @@ name: Market Temperature Scan
 
 on:
   schedule:
-    # Daily at 10:00 UTC (~6:00am ET EDT / ~5:00am ET EST), weekdays
-    - cron: '0 10 * * 1-5'
+    # Two weekday runs so a single failure cannot leave the gauge a day stale.
+    #
+    # The old single entry was '0 10' (6am ET), yet for the two weeks before
+    # this change every run landed at 13:56-16:06 UTC - four-plus hours late,
+    # every day. Whatever the cause, the page showed yesterday's number all
+    # morning. Do not trust the cron here to tell you when this actually runs;
+    # check the Actions tab (and cron-job.org, if an entry exists there).
+    #
+    # Off-the-hour minutes on purpose: GitHub's queue is most congested at :00.
+    #
+    # First slot is deliberately AFTER the 9:35 market scan has had time to
+    # commit, because Risk Posture reads sector rotation from results.json - a
+    # 9:35 run here would score yesterday's posture.
+    - cron: '50 13 * * 1-5'   # ~9:50am EDT / 8:50am EST  (just after the open)
+    - cron: '50 14 * * 1-5'   # ~10:50am EDT / 9:50am EST (one hour later, backup)
   workflow_dispatch:
 
 permissions:
