@@ -2,21 +2,23 @@ name: Market Temperature Scan
 
 on:
   schedule:
-    # Two weekday runs so a single failure cannot leave the gauge a day stale.
+    # THIS IS NOT THE REAL SCHEDULE. cron-job.org dispatches this workflow at
+    # '50 9,10 * * 1-5' America/New_York (9:50am and 10:50am ET, weekdays).
     #
-    # The old single entry was '0 10' (6am ET), yet for the two weeks before
-    # this change every run landed at 13:56-16:06 UTC - four-plus hours late,
-    # every day. Whatever the cause, the page showed yesterday's number all
-    # morning. Do not trust the cron here to tell you when this actually runs;
-    # check the Actions tab (and cron-job.org, if an entry exists there).
+    # Why: GitHub's own scheduler ran the old '0 10' (6am ET) entry FOUR TO SIX
+    # HOURS LATE every weekday for two weeks - the Actions tab confirmed the
+    # trigger was "Scheduled", not anything external - so the homepage showed
+    # yesterday's number all morning. The first cron-job.org dispatch landed
+    # 91 seconds after its slot. Check cron-job.org, not this file, for when
+    # the gauge actually refreshes; runs from it show as repository_dispatch.
     #
-    # Off-the-hour minutes on purpose: GitHub's queue is most congested at :00.
+    # The 9:50 slot is deliberately AFTER the 9:35 market scan has had time to
+    # commit, because Risk Posture reads sector rotation from results.json.
     #
-    # First slot is deliberately AFTER the 9:35 market scan has had time to
-    # commit, because Risk Posture reads sector rotation from results.json - a
-    # 9:35 run here would score yesterday's posture.
-    - cron: '50 13 * * 1-5'   # ~9:50am EDT / 8:50am EST  (just after the open)
-    - cron: '50 14 * * 1-5'   # ~10:50am EDT / 9:50am EST (one hour later, backup)
+    # The single entry below is only a fallback so a cron-job.org outage cannot
+    # leave the gauge stale for more than a day. Post-close and off-the-hour,
+    # staggered from newsstand's fallback so the two never queue together.
+    - cron: '5 22 * * 1-5'    # ~6:05pm EDT / 5:05pm EST (after the close)
   workflow_dispatch:
 
 permissions:
