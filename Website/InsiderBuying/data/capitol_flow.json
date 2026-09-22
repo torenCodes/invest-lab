@@ -1,9 +1,9 @@
 {
- "scan_time": "2026-09-18T15:16:25.904719+00:00",
+ "scan_time": "2026-09-22T16:15:03.128322+00:00",
  "source": "US House Clerk \u2014 Periodic Transaction Reports",
- "filings_total": 393,
- "filings_with_trades": 241,
- "transactions": 2832,
+ "filings_total": 396,
+ "filings_with_trades": 244,
+ "transactions": 2848,
  "window_days": 90,
  "median_disclosure_lag_days": 18,
  "caveats": {
@@ -33,6 +33,17 @@
     "David J. Taylor",
     "Gilbert Cisneros",
     "Josh Gottheimer"
+   ]
+  },
+  {
+   "ticker": "ACN",
+   "trades": 4,
+   "est_amount": 32000,
+   "members": 3,
+   "member_names": [
+    "Dan Newhouse",
+    "Gilbert Cisneros",
+    "Scott Scott Franklin"
    ]
   },
   {
@@ -99,8 +110,8 @@
   },
   {
    "ticker": "PG",
-   "trades": 2,
-   "est_amount": 16000,
+   "trades": 3,
+   "est_amount": 24000,
    "members": 2,
    "member_names": [
     "David J. Taylor",
@@ -125,16 +136,6 @@
    "member_names": [
     "Gilbert Cisneros",
     "Josh Gottheimer"
-   ]
-  },
-  {
-   "ticker": "ACN",
-   "trades": 2,
-   "est_amount": 16000,
-   "members": 2,
-   "member_names": [
-    "Dan Newhouse",
-    "Gilbert Cisneros"
    ]
   },
   {
@@ -274,6 +275,18 @@
    ]
   },
   {
+   "ticker": "GOOGL",
+   "trades": 6,
+   "est_amount": 164000,
+   "members": 4,
+   "member_names": [
+    "Dan Newhouse",
+    "Michael Rulli",
+    "Pete Sessions",
+    "Thomas H. Kean"
+   ]
+  },
+  {
    "ticker": "ABT",
    "trades": 5,
    "est_amount": 64500,
@@ -286,6 +299,18 @@
    ]
   },
   {
+   "ticker": "AAPL",
+   "trades": 4,
+   "est_amount": 32000,
+   "members": 4,
+   "member_names": [
+    "John J Mr McGuire",
+    "Michael Rulli",
+    "Richard Dean Dr McCormick",
+    "Scott Scott Franklin"
+   ]
+  },
+  {
    "ticker": "CCI",
    "trades": 4,
    "est_amount": 32000,
@@ -295,17 +320,6 @@
     "Josh Gottheimer",
     "Michael Rulli",
     "Robert J. Wittman"
-   ]
-  },
-  {
-   "ticker": "GOOGL",
-   "trades": 5,
-   "est_amount": 131500,
-   "members": 3,
-   "member_names": [
-    "Dan Newhouse",
-    "Michael Rulli",
-    "Thomas H. Kean"
    ]
   },
   {
@@ -360,17 +374,6 @@
    "member_names": [
     "John J Mr McGuire",
     "John McGuire",
-    "Richard Dean Dr McCormick"
-   ]
-  },
-  {
-   "ticker": "AAPL",
-   "trades": 3,
-   "est_amount": 24000,
-   "members": 3,
-   "member_names": [
-    "John J Mr McGuire",
-    "Michael Rulli",
     "Richard Dean Dr McCormick"
    ]
   },
@@ -543,12 +546,12 @@
    "trades": 31
   },
   {
-   "member": "Richard Dean Dr McCormick",
+   "member": "David J. Taylor",
    "trades": 26
   },
   {
-   "member": "David J. Taylor",
-   "trades": 24
+   "member": "Richard Dean Dr McCormick",
+   "trades": 26
   },
   {
    "member": "Josh Gottheimer",
@@ -556,7 +559,7 @@
   },
   {
    "member": "Thomas H. Kean",
-   "trades": 19
+   "trades": 18
   },
   {
    "member": "Maria Elvira Salazar",
@@ -567,18 +570,18 @@
    "trades": 13
   },
   {
-   "member": "Kelly Louise Morrison",
-   "trades": 8
+   "member": "Scott Scott Franklin",
+   "trades": 12
   },
   {
-   "member": "Nancy Pelosi",
-   "trades": 7
+   "member": "Kelly Louise Morrison",
+   "trades": 8
   }
  ],
  "asset_mix": [
   {
    "type": "Stock",
-   "trades": 543
+   "trades": 558
   },
   {
    "type": "Options",
@@ -598,6 +601,58 @@
    "member": "Steve Cohen",
    "state": "TN09",
    "doc": "20033889"
+  },
+  {
+   "ticker": "ABBV",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-09-14",
+   "notify_date": "2026-09-18",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Pete Sessions",
+   "state": "TX17",
+   "doc": "20035480"
+  },
+  {
+   "ticker": "GOOGL",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-09-14",
+   "notify_date": "2026-09-18",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Pete Sessions",
+   "state": "TX17",
+   "doc": "20035480"
+  },
+  {
+   "ticker": "IBP",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-09-08",
+   "notify_date": "2026-09-09",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035471"
+  },
+  {
+   "ticker": "PG",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-09-08",
+   "notify_date": "2026-09-17",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David J. Taylor",
+   "state": "OH02",
+   "doc": "20035471"
   },
   {
    "ticker": "VSAT",
@@ -871,6 +926,97 @@
    "member": "Gilbert Cisneros",
    "state": "CA31",
    "doc": "20035390"
+  },
+  {
+   "ticker": "ACN",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-08-26",
+   "notify_date": "2026-09-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Scott Scott Franklin",
+   "state": "FL18",
+   "doc": "20035450"
+  },
+  {
+   "ticker": "ACN",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-08-26",
+   "notify_date": "2026-09-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Scott Scott Franklin",
+   "state": "FL18",
+   "doc": "20035450"
+  },
+  {
+   "ticker": "JPM",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-08-26",
+   "notify_date": "2026-09-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Scott Scott Franklin",
+   "state": "FL18",
+   "doc": "20035450"
+  },
+  {
+   "ticker": "MCD",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-08-26",
+   "notify_date": "2026-09-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Scott Scott Franklin",
+   "state": "FL18",
+   "doc": "20035450"
+  },
+  {
+   "ticker": "NVO",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-08-26",
+   "notify_date": "2026-09-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Scott Scott Franklin",
+   "state": "FL18",
+   "doc": "20035450"
+  },
+  {
+   "ticker": "PEP",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-08-26",
+   "notify_date": "2026-09-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Scott Scott Franklin",
+   "state": "FL18",
+   "doc": "20035450"
+  },
+  {
+   "ticker": "PEP",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-08-26",
+   "notify_date": "2026-09-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Scott Scott Franklin",
+   "state": "FL18",
+   "doc": "20035450"
   },
   {
    "ticker": "BRO",
@@ -1731,6 +1877,71 @@
    "doc": "20035432"
   },
   {
+   "ticker": "GOOG",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-20",
+   "notify_date": "2026-09-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Scott Scott Franklin",
+   "state": "FL18",
+   "doc": "20035450"
+  },
+  {
+   "ticker": "GOOG",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-20",
+   "notify_date": "2026-09-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Scott Scott Franklin",
+   "state": "FL18",
+   "doc": "20035450"
+  },
+  {
+   "ticker": "AAPL",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-20",
+   "notify_date": "2026-09-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Scott Scott Franklin",
+   "state": "FL18",
+   "doc": "20035450"
+  },
+  {
+   "ticker": "JPM",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-20",
+   "notify_date": "2026-09-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Scott Scott Franklin",
+   "state": "FL18",
+   "doc": "20035450"
+  },
+  {
+   "ticker": "JPM",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-08-20",
+   "notify_date": "2026-09-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Scott Scott Franklin",
+   "state": "FL18",
+   "doc": "20035450"
+  },
+  {
    "ticker": "CL",
    "asset_type": "ST",
    "code": "S",
@@ -1934,214 +2145,6 @@
    "amount_low": 15001,
    "amount_high": 50000,
    "amount_mid": 32500,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035390"
-  },
-  {
-   "ticker": "FSV",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-08-19",
-   "notify_date": "2026-09-04",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035390"
-  },
-  {
-   "ticker": "GMED",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-08-19",
-   "notify_date": "2026-09-04",
-   "amount_low": 15001,
-   "amount_high": 50000,
-   "amount_mid": 32500,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035390"
-  },
-  {
-   "ticker": "NEO",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-08-19",
-   "notify_date": "2026-09-04",
-   "amount_low": 250001,
-   "amount_high": 500000,
-   "amount_mid": 375000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035390"
-  },
-  {
-   "ticker": "BUD",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-08-27",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Kevin Hern",
-   "state": "OK01",
-   "doc": "20035326"
-  },
-  {
-   "ticker": "BIIB",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-08-27",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Kevin Hern",
-   "state": "OK01",
-   "doc": "20035326"
-  },
-  {
-   "ticker": "KMB",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-08-27",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Kevin Hern",
-   "state": "OK01",
-   "doc": "20035326"
-  },
-  {
-   "ticker": "AAPL",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-09-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "John J Mr McGuire",
-   "state": "VA05",
-   "doc": "20035367"
-  },
-  {
-   "ticker": "NVDA",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-09-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "John J Mr McGuire",
-   "state": "VA05",
-   "doc": "20035367"
-  },
-  {
-   "ticker": "HUBB",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-09-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "April McClain Delaney",
-   "state": "MD06",
-   "doc": "20035408"
-  },
-  {
-   "ticker": "AMD",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-09-04",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035390"
-  },
-  {
-   "ticker": "APH",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-09-04",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035390"
-  },
-  {
-   "ticker": "APP",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-09-04",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035390"
-  },
-  {
-   "ticker": "BSX",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-09-04",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035390"
-  },
-  {
-   "ticker": "NET",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-09-04",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035390"
-  },
-  {
-   "ticker": "COHR",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-09-04",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035390"
-  },
-  {
-   "ticker": "COIN",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-08-18",
-   "notify_date": "2026-09-04",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
    "member": "Gilbert Cisneros",
    "state": "CA31",
    "doc": "20035390"
