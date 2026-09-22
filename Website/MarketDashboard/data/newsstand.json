@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-09-22T00:18:09.097273+00:00",
+  "scan_time": "2026-09-22T14:30:35.194799+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
@@ -9,9 +9,9 @@
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.12%",
-        "read": "Firm",
-        "tone": "good"
+        "value": "+0.01%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Market trend",
@@ -23,9 +23,9 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.3%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "+2.1%",
+        "read": "Strong",
+        "tone": "good"
       },
       {
         "label": "Participation",
@@ -37,34 +37,34 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "14.9",
+        "value": "14.4",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.96%",
+        "value": "4.95%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-09-22T00:18:11.975947+00:00",
+    "updated": "2026-09-22T14:30:38.184072+00:00",
     "session": {
-      "change_pct": -0.12,
-      "from_open_pct": 0.05,
-      "range_pos": 0.923,
-      "sectors_green": null,
-      "sectors_total": null,
-      "live": false,
-      "detail": "-0.12% vs prior close \u00b7 at the highs (92% of range) \u00b7 last completed session"
+      "change_pct": 0.01,
+      "from_open_pct": -0.06,
+      "range_pos": 0.055,
+      "sectors_green": 7,
+      "sectors_total": 11,
+      "live": true,
+      "detail": "+0.01% vs prior close \u00b7 at the lows (5% of range) \u00b7 7/11 sectors green"
     },
     "participation": {
-      "ratio": 1.226,
+      "ratio": 1.229,
       "expected": 1.178,
-      "adjusted": 1.04,
+      "adjusted": 1.043,
       "direction": "building",
-      "drift_pct": 28.5,
+      "drift_pct": 29.0,
       "detail": "54M vs 44M avg"
     }
   }
