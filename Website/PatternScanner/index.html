@@ -714,7 +714,7 @@
     <section class="scan-section" id="sec-coiled" style="display:none;">
       <div class="section-head">
         <div class="section-title"><span class="tt-accent">Coiled</span> Setups</div>
-        <div class="section-subtitle">Tight, wound-up consolidations in an uptrend — narrow range, drying volume, energy building before the move. Ranked by Coil Score.</div>
+        <div class="section-subtitle">Uptrending stocks wound tight, with a narrow range and drying volume as they build toward the next move. Ranked by Coil Score.</div>
         <div class="section-count" id="count-coiled">—</div>
       </div>
       <div class="setups-grid" id="grid-coiled"></div>
@@ -724,7 +724,7 @@
     <section class="scan-section" id="sec-leaders" style="display:none;">
       <div class="section-head">
         <div class="section-title">Market <span class="tt-accent">Leaders</span></div>
-        <div class="section-subtitle">The strongest trends that are still constructive — high relative strength, orderly range, sitting near support. Not yet extended. Ranked by Leader Score.</div>
+        <div class="section-subtitle">The strongest trends that are still in a buyable spot: high relative strength, an orderly range, and price near support rather than stretched above it. Ranked by Leader Score.</div>
         <div class="section-count" id="count-leaders">—</div>
       </div>
       <div class="setups-grid" id="grid-leaders"></div>
@@ -734,26 +734,26 @@
     <div class="glossary" id="glossary" style="display:none;">
       <div class="glossary-label">How to read this dashboard</div>
       <div class="glossary-intro">
-        Two complementary swing lists, both built from daily price structure across the broad liquid US market — no news, no hype, just the tape.
-        <strong>Coiled</strong> surfaces tight setups before they go; <strong>Leaders</strong> surfaces the strongest names that still offer a sensible entry. A name can earn a place on both.
+        Two complementary swing lists, built entirely from daily price action across the liquid US market. News and social chatter play no part in either.
+        <strong>Coiled</strong> surfaces tight setups before they go. <strong>Leaders</strong> surfaces the strongest names that still offer a sensible entry. A name can earn a place on both.
       </div>
       <div class="glossary-grid">
-        <div><strong style="color:var(--accent-dark);">Coil Score</strong> (0–100) — Trend stack (30) + relative strength (25) + range tightness (25) + volume dry-up (20). Higher = more wound-up.</div>
-        <div><strong style="color:var(--accent-dark);">Leader Score</strong> (0–100) — Relative strength (50) + trend (25) + constructive setup (25). Rewards strength that hasn't yet run; gates out anything parabolic, broken, or already breaking out.</div>
+        <div><strong style="color:var(--accent-dark);">Coil Score</strong> (0–100): trend stack (30) + relative strength (25) + range tightness (25) + volume dry-up (20). Higher = more wound-up.</div>
+        <div><strong style="color:var(--accent-dark);">Leader Score</strong> (0–100): relative strength (50) + trend (25) + constructive setup (25). It rewards strength that hasn't run yet, and screens out anything parabolic, broken, or already breaking out.</div>
       </div>
       <div class="glossary-label spaced">Pattern Tags</div>
       <div class="glossary-grid">
-        <div><strong>Volatility squeeze</strong> — Range has compressed to a tight band (&lt;6%), the classic pre-breakout coil.</div>
-        <div><strong>Tight base (VCP)</strong> — Volatility Contraction Pattern: range narrowing vs the prior base as supply dries up.</div>
-        <div><strong>Bull flag</strong> — A strong run (the pole) digesting in a tight, calm consolidation (the flag).</div>
-        <div><strong>Coiled base</strong> — An uptrending name basing constructively, building the next leg.</div>
+        <div><strong>Volatility squeeze:</strong> Range has compressed to a tight band (&lt;6%), the classic pre-breakout coil.</div>
+        <div><strong>Tight base (VCP):</strong> Volatility Contraction Pattern: range narrowing vs the prior base as supply dries up.</div>
+        <div><strong>Bull flag:</strong> A strong run (the pole) digesting in a tight, calm consolidation (the flag).</div>
+        <div><strong>Coiled base:</strong> An uptrending name basing constructively, building the next leg.</div>
       </div>
       <div class="glossary-label spaced">Metric Terms</div>
       <div class="glossary-grid">
-        <div><strong>RS %ile</strong> — Relative strength: 3-month return ranked against the whole universe. 90+ = top decile.</div>
-        <div><strong>10-day range</strong> — Width of the recent consolidation as a % of price. Tighter = more coiled.</div>
-        <div><strong>Vol vs base</strong> — Recent 10-day volume against its 50-day average. Below 100% = volume drying up.</div>
-        <div><strong>vs 20-day</strong> — How far price sits above (or below) its 20-day average. Near zero = entry in range, not extended.</div>
+        <div><strong>RS %ile:</strong> Relative strength: 3-month return ranked against the whole universe. 90+ = top decile.</div>
+        <div><strong>10-day range:</strong> Width of the recent consolidation as a % of price. Tighter = more coiled.</div>
+        <div><strong>Vol vs base:</strong> Recent 10-day volume against its 50-day average. Below 100% = volume drying up.</div>
+        <div><strong>vs 20-day:</strong> How far price sits above (or below) its 20-day average. Near zero = entry in range, not extended.</div>
       </div>
     </div>
 
@@ -854,7 +854,7 @@
   // ── Synthesize human-readable signals from the measured structure ─────────────
   function buildSignals(s) {
     var out = [];
-    if (s.perfect_stack)      out.push('Stacked uptrend — price &gt; 10 &gt; 20 &gt; 50-day');
+    if (s.perfect_stack)      out.push('Stacked uptrend: price &gt; 10 &gt; 20 &gt; 50-day');
     else if (s.above_50dma)   out.push('Holding above the 50-day average');
     if (s.rs_pct >= 90)       out.push('Top-decile relative strength (' + s.rs_pct + 'th %ile)');
     else if (s.rs_pct >= 70)  out.push('Strong relative strength (' + s.rs_pct + 'th %ile)');
@@ -862,7 +862,7 @@
     else if (s.band_pct < 12) out.push('Tightening range — ' + s.band_pct + '% over 10 days');
     if (s.contraction < 0.8)  out.push('Range contracting vs the base (VCP)');
     if (s.vol_ratio < 0.8)    out.push('Volume dried up to ' + Math.round(s.vol_ratio * 100) + '% of its base');
-    if (s.extension >= -3 && s.extension <= 6) out.push('Sitting near the 20-day — entry in range');
+    if (s.extension >= -3 && s.extension <= 6) out.push('Near the 20-day: entry in range');
     else if (s.extension > 12) out.push('Extended ' + s.extension + '% above the 20-day');
     if (s.ret63 >= 20)        out.push('Up ' + Math.round(s.ret63) + '% over the last 3 months');
     if (!out.length)          out.push('Constructive structure across the board');

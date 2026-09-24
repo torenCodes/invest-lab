@@ -573,7 +573,7 @@ def _build_story(row, signals):
     if   v >= 1_000_000: parts.append(f"${v/1e6:.1f}M total")
     elif v >=   100_000: parts.append(f"${v/1e3:.0f}K total")
 
-    return f"{ticker} — " + ", ".join(parts) + "."
+    return f"{ticker}: " + ", ".join(parts) + "."
 
 
 def build_nominees(transactions, enrichment):

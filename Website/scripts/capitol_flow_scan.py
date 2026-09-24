@@ -249,7 +249,7 @@ def run(years=1, limit=None):
 
     out = {
         "scan_time":     start.isoformat(),
-        "source":        "US House Clerk — Periodic Transaction Reports",
+        "source":        "US House Clerk (Periodic Transaction Reports)",
         "filings_total": len(parsed),
         "filings_with_trades": scanned,
         "transactions":  len(txns),

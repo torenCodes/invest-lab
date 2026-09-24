@@ -334,7 +334,7 @@ def _participation(vol):
                       f"breakouts than the verdict alone implies.")
         else:
             clause = (f"Volume is under its 50-day norm, though that is ordinary for "
-                      f"{season_label} — plan for a slow tape rather than reading it as a warning.")
+                      f"{season_label}. It points to a slow tape rather than a warning sign.")
     elif read == "Heavy":
         clause = ("Volume is running above its 50-day norm, so there is real participation "
                   "behind these moves rather than a thin-tape drift.")

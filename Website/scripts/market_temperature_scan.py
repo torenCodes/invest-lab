@@ -374,8 +374,8 @@ def compute_yield_curve():
         "raw_label":   f"{spread:+.2f}% (10Y−2Y)",
         "score":       score,
         "label":       label_for(score),
-        "description": "10-year minus 2-year Treasury. A steep curve is early-cycle and healthy; "
-                       "flat or inverted marks a late-cycle market.",
+        "description": "10-year minus 2-year Treasury. A steep curve is early-cycle and healthy. "
+                       "A flat or inverted one marks a late-cycle market.",
     }
 
 
@@ -462,8 +462,8 @@ def compute_internals():
         "total":       total,
         "score":       round(clamp(pct50, 0.0, 100.0), 1),   # the % IS the score
         "label":       label_for(pct50),
-        "description": f"{above50} of {total} S&P 500 stocks above their 50-day average — the fast "
-                       "participation read, which swings with every dip and rally.",
+        "description": f"{above50} of {total} S&P 500 stocks are above their 50-day average. This is "
+                       "the fast participation read, and it swings with every dip and rally.",
     }
 
     pct = round(100.0 * above / total, 1)
@@ -535,8 +535,8 @@ def compute_fear_greed():
         "raw_label":   f"{round(score)} ({rating})",
         "score":       round(score, 1),
         "label":       label_for(score),
-        "description": "CNN's composite of seven short-term sentiment signals — momentum, breadth, "
-                       "put/call, junk demand and volatility.",
+        "description": "CNN's composite of seven short-term sentiment signals, including momentum, "
+                       "breadth, put/call, junk bond demand and volatility.",
     }
 
 
@@ -576,7 +576,7 @@ GROUPS = [
      ["risk_posture", "growth_value"]),
     ("sentiment", "Sentiment",
      "What investors say they feel, against what insiders quietly do. The "
-     "insider leg is inverted — they buy weakness and go quiet into strength.",
+     "insider leg is inverted, because insiders buy weakness and go quiet into strength.",
      ["fear_greed", "insider"]),
     ("credit_rates", "Credit & Rates",
      "The slower backdrop. Tight credit spreads signal complacency, so that "

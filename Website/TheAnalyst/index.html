@@ -741,7 +741,7 @@
     <div class="intro">
       <div class="intro-title">Greatest hits, with a documentary edge.</div>
       <div class="intro-sub">
-        These fifteen names didn't make this list by accident — every one of them was already surfaced by at least one of the lab's other dashboards (Movers &amp; Shakers, Tried &amp; True, The Underdogs, Insider Buying, or Pattern Scanner). The Analyst takes the cross-section, runs the fundamentals, and writes the story. Click any card to see the full report card, SEC filings, and the deeper metric stack.
+        Every one of these fifteen names was already surfaced by at least one of the lab's other dashboards (Movers &amp; Shakers, Tried &amp; True, The Underdogs, Insider Buying, or Pattern Scanner). The Analyst runs the fundamentals on that cross-section and writes up what it finds. Click any card to see the full report card, SEC filings, and the deeper metric stack.
       </div>
     </div>
 
@@ -760,14 +760,14 @@
         Each stock starts at zero and accumulates points across seven dimensions. A score of +25 or higher reads as <em>Undervalued</em>, -15 to +25 is <em>Fairly Valued</em>, below -15 is <em>Overpriced</em>. Pre-profitability growth stories with negative EPS but accelerating revenue route to <em>Speculative</em> instead, since traditional value metrics don't apply.
       </p>
       <div class="verdict-grid">
-        <div><strong style="color:var(--ink)">P/E vs sector</strong> — penalizes premium multiples, rewards discount-to-peers.</div>
-        <div><strong style="color:var(--ink)">PEG ratio</strong> — under 1.0 means growth may be underpriced.</div>
-        <div><strong style="color:var(--ink)">Revenue growth</strong> — top-line momentum, with penalty for contraction.</div>
-        <div><strong style="color:var(--ink)">Net margin</strong> — pricing power and operational leverage.</div>
-        <div><strong style="color:var(--ink)">Free Cash Flow yield + margin</strong> — actual cash generated after capex; harder to massage than reported earnings.</div>
-        <div><strong style="color:var(--ink)">Graham Number</strong> — classic margin-of-safety check (price vs &radic;(22.5 &times; EPS &times; book value)).</div>
-        <div><strong style="color:var(--ink)">Return on equity</strong> — capital efficiency.</div>
-        <div><strong style="color:var(--ink)">Debt/Equity</strong> — penalty for leverage above 200%.</div>
+        <div><strong style="color:var(--ink)">P/E vs sector:</strong> penalizes premium multiples, rewards discount-to-peers.</div>
+        <div><strong style="color:var(--ink)">PEG ratio:</strong> under 1.0 means growth may be underpriced.</div>
+        <div><strong style="color:var(--ink)">Revenue growth:</strong> top-line momentum, with penalty for contraction.</div>
+        <div><strong style="color:var(--ink)">Net margin:</strong> pricing power and operational leverage.</div>
+        <div><strong style="color:var(--ink)">Free Cash Flow yield + margin:</strong> the actual cash generated after capex, which is harder to massage than reported earnings.</div>
+        <div><strong style="color:var(--ink)">Graham Number:</strong> classic margin-of-safety check (price vs &radic;(22.5 &times; EPS &times; book value)).</div>
+        <div><strong style="color:var(--ink)">Return on equity:</strong> capital efficiency.</div>
+        <div><strong style="color:var(--ink)">Debt/Equity:</strong> penalty for leverage above 200%.</div>
       </div>
     </div>
 
@@ -881,7 +881,7 @@
     var container = document.getElementById('cards-container');
     if (!filtered.length) {
       var msg = allTickers.length === 0
-        ? 'No data yet — Analyst scan runs weekdays ~10:30am ET.'
+        ? 'No data yet. The Analyst scan runs weekdays around 10:30am ET.'
         : 'No ' + verdict.toLowerCase() + ' picks in today\'s set.';
       container.innerHTML =
         '<div class="empty-state"><div class="empty-icon">&#128202;</div>' +

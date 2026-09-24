@@ -147,8 +147,8 @@ def compute_verdict(info, price, graham):
         elif pe > sector_pe * 1.80:
             score -= 25
             cautions.append(
-                f"P/E of {pe:.1f}x represents a steep premium to the {sector} sector "
-                f"(~{sector_pe}x) — significant growth must materialise to justify the multiple"
+                f"P/E of {pe:.1f}x is a steep premium to the {sector} sector "
+                f"(~{sector_pe}x), so a lot of growth has to show up to justify it"
             )
         elif pe > sector_pe * 1.25:
             score -= 12
@@ -162,8 +162,8 @@ def compute_verdict(info, price, graham):
         if   peg < 1.0:
             score += 20
             signals.append(
-                f"PEG ratio of {peg:.2f} is below 1.0 — growth may be underpriced "
-                f"relative to the earnings trajectory"
+                f"PEG ratio of {peg:.2f} is below 1.0, which suggests the market may be "
+                f"underpricing the earnings growth"
             )
         elif peg < 1.5:
             score += 8
@@ -179,7 +179,7 @@ def compute_verdict(info, price, graham):
         if   rev_growth > 0.20:
             score += 15
             signals.append(
-                f"Revenue expanding at {rev_growth*100:.1f}% YoY — robust top-line momentum"
+                f"Revenue is growing fast, up {rev_growth*100:.1f}% YoY"
             )
         elif rev_growth > 0.08:
             score += 8
@@ -187,14 +187,14 @@ def compute_verdict(info, price, graham):
         elif rev_growth < 0:
             score -= 15
             cautions.append(
-                f"Revenue declined {abs(rev_growth)*100:.1f}% YoY — top-line contraction "
-                f"demands explanation"
+                f"Revenue fell {abs(rev_growth)*100:.1f}% YoY. A shrinking top line "
+                f"needs a good explanation"
             )
         elif rev_growth < 0.03:
             score -= 5
             cautions.append(
-                f"Revenue growth of {rev_growth*100:.1f}% YoY is below inflation — "
-                f"organic growth is stalling"
+                f"Revenue growth of {rev_growth*100:.1f}% YoY trails inflation, so in "
+                f"real terms the business is standing still"
             )
 
     # ── Net margin
@@ -202,16 +202,15 @@ def compute_verdict(info, price, graham):
         if   net_margin > 0.20:
             score += 10
             signals.append(
-                f"Net margin of {net_margin*100:.1f}% reflects exceptional pricing power "
-                f"and operational leverage"
+                f"Net margin of {net_margin*100:.1f}% points to strong pricing power"
             )
         elif net_margin > 0.10:
             score += 5
         elif net_margin < 0:
             score -= 20
             cautions.append(
-                f"Negative net margin ({net_margin*100:.1f}%) — the company is currently "
-                f"burning cash at the operating level"
+                f"Net margin is negative ({net_margin*100:.1f}%), so the company is "
+                f"losing money on its operations"
             )
 
     # ── Free cash flow (yield + margin). FCF is the cash left after capex —
@@ -224,29 +223,29 @@ def compute_verdict(info, price, graham):
         if   fcf_yield > 0.08:
             score += 12
             signals.append(
-                f"Free cash flow yield of {fcf_yield*100:.1f}% reflects strong cash "
-                f"generation at an attractive price"
+                f"A free cash flow yield of {fcf_yield*100:.1f}% is a lot of cash "
+                f"generation for the price"
             )
         elif fcf_yield > 0.04:
             score += 6
             signals.append(
-                f"Free cash flow yield of {fcf_yield*100:.1f}% — cash returns to "
-                f"shareholders are well-supported"
+                f"Free cash flow yield of {fcf_yield*100:.1f}% leaves room to fund "
+                f"buybacks and dividends"
             )
         elif fcf_yield < 0:
             score -= 15
             cautions.append(
-                f"Free cash flow is negative — the company is currently consuming cash "
-                f"at the corporate level after capex, which limits flexibility for "
-                f"buybacks, dividends, or debt paydown"
+                f"Free cash flow is negative, so after capex the company spends more "
+                f"cash than it brings in. That limits room for buybacks, dividends or "
+                f"paying down debt"
             )
 
     # FCF margin bonus only when FCF is positive — capital-efficiency signal
     if fcf_margin is not None and fcf_margin > 0.20 and (fcf_yield is None or fcf_yield > 0):
         score += 5
         signals.append(
-            f"FCF margin of {fcf_margin*100:.1f}% — the business converts a high "
-            f"share of revenue into actual cash"
+            f"An FCF margin of {fcf_margin*100:.1f}% means a high share of revenue "
+            f"ends up as actual cash"
         )
 
     # ── Graham Number
@@ -256,19 +255,20 @@ def compute_verdict(info, price, graham):
             score += 20
             signals.append(
                 f"At ${price:.2f}, the stock trades {(1-ratio)*100:.0f}% below its "
-                f"Graham Number of ${graham:.2f} — a classic value margin of safety"
+                f"Graham Number of ${graham:.2f}. That gap is the classic value "
+                f"investor's margin of safety"
             )
         elif ratio < 1.0:
             score += 10
             signals.append(
                 f"Price of ${price:.2f} is below the Graham Number of ${graham:.2f}, "
-                f"suggesting the market has not yet fully priced intrinsic book value"
+                f"a conservative fair-value estimate built from earnings and book value"
             )
         elif ratio > 2.0:
             score -= 15
             cautions.append(
-                f"Trading at {ratio:.1f}x the Graham Number of ${graham:.2f} — the market "
-                f"assigns a large franchise premium above tangible asset value"
+                f"Trading at {ratio:.1f}x its Graham Number of ${graham:.2f}, which means "
+                f"the market is paying a large premium over its tangible asset value"
             )
 
     # ── ROE
@@ -276,21 +276,21 @@ def compute_verdict(info, price, graham):
         if   roe > 0.25:
             score += 8
             signals.append(
-                f"Return on equity of {roe*100:.1f}% demonstrates best-in-class "
-                f"capital efficiency"
+                f"Return on equity of {roe*100:.1f}% shows the business earns a lot "
+                f"on its capital"
             )
         elif roe < 0:
             score -= 10
             cautions.append(
-                f"Negative ROE indicates the business is currently eroding shareholder equity"
+                f"Negative ROE means the business is eroding shareholder equity"
             )
 
     # ── Leverage
     if debt_eq is not None and debt_eq > 200:
         score -= 12
         cautions.append(
-            f"Debt/equity ratio of {debt_eq:.0f}% is elevated — financial leverage "
-            f"amplifies downside risk in a higher-rate environment"
+            f"Debt/equity of {debt_eq:.0f}% is high, and that much leverage magnifies "
+            f"the downside, especially when interest rates are high"
         )
 
     # ── Verdict label
@@ -316,10 +316,10 @@ def compute_verdict(info, price, graham):
     }
 
     closers = {
-        "UNDERVALUED":   f"At a forward P/E of {pe_str} with {gr_str} revenue growth, the risk/reward skews favourably for patient long-term investors.",
-        "FAIRLY VALUED": f"The current valuation appears to reflect near-term earnings. Accumulating on market-wide pullbacks would improve the entry risk/reward.",
-        "OVERPRICED":    f"While the business quality may be high, current pricing offers limited margin of safety — position sizing and a disciplined entry point are important.",
-        "SPECULATIVE":   f"Investors should size positions to reflect execution risk and monitor quarterly revenue cadence and the timeline to profitability.",
+        "UNDERVALUED":   f"On this model, that price combined with {gr_str} revenue growth tips the balance toward value.",
+        "FAIRLY VALUED": f"The price looks to reflect near-term earnings, with no clear discount and no stretched premium.",
+        "OVERPRICED":    f"At this price there is little margin of safety left in the numbers.",
+        "SPECULATIVE":   f"The story rests on quarterly revenue and how quickly it closes the gap to profitability.",
     }
 
     parts = [openers[verdict]]

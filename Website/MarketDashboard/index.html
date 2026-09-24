@@ -1195,7 +1195,7 @@ function toggleSiteNav(btn) {
           <span class="panel-icon">🗺️</span>
           <span class="panel-title">Sector Rotation</span>
         </div>
-        <p class="panel-desc">Where money is actually rotating across the eleven SPDR sector ETFs — measured <strong>against the S&amp;P 500</strong>, not just on their own, since a sector up 1% while the market's up 2% is quietly losing leadership. The <strong>rotation map</strong> plots every sector by relative strength and momentum (Leading, Weakening, Lagging, Improving); the <strong>banner</strong> reads the overall risk posture from cyclicals vs defensives; and the <strong>table</strong> breaks out each sector's edge over the market across 1D–3M, whether it's rotating in or out this week, and the conviction (volume) behind the move. Toggle to absolute returns anytime. Sectors rotating in are often where the next high-cadence movers surface — click a row for today's scan movers within it, or a header to sort.</p>
+        <p class="panel-desc">Where money is actually rotating across the eleven SPDR sector ETFs, measured <strong>against the S&amp;P 500</strong> rather than on their own. A sector up 1% while the market gains 2% is quietly losing leadership. The <strong>rotation map</strong> plots every sector by relative strength and momentum (Leading, Weakening, Lagging, Improving). The <strong>banner</strong> reads the overall risk posture from cyclicals versus defensives. The <strong>table</strong> shows each sector's edge over the market across 1D–3M, whether it is rotating in or out this week, and the volume behind the move. You can switch to absolute returns at any time. Sectors rotating in are often where the next high-cadence movers turn up, so click a row to see today's scan movers inside it, or a header to sort.</p>
       </div>
       <div id="sector-rotation-body">
         <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading sector data…</div></div>
@@ -1518,10 +1518,10 @@ function buildPostureBanner(posture, benchmark) {
   const cls = posture.label === 'Risk-on' ? 'sr-posture-on'
             : posture.label === 'Risk-off' ? 'sr-posture-off' : 'sr-posture-neutral';
   const read = posture.label === 'Risk-on'
-      ? 'Cyclicals are leading defensives — the market is playing offense.'
+      ? 'Cyclicals are leading defensives, so the market is playing offense.'
       : posture.label === 'Risk-off'
-        ? 'Defensives are leading cyclicals — the market is playing defense.'
-        : 'Cyclicals and defensives are balanced — no clear risk posture.';
+        ? 'Defensives are leading cyclicals, so the market is playing defense.'
+        : 'Cyclicals and defensives are balanced, with no clear risk posture.';
   const lead = (posture.leaders  || []).join(' & ');
   const lag  = (posture.laggards || []).join(' & ');
   const spy  = benchmark && benchmark.ret_1m != null
@@ -1584,7 +1584,7 @@ function buildRRG(sectors) {
       g += `<polyline points="${p}" fill="none" stroke="${q.color}" stroke-width="1.2" stroke-opacity="0.18" stroke-linejoin="round"/>`;
     }
     const X = sx(s.rrg.x), Y = sy(s.rrg.y);
-    g += `<circle cx="${X.toFixed(1)}" cy="${Y.toFixed(1)}" r="5" fill="${q.color}"><title>${s.sector} — ${s.rrg.quadrant}</title></circle>`;
+    g += `<circle cx="${X.toFixed(1)}" cy="${Y.toFixed(1)}" r="5" fill="${q.color}"><title>${s.sector}: ${s.rrg.quadrant}</title></circle>`;
     const labelLeft = X > W * 0.86;   // keep labels inside the canvas at the right edge
     g += `<text x="${(labelLeft ? X - 8 : X + 8).toFixed(1)}" y="${(Y + 3.5).toFixed(1)}"${labelLeft ? ' text-anchor="end"' : ''} class="rrg-dot-label" fill="${q.color}">${s.ticker}</text>`;
     return g;
@@ -1744,7 +1744,7 @@ async function loadResults() {
 
     if (!data || !data.scan_time) {
       pulse.className = 'pulse error';
-      text.textContent = 'No scan data yet — check back after 8am ET on a weekday';
+      text.textContent = 'No scan data yet. Check back after 8am ET on a weekday.';
       return;
     }
 
@@ -1780,7 +1780,7 @@ function loadCadence() {
     .then(d => { cadenceData = (d && d.names) || []; renderCadence(); maybeScrollToHash(); })
     .catch(() => {
       $('cadence-body').innerHTML =
-        '<div class="empty-state">Watchlist unavailable — the Cadence scan runs pre-market on weekdays.</div>';
+        '<div class="empty-state">Watchlist unavailable. The Cadence scan runs pre-market on weekdays.</div>';
     });
 }
 
@@ -1793,7 +1793,7 @@ function cadenceSort(col) {
 function renderCadence() {
   const el = $('cadence-body');
   if (!cadenceData.length) {
-    el.innerHTML = '<div class="empty-state">No watchlist yet — the Cadence scan runs pre-market on weekdays.</div>';
+    el.innerHTML = '<div class="empty-state">No watchlist yet. The Cadence scan runs pre-market on weekdays.</div>';
     return;
   }
 
@@ -1871,7 +1871,7 @@ function updateResults(data) {
   if (data.day_trades && data.day_trades.length) {
     dayEl.innerHTML = data.day_trades.map((s, i) => renderStockCard(s, 'day', i)).join('');
   } else {
-    dayEl.innerHTML = '<div class="empty-state">No movers in play yet — check back after the open.</div>';
+    dayEl.innerHTML = '<div class="empty-state">No movers in play yet. Check back after the open.</div>';
   }
 
   // Market chatter

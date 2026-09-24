@@ -916,13 +916,13 @@ function toggleSiteNav(btn) {
     <div class="sidebar-section">
       <div class="sidebar-label" id="side-how-label">How it works</div>
       <div class="sidebar-note" id="side-how-corporate">
-        Every ticker is scored 0-100 across seven dimensions. The weights are not guesses: they were set by testing the old model against <strong>22,600 historical insider buying clusters</strong> over five years of SEC filings, measured at 60 days against a small-cap benchmark.
+        Every ticker is scored 0-100 across seven dimensions. The weights come from testing the old model against <strong>22,600 historical insider buying clusters</strong> over five years of SEC filings, measured at 60 days against a small-cap benchmark.
         <br><br>
-        That test found the previous model ranked names almost backwards, so it was rebuilt. <strong>Price context (35)</strong> carries the most weight because it was the only dimension that separated winners from losers consistently — purchases near 52-week highs beat the index, purchases in stocks down more than 50% trailed it badly. <strong>Cluster size (15)</strong> is gated on that: several insiders buying together had the best hit rate in the whole study when the business was sound, and was worthless when the chart was broken. <strong>Role (20)</strong> follows the evidence rather than intuition, which means CFO purchases score above CEO ones. Position growth (10), recency (10), size (5) and entry price (5) round it out.
+        That test found the previous model ranked names almost backwards, so it was rebuilt. <strong>Price context (35)</strong> carries the most weight because it was the only dimension that separated winners from losers consistently. Purchases near 52-week highs beat the index, and purchases in stocks down more than 50% trailed it badly. <strong>Cluster size (15)</strong> is gated on that: several insiders buying together was the only group in the whole study to beat a coin flip, but only while the stock was holding up. It counts for far less when the chart is broken. <strong>Role (20)</strong> follows the evidence, so CFO purchases score above CEO ones. Position growth (10), recency (10), size (5) and entry price (5) round it out.
         <br><br>
         Tier A is roughly the top 15%. Open-market purchases only, so option exercises and scheduled sales are excluded, as are blank-check vehicles and anything without a real quote.
         <br><br>
-        <em>The measured effects are modest and come from a single market regime. This ranks candidates for your own research; it does not forecast returns.</em>
+        <em>The measured effects are modest and come from a single market regime. It ranks candidates for your own research. It does not forecast returns.</em>
       </div>
       <div class="sidebar-note" id="side-how-politician" hidden>
         Periodic Transaction Reports filed with the Clerk of the House, parsed straight from the PDFs. Names are ranked by how many different members traded them rather than by dollars, because members disclose only a broad range and a midpoint is a poor measure of size.
@@ -1032,7 +1032,7 @@ function renderStandouts(standouts) {
   return `
     <div class="standouts-callout">
       <div class="standouts-callout-title">This Week's Standouts</div>
-      <div class="standouts-callout-sub">Top conviction across all dimensions — click to jump to the card.</div>
+      <div class="standouts-callout-sub">Top conviction across all dimensions. Click to jump to the card.</div>
       <div class="standouts-grid">${cards}</div>
     </div>`;
 }
@@ -1093,7 +1093,7 @@ function renderNominees(filter) {
 
   if (!list.length) {
     const msg = !allNominees.length
-      ? 'No insider activity in this window — check back after the next scan.'
+      ? 'No insider activity in this window. Check back after the next scan.'
       : `No ${tierLabel(filter)} nominees today.`;
     return `<div class="empty-state">${msg}</div>`;
   }

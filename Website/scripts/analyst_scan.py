@@ -160,7 +160,7 @@ def gather_sources():
             add(s.get("ticker"), {
                 "source_key": "insider",
                 "label":      "Insider Buying",
-                "signal":     f"Tier {tier} (score {score}) — {sig}",
+                "signal":     f"Tier {tier} (score {score}) · {sig}",
                 "score":      score,
             })
 
@@ -174,14 +174,14 @@ def gather_sources():
             add(s.get("ticker"), {
                 "source_key": "patterns_coil",
                 "label":      "Pattern Scanner",
-                "signal":     f"{s.get('pattern') or 'Coiled setup'} — Coil {round(s.get('coil_score') or 0)}",
+                "signal":     f"{s.get('pattern') or 'Coiled setup'} · Coil {round(s.get('coil_score') or 0)}",
                 "score":      s.get("coil_score") or 0,
             })
         for s in (ps.get("leaders") or [])[:8]:
             add(s.get("ticker"), {
                 "source_key": "patterns_leader",
                 "label":      "Pattern Scanner",
-                "signal":     f"Constructive leader — Leader {round(s.get('leader_score') or 0)}, RS {s.get('rs_pct') or 0}th",
+                "signal":     f"Constructive leader · Leader {round(s.get('leader_score') or 0)}, RS {s.get('rs_pct') or 0}th",
                 "score":      s.get("leader_score") or 0,
             })
 
