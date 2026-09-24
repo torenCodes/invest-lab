@@ -148,18 +148,27 @@ def build_series(days):
     return series
 
 
-def fetch_name_map():
-    """Build a {ticker: company name} map from Polygon's tickers reference
-    (paginated, ~12 calls for the whole market). Grouped-daily bars give us
-    OHLCV but no names, so this is how the watchlist gets 'DigitalOcean'
-    under 'DOCN'. Cached locally for 7 days since names rarely change."""
-    cache_path = os.path.join(CACHE_DIR, "name_map.json")
+_REFERENCE = None   # in-process memo: cadence and coil each fetch the reference once
+
+
+def _fetch_reference():
+    """{ticker: [name, polygon_type]} from Polygon's tickers reference
+    (paginated, ~13 calls for the whole market). Grouped-daily bars carry no
+    names or security types, so this is where both come from. Cached locally
+    for 7 days. It used to keep only the name and discard `type`; the type is
+    what lets the leveraged-product filter trust broad words like "Ultra" on
+    funds without catching companies such as Ultra Clean Holdings."""
+    global _REFERENCE
+    if _REFERENCE is not None:
+        return _REFERENCE
+    cache_path = os.path.join(CACHE_DIR, "reference.json")
     if os.path.exists(cache_path) and (time.time() - os.path.getmtime(cache_path)) < 7 * 86400:
         with open(cache_path) as f:
-            return json.load(f)
+            _REFERENCE = json.load(f)
+        return _REFERENCE
 
-    print("[cadence] Building ticker -> name map...")
-    names = {}
+    print("[cadence] Building ticker reference (names + security types)...")
+    refs = {}
     url = "https://api.polygon.io/v3/reference/tickers"
     params = {"market": "stocks", "active": "true", "limit": 1000, "apiKey": POLYGON_KEY}
     pages = 0
@@ -173,23 +182,86 @@ def fetch_name_map():
             r.raise_for_status()
             j = r.json()
         except Exception as e:
-            print(f"[cadence] name map page {pages} failed: {e}")
+            print(f"[cadence] reference page {pages} failed: {e}")
             break
         for row in (j.get("results") or []):
             t, nm = row.get("ticker"), row.get("name")
             if t and nm:
-                names[t] = nm
+                refs[t] = [nm, row.get("type")]
         url = j.get("next_url")
         params = {"apiKey": POLYGON_KEY}   # next_url already carries the cursor/filters
         if url:
             time.sleep(2)
 
-    if names:
+    if refs:                               # never cache a failed fetch as data
         os.makedirs(CACHE_DIR, exist_ok=True)
         with open(cache_path, "w") as f:
-            json.dump(names, f)
-    print(f"[cadence] Name map: {len(names)} tickers across {pages} pages")
-    return names
+            json.dump(refs, f)
+    typed = sum(1 for v in refs.values() if v[1])
+    print(f"[cadence] Reference: {len(refs)} tickers ({typed} with a security type) across {pages} pages")
+    _REFERENCE = refs
+    return refs
+
+
+def fetch_name_map():
+    """{ticker: company name}. This is how the watchlist gets 'DigitalOcean'
+    under 'DOCN'. Kept for coil_scan, which imports it."""
+    return {t: v[0] for t, v in _fetch_reference().items()}
+
+
+# ── Leveraged / inverse products (Sep 2026) ───────────────────────────────────
+# Cadence scores daily range, and a 2x or 3x fund's range is its underlying's
+# range multiplied. So these products won on leverage rather than rhythm: 35 of
+# the 60 names and 6 of the top 10 in Sep 2026, with the same stock listed twice
+# (SNXX and SNDU are both 2x SNDK). The underlying stock is already in the
+# universe and competes on its own rhythm, so nothing real is lost by dropping
+# them. They also skew Pattern Scanner's relative-strength percentiles, since a
+# 3x fund's return sits at the extreme of the distribution every stock is
+# ranked against.
+#
+# Tested before shipping against all 12,807 names in the reference and every
+# name that ever appeared on Cadence or Pattern Scanner: 69 of 69 leveraged or
+# inverse products caught, and zero operating companies.
+
+FUND_TYPES = {"ETF", "ETN", "ETV", "ETS", "FUND"}
+
+# High precision, safe on any name. The digit rule needs a boundary before the
+# number so "10x Genomics" is not read as a 0x fund.
+_LEV_NAME = re.compile(
+    r"(?<![\w.])-?\d(?:\.\d+)?\s?x\b"          # 2X, 3x, 1.5X, -1x
+    r"|\bleveraged\b|\binverse\b"
+    r"|\bultrapro\b|\bultrashort\b"
+    r"|\bdaily target\b"
+    r"|\bproshares\s+(?:ultra\w*|short)\b",     # ProShares Ultra / UltraPro / UltraShort / Short
+    re.I)
+# Broad words, trusted ONLY when Polygon says the security is a fund:
+# Ultra Clean Holdings and Build-A-Bear Workshop are companies.
+_LEV_FUND_WORDS = re.compile(r"\b(?:ultra|bull|bear|short)\b", re.I)
+
+
+def is_leveraged_product(name, sec_type=None):
+    """True for leveraged and inverse ETFs / ETNs."""
+    if not name:
+        return False
+    if _LEV_NAME.search(name):
+        return True
+    return (sec_type or "").upper() in FUND_TYPES and bool(_LEV_FUND_WORDS.search(name))
+
+
+def drop_leveraged(series, tag):
+    """Remove leveraged / inverse products from a {ticker: bars} series.
+    Must run BEFORE scoring: Pattern Scanner ranks relative strength as a
+    percentile across the whole field, so leaving them in distorts every
+    stock's score, not just the slots they occupy."""
+    ref = _fetch_reference()
+    if not ref:
+        print(f"[{tag}] !! ticker reference unavailable - leveraged-product filter is OFF this run")
+        return series
+    dropped = sorted(t for t in series if t in ref and is_leveraged_product(*ref[t]))
+    print(f"[{tag}] Excluded {len(dropped)} leveraged/inverse products "
+          f"(e.g. {', '.join(dropped[:8])})")
+    gone = set(dropped)
+    return {t: bars for t, bars in series.items() if t not in gone}
 
 
 # ── Scoring ───────────────────────────────────────────────────────────────────
@@ -267,6 +339,7 @@ def run():
 
     series = build_series(days)
     print(f"[cadence] Built series for {len(series)} tickers")
+    series = drop_leveraged(series, "cadence")
 
     scored = []
     for t, bars in series.items():

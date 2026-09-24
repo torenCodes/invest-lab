@@ -35,7 +35,8 @@ from datetime import date, timedelta, datetime, timezone
 
 # Reuse the proven data layer from the Cadence scan (shared cache + name map)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from cadence_scan import fetch_grouped, build_series, fetch_name_map, clean_name, clamp  # noqa: E402
+from cadence_scan import (fetch_grouped, build_series, fetch_name_map, clean_name, clamp,  # noqa: E402
+                          drop_leveraged)
 
 # ── Config ────────────────────────────────────────────────────────────────────
 BASE_DIR    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Website/
@@ -203,6 +204,9 @@ def run():
 
     series = build_series(days)
     print(f"[coil] Built series for {len(series)} tickers")
+    # Before scoring, not after: relative strength below is a percentile across
+    # the whole field, and a 3x fund's return distorts every stock's rank.
+    series = drop_leveraged(series, "coil")
 
     scored = []
     for t, bars in series.items():
