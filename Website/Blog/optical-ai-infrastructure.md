@@ -4,85 +4,85 @@
 
 ---
 
-Everyone knows the AI story: Nvidia prints money, cloud hyperscalers spend hundreds of billions, and data centers multiply like rabbits. However, there is a quieter part of this story that a sharp group of investors started flagging before it became consensus, the optical buildout.
+Everyone knows the AI story by now. Nvidia (NVDA) prints money, the cloud hyperscalers spend hundreds of billions, and data centers multiply like rabbits. There's a quieter part of the story, though, and a sharp group of investors started flagging it before it became consensus: the optical buildout.
 
-While the world was fixated on GPUs, a handful of voices on YouTube and X were pointing at something less glamorous but just as important — the cables, transceivers, and photonic components that actually move data between all those chips. Their analysis may have been early, but they were right.
+While the world fixated on GPUs, a handful of voices on YouTube and X kept pointing at something less glamorous and just as important. The cables, transceivers and photonic components that actually move data between all those chips. Those voices may have been early. They were also right.
 
 ---
 
 ## Why Optics? Why Now?
 
-Modern AI workloads are fundamentally different from what data centers were originally built for. Training a frontier model means thousands of GPUs working in tight sync, passing enormous amounts of data back and forth constantly. The bottleneck often isn't compute, it's bandwidth.
+Modern AI workloads look nothing like what data centers were originally built for. Training a frontier model means thousands of GPUs working in tight sync, passing enormous amounts of data back and forth all the time. Often the limit is bandwidth: the GPUs can compute faster than the network can feed them.
 
-Fiber solves this in a way copper can't, because it moves data as light, which means it covers distance with far less power loss and signal degradation than copper can manage at scale. As AI clusters grew from hundreds to tens of thousands of GPUs, demand for high-speed optical transceivers, coherent modules, and photonic components exploded, and it hasn't let up.
+Fiber handles that in a way copper can't. It moves data as light, so it covers distance with far less power loss and signal degradation than copper manages at scale. As AI clusters grew from hundreds of GPUs to tens of thousands, demand for high-speed optical transceivers, coherent modules and photonic components exploded, and it hasn't let up.
 
-Hyperscalers like Microsoft, Google, Amazon, and Meta have each committed to multi-hundred-billion-dollar infrastructure plans through 2027. A significant chunk of that flows into optical networking usage inside data centers, between data centers, and out into the metro and long-haul networks that AI traffic is now straining in ways nobody planned for.
+Microsoft (MSFT), Google (GOOGL), Amazon (AMZN) and Meta (META) have each committed to multi-hundred-billion-dollar infrastructure plans through 2027. A significant chunk of that flows into optical networking: inside data centers, between them, and out into the metro and long-haul networks that AI traffic is now straining in ways nobody planned for.
 
 ---
 
-## The Players Worth Knowing
+## The Players
 
-Several publicly traded companies sit at the center of this buildout, and a handful have been on the radar of forward-looking investors for years.
+Several publicly traded companies sit at the center of this buildout, and a few have been on forward-looking investors' radar for years.
 
-**II-VI / Coherent (COHR)** is the heavyweight of the bunch. After the merger of II-VI and Coherent Corp, the combined company became one of the most vertically integrated optical component manufacturers in the world, producing everything from compound semiconductors to 400G and 800G transceivers and coherent modules. As data center speeds push toward 1.6T, COHR is deeply embedded in that roadmap, and while the integration story has been messy, the underlying demand is hard to argue with.
+**II-VI / Coherent (COHR)** is the heavyweight. The merger of II-VI and Coherent Corp created one of the most vertically integrated optical component makers in the world, producing everything from compound semiconductors to 400G and 800G transceivers and coherent modules. As data center speeds push toward 1.6T, COHR is built into that roadmap. The integration has been messy, but the demand underneath it is hard to argue with.
 
-**Lumentum (LITE)** makes precision optical and photonic products and is well-positioned in 3D sensing, telecom, and increasingly data center optics. Their indium phosphide (InP) laser expertise is core to the high-speed transceivers AI clusters depend on. The company has historically been volatile alongside telecom cycles, though the data center tailwind is a newer and more durable driver than anything they've seen before.
+**Lumentum (LITE)** makes precision optical and photonic products, with a strong position in 3D sensing, telecom and, increasingly, data center optics. Its indium phosphide (InP) laser expertise is core to the high-speed transceivers AI clusters depend on. Lumentum has historically swung with telecom cycles. Data center demand is a newer driver, and a more durable one than anything the company has seen before.
 
-**AXT Inc. (AXTI)** is the picks-and-shovels play beneath the picks-and-shovels. The company makes the compound semiconductor substrates (indium phosphide, gallium arsenide, germanium) that are the raw material for the lasers and photodetectors inside optical components, which means when COHR and LITE ramp production, AXTI benefits one level upstream. The stock is small-cap and carries higher risk, though it's tightly tied to optical growth without the integration complexity of the bigger players.
+**AXT Inc. (AXTI)** is the picks-and-shovels play beneath the picks-and-shovels. It makes the compound semiconductor substrates (indium phosphide, gallium arsenide, germanium) that become the lasers and photodetectors inside optical components. When COHR and LITE ramp production, AXTI benefits one level upstream. It's a small-cap with higher risk, but it's tightly tied to optical growth without the integration complexity of the bigger players.
 
-A few more worth keeping tabs on:
+A few more to keep tabs on:
 
-**Fabrinet (FN)** is a contract manufacturer for optical components, assembling the finished transceivers for many of the names above. As optical volume grows, Fabrinet's highly automated Thailand facilities scale right along with it. The balance sheet is clean and execution has been consistent across cycles.
+**Fabrinet (FN)** is a contract manufacturer that assembles the finished transceivers for many of the names above. As optical volume grows, its highly automated Thailand facilities scale right along with it. The balance sheet is clean, and execution has been consistent across cycles.
 
-**Ciena (CIEN)** operates higher up at the networking systems layer. Their WaveLogic coherent technology powers long-haul and metro networks, and AI is driving traffic growth outside the data center that nobody fully anticipated. It's less of a direct AI play than the component names, though it's still catching the same tailwind.
+**Ciena (CIEN)** works higher up, at the networking systems layer. Its WaveLogic coherent technology powers long-haul and metro networks, and AI is driving traffic growth outside the data center that nobody fully anticipated. It's a less direct AI play than the component makers, though it's catching the same tailwind.
 
-**Applied Optoelectronics (AAOI)** is a smaller, more speculative name in data center transceivers. Volatility runs higher than its larger peers, but meaningful demand upticks from hyperscaler relationships have started turning heads in recent quarters.
+**Applied Optoelectronics (AAOI)** is a smaller, more speculative name in data center transceivers. It runs more volatile than its larger peers, but meaningful demand upticks from hyperscaler relationships have started turning heads in recent quarters.
 
-**Marvell Technology (MRVL)** straddles semiconductors and silicon photonics. They're developing custom silicon photonics solutions for hyperscalers that could reshape how optical components get integrated at scale, which makes the stock a larger-cap way to get exposure to the optical story with less pure-play risk.
+**Marvell Technology (MRVL)** straddles semiconductors and silicon photonics. It's developing custom silicon photonics for hyperscalers that could reshape how optical components get integrated at scale, which makes it a larger-cap way into the optical story with less pure-play risk.
 
 ---
 
 ## Why This Trade Makes Sense
 
-Every GPU cluster needs to be networked, every data center needs to connect to others, and every byte of AI-generated content travels over fiber. Optical is the connective tissue holding the whole AI era together.
+Every GPU cluster has to be networked. Every data center has to connect to others. Every byte of AI-generated content travels over fiber. Optical is the connective tissue of the whole buildout.
 
-A few things make this interesting from an investment angle:
+A few things make it interesting from an investment angle.
 
-**Supply constraints are real.** High-speed optical transceivers (especially 400G, 800G, and the emerging 1.6T) require specialized manufacturing, compound semiconductors, and long qualification cycles with hyperscalers. None of that gets spun up overnight, which means companies already qualified and ramping have a durable advantage over anyone trying to catch up.
+**Supply constraints are real.** High-speed optical transceivers, especially 400G, 800G and the emerging 1.6T, need specialized manufacturing, compound semiconductors and long qualification cycles with hyperscalers. None of that gets spun up overnight, so the companies already qualified and ramping have a durable head start on anyone trying to catch up.
 
-**The upgrade cycle keeps coming.** Data center optical infrastructure gets refreshed as speeds increase, and each generation means new transceivers, new switches, and new fiber plant. The move from 100G to 400G was a multi-year cycle, and the move to 800G and beyond is already underway. That pattern produces recurring demand rather than a one-time build.
+**The upgrade cycle keeps coming.** Data center optics get refreshed as speeds rise, and each generation means new transceivers, new switches and new fiber plant. The move from 100G to 400G took years, and the move to 800G and beyond is already underway. Demand comes back with every generation.
 
-**Valuation has lagged the narrative.** Nvidia carries some of the loftiest multiples in the market, while a lot of optical component companies still sit at relatively modest valuations despite real secular tailwinds. As the AI infrastructure theme broadens beyond GPUs into the full stack, there's room for multiple expansion in names that haven't yet been bid up.
+**Valuation has lagged the narrative.** Nvidia carries some of the loftiest multiples in the market, while plenty of optical component makers still trade at relatively modest valuations despite real long-term tailwinds. As the AI infrastructure theme broadens from GPUs to the full stack, names that haven't been bid up yet have room for their multiples to expand.
 
 ---
 
 ## The Risks Are Real Too
 
-Optical companies are historically cyclical. Telecom spending booms and busts have burned investors before, and inventory digestion cycles can be genuinely painful when they hit. Integration execution risk at COHR is still a live concern, and if AI capex ever hits a serious wall, the whole infrastructure trade faces a re-rating.
+Optical companies are historically cyclical. Telecom booms and busts have burned investors before, and inventory digestion cycles can be painful when they hit. Integration risk at COHR is still live, and if AI capex ever hits a serious wall, the whole infrastructure trade gets re-rated.
 
-However, the structural case for the trade, namely that AI requires massive and sustained optical buildout, is well-supported by the spending commitments hyperscalers have already locked in through the rest of this decade.
+Still, the core case, that AI needs a massive and sustained optical buildout, is well supported by the spending hyperscalers have already locked in for the rest of this decade.
 
 ---
 
 ## Credit Where It's Due
 
-A few people have been doing this work publicly and deserve direct acknowledgment.
+A few people have been doing this work in public and deserve direct credit.
 
-**Yiannis Zourmpanos (@yianisz on X)** posted what may be the clearest synthesis of the photonics moment to date. In a March 11, 2026 thread, he laid out the full supply chain: from transceiver names like LITE, COHR, AAOI, and FN, to DSP/silicon players like MRVL and CRDO, to foundry and equipment names, all the way up to substrate leaders including AXTI, SIQE, and SOI. His framing captures it as well as anything written: "AI started as a GPU trade. It's quickly becoming an optics and networking trade too." He also noted that AAOI landing a $200M+ 1.6T order and LITE and COHR entering the S&P 500 in the same week signaled photonics moving from niche to core AI infrastructure.
+**Yiannis Zourmpanos (@yianisz on X)** posted what may be the clearest synthesis of the photonics moment so far. In a March 11, 2026 thread he laid out the whole supply chain, from transceiver names like LITE, COHR, AAOI and FN, to DSP and silicon players like MRVL and CRDO, to foundry and equipment names, all the way up to substrate leaders including AXTI, SIQE and SOI. His framing is as good as anything written on it: "AI started as a GPU trade. It's quickly becoming an optics and networking trade too." He also pointed out that AAOI landing a $200M+ 1.6T order in the same week LITE and COHR entered the S&P 500 signaled photonics moving from niche to core AI infrastructure.
 
-**Davy (@Blinklebloop on X)**, also on March 11, 2026, highlighted a lesser-known angle: SOITEC, a French company with a near-monopoly on Smart-Cut technology used to make SOI (silicon-on-insulator) wafers. Those wafers are the substrate inside photonic integrated circuits (PICs), and PICs are what power the transceivers driving AI clusters. Finding the company two levels beneath the headline names is exactly the kind of research that gets rewarded early.
+**Davy (@Blinklebloop on X)**, also on March 11, 2026, highlighted a lesser-known angle: SOITEC, a French company with a near-monopoly on the Smart-Cut technology used to make SOI (silicon-on-insulator) wafers. Those wafers are the substrate inside photonic integrated circuits (PICs), and PICs power the transceivers driving AI clusters. Finding the company two levels beneath the headline names is exactly the kind of digging that pays off early.
 
-**Martin Shkreli** has been one of the more vocal and unconventional voices here, publishing a detailed Substack essay on photonic computing and taking an advisory role at Q/C Technologies (QCLS). His focus is on the longer-horizon possibility of photonics *replacing* GPUs for matrix multiplication entirely, which is more speculative than the transceiver buildout discussed here but part of the same broader conviction that light is the future of computing infrastructure. His willingness to make the argument loudly, regardless of how the mainstream received it, helped put the topic on more investors' radar.
+**Martin Shkreli** has been one of the louder and more unconventional voices here. He published a detailed Substack essay on photonic computing and took an advisory role at Q/C Technologies (QCLS). His focus is the longer-range possibility of photonics *replacing* GPUs for matrix multiplication altogether. That's more speculative than the transceiver buildout covered here, but it comes from the same conviction that light is the future of computing infrastructure. His willingness to argue it loudly, however the mainstream received it, helped put the topic on more investors' radar.
 
-That kind of bottom-up public research is how ideas like this travel before they become consensus. Supply chain digging, earnings call analysis, and connecting upstream substrates to downstream hyperscaler capex all add up to genuine edge over institutional research. If you found this thesis through any of these voices, you were early.
+That kind of bottom-up public research is how ideas like this spread before they become consensus. Digging through supply chains, working through earnings calls and connecting upstream substrates to downstream hyperscaler capex can add up to a genuine edge, even over institutional research. If you found this idea through any of these voices, you were early.
 
 ---
 
 ## The Bottom Line
 
-The AI infrastructure trade isn't just about who makes the chips, it's about who makes the light that connects them. Optical component and systems companies, including COHR, LITE, AXTI, FN, and CIEN, are sitting at the center of a multi-year, multi-hundred-billion-dollar buildout cycle. The story is maturing from early-adopter insight to institutional consensus, but there's likely still runway ahead as speeds increase, clusters grow, and the world's data centers keep transforming into AI factories.
+Behind every AI chip is the light that connects it to the next one. Optical component and systems companies, including COHR, LITE, AXTI, FN and CIEN, sit at the center of a multi-year, multi-hundred-billion-dollar buildout cycle. The story is maturing from early-adopter insight into institutional consensus, and there's likely still runway as speeds rise, clusters grow and data centers keep turning into AI factories.
 
-The fiber is being laid, and the light is already moving.
+The fiber is being laid. The light is already moving.
 
 ---
 
