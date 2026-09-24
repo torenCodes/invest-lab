@@ -63,12 +63,11 @@ def _write_json(path, payload):
     with open(path, "w") as f:
         f.write(text)
 
-# Dashboard "families" for cross-source dedup. Movers' day + swing lenses
-# come from the same scan, so they shouldn't double-count toward the
-# "surfaced by N dashboards" tally. Same for Insider's cluster + csuite.
+# Dashboard "families" for cross-source dedup, so two lenses from the same
+# dashboard (Pattern Scanner's coil + leaders, Insider's cluster + csuite)
+# don't double-count toward the "surfaced by N dashboards" tally.
 DASHBOARD_FAMILY = {
     "movers_day":      "movers",
-    "movers_swing":    "movers",
     "tried_true":      "tried_true",
     "underdogs":       "underdogs",
     "insider":         "insider",
@@ -118,13 +117,11 @@ def gather_sources():
                 "signal":     f"Day Trade nominee (score {s.get('score', 0)})",
                 "score":      s.get("score") or 0,
             })
-        for s in (md.get("swing_trades") or [])[:5]:
-            add(s.get("ticker"), {
-                "source_key": "movers_swing",
-                "label":      "Movers & Shakers",
-                "signal":     f"Swing Trade nominee (score {s.get('score', 0)})",
-                "score":      s.get("score") or 0,
-            })
+        # No Movers swing source. That list was hidden from the Movers page in
+        # June 2026 and has since been removed from the scan; names sourced from
+        # it here carried a "Movers & Shakers" pill that led readers to a page
+        # with no swing section. Swing reaches this board through Pattern
+        # Scanner's Coil and Leaders lists instead.
 
     # ── The Marathon: Tried & True (ETF consensus) — top 8 by rank
     tt = _load("TheMarathon/data/consensus.json")

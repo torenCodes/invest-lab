@@ -69,18 +69,16 @@ def extract_movers(path):
     with open(path) as f:
         data = json.load(f)
 
-    # Pick highest-scored nominee across day_trades and swing_trades
-    candidates = []
-    day_list   = data.get('day_trades', [])
-    swing_list = data.get('swing_trades', [])
-    if day_list:
-        candidates.append(('Day Trade', day_list[0]))
-    if swing_list:
-        candidates.append(('Swing Trade', swing_list[0]))
-    if not candidates:
+    # The day list's #1 only - the pick the homepage shows as Top Day Trade.
+    # This used to take whichever of day[0] or swing[0] scored higher, but the
+    # swing list was hidden from the site in June 2026, so on those days the
+    # track record graded a name no visitor could have seen in place of the one
+    # they did. Swing is now graded through Pattern Scanner (Coil).
+    day_list = data.get('day_trades', [])
+    if not day_list:
         return None
 
-    trade_type, pick = max(candidates, key=lambda x: x[1].get('score', 0))
+    trade_type, pick = 'Day Trade', day_list[0]
     signals = pick.get('signals', [])
     reason  = trade_type + ' — ' + '; '.join(signals[:2]) if signals else trade_type + ' nominee'
 

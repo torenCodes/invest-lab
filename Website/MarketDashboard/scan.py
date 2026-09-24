@@ -46,71 +46,17 @@ POLYGON_API_KEY = os.environ.get("POLYGON_KEY", "")
 
 DAY_TRADE_MIN_PRICE   = 5.0
 DAY_TRADE_MAX_PRICE   = 150.0
-SWING_TRADE_MIN_PRICE = 20.0
-SWING_TRADE_MAX_CHG   = 12.0   # Skip parabolic blowoff tops in swing pool
 MIN_MARKET_CAP        = 20_000_000
-MIN_MARKET_CAP_SWING  = 1_000_000_000   # $1B floor — established mid-cap+
 MIN_DAY_SCORE         = 10
-MIN_SWING_SCORE       = 15     # Forces multi-signal conviction
 # Score components: 8(gainer)+5(active)+15(move)+15(buzz)+12(trending)+8(finviz)
 #                 + 3(closing strong) + 5(sector leader) = 71
 MAX_POSSIBLE_SCORE    = 71
 
-# Russell 1000 ETF (iShares IWB) — universe for swing candidates.
-# Russell 1000 already contains the entire S&P 500, so this single
-# fetch covers "S&P 500 plus Russell 1000."
-IWB_URL = ("https://www.ishares.com/us/products/239707/ishares-russell-1000-etf/"
-           "1467271812596.ajax?fileType=csv&fileName=IWB_holdings&dataType=fund")
 
 NEXT_SCAN_INFO = "Weekdays 9:35am, 11:30am & 1:30pm ET"
 
 
 # ── Universe helpers ──────────────────────────────────────────────────────────
-
-def _norm_ticker(t):
-    """Canonicalize a ticker for set membership: uppercase, strip . and -.
-    Different sources spell share-class tickers differently (BRKB / BRK.B / BRK-B);
-    normalizing on both sides of the comparison avoids false misses."""
-    return (t or "").upper().replace(".", "").replace("-", "").strip()
-
-
-def fetch_russell1000_universe():
-    """Fetch the iShares IWB (Russell 1000) holdings CSV and return a set of
-    normalized equity tickers. Russell 1000 ≈ top 1000 US stocks by market cap
-    and contains the entire S&P 500 — used to gate swing candidates to
-    institutional-grade names. Returns empty set on failure (caller should
-    treat that as "no universe filter applied")."""
-    print("[scan.py] Fetching Russell 1000 universe (iShares IWB)...")
-    headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                             "AppleWebKit/537.36 (KHTML, like Gecko) "
-                             "Chrome/125.0.0.0 Safari/537.36"}
-    try:
-        r = requests.get(IWB_URL, headers=headers, timeout=20)
-        r.raise_for_status()
-    except Exception as e:
-        print(f"[scan.py] IWB fetch failed: {e}")
-        return set()
-
-    tickers = set()
-    in_holdings = False
-    for row in csv.reader(io.StringIO(r.text)):
-        if not row:
-            continue
-        if not in_holdings:
-            if row[0].strip().lower() == "ticker":
-                in_holdings = True
-            continue
-        if len(row) < 4:
-            continue
-        ticker    = row[0].strip().upper()
-        asset_cls = row[3].strip() if len(row) > 3 else ""
-        if not ticker or asset_cls.lower() != "equity":
-            continue
-        tickers.add(_norm_ticker(ticker))
-
-    print(f"[scan.py] Russell 1000 universe: {len(tickers)} tickers loaded")
-    return tickers
-
 
 # ── Yahoo Finance movers ───────────────────────────────────────────────────────
 
@@ -612,7 +558,7 @@ def get_stocktwits_sentiment(ticker):
 
 def enrich_chatter(reddit_cards, apewisdom, result_map):
     """Broaden + enrich the Market Chatter cards with the new social sources,
-    WITHOUT touching the day/swing buzz scoring (ApeWisdom counts run far larger
+    WITHOUT touching the day-trade buzz scoring (ApeWisdom counts run far larger
     than the Reddit/Polygon scale, so they'd skew the buzz thresholds):
       - pull in top ApeWisdom names the Reddit/news pass missed (momentum names
         often surface there first), up to CHATTER_MAX cards;
@@ -870,18 +816,22 @@ def apply_sector_leadership(results):
 # ── Categorize ─────────────────────────────────────────────────────────────────
 
 def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Reddit",
-               yahoo_trending=None, swing_universe=None):
-    """Split results into day-trade vs swing-trade candidate lists.
+               yahoo_trending=None):
+    """Build the day-trade list and the chatter cards.
 
     Day trades: full scan universe (gainers + active), $5–$150, +1.5%+, score 10+.
-    Swing trades: Russell 1000 only (institutional-grade), $20+, $2B+ market cap,
-    1%–10% change band (not parabolic), score 15+ (multi-signal conviction).
+
+    There is no swing list. It was taken off the page on 2026-06-18 when swing
+    moved to the Coil engine on Pattern Scanner, but this scan kept computing
+    it, and two consumers kept reading it: the archive, which recorded whichever
+    of day or swing scored higher (so an invisible swing pick could displace the
+    Top Day Trade visitors actually saw), and The Analyst, which labelled those
+    names "Movers & Shakers" and sent readers to a dashboard with no swing
+    section. Benchmarked over 30 days the hidden list trailed SPY by ~2 points at
+    the median, where Coil ran slightly ahead. Removed in Sep 2026, along with
+    the Russell 1000 download it needed on every run.
     """
     day_cands   = []
-    swing_cands = []
-
-    swing_dropped_universe = 0
-    swing_dropped_change   = 0
 
     for r in results:
         if not r:
@@ -896,32 +846,7 @@ def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Redd
                 and r["score"] >= MIN_DAY_SCORE):
             day_cands.append(r)
 
-        # Swing — gated on Russell 1000 universe + tighter constraints
-        if swing_universe and _norm_ticker(r["ticker"]) not in swing_universe:
-            swing_dropped_universe += 1
-            continue
-        if chg_pct > SWING_TRADE_MAX_CHG:
-            swing_dropped_change += 1
-            continue
-        if (price >= SWING_TRADE_MIN_PRICE
-                and market_cap >= MIN_MARKET_CAP_SWING
-                and chg_pct >= 1.0
-                and r["score"] >= MIN_SWING_SCORE):
-            swing_cands.append(r)
-
-    if swing_universe:
-        print(f"[scan.py] Swing pre-filter: {swing_dropped_universe} dropped "
-              f"(outside Russell 1000), {swing_dropped_change} dropped "
-              f"(change > {SWING_TRADE_MAX_CHG:.0f}%)")
-
     day_cands.sort(key=lambda x: x["score"], reverse=True)
-    swing_cands.sort(key=lambda x: x["score"], reverse=True)
-
-    # No more cross-section dedup. A high-quality $20+ name with strong
-    # momentum is legitimately both a day-trade play (intraday) AND a swing
-    # play (multi-day large cap) — the section headers already frame them
-    # differently. Excluding day picks from swing was leaving swing empty
-    # whenever the top scorers happened to also meet swing criteria.
 
     result_map = {r["ticker"]: r for r in results if r}
     reddit_candidates = sorted(buzz_lookup.items(), key=lambda x: x[1], reverse=True)
@@ -979,7 +904,7 @@ def categorize(results, buzz_lookup, universe, yahoo_cats=None, buzz_label="Redd
         except Exception:
             continue
 
-    return day_cands[:6], swing_cands[:6], reddit_cards
+    return day_cands[:6], reddit_cards
 
 
 # ── Earnings enrichment ────────────────────────────────────────────────────────
@@ -1345,9 +1270,6 @@ def run():
     universe   = sorted(yahoo_cats["gainers"] | yahoo_cats["active"])
     print(f"[scan.py] Universe: {len(universe)} tickers (gainers + active only)")
 
-    # Russell 1000 universe used to gate swing-trade candidates only
-    swing_universe = fetch_russell1000_universe()
-
     print("[scan.py] Fetching Yahoo trending tickers...")
     yahoo_trending = get_yahoo_trending()
 
@@ -1398,17 +1320,16 @@ def run():
         time.sleep(1.1)
 
     # Sector leadership pass — applied before categorize so the +5 bonus
-    # can lift a stock over the day/swing score cutoffs.
+    # can lift a stock over the day-trade score cutoff.
     apply_sector_leadership(results)
 
-    day_trades, swing_trades, reddit_cards = categorize(
+    day_trades, reddit_cards = categorize(
         results, buzz_lookup, universe, yahoo_cats, buzz_label, yahoo_trending,
-        swing_universe=swing_universe,
     )
 
     print("[scan.py] Enriching Market Chatter (ApeWisdom + StockTwits)...")
     apewisdom   = get_apewisdom_buzz()
-    chatter_map = {c["ticker"]: c for c in (day_trades + swing_trades + reddit_cards)}
+    chatter_map = {c["ticker"]: c for c in (day_trades + reddit_cards)}
     reddit_cards = enrich_chatter(reddit_cards, apewisdom, chatter_map)
     chatter_emerging = compute_emerging_chatter(apewisdom)
     print(f"[scan.py] Emerging chatter (accelerating): {[c['ticker'] for c in chatter_emerging]}")
@@ -1420,7 +1341,7 @@ def run():
     sector_rotation = get_sector_rotation(results)
 
     print(f"[scan.py] Enriching nominees with earnings data...")
-    enrich_with_earnings(day_trades + swing_trades + reddit_cards, earnings_cal)
+    enrich_with_earnings(day_trades + reddit_cards, earnings_cal)
 
     confirmed = {card["ticker"] for card in reddit_cards}
     filtered_feed = []
@@ -1469,7 +1390,7 @@ def run():
         print(f"[scan.py] Chatter feed: {len(display_feed)} Finnhub headlines for chatter picks")
 
     # Normalize scores to 0-100 scale for frontend display
-    for nominee in day_trades + swing_trades + reddit_cards:
+    for nominee in day_trades + reddit_cards:
         raw = nominee.get("score", 0)
         nominee["score_normalized"] = round(min(raw / MAX_POSSIBLE_SCORE * 100, 100))
 
@@ -1478,7 +1399,6 @@ def run():
         "next_scan_info":   NEXT_SCAN_INFO,
         "total_scanned":    len(universe),
         "day_trades":       day_trades,
-        "swing_trades":     swing_trades,
         "buzz_source":      buzz_source,
         "reddit_cards":     reddit_cards,
         "chatter_emerging": chatter_emerging,
@@ -1495,7 +1415,7 @@ def run():
         f.write(payload)
 
     elapsed = (datetime.now(timezone.utc) - start).seconds
-    print(f"[scan.py] Done in {elapsed}s — {len(day_trades)}D {len(swing_trades)}S {len(reddit_cards)}R")
+    print(f"[scan.py] Done in {elapsed}s — {len(day_trades)}D {len(reddit_cards)}R")
 
     # An empty board is a normal outcome on a red tape, but it is also what a
     # dead API key looks like. Say which, every run, so the two are never
@@ -1505,7 +1425,7 @@ def run():
         print(f"[scan.py] !! FINNHUB DEGRADED — {sum(_FINNHUB_FAILS.values())} failed calls:")
         for line in fails:
             print(f"[scan.py]    {line}")
-        if not (day_trades or swing_trades or reddit_cards):
+        if not (day_trades or reddit_cards):
             print("[scan.py] !! Board is EMPTY and Finnhub was failing — treat the "
                   "empty result as unproven, not as 'no candidates today'.")
     else:
