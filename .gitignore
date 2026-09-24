@@ -29,6 +29,8 @@ results.json
 # SEC Form 345 quarterly archives (~200MB, one-time backfill, dev-only —
 # CI reuses the committed insider_history.json instead of re-downloading)
 .insider_cache/
+# list_backtest.py: git-history snapshots + daily price cache + miss ledger
+.list_cache/
 # GitHub Actions commits each dashboard's scan output — must not be ignored
 !**/data/results.json
 
