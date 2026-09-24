@@ -768,6 +768,22 @@
   }
   .cad-tag-day   { background: var(--accent-muted, #edf8f6); color: var(--accent-dark, #2a9b87); }
   .cad-tag-swing { background: #fdf9ed; color: #b8922a; }
+  .cad-more {
+    display: block;
+    margin: 0.85rem auto 0.25rem;
+    padding: 0.5rem 1.1rem;
+    background: var(--accent-muted);
+    color: var(--accent-dark);
+    border: 1px solid var(--accent-light);
+    border-radius: 4px;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+  .cad-more:hover { background: var(--accent-light); }
+  .cad-more:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .sr-cell {
     padding: 10px 14px;
     text-align: right;
@@ -1138,14 +1154,14 @@ function toggleSiteNav(btn) {
       <a class="nav-item active" href="#day-trades" onclick="setActive(this)">
         <span class="nav-icon">⚡</span> In Play Today
       </a>
+      <a class="nav-item" href="#sector-rotation" onclick="setActive(this)">
+        <span class="nav-icon">🗺️</span> Sector Rotation
+      </a>
       <a class="nav-item" href="#market-chatter" onclick="setActive(this)">
         <span class="nav-icon">💬</span> Market Chatter
       </a>
       <a class="nav-item" href="#cadence" onclick="setActive(this)">
         <span class="nav-icon">🎯</span> Cadence Watchlist
-      </a>
-      <a class="nav-item" href="#sector-rotation" onclick="setActive(this)">
-        <span class="nav-icon">🗺️</span> Sector Rotation
       </a>
     </div>
     <div class="sidebar-section scan-progress-wrap">
@@ -1168,6 +1184,21 @@ function toggleSiteNav(btn) {
       </div>
       <div class="cards-grid" id="day-cards">
         <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Waiting for scan results…</div></div>
+      </div>
+    </section>
+
+    <!-- Sector Rotation — second, directly under the movers it explains. It sat
+         last until Sep 2026, two screens down behind the 1,166px Cadence table. -->
+    <section id="sector-rotation" class="full-panel">
+      <div class="panel-header">
+        <div class="panel-header-top">
+          <span class="panel-icon">🗺️</span>
+          <span class="panel-title">Sector Rotation</span>
+        </div>
+        <p class="panel-desc">Where money is actually rotating across the eleven SPDR sector ETFs — measured <strong>against the S&amp;P 500</strong>, not just on their own, since a sector up 1% while the market's up 2% is quietly losing leadership. The <strong>rotation map</strong> plots every sector by relative strength and momentum (Leading, Weakening, Lagging, Improving); the <strong>banner</strong> reads the overall risk posture from cyclicals vs defensives; and the <strong>table</strong> breaks out each sector's edge over the market across 1D–3M, whether it's rotating in or out this week, and the conviction (volume) behind the move. Toggle to absolute returns anytime. Sectors rotating in are often where the next high-cadence movers surface — click a row for today's scan movers within it, or a header to sort.</p>
+      </div>
+      <div id="sector-rotation-body">
+        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading sector data…</div></div>
       </div>
     </section>
 
@@ -1197,19 +1228,6 @@ function toggleSiteNav(btn) {
       </div>
     </section>
 
-    <!-- Sector Rotation Tracker — full width -->
-    <section id="sector-rotation" class="full-panel">
-      <div class="panel-header">
-        <div class="panel-header-top">
-          <span class="panel-icon">🗺️</span>
-          <span class="panel-title">Sector Rotation</span>
-        </div>
-        <p class="panel-desc">Where money is actually rotating across the eleven SPDR sector ETFs — measured <strong>against the S&amp;P 500</strong>, not just on their own, since a sector up 1% while the market's up 2% is quietly losing leadership. The <strong>rotation map</strong> plots every sector by relative strength and momentum (Leading, Weakening, Lagging, Improving); the <strong>banner</strong> reads the overall risk posture from cyclicals vs defensives; and the <strong>table</strong> breaks out each sector's edge over the market across 1D–3M, whether it's rotating in or out this week, and the conviction (volume) behind the move. Toggle to absolute returns anytime. Sectors rotating in are often where the next high-cadence movers surface — click a row for today's scan movers within it, or a header to sort.</p>
-      </div>
-      <div id="sector-rotation-body">
-        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading sector data…</div></div>
-      </div>
-    </section>
 
   </main>
 </div>
@@ -1223,6 +1241,16 @@ const CADENCE_URL = 'data/cadence.json';
 let cadenceData    = [];
 let cadenceSortCol = 'cadence_score';
 let cadenceSortDir = -1;   // -1 = descending
+// All 60 rows ran 1,166px and were the reason Sector Rotation sat two screens
+// down. Show the top 15 of the CURRENT sort by default; sorting still ranks
+// all 60, so a re-sort surfaces different names rather than reshuffling 15.
+const CADENCE_PREVIEW = 15;
+let cadenceShowAll   = false;
+function cadenceToggleAll() {
+  cadenceShowAll = !cadenceShowAll;
+  renderCadence();
+  if (!cadenceShowAll) $('cadence').scrollIntoView({ block: 'start' });
+}
 
 // ── State ──────────────────────────────────────────────────────────────────
 let lastScanTime = null;
@@ -1797,7 +1825,10 @@ function renderCadence() {
   const tkActive = cadenceSortCol === 'ticker' ? ' sr-th-active' : '';
   const tkArrow  = cadenceSortCol === 'ticker' ? (cadenceSortDir === -1 ? ' ↓' : ' ↑') : '';
 
-  const rows = sorted.map(n => {
+  const shown = cadenceShowAll ? sorted : sorted.slice(0, CADENCE_PREVIEW);
+  const more  = sorted.length - CADENCE_PREVIEW;
+
+  const rows = shown.map(n => {
     const tagCls   = n.tag === 'leans-swing' ? 'cad-tag-swing' : 'cad-tag-day';
     const tagLabel = n.tag === 'leans-swing' ? 'leans swing' : 'day';
     return `<tr class="sr-row">
@@ -1818,7 +1849,9 @@ function renderCadence() {
       <th class="sr-th">Tag</th>
     </tr></thead>
     <tbody>${rows}</tbody>
-  </table></div>`;
+  </table></div>${more > 0 ? `
+  <button type="button" class="cad-more" onclick="cadenceToggleAll()">${
+    cadenceShowAll ? `Show top ${CADENCE_PREVIEW} only` : `Show all ${sorted.length} names`}</button>` : ''}`;
 }
 
 // ── Results renderer ───────────────────────────────────────────────────────

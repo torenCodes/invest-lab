@@ -107,7 +107,7 @@ def gather_sources():
             return
         surface.setdefault(t, []).append(tag)
 
-    # ── Movers & Shakers — top 5 day, top 5 swing
+    # ── Movers & Shakers — top 5 day trades
     md = _load("MarketDashboard/data/results.json")
     if md:
         for s in (md.get("day_trades") or [])[:5]:
@@ -167,7 +167,7 @@ def gather_sources():
     # ── Pattern Scanner — top swing setups from the Coil engine.
     # Coiled (tightness-ranked) + Leaders (constructive strength). Both lists
     # are the same dashboard, so a name in both still counts once toward the
-    # cross-dashboard tally (like Movers day+swing).
+    # cross-dashboard tally.
     ps = _load("PatternScanner/data/coil.json")
     if ps:
         for s in (ps.get("coiled") or [])[:8]:
