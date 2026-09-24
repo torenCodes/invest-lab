@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: pip install yfinance
 
-      - name: Calculate 30-day outcomes
+      - name: Calculate outcomes (30-day, plus same-day / next-day / 5-day for Movers)
         run: python Website/scripts/calculate_outcomes.py
 
       - name: Commit results

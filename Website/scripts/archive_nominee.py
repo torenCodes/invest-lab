@@ -292,7 +292,7 @@ def main():
               f'{nominee["ticker"]} ({nominee["source_key"]}) — skipping')
         sys.exit(0)
 
-    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    today, flagged_at, session = _flag_stamp()
     entry = {
         'id':            f'{nominee["source_key"]}-{nominee["ticker"]}-{today}',
         'source':        nominee['source'],
@@ -301,6 +301,8 @@ def main():
         'name':          nominee['name'],
         'sector':        nominee.get('sector', ''),
         'date_flagged':  today,
+        'flagged_at':    flagged_at,
+        'flagged_session': session,
         'entry_price':   round(float(nominee['entry_price']), 2),
         'score':         nominee.get('score'),
         'reason':        nominee['reason'],
@@ -313,6 +315,44 @@ def main():
     save_archive(archive)
     print(f'[archive] Recorded: {entry["ticker"]} ({entry["source"]}) '
           f'at ${entry["entry_price"]} on {today}')
+
+
+def _flag_stamp():
+    """(date_flagged, flagged_at, flagged_session) for a pick recorded now.
+
+    date_flagged is the US/Eastern trading date. It used to be the UTC date,
+    so any run landing after 8pm ET was stamped with tomorrow's date - and
+    GitHub's scheduler has been observed running hours late.
+
+    flagged_session records WHERE in the trading day the entry price was taken.
+    The archive used to hold only the date, and the entry price is whatever the
+    scan saw at run time: intraday for most runs, but exactly the close for any
+    run that landed after 4pm. 37 of 347 Movers picks had an entry equal to the
+    day's close to the cent, which made a same-day outcome meaningless for them
+    and was indistinguishable from the rest. calculate_outcomes skips the
+    same-day read for 'after' and 'closed'.
+    """
+    now_utc = datetime.now(timezone.utc)
+    try:
+        from zoneinfo import ZoneInfo
+        now_et = now_utc.astimezone(ZoneInfo('America/New_York'))
+    except Exception:
+        # No tz database (rare; the Actions runner has one). Fixed EDT offset is
+        # wrong by an hour in winter, which only matters within an hour of the
+        # open or close, so say so rather than fail.
+        print('[archive] zoneinfo unavailable - using a fixed UTC-4 offset')
+        now_et = now_utc - timedelta(hours=4)
+
+    mins = now_et.hour * 60 + now_et.minute
+    if now_et.weekday() >= 5:
+        session = 'closed'
+    elif mins < 9 * 60 + 30:
+        session = 'pre'
+    elif mins < 16 * 60:
+        session = 'open'
+    else:
+        session = 'after'
+    return now_et.strftime('%Y-%m-%d'), now_utc.isoformat(timespec='seconds'), session
 
 
 if __name__ == '__main__':
