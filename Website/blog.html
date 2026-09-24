@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research Blog — The Invest Lab</title>
-  <meta name="description" content="In-depth research posts from The Invest Lab — sector deep-dives, trade reviews, market observations, and stock screening insights for individual investors.">
+  <meta name="description" content="Long-form research from The Invest Lab on the industries and supply chains shaping the market, starting with the physical buildout behind AI.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://theinvestlab.com/blog.html">
 
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://theinvestlab.com/blog.html">
   <meta property="og:title" content="Research Blog — The Invest Lab">
-  <meta property="og:description" content="In-depth research posts from The Invest Lab — sector deep-dives, trade reviews, market observations, and stock screening insights for individual investors.">
+  <meta property="og:description" content="Long-form research from The Invest Lab on the industries and supply chains shaping the market, starting with the physical buildout behind AI.">
   <meta property="og:image" content="https://theinvestlab.com/images/charts.jpg">
   <meta property="og:image:width" content="1152">
   <meta property="og:image:height" content="768">
@@ -24,7 +24,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Research Blog — The Invest Lab">
-  <meta name="twitter:description" content="In-depth research posts from The Invest Lab — sector deep-dives, trade reviews, market observations, and stock screening insights for individual investors.">
+  <meta name="twitter:description" content="Long-form research from The Invest Lab on the industries and supply chains shaping the market, starting with the physical buildout behind AI.">
   <meta name="twitter:image" content="https://theinvestlab.com/images/charts.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -90,7 +90,7 @@
       fetch('Blog/posts.json')
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(renderListing)
-        .catch(function () { root.innerHTML = errHtml('Unable to load posts — please try again later.'); });
+        .catch(function () { root.innerHTML = errHtml('Unable to load posts. Please try again later.'); });
     }
 
     function renderListing(posts) {
@@ -132,13 +132,13 @@
               '<h1 class="blog-hero-title">Research Blog</h1>' +
               '<p class="hero-body">' +
                 'Long-form posts on sector trends, trade reviews, market observations, ' +
-                'and the research behind the dashboards — written to think through ideas ' +
+                'and the research behind the dashboards, written to think through ideas ' +
                 'more deeply than a screen of tickers can.' +
               '</p>' +
               (heroCta ? '<div class="hero-cta">' + heroCta + '</div>' : '') +
             '</div>' +
             '<div class="hero-image">' +
-              '<img src="images/blogMain.jpg" alt="Printed equity research spread over a desk — investment thesis, key statistics and valuation metrics under a magnifying glass, beside tablets showing stock and sector performance" class="hero-img" width="1264" height="843" fetchpriority="high" decoding="async">' +
+              '<img src="images/blogMain.jpg" alt="Printed equity research on a desk under a magnifying glass, beside tablets showing stock and sector performance charts" class="hero-img" width="1264" height="843" fetchpriority="high" decoding="async">' +
             '</div>' +
           '</div>' +
         '</section>' +
