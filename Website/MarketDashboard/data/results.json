@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-09-25T14:15:22.255595+00:00",
+  "scan_time": "2026-09-25T17:44:34.311903+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 23,
   "day_trades": [
@@ -7,17 +7,17 @@
       "ticker": "AKAM",
       "name": "Akamai Technologies Inc",
       "sector": "Technology",
-      "current_price": 116.34,
-      "change_pct": 5.3709,
+      "current_price": 116.45,
+      "change_pct": 5.4705,
       "high": 129.5675,
-      "low": 115.82,
+      "low": 115.1,
       "open": 129.5675,
       "prev_close": 110.41,
       "score": 48,
       "signals": [
-        "Top gainer (+5.4%)",
+        "Top gainer (+5.5%)",
         "High volume",
-        "Strong move (+5.4%)",
+        "Strong move (+5.5%)",
         "Yahoo trending (#4)",
         "Unusual volume (Finviz)"
       ],
@@ -39,34 +39,139 @@
         }
       },
       "score_normalized": 68
+    },
+    {
+      "ticker": "GLND",
+      "name": "Greenland Energy Co",
+      "sector": "Energy",
+      "current_price": 6.09,
+      "change_pct": 13.8318,
+      "high": 6.7,
+      "low": 4.83,
+      "open": 6.22,
+      "prev_close": 5.35,
+      "score": 48,
+      "signals": [
+        "Top gainer (+13.8%)",
+        "High volume",
+        "Strong move (+13.8%)",
+        "Yahoo trending (#2)",
+        "Unusual volume (Finviz)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 233956546.0996563,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950969974056.png",
+      "weburl": "",
+      "yahoo_trending_rank": 2,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 68
+    },
+    {
+      "ticker": "TEM",
+      "name": "Tempus AI Inc",
+      "sector": "Life Sciences Tools & Services",
+      "current_price": 84.67,
+      "change_pct": 2.9548,
+      "high": 85.47,
+      "low": 80.31,
+      "open": 82.8725,
+      "prev_close": 82.24,
+      "score": 33,
+      "signals": [
+        "Top gainer (+3.0%)",
+        "High volume",
+        "Moderate move (+3.0%)",
+        "Yahoo trending (#9)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 14838954360.241283,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950967583436.png",
+      "weburl": "https://investors.tempus.com/",
+      "yahoo_trending_rank": 9,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": -0.04,
+          "estimate": -0.14,
+          "beat": true,
+          "surprise_pct": 71.7
+        }
+      },
+      "score_normalized": 46
+    },
+    {
+      "ticker": "KGC",
+      "name": "Kinross Gold Corp",
+      "sector": "Metals & Mining",
+      "current_price": 24.92,
+      "change_pct": 2.0475,
+      "high": 24.985,
+      "low": 24.27,
+      "open": 24.42,
+      "prev_close": 24.42,
+      "score": 29,
+      "signals": [
+        "Top gainer (+2.0%)",
+        "High volume",
+        "Moderate move (+2.0%)",
+        "Yahoo trending (#16)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 46156626338.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950872154416.png",
+      "weburl": "https://www.kinross.com/home/default.aspx",
+      "yahoo_trending_rank": 16,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": 0.71,
+          "estimate": 0.74,
+          "beat": false,
+          "surprise_pct": -4.1
+        }
+      },
+      "score_normalized": 41
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
     {
-      "ticker": "GOOG",
-      "mentions": 6,
-      "name": "Alphabet Inc",
-      "sector": "Media",
-      "current_price": 338.52,
-      "change_pct": -0.1445,
-      "high": 343.6,
-      "low": 338.41,
-      "open": 339.0525,
-      "prev_close": 339.01,
-      "market_cap": 4187062800000.0005,
+      "ticker": "NVDA",
+      "mentions": 4,
+      "name": "NVIDIA Corp",
+      "sector": "Semiconductors",
+      "current_price": 224.82,
+      "change_pct": 0.1069,
+      "high": 226.94,
+      "low": 223.1329,
+      "open": 225.255,
+      "prev_close": 224.58,
+      "market_cap": 5412377868160.955,
       "score": 0,
       "signals": [
-        "News buzz (6 mentions)"
+        "News buzz (4 mentions)"
       ],
-      "reddit_mentions": 6,
+      "reddit_mentions": 4,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -70,
-        "reddit": 22,
-        "st_bull": 59,
+        "trend_pct": -12,
+        "reddit": 46,
+        "st_bull": 94,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -77,38 +182,43 @@
         "upcoming": null,
         "recent": {
           "period": "2026-06-30",
-          "actual": 2.85,
-          "estimate": 2.98,
-          "beat": false,
-          "surprise_pct": -4.4
+          "actual": 1.87,
+          "estimate": 1.79,
+          "beat": true,
+          "surprise_pct": 4.3
         }
       },
       "score_normalized": 0
     },
     {
-      "ticker": "GOOGL",
-      "mentions": 6,
-      "name": "Alphabet Inc",
-      "sector": "Media",
-      "current_price": 341.79,
-      "change_pct": -0.1665,
-      "high": 347.03,
-      "low": 341.65,
-      "open": 342.385,
-      "prev_close": 342.36,
-      "market_cap": 4187062800000.0005,
-      "score": 0,
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices Inc",
+      "sector": "Semiconductors",
+      "current_price": 629.57,
+      "change_pct": 0.0493,
+      "high": 639,
+      "low": 625.52,
+      "open": 638.6425,
+      "prev_close": 629.26,
+      "score": 30,
       "signals": [
-        "News buzz (6 mentions)"
+        "Top gainer (+0.0%)",
+        "High volume",
+        "News activity (3)",
+        "Yahoo trending (#5)"
       ],
-      "reddit_mentions": 6,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
+      "reddit_mentions": 3,
+      "market_cap": 1027251178654.3406,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AMD.png",
+      "weburl": "https://www.amd.com/",
+      "yahoo_trending_rank": 5,
+      "mentions": 3,
       "social": {
-        "trend_pct": -69,
-        "reddit": 29,
-        "st_bull": 71,
+        "trend_pct": 20,
+        "reddit": 77,
+        "st_bull": 60,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -119,48 +229,51 @@
         "upcoming": null,
         "recent": {
           "period": "2026-06-30",
-          "actual": 2.85,
-          "estimate": 2.98,
-          "beat": false,
-          "surprise_pct": -4.4
+          "actual": 1.66,
+          "estimate": 1.63,
+          "beat": true,
+          "surprise_pct": 1.8
         }
       },
-      "score_normalized": 0
+      "score_normalized": 42
     },
     {
-      "ticker": "GOOGM",
-      "mentions": 6,
-      "name": "Alphabet Inc",
-      "sector": "Media",
-      "current_price": 48.73,
-      "change_pct": 0,
-      "high": 49.21,
-      "low": 48.7,
-      "open": 48.855,
-      "prev_close": 48.73,
-      "market_cap": 4187062800000.0005,
+      "ticker": "BBNX",
+      "mentions": 2,
+      "name": "Beta Bionics Inc",
+      "sector": "Health Care",
+      "current_price": 21.71,
+      "change_pct": -0.2298,
+      "high": 21.990000000000002,
+      "low": 21.25,
+      "open": 21.66,
+      "prev_close": 21.76,
+      "market_cap": 1173869617.9540331,
       "score": 0,
       "signals": [
-        "News buzz (6 mentions)"
+        "News buzz (2 mentions)"
       ],
-      "reddit_mentions": 6,
+      "reddit_mentions": 2,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "reddit": 6,
+        "reddit": 2,
+        "st_bull": 60,
+        "st_msgs": 30,
         "sources": [
-          "Reddit"
+          "Reddit",
+          "StockTwits"
         ]
       },
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-06-30",
-          "actual": 2.85,
-          "estimate": 2.98,
-          "beat": false,
-          "surprise_pct": -4.4
+          "actual": -0.53,
+          "estimate": -0.61,
+          "beat": true,
+          "surprise_pct": 12.8
         }
       },
       "score_normalized": 0
@@ -169,19 +282,19 @@
       "ticker": "META",
       "name": "Meta Platforms Inc",
       "sector": "Media",
-      "current_price": 753.46,
-      "change_pct": -3.1032,
+      "current_price": 749.07,
+      "change_pct": -3.6677,
       "market_cap": 1980915229718.3723,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 310,
+      "mentions": 262,
       "social": {
-        "trend_pct": 72,
-        "reddit": 310,
-        "st_bull": 62,
+        "trend_pct": 31,
+        "reddit": 262,
+        "st_bull": 92,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -204,18 +317,18 @@
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "current_price": 1085.09,
-      "change_pct": 0.422,
+      "current_price": 1083.63,
+      "change_pct": 0.2869,
       "market_cap": 1220343095602.9153,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 120,
+      "mentions": 142,
       "social": {
-        "trend_pct": -9,
-        "reddit": 120,
+        "trend_pct": 18,
+        "reddit": 142,
         "sources": [
           "Reddit"
         ]
@@ -236,21 +349,21 @@
       "score_normalized": 0
     },
     {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices Inc",
-      "sector": "Semiconductors",
-      "current_price": 632.41,
-      "change_pct": 0.5006,
-      "market_cap": 1027251178654.3406,
+      "ticker": "SNDK",
+      "name": "Sandisk Corp",
+      "sector": "Technology",
+      "current_price": 1783.7,
+      "change_pct": 1.7153,
+      "market_cap": 256763290319.92664,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 74,
+      "mentions": 68,
       "social": {
-        "trend_pct": 17,
-        "reddit": 74,
+        "trend_pct": 39,
+        "reddit": 68,
         "sources": [
           "Reddit"
         ]
@@ -259,10 +372,10 @@
         "upcoming": null,
         "recent": {
           "period": "2026-06-30",
-          "actual": 1.66,
-          "estimate": 1.63,
+          "actual": 39.25,
+          "estimate": 35.14,
           "beat": true,
-          "surprise_pct": 1.8
+          "surprise_pct": 11.7
         }
       },
       "score_normalized": 0
@@ -270,26 +383,26 @@
   ],
   "chatter_emerging": [
     {
+      "ticker": "GLND",
+      "name": "Greenland Energy Co",
+      "sector": "Energy",
+      "mentions": 33,
+      "prev": 5,
+      "trend_pct": 560,
+      "current_price": 6.06,
+      "change_pct": 13.271,
+      "market_cap": 233956546.0996563
+    },
+    {
       "ticker": "COST",
       "name": "Costco Wholesale Corp",
       "sector": "Retail",
-      "mentions": 27,
+      "mentions": 30,
       "prev": 10,
-      "trend_pct": 170,
-      "current_price": 919.44,
-      "change_pct": 2.5611,
+      "trend_pct": 200,
+      "current_price": 921.18,
+      "change_pct": 2.7552,
       "market_cap": 397569898635.8309
-    },
-    {
-      "ticker": "AVGO",
-      "name": "Broadcom Inc",
-      "sector": "Semiconductors",
-      "mentions": 25,
-      "prev": 10,
-      "trend_pct": 150,
-      "current_price": 350.83,
-      "change_pct": 0.1341,
-      "market_cap": 1672488919732.5938
     }
   ],
   "sector_rotation": {
@@ -297,18 +410,18 @@
       {
         "ticker": "XLK",
         "sector": "Technology",
-        "ret_1d": 0.43,
-        "ret_5d": 3.25,
-        "ret_1m": 7.07,
-        "ret_3m": 8.09,
-        "rel_1d": 0.44,
-        "rel_5d": 2.54,
-        "rel_1m": 6.69,
-        "rel_3m": 2.6,
+        "ret_1d": 1.0,
+        "ret_5d": 3.84,
+        "ret_1m": 7.68,
+        "ret_3m": 8.71,
+        "rel_1d": 0.52,
+        "rel_5d": 2.63,
+        "rel_1m": 6.8,
+        "rel_3m": 2.7,
         "rvol": 0.94,
         "rrg": {
-          "x": 102.26,
-          "y": 100.21,
+          "x": 102.29,
+          "y": 100.24,
           "quadrant": "Leading",
           "tail": [
             {
@@ -336,29 +449,29 @@
               "y": 100.59
             },
             {
-              "x": 102.26,
-              "y": 100.21
+              "x": 102.29,
+              "y": 100.24
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "AKAM",
-            "name": "Akamai Technologies Inc",
-            "change_pct": 5.3709,
-            "price": 116.34
+            "ticker": "CRDO",
+            "name": "Credo Technology Group Holding Ltd",
+            "change_pct": 9.3075,
+            "price": 214.21
           },
           {
-            "ticker": "ARM",
-            "name": "Arm Holdings PLC",
-            "change_pct": 4.1718,
-            "price": 319.12
+            "ticker": "AKAM",
+            "name": "Akamai Technologies Inc",
+            "change_pct": 5.4705,
+            "price": 116.45
           },
           {
             "ticker": "FSLR",
             "name": "First Solar Inc",
-            "change_pct": 2.4164,
-            "price": 176.32
+            "change_pct": 3.2354,
+            "price": 177.73
           }
         ],
         "rotation": 0
@@ -366,18 +479,18 @@
       {
         "ticker": "XLC",
         "sector": "Comm. Services",
-        "ret_1d": -1.05,
-        "ret_5d": 2.13,
-        "ret_1m": 0.49,
-        "ret_3m": 6.58,
-        "rel_1d": -1.04,
-        "rel_5d": 1.42,
-        "rel_1m": 0.11,
-        "rel_3m": 1.09,
+        "ret_1d": -0.99,
+        "ret_5d": 2.19,
+        "ret_1m": 0.55,
+        "ret_3m": 6.64,
+        "rel_1d": -1.47,
+        "rel_5d": 0.98,
+        "rel_1m": -0.33,
+        "rel_3m": 0.63,
         "rvol": 1.12,
         "rrg": {
-          "x": 100.47,
-          "y": 100.93,
+          "x": 100.16,
+          "y": 100.63,
           "quadrant": "Leading",
           "tail": [
             {
@@ -405,8 +518,8 @@
               "y": 98.48
             },
             {
-              "x": 100.47,
-              "y": 100.93
+              "x": 100.16,
+              "y": 100.63
             }
           ]
         },
@@ -416,19 +529,19 @@
       {
         "ticker": "XLE",
         "sector": "Energy",
-        "ret_1d": -0.78,
-        "ret_5d": -2.85,
-        "ret_1m": 0.08,
-        "ret_3m": 16.05,
-        "rel_1d": -0.77,
-        "rel_5d": -3.56,
-        "rel_1m": -0.3,
-        "rel_3m": 10.56,
+        "ret_1d": -1.41,
+        "ret_5d": -3.46,
+        "ret_1m": -0.55,
+        "ret_3m": 15.32,
+        "rel_1d": -1.89,
+        "rel_5d": -4.67,
+        "rel_1m": -1.43,
+        "rel_3m": 9.31,
         "rvol": 1.19,
         "rrg": {
-          "x": 100.04,
-          "y": 98.91,
-          "quadrant": "Weakening",
+          "x": 99.75,
+          "y": 98.62,
+          "quadrant": "Lagging",
           "tail": [
             {
               "x": 100.89,
@@ -455,29 +568,36 @@
               "y": 99.16
             },
             {
-              "x": 100.04,
-              "y": 98.91
+              "x": 99.75,
+              "y": 98.62
             }
           ]
         },
-        "top_stocks": [],
+        "top_stocks": [
+          {
+            "ticker": "GLND",
+            "name": "Greenland Energy Co",
+            "change_pct": 13.8318,
+            "price": 6.09
+          }
+        ],
         "rotation": -7
       },
       {
         "ticker": "XLV",
         "sector": "Health Care",
-        "ret_1d": -0.45,
-        "ret_5d": 0.81,
-        "ret_1m": -2.19,
-        "ret_3m": 5.87,
-        "rel_1d": -0.44,
-        "rel_5d": 0.1,
-        "rel_1m": -2.57,
-        "rel_3m": 0.38,
+        "ret_1d": 0.06,
+        "ret_5d": 1.33,
+        "ret_1m": -1.68,
+        "ret_3m": 6.42,
+        "rel_1d": -0.42,
+        "rel_5d": 0.12,
+        "rel_1m": -2.56,
+        "rel_3m": 0.41,
         "rvol": 1.19,
         "rrg": {
-          "x": 100.11,
-          "y": 100.01,
+          "x": 100.13,
+          "y": 100.02,
           "quadrant": "Leading",
           "tail": [
             {
@@ -505,29 +625,42 @@
               "y": 100.98
             },
             {
-              "x": 100.11,
-              "y": 100.01
+              "x": 100.13,
+              "y": 100.02
             }
           ]
         },
-        "top_stocks": [],
+        "top_stocks": [
+          {
+            "ticker": "MRNA",
+            "name": "Moderna Inc",
+            "change_pct": 1.4886,
+            "price": 197.72
+          },
+          {
+            "ticker": "TWST",
+            "name": "Twist Bioscience Corp",
+            "change_pct": 0.4727,
+            "price": 184.9
+          }
+        ],
         "rotation": 1
       },
       {
         "ticker": "XLP",
         "sector": "Cons. Staples",
-        "ret_1d": -0.13,
-        "ret_5d": -0.81,
-        "ret_1m": -4.8,
-        "ret_3m": -3.05,
-        "rel_1d": -0.12,
-        "rel_5d": -1.52,
-        "rel_1m": -5.18,
-        "rel_3m": -8.54,
+        "ret_1d": 0.25,
+        "ret_5d": -0.43,
+        "ret_1m": -4.44,
+        "ret_3m": -2.68,
+        "rel_1d": -0.23,
+        "rel_5d": -1.64,
+        "rel_1m": -5.32,
+        "rel_3m": -8.69,
         "rvol": 1.08,
         "rrg": {
-          "x": 98.28,
-          "y": 99.93,
+          "x": 98.24,
+          "y": 99.9,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -555,29 +688,29 @@
               "y": 99.93
             },
             {
-              "x": 98.28,
-              "y": 99.93
+              "x": 98.24,
+              "y": 99.9
             }
           ]
         },
         "top_stocks": [],
-        "rotation": -1
+        "rotation": -2
       },
       {
         "ticker": "XLI",
         "sector": "Industrials",
-        "ret_1d": 0.45,
-        "ret_5d": 0.17,
-        "ret_1m": -5.71,
-        "ret_3m": -6.16,
-        "rel_1d": 0.46,
-        "rel_5d": -0.54,
-        "rel_1m": -6.09,
-        "rel_3m": -11.65,
+        "ret_1d": 0.88,
+        "ret_5d": 0.61,
+        "ret_1m": -5.3,
+        "ret_3m": -5.75,
+        "rel_1d": 0.4,
+        "rel_5d": -0.6,
+        "rel_1m": -6.18,
+        "rel_3m": -11.76,
         "rvol": 1.13,
         "rrg": {
-          "x": 98.53,
-          "y": 100.75,
+          "x": 98.52,
+          "y": 100.73,
           "quadrant": "Improving",
           "tail": [
             {
@@ -605,8 +738,8 @@
               "y": 100.56
             },
             {
-              "x": 98.53,
-              "y": 100.75
+              "x": 98.52,
+              "y": 100.73
             }
           ]
         },
@@ -614,8 +747,14 @@
           {
             "ticker": "INLF",
             "name": "INLIF Ltd",
-            "change_pct": 85.7627,
-            "price": 5.48
+            "change_pct": 62.7119,
+            "price": 4.8
+          },
+          {
+            "ticker": "RKLB",
+            "name": "Rocket Lab Corp",
+            "change_pct": 0.9917,
+            "price": 74.34
           }
         ],
         "rotation": 2
@@ -623,18 +762,18 @@
       {
         "ticker": "XLY",
         "sector": "Cons. Discretionary",
-        "ret_1d": -0.44,
-        "ret_5d": -0.85,
-        "ret_1m": -6.04,
-        "ret_3m": -3.75,
-        "rel_1d": -0.43,
-        "rel_5d": -1.56,
-        "rel_1m": -6.42,
-        "rel_3m": -9.24,
+        "ret_1d": 0.29,
+        "ret_5d": -0.14,
+        "ret_1m": -5.36,
+        "ret_3m": -3.05,
+        "rel_1d": -0.19,
+        "rel_5d": -1.35,
+        "rel_1m": -6.24,
+        "rel_3m": -9.06,
         "rvol": 0.83,
         "rrg": {
-          "x": 97.86,
-          "y": 100.11,
+          "x": 97.94,
+          "y": 100.19,
           "quadrant": "Improving",
           "tail": [
             {
@@ -662,8 +801,8 @@
               "y": 99.87
             },
             {
-              "x": 97.86,
-              "y": 100.11
+              "x": 97.94,
+              "y": 100.19
             }
           ]
         },
@@ -671,33 +810,33 @@
           {
             "ticker": "COST",
             "name": "Costco Wholesale Corp",
-            "change_pct": 2.5611,
-            "price": 919.44
+            "change_pct": 2.7619,
+            "price": 921.24
           },
           {
             "ticker": "SBUX",
             "name": "Starbucks Corp",
-            "change_pct": 0.5766,
-            "price": 94.19
+            "change_pct": 0.7688,
+            "price": 94.37
           }
         ],
-        "rotation": 0
+        "rotation": 1
       },
       {
         "ticker": "XLF",
         "sector": "Financials",
-        "ret_1d": -0.09,
-        "ret_5d": -2.13,
-        "ret_1m": -6.16,
-        "ret_3m": 2.06,
-        "rel_1d": -0.08,
-        "rel_5d": -2.84,
-        "rel_1m": -6.54,
-        "rel_3m": -3.43,
+        "ret_1d": 0.5,
+        "ret_5d": -1.54,
+        "ret_1m": -5.6,
+        "ret_3m": 2.67,
+        "rel_1d": 0.02,
+        "rel_5d": -2.75,
+        "rel_1m": -6.48,
+        "rel_3m": -3.34,
         "rvol": 0.85,
         "rrg": {
-          "x": 97.43,
-          "y": 100.34,
+          "x": 97.47,
+          "y": 100.4,
           "quadrant": "Improving",
           "tail": [
             {
@@ -725,79 +864,29 @@
               "y": 97.34
             },
             {
-              "x": 97.43,
-              "y": 100.34
+              "x": 97.47,
+              "y": 100.4
             }
           ]
         },
         "top_stocks": [],
-        "rotation": -1
-      },
-      {
-        "ticker": "XLRE",
-        "sector": "Real Estate",
-        "ret_1d": -0.05,
-        "ret_5d": -1.29,
-        "ret_1m": -6.9,
-        "ret_3m": -7.21,
-        "rel_1d": -0.04,
-        "rel_5d": -2.0,
-        "rel_1m": -7.28,
-        "rel_3m": -12.7,
-        "rvol": 1.09,
-        "rrg": {
-          "x": 98.19,
-          "y": 100.12,
-          "quadrant": "Improving",
-          "tail": [
-            {
-              "x": 98.71,
-              "y": 99.8
-            },
-            {
-              "x": 99.57,
-              "y": 100.65
-            },
-            {
-              "x": 98.8,
-              "y": 99.45
-            },
-            {
-              "x": 98.55,
-              "y": 99.89
-            },
-            {
-              "x": 98.57,
-              "y": 100.17
-            },
-            {
-              "x": 98.24,
-              "y": 99.81
-            },
-            {
-              "x": 98.19,
-              "y": 100.12
-            }
-          ]
-        },
-        "top_stocks": [],
-        "rotation": 1
+        "rotation": 0
       },
       {
         "ticker": "XLB",
         "sector": "Materials",
-        "ret_1d": -0.14,
-        "ret_5d": -0.3,
-        "ret_1m": -7.14,
-        "ret_3m": -3.41,
-        "rel_1d": -0.13,
-        "rel_5d": -1.01,
-        "rel_1m": -7.52,
-        "rel_3m": -8.9,
+        "ret_1d": 0.22,
+        "ret_5d": 0.06,
+        "ret_1m": -6.8,
+        "ret_3m": -3.06,
+        "rel_1d": -0.26,
+        "rel_5d": -1.15,
+        "rel_1m": -7.68,
+        "rel_3m": -9.07,
         "rvol": 1.17,
         "rrg": {
-          "x": 97.94,
-          "y": 100.23,
+          "x": 97.89,
+          "y": 100.2,
           "quadrant": "Improving",
           "tail": [
             {
@@ -825,8 +914,8 @@
               "y": 99.56
             },
             {
-              "x": 97.94,
-              "y": 100.23
+              "x": 97.89,
+              "y": 100.2
             }
           ]
         },
@@ -834,27 +923,77 @@
           {
             "ticker": "KGC",
             "name": "Kinross Gold Corp",
-            "change_pct": 1.1466,
-            "price": 24.7
+            "change_pct": 2.0475,
+            "price": 24.92
           }
         ],
-        "rotation": 5
+        "rotation": 4
+      },
+      {
+        "ticker": "XLRE",
+        "sector": "Real Estate",
+        "ret_1d": -0.3,
+        "ret_5d": -1.54,
+        "ret_1m": -7.13,
+        "ret_3m": -7.44,
+        "rel_1d": -0.78,
+        "rel_5d": -2.75,
+        "rel_1m": -8.01,
+        "rel_3m": -13.45,
+        "rvol": 1.09,
+        "rrg": {
+          "x": 98.01,
+          "y": 99.96,
+          "quadrant": "Lagging",
+          "tail": [
+            {
+              "x": 98.71,
+              "y": 99.8
+            },
+            {
+              "x": 99.57,
+              "y": 100.65
+            },
+            {
+              "x": 98.8,
+              "y": 99.45
+            },
+            {
+              "x": 98.55,
+              "y": 99.89
+            },
+            {
+              "x": 98.57,
+              "y": 100.17
+            },
+            {
+              "x": 98.24,
+              "y": 99.81
+            },
+            {
+              "x": 98.01,
+              "y": 99.96
+            }
+          ]
+        },
+        "top_stocks": [],
+        "rotation": 1
       },
       {
         "ticker": "XLU",
         "sector": "Utilities",
-        "ret_1d": -0.17,
-        "ret_5d": -3.69,
-        "ret_1m": -9.02,
-        "ret_3m": -14.32,
-        "rel_1d": -0.16,
-        "rel_5d": -4.4,
-        "rel_1m": -9.4,
-        "rel_3m": -19.81,
+        "ret_1d": -0.09,
+        "ret_5d": -3.62,
+        "ret_1m": -8.95,
+        "ret_3m": -14.26,
+        "rel_1d": -0.57,
+        "rel_5d": -4.83,
+        "rel_1m": -9.83,
+        "rel_3m": -20.27,
         "rvol": 1.17,
         "rrg": {
-          "x": 98.04,
-          "y": 99.86,
+          "x": 97.98,
+          "y": 99.79,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -882,8 +1021,8 @@
               "y": 99.78
             },
             {
-              "x": 98.04,
-              "y": 99.86
+              "x": 97.98,
+              "y": 99.79
             }
           ]
         },
@@ -891,8 +1030,8 @@
           {
             "ticker": "BE",
             "name": "Bloom Energy Corp",
-            "change_pct": 5.0478,
-            "price": 280.11
+            "change_pct": 8.4905,
+            "price": 289.29
           }
         ],
         "rotation": 0
@@ -900,25 +1039,130 @@
     ],
     "posture": {
       "label": "Risk-on",
-      "spread": 2.81,
+      "spread": 3.08,
       "leaders": [
         "Technology",
         "Comm. Services"
       ],
       "laggards": [
-        "Materials",
+        "Real Estate",
         "Utilities"
       ]
     },
     "benchmark": {
       "ticker": "SPY",
-      "ret_1d": -0.01,
-      "ret_5d": 0.71,
-      "ret_1m": 0.38,
-      "ret_3m": 5.49
+      "ret_1d": 0.48,
+      "ret_5d": 1.21,
+      "ret_1m": 0.88,
+      "ret_3m": 6.01
     }
   },
   "reddit_feed": [
+    {
+      "id": "0b30e2494c1e728a8b14f47f01c82e916f1d5fce1168a62c887f9beb0f0c20c4",
+      "title": "DEADLINE ALERT for DKS and BBNX: The Law Offices of Frank R. Cruz Reminds Investors of Class Actions on Behalf of Shareh",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "DKS",
+        "BBNX"
+      ],
+      "hours_ago": 1.6,
+      "url": "https://www.globenewswire.com/news-release/2026/09/25/3369252/0/en/deadline-alert-for-dks-and-bbnx-the-law-offices-of-frank-r-cruz-reminds-investors-of-class-actions-on-behalf-of-shareholders.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "BBNX"
+      ]
+    },
+    {
+      "id": "768df8c3386cbd44a2e865daa9680b27462a7541421dad7f27a2bde531170a9c",
+      "title": "IonQ Has Made Another Quantum Computing Breakthrough: Here's What a $1,000 Investment in It Could Look Like in 5 Years",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "IONQ",
+        "NVDA"
+      ],
+      "hours_ago": 2.6,
+      "url": "https://www.fool.com/investing/2026/09/25/ionq-quantum-breakthrough-heres-what-a-1000-invest/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "7cba820968b4acc99c8142bb77690e9249f7a4e484df64b90163ba241fa32e3a",
+      "title": "Why Meta Platforms Stock Reversed Today",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "META",
+        "GS",
+        "GSpA",
+        "GSpC",
+        "GSpD"
+      ],
+      "hours_ago": 2.7,
+      "url": "https://www.fool.com/investing/2026/09/25/why-meta-platforms-stock-reversed-today/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "META"
+      ]
+    },
+    {
+      "id": "f18fa6f3eb603d94411ab0aa97b9f1e574deb2501aa35fbac8b87906fdb37de5",
+      "title": "Prediction: A Stock Market Crash Is Coming. Here's What Investors Should Do Based on Warren Buffett's Time-Tested Advice",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "MU",
+        "AXP",
+        "KO"
+      ],
+      "hours_ago": 2.7,
+      "url": "https://www.fool.com/investing/2026/09/25/prediction-stock-market-crash-warren-buffetts-advi/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA",
+        "AMD",
+        "MU"
+      ]
+    },
+    {
+      "id": "892b8cef164c122f9e222cdf13eda4d85d2d8232a6847a5ee6d3d6984f055f03",
+      "title": "Could Micron Stock Reach $2,000? 1 Reason to Believe It -- and 1 Reason to Be Skeptical",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "MU"
+      ],
+      "hours_ago": 3.2,
+      "url": "https://www.fool.com/investing/2026/09/25/could-micron-stock-reach-2000-1-reason-to-believe/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "MU"
+      ]
+    },
+    {
+      "id": "8a00e383a9208086b66307ccae1a4b1e0defa49ba3528426910d10cad02b881b",
+      "title": "Is It Finally Time to Sell AMD?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "AMD",
+        "NVDA",
+        "AVGO"
+      ],
+      "hours_ago": 3.5,
+      "url": "https://www.fool.com/investing/2026/09/25/is-it-finally-time-to-sell-amd/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMD",
+        "NVDA"
+      ]
+    },
     {
       "id": "517ef2f43afb45ebef5dc0886103ecaa8a976d33a293daad7c58bf030aef571b",
       "title": "AMD Just Joined Nvidia in the $1 Trillion Club. At $614, Wall Street Is Paying Too Much for a Distant No. 2.",
@@ -931,115 +1175,13 @@
         "MSFT",
         "ORCL"
       ],
-      "hours_ago": 3.2,
+      "hours_ago": 6.7,
       "url": "https://www.fool.com/investing/2026/09/25/amd-just-joined-nvidia-in-the-1-trillion-club-at-6/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "AMD",
+        "NVDA",
         "META"
-      ]
-    },
-    {
-      "id": "176b7787493f43e50d26f0ebb7bcbeb9cf59efb93802fad19686405e4c080370",
-      "title": "Does History Suggest Buying SpaceX Stock in a Market Crash? The Answer Might Surprise You",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "SPCX",
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN"
-      ],
-      "hours_ago": 4.0,
-      "url": "https://www.fool.com/investing/2026/09/25/does-history-suggest-buying-spacex-stock-in-a-mark/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "GOOG",
-        "GOOGL",
-        "GOOGM"
-      ]
-    },
-    {
-      "id": "0bf122a385b49a36fe0cbfa2fce3ed773e765163fa454a6ff9b0eff7b6c535a8",
-      "title": "Berkshire Hathaway Just Bought $212 Million of This Beaten Down Stock in 3 Days, and Its Stake Has Increased 81% This Qu",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "LEN",
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN"
-      ],
-      "hours_ago": 4.1,
-      "url": "https://www.fool.com/investing/2026/09/25/berkshire-just-bought-212-million-of-stock/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "GOOG",
-        "GOOGL",
-        "GOOGM"
-      ]
-    },
-    {
-      "id": "8a1a92af8cbb53a6f01f29fdd0bdb302094da102273a7e1cb3934ada28c17ca6",
-      "title": "Microservices in Healthcare Market Set for Strong Growth Through 2035 as Cloud Adoption, Modular Applications and Digita",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "AMZN",
-        "MSFT",
-        "GOOG",
-        "GOOGL",
-        "GOOGM"
-      ],
-      "hours_ago": 4.7,
-      "url": "https://www.globenewswire.com/news-release/2026/09/25/3368981/28124/en/microservices-in-healthcare-market-set-for-strong-growth-through-2035-as-cloud-adoption-modular-applications-and-digital-transformation-unlock-new-opportunities.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "GOOG",
-        "GOOGL",
-        "GOOGM"
-      ]
-    },
-    {
-      "id": "ace20eadfb3b202002a8d033ce78b487915a1fa9afbb04e3f712dedb9770e4f8",
-      "title": "Small Modular Reactors Market Size, Share, Trends, Opportunity, and Forecast to 2031",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "AMZN",
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN"
-      ],
-      "hours_ago": 5.3,
-      "url": "https://www.globenewswire.com/news-release/2026/09/25/3368933/28124/en/small-modular-reactors-market-size-share-trends-opportunity-and-forecast-to-2031.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "GOOG",
-        "GOOGL",
-        "GOOGM"
-      ]
-    },
-    {
-      "id": "5dc750709aaac9bb68a2fc8f97126f140a677d8f5f384ad959cc68e9baa8e9b4",
-      "title": "AI Automation Market to Reach USD 2,041.82 Billion by 2035, Expanding at 31.62% CAGR as Enterprises Accelerate Intellige",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "MSFT",
-        "PATH",
-        "IBM",
-        "NOW",
-        "GOOG"
-      ],
-      "hours_ago": 7.8,
-      "url": "https://www.globenewswire.com/news-release/2026/09/25/3368860/0/en/ai-automation-market-to-reach-usd-2-041-82-billion-by-2035-expanding-at-31-62-cagr-as-enterprises-accelerate-intelligent-automation.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "GOOG"
       ]
     }
   ]
