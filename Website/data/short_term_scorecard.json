@@ -1,0 +1,947 @@
+{
+ "generated": "2026-09-26T17:19:40+00:00",
+ "window": [
+  "2026-07-02",
+  "2026-09-25"
+ ],
+ "method": "entry at the first 5-minute bar after the card appeared (same session) or the next session's open; up-first = share of picks reaching +X% before -X%, among those that reached either; ~50% means no edge",
+ "movement": {
+  "In Play Today: the top card each day": {
+   "same": {
+    "n": 59,
+    "median_best_move": 3.38,
+    "median_worst_move": -2.96,
+    "median_to_close": -0.09,
+    "touch": {
+     "1": {
+      "up_first": 23,
+      "down_first": 20,
+      "neither": 1,
+      "both_in_one_bar": 15,
+      "up_first_pct": 53.5,
+      "up_first_90ci": [
+       41.1,
+       65.4
+      ],
+      "reached_either_pct": 72.9
+     },
+     "2": {
+      "up_first": 25,
+      "down_first": 25,
+      "neither": 6,
+      "both_in_one_bar": 3,
+      "up_first_pct": 50.0,
+      "up_first_90ci": [
+       38.7,
+       61.3
+      ],
+      "reached_either_pct": 84.7
+     },
+     "3": {
+      "up_first": 25,
+      "down_first": 20,
+      "neither": 11,
+      "both_in_one_bar": 3,
+      "up_first_pct": 55.6,
+      "up_first_90ci": [
+       43.4,
+       67.1
+      ],
+      "reached_either_pct": 76.3
+     }
+    }
+   },
+   "next": {
+    "n": 60,
+    "median_best_move": 3.05,
+    "median_worst_move": -2.96,
+    "median_to_close": -0.2,
+    "touch": {
+     "1": {
+      "up_first": 22,
+      "down_first": 14,
+      "neither": 1,
+      "both_in_one_bar": 23,
+      "up_first_pct": 61.1,
+      "up_first_90ci": [
+       47.4,
+       73.2
+      ],
+      "reached_either_pct": 60.0
+     },
+     "2": {
+      "up_first": 28,
+      "down_first": 25,
+      "neither": 2,
+      "both_in_one_bar": 5,
+      "up_first_pct": 52.8,
+      "up_first_90ci": [
+       41.7,
+       63.7
+      ],
+      "reached_either_pct": 88.3
+     },
+     "3": {
+      "up_first": 25,
+      "down_first": 23,
+      "neither": 9,
+      "both_in_one_bar": 3,
+      "up_first_pct": 52.1,
+      "up_first_90ci": [
+       40.4,
+       63.5
+      ],
+      "reached_either_pct": 80.0
+     }
+    }
+   }
+  },
+  "In Play Today: every name listed": {
+   "same": {
+    "n": 326,
+    "median_best_move": 1.65,
+    "median_worst_move": -2.31,
+    "median_to_close": -0.29,
+    "touch": {
+     "1": {
+      "up_first": 128,
+      "down_first": 153,
+      "neither": 19,
+      "both_in_one_bar": 26,
+      "up_first_pct": 45.6,
+      "up_first_90ci": [
+       40.7,
+       50.5
+      ],
+      "reached_either_pct": 86.2
+     },
+     "2": {
+      "up_first": 102,
+      "down_first": 139,
+      "neither": 80,
+      "both_in_one_bar": 5,
+      "up_first_pct": 42.3,
+      "up_first_90ci": [
+       37.2,
+       47.6
+      ],
+      "reached_either_pct": 73.9
+     },
+     "3": {
+      "up_first": 83,
+      "down_first": 113,
+      "neither": 127,
+      "both_in_one_bar": 3,
+      "up_first_pct": 42.3,
+      "up_first_90ci": [
+       36.7,
+       48.2
+      ],
+      "reached_either_pct": 60.1
+     }
+    }
+   },
+   "next": {
+    "n": 356,
+    "median_best_move": 2.21,
+    "median_worst_move": -2.78,
+    "median_to_close": -0.39,
+    "touch": {
+     "1": {
+      "up_first": 141,
+      "down_first": 141,
+      "neither": 8,
+      "both_in_one_bar": 66,
+      "up_first_pct": 50.0,
+      "up_first_90ci": [
+       45.1,
+       54.9
+      ],
+      "reached_either_pct": 79.2
+     },
+     "2": {
+      "up_first": 132,
+      "down_first": 156,
+      "neither": 42,
+      "both_in_one_bar": 26,
+      "up_first_pct": 45.8,
+      "up_first_90ci": [
+       41.1,
+       50.7
+      ],
+      "reached_either_pct": 80.9
+     },
+     "3": {
+      "up_first": 119,
+      "down_first": 131,
+      "neither": 97,
+      "both_in_one_bar": 9,
+      "up_first_pct": 47.6,
+      "up_first_90ci": [
+       42.5,
+       52.8
+      ],
+      "reached_either_pct": 70.2
+     }
+    }
+   }
+  },
+  "Highly Discussed: the top card each day": {
+   "same": {
+    "n": 59,
+    "median_best_move": 1.32,
+    "median_worst_move": -1.18,
+    "median_to_close": 0.16,
+    "touch": {
+     "1": {
+      "up_first": 28,
+      "down_first": 22,
+      "neither": 8,
+      "both_in_one_bar": 1,
+      "up_first_pct": 56.0,
+      "up_first_90ci": [
+       44.4,
+       66.9
+      ],
+      "reached_either_pct": 84.7
+     },
+     "2": {
+      "up_first": 21,
+      "down_first": 13,
+      "neither": 25,
+      "both_in_one_bar": 0,
+      "up_first_pct": 61.8,
+      "up_first_90ci": [
+       47.7,
+       74.1
+      ],
+      "reached_either_pct": 57.6
+     },
+     "3": {
+      "up_first": 16,
+      "down_first": 10,
+      "neither": 33,
+      "both_in_one_bar": 0,
+      "up_first_pct": 61.5,
+      "up_first_90ci": [
+       45.5,
+       75.4
+      ],
+      "reached_either_pct": 44.1
+     }
+    }
+   },
+   "next": {
+    "n": 61,
+    "median_best_move": 1.54,
+    "median_worst_move": -1.05,
+    "median_to_close": -0.2,
+    "touch": {
+     "1": {
+      "up_first": 27,
+      "down_first": 21,
+      "neither": 6,
+      "both_in_one_bar": 7,
+      "up_first_pct": 56.2,
+      "up_first_90ci": [
+       44.5,
+       67.4
+      ],
+      "reached_either_pct": 78.7
+     },
+     "2": {
+      "up_first": 20,
+      "down_first": 15,
+      "neither": 25,
+      "both_in_one_bar": 1,
+      "up_first_pct": 57.1,
+      "up_first_90ci": [
+       43.4,
+       69.9
+      ],
+      "reached_either_pct": 57.4
+     },
+     "3": {
+      "up_first": 15,
+      "down_first": 13,
+      "neither": 33,
+      "both_in_one_bar": 0,
+      "up_first_pct": 53.6,
+      "up_first_90ci": [
+       38.4,
+       68.1
+      ],
+      "reached_either_pct": 45.9
+     }
+    }
+   }
+  },
+  "Highly Discussed: every name listed": {
+   "same": {
+    "n": 143,
+    "median_best_move": 1.18,
+    "median_worst_move": -1.29,
+    "median_to_close": -0.1,
+    "touch": {
+     "1": {
+      "up_first": 54,
+      "down_first": 53,
+      "neither": 24,
+      "both_in_one_bar": 12,
+      "up_first_pct": 50.5,
+      "up_first_90ci": [
+       42.6,
+       58.3
+      ],
+      "reached_either_pct": 74.8
+     },
+     "2": {
+      "up_first": 42,
+      "down_first": 43,
+      "neither": 56,
+      "both_in_one_bar": 2,
+      "up_first_pct": 49.4,
+      "up_first_90ci": [
+       40.6,
+       58.2
+      ],
+      "reached_either_pct": 59.4
+     },
+     "3": {
+      "up_first": 28,
+      "down_first": 37,
+      "neither": 78,
+      "both_in_one_bar": 0,
+      "up_first_pct": 43.1,
+      "up_first_90ci": [
+       33.5,
+       53.3
+      ],
+      "reached_either_pct": 45.5
+     }
+    }
+   },
+   "next": {
+    "n": 164,
+    "median_best_move": 1.74,
+    "median_worst_move": -1.93,
+    "median_to_close": -0.47,
+    "touch": {
+     "1": {
+      "up_first": 53,
+      "down_first": 69,
+      "neither": 12,
+      "both_in_one_bar": 30,
+      "up_first_pct": 43.4,
+      "up_first_90ci": [
+       36.3,
+       50.9
+      ],
+      "reached_either_pct": 74.4
+     },
+     "2": {
+      "up_first": 54,
+      "down_first": 51,
+      "neither": 46,
+      "both_in_one_bar": 13,
+      "up_first_pct": 51.4,
+      "up_first_90ci": [
+       43.5,
+       59.3
+      ],
+      "reached_either_pct": 64.0
+     },
+     "3": {
+      "up_first": 40,
+      "down_first": 40,
+      "neither": 78,
+      "both_in_one_bar": 6,
+      "up_first_pct": 50.0,
+      "up_first_90ci": [
+       41.0,
+       59.0
+      ],
+      "reached_either_pct": 48.8
+     }
+    }
+   }
+  }
+ },
+ "control": {
+  "In Play Today: the top card each day": {
+   "same": {
+    "n": 59,
+    "median_best_move": 0.29,
+    "median_worst_move": -0.3,
+    "median_to_close": -0.03,
+    "touch": {
+     "0.25": {
+      "up_first": 25,
+      "down_first": 30,
+      "neither": 4,
+      "both_in_one_bar": 0,
+      "up_first_pct": 45.5,
+      "up_first_90ci": [
+       34.9,
+       56.5
+      ],
+      "reached_either_pct": 93.2
+     },
+     "0.5": {
+      "up_first": 14,
+      "down_first": 19,
+      "neither": 26,
+      "both_in_one_bar": 0,
+      "up_first_pct": 42.4,
+      "up_first_90ci": [
+       29.4,
+       56.6
+      ],
+      "reached_either_pct": 55.9
+     },
+     "1": {
+      "up_first": 2,
+      "down_first": 4,
+      "neither": 53,
+      "both_in_one_bar": 0,
+      "up_first_pct": 33.3,
+      "up_first_90ci": [
+       11.7,
+       65.3
+      ],
+      "reached_either_pct": 10.2
+     }
+    }
+   },
+   "next": {
+    "n": 60,
+    "median_best_move": 0.3,
+    "median_worst_move": -0.35,
+    "median_to_close": -0.04,
+    "touch": {
+     "0.25": {
+      "up_first": 24,
+      "down_first": 32,
+      "neither": 4,
+      "both_in_one_bar": 0,
+      "up_first_pct": 42.9,
+      "up_first_90ci": [
+       32.6,
+       53.8
+      ],
+      "reached_either_pct": 93.3
+     },
+     "0.5": {
+      "up_first": 13,
+      "down_first": 17,
+      "neither": 30,
+      "both_in_one_bar": 0,
+      "up_first_pct": 43.3,
+      "up_first_90ci": [
+       29.6,
+       58.1
+      ],
+      "reached_either_pct": 50.0
+     },
+     "1": {
+      "up_first": 3,
+      "down_first": 3,
+      "neither": 54,
+      "both_in_one_bar": 0,
+      "up_first_pct": 50.0,
+      "up_first_90ci": [
+       22.1,
+       77.9
+      ],
+      "reached_either_pct": 10.0
+     }
+    }
+   }
+  },
+  "In Play Today: every name listed": {
+   "same": {
+    "n": 326,
+    "median_best_move": 0.18,
+    "median_worst_move": -0.24,
+    "median_to_close": -0.04,
+    "touch": {
+     "0.25": {
+      "up_first": 113,
+      "down_first": 141,
+      "neither": 72,
+      "both_in_one_bar": 0,
+      "up_first_pct": 44.5,
+      "up_first_90ci": [
+       39.4,
+       49.6
+      ],
+      "reached_either_pct": 77.9
+     },
+     "0.5": {
+      "up_first": 56,
+      "down_first": 71,
+      "neither": 199,
+      "both_in_one_bar": 0,
+      "up_first_pct": 44.1,
+      "up_first_90ci": [
+       37.0,
+       51.4
+      ],
+      "reached_either_pct": 39.0
+     },
+     "1": {
+      "up_first": 9,
+      "down_first": 7,
+      "neither": 310,
+      "both_in_one_bar": 0,
+      "up_first_pct": 56.2,
+      "up_first_90ci": [
+       36.5,
+       74.2
+      ],
+      "reached_either_pct": 4.9
+     }
+    }
+   },
+   "next": {
+    "n": 356,
+    "median_best_move": 0.29,
+    "median_worst_move": -0.34,
+    "median_to_close": -0.04,
+    "touch": {
+     "0.25": {
+      "up_first": 150,
+      "down_first": 182,
+      "neither": 24,
+      "both_in_one_bar": 0,
+      "up_first_pct": 45.2,
+      "up_first_90ci": [
+       40.7,
+       49.7
+      ],
+      "reached_either_pct": 93.3
+     },
+     "0.5": {
+      "up_first": 83,
+      "down_first": 97,
+      "neither": 176,
+      "both_in_one_bar": 0,
+      "up_first_pct": 46.1,
+      "up_first_90ci": [
+       40.1,
+       52.2
+      ],
+      "reached_either_pct": 50.6
+     },
+     "1": {
+      "up_first": 14,
+      "down_first": 22,
+      "neither": 320,
+      "both_in_one_bar": 0,
+      "up_first_pct": 38.9,
+      "up_first_90ci": [
+       26.8,
+       52.6
+      ],
+      "reached_either_pct": 10.1
+     }
+    }
+   }
+  },
+  "Highly Discussed: the top card each day": {
+   "same": {
+    "n": 59,
+    "median_best_move": 0.3,
+    "median_worst_move": -0.3,
+    "median_to_close": -0.02,
+    "touch": {
+     "0.25": {
+      "up_first": 26,
+      "down_first": 29,
+      "neither": 4,
+      "both_in_one_bar": 0,
+      "up_first_pct": 47.3,
+      "up_first_90ci": [
+       36.6,
+       58.2
+      ],
+      "reached_either_pct": 93.2
+     },
+     "0.5": {
+      "up_first": 14,
+      "down_first": 18,
+      "neither": 27,
+      "both_in_one_bar": 0,
+      "up_first_pct": 43.8,
+      "up_first_90ci": [
+       30.4,
+       58.1
+      ],
+      "reached_either_pct": 54.2
+     },
+     "1": {
+      "up_first": 2,
+      "down_first": 4,
+      "neither": 53,
+      "both_in_one_bar": 0,
+      "up_first_pct": 33.3,
+      "up_first_90ci": [
+       11.7,
+       65.3
+      ],
+      "reached_either_pct": 10.2
+     }
+    }
+   },
+   "next": {
+    "n": 61,
+    "median_best_move": 0.29,
+    "median_worst_move": -0.35,
+    "median_to_close": -0.04,
+    "touch": {
+     "0.25": {
+      "up_first": 24,
+      "down_first": 33,
+      "neither": 4,
+      "both_in_one_bar": 0,
+      "up_first_pct": 42.1,
+      "up_first_90ci": [
+       31.9,
+       53.0
+      ],
+      "reached_either_pct": 93.4
+     },
+     "0.5": {
+      "up_first": 13,
+      "down_first": 18,
+      "neither": 30,
+      "both_in_one_bar": 0,
+      "up_first_pct": 41.9,
+      "up_first_90ci": [
+       28.6,
+       56.6
+      ],
+      "reached_either_pct": 50.8
+     },
+     "1": {
+      "up_first": 3,
+      "down_first": 3,
+      "neither": 55,
+      "both_in_one_bar": 0,
+      "up_first_pct": 50.0,
+      "up_first_90ci": [
+       22.1,
+       77.9
+      ],
+      "reached_either_pct": 9.8
+     }
+    }
+   }
+  },
+  "Highly Discussed: every name listed": {
+   "same": {
+    "n": 143,
+    "median_best_move": 0.25,
+    "median_worst_move": -0.21,
+    "median_to_close": 0.03,
+    "touch": {
+     "0.25": {
+      "up_first": 55,
+      "down_first": 52,
+      "neither": 36,
+      "both_in_one_bar": 0,
+      "up_first_pct": 51.4,
+      "up_first_90ci": [
+       43.5,
+       59.2
+      ],
+      "reached_either_pct": 74.8
+     },
+     "0.5": {
+      "up_first": 28,
+      "down_first": 29,
+      "neither": 86,
+      "both_in_one_bar": 0,
+      "up_first_pct": 49.1,
+      "up_first_90ci": [
+       38.5,
+       59.8
+      ],
+      "reached_either_pct": 39.9
+     },
+     "1": {
+      "up_first": 3,
+      "down_first": 5,
+      "neither": 135,
+      "both_in_one_bar": 0,
+      "up_first_pct": 37.5,
+      "up_first_90ci": [
+       16.1,
+       65.2
+      ],
+      "reached_either_pct": 5.6
+     }
+    }
+   },
+   "next": {
+    "n": 164,
+    "median_best_move": 0.35,
+    "median_worst_move": -0.33,
+    "median_to_close": 0.06,
+    "touch": {
+     "0.25": {
+      "up_first": 68,
+      "down_first": 92,
+      "neither": 4,
+      "both_in_one_bar": 0,
+      "up_first_pct": 42.5,
+      "up_first_90ci": [
+       36.2,
+       49.0
+      ],
+      "reached_either_pct": 97.6
+     },
+     "0.5": {
+      "up_first": 40,
+      "down_first": 49,
+      "neither": 75,
+      "both_in_one_bar": 0,
+      "up_first_pct": 44.9,
+      "up_first_90ci": [
+       36.5,
+       53.6
+      ],
+      "reached_either_pct": 54.3
+     },
+     "1": {
+      "up_first": 12,
+      "down_first": 6,
+      "neither": 146,
+      "both_in_one_bar": 0,
+      "up_first_pct": 66.7,
+      "up_first_90ci": [
+       47.3,
+       81.7
+      ],
+      "reached_either_pct": 11.0
+     }
+    }
+   }
+  }
+ },
+ "cadence": {
+  "every name, every day": {
+   "fwd5": {
+    "n": 3720,
+    "median_scored_adr": 9.0,
+    "median_realized_adr": 8.23,
+    "median_realized_over_scored": 0.89,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.73,
+    "median_realized_consistency": 0.85,
+    "spearman_scored_vs_realized_adr": 0.656,
+    "spearman_score_vs_realized_adr": 0.141
+   },
+   "fwd20": {
+    "n": 2760,
+    "median_scored_adr": 9.3,
+    "median_realized_adr": 7.97,
+    "median_realized_over_scored": 0.84,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.75,
+    "median_realized_consistency": 0.7,
+    "spearman_scored_vs_realized_adr": 0.652,
+    "spearman_score_vs_realized_adr": 0.128
+   }
+  },
+  "first appearance only": {
+   "fwd5": {
+    "n": 177,
+    "median_scored_adr": 9.3,
+    "median_realized_adr": 9.03,
+    "median_realized_over_scored": 0.96,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.73,
+    "median_realized_consistency": 0.87,
+    "spearman_scored_vs_realized_adr": 0.781,
+    "spearman_score_vs_realized_adr": 0.198
+   },
+   "fwd20": {
+    "n": 154,
+    "median_scored_adr": 9.3,
+    "median_realized_adr": 8.56,
+    "median_realized_over_scored": 0.9,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.75,
+    "median_realized_consistency": 0.7,
+    "spearman_scored_vs_realized_adr": 0.796,
+    "spearman_score_vs_realized_adr": 0.076
+   }
+  },
+  "top 10": {
+   "fwd5": {
+    "n": 620,
+    "median_scored_adr": 9.5,
+    "median_realized_adr": 8.52,
+    "median_realized_over_scored": 0.88,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.81,
+    "median_realized_consistency": 0.87,
+    "spearman_scored_vs_realized_adr": 0.529,
+    "spearman_score_vs_realized_adr": 0.157
+   },
+   "fwd20": {
+    "n": 460,
+    "median_scored_adr": 9.7,
+    "median_realized_adr": 8.56,
+    "median_realized_over_scored": 0.84,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.82,
+    "median_realized_consistency": 0.69,
+    "spearman_scored_vs_realized_adr": 0.491,
+    "spearman_score_vs_realized_adr": 0.111
+   }
+  },
+  "ranks 11-60": {
+   "fwd5": {
+    "n": 3100,
+    "median_scored_adr": 9.0,
+    "median_realized_adr": 8.18,
+    "median_realized_over_scored": 0.89,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.71,
+    "median_realized_consistency": 0.85,
+    "spearman_scored_vs_realized_adr": 0.671,
+    "spearman_score_vs_realized_adr": 0.129
+   },
+   "fwd20": {
+    "n": 2300,
+    "median_scored_adr": 9.2,
+    "median_realized_adr": 7.82,
+    "median_realized_over_scored": 0.84,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.73,
+    "median_realized_consistency": 0.71,
+    "spearman_scored_vs_realized_adr": 0.672,
+    "spearman_score_vs_realized_adr": 0.077
+   }
+  },
+  "leveraged funds (now excluded)": {
+   "fwd5": {
+    "n": 1003,
+    "median_scored_adr": 11.8,
+    "median_realized_adr": 10.42,
+    "median_realized_over_scored": 0.92,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.71,
+    "median_realized_consistency": 0.83,
+    "spearman_scored_vs_realized_adr": 0.723,
+    "spearman_score_vs_realized_adr": 0.2
+   },
+   "fwd20": {
+    "n": 526,
+    "median_scored_adr": 13.2,
+    "median_realized_adr": 11.09,
+    "median_realized_over_scored": 0.89,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.73,
+    "median_realized_consistency": 0.66,
+    "spearman_scored_vs_realized_adr": 0.654,
+    "spearman_score_vs_realized_adr": 0.238
+   }
+  },
+  "real companies": {
+   "fwd5": {
+    "n": 2717,
+    "median_scored_adr": 8.6,
+    "median_realized_adr": 7.72,
+    "median_realized_over_scored": 0.88,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.74,
+    "median_realized_consistency": 0.86,
+    "spearman_scored_vs_realized_adr": 0.534,
+    "spearman_score_vs_realized_adr": 0.333
+   },
+   "fwd20": {
+    "n": 2234,
+    "median_scored_adr": 8.9,
+    "median_realized_adr": 7.58,
+    "median_realized_over_scored": 0.83,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.75,
+    "median_realized_consistency": 0.71,
+    "spearman_scored_vs_realized_adr": 0.553,
+    "spearman_score_vs_realized_adr": 0.303
+   }
+  },
+  "score: top third": {
+   "fwd5": {
+    "n": 1301,
+    "median_scored_adr": 9.3,
+    "median_realized_adr": 8.56,
+    "median_realized_over_scored": 0.9,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.77,
+    "median_realized_consistency": 0.85,
+    "spearman_scored_vs_realized_adr": 0.568,
+    "spearman_score_vs_realized_adr": 0.148
+   },
+   "fwd20": {
+    "n": 1219,
+    "median_scored_adr": 9.3,
+    "median_realized_adr": 8.19,
+    "median_realized_over_scored": 0.85,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.77,
+    "median_realized_consistency": 0.71,
+    "spearman_scored_vs_realized_adr": 0.582,
+    "spearman_score_vs_realized_adr": 0.234
+   }
+  },
+  "score: bottom third": {
+   "fwd5": {
+    "n": 1156,
+    "median_scored_adr": 8.4,
+    "median_realized_adr": 7.61,
+    "median_realized_over_scored": 0.87,
+    "still_above_floor_pct": 99.9,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.68,
+    "median_realized_consistency": 0.86,
+    "spearman_scored_vs_realized_adr": 0.676,
+    "spearman_score_vs_realized_adr": 0.092
+   },
+   "fwd20": {
+    "n": 444,
+    "median_scored_adr": 9.3,
+    "median_realized_adr": 7.22,
+    "median_realized_over_scored": 0.77,
+    "still_above_floor_pct": 100.0,
+    "median_share_of_days_over_floor": 100.0,
+    "median_scored_consistency": 0.7,
+    "median_realized_consistency": 0.74,
+    "spearman_scored_vs_realized_adr": 0.723,
+    "spearman_score_vs_realized_adr": 0.114
+   }
+  }
+ },
+ "cadence_reference": {
+  "SPY": 0.78,
+  "QQQ": 1.26,
+  "IWM": 1.13
+ }
+}
