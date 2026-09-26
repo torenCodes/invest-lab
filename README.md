@@ -59,6 +59,8 @@ So the model was rebuilt around the evidence, the weak dimensions were cut, and 
 **1. It grades its own homework.**
 Every scan archives its top pick with an entry price. A scheduled job fills in the 30-day outcome once, as a fixed snapshot that is never revisited or quietly revised. The homepage publishes the aggregate: winners, losers, and hit rate. Day-trade picks are also graded at the close of the same day, the next day and five sessions out, because a 30-day clock is the wrong one for a same-day idea. Being able to say *"here is how the model actually did"* was the whole point.
 
+Every scan also commits its full list, so the git history is a dated record of every board. Three research scripts grade it. `list_backtest.py` scores every name any board ever listed, from the day it first appeared. `short_term_backtest.py` judges the day-trading boards on what they claim, movement after the flag, using 5-minute bars and first-touch odds against a 50% coin flip. `early_signal_backtest.py` tested whether the morning scan could spot movers sooner. It could not: of 716 stocks that closed a day up 10% or more, the typical one was already up 8% by 10am, and none of four signals, fixed before the test ran, beat the current pick. That result is kept, along with the one lead it produced and the date it gets re-tested.
+
 **2. Unproven signals stay out of the public numbers.**
 A newer experiment flags stocks whose social-mention volume is accelerating, on the theory that chatter precedes breakouts. It is archived and scored every day, but it is deliberately **excluded from the published track record** until it has enough matured outcomes to justify a place there. Measure first, publish second.
 
@@ -128,6 +130,9 @@ only deployment and automation config.
 │   │   ├── newsstand_scan.py           # Trading Conditions read
 │   │   ├── insider_pulse_scan.py       # market-wide insider buy/sell breadth
 │   │   ├── insider_backtest.py         # research harness that measures the conviction model
+│   │   ├── list_backtest.py            # grades every board's full list from git history
+│   │   ├── short_term_backtest.py      # grades day-trade boards on movement after the flag
+│   │   ├── early_signal_backtest.py    # tests signals for spotting movers earlier
 │   │   ├── capitol_flow_scan.py        # House PTR filings → congressional trades
 │   │   ├── archive_nominee.py          # records each scan's top pick
 │   │   └── calculate_outcomes.py       # grades picks → track record

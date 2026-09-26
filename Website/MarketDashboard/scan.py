@@ -37,6 +37,9 @@ def json_safe(obj):
 # ── Config ────────────────────────────────────────────────────────────────────
 BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(BASE_DIR, "data", "results.json")
+# Every name the scan looked at, not just the six it shows. Committed each run,
+# so git history becomes a record the research scripts can grade signal by signal.
+UNIVERSE_FILE = os.path.join(BASE_DIR, "data", "scan_universe.json")
 
 # API keys come from the environment only — GitHub Actions secrets in CI, or
 # your shell when running locally. Never commit a literal fallback: an unset
@@ -682,6 +685,9 @@ def compute_emerging_chatter(apewisdom, limit=3):
 
 # ── Stock analysis ─────────────────────────────────────────────────────────────
 
+_QUOTED = {}   # ticker -> the quote + profile basics, kept even for names rejected below
+
+
 def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_label="Reddit",
                   buzz_source="news", finviz_set=None):
     quote = get_stock_quote(ticker)
@@ -691,6 +697,13 @@ def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_lab
     profile = get_company_profile(ticker)
     if not profile or not profile.get("name"):
         return None
+
+    _QUOTED[ticker] = {
+        "price": quote.get("c"), "change_pct": quote.get("dp"), "open": quote.get("o"),
+        "high": quote.get("h"), "low": quote.get("l"), "prev_close": quote.get("pc"),
+        "market_cap": (profile.get("marketCapitalization") or 0) * 1_000_000,
+        "sector": profile.get("finnhubIndustry", "Unknown"),
+    }
 
     current_price = quote.get("c", 0)
     change_pct    = quote.get("dp", 0)
@@ -1259,6 +1272,43 @@ def get_finviz_movers():
         return []
 
 
+# ── Full-universe snapshot ─────────────────────────────────────────────────────
+
+def write_universe_snapshot(start, universe, results, day_trades, yahoo_cats, buzz_lookup,
+                            buzz_source, yahoo_trending, finviz_set):
+    """One row per ticker the scan considered. score is None when the name was
+    rejected before scoring (down on the day, or no quote); board_rank is its
+    place on In Play Today, None if it did not make the six. One row per line
+    keeps the committed diffs readable."""
+    scored = {r["ticker"]: r for r in results}
+    board = {r["ticker"]: i for i, r in enumerate(day_trades, 1)}
+    rows = []
+    for tk in universe:
+        r = scored.get(tk)
+        rows.append({
+            "ticker": tk,
+            **(_QUOTED.get(tk) or {"price": None}),
+            "score": r["score"] if r else None,
+            "signals": r["signals"] if r else [],
+            "gainer": tk in yahoo_cats["gainers"],
+            "active": tk in yahoo_cats["active"],
+            "buzz": buzz_lookup.get(tk, 0),
+            "trending_rank": (yahoo_trending or {}).get(tk),
+            "finviz": tk in finviz_set,
+            "board_rank": board.get(tk),
+        })
+    head = {"scan_time": start.isoformat(), "source": "Yahoo day gainers + most active",
+            "buzz_source": buzz_source, "count": len(rows),
+            "quoted": sum(1 for x in rows if x["price"] is not None)}
+    lines = [json.dumps(json_safe(x), allow_nan=False) for x in rows]
+    payload = (json.dumps(head, allow_nan=False)[:-1] + ', "names": [\n'
+               + ",\n".join(lines) + "\n]}\n")
+    json.loads(payload)                                   # never commit a file the parser rejects
+    with open(UNIVERSE_FILE, "w") as f:
+        f.write(payload)
+    print(f"[scan.py] Universe snapshot: {len(rows)} names ({head['quoted']} quoted) -> {UNIVERSE_FILE}")
+
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def run():
@@ -1413,6 +1463,13 @@ def run():
     payload = json.dumps(json_safe(output), indent=2, allow_nan=False)
     with open(OUTPUT_FILE, "w") as f:
         f.write(payload)
+
+    # Research record only: a failure here must never cost the board its update.
+    try:
+        write_universe_snapshot(start, universe, results, day_trades, yahoo_cats, buzz_lookup,
+                                buzz_source, yahoo_trending, finviz_set)
+    except Exception as e:
+        print(f"[scan.py] !! universe snapshot not written: {e}")
 
     elapsed = (datetime.now(timezone.utc) - start).seconds
     print(f"[scan.py] Done in {elapsed}s — {len(day_trades)}D {len(reddit_cards)}R")
