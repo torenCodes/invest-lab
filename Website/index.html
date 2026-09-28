@@ -368,34 +368,34 @@
             over with a fundamental deep-dive that examines P/E, PEG, Free Cash Flow,
             Graham Number, ROE, and leverage before summarizing the findings with a
             written verdict.</p>
-          <p>Below are the receipts so you can see an example of past results. Every
-            top nominee from each scan is logged with a 30-day outcome, and the misses
-            are alongside to keep everything in perspective.</p>
+          <p>Below are the receipts. Every top nominee is logged the moment it is
+            flagged and graded on its own board's clock: a day trade at that day's
+            close, a swing setup after 20 trading days, the long-term boards after 60.
+            Each result sits next to the S&amp;P 500 over the same days, and the misses
+            stay alongside the wins.</p>
         </div>
       </div>
 
-      <div class="track-stats" id="track-stats">
-        <div class="track-stat">
-          <div class="track-stat-num" id="ts-total">—</div>
-          <div class="track-stat-lbl">Total nominees logged</div>
-        </div>
-        <div class="track-stat">
-          <div class="track-stat-num" id="ts-completed">—</div>
-          <div class="track-stat-lbl">30-day outcomes calculated</div>
-        </div>
-        <div class="track-stat">
-          <div class="track-stat-num" id="ts-positive">—</div>
-          <div class="track-stat-lbl">Positive returns</div>
-        </div>
-        <div class="track-stat">
-          <div class="track-stat-num" id="ts-avg">—</div>
-          <div class="track-stat-lbl">Average outcome</div>
+      <!-- Board scorecard: one row per board, each graded on its own clock.
+           Populated by JS from nominees_archive.json (the "graded" field). -->
+      <div class="board-scorecard" id="board-scorecard">
+        <div class="bsc-summary" id="bsc-summary">Loading the scorecard…</div>
+        <div class="bsc-table" role="table" aria-label="Track record by board">
+          <div class="bsc-row bsc-head" role="row">
+            <span role="columnheader">Board</span>
+            <span role="columnheader">Graded at</span>
+            <span role="columnheader">Graded</span>
+            <span role="columnheader">Typical pick</span>
+            <span role="columnheader">vs S&amp;P 500</span>
+            <span role="columnheader">Beat the S&amp;P</span>
+          </div>
+          <div id="bsc-rows"></div>
         </div>
       </div>
 
       <div class="track-record-detail">
         <div class="track-record-detail-col">
-          <div class="track-record-detail-title">Recent winners</div>
+          <div class="track-record-detail-title">Latest results</div>
           <ul class="track-record-detail-list" id="ts-winners">
             <li class="track-record-detail-loading">Loading…</li>
           </ul>
@@ -415,7 +415,7 @@
       </div>
 
       <p class="track-record-footnote" style="margin-top:1.5rem;">
-        <strong>Recent winners</strong> are the latest picks to clear their 30-day mark in the green. <strong>Hall of fame</strong> and <strong>Worst misses</strong> are the best and worst 30-day outcomes since inception. Each outcome is a snapshot taken once a pick is at least 30 calendar days old, and it is never revised, so an older entry shows how the pick did at that horizon rather than where it trades today. Every board is graded on this same 30-day clock, including day-trade picks that are made for a much shorter one. The headline stats above count <em>all</em> outcomes, wins and losses, and leave out picks still pending. Past performance is not predictive of future results. These are educational records of the lab's process, not investment advice.
+        Each board is graded on the clock it is built for. A Top Day Trade runs from the price when the scan flagged it to that day's close, or to the next day's close if it was flagged after the market closed. A Pattern Scanner setup gets 20 trading days. Underdogs, Tried &amp; True and Insider Buying get 60, about three months. The S&amp;P 500 is measured over the same days, starting from the last close before the pick. <strong>Typical pick</strong> is the median, so one huge winner cannot carry a board. Insider Buying is split at its August 2026 rebuild, so the current model is judged on its own picks rather than the old model's. <strong>Latest results</strong> are the most recent picks to reach their grading day, wins and losses alike. <strong>Hall of fame</strong> and <strong>Worst misses</strong> are the best and worst results since inception. Each result is recorded once on its grading day and never revised, so an older entry shows how the pick did then, not where it trades today. Picks still inside their clock are left out, and rows with fewer than 15 results are marked as early. Past performance is not predictive of future results. These are educational records of the lab's process, not investment advice.
       </p>
 
     </div>
@@ -878,18 +878,37 @@
 </script>
 
 <script>
-// ── Lab Methodology / Track Record — aggregate stats from nominees_archive ──
-// Pulls the same archive used by Other Lab Results but presents the
-// portfolio-level view: total nominees, % positive, average outcome, plus
-// top winners and worst misses. Pending nominees are excluded since we
-// can't yet score them.
+// ── Lab Methodology / Track Record — each board on its own clock ─────────────
+// Reads the "graded" result calculate_outcomes.py writes once per pick: the
+// close a set number of trading sessions after the last close before the flag
+// (1 for a day trade, 20 for Pattern Scanner, 60 for the long-term boards),
+// with SPY over the same sessions. Nothing is pooled across boards, because a
+// one-day trade and a three-month hold answer different questions. Medians,
+// so one outlier cannot carry a board. Chatter Watch is still experimental and
+// stays out of the public record.
 (function () {
   var ARCHIVE_URL = 'https://invest-movers-shakers.onrender.com/data/nominees_archive.json';
+  var INSIDER_REBUILD = '2026-08-20';   // conviction model rebuilt from backtest evidence
+  var MIN_SAMPLE = 15;                  // below this a row is marked early
 
-  function fmtPct(v) {
-    if (v == null) return '—';
-    return (v >= 0 ? '+' : '') + v.toFixed(1) + '%';
-  }
+  function isInsider(n) { return n.source_key === 'insider'; }
+  var BOARDS = [
+    { name: 'Movers &amp; Shakers', sub: 'Top Day Trade', clock: 'That day’s close', sessions: 1,
+      key: 'movers', test: function (n) { return n.source_key === 'movers'; } },
+    { name: 'Pattern Scanner', sub: 'Top Coil setup', clock: '20 trading days', sessions: 20,
+      key: 'patterns', test: function (n) { return n.source_key === 'patterns'; } },
+    { name: 'Underdogs', sub: 'The Marathon · deep value', clock: '60 trading days', sessions: 60,
+      key: 'underdogs', test: function (n) { return n.source_key === 'underdogs'; } },
+    { name: 'Tried &amp; True', sub: 'The Marathon · ETF consensus', clock: '60 trading days', sessions: 60,
+      key: 'tried-true', test: function (n) { return n.source_key === 'tried-true'; } },
+    { name: 'Insider Buying', sub: 'Current model, since Aug 20, 2026', clock: '60 trading days', sessions: 60,
+      key: 'insider', test: function (n) { return isInsider(n) && n.date_flagged >= INSIDER_REBUILD; } },
+    { name: 'Insider Buying', sub: 'Earlier model, before Aug 20, 2026', clock: '60 trading days', sessions: 60,
+      key: 'insider', test: function (n) { return isInsider(n) && n.date_flagged < INSIDER_REBUILD; } }
+  ];
+  var SHORT_NAME  = { 'movers': 'Movers', 'patterns': 'Patterns', 'underdogs': 'Underdogs',
+                      'tried-true': 'Tried &amp; True', 'insider': 'Insider' };
+  var SHORT_CLOCK = { 1: 'same day', 20: '20 days', 60: '60 days' };
 
   function dashUrlFor(sourceKey) {
     var map = {
@@ -897,96 +916,124 @@
       'underdogs':  'https://invest-the-marathon.onrender.com/?tab=underdogs',
       'insider':    'https://invest-insider-buying.onrender.com',
       'tried-true': 'https://invest-the-marathon.onrender.com/?tab=tried-true',
-      'patterns':   'https://invest-patterns.onrender.com',
-      'chatter':    'https://invest-movers-shakers.onrender.com/#market-chatter',
-      'marathon':   'https://invest-the-marathon.onrender.com'
+      'patterns':   'https://invest-patterns.onrender.com'
     };
     return map[sourceKey] || '#';
+  }
+
+  function fmtPct(v) {
+    if (v == null) return '—';
+    return (v >= 0 ? '+' : '') + v.toFixed(1) + '%';
+  }
+  function fmtPts(v) {
+    if (v == null) return '—';
+    return (v >= 0 ? '+' : '') + v.toFixed(1) + ' pts';
+  }
+  function median(xs) {
+    if (!xs.length) return null;
+    var s = xs.slice().sort(function (a, b) { return a - b; });
+    var m = Math.floor(s.length / 2);
+    return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+  }
+  function isGraded(n) { return n.graded && typeof n.graded.pct === 'number'; }
+  function fmtShortDate(s) {
+    if (!s) return '';
+    var d = new Date(s + 'T12:00:00Z');
+    return isNaN(d) ? '' : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+  }
+  // Rough calendar date the first waiting pick reaches its grading day
+  // (trading days x 7/5, plus a couple of holidays), shown as early/mid/late.
+  function dueLabel(list, sessions) {
+    var waiting = list.filter(function (n) { return !isGraded(n) && !n.graded_unavailable; })
+                      .map(function (n) { return n.date_flagged; }).sort();
+    if (!waiting.length) return 'No picks yet';
+    var d = new Date(waiting[0] + 'T12:00:00Z');
+    d.setUTCDate(d.getUTCDate() + Math.ceil(sessions * 7 / 5) + 2);
+    var day = d.getUTCDate();
+    var part = day <= 10 ? 'early' : day <= 20 ? 'mid' : 'late';
+    return 'First results due ' + part + '-' + d.toLocaleDateString('en-US', { month: 'long', timeZone: 'UTC' });
+  }
+
+  function renderScorecard(all) {
+    var rowsEl = document.getElementById('bsc-rows');
+    var sumEl  = document.getElementById('bsc-summary');
+    var graded = all.filter(isGraded);
+    var waiting = all.filter(function (n) { return !isGraded(n) && !n.graded_unavailable; });
+    var first = all.map(function (n) { return n.date_flagged; }).sort()[0];
+    var since = first ? new Date(first + 'T12:00:00Z').toLocaleDateString('en-US',
+                  { month: 'long', year: 'numeric', timeZone: 'UTC' }) : '';
+    sumEl.textContent = graded.length
+      ? all.length + ' top picks logged since ' + since + ' · ' + graded.length +
+        ' graded · ' + waiting.length + ' still inside their clock'
+      : 'Grading in progress. Results appear after the next outcomes run.';
+
+    rowsEl.innerHTML = BOARDS.map(function (b) {
+      var list = all.filter(b.test);
+      var g = list.filter(isGraded);
+      var ex = g.map(function (n) { return n.graded.pct - n.graded.spy_pct; });
+      var early = g.length > 0 && g.length < MIN_SAMPLE;
+      var cells;
+      if (!g.length) {
+        cells = '<span class="bsc-pending" role="cell">' + dueLabel(list, b.sessions) + '</span>';
+      } else {
+        var typical = median(g.map(function (n) { return n.graded.pct; }));
+        var excess  = median(ex);
+        var beat    = Math.round(100 * ex.filter(function (e) { return e > 0; }).length / ex.length);
+        cells =
+          '<span class="bsc-num" role="cell" data-label="Typical pick"><span class="bsc-val">' + fmtPct(typical) + '</span></span>' +
+          '<span class="bsc-num ' + (excess >= 0 ? 'pos' : 'neg') + '" role="cell" data-label="vs S&amp;P 500"><span class="bsc-val">' + fmtPts(excess) + '</span></span>' +
+          '<span class="bsc-num ' + (beat >= 50 ? 'pos' : 'neg') + '" role="cell" data-label="Beat the S&amp;P"><span class="bsc-val">' + beat + '%</span></span>';
+      }
+      return '<a class="bsc-row' + (early ? ' bsc-early' : '') + '" role="row" href="' + dashUrlFor(b.key) + '">' +
+          '<span class="bsc-board" role="cell"><span class="bsc-name">' + b.name + '</span>' +
+            '<span class="bsc-sub">' + b.sub + '</span></span>' +
+          '<span class="bsc-clock" role="cell" data-label="Graded at"><span class="bsc-val">' + b.clock + '</span></span>' +
+          '<span class="bsc-num" role="cell" data-label="Graded"><span class="bsc-val">' + g.length +
+            '<span class="bsc-of"> of ' + list.length + '</span>' +
+            (early ? '<span class="bsc-tag">early</span>' : '') + '</span></span>' +
+          cells +
+        '</a>';
+    }).join('');
+  }
+
+  function renderList(elId, items) {
+    var ul = document.getElementById(elId);
+    if (!ul) return;
+    if (!items.length) {
+      ul.innerHTML = '<li class="track-record-detail-empty">No graded picks yet.</li>';
+      return;
+    }
+    ul.innerHTML = items.map(function (n) {
+      var pct = n.graded.pct;
+      // Date first so it isn't truncated: it says when the result was taken.
+      var meta = fmtShortDate(n.graded.date) + ' · ' + (SHORT_NAME[n.source_key] || n.source || '') +
+                 ' · ' + (SHORT_CLOCK[n.graded.sessions] || n.graded.sessions + ' days');
+      return '<li>' +
+        '<a href="' + dashUrlFor(n.source_key) + '" class="track-record-detail-row">' +
+          '<span class="track-record-detail-ticker">' + (n.ticker || '?') + '</span>' +
+          '<span class="track-record-detail-source">' + meta + '</span>' +
+          '<span class="track-record-detail-pct ' + (pct >= 0 ? 'pos' : 'neg') + '">' + fmtPct(pct) + '</span>' +
+        '</a>' +
+      '</li>';
+    }).join('');
   }
 
   fetch(ARCHIVE_URL + '?t=' + Date.now())
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (data) {
-      // Experimental "Chatter Watch" (source_key 'chatter') is kept OUT of the
-      // public Track Record + headline stats while its signal is unproven — it's
-      // still archived and its 30-day outcomes are computed, just evaluated
-      // privately for now. Remove this filter (and give it a display) once the
-      // chatter-velocity signal earns promotion. See project-coil… / dashboards ref.
-      var all       = (data.nominees || []).filter(function (n) { return n.source_key !== 'chatter'; });
-      var completed = all.filter(function (n) { return n.outcome_pct !== null; });
-
-      var total     = all.length;
-      var nDone     = completed.length;
-      var nPositive = completed.filter(function (n) { return n.outcome_pct > 0; }).length;
-      var avg       = nDone ? completed.reduce(function (s, n) { return s + n.outcome_pct; }, 0) / nDone : null;
-
-      var pctPositive = nDone ? Math.round((nPositive / nDone) * 100) : null;
-
-      document.getElementById('ts-total').textContent     = total || '—';
-      document.getElementById('ts-completed').textContent = nDone || '—';
-      document.getElementById('ts-positive').textContent  = pctPositive != null ? pctPositive + '%' : '—';
-      document.getElementById('ts-avg').textContent       = fmtPct(avg);
-      // Color the avg/positive cells based on direction
-      if (avg != null) {
-        document.getElementById('ts-avg').style.color = avg >= 0 ? 'var(--accent-dark)' : '#c0392b';
-      }
-      if (pctPositive != null) {
-        document.getElementById('ts-positive').style.color = pctPositive >= 50 ? 'var(--accent-dark)' : '#c0392b';
-      }
-
-      function fmtShortDate(s) {
-        if (!s) return '';
-        var d = new Date(s + 'T12:00:00Z');
-        return isNaN(d) ? '' : d.toLocaleDateString([], { month: 'short', day: 'numeric' });
-      }
-
-      function renderList(elId, items) {
-        var ul = document.getElementById(elId);
-        if (!ul) return;
-        if (!items.length) {
-          ul.innerHTML = '<li class="track-record-detail-empty">No data yet.</li>';
-          return;
-        }
-        ul.innerHTML = items.map(function (n) {
-          var href = dashUrlFor(n.source_key);
-          var pct  = fmtPct(n.outcome_pct);
-          var pctCls = n.outcome_pct >= 0 ? 'pos' : 'neg';
-          // Date first so it isn't truncated — it's the key context (recency
-          // for "Recent outcomes", and "this is a dated snapshot" for old wins).
-          var meta = fmtShortDate(n.outcome_date) + (n.source ? ' · ' + n.source : '');
-          return '<li>' +
-            '<a href="' + href + '" class="track-record-detail-row">' +
-              '<span class="track-record-detail-ticker">' + (n.ticker || '?') + '</span>' +
-              '<span class="track-record-detail-source">' + meta + '</span>' +
-              '<span class="track-record-detail-pct ' + pctCls + '">' + pct + '</span>' +
-            '</a>' +
-          '</li>';
-        }).join('');
-      }
-
-      // Recent winners: the latest positive outcomes — shows what's working now
-      // (turns over as new picks mature; daily outcomes keep it fresh).
-      var recentWinners = completed.filter(function (n) { return n.outcome_pct > 0; })
-        .sort(function (a, b) { return (b.outcome_date || '').localeCompare(a.outcome_date || ''); })
-        .slice(0, 5);
-      // Hall of fame: the best 30-day outcomes since inception.
-      var hof = completed.slice().sort(function (a, b) {
-        return b.outcome_pct - a.outcome_pct;
-      }).slice(0, 5);
-      // Worst misses: the biggest losses since inception — kept for honesty.
-      var misses = completed.slice().sort(function (a, b) {
-        return a.outcome_pct - b.outcome_pct;
-      }).slice(0, 5);
-      renderList('ts-winners', recentWinners);
-      renderList('ts-hof',     hof);
-      renderList('ts-losers',  misses);
+      var all = (data.nominees || []).filter(function (n) { return n.source_key !== 'chatter'; });
+      renderScorecard(all);
+      var graded = all.filter(isGraded);
+      // Latest results: the most recent picks to reach their grading day, wins and losses alike.
+      renderList('ts-winners', graded.slice().sort(function (a, b) {
+        return (b.graded.date || '').localeCompare(a.graded.date || '');
+      }).slice(0, 5));
+      renderList('ts-hof', graded.slice().sort(function (a, b) { return b.graded.pct - a.graded.pct; }).slice(0, 5));
+      renderList('ts-losers', graded.slice().sort(function (a, b) { return a.graded.pct - b.graded.pct; }).slice(0, 5));
     })
     .catch(function () {
-      ['ts-total','ts-completed','ts-positive','ts-avg'].forEach(function (id) {
-        var el = document.getElementById(id);
-        if (el) el.textContent = '—';
-      });
-      ['ts-winners','ts-hof','ts-losers'].forEach(function (id) {
+      document.getElementById('bsc-summary').textContent = 'Track record data unavailable.';
+      ['ts-winners', 'ts-hof', 'ts-losers'].forEach(function (id) {
         var el = document.getElementById(id);
         if (el) el.innerHTML = '<li class="track-record-detail-empty">Track record data unavailable.</li>';
       });

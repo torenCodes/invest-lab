@@ -2165,7 +2165,7 @@ body {
 }
 .track-record-detail-row {
   display: grid;
-  grid-template-columns: 70px 1fr 80px;
+  grid-template-columns: 56px 1fr 64px;
   align-items: center;
   gap: 0.5rem;
   padding: 0.45rem 0.5rem;
@@ -2213,6 +2213,128 @@ body {
 @media (max-width: 700px) {
   .track-stats          { grid-template-columns: repeat(2, 1fr); }
   .track-record-detail  { grid-template-columns: 1fr; }
+}
+
+/* Board scorecard: one row per board, each graded on its own clock (Sep 2026) */
+.board-scorecard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1.1rem 1.25rem 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.bsc-summary {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  margin-bottom: 0.6rem;
+}
+.bsc-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.3fr) minmax(0, 0.9fr) minmax(0, 0.9fr) minmax(0, 0.9fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.12s;
+}
+a.bsc-row:hover { background: var(--accent-muted); }
+.bsc-head {
+  border-top: none;
+  padding-top: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.bsc-head span:nth-child(n+3) { text-align: right; }
+.bsc-name {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.bsc-sub {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bsc-clock {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+.bsc-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: right;
+}
+.bsc-num.pos { color: var(--accent-dark); }
+.bsc-num.neg { color: #c0392b; }
+.bsc-early .bsc-num.pos,
+.bsc-early .bsc-num.neg { opacity: 0.6; }
+.bsc-of {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--ink-3);
+}
+.bsc-tag {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0 0.3rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  vertical-align: 1px;
+}
+.bsc-pending {
+  grid-column: span 3;
+  text-align: right;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--ink-3);
+}
+
+/* Phones: each board becomes a small card, labels above their values:
+   board name / graded-at + graded / typical, vs S&P, beat */
+@media (max-width: 700px) {
+  .board-scorecard { padding: 1rem 0.9rem 0.4rem; }
+  .bsc-head { display: none; }
+  .bsc-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.55rem 0.75rem;
+    align-items: start;
+    padding: 0.8rem 0.25rem;
+  }
+  #bsc-rows .bsc-row:first-child { border-top: none; }
+  .bsc-board { grid-column: 1 / -1; }
+  .bsc-clock { grid-column: span 2; }
+  .bsc-row > [data-label] { text-align: left; }
+  .bsc-row > [data-label]::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .bsc-pending { grid-column: 1 / -1; text-align: left; }
 }
 
 /* ── FAQ Section ─────────────────────────────────────────────────────────── */
