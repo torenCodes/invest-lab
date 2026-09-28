@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-09-28T19:58:17.486380+00:00",
+  "scan_time": "2026-09-28T20:12:38.794698+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 22,
   "day_trades": [
@@ -7,17 +7,17 @@
       "ticker": "KOD",
       "name": "Kodiak Sciences Inc",
       "sector": "Biotechnology",
-      "current_price": 89.21,
-      "change_pct": 175.7651,
-      "high": 95.78,
-      "low": 48.1025,
-      "open": 48.1025,
+      "current_price": 89.92,
+      "change_pct": 177.9598,
+      "high": 95.77,
+      "low": 60.49,
+      "open": 61.705,
       "prev_close": 32.35,
       "score": 51,
       "signals": [
-        "Top gainer (+175.8%)",
+        "Top gainer (+178.0%)",
         "High volume",
-        "Strong move (+175.8%)",
+        "Strong move (+178.0%)",
         "Yahoo trending (#1)",
         "Unusual volume (Finviz)",
         "Closing strong"
@@ -45,17 +45,17 @@
       "ticker": "ABCL",
       "name": "Abcellera Biologics Inc",
       "sector": "Life Sciences Tools & Services",
-      "current_price": 13.96,
-      "change_pct": 9.9213,
-      "high": 14.2399,
+      "current_price": 13.92,
+      "change_pct": 9.6063,
+      "high": 14.2299,
       "low": 12.38,
-      "open": 12.535,
+      "open": 12.44,
       "prev_close": 12.7,
       "score": 43,
       "signals": [
-        "Top gainer (+9.9%)",
+        "Top gainer (+9.6%)",
         "High volume",
-        "Strong move (+9.9%)",
+        "Strong move (+9.6%)",
         "Yahoo trending (#7)",
         "Closing strong"
       ],
@@ -82,17 +82,17 @@
       "ticker": "VSXY",
       "name": "Victoria's Secret & Co",
       "sector": "Retail",
-      "current_price": 88.73,
-      "change_pct": 7.0197,
+      "current_price": 88.29,
+      "change_pct": 6.489,
       "high": 90.41,
       "low": 81.5,
-      "open": 82.325,
+      "open": 82.53,
       "prev_close": 82.91,
       "score": 39,
       "signals": [
-        "Top gainer (+7.0%)",
+        "Top gainer (+6.5%)",
         "High volume",
-        "Strong move (+7.0%)",
+        "Strong move (+6.5%)",
         "Yahoo trending (#16)",
         "Closing strong"
       ],
@@ -119,11 +119,11 @@
       "ticker": "MSB",
       "name": "Mesabi Trust",
       "sector": "Metals & Mining",
-      "current_price": 19.97,
-      "change_pct": 4.4456,
+      "current_price": 19.96,
+      "change_pct": 4.3933,
       "high": 22.3199,
       "low": 18.5,
-      "open": 19.85,
+      "open": 19,
       "prev_close": 19.12,
       "score": 31,
       "signals": [
@@ -149,15 +149,56 @@
   "buzz_source": "news",
   "reddit_cards": [
     {
+      "ticker": "BZAI",
+      "mentions": 2,
+      "name": "Blaize Holdings Inc",
+      "sector": "Semiconductors",
+      "current_price": 0.4957,
+      "change_pct": -3.5415,
+      "high": 0.5178,
+      "low": 0.485,
+      "open": 0.5,
+      "prev_close": 0.5139,
+      "market_cap": 72242214.41214243,
+      "score": 0,
+      "signals": [
+        "News buzz (2 mentions)"
+      ],
+      "reddit_mentions": 2,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "reddit": 2,
+        "st_bull": 73,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-06-30",
+          "actual": -0.19,
+          "estimate": -0.16,
+          "beat": false,
+          "surprise_pct": -22.1
+        }
+      },
+      "score_normalized": 0
+    },
+    {
       "ticker": "HYLN",
       "mentions": 2,
       "name": "Hyliion Holdings Corp",
       "sector": "Electrical Equipment",
-      "current_price": 3.98,
-      "change_pct": -5.6872,
+      "current_price": 3.96,
+      "change_pct": -6.1611,
       "high": 4.135,
       "low": 3.92,
-      "open": 4.13,
+      "open": 4.12,
       "prev_close": 4.22,
       "market_cap": 713495833.8803318,
       "score": 0,
@@ -193,11 +234,11 @@
       "ticker": "NVDA",
       "name": "NVIDIA Corp",
       "sector": "Semiconductors",
-      "current_price": 228.96,
-      "change_pct": 1.7284,
+      "current_price": 228.86,
+      "change_pct": 1.6839,
       "high": 233.21,
-      "low": 226.505,
-      "open": 226.505,
+      "low": 228.04,
+      "open": 229.75,
       "prev_close": 225.07,
       "score": 30,
       "signals": [
@@ -217,7 +258,7 @@
       "social": {
         "trend_pct": 977,
         "reddit": 140,
-        "st_bull": 44,
+        "st_bull": 73,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -237,63 +278,21 @@
       "score_normalized": 42
     },
     {
-      "ticker": "AAPL",
-      "mentions": 2,
-      "name": "Apple Inc",
-      "sector": "Technology",
-      "current_price": 338.33,
-      "change_pct": -0.8034,
-      "high": 342.988,
-      "low": 338.04,
-      "open": 340.435,
-      "prev_close": 341.07,
-      "market_cap": 4961437433106.001,
-      "score": 0,
-      "signals": [
-        "News buzz (2 mentions)"
-      ],
-      "reddit_mentions": 2,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "trend_pct": 1050,
-        "reddit": 23,
-        "st_bull": 75,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-06-30",
-          "actual": 1.91,
-          "estimate": 1.93,
-          "beat": false,
-          "surprise_pct": -0.9
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "current_price": 1054.75,
-      "change_pct": -2.5437,
+      "current_price": 1053.98,
+      "change_pct": -2.6149,
       "market_cap": 1191780771655.6987,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 192,
+      "mentions": 188,
       "social": {
-        "trend_pct": 327,
-        "reddit": 192,
+        "trend_pct": 318,
+        "reddit": 188,
         "st_bull": 100,
         "st_msgs": 30,
         "sources": [
@@ -320,18 +319,18 @@
       "ticker": "META",
       "name": "Meta Platforms Inc",
       "sector": "Media",
-      "current_price": 715.34,
-      "change_pct": -4.832,
+      "current_price": 715.62,
+      "change_pct": -4.7947,
       "market_cap": 1839273887949.6655,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 101,
+      "mentions": 99,
       "social": {
-        "trend_pct": 818,
-        "reddit": 101,
+        "trend_pct": 800,
+        "reddit": 99,
         "sources": [
           "Reddit"
         ]
@@ -352,18 +351,18 @@
       "ticker": "AMD",
       "name": "Advanced Micro Devices Inc",
       "sector": "Semiconductors",
-      "current_price": 608.03,
-      "change_pct": -3.5837,
+      "current_price": 607.87,
+      "change_pct": -3.6091,
       "market_cap": 988643177619.584,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 51,
+      "mentions": 50,
       "social": {
-        "trend_pct": 219,
-        "reddit": 51,
+        "trend_pct": 233,
+        "reddit": 50,
         "sources": [
           "Reddit"
         ]
@@ -386,11 +385,11 @@
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "mentions": 192,
+      "mentions": 188,
       "prev": 45,
-      "trend_pct": 327,
-      "current_price": 1054.75,
-      "change_pct": -2.5437,
+      "trend_pct": 318,
+      "current_price": 1053.98,
+      "change_pct": -2.6149,
       "market_cap": 1191780771655.6987
     },
     {
@@ -400,19 +399,19 @@
       "mentions": 140,
       "prev": 13,
       "trend_pct": 977,
-      "current_price": 228.96,
-      "change_pct": 1.7284,
+      "current_price": 228.86,
+      "change_pct": 1.6839,
       "market_cap": 5546374180490.211
     },
     {
       "ticker": "META",
       "name": "Meta Platforms Inc",
       "sector": "Media",
-      "mentions": 101,
+      "mentions": 99,
       "prev": 11,
-      "trend_pct": 818,
-      "current_price": 715.34,
-      "change_pct": -4.832,
+      "trend_pct": 800,
+      "current_price": 715.62,
+      "change_pct": -4.7947,
       "market_cap": 1839273887949.6655
     }
   ],
@@ -421,18 +420,18 @@
       {
         "ticker": "XLK",
         "sector": "Technology",
-        "ret_1d": -0.86,
-        "ret_5d": -0.14,
-        "ret_1m": 3.29,
-        "ret_3m": 5.07,
-        "rel_1d": -0.1,
-        "rel_5d": 0.89,
-        "rel_1m": 3.77,
-        "rel_3m": 1.51,
+        "ret_1d": -0.89,
+        "ret_5d": -0.16,
+        "ret_1m": 3.26,
+        "ret_3m": 5.04,
+        "rel_1d": -0.14,
+        "rel_5d": 0.87,
+        "rel_1m": 3.73,
+        "rel_3m": 1.47,
         "rvol": 0.87,
         "rrg": {
-          "x": 102.01,
-          "y": 99.2,
+          "x": 102.0,
+          "y": 99.18,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -460,8 +459,8 @@
               "y": 102.17
             },
             {
-              "x": 102.01,
-              "y": 99.2
+              "x": 102.0,
+              "y": 99.18
             }
           ]
         },
@@ -469,20 +468,20 @@
           {
             "ticker": "KOD",
             "name": "Kodiak Sciences Inc",
-            "change_pct": 175.7651,
-            "price": 89.21
+            "change_pct": 177.9598,
+            "price": 89.92
           },
           {
             "ticker": "QNC",
             "name": "Quantum eMotion Corp",
-            "change_pct": 15.9574,
-            "price": 2.18
+            "change_pct": 17.0213,
+            "price": 2.2
           },
           {
             "ticker": "NVDA",
             "name": "NVIDIA Corp",
-            "change_pct": 1.7284,
-            "price": 228.96
+            "change_pct": 1.6839,
+            "price": 228.86
           }
         ],
         "rotation": -2
@@ -490,18 +489,18 @@
       {
         "ticker": "XLE",
         "sector": "Energy",
-        "ret_1d": 0.06,
-        "ret_5d": -0.62,
-        "ret_1m": 0.25,
-        "ret_3m": 16.54,
-        "rel_1d": 0.82,
-        "rel_5d": 0.41,
-        "rel_1m": 0.73,
-        "rel_3m": 12.98,
+        "ret_1d": 0.12,
+        "ret_5d": -0.55,
+        "ret_1m": 0.31,
+        "ret_3m": 16.62,
+        "rel_1d": 0.87,
+        "rel_5d": 0.48,
+        "rel_1m": 0.78,
+        "rel_3m": 13.05,
         "rvol": 1.15,
         "rrg": {
-          "x": 100.06,
-          "y": 99.95,
+          "x": 100.08,
+          "y": 99.97,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -529,8 +528,8 @@
               "y": 98.35
             },
             {
-              "x": 100.06,
-              "y": 99.95
+              "x": 100.08,
+              "y": 99.97
             }
           ]
         },
@@ -540,18 +539,18 @@
       {
         "ticker": "XLV",
         "sector": "Health Care",
-        "ret_1d": 0.3,
-        "ret_5d": 1.3,
-        "ret_1m": 0.17,
-        "ret_3m": 6.92,
-        "rel_1d": 1.06,
-        "rel_5d": 2.33,
-        "rel_1m": 0.65,
-        "rel_3m": 3.36,
+        "ret_1d": 0.33,
+        "ret_5d": 1.33,
+        "ret_1m": 0.2,
+        "ret_3m": 6.95,
+        "rel_1d": 1.08,
+        "rel_5d": 2.36,
+        "rel_1m": 0.67,
+        "rel_3m": 3.38,
         "rvol": 0.79,
         "rrg": {
-          "x": 100.78,
-          "y": 101.15,
+          "x": 100.79,
+          "y": 101.16,
           "quadrant": "Leading",
           "tail": [
             {
@@ -579,8 +578,8 @@
               "y": 99.71
             },
             {
-              "x": 100.78,
-              "y": 101.15
+              "x": 100.79,
+              "y": 101.16
             }
           ]
         },
@@ -588,20 +587,20 @@
           {
             "ticker": "KOD",
             "name": "Kodiak Sciences Inc",
-            "change_pct": 175.7651,
-            "price": 89.21
+            "change_pct": 177.9598,
+            "price": 89.92
           },
           {
             "ticker": "ARAY",
             "name": "Accuray Inc",
-            "change_pct": 39.749,
-            "price": 0.3006
+            "change_pct": 39.377,
+            "price": 0.2998
           },
           {
             "ticker": "MEDS",
             "name": "Wellgistics Health Inc",
-            "change_pct": 20.5788,
-            "price": 3.75
+            "change_pct": 22.508,
+            "price": 3.81
           }
         ],
         "rotation": 2
@@ -609,18 +608,18 @@
       {
         "ticker": "XLC",
         "sector": "Comm. Services",
-        "ret_1d": -1.62,
-        "ret_5d": -3.16,
-        "ret_1m": 0.07,
-        "ret_3m": 3.35,
-        "rel_1d": -0.86,
-        "rel_5d": -2.13,
-        "rel_1m": 0.55,
-        "rel_3m": -0.21,
+        "ret_1d": -1.57,
+        "ret_5d": -3.1,
+        "ret_1m": 0.13,
+        "ret_3m": 3.41,
+        "rel_1d": -0.82,
+        "rel_5d": -2.07,
+        "rel_1m": 0.6,
+        "rel_3m": -0.16,
         "rvol": 1.0,
         "rrg": {
-          "x": 99.57,
-          "y": 98.56,
+          "x": 99.61,
+          "y": 98.6,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -648,8 +647,8 @@
               "y": 98.24
             },
             {
-              "x": 99.57,
-              "y": 98.56
+              "x": 99.61,
+              "y": 98.6
             }
           ]
         },
@@ -657,14 +656,14 @@
           {
             "ticker": "CLRO",
             "name": "Clearone Inc",
-            "change_pct": 49.5652,
-            "price": 5.16
+            "change_pct": 47.8261,
+            "price": 5.1
           },
           {
             "ticker": "AMC",
             "name": "AMC Entertainment Holdings Inc",
-            "change_pct": 12.2449,
-            "price": 3.3
+            "change_pct": 11.9048,
+            "price": 3.29
           }
         ],
         "rotation": -6
@@ -672,17 +671,17 @@
       {
         "ticker": "XLP",
         "sector": "Cons. Staples",
-        "ret_1d": 0.26,
-        "ret_5d": 0.43,
-        "ret_1m": -2.66,
-        "ret_3m": -1.84,
-        "rel_1d": 1.02,
-        "rel_5d": 1.46,
-        "rel_1m": -2.18,
-        "rel_3m": -5.4,
+        "ret_1d": 0.28,
+        "ret_5d": 0.45,
+        "ret_1m": -2.64,
+        "ret_3m": -1.82,
+        "rel_1d": 1.03,
+        "rel_5d": 1.48,
+        "rel_1m": -2.17,
+        "rel_3m": -5.39,
         "rvol": 0.86,
         "rrg": {
-          "x": 98.76,
+          "x": 98.77,
           "y": 101.03,
           "quadrant": "Improving",
           "tail": [
@@ -711,7 +710,7 @@
               "y": 98.56
             },
             {
-              "x": 98.76,
+              "x": 98.77,
               "y": 101.03
             }
           ]
@@ -723,13 +722,13 @@
         "ticker": "XLI",
         "sector": "Industrials",
         "ret_1d": -0.99,
-        "ret_5d": -0.73,
+        "ret_5d": -0.72,
         "ret_1m": -5.37,
         "ret_3m": -7.42,
-        "rel_1d": -0.23,
-        "rel_5d": 0.3,
-        "rel_1m": -4.89,
-        "rel_3m": -10.98,
+        "rel_1d": -0.24,
+        "rel_5d": 0.31,
+        "rel_1m": -4.9,
+        "rel_3m": -10.99,
         "rvol": 0.95,
         "rrg": {
           "x": 98.53,
@@ -770,8 +769,8 @@
           {
             "ticker": "GGG",
             "name": "Graco Inc",
-            "change_pct": 0.6422,
-            "price": 78.36
+            "change_pct": 0.5009,
+            "price": 78.25
           }
         ],
         "rotation": 0
@@ -779,12 +778,12 @@
       {
         "ticker": "XLY",
         "sector": "Cons. Discretionary",
-        "ret_1d": -1.43,
-        "ret_5d": -2.9,
-        "ret_1m": -5.75,
-        "ret_3m": -6.75,
+        "ret_1d": -1.42,
+        "ret_5d": -2.89,
+        "ret_1m": -5.74,
+        "ret_3m": -6.74,
         "rel_1d": -0.67,
-        "rel_5d": -1.87,
+        "rel_5d": -1.86,
         "rel_1m": -5.27,
         "rel_3m": -10.31,
         "rvol": 1.0,
@@ -827,8 +826,8 @@
           {
             "ticker": "VSXY",
             "name": "Victoria's Secret & Co",
-            "change_pct": 7.0197,
-            "price": 88.73
+            "change_pct": 6.489,
+            "price": 88.29
           }
         ],
         "rotation": 0
@@ -836,18 +835,18 @@
       {
         "ticker": "XLF",
         "sector": "Financials",
-        "ret_1d": -1.18,
-        "ret_5d": -3.05,
-        "ret_1m": -6.04,
-        "ret_3m": 1.24,
+        "ret_1d": -1.17,
+        "ret_5d": -3.04,
+        "ret_1m": -6.03,
+        "ret_3m": 1.25,
         "rel_1d": -0.42,
-        "rel_5d": -2.02,
+        "rel_5d": -2.01,
         "rel_1m": -5.56,
         "rel_3m": -2.32,
         "rvol": 0.85,
         "rrg": {
           "x": 97.51,
-          "y": 101.25,
+          "y": 101.26,
           "quadrant": "Improving",
           "tail": [
             {
@@ -876,7 +875,7 @@
             },
             {
               "x": 97.51,
-              "y": 101.25
+              "y": 101.26
             }
           ]
         },
@@ -884,19 +883,69 @@
         "rotation": -1
       },
       {
+        "ticker": "XLRE",
+        "sector": "Real Estate",
+        "ret_1d": -0.49,
+        "ret_5d": -2.9,
+        "ret_1m": -6.62,
+        "ret_3m": -7.16,
+        "rel_1d": 0.26,
+        "rel_5d": -1.87,
+        "rel_1m": -6.15,
+        "rel_3m": -10.73,
+        "rvol": 1.07,
+        "rrg": {
+          "x": 98.18,
+          "y": 100.23,
+          "quadrant": "Improving",
+          "tail": [
+            {
+              "x": 98.89,
+              "y": 99.98
+            },
+            {
+              "x": 99.42,
+              "y": 100.45
+            },
+            {
+              "x": 98.76,
+              "y": 99.51
+            },
+            {
+              "x": 98.49,
+              "y": 99.9
+            },
+            {
+              "x": 98.55,
+              "y": 100.19
+            },
+            {
+              "x": 98.16,
+              "y": 99.75
+            },
+            {
+              "x": 98.18,
+              "y": 100.23
+            }
+          ]
+        },
+        "top_stocks": [],
+        "rotation": 1
+      },
+      {
         "ticker": "XLB",
         "sector": "Materials",
-        "ret_1d": -0.69,
-        "ret_5d": -0.51,
-        "ret_1m": -6.66,
-        "ret_3m": -1.93,
+        "ret_1d": -0.68,
+        "ret_5d": -0.5,
+        "ret_1m": -6.65,
+        "ret_3m": -1.92,
         "rel_1d": 0.07,
-        "rel_5d": 0.52,
+        "rel_5d": 0.53,
         "rel_1m": -6.18,
         "rel_3m": -5.49,
         "rvol": 0.89,
         "rrg": {
-          "x": 98.03,
+          "x": 98.04,
           "y": 100.72,
           "quadrant": "Improving",
           "tail": [
@@ -925,7 +974,7 @@
               "y": 99.27
             },
             {
-              "x": 98.03,
+              "x": 98.04,
               "y": 100.72
             }
           ]
@@ -934,76 +983,26 @@
           {
             "ticker": "MSB",
             "name": "Mesabi Trust",
-            "change_pct": 4.4456,
-            "price": 19.97
+            "change_pct": 4.3933,
+            "price": 19.96
           }
         ],
-        "rotation": 5
-      },
-      {
-        "ticker": "XLRE",
-        "sector": "Real Estate",
-        "ret_1d": -0.54,
-        "ret_5d": -2.95,
-        "ret_1m": -6.67,
-        "ret_3m": -7.21,
-        "rel_1d": 0.22,
-        "rel_5d": -1.92,
-        "rel_1m": -6.19,
-        "rel_3m": -10.77,
-        "rvol": 1.07,
-        "rrg": {
-          "x": 98.16,
-          "y": 100.22,
-          "quadrant": "Improving",
-          "tail": [
-            {
-              "x": 98.89,
-              "y": 99.98
-            },
-            {
-              "x": 99.42,
-              "y": 100.45
-            },
-            {
-              "x": 98.76,
-              "y": 99.51
-            },
-            {
-              "x": 98.49,
-              "y": 99.9
-            },
-            {
-              "x": 98.55,
-              "y": 100.19
-            },
-            {
-              "x": 98.16,
-              "y": 99.75
-            },
-            {
-              "x": 98.16,
-              "y": 100.22
-            }
-          ]
-        },
-        "top_stocks": [],
-        "rotation": 2
+        "rotation": 6
       },
       {
         "ticker": "XLU",
         "sector": "Utilities",
-        "ret_1d": -0.63,
-        "ret_5d": -3.44,
-        "ret_1m": -8.41,
-        "ret_3m": -14.06,
-        "rel_1d": 0.13,
-        "rel_5d": -2.41,
-        "rel_1m": -7.93,
-        "rel_3m": -17.62,
+        "ret_1d": -0.61,
+        "ret_5d": -3.42,
+        "ret_1m": -8.39,
+        "ret_3m": -14.04,
+        "rel_1d": 0.14,
+        "rel_5d": -2.39,
+        "rel_1m": -7.92,
+        "rel_3m": -17.61,
         "rvol": 1.34,
         "rrg": {
-          "x": 98.16,
+          "x": 98.17,
           "y": 100.26,
           "quadrant": "Improving",
           "tail": [
@@ -1032,7 +1031,7 @@
               "y": 99.65
             },
             {
-              "x": 98.16,
+              "x": 98.17,
               "y": 100.26
             }
           ]
@@ -1043,25 +1042,57 @@
     ],
     "posture": {
       "label": "Neutral",
-      "spread": 0.98,
+      "spread": 0.96,
       "leaders": [
         "Technology",
         "Energy"
       ],
       "laggards": [
-        "Real Estate",
+        "Materials",
         "Utilities"
       ]
     },
     "benchmark": {
       "ticker": "SPY",
-      "ret_1d": -0.76,
+      "ret_1d": -0.75,
       "ret_5d": -1.03,
-      "ret_1m": -0.48,
-      "ret_3m": 3.56
+      "ret_1m": -0.47,
+      "ret_3m": 3.57
     }
   },
   "reddit_feed": [
+    {
+      "id": "819c26806c8c4ae3cbb6ef3ec93ba9953a15aefaebb1e59c5d3de30287859073",
+      "title": "BLAIZE HOLDINGS DEADLINE: ROSEN, THE FIRST FILING FIRM, Encourages Blaize Holdings, Inc. Investors to Secure Counsel Bef",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "BZAI",
+        "BZAIW"
+      ],
+      "hours_ago": 0.3,
+      "url": "https://www.globenewswire.com/news-release/2026/09/28/3370241/673/en/blaize-holdings-deadline-rosen-the-first-filing-firm-encourages-blaize-holdings-inc-investors-to-secure-counsel-before-important-october-5-deadline-in-securities-class-action-first.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "BZAI"
+      ]
+    },
+    {
+      "id": "c3530c0f7611983fe295f4a98a32ff61dbcaa3ae4fe7abb8d0d2a1887bd19a08",
+      "title": "Deadline Alert: Blaize Holdings, Inc. (BZAI) Shareholders Who Lost Money Urged To Contact Glancy Prongay Wolke & Rotter ",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "BZAI",
+        "BZAIW"
+      ],
+      "hours_ago": 0.5,
+      "url": "https://www.globenewswire.com/news-release/2026/09/28/3370238/34548/en/deadline-alert-blaize-holdings-inc-bzai-shareholders-who-lost-money-urged-to-contact-glancy-prongay-wolke-rotter-llp-about-securities-fraud-lawsuit.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "BZAI"
+      ]
+    },
     {
       "id": "0787ddb1aff919cef6c4348d5d29ef94381bda2463f13b08ad93f943dbf58c62",
       "title": "AARDVARK DEADLINE: ROSEN, NATIONAL INVESTOR COUNSEL, Encourages Aardvark Therapeutics, Inc. Investors to Secure Counsel ",
@@ -1071,7 +1102,7 @@
         "AARD",
         "HYLN"
       ],
-      "hours_ago": 1.1,
+      "hours_ago": 1.3,
       "url": "https://www.globenewswire.com/news-release/2026/09/28/3370220/673/en/aardvark-deadline-rosen-national-investor-counsel-encourages-aardvark-therapeutics-inc-investors-to-secure-counsel-before-important-deadline-in-securities-class-action-aard.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1087,12 +1118,11 @@
         "NVDA",
         "AAPL"
       ],
-      "hours_ago": 2.7,
+      "hours_ago": 3.0,
       "url": "https://www.fool.com/investing/2026/09/28/jensen-huang-just-gave-investors-150-billion-reaso/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "NVDA",
-        "AAPL"
+        "NVDA"
       ]
     },
     {
@@ -1107,7 +1137,7 @@
         "GOOGM",
         "GOOGN"
       ],
-      "hours_ago": 3.2,
+      "hours_ago": 3.5,
       "url": "https://www.globenewswire.com/news-release/2026/09/28/3370170/0/en/black-unicorn-digital-solutions-crosses-450-d2c-brands-scaled-moves-to-founder-led-model-as-ad-platforms-automate-media-buying.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1126,7 +1156,7 @@
         "MU",
         "SKHY"
       ],
-      "hours_ago": 3.6,
+      "hours_ago": 3.8,
       "url": "https://www.fool.com/investing/2026/09/28/nvidias-record-buyback-couldnt-lift-the-nasdaq/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1143,28 +1173,11 @@
       "tickers": [
         "HYLN"
       ],
-      "hours_ago": 5.0,
+      "hours_ago": 5.3,
       "url": "https://www.globenewswire.com/news-release/2026/09/28/3370059/0/en/hyln-investors-have-opportunity-to-lead-hyliion-holdings-corp-securities-fraud-lawsuit-with-sbs-law.html",
       "is_news": true,
       "confirmed_tickers": [
         "HYLN"
-      ]
-    },
-    {
-      "id": "d6f4a24710b8ce065211fd5308b7f51219806f122fad38a0c13ed68fc5adf0cb",
-      "title": "United Kingdom NOR Flash Market (2026-2031) - ADAS and EV Platform Adoption Drives Growth",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "MU",
-        "MCHP",
-        "MCHPP"
-      ],
-      "hours_ago": 7.0,
-      "url": "https://www.globenewswire.com/news-release/2026/09/28/3369885/28124/en/united-kingdom-nor-flash-market-2026-2031-adas-and-ev-platform-adoption-drives-growth.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MU"
       ]
     }
   ]
