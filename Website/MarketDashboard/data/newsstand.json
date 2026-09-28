@@ -1,17 +1,17 @@
 {
-  "scan_time": "2026-09-26T00:10:03.756192+00:00",
+  "scan_time": "2026-09-28T14:30:30.707002+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Favorable",
-    "score": 5,
-    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
+    "verdict": "Cautious",
+    "score": 1,
+    "headline": "Today's tape is working against the longer-term trend: SPY -0.53% and holding near the session low, with only 4 of 11 sectors green. Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.08%",
-        "read": "Flat",
-        "tone": "neutral"
+        "value": "-0.53%",
+        "read": "Weak",
+        "tone": "bad"
       },
       {
         "label": "Market trend",
@@ -23,48 +23,48 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "+0.6%",
-        "read": "Firm",
-        "tone": "good"
+        "value": "-0.8%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "-0%",
+        "value": "+0%",
         "read": "Normal",
         "tone": "neutral"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "14.9",
+        "value": "15.9",
         "read": "Calm",
         "tone": "good"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "5.18%",
-        "read": "Stable",
-        "tone": "neutral"
+        "value": "5.23%",
+        "read": "Rising fast",
+        "tone": "bad"
       }
     ],
-    "updated": "2026-09-26T00:10:05.836554+00:00",
+    "updated": "2026-09-28T14:30:32.461114+00:00",
     "session": {
-      "change_pct": -0.08,
-      "from_open_pct": 0.41,
-      "range_pos": 0.689,
-      "sectors_green": null,
-      "sectors_total": null,
-      "live": false,
-      "detail": "-0.08% vs prior close \u00b7 mid-range (69% of range) \u00b7 last completed session"
+      "change_pct": -0.53,
+      "from_open_pct": -0.14,
+      "range_pos": 0.193,
+      "sectors_green": 4,
+      "sectors_total": 11,
+      "live": true,
+      "detail": "-0.53% vs prior close \u00b7 at the lows (19% of range) \u00b7 4/11 sectors green"
     },
     "participation": {
-      "ratio": 0.997,
+      "ratio": 1.003,
       "expected": 1.178,
-      "adjusted": 0.846,
+      "adjusted": 0.851,
       "direction": "fading",
-      "drift_pct": -17.0,
+      "drift_pct": -16.5,
       "detail": "44M vs 44M avg"
     }
   }
