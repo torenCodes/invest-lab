@@ -12,7 +12,7 @@
 
 ## What it does
 
-Every weekday, without anyone touching it, the platform pulls market data from six sources, scores roughly 2,500 liquid US stocks through several custom ranking engines, publishes the results to five dashboards, and then **tracks how its own picks actually performed 30 days later**.
+Every weekday, without anyone touching it, the platform pulls market data from six sources, scores roughly 2,500 liquid US stocks through several custom ranking engines, publishes the results to five dashboards, and then **grades its own picks against the S&P 500, each on the clock its board is built for**.
 
 | Dashboard | What it surfaces |
 |---|---|
@@ -57,7 +57,7 @@ So the model was rebuilt around the evidence, the weak dimensions were cut, and 
 ## The part I'd point a data team at
 
 **1. It grades its own homework.**
-Every scan archives its top pick with an entry price. A scheduled job fills in the 30-day outcome once, as a fixed snapshot that is never revisited or quietly revised. The homepage publishes the aggregate: winners, losers, and hit rate. Day-trade picks are also graded at the close of the same day, the next day and five sessions out, because a 30-day clock is the wrong one for a same-day idea. Being able to say *"here is how the model actually did"* was the whole point.
+Every scan archives its top pick with an entry price. A scheduled job grades each one once, on its own board's clock: a day-trade pick at that day's close, a swing setup after 20 trading sessions, the long-term boards after 60, always next to the S&P 500 over the same sessions. Each result is a fixed snapshot, never revisited or quietly revised. The homepage publishes a scorecard per board and no pooled number, because a one-day trade and a three-month hold answer different questions, and it uses medians so one outlier cannot carry a board. Insider Buying is split at its model rebuild, so the new model is judged only on its own picks. Being able to say *"here is how the model actually did"* was the whole point.
 
 Every scan also commits its full list, so the git history is a dated record of every board. Three research scripts grade it. `list_backtest.py` scores every name any board ever listed, from the day it first appeared. `short_term_backtest.py` judges the day-trading boards on what they claim, movement after the flag, using 5-minute bars and first-touch odds against a 50% coin flip. `early_signal_backtest.py` tested whether the morning scan could spot movers sooner. It could not: of 716 stocks that closed a day up 10% or more, the typical one was already up 8% by 10am, and none of four signals, fixed before the test ran, beat the current pick. That result is kept, along with the one lead it produced and the date it gets re-tested.
 
@@ -66,6 +66,7 @@ A newer experiment flags stocks whose social-mention volume is accelerating, on 
 
 **3. Data-quality defenses, learned the hard way.**
 - Python's `json.dump` emits bare `NaN`, which Python accepts and JSON does not, so browsers reject the entire file. A single unguarded division silently broke every dashboard while `curl` and Python read it back fine. All writes now go through a NaN-safe serializer.
+- Yahoo rescales every past price after a stock split, while the archive stores each entry as it was seen that day. Compared naively, CrowdStrike's 4-for-1 split read as a 75% one-day loss. Returns are now computed on a single basis using the split dates. That corrected three stored results and kept a reverse split from reading as a 575% gain.
 - The Coil engine once ranked pending-acquisition stocks at the very top. A buyout target gaps once, then trades pinned near the deal price on drying volume, which is a mathematically *perfect* "coiled spring" that can never break out. A liveliness filter now screens them out.
 
 **4. Statistics over gut feel.**
@@ -135,7 +136,7 @@ only deployment and automation config.
 │   │   ├── early_signal_backtest.py    # tests signals for spotting movers earlier
 │   │   ├── capitol_flow_scan.py        # House PTR filings → congressional trades
 │   │   ├── archive_nominee.py          # records each scan's top pick
-│   │   └── calculate_outcomes.py       # grades picks → track record
+│   │   └── calculate_outcomes.py       # grades each pick on its board's clock → track record
 │   ├── MarketDashboard/        #   Movers & Shakers (Flask app + scan)
 │   ├── TheMarathon/            #   Tried & True · Underdogs · ETF Scorecard
 │   ├── InsiderBuying/          #   Corporate + Politician tabs

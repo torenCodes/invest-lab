@@ -90,7 +90,7 @@ insider_pulse_scan.py      market-wide insider buy/sell breadth
 capitol_flow_scan.py       House PTR filings → congressional trades
 insider_backtest.py        research harness — measures the conviction model
 archive_nominee.py         records each scan's top pick
-calculate_outcomes.py      fills 30-day outcomes → the track record
+calculate_outcomes.py      grades each pick on its board's clock vs the S&P 500 → the track record
 ```
 
 ### Scale (measured 2026-09-22)
@@ -188,8 +188,13 @@ single market regime.
 Two supporting stories, both real and both safe to tell:
 
 - **It grades its own homework.** Every scan archives its top pick with an entry price. A
-  scheduled job fills the 30-day outcome *once*, as a fixed point-in-time snapshot never
-  revisited or quietly revised. The homepage publishes winners, losers and hit rate.
+  scheduled job grades it *once*, on its own board's clock (a day trade at that day's close, a
+  swing setup after 20 trading sessions, the long-term boards after 60), next to the S&P 500
+  over the same sessions, as a fixed snapshot never revisited or quietly revised. The homepage
+  shows a scorecard per board and no pooled number, using medians, with Insider Buying split at
+  its model rebuild. Since Sep 2026 it is fair to say the lab grades each board on the question
+  that board asks; the headline results are modest and mostly trail the index, and the site
+  shows that plainly.
 - **Unproven signals stay out of the published numbers.** A chatter-velocity experiment is
   archived and scored daily but deliberately excluded from the public track record until it has
   enough matured outcomes. Measure first, publish second.
