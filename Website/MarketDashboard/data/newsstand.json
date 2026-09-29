@@ -1,17 +1,17 @@
 {
-  "scan_time": "2026-09-28T20:30:33.853393+00:00",
+  "scan_time": "2026-09-29T01:17:18.594992+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Mixed",
-    "score": 2,
-    "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you.",
+    "verdict": "Favorable",
+    "score": 6,
+    "headline": "Today's tape is confirming the trend: SPY +0.54% and closing strong. The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.74%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "+0.54%",
+        "read": "Strong",
+        "tone": "good"
       },
       {
         "label": "Market trend",
@@ -23,14 +23,14 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-1.0%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "+1.3%",
+        "read": "Firm",
+        "tone": "good"
       },
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "+0%",
+        "value": "-3%",
         "read": "Normal",
         "tone": "neutral"
       },
@@ -49,23 +49,23 @@
         "tone": "bad"
       }
     ],
-    "updated": "2026-09-28T20:30:35.287563+00:00",
+    "updated": "2026-09-29T01:17:20.064944+00:00",
     "session": {
-      "change_pct": -0.74,
-      "from_open_pct": -0.36,
-      "range_pos": 0.325,
-      "sectors_green": 3,
-      "sectors_total": 11,
-      "live": true,
-      "detail": "-0.74% vs prior close \u00b7 mid-range (33% of range) \u00b7 3/11 sectors green"
+      "change_pct": 0.54,
+      "from_open_pct": 0.33,
+      "range_pos": 0.845,
+      "sectors_green": null,
+      "sectors_total": null,
+      "live": false,
+      "detail": "+0.54% vs prior close \u00b7 at the highs (84% of range) \u00b7 last completed session"
     },
     "participation": {
-      "ratio": 1.003,
-      "expected": 1.178,
-      "adjusted": 0.851,
+      "ratio": 0.974,
+      "expected": 1.086,
+      "adjusted": 0.896,
       "direction": "fading",
-      "drift_pct": -16.5,
-      "detail": "44M vs 44M avg"
+      "drift_pct": -21.6,
+      "detail": "42M vs 44M avg"
     }
   }
 }
