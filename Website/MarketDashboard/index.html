@@ -1154,11 +1154,11 @@ function toggleSiteNav(btn) {
       <a class="nav-item active" href="#day-trades" onclick="setActive(this)">
         <span class="nav-icon">⚡</span> In Play Today
       </a>
-      <a class="nav-item" href="#sector-rotation" onclick="setActive(this)">
-        <span class="nav-icon">🗺️</span> Sector Rotation
-      </a>
       <a class="nav-item" href="#market-chatter" onclick="setActive(this)">
         <span class="nav-icon">💬</span> Market Chatter
+      </a>
+      <a class="nav-item" href="#sector-rotation" onclick="setActive(this)">
+        <span class="nav-icon">🗺️</span> Sector Rotation
       </a>
       <a class="nav-item" href="#cadence" onclick="setActive(this)">
         <span class="nav-icon">🎯</span> Cadence Watchlist
@@ -1187,8 +1187,20 @@ function toggleSiteNav(btn) {
       </div>
     </section>
 
-    <!-- Sector Rotation — second, directly under the movers it explains. It sat
-         last until Sep 2026, two screens down behind the 1,166px Cadence table. -->
+    <!-- Market Chatter — second, directly under In Play Today (Sep 30 2026) -->
+    <section id="market-chatter">
+      <div class="section-header">
+        <div class="section-title">Market Chatter</div>
+        <div class="section-subtitle">Most-discussed tickers across news &amp; social media</div>
+        <div class="section-badge" id="chatter-badge">—</div>
+      </div>
+      <div id="chatter-content">
+        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading chatter data…</div></div>
+      </div>
+    </section>
+
+    <!-- Sector Rotation — third, below Market Chatter (Sep 30 2026). It sat last until
+         Sep 2026, two screens down behind the 1,166px Cadence table. -->
     <section id="sector-rotation" class="full-panel">
       <div class="panel-header">
         <div class="panel-header-top">
@@ -1199,18 +1211,6 @@ function toggleSiteNav(btn) {
       </div>
       <div id="sector-rotation-body">
         <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading sector data…</div></div>
-      </div>
-    </section>
-
-    <!-- Market Chatter -->
-    <section id="market-chatter">
-      <div class="section-header">
-        <div class="section-title">Market Chatter</div>
-        <div class="section-subtitle">Most-discussed tickers across news &amp; social media</div>
-        <div class="section-badge" id="chatter-badge">—</div>
-      </div>
-      <div id="chatter-content">
-        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading chatter data…</div></div>
       </div>
     </section>
 
