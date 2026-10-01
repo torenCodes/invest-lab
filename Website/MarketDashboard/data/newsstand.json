@@ -1,29 +1,29 @@
 {
-  "scan_time": "2026-10-01T16:30:30.981598+00:00",
+  "scan_time": "2026-10-01T18:30:30.578352+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Cautious",
-    "score": 0,
-    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
+    "verdict": "Favorable",
+    "score": 5,
+    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.14%",
-        "read": "Flat",
-        "tone": "neutral"
+        "value": "+0.17%",
+        "read": "Firm",
+        "tone": "good"
       },
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Below 50-day",
-        "read": "Downtrend",
-        "tone": "bad"
+        "value": "Above 50-day",
+        "read": "Uptrend",
+        "tone": "good"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.7%",
+        "value": "-0.4%",
         "read": "Soft",
         "tone": "neutral"
       },
@@ -37,7 +37,7 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "17.1",
+        "value": "16.6",
         "read": "Calm",
         "tone": "good"
       },
@@ -49,15 +49,15 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-10-01T16:30:32.511112+00:00",
+    "updated": "2026-10-01T18:30:33.025179+00:00",
     "session": {
-      "change_pct": -0.14,
-      "from_open_pct": -0.37,
-      "range_pos": 0.425,
-      "sectors_green": 4,
+      "change_pct": 0.17,
+      "from_open_pct": -0.06,
+      "range_pos": 0.784,
+      "sectors_green": 5,
       "sectors_total": 11,
       "live": true,
-      "detail": "-0.14% vs prior close \u00b7 mid-range (43% of range) \u00b7 4/11 sectors green"
+      "detail": "+0.17% vs prior close \u00b7 at the highs (78% of range) \u00b7 5/11 sectors green"
     },
     "participation": {
       "ratio": 1.011,
