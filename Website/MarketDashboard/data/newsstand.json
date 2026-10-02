@@ -1,36 +1,36 @@
 {
-  "scan_time": "2026-10-01T20:30:31.310574+00:00",
+  "scan_time": "2026-10-02T01:05:31.456041+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Favorable",
-    "score": 5,
-    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
+    "verdict": "Cautious",
+    "score": -1,
+    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "+0.18%",
-        "read": "Firm",
-        "tone": "good"
+        "value": "-0.21%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Above 50-day",
-        "read": "Uptrend",
-        "tone": "good"
+        "value": "Below 50-day",
+        "read": "Downtrend",
+        "tone": "bad"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.4%",
+        "value": "-0.7%",
         "read": "Soft",
         "tone": "neutral"
       },
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "+1%",
+        "value": "+2%",
         "read": "Normal",
         "tone": "neutral"
       },
@@ -49,23 +49,23 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-10-01T20:30:33.330725+00:00",
+    "updated": "2026-10-02T01:05:33.166745+00:00",
     "session": {
-      "change_pct": 0.18,
-      "from_open_pct": -0.05,
-      "range_pos": 0.758,
-      "sectors_green": 5,
-      "sectors_total": 11,
-      "live": true,
-      "detail": "+0.18% vs prior close \u00b7 at the highs (76% of range) \u00b7 5/11 sectors green"
+      "change_pct": -0.21,
+      "from_open_pct": -0.5,
+      "range_pos": 0.062,
+      "sectors_green": null,
+      "sectors_total": null,
+      "live": false,
+      "detail": "-0.21% vs prior close \u00b7 at the lows (6% of range) \u00b7 last completed session"
     },
     "participation": {
-      "ratio": 1.012,
+      "ratio": 1.02,
       "expected": 1.086,
-      "adjusted": 0.932,
-      "direction": "fading",
-      "drift_pct": -12.9,
-      "detail": "44M vs 44M avg"
+      "adjusted": 0.939,
+      "direction": "steady",
+      "drift_pct": -9.6,
+      "detail": "45M vs 44M avg"
     }
   }
 }
