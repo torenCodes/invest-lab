@@ -1,86 +1,41 @@
 {
-  "scanned_at": "2026-10-07T19:14:52.275901+00:00",
+  "scanned_at": "2026-10-08T19:11:18.367800+00:00",
   "next_scan_info": "Mon / Wed / Fri 9am ET",
   "nominees": [
-    {
-      "ticker": "SCHW",
-      "name": "The Charles Schwab Corporation",
-      "sector": "Financial Services",
-      "industry": "Capital Markets",
-      "price": 95.36,
-      "market_cap": 164918099968,
-      "pe": 17.370674,
-      "pb": 3.7511308,
-      "roe": 0.20273,
-      "gross_margin": 0.97495,
-      "revenue_growth": 0.209,
-      "is_financial": true,
-      "quality_score": 76,
-      "beaten_up_score": 53,
-      "recovery_bonus": 10,
-      "composite_score": 65.4,
-      "quality_signals": [
-        "ROE 20.3%",
-        "P/B 3.8\u00d7",
-        "Rev growth +20.9%"
-      ],
-      "beaten_signals": [
-        "16.1% off 52w high",
-        "YTD -5.2%",
-        "RSI 30.0"
-      ],
-      "recovery_signals": [
-        "Earnings beat +2.5%"
-      ],
-      "rsi": 30.0,
-      "drawdown_pct": 16.1,
-      "ytd_pct": -5.2,
-      "high_52w": 113.65,
-      "etf_count": 1,
-      "total_weight": 2.54,
-      "etfs_holding": [
-        {
-          "symbol": "MOAT",
-          "provider": "VanEck",
-          "weight": 2.54
-        }
-      ],
-      "rank": 1
-    },
     {
       "ticker": "GEHC",
       "name": "GE HealthCare Technologies Inc.",
       "sector": "Healthcare",
       "industry": "Medical Devices",
-      "price": 64.92,
-      "market_cap": 29533849600,
-      "pe": 14.925288,
-      "pb": 2.6720307,
+      "price": 64.14,
+      "market_cap": 29176758272,
+      "pe": 14.744828,
+      "pb": 2.6397233,
       "roe": 0.19376,
       "gross_margin": 0.39528,
       "revenue_growth": 0.058,
       "is_financial": false,
       "quality_score": 48,
-      "beaten_up_score": 70,
+      "beaten_up_score": 80,
       "recovery_bonus": 15,
-      "composite_score": 64.6,
+      "composite_score": 68.6,
       "quality_signals": [
         "Gross margin 40%",
         "ROE 19.4%",
         "Rev growth +5.8%"
       ],
       "beaten_signals": [
-        "26.2% off 52w high",
-        "YTD -21.5%",
-        "RSI 42.8"
+        "27.1% off 52w high",
+        "YTD -22.4%",
+        "RSI 39.3"
       ],
       "recovery_signals": [
         "Earnings beat +7.0%",
         "Price stabilizing"
       ],
-      "rsi": 42.8,
-      "drawdown_pct": 26.2,
-      "ytd_pct": -21.5,
+      "rsi": 39.3,
+      "drawdown_pct": 27.1,
+      "ytd_pct": -22.4,
       "high_52w": 88.03,
       "etf_count": 1,
       "total_weight": 2.5,
@@ -91,17 +46,107 @@
           "weight": 2.5
         }
       ],
+      "rank": 1
+    },
+    {
+      "ticker": "SNDK",
+      "name": "Sandisk Corporation",
+      "sector": "Technology",
+      "industry": "Computer Hardware",
+      "price": 1601.88,
+      "market_cap": 231515095040,
+      "pe": 21.717394,
+      "pb": 15.167691,
+      "roe": 0.9164,
+      "gross_margin": 0.71474,
+      "revenue_growth": 3.716,
+      "is_financial": false,
+      "quality_score": 90,
+      "beaten_up_score": 35,
+      "recovery_bonus": 10,
+      "composite_score": 64.5,
+      "quality_signals": [
+        "Gross margin 71%",
+        "ROE 91.6%",
+        "Rev growth +371.6%"
+      ],
+      "beaten_signals": [
+        "31.4% off 52w high",
+        "YTD +482.0%",
+        "RSI 45.0"
+      ],
+      "recovery_signals": [
+        "Earnings beat +11.7%"
+      ],
+      "rsi": 45.0,
+      "drawdown_pct": 31.4,
+      "ytd_pct": 482.0,
+      "high_52w": 2335.0,
+      "etf_count": 1,
+      "total_weight": 2.13,
+      "etfs_holding": [
+        {
+          "symbol": "COWZ",
+          "provider": "Pacer",
+          "weight": 2.13
+        }
+      ],
       "rank": 2
+    },
+    {
+      "ticker": "SCHW",
+      "name": "The Charles Schwab Corporation",
+      "sector": "Financial Services",
+      "industry": "Capital Markets",
+      "price": 97.12,
+      "market_cap": 167953088512,
+      "pe": 17.690348,
+      "pb": 3.820163,
+      "roe": 0.20273,
+      "gross_margin": 0.97495,
+      "revenue_growth": 0.209,
+      "is_financial": true,
+      "quality_score": 76,
+      "beaten_up_score": 48,
+      "recovery_bonus": 10,
+      "composite_score": 63.4,
+      "quality_signals": [
+        "ROE 20.3%",
+        "P/B 3.8\u00d7",
+        "Rev growth +20.9%"
+      ],
+      "beaten_signals": [
+        "14.5% off 52w high",
+        "YTD -3.4%",
+        "RSI 36.6"
+      ],
+      "recovery_signals": [
+        "Earnings beat +2.5%"
+      ],
+      "rsi": 36.6,
+      "drawdown_pct": 14.5,
+      "ytd_pct": -3.4,
+      "high_52w": 113.65,
+      "etf_count": 1,
+      "total_weight": 2.54,
+      "etfs_holding": [
+        {
+          "symbol": "MOAT",
+          "provider": "VanEck",
+          "weight": 2.54
+        }
+      ],
+      "rank": 3
     },
     {
       "ticker": "KLAC",
       "name": "KLA Corporation",
       "sector": "Technology",
       "industry": "Semiconductor Equipment & Materials",
-      "price": 195.59,
-      "market_cap": 255246204928,
-      "pe": 53.439888,
-      "pb": 40.261425,
+      "price": 195.52,
+      "market_cap": 255174443008,
+      "pe": 53.424862,
+      "pb": 40.250107,
       "roe": 0.87496,
       "gross_margin": 0.61301,
       "revenue_growth": 0.152,
@@ -118,12 +163,12 @@
       "beaten_signals": [
         "35.1% off 52w high",
         "YTD +54.0%",
-        "RSI 54.9"
+        "RSI 54.7"
       ],
       "recovery_signals": [
         "Earnings beat +3.3%"
       ],
-      "rsi": 54.9,
+      "rsi": 54.7,
       "drawdown_pct": 35.1,
       "ytd_pct": 54.0,
       "high_52w": 301.37,
@@ -136,151 +181,62 @@
           "weight": 2.61
         }
       ],
-      "rank": 3
-    },
-    {
-      "ticker": "BR",
-      "name": "Broadridge Financial Solutions, Inc.",
-      "sector": "Technology",
-      "industry": "Information Technology Services",
-      "price": 160.4,
-      "market_cap": 18108600320,
-      "pe": 16.707811,
-      "pb": 6.4371715,
-      "roe": 0.40916002,
-      "gross_margin": 0.31780002,
-      "revenue_growth": 0.075,
-      "is_financial": false,
-      "quality_score": 63,
-      "beaten_up_score": 80,
-      "recovery_bonus": 0,
-      "composite_score": 60.35,
-      "quality_signals": [
-        "Gross margin 32%",
-        "ROE 40.9%",
-        "Rev growth +7.5%"
-      ],
-      "beaten_signals": [
-        "30.7% off 52w high",
-        "YTD -25.9%",
-        "RSI 41.9"
-      ],
-      "recovery_signals": [],
-      "rsi": 41.9,
-      "drawdown_pct": 30.7,
-      "ytd_pct": -25.9,
-      "high_52w": 231.61,
-      "etf_count": 1,
-      "total_weight": 2.52,
-      "etfs_holding": [
-        {
-          "symbol": "MOAT",
-          "provider": "VanEck",
-          "weight": 2.52
-        }
-      ],
       "rank": 4
     },
     {
-      "ticker": "BF-B",
-      "name": "Brown-Forman Corporation",
-      "sector": "Consumer Defensive",
-      "industry": "Beverages - Wineries & Distilleries",
-      "price": 26.23,
-      "market_cap": 12033715200,
-      "pe": 16.919355,
-      "pb": 3.030741,
-      "roe": 0.18122,
-      "gross_margin": 0.60664004,
-      "revenue_growth": -0.014,
+      "ticker": "AMAT",
+      "name": "Applied Materials, Inc.",
+      "sector": "Technology",
+      "industry": "Semiconductor Equipment & Materials",
+      "price": 505.5,
+      "market_cap": 401163517952,
+      "pe": 43.615185,
+      "pb": 15.654516,
+      "roe": 0.41068,
+      "gross_margin": 0.49398,
+      "revenue_growth": 0.248,
       "is_financial": false,
-      "quality_score": 67,
-      "beaten_up_score": 35,
-      "recovery_bonus": 15,
-      "composite_score": 59.15,
+      "quality_score": 82,
+      "beaten_up_score": 30,
+      "recovery_bonus": 10,
+      "composite_score": 58.9,
       "quality_signals": [
-        "Gross margin 61%",
-        "ROE 18.1%",
-        "Rev growth -1.4%"
+        "Gross margin 49%",
+        "ROE 41.1%",
+        "Rev growth +24.8%"
       ],
       "beaten_signals": [
-        "12.8% off 52w high",
-        "YTD +3.0%",
-        "RSI 47.3"
+        "30.0% off 52w high",
+        "YTD +88.7%",
+        "RSI 54.1"
       ],
       "recovery_signals": [
-        "Earnings beat +1.2%",
-        "Price stabilizing"
+        "Earnings beat +1.1%"
       ],
-      "rsi": 47.3,
-      "drawdown_pct": 12.8,
-      "ytd_pct": 3.0,
-      "high_52w": 30.08,
+      "rsi": 54.1,
+      "drawdown_pct": 30.0,
+      "ytd_pct": 88.7,
+      "high_52w": 722.23,
       "etf_count": 1,
-      "total_weight": 2.48,
+      "total_weight": 3.1,
       "etfs_holding": [
         {
-          "symbol": "MOAT",
-          "provider": "VanEck",
-          "weight": 2.48
+          "symbol": "QUAL",
+          "provider": "iShares",
+          "weight": 3.1
         }
       ],
       "rank": 5
-    },
-    {
-      "ticker": "SNDK",
-      "name": "Sandisk Corporation",
-      "sector": "Technology",
-      "industry": "Computer Hardware",
-      "price": 1702.38,
-      "market_cap": 249261441024,
-      "pe": 23.080048,
-      "pb": 16.119385,
-      "roe": 0.9164,
-      "gross_margin": 0.71474,
-      "revenue_growth": 3.716,
-      "is_financial": false,
-      "quality_score": 90,
-      "beaten_up_score": 20,
-      "recovery_bonus": 10,
-      "composite_score": 58.5,
-      "quality_signals": [
-        "Gross margin 71%",
-        "ROE 91.6%",
-        "Rev growth +371.6%"
-      ],
-      "beaten_signals": [
-        "27.1% off 52w high",
-        "YTD +518.5%",
-        "RSI 51.6"
-      ],
-      "recovery_signals": [
-        "Earnings beat +11.7%"
-      ],
-      "rsi": 51.6,
-      "drawdown_pct": 27.1,
-      "ytd_pct": 518.5,
-      "high_52w": 2335.0,
-      "etf_count": 1,
-      "total_weight": 2.13,
-      "etfs_holding": [
-        {
-          "symbol": "COWZ",
-          "provider": "Pacer",
-          "weight": 2.13
-        }
-      ],
-      "rank": 6
     },
     {
       "ticker": "LRCX",
       "name": "Lam Research Corporation",
       "sector": "Technology",
       "industry": "Semiconductor Equipment & Materials",
-      "price": 326.73,
-      "market_cap": 408881037312,
-      "pe": 56.724392,
-      "pb": 32.78143,
+      "price": 317.28,
+      "market_cap": 397051920384,
+      "pe": 55.083332,
+      "pb": 31.83305,
       "roe": 0.65066004,
       "gross_margin": 0.50469,
       "revenue_growth": 0.3,
@@ -295,16 +251,16 @@
         "Rev growth +30.0%"
       ],
       "beaten_signals": [
-        "24.5% off 52w high",
-        "YTD +77.1%",
-        "RSI 55.4"
+        "26.7% off 52w high",
+        "YTD +72.0%",
+        "RSI 50.6"
       ],
       "recovery_signals": [
         "Earnings beat +6.0%"
       ],
-      "rsi": 55.4,
-      "drawdown_pct": 24.5,
-      "ytd_pct": 77.1,
+      "rsi": 50.6,
+      "drawdown_pct": 26.7,
+      "ytd_pct": 72.0,
       "high_52w": 432.87,
       "etf_count": 1,
       "total_weight": 3.89,
@@ -315,86 +271,84 @@
           "weight": 3.89
         }
       ],
-      "rank": 7
+      "rank": 6
     },
     {
-      "ticker": "AMAT",
-      "name": "Applied Materials, Inc.",
+      "ticker": "BR",
+      "name": "Broadridge Financial Solutions, Inc.",
       "sector": "Technology",
-      "industry": "Semiconductor Equipment & Materials",
-      "price": 519.5,
-      "market_cap": 412277833728,
-      "pe": 44.823555,
-      "pb": 16.088228,
-      "roe": 0.41068,
-      "gross_margin": 0.49398,
-      "revenue_growth": 0.248,
+      "industry": "Information Technology Services",
+      "price": 164.67,
+      "market_cap": 18591248384,
+      "pe": 17.153124,
+      "pb": 6.608741,
+      "roe": 0.40916002,
+      "gross_margin": 0.31780002,
+      "revenue_growth": 0.075,
       "is_financial": false,
-      "quality_score": 82,
-      "beaten_up_score": 20,
-      "recovery_bonus": 10,
-      "composite_score": 54.9,
+      "quality_score": 63,
+      "beaten_up_score": 65,
+      "recovery_bonus": 0,
+      "composite_score": 54.35,
       "quality_signals": [
-        "Gross margin 49%",
-        "ROE 41.1%",
-        "Rev growth +24.8%"
+        "Gross margin 32%",
+        "ROE 40.9%",
+        "Rev growth +7.5%"
       ],
       "beaten_signals": [
-        "28.1% off 52w high",
-        "YTD +93.9%",
-        "RSI 59.5"
+        "28.8% off 52w high",
+        "YTD -23.9%",
+        "RSI 50.6"
       ],
-      "recovery_signals": [
-        "Earnings beat +1.1%"
-      ],
-      "rsi": 59.5,
-      "drawdown_pct": 28.1,
-      "ytd_pct": 93.9,
-      "high_52w": 722.23,
+      "recovery_signals": [],
+      "rsi": 50.6,
+      "drawdown_pct": 28.8,
+      "ytd_pct": -23.9,
+      "high_52w": 231.31,
       "etf_count": 1,
-      "total_weight": 3.1,
+      "total_weight": 2.52,
       "etfs_holding": [
         {
-          "symbol": "QUAL",
-          "provider": "iShares",
-          "weight": 3.1
+          "symbol": "MOAT",
+          "provider": "VanEck",
+          "weight": 2.52
         }
       ],
-      "rank": 8
+      "rank": 7
     },
     {
       "ticker": "ACN",
       "name": "Accenture plc",
       "sector": "Technology",
       "industry": "Information Technology Services",
-      "price": 198.05,
-      "market_cap": 121195126784,
-      "pe": 14.605457,
-      "pb": 3.7392619,
+      "price": 205.56,
+      "market_cap": 125787750400,
+      "pe": 15.158922,
+      "pb": 3.880959,
       "roe": 0.26025,
       "gross_margin": 0.3205,
       "revenue_growth": 0.062,
       "is_financial": false,
       "quality_score": 59,
-      "beaten_up_score": 45,
+      "beaten_up_score": 35,
       "recovery_bonus": 10,
-      "composite_score": 54.55,
+      "composite_score": 50.55,
       "quality_signals": [
         "Gross margin 32%",
         "ROE 26.0%",
         "Rev growth +6.2%"
       ],
       "beaten_signals": [
-        "29.9% off 52w high",
-        "YTD -22.2%",
-        "RSI 57.8"
+        "27.3% off 52w high",
+        "YTD -19.3%",
+        "RSI 61.8"
       ],
       "recovery_signals": [
         "Earnings beat +2.4%"
       ],
-      "rsi": 57.8,
-      "drawdown_pct": 29.9,
-      "ytd_pct": -22.2,
+      "rsi": 61.8,
+      "drawdown_pct": 27.3,
+      "ytd_pct": -19.3,
       "high_52w": 282.71,
       "etf_count": 1,
       "total_weight": 2.09,
@@ -405,41 +359,41 @@
           "weight": 2.09
         }
       ],
-      "rank": 9
+      "rank": 8
     },
     {
       "ticker": "ZBH",
       "name": "Zimmer Biomet Holdings, Inc.",
       "sector": "Healthcare",
       "industry": "Medical Devices",
-      "price": 89.34,
-      "market_cap": 17041459200,
-      "pe": 21.68568,
-      "pb": 1.3489703,
+      "price": 88.93,
+      "market_cap": 16962302976,
+      "pe": 21.584951,
+      "pb": 1.3427044,
       "roe": 0.06413,
       "gross_margin": 0.69524,
       "revenue_growth": 0.048,
       "is_financial": false,
       "quality_score": 54,
-      "beaten_up_score": 35,
+      "beaten_up_score": 38,
       "recovery_bonus": 10,
-      "composite_score": 48.3,
+      "composite_score": 49.5,
       "quality_signals": [
         "Gross margin 70%",
         "ROE 6.4%",
         "Rev growth +4.8%"
       ],
       "beaten_signals": [
-        "13.2% off 52w high",
-        "YTD +0.0%",
-        "RSI 40.9"
+        "13.6% off 52w high",
+        "YTD -0.4%",
+        "RSI 40.6"
       ],
       "recovery_signals": [
         "Earnings beat +2.0%"
       ],
-      "rsi": 40.9,
-      "drawdown_pct": 13.2,
-      "ytd_pct": 0.0,
+      "rsi": 40.6,
+      "drawdown_pct": 13.6,
+      "ytd_pct": -0.4,
       "high_52w": 102.88,
       "etf_count": 1,
       "total_weight": 2.48,
@@ -450,17 +404,17 @@
           "weight": 2.48
         }
       ],
-      "rank": 10
+      "rank": 9
     },
     {
       "ticker": "TJX",
       "name": "The TJX Companies, Inc.",
       "sector": "Consumer Cyclical",
       "industry": "Apparel Retail",
-      "price": 138.97,
-      "market_cap": 153526304768,
-      "pe": 25.736113,
-      "pb": 14.368797,
+      "price": 138.91,
+      "market_cap": 153448955904,
+      "pe": 25.723148,
+      "pb": 14.361559,
       "roe": 0.62171,
       "gross_margin": 0.31467,
       "revenue_growth": 0.054,
@@ -475,15 +429,15 @@
         "Rev growth +5.4%"
       ],
       "beaten_signals": [
-        "17.2% off 52w high",
+        "17.3% off 52w high",
         "YTD -9.1%",
-        "RSI 62.1"
+        "RSI 62.0"
       ],
       "recovery_signals": [
         "Earnings beat +1.6%"
       ],
-      "rsi": 62.1,
-      "drawdown_pct": 17.2,
+      "rsi": 62.0,
+      "drawdown_pct": 17.3,
       "ytd_pct": -9.1,
       "high_52w": 167.88,
       "etf_count": 1,
@@ -495,41 +449,41 @@
           "weight": 3.32
         }
       ],
-      "rank": 11
+      "rank": 10
     },
     {
       "ticker": "EL",
       "name": "The Est\u00e9e Lauder Companies Inc.",
       "sector": "Consumer Defensive",
       "industry": "Household & Personal Products",
-      "price": 95.09,
-      "market_cap": 34453270528,
-      "pe": 190.18,
-      "pb": 9.038973,
+      "price": 94.45,
+      "market_cap": 34223198208,
+      "pe": 188.91,
+      "pb": 8.978612,
       "roe": 0.04745,
       "gross_margin": 0.75487,
       "revenue_growth": 0.063,
       "is_financial": false,
       "quality_score": 44,
-      "beaten_up_score": 25,
+      "beaten_up_score": 40,
       "recovery_bonus": 10,
-      "composite_score": 39.8,
+      "composite_score": 45.8,
       "quality_signals": [
         "Gross margin 75%",
         "ROE 4.7%",
         "Rev growth +6.3%"
       ],
       "beaten_signals": [
-        "19.7% off 52w high",
-        "YTD -10.0%",
-        "RSI 50.4"
+        "20.2% off 52w high",
+        "YTD -10.6%",
+        "RSI 49.0"
       ],
       "recovery_signals": [
         "Earnings beat +18.4%"
       ],
-      "rsi": 50.4,
-      "drawdown_pct": 19.7,
-      "ytd_pct": -10.0,
+      "rsi": 49.0,
+      "drawdown_pct": 20.2,
+      "ytd_pct": -10.6,
       "high_52w": 118.37,
       "etf_count": 1,
       "total_weight": 2.53,
@@ -540,12 +494,55 @@
           "weight": 2.53
         }
       ],
+      "rank": 11
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "sector": "Consumer Cyclical",
+      "industry": "Auto Manufacturers",
+      "price": 372.03,
+      "market_cap": 1469349756928,
+      "pe": 344.47214,
+      "pb": 16.914293,
+      "roe": 0.046669997,
+      "gross_margin": 0.18852,
+      "revenue_growth": 0.255,
+      "is_financial": false,
+      "quality_score": 35,
+      "beaten_up_score": 55,
+      "recovery_bonus": 0,
+      "composite_score": 37.75,
+      "quality_signals": [
+        "Gross margin 19%",
+        "ROE 4.7%",
+        "Rev growth +25.5%"
+      ],
+      "beaten_signals": [
+        "24.1% off 52w high",
+        "YTD -15.1%",
+        "RSI 53.9"
+      ],
+      "recovery_signals": [],
+      "rsi": 53.9,
+      "drawdown_pct": 24.1,
+      "ytd_pct": -15.1,
+      "high_52w": 489.88,
+      "etf_count": 1,
+      "total_weight": 2.82,
+      "etfs_holding": [
+        {
+          "symbol": "QQQ",
+          "provider": "Invesco",
+          "weight": 2.82
+        }
+      ],
       "rank": 12
     }
   ],
   "meta": {
     "etfs_scanned": 4,
     "total_tickers_found": 33,
-    "candidates_qualified": 14
+    "candidates_qualified": 13
   }
 }
