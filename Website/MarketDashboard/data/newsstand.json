@@ -1,17 +1,17 @@
 {
-  "scan_time": "2026-10-07T20:30:31.825891+00:00",
+  "scan_time": "2026-10-08T01:20:57.259954+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
-    "score": 5,
+    "score": 7,
     "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.24%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "+0.55%",
+        "read": "Firm",
+        "tone": "good"
       },
       {
         "label": "Market trend",
@@ -30,7 +30,7 @@
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "+8%",
+        "value": "-6%",
         "read": "Normal",
         "tone": "neutral"
       },
@@ -49,23 +49,23 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-10-07T20:30:33.908760+00:00",
+    "updated": "2026-10-08T01:20:59.752825+00:00",
     "session": {
-      "change_pct": -0.24,
-      "from_open_pct": 0.19,
-      "range_pos": 0.657,
-      "sectors_green": 1,
-      "sectors_total": 11,
-      "live": true,
-      "detail": "-0.24% vs prior close \u00b7 mid-range (66% of range) \u00b7 1/11 sectors green"
+      "change_pct": 0.55,
+      "from_open_pct": 0.12,
+      "range_pos": 0.309,
+      "sectors_green": null,
+      "sectors_total": null,
+      "live": false,
+      "detail": "+0.55% vs prior close \u00b7 mid-range (31% of range) \u00b7 last completed session"
     },
     "participation": {
-      "ratio": 1.079,
+      "ratio": 0.943,
       "expected": 0.998,
-      "adjusted": 1.081,
-      "direction": "building",
-      "drift_pct": 10.2,
-      "detail": "47M vs 44M avg"
+      "adjusted": 0.945,
+      "direction": "steady",
+      "drift_pct": -7.5,
+      "detail": "41M vs 44M avg"
     }
   }
 }
