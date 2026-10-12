@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-10-12T22:31:29.008298+00:00",
+  "scan_time": "2026-10-12T23:39:44.730501+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 25,
   "day_trades": [
@@ -13,17 +13,16 @@
       "low": 15.865,
       "open": 15.89,
       "prev_close": 15.78,
-      "score": 61,
+      "score": 51,
       "signals": [
         "Top gainer (+12.4%)",
         "High volume",
         "Strong move (+12.4%)",
-        "Trending buzz (13)",
         "Yahoo trending (#8)",
         "Unusual volume (Finviz)",
         "Closing strong"
       ],
-      "reddit_mentions": 13,
+      "reddit_mentions": 1,
       "market_cap": 2621692890.0761013,
       "is_gainer": true,
       "is_active": true,
@@ -34,46 +33,7 @@
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 86
-    },
-    {
-      "ticker": "GME",
-      "name": "GameStop Corp",
-      "sector": "Retail",
-      "current_price": 27.23,
-      "change_pct": 2.5226,
-      "high": 27.25,
-      "low": 25.77,
-      "open": 26.21,
-      "prev_close": 26.56,
-      "score": 39,
-      "signals": [
-        "Top gainer (+2.5%)",
-        "High volume",
-        "Moderate move (+2.5%)",
-        "Trending activity (6)",
-        "Yahoo trending (#15)",
-        "Closing strong",
-        "Sector leader (Retail)"
-      ],
-      "reddit_mentions": 6,
-      "market_cap": 13399547111.582277,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/GME.png",
-      "weburl": "https://news.gamestop.com/",
-      "yahoo_trending_rank": 15,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.27,
-          "estimate": 0.27,
-          "beat": false,
-          "surprise_pct": -1.0
-        }
-      },
-      "score_normalized": 55
+      "score_normalized": 72
     },
     {
       "ticker": "VSXY",
@@ -85,12 +45,13 @@
       "low": 82.93,
       "open": 83.33,
       "prev_close": 82.87,
-      "score": 31,
+      "score": 36,
       "signals": [
         "Top gainer (+6.9%)",
         "High volume",
         "Strong move (+6.9%)",
-        "Closing strong"
+        "Closing strong",
+        "Sector leader (Retail)"
       ],
       "reddit_mentions": 0,
       "market_cap": 6610045882.469577,
@@ -109,7 +70,44 @@
           "surprise_pct": 20.7
         }
       },
-      "score_normalized": 44
+      "score_normalized": 51
+    },
+    {
+      "ticker": "GME",
+      "name": "GameStop Corp",
+      "sector": "Retail",
+      "current_price": 27.23,
+      "change_pct": 2.5226,
+      "high": 27.25,
+      "low": 25.77,
+      "open": 26.21,
+      "prev_close": 26.56,
+      "score": 29,
+      "signals": [
+        "Top gainer (+2.5%)",
+        "High volume",
+        "Moderate move (+2.5%)",
+        "Yahoo trending (#15)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 13399547111.582277,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/GME.png",
+      "weburl": "https://news.gamestop.com/",
+      "yahoo_trending_rank": 15,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.27,
+          "estimate": 0.27,
+          "beat": false,
+          "surprise_pct": -1.0
+        }
+      },
+      "score_normalized": 41
     },
     {
       "ticker": "EBAY",
@@ -128,7 +126,7 @@
         "Moderate move (+2.2%)",
         "Yahoo trending (#17)"
       ],
-      "reddit_mentions": 4,
+      "reddit_mentions": 0,
       "market_cap": 49924551496.80175,
       "is_gainer": true,
       "is_active": true,
@@ -142,119 +140,110 @@
       "score_normalized": 37
     }
   ],
-  "buzz_source": "trending",
+  "buzz_source": "news",
   "reddit_cards": [
     {
-      "ticker": "BMBL",
-      "name": "Bumble Inc",
-      "sector": "Media",
-      "current_price": 3.8,
-      "change_pct": 49.6063,
-      "high": 3.975,
-      "low": 2.5,
-      "open": 2.54,
-      "prev_close": 2.54,
-      "score": 63,
-      "signals": [
-        "Top gainer (+49.6%)",
-        "High volume",
-        "Strong move (+49.6%)",
-        "High Trending buzz (20)",
-        "Yahoo trending (#1)",
-        "Closing strong",
-        "Sector leader (Media)"
-      ],
-      "reddit_mentions": 20,
-      "market_cap": 335199551.8128655,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BMBL.png",
-      "weburl": "https://bumble.com/",
-      "yahoo_trending_rank": 1,
-      "mentions": 20,
-      "social": {
-        "reddit": 20,
-        "st_bull": 78,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 89
-    },
-    {
-      "ticker": "META",
-      "name": "Meta Platforms Inc",
-      "sector": "Media",
-      "current_price": 742.96,
-      "change_pct": 3.3799,
-      "high": 752.24,
-      "low": 727.64,
-      "open": 728.495,
-      "prev_close": 718.67,
-      "score": 48,
-      "signals": [
-        "Top gainer (+3.4%)",
-        "High volume",
-        "Good move (+3.4%)",
-        "Trending buzz (19)",
-        "Yahoo trending (#2)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 19,
-      "market_cap": 1830816270501.6697,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/FB.png",
-      "weburl": "https://www.meta.com/",
-      "yahoo_trending_rank": 2,
-      "mentions": 19,
-      "social": {
-        "trend_pct": 800,
-        "reddit": 45,
-        "st_bull": 75,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 68
-    },
-    {
-      "ticker": "CBRS",
-      "mentions": 18,
-      "name": "Cerebras Systems Inc",
+      "ticker": "NVDA",
+      "mentions": 6,
+      "name": "NVIDIA Corp",
       "sector": "Semiconductors",
-      "current_price": 146.62,
-      "change_pct": -10.6901,
-      "high": 161.2,
-      "low": 145.75,
-      "open": 160.88,
-      "prev_close": 164.17,
-      "market_cap": 36749213173.42407,
+      "current_price": 226.32,
+      "change_pct": -1.291,
+      "high": 228.86,
+      "low": 224.9,
+      "open": 228.73,
+      "prev_close": 229.28,
+      "market_cap": 5525647897570.095,
       "score": 0,
       "signals": [
-        "Trending buzz (18 mentions)",
-        "Yahoo trending (#3)"
+        "News buzz (6 mentions)"
       ],
-      "reddit_mentions": 18,
+      "reddit_mentions": 6,
       "is_gainer": false,
       "is_active": false,
-      "yahoo_trending_rank": 3,
+      "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 3700,
-        "reddit": 38,
-        "st_bull": 92,
+        "trend_pct": 26,
+        "reddit": 43,
+        "st_bull": 33,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 2.22,
+          "estimate": 2.14,
+          "beat": true,
+          "surprise_pct": 3.8
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "GOOG",
+      "mentions": 5,
+      "name": "Alphabet Inc",
+      "sector": "Media",
+      "current_price": 348.97,
+      "change_pct": 0.3191,
+      "high": 352.66,
+      "low": 347.1601,
+      "open": 348.34,
+      "prev_close": 347.86,
+      "market_cap": 4300801800000.001,
+      "score": 0,
+      "signals": [
+        "News buzz (5 mentions)"
+      ],
+      "reddit_mentions": 5,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": 88,
+        "reddit": 15,
+        "st_bull": 47,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "GOOGL",
+      "mentions": 5,
+      "name": "Alphabet Inc",
+      "sector": "Media",
+      "current_price": 352.72,
+      "change_pct": 0.3014,
+      "high": 356.5,
+      "low": 350.5,
+      "open": 351.86,
+      "prev_close": 351.66,
+      "market_cap": 4300801800000.001,
+      "score": 0,
+      "signals": [
+        "News buzz (5 mentions)"
+      ],
+      "reddit_mentions": 5,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": 533,
+        "reddit": 19,
+        "st_bull": 71,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -279,11 +268,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 265,
+      "mentions": 269,
       "social": {
-        "trend_pct": 755,
-        "reddit": 265,
-        "st_bull": 92,
+        "trend_pct": 741,
+        "reddit": 269,
+        "st_bull": 73,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -314,10 +303,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 74,
+      "mentions": 75,
       "social": {
-        "trend_pct": 1750,
-        "reddit": 74,
+        "trend_pct": 2400,
+        "reddit": 75,
         "sources": [
           "Reddit"
         ]
@@ -329,21 +318,21 @@
       "score_normalized": 0
     },
     {
-      "ticker": "ASTS",
-      "name": "AST SpaceMobile Inc",
-      "sector": "Telecommunication",
-      "current_price": 51.46,
-      "change_pct": 0.9713,
-      "market_cap": 19833921522.01634,
+      "ticker": "META",
+      "name": "Meta Platforms Inc",
+      "sector": "Media",
+      "current_price": 742.96,
+      "change_pct": 3.3799,
+      "market_cap": 1830816270501.6697,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 45,
+      "mentions": 44,
       "social": {
-        "trend_pct": 5,
-        "reddit": 45,
+        "trend_pct": 633,
+        "reddit": 44,
         "sources": [
           "Reddit"
         ]
@@ -360,9 +349,9 @@
       "ticker": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "mentions": 265,
-      "prev": 31,
-      "trend_pct": 755,
+      "mentions": 269,
+      "prev": 32,
+      "trend_pct": 741,
       "current_price": 989.04,
       "change_pct": -3.8834,
       "market_cap": 1162145426984.6853
@@ -371,9 +360,9 @@
       "ticker": "SNDK",
       "name": "Sandisk Corp",
       "sector": "Technology",
-      "mentions": 74,
-      "prev": 4,
-      "trend_pct": 1750,
+      "mentions": 75,
+      "prev": 3,
+      "trend_pct": 2400,
       "current_price": 1487.33,
       "change_pct": -5.9735,
       "market_cap": 228616575255.16385
@@ -382,9 +371,9 @@
       "ticker": "META",
       "name": "Meta Platforms Inc",
       "sector": "Media",
-      "mentions": 45,
-      "prev": 5,
-      "trend_pct": 800,
+      "mentions": 44,
+      "prev": 6,
+      "trend_pct": 633,
       "current_price": 742.96,
       "change_pct": 3.3799,
       "market_cap": 1830816270501.6697
@@ -1049,214 +1038,209 @@
   },
   "reddit_feed": [
     {
-      "id": "142824508",
-      "title": "Is It Too Late To Buy Shopify Stock?",
-      "subreddit": "Yahoo",
+      "id": "082e2986e2a2028ecc8d7e01915a10f53eec74499ec19c70604b45d50f9b5f5e",
+      "title": "Broadcom vs. Qualcomm: Which Chip Stock Is a Better Buy in 2026?",
+      "subreddit": "The Motley Fool",
       "ups": 0,
       "tickers": [
-        "META"
+        "AVGO",
+        "QCOM",
+        "AAPL",
+        "GOOG",
+        "GOOGL"
       ],
+      "hours_ago": 1.1,
+      "url": "https://www.fool.com/coverage/better-buy/2026/10/12/broadcom-vs-qualcomm-which-chip-stock-is-a-better-buy-in-2026/?source=iedfolrf0000001",
+      "is_news": true,
       "confirmed_tickers": [
-        "META"
-      ],
-      "hours_ago": 0.9,
-      "url": "https://finnhub.io/api/news?id=7194798123a72128ef1f23eb2688ac4a3e912b934a410cd825d4d460d29be0a9",
-      "is_news": true
+        "GOOG",
+        "GOOGL"
+      ]
     },
     {
-      "id": "142824512",
-      "title": "Stock Market Today, Oct. 12: Dow Gains as Memory Stocks Weigh on Nasdaq",
-      "subreddit": "Yahoo",
+      "id": "1df73eb846ede96f5bb82dc6aa40a2e60c9b212b5e08df6a43ab6f7539bf269a",
+      "title": "TSMC Revenue Growth Accelerated Faster Than Expected Last Quarter. Here's Why It's My Top AI Chip Stock to Buy.",
+      "subreddit": "The Motley Fool",
       "ups": 0,
       "tickers": [
-        "META"
-      ],
-      "confirmed_tickers": [
-        "META"
+        "TSM",
+        "NVDA",
+        "AAPL"
       ],
       "hours_ago": 1.2,
-      "url": "https://finnhub.io/api/news?id=a1bc57aec181cff351dc669ee73c0ed3171ce1e04a235c076b501a154eac16cc",
-      "is_news": true
+      "url": "https://www.fool.com/investing/2026/10/12/tsmc-revenue-growth-accelerated-faster-than-expect/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
     },
     {
-      "id": "142824459",
-      "title": "Dow Jones Futures: Micron, Nvidia Lead AI Trade Lower; Apple, Meta Rally Near Buy Points",
-      "subreddit": "Yahoo",
+      "id": "edf8eaa64a73722c612c3333f6ff37d332f4ea4bbd8fdb88d2d26b1cdf59e6f5",
+      "title": "ROSEN, SKILLED INVESTOR COUNSEL, Encourages Alphabet Inc. Investors to Secure Counsel Before Important Deadline in Secur",
+      "subreddit": "GlobeNewswire Inc.",
       "ups": 0,
       "tickers": [
+        "GOOG",
+        "GOOGL",
+        "GOOGM",
+        "GOOGN"
+      ],
+      "hours_ago": 1.9,
+      "url": "https://www.globenewswire.com/news-release/2026/10/12/3379271/673/en/rosen-skilled-investor-counsel-encourages-alphabet-inc-investors-to-secure-counsel-before-important-deadline-in-securities-class-action-googl-goog.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOOG",
+        "GOOGL"
+      ]
+    },
+    {
+      "id": "2fdc79ec22662f3a38793fbde5599cb8ea3286be7ff86018b804f5bd155578f1",
+      "title": "$10,000 Invested Equally in Alphabet and Nvidia Could Be Worth This Much by 2030",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "NVDA",
+        "GOOG",
+        "GOOGL",
+        "GOOGM",
+        "GOOGN"
+      ],
+      "hours_ago": 2.2,
+      "url": "https://www.fool.com/investing/2026/10/12/10000-invested-equally-in-alphabet-and-nvidia-cou/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA",
+        "GOOG",
+        "GOOGL"
+      ]
+    },
+    {
+      "id": "98460469bbf5222a9552219cf94bb30f46c18c265911fe27532f3d33d442fc03",
+      "title": "Stock Market Today, Oct. 12: Dow Gains as Memory Stocks Weigh on Nasdaq",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "CRM",
+        "FIGS",
+        "SNDK",
+        "LITE",
         "META"
       ],
+      "hours_ago": 2.6,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/10/12/stock-market-today-oct-12-dow-gains-as-memory-stocks-weigh-on-nasdaq/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "SNDK",
+        "META"
+      ]
+    },
+    {
+      "id": "62832444e7b5cbd2eb1076e9ec7f96a803defdf32b5d8c5a48c51c371f18a8b5",
+      "title": "Kaplan Fox & Kilsheimer LLP Alerts Alphabet Inc. (NASDAQ: GOOGL, GOOG) Investors to a Securities Class Action Deadline o",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "GOOG",
+        "GOOGL",
+        "GOOGM",
+        "GOOGN"
+      ],
+      "hours_ago": 2.9,
+      "url": "https://www.globenewswire.com/news-release/2026/10/12/3379259/1020/en/kaplan-fox-kilsheimer-llp-alerts-alphabet-inc-nasdaq-googl-goog-investors-to-a-securities-class-action-deadline-on-december-1-2026.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOOG",
+        "GOOGL"
+      ]
+    },
+    {
+      "id": "aae21f6aef3ac373597f922af12e8182dd8a37f03197a37f4b1aba1fb19a84a7",
+      "title": "ASML: A Rule Breaker Test of Lasting Leadership",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "ASML",
+        "NVDA",
+        "TSM",
+        "MSFT",
+        "INTC"
+      ],
+      "hours_ago": 3.2,
+      "url": "https://www.fool.com/investing/2026/10/12/asml-a-rule-breaker-test-of-lasting-leadership/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "3ed693819fc72605ffda51fc13dc562b4b57770b63b4fc08a20a367d4d408b00",
+      "title": "Afraid of a Stock Market Crash? 4 Great ETFs to Buy Regardless.",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "VOO",
+        "QQQ",
+        "AIQ",
+        "SCHD",
+        "NVDA"
+      ],
+      "hours_ago": 4.0,
+      "url": "https://www.fool.com/investing/2026/10/12/afraid-of-a-stock-market-crash-4-great-etfs-to-buy/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "005bb56f71dfe4c85bfe68988af6159d8963624db771949315d7dddc86fac9a3",
+      "title": "Nvidia and AMD Reached a Historic Valuation Split. 1 Stock Is Far Safer.",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "NVDA",
+        "AMD"
+      ],
+      "hours_ago": 4.2,
+      "url": "https://www.fool.com/investing/2026/10/12/nvidia-and-amd-reached-a-historic-valuation-split/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "74058b16a71d627c0d14b732684599d4c46cbf4e143fd958c9c78f8df8242d4b",
+      "title": "Is ASML Holding NV's Stock a Buy Ahead of Its Q3 Earnings Report Wednesday?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "ASML",
+        "TSM",
+        "INTC",
+        "NVDA",
+        "SMH"
+      ],
+      "hours_ago": 4.3,
+      "url": "https://www.fool.com/investing/2026/10/12/is-asml-holding-nvs-stock-a-buy-ahead-of-its-qx-earnings-report-tomorrow/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "27241f84ff82d9c2e4b4719a60050bc3e0586200c684681206df156fe83c95f8",
+      "title": "Why Meta Platforms Stock Rallied Monday Morning",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "META",
+        "AAPL"
+      ],
+      "hours_ago": 4.5,
+      "url": "https://www.fool.com/investing/2026/10/12/why-meta-platforms-stock-rallied-monday-morning/?source=iedfolrf0000001",
+      "is_news": true,
       "confirmed_tickers": [
         "META"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://finnhub.io/api/news?id=7640625929204e2af1763dfe7765c394471896e6f5ab1a20d5e6b8900deffa75",
-      "is_news": true
-    },
-    {
-      "id": "142821613",
-      "title": "Stock Market Today: Dow Outperforms In Mixed Trade; Tanker Firm Navios Glides Into Buy Zone (Live Coverage)",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "META"
-      ],
-      "confirmed_tickers": [
-        "META"
-      ],
-      "hours_ago": 1.7,
-      "url": "https://finnhub.io/api/news?id=70fecb3ac5defad33ee7d7fe28e99e784a13908d02991ed0fb929fe34d368554",
-      "is_news": true
-    },
-    {
-      "id": "142824504",
-      "title": "Meta to Announce Third Quarter 2026 Results",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "META"
-      ],
-      "confirmed_tickers": [
-        "META"
-      ],
-      "hours_ago": 2.0,
-      "url": "https://finnhub.io/api/news?id=91c818f7db59399d2de1ff9c4c35ea0f36bb7d37de4f352a19343c7bb1dce51e",
-      "is_news": true
-    },
-    {
-      "id": "142823402",
-      "title": "Monday's session: top gainers and losers",
-      "subreddit": "ChartMill",
-      "ups": 0,
-      "tickers": [
-        "BMBL"
-      ],
-      "confirmed_tickers": [
-        "BMBL"
-      ],
-      "hours_ago": 3.5,
-      "url": "https://finnhub.io/api/news?id=c1aba843ff6eeea9d0b4759857a19bd36752f9bad61f86f331099e03bf8aa025",
-      "is_news": true
-    },
-    {
-      "id": "142816305",
-      "title": "Elite AI Stocks To Own In October 2026",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "CBRS"
-      ],
-      "confirmed_tickers": [
-        "CBRS"
-      ],
-      "hours_ago": 13.3,
-      "url": "https://finnhub.io/api/news?id=dcde6cf6281b44d8bc8e14106234853a9ed23da1df948fb8b68a6264f35ee5bd",
-      "is_news": true
-    },
-    {
-      "id": "142820991",
-      "title": "Cerebras Stock Fell on OpenAI Chip Report, Then Rose 9% After Altman Weighed In",
-      "subreddit": "Benzinga",
-      "ups": 0,
-      "tickers": [
-        "CBRS"
-      ],
-      "confirmed_tickers": [
-        "CBRS"
-      ],
-      "hours_ago": 13.6,
-      "url": "https://finnhub.io/api/news?id=47702ecac19a28414ce878a06df4ef3cd43ea27173dec649638a0ab07be5b89d",
-      "is_news": true
-    },
-    {
-      "id": "142819401",
-      "title": "All Roads Lead To Vicor",
-      "subreddit": "SeekingAlpha",
-      "ups": 0,
-      "tickers": [
-        "CBRS"
-      ],
-      "confirmed_tickers": [
-        "CBRS"
-      ],
-      "hours_ago": 13.9,
-      "url": "https://finnhub.io/api/news?id=e63aff36b3ddb516c7ea3c8a6c38bc655a7945761238cc39ba3715bc23116d73",
-      "is_news": true
-    },
-    {
-      "id": "142809086",
-      "title": "Not Nvidia. Not Broadcom. This Little-Known Chip Supplier Could Be the AI Boom's Best-Kept Secret.",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "CBRS"
-      ],
-      "confirmed_tickers": [
-        "CBRS"
-      ],
-      "hours_ago": 22.7,
-      "url": "https://finnhub.io/api/news?id=48e3301fa687f34640b060c5a4135c07a2eb52670133fb68e27497a37c862e98",
-      "is_news": true
-    },
-    {
-      "id": "142805675",
-      "title": "Cerebras: The Earnings Curve Changes The Entire Setup",
-      "subreddit": "SeekingAlpha",
-      "ups": 0,
-      "tickers": [
-        "CBRS"
-      ],
-      "confirmed_tickers": [
-        "CBRS"
-      ],
-      "hours_ago": 36.9,
-      "url": "https://finnhub.io/api/news?id=677d843f6b255a18394825cba83253de2c0acfe2f31c6c19ebc885442e37a214",
-      "is_news": true
-    },
-    {
-      "id": "142720785",
-      "title": "3 Out-of-Favor Stocks We Think Twice About",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "BMBL"
-      ],
-      "confirmed_tickers": [
-        "BMBL"
-      ],
-      "hours_ago": 108.5,
-      "url": "https://finnhub.io/api/news?id=e683ae3b69a6f6d446bb4ebab3aaace393ebbdb78fc1771d5e7feb5e0f2863b7",
-      "is_news": true
-    },
-    {
-      "id": "142671108",
-      "title": "Bumble Inc. (BMBL) Stock Dips While Market Gains: Key Facts",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "BMBL"
-      ],
-      "confirmed_tickers": [
-        "BMBL"
-      ],
-      "hours_ago": 145.3,
-      "url": "https://finnhub.io/api/news?id=a01a113d1ea41116f5db986d4062f1d6483ebbab1f900fcff2e1a020479914e7",
-      "is_news": true
-    },
-    {
-      "id": "142637254",
-      "title": "2 Small-Cap Stocks with Solid Fundamentals and 1 Facing Headwinds",
-      "subreddit": "Yahoo",
-      "ups": 0,
-      "tickers": [
-        "BMBL"
-      ],
-      "confirmed_tickers": [
-        "BMBL"
-      ],
-      "hours_ago": 176.1,
-      "url": "https://finnhub.io/api/news?id=dbdcba4c47b1b83a79663d8e7861cf8d818f41a3f0135a802bb75dcbaae36975",
-      "is_news": true
+      ]
     }
   ]
 }
