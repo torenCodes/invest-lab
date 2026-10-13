@@ -1,6 +1,6 @@
 {
-  "scan_time": "2026-10-13T21:45:24.303519",
-  "total_transactions": 465,
+  "scan_time": "2026-10-13T22:04:40.518182",
+  "total_transactions": 466,
   "date_range": "2026-09-11 \u2013 2026-10-08",
   "min_value": 25000,
   "nominees": [
@@ -9182,6 +9182,49 @@
       "story": "CELH: Two insiders bought, $1.3M total."
     },
     {
+      "ticker": "GRCE",
+      "insider": "Opaleye Management Inc.",
+      "title": "10%",
+      "date": "2026-10-08",
+      "price": 2.03,
+      "qty": 105300,
+      "value": 216876.0,
+      "txn_count": 4,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Grace Therapeutics, Inc.",
+      "sector": "Healthcare",
+      "current_price": 1.99,
+      "change_pct": -1.49,
+      "market_cap": 41861500,
+      "week52_high": 5.18,
+      "week52_low": 1.79,
+      "insider_avg_cost": 2.06,
+      "vs_insider_pct": -3.4,
+      "max_delta_own": 2.0,
+      "insiders": [
+        {
+          "name": "Opaleye Management Inc.",
+          "title": "10%",
+          "date": "2026-10-08",
+          "price": 2.03,
+          "qty": 105300,
+          "value": 216876.0,
+          "is_csuite": false,
+          "owned": 2873289,
+          "delta_own": 2.0
+        }
+      ],
+      "conviction_score": 27.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "Bought this week",
+        "Still below insider cost"
+      ],
+      "story": "GRCE: Opaleye Management Inc. (10%) bought, $217K total."
+    },
+    {
       "ticker": "GPUS",
       "insider": "Ault Milton C III",
       "title": "Exec COB, 10%",
@@ -10741,48 +10784,6 @@
       "story": "GLOO: Gelsinger Patrick P (See Remarks) bought."
     },
     {
-      "ticker": "GRCE",
-      "insider": "Opaleye Management Inc.",
-      "title": "10%",
-      "date": "2026-10-01",
-      "price": 2.05,
-      "qty": 90668,
-      "value": 187193.0,
-      "txn_count": 3,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Grace Therapeutics, Inc.",
-      "sector": "Healthcare",
-      "current_price": 1.99,
-      "change_pct": -1.49,
-      "market_cap": 41861500,
-      "week52_high": 5.18,
-      "week52_low": 1.79,
-      "insider_avg_cost": 2.06,
-      "vs_insider_pct": -3.4,
-      "max_delta_own": 2.0,
-      "insiders": [
-        {
-          "name": "Opaleye Management Inc.",
-          "title": "10%",
-          "date": "2026-10-01",
-          "price": 2.05,
-          "qty": 90668,
-          "value": 187193.0,
-          "is_csuite": false,
-          "owned": 2858657,
-          "delta_own": 2.0
-        }
-      ],
-      "conviction_score": 21.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high",
-        "Still below insider cost"
-      ],
-      "story": "GRCE: Opaleye Management Inc. (10%) bought, $187K total."
-    },
-    {
       "ticker": "SPRU",
       "insider": "Steel Partners Holdings L.P.",
       "title": "10%",
@@ -11610,6 +11611,20 @@
   },
   "recent_feed": [
     {
+      "ticker": "GRCE",
+      "company": "Grace Therapeutics, Inc.",
+      "insider": "Opaleye Management Inc.",
+      "title": "10%",
+      "date": "2026-10-08",
+      "price": 2.03,
+      "qty": 14632,
+      "owned": 2873289,
+      "delta_own": 1.0,
+      "value": 29683.0,
+      "filing": "2026-10-13",
+      "is_csuite": false
+    },
+    {
       "ticker": "CRBG",
       "company": "Corebridge Financial, Inc.",
       "insider": "Nippon Life Insurance Co",
@@ -12154,20 +12169,6 @@
       "value": 292800.0,
       "filing": "2026-10-08",
       "is_csuite": true
-    },
-    {
-      "ticker": "CINT",
-      "company": "Ci&amp;T Inc",
-      "insider": "Martins Fernando Matt Borges",
-      "title": "Dir, 10%",
-      "date": "2026-10-06",
-      "price": 3.13,
-      "qty": 15745,
-      "owned": 82216,
-      "delta_own": 24.0,
-      "value": 49323.0,
-      "filing": "2026-10-08",
-      "is_csuite": false
     }
   ]
 }
