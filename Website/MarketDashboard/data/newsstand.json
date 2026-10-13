@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-10-12T20:30:30.875864+00:00",
+  "scan_time": "2026-10-13T02:43:31.313292+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Favorable",
-    "score": 5,
-    "headline": "The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run. Volume is under its 50-day norm, though that is ordinary for early October. It points to a slow tape rather than a warning sign.",
+    "verdict": "Mixed",
+    "score": 3,
+    "headline": "The tape is sending mixed signals, so it pays to stay selective, keep position sizes measured, and let the cleaner setups come to you. Participation is unusually light even for mid October and still fading, so expect wider spreads, slower fills and more failed breakouts than the verdict alone implies.",
     "signals": [
       {
         "label": "Today's tape",
@@ -30,9 +30,9 @@
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "-17%",
-        "read": "Light",
-        "tone": "neutral"
+        "value": "-28%",
+        "read": "Thin",
+        "tone": "bad"
       },
       {
         "label": "Volatility (VIX)",
@@ -49,23 +49,23 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-10-12T20:30:32.340748+00:00",
+    "updated": "2026-10-13T02:43:33.150573+00:00",
     "session": {
       "change_pct": -0.06,
       "from_open_pct": -0.09,
       "range_pos": 0.447,
       "sectors_green": 8,
       "sectors_total": 11,
-      "live": true,
-      "detail": "-0.06% vs prior close \u00b7 mid-range (45% of range) \u00b7 8/11 sectors green"
+      "live": false,
+      "detail": "-0.06% vs prior close \u00b7 mid-range (45% of range) \u00b7 8/11 sectors green \u00b7 last completed session"
     },
     "participation": {
-      "ratio": 0.83,
-      "expected": 0.998,
-      "adjusted": 0.832,
+      "ratio": 0.721,
+      "expected": 0.955,
+      "adjusted": 0.755,
       "direction": "fading",
-      "drift_pct": -25.8,
-      "detail": "35M vs 42M avg \u00b7 about normal for this week of the year"
+      "drift_pct": -37.5,
+      "detail": "30M vs 41M avg \u00b7 unusually light even for this week of the year"
     }
   }
 }
