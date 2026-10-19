@@ -41,7 +41,7 @@
         <img src="images/logo.png" alt="The Invest Lab" class="nav-logo-img" width="521" height="521">
         <span class="logo-text">The Invest Lab</span>
       </a>
-      <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="var o=document.querySelector('.nav-links').classList.toggle('open');this.textContent=o?'✕':'☰';this.setAttribute('aria-expanded',o)">&#9776;</button>
       <ul class="nav-links">
         <li class="nav-item">
           <a href="index.html#dashboards" class="nav-link">Dashboards <span class="nav-chevron">▾</span></a>
@@ -53,7 +53,7 @@
             <li><a href="https://invest-the-analyst.onrender.com" class="nav-dropdown-link">The Analyst</a></li>
           </ul>
         </li>
-        <li><a href="https://theinvestlab.com/blog.html" class="nav-link" style="color:var(--accent)">Blog</a></li>
+        <li><a href="https://theinvestlab.com/blog.html" class="nav-link active">Blog</a></li>
         <li><a href="index.html#about" class="nav-link">About</a></li>
       </ul>
     </nav>

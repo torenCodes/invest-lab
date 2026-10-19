@@ -53,7 +53,7 @@
         <img src="images/logo.png" alt="The Invest Lab" class="nav-logo-img" width="521" height="521">
         <span class="logo-text">The Invest Lab</span>
       </a>
-      <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="var o=document.querySelector('.nav-links').classList.toggle('open');this.textContent=o?'✕':'☰';this.setAttribute('aria-expanded',o)">&#9776;</button>
       <ul class="nav-links">
         <li class="nav-item">
           <a href="#dashboards" class="nav-link">Dashboards <span class="nav-chevron">▾</span></a>

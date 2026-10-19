@@ -849,47 +849,49 @@
     .scorecard-wrap { overflow-x: auto; }
   }
 
-  /* ── Site header (shared top nav) ────────────────────────────────────────── */
-  .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e0e7e7;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'Barlow',sans-serif;}
-  .site-nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px;}
-  .site-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:#1a1a18;font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;white-space:nowrap;}
-  .site-logo img{height:2.2rem;width:auto;display:block;}
-  .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
-  .site-nav-item{position:relative;}
-  .site-nav-link{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .9rem;border-radius:3px;text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#4a4a46;transition:color .15s,background .15s;}
-  .site-nav-link:hover,.site-nav-link.active{color:#38bda6;background:#edf8f6;}
-  .site-nav-chevron{font-size:.6rem;opacity:.6;transition:transform .2s;}
-  .site-nav-item:hover .site-nav-chevron{transform:rotate(180deg);}
-  .site-dropdown{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%) translateY(-4px);background:#fff;border:1px solid #e8e6e0;border-radius:4px;box-shadow:0 4px 18px rgba(0,0,0,.10);list-style:none;min-width:190px;padding:.4rem 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,visibility .18s,transform .18s;z-index:200;}
-  .site-dropdown::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px;}
-  .site-nav-item:hover .site-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
-  .site-dropdown-link{display:block;padding:.55rem 1.1rem;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#4a4a46;white-space:nowrap;transition:color .15s,background .15s;}
-  .site-dropdown-link:hover,.site-dropdown-link.active{color:#38bda6;background:#edf8f6;}
-  .nav-burger{display:none;background:none;border:1px solid #e8e6e0;border-radius:4px;cursor:pointer;padding:6px 10px;color:#1a1a18;font-size:1.2rem;line-height:1;}
-  @media(max-width:660px){
-    .site-nav{height:56px;padding:0 16px;}
-    .site-logo{font-size:1.1rem;}
-    .site-logo img{height:1.6rem;}
-    .nav-burger{display:block;}
-    .site-nav-links{display:none;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:2px solid #e0e7e7;box-shadow:0 6px 16px rgba(0,0,0,.09);padding:.4rem 0;list-style:none;}
-    .site-nav-links.open{display:flex;}
-    .site-nav-item{width:100%;}
-    .site-nav-link{padding:.7rem 1.2rem;border-radius:0;justify-content:flex-start;font-size:.75rem;}
-    .site-dropdown{position:static;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;border:none;border-radius:0;border-top:1px solid #f0ede8;padding:.2rem 0 .4rem 1rem;min-width:unset;}
-    .site-dropdown-link{padding:.5rem 1rem;font-size:.72rem;}
-  }
-
 </style>
 </head>
 <body>
 
+<!-- BEGIN shared-header: identical on all five dashboards except the one
+     "active" dropdown link. Values mirror the homepage header in styles.css
+     (.site-header / .nav-*); change all seven pages together. -->
+<style>
+  .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e8e6e0;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'Barlow',sans-serif;}
+  .site-nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1280px;margin:0 auto;padding:0 clamp(1.5rem,5vw,3rem);}
+  .site-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:#1a1a18;font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:700;letter-spacing:-.01em;line-height:1.65;white-space:nowrap;flex-shrink:0;}
+  .site-logo img{height:3rem;width:auto;display:block;object-fit:contain;}
+  .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+  .site-nav-item{position:relative;}
+  .site-nav-link{display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;border-radius:4px;text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;line-height:1.65;color:#4a4a46;transition:color .15s,background .15s;}
+  .site-nav-link:hover,.site-nav-link.active{color:#38bda6;background:#edf8f6;}
+  .site-nav-chevron{font-size:.6rem;opacity:.6;transition:transform .2s;}
+  .site-nav-item:hover .site-nav-chevron{transform:rotate(180deg);}
+  .site-dropdown{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%) translateY(-4px);background:#fdfefb;border:1px solid #e8e6e0;border-radius:4px;box-shadow:0 4px 18px rgba(0,0,0,.10);list-style:none;min-width:180px;padding:.4rem 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,visibility .18s,transform .18s;z-index:200;}
+  .site-dropdown::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px;}
+  .site-nav-item:hover .site-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+  .site-dropdown-link{display:block;padding:.55rem 1.1rem;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;line-height:1.65;text-decoration:none;color:#4a4a46;white-space:nowrap;transition:color .15s,background .15s;}
+  .site-dropdown-link:hover,.site-dropdown-link.active{color:#38bda6;background:#edf8f6;}
+  .nav-burger{display:none;background:none;border:1px solid #8a8a82;border-radius:4px;cursor:pointer;padding:8px 12px;color:#1a1a18;font-size:1.5rem;line-height:1;min-width:44px;min-height:44px;}
+  @media (max-width:680px){
+    .nav-burger{display:block;}
+    .site-nav-links{display:none;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:70px;left:0;right:0;background:#fff;border-bottom:2px solid #e8e6e0;box-shadow:0 6px 16px rgba(0,0,0,.09);padding:.4rem 0;z-index:110;}
+    .site-nav-links.open{display:flex;}
+    .site-nav-item{width:100%;position:static;}
+    .site-nav-link{padding:.7rem 1.2rem;border-radius:0;justify-content:flex-start;font-size:.75rem;}
+    .site-dropdown{position:static;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;border:none;border-radius:0;border-top:1px solid #f0ede8;padding:.2rem 0 .4rem 1rem;min-width:0;}
+    .site-dropdown-link{padding:.5rem 1rem;font-size:.72rem;}
+  }
+  @media (max-width:560px){.site-logo{font-size:1.5rem;}.site-logo img{height:2.2rem;}}
+  @media (max-width:400px){.site-logo-text{display:none;}.site-logo img{height:2rem;}}
+</style>
 <header class="site-header">
   <nav class="site-nav">
     <a href="https://theinvestlab.com" class="site-logo">
-      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
-      The Invest Lab
+      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab" width="521" height="521">
+      <span class="site-logo-text">The Invest Lab</span>
     </a>
-    <button class="nav-burger" aria-label="Menu" onclick="toggleSiteNav(this)">&#9776;</button>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="toggleSiteNav(this)">&#9776;</button>
     <ul class="site-nav-links">
       <li class="site-nav-item">
         <a href="https://theinvestlab.com/#dashboards" class="site-nav-link active">Dashboards <span class="site-nav-chevron">&#9662;</span></a>
@@ -901,8 +903,8 @@
           <li><a href="https://invest-the-analyst.onrender.com" class="site-dropdown-link">The Analyst</a></li>
         </ul>
       </li>
-      <li><a href="https://theinvestlab.com/blog.html" class="site-nav-link">Blog</a></li>
-      <li><a href="https://theinvestlab.com/#about" class="site-nav-link">About</a></li>
+      <li class="site-nav-item"><a href="https://theinvestlab.com/blog.html" class="site-nav-link">Blog</a></li>
+      <li class="site-nav-item"><a href="https://theinvestlab.com/#about" class="site-nav-link">About</a></li>
     </ul>
   </nav>
 </header>
@@ -910,9 +912,11 @@
 function toggleSiteNav(btn) {
   var links = document.querySelector('.site-nav-links');
   var open = links.classList.toggle('open');
-  btn.textContent = open ? '\u2715' : '\u2630';
+  btn.textContent = open ? '✕' : '☰';
+  btn.setAttribute('aria-expanded', open);
 }
 </script>
+<!-- END shared-header -->
 
 <div class="layout">
 
