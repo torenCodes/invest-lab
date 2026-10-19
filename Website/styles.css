@@ -630,9 +630,7 @@ body {
 
 @media (max-width: 900px) {
   /* Stack to a single column below 900px so the image column doesn't get
-     squeezed too narrow. Since the disclaimer sits as a sibling after
-     .about-image in the HTML, the natural order becomes:
-     title -> text -> image -> disclaimer. */
+     squeezed too narrow: title -> text -> image. */
   .about-layout { grid-template-columns: 1fr; }
   .about-image  { justify-content: flex-start; margin-top: 1rem; }
   .about-image img { max-width: 380px; }
@@ -647,21 +645,6 @@ body {
 
 .about-text p:last-child { margin-bottom: 0; }
 .about-text strong { color: var(--ink); font-weight: 600; }
-
-.about-disclaimer {
-  /* Disclaimer is its own grid sibling now (moved out of .about-text in
-     May 2026 so mobile order reads text -> image -> disclaimer). Spans
-     full grid width on desktop, then falls below the image on mobile. */
-  grid-column: 1 / -1;
-  font-size: 0.85rem !important;
-  color: var(--ink-3) !important;
-  background: rgba(56, 189, 166, 0.05);
-  border: 1px solid var(--accent-light);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--radius);
-  padding: 0.75rem 1rem;
-  margin-top: 1.5rem !important;
-}
 
 .about-image {
   display: flex;
@@ -885,18 +868,19 @@ body {
 }
 
 /* ── Footer ─────────────────────────────────────────────────────────────── */
+/* Four columns (Oct 2026): brand + project credit, dashboards, the lab,
+   open source; then a full-width bottom bar carrying the disclaimer, which
+   replaced the boxed disclaimer that sat in the About section. */
 .site-footer {
   background: var(--bg-dark);
-  color: rgba(255, 255, 255, 0.5);
-  padding: 2.75rem 0;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 3.5rem 0 2rem;
 }
 
-.footer-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.45rem;
-  text-align: center;
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
 }
 
 .footer-logo {
@@ -905,16 +889,74 @@ body {
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.92);
   letter-spacing: -0.01em;
-  margin-bottom: 0.2rem;
 }
 
-.footer-disclaimer { font-size: 0.8rem; }
+.footer-about {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  max-width: 40ch;
+  margin: 0.75rem 0 0.6rem;
+}
+
+.footer-project { font-size: 0.88rem; }
+
+.footer-heading {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0.35rem;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.footer-col a,
+.footer-project a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.15s;
+}
+.footer-project a { color: var(--accent); }
+.footer-col a:hover,
+.footer-project a:hover { color: var(--accent-light); }
+
+.footer-bottom {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-disclaimer {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  max-width: 95ch;
+}
 
 .footer-copy {
   font-size: 0.72rem;
   font-family: monospace;
-  opacity: 0.35;
-  margin-top: 0.2rem;
+  opacity: 0.45;
+}
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-col:last-child { grid-column: 1 / -1; }
 }
 
 /* ── Market Snapshot Preview ─────────────────────────────────────────────── */
@@ -2072,6 +2114,16 @@ body {
 @media (max-width: 400px) { .track-record-grid { grid-template-columns: 1fr; } }
 
 /* ── Lab Methodology section ─────────────────────────────────────────────── */
+/* Since Oct 2026 the section opens with one paragraph and goes straight into
+   the scorecard; capped near 80 characters a line so it stays readable at
+   full container width. */
+.methodology-lead {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink-2);
+  max-width: 80ch;
+  margin: 0 0 1.75rem;
+}
 .methodology-intro {
   display: flex;
   align-items: flex-start;

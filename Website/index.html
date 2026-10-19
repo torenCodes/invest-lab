@@ -109,9 +109,9 @@
 
           <div class="preview-grid">
             <a class="preview-card" id="pc-daytrade"  href="https://invest-movers-shakers.onrender.com/#day-trades"></a>
+            <a class="preview-card" id="pc-discussed" href="https://invest-movers-shakers.onrender.com/#market-chatter"></a>
             <a class="preview-card" id="pc-cadence"   href="https://invest-movers-shakers.onrender.com/#cadence"></a>
             <a class="preview-card" id="pc-coil"      href="https://invest-patterns.onrender.com/#sec-coiled"></a>
-            <a class="preview-card" id="pc-discussed" href="https://invest-movers-shakers.onrender.com/#market-chatter"></a>
           </div>
 
           <div class="archive-inline" id="track-record">
@@ -346,7 +346,8 @@
 
   <!-- ── Zone 5: Lab Methodology + Track Record ─────────────────────────── -->
   <!-- Bright section between two gray ones (Dashboards above, About below).
-       Concise framing of how the lab works, then the track-record receipts. -->
+       One lead paragraph, then the track-record receipts. How the lab works
+       moved to About (Oct 2026). -->
   <section class="section section-alt" id="methodology">
     <div class="container">
 
@@ -355,27 +356,11 @@
         <p class="section-sub">How the lab works, and how its picks have performed.</p>
       </div>
 
-      <div class="methodology-intro">
-        <div class="methodology-image">
-          <img src="images/lab.jpg" alt="Tablet on a laboratory bench showing a rising candlestick chart, beside a microscope, flask and pipettes" loading="lazy" decoding="async" width="1152" height="768">
-        </div>
-        <div class="methodology-text">
-          <p>The Invest Lab runs five proprietary screens each weekday focused on
-            momentum, ETF consensus, deep value, insider conviction, and chart structure.
-            Each codifying a well-known investment style, running it against fresh data
-            so that no single lens is the answer. The goal is to provide signal-rich
-            starting points for your own research and not a "buy this" recommendation.</p>
-          <p>When the same name appears across multiple dashboards, The Analyst takes
-            over with a fundamental deep-dive that examines P/E, PEG, Free Cash Flow,
-            Graham Number, ROE, and leverage before summarizing the findings with a
-            written verdict.</p>
-          <p>Below are the receipts. Every top nominee is logged the moment it is
-            flagged and graded on its own board's clock: a day trade at that day's
-            close, a swing setup after 20 trading days, the long-term boards after 60.
-            Each result sits next to the S&amp;P 500 over the same days, and the misses
-            stay alongside the wins.</p>
-        </div>
-      </div>
+      <p class="methodology-lead">Below are the receipts. Every top nominee is logged the moment it is
+        flagged and graded on its own board's clock: a day trade at that day's
+        close, a swing setup after 20 trading days, the long-term boards after 60.
+        Each result sits next to the S&amp;P 500 over the same days, and the misses
+        stay alongside the wins.</p>
 
       <!-- Board scorecard: one row per board, each graded on its own clock.
            Populated by JS from nominees_archive.json (the "graded" field). -->
@@ -430,30 +415,16 @@
         <h2 class="section-title">About This Site</h2>
 
         <div class="about-text">
-          <p>
-            This is a personal research platform built to support a disciplined,
-            data-driven approach to stock investing. The goal isn't to predict the
-            future but to identify stocks with <strong>real momentum</strong>, strong
-            market interest, and favorable setups, then do that research faster and
-            more consistently than is possible by hand.
-          </p>
-          <p>
-            The philosophy is simple, put the focus on <strong>green stocks only</strong>.
-            Upward-moving tickers with real volume behind them is what the system looks
-            for. There's no short selling and no chasing noise, just systematic screening
-            enriched with sentiment data from professional-grade market feeds and the
-            investing community.
-          </p>
+          <p>The Invest Lab runs five proprietary screens each weekday focused on
+            momentum, ETF consensus, deep value, insider conviction, and chart structure.
+            Each codifying a well-known investment style, running it against fresh data
+            so that no single lens is the answer. The goal is to provide signal-rich
+            starting points for your own research and not a "buy this" recommendation.</p>
         </div>
 
         <div class="about-image">
-          <img src="images/labcoat.jpg" alt="Researcher in a lab coat holding a device that projects a rising stock chart, with a notebook under one arm" loading="lazy" decoding="async" width="800" height="533">
+          <img src="images/lab.jpg" alt="Tablet on a laboratory bench showing a rising candlestick chart, beside a microscope, flask and pipettes" loading="lazy" decoding="async" width="1152" height="768">
         </div>
-
-        <p class="about-disclaimer">
-          ⚠ Nothing on this site is financial advice. All content is for personal
-          educational use only.
-        </p>
 
       </div>
     </div>
@@ -462,14 +433,39 @@
   <!-- ── Footer ───────────────────────────────────────────────────────────── -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-inner">
-        <span class="footer-logo">
-          <img src="images/logo.png" alt="The Invest Lab" class="footer-logo-img" width="521" height="521" loading="lazy">
-          The Invest Lab
-        </span>
-        <p class="footer-disclaimer">Not financial advice. For personal educational use only.</p>
-        <p class="footer-disclaimer"><a href="mailto:contact@theinvestlab.com" style="color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.9)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">contact@theinvestlab.com</a></p>
-        <p class="footer-copy">Built with curiosity and caffeine.</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">
+            <img src="images/logo.png" alt="The Invest Lab" class="footer-logo-img" width="521" height="521" loading="lazy">
+            The Invest Lab
+          </span>
+          <p class="footer-about">A personal stock research lab. Five dashboards scan the market each weekday, and every top pick is graded against the S&amp;P 500.</p>
+          <p class="footer-project">This is a <a href="https://databytoren.com">databytoren.com</a> project.</p>
+        </div>
+        <nav class="footer-col" aria-label="Dashboards">
+          <div class="footer-heading">Dashboards</div>
+          <a href="https://invest-movers-shakers.onrender.com">Movers and Shakers</a>
+          <a href="https://invest-the-marathon.onrender.com">The Marathon</a>
+          <a href="https://invest-insider-buying.onrender.com">Insider Buying</a>
+          <a href="https://invest-patterns.onrender.com">Pattern Scanner</a>
+          <a href="https://invest-the-analyst.onrender.com">The Analyst</a>
+        </nav>
+        <nav class="footer-col" aria-label="The lab">
+          <div class="footer-heading">The Lab</div>
+          <a href="#methodology">Track Record</a>
+          <a href="blog.html">Research Blog</a>
+          <a href="#about">About This Site</a>
+          <a href="mailto:contact@theinvestlab.com">contact<wbr>@theinvestlab.com</a>
+        </nav>
+        <div class="footer-col">
+          <div class="footer-heading">Open Source</div>
+          <p>The code behind every scan, score and grade is public on GitHub.</p>
+          <a href="https://github.com/torenCodes/invest-lab">github.com/<wbr>torenCodes/<wbr>invest-lab</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">Nothing on this site is financial advice. All content is for personal educational use only. Lists and scores are computed on a schedule from public market data and can be wrong or out of date. Past results do not predict future ones.</p>
+        <p class="footer-copy">&copy; 2026 The Invest Lab &middot; Built with curiosity and caffeine.</p>
       </div>
     </div>
   </footer>
