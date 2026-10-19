@@ -2129,13 +2129,11 @@ body {
 
 /* ── Lab Methodology section ─────────────────────────────────────────────── */
 /* Since Oct 2026 the section opens with one paragraph and goes straight into
-   the scorecard; capped near 80 characters a line so it stays readable at
-   full container width. */
+   the scorecard, running the full container width. */
 .methodology-lead {
   font-size: 1rem;
   line-height: 1.75;
   color: var(--ink-2);
-  max-width: 80ch;
   margin: 0 0 1.75rem;
 }
 .methodology-intro {
