@@ -870,11 +870,24 @@ body {
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 /* Four columns (Oct 2026): brand + project credit, dashboards, the lab,
    open source; then a full-width bottom bar carrying the disclaimer, which
-   replaced the boxed disclaimer that sat in the About section. */
+   replaced the boxed disclaimer that sat in the About section.
+   The same footer runs on every page. The five dashboards carry these rules
+   inline (between BEGIN/END shared-footer comments) with the variables
+   written out, because they don't load this stylesheet; change all seven
+   pages together. */
 .site-footer {
   background: var(--bg-dark);
   color: rgba(255, 255, 255, 0.55);
   padding: 3.5rem 0 2rem;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
 }
 
 .footer-grid {

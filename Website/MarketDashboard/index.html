@@ -1931,24 +1931,65 @@ loadCadence();
 setInterval(loadResults, 5 * 60 * 1000);  // auto-refresh every 5 min
 </script>
 
-<!-- ── Shared Site Footer ──────────────────────────────────────────────── -->
+<!-- BEGIN shared-footer: identical on all five dashboards. The homepage and blog
+     use the same markup styled by styles.css (same values); change all seven together. -->
 <style>
-  .site-footer-shared{background:#2e3334;color:rgba(255,255,255,.5);padding:1.5rem 0;font-family:'DM Sans',sans-serif;}
-  .site-footer-inner{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;}
-  .site-footer-brand{display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:1rem;color:rgba(255,255,255,.92);}
-  .site-footer-brand img{height:1.2rem;width:auto;filter:invert(1);opacity:.85;}
-  .site-footer-disc{font-size:.78rem;}
-  .site-footer-copy{font-size:.68rem;font-family:monospace;opacity:.3;}
+  .site-footer{background:#1a1a18;color:rgba(255,255,255,.55);padding:3.5rem 0 2rem;font-family:'Barlow',sans-serif;font-weight:400;line-height:1.65;}
+  .footer-container{max-width:1280px;margin:0 auto;padding:0 clamp(1.5rem,5vw,3rem);}
+  .footer-grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:2.5rem;}
+  .footer-logo{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:rgba(255,255,255,.92);letter-spacing:-.01em;}
+  .footer-logo-img{height:2rem;width:auto;display:inline-block;vertical-align:middle;margin-right:.25rem;filter:invert(1);opacity:.85;}
+  .footer-about{font-size:.88rem;line-height:1.65;max-width:40ch;margin:.75rem 0 .6rem;}
+  .footer-project{font-size:.88rem;}
+  .footer-heading{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.92);margin-bottom:.35rem;}
+  .footer-col{display:flex;flex-direction:column;align-items:flex-start;gap:.55rem;font-size:.88rem;line-height:1.55;}
+  .footer-col a,.footer-project a{color:rgba(255,255,255,.75);text-decoration:none;overflow-wrap:anywhere;transition:color .15s;}
+  .footer-project a{color:#38bda6;}
+  .footer-col a:hover,.footer-project a:hover{color:#b8e8e0;}
+  .footer-bottom{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:.5rem;}
+  .footer-disclaimer{font-size:.8rem;line-height:1.6;max-width:95ch;}
+  .footer-copy{font-size:.72rem;font-family:monospace;opacity:.45;}
+  @media (max-width:900px){.footer-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;}.footer-brand{grid-column:1/-1;}}
+  @media (max-width:560px){.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.footer-col:last-child{grid-column:1/-1;}}
 </style>
-<footer class="site-footer-shared">
-  <div class="site-footer-inner">
-    <div class="site-footer-brand">
-      <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab">
-      The Invest Lab
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">
+          <img src="https://theinvestlab.com/images/logo.png" alt="The Invest Lab" class="footer-logo-img" width="521" height="521" loading="lazy">
+          The Invest Lab
+        </span>
+        <p class="footer-about">A personal stock research lab. Five dashboards scan the market each weekday, and every top pick is graded against the S&amp;P 500.</p>
+        <p class="footer-project">This is a <a href="https://databytoren.com">databytoren.com</a> project.</p>
+      </div>
+      <nav class="footer-col" aria-label="Dashboards">
+        <div class="footer-heading">Dashboards</div>
+        <a href="https://invest-movers-shakers.onrender.com">Movers and Shakers</a>
+        <a href="https://invest-the-marathon.onrender.com">The Marathon</a>
+        <a href="https://invest-insider-buying.onrender.com">Insider Buying</a>
+        <a href="https://invest-patterns.onrender.com">Pattern Scanner</a>
+        <a href="https://invest-the-analyst.onrender.com">The Analyst</a>
+      </nav>
+      <nav class="footer-col" aria-label="The lab">
+        <div class="footer-heading">The Lab</div>
+        <a href="https://theinvestlab.com/#methodology">Track Record</a>
+        <a href="https://theinvestlab.com/blog.html">Research Blog</a>
+        <a href="https://theinvestlab.com/#about">About This Site</a>
+        <a href="mailto:contact@theinvestlab.com">contact<wbr>@theinvestlab.com</a>
+      </nav>
+      <div class="footer-col">
+        <div class="footer-heading">Open Source</div>
+        <p>The code behind every scan, score and grade is public on GitHub.</p>
+        <a href="https://github.com/torenCodes/invest-lab">github.com/<wbr>torenCodes/<wbr>invest-lab</a>
+      </div>
     </div>
-    <p class="site-footer-disc">Not financial advice. For personal educational use only.</p>
-    <p class="site-footer-copy">Built with curiosity and caffeine.</p>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">Nothing on this site is financial advice. All content is for personal educational use only. Lists and scores are computed on a schedule from public market data and can be wrong or out of date. Past results do not predict future ones.</p>
+      <p class="footer-copy">&copy; 2026 The Invest Lab &middot; Built with curiosity and caffeine.</p>
+    </div>
   </div>
 </footer>
+<!-- END shared-footer -->
 </body>
 </html>
