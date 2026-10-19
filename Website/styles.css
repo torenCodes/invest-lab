@@ -2437,6 +2437,10 @@ a.bsc-row:hover { background: var(--accent-muted); }
    and its <script> block. All class names use the .mt- prefix.
    ═════════════════════════════════════════════════════════════════════ */
 
+/* A static card in the Market Reading rail (Oct 2026): the composite and its
+   gauge, the four theme bars, then four key signals. It used to expand into
+   all ten components, which ran well over a thousand pixels and jolted the
+   page; the expanded panel and its styles are gone. */
 .market-temp {
   background: var(--surface);
   border: 1px solid #e8e6df;
@@ -2445,19 +2449,15 @@ a.bsc-row:hover { background: var(--accent-muted); }
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
+.mt-in-side { margin: 0; }
 
+/* Title block on row 1, the gauge across row 2 */
 .mt-strip {
   display: grid;
-  grid-template-columns: 1fr auto 24px;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 0.95rem 1.15rem;
-  cursor: pointer;
-  user-select: none;
-  transition: background 0.15s ease;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.5rem 0.75rem;
+  padding: 0.85rem 1rem;
 }
-.mt-strip:hover { background: #faf9f4; }
-.mt-strip:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
 .mt-strip-left { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
 
@@ -2484,13 +2484,12 @@ a.bsc-row:hover { background: var(--accent-muted); }
 .mt-strip-gauge {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: stretch;
   gap: 0.35rem;
-  min-width: 220px;
 }
 .mt-gauge-track {
   position: relative;
-  width: 220px;
+  width: 100%;
   height: 6px;
   background: linear-gradient(90deg, #4ea37a 0%, #c9c28a 50%, #d16a5a 100%);
   border-radius: 999px;
@@ -2536,144 +2535,7 @@ a.bsc-row:hover { background: var(--accent-muted); }
 .mt-v-extreme  { background: #efcec4; color: #6c1c10; }
 .mt-v-unknown  { background: #ececec; color: #555; }
 
-.mt-chevron {
-  color: var(--ink-3);
-  font-size: 1rem;
-  transition: transform 0.2s ease;
-  justify-self: end;
-}
-
-.mt-body {
-  border-top: 1px solid #ece9e0;
-  padding: 1.1rem 1.15rem 1.2rem;
-  background: #fbfaf6;
-}
-
-.mt-components {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.mt-comp {
-  background: var(--surface);
-  border: 1px solid #ece9e0;
-  border-radius: 8px;
-  padding: 0.75rem 0.85rem 0.85rem;
-}
-.mt-comp--missing { opacity: 0.6; }
-
-/* The right column used to be flex-shrink: 0, so a longer readout claimed the
-   full width and crushed the title and subtitle beside it — the subtitle ended
-   up wrapping one word per line. Both columns can now shrink, and the head
-   wraps rather than compressing, so this holds at any card width instead of
-   only for short labels. */
-.mt-comp-head {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.35rem 0.6rem;
-  margin-bottom: 0.5rem;
-}
-.mt-comp-head-left {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  flex: 1 1 9rem;
-}
-.mt-comp-head-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.25rem;
-  min-width: 0;
-  flex: 0 1 auto;
-  text-align: right;
-}
-
-.mt-comp-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--ink);
-  line-height: 1.15;
-}
-.mt-comp-sub {
-  font-size: 0.7rem;
-  color: var(--ink-3);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.mt-comp-raw {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--ink-2);
-  overflow-wrap: anywhere;   /* wrap a long readout instead of overflowing */
-}
-.mt-comp-title { overflow-wrap: anywhere; }
-.mt-comp-badge {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.12rem 0.42rem;
-  border-radius: 3px;
-}
-.mt-comp-state {
-  font-size: 0.75rem;
-  color: var(--ink-3);
-  font-style: italic;
-}
-
-.mt-comp-bar {
-  height: 4px;
-  background: #ece9e0;
-  border-radius: 999px;
-  overflow: hidden;
-  margin-bottom: 0.55rem;
-}
-.mt-comp-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--accent) 0%, #c9c28a 50%, #d16a5a 100%);
-  border-radius: 999px;
-  transition: width 0.5s ease;
-}
-.mt-comp-desc {
-  font-size: 0.78rem;
-  color: var(--ink-2);
-  line-height: 1.45;
-  margin: 0;
-}
-
-.mt-footnote {
-  font-size: 0.72rem;
-  color: var(--ink-3);
-  line-height: 1.55;
-  margin: 0.9rem 0 0;
-  font-style: italic;
-}
-
-@media (max-width: 760px) {
-  .mt-strip {
-    grid-template-columns: 1fr 24px;
-    grid-template-rows: auto auto;
-    row-gap: 0.6rem;
-  }
-  .mt-strip-gauge {
-    grid-column: 1 / 2;
-    align-items: flex-start;
-    min-width: 0;
-  }
-  .mt-gauge-track { width: 100%; max-width: 320px; }
-  .mt-chevron { grid-column: 2; grid-row: 1; align-self: start; }
-  .mt-components { grid-template-columns: 1fr; }
-}
-
 /* ─── Trading Conditions accordion (Aug 2026) ─────────────────────────────
-   Pairs with Macro Temperature below it: one panel open at a time, so the
-   Market Reading rail keeps roughly the same height whichever you are reading.
    Collapsing keeps .tc-top (the verdict chip) visible — a collapsed card
    should still answer the question it exists to answer. */
 .ns-conditions-card .newsstand-card-header {
@@ -2691,33 +2553,8 @@ a.bsc-row:hover { background: var(--accent-muted); }
 .ns-conditions-card.tc-collapsed .tc-content { padding-bottom: 0.15rem; }
 .ns-conditions-card.tc-collapsed .tc-top { margin-bottom: 0; }
 
-/* ─── Sidebar variant (Aug 2026) ──────────────────────────────────────────
-   Macro Temperature moved from the 749px main column into the 420px Market
-   Reading rail. Three columns of strip no longer fit, and ten flat component
-   cards stacked to ~2,100px, so the gauge drops to its own row and the
-   components nest under four theme bars. */
-
-.mt-in-side { margin: 0; }
-
-/* Strip: title + chevron on row 1, gauge spanning row 2. Both columns are
-   allowed to shrink — .mt-strip-left already carries min-width: 0 — so a
-   longer verdict can never crush the title the way it did on .mt-comp-head. */
-.mt-in-side .mt-strip {
-  grid-template-columns: minmax(0, 1fr) 24px;
-  gap: 0.5rem 0.75rem;
-  padding: 0.85rem 1rem;
-}
-.mt-in-side .mt-strip-gauge {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  align-items: stretch;
-}
-.mt-in-side .mt-gauge-track { width: 100%; }
-.mt-in-side .mt-chevron { grid-column: 2; grid-row: 1; align-self: center; }
-
-/* Four theme bars, always visible under the strip */
-/* Collapses to nothing on a pre-grouping payload, so the fallback does not
-   show a bordered empty strip under the gauge. */
+/* Four theme bars under the gauge. Collapses to nothing on a pre-grouping
+   payload, so the fallback does not show a bordered empty strip. */
 .mt-groups:empty { display: none; }
 
 .mt-groups {
@@ -2746,8 +2583,8 @@ a.bsc-row:hover { background: var(--accent-muted); }
   border-radius: 3px;
   overflow: hidden;
 }
-/* Same gradient as .mt-comp-bar-fill — a group scoring Hot must not render as
-   a cool teal bar directly above component bars that run teal-to-red. */
+/* Teal-to-red, matching the composite gauge: a group scoring Hot must not
+   render as a cool teal bar. */
 .mt-group-fill {
   display: block;
   height: 100%;
@@ -2763,63 +2600,46 @@ a.bsc-row:hover { background: var(--accent-muted); }
   background: none;
 }
 
-/* The accordion alone was not enough. Collapsing Trading Conditions frees
-   ~500px, but the expanded gauge is ~1,800px, so the rail still went 1,026 ->
-   2,038px and shoved the page around — the thing this was meant to stop.
-   Capping the body and letting it scroll in place keeps the rail near its
-   resting height whichever panel is open.
-   Released on narrow screens: there the rail is full width, the page scrolls
-   naturally, and a nested scroll area is only in the way. */
-.mt-in-side .mt-body {
-  max-height: 68vh;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-}
-@media (max-width: 900px) {
-  .mt-in-side .mt-body { max-height: none; overflow-y: visible; }
-}
+/* Key signals (Oct 2026): four of the ten components, each with its reading
+   and score, in the same row rhythm as the theme bars above. The reading
+   takes the place of the bar. */
+.mt-signals:empty { display: none; }
 
-/* Expanded: components nested under their theme.
-   The per-component paragraph is hidden here. Each ran ~72px in this column —
-   720px across ten, most of the reason the expanded card measured 2,490px —
-   and it was written for the wide two-column grid. The group blurb carries the
-   "why" instead; every component still shows its own title, reading and bar. */
-.mt-in-side .mt-comp-desc { display: none; }
-.mt-in-side .mt-comp { padding: 0.6rem 0.7rem 0.7rem; }
-.mt-in-side .mt-comp-head { gap: 0.3rem 0.5rem; }
-.mt-in-side .mt-comp-bar { margin-top: 0.45rem; }
-
-.mt-in-side .mt-components { grid-template-columns: 1fr; gap: 0.5rem; }
-.mt-group-block { display: flex; flex-direction: column; gap: 0.5rem; }
-.mt-group-block + .mt-group-block {
+.mt-signals {
   border-top: 1px solid #eceae3;
-  padding-top: 0.85rem;
-}
-.mt-group-head {
+  padding: 0.6rem 1rem 0.8rem;
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 0.42rem;
 }
-.mt-group-head-title {
+.mt-signals-title {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--ink-3);
 }
-.mt-group-head-weight {
+.mt-signal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 26px;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: help;
+}
+.mt-signal-name {
+  font-size: 0.72rem;
+  color: var(--ink-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mt-signal-raw {
   font-family: 'DM Mono', monospace;
   font-size: 0.68rem;
   color: var(--ink-3);
-  flex-shrink: 0;
+  white-space: nowrap;
 }
-.mt-group-blurb {
-  margin: -0.25rem 0 0;
-  font-size: 0.72rem;
-  line-height: 1.45;
-  color: var(--ink-3);
-}
+.mt-signal--missing { opacity: 0.6; cursor: default; }
 
 /* ═════ /Market Temperature ═════ */

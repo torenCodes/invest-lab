@@ -147,7 +147,7 @@
             </div>
             <!-- ─── Macro Temperature — the regime behind today's conditions ─── -->
             <section class="market-temp mt-in-side" id="market-temperature" aria-labelledby="mt-title">
-              <div class="mt-strip" id="mt-strip" role="button" tabindex="0" aria-expanded="false">
+              <div class="mt-strip" id="mt-strip">
                 <div class="mt-strip-left">
                   <span class="mt-eyebrow">Proprietary Gauge</span>
                   <span class="mt-title" id="mt-title">Macro Temperature</span>
@@ -160,15 +160,13 @@
                     <span class="mt-gauge-verdict" id="mt-verdict">loading…</span>
                   </div>
                 </div>
-                <span class="mt-chevron" id="mt-chevron" aria-hidden="true">▾</span>
               </div>
               <!-- Four theme bars, always visible: the composite alone hides a lot,
                    e.g. a Neutral 55 that is three neutral legs and one running Hot. -->
               <div class="mt-groups" id="mt-groups"></div>
-              <div class="mt-body" id="mt-body" hidden>
-                <div class="mt-components" id="mt-components"></div>
-                <p class="mt-footnote">Ten signals, grouped into four themes and weighted 40 / 25 / 20 / 15. Most move every session. Two are deliberately contrarian and inverted: <strong>Credit Spreads</strong>, where tight means complacency, and <strong>Insider Breadth</strong>, because executives buy weakness and go quiet into strength. It carries only 5%, since testing supported the direction but on a thin sample. Weekdays at 9:50am and 10:50am ET. For education only, not investment advice.</p>
-              </div>
+              <!-- Four of the ten underlying signals (Oct 2026), shown in place of
+                   the old expanding panel. Hover a row for what it measures. -->
+              <div class="mt-signals" id="mt-signals"></div>
             </section>
             <!-- ─── /Macro Temperature ─── -->
           </div>
@@ -420,6 +418,9 @@
             Each one codifies a well-known investment style and runs it against fresh data,
             so no single lens is the answer. The goal is to provide signal-rich
             starting points for your own research and not a "buy this" recommendation.</p>
+          <p>When the same stock turns up on more than one board, The Analyst takes a
+            closer look, checking P/E, PEG, free cash flow, the Graham Number, return on
+            equity and debt before writing a short verdict.</p>
         </div>
 
         <div class="about-image">
@@ -1039,21 +1040,27 @@
 </script>
 
 <script>
-// ── Market Temperature — composite valuation gauge (compartmentalized) ──────
+// ── Macro Temperature — composite regime gauge (compartmentalized) ──────────
+// A static card since Oct 2026. It used to expand into all ten components as an
+// accordion with Trading Conditions; expanded it ran well over a thousand
+// pixels and jolted the page. It now shows the composite, the four theme bars
+// and four key signals, sized to end close to the Other Lab Results cards
+// beside it. Each signal's description is its hover title.
 (function () {
   var MT_URL = 'https://invest-movers-shakers.onrender.com/data/market_temperature.json';
   var root   = document.getElementById('market-temperature');
   if (!root) return;
 
-  var strip     = document.getElementById('mt-strip');
-  var body      = document.getElementById('mt-body');
-  var chevron   = document.getElementById('mt-chevron');
   var scoreEl   = document.getElementById('mt-score');
   var verdictEl = document.getElementById('mt-verdict');
   var metaEl    = document.getElementById('mt-meta');
   var fillEl    = document.getElementById('mt-gauge-fill');
-  var compsEl   = document.getElementById('mt-components');
   var groupsEl  = document.getElementById('mt-groups');
+  var signalsEl = document.getElementById('mt-signals');
+
+  // Shown under the theme bars, in this order. The other six still count
+  // toward the composite and their theme scores.
+  var KEY_SIGNALS = ['fear_greed', 'new_highs', 'credit', 'yield_curve'];
 
   function verdictClass(label) {
     // Temperature labels (Jul 2026 regime rebuild); legacy valuation labels
@@ -1068,80 +1075,18 @@
     }
   }
 
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (ch) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch];
+    });
+  }
+
   function fmtTs(iso) {
     try {
       var d = new Date(iso);
       return d.toLocaleDateString([], { month: 'short', day: 'numeric' }) +
              ' · ' + d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     } catch (e) { return ''; }
-  }
-
-  // Accordion with Trading Conditions above it. Expanded, this card runs well
-  // over a thousand pixels, which shoved the whole page layout around. Only one
-  // of the two panels is open at a time, so the rail's height stays roughly
-  // fixed whichever one you are reading. Closing this one hands the default
-  // state back to Trading Conditions rather than leaving the rail empty.
-  function setExpanded(open, silent) {
-    body.hidden = !open;
-    strip.setAttribute('aria-expanded', open ? 'true' : 'false');
-    chevron.textContent = open ? '▴' : '▾';
-    if (!silent) {
-      document.dispatchEvent(new CustomEvent('lab:panel', {
-        detail: { id: 'macro-temp', open: open }
-      }));
-    }
-  }
-
-  // Another panel opened — stand down without echoing the event back.
-  document.addEventListener('lab:panel', function (e) {
-    if (e.detail && e.detail.id !== 'macro-temp' && e.detail.open && !body.hidden) {
-      setExpanded(false, true);
-    }
-  });
-
-  strip.addEventListener('click', function () {
-    setExpanded(body.hidden);
-  });
-  strip.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setExpanded(body.hidden); }
-  });
-
-  function renderComponent(key, c) {
-    if (!c) {
-      return '<div class="mt-comp mt-comp--missing">' +
-               '<div class="mt-comp-head"><span class="mt-comp-title">' + titleFor(key) + '</span>' +
-               '<span class="mt-comp-state">unavailable</span></div>' +
-             '</div>';
-    }
-    var pct = Math.max(0, Math.min(100, c.score || 0));
-    return '<div class="mt-comp">' +
-             '<div class="mt-comp-head">' +
-               '<div class="mt-comp-head-left">' +
-                 '<span class="mt-comp-title">' + (c.title || key) + '</span>' +
-                 '<span class="mt-comp-sub">' + (c.subtitle || '') + '</span>' +
-               '</div>' +
-               '<div class="mt-comp-head-right">' +
-                 '<span class="mt-comp-raw">' + (c.raw_label || '') + '</span>' +
-                 '<span class="mt-comp-badge ' + verdictClass(c.label) + '">' + (c.label || '—') + '</span>' +
-               '</div>' +
-             '</div>' +
-             '<div class="mt-comp-bar"><div class="mt-comp-bar-fill" style="width:' + pct + '%"></div></div>' +
-             '<p class="mt-comp-desc">' + (c.description || '') + '</p>' +
-           '</div>';
-  }
-
-  function renderGroupBar(g) {
-    var has = g.score != null;
-    var pct = has ? Math.max(0, Math.min(100, g.score)) : 0;
-    return '<div class="mt-group">' +
-             '<span class="mt-group-name">' + (g.title || g.key) + '</span>' +
-             '<span class="mt-group-track">' +
-               '<span class="mt-group-fill" style="width:' + pct + '%"></span>' +
-             '</span>' +
-             '<span class="mt-group-score ' + verdictClass(g.label) + '">' +
-               (has ? Math.round(g.score) : '—') +
-             '</span>' +
-           '</div>';
   }
 
   function titleFor(key) {
@@ -1155,12 +1100,38 @@
       fear_greed:   'Fear & Greed',
       breadth:      'Structural Breadth',
       credit:       'Credit Spreads',
-      yield_curve:  'Yield Curve',
-      // legacy keys — so old data renders cleanly until the new scan lands
-      buffett:      'Buffett Indicator',
-      shiller:      'Shiller CAPE',
-      fed_model:    'Fed Model'
+      yield_curve:  'Yield Curve'
     })[key] || key;
+  }
+
+  function renderGroupBar(g) {
+    var has = g.score != null;
+    var pct = has ? Math.max(0, Math.min(100, g.score)) : 0;
+    return '<div class="mt-group" title="' + esc(g.blurb) + '">' +
+             '<span class="mt-group-name">' + esc(g.title || g.key) + '</span>' +
+             '<span class="mt-group-track">' +
+               '<span class="mt-group-fill" style="width:' + pct + '%"></span>' +
+             '</span>' +
+             '<span class="mt-group-score ' + verdictClass(g.label) + '">' +
+               (has ? Math.round(g.score) : '—') +
+             '</span>' +
+           '</div>';
+  }
+
+  // A dead feed still shows its row as "unavailable" rather than vanishing.
+  function renderSignal(key, c) {
+    if (!c || c.score == null) {
+      return '<div class="mt-signal mt-signal--missing">' +
+               '<span class="mt-signal-name">' + esc(titleFor(key)) + '</span>' +
+               '<span class="mt-signal-raw">unavailable</span>' +
+               '<span class="mt-group-score mt-v-unknown">—</span>' +
+             '</div>';
+    }
+    return '<div class="mt-signal" title="' + esc(c.description) + '">' +
+             '<span class="mt-signal-name">' + esc(c.title || titleFor(key)) + '</span>' +
+             '<span class="mt-signal-raw">' + esc(c.raw_label) + '</span>' +
+             '<span class="mt-group-score ' + verdictClass(c.label) + '">' + Math.round(c.score) + '</span>' +
+           '</div>';
   }
 
   function render(data) {
@@ -1173,38 +1144,11 @@
     fillEl.style.width    = (score != null ? Math.max(0, Math.min(100, score)) : 0) + '%';
     metaEl.textContent    = data.scan_time ? 'Updated ' + fmtTs(data.scan_time) : '';
 
-    // Data-driven: render whatever components the scan emitted, in its order
-    // (fast movers first) — works with both the old and new composition.
-    var comps  = data.components || {};
-    var groups = data.groups || [];
-
-    if (groupsEl) {
-      groupsEl.innerHTML = groups.map(renderGroupBar).join('');
-    }
-
-    if (groups.length) {
-      // Ten flat bars did not fit the sidebar, so components nest under their
-      // theme. Members are rendered even when null so a dead feed still shows
-      // as "unavailable" rather than silently vanishing from the list.
-      compsEl.innerHTML = groups.map(function (g) {
-        return '<div class="mt-group-block">' +
-                 '<div class="mt-group-head">' +
-                   '<span class="mt-group-head-title">' + g.title + '</span>' +
-                   '<span class="mt-group-head-weight">' + Math.round((g.weight || 0) * 100) + '%</span>' +
-                 '</div>' +
-                 '<p class="mt-group-blurb">' + (g.blurb || '') + '</p>' +
-                 (g.members || []).map(function (k) {
-                   return renderComponent(k, comps[k]);
-                 }).join('') +
-               '</div>';
-      }).join('');
-    } else {
-      // Pre-grouping payload — kept so the page still renders if a scan
-      // ever writes the old flat shape again.
-      compsEl.innerHTML = Object.keys(comps).map(function (k) {
-        return renderComponent(k, comps[k]);
-      }).join('');
-    }
+    var comps = data.components || {};
+    groupsEl.innerHTML = (data.groups || []).map(renderGroupBar).join('');
+    signalsEl.innerHTML =
+      '<div class="mt-signals-title">Key signals</div>' +
+      KEY_SIGNALS.map(function (k) { return renderSignal(k, comps[k]); }).join('');
   }
 
   fetch(MT_URL, { cache: 'no-cache' })
@@ -1256,35 +1200,22 @@
     renderConditions(data.trading_conditions);
   }
 
-  // ── Accordion with Macro Temperature ──────────────────────────────────────
+  // ── Collapsible card ──────────────────────────────────────────────────────
   // Expanded by default. Collapsing hides the headline and the signal rows but
   // deliberately keeps the verdict chip visible, so a collapsed card still
-  // answers the one question it exists to answer.
+  // answers the one question it exists to answer. (It was an accordion with
+  // Macro Temperature until Oct 2026, when that card stopped expanding.)
   (function () {
     var card   = document.getElementById('ns-conditions');
     var header = document.getElementById('tc-header');
     var chev   = document.getElementById('tc-chevron');
     if (!card || !header) return;
 
-    function setOpen(open, silent) {
+    function setOpen(open) {
       card.classList.toggle('tc-collapsed', !open);
       header.setAttribute('aria-expanded', open ? 'true' : 'false');
       if (chev) chev.textContent = open ? '▴' : '▾';
-      if (!silent) {
-        document.dispatchEvent(new CustomEvent('lab:panel', {
-          detail: { id: 'trading-conditions', open: open }
-        }));
-      }
     }
-
-    document.addEventListener('lab:panel', function (e) {
-      if (!e.detail || e.detail.id === 'trading-conditions') return;
-      if (e.detail.open) {
-        setOpen(false, true);            // the other panel opened — stand down
-      } else {
-        setOpen(true, true);             // it closed — take the default state back
-      }
-    });
 
     header.addEventListener('click', function () {
       setOpen(card.classList.contains('tc-collapsed'));
