@@ -1659,6 +1659,14 @@ body {
   border-color: var(--accent-light);
 }
 
+/* Trading Conditions is a fixed card (Oct 2026), like Macro Temperature below
+   it: no pointer and no hover lift, since there is nothing to click. */
+.ns-conditions-card { cursor: default; }
+.ns-conditions-card:hover {
+  box-shadow: none;
+  border-color: var(--border);
+}
+
 .newsstand-card.ns-open {
   border-color: var(--accent);
 }
@@ -2534,24 +2542,6 @@ a.bsc-row:hover { background: var(--accent-muted); }
 .mt-v-frothy   { background: #f5dfce; color: #8a3a14; }
 .mt-v-extreme  { background: #efcec4; color: #6c1c10; }
 .mt-v-unknown  { background: #ececec; color: #555; }
-
-/* ─── Trading Conditions accordion (Aug 2026) ─────────────────────────────
-   Collapsing keeps .tc-top (the verdict chip) visible — a collapsed card
-   should still answer the question it exists to answer. */
-.ns-conditions-card .newsstand-card-header {
-  cursor: pointer;
-  user-select: none;
-}
-.ns-conditions-card .newsstand-card-header:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-.ns-conditions-card.tc-collapsed .tc-headline,
-.ns-conditions-card.tc-collapsed .tc-signals {
-  display: none;
-}
-.ns-conditions-card.tc-collapsed .tc-content { padding-bottom: 0.15rem; }
-.ns-conditions-card.tc-collapsed .tc-top { margin-bottom: 0; }
 
 /* Four theme bars under the gauge. Collapses to nothing on a pre-grouping
    payload, so the fallback does not show a bordered empty strip. */
