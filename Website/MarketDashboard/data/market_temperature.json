@@ -1,13 +1,13 @@
 {
-  "scan_time": "2026-10-21T14:50:38.941353+00:00",
+  "scan_time": "2026-10-22T00:35:07.483966+00:00",
   "next_scan_info": "Weekdays at 9:50am and 10:50am ET",
-  "composite_score": 37.0,
+  "composite_score": 37.3,
   "composite_label": "Cool",
   "components": {
     "risk_posture": {
-      "raw": -4.05,
-      "raw_label": "-4.0pt Risk-off",
-      "score": 25.7,
+      "raw": -3.71,
+      "raw_label": "-3.7pt Risk-off",
+      "score": 27.7,
       "label": "Cool",
       "description": "Cyclical sectors' 1-month strength against defensives, from the lab's own Sector Rotation engine. Cyclicals leading means risk appetite is on.",
       "title": "Risk Posture",
@@ -16,10 +16,10 @@
       "group": "risk_appetite"
     },
     "trend": {
-      "raw": 0.48,
-      "raw_label": "+0.5% vs 50-DMA",
-      "score": 23.2,
-      "label": "Cool",
+      "raw": 0.23,
+      "raw_label": "+0.2% vs 50-DMA",
+      "score": 18.8,
+      "label": "Cold",
       "description": "The S&P against its 50-day average plus the last two weeks' thrust, percentile-ranked over three years.",
       "title": "Trend Heat",
       "subtitle": "S&P vs 50-DMA + thrust",
@@ -27,10 +27,10 @@
       "group": "trend_participation"
     },
     "insider": {
-      "raw": 0.2593,
-      "raw_label": "Quiet \u00b7 265 of 1,022 buying",
-      "percentile": 18.1,
-      "score": 81.9,
+      "raw": 0.2611,
+      "raw_label": "Quiet \u00b7 270 of 1,034 buying",
+      "percentile": 19.0,
+      "score": 81.0,
       "label": "Hot",
       "description": "Share of Form 4 filers that were buying, ranked against five years. Inverted: insiders buy weakness and go quiet into strength, so a quiet tape reads hot.",
       "title": "Insider Breadth",
@@ -39,48 +39,48 @@
       "group": "sentiment"
     },
     "growth_value": {
-      "raw": 0.4776,
-      "raw_label": "Value leading, -1.1% in 3mo",
-      "percentile": 6.5,
-      "score": 22.6,
-      "label": "Cool",
-      "description": "Russell 1000 Growth against Value: 6.5th percentile of three years, -1.1% this quarter. Growth leading means investors are paying up for future earnings.",
+      "raw": 0.475,
+      "raw_label": "Value leading, -3.0% in 3mo",
+      "percentile": 3.9,
+      "score": 16.9,
+      "label": "Cold",
+      "description": "Russell 1000 Growth against Value: 3.9th percentile of three years, -3.0% this quarter. Growth leading means investors are paying up for future earnings.",
       "title": "Growth vs Value",
       "subtitle": "IWF / IWD style ratio",
       "weight": 0.1,
       "group": "risk_appetite"
     },
     "breadth_50": {
-      "raw": 56.4,
-      "raw_label": "56.4% above 50-DMA",
-      "above_50dma": 282,
+      "raw": 53.4,
+      "raw_label": "53.4% above 50-DMA",
+      "above_50dma": 267,
       "total": 500,
-      "score": 56.4,
+      "score": 53.4,
       "label": "Neutral",
-      "description": "282 of 500 S&P 500 stocks are above their 50-day average. This is the fast participation read, and it swings with every dip and rally.",
+      "description": "267 of 500 S&P 500 stocks are above their 50-day average. This is the fast participation read, and it swings with every dip and rally.",
       "title": "Fast Breadth",
       "subtitle": "% S&P 500 > 50-DMA",
       "weight": 0.1,
       "group": "trend_participation"
     },
     "new_highs": {
-      "raw": 16.0,
-      "raw_label": "102 hi / 22 lo",
-      "near_high": 102,
-      "near_low": 22,
+      "raw": 16.6,
+      "raw_label": "101 hi / 18 lo",
+      "near_high": 101,
+      "near_low": 18,
       "total": 500,
-      "score": 66.0,
+      "score": 66.6,
       "label": "Warm",
-      "description": "102 stocks near a 52-week high vs 22 near a low, within 5%. A surge of highs signals euphoria, a wave of lows signals stress.",
+      "description": "101 stocks near a 52-week high vs 18 near a low, within 5%. A surge of highs signals euphoria, a wave of lows signals stress.",
       "title": "Net New Highs",
       "subtitle": "52wk highs \u2212 lows",
       "weight": 0.1,
       "group": "trend_participation"
     },
     "fear_greed": {
-      "raw": 29.5,
-      "raw_label": "29 (Fear)",
-      "score": 29.5,
+      "raw": 31.4,
+      "raw_label": "31 (Fear)",
+      "score": 31.4,
       "label": "Cool",
       "description": "CNN's composite of seven short-term sentiment signals, including momentum, breadth, put/call, junk bond demand and volatility.",
       "title": "Fear & Greed",
@@ -89,48 +89,27 @@
       "group": "sentiment"
     },
     "breadth": {
-      "raw": 57.0,
-      "raw_label": "57.0% above 200-DMA",
-      "above_200dma": 285,
+      "raw": 55.8,
+      "raw_label": "55.8% above 200-DMA",
+      "above_200dma": 279,
       "total": 500,
       "score": 45,
       "label": "Neutral",
-      "description": "285 of 500 S&P 500 stocks above their 200-day average. Healthy markets run 50\u201375%; above 90% is euphoric.",
+      "description": "279 of 500 S&P 500 stocks above their 200-day average. Healthy markets run 50\u201375%; above 90% is euphoric.",
       "title": "Structural Breadth",
       "subtitle": "% S&P 500 > 200-DMA",
       "weight": 0.05,
       "group": "trend_participation"
     },
-    "credit": {
-      "raw": 3.33,
-      "raw_label": "3.33% HY OAS",
-      "percentile": 81.9,
-      "score": 18.1,
-      "label": "Cold",
-      "description": "Extra yield demanded to hold junk bonds over Treasuries. Tight means complacency, wide means stress. Inverted, so tight scores hot.",
-      "title": "Credit Spreads",
-      "subtitle": "High-Yield OAS",
-      "weight": 0.1,
-      "group": "credit_rates"
-    },
-    "yield_curve": {
-      "raw": 0.33,
-      "raw_label": "+0.33% (10Y\u22122Y)",
-      "score": 52,
-      "label": "Neutral",
-      "description": "10-year minus 2-year Treasury. A steep curve is early-cycle and healthy. A flat or inverted one marks a late-cycle market.",
-      "title": "Yield Curve",
-      "subtitle": "10Y \u2212 2Y Treasury",
-      "weight": 0.05,
-      "group": "credit_rates"
-    }
+    "credit": null,
+    "yield_curve": null
   },
   "groups": [
     {
       "key": "trend_participation",
       "title": "Trend & Participation",
       "blurb": "Is the market rising, and are enough stocks coming with it? Trend heat plus three breadth reads, fast to slow.",
-      "score": 44.9,
+      "score": 42.7,
       "label": "Neutral",
       "weight": 0.4,
       "weight_live": 0.4,
@@ -152,7 +131,7 @@
       "key": "risk_appetite",
       "title": "Risk Appetite",
       "blurb": "Where money is positioned. Cyclicals against defensives, and whether investors are paying up for growth or retreating to value.",
-      "score": 24.5,
+      "score": 23.4,
       "label": "Cool",
       "weight": 0.25,
       "weight_live": 0.25,
@@ -170,7 +149,7 @@
       "key": "sentiment",
       "title": "Sentiment",
       "blurb": "What investors say they feel, against what insiders quietly do. The insider leg is inverted, because insiders buy weakness and go quiet into strength.",
-      "score": 42.6,
+      "score": 43.8,
       "label": "Neutral",
       "weight": 0.2,
       "weight_live": 0.2,
@@ -188,20 +167,20 @@
       "key": "credit_rates",
       "title": "Credit & Rates",
       "blurb": "The slower backdrop. Tight credit spreads signal complacency, so that leg is inverted too, and the curve marks cycle stage.",
-      "score": 29.4,
-      "label": "Cool",
+      "score": null,
+      "label": null,
       "weight": 0.15,
-      "weight_live": 0.15,
+      "weight_live": 0.0,
       "members": [
         "credit",
         "yield_curve"
       ],
-      "members_live": [
+      "members_live": [],
+      "members_missing": [
         "credit",
         "yield_curve"
-      ],
-      "members_missing": []
+      ]
     }
   ],
-  "coverage": 1.0
+  "coverage": 0.85
 }
