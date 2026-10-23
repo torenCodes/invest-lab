@@ -1,8 +1,40 @@
 {
-  "scan_time": "2026-10-23T20:31:29.796744+00:00",
+  "scan_time": "2026-10-23T22:05:14.703101+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 23,
+  "total_scanned": 22,
   "day_trades": [
+    {
+      "ticker": "CART",
+      "name": "Maplebear Inc",
+      "sector": "Retail",
+      "current_price": 56.44,
+      "change_pct": 9.2105,
+      "high": 57.21,
+      "low": 50.49,
+      "open": 51.37,
+      "prev_close": 51.68,
+      "score": 48,
+      "signals": [
+        "Top gainer (+9.2%)",
+        "High volume",
+        "Strong move (+9.2%)",
+        "Yahoo trending (#7)",
+        "Closing strong",
+        "Sector leader (Retail)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 11963923225.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950400489496.png",
+      "weburl": "https://www.instacart.com/",
+      "yahoo_trending_rank": 7,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 68
+    },
     {
       "ticker": "CCI",
       "name": "Crown Castle Inc",
@@ -41,6 +73,43 @@
       "score_normalized": 63
     },
     {
+      "ticker": "NTSK",
+      "name": "Netskope Inc",
+      "sector": "Technology",
+      "current_price": 24.28,
+      "change_pct": 9.3694,
+      "high": 24.4,
+      "low": 21.83,
+      "open": 22,
+      "prev_close": 22.2,
+      "score": 39,
+      "signals": [
+        "Top gainer (+9.4%)",
+        "High volume",
+        "Strong move (+9.4%)",
+        "Yahoo trending (#18)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 9070647775.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950402593546.png",
+      "weburl": "https://www.netskope.com/",
+      "yahoo_trending_rank": 18,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.03,
+          "estimate": -0.07,
+          "beat": true,
+          "surprise_pct": 56.4
+        }
+      },
+      "score_normalized": 55
+    },
+    {
       "ticker": "RHI",
       "name": "Robert Half Inc",
       "sector": "Professional Services",
@@ -50,12 +119,11 @@
       "low": 41,
       "open": 41.945,
       "prev_close": 37.68,
-      "score": 39,
+      "score": 31,
       "signals": [
         "Top gainer (+21.7%)",
         "High volume",
         "Strong move (+21.7%)",
-        "Yahoo trending (#11)",
         "Closing strong"
       ],
       "reddit_mentions": 0,
@@ -64,7 +132,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/RHI.png",
       "weburl": "https://www.roberthalf.com/",
-      "yahoo_trending_rank": 11,
+      "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -75,49 +143,14 @@
           "surprise_pct": 3.8
         }
       },
-      "score_normalized": 55
+      "score_normalized": 44
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
     {
-      "ticker": "FTRE",
-      "mentions": 8,
-      "name": "Fortrea Holdings Inc",
-      "sector": "Life Sciences Tools & Services",
-      "current_price": 23.63,
-      "change_pct": -1.2124,
-      "high": 24.048,
-      "low": 23.4241,
-      "open": 23.92,
-      "prev_close": 23.92,
-      "market_cap": 2274791971.0,
-      "score": 0,
-      "signals": [
-        "News buzz (8 mentions)"
-      ],
-      "reddit_mentions": 8,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "reddit": 8,
-        "st_bull": 100,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "SPCX",
-      "mentions": 3,
+      "mentions": 5,
       "name": "Space Exploration Technologies Corp",
       "sector": "Telecommunication",
       "current_price": 147.49,
@@ -129,16 +162,16 @@
       "market_cap": 1943208390381.0,
       "score": 0,
       "signals": [
-        "News buzz (3 mentions)"
+        "News buzz (5 mentions)"
       ],
-      "reddit_mentions": 3,
+      "reddit_mentions": 5,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -52,
-        "reddit": 60,
-        "st_bull": 93,
+        "trend_pct": -54,
+        "reddit": 56,
+        "st_bull": 79,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -158,28 +191,61 @@
       "score_normalized": 0
     },
     {
-      "ticker": "JNJ",
-      "mentions": 3,
-      "name": "Johnson & Johnson",
-      "sector": "Pharmaceuticals",
-      "current_price": 263.81,
-      "change_pct": -1.42,
-      "high": 266.025,
-      "low": 262.4,
-      "open": 265.82,
-      "prev_close": 267.61,
-      "market_cap": 644220274851.0001,
+      "ticker": "GOFPY",
+      "mentions": 5,
+      "name": "Allwyn AG",
+      "sector": "Hotels, Restaurants & Leisure",
+      "current_price": 6.6148,
+      "change_pct": -1.8576,
+      "high": 6.76,
+      "low": 6.6,
+      "open": 6.6375,
+      "prev_close": 6.74,
+      "market_cap": 9279526611.0,
       "score": 0,
       "signals": [
-        "News buzz (3 mentions)"
+        "News buzz (5 mentions)"
       ],
-      "reddit_mentions": 3,
+      "reddit_mentions": 5,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "reddit": 3,
-        "st_bull": 100,
+        "reddit": 5,
+        "sources": [
+          "Reddit"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "TSLA",
+      "mentions": 4,
+      "name": "Tesla Inc",
+      "sector": "Automobiles",
+      "current_price": 372.22,
+      "change_pct": -0.63,
+      "high": 377.32,
+      "low": 365.27,
+      "open": 373.2,
+      "prev_close": 374.58,
+      "market_cap": 1480613634458.0002,
+      "score": 0,
+      "signals": [
+        "News buzz (4 mentions)"
+      ],
+      "reddit_mentions": 4,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": -63,
+        "reddit": 59,
+        "st_bull": 77,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -190,10 +256,10 @@
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 2.59,
-          "estimate": 2.56,
+          "actual": 0.48,
+          "estimate": 0.44,
           "beat": true,
-          "surprise_pct": 1.0
+          "surprise_pct": 10.1
         }
       },
       "score_normalized": 0
@@ -210,11 +276,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 208,
+      "mentions": 192,
       "social": {
-        "trend_pct": -9,
-        "reddit": 208,
-        "st_bull": 76,
+        "trend_pct": -28,
+        "reddit": 192,
+        "st_bull": 75,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -245,10 +311,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 109,
+      "mentions": 101,
       "social": {
-        "trend_pct": 56,
-        "reddit": 109,
+        "trend_pct": 23,
+        "reddit": 101,
         "sources": [
           "Reddit"
         ]
@@ -277,10 +343,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 106,
+      "mentions": 86,
       "social": {
-        "trend_pct": 83,
-        "reddit": 106,
+        "trend_pct": -26,
+        "reddit": 86,
         "sources": [
           "Reddit"
         ]
@@ -298,7 +364,19 @@
       "score_normalized": 0
     }
   ],
-  "chatter_emerging": [],
+  "chatter_emerging": [
+    {
+      "ticker": "CRDO",
+      "name": "Credo Technology Group Holding Ltd",
+      "sector": "Semiconductors",
+      "mentions": 22,
+      "prev": 3,
+      "trend_pct": 633,
+      "current_price": 147.29,
+      "change_pct": -9.5104,
+      "market_cap": 30592934748.999996
+    }
+  ],
   "sector_rotation": {
     "sectors": [
       {
@@ -611,7 +689,20 @@
             }
           ]
         },
-        "top_stocks": [],
+        "top_stocks": [
+          {
+            "ticker": "NXH",
+            "name": "Bed Bath & Beyond Inc",
+            "change_pct": 10.8108,
+            "price": 1.64
+          },
+          {
+            "ticker": "CART",
+            "name": "Maplebear Inc",
+            "change_pct": 9.2105,
+            "price": 56.44
+          }
+        ],
         "rotation": -2
       },
       {
@@ -663,10 +754,10 @@
         },
         "top_stocks": [
           {
-            "ticker": "FCNCA",
-            "name": "First Citizens BancShares Inc (Delaware)",
-            "change_pct": 8.152,
-            "price": 2375.84
+            "ticker": "UWMC",
+            "name": "UWM Holdings Corp",
+            "change_pct": 26.087,
+            "price": 1.45
           }
         ],
         "rotation": 0
@@ -730,12 +821,6 @@
             "name": "American Tower Corp",
             "change_pct": 4.0756,
             "price": 188.97
-          },
-          {
-            "ticker": "SBAC",
-            "name": "SBA Communications Corp",
-            "change_pct": 3.5652,
-            "price": 184.75
           }
         ],
         "rotation": 5
@@ -787,14 +872,7 @@
             }
           ]
         },
-        "top_stocks": [
-          {
-            "ticker": "GPUS",
-            "name": "Hyperscale Data Inc",
-            "change_pct": 34.0476,
-            "price": 0.1689
-          }
-        ],
+        "top_stocks": [],
         "rotation": -1
       },
       {
@@ -846,6 +924,12 @@
         },
         "top_stocks": [
           {
+            "ticker": "NTSK",
+            "name": "Netskope Inc",
+            "change_pct": 9.3694,
+            "price": 24.28
+          },
+          {
             "ticker": "CRWD",
             "name": "CrowdStrike Holdings Inc",
             "change_pct": 8.25,
@@ -856,12 +940,6 @@
             "name": "Zscaler Inc",
             "change_pct": 7.3141,
             "price": 255.15
-          },
-          {
-            "ticker": "NET",
-            "name": "Cloudflare Inc",
-            "change_pct": 7.2857,
-            "price": 325.73
           }
         ],
         "rotation": 1
@@ -939,6 +1017,163 @@
   },
   "reddit_feed": [
     {
+      "id": "a3bde6a72fe483cab42e6368bcb2e43b2540fbc83252e19c0917e34e5a16c0eb",
+      "title": "Elon Musk Says a SpaceX-Tesla Merger Is a \u201cGood Idea.\u201d Here\u2019s What Stands in the Way.",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "SPCX",
+        "TSLA"
+      ],
+      "hours_ago": 0.5,
+      "url": "https://www.fool.com/investing/2026/10/23/elon-musk-says-a-spacex-tesla-merger-is-a-good-idea-here-s-what-stands-in-the-way/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "SPCX",
+        "TSLA"
+      ]
+    },
+    {
+      "id": "424b20133bae1fcd48a2a11c29d4e41aae3c515f5921f5f6866a41d3c9ddea50",
+      "title": "Stock Market Today, Oct. 23: SpaceX Achieves Rare Double Upgrade to Buy on AI Growth",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "SPCX",
+        "RKLB",
+        "ASTS"
+      ],
+      "hours_ago": 1.1,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/10/23/stock-market-today-oct-23-spacex-achieves-rare-double-upgrade-to-buy-on-ai-growth/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "SPCX"
+      ]
+    },
+    {
+      "id": "0d0a844b77d0cb32b5b58ff4221751497dd2e42fff5696e6a6808f4b44fb0dfe",
+      "title": "Stock Market Today, Oct. 23: Bloom Energy Falls on Cash Flow Concerns Despite Record Q3 Revenue",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "BE",
+        "PLUG",
+        "FCEL"
+      ],
+      "hours_ago": 1.3,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/10/23/stock-market-today-oct-23-bloom-energy-falls-on-cash-flow-concerns-despite-record-q3-revenue/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "BE"
+      ]
+    },
+    {
+      "id": "d608781e88275bffaf380da3dd34cbb0ab19e3978dcdaaa3a19411b154e3fbe6",
+      "title": "Prediction: Nvidia Will Outperform Broadcom Over the Next 5 Years",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "NVDA",
+        "AVGO",
+        "AMZN",
+        "TSLA"
+      ],
+      "hours_ago": 1.3,
+      "url": "https://www.fool.com/investing/2026/10/23/prediction-nvidia-will-outperform-broadcom-over-the-next-5-years/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA",
+        "TSLA"
+      ]
+    },
+    {
+      "id": "f501d062314705202e8713652806cfce3719c67133b98b33dce84ed3db35223d",
+      "title": "Del Valle ISD Education Foundation in Austin gewinnt den F1\u00ae Allwyn Global Community Award und er\u00f6ffnet 12.000 Sch\u00fclerin",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "GOFPY",
+        "FWONA",
+        "LLYVA",
+        "LLYVK"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387615/0/de/del-valle-isd-education-foundation-in-austin-gewinnt-den-f1-allwyn-global-community-award-und-er%C3%B6ffnet-12-000-sch%C3%BClerinnen-und-sch%C3%BClern-wege-in-mint-berufe.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOFPY"
+      ]
+    },
+    {
+      "id": "f11afb2e5fd4df76f53ed1dd00065558e9c07e29f37991da9128fe9aa58ae1e8",
+      "title": "\u5967\u65af\u6c40 Del Valle ISD Education Foundation \u69ae\u7372 F1\u00ae Allwyn \u5168\u7403\u793e\u5340\u5927\u734e\uff0c\u5354\u52a9 1.2 \u842c\u540d\u5b78\u751f\u958b\u62d3 STEM \u8077\u696d\u51fa\u8def",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "GOFPY",
+        "FWONA",
+        "LLYVA",
+        "LLYVK"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387615/0/zh-hant/%E5%A5%A7%E6%96%AF%E6%B1%80-del-valle-isd-education-foundation-%E6%A6%AE%E7%8D%B2-f1-allwyn-%E5%85%A8%E7%90%83%E7%A4%BE%E5%8D%80%E5%A4%A7%E7%8D%8E-%E5%8D%94%E5%8A%A9-1-2-%E8%90%AC%E5%90%8D%E5%AD%B8%E7%94%9F%E9%96%8B%E6%8B%93-stem-%E8%81%B7%E6%A5%AD%E5%87%BA%E8%B7%AF.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOFPY"
+      ]
+    },
+    {
+      "id": "e55c4220309d0e44a95692d9b283723d33489ac0b2d20ff721c469fec64e4de7",
+      "title": "\u00c0 Austin, le prix F1\u00ae Allwyn Global Community Award r\u00e9compense la Del Valle ISD Education Foundation et favorise l\u2019acc\u00e8s",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "FWONA",
+        "LLYVA",
+        "LLYVK",
+        "GOFPY"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387615/0/fr/%C3%A0-austin-le-prix-f1-allwyn-global-community-award-r%C3%A9compense-la-del-valle-isd-education-foundation-et-favorise-l-acc%C3%A8s-de-12-000-%C3%A9l%C3%A8ves-aux-carri%C3%A8res-scientifiques-et-technologique.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOFPY"
+      ]
+    },
+    {
+      "id": "8f73d03b785e50ffaddde67d61245e530e165f0f7656206bbf13a34c5066ec57",
+      "title": "\ubbf8\uad6d \uc624\uc2a4\ud2f4 \ub378 \ubc1c\ub808 \ub3c5\ub9bd\uad50\uc721\uad6c \uad50\uc721\uc7ac\ub2e8, \u2018F1\u00ae \uc62c\uc708 \uae00\ub85c\ubc8c \ucee4\ubba4\ub2c8\ud2f0 \uc5b4\uc6cc\ub4dc\u2019 \uc218\uc0c1\u2026\ud559\uc0dd 1\ub9cc2,000\uba85\uc758 STEM \ubd84\uc57c \uc9c4\ub85c \uac1c\ubc1c \uc9c0\uc6d0 \ud655\ub300",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "GOFPY"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387615/0/ko/%EB%AF%B8%EA%B5%AD-%EC%98%A4%EC%8A%A4%ED%8B%B4-%EB%8D%B8-%EB%B0%9C%EB%A0%88-%EB%8F%85%EB%A6%BD%EA%B5%90%EC%9C%A1%EA%B5%AC-%EA%B5%90%EC%9C%A1%EC%9E%AC%EB%8B%A8-f1-%EC%98%AC%EC%9C%88-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0-%EC%96%B4%EC%9B%8C%EB%93%9C-%EC%88%98%EC%83%81-%ED%95%99%EC%83%9D-1%EB%A7%8C2-000%EB%AA%85%EC%9D%98-stem-%EB%B6%84%EC%95%BC-%EC%A7%84%EB%A1%9C-%EA%B0%9C%EB%B0%9C-%EC%A7%80%EC%9B%90-%ED%99%95%EB%8C%80.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOFPY"
+      ]
+    },
+    {
+      "id": "5b2a698c078a2a387fe84d1cbb47078f6a394ae04d2647c22708438add0cfdc4",
+      "title": "\u5965\u65af\u6c40 Del Valle ISD Education Foundation \u8363\u83b7 F1\u00ae Allwyn \u5168\u7403\u793e\u533a\u5956\uff0c\u52a9\u529b 12,000 \u540d\u5b66\u751f\u5f00\u542f STEM \u804c\u4e1a\u4e4b\u8def",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "GOFPY",
+        "FWONA",
+        "LLYVA",
+        "LLYVK"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387615/0/zh-hans/%E5%A5%A5%E6%96%AF%E6%B1%80-del-valle-isd-education-foundation-%E8%8D%A3%E8%8E%B7-f1-allwyn-%E5%85%A8%E7%90%83%E7%A4%BE%E5%8C%BA%E5%A5%96-%E5%8A%A9%E5%8A%9B-12-000-%E5%90%8D%E5%AD%A6%E7%94%9F%E5%BC%80%E5%90%AF-stem-%E8%81%8C%E4%B8%9A%E4%B9%8B%E8%B7%AF.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOFPY"
+      ]
+    },
+    {
       "id": "98c83287a45619b31d7559232d3cadcf0eb0c14af817f1064771e8a1c7642aa3",
       "title": "Not Starlink. Not Starship. Not Grok. $561 Million of SpaceX's $4.4 Billion Profit Came From an Unexpected Source.",
       "subreddit": "The Motley Fool",
@@ -946,7 +1181,7 @@
       "tickers": [
         "SPCX"
       ],
-      "hours_ago": 1.0,
+      "hours_ago": 2.6,
       "url": "https://www.fool.com/investing/2026/10/23/not-starlink-not-starship-not-grok-561-million-of/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -965,169 +1200,11 @@
         "VZ",
         "TBB"
       ],
-      "hours_ago": 2.0,
+      "hours_ago": 3.6,
       "url": "https://www.fool.com/investing/2026/10/23/spacex-just-made-cell-towers-cool-again-verizon-at-and-t-and-t-mobile-are-paying-the-price/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "SPCX"
-      ]
-    },
-    {
-      "id": "d7eae03377134bf1a457c653840318bd750a5dc718cfe52c36e01d2e0f0e8fc7",
-      "title": "SpaceX Burned More Than $9.9 Billion of Free Cash Flow in a Single Quarter. Here's How Long Its $85.7 Billion IPO War Ch",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "SPCX",
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN"
-      ],
-      "hours_ago": 2.3,
-      "url": "https://www.fool.com/investing/2026/10/23/spacex-burned-more-than-99-billion-of-free-cash-fl/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "SPCX"
-      ]
-    },
-    {
-      "id": "9444b70ce367c1da6f2a1b0c6c8946b7de356e6f2114c6b62ec03e4f96cf586c",
-      "title": "Bloom Energy Stock Sinks Despite Record Revenue and a Stellar Outlook. Is It Time to Buy?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "BE",
-        "ORCL",
-        "NVDA",
-        "BAM"
-      ],
-      "hours_ago": 2.8,
-      "url": "https://www.fool.com/investing/2026/10/23/bloom-energy-stock-sinks-despite-record-revenue-and-a-stellar-outlook-is-it-time-to-buy/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "BE",
-        "NVDA"
-      ]
-    },
-    {
-      "id": "718e3906b6448200e44335f64cdbd3ed5e3bf31257a4f0df22ca7242ffbfa1aa",
-      "title": "CHMP empfiehlt die Zulassung von Johnson & Johnsons TALVEY\u00ae\u25bc (Talquetamab) plus Daratumumab zur Behandlung des rezidivie",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "JNJ"
-      ],
-      "hours_ago": 2.8,
-      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387565/0/de/chmp-empfiehlt-die-zulassung-von-johnson-johnsons-talvey-talquetamab-plus-daratumumab-zur-behandlung-des-rezidivierten-refrakt%C3%A4ren-multiplen-myeloms-in-einer-fr%C3%BCheren-therapielinie.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "JNJ"
-      ]
-    },
-    {
-      "id": "ce7d9f45ef89a6cd24fa803c74b2cf71d6e517d4c4e8fff09f8f17914b6caba5",
-      "title": "Le CHMP recommande l\u2019approbation de TALVEY\u00ae\u25bc (talquetamab) de Johnson & Johnson, en association avec le daratumumab, dan",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "JNJ"
-      ],
-      "hours_ago": 2.8,
-      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387564/0/fr/le-chmp-recommande-l-approbation-de-talvey-talquetamab-de-johnson-johnson-en-association-avec-le-daratumumab-dans-une-ligne-de-traitement-plus-pr%C3%A9coce-du-my%C3%A9lome-multiple-en-rechut.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "JNJ"
-      ]
-    },
-    {
-      "id": "d6a66d5498fcf11718a897b8ae8aa837136cc940bec16c5960d1a65f3a0dbc37",
-      "title": "Il CHMP raccomanda l'approvazione di TALVEY\u00ae\u25bc (talquetamab) di Johnson & Johnson in combinazione con daratumumab nel tra",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "JNJ"
-      ],
-      "hours_ago": 2.9,
-      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387563/0/it/il-chmp-raccomanda-l-approvazione-di-talvey-talquetamab-di-johnson-johnson-in-combinazione-con-daratumumab-nel-trattamento-in-una-linea-terapeutica-pi%C3%B9-precoce-del-mieloma-multiplo.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "JNJ"
-      ]
-    },
-    {
-      "id": "d1914569e7f985754f3a3875382ae270611664cd895bdf17af3cc9a63f99b7cd",
-      "title": "Collaboration entre Fortrea et Omico pour faire progresser le d\u00e9veloppement de m\u00e9dicaments oncologiques bas\u00e9s sur des bi",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "FTRE"
-      ],
-      "hours_ago": 3.6,
-      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387552/0/fr/collaboration-entre-fortrea-et-omico-pour-faire-progresser-le-d%C3%A9veloppement-de-m%C3%A9dicaments-oncologiques-bas%C3%A9s-sur-des-biomarqueurs.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "FTRE"
-      ]
-    },
-    {
-      "id": "bc3b8949792d9048bbf1c5811567cdae7320e0c15ff0554c0d1fb9ae8d6fb9a0",
-      "title": "\u05e9\u05d9\u05ea\u05d5\u05e3 \u05e4\u05e2\u05d5\u05dc\u05d4 \u05d1\u05d9\u05df Fortrea \u05dc-Omico \u05dc\u05e7\u05d9\u05d3\u05d5\u05dd \u05e4\u05d9\u05ea\u05d5\u05d7 \u05ea\u05e8\u05d5\u05e4\u05d5\u05ea \u05d0\u05d5\u05e0\u05e7\u05d5\u05dc\u05d5\u05d2\u05d9\u05d5\u05ea \u05d4\u05de\u05d1\u05d5\u05e1\u05e1\u05d5\u05ea \u05e2\u05dc \u05e1\u05de\u05e0\u05d9\u05dd \u05d1\u05d9\u05d5\u05dc\u05d5\u05d2\u05d9\u05d9\u05dd",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "FTRE"
-      ],
-      "hours_ago": 3.6,
-      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387552/0/he/%D7%A9%D7%99%D7%AA%D7%95%D7%A3-%D7%A4%D7%A2%D7%95%D7%9C%D7%94-%D7%91%D7%99%D7%9F-fortrea-%D7%9C-omico-%D7%9C%D7%A7%D7%99%D7%93%D7%95%D7%9D-%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%AA%D7%A8%D7%95%D7%A4%D7%95%D7%AA-%D7%90%D7%95%D7%A0%D7%A7%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%91%D7%95%D7%A1%D7%A1%D7%95%D7%AA-%D7%A2%D7%9C-%D7%A1%D7%9E%D7%A0%D7%99%D7%9D-%D7%91%D7%99%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%99%D7%9D.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "FTRE"
-      ]
-    },
-    {
-      "id": "b9085a1d669164a1e112bfed5e0cfec6e02dead0ed8b578e9db93badfb78ba46",
-      "title": "Fortrea und Omico kooperieren zur F\u00f6rderung der biomarkergest\u00fctzten Entwicklung von Krebsmedikamenten",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "FTRE"
-      ],
-      "hours_ago": 3.6,
-      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387552/0/de/fortrea-und-omico-kooperieren-zur-f%C3%B6rderung-der-biomarkergest%C3%BCtzten-entwicklung-von-krebsmedikamenten.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "FTRE"
-      ]
-    },
-    {
-      "id": "ae9548bcfdc7214ee267618266cd8dda37e39d726b5d633b11a301293f3dbf93",
-      "title": "\ud3ec\ud2b8\ub9ac\uc544\uc640 \uc624\ubbf8\ucf54, \ubc14\uc774\uc624\ub9c8\ucee4 \uae30\ubc18 \ud56d\uc554 \uc2e0\uc57d \uac1c\ubc1c \ubc1c\uc804 \uc704\ud55c \ud611\ub825 \ucd94\uc9c4",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "FTRE"
-      ],
-      "hours_ago": 3.6,
-      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387552/0/ko/%ED%8F%AC%ED%8A%B8%EB%A6%AC%EC%95%84%EC%99%80-%EC%98%A4%EB%AF%B8%EC%BD%94-%EB%B0%94%EC%9D%B4%EC%98%A4%EB%A7%88%EC%BB%A4-%EA%B8%B0%EB%B0%98-%ED%95%AD%EC%95%94-%EC%8B%A0%EC%95%BD-%EA%B0%9C%EB%B0%9C-%EB%B0%9C%EC%A0%84-%EC%9C%84%ED%95%9C-%ED%98%91%EB%A0%A5-%EC%B6%94%EC%A7%84.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "FTRE"
-      ]
-    },
-    {
-      "id": "742c398fe70a0e16d43dce27fceb39dc92b0a5111d12c51da54df266e80d0986",
-      "title": "Fortrea \u8207 Omico \u651c\u624b\u5408\u4f5c\uff0c\u63a8\u52d5\u751f\u7269\u6a19\u8a18\u4e3b\u5c0e\u7684\u816b\u7624\u85e5\u7269\u958b\u767c",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "FTRE"
-      ],
-      "hours_ago": 3.6,
-      "url": "https://www.globenewswire.com/news-release/2026/10/23/3387552/0/zh-hant/fortrea-%E8%88%87-omico-%E6%94%9C%E6%89%8B%E5%90%88%E4%BD%9C-%E6%8E%A8%E5%8B%95%E7%94%9F%E7%89%A9%E6%A8%99%E8%A8%98%E4%B8%BB%E5%B0%8E%E7%9A%84%E8%85%AB%E7%98%A4%E8%97%A5%E7%89%A9%E9%96%8B%E7%99%BC.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "FTRE"
       ]
     }
   ]
