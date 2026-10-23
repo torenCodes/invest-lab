@@ -1,36 +1,36 @@
 {
-  "scan_time": "2026-10-22T20:30:32.862884+00:00",
+  "scan_time": "2026-10-23T00:11:59.695838+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Risk-Off",
-    "score": -3,
-    "headline": "Today's tape is working against the longer-term trend: SPY -1.18% and off its highs, with only 6 of 11 sectors green. Trend and volatility are working against momentum longs, a defensive backdrop where smaller size and mean-reversion setups make more sense than chasing strength.",
+    "verdict": "Favorable",
+    "score": 6,
+    "headline": "Today's tape is confirming the trend: SPY +0.53% and closing strong. The trend is up and volatility is manageable, a constructive backdrop where momentum and breakout setups have room to run.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-1.18%",
-        "read": "Weak",
-        "tone": "bad"
+        "value": "+0.53%",
+        "read": "Strong",
+        "tone": "good"
       },
       {
         "label": "Market trend",
         "sub": "SPY vs moving averages",
-        "value": "Below 50-day",
-        "read": "Downtrend",
-        "tone": "bad"
+        "value": "Above 50-day",
+        "read": "Uptrend",
+        "tone": "good"
       },
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-1.0%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "+0.5%",
+        "read": "Firm",
+        "tone": "good"
       },
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "+5%",
+        "value": "+9%",
         "read": "Normal",
         "tone": "neutral"
       },
@@ -49,23 +49,23 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-10-22T20:30:34.923089+00:00",
+    "updated": "2026-10-23T00:12:01.387967+00:00",
     "session": {
-      "change_pct": -1.18,
-      "from_open_pct": -0.31,
-      "range_pos": 0.427,
-      "sectors_green": 6,
-      "sectors_total": 11,
-      "live": true,
-      "detail": "-1.18% vs prior close \u00b7 mid-range (43% of range) \u00b7 6/11 sectors green"
+      "change_pct": 0.53,
+      "from_open_pct": 0.25,
+      "range_pos": 0.776,
+      "sectors_green": null,
+      "sectors_total": null,
+      "live": false,
+      "detail": "+0.53% vs prior close \u00b7 at the highs (78% of range) \u00b7 last completed session"
     },
     "participation": {
-      "ratio": 1.053,
+      "ratio": 1.095,
       "expected": 0.99,
-      "adjusted": 1.064,
+      "adjusted": 1.106,
       "direction": "building",
-      "drift_pct": 30.6,
-      "detail": "43M vs 41M avg"
+      "drift_pct": 34.9,
+      "detail": "45M vs 41M avg"
     }
   }
 }
