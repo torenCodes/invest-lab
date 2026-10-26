@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-10-26T21:26:46.680701",
-  "total_transactions": 300,
-  "date_range": "2026-09-24 \u2013 2026-10-26",
+  "scan_time": "2026-10-26T22:05:23.794534",
+  "total_transactions": 302,
+  "date_range": "2026-09-24 \u2013 2026-10-23",
   "min_value": 25000,
   "nominees": [
     {
@@ -3275,6 +3275,61 @@
         "Top quartile of its 52-week range"
       ],
       "story": "BUKS: Daly Joseph Patrick (Dir, 10%) bought."
+    },
+    {
+      "ticker": "THRM",
+      "insider": "Mascarenas Paul Anthony",
+      "title": "Dir",
+      "date": "2026-10-23",
+      "price": 26.63,
+      "qty": 25000,
+      "value": 662600.0,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": true,
+      "company": "Gentherm Incorporated",
+      "sector": "Consumer Cyclical",
+      "current_price": 28.59,
+      "change_pct": -0.03,
+      "market_cap": 1557439744,
+      "week52_high": 48.35,
+      "week52_low": 25.31,
+      "insider_avg_cost": 26.5,
+      "vs_insider_pct": 7.9,
+      "max_delta_own": 747.0,
+      "insiders": [
+        {
+          "name": "Mascarenas Paul Anthony",
+          "title": "Dir",
+          "date": "2026-10-23",
+          "price": 26.63,
+          "qty": 20000,
+          "value": 532600.0,
+          "is_csuite": false,
+          "owned": 22677,
+          "delta_own": 747.0
+        },
+        {
+          "name": "Presley William T.",
+          "title": "Pres, CEO",
+          "date": "2026-10-23",
+          "price": 26.0,
+          "qty": 5000,
+          "value": 130000.0,
+          "is_csuite": true,
+          "owned": 183314,
+          "delta_own": 3.0
+        }
+      ],
+      "conviction_score": 42.0,
+      "tier": "B",
+      "signals": [
+        "2 insiders buying, but the stock is well off its highs",
+        "Insider more than doubled their stake",
+        "Bought this week",
+        "$663K total"
+      ],
+      "story": "THRM: Two insiders bought including the Pres, CEO, $663K total."
     },
     {
       "ticker": "IAM",
@@ -7407,11 +7462,39 @@
   ],
   "tier_counts": {
     "A": 7,
-    "B": 66,
+    "B": 67,
     "W": 81,
-    "total": 154
+    "total": 155
   },
   "recent_feed": [
+    {
+      "ticker": "THRM",
+      "company": "Gentherm Inc",
+      "insider": "Mascarenas Paul Anthony",
+      "title": "Dir",
+      "date": "2026-10-23",
+      "price": 26.63,
+      "qty": 20000,
+      "owned": 22677,
+      "delta_own": 747.0,
+      "value": 532600.0,
+      "filing": "2026-10-26",
+      "is_csuite": false
+    },
+    {
+      "ticker": "THRM",
+      "company": "Gentherm Inc",
+      "insider": "Presley William T.",
+      "title": "Pres, CEO",
+      "date": "2026-10-23",
+      "price": 26.0,
+      "qty": 5000,
+      "owned": 183314,
+      "delta_own": 3.0,
+      "value": 130000.0,
+      "filing": "2026-10-26",
+      "is_csuite": true
+    },
     {
       "ticker": "BY",
       "company": "Byline Bancorp, Inc.",
@@ -7941,34 +8024,6 @@
       "owned": 37932,
       "delta_own": 378.0,
       "value": 32700.0,
-      "filing": "2026-10-21",
-      "is_csuite": false
-    },
-    {
-      "ticker": "DX",
-      "company": "Dynex Capital Inc",
-      "insider": "Boston Byron L",
-      "title": "Co-CEO, COB",
-      "date": "2026-10-20",
-      "price": 10.89,
-      "qty": 9180,
-      "owned": 898842,
-      "delta_own": 1.0,
-      "value": 99970.0,
-      "filing": "2026-10-21",
-      "is_csuite": true
-    },
-    {
-      "ticker": "SKAS",
-      "company": "Saker Aviation Services, Inc.",
-      "insider": "Eriksen Howard Timothy",
-      "title": "10%",
-      "date": "2026-10-20",
-      "price": 5.52,
-      "qty": 12700,
-      "owned": 195181,
-      "delta_own": 7.0,
-      "value": 70104.0,
       "filing": "2026-10-21",
       "is_csuite": false
     }
