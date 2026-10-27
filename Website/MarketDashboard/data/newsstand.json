@@ -1,17 +1,17 @@
 {
-  "scan_time": "2026-10-26T20:30:30.411581+00:00",
+  "scan_time": "2026-10-27T00:52:12.042437+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Cautious",
-    "score": 1,
-    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight.",
+    "score": -1,
+    "headline": "Conditions are choppy and participation is thinning, which favors quick trades and tighter risk over holding momentum overnight. Volume is under its 50-day norm, though that is ordinary for late October. It points to a slow tape rather than a warning sign.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "+0.71%",
-        "read": "Firm",
-        "tone": "good"
+        "value": "-0.52%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Market trend",
@@ -23,15 +23,15 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.1%",
+        "value": "-0.4%",
         "read": "Soft",
         "tone": "neutral"
       },
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "-6%",
-        "read": "Normal",
+        "value": "-9%",
+        "read": "Light",
         "tone": "neutral"
       },
       {
@@ -49,23 +49,23 @@
         "tone": "good"
       }
     ],
-    "updated": "2026-10-26T20:30:32.278739+00:00",
+    "updated": "2026-10-27T00:52:14.270262+00:00",
     "session": {
-      "change_pct": 0.71,
-      "from_open_pct": 0.41,
-      "range_pos": 0.612,
-      "sectors_green": 8,
-      "sectors_total": 11,
-      "live": true,
-      "detail": "+0.71% vs prior close \u00b7 mid-range (61% of range) \u00b7 8/11 sectors green"
+      "change_pct": -0.52,
+      "from_open_pct": 0.01,
+      "range_pos": 0.269,
+      "sectors_green": null,
+      "sectors_total": null,
+      "live": false,
+      "detail": "-0.52% vs prior close \u00b7 mid-range (27% of range) \u00b7 last completed session"
     },
     "participation": {
-      "ratio": 0.945,
-      "expected": 0.99,
-      "adjusted": 0.954,
-      "direction": "steady",
-      "drift_pct": -7.1,
-      "detail": "39M vs 41M avg"
+      "ratio": 0.909,
+      "expected": 0.995,
+      "adjusted": 0.914,
+      "direction": "fading",
+      "drift_pct": -18.4,
+      "detail": "37M vs 41M avg \u00b7 about normal for this week of the year"
     }
   }
 }
