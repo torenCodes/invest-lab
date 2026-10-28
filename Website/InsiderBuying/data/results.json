@@ -1,6 +1,6 @@
 {
-  "scan_time": "2026-10-28T21:31:11.531795",
-  "total_transactions": 322,
+  "scan_time": "2026-10-28T21:59:48.914335",
+  "total_transactions": 323,
   "date_range": "2026-09-22 \u2013 2026-10-26",
   "min_value": 25000,
   "nominees": [
@@ -3091,6 +3091,49 @@
       "story": "IIPR: Gold Alan D (Exec COB) bought, $1.0M total."
     },
     {
+      "ticker": "GOLD",
+      "insider": "Tether Global Investments Fund, S.I.C.A.F., S.A.",
+      "title": "10%",
+      "date": "2026-10-26",
+      "price": 39.27,
+      "qty": 200000,
+      "value": 7910277.0,
+      "txn_count": 3,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Gold.com, Inc.",
+      "sector": "Financial Services",
+      "current_price": 39.04,
+      "change_pct": -1.31,
+      "market_cap": 1135925504,
+      "week52_high": 66.7,
+      "week52_low": 23.0,
+      "insider_avg_cost": 39.55,
+      "vs_insider_pct": -1.3,
+      "max_delta_own": 3.0,
+      "insiders": [
+        {
+          "name": "Tether Global Investments Fund, S.I.C.A.F., S.A.",
+          "title": "10%",
+          "date": "2026-10-26",
+          "price": 39.27,
+          "qty": 200000,
+          "value": 7910277.0,
+          "is_csuite": false,
+          "owned": 3870787,
+          "delta_own": 3.0
+        }
+      ],
+      "conviction_score": 45.0,
+      "tier": "B",
+      "signals": [
+        "Bought in the last 2 days",
+        "$7.9M total",
+        "Still below insider cost"
+      ],
+      "story": "GOLD: Tether Global Investments Fund, S.I.C.A.F., S.A. (10%) bought, $7.9M total."
+    },
+    {
       "ticker": "SRRK",
       "insider": "Akkaraju Srinivas",
       "title": "Dir",
@@ -4565,48 +4608,6 @@
         "Trading 6% below insider cost"
       ],
       "story": "EP: Mulacek Phil E (Dir, 10%) bought, $408K total."
-    },
-    {
-      "ticker": "GOLD",
-      "insider": "Tether Global Investments Fund, S.I.C.A.F., S.A.",
-      "title": "10%",
-      "date": "2026-10-13",
-      "price": 39.81,
-      "qty": 100000,
-      "value": 3983019.0,
-      "txn_count": 2,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Gold.com, Inc.",
-      "sector": "Financial Services",
-      "current_price": 39.04,
-      "change_pct": -1.31,
-      "market_cap": 1135925504,
-      "week52_high": 66.7,
-      "week52_low": 23.0,
-      "insider_avg_cost": 39.83,
-      "vs_insider_pct": -2.0,
-      "max_delta_own": 2.0,
-      "insiders": [
-        {
-          "name": "Tether Global Investments Fund, S.I.C.A.F., S.A.",
-          "title": "10%",
-          "date": "2026-10-13",
-          "price": 39.81,
-          "qty": 100000,
-          "value": 3983019.0,
-          "is_csuite": false,
-          "owned": 3770787,
-          "delta_own": 2.0
-        }
-      ],
-      "conviction_score": 37.0,
-      "tier": "W",
-      "signals": [
-        "$4.0M total",
-        "Still below insider cost"
-      ],
-      "story": "GOLD: Tether Global Investments Fund, S.I.C.A.F., S.A. (10%) bought, $4.0M total."
     },
     {
       "ticker": "GGR",
@@ -8098,11 +8099,25 @@
   ],
   "tier_counts": {
     "A": 12,
-    "B": 66,
-    "W": 89,
+    "B": 67,
+    "W": 88,
     "total": 167
   },
   "recent_feed": [
+    {
+      "ticker": "GOLD",
+      "company": "Gold.Com, Inc.",
+      "insider": "Tether Global Investments Fund, S.I.C.A.F., S.A.",
+      "title": "10%",
+      "date": "2026-10-26",
+      "price": 39.27,
+      "qty": 100000,
+      "owned": 3870787,
+      "delta_own": 3.0,
+      "value": 3927258.0,
+      "filing": "2026-10-28",
+      "is_csuite": false
+    },
     {
       "ticker": "HXL",
       "company": "Hexcel Corp /De/",
@@ -8648,20 +8663,6 @@
       "value": 532600.0,
       "filing": "2026-10-26",
       "is_csuite": false
-    },
-    {
-      "ticker": "THRM",
-      "company": "Gentherm Inc",
-      "insider": "Presley William T.",
-      "title": "Pres, CEO",
-      "date": "2026-10-23",
-      "price": 26.0,
-      "qty": 5000,
-      "owned": 183314,
-      "delta_own": 3.0,
-      "value": 130000.0,
-      "filing": "2026-10-26",
-      "is_csuite": true
     }
   ]
 }
