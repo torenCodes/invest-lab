@@ -329,9 +329,9 @@ def _participation(vol):
     clause = None
     if read in ("Thin", "Light"):
         if note and note.startswith("unusually"):
-            clause = (f"Participation is unusually light even for {season_label} and still "
-                      f"{direction}, so expect wider spreads, slower fills and more failed "
-                      f"breakouts than the verdict alone implies.")
+            # Descriptive only (Oct 2026): the old sentence told readers to
+            # expect wider spreads, slower fills and failed breakouts.
+            clause = f"Participation is unusually light even for {season_label}."
         else:
             clause = (f"Volume is under its 50-day norm, though that is ordinary for "
                       f"{season_label}. It points to a slow tape rather than a warning sign.")
