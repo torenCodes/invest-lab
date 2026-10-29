@@ -787,10 +787,13 @@
 
 <!-- BEGIN shared-header: identical on all five dashboards except the one
      "active" dropdown link. Values mirror the homepage header in styles.css
-     (.site-header / .nav-*); change all seven pages together. -->
+     (.site-header / .nav-*); change all seven pages together. One deliberate
+     difference: the dashboards use the full page width, so the logo and nav sit
+     at the page edges (28px, 16px on phones) instead of in the homepage's
+     centered 1280px container. -->
 <style>
   .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e8e6e0;box-shadow:0 1px 8px rgba(0,0,0,.06);font-family:'Barlow',sans-serif;}
-  .site-nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1280px;margin:0 auto;padding:0 clamp(1.5rem,5vw,3rem);}
+  .site-nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px;}
   .site-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:#1a1a18;font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:700;letter-spacing:-.01em;line-height:1.65;white-space:nowrap;flex-shrink:0;}
   .site-logo img{height:3rem;width:auto;display:block;object-fit:contain;}
   .site-nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
@@ -806,6 +809,7 @@
   .site-dropdown-link:hover,.site-dropdown-link.active{color:#38bda6;background:#edf8f6;}
   .nav-burger{display:none;background:none;border:1px solid #8a8a82;border-radius:4px;cursor:pointer;padding:8px 12px;color:#1a1a18;font-size:1.5rem;line-height:1;min-width:44px;min-height:44px;}
   @media (max-width:680px){
+    .site-nav{padding:0 16px;}
     .nav-burger{display:block;}
     .site-nav-links{display:none;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:70px;left:0;right:0;background:#fff;border-bottom:2px solid #e8e6e0;box-shadow:0 6px 16px rgba(0,0,0,.09);padding:.4rem 0;z-index:110;}
     .site-nav-links.open{display:flex;}
