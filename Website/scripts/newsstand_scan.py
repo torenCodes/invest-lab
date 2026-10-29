@@ -489,16 +489,19 @@ def fetch_trading_conditions():
     elif pts >= -1: verdict = "Cautious"
     else:           verdict = "Risk-Off"
 
+    # Describe how the inputs line up; never tell the reader what to do (Oct
+    # 2026: the old lines advised on position size, risk and holding periods).
+    # A verdict is a sum, so each line has to hold for any mix of inputs that
+    # lands in its band — the signal rows underneath carry the specifics.
     headlines = {
-        "Favorable": "The trend is up and volatility is manageable, a constructive backdrop "
-                     "where momentum and breakout setups have room to run.",
-        "Mixed":     "The tape is sending mixed signals, so it pays to stay selective, keep "
-                     "position sizes measured, and let the cleaner setups come to you.",
-        "Cautious":  "Conditions are choppy and participation is thinning, which favors quick "
-                     "trades and tighter risk over holding momentum overnight.",
-        "Risk-Off":  "Trend and volatility are working against momentum longs, a defensive "
-                     "backdrop where smaller size and mean-reversion setups make more sense "
-                     "than chasing strength.",
+        "Favorable": "Most of the inputs are positive and they agree, with trend and "
+                     "momentum leaning the same way.",
+        "Mixed":     "The tape is sending mixed signals: some inputs lean positive, others "
+                     "negative, and none clearly leads.",
+        "Cautious":  "More of the inputs lean negative than positive, so the backdrop reads "
+                     "as choppy and unsettled.",
+        "Risk-Off":  "Most of the inputs are negative, and together they show a market "
+                     "working against rising prices.",
     }
 
     headline = headlines[verdict]
