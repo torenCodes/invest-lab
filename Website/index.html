@@ -164,7 +164,7 @@
                    e.g. a Neutral 55 that is three neutral legs and one running Hot. -->
               <div class="mt-groups" id="mt-groups"></div>
               <!-- Four of the ten underlying signals (Oct 2026), shown in place of
-                   the old expanding panel. Hover a row for what it measures. -->
+                   the old expanding panel. Each row has an info box on hover or tap. -->
               <div class="mt-signals" id="mt-signals"></div>
             </section>
             <!-- ─── /Macro Temperature ─── -->
@@ -1044,7 +1044,7 @@
 // accordion with Trading Conditions; expanded it ran well over a thousand
 // pixels and jolted the page. It now shows the composite, the four theme bars
 // and four key signals, sized to end close to the Other Lab Results cards
-// beside it. Each signal's description is its hover title.
+// beside it. Every bar row has an info box (hover, focus or tap).
 (function () {
   var MT_URL = 'https://invest-movers-shakers.onrender.com/data/market_temperature.json';
   var root   = document.getElementById('market-temperature');
@@ -1103,34 +1103,36 @@
     })[key] || key;
   }
 
-  function renderGroupBar(g) {
-    var has = g.score != null;
-    var pct = has ? Math.max(0, Math.min(100, g.score)) : 0;
-    return '<div class="mt-group" title="' + esc(g.blurb) + '">' +
-             '<span class="mt-group-name">' + esc(g.title || g.key) + '</span>' +
+  // One temperature-bar row, used for the four themes and the four key
+  // signals alike. `tip` fills the info box shown on hover, keyboard focus
+  // or a tap (the row is focusable), so it works without a mouse.
+  function renderBar(name, score, label, tip) {
+    var has = score != null;
+    var pct = has ? Math.max(0, Math.min(100, score)) : 0;
+    return '<div class="mt-group" tabindex="0" data-tip="' + esc(tip) + '" aria-label="' +
+             esc(name + ': ' + (has ? Math.round(score) : 'unavailable') + '. ' + tip) + '">' +
+             '<span class="mt-group-name">' + esc(name) + '</span>' +
              '<span class="mt-group-track">' +
                '<span class="mt-group-fill" style="width:' + pct + '%"></span>' +
              '</span>' +
-             '<span class="mt-group-score ' + verdictClass(g.label) + '">' +
-               (has ? Math.round(g.score) : '—') +
+             '<span class="mt-group-score ' + verdictClass(label) + '">' +
+               (has ? Math.round(score) : '—') +
              '</span>' +
            '</div>';
   }
 
-  // A dead feed still shows its row as "unavailable" rather than vanishing.
+  function renderGroupBar(g) {
+    return renderBar(g.title || g.key, g.score, g.label, g.blurb || '');
+  }
+
+  // A dead feed still shows its row, empty and marked unavailable, rather
+  // than vanishing. The info box leads with the reading, e.g. "26 (Fear)".
   function renderSignal(key, c) {
     if (!c || c.score == null) {
-      return '<div class="mt-signal mt-signal--missing">' +
-               '<span class="mt-signal-name">' + esc(titleFor(key)) + '</span>' +
-               '<span class="mt-signal-raw">unavailable</span>' +
-               '<span class="mt-group-score mt-v-unknown">—</span>' +
-             '</div>';
+      return renderBar(titleFor(key), null, null, 'Unavailable: this signal did not update on the last scan.');
     }
-    return '<div class="mt-signal" title="' + esc(c.description) + '">' +
-             '<span class="mt-signal-name">' + esc(c.title || titleFor(key)) + '</span>' +
-             '<span class="mt-signal-raw">' + esc(c.raw_label) + '</span>' +
-             '<span class="mt-group-score ' + verdictClass(c.label) + '">' + Math.round(c.score) + '</span>' +
-           '</div>';
+    var tip = (c.raw_label ? c.raw_label + '. ' : '') + (c.description || '');
+    return renderBar(c.title || titleFor(key), c.score, c.label, tip);
   }
 
   function render(data) {
