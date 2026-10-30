@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-10-29T20:30:33.241931+00:00",
+  "scan_time": "2026-10-30T01:21:36.310175+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Favorable",
@@ -9,9 +9,9 @@
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.38%",
-        "read": "Flat",
-        "tone": "neutral"
+        "value": "+0.34%",
+        "read": "Firm",
+        "tone": "good"
       },
       {
         "label": "Market trend",
@@ -23,14 +23,14 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "+0.7%",
-        "read": "Firm",
-        "tone": "good"
+        "value": "-0.1%",
+        "read": "Soft",
+        "tone": "neutral"
       },
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "-12%",
+        "value": "-19%",
         "read": "Light",
         "tone": "neutral"
       },
@@ -49,23 +49,23 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-10-29T20:30:35.575182+00:00",
+    "updated": "2026-10-30T01:21:38.579386+00:00",
     "session": {
-      "change_pct": -0.38,
-      "from_open_pct": 0.07,
-      "range_pos": 0.662,
-      "sectors_green": 9,
-      "sectors_total": 11,
-      "live": true,
-      "detail": "-0.38% vs prior close \u00b7 mid-range (66% of range) \u00b7 9/11 sectors green"
+      "change_pct": 0.34,
+      "from_open_pct": 0.11,
+      "range_pos": 0.745,
+      "sectors_green": null,
+      "sectors_total": null,
+      "live": false,
+      "detail": "+0.34% vs prior close \u00b7 mid-range (75% of range) \u00b7 last completed session"
     },
     "participation": {
-      "ratio": 0.879,
+      "ratio": 0.807,
       "expected": 0.995,
-      "adjusted": 0.883,
+      "adjusted": 0.81,
       "direction": "fading",
-      "drift_pct": -16.5,
-      "detail": "36M vs 41M avg \u00b7 about normal for this week of the year"
+      "drift_pct": -27.2,
+      "detail": "33M vs 40M avg \u00b7 about normal for this week of the year"
     }
   }
 }
