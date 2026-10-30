@@ -1,8 +1,39 @@
 {
-  "scan_time": "2026-10-30T21:36:54.635656+00:00",
+  "scan_time": "2026-10-30T22:56:36.631160+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 18,
   "day_trades": [
+    {
+      "ticker": "CPRI",
+      "name": "Capri Holdings Ltd",
+      "sector": "Textiles, Apparel & Luxury Goods",
+      "current_price": 18.68,
+      "change_pct": 16.3138,
+      "high": 19.1426,
+      "low": 17.6,
+      "open": 17.75,
+      "prev_close": 16.06,
+      "score": 39,
+      "signals": [
+        "Top gainer (+16.3%)",
+        "High volume",
+        "Strong move (+16.3%)",
+        "Yahoo trending (#18)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 2118466107.1980076,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CPRI.png",
+      "weburl": "https://www.capriholdings.com/corporate-overview/default.aspx",
+      "yahoo_trending_rank": 18,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 55
+    },
     {
       "ticker": "GPN",
       "name": "Global Payments Inc",
@@ -18,7 +49,7 @@
         "Top gainer (+13.0%)",
         "High volume",
         "Strong move (+13.0%)",
-        "Yahoo trending (#11)",
+        "Yahoo trending (#13)",
         "Closing strong"
       ],
       "reddit_mentions": 0,
@@ -27,19 +58,50 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/GPN.png",
       "weburl": "https://www.globalpayments.com/en-ap",
-      "yahoo_trending_rank": 11,
+      "yahoo_trending_rank": 13,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
       "score_normalized": 55
+    },
+    {
+      "ticker": "PGEN",
+      "name": "Precigen, Inc.",
+      "sector": "Biotechnology",
+      "current_price": 6.94,
+      "change_pct": 4.5181,
+      "high": 7.035,
+      "low": 6.49,
+      "open": 6.49,
+      "prev_close": 6.64,
+      "score": 38,
+      "signals": [
+        "Top gainer (+4.5%)",
+        "High volume",
+        "Good move (+4.5%)",
+        "Yahoo trending (#9)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 2422108403.082831,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/PGEN.png",
+      "weburl": "https://precigen.com/",
+      "yahoo_trending_rank": 9,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 54
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
     {
       "ticker": "AMZN",
-      "mentions": 4,
+      "mentions": 5,
       "name": "Amazon.com Inc",
       "sector": "Retail",
       "current_price": 240.35,
@@ -51,16 +113,16 @@
       "market_cap": 2582567198388.523,
       "score": 0,
       "signals": [
-        "News buzz (4 mentions)"
+        "News buzz (5 mentions)"
       ],
-      "reddit_mentions": 4,
+      "reddit_mentions": 5,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -34,
-        "reddit": 97,
-        "st_bull": 92,
+        "trend_pct": -47,
+        "reddit": 83,
+        "st_bull": 83,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -80,60 +142,17 @@
       "score_normalized": 0
     },
     {
-      "ticker": "NVDA",
+      "ticker": "IONQ",
       "mentions": 2,
-      "name": "NVIDIA Corporation",
+      "name": "IonQ, Inc.",
       "sector": "Semiconductors",
-      "current_price": 204.64,
-      "change_pct": -4.2217,
-      "high": 209.06,
-      "low": 200.9199,
-      "open": 208.94,
-      "prev_close": 213.66,
-      "market_cap": 4897843083948.657,
-      "score": 0,
-      "signals": [
-        "News buzz (2 mentions)",
-        "Yahoo trending (#2)"
-      ],
-      "reddit_mentions": 2,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": 2,
-      "social": {
-        "trend_pct": 258,
-        "reddit": 111,
-        "st_bull": 77,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 2.22,
-          "estimate": 2.14,
-          "beat": true,
-          "surprise_pct": 3.8
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "JPM",
-      "mentions": 2,
-      "name": "JPMorgan Chase & Co.",
-      "sector": "Banking",
-      "current_price": 337.04,
-      "change_pct": -1.9035,
-      "high": 345.29,
-      "low": 335.12,
-      "open": 345.29,
-      "prev_close": 343.58,
-      "market_cap": 898599836596.9886,
+      "current_price": 30.04,
+      "change_pct": -5.2963,
+      "high": 30.37,
+      "low": 28.545,
+      "open": 29.83,
+      "prev_close": 31.72,
+      "market_cap": 12375529194.408575,
       "score": 0,
       "signals": [
         "News buzz (2 mentions)"
@@ -144,7 +163,43 @@
       "yahoo_trending_rank": null,
       "social": {
         "reddit": 2,
-        "st_bull": 50,
+        "st_bull": 86,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "GOOG",
+      "mentions": 2,
+      "name": "Alphabet Inc.",
+      "sector": "Media",
+      "current_price": 278.22,
+      "change_pct": -1.4523,
+      "high": 281.86,
+      "low": 275.35,
+      "open": 279.69,
+      "prev_close": 282.32,
+      "market_cap": 3414004499999.9995,
+      "score": 0,
+      "signals": [
+        "News buzz (2 mentions)"
+      ],
+      "reddit_mentions": 2,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": -69,
+        "reddit": 160,
+        "st_bull": 83,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -155,10 +210,10 @@
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 5.57,
-          "estimate": 5.96,
+          "actual": 2.12,
+          "estimate": 3.11,
           "beat": false,
-          "surprise_pct": -6.5
+          "surprise_pct": -31.8
         }
       },
       "score_normalized": 0
@@ -175,11 +230,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 371,
+      "mentions": 359,
       "social": {
-        "trend_pct": 91,
-        "reddit": 371,
-        "st_bull": 78,
+        "trend_pct": 57,
+        "reddit": 359,
+        "st_bull": 88,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -210,10 +265,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 230,
+      "mentions": 220,
       "social": {
-        "trend_pct": 211,
-        "reddit": 230,
+        "trend_pct": 114,
+        "reddit": 220,
         "sources": [
           "Reddit"
         ]
@@ -231,57 +286,40 @@
       "score_normalized": 0
     },
     {
-      "ticker": "GOOG",
-      "name": "Alphabet Inc.",
-      "sector": "Media",
-      "current_price": 278.22,
-      "change_pct": -1.4523,
-      "market_cap": 3414004499999.9995,
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "sector": "Semiconductors",
+      "current_price": 504.8,
+      "change_pct": -10.8789,
+      "market_cap": 817208785747.1929,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 164,
+      "mentions": 136,
       "social": {
-        "trend_pct": -72,
-        "reddit": 164,
+        "trend_pct": 353,
+        "reddit": 136,
         "sources": [
           "Reddit"
         ]
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 2.12,
-          "estimate": 3.11,
-          "beat": false,
-          "surprise_pct": -31.8
-        }
+        "recent": null
       },
       "score_normalized": 0
     }
   ],
   "chatter_emerging": [
     {
-      "ticker": "INTC",
-      "name": "Intel Corp",
-      "sector": "Semiconductors",
-      "mentions": 230,
-      "prev": 74,
-      "trend_pct": 211,
-      "current_price": 65.76,
-      "change_pct": -28.5761,
-      "market_cap": 339420831023.6554
-    },
-    {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
       "sector": "Semiconductors",
-      "mentions": 133,
-      "prev": 25,
-      "trend_pct": 432,
+      "mentions": 136,
+      "prev": 30,
+      "trend_pct": 353,
       "current_price": 504.8,
       "change_pct": -10.8789,
       "market_cap": 817208785747.1929
@@ -290,12 +328,23 @@
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
-      "mentions": 111,
-      "prev": 31,
-      "trend_pct": 258,
+      "mentions": 106,
+      "prev": 28,
+      "trend_pct": 279,
       "current_price": 204.64,
       "change_pct": -4.2217,
       "market_cap": 4897843083948.657
+    },
+    {
+      "ticker": "PLTR",
+      "name": "Palantir Technologies Inc.",
+      "sector": "Technology",
+      "mentions": 26,
+      "prev": 3,
+      "trend_pct": 767,
+      "current_price": 184.11,
+      "change_pct": -6.2672,
+      "market_cap": 444301442313.4105
     }
   ],
   "sector_rotation": {
@@ -472,6 +521,12 @@
             "name": "AstraZeneca PLC",
             "change_pct": 7.0241,
             "price": 186.65
+          },
+          {
+            "ticker": "PGEN",
+            "name": "Precigen, Inc.",
+            "change_pct": 4.5181,
+            "price": 6.94
           }
         ],
         "rotation": 2
@@ -674,6 +729,12 @@
           ]
         },
         "top_stocks": [
+          {
+            "ticker": "CPRI",
+            "name": "Capri Holdings Ltd",
+            "change_pct": 16.3138,
+            "price": 18.68
+          },
           {
             "ticker": "GME",
             "name": "GameStop Corp.",
@@ -893,6 +954,12 @@
             "name": "Regeneron Pharmaceuticals, Inc.",
             "change_pct": 13.3273,
             "price": 927.89
+          },
+          {
+            "ticker": "PGEN",
+            "name": "Precigen, Inc.",
+            "change_pct": 4.5181,
+            "price": 6.94
           }
         ],
         "rotation": 1
@@ -920,6 +987,58 @@
   },
   "reddit_feed": [
     {
+      "id": "7975e2285995cbfe2d06f5cdd5df93573f709c3b352478e61423d4a113df6fe4",
+      "title": "Prediction: This Is the Quantum Computing Stock Most Likely to Still Be Standing in 2030",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "IONQ",
+        "IT"
+      ],
+      "hours_ago": 0.9,
+      "url": "https://www.fool.com/investing/2026/10/30/prediction-this-is-the-quantum-computing-stock-mos/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "IONQ"
+      ]
+    },
+    {
+      "id": "f15c69a5c6ee1da82ac4612df49078ab669afe24ef2c741a008c899115576eae",
+      "title": "Elon Musk Says Neoclouds Face a \"Guppy Level\" Death. SpaceX Just Borrowed $40 Billion to Make Sure It Isn't One.",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "SPCX",
+        "GOOG",
+        "GOOGL",
+        "GOOGM",
+        "GOOGN"
+      ],
+      "hours_ago": 1.4,
+      "url": "https://www.fool.com/investing/2026/10/30/elon-musk-says-neoclouds-face-a-guppy-level-death/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOOG"
+      ]
+    },
+    {
+      "id": "7c96335e5a4ceec013b70606348c3a87279d556c97dd4d4bbd3489b85af3eafb",
+      "title": "Stock Market Today, Oct. 30: Amazon Misses Revenue and Earnings Expectations",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "AMZN",
+        "WMT",
+        "COST"
+      ],
+      "hours_ago": 1.7,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/10/30/stock-market-today-oct-30-amazon-misses-revenue-and-earnings-expectations/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMZN"
+      ]
+    },
+    {
       "id": "3522d18b1dc1d60b45a3c10e0f6c9e40729a36341376b544c6f5afd91b8605bb",
       "title": "Stock Market Today, Oct. 30: Intel Plunges Nearly 29% as Weak Outlook Rattles Wall Street",
       "subreddit": "The Motley Fool",
@@ -929,31 +1048,12 @@
         "AMD",
         "NVDA"
       ],
-      "hours_ago": 0.6,
+      "hours_ago": 1.9,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/10/30/stock-market-today-oct-30-intel-plunges-nearly-29-as-weak-outlook-rattles-wall-street/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "INTC",
-        "NVDA"
-      ]
-    },
-    {
-      "id": "a17d35cbe69dc961f28166f0bfeeec9a4a3d30af8868dbe7a8deff607a1eb311",
-      "title": "Why GE Vernova Stock Fell on Friday",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "GEV",
-        "AMJB",
-        "JPM",
-        "JPMpC",
-        "JPMpD"
-      ],
-      "hours_ago": 0.9,
-      "url": "https://www.fool.com/investing/2026/10/30/why-ge-vernova-stock-fell-on-friday/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "JPM"
+        "AMD"
       ]
     },
     {
@@ -968,31 +1068,12 @@
         "GOOGN",
         "AMZN"
       ],
-      "hours_ago": 1.2,
+      "hours_ago": 2.6,
       "url": "https://www.fool.com/investing/2026/10/30/here-s-what-the-s-and-p-500-did-the-last-2-times-its-earnings-grew-25-plus-for-3-straight-quarters/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "GOOG",
         "AMZN"
-      ]
-    },
-    {
-      "id": "ba97ff3e4ccb153fd9bc2468eb197bd40d3f7ecce905cebc50cd0cb274fadca6",
-      "title": "Bank of America vs. JPMorgan Chase: Diverging Quarterly Revenue Trends for These Financial Giants",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "AMJB",
-        "JPM",
-        "JPMpC",
-        "JPMpD",
-        "JPMpJ"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://www.fool.com/coverage/charts/2026/10/30/bank-of-america-vs-jpmorgan-chase-diverging-quarterly-revenue-trends-for-these-financial-giants/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "JPM"
       ]
     },
     {
@@ -1003,7 +1084,7 @@
       "tickers": [
         "RDDT"
       ],
-      "hours_ago": 1.8,
+      "hours_ago": 3.2,
       "url": "https://www.fool.com/earnings/takeaways/2026/10/30/reddit-3-key-takeaways-for-long-term-investors/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1021,44 +1102,11 @@
         "AVGO",
         "AMZN"
       ],
-      "hours_ago": 2.1,
+      "hours_ago": 3.4,
       "url": "https://www.fool.com/coverage/better-buy/2026/10/30/arista-networks-vs-figma-which-technology-stock-is-a-better-buy-in-2026/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "AMZN"
-      ]
-    },
-    {
-      "id": "856992d317a678614b797fe719a90b54952397948e370f4ed033cd8d3781db99",
-      "title": "AppLovin vs. Magnite: Which Digital Advertising Stock Is a Better Buy in 2026?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "APP",
-        "MGNI",
-        "AAPL",
-        "AMZN"
-      ],
-      "hours_ago": 3.7,
-      "url": "https://www.fool.com/coverage/better-buy/2026/10/30/applovin-vs-magnite-which-digital-advertising-stock-is-a-better-buy-in-2026/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "AMZN"
-      ]
-    },
-    {
-      "id": "083c6f269bfa15bd234d443e0bd3d004e82d0ec07baf60e7bed955704f5e141c",
-      "title": "Is Nvidia Stock a Trick or Treat?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "NVDA"
-      ],
-      "hours_ago": 3.8,
-      "url": "https://www.fool.com/investing/2026/10/30/is-nvidia-stock-a-trick-or-treat/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
       ]
     }
   ]
