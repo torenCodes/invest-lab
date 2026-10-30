@@ -1,42 +1,36 @@
 {
-  "scan_time": "2026-10-30T19:57:33.141820+00:00",
+  "scan_time": "2026-10-30T21:36:54.635656+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 19,
+  "total_scanned": 18,
   "day_trades": [
     {
-      "ticker": "FDXF",
-      "name": "FedEx Freight Holding Company Inc",
-      "sector": "Road & Rail",
-      "current_price": 126.7,
-      "change_pct": 15.5073,
-      "high": 128,
-      "low": 114.04,
-      "open": 114.04,
-      "prev_close": 109.69,
+      "ticker": "GPN",
+      "name": "Global Payments Inc",
+      "sector": "Financial Services",
+      "current_price": 96.84,
+      "change_pct": 12.9725,
+      "high": 101.32,
+      "low": 84.66,
+      "open": 86,
+      "prev_close": 85.72,
       "score": 39,
       "signals": [
-        "Top gainer (+15.5%)",
+        "Top gainer (+13.0%)",
         "High volume",
-        "Strong move (+15.5%)",
-        "Yahoo trending (#18)",
+        "Strong move (+13.0%)",
+        "Yahoo trending (#11)",
         "Closing strong"
       ],
       "reddit_mentions": 0,
-      "market_cap": 19038893124.694412,
+      "market_cap": 25088468745.39174,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950970980546.png",
-      "weburl": "",
-      "yahoo_trending_rank": 18,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/GPN.png",
+      "weburl": "https://www.globalpayments.com/en-ap",
+      "yahoo_trending_rank": 11,
       "earnings_info": {
         "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 1.49,
-          "estimate": 1.38,
-          "beat": true,
-          "surprise_pct": 7.7
-        }
+        "recent": null
       },
       "score_normalized": 55
     }
@@ -45,28 +39,28 @@
   "reddit_cards": [
     {
       "ticker": "AMZN",
-      "mentions": 3,
+      "mentions": 4,
       "name": "Amazon.com Inc",
       "sector": "Retail",
-      "current_price": 239.68,
-      "change_pct": -1.6859,
+      "current_price": 240.35,
+      "change_pct": -1.4111,
       "high": 241.55,
       "low": 229.3632,
-      "open": 229.565,
+      "open": 232.54,
       "prev_close": 243.79,
       "market_cap": 2582567198388.523,
       "score": 0,
       "signals": [
-        "News buzz (3 mentions)"
+        "News buzz (4 mentions)"
       ],
-      "reddit_mentions": 3,
+      "reddit_mentions": 4,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 103,
-        "reddit": 154,
-        "st_bull": 100,
+        "trend_pct": -34,
+        "reddit": 97,
+        "st_bull": 92,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -86,17 +80,60 @@
       "score_normalized": 0
     },
     {
-      "ticker": "YSS",
+      "ticker": "NVDA",
       "mentions": 2,
-      "name": "York Space Systems Inc",
-      "sector": "Aerospace & Defense",
-      "current_price": 6.3,
-      "change_pct": -9.8712,
-      "high": 6.865,
-      "low": 6.16,
-      "open": 6.805,
-      "prev_close": 6.99,
-      "market_cap": 866730000.0,
+      "name": "NVIDIA Corporation",
+      "sector": "Semiconductors",
+      "current_price": 204.64,
+      "change_pct": -4.2217,
+      "high": 209.06,
+      "low": 200.9199,
+      "open": 208.94,
+      "prev_close": 213.66,
+      "market_cap": 4897843083948.657,
+      "score": 0,
+      "signals": [
+        "News buzz (2 mentions)",
+        "Yahoo trending (#2)"
+      ],
+      "reddit_mentions": 2,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": 2,
+      "social": {
+        "trend_pct": 258,
+        "reddit": 111,
+        "st_bull": 77,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 2.22,
+          "estimate": 2.14,
+          "beat": true,
+          "surprise_pct": 3.8
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "JPM",
+      "mentions": 2,
+      "name": "JPMorgan Chase & Co.",
+      "sector": "Banking",
+      "current_price": 337.04,
+      "change_pct": -1.9035,
+      "high": 345.29,
+      "low": 335.12,
+      "open": 345.29,
+      "prev_close": 343.58,
+      "market_cap": 898599836596.9886,
       "score": 0,
       "signals": [
         "News buzz (2 mentions)"
@@ -107,7 +144,7 @@
       "yahoo_trending_rank": null,
       "social": {
         "reddit": 2,
-        "st_bull": 56,
+        "st_bull": 50,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -116,43 +153,13 @@
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "AAPL",
-      "mentions": 2,
-      "name": "Apple Inc.",
-      "sector": "Technology",
-      "current_price": 344.22,
-      "change_pct": -1.3442,
-      "high": 349.19,
-      "low": 334.35,
-      "open": 349.0625,
-      "prev_close": 348.91,
-      "market_cap": 5047846598637.617,
-      "score": 0,
-      "signals": [
-        "News buzz (2 mentions)"
-      ],
-      "reddit_mentions": 2,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "trend_pct": 138,
-        "reddit": 81,
-        "st_bull": 71,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 5.57,
+          "estimate": 5.96,
+          "beat": false,
+          "surprise_pct": -6.5
+        }
       },
       "score_normalized": 0
     },
@@ -160,19 +167,19 @@
       "ticker": "RDDT",
       "name": "Reddit, Inc.",
       "sector": "Media",
-      "current_price": 91.88,
-      "change_pct": -29.1049,
+      "current_price": 91.73,
+      "change_pct": -29.2207,
       "market_cap": 17489806515.46007,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 431,
+      "mentions": 371,
       "social": {
-        "trend_pct": 359,
-        "reddit": 431,
-        "st_bull": 55,
+        "trend_pct": 91,
+        "reddit": 371,
+        "st_bull": 78,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -195,18 +202,18 @@
       "ticker": "INTC",
       "name": "Intel Corp",
       "sector": "Semiconductors",
-      "current_price": 64.97,
-      "change_pct": -29.4341,
+      "current_price": 65.76,
+      "change_pct": -28.5761,
       "market_cap": 339420831023.6554,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 291,
+      "mentions": 230,
       "social": {
-        "trend_pct": 1355,
-        "reddit": 291,
+        "trend_pct": 211,
+        "reddit": 230,
         "sources": [
           "Reddit"
         ]
@@ -227,18 +234,18 @@
       "ticker": "GOOG",
       "name": "Alphabet Inc.",
       "sector": "Media",
-      "current_price": 278.35,
-      "change_pct": -1.4062,
+      "current_price": 278.22,
+      "change_pct": -1.4523,
       "market_cap": 3414004499999.9995,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 170,
+      "mentions": 164,
       "social": {
-        "trend_pct": -76,
-        "reddit": 170,
+        "trend_pct": -72,
+        "reddit": 164,
         "sources": [
           "Reddit"
         ]
@@ -258,37 +265,37 @@
   ],
   "chatter_emerging": [
     {
-      "ticker": "RDDT",
-      "name": "Reddit, Inc.",
-      "sector": "Media",
-      "mentions": 431,
-      "prev": 94,
-      "trend_pct": 359,
-      "current_price": 91.88,
-      "change_pct": -29.1049,
-      "market_cap": 17489806515.46007
-    },
-    {
       "ticker": "INTC",
       "name": "Intel Corp",
       "sector": "Semiconductors",
-      "mentions": 291,
-      "prev": 20,
-      "trend_pct": 1355,
-      "current_price": 64.97,
-      "change_pct": -29.4341,
+      "mentions": 230,
+      "prev": 74,
+      "trend_pct": 211,
+      "current_price": 65.76,
+      "change_pct": -28.5761,
       "market_cap": 339420831023.6554
     },
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
       "sector": "Semiconductors",
-      "mentions": 128,
-      "prev": 23,
-      "trend_pct": 457,
-      "current_price": 502.91,
-      "change_pct": -11.2125,
+      "mentions": 133,
+      "prev": 25,
+      "trend_pct": 432,
+      "current_price": 504.8,
+      "change_pct": -10.8789,
       "market_cap": 817208785747.1929
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "sector": "Semiconductors",
+      "mentions": 111,
+      "prev": 31,
+      "trend_pct": 258,
+      "current_price": 204.64,
+      "change_pct": -4.2217,
+      "market_cap": 4897843083948.657
     }
   ],
   "sector_rotation": {
@@ -296,18 +303,18 @@
       {
         "ticker": "XLE",
         "sector": "Energy",
-        "ret_1d": 1.95,
-        "ret_5d": 1.04,
-        "ret_1m": 11.72,
-        "ret_3m": 19.86,
-        "rel_1d": 4.25,
-        "rel_5d": 2.13,
-        "rel_1m": 13.33,
-        "rel_3m": 20.41,
+        "ret_1d": 1.91,
+        "ret_5d": 1.0,
+        "ret_1m": 11.67,
+        "ret_3m": 19.81,
+        "rel_1d": 3.68,
+        "rel_5d": 1.56,
+        "rel_1m": 12.75,
+        "rel_3m": 19.82,
         "rvol": 0.78,
         "rrg": {
-          "x": 102.61,
-          "y": 99.85,
+          "x": 102.47,
+          "y": 99.67,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -335,79 +342,42 @@
               "y": 100.09
             },
             {
-              "x": 102.61,
-              "y": 99.85
+              "x": 102.47,
+              "y": 99.67
             }
           ]
         },
-        "top_stocks": [],
+        "top_stocks": [
+          {
+            "ticker": "XOM",
+            "name": "Exxonmobil Holdings Corp",
+            "change_pct": 2.1605,
+            "price": 187.25
+          },
+          {
+            "ticker": "CVX",
+            "name": "Chevron Corporation",
+            "change_pct": 1.7541,
+            "price": 235.52
+          }
+        ],
         "rotation": -8
-      },
-      {
-        "ticker": "XLV",
-        "sector": "Health Care",
-        "ret_1d": 0.59,
-        "ret_5d": 3.26,
-        "ret_1m": 11.39,
-        "ret_3m": 14.54,
-        "rel_1d": 2.89,
-        "rel_5d": 4.35,
-        "rel_1m": 13.0,
-        "rel_3m": 15.09,
-        "rvol": 1.77,
-        "rrg": {
-          "x": 103.0,
-          "y": 100.44,
-          "quadrant": "Leading",
-          "tail": [
-            {
-              "x": 100.2,
-              "y": 100.98
-            },
-            {
-              "x": 100.3,
-              "y": 100.21
-            },
-            {
-              "x": 98.97,
-              "y": 98.67
-            },
-            {
-              "x": 99.89,
-              "y": 101.23
-            },
-            {
-              "x": 102.44,
-              "y": 102.29
-            },
-            {
-              "x": 102.4,
-              "y": 99.82
-            },
-            {
-              "x": 103.0,
-              "y": 100.44
-            }
-          ]
-        },
-        "top_stocks": [],
-        "rotation": 1
       },
       {
         "ticker": "XLP",
         "sector": "Cons. Staples",
-        "ret_1d": 1.36,
-        "ret_5d": 1.26,
-        "ret_1m": 11.26,
-        "ret_3m": 6.01,
-        "rel_1d": 3.66,
-        "rel_5d": 2.35,
-        "rel_1m": 12.87,
-        "rel_3m": 6.56,
+        "ret_1d": 1.41,
+        "ret_5d": 1.31,
+        "ret_1m": 11.32,
+        "ret_3m": 6.07,
+        "rel_1d": 3.18,
+        "rel_5d": 1.87,
+        "rel_1m": 12.4,
+        "rel_3m": 6.08,
         "rvol": 1.08,
         "rrg": {
-          "x": 102.53,
-          "y": 100.18,
+          "x": 102.39,
+          "y": 100.05,
           "quadrant": "Leading",
           "tail": [
             {
@@ -435,29 +405,92 @@
               "y": 99.54
             },
             {
-              "x": 102.53,
-              "y": 100.18
+              "x": 102.39,
+              "y": 100.05
             }
           ]
         },
         "top_stocks": [],
-        "rotation": -4
+        "rotation": -5
+      },
+      {
+        "ticker": "XLV",
+        "sector": "Health Care",
+        "ret_1d": 0.45,
+        "ret_5d": 3.12,
+        "ret_1m": 11.23,
+        "ret_3m": 14.38,
+        "rel_1d": 2.22,
+        "rel_5d": 3.68,
+        "rel_1m": 12.31,
+        "rel_3m": 14.39,
+        "rvol": 1.77,
+        "rrg": {
+          "x": 102.97,
+          "y": 100.41,
+          "quadrant": "Leading",
+          "tail": [
+            {
+              "x": 100.2,
+              "y": 100.98
+            },
+            {
+              "x": 100.3,
+              "y": 100.21
+            },
+            {
+              "x": 98.97,
+              "y": 98.67
+            },
+            {
+              "x": 99.89,
+              "y": 101.23
+            },
+            {
+              "x": 102.44,
+              "y": 102.29
+            },
+            {
+              "x": 102.4,
+              "y": 99.82
+            },
+            {
+              "x": 102.97,
+              "y": 100.41
+            }
+          ]
+        },
+        "top_stocks": [
+          {
+            "ticker": "REGN",
+            "name": "Regeneron Pharmaceuticals, Inc.",
+            "change_pct": 13.3273,
+            "price": 927.89
+          },
+          {
+            "ticker": "AZN",
+            "name": "AstraZeneca PLC",
+            "change_pct": 7.0241,
+            "price": 186.65
+          }
+        ],
+        "rotation": 2
       },
       {
         "ticker": "XLU",
         "sector": "Utilities",
-        "ret_1d": 0.74,
-        "ret_5d": 2.11,
-        "ret_1m": 9.53,
-        "ret_3m": -1.31,
-        "rel_1d": 3.04,
-        "rel_5d": 3.2,
-        "rel_1m": 11.14,
-        "rel_3m": -0.76,
+        "ret_1d": 0.67,
+        "ret_5d": 2.04,
+        "ret_1m": 9.45,
+        "ret_3m": -1.38,
+        "rel_1d": 2.44,
+        "rel_5d": 2.6,
+        "rel_1m": 10.53,
+        "rel_3m": -1.37,
         "rvol": 0.78,
         "rrg": {
-          "x": 102.06,
-          "y": 101.84,
+          "x": 101.88,
+          "y": 101.5,
           "quadrant": "Leading",
           "tail": [
             {
@@ -485,8 +518,8 @@
               "y": 100.5
             },
             {
-              "x": 102.06,
-              "y": 101.84
+              "x": 101.88,
+              "y": 101.5
             }
           ]
         },
@@ -496,18 +529,18 @@
       {
         "ticker": "XLB",
         "sector": "Materials",
-        "ret_1d": 0.27,
-        "ret_5d": 2.65,
-        "ret_1m": 8.51,
-        "ret_3m": 3.73,
-        "rel_1d": 2.57,
-        "rel_5d": 3.74,
-        "rel_1m": 10.12,
-        "rel_3m": 4.28,
+        "ret_1d": 0.4,
+        "ret_5d": 2.79,
+        "ret_1m": 8.65,
+        "ret_3m": 3.87,
+        "rel_1d": 2.17,
+        "rel_5d": 3.35,
+        "rel_1m": 9.73,
+        "rel_3m": 3.88,
         "rvol": 1.32,
         "rrg": {
-          "x": 101.78,
-          "y": 101.1,
+          "x": 101.65,
+          "y": 100.98,
           "quadrant": "Leading",
           "tail": [
             {
@@ -535,8 +568,8 @@
               "y": 100.4
             },
             {
-              "x": 101.78,
-              "y": 101.1
+              "x": 101.65,
+              "y": 100.98
             }
           ]
         },
@@ -546,18 +579,18 @@
       {
         "ticker": "XLRE",
         "sector": "Real Estate",
-        "ret_1d": 0.21,
-        "ret_5d": 1.36,
-        "ret_1m": 6.07,
-        "ret_3m": -3.69,
-        "rel_1d": 2.51,
-        "rel_5d": 2.45,
-        "rel_1m": 7.68,
-        "rel_3m": -3.14,
+        "ret_1d": 0.26,
+        "ret_5d": 1.41,
+        "ret_1m": 6.12,
+        "ret_3m": -3.64,
+        "rel_1d": 2.03,
+        "rel_5d": 1.97,
+        "rel_1m": 7.2,
+        "rel_3m": -3.63,
         "rvol": 0.83,
         "rrg": {
-          "x": 101.12,
-          "y": 101.44,
+          "x": 100.96,
+          "y": 101.18,
           "quadrant": "Leading",
           "tail": [
             {
@@ -585,8 +618,8 @@
               "y": 100.71
             },
             {
-              "x": 101.12,
-              "y": 101.44
+              "x": 100.96,
+              "y": 101.18
             }
           ]
         },
@@ -596,18 +629,18 @@
       {
         "ticker": "XLY",
         "sector": "Cons. Discretionary",
-        "ret_1d": -0.69,
-        "ret_5d": 2.03,
-        "ret_1m": 6.06,
-        "ret_3m": -2.16,
-        "rel_1d": 1.61,
-        "rel_5d": 3.12,
-        "rel_1m": 7.67,
-        "rel_3m": -1.61,
+        "ret_1d": -0.71,
+        "ret_5d": 2.02,
+        "ret_1m": 6.04,
+        "ret_3m": -2.18,
+        "rel_1d": 1.06,
+        "rel_5d": 2.58,
+        "rel_1m": 7.12,
+        "rel_3m": -2.17,
         "rvol": 0.9,
         "rrg": {
-          "x": 101.66,
-          "y": 101.67,
+          "x": 101.44,
+          "y": 101.38,
           "quadrant": "Leading",
           "tail": [
             {
@@ -635,29 +668,36 @@
               "y": 100.5
             },
             {
-              "x": 101.66,
-              "y": 101.67
+              "x": 101.44,
+              "y": 101.38
             }
           ]
         },
-        "top_stocks": [],
+        "top_stocks": [
+          {
+            "ticker": "GME",
+            "name": "GameStop Corp.",
+            "change_pct": 0.9583,
+            "price": 24.23
+          }
+        ],
         "rotation": 3
       },
       {
         "ticker": "XLF",
         "sector": "Financials",
-        "ret_1d": -0.67,
-        "ret_5d": 1.18,
-        "ret_1m": 5.8,
-        "ret_3m": -1.08,
-        "rel_1d": 1.63,
-        "rel_5d": 2.27,
-        "rel_1m": 7.41,
-        "rel_3m": -0.53,
+        "ret_1d": -0.76,
+        "ret_5d": 1.09,
+        "ret_1m": 5.71,
+        "ret_3m": -1.17,
+        "rel_1d": 1.01,
+        "rel_5d": 1.65,
+        "rel_1m": 6.79,
+        "rel_3m": -1.16,
         "rvol": 1.01,
         "rrg": {
-          "x": 101.09,
-          "y": 100.88,
+          "x": 100.88,
+          "y": 100.67,
           "quadrant": "Leading",
           "tail": [
             {
@@ -685,30 +725,37 @@
               "y": 100.53
             },
             {
-              "x": 101.09,
-              "y": 100.88
+              "x": 100.88,
+              "y": 100.67
             }
           ]
         },
-        "top_stocks": [],
+        "top_stocks": [
+          {
+            "ticker": "GPN",
+            "name": "Global Payments Inc",
+            "change_pct": 12.9725,
+            "price": 96.84
+          }
+        ],
         "rotation": 0
       },
       {
         "ticker": "XLI",
         "sector": "Industrials",
-        "ret_1d": -1.54,
-        "ret_5d": 1.76,
-        "ret_1m": -0.67,
-        "ret_3m": -8.3,
-        "rel_1d": 0.76,
-        "rel_5d": 2.85,
-        "rel_1m": 0.94,
-        "rel_3m": -7.75,
+        "ret_1d": -1.6,
+        "ret_5d": 1.69,
+        "ret_1m": -0.74,
+        "ret_3m": -8.36,
+        "rel_1d": 0.17,
+        "rel_5d": 2.25,
+        "rel_1m": 0.34,
+        "rel_3m": -8.35,
         "rvol": 1.04,
         "rrg": {
-          "x": 100.08,
-          "y": 102.01,
-          "quadrant": "Leading",
+          "x": 99.83,
+          "y": 101.6,
+          "quadrant": "Improving",
           "tail": [
             {
               "x": 98.22,
@@ -735,8 +782,8 @@
               "y": 99.71
             },
             {
-              "x": 100.08,
-              "y": 102.01
+              "x": 99.83,
+              "y": 101.6
             }
           ]
         },
@@ -746,18 +793,18 @@
       {
         "ticker": "XLC",
         "sector": "Comm. Services",
-        "ret_1d": -1.09,
-        "ret_5d": -5.12,
-        "ret_1m": -8.95,
-        "ret_3m": -9.79,
-        "rel_1d": 1.21,
-        "rel_5d": -4.03,
-        "rel_1m": -7.34,
-        "rel_3m": -9.24,
+        "ret_1d": -1.29,
+        "ret_5d": -5.32,
+        "ret_1m": -9.13,
+        "ret_3m": -9.98,
+        "rel_1d": 0.48,
+        "rel_5d": -4.76,
+        "rel_1m": -8.05,
+        "rel_3m": -9.97,
         "rvol": 1.63,
         "rrg": {
-          "x": 97.4,
-          "y": 100.31,
+          "x": 97.21,
+          "y": 100.16,
           "quadrant": "Improving",
           "tail": [
             {
@@ -785,8 +832,8 @@
               "y": 98.15
             },
             {
-              "x": 97.4,
-              "y": 100.31
+              "x": 97.21,
+              "y": 100.16
             }
           ]
         },
@@ -796,18 +843,18 @@
       {
         "ticker": "XLK",
         "sector": "Technology",
-        "ret_1d": -4.78,
-        "ret_5d": -1.92,
-        "ret_1m": -9.15,
-        "ret_3m": 1.06,
-        "rel_1d": -2.48,
-        "rel_5d": -0.83,
-        "rel_1m": -7.54,
-        "rel_3m": 1.61,
+        "ret_1d": -4.89,
+        "ret_5d": -2.03,
+        "ret_1m": -9.25,
+        "ret_3m": 0.94,
+        "rel_1d": -3.12,
+        "rel_5d": -1.47,
+        "rel_1m": -8.17,
+        "rel_3m": 0.95,
         "rvol": 0.85,
         "rrg": {
-          "x": 98.78,
-          "y": 99.7,
+          "x": 98.57,
+          "y": 99.49,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -835,21 +882,28 @@
               "y": 100.21
             },
             {
-              "x": 98.78,
-              "y": 99.7
+              "x": 98.57,
+              "y": 99.49
             }
           ]
         },
-        "top_stocks": [],
+        "top_stocks": [
+          {
+            "ticker": "REGN",
+            "name": "Regeneron Pharmaceuticals, Inc.",
+            "change_pct": 13.3273,
+            "price": 927.89
+          }
+        ],
         "rotation": 1
       }
     ],
     "posture": {
       "label": "Risk-off",
-      "spread": -9.3,
+      "spread": -9.32,
       "leaders": [
         "Energy",
-        "Health Care"
+        "Cons. Staples"
       ],
       "laggards": [
         "Comm. Services",
@@ -858,59 +912,120 @@
     },
     "benchmark": {
       "ticker": "SPY",
-      "ret_1d": -2.3,
-      "ret_5d": -1.09,
-      "ret_1m": -1.61,
-      "ret_3m": -0.55
+      "ret_1d": -1.77,
+      "ret_5d": -0.56,
+      "ret_1m": -1.08,
+      "ret_3m": -0.01
     }
   },
   "reddit_feed": [
     {
-      "id": "f5e7078a4db0907f8e46d6ff0f40fea82a53a69110ab88b3828cd7391b248760",
-      "title": "DNB DEADLINE: ROSEN, GLOBAL INVESTOR COUNSEL, Encourages Dun & Bradstreet Holdings, Inc. Investors to Secure Counsel Bef",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "YSS",
-        "BULL",
-        "BULLW"
-      ],
-      "hours_ago": 1.0,
-      "url": "https://www.globenewswire.com/news-release/2026/10/30/3392601/673/en/dnb-deadline-rosen-global-investor-counsel-encourages-dun-bradstreet-holdings-inc-investors-to-secure-counsel-before-important-november-10-deadline-in-securities-class-action-dnb.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "YSS"
-      ]
-    },
-    {
-      "id": "de71e0e8b70b0381b936345970de8160f1f445b61b3fcff0ed2925d1b8d5d916",
-      "title": "YSS DEADLINE TODAY: ROSEN, A RANKED AND LEADING LAW FIRM, Encourages York Space Systems Inc. Investors to Secure Counsel",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "YSS"
-      ],
-      "hours_ago": 1.2,
-      "url": "https://www.globenewswire.com/news-release/2026/10/30/3392600/673/en/yss-deadline-today-rosen-a-ranked-and-leading-law-firm-encourages-york-space-systems-inc-investors-to-secure-counsel-before-important-october-30-deadline-in-securities-class-action.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "YSS"
-      ]
-    },
-    {
-      "id": "eb15a63d3f4d44ce9cdf1a8a073b623ceba087519bf2e0abd07757081f43f272",
-      "title": "Apple Is Near a Record. Netflix Is Down More Than Half. I'd Buy Only 1 of Them.",
+      "id": "3522d18b1dc1d60b45a3c10e0f6c9e40729a36341376b544c6f5afd91b8605bb",
+      "title": "Stock Market Today, Oct. 30: Intel Plunges Nearly 29% as Weak Outlook Rattles Wall Street",
       "subreddit": "The Motley Fool",
       "ups": 0,
       "tickers": [
-        "AAPL",
-        "NFLX"
+        "INTC",
+        "AMD",
+        "NVDA"
       ],
-      "hours_ago": 1.4,
-      "url": "https://www.fool.com/investing/2026/10/30/apple-is-near-a-record-netflix-is-down-more-than-half-i-d-buy-only-1-of-them/?source=iedfolrf0000001",
+      "hours_ago": 0.6,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/10/30/stock-market-today-oct-30-intel-plunges-nearly-29-as-weak-outlook-rattles-wall-street/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "AAPL"
+        "INTC",
+        "NVDA"
+      ]
+    },
+    {
+      "id": "a17d35cbe69dc961f28166f0bfeeec9a4a3d30af8868dbe7a8deff607a1eb311",
+      "title": "Why GE Vernova Stock Fell on Friday",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "GEV",
+        "AMJB",
+        "JPM",
+        "JPMpC",
+        "JPMpD"
+      ],
+      "hours_ago": 0.9,
+      "url": "https://www.fool.com/investing/2026/10/30/why-ge-vernova-stock-fell-on-friday/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "JPM"
+      ]
+    },
+    {
+      "id": "bfa5a11a163d81e2f7072276024853f6c3072b1eb86b11e766ae4423a30c9992",
+      "title": "Here's What the S&P 500 Did the Last 2 Times Its Earnings Grew 25%-Plus for 3 Straight Quarters",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "GOOG",
+        "GOOGL",
+        "GOOGM",
+        "GOOGN",
+        "AMZN"
+      ],
+      "hours_ago": 1.2,
+      "url": "https://www.fool.com/investing/2026/10/30/here-s-what-the-s-and-p-500-did-the-last-2-times-its-earnings-grew-25-plus-for-3-straight-quarters/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOOG",
+        "AMZN"
+      ]
+    },
+    {
+      "id": "ba97ff3e4ccb153fd9bc2468eb197bd40d3f7ecce905cebc50cd0cb274fadca6",
+      "title": "Bank of America vs. JPMorgan Chase: Diverging Quarterly Revenue Trends for These Financial Giants",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "AMJB",
+        "JPM",
+        "JPMpC",
+        "JPMpD",
+        "JPMpJ"
+      ],
+      "hours_ago": 1.6,
+      "url": "https://www.fool.com/coverage/charts/2026/10/30/bank-of-america-vs-jpmorgan-chase-diverging-quarterly-revenue-trends-for-these-financial-giants/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "JPM"
+      ]
+    },
+    {
+      "id": "326cc169198cd1f46cef7ff4c9feadd4044e97dbc470b49d04db9897535ddde5",
+      "title": "Reddit: 3 Key Takeaways for Long-Term Investors",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "RDDT"
+      ],
+      "hours_ago": 1.8,
+      "url": "https://www.fool.com/earnings/takeaways/2026/10/30/reddit-3-key-takeaways-for-long-term-investors/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "RDDT"
+      ]
+    },
+    {
+      "id": "83c3912a89fb122e7b73e8638aafb52bad7957239afae901739778816c5c8d82",
+      "title": "Arista Networks vs. Figma: Which Technology Stock Is a Better Buy in 2026?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "ANET",
+        "FIG",
+        "AVGO",
+        "AMZN"
+      ],
+      "hours_ago": 2.1,
+      "url": "https://www.fool.com/coverage/better-buy/2026/10/30/arista-networks-vs-figma-which-technology-stock-is-a-better-buy-in-2026/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMZN"
       ]
     },
     {
@@ -924,84 +1039,26 @@
         "AAPL",
         "AMZN"
       ],
-      "hours_ago": 2.0,
+      "hours_ago": 3.7,
       "url": "https://www.fool.com/coverage/better-buy/2026/10/30/applovin-vs-magnite-which-digital-advertising-stock-is-a-better-buy-in-2026/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "AAPL",
         "AMZN"
       ]
     },
     {
-      "id": "724c53bc52ca71fff5a08118d98f872d867e50ba8e50c1da372e000511abf068",
-      "title": "Big Tech Stocks Have Never Looked Cheaper. Is the Magnificent Seven a Screaming Buy?",
+      "id": "083c6f269bfa15bd234d443e0bd3d004e82d0ec07baf60e7bed955704f5e141c",
+      "title": "Is Nvidia Stock a Trick or Treat?",
       "subreddit": "The Motley Fool",
       "ups": 0,
       "tickers": [
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN",
-        "AMZN"
+        "NVDA"
       ],
-      "hours_ago": 3.0,
-      "url": "https://www.fool.com/investing/2026/10/30/big-tech-stocks-have-never-looked-cheaper-is-the-magnificent-seven-a-screaming-buy/?source=iedfolrf0000001",
+      "hours_ago": 3.8,
+      "url": "https://www.fool.com/investing/2026/10/30/is-nvidia-stock-a-trick-or-treat/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "GOOG",
-        "AMZN"
-      ]
-    },
-    {
-      "id": "7075594eeff49b221f7a62060ed2207c11ad1e6c552d988cce2631205b81dfd0",
-      "title": "Adobe vs. Axon Enterprise: Which Technology Stock Is a Better Buy in 2026?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "ADBE",
-        "AXON",
-        "AMZN",
-        "INTU",
-        "MSI"
-      ],
-      "hours_ago": 3.0,
-      "url": "https://www.fool.com/coverage/better-buy/2026/10/30/adobe-vs-axon-enterprise-which-technology-stock-is-a-better-buy-in-2026/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "AMZN"
-      ]
-    },
-    {
-      "id": "797e423cd062d2a9792854dcaf6a87e3658e7cf63b3b445ab82377518234382c",
-      "title": "Intel: 3 Key Takeaways for Long-Term Investors",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "INTC",
-        "NVDA",
-        "ARM"
-      ],
-      "hours_ago": 4.2,
-      "url": "https://www.fool.com/earnings/takeaways/2026/10/30/intel-3-key-takeaways-for-long-term-investors/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "INTC"
-      ]
-    },
-    {
-      "id": "2360f50e4ee2a02107099b3e1e4133a4106597525beb92879c820612d82f62f8",
-      "title": "Why Cerebras Stock Dropped Today",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "CBRS",
-        "INTC"
-      ],
-      "hours_ago": 4.3,
-      "url": "https://www.fool.com/investing/2026/10/30/why-cerebras-stock-dropped-today/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "INTC"
+        "NVDA"
       ]
     }
   ]
