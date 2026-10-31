@@ -1,37 +1,37 @@
 {
-  "scan_time": "2026-10-30T20:30:33.388776+00:00",
+  "scan_time": "2026-10-31T01:05:04.110226+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Risk-Off",
-    "score": -2,
-    "headline": "Today's tape is working against the longer-term trend: SPY -1.77% and off its highs, with only 6 of 11 sectors green. Most of the inputs are negative, and together they show a market working against rising prices. Volume is under its 50-day norm, though that is ordinary for late October. It points to a slow tape rather than a warning sign.",
+    "verdict": "Mixed",
+    "score": 4,
+    "headline": "The tape is sending mixed signals: some inputs lean positive, others negative, and none clearly leads.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-1.77%",
-        "read": "Weak",
-        "tone": "bad"
-      },
-      {
-        "label": "Market trend",
-        "sub": "SPY vs moving averages",
-        "value": "Below 50-day",
-        "read": "Downtrend",
-        "tone": "bad"
-      },
-      {
-        "label": "5-day momentum",
-        "sub": "SPY one-week change",
-        "value": "-0.6%",
+        "value": "-0.38%",
         "read": "Soft",
         "tone": "neutral"
       },
       {
+        "label": "Market trend",
+        "sub": "SPY vs moving averages",
+        "value": "Above 50-day",
+        "read": "Uptrend",
+        "tone": "good"
+      },
+      {
+        "label": "5-day momentum",
+        "sub": "SPY one-week change",
+        "value": "+0.7%",
+        "read": "Firm",
+        "tone": "good"
+      },
+      {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "-19%",
-        "read": "Light",
+        "value": "+1%",
+        "read": "Normal",
         "tone": "neutral"
       },
       {
@@ -49,23 +49,23 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-10-30T20:30:35.303487+00:00",
+    "updated": "2026-10-31T01:05:06.552289+00:00",
     "session": {
-      "change_pct": -1.77,
-      "from_open_pct": -0.74,
-      "range_pos": 0.483,
-      "sectors_green": 6,
-      "sectors_total": 11,
-      "live": true,
-      "detail": "-1.77% vs prior close \u00b7 mid-range (48% of range) \u00b7 6/11 sectors green"
+      "change_pct": -0.38,
+      "from_open_pct": 0.07,
+      "range_pos": 0.662,
+      "sectors_green": null,
+      "sectors_total": null,
+      "live": false,
+      "detail": "-0.38% vs prior close \u00b7 mid-range (66% of range) \u00b7 last completed session"
     },
     "participation": {
-      "ratio": 0.811,
+      "ratio": 1.011,
       "expected": 0.995,
-      "adjusted": 0.815,
-      "direction": "fading",
-      "drift_pct": -26.7,
-      "detail": "33M vs 41M avg \u00b7 about normal for this week of the year"
+      "adjusted": 1.016,
+      "direction": "steady",
+      "drift_pct": 7.6,
+      "detail": "42M vs 41M avg"
     }
   }
 }
