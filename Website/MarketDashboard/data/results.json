@@ -1,45 +1,8 @@
 {
-  "scan_time": "2026-11-02T22:29:35.190171+00:00",
+  "scan_time": "2026-11-02T23:08:51.144935+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 23,
   "day_trades": [
-    {
-      "ticker": "TEM",
-      "name": "Tempus AI, Inc.",
-      "sector": "Life Sciences Tools & Services",
-      "current_price": 78.48,
-      "change_pct": 8.668,
-      "high": 83.4243,
-      "low": 70.3,
-      "open": 74.43,
-      "prev_close": 72.22,
-      "score": 39,
-      "signals": [
-        "Top gainer (+8.7%)",
-        "High volume",
-        "Strong move (+8.7%)",
-        "Yahoo trending (#16)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 13161520000.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950967583436.png",
-      "weburl": "https://investors.tempus.com/",
-      "yahoo_trending_rank": 16,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.07,
-          "estimate": -0.08,
-          "beat": true,
-          "surprise_pct": 188.1
-        }
-      },
-      "score_normalized": 55
-    },
     {
       "ticker": "UPWK",
       "name": "Upwork Inc.",
@@ -66,7 +29,13 @@
       "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.25,
+          "estimate": 0.32,
+          "beat": false,
+          "surprise_pct": -22.1
+        }
       },
       "score_normalized": 44
     },
@@ -85,7 +54,7 @@
         "Top gainer (+2.2%)",
         "High volume",
         "Moderate move (+2.2%)",
-        "Yahoo trending (#8)"
+        "Yahoo trending (#10)"
       ],
       "reddit_mentions": 0,
       "market_cap": 10642560000.0,
@@ -93,7 +62,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/CLX.png",
       "weburl": "https://www.thecloroxcompany.com/",
-      "yahoo_trending_rank": 8,
+      "yahoo_trending_rank": 10,
       "earnings_info": {
         "upcoming": null,
         "recent": null
@@ -115,7 +84,7 @@
         "Top gainer (+2.7%)",
         "High volume",
         "Moderate move (+2.7%)",
-        "Yahoo trending (#18)",
+        "Yahoo trending (#15)",
         "Closing strong"
       ],
       "reddit_mentions": 0,
@@ -124,10 +93,16 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/LSCC.png",
       "weburl": "https://www.latticesemi.com/",
-      "yahoo_trending_rank": 18,
+      "yahoo_trending_rank": 15,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.72,
+          "estimate": 0.56,
+          "beat": true,
+          "surprise_pct": 27.8
+        }
       },
       "score_normalized": 41
     }
@@ -136,7 +111,7 @@
   "reddit_cards": [
     {
       "ticker": "AMZN",
-      "mentions": 8,
+      "mentions": 7,
       "name": "Amazon.com Inc",
       "sector": "Retail",
       "current_price": 245.63,
@@ -148,16 +123,16 @@
       "market_cap": 2598937790000.0,
       "score": 0,
       "signals": [
-        "News buzz (8 mentions)"
+        "News buzz (7 mentions)"
       ],
-      "reddit_mentions": 8,
+      "reddit_mentions": 7,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
         "trend_pct": 229,
         "reddit": 23,
-        "st_bull": 67,
+        "st_bull": 75,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -172,6 +147,48 @@
           "estimate": 2.0,
           "beat": false,
           "surprise_pct": -5.6
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "MSFT",
+      "mentions": 5,
+      "name": "Microsoft Corporation",
+      "sector": "Technology",
+      "current_price": 507.12,
+      "change_pct": -2.8338,
+      "high": 529.63,
+      "low": 504.96,
+      "open": 524.015,
+      "prev_close": 521.91,
+      "market_cap": 3875805200000.0,
+      "score": 0,
+      "signals": [
+        "News buzz (5 mentions)"
+      ],
+      "reddit_mentions": 5,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": 73,
+        "reddit": 19,
+        "st_bull": 73,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 4.89,
+          "estimate": 4.82,
+          "beat": true,
+          "surprise_pct": 1.4
         }
       },
       "score_normalized": 0
@@ -197,9 +214,9 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 256,
+        "trend_pct": 235,
         "reddit": 57,
-        "st_bull": 50,
+        "st_bull": 55,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -219,49 +236,6 @@
       "score_normalized": 0
     },
     {
-      "ticker": "MRVL",
-      "mentions": 4,
-      "name": "Marvell Technology, Inc.",
-      "sector": "Semiconductors",
-      "current_price": 171.41,
-      "change_pct": -12.724,
-      "high": 192.305,
-      "low": 168.52,
-      "open": 191.555,
-      "prev_close": 196.4,
-      "market_cap": 172223160000.0,
-      "score": 0,
-      "signals": [
-        "News buzz (4 mentions)",
-        "Yahoo trending (#4)"
-      ],
-      "reddit_mentions": 4,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": 4,
-      "social": {
-        "trend_pct": 1700,
-        "reddit": 54,
-        "st_bull": 22,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.94,
-          "estimate": 0.94,
-          "beat": false,
-          "surprise_pct": -0.2
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "AAPL",
       "name": "Apple Inc.",
       "sector": "Technology",
@@ -273,11 +247,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 182,
+      "mentions": 229,
       "social": {
-        "trend_pct": 1555,
-        "reddit": 182,
-        "st_bull": 12,
+        "trend_pct": 2762,
+        "reddit": 229,
+        "st_bull": 73,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -302,10 +276,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 105,
+      "mentions": 110,
       "social": {
-        "trend_pct": 1650,
-        "reddit": 105,
+        "trend_pct": 1733,
+        "reddit": 110,
         "sources": [
           "Reddit"
         ]
@@ -334,17 +308,23 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 101,
+      "mentions": 110,
       "social": {
-        "trend_pct": 1920,
-        "reddit": 101,
+        "trend_pct": 1733,
+        "reddit": 110,
         "sources": [
           "Reddit"
         ]
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.44,
+          "estimate": 0.42,
+          "beat": true,
+          "surprise_pct": 5.2
+        }
       },
       "score_normalized": 0
     }
@@ -354,9 +334,9 @@
       "ticker": "AAPL",
       "name": "Apple Inc.",
       "sector": "Technology",
-      "mentions": 182,
-      "prev": 11,
-      "trend_pct": 1555,
+      "mentions": 229,
+      "prev": 8,
+      "trend_pct": 2762,
       "current_price": 338.32,
       "change_pct": -1.8309,
       "market_cap": 5029592250000.0
@@ -365,9 +345,9 @@
       "ticker": "MU",
       "name": "Micron Technology, Inc.",
       "sector": "Semiconductors",
-      "mentions": 105,
+      "mentions": 110,
       "prev": 6,
-      "trend_pct": 1650,
+      "trend_pct": 1733,
       "current_price": 833.59,
       "change_pct": -5.7814,
       "market_cap": 1001015370000.0
@@ -376,9 +356,9 @@
       "ticker": "PLTR",
       "name": "Palantir Technologies Inc.",
       "sector": "Technology",
-      "mentions": 101,
-      "prev": 5,
-      "trend_pct": 1920,
+      "mentions": 110,
+      "prev": 6,
+      "trend_pct": 1733,
       "current_price": 178.34,
       "change_pct": -3.134,
       "market_cap": 442427100000.0
@@ -489,6 +469,12 @@
             "name": "IDEXX Laboratories, Inc.",
             "change_pct": 21.8483,
             "price": 671.64
+          },
+          {
+            "ticker": "PFE",
+            "name": "Pfizer Inc.",
+            "change_pct": 0.4915,
+            "price": 30.67
           }
         ],
         "rotation": -2
@@ -690,14 +676,7 @@
             }
           ]
         },
-        "top_stocks": [
-          {
-            "ticker": "EVGO",
-            "name": "EVgo Inc",
-            "change_pct": 46.8254,
-            "price": 1.85
-          }
-        ],
+        "top_stocks": [],
         "rotation": 4
       },
       {
@@ -994,6 +973,64 @@
   },
   "reddit_feed": [
     {
+      "id": "5d2a3d963ada86934f510e28f8498cc52623f18ceb7d2d6b8a04864d51dfc706",
+      "title": "Accenture vs. Microsoft: Which Technology Stock Is a Better Buy for 2027?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "MSFT",
+        "ACN",
+        "AMZN"
+      ],
+      "hours_ago": 0.5,
+      "url": "https://www.fool.com/coverage/better-buy/2026/11/02/accenture-vs-microsoft-which-technology-stock-is-a-better-buy-for-2027/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "MSFT",
+        "AMZN"
+      ]
+    },
+    {
+      "id": "b648220aad3706603f3822ba7097465da37736824c9e1ffc60dda47707c78e3b",
+      "title": "Stock Market Today, Nov. 2: Apple Stock Slides Ahead of Earnings, but Its Latest Results Tell a Different Story",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "AAPL",
+        "MSFT",
+        "GOOG",
+        "GOOGL",
+        "GOOGM"
+      ],
+      "hours_ago": 0.7,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/02/stock-market-today-nov-2-apple-stock-slides-ahead-of-earnings-but-its-latest-results-tell-a-different-story/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AAPL",
+        "MSFT"
+      ]
+    },
+    {
+      "id": "7a762d2f785fd304b11b16c7cc79cc6d900224d8a14406282865e6f35255a89e",
+      "title": "AMD Reports Tuesday. Here's the Number That Will Show Whether It's Gaining on Nvidia",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "AMD",
+        "NVDA",
+        "META",
+        "METAM",
+        "MSFT"
+      ],
+      "hours_ago": 0.8,
+      "url": "https://www.fool.com/investing/2026/11/02/amd-reports-tuesday-here-s-the-number-that-will-show-whether-it-s-gaining-on-nvidia/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA",
+        "MSFT"
+      ]
+    },
+    {
       "id": "930bbeffca03e0d94aa3675057a788de3ce8260a519a4623d01947d16287e558",
       "title": "UiPath vs. SentinelOne: Which Technology Stock Is a Better Buy for 2027?",
       "subreddit": "The Motley Fool",
@@ -1003,28 +1040,11 @@
         "SNOW",
         "AMZN"
       ],
-      "hours_ago": 0.6,
+      "hours_ago": 1.2,
       "url": "https://www.fool.com/coverage/better-buy/2026/11/02/uipath-vs-sentinelone-which-technology-stock-is-a-better-buy-for-2027/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "AMZN"
-      ]
-    },
-    {
-      "id": "1bdcbbf9553ad9b33c0518cd2422925e494da31b55da5f97efade2a3895f4042",
-      "title": "Stock Market Today, Nov. 2: Marvell Announces $115 Billion All-Stock Acquisition of Lumentum",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "MRVL",
-        "LITE",
-        "AVGO"
-      ],
-      "hours_ago": 0.7,
-      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/02/stock-market-today-nov-2-marvell-announces-usd115-billion-all-stock-acquisition-of-lumentum/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MRVL"
       ]
     },
     {
@@ -1037,28 +1057,11 @@
         "WMT",
         "COST"
       ],
-      "hours_ago": 0.7,
+      "hours_ago": 1.4,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/02/stock-market-today-nov-2-amazon-rallies-on-phillip-securities-buy-upgrade-and-330-target/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "AMZN"
-      ]
-    },
-    {
-      "id": "b6c52025a837a3584ce9877474f4c0b8591b7b3d8908b5dddd89621cdea3e5a5",
-      "title": "Ichor's Profit Jumps as Cash Burn Grows: Rapid Earnings Reaction",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "ICHR",
-        "MRVL",
-        "LITE"
-      ],
-      "hours_ago": 0.7,
-      "url": "https://www.fool.com/investing/2026/11/02/ichor-s-profit-jumps-as-cash-burn-grows-rapid-earnings-reaction/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MRVL"
       ]
     },
     {
@@ -1069,7 +1072,7 @@
       "tickers": [
         "AAPL"
       ],
-      "hours_ago": 0.8,
+      "hours_ago": 1.4,
       "url": "https://www.fool.com/investing/2026/11/02/apple-sales-rise-12-tariff-refunds-pad-eps-rapid-earnings-reaction/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1085,30 +1088,11 @@
         "AMZN",
         "ARM"
       ],
-      "hours_ago": 2.0,
+      "hours_ago": 2.6,
       "url": "https://www.fool.com/investing/2026/11/02/is-amazon-stock-a-buy-as-cloud-revenue-continues-t/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "AMZN"
-      ]
-    },
-    {
-      "id": "886e9d759ae7c9bbce11be9795e0b40fcf53a4ddade21c9795a87a901d96a99a",
-      "title": "5 AI Infrastructure Stocks to Buy and Hold Through 2030",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "MRVL",
-        "AMD",
-        "FPS",
-        "ORCL",
-        "BN"
-      ],
-      "hours_ago": 2.1,
-      "url": "https://www.fool.com/investing/2026/11/02/5-ai-infrastructure-stocks-to-buy-and-hold-through-2030/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MRVL"
       ]
     },
     {
@@ -1123,84 +1107,12 @@
         "MSFT",
         "NVDA"
       ],
-      "hours_ago": 2.1,
+      "hours_ago": 2.8,
       "url": "https://www.fool.com/coverage/better-buy/2026/11/02/applied-digital-vs-iren-which-technology-stock-is-a-better-buy-for-2027/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
+        "MSFT",
         "NVDA"
-      ]
-    },
-    {
-      "id": "06d631f5def8fb957ec07645c1620813b34667e33048d36fc18ad3ea2087ba0b",
-      "title": "Prediction: Nov. 3 Will Be a Huge Day for the Stock Market",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "META",
-        "METAM",
-        "AMZN",
-        "CRWV",
-        "WULF"
-      ],
-      "hours_ago": 2.6,
-      "url": "https://www.fool.com/investing/2026/11/02/prediction-nov-3-will-be-a-huge-day-for-the-stock-market/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "AMZN"
-      ]
-    },
-    {
-      "id": "3025b8bcbe38f6bdf25934fb12668cb4d98c914e3fd8e8d5f82b68e79c6a4736",
-      "title": "The 3 Best Artificial Intelligence (AI) Stocks to Buy in November",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "AMZN",
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN"
-      ],
-      "hours_ago": 2.8,
-      "url": "https://www.fool.com/investing/2026/11/02/best-artificial-intelligence-ai-stocks-to-buy-nov/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "AMZN"
-      ]
-    },
-    {
-      "id": "4332834046c559619606ea76e7ba9b852c39b73aa9cf21ec68ab98b616b4335c",
-      "title": "Dell Technologies vs. Intel: Which Technology Stock Is a Better Buy for 2027?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "DELL",
-        "INTC",
-        "NVDA",
-        "QCOM",
-        "GOOG"
-      ],
-      "hours_ago": 3.0,
-      "url": "https://www.fool.com/coverage/better-buy/2026/11/02/dell-technologies-vs-intel-which-technology-stock-is-a-better-buy-for-2027/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "c0873196151978e2221326942daee59d05187ff77444626be7ab72e0961d11f1",
-      "title": "Why Marvell Technology Plunged Today",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "MRVL",
-        "LITE"
-      ],
-      "hours_ago": 3.1,
-      "url": "https://www.fool.com/investing/2026/11/02/why-marvell-technology-plunged-today/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MRVL"
       ]
     }
   ]
