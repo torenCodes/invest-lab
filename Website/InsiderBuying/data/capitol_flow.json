@@ -1,9 +1,9 @@
 {
- "scan_time": "2026-10-30T17:17:53.332790+00:00",
+ "scan_time": "2026-11-03T19:00:30.279806+00:00",
  "source": "US House Clerk (Periodic Transaction Reports)",
- "filings_total": 447,
- "filings_with_trades": 268,
- "transactions": 3169,
+ "filings_total": 451,
+ "filings_with_trades": 270,
+ "transactions": 3179,
  "window_days": 90,
  "median_disclosure_lag_days": 16,
  "caveats": {
@@ -211,15 +211,6 @@
    ]
   },
   {
-   "ticker": "FWONK",
-   "trades": 3,
-   "est_amount": 73000,
-   "members": 1,
-   "member_names": [
-    "April McClain Delaney"
-   ]
-  },
-  {
    "ticker": "MRSH",
    "trades": 2,
    "est_amount": 65000,
@@ -238,21 +229,30 @@
    ]
   },
   {
-   "ticker": "LTH",
-   "trades": 4,
-   "est_amount": 56500,
+   "ticker": "GMED",
+   "trades": 3,
+   "est_amount": 48500,
+   "members": 1,
+   "member_names": [
+    "Gilbert Cisneros"
+   ]
+  },
+  {
+   "ticker": "HUBB",
+   "trades": 3,
+   "est_amount": 48500,
    "members": 1,
    "member_names": [
     "April McClain Delaney"
    ]
   },
   {
-   "ticker": "HUBB",
-   "trades": 4,
-   "est_amount": 56500,
+   "ticker": "MOG.A",
+   "trades": 2,
+   "est_amount": 40500,
    "members": 1,
    "member_names": [
-    "April McClain Delaney"
+    "Gilbert Cisneros"
    ]
   }
  ],
@@ -392,6 +392,16 @@
    ]
   },
   {
+   "ticker": "AVGO",
+   "trades": 3,
+   "est_amount": 391000,
+   "members": 2,
+   "member_names": [
+    "Gilbert Cisneros",
+    "John J Mr McGuire"
+   ]
+  },
+  {
    "ticker": "STE",
    "trades": 2,
    "est_amount": 207500,
@@ -452,6 +462,16 @@
    ]
   },
   {
+   "ticker": "ABT",
+   "trades": 2,
+   "est_amount": 83000,
+   "members": 2,
+   "member_names": [
+    "Pete Sessions",
+    "Thomas H. Kean"
+   ]
+  },
+  {
    "ticker": "STX",
    "trades": 3,
    "est_amount": 73000,
@@ -500,26 +520,6 @@
     "Josh Gottheimer",
     "Pete Sessions"
    ]
-  },
-  {
-   "ticker": "BA",
-   "trades": 3,
-   "est_amount": 48500,
-   "members": 2,
-   "member_names": [
-    "Kevin Hern",
-    "Maria Elvira Salazar"
-   ]
-  },
-  {
-   "ticker": "CB",
-   "trades": 3,
-   "est_amount": 48500,
-   "members": 2,
-   "member_names": [
-    "Kevin Hern",
-    "Maria Elvira Salazar"
-   ]
   }
  ],
  "most_active": [
@@ -529,11 +529,11 @@
   },
   {
    "member": "Gilbert Cisneros",
-   "trades": 114
+   "trades": 113
   },
   {
    "member": "April McClain Delaney",
-   "trades": 78
+   "trades": 65
   },
   {
    "member": "Maria Elvira Salazar",
@@ -546,6 +546,10 @@
   {
    "member": "David J. Taylor",
    "trades": 33
+  },
+  {
+   "member": "Thomas H. Kean",
+   "trades": 12
   },
   {
    "member": "Scott Scott Franklin",
@@ -566,16 +570,12 @@
   {
    "member": "Josh Gottheimer",
    "trades": 9
-  },
-  {
-   "member": "Jonathan Jackson",
-   "trades": 7
   }
  ],
  "asset_mix": [
   {
    "type": "Stock",
-   "trades": 574
+   "trades": 570
   },
   {
    "type": "Options",
@@ -1364,6 +1364,19 @@
    "doc": "20035563"
   },
   {
+   "ticker": "MU",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-10-01",
+   "notify_date": "2026-10-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "John J Mr McGuire",
+   "state": "VA05",
+   "doc": "20035484"
+  },
+  {
    "ticker": "IBRX",
    "asset_type": "ST",
    "code": "P",
@@ -1401,6 +1414,32 @@
    "member": "Lisa McClain",
    "state": "MI09",
    "doc": "20035585"
+  },
+  {
+   "ticker": "JNJ",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-09-30",
+   "notify_date": "2026-10-07",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Thomas H. Kean",
+   "state": "NJ07",
+   "doc": "20035591"
+  },
+  {
+   "ticker": "SYK",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-09-30",
+   "notify_date": "2026-10-07",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Thomas H. Kean",
+   "state": "NJ07",
+   "doc": "20035591"
   },
   {
    "ticker": "AEIS",
@@ -1637,6 +1676,19 @@
    "doc": "20035622"
   },
   {
+   "ticker": "ESAB",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-09-29",
+   "notify_date": "2026-10-01",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Thomas H. Kean",
+   "state": "NJ07",
+   "doc": "20035591"
+  },
+  {
    "ticker": "MSFT",
    "asset_type": "ST",
    "code": "S",
@@ -1765,6 +1817,19 @@
    "member": "Josh Gottheimer",
    "state": "NJ05",
    "doc": "20035590"
+  },
+  {
+   "ticker": "MU",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-09-25",
+   "notify_date": "2026-10-02",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "John J Mr McGuire",
+   "state": "VA05",
+   "doc": "20035484"
   },
   {
    "ticker": "BRK.B",
@@ -2077,71 +2142,6 @@
    "member": "Maria Elvira Salazar",
    "state": "FL27",
    "doc": "20035562"
-  },
-  {
-   "ticker": "SNOW",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-09-24",
-   "notify_date": "2026-10-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Maria Elvira Salazar",
-   "state": "FL27",
-   "doc": "20035562"
-  },
-  {
-   "ticker": "SPCX",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-09-24",
-   "notify_date": "2026-10-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Maria Elvira Salazar",
-   "state": "FL27",
-   "doc": "20035562"
-  },
-  {
-   "ticker": "URI",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-09-24",
-   "notify_date": "2026-10-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Maria Elvira Salazar",
-   "state": "FL27",
-   "doc": "20035562"
-  },
-  {
-   "ticker": "UNH",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-09-24",
-   "notify_date": "2026-10-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Maria Elvira Salazar",
-   "state": "FL27",
-   "doc": "20035562"
-  },
-  {
-   "ticker": "AVGO",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-09-24",
-   "notify_date": "2026-10-09",
-   "amount_low": 250001,
-   "amount_high": 500000,
-   "amount_mid": 375000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035622"
   }
  ]
 }
