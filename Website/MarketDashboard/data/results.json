@@ -1,8 +1,45 @@
 {
-  "scan_time": "2026-11-03T22:23:43.726128+00:00",
+  "scan_time": "2026-11-03T23:57:24.226935+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 25,
   "day_trades": [
+    {
+      "ticker": "NVTS",
+      "name": "Navitas Semiconductor Corporation",
+      "sector": "Semiconductors",
+      "current_price": 8.56,
+      "change_pct": 7.9445,
+      "high": 8.945,
+      "low": 8.2,
+      "open": 8.26,
+      "prev_close": 7.93,
+      "score": 45,
+      "signals": [
+        "Top gainer (+7.9%)",
+        "High volume",
+        "Strong move (+7.9%)",
+        "Yahoo trending (#8)",
+        "Sector leader (Semiconductors)"
+      ],
+      "reddit_mentions": 1,
+      "market_cap": 2070471215.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950785244176.png",
+      "weburl": "https://navitassemi.com/",
+      "yahoo_trending_rank": 8,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.03,
+          "estimate": -0.04,
+          "beat": true,
+          "surprise_pct": 20.4
+        }
+      },
+      "score_normalized": 63
+    },
     {
       "ticker": "FISV",
       "name": "Fiserv Inc",
@@ -18,17 +55,17 @@
         "Top gainer (+12.5%)",
         "High volume",
         "Strong move (+12.5%)",
-        "Yahoo trending (#12)",
+        "Yahoo trending (#17)",
         "Closing strong",
         "Sector leader (Financial Services)"
       ],
-      "reddit_mentions": 1,
+      "reddit_mentions": 2,
       "market_cap": 27614646121.000004,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/FISV.png",
       "weburl": "https://www.fiserv.com/",
-      "yahoo_trending_rank": 12,
+      "yahoo_trending_rank": 17,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -56,7 +93,7 @@
         "Top gainer (+18.4%)",
         "High volume",
         "Strong move (+18.4%)",
-        "Yahoo trending (#20)",
+        "Yahoo trending (#19)",
         "Closing strong",
         "Sector leader (Technology)"
       ],
@@ -66,43 +103,12 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/RIOT.png",
       "weburl": "https://www.riotplatforms.com/",
-      "yahoo_trending_rank": 20,
+      "yahoo_trending_rank": 19,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
       "score_normalized": 62
-    },
-    {
-      "ticker": "NVTS",
-      "name": "Navitas Semiconductor Corporation",
-      "sector": "Semiconductors",
-      "current_price": 8.56,
-      "change_pct": 7.9445,
-      "high": 8.945,
-      "low": 8.2,
-      "open": 8.26,
-      "prev_close": 7.93,
-      "score": 41,
-      "signals": [
-        "Top gainer (+7.9%)",
-        "High volume",
-        "Strong move (+7.9%)",
-        "Yahoo trending (#11)",
-        "Sector leader (Semiconductors)"
-      ],
-      "reddit_mentions": 1,
-      "market_cap": 2070471215.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950785244176.png",
-      "weburl": "https://navitassemi.com/",
-      "yahoo_trending_rank": 11,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 58
     },
     {
       "ticker": "SMCI",
@@ -121,7 +127,7 @@
         "Good move (+3.1%)",
         "Yahoo trending (#2)"
       ],
-      "reddit_mentions": 0,
+      "reddit_mentions": 1,
       "market_cap": 19998026916.0,
       "is_gainer": true,
       "is_active": true,
@@ -160,7 +166,13 @@
       "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.18,
+          "estimate": -0.03,
+          "beat": false,
+          "surprise_pct": -488.2
+        }
       },
       "score_normalized": 37
     },
@@ -179,7 +191,7 @@
         "Top gainer (+2.7%)",
         "High volume",
         "Moderate move (+2.7%)",
-        "Yahoo trending (#15)"
+        "Yahoo trending (#16)"
       ],
       "reddit_mentions": 0,
       "market_cap": 2035010050.0000002,
@@ -187,10 +199,16 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950800353446.png",
       "weburl": "https://ouster.com/",
-      "yahoo_trending_rank": 15,
+      "yahoo_trending_rank": 16,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.2,
+          "estimate": -0.25,
+          "beat": true,
+          "surprise_pct": 20.0
+        }
       },
       "score_normalized": 37
     }
@@ -218,9 +236,9 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -22,
-        "reddit": 58,
-        "st_bull": 81,
+        "trend_pct": -62,
+        "reddit": 42,
+        "st_bull": 72,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -240,35 +258,64 @@
       "score_normalized": 0
     },
     {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "sector": "Semiconductors",
-      "current_price": 206.69,
-      "change_pct": 2.2914,
-      "high": 209.14,
-      "low": 205.93,
-      "open": 207.96,
-      "prev_close": 202.06,
-      "score": 35,
+      "ticker": "FLNC",
+      "mentions": 2,
+      "name": "Fluence Energy Inc",
+      "sector": "Electrical Equipment",
+      "current_price": 5.5,
+      "change_pct": 5.5662,
+      "high": 5.62,
+      "low": 5.3,
+      "open": 5.34,
+      "prev_close": 5.21,
+      "market_cap": 961747097.0,
+      "score": 0,
       "signals": [
-        "Top gainer (+2.3%)",
-        "High volume",
-        "Moderate move (+2.3%)",
-        "News activity (3)",
-        "Yahoo trending (#7)"
+        "News buzz (2 mentions)"
       ],
-      "reddit_mentions": 3,
-      "market_cap": 4869645941162.001,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942959144056.png",
-      "weburl": "https://www.nvidia.com",
-      "yahoo_trending_rank": 7,
-      "mentions": 3,
+      "reddit_mentions": 2,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -34,
-        "reddit": 37,
-        "st_bull": 100,
+        "reddit": 2,
+        "st_bull": 89,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "AAPL",
+      "mentions": 2,
+      "name": "Apple Inc.",
+      "sector": "Technology",
+      "current_price": 331.9,
+      "change_pct": -1.8976,
+      "high": 334.5,
+      "low": 325.33,
+      "open": 325.58,
+      "prev_close": 338.32,
+      "market_cap": 4937502978766.0,
+      "score": 0,
+      "signals": [
+        "News buzz (2 mentions)"
+      ],
+      "reddit_mentions": 2,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": -81,
+        "reddit": 43,
+        "st_bull": 83,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -279,46 +326,11 @@
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 2.22,
-          "estimate": 2.14,
+          "actual": 2.05,
+          "estimate": 2.03,
           "beat": true,
-          "surprise_pct": 3.8
+          "surprise_pct": 1.1
         }
-      },
-      "score_normalized": 49
-    },
-    {
-      "ticker": "EVRG",
-      "mentions": 3,
-      "name": "Evergy, Inc.",
-      "sector": "Utilities",
-      "current_price": 85.45,
-      "change_pct": -1.2709,
-      "high": 86.12,
-      "low": 85.19,
-      "open": 86.12,
-      "prev_close": 86.55,
-      "market_cap": 19950903537.0,
-      "score": 0,
-      "signals": [
-        "News buzz (3 mentions)"
-      ],
-      "reddit_mentions": 3,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "reddit": 3,
-        "st_bull": 100,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
       },
       "score_normalized": 0
     },
@@ -334,11 +346,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 313,
+      "mentions": 330,
       "social": {
-        "trend_pct": 306,
-        "reddit": 313,
-        "st_bull": 83,
+        "trend_pct": 244,
+        "reddit": 330,
+        "st_bull": 77,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -347,38 +359,12 @@
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "AAPL",
-      "name": "Apple Inc.",
-      "sector": "Technology",
-      "current_price": 331.9,
-      "change_pct": -1.8976,
-      "market_cap": 4937502978766.0,
-      "score": 0,
-      "signals": [],
-      "reddit_mentions": 0,
-      "is_gainer": false,
-      "is_active": false,
-      "mentions": 93,
-      "social": {
-        "trend_pct": -38,
-        "reddit": 93,
-        "sources": [
-          "Reddit"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 2.05,
-          "estimate": 2.03,
+          "actual": 2.09,
+          "estimate": 1.97,
           "beat": true,
-          "surprise_pct": 1.1
+          "surprise_pct": 6.1
         }
       },
       "score_normalized": 0
@@ -395,10 +381,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 84,
+      "mentions": 81,
       "social": {
-        "trend_pct": -17,
-        "reddit": 84,
+        "trend_pct": -25,
+        "reddit": 81,
         "sources": [
           "Reddit"
         ]
@@ -414,6 +400,38 @@
         }
       },
       "score_normalized": 0
+    },
+    {
+      "ticker": "INTC",
+      "name": "Intel Corp",
+      "sector": "Semiconductors",
+      "current_price": 60.55,
+      "change_pct": 0.9672,
+      "market_cap": 317007751414.0,
+      "score": 0,
+      "signals": [],
+      "reddit_mentions": 0,
+      "is_gainer": false,
+      "is_active": false,
+      "mentions": 50,
+      "social": {
+        "trend_pct": -6,
+        "reddit": 50,
+        "sources": [
+          "Reddit"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.52,
+          "estimate": 0.4,
+          "beat": true,
+          "surprise_pct": 28.6
+        }
+      },
+      "score_normalized": 0
     }
   ],
   "chatter_emerging": [
@@ -421,9 +439,9 @@
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
       "sector": "Semiconductors",
-      "mentions": 313,
-      "prev": 77,
-      "trend_pct": 306,
+      "mentions": 330,
+      "prev": 96,
+      "trend_pct": 244,
       "current_price": 483.9,
       "change_pct": 3.6544,
       "market_cap": 762104611624.0
@@ -432,9 +450,9 @@
       "ticker": "SMCI",
       "name": "Super Micro Computer Inc",
       "sector": "Technology",
-      "mentions": 39,
+      "mentions": 41,
       "prev": 4,
-      "trend_pct": 875,
+      "trend_pct": 925,
       "current_price": 31.39,
       "change_pct": 3.1209,
       "market_cap": 19998026916.0
@@ -1098,6 +1116,90 @@
   },
   "reddit_feed": [
     {
+      "id": "74ec4650bb8a9a77b5503a53ee97a87507ee93600f43a594f13ea8e8870ce142",
+      "title": "INVESTOR ALERT: Pomerantz Law Firm Reminds Investors with Losses on their Investment in Fluence Energy, Inc. of Class Ac",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "FLNC"
+      ],
+      "hours_ago": 1.0,
+      "url": "https://www.globenewswire.com/news-release/2026/11/03/3394947/1087/en/investor-alert-pomerantz-law-firm-reminds-investors-with-losses-on-their-investment-in-fluence-energy-inc-of-class-action-lawsuit-and-upcoming-deadlines-flnc.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "FLNC"
+      ]
+    },
+    {
+      "id": "485aaff11cd1e804b41567104800f38d56ce5208be7e5510929a7253ec7efcd8",
+      "title": "INVESTOR ALERT: Pomerantz Law Firm Reminds Investors with Losses on their Investment in Honeywell Aerospace Inc. of Clas",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "HONA",
+        "FLNC"
+      ],
+      "hours_ago": 1.1,
+      "url": "https://www.globenewswire.com/news-release/2026/11/03/3394940/1087/en/investor-alert-pomerantz-law-firm-reminds-investors-with-losses-on-their-investment-in-honeywell-aerospace-inc-of-class-action-lawsuit-and-upcoming-deadlines-hona.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "FLNC"
+      ]
+    },
+    {
+      "id": "fc0026f38bfdcc4451a9fb9b3f029de2916735cde274e87e437b3d441c6ad402",
+      "title": "Should You Buy Qualcomm Stock Before Its Nov. 4 Report?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "QCOM",
+        "AAPL",
+        "INTC"
+      ],
+      "hours_ago": 1.1,
+      "url": "https://www.fool.com/investing/2026/11/03/should-you-buy-qualcomm-stock-before-its-nov-4-report/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AAPL",
+        "INTC"
+      ]
+    },
+    {
+      "id": "e1558e7625a8a2989c5d436e2bdfae1b9dae16e442bfc72d7e2e4da162252204",
+      "title": "Stock Market Today, Nov. 3: Markets Edge Higher as Semiconductor Stocks Rebound",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "AMD",
+        "SMCI",
+        "SMCIP",
+        "FISV",
+        "AAPL"
+      ],
+      "hours_ago": 1.2,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/03/stock-market-today-nov-3-markets-edge-higher-as-semiconductor-stocks-rebound/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMD",
+        "AAPL"
+      ]
+    },
+    {
+      "id": "a80ea757c8547592d49aef2cc9c9c90abe6c4919d322a565deeb7a953146cab8",
+      "title": "Is Palantir Stock a Buy After its Latest Earnings Report?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "PLTR"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://www.fool.com/investing/2026/11/03/is-palantir-stock-a-buy-after-its-latest-earnings-report/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "PLTR"
+      ]
+    },
+    {
       "id": "818f7c83a585728889eb742475f7f18ec15ef4acf34c004434d03a9fd547b45b",
       "title": "Stock Market Today, Nov. 3: Palantir Falls After Q3 Results as Valuation Stays in Focus",
       "subreddit": "The Motley Fool",
@@ -1107,75 +1209,11 @@
         "AI",
         "BBAI"
       ],
-      "hours_ago": 0.4,
+      "hours_ago": 2.0,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/03/stock-market-today-nov-3-palantir-falls-after-q3-results-as-valuation-stays-in-focus/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "PLTR"
-      ]
-    },
-    {
-      "id": "d9759e1f0e868ec4bde53209f8bd9f399759fbfae24808bf6e0e8868e8a394a7",
-      "title": "Investors Are Asking the Wrong Question About Anthropic",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "ANTW",
-        "NVDA",
-        "OAIW"
-      ],
-      "hours_ago": 4.4,
-      "url": "https://www.fool.com/investing/2026/11/03/investors-are-asking-the-wrong-question-about-anth/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "9bf333e2611a5e91311ea4ca63aed0fc90e5b9b93005f402c53eaf98dfcf2ae7",
-      "title": "Palantir Q3 Earnings Call Highlights Sovereign AI Demand and Outlook",
-      "subreddit": "Zacks Investment Research",
-      "ups": 0,
-      "tickers": [
-        "PLTR"
-      ],
-      "hours_ago": 4.6,
-      "url": "https://www.zacks.com/stock/news/3022151/palantir-q3-earnings-call-highlights-sovereign-ai-demand-and-outlook?cid=CS-ZC-FT-analyst_blog_plus|earnings_call_takeaways-3022151",
-      "is_news": true,
-      "confirmed_tickers": [
-        "PLTR"
-      ]
-    },
-    {
-      "id": "cab57376857ab33c7caa89b458ab5d989d3de19540435021462183ab1bbdc468",
-      "title": "Apple Just Stockpiled $10 Billion of Parts While Warning Memory Prices Are 'Unprecedented.' Should Investors Worry?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "AAPL",
-        "MU"
-      ],
-      "hours_ago": 4.6,
-      "url": "https://www.fool.com/investing/2026/11/03/apple-just-stockpiled-usd10-billion-of-parts-while-warning-memory-prices-are-unprecedented-should-investors-worry/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "AAPL",
-        "MU"
-      ]
-    },
-    {
-      "id": "db3e29204bfadf0ecdbf238ac6694b3db3d36a3402e7f788a8f8d5c35723dbfe",
-      "title": "Apple Stock Fell After a Record iPhone Quarter. Here\u2019s the Margin Problem Investors Shouldn\u2019t Ignore.",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "AAPL"
-      ],
-      "hours_ago": 4.6,
-      "url": "https://www.fool.com/investing/2026/11/03/apple-stock-fell-after-a-record-iphone-quarter-heres-the-margin-problem-investors-shouldnt-ignore/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "AAPL"
       ]
     }
   ]
