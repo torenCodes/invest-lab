@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-11-02T23:48:10.640509",
+  "scan_time": "2026-11-03T00:11:16.940141",
   "total_transactions": 298,
   "date_range": "2026-09-30 \u2013 2026-11-02",
   "min_value": 25000,
@@ -117,14 +117,13 @@
           "delta_own": 13.0
         }
       ],
-      "conviction_score": 77.0,
+      "conviction_score": 74.0,
       "tier": "A",
       "signals": [
         "Trading near its 52-week high",
         "Top quartile of its 52-week range",
         "3 insiders buying together",
-        "Position up 13%",
-        "Bought this week"
+        "Position up 13%"
       ],
       "story": "BBT: Cluster of 3 insiders, $232K total."
     },
@@ -184,84 +183,6 @@
         "Still below insider cost"
       ],
       "story": "BBTX: Two insiders bought, $12.0M total."
-    },
-    {
-      "ticker": "NPB",
-      "insider": "Williams Charles Alan",
-      "title": "COB, CEO",
-      "date": "2026-10-23",
-      "price": 15.37,
-      "qty": 118240,
-      "value": 1819350.0,
-      "txn_count": 4,
-      "insider_count": 4,
-      "is_csuite": true,
-      "company": "Northpointe Bancshares, Inc.",
-      "sector": "Financial Services",
-      "current_price": 15.89,
-      "change_pct": 0.63,
-      "market_cap": 549505472,
-      "week52_high": 19.71,
-      "week52_low": 13.8,
-      "insider_avg_cost": 15.39,
-      "vs_insider_pct": 3.2,
-      "max_delta_own": 999.0,
-      "insiders": [
-        {
-          "name": "Williams Charles Alan",
-          "title": "COB, CEO",
-          "date": "2026-10-23",
-          "price": 15.37,
-          "qty": 100000,
-          "value": 1537390.0,
-          "is_csuite": true,
-          "owned": 3410180,
-          "delta_own": 3.0
-        },
-        {
-          "name": "Boer Carrie L",
-          "title": "Dir",
-          "date": "2026-10-23",
-          "price": 15.4,
-          "qty": 12000,
-          "value": 184762.0,
-          "is_csuite": false,
-          "owned": 12000,
-          "delta_own": 999.0
-        },
-        {
-          "name": "Long Joseph B",
-          "title": "COO",
-          "date": "2026-10-23",
-          "price": 15.37,
-          "qty": 3240,
-          "value": 49800.0,
-          "is_csuite": true,
-          "owned": 3240,
-          "delta_own": 999.0
-        },
-        {
-          "name": "Chaudhary Rajeev Kumar",
-          "title": "Dir",
-          "date": "2026-10-28",
-          "price": 15.8,
-          "qty": 3000,
-          "value": 47398.0,
-          "is_csuite": false,
-          "owned": 3000,
-          "delta_own": 999.0
-        }
-      ],
-      "conviction_score": 71.0,
-      "tier": "A",
-      "signals": [
-        "4 insiders buying together",
-        "COO bought",
-        "Insider more than doubled their stake",
-        "Bought this week",
-        "$1.8M total"
-      ],
-      "story": "NPB: Cluster of 4 buyers including the COB, CEO and COO, $1.8M total."
     },
     {
       "ticker": "ACN",
@@ -363,6 +284,83 @@
       "story": "DINO: The CEO bought, $1.1M total."
     },
     {
+      "ticker": "NPB",
+      "insider": "Williams Charles Alan",
+      "title": "COB, CEO",
+      "date": "2026-10-23",
+      "price": 15.37,
+      "qty": 118240,
+      "value": 1819350.0,
+      "txn_count": 4,
+      "insider_count": 4,
+      "is_csuite": true,
+      "company": "Northpointe Bancshares, Inc.",
+      "sector": "Financial Services",
+      "current_price": 15.89,
+      "change_pct": 0.63,
+      "market_cap": 549505472,
+      "week52_high": 19.71,
+      "week52_low": 13.8,
+      "insider_avg_cost": 15.39,
+      "vs_insider_pct": 3.2,
+      "max_delta_own": 999.0,
+      "insiders": [
+        {
+          "name": "Williams Charles Alan",
+          "title": "COB, CEO",
+          "date": "2026-10-23",
+          "price": 15.37,
+          "qty": 100000,
+          "value": 1537390.0,
+          "is_csuite": true,
+          "owned": 3410180,
+          "delta_own": 3.0
+        },
+        {
+          "name": "Boer Carrie L",
+          "title": "Dir",
+          "date": "2026-10-23",
+          "price": 15.4,
+          "qty": 12000,
+          "value": 184762.0,
+          "is_csuite": false,
+          "owned": 12000,
+          "delta_own": 999.0
+        },
+        {
+          "name": "Long Joseph B",
+          "title": "COO",
+          "date": "2026-10-23",
+          "price": 15.37,
+          "qty": 3240,
+          "value": 49800.0,
+          "is_csuite": true,
+          "owned": 3240,
+          "delta_own": 999.0
+        },
+        {
+          "name": "Chaudhary Rajeev Kumar",
+          "title": "Dir",
+          "date": "2026-10-28",
+          "price": 15.8,
+          "qty": 3000,
+          "value": 47398.0,
+          "is_csuite": false,
+          "owned": 3000,
+          "delta_own": 999.0
+        }
+      ],
+      "conviction_score": 68.0,
+      "tier": "A",
+      "signals": [
+        "4 insiders buying together",
+        "COO bought",
+        "Insider more than doubled their stake",
+        "$1.8M total"
+      ],
+      "story": "NPB: Cluster of 4 buyers including the COB, CEO and COO, $1.8M total."
+    },
+    {
       "ticker": "ACCV",
       "insider": "Rubiera Michael",
       "title": "CEO",
@@ -450,138 +448,6 @@
         "Trading 22% below insider cost"
       ],
       "story": "ACCV: Cluster of 5 buyers including the CEO and COO, $4.1M total."
-    },
-    {
-      "ticker": "MED",
-      "insider": "Kiai Parsa",
-      "title": "Dir",
-      "date": "2026-10-28",
-      "price": 12.24,
-      "qty": 5557,
-      "value": 68027.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Medifast, Inc.",
-      "sector": "Consumer Cyclical",
-      "current_price": 12.53,
-      "change_pct": 3.13,
-      "market_cap": 140117936,
-      "week52_high": 13.45,
-      "week52_low": 9.22,
-      "insider_avg_cost": 12.24,
-      "vs_insider_pct": 2.4,
-      "max_delta_own": 37.0,
-      "insiders": [
-        {
-          "name": "Kiai Parsa",
-          "title": "Dir",
-          "date": "2026-10-28",
-          "price": 12.24,
-          "qty": 5557,
-          "value": 68027.0,
-          "is_csuite": false,
-          "owned": 20428,
-          "delta_own": 37.0
-        }
-      ],
-      "conviction_score": 67.0,
-      "tier": "A",
-      "signals": [
-        "Trading near its 52-week high",
-        "Top quartile of its 52-week range",
-        "Position up 37%",
-        "Bought this week"
-      ],
-      "story": "MED: Kiai Parsa (Dir) bought."
-    },
-    {
-      "ticker": "BFC",
-      "insider": "Sprang Todd A.",
-      "title": "Dir",
-      "date": "2026-10-28",
-      "price": 148.37,
-      "qty": 400,
-      "value": 59348.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Bank First Corporation",
-      "sector": "Financial Services",
-      "current_price": 150.95,
-      "change_pct": 1.29,
-      "market_cap": 1672997504,
-      "week52_high": 159.1,
-      "week52_low": 119.08,
-      "insider_avg_cost": 148.37,
-      "vs_insider_pct": 1.7,
-      "max_delta_own": 20.0,
-      "insiders": [
-        {
-          "name": "Sprang Todd A.",
-          "title": "Dir",
-          "date": "2026-10-28",
-          "price": 148.37,
-          "qty": 400,
-          "value": 59348.0,
-          "is_csuite": false,
-          "owned": 2431,
-          "delta_own": 20.0
-        }
-      ],
-      "conviction_score": 67.0,
-      "tier": "A",
-      "signals": [
-        "Trading near its 52-week high",
-        "Top quartile of its 52-week range",
-        "Position up 20%",
-        "Bought this week"
-      ],
-      "story": "BFC: Sprang Todd A. (Dir) bought."
-    },
-    {
-      "ticker": "PNFP",
-      "insider": "Ingram David B",
-      "title": "Dir",
-      "date": "2026-10-28",
-      "price": 99.16,
-      "qty": 10000,
-      "value": 991600.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Pinnacle Financial Partners, Inc.",
-      "sector": "Financial Services",
-      "current_price": 104.32,
-      "change_pct": 2.62,
-      "market_cap": 15764070400,
-      "week52_high": 110.33,
-      "week52_low": 81.08,
-      "insider_avg_cost": 99.16,
-      "vs_insider_pct": 5.2,
-      "max_delta_own": 4.0,
-      "insiders": [
-        {
-          "name": "Ingram David B",
-          "title": "Dir",
-          "date": "2026-10-28",
-          "price": 99.16,
-          "qty": 10000,
-          "value": 991600.0,
-          "is_csuite": false,
-          "owned": 283210,
-          "delta_own": 4.0
-        }
-      ],
-      "conviction_score": 66.0,
-      "tier": "A",
-      "signals": [
-        "Trading near its 52-week high",
-        "Top quartile of its 52-week range",
-        "Bought this week",
-        "$992K total"
-      ],
-      "story": "PNFP: Ingram David B (Dir) bought, $992K total."
     },
     {
       "ticker": "HEI",
@@ -704,37 +570,37 @@
       "story": "HEI: Cluster of 8 buyers including the Co-COB, Co-CEO, $1.4M total."
     },
     {
-      "ticker": "BFH",
-      "insider": "Fawcett John J.",
+      "ticker": "MED",
+      "insider": "Kiai Parsa",
       "title": "Dir",
       "date": "2026-10-28",
-      "price": 24.7,
-      "qty": 5000,
-      "value": 123490.0,
+      "price": 12.24,
+      "qty": 5557,
+      "value": 68027.0,
       "txn_count": 1,
       "insider_count": 1,
       "is_csuite": false,
-      "company": "Bread Financial Holdings, Inc.",
-      "sector": "Financial Services",
-      "current_price": 107.16,
-      "change_pct": 3.63,
-      "market_cap": 4067926528,
-      "week52_high": 114.53,
-      "week52_low": 59.26,
-      "insider_avg_cost": 24.7,
-      "vs_insider_pct": 333.8,
-      "max_delta_own": 999.0,
+      "company": "Medifast, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 12.53,
+      "change_pct": 3.13,
+      "market_cap": 140117936,
+      "week52_high": 13.45,
+      "week52_low": 9.22,
+      "insider_avg_cost": 12.24,
+      "vs_insider_pct": 2.4,
+      "max_delta_own": 37.0,
       "insiders": [
         {
-          "name": "Fawcett John J.",
+          "name": "Kiai Parsa",
           "title": "Dir",
           "date": "2026-10-28",
-          "price": 24.7,
-          "qty": 5000,
-          "value": 123490.0,
+          "price": 12.24,
+          "qty": 5557,
+          "value": 68027.0,
           "is_csuite": false,
-          "owned": 5000,
-          "delta_own": 999.0
+          "owned": 20428,
+          "delta_own": 37.0
         }
       ],
       "conviction_score": 64.0,
@@ -742,10 +608,52 @@
       "signals": [
         "Trading near its 52-week high",
         "Top quartile of its 52-week range",
-        "Insider more than doubled their stake",
-        "Bought this week"
+        "Position up 37%"
       ],
-      "story": "BFH: Fawcett John J. (Dir) bought, $123K total."
+      "story": "MED: Kiai Parsa (Dir) bought."
+    },
+    {
+      "ticker": "BFC",
+      "insider": "Sprang Todd A.",
+      "title": "Dir",
+      "date": "2026-10-28",
+      "price": 148.37,
+      "qty": 400,
+      "value": 59348.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Bank First Corporation",
+      "sector": "Financial Services",
+      "current_price": 150.95,
+      "change_pct": 1.29,
+      "market_cap": 1672997504,
+      "week52_high": 159.1,
+      "week52_low": 119.08,
+      "insider_avg_cost": 148.37,
+      "vs_insider_pct": 1.7,
+      "max_delta_own": 20.0,
+      "insiders": [
+        {
+          "name": "Sprang Todd A.",
+          "title": "Dir",
+          "date": "2026-10-28",
+          "price": 148.37,
+          "qty": 400,
+          "value": 59348.0,
+          "is_csuite": false,
+          "owned": 2431,
+          "delta_own": 20.0
+        }
+      ],
+      "conviction_score": 64.0,
+      "tier": "A",
+      "signals": [
+        "Trading near its 52-week high",
+        "Top quartile of its 52-week range",
+        "Position up 20%"
+      ],
+      "story": "BFC: Sprang Todd A. (Dir) bought."
     },
     {
       "ticker": "BY",
@@ -791,6 +699,49 @@
       "story": "BY: Stewart Pamela C (Dir) bought."
     },
     {
+      "ticker": "PNFP",
+      "insider": "Ingram David B",
+      "title": "Dir",
+      "date": "2026-10-28",
+      "price": 99.16,
+      "qty": 10000,
+      "value": 991600.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Pinnacle Financial Partners, Inc.",
+      "sector": "Financial Services",
+      "current_price": 104.32,
+      "change_pct": 2.62,
+      "market_cap": 15764070400,
+      "week52_high": 110.33,
+      "week52_low": 81.08,
+      "insider_avg_cost": 99.16,
+      "vs_insider_pct": 5.2,
+      "max_delta_own": 4.0,
+      "insiders": [
+        {
+          "name": "Ingram David B",
+          "title": "Dir",
+          "date": "2026-10-28",
+          "price": 99.16,
+          "qty": 10000,
+          "value": 991600.0,
+          "is_csuite": false,
+          "owned": 283210,
+          "delta_own": 4.0
+        }
+      ],
+      "conviction_score": 63.0,
+      "tier": "A",
+      "signals": [
+        "Trading near its 52-week high",
+        "Top quartile of its 52-week range",
+        "$992K total"
+      ],
+      "story": "PNFP: Ingram David B (Dir) bought, $992K total."
+    },
+    {
       "ticker": "BLX",
       "insider": "Diaz Adriana Lizzeth",
       "title": "Chief Audit Officer",
@@ -805,7 +756,7 @@
       "sector": "Financial Services",
       "current_price": 50.71,
       "change_pct": 3.62,
-      "market_cap": 0,
+      "market_cap": 1887943808,
       "week52_high": 63.2,
       "week52_low": 42.29,
       "insider_avg_cost": 52.39,
@@ -878,101 +829,47 @@
       "story": "BHRB: McLaughlin Shawn Patrick (Dir) bought."
     },
     {
-      "ticker": "TFC",
-      "insider": "Lyons Michael P.",
-      "title": "Pres, CEO",
+      "ticker": "BFH",
+      "insider": "Fawcett John J.",
+      "title": "Dir",
       "date": "2026-10-28",
-      "price": 48.36,
-      "qty": 25000,
-      "value": 1209050.0,
+      "price": 24.7,
+      "qty": 5000,
+      "value": 123490.0,
       "txn_count": 1,
       "insider_count": 1,
-      "is_csuite": true,
-      "company": "Truist Financial Corporation",
-      "sector": "Financial Services",
-      "current_price": 50.17,
-      "change_pct": 2.83,
-      "market_cap": 60128161792,
-      "week52_high": 56.2,
-      "week52_low": 43.13,
-      "insider_avg_cost": 48.36,
-      "vs_insider_pct": 3.7,
-      "max_delta_own": 119.0,
-      "insiders": [
-        {
-          "name": "Lyons Michael P.",
-          "title": "Pres, CEO",
-          "date": "2026-10-28",
-          "price": 48.36,
-          "qty": 25000,
-          "value": 1209050.0,
-          "is_csuite": true,
-          "owned": 46000,
-          "delta_own": 119.0
-        }
-      ],
-      "conviction_score": 62.0,
-      "tier": "A",
-      "signals": [
-        "Insider more than doubled their stake",
-        "Bought this week",
-        "$1.2M total"
-      ],
-      "story": "TFC: The Pres, CEO bought, $1.2M total."
-    },
-    {
-      "ticker": "MSM",
-      "insider": "Jacobson Mitchell",
-      "title": "Dir, 10%",
-      "date": "2026-10-23",
-      "price": 115.94,
-      "qty": 250433,
-      "value": 29034299.0,
-      "txn_count": 2,
-      "insider_count": 2,
       "is_csuite": false,
-      "company": "MSC Industrial Direct Co., Inc.",
-      "sector": "Industrials",
-      "current_price": 119.62,
-      "change_pct": -1.16,
-      "market_cap": 0,
-      "week52_high": 133.95,
-      "week52_low": 78.8,
-      "insider_avg_cost": 115.94,
-      "vs_insider_pct": 3.2,
+      "company": "Bread Financial Holdings, Inc.",
+      "sector": "Financial Services",
+      "current_price": 107.16,
+      "change_pct": 3.63,
+      "market_cap": 4067926528,
+      "week52_high": 114.53,
+      "week52_low": 59.26,
+      "insider_avg_cost": 24.7,
+      "vs_insider_pct": 333.8,
       "max_delta_own": 999.0,
       "insiders": [
         {
-          "name": "Jacobson Mitchell",
-          "title": "Dir, 10%",
-          "date": "2026-10-23",
-          "price": 115.94,
-          "qty": 250000,
-          "value": 28984170.0,
-          "is_csuite": false,
-          "owned": 8331520,
-          "delta_own": 3.0
-        },
-        {
-          "name": "Slone Reuben E",
+          "name": "Fawcett John J.",
           "title": "Dir",
-          "date": "2026-10-23",
-          "price": 115.77,
-          "qty": 433,
-          "value": 50129.0,
+          "date": "2026-10-28",
+          "price": 24.7,
+          "qty": 5000,
+          "value": 123490.0,
           "is_csuite": false,
-          "owned": 433,
+          "owned": 5000,
           "delta_own": 999.0
         }
       ],
       "conviction_score": 61.0,
       "tier": "B",
       "signals": [
-        "2 insiders buying",
-        "Insider more than doubled their stake",
-        "$29.0M total"
+        "Trading near its 52-week high",
+        "Top quartile of its 52-week range",
+        "Insider more than doubled their stake"
       ],
-      "story": "MSM: Two insiders bought, $29.0M total."
+      "story": "BFH: Fawcett John J. (Dir) bought, $123K total."
     },
     {
       "ticker": "CLF",
@@ -1213,6 +1110,48 @@
       "story": "PKBK: The Pres, CEO bought."
     },
     {
+      "ticker": "TFC",
+      "insider": "Lyons Michael P.",
+      "title": "Pres, CEO",
+      "date": "2026-10-28",
+      "price": 48.36,
+      "qty": 25000,
+      "value": 1209050.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "Truist Financial Corporation",
+      "sector": "Financial Services",
+      "current_price": 50.17,
+      "change_pct": 2.83,
+      "market_cap": 60128161792,
+      "week52_high": 56.2,
+      "week52_low": 43.13,
+      "insider_avg_cost": 48.36,
+      "vs_insider_pct": 3.7,
+      "max_delta_own": 119.0,
+      "insiders": [
+        {
+          "name": "Lyons Michael P.",
+          "title": "Pres, CEO",
+          "date": "2026-10-28",
+          "price": 48.36,
+          "qty": 25000,
+          "value": 1209050.0,
+          "is_csuite": true,
+          "owned": 46000,
+          "delta_own": 119.0
+        }
+      ],
+      "conviction_score": 59.0,
+      "tier": "B",
+      "signals": [
+        "Insider more than doubled their stake",
+        "$1.2M total"
+      ],
+      "story": "TFC: The Pres, CEO bought, $1.2M total."
+    },
+    {
       "ticker": "CRBG",
       "insider": "Nippon Life Insurance Co",
       "title": "10%",
@@ -1227,7 +1166,7 @@
       "sector": "Financial Services",
       "current_price": 35.04,
       "change_pct": 0.66,
-      "market_cap": 15619732480,
+      "market_cap": 15619869696,
       "week52_high": 36.0,
       "week52_low": 22.19,
       "insider_avg_cost": 34.41,
@@ -1255,6 +1194,60 @@
         "$205.5M total"
       ],
       "story": "CRBG: Nippon Life Insurance Co (10%) bought, $205.5M total."
+    },
+    {
+      "ticker": "MSM",
+      "insider": "Jacobson Mitchell",
+      "title": "Dir, 10%",
+      "date": "2026-10-23",
+      "price": 115.94,
+      "qty": 250433,
+      "value": 29034299.0,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": false,
+      "company": "MSC Industrial Direct Co., Inc.",
+      "sector": "Industrials",
+      "current_price": 119.62,
+      "change_pct": -1.16,
+      "market_cap": 6680334336,
+      "week52_high": 133.95,
+      "week52_low": 78.8,
+      "insider_avg_cost": 115.94,
+      "vs_insider_pct": 3.2,
+      "max_delta_own": 999.0,
+      "insiders": [
+        {
+          "name": "Jacobson Mitchell",
+          "title": "Dir, 10%",
+          "date": "2026-10-23",
+          "price": 115.94,
+          "qty": 250000,
+          "value": 28984170.0,
+          "is_csuite": false,
+          "owned": 8331520,
+          "delta_own": 3.0
+        },
+        {
+          "name": "Slone Reuben E",
+          "title": "Dir",
+          "date": "2026-10-23",
+          "price": 115.77,
+          "qty": 433,
+          "value": 50129.0,
+          "is_csuite": false,
+          "owned": 433,
+          "delta_own": 999.0
+        }
+      ],
+      "conviction_score": 58.0,
+      "tier": "B",
+      "signals": [
+        "2 insiders buying",
+        "Insider more than doubled their stake",
+        "$29.0M total"
+      ],
+      "story": "MSM: Two insiders bought, $29.0M total."
     },
     {
       "ticker": "AXIA",
@@ -1383,48 +1376,6 @@
         "Still below insider cost"
       ],
       "story": "AMT: Clarke Teresa Hillary (Dir) bought."
-    },
-    {
-      "ticker": "GME",
-      "insider": "Cohen Ryan",
-      "title": "Pres, CEO, COB",
-      "date": "2026-10-13",
-      "price": 26.98,
-      "qty": 844130,
-      "value": 22774728.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "GameStop Corp.",
-      "sector": "Consumer Cyclical",
-      "current_price": 24.19,
-      "change_pct": -0.17,
-      "market_cap": 12203879424,
-      "week52_high": 28.3,
-      "week52_low": 17.79,
-      "insider_avg_cost": 26.98,
-      "vs_insider_pct": -10.3,
-      "max_delta_own": 2.0,
-      "insiders": [
-        {
-          "name": "Cohen Ryan",
-          "title": "Pres, CEO, COB",
-          "date": "2026-10-13",
-          "price": 26.98,
-          "qty": 844130,
-          "value": 22774728.0,
-          "is_csuite": true,
-          "owned": 42492652,
-          "delta_own": 2.0
-        }
-      ],
-      "conviction_score": 57.0,
-      "tier": "B",
-      "signals": [
-        "$22.8M total",
-        "Trading 10% below insider cost"
-      ],
-      "story": "GME: The Pres, CEO, COB bought, $22.8M total."
     },
     {
       "ticker": "VRA",
@@ -1596,6 +1547,48 @@
       "story": "BOLD: Tang Kevin (10%) bought, $427K total."
     },
     {
+      "ticker": "GME",
+      "insider": "Cohen Ryan",
+      "title": "Pres, CEO, COB",
+      "date": "2026-10-13",
+      "price": 26.98,
+      "qty": 844130,
+      "value": 22774728.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "GameStop Corp.",
+      "sector": "Consumer Cyclical",
+      "current_price": 24.19,
+      "change_pct": -0.17,
+      "market_cap": 12203879424,
+      "week52_high": 28.3,
+      "week52_low": 17.79,
+      "insider_avg_cost": 26.98,
+      "vs_insider_pct": -10.3,
+      "max_delta_own": 2.0,
+      "insiders": [
+        {
+          "name": "Cohen Ryan",
+          "title": "Pres, CEO, COB",
+          "date": "2026-10-13",
+          "price": 26.98,
+          "qty": 844130,
+          "value": 22774728.0,
+          "is_csuite": true,
+          "owned": 42492652,
+          "delta_own": 2.0
+        }
+      ],
+      "conviction_score": 55.0,
+      "tier": "B",
+      "signals": [
+        "$22.8M total",
+        "Trading 10% below insider cost"
+      ],
+      "story": "GME: The Pres, CEO, COB bought, $22.8M total."
+    },
+    {
       "ticker": "SKYH",
       "insider": "Gonzalez Francisco",
       "title": "CFO",
@@ -1635,48 +1628,6 @@
         "CFO bought"
       ],
       "story": "SKYH: The CFO bought."
-    },
-    {
-      "ticker": "TIPT",
-      "insider": "Barnes Michael Gene",
-      "title": "COB, CEO, 10%",
-      "date": "2026-10-23",
-      "price": 16.24,
-      "qty": 30930,
-      "value": 502303.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "Tiptree Inc.",
-      "sector": "Financial Services",
-      "current_price": 17.59,
-      "change_pct": 3.23,
-      "market_cap": 640720960,
-      "week52_high": 19.33,
-      "week52_low": 15.49,
-      "insider_avg_cost": 16.24,
-      "vs_insider_pct": 8.3,
-      "max_delta_own": null,
-      "insiders": [
-        {
-          "name": "Barnes Michael Gene",
-          "title": "COB, CEO, 10%",
-          "date": "2026-10-23",
-          "price": 16.24,
-          "qty": 30930,
-          "value": 502303.0,
-          "is_csuite": true,
-          "owned": 10116358,
-          "delta_own": null
-        }
-      ],
-      "conviction_score": 54.0,
-      "tier": "B",
-      "signals": [
-        "Trading near its 52-week high",
-        "$502K total"
-      ],
-      "story": "TIPT: The COB, CEO, 10% bought, $502K total."
     },
     {
       "ticker": "YORW",
@@ -1819,7 +1770,7 @@
       "sector": "Real Estate",
       "current_price": 23.2,
       "change_pct": 3.25,
-      "market_cap": 2546348800,
+      "market_cap": 2546181632,
       "week52_high": 26.86,
       "week52_low": 20.86,
       "insider_avg_cost": 22.61,
@@ -2011,6 +1962,48 @@
       "story": "WS: The CEO Americas Kloeckner Metals bought."
     },
     {
+      "ticker": "TIPT",
+      "insider": "Barnes Michael Gene",
+      "title": "COB, CEO, 10%",
+      "date": "2026-10-23",
+      "price": 16.24,
+      "qty": 30930,
+      "value": 502303.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "Tiptree Inc.",
+      "sector": "Financial Services",
+      "current_price": 17.59,
+      "change_pct": 3.23,
+      "market_cap": 640720960,
+      "week52_high": 19.33,
+      "week52_low": 15.49,
+      "insider_avg_cost": 16.24,
+      "vs_insider_pct": 8.3,
+      "max_delta_own": null,
+      "insiders": [
+        {
+          "name": "Barnes Michael Gene",
+          "title": "COB, CEO, 10%",
+          "date": "2026-10-23",
+          "price": 16.24,
+          "qty": 30930,
+          "value": 502303.0,
+          "is_csuite": true,
+          "owned": 10116358,
+          "delta_own": null
+        }
+      ],
+      "conviction_score": 51.0,
+      "tier": "B",
+      "signals": [
+        "Trading near its 52-week high",
+        "$502K total"
+      ],
+      "story": "TIPT: The COB, CEO, 10% bought, $502K total."
+    },
+    {
       "ticker": "FBK",
       "insider": "Ingram Orrin H II",
       "title": "Dir",
@@ -2051,48 +2044,6 @@
         "$1.5M total"
       ],
       "story": "FBK: Ingram Orrin H II (Dir) bought, $1.5M total."
-    },
-    {
-      "ticker": "CXM",
-      "insider": "Ward Jr Stephen M",
-      "title": "Dir",
-      "date": "2026-10-13",
-      "price": 5.67,
-      "qty": 150000,
-      "value": 850500.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Sprinklr, Inc.",
-      "sector": "Technology",
-      "current_price": 6.88,
-      "change_pct": 1.03,
-      "market_cap": 1597338880,
-      "week52_high": 8.275,
-      "week52_low": 4.715,
-      "insider_avg_cost": 5.67,
-      "vs_insider_pct": 21.3,
-      "max_delta_own": 172.0,
-      "insiders": [
-        {
-          "name": "Ward Jr Stephen M",
-          "title": "Dir",
-          "date": "2026-10-13",
-          "price": 5.67,
-          "qty": 150000,
-          "value": 850500.0,
-          "is_csuite": false,
-          "owned": 237088,
-          "delta_own": 172.0
-        }
-      ],
-      "conviction_score": 51.0,
-      "tier": "B",
-      "signals": [
-        "Insider more than doubled their stake",
-        "$850K total"
-      ],
-      "story": "CXM: Ward Jr Stephen M (Dir) bought, $850K total."
     },
     {
       "ticker": "MAGN",
@@ -2262,6 +2213,48 @@
       "story": "PEP: Pohlad Robert C (Dir) bought, $23.7M total."
     },
     {
+      "ticker": "CXM",
+      "insider": "Ward Jr Stephen M",
+      "title": "Dir",
+      "date": "2026-10-13",
+      "price": 5.67,
+      "qty": 150000,
+      "value": 850500.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Sprinklr, Inc.",
+      "sector": "Technology",
+      "current_price": 6.88,
+      "change_pct": 1.03,
+      "market_cap": 1597338880,
+      "week52_high": 8.275,
+      "week52_low": 4.715,
+      "insider_avg_cost": 5.67,
+      "vs_insider_pct": 21.3,
+      "max_delta_own": 172.0,
+      "insiders": [
+        {
+          "name": "Ward Jr Stephen M",
+          "title": "Dir",
+          "date": "2026-10-13",
+          "price": 5.67,
+          "qty": 150000,
+          "value": 850500.0,
+          "is_csuite": false,
+          "owned": 237088,
+          "delta_own": 172.0
+        }
+      ],
+      "conviction_score": 49.0,
+      "tier": "B",
+      "signals": [
+        "Insider more than doubled their stake",
+        "$850K total"
+      ],
+      "story": "CXM: Ward Jr Stephen M (Dir) bought, $850K total."
+    },
+    {
       "ticker": "HRL",
       "insider": "Newlands William A",
       "title": "Chairman of the Board",
@@ -2301,61 +2294,6 @@
         "Position up 15%"
       ],
       "story": "HRL: The Chairman of the Board bought, $201K total."
-    },
-    {
-      "ticker": "TRXB",
-      "insider": "Alexandria Venture Investments, LLC",
-      "title": "10%",
-      "date": "2026-10-13",
-      "price": 14.0,
-      "qty": 271428,
-      "value": 3799992.0,
-      "txn_count": 2,
-      "insider_count": 2,
-      "is_csuite": false,
-      "company": "TRex Bio, Inc.",
-      "sector": "Healthcare",
-      "current_price": 13.64,
-      "change_pct": -0.73,
-      "market_cap": 374359104,
-      "week52_high": 16.56,
-      "week52_low": 13.1,
-      "insider_avg_cost": 14.0,
-      "vs_insider_pct": -2.6,
-      "max_delta_own": 15.0,
-      "insiders": [
-        {
-          "name": "Alexandria Venture Investments, LLC",
-          "title": "10%",
-          "date": "2026-10-13",
-          "price": 14.0,
-          "qty": 178571,
-          "value": 2499994.0,
-          "is_csuite": false,
-          "owned": 1346501,
-          "delta_own": 15.0
-        },
-        {
-          "name": "Svlsf Vi, LLC",
-          "title": "10%",
-          "date": "2026-10-08",
-          "price": 14.0,
-          "qty": 92857,
-          "value": 1299998.0,
-          "is_csuite": false,
-          "owned": 3011818,
-          "delta_own": 3.0
-        }
-      ],
-      "conviction_score": 48.0,
-      "tier": "B",
-      "signals": [
-        "2 insiders buying",
-        "Position up 15%",
-        "$3.8M total",
-        "Still below insider cost"
-      ],
-      "story": "TRXB: Two insiders bought, $3.8M total."
     },
     {
       "ticker": "BBD",
@@ -2789,159 +2727,59 @@
       "story": "BORR: Two insiders bought including the COO, $44.5M total."
     },
     {
-      "ticker": "RAPP",
-      "insider": "Healy James",
-      "title": "Dir",
-      "date": "2026-10-28",
-      "price": 21.0,
-      "qty": 1031174,
-      "value": 22023905.0,
-      "txn_count": 7,
-      "insider_count": 7,
-      "is_csuite": true,
-      "company": "Rapport Therapeutics, Inc.",
-      "sector": "Healthcare",
-      "current_price": 25.13,
-      "change_pct": 0.32,
-      "market_cap": 1480927616,
-      "week52_high": 52.93,
-      "week52_low": 22.061,
-      "insider_avg_cost": 21.36,
-      "vs_insider_pct": 17.6,
-      "max_delta_own": 999.0,
-      "insiders": [
-        {
-          "name": "Healy James",
-          "title": "Dir",
-          "date": "2026-10-28",
-          "price": 21.0,
-          "qty": 969480,
-          "value": 20359080.0,
-          "is_csuite": false,
-          "owned": 2873888,
-          "delta_own": 51.0
-        },
-        {
-          "name": "Paul Steven M",
-          "title": "Dir",
-          "date": "2026-10-22",
-          "price": 27.28,
-          "qty": 35714,
-          "value": 974278.0,
-          "is_csuite": false,
-          "owned": 555022,
-          "delta_own": 7.0
-        },
-        {
-          "name": "Maraganore John",
-          "title": "Dir",
-          "date": "2026-10-22",
-          "price": 26.45,
-          "qty": 9411,
-          "value": 248891.0,
-          "is_csuite": false,
-          "owned": 9411,
-          "delta_own": 999.0
-        },
-        {
-          "name": "Ignelzi Troy A.",
-          "title": "CFO",
-          "date": "2026-10-21",
-          "price": 26.1,
-          "qty": 5500,
-          "value": 143550.0,
-          "is_csuite": true,
-          "owned": 15500,
-          "delta_own": 55.0
-        },
-        {
-          "name": "Young Wendy B.",
-          "title": "Dir",
-          "date": "2026-10-22",
-          "price": 26.39,
-          "qty": 3789,
-          "value": 99992.0,
-          "is_csuite": false,
-          "owned": 13289,
-          "delta_own": 40.0
-        },
-        {
-          "name": "Silva Paul M",
-          "title": "Dir",
-          "date": "2026-10-22",
-          "price": 27.08,
-          "qty": 3680,
-          "value": 99636.0,
-          "is_csuite": false,
-          "owned": 3680,
-          "delta_own": 999.0
-        },
-        {
-          "name": "Sanchez Ramiro",
-          "title": "Dir",
-          "date": "2026-10-23",
-          "price": 27.35,
-          "qty": 3600,
-          "value": 98478.0,
-          "is_csuite": false,
-          "owned": 3600,
-          "delta_own": 999.0
-        }
-      ],
-      "conviction_score": 45.0,
-      "tier": "B",
-      "signals": [
-        "Down over 50% from its high",
-        "7 insiders buying, but the stock is well off its highs",
-        "CFO bought",
-        "Insider more than doubled their stake",
-        "Bought this week",
-        "$22.0M total"
-      ],
-      "story": "RAPP: Cluster of 7 buyers including the CFO, $22.0M total."
-    },
-    {
-      "ticker": "LYCA",
-      "insider": "Venrock Healthcare Capital Partners Iii, L.P.",
+      "ticker": "TRXB",
+      "insider": "Alexandria Venture Investments, LLC",
       "title": "10%",
-      "date": "2026-10-28",
-      "price": 25.78,
-      "qty": 2070444,
-      "value": 38298574.0,
+      "date": "2026-10-13",
+      "price": 14.0,
+      "qty": 271428,
+      "value": 3799992.0,
       "txn_count": 2,
-      "insider_count": 1,
+      "insider_count": 2,
       "is_csuite": false,
-      "company": "Lycia Therapeutics, Inc.",
+      "company": "TRex Bio, Inc.",
       "sector": "Healthcare",
-      "current_price": 27.18,
-      "change_pct": 2.95,
-      "market_cap": 1415930112,
-      "week52_high": 36.49,
-      "week52_low": 22.19,
-      "insider_avg_cost": 18.5,
-      "vs_insider_pct": 46.9,
-      "max_delta_own": 43.0,
+      "current_price": 13.64,
+      "change_pct": -0.73,
+      "market_cap": 374359104,
+      "week52_high": 16.56,
+      "week52_low": 13.1,
+      "insider_avg_cost": 14.0,
+      "vs_insider_pct": -2.6,
+      "max_delta_own": 15.0,
       "insiders": [
         {
-          "name": "Venrock Healthcare Capital Partners Iii, L.P.",
+          "name": "Alexandria Venture Investments, LLC",
           "title": "10%",
-          "date": "2026-10-28",
-          "price": 25.78,
-          "qty": 2070444,
-          "value": 38298574.0,
+          "date": "2026-10-13",
+          "price": 14.0,
+          "qty": 178571,
+          "value": 2499994.0,
           "is_csuite": false,
-          "owned": 6850237,
-          "delta_own": 43.0
+          "owned": 1346501,
+          "delta_own": 15.0
+        },
+        {
+          "name": "Svlsf Vi, LLC",
+          "title": "10%",
+          "date": "2026-10-08",
+          "price": 14.0,
+          "qty": 92857,
+          "value": 1299998.0,
+          "is_csuite": false,
+          "owned": 3011818,
+          "delta_own": 3.0
         }
       ],
-      "conviction_score": 44.0,
+      "conviction_score": 46.0,
       "tier": "B",
       "signals": [
-        "Position up 43%",
-        "Bought this week",
-        "$38.3M total"
+        "2 insiders buying",
+        "Position up 15%",
+        "$3.8M total",
+        "Still below insider cost"
       ],
-      "story": "LYCA: Venrock Healthcare Capital Partners Iii, L.P. (10%) bought, $38.3M total."
+      "story": "TRXB: Two insiders bought, $3.8M total."
     },
     {
       "ticker": "NBIS",
@@ -2958,7 +2796,7 @@
       "sector": "Communication Services",
       "current_price": 141.39,
       "change_pct": -8.27,
-      "market_cap": 38437609472,
+      "market_cap": 35898667008,
       "week52_high": 299.86,
       "week52_low": 73.52,
       "insider_avg_cost": 164.07,
@@ -3003,7 +2841,7 @@
       "sector": "Financial Services",
       "current_price": 40.67,
       "change_pct": 1.96,
-      "market_cap": 677357568,
+      "market_cap": 676713280,
       "week52_high": 46.355,
       "week52_low": 35.73,
       "insider_avg_cost": 40.34,
@@ -3247,99 +3085,115 @@
       "story": "JCTC: Ajb Investment Fund Ii, LP (10%) bought."
     },
     {
-      "ticker": "SRRK",
-      "insider": "Akkaraju Srinivas",
+      "ticker": "RAPP",
+      "insider": "Healy James",
       "title": "Dir",
-      "date": "2026-10-23",
-      "price": 41.45,
-      "qty": 289470,
-      "value": 11999922.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Scholar Rock Holding Corporation",
-      "sector": "Healthcare",
-      "current_price": 42.91,
-      "change_pct": -2.26,
-      "market_cap": 5225806336,
-      "week52_high": 61.76,
-      "week52_low": 27.07,
-      "insider_avg_cost": 41.45,
-      "vs_insider_pct": 3.5,
-      "max_delta_own": 4.0,
-      "insiders": [
-        {
-          "name": "Akkaraju Srinivas",
-          "title": "Dir",
-          "date": "2026-10-23",
-          "price": 41.45,
-          "qty": 289470,
-          "value": 11999922.0,
-          "is_csuite": false,
-          "owned": 7131508,
-          "delta_own": 4.0
-        }
-      ],
-      "conviction_score": 42.0,
-      "tier": "B",
-      "signals": [
-        "$12.0M total"
-      ],
-      "story": "SRRK: Akkaraju Srinivas (Dir) bought, $12.0M total."
-    },
-    {
-      "ticker": "THRM",
-      "insider": "Mascarenas Paul Anthony",
-      "title": "Dir",
-      "date": "2026-10-23",
-      "price": 26.63,
-      "qty": 25000,
-      "value": 662600.0,
-      "txn_count": 2,
-      "insider_count": 2,
+      "date": "2026-10-28",
+      "price": 21.0,
+      "qty": 1031174,
+      "value": 22023905.0,
+      "txn_count": 7,
+      "insider_count": 7,
       "is_csuite": true,
-      "company": "Gentherm Incorporated",
-      "sector": "Consumer Cyclical",
-      "current_price": 31.38,
-      "change_pct": 1.39,
-      "market_cap": 1709424768,
-      "week52_high": 48.35,
-      "week52_low": 25.31,
-      "insider_avg_cost": 26.5,
-      "vs_insider_pct": 18.4,
-      "max_delta_own": 747.0,
+      "company": "Rapport Therapeutics, Inc.",
+      "sector": "Healthcare",
+      "current_price": 25.13,
+      "change_pct": 0.32,
+      "market_cap": 1480927616,
+      "week52_high": 52.93,
+      "week52_low": 22.061,
+      "insider_avg_cost": 21.36,
+      "vs_insider_pct": 17.6,
+      "max_delta_own": 999.0,
       "insiders": [
         {
-          "name": "Mascarenas Paul Anthony",
+          "name": "Healy James",
           "title": "Dir",
-          "date": "2026-10-23",
-          "price": 26.63,
-          "qty": 20000,
-          "value": 532600.0,
+          "date": "2026-10-28",
+          "price": 21.0,
+          "qty": 969480,
+          "value": 20359080.0,
           "is_csuite": false,
-          "owned": 22677,
-          "delta_own": 747.0
+          "owned": 2873888,
+          "delta_own": 51.0
         },
         {
-          "name": "Presley William T.",
-          "title": "Pres, CEO",
-          "date": "2026-10-23",
-          "price": 26.0,
-          "qty": 5000,
-          "value": 130000.0,
+          "name": "Paul Steven M",
+          "title": "Dir",
+          "date": "2026-10-22",
+          "price": 27.28,
+          "qty": 35714,
+          "value": 974278.0,
+          "is_csuite": false,
+          "owned": 555022,
+          "delta_own": 7.0
+        },
+        {
+          "name": "Maraganore John",
+          "title": "Dir",
+          "date": "2026-10-22",
+          "price": 26.45,
+          "qty": 9411,
+          "value": 248891.0,
+          "is_csuite": false,
+          "owned": 9411,
+          "delta_own": 999.0
+        },
+        {
+          "name": "Ignelzi Troy A.",
+          "title": "CFO",
+          "date": "2026-10-21",
+          "price": 26.1,
+          "qty": 5500,
+          "value": 143550.0,
           "is_csuite": true,
-          "owned": 183314,
-          "delta_own": 3.0
+          "owned": 15500,
+          "delta_own": 55.0
+        },
+        {
+          "name": "Young Wendy B.",
+          "title": "Dir",
+          "date": "2026-10-22",
+          "price": 26.39,
+          "qty": 3789,
+          "value": 99992.0,
+          "is_csuite": false,
+          "owned": 13289,
+          "delta_own": 40.0
+        },
+        {
+          "name": "Silva Paul M",
+          "title": "Dir",
+          "date": "2026-10-22",
+          "price": 27.08,
+          "qty": 3680,
+          "value": 99636.0,
+          "is_csuite": false,
+          "owned": 3680,
+          "delta_own": 999.0
+        },
+        {
+          "name": "Sanchez Ramiro",
+          "title": "Dir",
+          "date": "2026-10-23",
+          "price": 27.35,
+          "qty": 3600,
+          "value": 98478.0,
+          "is_csuite": false,
+          "owned": 3600,
+          "delta_own": 999.0
         }
       ],
       "conviction_score": 42.0,
       "tier": "B",
       "signals": [
-        "2 insiders buying, but the stock is well off its highs",
+        "Down over 50% from its high",
+        "7 insiders buying, but the stock is well off its highs",
+        "CFO bought",
         "Insider more than doubled their stake",
-        "$663K total"
+        "$22.0M total"
       ],
-      "story": "THRM: Two insiders bought including the Pres, CEO, $663K total."
+      "story": "RAPP: Cluster of 7 buyers including the CFO, $22.0M total."
     },
     {
       "ticker": "DOLE",
@@ -3452,61 +3306,6 @@
       "story": "AGMB: Cluster of 3 buyers including the CEO and CFO, $400K total."
     },
     {
-      "ticker": "RTSN",
-      "insider": "Keller Eric L.",
-      "title": "CEO",
-      "date": "2026-10-13",
-      "price": 12.0,
-      "qty": 30800,
-      "value": 369600.0,
-      "txn_count": 2,
-      "insider_count": 2,
-      "is_csuite": true,
-      "company": "Retension Pharmaceuticals, Inc.",
-      "sector": "Healthcare",
-      "current_price": 11.3,
-      "change_pct": -0.53,
-      "market_cap": 94147072,
-      "week52_high": 18.64,
-      "week52_low": 9.66,
-      "insider_avg_cost": 12.0,
-      "vs_insider_pct": -5.8,
-      "max_delta_own": 80.0,
-      "insiders": [
-        {
-          "name": "Keller Eric L.",
-          "title": "CEO",
-          "date": "2026-10-13",
-          "price": 12.0,
-          "qty": 20800,
-          "value": 249600.0,
-          "is_csuite": true,
-          "owned": 464407,
-          "delta_own": 5.0
-        },
-        {
-          "name": "Berger Franklin M",
-          "title": "Dir",
-          "date": "2026-10-13",
-          "price": 12.0,
-          "qty": 10000,
-          "value": 120000.0,
-          "is_csuite": false,
-          "owned": 22517,
-          "delta_own": 80.0
-        }
-      ],
-      "conviction_score": 42.0,
-      "tier": "B",
-      "signals": [
-        "2 insiders buying, but the stock is well off its highs",
-        "Position up 80%",
-        "$370K total",
-        "Trading 6% below insider cost"
-      ],
-      "story": "RTSN: Two insiders bought including the CEO, $370K total."
-    },
-    {
       "ticker": "MWA",
       "insider": "Healy Brian C.",
       "title": "Dir",
@@ -3589,61 +3388,46 @@
       "story": "ESEA: Pittas Aristeidis P (Dir) bought."
     },
     {
-      "ticker": "TTMI",
-      "insider": "Ali Wajid",
-      "title": "Dir",
+      "ticker": "LYCA",
+      "insider": "Venrock Healthcare Capital Partners Iii, L.P.",
+      "title": "10%",
       "date": "2026-10-28",
-      "price": 90.25,
-      "qty": 15000,
-      "value": 1342811.0,
+      "price": 25.78,
+      "qty": 2070444,
+      "value": 38298574.0,
       "txn_count": 2,
-      "insider_count": 2,
-      "is_csuite": true,
-      "company": "TTM Technologies, Inc.",
-      "sector": "Technology",
-      "current_price": 76.58,
-      "change_pct": -7.67,
-      "market_cap": 8069657600,
-      "week52_high": 223.83,
-      "week52_low": 55.44,
-      "insider_avg_cost": 89.52,
-      "vs_insider_pct": -14.5,
-      "max_delta_own": 39.0,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Lycia Therapeutics, Inc.",
+      "sector": "Healthcare",
+      "current_price": 27.18,
+      "change_pct": 2.95,
+      "market_cap": 1415930112,
+      "week52_high": 36.49,
+      "week52_low": 22.19,
+      "insider_avg_cost": 18.5,
+      "vs_insider_pct": 46.9,
+      "max_delta_own": 43.0,
       "insiders": [
         {
-          "name": "Ali Wajid",
-          "title": "Dir",
+          "name": "Venrock Healthcare Capital Partners Iii, L.P.",
+          "title": "10%",
           "date": "2026-10-28",
-          "price": 90.25,
-          "qty": 10000,
-          "value": 902461.0,
+          "price": 25.78,
+          "qty": 2070444,
+          "value": 38298574.0,
           "is_csuite": false,
-          "owned": 35835,
-          "delta_own": 39.0
-        },
-        {
-          "name": "Roks Edwin",
-          "title": "Pres, CEO",
-          "date": "2026-10-28",
-          "price": 88.07,
-          "qty": 5000,
-          "value": 440350.0,
-          "is_csuite": true,
-          "owned": 64483,
-          "delta_own": 8.0
+          "owned": 6850237,
+          "delta_own": 43.0
         }
       ],
       "conviction_score": 41.0,
       "tier": "B",
       "signals": [
-        "Down over 50% from its high",
-        "2 insiders buying, but the stock is well off its highs",
-        "Position up 39%",
-        "Bought this week",
-        "$1.3M total",
-        "Trading 14% below insider cost"
+        "Position up 43%",
+        "$38.3M total"
       ],
-      "story": "TTMI: Two insiders bought including the Pres, CEO, $1.3M total."
+      "story": "LYCA: Venrock Healthcare Capital Partners Iii, L.P. (10%) bought, $38.3M total."
     },
     {
       "ticker": "HXL",
@@ -3742,7 +3526,7 @@
       "sector": "Healthcare",
       "current_price": 5.78,
       "change_pct": -8.4,
-      "market_cap": 563310016,
+      "market_cap": 562637952,
       "week52_high": 11.055,
       "week52_low": 3.3,
       "insider_avg_cost": 7.49,
@@ -3769,6 +3553,61 @@
         "Trading 23% below insider cost"
       ],
       "story": "AVR: L1 Capital Pty Ltd (10%) bought, $8.7M total."
+    },
+    {
+      "ticker": "RTSN",
+      "insider": "Keller Eric L.",
+      "title": "CEO",
+      "date": "2026-10-13",
+      "price": 12.0,
+      "qty": 30800,
+      "value": 369600.0,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": true,
+      "company": "Retension Pharmaceuticals, Inc.",
+      "sector": "Healthcare",
+      "current_price": 11.3,
+      "change_pct": -0.53,
+      "market_cap": 94147072,
+      "week52_high": 18.64,
+      "week52_low": 9.66,
+      "insider_avg_cost": 12.0,
+      "vs_insider_pct": -5.8,
+      "max_delta_own": 80.0,
+      "insiders": [
+        {
+          "name": "Keller Eric L.",
+          "title": "CEO",
+          "date": "2026-10-13",
+          "price": 12.0,
+          "qty": 20800,
+          "value": 249600.0,
+          "is_csuite": true,
+          "owned": 464407,
+          "delta_own": 5.0
+        },
+        {
+          "name": "Berger Franklin M",
+          "title": "Dir",
+          "date": "2026-10-13",
+          "price": 12.0,
+          "qty": 10000,
+          "value": 120000.0,
+          "is_csuite": false,
+          "owned": 22517,
+          "delta_own": 80.0
+        }
+      ],
+      "conviction_score": 40.0,
+      "tier": "B",
+      "signals": [
+        "2 insiders buying, but the stock is well off its highs",
+        "Position up 80%",
+        "$370K total",
+        "Trading 6% below insider cost"
+      ],
+      "story": "RTSN: Two insiders bought including the CEO, $370K total."
     },
     {
       "ticker": "SEVN",
@@ -3866,50 +3705,6 @@
         "$986K total"
       ],
       "story": "XYL: Koch D Christian (Dir) bought, $986K total."
-    },
-    {
-      "ticker": "ELVR",
-      "insider": "Cortes Vargas Christian Mauricio",
-      "title": "CFO",
-      "date": "2026-10-28",
-      "price": 2.67,
-      "qty": 16000,
-      "value": 42720.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "Elevra Lithium Limited",
-      "sector": "Basic Materials",
-      "current_price": 22.36,
-      "change_pct": 1.82,
-      "market_cap": 431594624,
-      "week52_high": 102.8,
-      "week52_low": 21.32,
-      "insider_avg_cost": 2.67,
-      "vs_insider_pct": 737.5,
-      "max_delta_own": 350.0,
-      "insiders": [
-        {
-          "name": "Cortes Vargas Christian Mauricio",
-          "title": "CFO",
-          "date": "2026-10-28",
-          "price": 2.67,
-          "qty": 16000,
-          "value": 42720.0,
-          "is_csuite": true,
-          "owned": 11431,
-          "delta_own": 350.0
-        }
-      ],
-      "conviction_score": 39.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high",
-        "CFO bought",
-        "Insider more than doubled their stake",
-        "Bought this week"
-      ],
-      "story": "ELVR: The CFO bought."
     },
     {
       "ticker": "BMN",
@@ -4038,6 +3833,101 @@
       "story": "FLG: Frank Alan L (Dir) bought, $101K total."
     },
     {
+      "ticker": "SRRK",
+      "insider": "Akkaraju Srinivas",
+      "title": "Dir",
+      "date": "2026-10-23",
+      "price": 41.45,
+      "qty": 289470,
+      "value": 11999922.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Scholar Rock Holding Corporation",
+      "sector": "Healthcare",
+      "current_price": 42.91,
+      "change_pct": -2.26,
+      "market_cap": 5225806336,
+      "week52_high": 61.76,
+      "week52_low": 27.07,
+      "insider_avg_cost": 41.45,
+      "vs_insider_pct": 3.5,
+      "max_delta_own": 4.0,
+      "insiders": [
+        {
+          "name": "Akkaraju Srinivas",
+          "title": "Dir",
+          "date": "2026-10-23",
+          "price": 41.45,
+          "qty": 289470,
+          "value": 11999922.0,
+          "is_csuite": false,
+          "owned": 7131508,
+          "delta_own": 4.0
+        }
+      ],
+      "conviction_score": 39.0,
+      "tier": "W",
+      "signals": [
+        "$12.0M total"
+      ],
+      "story": "SRRK: Akkaraju Srinivas (Dir) bought, $12.0M total."
+    },
+    {
+      "ticker": "THRM",
+      "insider": "Mascarenas Paul Anthony",
+      "title": "Dir",
+      "date": "2026-10-23",
+      "price": 26.63,
+      "qty": 25000,
+      "value": 662600.0,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": true,
+      "company": "Gentherm Incorporated",
+      "sector": "Consumer Cyclical",
+      "current_price": 31.38,
+      "change_pct": 1.39,
+      "market_cap": 1709424768,
+      "week52_high": 48.35,
+      "week52_low": 25.31,
+      "insider_avg_cost": 26.5,
+      "vs_insider_pct": 18.4,
+      "max_delta_own": 747.0,
+      "insiders": [
+        {
+          "name": "Mascarenas Paul Anthony",
+          "title": "Dir",
+          "date": "2026-10-23",
+          "price": 26.63,
+          "qty": 20000,
+          "value": 532600.0,
+          "is_csuite": false,
+          "owned": 22677,
+          "delta_own": 747.0
+        },
+        {
+          "name": "Presley William T.",
+          "title": "Pres, CEO",
+          "date": "2026-10-23",
+          "price": 26.0,
+          "qty": 5000,
+          "value": 130000.0,
+          "is_csuite": true,
+          "owned": 183314,
+          "delta_own": 3.0
+        }
+      ],
+      "conviction_score": 39.0,
+      "tier": "W",
+      "signals": [
+        "2 insiders buying, but the stock is well off its highs",
+        "Insider more than doubled their stake",
+        "$663K total"
+      ],
+      "story": "THRM: Two insiders bought including the Pres, CEO, $663K total."
+    },
+    {
       "ticker": "IAM",
       "insider": "Rachlin Evan Lockwood",
       "title": "Dir",
@@ -4095,7 +3985,7 @@
       "sector": "Consumer Cyclical",
       "current_price": 11.4,
       "change_pct": -5.94,
-      "market_cap": 2784416000,
+      "market_cap": 2639946496,
       "week52_high": 34.53,
       "week52_low": 11.39,
       "insider_avg_cost": 11.83,
@@ -4123,6 +4013,62 @@
         "Still below insider cost"
       ],
       "story": "RSI: Winter Thomas (Dir) bought, $118K total."
+    },
+    {
+      "ticker": "TTMI",
+      "insider": "Ali Wajid",
+      "title": "Dir",
+      "date": "2026-10-28",
+      "price": 90.25,
+      "qty": 15000,
+      "value": 1342811.0,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": true,
+      "company": "TTM Technologies, Inc.",
+      "sector": "Technology",
+      "current_price": 76.58,
+      "change_pct": -7.67,
+      "market_cap": 8069657600,
+      "week52_high": 223.83,
+      "week52_low": 55.44,
+      "insider_avg_cost": 89.52,
+      "vs_insider_pct": -14.5,
+      "max_delta_own": 39.0,
+      "insiders": [
+        {
+          "name": "Ali Wajid",
+          "title": "Dir",
+          "date": "2026-10-28",
+          "price": 90.25,
+          "qty": 10000,
+          "value": 902461.0,
+          "is_csuite": false,
+          "owned": 35835,
+          "delta_own": 39.0
+        },
+        {
+          "name": "Roks Edwin",
+          "title": "Pres, CEO",
+          "date": "2026-10-28",
+          "price": 88.07,
+          "qty": 5000,
+          "value": 440350.0,
+          "is_csuite": true,
+          "owned": 64483,
+          "delta_own": 8.0
+        }
+      ],
+      "conviction_score": 38.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "2 insiders buying, but the stock is well off its highs",
+        "Position up 39%",
+        "$1.3M total",
+        "Trading 14% below insider cost"
+      ],
+      "story": "TTMI: Two insiders bought including the Pres, CEO, $1.3M total."
     },
     {
       "ticker": "GOLD",
@@ -4180,7 +4126,7 @@
       "sector": "Industrials",
       "current_price": 69.78,
       "change_pct": -3.95,
-      "market_cap": 3740470784,
+      "market_cap": 3750256640,
       "week52_high": 94.5,
       "week52_low": 69.2125,
       "insider_avg_cost": 80.78,
@@ -4264,50 +4210,6 @@
         "Trading 25% below insider cost"
       ],
       "story": "ONMD: Two insiders bought, $1000K total."
-    },
-    {
-      "ticker": "ACTU",
-      "insider": "Schmitt Daniel M",
-      "title": "Pres, CEO, Dir",
-      "date": "2026-10-28",
-      "price": 0.36,
-      "qty": 140844,
-      "value": 50000.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "Actuate Therapeutics, Inc. Common stock",
-      "sector": "Healthcare",
-      "current_price": 0.342,
-      "change_pct": 2.06,
-      "market_cap": 18810036,
-      "week52_high": 7.9,
-      "week52_low": 0.33,
-      "insider_avg_cost": 0.36,
-      "vs_insider_pct": -5.0,
-      "max_delta_own": 15.0,
-      "insiders": [
-        {
-          "name": "Schmitt Daniel M",
-          "title": "Pres, CEO, Dir",
-          "date": "2026-10-28",
-          "price": 0.36,
-          "qty": 140844,
-          "value": 50000.0,
-          "is_csuite": true,
-          "owned": 1073300,
-          "delta_own": 15.0
-        }
-      ],
-      "conviction_score": 37.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high",
-        "Position up 15%",
-        "Bought this week",
-        "Trading 5% below insider cost"
-      ],
-      "story": "ACTU: The Pres, CEO, Dir bought."
     },
     {
       "ticker": "PRTA",
@@ -4586,7 +4488,7 @@
       "sector": "Consumer Defensive",
       "current_price": 3.2,
       "change_pct": 0.63,
-      "market_cap": 0,
+      "market_cap": 318769472,
       "week52_high": 4.45,
       "week52_low": 3.12,
       "insider_avg_cost": 3.52,
@@ -4700,6 +4602,49 @@
         "$409K total"
       ],
       "story": "ATEC: Demski David M (Dir) bought, $409K total."
+    },
+    {
+      "ticker": "ELVR",
+      "insider": "Cortes Vargas Christian Mauricio",
+      "title": "CFO",
+      "date": "2026-10-28",
+      "price": 2.67,
+      "qty": 16000,
+      "value": 42720.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "Elevra Lithium Limited",
+      "sector": "Basic Materials",
+      "current_price": 22.36,
+      "change_pct": 1.82,
+      "market_cap": 433819872,
+      "week52_high": 102.8,
+      "week52_low": 21.32,
+      "insider_avg_cost": 2.67,
+      "vs_insider_pct": 737.5,
+      "max_delta_own": 350.0,
+      "insiders": [
+        {
+          "name": "Cortes Vargas Christian Mauricio",
+          "title": "CFO",
+          "date": "2026-10-28",
+          "price": 2.67,
+          "qty": 16000,
+          "value": 42720.0,
+          "is_csuite": true,
+          "owned": 11431,
+          "delta_own": 350.0
+        }
+      ],
+      "conviction_score": 36.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "CFO bought",
+        "Insider more than doubled their stake"
+      ],
+      "story": "ELVR: The CFO bought."
     },
     {
       "ticker": "XGN",
@@ -4966,51 +4911,6 @@
       "story": "HDSN: Hartree Partners, LP (10%) bought, $1.3M total."
     },
     {
-      "ticker": "RCT",
-      "insider": "Senn Nikolaus Beat",
-      "title": "Dir, 10%",
-      "date": "2026-10-28",
-      "price": 0.25,
-      "qty": 1700000,
-      "value": 425000.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "RedCloud Holdings plc",
-      "sector": "Technology",
-      "current_price": 0.0351,
-      "change_pct": -39.17,
-      "market_cap": 3768147,
-      "week52_high": 2.34,
-      "week52_low": 0.0337,
-      "insider_avg_cost": 0.25,
-      "vs_insider_pct": -86.0,
-      "max_delta_own": 17.0,
-      "insiders": [
-        {
-          "name": "Senn Nikolaus Beat",
-          "title": "Dir, 10%",
-          "date": "2026-10-28",
-          "price": 0.25,
-          "qty": 1700000,
-          "value": 425000.0,
-          "is_csuite": false,
-          "owned": 11986524,
-          "delta_own": 17.0
-        }
-      ],
-      "conviction_score": 35.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high",
-        "Position up 17%",
-        "Bought this week",
-        "$425K total",
-        "Trading 86% below insider cost"
-      ],
-      "story": "RCT: Senn Nikolaus Beat (Dir, 10%) bought, $425K total."
-    },
-    {
       "ticker": "APLD",
       "insider": "Zhang Jason Gechen",
       "title": "Pres",
@@ -5150,90 +5050,47 @@
       "story": "STIM: Chernett Jorey (10%) bought."
     },
     {
-      "ticker": "HYMC",
-      "insider": "Rhodes Blake",
-      "title": "Dir",
+      "ticker": "ACTU",
+      "insider": "Schmitt Daniel M",
+      "title": "Pres, CEO, Dir",
       "date": "2026-10-28",
-      "price": 16.69,
-      "qty": 3000,
-      "value": 50075.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Hycroft Mining Holding Corporation",
-      "sector": "Basic Materials",
-      "current_price": 16.33,
-      "change_pct": -0.55,
-      "market_cap": 1521687424,
-      "week52_high": 58.73,
-      "week52_low": 7.07,
-      "insider_avg_cost": 16.69,
-      "vs_insider_pct": -2.2,
-      "max_delta_own": 74.0,
-      "insiders": [
-        {
-          "name": "Rhodes Blake",
-          "title": "Dir",
-          "date": "2026-10-28",
-          "price": 16.69,
-          "qty": 3000,
-          "value": 50075.0,
-          "is_csuite": false,
-          "owned": 7068,
-          "delta_own": 74.0
-        }
-      ],
-      "conviction_score": 34.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high",
-        "Position up 74%",
-        "Bought this week",
-        "Still below insider cost"
-      ],
-      "story": "HYMC: Rhodes Blake (Dir) bought."
-    },
-    {
-      "ticker": "AIOK",
-      "insider": "Panagiotidis Petros Panagiotis",
-      "title": "CEO",
-      "date": "2026-10-23",
-      "price": 8.15,
-      "qty": 130000,
-      "value": 1059604.0,
+      "price": 0.36,
+      "qty": 140844,
+      "value": 50000.0,
       "txn_count": 1,
       "insider_count": 1,
       "is_csuite": true,
-      "company": "AI OKTO CORP.",
-      "sector": "Energy",
-      "current_price": 12.63,
-      "change_pct": -47.75,
-      "market_cap": 54560540,
-      "week52_high": 31.09,
-      "week52_low": 3.9,
-      "insider_avg_cost": 8.15,
-      "vs_insider_pct": 55.0,
-      "max_delta_own": 4.0,
+      "company": "Actuate Therapeutics, Inc. Common stock",
+      "sector": "Healthcare",
+      "current_price": 0.342,
+      "change_pct": 2.06,
+      "market_cap": 18810036,
+      "week52_high": 7.9,
+      "week52_low": 0.33,
+      "insider_avg_cost": 0.36,
+      "vs_insider_pct": -5.0,
+      "max_delta_own": 15.0,
       "insiders": [
         {
-          "name": "Panagiotidis Petros Panagiotis",
-          "title": "CEO",
-          "date": "2026-10-23",
-          "price": 8.15,
-          "qty": 130000,
-          "value": 1059604.0,
+          "name": "Schmitt Daniel M",
+          "title": "Pres, CEO, Dir",
+          "date": "2026-10-28",
+          "price": 0.36,
+          "qty": 140844,
+          "value": 50000.0,
           "is_csuite": true,
-          "owned": 3336185,
-          "delta_own": 4.0
+          "owned": 1073300,
+          "delta_own": 15.0
         }
       ],
       "conviction_score": 34.0,
       "tier": "W",
       "signals": [
         "Down over 50% from its high",
-        "$1.1M total"
+        "Position up 15%",
+        "Trading 5% below insider cost"
       ],
-      "story": "AIOK: The CEO bought, $1.1M total."
+      "story": "ACTU: The Pres, CEO, Dir bought."
     },
     {
       "ticker": "DAIO",
@@ -5364,50 +5221,6 @@
         "Still below insider cost"
       ],
       "story": "LBRT: Babcock Ken (Dir) bought, $223K total."
-    },
-    {
-      "ticker": "PLUR",
-      "insider": "Manieu Alexandre Weinstein",
-      "title": "Dir, 10%",
-      "date": "2026-10-23",
-      "price": 1.5,
-      "qty": 833334,
-      "value": 1250001.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Pluri Inc.",
-      "sector": "Healthcare",
-      "current_price": 1.2,
-      "change_pct": -3.23,
-      "market_cap": 16224513,
-      "week52_high": 4.87,
-      "week52_low": 0.85,
-      "insider_avg_cost": 1.5,
-      "vs_insider_pct": -20.0,
-      "max_delta_own": 66.0,
-      "insiders": [
-        {
-          "name": "Manieu Alexandre Weinstein",
-          "title": "Dir, 10%",
-          "date": "2026-10-23",
-          "price": 1.5,
-          "qty": 833334,
-          "value": 1250001.0,
-          "is_csuite": false,
-          "owned": 2090900,
-          "delta_own": 66.0
-        }
-      ],
-      "conviction_score": 33.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high",
-        "Position up 66%",
-        "$1.3M total",
-        "Trading 20% below insider cost"
-      ],
-      "story": "PLUR: Manieu Alexandre Weinstein (Dir, 10%) bought, $1.3M total."
     },
     {
       "ticker": "GPI",
@@ -5604,7 +5417,7 @@
       "sector": "Financial Services",
       "current_price": 10.85,
       "change_pct": -2.95,
-      "market_cap": 84866336,
+      "market_cap": 83347760,
       "week52_high": 16.16,
       "week52_low": 9.09,
       "insider_avg_cost": 10.39,
@@ -5629,6 +5442,50 @@
         "$701K total"
       ],
       "story": "SAMG: Equinox Partners Investment Management LLC (10%) bought, $701K total."
+    },
+    {
+      "ticker": "RCT",
+      "insider": "Senn Nikolaus Beat",
+      "title": "Dir, 10%",
+      "date": "2026-10-28",
+      "price": 0.25,
+      "qty": 1700000,
+      "value": 425000.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "RedCloud Holdings plc",
+      "sector": "Technology",
+      "current_price": 0.0351,
+      "change_pct": -39.17,
+      "market_cap": 3768147,
+      "week52_high": 2.34,
+      "week52_low": 0.0337,
+      "insider_avg_cost": 0.25,
+      "vs_insider_pct": -86.0,
+      "max_delta_own": 17.0,
+      "insiders": [
+        {
+          "name": "Senn Nikolaus Beat",
+          "title": "Dir, 10%",
+          "date": "2026-10-28",
+          "price": 0.25,
+          "qty": 1700000,
+          "value": 425000.0,
+          "is_csuite": false,
+          "owned": 11986524,
+          "delta_own": 17.0
+        }
+      ],
+      "conviction_score": 32.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "Position up 17%",
+        "$425K total",
+        "Trading 86% below insider cost"
+      ],
+      "story": "RCT: Senn Nikolaus Beat (Dir, 10%) bought, $425K total."
     },
     {
       "ticker": "MHH",
@@ -5684,7 +5541,7 @@
       "sector": "Technology",
       "current_price": 40.15,
       "change_pct": 4.15,
-      "market_cap": 20705593344,
+      "market_cap": 20752697344,
       "week52_high": 68.37,
       "week52_low": 32.1,
       "insider_avg_cost": 36.4,
@@ -5834,6 +5691,91 @@
       "story": "STKH: The CEO bought."
     },
     {
+      "ticker": "HYMC",
+      "insider": "Rhodes Blake",
+      "title": "Dir",
+      "date": "2026-10-28",
+      "price": 16.69,
+      "qty": 3000,
+      "value": 50075.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Hycroft Mining Holding Corporation",
+      "sector": "Basic Materials",
+      "current_price": 16.33,
+      "change_pct": -0.55,
+      "market_cap": 1521687424,
+      "week52_high": 58.73,
+      "week52_low": 7.07,
+      "insider_avg_cost": 16.69,
+      "vs_insider_pct": -2.2,
+      "max_delta_own": 74.0,
+      "insiders": [
+        {
+          "name": "Rhodes Blake",
+          "title": "Dir",
+          "date": "2026-10-28",
+          "price": 16.69,
+          "qty": 3000,
+          "value": 50075.0,
+          "is_csuite": false,
+          "owned": 7068,
+          "delta_own": 74.0
+        }
+      ],
+      "conviction_score": 31.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "Position up 74%",
+        "Still below insider cost"
+      ],
+      "story": "HYMC: Rhodes Blake (Dir) bought."
+    },
+    {
+      "ticker": "AIOK",
+      "insider": "Panagiotidis Petros Panagiotis",
+      "title": "CEO",
+      "date": "2026-10-23",
+      "price": 8.15,
+      "qty": 130000,
+      "value": 1059604.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "AI OKTO CORP.",
+      "sector": "Energy",
+      "current_price": 12.63,
+      "change_pct": -47.75,
+      "market_cap": 54560540,
+      "week52_high": 31.09,
+      "week52_low": 3.9,
+      "insider_avg_cost": 8.15,
+      "vs_insider_pct": 55.0,
+      "max_delta_own": 4.0,
+      "insiders": [
+        {
+          "name": "Panagiotidis Petros Panagiotis",
+          "title": "CEO",
+          "date": "2026-10-23",
+          "price": 8.15,
+          "qty": 130000,
+          "value": 1059604.0,
+          "is_csuite": true,
+          "owned": 3336185,
+          "delta_own": 4.0
+        }
+      ],
+      "conviction_score": 31.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "$1.1M total"
+      ],
+      "story": "AIOK: The CEO bought, $1.1M total."
+    },
+    {
       "ticker": "FEAM",
       "insider": "Vant Hoff Graham",
       "title": "Dir",
@@ -5918,48 +5860,48 @@
       "story": "NXRT: McGraner Matt (See Remarks) bought, $201K total."
     },
     {
-      "ticker": "SNES",
-      "insider": "Glenbrook Capital Management",
-      "title": "10%",
-      "date": "2026-10-28",
-      "price": 0.97,
-      "qty": 1117679,
-      "value": 809951.0,
-      "txn_count": 3,
+      "ticker": "PLUR",
+      "insider": "Manieu Alexandre Weinstein",
+      "title": "Dir, 10%",
+      "date": "2026-10-23",
+      "price": 1.5,
+      "qty": 833334,
+      "value": 1250001.0,
+      "txn_count": 1,
       "insider_count": 1,
       "is_csuite": false,
-      "company": "SenesTech, Inc.",
-      "sector": "Basic Materials",
-      "current_price": 1.05,
-      "change_pct": -2.78,
-      "market_cap": 5568597,
-      "week52_high": 3.609,
-      "week52_low": 0.55,
-      "insider_avg_cost": 0.72,
-      "vs_insider_pct": 45.8,
-      "max_delta_own": 38.0,
+      "company": "Pluri Inc.",
+      "sector": "Healthcare",
+      "current_price": 1.2,
+      "change_pct": -3.23,
+      "market_cap": 16224513,
+      "week52_high": 4.87,
+      "week52_low": 0.85,
+      "insider_avg_cost": 1.5,
+      "vs_insider_pct": -20.0,
+      "max_delta_own": 66.0,
       "insiders": [
         {
-          "name": "Glenbrook Capital Management",
-          "title": "10%",
-          "date": "2026-10-28",
-          "price": 0.97,
-          "qty": 1117679,
-          "value": 809951.0,
+          "name": "Manieu Alexandre Weinstein",
+          "title": "Dir, 10%",
+          "date": "2026-10-23",
+          "price": 1.5,
+          "qty": 833334,
+          "value": 1250001.0,
           "is_csuite": false,
-          "owned": 4391946,
-          "delta_own": 38.0
+          "owned": 2090900,
+          "delta_own": 66.0
         }
       ],
       "conviction_score": 30.0,
       "tier": "W",
       "signals": [
         "Down over 50% from its high",
-        "Position up 38%",
-        "Bought this week",
-        "$810K total"
+        "Position up 66%",
+        "$1.3M total",
+        "Trading 20% below insider cost"
       ],
-      "story": "SNES: Glenbrook Capital Management (10%) bought, $810K total."
+      "story": "PLUR: Manieu Alexandre Weinstein (Dir, 10%) bought, $1.3M total."
     },
     {
       "ticker": "RENT",
@@ -6081,7 +6023,7 @@
       "txn_count": 3,
       "insider_count": 1,
       "is_csuite": true,
-      "company": "Zone Frontier Inc.",
+      "company": "CleanCore Solutions, Inc.",
       "sector": "Technology",
       "current_price": 4.12,
       "change_pct": 8.42,
@@ -6451,61 +6393,6 @@
       "story": "CNXU: Purcell Lynn Sebastian (Dir, 10%) bought, $500K total."
     },
     {
-      "ticker": "IMSR",
-      "insider": "Irish Simon",
-      "title": "CEO",
-      "date": "2026-10-13",
-      "price": 3.01,
-      "qty": 28900,
-      "value": 90154.0,
-      "txn_count": 2,
-      "insider_count": 2,
-      "is_csuite": true,
-      "company": "Terrestrial Energy Inc.",
-      "sector": "Utilities",
-      "current_price": 2.99,
-      "change_pct": -7.14,
-      "market_cap": 316746432,
-      "week52_high": 16.38,
-      "week52_low": 2.7,
-      "insider_avg_cost": 3.12,
-      "vs_insider_pct": -4.2,
-      "max_delta_own": 56.0,
-      "insiders": [
-        {
-          "name": "Irish Simon",
-          "title": "CEO",
-          "date": "2026-10-13",
-          "price": 3.01,
-          "qty": 16900,
-          "value": 50818.0,
-          "is_csuite": true,
-          "owned": 5183609,
-          "delta_own": null
-        },
-        {
-          "name": "Buckman Frederick W",
-          "title": "Dir",
-          "date": "2026-10-09",
-          "price": 3.28,
-          "qty": 12000,
-          "value": 39336.0,
-          "is_csuite": false,
-          "owned": 33599,
-          "delta_own": 56.0
-        }
-      ],
-      "conviction_score": 29.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high",
-        "2 insiders buying, but the stock is well off its highs",
-        "Position up 56%",
-        "Still below insider cost"
-      ],
-      "story": "IMSR: Two insiders bought including the CEO."
-    },
-    {
       "ticker": "CITR",
       "insider": "Huff Craig A",
       "title": "Dir, 10%",
@@ -6722,47 +6609,47 @@
       "story": "COE: The CEO, 10% bought, $32.3M total."
     },
     {
-      "ticker": "CTEV",
-      "insider": "Ares Management LLC",
+      "ticker": "SNES",
+      "insider": "Glenbrook Capital Management",
       "title": "10%",
-      "date": "2026-10-23",
-      "price": 23.69,
-      "qty": 141668,
-      "value": 3356212.0,
-      "txn_count": 2,
+      "date": "2026-10-28",
+      "price": 0.97,
+      "qty": 1117679,
+      "value": 809951.0,
+      "txn_count": 3,
       "insider_count": 1,
       "is_csuite": false,
-      "company": "Claritev Corporation",
-      "sector": "Healthcare",
-      "current_price": 22.92,
-      "change_pct": -4.5,
-      "market_cap": 388435872,
-      "week52_high": 73.68,
-      "week52_low": 11.5,
-      "insider_avg_cost": 23.69,
-      "vs_insider_pct": -3.3,
-      "max_delta_own": 4.0,
+      "company": "SenesTech, Inc.",
+      "sector": "Basic Materials",
+      "current_price": 1.05,
+      "change_pct": -2.78,
+      "market_cap": 5694719,
+      "week52_high": 3.609,
+      "week52_low": 0.55,
+      "insider_avg_cost": 0.72,
+      "vs_insider_pct": 45.8,
+      "max_delta_own": 38.0,
       "insiders": [
         {
-          "name": "Ares Management LLC",
+          "name": "Glenbrook Capital Management",
           "title": "10%",
-          "date": "2026-10-23",
-          "price": 23.69,
-          "qty": 141668,
-          "value": 3356212.0,
+          "date": "2026-10-28",
+          "price": 0.97,
+          "qty": 1117679,
+          "value": 809951.0,
           "is_csuite": false,
-          "owned": 1933939,
-          "delta_own": 4.0
+          "owned": 4391946,
+          "delta_own": 38.0
         }
       ],
       "conviction_score": 27.0,
       "tier": "W",
       "signals": [
         "Down over 50% from its high",
-        "$3.4M total",
-        "Still below insider cost"
+        "Position up 38%",
+        "$810K total"
       ],
-      "story": "CTEV: Ares Management LLC (10%) bought, $3.4M total."
+      "story": "SNES: Glenbrook Capital Management (10%) bought, $810K total."
     },
     {
       "ticker": "LIQT",
@@ -6893,6 +6780,61 @@
         "Trading 24% below insider cost"
       ],
       "story": "NEOV: Hass John A (Dir) bought."
+    },
+    {
+      "ticker": "IMSR",
+      "insider": "Irish Simon",
+      "title": "CEO",
+      "date": "2026-10-13",
+      "price": 3.01,
+      "qty": 28900,
+      "value": 90154.0,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": true,
+      "company": "Terrestrial Energy Inc.",
+      "sector": "Utilities",
+      "current_price": 2.99,
+      "change_pct": -7.14,
+      "market_cap": 316746432,
+      "week52_high": 16.38,
+      "week52_low": 2.7,
+      "insider_avg_cost": 3.12,
+      "vs_insider_pct": -4.2,
+      "max_delta_own": 56.0,
+      "insiders": [
+        {
+          "name": "Irish Simon",
+          "title": "CEO",
+          "date": "2026-10-13",
+          "price": 3.01,
+          "qty": 16900,
+          "value": 50818.0,
+          "is_csuite": true,
+          "owned": 5183609,
+          "delta_own": null
+        },
+        {
+          "name": "Buckman Frederick W",
+          "title": "Dir",
+          "date": "2026-10-09",
+          "price": 3.28,
+          "qty": 12000,
+          "value": 39336.0,
+          "is_csuite": false,
+          "owned": 33599,
+          "delta_own": 56.0
+        }
+      ],
+      "conviction_score": 27.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "2 insiders buying, but the stock is well off its highs",
+        "Position up 56%",
+        "Still below insider cost"
+      ],
+      "story": "IMSR: Two insiders bought including the CEO."
     },
     {
       "ticker": "VRXA",
@@ -7195,6 +7137,49 @@
       "story": "VCIG: The CEO, Dir, 10% bought, $313K total."
     },
     {
+      "ticker": "CTEV",
+      "insider": "Ares Management LLC",
+      "title": "10%",
+      "date": "2026-10-23",
+      "price": 23.69,
+      "qty": 141668,
+      "value": 3356212.0,
+      "txn_count": 2,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Claritev Corporation",
+      "sector": "Healthcare",
+      "current_price": 22.92,
+      "change_pct": -4.5,
+      "market_cap": 388435872,
+      "week52_high": 73.68,
+      "week52_low": 11.5,
+      "insider_avg_cost": 23.69,
+      "vs_insider_pct": -3.3,
+      "max_delta_own": 4.0,
+      "insiders": [
+        {
+          "name": "Ares Management LLC",
+          "title": "10%",
+          "date": "2026-10-23",
+          "price": 23.69,
+          "qty": 141668,
+          "value": 3356212.0,
+          "is_csuite": false,
+          "owned": 1933939,
+          "delta_own": 4.0
+        }
+      ],
+      "conviction_score": 24.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "$3.4M total",
+        "Still below insider cost"
+      ],
+      "story": "CTEV: Ares Management LLC (10%) bought, $3.4M total."
+    },
+    {
       "ticker": "GRCE",
       "insider": "Opaleye Management Inc.",
       "title": "10%",
@@ -7321,47 +7306,6 @@
         "Trading 19% below insider cost"
       ],
       "story": "ALP: Mitin Yury (See Remarks) bought."
-    },
-    {
-      "ticker": "NXTC",
-      "insider": "Adar1 Capital Management, LLC",
-      "title": "10%",
-      "date": "2026-10-23",
-      "price": 4.95,
-      "qty": 10851,
-      "value": 53691.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "NextCure, Inc.",
-      "sector": "Healthcare",
-      "current_price": 5.695,
-      "change_pct": -9.75,
-      "market_cap": 26068060,
-      "week52_high": 15.74,
-      "week52_low": 1.55,
-      "insider_avg_cost": 4.95,
-      "vs_insider_pct": 15.1,
-      "max_delta_own": 2.0,
-      "insiders": [
-        {
-          "name": "Adar1 Capital Management, LLC",
-          "title": "10%",
-          "date": "2026-10-23",
-          "price": 4.95,
-          "qty": 10851,
-          "value": 53691.0,
-          "is_csuite": false,
-          "owned": 733270,
-          "delta_own": 2.0
-        }
-      ],
-      "conviction_score": 23.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high"
-      ],
-      "story": "NXTC: Adar1 Capital Management, LLC (10%) bought."
     },
     {
       "ticker": "NUAI",
@@ -7618,6 +7562,47 @@
       "story": "DGXX: The CEO, 10% bought."
     },
     {
+      "ticker": "NXTC",
+      "insider": "Adar1 Capital Management, LLC",
+      "title": "10%",
+      "date": "2026-10-23",
+      "price": 4.95,
+      "qty": 10851,
+      "value": 53691.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "NextCure, Inc.",
+      "sector": "Healthcare",
+      "current_price": 5.695,
+      "change_pct": -9.75,
+      "market_cap": 26068060,
+      "week52_high": 15.74,
+      "week52_low": 1.55,
+      "insider_avg_cost": 4.95,
+      "vs_insider_pct": 15.1,
+      "max_delta_own": 2.0,
+      "insiders": [
+        {
+          "name": "Adar1 Capital Management, LLC",
+          "title": "10%",
+          "date": "2026-10-23",
+          "price": 4.95,
+          "qty": 10851,
+          "value": 53691.0,
+          "is_csuite": false,
+          "owned": 733270,
+          "delta_own": 2.0
+        }
+      ],
+      "conviction_score": 20.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high"
+      ],
+      "story": "NXTC: Adar1 Capital Management, LLC (10%) bought."
+    },
+    {
       "ticker": "QTEX",
       "insider": "Ben-Noon Dagi Shahar",
       "title": "CEO",
@@ -7632,7 +7617,7 @@
       "sector": "Technology",
       "current_price": 1.12,
       "change_pct": -8.2,
-      "market_cap": 75124048,
+      "market_cap": 62393824,
       "week52_high": 3.85,
       "week52_low": 0.283,
       "insider_avg_cost": 1.67,
@@ -7735,7 +7720,7 @@
           "delta_own": null
         }
       ],
-      "conviction_score": 15.0,
+      "conviction_score": 13.0,
       "tier": "W",
       "signals": [
         "Down over 50% from its high",
@@ -7858,14 +7843,13 @@
           "delta_own": 13.0
         }
       ],
-      "conviction_score": 77.0,
+      "conviction_score": 74.0,
       "tier": "A",
       "signals": [
         "Trading near its 52-week high",
         "Top quartile of its 52-week range",
         "3 insiders buying together",
-        "Position up 13%",
-        "Bought this week"
+        "Position up 13%"
       ],
       "story": "BBT: Cluster of 3 insiders, $232K total."
     },
@@ -7928,9 +7912,9 @@
     }
   ],
   "tier_counts": {
-    "A": 16,
-    "B": 61,
-    "W": 91,
+    "A": 14,
+    "B": 60,
+    "W": 94,
     "total": 168
   },
   "recent_feed": [
