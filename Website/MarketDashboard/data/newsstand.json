@@ -1,16 +1,16 @@
 {
-  "scan_time": "2026-11-04T21:30:32.061678+00:00",
+  "scan_time": "2026-11-05T01:49:53.508190+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Mixed",
-    "score": 3,
-    "headline": "Today's tape is confirming the trend: SPY +1.65% and closing strong. The tape is sending mixed signals: some inputs lean positive, others negative, and none clearly leads. Volume is running above its 50-day norm, so there is real participation behind these moves rather than a thin-tape drift.",
+    "verdict": "Cautious",
+    "score": 1,
+    "headline": "More of the inputs lean negative than positive, so the backdrop reads as choppy and unsettled. Volume is running above its 50-day norm, so there is real participation behind these moves rather than a thin-tape drift.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "+1.65%",
-        "read": "Strong",
+        "value": "+0.30%",
+        "read": "Firm",
         "tone": "good"
       },
       {
@@ -23,14 +23,14 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.7%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "-2.0%",
+        "read": "Weak",
+        "tone": "bad"
       },
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "+12%",
+        "value": "+25%",
         "read": "Heavy",
         "tone": "good"
       },
@@ -49,23 +49,23 @@
         "tone": "good"
       }
     ],
-    "updated": "2026-11-04T21:30:34.915560+00:00",
+    "updated": "2026-11-05T01:49:55.398405+00:00",
     "session": {
-      "change_pct": 1.65,
-      "from_open_pct": 0.5,
-      "range_pos": 0.634,
-      "sectors_green": 8,
-      "sectors_total": 11,
-      "live": true,
-      "detail": "+1.65% vs prior close \u00b7 mid-range (63% of range) \u00b7 8/11 sectors green"
+      "change_pct": 0.3,
+      "from_open_pct": 0.22,
+      "range_pos": 0.419,
+      "sectors_green": null,
+      "sectors_total": null,
+      "live": false,
+      "detail": "+0.30% vs prior close \u00b7 mid-range (42% of range) \u00b7 last completed session"
     },
     "participation": {
-      "ratio": 1.12,
+      "ratio": 1.252,
       "expected": 0.985,
-      "adjusted": 1.138,
+      "adjusted": 1.271,
       "direction": "building",
-      "drift_pct": 28.9,
-      "detail": "46M vs 41M avg"
+      "drift_pct": 47.9,
+      "detail": "53M vs 42M avg \u00b7 busier than this week normally runs"
     }
   }
 }
