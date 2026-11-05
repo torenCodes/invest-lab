@@ -679,15 +679,8 @@
     border-bottom: 1px solid var(--border-light);
     background: var(--surface-2);
   }
-  .panel-header-top {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .panel-icon { font-size: 1.1rem; flex-shrink: 0; }
-  .panel-title { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
   .panel-desc {
-    margin: 7px 0 0;
+    margin: 0;
     font-size: 0.75rem;
     color: var(--ink-3);
     line-height: 1.55;
@@ -783,6 +776,57 @@
     cursor: pointer;
   }
   .cad-more:hover { background: var(--accent-light); }
+  /* Sector pills: each is on/off, and none on means every sector (Nov 2026). */
+  .cad-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .cad-pills:empty { display: none; }
+  .cad-pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
+    padding: 4px 11px;
+    background: var(--surface);
+    color: var(--ink-2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font: inherit;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background 0.12s, border-color 0.12s, color 0.12s;
+  }
+  .cad-pill:hover { border-color: var(--accent); color: var(--accent-dark); }
+  .cad-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .cad-pill[aria-pressed="true"] {
+    background: var(--accent-muted);
+    border-color: var(--accent);
+    color: var(--accent-dark);
+    font-weight: 600;
+  }
+  .cad-pill-rs {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 400;
+  }
+  .cad-pill-rs.up { color: #1a7a4a; }
+  .cad-pill-rs.down { color: #c0392b; }
+  .cad-pill-beat { margin-left: auto; }
+  .cad-sector {
+    padding: 10px 14px;
+    font-size: 0.78rem;
+    color: var(--ink-2);
+    white-space: nowrap;
+  }
+  @media (max-width: 700px) {
+    .cad-pills { padding: 10px 14px; }
+    .cad-pill-beat { margin-left: 0; }
+  }
   .cad-more:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .sr-cell {
     padding: 10px 14px;
@@ -1193,30 +1237,37 @@ function toggleSiteNav(btn) {
 
     <!-- Sector Rotation — third, below Market Chatter (Sep 30 2026). It sat last until
          Sep 2026, two screens down behind the 1,166px Cadence table. -->
-    <section id="sector-rotation" class="full-panel">
-      <div class="panel-header">
-        <div class="panel-header-top">
-          <span class="panel-icon">🗺️</span>
-          <span class="panel-title">Sector Rotation</span>
-        </div>
-        <p class="panel-desc">Where money is actually rotating across the eleven SPDR sector ETFs, measured <strong>against the S&amp;P 500</strong> rather than on their own. A sector up 1% while the market gains 2% is quietly losing leadership. The <strong>rotation map</strong> plots every sector by relative strength and momentum (Leading, Weakening, Lagging, Improving). The <strong>banner</strong> reads the overall risk posture from cyclicals versus defensives. The <strong>table</strong> shows each sector's edge over the market across 1D–3M, whether it is rotating in or out this week, and the volume behind the move. You can switch to absolute returns at any time. Sectors rotating in are often where the next high-cadence movers turn up, so click a row to see today's scan movers inside it, or a header to sort.</p>
+    <section id="sector-rotation">
+      <div class="section-header">
+        <div class="section-title">Sector Rotation</div>
+        <div class="section-subtitle">Where money is actually rotating across the eleven SPDR sector ETFs, measured against the S&amp;P 500 rather than on their own.</div>
+        <div class="section-badge" id="sector-badge">—</div>
       </div>
-      <div id="sector-rotation-body">
-        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading sector data…</div></div>
+      <div class="full-panel">
+        <div class="panel-header">
+          <p class="panel-desc">A sector up 1% while the market gains 2% is losing ground, so that's the lens here. The banner reads risk appetite from cyclicals against defensives. The map plots each sector by relative strength and momentum: Leading, Weakening, Lagging or Improving. The table shows each sector's edge over the market from one day out to three months, whether it's rotating in or out this week, and the volume behind the move. Click a row to see today's movers in that sector, click a header to sort, or switch to absolute returns anytime.</p>
+        </div>
+        <div id="sector-rotation-body">
+          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading sector data…</div></div>
+        </div>
       </div>
     </section>
 
     <!-- Cadence Watchlist — day-trade rhythm engine -->
-    <section id="cadence" class="full-panel">
-      <div class="panel-header">
-        <div class="panel-header-top">
-          <span class="panel-icon">🎯</span>
-          <span class="panel-title">Cadence Watchlist</span>
-        </div>
-        <p class="panel-desc">A proprietary daily-rhythm ranking of the liquid US market, built to surface names with the kind of tradeable cadence you can learn and trade in and out of. The <strong>Cadence Score</strong> (0–100) blends average daily range, how consistent that range has been, liquidity, and price band, so a higher score means more reliable intraday movement. <strong>ADR%</strong> is the typical daily swing, <strong>Consistency</strong> is how steady that swing has been (closer to 1.0 is a steadier rhythm, lower is more erratic), and the <strong>Tag</strong> flags names whose price leans them toward swing territory. Leveraged and inverse funds are left out, since their range comes from the leverage and the underlying stock is already here on its own. Click any column to sort.</p>
+    <section id="cadence">
+      <div class="section-header">
+        <div class="section-title">Cadence Watchlist</div>
+        <div class="section-subtitle">A proprietary daily-rhythm ranking of the liquid US market, built to surface names with the kind of tradeable cadence you can learn and trade in and out of.</div>
+        <div class="section-badge" id="cadence-badge">—</div>
       </div>
-      <div id="cadence-body">
-        <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading watchlist…</div></div>
+      <div class="full-panel">
+        <div class="panel-header">
+          <p class="panel-desc">The score (0–100) blends how far a stock moves in a typical day (ADR%), how steady that swing has been (Consistency, closer to 1.0 is steadier), liquidity and price. It doesn't care which way a stock is heading, so a high score can still be one sliding lower. That's what vs S&amp;P is for: the last 20 days against the market. The pills run strongest sector to weakest over those same 20 days. Turn on any mix, or none for everything. Leveraged and inverse funds stay out, since their range comes from the leverage. Click a column to sort.</p>
+        </div>
+        <div class="cad-pills" id="cadence-pills" role="group" aria-label="Filter the watchlist"></div>
+        <div id="cadence-body">
+          <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading watchlist…</div></div>
+        </div>
       </div>
     </section>
 
@@ -1230,7 +1281,11 @@ const RESULTS_URL = 'data/results.json';
 const CADENCE_URL = 'data/cadence.json';
 
 // Cadence Watchlist state
-let cadenceData    = [];
+let cadenceData    = [];    // the ranked top 60
+let cadenceExtra   = [];    // the best of each sector beyond the top 60; only filters reach these
+let cadenceSectors = [];    // one row per sector, strongest against the S&P first
+let cadenceOn      = new Set();   // sector pills switched on; empty means every sector
+let cadenceBeatOnly = false;      // the "Beating the S&P" pill
 let cadenceSortCol = 'cadence_score';
 let cadenceSortDir = -1;   // -1 = descending
 // All 60 rows ran 1,166px and were the reason Sector Rotation sat two screens
@@ -1497,6 +1552,8 @@ function renderSectorRotation(payload) {
     el.innerHTML = '<div class="empty-state">No sector data available.</div>';
     return;
   }
+  const leading = sectors.filter(s => s.rrg && s.rrg.quadrant === 'Leading').length;
+  $('sector-badge').textContent = `${leading} of ${sectors.length} leading`;
   el.innerHTML =
     buildPostureBanner(payload.posture, payload.benchmark) +
     buildRRG(sectors) +
@@ -1769,7 +1826,14 @@ function maybeScrollToHash() {
 function loadCadence() {
   fetch(CADENCE_URL + '?t=' + Date.now())
     .then(r => r.ok ? r.json() : null)
-    .then(d => { cadenceData = (d && d.names) || []; renderCadence(); maybeScrollToHash(); })
+    .then(d => {
+      cadenceData    = (d && d.names) || [];
+      cadenceExtra   = (d && d.sector_depth) || [];
+      cadenceSectors = (d && d.sectors) || [];
+      renderCadencePills();
+      renderCadence();
+      maybeScrollToHash();
+    })
     .catch(() => {
       $('cadence-body').innerHTML =
         '<div class="empty-state">Watchlist unavailable. The Cadence scan runs pre-market on weekdays.</div>';
@@ -1782,6 +1846,39 @@ function cadenceSort(col) {
   renderCadence();
 }
 
+function renderCadencePills() {
+  const box = $('cadence-pills');
+  if (!cadenceSectors.length) { box.innerHTML = ''; return; }
+  const rs = v => v == null ? ''
+    : `<span class="cad-pill-rs ${v >= 0 ? 'up' : 'down'}">${v >= 0 ? '+' : ''}${v.toFixed(0)}</span>`;
+  box.innerHTML =
+    `<button type="button" class="cad-pill" data-kind="all">All sectors</button>` +
+    cadenceSectors.map(x =>
+      `<button type="button" class="cad-pill" data-sector="${x.sector}">${x.sector} ${rs(x.rs_20)}</button>`).join('') +
+    `<button type="button" class="cad-pill cad-pill-beat" data-kind="beat">Beating the S&amp;P</button>`;
+  box.onclick = e => {
+    const b = e.target.closest('.cad-pill');
+    if (!b) return;
+    if (b.dataset.kind === 'all') cadenceOn.clear();
+    else if (b.dataset.kind === 'beat') cadenceBeatOnly = !cadenceBeatOnly;
+    else if (cadenceOn.has(b.dataset.sector)) cadenceOn.delete(b.dataset.sector);
+    else cadenceOn.add(b.dataset.sector);
+    cadenceShowAll = false;
+    syncCadencePills();
+    renderCadence();
+  };
+  syncCadencePills();
+}
+
+function syncCadencePills() {
+  $('cadence-pills').querySelectorAll('.cad-pill').forEach(b => {
+    const on = b.dataset.kind === 'all'  ? cadenceOn.size === 0
+             : b.dataset.kind === 'beat' ? cadenceBeatOnly
+             : cadenceOn.has(b.dataset.sector);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+}
+
 function renderCadence() {
   const el = $('cadence-body');
   if (!cadenceData.length) {
@@ -1792,12 +1889,25 @@ function renderCadence() {
   const numCols = [
     { key: 'cadence_score', label: 'Score' },
     { key: 'adr_pct',       label: 'ADR%' },
+    { key: 'rs_20',         label: 'vs S&amp;P' },
     { key: 'consistency',   label: 'Consistency' },
     { key: 'dollar_vol',    label: '$ Vol' },
     { key: 'price',         label: 'Price' },
   ];
 
-  const sorted = [...cadenceData].sort((a, b) => {
+  // With no filter on this is the ranked top 60. A filter also reaches the
+  // deeper names, so a Staples pill shows Staples that never crack the top 60.
+  const filtering = cadenceOn.size > 0 || cadenceBeatOnly;
+  let pool = filtering ? cadenceData.concat(cadenceExtra) : cadenceData;
+  if (cadenceOn.size) pool = pool.filter(n => cadenceOn.has(n.sector));
+  if (cadenceBeatOnly) pool = pool.filter(n => n.rs_20 != null && n.rs_20 > 0);
+  $('cadence-badge').textContent = `${pool.length} name${pool.length === 1 ? '' : 's'}`;
+  if (!pool.length) {
+    el.innerHTML = '<div class="empty-state">No names match. Turn a pill off to widen the list.</div>';
+    return;
+  }
+
+  const sorted = [...pool].sort((a, b) => {
     let av = a[cadenceSortCol], bv = b[cadenceSortCol];
     if (typeof av === 'string' || typeof bv === 'string') {
       av = av || ''; bv = bv || '';
@@ -1816,6 +1926,13 @@ function renderCadence() {
 
   const tkActive = cadenceSortCol === 'ticker' ? ' sr-th-active' : '';
   const tkArrow  = cadenceSortCol === 'ticker' ? (cadenceSortDir === -1 ? ' ↓' : ' ↑') : '';
+  const secActive = cadenceSortCol === 'sector' ? ' sr-th-active' : '';
+  const secArrow  = cadenceSortCol === 'sector' ? (cadenceSortDir === -1 ? ' ↓' : ' ↑') : '';
+  const rsCell = v => {
+    if (v == null) return '<td class="sr-cell">—</td>';
+    const cls = v >= 2 ? 'sr-pos-strong' : v > 0 ? 'sr-pos' : v <= -2 ? 'sr-neg-strong' : 'sr-neg';
+    return `<td class="sr-cell ${cls}">${v >= 0 ? '+' : ''}${v.toFixed(1)}</td>`;
+  };
 
   const shown = cadenceShowAll ? sorted : sorted.slice(0, CADENCE_PREVIEW);
   const more  = sorted.length - CADENCE_PREVIEW;
@@ -1825,8 +1942,10 @@ function renderCadence() {
     const tagLabel = n.tag === 'leans-swing' ? 'leans swing' : 'day';
     return `<tr class="sr-row">
       <td class="sr-ticker cad-ticker"><span class="cad-tk">${n.ticker}</span>${n.name ? `<span class="cad-co">${String(n.name).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span>` : ''}</td>
+      <td class="cad-sector">${n.sector || '—'}</td>
       <td class="sr-cell cad-score">${n.cadence_score.toFixed(1)}</td>
       <td class="sr-cell">${n.adr_pct.toFixed(1)}%</td>
+      ${rsCell(n.rs_20)}
       <td class="sr-cell">${n.consistency.toFixed(2)}</td>
       <td class="sr-cell">$${(n.dollar_vol / 1e6).toFixed(0)}M</td>
       <td class="sr-cell">$${n.price.toFixed(2)}</td>
@@ -1837,6 +1956,7 @@ function renderCadence() {
   el.innerHTML = `<div class="cad-scroll"><table class="sr-table">
     <thead><tr>
       <th class="sr-th sr-th-left${tkActive}" onclick="cadenceSort('ticker')">Ticker${tkArrow}</th>
+      <th class="sr-th sr-th-left${secActive}" onclick="cadenceSort('sector')">Sector${secArrow}</th>
       ${numTh}
       <th class="sr-th">Tag</th>
     </tr></thead>

@@ -17,8 +17,12 @@ Cadence Score (0-100):
   Price-band   (10) — $20-300 ideal day range; $300-500 tagged "leans swing";
                       $10-20 allowed (quality gate applied at integration).
 
-This is the standalone validation build. It prints where the user's known
-names land so we can eyeball the ranking before wiring it into M&S.
+The score measures how much a stock moves and says nothing about which way, so
+each name also carries its sector and its last 20 sessions against SPY. Those are
+display and filter fields and do not touch the score or the order: tested in
+cadence_theme_backtest.py (Nov 2026), no direction rule cleared the bar to change
+the default ranking.
+
 Run: python scripts/cadence_scan.py
 """
 
@@ -52,6 +56,26 @@ MIN_PRICE       = 10.0
 MAX_PRICE       = 500.0
 MIN_DOLLAR_VOL  = 25_000_000   # median daily $ volume floor (tradeable)
 MIN_ADR         = 3.0          # % — enough range to bother
+
+# Output
+TOP_N           = 60           # the ranked list, read by the homepage and the research scripts
+SECTOR_DEPTH    = 15           # best names per sector, so a sector pill has something to show
+BEATING_DEPTH   = 10           # plus the best per sector that are beating SPY
+RS_WINDOW       = 20           # sessions of relative strength
+
+# Sectors. Named as in Sector Rotation, one per SPDR fund.
+SECTOR_MAP_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sector_map.json")
+SECTOR_FUNDS = {"XLK": "Technology", "XLF": "Financials", "XLV": "Health Care", "XLE": "Energy",
+                "XLI": "Industrials", "XLC": "Comm. Services", "XLY": "Cons. Discretionary",
+                "XLP": "Cons. Staples", "XLRE": "Real Estate", "XLB": "Materials", "XLU": "Utilities"}
+YAHOO_SECTORS = {"Technology": "Technology", "Financial Services": "Financials", "Healthcare": "Health Care",
+                 "Energy": "Energy", "Industrials": "Industrials", "Communication Services": "Comm. Services",
+                 "Consumer Cyclical": "Cons. Discretionary", "Consumer Defensive": "Cons. Staples",
+                 "Real Estate": "Real Estate", "Basic Materials": "Materials", "Utilities": "Utilities"}
+# Bitcoin miners turned AI / data-center hosts. Yahoo files several under Capital
+# Markets, which would put IREN and HUT on the Financials pill.
+MINER_HOSTS = {"IREN", "HUT", "WULF", "CLSK", "MARA", "RIOT", "BTDR", "BITF", "HIVE", "BTBT", "CAN"}
+MAX_SECTOR_LOOKUPS = 60        # per run, highest scores first; the rest wait for the next run
 
 # Names to spotlight in the sanity print
 WATCH = ["BE", "AAOI", "TE", "NVDA", "DELL", "MRVL", "AVGO", "TQQQ", "SOXL", "PLTR"]
@@ -327,6 +351,102 @@ def score_ticker(ticker, bars):
     }
 
 
+# ── Sector and direction (display and filter fields, Nov 2026) ────────────────
+
+def load_sector_map():
+    """{ticker: sector}. Committed, because Polygon's bars carry no sector and a
+    full lookup takes Yahoo about ten minutes."""
+    try:
+        with open(SECTOR_MAP_FILE) as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        print("[cadence] !! sector map missing or unreadable; starting empty")
+        return {}
+
+
+def fill_sector_map(sector_map, scored):
+    """Look up names the map does not know yet, best scores first. A failed
+    lookup is retried on the next run and is never stored as 'no sector'. Funds
+    have no sector, so they are not looked up and only appear under All."""
+    ref = _fetch_reference()
+    missing = [s["ticker"] for s in scored
+               if s["ticker"] not in sector_map
+               and (ref.get(s["ticker"]) or [None, None])[1] not in FUND_TYPES]
+    if not missing:
+        return
+    try:
+        import yfinance as yf
+    except ImportError:
+        print(f"[cadence] !! yfinance not installed; {len(missing)} names keep no sector this run")
+        return
+    added = 0
+    for t in missing[:MAX_SECTOR_LOOKUPS]:
+        try:
+            label = YAHOO_SECTORS.get(yf.Ticker(t.replace(".", "-")).info.get("sector"))
+        except Exception as e:
+            print(f"[cadence] sector lookup failed for {t}: {type(e).__name__}")
+            continue
+        if label:
+            sector_map[t] = "Technology" if t in MINER_HOSTS else label
+            added += 1
+        time.sleep(0.4)
+    if added:
+        with open(SECTOR_MAP_FILE, "w") as f:
+            json.dump(dict(sorted(sector_map.items())), f, indent=0)
+    print(f"[cadence] Sector lookups: {added} added, {len(missing) - added} still unknown")
+
+
+def window_return(bars):
+    """% return over the last RS_WINDOW sessions, or None with too little history."""
+    closes = [b["c"] for b in bars if b["c"]]
+    if len(closes) <= RS_WINDOW:
+        return None
+    return (closes[-1] / closes[-1 - RS_WINDOW] - 1) * 100
+
+
+def add_direction(s, bars, spy_ret, sector_map):
+    """Sector, last 20 sessions against SPY, and whether it closed above its own
+    20-day average. git history keeps these point-in-time for later testing."""
+    closes = [b["c"] for b in bars if b["c"]][-RS_WINDOW:]
+    ret = window_return(bars)
+    s["sector"] = sector_map.get(s["ticker"])
+    s["rs_20"] = round(ret - spy_ret, 1) if ret is not None and spy_ret is not None else None
+    s["above_20d"] = bool(closes) and closes[-1] > sum(closes) / len(closes)
+
+
+def sector_summary(series, spy_ret, scored):
+    """One row per sector, strongest against SPY first: the pills, in order."""
+    eligible = defaultdict(int)
+    for s in scored:
+        if s["sector"]:
+            eligible[s["sector"]] += 1
+    rows = []
+    for fund, label in SECTOR_FUNDS.items():
+        ret = window_return(series.get(fund) or [])
+        rows.append({"sector": label, "fund": fund, "eligible": eligible[label],
+                     "rs_20": round(ret - spy_ret, 1) if ret is not None and spy_ret is not None else None})
+    rows.sort(key=lambda r: (r["rs_20"] is None, -(r["rs_20"] or 0)))
+    return rows
+
+
+def sector_depth(scored):
+    """Names beyond the top TOP_N that a sector or strength filter should still
+    find. Staples rarely crack the overall top 60 on range, but a Staples pill
+    should still show the best Staples have. Kept apart from `names` so the ranked
+    list, the homepage card and the research scripts read exactly what they did."""
+    keep, seen, beating = [], defaultdict(int), defaultdict(int)
+    for rank, s in enumerate(scored):
+        sec = s["sector"]
+        if not sec:
+            continue
+        seen[sec] += 1
+        wins = s["rs_20"] is not None and s["rs_20"] > 0
+        beating[sec] += wins
+        if rank >= TOP_N and (seen[sec] <= SECTOR_DEPTH or (wins and beating[sec] <= BEATING_DEPTH)):
+            keep.append(s)
+    return keep
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def run():
@@ -373,18 +493,43 @@ def run():
         print(f"{i:>4} {s['ticker']:6} {s['cadence_score']:>6} {s['adr_pct']:>5} "
               f"{s['consistency']:>5} {dv:>7} ${s['price']:>7} {s['tag']}")
 
-    # Enrich the top 60 with company names (grouped-daily bars carry none)
+    # Sector and direction, then company names (grouped-daily bars carry neither)
+    sector_map = load_sector_map()
+    fill_sector_map(sector_map, scored)
+    spy_ret = window_return(series.get("SPY") or [])
+    if spy_ret is None:
+        print("[cadence] !! no SPY history; relative strength is blank this run")
+    for s in scored:
+        add_direction(s, series[s["ticker"]], spy_ret, sector_map)
+    known = sum(1 for s in scored if s["sector"])
+    beating = sum(1 for s in scored[:TOP_N] if s["rs_20"] is not None and s["rs_20"] > 0)
+    print(f"[cadence] Sector known for {known} of {len(scored)}; "
+          f"{beating} of the top {TOP_N} beat SPY over {RS_WINDOW} sessions")
+
     name_map = fetch_name_map()
 
-    out = []
-    for s in scored[:60]:
-        s2 = {k: v for k, v in s.items() if k != "_components"}
-        s2["name"] = clean_name(name_map.get(s2["ticker"], ""))
-        out.append(s2)
+    def row(s):
+        r = {k: v for k, v in s.items() if k != "_components"}
+        r["name"] = clean_name(name_map.get(r["ticker"], ""))
+        return r
+
+    names = [row(s) for s in scored[:TOP_N]]
+    depth = [row(s) for s in sector_depth(scored)]
+    head = {"generated": max(days), "count": len(scored),
+            "spy_20": round(spy_ret, 1) if spy_ret is not None else None,
+            "sectors": sector_summary(series, spy_ret, scored)}
+
+    # One row per line keeps the committed diffs readable. Serialized and parsed
+    # before the file is touched, so a bad value cannot leave a broken file behind.
+    def block(rows):
+        return "[\n" + ",\n".join(json.dumps(r, allow_nan=False) for r in rows) + "\n]"
+    payload = (json.dumps(head, allow_nan=False)[:-1] + ', "names": ' + block(names)
+               + ', "sector_depth": ' + block(depth) + "}\n")
+    json.loads(payload)
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, "w") as f:
-        json.dump({"generated": max(days), "count": len(scored), "names": out}, f, indent=2)
-    print(f"\n[cadence] Wrote top {len(out)} to {OUTPUT_FILE}")
+        f.write(payload)
+    print(f"\n[cadence] Wrote top {len(names)} + {len(depth)} sector-depth names to {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":
