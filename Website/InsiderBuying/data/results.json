@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-11-05T22:35:05.856562",
-  "total_transactions": 354,
-  "date_range": "2025-03-25 \u2013 2026-11-04",
+  "scan_time": "2026-11-05T23:01:13.574275",
+  "total_transactions": 360,
+  "date_range": "2025-03-25 \u2013 2026-11-03",
   "min_value": 25000,
   "nominees": [
     {
@@ -2898,6 +2898,62 @@
         "$1.5M total"
       ],
       "story": "FBK: Ingram Orrin H II (Dir) bought, $1.5M total."
+    },
+    {
+      "ticker": "BXMT",
+      "insider": "Johnson Timothy Steven",
+      "title": "CEO",
+      "date": "2026-11-04",
+      "price": 11.5,
+      "qty": 100000,
+      "value": 1149642.0,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": true,
+      "company": "Blackstone Mortgage Trust, Inc.",
+      "sector": "Real Estate",
+      "current_price": 11.45,
+      "change_pct": -1.55,
+      "market_cap": 1900561664,
+      "week52_high": 20.67,
+      "week52_low": 10.12,
+      "insider_avg_cost": 11.5,
+      "vs_insider_pct": -0.4,
+      "max_delta_own": 17.0,
+      "insiders": [
+        {
+          "name": "Johnson Timothy Steven",
+          "title": "CEO",
+          "date": "2026-11-04",
+          "price": 11.5,
+          "qty": 90000,
+          "value": 1035351.0,
+          "is_csuite": true,
+          "owned": 617900,
+          "delta_own": 17.0
+        },
+        {
+          "name": "Nassau Henry N",
+          "title": "Dir",
+          "date": "2026-11-04",
+          "price": 11.43,
+          "qty": 10000,
+          "value": 114291.0,
+          "is_csuite": false,
+          "owned": 233490,
+          "delta_own": 4.0
+        }
+      ],
+      "conviction_score": 50.0,
+      "tier": "B",
+      "signals": [
+        "2 insiders buying, but the stock is well off its highs",
+        "Position up 17%",
+        "Bought in the last 2 days",
+        "$1.1M total",
+        "Still below insider cost"
+      ],
+      "story": "BXMT: Two insiders bought including the CEO, $1.1M total."
     },
     {
       "ticker": "BB",
@@ -5930,6 +5986,107 @@
       "story": "DX: Two insiders bought including the Co-CEO, Pres, $257K total."
     },
     {
+      "ticker": "ETRA",
+      "insider": "Gordon Carl L",
+      "title": "Dir, 10%",
+      "date": "2026-11-03",
+      "price": 7.63,
+      "qty": 945142,
+      "value": 7210232.0,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": false,
+      "company": "Electra Therapeutics, Inc.",
+      "sector": "Healthcare",
+      "current_price": 7.35,
+      "change_pct": -7.78,
+      "market_cap": 461337120,
+      "week52_high": 15.5,
+      "week52_low": 6.87,
+      "insider_avg_cost": 7.63,
+      "vs_insider_pct": -3.7,
+      "max_delta_own": 28.0,
+      "insiders": [
+        {
+          "name": "Gordon Carl L",
+          "title": "Dir, 10%",
+          "date": "2026-11-03",
+          "price": 7.63,
+          "qty": 472571,
+          "value": 3605116.0,
+          "is_csuite": false,
+          "owned": 2136979,
+          "delta_own": 28.0
+        },
+        {
+          "name": "Orbimed Advisors LLC",
+          "title": "Dir, 10%",
+          "date": "2026-11-03",
+          "price": 7.63,
+          "qty": 472571,
+          "value": 3605116.0,
+          "is_csuite": false,
+          "owned": 2136979,
+          "delta_own": 28.0
+        }
+      ],
+      "conviction_score": 36.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "2 insiders buying, but the stock is well off its highs",
+        "Position up 28%",
+        "Bought in the last 2 days",
+        "$7.2M total",
+        "Still below insider cost"
+      ],
+      "story": "ETRA: Two insiders bought, $7.2M total."
+    },
+    {
+      "ticker": "LAB",
+      "insider": "Carey Thomas D.",
+      "title": "Dir",
+      "date": "2026-11-05",
+      "price": 0.63,
+      "qty": 75000,
+      "value": 46898.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Standard BioTools Inc.",
+      "sector": "Healthcare",
+      "current_price": 0.6224,
+      "change_pct": 1.04,
+      "market_cap": 245717552,
+      "week52_high": 1.72,
+      "week52_low": 0.59,
+      "insider_avg_cost": 0.63,
+      "vs_insider_pct": -1.2,
+      "max_delta_own": 22.0,
+      "insiders": [
+        {
+          "name": "Carey Thomas D.",
+          "title": "Dir",
+          "date": "2026-11-05",
+          "price": 0.63,
+          "qty": 75000,
+          "value": 46898.0,
+          "is_csuite": false,
+          "owned": 419456,
+          "delta_own": 22.0
+        }
+      ],
+      "conviction_score": 36.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "Position up 22%",
+        "Bought in the last 2 days",
+        "Still below insider cost"
+      ],
+      "story": "LAB: Carey Thomas D. (Dir) bought."
+    },
+    {
       "ticker": "SEVN",
       "insider": "Jordan Matthew P.",
       "title": "Dir",
@@ -6720,50 +6877,6 @@
       "story": "FUL: Two insiders bought, $525K total."
     },
     {
-      "ticker": "LYEL",
-      "insider": "Arch Venture Fund Xiii, L.P.",
-      "title": "10%",
-      "date": "2026-11-04",
-      "price": 10.77,
-      "qty": 2321262,
-      "value": 24999992.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Lyell Immunopharma, Inc.",
-      "sector": "Healthcare",
-      "current_price": 15.0,
-      "change_pct": -2.79,
-      "market_cap": 367577088,
-      "week52_high": 45.0,
-      "week52_low": 7.195,
-      "insider_avg_cost": 10.77,
-      "vs_insider_pct": 39.3,
-      "max_delta_own": 71.0,
-      "insiders": [
-        {
-          "name": "Arch Venture Fund Xiii, L.P.",
-          "title": "10%",
-          "date": "2026-11-04",
-          "price": 10.77,
-          "qty": 2321262,
-          "value": 24999992.0,
-          "is_csuite": false,
-          "owned": 5568424,
-          "delta_own": 71.0
-        }
-      ],
-      "conviction_score": 33.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high",
-        "Position up 71%",
-        "Bought in the last 2 days",
-        "$25.0M total"
-      ],
-      "story": "LYEL: Arch Venture Fund Xiii, L.P. (10%) bought, $25.0M total."
-    },
-    {
       "ticker": "GPI",
       "insider": "Conifer Management, L.L.C.",
       "title": "10%",
@@ -6901,6 +7014,62 @@
         "Position up 24%"
       ],
       "story": "CINT: Two insiders bought including the CEO, 10%."
+    },
+    {
+      "ticker": "LYEL",
+      "insider": "Arch Venture Partners Ix, LLC",
+      "title": "10%",
+      "date": "2026-11-04",
+      "price": 10.77,
+      "qty": 4642524,
+      "value": 49999984.0,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": false,
+      "company": "Lyell Immunopharma, Inc.",
+      "sector": "Healthcare",
+      "current_price": 15.0,
+      "change_pct": -2.79,
+      "market_cap": 367577088,
+      "week52_high": 45.0,
+      "week52_low": 7.195,
+      "insider_avg_cost": 10.77,
+      "vs_insider_pct": 39.3,
+      "max_delta_own": 71.0,
+      "insiders": [
+        {
+          "name": "Arch Venture Partners Ix, LLC",
+          "title": "10%",
+          "date": "2026-11-04",
+          "price": 10.77,
+          "qty": 2321262,
+          "value": 24999992.0,
+          "is_csuite": false,
+          "owned": 5568424,
+          "delta_own": 71.0
+        },
+        {
+          "name": "Arch Venture Fund Xiii, L.P.",
+          "title": "10%",
+          "date": "2026-11-04",
+          "price": 10.77,
+          "qty": 2321262,
+          "value": 24999992.0,
+          "is_csuite": false,
+          "owned": 5568424,
+          "delta_own": 71.0
+        }
+      ],
+      "conviction_score": 32.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "2 insiders buying, but the stock is well off its highs",
+        "Position up 71%",
+        "Bought in the last 2 days",
+        "$50.0M total"
+      ],
+      "story": "LYEL: Two insiders bought, $50.0M total."
     },
     {
       "ticker": "TBBK",
@@ -9511,11 +9680,95 @@
   ],
   "tier_counts": {
     "A": 17,
-    "B": 92,
-    "W": 88,
-    "total": 197
+    "B": 93,
+    "W": 90,
+    "total": 200
   },
   "recent_feed": [
+    {
+      "ticker": "ETRA",
+      "company": "Electra Therapeutics, Inc.",
+      "insider": "Gordon Carl L",
+      "title": "Dir, 10%",
+      "date": "2026-11-03",
+      "price": 7.63,
+      "qty": 472571,
+      "owned": 2136979,
+      "delta_own": 28.0,
+      "value": 3605116.0,
+      "filing": "2026-11-05",
+      "is_csuite": false
+    },
+    {
+      "ticker": "BXMT",
+      "company": "Blackstone Mortgage Trust, Inc.",
+      "insider": "Nassau Henry N",
+      "title": "Dir",
+      "date": "2026-11-04",
+      "price": 11.43,
+      "qty": 10000,
+      "owned": 233490,
+      "delta_own": 4.0,
+      "value": 114291.0,
+      "filing": "2026-11-05",
+      "is_csuite": false
+    },
+    {
+      "ticker": "BXMT",
+      "company": "Blackstone Mortgage Trust, Inc.",
+      "insider": "Johnson Timothy Steven",
+      "title": "CEO",
+      "date": "2026-11-04",
+      "price": 11.5,
+      "qty": 90000,
+      "owned": 617900,
+      "delta_own": 17.0,
+      "value": 1035351.0,
+      "filing": "2026-11-05",
+      "is_csuite": true
+    },
+    {
+      "ticker": "ETRA",
+      "company": "Electra Therapeutics, Inc.",
+      "insider": "Orbimed Advisors LLC",
+      "title": "Dir, 10%",
+      "date": "2026-11-03",
+      "price": 7.63,
+      "qty": 472571,
+      "owned": 2136979,
+      "delta_own": 28.0,
+      "value": 3605116.0,
+      "filing": "2026-11-05",
+      "is_csuite": false
+    },
+    {
+      "ticker": "LAB",
+      "company": "Standard Biotools Inc.",
+      "insider": "Carey Thomas D.",
+      "title": "Dir",
+      "date": "2026-11-05",
+      "price": 0.63,
+      "qty": 75000,
+      "owned": 419456,
+      "delta_own": 22.0,
+      "value": 46898.0,
+      "filing": "2026-11-05",
+      "is_csuite": false
+    },
+    {
+      "ticker": "LYEL",
+      "company": "Lyell Immunopharma, Inc.",
+      "insider": "Arch Venture Partners Ix, LLC",
+      "title": "10%",
+      "date": "2026-11-04",
+      "price": 10.77,
+      "qty": 2321262,
+      "owned": 5568424,
+      "delta_own": 71.0,
+      "value": 24999992.0,
+      "filing": "2026-11-05",
+      "is_csuite": false
+    },
     {
       "ticker": "LYEL",
       "company": "Lyell Immunopharma, Inc.",
@@ -9991,90 +10244,6 @@
       "value": 12921444.0,
       "filing": "2026-11-04",
       "is_csuite": false
-    },
-    {
-      "ticker": "HGV",
-      "company": "Hilton Grand Vacations Inc.",
-      "insider": "Potter Leonard",
-      "title": "Dir",
-      "date": "2026-11-03",
-      "price": 41.55,
-      "qty": 2500,
-      "owned": 107075,
-      "delta_own": 2.0,
-      "value": 103875.0,
-      "filing": "2026-11-04",
-      "is_csuite": false
-    },
-    {
-      "ticker": "HGV",
-      "company": "Hilton Grand Vacations Inc.",
-      "insider": "Wang Mark D",
-      "title": "See Remarks",
-      "date": "2026-11-02",
-      "price": 40.92,
-      "qty": 12200,
-      "owned": 916715,
-      "delta_own": 1.0,
-      "value": 499224.0,
-      "filing": "2026-11-04",
-      "is_csuite": false
-    },
-    {
-      "ticker": "JBLU",
-      "company": "Jetblue Airways Corp",
-      "insider": "Mittal Nik",
-      "title": "Dir",
-      "date": "2026-11-03",
-      "price": 3.24,
-      "qty": 100000,
-      "owned": 238537,
-      "delta_own": 72.0,
-      "value": 323844.0,
-      "filing": "2026-11-04",
-      "is_csuite": false
-    },
-    {
-      "ticker": "PRLB",
-      "company": "Proto Labs Inc",
-      "insider": "Krishna Suresh",
-      "title": "Pres, CEO",
-      "date": "2026-11-02",
-      "price": 69.52,
-      "qty": 750,
-      "owned": 30897,
-      "delta_own": 2.0,
-      "value": 52140.0,
-      "filing": "2026-11-04",
-      "is_csuite": true
-    },
-    {
-      "ticker": "PRLB",
-      "company": "Proto Labs Inc",
-      "insider": "Gawlick Rainer",
-      "title": "Dir",
-      "date": "2026-11-03",
-      "price": 68.18,
-      "qty": 720,
-      "owned": 46813,
-      "delta_own": 2.0,
-      "value": 49090.0,
-      "filing": "2026-11-04",
-      "is_csuite": false
-    },
-    {
-      "ticker": "UPBD",
-      "company": "Upbound Group, Inc.",
-      "insider": "Khouri Halim",
-      "title": "EVP, CFO",
-      "date": "2026-11-02",
-      "price": 22.78,
-      "qty": 11000,
-      "owned": 114854,
-      "delta_own": 11.0,
-      "value": 250580.0,
-      "filing": "2026-11-04",
-      "is_csuite": true
     }
   ]
 }
