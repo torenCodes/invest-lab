@@ -1,15 +1,15 @@
 {
-  "scan_time": "2026-11-06T01:49:47.305528+00:00",
+  "scan_time": "2026-11-06T15:30:28.157769+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Cautious",
-    "score": 0,
-    "headline": "Today's tape is confirming the trend: SPY +1.65% and closing strong. More of the inputs lean negative than positive, so the backdrop reads as choppy and unsettled. Volume is running above its 50-day norm, so there is real participation behind these moves rather than a thin-tape drift.",
+    "verdict": "Mixed",
+    "score": 2,
+    "headline": "Today's tape is confirming the trend: SPY +0.76% and closing strong. The tape is sending mixed signals: some inputs lean positive, others negative, and none clearly leads. Volume is running above its 50-day norm, so there is real participation behind these moves rather than a thin-tape drift.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "+1.65%",
+        "value": "+0.76%",
         "read": "Strong",
         "tone": "good"
       },
@@ -23,49 +23,49 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.7%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "-2.3%",
+        "read": "Weak",
+        "tone": "bad"
       },
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "+57%",
+        "value": "+59%",
         "read": "Heavy",
         "tone": "good"
       },
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "28.2",
-        "read": "High fear",
-        "tone": "bad"
+        "value": "23.7",
+        "read": "Elevated",
+        "tone": "neutral"
       },
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "4.84%",
-        "read": "Easing",
-        "tone": "good"
+        "value": "4.87%",
+        "read": "Stable",
+        "tone": "neutral"
       }
     ],
-    "updated": "2026-11-06T01:49:50.154423+00:00",
+    "updated": "2026-11-06T15:30:30.204535+00:00",
     "session": {
-      "change_pct": 1.65,
-      "from_open_pct": 0.5,
-      "range_pos": 0.321,
-      "sectors_green": null,
-      "sectors_total": null,
-      "live": false,
-      "detail": "+1.65% vs prior close \u00b7 mid-range (32% of range) \u00b7 last completed session"
+      "change_pct": 0.76,
+      "from_open_pct": 0.51,
+      "range_pos": 0.523,
+      "sectors_green": 9,
+      "sectors_total": 11,
+      "live": true,
+      "detail": "+0.76% vs prior close \u00b7 mid-range (52% of range) \u00b7 9/11 sectors green"
     },
     "participation": {
-      "ratio": 1.568,
+      "ratio": 1.585,
       "expected": 0.985,
-      "adjusted": 1.593,
+      "adjusted": 1.61,
       "direction": "building",
-      "drift_pct": 109.7,
-      "detail": "69M vs 44M avg \u00b7 busier than this week normally runs"
+      "drift_pct": 112.4,
+      "detail": "70M vs 44M avg \u00b7 busier than this week normally runs"
     }
   }
 }
