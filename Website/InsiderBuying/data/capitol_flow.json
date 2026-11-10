@@ -1,9 +1,9 @@
 {
- "scan_time": "2026-11-06T18:34:22.573635+00:00",
+ "scan_time": "2026-11-10T19:17:27.043263+00:00",
  "source": "US House Clerk (Periodic Transaction Reports)",
- "filings_total": 457,
- "filings_with_trades": 274,
- "transactions": 3189,
+ "filings_total": 462,
+ "filings_with_trades": 277,
+ "transactions": 3192,
  "window_days": 90,
  "median_disclosure_lag_days": 16,
  "caveats": {
@@ -59,8 +59,8 @@
   },
   {
    "ticker": "PG",
-   "trades": 5,
-   "est_amount": 40000,
+   "trades": 4,
+   "est_amount": 32000,
    "members": 3,
    "member_names": [
     "David J. Taylor",
@@ -260,8 +260,8 @@
  "top_sold": [
   {
    "ticker": "MSFT",
-   "trades": 9,
-   "est_amount": 1621500,
+   "trades": 8,
+   "est_amount": 1589000,
    "members": 7,
    "member_names": [
     "David J. Taylor",
@@ -362,17 +362,6 @@
    ]
   },
   {
-   "ticker": "SOLS",
-   "trades": 3,
-   "est_amount": 24000,
-   "members": 3,
-   "member_names": [
-    "Kelly Louise Morrison",
-    "Kevin Hern",
-    "Pete Sessions"
-   ]
-  },
-  {
    "ticker": "COST",
    "trades": 3,
    "est_amount": 558000,
@@ -463,6 +452,16 @@
    ]
   },
   {
+   "ticker": "WBD",
+   "trades": 2,
+   "est_amount": 83000,
+   "members": 2,
+   "member_names": [
+    "David Kustoff",
+    "Nancy Pelosi"
+   ]
+  },
+  {
    "ticker": "ABT",
    "trades": 2,
    "est_amount": 83000,
@@ -526,11 +525,11 @@
  "most_active": [
   {
    "member": "Kevin Hern",
-   "trades": 151
+   "trades": 148
   },
   {
    "member": "Gilbert Cisneros",
-   "trades": 103
+   "trades": 101
   },
   {
    "member": "Maria Elvira Salazar",
@@ -538,7 +537,7 @@
   },
   {
    "member": "April McClain Delaney",
-   "trades": 52
+   "trades": 51
   },
   {
    "member": "Pete Sessions",
@@ -546,11 +545,7 @@
   },
   {
    "member": "David J. Taylor",
-   "trades": 33
-  },
-  {
-   "member": "Thomas H. Kean",
-   "trades": 12
+   "trades": 29
   },
   {
    "member": "Scott Scott Franklin",
@@ -558,6 +553,10 @@
   },
   {
    "member": "Cleo Fields",
+   "trades": 10
+  },
+  {
+   "member": "Thomas H. Kean",
    "trades": 10
   },
   {
@@ -576,7 +575,7 @@
  "asset_mix": [
   {
    "type": "Stock",
-   "trades": 539
+   "trades": 519
   },
   {
    "type": "Options",
@@ -975,6 +974,19 @@
    "doc": "20035770"
   },
   {
+   "ticker": "WDC",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-15",
+   "notify_date": "2026-11-04",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "John J Mr McGuire",
+   "state": "VA05",
+   "doc": "20035775"
+  },
+  {
    "ticker": "TXN",
    "asset_type": "ST",
    "code": "S",
@@ -1168,6 +1180,32 @@
    "member": "Pete Sessions",
    "state": "TX17",
    "doc": "20035563"
+  },
+  {
+   "ticker": "WBD",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-07",
+   "notify_date": "2026-10-12",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "David Kustoff",
+   "state": "TN08",
+   "doc": "20024921"
+  },
+  {
+   "ticker": "WBD",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-07",
+   "notify_date": "2026-10-07",
+   "amount_low": 50001,
+   "amount_high": 100000,
+   "amount_mid": 75000,
+   "member": "Nancy Pelosi",
+   "state": "CA11",
+   "doc": "20035780"
   },
   {
    "ticker": "NEE",
@@ -2094,45 +2132,6 @@
   },
   {
    "ticker": "FDX",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-09-24",
-   "notify_date": "2026-10-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Maria Elvira Salazar",
-   "state": "FL27",
-   "doc": "20035562"
-  },
-  {
-   "ticker": "GE",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-09-24",
-   "notify_date": "2026-10-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Maria Elvira Salazar",
-   "state": "FL27",
-   "doc": "20035562"
-  },
-  {
-   "ticker": "GS",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-09-24",
-   "notify_date": "2026-10-01",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Maria Elvira Salazar",
-   "state": "FL27",
-   "doc": "20035562"
-  },
-  {
-   "ticker": "HONA",
    "asset_type": "ST",
    "code": "S",
    "trade_date": "2026-09-24",
