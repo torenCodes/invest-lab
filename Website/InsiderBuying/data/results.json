@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-11-10T22:10:01.141271",
-  "total_transactions": 438,
-  "date_range": "2026-09-16 \u2013 2026-11-09",
+  "scan_time": "2026-11-10T22:39:08.226601",
+  "total_transactions": 445,
+  "date_range": "2026-09-16 \u2013 2026-11-10",
   "min_value": 25000,
   "nominees": [
     {
@@ -127,6 +127,51 @@
         "$1.8M total"
       ],
       "story": "UPBD: Cluster of 8 buyers including the CEO and EVP, CFO, $1.8M total."
+    },
+    {
+      "ticker": "EGBN",
+      "insider": "Newell Eric R",
+      "title": "Senior EVP, CFO",
+      "date": "2026-11-10",
+      "price": 33.91,
+      "qty": 1470,
+      "value": 49848.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "Eagle Bancorp, Inc.",
+      "sector": "Financial Services",
+      "current_price": 34.04,
+      "change_pct": -0.32,
+      "market_cap": 1037972736,
+      "week52_high": 35.05,
+      "week52_low": 15.58,
+      "insider_avg_cost": 33.91,
+      "vs_insider_pct": 0.4,
+      "max_delta_own": 19.0,
+      "insiders": [
+        {
+          "name": "Newell Eric R",
+          "title": "Senior EVP, CFO",
+          "date": "2026-11-10",
+          "price": 33.91,
+          "qty": 1470,
+          "value": 49848.0,
+          "is_csuite": true,
+          "owned": 9303,
+          "delta_own": 19.0
+        }
+      ],
+      "conviction_score": 81.0,
+      "tier": "A",
+      "signals": [
+        "Trading near its 52-week high",
+        "Top quartile of its 52-week range",
+        "Senior EVP bought",
+        "Position up 19%",
+        "Bought in the last 2 days"
+      ],
+      "story": "EGBN: The Senior EVP, CFO bought."
     },
     {
       "ticker": "SOPH",
@@ -3728,6 +3773,118 @@
       "story": "ACOG: Opaleye Management Inc. (10%) bought, $574K total."
     },
     {
+      "ticker": "DTI",
+      "insider": "Prejean Robert Wayne",
+      "title": "CEO",
+      "date": "2026-11-09",
+      "price": 1.64,
+      "qty": 155350,
+      "value": 254917.0,
+      "txn_count": 3,
+      "insider_count": 3,
+      "is_csuite": true,
+      "company": "Drilling Tools International Corporation",
+      "sector": "Energy",
+      "current_price": 1.48,
+      "change_pct": -6.33,
+      "market_cap": 52217692,
+      "week52_high": 4.69,
+      "week52_low": 1.35,
+      "insider_avg_cost": 1.64,
+      "vs_insider_pct": -9.8,
+      "max_delta_own": 145.0,
+      "insiders": [
+        {
+          "name": "Prejean Robert Wayne",
+          "title": "CEO",
+          "date": "2026-11-09",
+          "price": 1.64,
+          "qty": 100000,
+          "value": 164300.0,
+          "is_csuite": true,
+          "owned": 591076,
+          "delta_own": 20.0
+        },
+        {
+          "name": "Johnson David Richard",
+          "title": "CFO",
+          "date": "2026-11-09",
+          "price": 1.65,
+          "qty": 30350,
+          "value": 49981.0,
+          "is_csuite": true,
+          "owned": 97780,
+          "delta_own": 45.0
+        },
+        {
+          "name": "Green IRA Harris Jr",
+          "title": "Dir",
+          "date": "2026-11-09",
+          "price": 1.63,
+          "qty": 25000,
+          "value": 40636.0,
+          "is_csuite": false,
+          "owned": 42207,
+          "delta_own": 145.0
+        }
+      ],
+      "conviction_score": 50.0,
+      "tier": "B",
+      "signals": [
+        "Down over 50% from its high",
+        "3 insiders buying, but the stock is well off its highs",
+        "CFO bought",
+        "Insider more than doubled their stake",
+        "Bought in the last 2 days",
+        "$255K total",
+        "Trading 10% below insider cost"
+      ],
+      "story": "DTI: Cluster of 3 buyers including the CEO and CFO, $255K total."
+    },
+    {
+      "ticker": "BSM",
+      "insider": "Carter Thomas L Jr",
+      "title": "Exec COB",
+      "date": "2026-11-09",
+      "price": 13.73,
+      "qty": 50000,
+      "value": 686290.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "Black Stone Minerals, L.P.",
+      "sector": "Energy",
+      "current_price": 13.67,
+      "change_pct": -0.51,
+      "market_cap": 2909820928,
+      "week52_high": 15.49,
+      "week52_low": 12.95,
+      "insider_avg_cost": 13.73,
+      "vs_insider_pct": -0.4,
+      "max_delta_own": null,
+      "insiders": [
+        {
+          "name": "Carter Thomas L Jr",
+          "title": "Exec COB",
+          "date": "2026-11-09",
+          "price": 13.73,
+          "qty": 50000,
+          "value": 686290.0,
+          "is_csuite": false,
+          "owned": 15507747,
+          "delta_own": null
+        }
+      ],
+      "conviction_score": 50.0,
+      "tier": "B",
+      "signals": [
+        "Bought in the last 2 days",
+        "$686K total",
+        "Still below insider cost"
+      ],
+      "story": "BSM: Carter Thomas L Jr (Exec COB) bought, $686K total."
+    },
+    {
       "ticker": "NLY",
       "insider": "Wede Scott",
       "title": "Dir",
@@ -4186,6 +4343,50 @@
         "$850K total"
       ],
       "story": "CXM: Ward Jr Stephen M (Dir) bought, $850K total."
+    },
+    {
+      "ticker": "NVT",
+      "insider": "Parker Herbert K",
+      "title": "Dir",
+      "date": "2026-11-09",
+      "price": 113.15,
+      "qty": 3000,
+      "value": 339435.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "nVent Electric plc",
+      "sector": "Industrials",
+      "current_price": 112.48,
+      "change_pct": -1.71,
+      "market_cap": 18176550912,
+      "week52_high": 184.64,
+      "week52_low": 93.22,
+      "insider_avg_cost": 113.14,
+      "vs_insider_pct": -0.6,
+      "max_delta_own": 17.0,
+      "insiders": [
+        {
+          "name": "Parker Herbert K",
+          "title": "Dir",
+          "date": "2026-11-09",
+          "price": 113.15,
+          "qty": 3000,
+          "value": 339435.0,
+          "is_csuite": false,
+          "owned": 20832,
+          "delta_own": 17.0
+        }
+      ],
+      "conviction_score": 48.0,
+      "tier": "B",
+      "signals": [
+        "Position up 17%",
+        "Bought in the last 2 days",
+        "$339K total",
+        "Still below insider cost"
+      ],
+      "story": "NVT: Parker Herbert K (Dir) bought, $339K total."
     },
     {
       "ticker": "FLOC",
@@ -5115,6 +5316,50 @@
         "Still below insider cost"
       ],
       "story": "BANC: The COB, CEO bought."
+    },
+    {
+      "ticker": "OESX",
+      "insider": "Brodin J Per",
+      "title": "EVP, CFO, CAO, Treasurer",
+      "date": "2026-11-10",
+      "price": 12.76,
+      "qty": 2000,
+      "value": 25520.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "Orion Energy Systems, Inc.",
+      "sector": "Industrials",
+      "current_price": 12.11,
+      "change_pct": -8.53,
+      "market_cap": 49706112,
+      "week52_high": 31.65,
+      "week52_low": 8.58,
+      "insider_avg_cost": 12.76,
+      "vs_insider_pct": -5.1,
+      "max_delta_own": 2.0,
+      "insiders": [
+        {
+          "name": "Brodin J Per",
+          "title": "EVP, CFO, CAO, Treasurer",
+          "date": "2026-11-10",
+          "price": 12.76,
+          "qty": 2000,
+          "value": 25520.0,
+          "is_csuite": true,
+          "owned": 87263,
+          "delta_own": 2.0
+        }
+      ],
+      "conviction_score": 44.0,
+      "tier": "B",
+      "signals": [
+        "Down over 50% from its high",
+        "EVP bought",
+        "Bought in the last 2 days",
+        "Trading 5% below insider cost"
+      ],
+      "story": "OESX: The EVP, CFO, CAO, Treasurer bought."
     },
     {
       "ticker": "STVN",
@@ -6510,50 +6755,6 @@
         "$370K total"
       ],
       "story": "RTSN: Two insiders bought including the CEO, $370K total."
-    },
-    {
-      "ticker": "DTI",
-      "insider": "Prejean Robert Wayne",
-      "title": "CEO",
-      "date": "2026-11-09",
-      "price": 1.64,
-      "qty": 100000,
-      "value": 164300.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "Drilling Tools International Corporation",
-      "sector": "Energy",
-      "current_price": 1.48,
-      "change_pct": -6.33,
-      "market_cap": 52217692,
-      "week52_high": 4.69,
-      "week52_low": 1.35,
-      "insider_avg_cost": 1.64,
-      "vs_insider_pct": -9.8,
-      "max_delta_own": 20.0,
-      "insiders": [
-        {
-          "name": "Prejean Robert Wayne",
-          "title": "CEO",
-          "date": "2026-11-09",
-          "price": 1.64,
-          "qty": 100000,
-          "value": 164300.0,
-          "is_csuite": true,
-          "owned": 591076,
-          "delta_own": 20.0
-        }
-      ],
-      "conviction_score": 41.0,
-      "tier": "B",
-      "signals": [
-        "Down over 50% from its high",
-        "Position up 20%",
-        "Bought in the last 2 days",
-        "Trading 10% below insider cost"
-      ],
-      "story": "DTI: The CEO bought, $164K total."
     },
     {
       "ticker": "MCY",
@@ -8627,50 +8828,6 @@
       "story": "VDTA: Hamble International Inc. (10%) bought, $1000K total."
     },
     {
-      "ticker": "GLXY",
-      "insider": "Novogratz Michael",
-      "title": "CEO, 10%",
-      "date": "2026-11-05",
-      "price": 12.98,
-      "qty": 760000,
-      "value": 9864346.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": true,
-      "company": "Galaxy Digital",
-      "sector": "Financial Services",
-      "current_price": 14.11,
-      "change_pct": -2.76,
-      "market_cap": 8280993280,
-      "week52_high": 36.1,
-      "week52_low": 11.78,
-      "insider_avg_cost": 12.98,
-      "vs_insider_pct": 8.7,
-      "max_delta_own": 173.0,
-      "insiders": [
-        {
-          "name": "Novogratz Michael",
-          "title": "CEO, 10%",
-          "date": "2026-11-05",
-          "price": 12.98,
-          "qty": 760000,
-          "value": 9864346.0,
-          "is_csuite": true,
-          "owned": 1200338,
-          "delta_own": 173.0
-        }
-      ],
-      "conviction_score": 34.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high",
-        "Insider more than doubled their stake",
-        "Bought this week",
-        "$9.9M total"
-      ],
-      "story": "GLXY: The CEO, 10% bought, $9.9M total."
-    },
-    {
       "ticker": "ENPH",
       "insider": "Kothandaraman Badrinarayanan",
       "title": "Pres, CEO",
@@ -8900,6 +9057,62 @@
         "$663K total"
       ],
       "story": "THRM: Two insiders bought including the Pres, CEO, $663K total."
+    },
+    {
+      "ticker": "GLXY",
+      "insider": "Novogratz Michael",
+      "title": "CEO, 10%",
+      "date": "2026-11-05",
+      "price": 12.98,
+      "qty": 765000,
+      "value": 9934246.0,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": true,
+      "company": "Galaxy Digital",
+      "sector": "Financial Services",
+      "current_price": 14.11,
+      "change_pct": -2.76,
+      "market_cap": 8280993280,
+      "week52_high": 36.1,
+      "week52_low": 11.78,
+      "insider_avg_cost": 12.99,
+      "vs_insider_pct": 8.6,
+      "max_delta_own": 173.0,
+      "insiders": [
+        {
+          "name": "Novogratz Michael",
+          "title": "CEO, 10%",
+          "date": "2026-11-05",
+          "price": 12.98,
+          "qty": 760000,
+          "value": 9864346.0,
+          "is_csuite": true,
+          "owned": 1200338,
+          "delta_own": 173.0
+        },
+        {
+          "name": "Deason Douglas R",
+          "title": "Dir",
+          "date": "2026-11-06",
+          "price": 13.98,
+          "qty": 5000,
+          "value": 69900.0,
+          "is_csuite": false,
+          "owned": 107348,
+          "delta_own": 5.0
+        }
+      ],
+      "conviction_score": 33.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "2 insiders buying, but the stock is well off its highs",
+        "Insider more than doubled their stake",
+        "Bought this week",
+        "$9.9M total"
+      ],
+      "story": "GLXY: Two insiders bought including the CEO, 10%, $9.9M total."
     },
     {
       "ticker": "NTHI",
@@ -11919,6 +12132,51 @@
       "story": "UPBD: Cluster of 8 buyers including the CEO and EVP, CFO, $1.8M total."
     },
     {
+      "ticker": "EGBN",
+      "insider": "Newell Eric R",
+      "title": "Senior EVP, CFO",
+      "date": "2026-11-10",
+      "price": 33.91,
+      "qty": 1470,
+      "value": 49848.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": true,
+      "company": "Eagle Bancorp, Inc.",
+      "sector": "Financial Services",
+      "current_price": 34.04,
+      "change_pct": -0.32,
+      "market_cap": 1037972736,
+      "week52_high": 35.05,
+      "week52_low": 15.58,
+      "insider_avg_cost": 33.91,
+      "vs_insider_pct": 0.4,
+      "max_delta_own": 19.0,
+      "insiders": [
+        {
+          "name": "Newell Eric R",
+          "title": "Senior EVP, CFO",
+          "date": "2026-11-10",
+          "price": 33.91,
+          "qty": 1470,
+          "value": 49848.0,
+          "is_csuite": true,
+          "owned": 9303,
+          "delta_own": 19.0
+        }
+      ],
+      "conviction_score": 81.0,
+      "tier": "A",
+      "signals": [
+        "Trading near its 52-week high",
+        "Top quartile of its 52-week range",
+        "Senior EVP bought",
+        "Position up 19%",
+        "Bought in the last 2 days"
+      ],
+      "story": "EGBN: The Senior EVP, CFO bought."
+    },
+    {
       "ticker": "SOPH",
       "insider": "Cardoza George",
       "title": "CFO",
@@ -11974,93 +12232,113 @@
         "$278K total"
       ],
       "story": "SOPH: Two insiders bought including the CFO, $278K total."
-    },
-    {
-      "ticker": "AN",
-      "insider": "Manley Michael Mark",
-      "title": "CEO, Dir",
-      "date": "2026-11-02",
-      "price": 184.11,
-      "qty": 9409,
-      "value": 1729868.0,
-      "txn_count": 5,
-      "insider_count": 4,
-      "is_csuite": true,
-      "company": "AutoNation, Inc.",
-      "sector": "Consumer Cyclical",
-      "current_price": 184.14,
-      "change_pct": -1.03,
-      "market_cap": 5889451008,
-      "week52_high": 235.81,
-      "week52_low": 151.82,
-      "insider_avg_cost": 183.85,
-      "vs_insider_pct": 0.2,
-      "max_delta_own": 9.0,
-      "insiders": [
-        {
-          "name": "Manley Michael Mark",
-          "title": "CEO, Dir",
-          "date": "2026-11-02",
-          "price": 184.11,
-          "qty": 5600,
-          "value": 1031024.0,
-          "is_csuite": true,
-          "owned": 157186,
-          "delta_own": 4.0
-        },
-        {
-          "name": "Szlosek Thomas A",
-          "title": "EVP, CFO",
-          "date": "2026-11-05",
-          "price": 184.83,
-          "qty": 2729,
-          "value": 499790.0,
-          "is_csuite": true,
-          "owned": 21166,
-          "delta_own": 9.0
-        },
-        {
-          "name": "Edmunds C Coleman",
-          "title": "EVP, GC, Corp Sec",
-          "date": "2026-11-03",
-          "price": 183.36,
-          "qty": 550,
-          "value": 100850.0,
-          "is_csuite": false,
-          "owned": 31071,
-          "delta_own": 2.0
-        },
-        {
-          "name": "Travisano Jacqueline A",
-          "title": "Dir",
-          "date": "2026-11-05",
-          "price": 185.29,
-          "qty": 530,
-          "value": 98204.0,
-          "is_csuite": false,
-          "owned": 9419,
-          "delta_own": 6.0
-        }
-      ],
-      "conviction_score": 78.0,
-      "tier": "A",
-      "signals": [
-        "4 insiders buying together",
-        "EVP bought",
-        "Position up 9%",
-        "Bought this week",
-        "$1.7M total"
-      ],
-      "story": "AN: Cluster of 4 buyers including the CEO, Dir and EVP, CFO, $1.7M total."
     }
   ],
   "tier_counts": {
-    "A": 25,
-    "B": 117,
+    "A": 26,
+    "B": 120,
     "W": 106,
-    "total": 248
+    "total": 252
   },
   "recent_feed": [
+    {
+      "ticker": "OESX",
+      "company": "Orion Energy Systems, Inc.",
+      "insider": "Brodin J Per",
+      "title": "EVP, CFO, CAO, Treasurer",
+      "date": "2026-11-10",
+      "price": 12.76,
+      "qty": 2000,
+      "owned": 87263,
+      "delta_own": 2.0,
+      "value": 25520.0,
+      "filing": "2026-11-10",
+      "is_csuite": true
+    },
+    {
+      "ticker": "DTI",
+      "company": "Drilling Tools International Corp",
+      "insider": "Johnson David Richard",
+      "title": "CFO",
+      "date": "2026-11-09",
+      "price": 1.65,
+      "qty": 30350,
+      "owned": 97780,
+      "delta_own": 45.0,
+      "value": 49981.0,
+      "filing": "2026-11-10",
+      "is_csuite": true
+    },
+    {
+      "ticker": "GLXY",
+      "company": "Galaxy Digital Inc.",
+      "insider": "Deason Douglas R",
+      "title": "Dir",
+      "date": "2026-11-06",
+      "price": 13.98,
+      "qty": 5000,
+      "owned": 107348,
+      "delta_own": 5.0,
+      "value": 69900.0,
+      "filing": "2026-11-10",
+      "is_csuite": false
+    },
+    {
+      "ticker": "BSM",
+      "company": "Black Stone Minerals, L.P.",
+      "insider": "Carter Thomas L Jr",
+      "title": "Exec COB",
+      "date": "2026-11-09",
+      "price": 13.73,
+      "qty": 50000,
+      "owned": 15507747,
+      "delta_own": 0.0,
+      "value": 686290.0,
+      "filing": "2026-11-10",
+      "is_csuite": false
+    },
+    {
+      "ticker": "NVT",
+      "company": "Nvent Electric Plc",
+      "insider": "Parker Herbert K",
+      "title": "Dir",
+      "date": "2026-11-09",
+      "price": 113.15,
+      "qty": 3000,
+      "owned": 20832,
+      "delta_own": 17.0,
+      "value": 339435.0,
+      "filing": "2026-11-10",
+      "is_csuite": false
+    },
+    {
+      "ticker": "DTI",
+      "company": "Drilling Tools International Corp",
+      "insider": "Green IRA Harris Jr",
+      "title": "Dir",
+      "date": "2026-11-09",
+      "price": 1.63,
+      "qty": 25000,
+      "owned": 42207,
+      "delta_own": 145.0,
+      "value": 40636.0,
+      "filing": "2026-11-10",
+      "is_csuite": false
+    },
+    {
+      "ticker": "EGBN",
+      "company": "Eagle Bancorp Inc",
+      "insider": "Newell Eric R",
+      "title": "Senior EVP, CFO",
+      "date": "2026-11-10",
+      "price": 33.91,
+      "qty": 1470,
+      "owned": 9303,
+      "delta_own": 19.0,
+      "value": 49848.0,
+      "filing": "2026-11-10",
+      "is_csuite": true
+    },
     {
       "ticker": "DTI",
       "company": "Drilling Tools International Corp",
@@ -12521,104 +12799,6 @@
       "delta_own": 18.0,
       "value": 155360.0,
       "filing": "2026-11-10",
-      "is_csuite": true
-    },
-    {
-      "ticker": "LBTY",
-      "company": "Liberty Global Ltd.",
-      "insider": "Malone John C",
-      "title": "10%",
-      "date": "2026-11-06",
-      "price": 9.73,
-      "qty": 150000,
-      "owned": 16773559,
-      "delta_own": 1.0,
-      "value": 1460150.0,
-      "filing": "2026-11-10",
-      "is_csuite": false
-    },
-    {
-      "ticker": "NXRT",
-      "company": "Nexpoint Residential Trust, Inc.",
-      "insider": "McGraner Matt",
-      "title": "See Remarks",
-      "date": "2026-11-05",
-      "price": 16.62,
-      "qty": 11992,
-      "owned": 512267,
-      "delta_own": 2.0,
-      "value": 199266.0,
-      "filing": "2026-11-09",
-      "is_csuite": false
-    },
-    {
-      "ticker": "NXRT",
-      "company": "Nexpoint Residential Trust, Inc.",
-      "insider": "Richards Paul",
-      "title": "See Remarks",
-      "date": "2026-11-05",
-      "price": 16.36,
-      "qty": 6300,
-      "owned": 42191,
-      "delta_own": 18.0,
-      "value": 103053.0,
-      "filing": "2026-11-09",
-      "is_csuite": false
-    },
-    {
-      "ticker": "MTRI",
-      "company": "Inmed Pharmaceuticals Inc.",
-      "insider": "Adar1 Capital Management, LLC",
-      "title": "10%",
-      "date": "2026-11-05",
-      "price": 13.1,
-      "qty": 2640,
-      "owned": 98297,
-      "delta_own": 3.0,
-      "value": 34572.0,
-      "filing": "2026-11-09",
-      "is_csuite": false
-    },
-    {
-      "ticker": "NTHI",
-      "company": "Neonc Technologies Holdings, Inc.",
-      "insider": "Heshmatpour Amir F",
-      "title": "CEO, Pres, 10%",
-      "date": "2026-11-09",
-      "price": 3.86,
-      "qty": 10000,
-      "owned": 7783140,
-      "delta_own": 0.0,
-      "value": 38600.0,
-      "filing": "2026-11-09",
-      "is_csuite": true
-    },
-    {
-      "ticker": "ADTN",
-      "company": "Adtran Holdings, Inc.",
-      "insider": "Santo Timothy P",
-      "title": "SVP of Finance; CFO",
-      "date": "2026-11-06",
-      "price": 4.16,
-      "qty": 17820,
-      "owned": 77744,
-      "delta_own": 30.0,
-      "value": 74188.0,
-      "filing": "2026-11-09",
-      "is_csuite": true
-    },
-    {
-      "ticker": "ADTN",
-      "company": "Adtran Holdings, Inc.",
-      "insider": "Stanton Thomas R",
-      "title": "COB, CEO",
-      "date": "2026-11-06",
-      "price": 4.01,
-      "qty": 150000,
-      "owned": 1410890,
-      "delta_own": 12.0,
-      "value": 600900.0,
-      "filing": "2026-11-09",
       "is_csuite": true
     }
   ]
