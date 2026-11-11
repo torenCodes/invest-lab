@@ -1,17 +1,17 @@
 {
-  "scan_time": "2026-11-10T21:30:26.704062+00:00",
+  "scan_time": "2026-11-11T01:29:16.552824+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Cautious",
-    "score": 0,
-    "headline": "More of the inputs lean negative than positive, so the backdrop reads as choppy and unsettled. Volume is running above its 50-day norm, so there is real participation behind these moves rather than a thin-tape drift.",
+    "verdict": "Favorable",
+    "score": 5,
+    "headline": "Today's tape is confirming the trend: SPY +2.37% and closing strong. Most of the inputs are positive and they agree, with trend and momentum leaning the same way. Volume is running above its 50-day norm, so there is real participation behind these moves rather than a thin-tape drift.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.37%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "+2.37%",
+        "read": "Strong",
+        "tone": "good"
       },
       {
         "label": "Market trend",
@@ -23,14 +23,14 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-0.6%",
-        "read": "Soft",
-        "tone": "neutral"
+        "value": "+0.1%",
+        "read": "Firm",
+        "tone": "good"
       },
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "+47%",
+        "value": "+50%",
         "read": "Heavy",
         "tone": "good"
       },
@@ -49,23 +49,23 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-11-10T21:30:28.999070+00:00",
+    "updated": "2026-11-11T01:29:18.237144+00:00",
     "session": {
-      "change_pct": -0.37,
-      "from_open_pct": 0.26,
-      "range_pos": 0.695,
-      "sectors_green": 6,
-      "sectors_total": 11,
-      "live": true,
-      "detail": "-0.37% vs prior close \u00b7 mid-range (69% of range) \u00b7 6/11 sectors green"
+      "change_pct": 2.37,
+      "from_open_pct": 1.45,
+      "range_pos": 0.81,
+      "sectors_green": null,
+      "sectors_total": null,
+      "live": false,
+      "detail": "+2.37% vs prior close \u00b7 at the highs (81% of range) \u00b7 last completed session"
     },
     "participation": {
-      "ratio": 1.474,
+      "ratio": 1.504,
       "expected": 0.977,
-      "adjusted": 1.51,
+      "adjusted": 1.54,
       "direction": "building",
-      "drift_pct": 45.1,
-      "detail": "66M vs 45M avg \u00b7 busier than this week normally runs"
+      "drift_pct": 45.4,
+      "detail": "67M vs 45M avg \u00b7 busier than this week normally runs"
     }
   }
 }
