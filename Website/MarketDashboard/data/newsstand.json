@@ -1,15 +1,15 @@
 {
-  "scan_time": "2026-11-11T19:30:30.974680+00:00",
+  "scan_time": "2026-11-11T21:30:32.550387+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
-    "verdict": "Favorable",
-    "score": 5,
-    "headline": "Today's tape is confirming the trend: SPY +1.38% and closing strong. Most of the inputs are positive and they agree, with trend and momentum leaning the same way. Volume is running above its 50-day norm, so there is real participation behind these moves rather than a thin-tape drift.",
+    "verdict": "Mixed",
+    "score": 4,
+    "headline": "Today's tape is confirming the trend: SPY +1.32% and closing strong. The tape is sending mixed signals: some inputs lean positive, others negative, and none clearly leads. Volume is running above its 50-day norm, so there is real participation behind these moves rather than a thin-tape drift.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "+1.38%",
+        "value": "+1.32%",
         "read": "Strong",
         "tone": "good"
       },
@@ -17,8 +17,8 @@
         "label": "Market trend",
         "sub": "SPY vs moving averages",
         "value": "Below 50-day",
-        "read": "Mixed trend",
-        "tone": "neutral"
+        "read": "Downtrend",
+        "tone": "bad"
       },
       {
         "label": "5-day momentum",
@@ -37,7 +37,7 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "17.6",
+        "value": "17.5",
         "read": "Calm",
         "tone": "good"
       },
@@ -49,15 +49,15 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-11-11T19:30:32.836118+00:00",
+    "updated": "2026-11-11T21:30:34.711328+00:00",
     "session": {
-      "change_pct": 1.38,
-      "from_open_pct": 0.46,
-      "range_pos": 0.708,
-      "sectors_green": 8,
+      "change_pct": 1.32,
+      "from_open_pct": 0.4,
+      "range_pos": 0.645,
+      "sectors_green": 10,
       "sectors_total": 11,
       "live": true,
-      "detail": "+1.38% vs prior close \u00b7 mid-range (71% of range) \u00b7 8/11 sectors green"
+      "detail": "+1.32% vs prior close \u00b7 mid-range (64% of range) \u00b7 10/11 sectors green"
     },
     "participation": {
       "ratio": 1.508,
