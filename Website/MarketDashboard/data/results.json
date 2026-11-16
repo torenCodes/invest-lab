@@ -1,7 +1,7 @@
 {
-  "scan_time": "2026-11-16T23:03:26.531398+00:00",
+  "scan_time": "2026-11-16T23:46:25.231928+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 21,
+  "total_scanned": 20,
   "day_trades": [
     {
       "ticker": "TSN",
@@ -13,15 +13,16 @@
       "low": 60.46,
       "open": 60.9,
       "prev_close": 58.82,
-      "score": 43,
+      "score": 53,
       "signals": [
         "Top gainer (+8.7%)",
         "High volume",
         "Strong move (+8.7%)",
+        "Trending buzz (11)",
         "Yahoo trending (#10)",
         "Closing strong"
       ],
-      "reddit_mentions": 0,
+      "reddit_mentions": 11,
       "market_cap": 20788028736.921497,
       "is_gainer": true,
       "is_active": true,
@@ -32,7 +33,7 @@
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 61
+      "score_normalized": 75
     },
     {
       "ticker": "CGON",
@@ -44,14 +45,15 @@
       "low": 78.27,
       "open": 92,
       "prev_close": 74.4,
-      "score": 36,
+      "score": 46,
       "signals": [
         "Top gainer (+14.0%)",
         "High volume",
         "Strong move (+14.0%)",
+        "Trending buzz (10)",
         "Yahoo trending (#11)"
       ],
-      "reddit_mentions": 0,
+      "reddit_mentions": 10,
       "market_cap": 7216521992.624261,
       "is_gainer": true,
       "is_active": true,
@@ -68,43 +70,7 @@
           "surprise_pct": 25.4
         }
       },
-      "score_normalized": 51
-    },
-    {
-      "ticker": "TU",
-      "name": "Telus Corporation",
-      "sector": "Telecommunication",
-      "current_price": 9.57,
-      "change_pct": 12.1923,
-      "high": 9.73,
-      "low": 9.1,
-      "open": 9.605,
-      "prev_close": 8.53,
-      "score": 36,
-      "signals": [
-        "Top gainer (+12.2%)",
-        "High volume",
-        "Strong move (+12.2%)",
-        "Yahoo trending (#12)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 19326880547.0,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/T.TO.png",
-      "weburl": "https://www.telus.com/en",
-      "yahoo_trending_rank": 12,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.16,
-          "estimate": 0.18,
-          "beat": false,
-          "surprise_pct": -9.4
-        }
-      },
-      "score_normalized": 51
+      "score_normalized": 65
     },
     {
       "ticker": "ACM",
@@ -116,15 +82,16 @@
       "low": 70.155,
       "open": 70.4,
       "prev_close": 70.5,
-      "score": 33,
+      "score": 43,
       "signals": [
         "Top gainer (+2.8%)",
         "High volume",
         "Moderate move (+2.8%)",
+        "Trending buzz (12)",
         "Yahoo trending (#9)",
         "Closing strong"
       ],
-      "reddit_mentions": 0,
+      "reddit_mentions": 12,
       "market_cap": 9213377165.77291,
       "is_gainer": true,
       "is_active": true,
@@ -135,35 +102,192 @@
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 46
+      "score_normalized": 61
+    },
+    {
+      "ticker": "TU",
+      "name": "Telus Corporation",
+      "sector": "Telecommunication",
+      "current_price": 9.57,
+      "change_pct": 12.1923,
+      "high": 9.73,
+      "low": 9.1,
+      "open": 9.605,
+      "prev_close": 8.53,
+      "score": 41,
+      "signals": [
+        "Top gainer (+12.2%)",
+        "High volume",
+        "Strong move (+12.2%)",
+        "Trending activity (7)",
+        "Yahoo trending (#14)"
+      ],
+      "reddit_mentions": 7,
+      "market_cap": 19326880547.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/T.TO.png",
+      "weburl": "https://www.telus.com/en",
+      "yahoo_trending_rank": 14,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.16,
+          "estimate": 0.18,
+          "beat": false,
+          "surprise_pct": -9.4
+        }
+      },
+      "score_normalized": 58
     }
   ],
-  "buzz_source": "news",
+  "buzz_source": "trending",
   "reddit_cards": [
     {
+      "ticker": "NFLX",
+      "mentions": 20,
+      "name": "Netflix, Inc.",
+      "sector": "Media",
+      "current_price": 60.75,
+      "change_pct": -2.2526,
+      "high": 62.98,
+      "low": 60.48,
+      "open": 62.885,
+      "prev_close": 62.15,
+      "market_cap": 252764913715.74643,
+      "score": 0,
+      "signals": [
+        "Trending buzz (20 mentions)",
+        "Yahoo trending (#1)"
+      ],
+      "reddit_mentions": 20,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": 1,
+      "social": {
+        "trend_pct": 1100,
+        "reddit": 20,
+        "st_bull": 25,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.87,
+          "estimate": 0.84,
+          "beat": true,
+          "surprise_pct": 3.7
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "INTC",
+      "mentions": 19,
+      "name": "Intel Corp",
+      "sector": "Semiconductors",
+      "current_price": 55.47,
+      "change_pct": -7.0231,
+      "high": 57.2,
+      "low": 54.89,
+      "open": 56.705,
+      "prev_close": 59.66,
+      "market_cap": 296098649242.6951,
+      "score": 0,
+      "signals": [
+        "Trending buzz (19 mentions)",
+        "Yahoo trending (#2)"
+      ],
+      "reddit_mentions": 19,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": 2,
+      "social": {
+        "trend_pct": 1100,
+        "reddit": 36,
+        "st_bull": 67,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.52,
+          "estimate": 0.4,
+          "beat": true,
+          "surprise_pct": 28.6
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "GDHG",
+      "name": "Golden Heaven Group Holdings Ltd",
+      "sector": "Hotels, Restaurants & Leisure",
+      "current_price": 1.58,
+      "change_pct": 91.4455,
+      "high": 13.24,
+      "low": 0.5899,
+      "open": 0.7188,
+      "prev_close": 0.8253,
+      "score": 50,
+      "signals": [
+        "Top gainer (+91.4%)",
+        "High volume",
+        "Strong move (+91.4%)",
+        "Trending buzz (18)",
+        "Yahoo trending (#3)"
+      ],
+      "reddit_mentions": 18,
+      "market_cap": 49097836.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950835386536.png",
+      "weburl": "https://ir.jsyoule.com/",
+      "yahoo_trending_rank": 3,
+      "mentions": 18,
+      "social": {
+        "reddit": 18,
+        "st_bull": 69,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 70
+    },
+    {
       "ticker": "NVDA",
-      "mentions": 11,
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
       "current_price": 156.14,
       "change_pct": -4.1204,
-      "high": 163.2,
-      "low": 155.01,
-      "open": 159.015,
-      "prev_close": 162.85,
       "market_cap": 3833828143689.7305,
       "score": 0,
-      "signals": [
-        "News buzz (11 mentions)"
-      ],
-      "reddit_mentions": 11,
+      "signals": [],
+      "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "yahoo_trending_rank": null,
+      "mentions": 1218,
       "social": {
-        "trend_pct": 185,
-        "reddit": 1199,
-        "st_bull": 73,
+        "trend_pct": 189,
+        "reddit": 1218,
+        "st_bull": 36,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -183,91 +307,6 @@
       "score_normalized": 0
     },
     {
-      "ticker": "SPCX",
-      "mentions": 4,
-      "name": "Space Exploration Technologies Corp",
-      "sector": "Telecommunication",
-      "current_price": 137.36,
-      "change_pct": -1.258,
-      "high": 139.98,
-      "low": 135,
-      "open": 138.5,
-      "prev_close": 139.11,
-      "market_cap": 1861420572385.2617,
-      "score": 0,
-      "signals": [
-        "News buzz (4 mentions)",
-        "Yahoo trending (#15)"
-      ],
-      "reddit_mentions": 4,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": 15,
-      "social": {
-        "trend_pct": 51,
-        "reddit": 68,
-        "st_bull": 88,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.45,
-          "estimate": 0.14,
-          "beat": true,
-          "surprise_pct": 230.6
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "MSFT",
-      "mentions": 4,
-      "name": "Microsoft Corporation",
-      "sector": "Technology",
-      "current_price": 517.99,
-      "change_pct": -1.1243,
-      "high": 527.95,
-      "low": 516.82,
-      "open": 525.09,
-      "prev_close": 523.88,
-      "market_cap": 3868981934574.392,
-      "score": 0,
-      "signals": [
-        "News buzz (4 mentions)"
-      ],
-      "reddit_mentions": 4,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "trend_pct": 279,
-        "reddit": 53,
-        "st_bull": 40,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 4.89,
-          "estimate": 4.82,
-          "beat": true,
-          "surprise_pct": 1.4
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "MU",
       "name": "Micron Technology, Inc.",
       "sector": "Semiconductors",
@@ -279,15 +318,12 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 116,
+      "mentions": 118,
       "social": {
-        "trend_pct": 625,
-        "reddit": 116,
-        "st_bull": 81,
-        "st_msgs": 30,
+        "trend_pct": 594,
+        "reddit": 118,
         "sources": [
-          "Reddit",
-          "StockTwits"
+          "Reddit"
         ]
       },
       "earnings_info": {
@@ -314,10 +350,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 103,
+      "mentions": 107,
       "social": {
-        "trend_pct": 69,
-        "reddit": 103,
+        "trend_pct": 95,
+        "reddit": 107,
         "sources": [
           "Reddit"
         ]
@@ -333,38 +369,6 @@
         }
       },
       "score_normalized": 0
-    },
-    {
-      "ticker": "NBIS",
-      "name": "Nebius Group NV",
-      "sector": "Technology",
-      "current_price": 107.13,
-      "change_pct": -7.5509,
-      "market_cap": 28840531341.967545,
-      "score": 0,
-      "signals": [],
-      "reddit_mentions": 0,
-      "is_gainer": false,
-      "is_active": false,
-      "mentions": 103,
-      "social": {
-        "trend_pct": 587,
-        "reddit": 103,
-        "sources": [
-          "Reddit"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.3,
-          "estimate": -0.7,
-          "beat": true,
-          "surprise_pct": 143.4
-        }
-      },
-      "score_normalized": 0
     }
   ],
   "chatter_emerging": [
@@ -372,9 +376,9 @@
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
-      "mentions": 1199,
-      "prev": 420,
-      "trend_pct": 185,
+      "mentions": 1218,
+      "prev": 422,
+      "trend_pct": 189,
       "current_price": 156.14,
       "change_pct": -4.1204,
       "market_cap": 3833828143689.7305
@@ -383,9 +387,9 @@
       "ticker": "MU",
       "name": "Micron Technology, Inc.",
       "sector": "Semiconductors",
-      "mentions": 116,
-      "prev": 16,
-      "trend_pct": 625,
+      "mentions": 118,
+      "prev": 17,
+      "trend_pct": 594,
       "current_price": 719.02,
       "change_pct": -7.6178,
       "market_cap": 822041193410.8157
@@ -394,9 +398,9 @@
       "ticker": "NBIS",
       "name": "Nebius Group NV",
       "sector": "Technology",
-      "mentions": 103,
-      "prev": 15,
-      "trend_pct": 587,
+      "mentions": 102,
+      "prev": 17,
+      "trend_pct": 500,
       "current_price": 107.13,
       "change_pct": -7.5509,
       "market_cap": 28840531341.967545
@@ -894,12 +898,6 @@
         },
         "top_stocks": [
           {
-            "ticker": "GMM",
-            "name": "Global Mofy AI Ltd",
-            "change_pct": 97.0588,
-            "price": 2.01
-          },
-          {
             "ticker": "TU",
             "name": "Telus Corporation",
             "change_pct": 12.1923,
@@ -1038,173 +1036,214 @@
   },
   "reddit_feed": [
     {
-      "id": "f2e37b267a9aaf7888896b6ee180c5949f0ae26b9cf5913d5fbaae3ba540bac9",
-      "title": "Stock Market Today, Nov. 16: IREN Slides as Neocloud Weakness and Tech Sector Selling Put Pressure on Shares",
-      "subreddit": "The Motley Fool",
+      "id": "143850622",
+      "title": "After-Hours Market Movers: Microcaps and Small Caps Post Sharp Gains and Losses",
+      "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "IREN",
-        "NVDA",
-        "WULF",
-        "CIFR"
+        "GDHG"
       ],
-      "hours_ago": 0.2,
-      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-today-nov-16-iren-slides-as-neocloud-weakness-and-tech-sector-selling-put-pressure-on-shares/?source=iedfolrf0000001",
-      "is_news": true,
       "confirmed_tickers": [
-        "NVDA"
-      ]
+        "GDHG"
+      ],
+      "hours_ago": 1.8,
+      "url": "https://finnhub.io/api/news?id=cfaf744597260bc77922fdb61e6eaf497fbe89b46b9bf033fbaad1220a4a6288",
+      "is_news": true
     },
     {
-      "id": "e344c7a92ff0118d2931b30f51af78aae2d2fa18848a8db8763d8a1366f73ffb",
-      "title": "4 Chip Stocks Down as Much as 36% From Their Highs to Buy and Hold for the Next Decade",
-      "subreddit": "The Motley Fool",
+      "id": "143850620",
+      "title": "S&P 500 Top Movers: Gainers and Losers for Nov. 16, 2026",
+      "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "AMD",
-        "TSM",
-        "ASML",
-        "MU"
+        "INTC"
       ],
-      "hours_ago": 0.4,
-      "url": "https://www.fool.com/investing/2026/11/16/4-chip-stocks-down-as-much-as-36-from-their-highs-to-buy-and-hold-for-the-next-decade/?source=iedfolrf0000001",
-      "is_news": true,
       "confirmed_tickers": [
-        "AMD",
-        "MU"
-      ]
+        "INTC"
+      ],
+      "hours_ago": 3.7,
+      "url": "https://finnhub.io/api/news?id=643fd1d4c5d1bf6eff8aea504dc0b40993044b4a0d5cfdb8e997baf62d02def9",
+      "is_news": true
     },
     {
-      "id": "e469e0674fb112bf0c1f4c25f8ad6a61aff14e748705b0d2c3f7f41c2d89527c",
-      "title": "Now That Jensen Huang is Out, Should Investors Buy AMD Stock Instead of Nvidia Stock?",
-      "subreddit": "The Motley Fool",
+      "id": "143850386",
+      "title": "INTW 2X Intel ETF Tumbles 13% as Intel Drops Amid Shareholder Lawsuit and AI Chip Selloff; Taiwan Semiconductor Falls 5%",
+      "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "NVDA"
+        "INTC"
       ],
-      "hours_ago": 0.6,
-      "url": "https://www.fool.com/investing/2026/11/16/now-that-jensen-huang-is-out-should-investors-buy-amd-stock-instead-of-nvidia-stock/?source=iedfolrf0000001",
-      "is_news": true,
       "confirmed_tickers": [
-        "NVDA"
-      ]
+        "INTC"
+      ],
+      "hours_ago": 3.7,
+      "url": "https://finnhub.io/api/news?id=1c62335723868c483e22a6ee74ea08e056bfd5df0228ab9486a41ff961d572c2",
+      "is_news": true
     },
     {
-      "id": "b88eb03ff711c772bbe4e663c46b5f7e1244af81a07ddd494accafd1540901c5",
-      "title": "This Is a Huge Week for the Stock Market: Nvidia Earnings, Fed Minutes, and Anthropic\u2019s IPO",
-      "subreddit": "The Motley Fool",
+      "id": "143850619",
+      "title": "US Session Top Movers: Double-Digit Gainers and Losers",
+      "subreddit": "ChartMill",
       "ups": 0,
       "tickers": [
-        "NVDA",
-        "SPCX",
-        "SHOP"
+        "GDHG"
       ],
-      "hours_ago": 1.1,
-      "url": "https://www.fool.com/investing/2026/11/16/this-is-a-huge-week-for-the-stock-market-nvidia-earnings-fed-minutes-and-anthropics-ipo/?source=iedfolrf0000001",
-      "is_news": true,
       "confirmed_tickers": [
-        "NVDA",
-        "SPCX"
-      ]
-    },
-    {
-      "id": "b26a0141928fc4b01fc2aa9107ce14e58c2aedda0e82f97c9e66cf682fabc601",
-      "title": "Anthropic Launches Claude Sheets. Is Microsoft's Stock in Trouble?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "MSFT",
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN"
-      ],
-      "hours_ago": 2.3,
-      "url": "https://www.fool.com/investing/2026/11/16/anthropic-launches-claude-sheets-is-microsoft-s-stock-in-trouble/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MSFT"
-      ]
-    },
-    {
-      "id": "08c7e9cca712e2d99dac6d0b1739b1d068e8700f897effff91c4a8e187a04271",
-      "title": "Here's How the S&P 500 Has Moved the Day After Each of Nvidia's Last 12 Reports",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "NVDA",
-        "VOO"
-      ],
-      "hours_ago": 2.4,
-      "url": "https://www.fool.com/investing/2026/11/16/here-s-how-the-s-and-p-500-has-moved-the-day-after-each-of-nvidia-s-last-12-reports/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "3143043fb1984672752d6dc1805d7db72ad72a3d063694d63f62d37f78085a30",
-      "title": "The Anthropic IPO Is Coming. I Wouldn't Buy on Day 1, I'd Do This Instead",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "SPCX"
-      ],
-      "hours_ago": 2.5,
-      "url": "https://www.fool.com/investing/2026/11/16/the-anthropic-ipo-is-coming-i-wouldn-t-buy-on-day-1-i-d-do-this-instead/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "SPCX"
-      ]
-    },
-    {
-      "id": "76735d1ff489ef3b301c85e282577ada5b32cdab721334bb8a253d5d79a703f8",
-      "title": "Down 60% From Its 52-Week High, Is Rocket Lab Stock a Bargain Buy?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "RKLB",
-        "SPCX"
-      ],
-      "hours_ago": 3.2,
-      "url": "https://www.fool.com/investing/2026/11/16/down-60-from-its-52-week-high-is-rocket-lab-stock-a-bargain-buy/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "SPCX"
-      ]
-    },
-    {
-      "id": "32f47e0f30489f01509fe2d6ec223000af2d34e0341ad96a873fd8d3b00f03c9",
-      "title": "Why Does Palantir Stock Keep Going Down?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "PLTR",
-        "NVDA"
+        "GDHG"
       ],
       "hours_ago": 3.8,
-      "url": "https://www.fool.com/investing/2026/11/16/why-does-palantir-stock-keep-going-down/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
+      "url": "https://finnhub.io/api/news?id=7b2e1d332927d04c2df3fa0f4b8619061aa6db94f6a1fc4e69e4aeae5ab04e04",
+      "is_news": true
     },
     {
-      "id": "111480fa8ecfab76a18bc42f52825f261199ca5586de0394176c63362736a70a",
-      "title": "Anthropic IPO: 5 Big Ways It Could Boost NVIDIA Stock",
-      "subreddit": "Zacks Investment Research",
+      "id": "143849993",
+      "title": "Intel \u201cTrades at 34x PE for Just 11%\u201d Growth, Says Dan Niles. Now Shareholders Are Suing",
+      "subreddit": "Yahoo",
       "ups": 0,
       "tickers": [
-        "NVDA",
-        "MSFT"
+        "INTC"
+      ],
+      "confirmed_tickers": [
+        "INTC"
       ],
       "hours_ago": 4.1,
-      "url": "https://www.zacks.com/stock/news/3030641/anthropic-ipo-5-big-ways-it-could-boost-nvidia-stock?cid=CS-ZC-FT-analyst_blog|investment_ideas-3030641",
-      "is_news": true,
+      "url": "https://finnhub.io/api/news?id=df8713115f19e55bb9ac869e5ce676103b79b643293b2f196727c69b9ec76ea4",
+      "is_news": true
+    },
+    {
+      "id": "143849998",
+      "title": "What Mattered Most In Cerebras's Latest Quarter?",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "INTC"
+      ],
       "confirmed_tickers": [
-        "NVDA",
-        "MSFT"
-      ]
+        "INTC"
+      ],
+      "hours_ago": 4.3,
+      "url": "https://finnhub.io/api/news?id=271d753a65a39338b956ad4be0dc4ea16d1a6edf746262c2625df3d6b3e0a0f1",
+      "is_news": true
+    },
+    {
+      "id": "143849994",
+      "title": "Why Intel's turnaround will take years",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "INTC"
+      ],
+      "confirmed_tickers": [
+        "INTC"
+      ],
+      "hours_ago": 4.3,
+      "url": "https://finnhub.io/api/news?id=4f23bf122ffb89a9b8fc52f03c0fc8d74ffffc4181bf6d390ae513b10384733e",
+      "is_news": true
+    },
+    {
+      "id": "143850618",
+      "title": "Today's Most-Active S&P 500 Stocks: Ford Leads Volume as SMCI and Micron Fall",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "NFLX"
+      ],
+      "confirmed_tickers": [
+        "NFLX"
+      ],
+      "hours_ago": 4.7,
+      "url": "https://finnhub.io/api/news?id=01f1922f0a9dc7c676415a493fb9c6b2b050afe2f2482528748570223291c332",
+      "is_news": true
+    },
+    {
+      "id": "143850617",
+      "title": "Most Active Stocks: CYAB, NVDA, GDHG Lead Latest Session",
+      "subreddit": "ChartMill",
+      "ups": 0,
+      "tickers": [
+        "GDHG"
+      ],
+      "confirmed_tickers": [
+        "GDHG"
+      ],
+      "hours_ago": 4.8,
+      "url": "https://finnhub.io/api/news?id=0367dc60e301ed00d075ea5bfdd8c39362cb8137b59b04b49cbc32fd9b8d1dda",
+      "is_news": true
+    },
+    {
+      "id": "143849663",
+      "title": "Netflix Stock Now Trades at a 70% Discount to Its Peak Valuation, and One Number Is to Blame",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "NFLX"
+      ],
+      "confirmed_tickers": [
+        "NFLX"
+      ],
+      "hours_ago": 7.5,
+      "url": "https://finnhub.io/api/news?id=d47f3f1b6ec7441bdbb1806b17ff77acf0f0aae7208fc9787f6eb12a829f8770",
+      "is_news": true
+    },
+    {
+      "id": "143848956",
+      "title": "Netflix Lowers 2026 Ad Revenue Forecast: Time to Hold the Stock?",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "NFLX"
+      ],
+      "confirmed_tickers": [
+        "NFLX"
+      ],
+      "hours_ago": 9.8,
+      "url": "https://finnhub.io/api/news?id=75e5be503f82f6cd353fbeebfc4bbbf0ee6eea0d4c76adf71b49dac0fa19d9d9",
+      "is_news": true
+    },
+    {
+      "id": "143846425",
+      "title": "US High Relative Profitability (DUHP) Buys $69.9 Million More Broadcom on Nov. 12",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "NFLX"
+      ],
+      "confirmed_tickers": [
+        "NFLX"
+      ],
+      "hours_ago": 12.7,
+      "url": "https://finnhub.io/api/news?id=5fb97faddbec53e53b106fcc138610f3f372a3d961a6c17415d5dd3847d18108",
+      "is_news": true
+    },
+    {
+      "id": "143847144",
+      "title": "ETFs Are Buying Netflix (NFLX) on Nov. 12",
+      "subreddit": "Yahoo",
+      "ups": 0,
+      "tickers": [
+        "NFLX"
+      ],
+      "confirmed_tickers": [
+        "NFLX"
+      ],
+      "hours_ago": 12.8,
+      "url": "https://finnhub.io/api/news?id=1ad37c114a15801f81bb3f9c5f57cc5accae1d0f660ec0e812b685c5436a3552",
+      "is_news": true
+    },
+    {
+      "id": "143766327",
+      "title": "12 Consumer Discretionary Stocks Moving In Thursday's Pre-Market Session",
+      "subreddit": "Benzinga",
+      "ups": 0,
+      "tickers": [
+        "GDHG"
+      ],
+      "confirmed_tickers": [
+        "GDHG"
+      ],
+      "hours_ago": 111.7,
+      "url": "https://finnhub.io/api/news?id=3193111576f9d4290fd494541287fd4acd95e181253c68a26925fc9f2e60a672",
+      "is_news": true
     }
   ]
 }
