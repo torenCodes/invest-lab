@@ -674,18 +674,6 @@
      the section title when a homepage card jumps here via #hash. */
   #day-trades, #cadence, #market-chatter, #sector-rotation { scroll-margin-top: 86px; }
 
-  .panel-header {
-    padding: 14px 20px;
-    border-bottom: 1px solid var(--border-light);
-    background: var(--surface-2);
-  }
-  .panel-desc {
-    margin: 0;
-    font-size: 0.75rem;
-    color: var(--ink-3);
-    line-height: 1.55;
-  }
-  .panel-desc strong { color: var(--ink-2); font-weight: 600; }
   /* Cadence table: cap height to ~24 rows and scroll the rest, sticky header */
   .cad-scroll { max-height: 1050px; overflow-y: auto; }
   .cad-scroll thead th { position: sticky; top: 0; z-index: 1; }
@@ -776,17 +764,77 @@
     cursor: pointer;
   }
   .cad-more:hover { background: var(--accent-light); }
-  /* Sector pills: each is on/off, and none on means every sector (Nov 2026). */
+  /* Filter bar (Nov 17 2026): the "Beating the S&P" toggle leads at upper left,
+     then the sector pills in an even grid, strongest to weakest. Each sector
+     pill is on/off, and none on means every sector. */
   .cad-pills {
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    padding: 12px 20px;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 16px 20px;
     border-bottom: 1px solid var(--border-light);
   }
   .cad-pills:empty { display: none; }
-  .cad-pill {
+  .cad-beat {
+    flex-shrink: 0;
     display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    padding: 9px 18px 9px 13px;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1.5px solid var(--accent);
+    border-radius: var(--radius);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.12s, border-color 0.12s, color 0.12s;
+  }
+  .cad-beat:hover { background: var(--accent-muted); }
+  .cad-beat:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .cad-beat-box {
+    width: 18px; height: 18px;
+    display: grid; place-items: center;
+    flex-shrink: 0;
+    border: 1.5px solid var(--accent);
+    border-radius: 3px;
+    background: var(--surface);
+  }
+  .cad-beat-title { display: block; font-size: 0.9rem; font-weight: 600; line-height: 1.2; }
+  .cad-beat-sub { display: block; font-size: 0.7rem; color: var(--ink-3); margin-top: 2px; }
+  .cad-beat[aria-pressed="true"] { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
+  .cad-beat[aria-pressed="true"] .cad-beat-sub { color: rgba(255,255,255,0.85); }
+  .cad-beat[aria-pressed="true"] .cad-beat-box { background: #fff; border-color: #fff; }
+  .cad-beat[aria-pressed="true"] .cad-beat-box::after {
+    content: '';
+    width: 5px; height: 9px;
+    margin-top: -2px;
+    border: solid var(--accent-dark);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .cad-sectors {
+    flex: 1; min-width: 0;
+    padding-left: 20px; border-left: 1px solid var(--border-light);
+    container: cad-sectors / inline-size;
+  }
+  .cad-sectors-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 8px;
+  }
+  /* Twelve pills (All + 11 sectors) in 6, 4, 3 or 2 equal columns, so every
+     row is full. The widest pill, Cons. Discretionary, needs about 144px. */
+  .cad-sectors-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  @container cad-sectors (min-width: 444px) { .cad-sectors-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @container cad-sectors (min-width: 594px) { .cad-sectors-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @container cad-sectors (min-width: 894px) { .cad-sectors-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+  .cad-pill {
+    display: flex;
+    justify-content: space-between;
     align-items: baseline;
     gap: 5px;
     padding: 4px 11px;
@@ -816,7 +864,6 @@
   }
   .cad-pill-rs.up { color: #1a7a4a; }
   .cad-pill-rs.down { color: #c0392b; }
-  .cad-pill-beat { margin-left: auto; }
   .cad-sector {
     padding: 10px 14px;
     font-size: 0.78rem;
@@ -824,8 +871,8 @@
     white-space: nowrap;
   }
   @media (max-width: 700px) {
-    .cad-pills { padding: 10px 14px; }
-    .cad-pill-beat { margin-left: 0; }
+    .cad-pills { flex-direction: column; align-items: stretch; gap: 14px; padding: 14px; }
+    .cad-sectors { padding-left: 0; border-left: none; }
   }
   .cad-more:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .sr-cell {
@@ -845,7 +892,7 @@
   /* ── Rotation overhaul: posture banner + RRG + toggle (Jul 2026) ──────────── */
   .sr-posture {
     display: flex; align-items: center; gap: 14px;
-    margin: 14px 16px 4px; padding: 11px 16px;
+    margin: 16px 16px 0; padding: 11px 16px;
     border: 1px solid var(--border); border-radius: var(--radius);
   }
   .sr-posture-on      { background: rgba(26,122,74,0.06); border-color: rgba(26,122,74,0.25); }
@@ -863,38 +910,32 @@
   .sr-posture-text strong { font-weight: 600; }
   .sr-posture-detail { display: block; font-size: 0.72rem; color: var(--ink-3); margin-top: 2px; }
 
-  /* Top-aligned columns so the two titles sit on the same line. */
-  .rrg-wrap { display: flex; gap: 26px; align-items: flex-start; flex-wrap: wrap; padding: 16px; }
-  .rrg-chart { flex: 0 0 460px; max-width: 100%; }
-  .rrg-svg { width: 100%; height: auto; display: block; }
+  /* Map beside the table (Nov 17 2026). The table keeps its natural width and
+     the map takes what's left, 250–420px; the map is drawn at its real pixel
+     size so its labels stay readable. A narrow panel stacks the two. */
+  .sr-panel { container: sr-panel / inline-size; }
+  .sr-layout { padding: 14px 14px 16px; }
+  .sr-layout .rrg-chart { max-width: 420px; margin: 0 auto 18px; }
+  @container sr-panel (min-width: 920px) {
+    .sr-layout { display: grid; grid-template-columns: minmax(250px, 420px) auto; gap: 20px; align-items: start; }
+    .sr-layout .rrg-chart { max-width: none; margin: 0; }
+  }
+  .sr-layout.no-map { display: block; }
+  .sr-col-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 28px; margin-bottom: 8px; }
+  .sr-col-title { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+  .rrg-plot { width: 100%; }
+  .rrg-svg { display: block; width: 100%; height: auto; }
   .rrg-qlabel { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.07em; opacity: 0.7; }
   .rrg-dot-label { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600; }
-  /* Stretch the side column to the chart's full height and let the quad
-     blocks grow to fill it — no dead space beside the map. */
-  .rrg-side {
-    flex: 1; min-width: 240px; padding-right: 50px;
-    align-self: stretch; display: flex; flex-direction: column; justify-content: center;
-  }
-  .rrg-side-title { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
-  .rrg-quads { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; flex: 1; gap: 14px 16px; margin-bottom: 12px; }
-  .rrg-quad-block { border: 1px solid var(--border-light); border-radius: var(--radius); padding: 13px 16px; }
-  .rrg-quad-head { display: flex; align-items: center; gap: 7px; font-size: 0.8rem; font-weight: 600; color: var(--ink); }
-  .rrg-quad-members { margin-top: 7px; font-size: 0.78rem; color: var(--ink-2); line-height: 1.5; }
-  .rrg-quad-member { padding: 2px 0; }
-  .rrg-quad-none { color: var(--ink-3); font-style: italic; }
-  .rrg-leg-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-  .rrg-read { font-size: 0.76rem; color: var(--ink-3); line-height: 1.55; }
+  .rrg-read { margin: 10px 0 0; font-size: 0.72rem; color: var(--ink-3); line-height: 1.5; }
   .rrg-read strong { color: var(--ink-2); font-weight: 600; }
-  /* Tablet / narrow desktop: side-by-side turns cramped once the standings
-     column drops under ~380px, so stack — chart centered, standings full width. */
-  @media (max-width: 1250px) {
-    .rrg-wrap { flex-direction: column; align-items: stretch; gap: 18px; }
-    .rrg-chart { flex-basis: auto; width: 100%; max-width: 460px; margin: 0 auto; }
-    .rrg-side { padding-right: 0; }
-  }
-  @media (max-width: 560px) { .rrg-quads { grid-template-columns: 1fr; } }
+  .sr-standings .sr-table-wrap { border: 1px solid var(--border-light); border-radius: var(--radius); }
+  .sr-standings .sr-th, .sr-standings .sr-cell, .sr-standings .sr-sector { padding-left: 8px; padding-right: 8px; }
+  .sr-standings .sr-th:first-child, .sr-standings .sr-sector { padding-left: 12px; }
+  .sr-standings .sr-cell:last-child, .sr-standings .sr-th:last-child { padding-right: 12px; }
+  .sr-q-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+  .sr-etf { margin-left: 7px; font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 400; color: var(--ink-3); }
 
-  .sr-toolbar { display: flex; justify-content: flex-end; padding: 2px 16px 10px; }
   .sr-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
   .sr-toggle button {
     border: none; background: var(--surface); color: var(--ink-3);
@@ -1092,9 +1133,6 @@
     .nav-item.active { border-bottom-color: var(--accent); }
     .scan-progress-wrap { width: 100%; padding: 8px 12px 0; }
     .main { padding: 16px; }
-    /* Sector Rotation is a 6-column table; let it scroll horizontally on small
-       screens instead of clipping its right columns (Cadence already scrolls). */
-    #sector-rotation-body { overflow-x: auto; }
   }
 </style>
 </head>
@@ -1240,13 +1278,10 @@ function toggleSiteNav(btn) {
     <section id="sector-rotation">
       <div class="section-header">
         <div class="section-title">Sector Rotation</div>
-        <div class="section-subtitle">Where money is actually rotating across the eleven SPDR sector ETFs, measured against the S&amp;P 500 rather than on their own.</div>
+        <div class="section-subtitle">Where money is actually rotating across the eleven SPDR sector ETFs, measured against the S&amp;P 500 rather than on their own. Click a sector to see today's movers in it.</div>
         <div class="section-badge" id="sector-badge">—</div>
       </div>
-      <div class="full-panel">
-        <div class="panel-header">
-          <p class="panel-desc">A sector up 1% while the market gains 2% is losing ground, so that's the lens here. The banner reads risk appetite from cyclicals against defensives. The map plots each sector by relative strength and momentum: Leading, Weakening, Lagging or Improving. The table shows each sector's edge over the market from one day out to three months, whether it's rotating in or out this week, and the volume behind the move. Click a row to see today's movers in that sector, click a header to sort, or switch to absolute returns anytime.</p>
-        </div>
+      <div class="full-panel sr-panel">
         <div id="sector-rotation-body">
           <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading sector data…</div></div>
         </div>
@@ -1257,13 +1292,10 @@ function toggleSiteNav(btn) {
     <section id="cadence">
       <div class="section-header">
         <div class="section-title">Cadence Watchlist</div>
-        <div class="section-subtitle">A proprietary daily-rhythm ranking of the liquid US market, built to surface names with the kind of tradeable cadence you can learn and trade in and out of.</div>
+        <div class="section-subtitle">A proprietary daily-rhythm ranking of the liquid US market. The score (0–100) blends a stock's typical daily range, how steady that range is, liquidity and price. It ignores direction, which is what vs S&amp;P is for: each name against the market over the last 20 days.</div>
         <div class="section-badge" id="cadence-badge">—</div>
       </div>
       <div class="full-panel">
-        <div class="panel-header">
-          <p class="panel-desc">The score (0–100) blends how far a stock moves in a typical day (ADR%), how steady that swing has been (Consistency, closer to 1.0 is steadier), liquidity and price. It doesn't care which way a stock is heading, so a high score can still be one sliding lower. That's what vs S&amp;P is for: the last 20 days against the market. The pills run strongest sector to weakest over those same 20 days. Turn on any mix, or none for everything. Leveraged and inverse funds stay out, since their range comes from the leverage. Click a column to sort.</p>
-        </div>
         <div class="cad-pills" id="cadence-pills" role="group" aria-label="Filter the watchlist"></div>
         <div id="cadence-body">
           <div class="loading-state"><div class="loading-spinner"></div><div class="loading-text">Loading watchlist…</div></div>
@@ -1554,11 +1586,25 @@ function renderSectorRotation(payload) {
   }
   const leading = sectors.filter(s => s.rrg && s.rrg.quadrant === 'Leading').length;
   $('sector-badge').textContent = `${leading} of ${sectors.length} leading`;
+  rrgPts = sectors.filter(s => s.rrg && s.rrg.x != null)
+    .map(s => ({ ...s, _tail: (s.rrg.tail || []).slice(-3) }));
+  const hasMap = rrgPts.length >= 2;
+  // The map column is laid out empty, then drawn at its real width (drawRRG),
+  // so its 10px labels stay 10px whether the map is 260px or 420px wide.
+  const map = hasMap ? `<div class="rrg-chart">
+      <div class="sr-col-head"><span class="sr-col-title">Rotation Map</span></div>
+      <div class="rrg-plot" id="rrg-plot"></div>
+      <p class="rrg-read">Each dot is a sector: <strong>relative strength vs the S&amp;P</strong> runs left to right, <strong>momentum</strong> bottom to top, and the short tail is its recent path. Sectors tend to turn clockwise, Improving &rarr; Leading &rarr; Weakening &rarr; Lagging.</p>
+    </div>` : '';
   el.innerHTML =
     buildPostureBanner(payload.posture, payload.benchmark) +
-    buildRRG(sectors) +
-    buildSectorToolbar() +
-    `<div class="sr-table-wrap">${buildSectorTable(sectors)}</div>`;
+    `<div class="sr-layout${hasMap ? '' : ' no-map'}">${map}
+      <div class="sr-standings">
+        <div class="sr-col-head"><span class="sr-col-title">Sector Standings</span>${buildSectorToggle()}</div>
+        <div class="sr-table-wrap">${buildSectorTable(sectors)}</div>
+      </div>
+    </div>`;
+  drawRRG();
 }
 
 // ── Risk-on / risk-off posture banner ───────────────────────────────────────
@@ -1584,16 +1630,34 @@ function buildPostureBanner(posture, benchmark) {
 }
 
 // ── Relative Rotation Graph (SVG quadrant chart) ────────────────────────────
-function buildRRG(sectors) {
-  // Render only the past two moves of each tail (current + 2 prior points) —
-  // the full multi-week trails turned the map into spaghetti.
-  const pts = sectors.filter(s => s.rrg && s.rrg.x != null)
-    .map(s => ({ ...s, _tail: (s.rrg.tail || []).slice(-3) }));
-  if (pts.length < 2) return '';
-  const W = 440, H = 440;
-  // Zero padding — the plot's top edge IS the svg edge, so the map's top
-  // lines up with the standings cards beside it. The 1.18x auto-scale headroom
-  // keeps dots well inside; right-edge dot labels flip to the left instead.
+// Points for the map, set by renderSectorRotation. Each tail is cut to the
+// past two moves (current + 2 prior points); the full multi-week trails turned
+// the map into spaghetti.
+let rrgPts = [];
+// Redraw whenever the map's column changes width: a window resize, or the web
+// fonts landing and widening the table beside it (which no resize event reports).
+const rrgObserver = window.ResizeObserver ? new ResizeObserver(() => paintRRG()) : null;
+
+function drawRRG() {
+  const box = document.getElementById('rrg-plot');
+  if (!box || rrgPts.length < 2) return;
+  if (rrgObserver) { rrgObserver.disconnect(); rrgObserver.observe(box); }
+  paintRRG();
+}
+function paintRRG() {
+  const box = document.getElementById('rrg-plot');
+  if (!box) return;
+  const W = Math.round(box.clientWidth);
+  if (!W || W === +box.dataset.w) return;
+  box.dataset.w = W;
+  box.innerHTML = buildRRG(rrgPts, W);
+}
+
+function buildRRG(pts, W) {
+  const H = W;
+  // Zero padding: the plot's top edge is the svg edge, so the map's top lines
+  // up with the table beside it. The 1.18x auto-scale headroom keeps dots well
+  // inside; right-edge dot labels flip to the left instead.
   const PAD = 0;
   let dev = 1.5;
   pts.forEach(s => {
@@ -1639,33 +1703,15 @@ function buildRRG(sectors) {
     return g;
   }).join('');
 
-  const svg = `<svg viewBox="0 0 ${W} ${H}" class="rrg-svg" xmlns="http://www.w3.org/2000/svg">${rects}${cross}${qlabels}${marks}</svg>`;
-
-  // Side panel: current standings per quadrant, arranged 2x2 to mirror the map
-  // (Improving | Leading over Lagging | Weakening) — fills the space beside the
-  // chart with the read that used to require hovering every dot.
-  const byQuad = {};
-  pts.forEach(s => { (byQuad[s.rrg.quadrant] = byQuad[s.rrg.quadrant] || []).push(s.sector); });
-  const quadBlocks = ['Improving', 'Leading', 'Lagging', 'Weakening'].map(q => `
-    <div class="rrg-quad-block" style="background:${RRG_QUAD[q].bg}">
-      <div class="rrg-quad-head"><span class="rrg-leg-dot" style="background:${RRG_QUAD[q].color}"></span>${q}</div>
-      <div class="rrg-quad-members">${(byQuad[q] || []).map(n => `<div class="rrg-quad-member">${n}</div>`).join('') || '<span class="rrg-quad-none">none today</span>'}</div>
-    </div>`).join('');
-  const side = `<div class="rrg-side">
-    <div class="rrg-side-title">Where sectors stand</div>
-    <div class="rrg-quads">${quadBlocks}</div>
-    <div class="rrg-read">Each dot is a sector plotted by <strong>relative strength vs the S&amp;P</strong> (left&ndash;right) and <strong>momentum</strong> (down&ndash;up); the short tail traces its recent path. Sectors tend to travel clockwise: Improving &rarr; Leading &rarr; Weakening &rarr; Lagging.</div>
-  </div>`;
-
-  return `<div class="rrg-wrap"><div class="rrg-chart"><div class="rrg-side-title">Rotation Movements</div>${svg}</div>${side}</div>`;
+  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" class="rrg-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sector rotation map">${rects}${cross}${qlabels}${marks}</svg>`;
 }
 
 // ── Relative / absolute toggle ──────────────────────────────────────────────
-function buildSectorToolbar() {
-  return `<div class="sr-toolbar"><div class="sr-toggle">
+function buildSectorToggle() {
+  return `<div class="sr-toggle">
     <button class="${sectorRetMode === 'rel' ? 'active' : ''}" onclick="sectorMode('rel')">vs S&amp;P 500</button>
     <button class="${sectorRetMode === 'abs' ? 'active' : ''}" onclick="sectorMode('abs')">Absolute</button>
-  </div></div>`;
+  </div>`;
 }
 
 // ── Reframed table ──────────────────────────────────────────────────────────
@@ -1707,9 +1753,14 @@ function buildSectorTable(sectors) {
     const chevron = expandable ? `<span class="sr-chevron">&#9654;</span>` : '';
     const onclickAttr = expandable ? ` onclick="toggleSector(${i})"` : '';
 
+    // The dot carries the sector's spot on the map; its color matches the
+    // map's quadrant labels, and the ETF ticker matches the map's dot label.
+    const quad = s.rrg && s.rrg.quadrant;
+    const dot = quad && RRG_QUAD[quad]
+      ? `<span class="sr-q-dot" style="background:${RRG_QUAD[quad].color}" title="${quad} on the rotation map"></span>`
+      : '<span class="sr-q-dot" style="background:var(--border)"></span>';
     const mainRow = `<tr class="sr-row${expandable ? ' sr-expandable' : ''}" id="sr-row-${i}"${onclickAttr}>
-      <td class="sr-sector">${s.sector}${chevron}</td>
-      <td class="sr-ticker">${s.ticker}</td>
+      <td class="sr-sector">${dot}${s.sector}<span class="sr-etf">${s.ticker}</span>${chevron}</td>
       ${retCols.map(c => srCell(s[c.key])).join('')}${srRotationCell(s.rotation)}${srConvictionCell(s.rvol)}
     </tr>`;
 
@@ -1732,7 +1783,7 @@ function buildSectorTable(sectors) {
     }).join('');
 
     const detailRow = `<tr class="sr-detail-row" id="sr-detail-${i}">
-      <td colspan="8"><div class="sr-detail-inner">
+      <td colspan="7"><div class="sr-detail-inner">
         <div class="sr-detail-label">Today's scan movers in this sector</div>
         <div class="sr-stocks">${stockCards}</div>
       </div></td>
@@ -1744,7 +1795,6 @@ function buildSectorTable(sectors) {
   return `<table class="sr-table">
     <thead><tr>
       <th class="sr-th sr-th-left">Sector</th>
-      <th class="sr-th sr-th-left">ETF</th>
       ${thHtml}
     </tr></thead>
     <tbody>${rows}</tbody>
@@ -1849,15 +1899,28 @@ function cadenceSort(col) {
 function renderCadencePills() {
   const box = $('cadence-pills');
   if (!cadenceSectors.length) { box.innerHTML = ''; return; }
-  const rs = v => v == null ? ''
-    : `<span class="cad-pill-rs ${v >= 0 ? 'up' : 'down'}">${v >= 0 ? '+' : ''}${v.toFixed(0)}</span>`;
+  // Whole points; anything that rounds to zero shows a plain 0 (no "-0").
+  const rs = v => {
+    if (v == null) return '';
+    const r = Math.round(v);
+    return r === 0 ? '<span class="cad-pill-rs">0</span>'
+      : `<span class="cad-pill-rs ${r > 0 ? 'up' : 'down'}">${r > 0 ? '+' : ''}${r}</span>`;
+  };
   box.innerHTML =
-    `<button type="button" class="cad-pill" data-kind="all">All sectors</button>` +
-    cadenceSectors.map(x =>
-      `<button type="button" class="cad-pill" data-sector="${x.sector}">${x.sector} ${rs(x.rs_20)}</button>`).join('') +
-    `<button type="button" class="cad-pill cad-pill-beat" data-kind="beat">Beating the S&amp;P</button>`;
+    `<button type="button" class="cad-beat" data-kind="beat">
+      <span class="cad-beat-box" aria-hidden="true"></span>
+      <span><span class="cad-beat-title">Beating the S&amp;P</span><span class="cad-beat-sub">Last 20 days</span></span>
+    </button>
+    <div class="cad-sectors">
+      <div class="cad-sectors-label">Sectors, strongest to weakest vs the S&amp;P</div>
+      <div class="cad-sectors-grid">
+        <button type="button" class="cad-pill" data-kind="all">All sectors</button>` +
+        cadenceSectors.map(x =>
+          `<button type="button" class="cad-pill" data-sector="${x.sector}"><span>${x.sector}</span>${rs(x.rs_20)}</button>`).join('') +
+      `</div>
+    </div>`;
   box.onclick = e => {
-    const b = e.target.closest('.cad-pill');
+    const b = e.target.closest('button');
     if (!b) return;
     if (b.dataset.kind === 'all') cadenceOn.clear();
     else if (b.dataset.kind === 'beat') cadenceBeatOnly = !cadenceBeatOnly;
@@ -1871,7 +1934,7 @@ function renderCadencePills() {
 }
 
 function syncCadencePills() {
-  $('cadence-pills').querySelectorAll('.cad-pill').forEach(b => {
+  $('cadence-pills').querySelectorAll('button').forEach(b => {
     const on = b.dataset.kind === 'all'  ? cadenceOn.size === 0
              : b.dataset.kind === 'beat' ? cadenceBeatOnly
              : cadenceOn.has(b.dataset.sector);
@@ -1886,12 +1949,13 @@ function renderCadence() {
     return;
   }
 
+  // Hover text keeps the column notes that used to sit above the table.
   const numCols = [
-    { key: 'cadence_score', label: 'Score' },
-    { key: 'adr_pct',       label: 'ADR%' },
-    { key: 'rs_20',         label: 'vs S&amp;P' },
-    { key: 'consistency',   label: 'Consistency' },
-    { key: 'dollar_vol',    label: '$ Vol' },
+    { key: 'cadence_score', label: 'Score',       tip: 'Blends typical daily range, how steady it is, liquidity and price. Leveraged and inverse funds stay out, since their range comes from the leverage.' },
+    { key: 'adr_pct',       label: 'ADR%',        tip: 'Average daily range: how far the stock moves in a typical day' },
+    { key: 'rs_20',         label: 'vs S&amp;P',  tip: '20-day return minus the S&P 500, in percentage points' },
+    { key: 'consistency',   label: 'Consistency', tip: 'How steady the daily range has been; closer to 1.0 is steadier' },
+    { key: 'dollar_vol',    label: '$ Vol',       tip: 'Median daily dollar volume' },
     { key: 'price',         label: 'Price' },
   ];
 
@@ -1921,7 +1985,7 @@ function renderCadence() {
   const numTh = numCols.map(c => {
     const active = c.key === cadenceSortCol ? ' sr-th-active' : '';
     const arrow  = c.key === cadenceSortCol ? (cadenceSortDir === -1 ? ' ↓' : ' ↑') : '';
-    return `<th class="sr-th${active}" onclick="cadenceSort('${c.key}')">${c.label}${arrow}</th>`;
+    return `<th class="sr-th${active}"${c.tip ? ` title="${c.tip.replace(/&/g, '&amp;')}"` : ''} onclick="cadenceSort('${c.key}')">${c.label}${arrow}</th>`;
   }).join('');
 
   const tkActive = cadenceSortCol === 'ticker' ? ' sr-th-active' : '';
