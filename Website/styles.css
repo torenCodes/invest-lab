@@ -544,7 +544,7 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
+  padding: 0.9rem 1.5rem;   /* Nov 2026: one-line descriptions, tighter cards */
   text-decoration: none;
   color: inherit;
   transition: all 0.2s;
@@ -583,7 +583,6 @@ body {
   line-height: 1.55;
   color: var(--ink-2);
   margin-bottom: 0.75rem;
-  padding-right: 10rem;
 }
 
 .dashboard-card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
@@ -839,6 +838,27 @@ body {
 }
 
 .blog-sidebar-cta:hover { color: var(--accent); }
+
+/* Zone 4 (Nov 2026): "View all posts" sits on the heading row, so both columns
+   end on a card, and on desktop the two columns end on the same line. The
+   columns stretch to the taller one and the blog cards share any slack, so the
+   last dashboard card and the last blog card stay level at any width. */
+.blog-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.blog-header-link { padding: 0 0 0.35rem; flex-shrink: 0; }
+@media (min-width: 901px) {
+  #dashboards .broadsheet { align-items: stretch; }
+  #dashboards .broadsheet-main,
+  #dashboards .broadsheet-side { display: flex; flex-direction: column; }
+  #dashboards .dashboard-grid { flex: 1 1 auto; grid-auto-rows: 1fr; }
+  #dashboards .blog-sidebar-stack { flex: 1 1 auto; }
+  #dashboards .blog-card--sidebar { flex: 1 1 auto; display: flex; flex-direction: column; }
+  #dashboards .blog-card--sidebar .blog-card-read-more { margin-top: auto; align-self: flex-start; }
+}
 
 /* ── Blog Coming Soon ───────────────────────────────────────────────────── */
 .blog-coming-soon {
@@ -1489,9 +1509,6 @@ body {
   .hero-cta { flex-direction: column; align-items: flex-start; }
   .dashboard-card { grid-template-columns: auto 1fr; }
   .dashboard-card-arrow { display: none; }
-  /* Clear the 10rem right reserve from desktop — the arrow column is
-     gone at this width, so the description text can use the full row. */
-  .dashboard-card-desc { padding-right: 0; }
   .about-stats { grid-template-columns: 1fr 1fr; }
 }
 

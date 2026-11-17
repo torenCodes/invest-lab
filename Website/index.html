@@ -77,10 +77,9 @@
       <div class="hero-content">
         <h1 class="hero-headline">Finding the signal in market noise.</h1>
         <p class="hero-body">
-          A personal research platform for identifying high-quality stocks and the
-          investing themes worth your attention, drawing on daily market data,
-          sentiment analysis, and proprietary screening to surface the names that
-          warrant a closer look.
+          A personal research lab for finding the stocks and investing themes worth
+          a closer look. Five screens run on fresh market data every weekday, and
+          every top pick gets graded against the S&amp;P 500.
         </p>
         <div class="hero-cta">
           <a href="#dashboards" class="btn btn-primary">View Dashboards</a>
@@ -128,7 +127,7 @@
         <div class="broadsheet-side">
             <div class="broadsheet-side-title">
               <h2 class="section-title">Market Reading</h2>
-              <p class="preview-ts-line">The day's trading conditions and what's on the radar.</p>
+              <p class="preview-ts-line">Today's trading conditions and the bigger macro picture.</p>
             </div>
           
           <div class="newsstand-grid">
@@ -137,7 +136,7 @@
                 <div class="newsstand-card-icon">🧭</div>
                 <div class="newsstand-card-left">
                   <h3 class="newsstand-card-title">Trading Conditions</h3>
-                  <p class="newsstand-card-desc">A market-regime read for momentum traders.</p>
+                  <p class="newsstand-card-desc">A quick read on today's market for momentum traders.</p>
                 </div>
               </div>
               <div class="tc-content" id="ns-conditions-content">
@@ -204,7 +203,7 @@
         <div class="broadsheet-main">
           <div class="section-header">
             <h2 class="section-title">All Dashboards</h2>
-            <p class="section-sub">Live tools for scanning, screening, and analyzing the market in real time.</p>
+            <p class="section-sub">Five boards, each a different way to read the market.</p>
           </div>
 
           <div class="dashboard-grid dashboard-grid--stacked">
@@ -214,14 +213,13 @@
               <div class="dashboard-card-body">
                 <h3 class="dashboard-card-title">Movers and Shakers</h3>
                 <p class="dashboard-card-desc">
-                  Scans the entire liquid US market for tradeable daily rhythm, ranking a watchlist
-                  of day-trade names alongside today's live movers, market chatter, and sector rotation.
+                  Scans the market for tradeable daily rhythms and short term nominees.
                 </p>
                 <div class="dashboard-card-tags">
                   <span class="tag">Cadence</span>
                   <span class="tag">Day Trades</span>
                   <span class="tag">Sector Flow</span>
-                  <span class="tag">Live</span>
+                  <span class="tag">Chatter</span>
                 </div>
               </div>
               <span class="dashboard-card-arrow">→</span>
@@ -232,8 +230,7 @@
               <div class="dashboard-card-body">
                 <h3 class="dashboard-card-title">The Marathon</h3>
                 <p class="dashboard-card-desc">
-                  Long-term investing thesis combining ETF consensus picks and beaten-down
-                  quality stocks. Includes ETF scorecard vs SPY.
+                  Long-term picks combining ETF consensus and beaten down names.
                 </p>
                 <div class="dashboard-card-tags">
                   <span class="tag">Buy &amp; Hold</span>
@@ -249,13 +246,12 @@
               <div class="dashboard-card-body">
                 <h3 class="dashboard-card-title">Insider Buying</h3>
                 <p class="dashboard-card-desc">
-                  Tracks open-market purchases by executives and directors via SEC Form 4.
-                  Surfaces cluster buys and C-suite activity.
+                  Tracks open-market purchases by executives and politicians.
                 </p>
                 <div class="dashboard-card-tags">
                   <span class="tag">Cluster Buys</span>
                   <span class="tag">C-Suite</span>
-                  <span class="tag">Smart Money</span>
+                  <span class="tag">Congress</span>
                 </div>
               </div>
               <span class="dashboard-card-arrow">→</span>
@@ -266,9 +262,7 @@
               <div class="dashboard-card-body">
                 <h3 class="dashboard-card-title">Pattern Scanner</h3>
                 <p class="dashboard-card-desc">
-                  A daily swing-setup scan of about 2,400 liquid US stocks. Coiled ranks uptrends
-                  wound tight, with a narrow range and drying volume. Leaders ranks the strongest
-                  trends still trading near support.
+                  Swing-setup scan with coiled ranks and leader board.
                 </p>
                 <div class="dashboard-card-tags">
                   <span class="tag">Coil Score</span>
@@ -284,7 +278,7 @@
               <div class="dashboard-card-body">
                 <h3 class="dashboard-card-title">The Analyst</h3>
                 <p class="dashboard-card-desc">
-                  A daily deep dive on the 15 stocks the other dashboards surfaced, with a verdict, fundamentals, free cash flow, the Graham Number, SEC filings, and why each one made the list.
+                  A daily deep dive on the top 15 names the other dashboards surfaced.
                 </p>
                 <div class="dashboard-card-tags">
                   <span class="tag">Deep Dive</span>
@@ -300,9 +294,12 @@
 
         <!-- SIDEBAR: Blog -->
         <div class="broadsheet-side" id="blog">
-          <div class="section-header">
-            <h2 class="section-title">Research Blog</h2>
-            <p class="section-sub">Deep dives into market trends.</p>
+          <div class="section-header blog-header">
+            <div>
+              <h2 class="section-title">Research Blog</h2>
+              <p class="section-sub">Deep dives into market trends.</p>
+            </div>
+            <a href="blog.html" class="blog-sidebar-cta blog-header-link">View all posts &rarr;</a>
           </div>
 
           <div class="blog-sidebar-stack" id="blog-sidebar-stack">
@@ -315,10 +312,11 @@
               .then(function(posts) {
                 var container = document.getElementById('blog-sidebar-stack');
                 var html = '';
-                // Cap the sidebar at the 4 most recent posts (posts.json is
-                // ordered newest-first) so the column stays roughly level with
-                // the dashboards grid beside it. "View all posts" covers the rest.
-                posts.slice(0, 4).forEach(function(post) {
+                // Cap the sidebar at the 3 most recent posts (posts.json is
+                // ordered newest-first) so the column stays level with the
+                // dashboards grid beside it. "View all posts" in the heading
+                // covers the rest.
+                posts.slice(0, 3).forEach(function(post) {
                   var tag = (post.tags && post.tags[0]) || '';
                   html += '<a href="blog.html?post=' + post.slug + '" class="blog-card blog-card--sidebar">'
                     + '<div class="blog-card-meta">'
@@ -330,7 +328,6 @@
                     + '<span class="blog-card-read-more">Read more &rarr;</span>'
                     + '</a>';
                 });
-                html += '<a href="blog.html" class="blog-sidebar-cta">View all posts &rarr;</a>';
                 container.innerHTML = html;
               });
           })();
@@ -350,14 +347,14 @@
 
       <div class="section-header">
         <h2 class="section-title">Lab Methodology and Track Record</h2>
-        <p class="section-sub">How the lab works, and how its picks have performed.</p>
+        <p class="section-sub">How the lab's picks have actually done.</p>
       </div>
 
       <p class="methodology-lead">Below are the receipts. Every top nominee is logged the moment it is
         flagged and graded on its own board's clock: a day trade at that day's
         close, a swing setup after 20 trading days, the long-term boards after 60.
         Each result sits next to the S&amp;P 500 over the same days, and the misses
-        stay alongside the wins.</p>
+        stay right next to the wins.</p>
 
       <!-- Board scorecard: one row per board, each graded on its own clock.
            Populated by JS from nominees_archive.json (the "graded" field). -->
@@ -398,7 +395,7 @@
       </div>
 
       <p class="track-record-footnote" style="margin-top:1.5rem;">
-        Each board is graded on the clock it is built for. A Top Day Trade runs from the price when the scan flagged it to that day's close, or to the next day's close if it was flagged after the market closed. A Pattern Scanner setup gets 20 trading days. Underdogs, Tried &amp; True and Insider Buying get 60, about three months. The S&amp;P 500 is measured over the same days, starting from the last close before the pick. <strong>Typical pick</strong> is the median, so one huge winner cannot carry a board. Insider Buying is split at its August 2026 rebuild, so the current model is judged on its own picks rather than the old model's. <strong>Latest results</strong> are the most recent picks to reach their grading day, wins and losses alike. <strong>Hall of fame</strong> and <strong>Worst misses</strong> are the best and worst results since inception. Each result is recorded once on its grading day and never revised, so an older entry shows how the pick did then, not where it trades today. Picks still inside their clock are left out, and rows with fewer than 15 results are marked as early. Past performance is not predictive of future results. These are educational records of the lab's process, not investment advice.
+        Each board is graded on the clock it's built for. A Top Day Trade runs from the price when it was flagged to that day's close, or the next day's if it was flagged after the bell. Pattern Scanner setups get 20 trading days. Underdogs, Tried &amp; True and Insider Buying get 60, about three months. The S&amp;P 500 is measured over the same days. <strong>Typical pick</strong> is the median, so one huge winner can't carry a board. Insider Buying is split at its August 2026 rebuild, so the new model is judged on its own picks. Every result is recorded once and never revised, so older entries show how a pick did then, not where it trades today. Rows with fewer than 15 results are marked early. Past performance doesn't predict future results, and none of this is investment advice.
       </p>
 
     </div>
@@ -412,11 +409,11 @@
         <h2 class="section-title">About This Site</h2>
 
         <div class="about-text">
-          <p>The Invest Lab runs five proprietary screens each weekday focused on
-            momentum, ETF consensus, deep value, insider conviction, and chart structure.
-            Each one codifies a well-known investment style and runs it against fresh data,
-            so no single lens is the answer. The goal is to provide signal-rich
-            starting points for your own research and not a "buy this" recommendation.</p>
+          <p>The Invest Lab runs five proprietary screens every weekday: momentum,
+            ETF consensus, deep value, insider buying and chart setups. Each one takes a
+            well-known investing style and runs it against fresh data, because no single
+            approach has all the answers. Think of what shows up here as a starting point
+            for your own research, not a "buy this" list.</p>
           <p>When the same stock turns up on more than one board, The Analyst takes a
             closer look, checking P/E, PEG, free cash flow, the Graham Number, return on
             equity and debt before writing a short verdict.</p>
@@ -569,7 +566,7 @@
       signals = signals.filter(function (s) { return !/reddit/i.test(s); });
       var mentions = stock.mentions || stock.reddit_mentions || 0;
       signals = signals.slice(0, mentions > 0 ? 1 : 2);
-      if (mentions > 0) signals.push('High investor discussion activity');
+      if (mentions > 0) signals.push('Heavy investor chatter');
     } else {
       signals = signals.slice(0, 2);
     }
@@ -631,7 +628,7 @@
       '<div class="pv-name">' + (n.name || n.ticker) + '</div>' +
       '<div class="pv-price">$' + fmt(n.price, 2) + '</div>' +
       '<ul class="pv-signals">' +
-        '<li>Consistency ' + fmt(n.consistency, 2) + ' — steadier near 1.0</li>' +
+        '<li>Consistency ' + fmt(n.consistency, 2) + ' · 1.0 is steadiest</li>' +
         '<li>$' + Math.round((n.dollar_vol || 0) / 1e6) + 'M average daily volume</li>' +
       '</ul>' +
       '<div class="pv-score"><span class="pv-score-label">Cadence Score</span> <span class="pv-score-val">' + fmt(n.cadence_score, 1) + '</span></div>' +
@@ -653,7 +650,7 @@
       '<div class="pv-name">' + (n.name || n.ticker) + '</div>' +
       '<div class="pv-price">$' + fmt(n.price, 2) + '</div>' +
       '<ul class="pv-signals">' +
-        '<li>' + (n.pattern || 'Coiled setup') + ' — ' + Math.round(n.rs_pct || 0) + 'th pct RS</li>' +
+        '<li>' + (n.pattern || 'Coiled setup') + ' · ' + Math.round(n.rs_pct || 0) + 'th pct RS</li>' +
         '<li>Volume at ' + Math.round((n.vol_ratio || 1) * 100) + '% of its base</li>' +
       '</ul>' +
       '<div class="pv-score"><span class="pv-score-label">Coil Score</span> <span class="pv-score-val">' + fmt(n.coil_score, 1) + '</span></div>' +
@@ -678,7 +675,7 @@
       var discuss = data.reddit_cards && data.reddit_cards[0];
 
       document.getElementById('pc-daytrade').innerHTML  = stockCard(day, 'Top Day Trade', 'View day trades', false);
-      document.getElementById('pc-discussed').innerHTML = stockCard(discuss, 'Highly Discussed', 'View all picks', true);
+      document.getElementById('pc-discussed').innerHTML = stockCard(discuss, 'Highly Discussed', 'View market chatter', true);
     })
     .catch(function () {
       var msg = '<div class="pv-empty">Data unavailable. Check back on a weekday.</div>';
