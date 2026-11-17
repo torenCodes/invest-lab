@@ -1262,10 +1262,21 @@ def get_finviz_movers():
                                  "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
         url = "https://finviz.com/screener.ashx?v=111&s=ta_unusualvolume&o=-volume&f=sh_price_o5"
         resp = requests.get(url, headers=headers, timeout=10)
-        tickers = re.findall(r'data-boxover-ticker="([A-Z0-9.\-]{1,6})"', resp.text)[:20]
-        tickers = list(dict.fromkeys(tickers))
+        # Finviz has redesigned twice. The Nov 2026 table marks each row with
+        # data-row-key and dropped data-boxover-ticker, which silently zeroed
+        # this signal from Oct 16. Try each known layout, newest last, and keep
+        # the first that finds rows.
+        tickers = []
+        for pattern in (r'data-boxover-ticker="([A-Z0-9.\-]{1,6})"',
+                        r'data-row-key="([A-Z0-9.\-]{1,6})"',
+                        r'href="/quote\?t=([A-Z0-9.\-]{1,6})&'):
+            tickers = list(dict.fromkeys(re.findall(pattern, resp.text)))[:20]
+            if tickers:
+                break
         if not tickers:
-            print("[Finviz] No tickers parsed — markup may have changed again")
+            print("[Finviz] !! No tickers parsed — markup may have changed again")
+        else:
+            print(f"[Finviz] {len(tickers)} unusual-volume tickers")
         return tickers
     except Exception as e:
         print(f"[Finviz] Error: {e}")

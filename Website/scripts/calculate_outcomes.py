@@ -334,8 +334,10 @@ def main():
     updated = 0
 
     for nominee in archive['nominees']:
-        # Skip already resolved
-        if nominee.get('outcome_price') is not None:
+        # Skip already resolved, and picks the graded pass has written off after
+        # MAX_GRADE_MISSES runs (bad tickers from the Aug 2026 Finviz parsing
+        # bug, delistings): without this they were re-fetched every day forever.
+        if nominee.get('outcome_price') is not None or nominee.get('graded_unavailable'):
             continue
 
         flagged = datetime.strptime(nominee['date_flagged'], '%Y-%m-%d').date()
