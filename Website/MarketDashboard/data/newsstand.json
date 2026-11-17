@@ -1,15 +1,15 @@
 {
-  "scan_time": "2026-11-17T19:30:39.011266+00:00",
+  "scan_time": "2026-11-17T21:30:48.706749+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Risk-Off",
     "score": -5,
-    "headline": "Today's tape is working against the longer-term trend: SPY -1.21% and off its highs, with only 0 of 11 sectors green. Most of the inputs are negative, and together they show a market working against rising prices.",
+    "headline": "Today's tape is working against the longer-term trend: SPY -1.01% and off its highs, with only 0 of 11 sectors green. Most of the inputs are negative, and together they show a market working against rising prices.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-1.21%",
+        "value": "-1.01%",
         "read": "Weak",
         "tone": "bad"
       },
@@ -23,7 +23,7 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-2.5%",
+        "value": "-2.3%",
         "read": "Weak",
         "tone": "bad"
       },
@@ -44,25 +44,25 @@
       {
         "label": "10-year yield",
         "sub": "Rate pressure on growth",
-        "value": "5.11%",
+        "value": "5.10%",
         "read": "Stable",
         "tone": "neutral"
       }
     ],
-    "updated": "2026-11-17T19:30:40.870047+00:00",
+    "updated": "2026-11-17T21:30:50.911113+00:00",
     "session": {
-      "change_pct": -1.21,
-      "from_open_pct": -1.0,
-      "range_pos": 0.312,
+      "change_pct": -1.01,
+      "from_open_pct": -0.81,
+      "range_pos": 0.426,
       "sectors_green": 0,
       "sectors_total": 11,
       "live": true,
-      "detail": "-1.21% vs prior close \u00b7 mid-range (31% of range) \u00b7 0/11 sectors green"
+      "detail": "-1.01% vs prior close \u00b7 mid-range (43% of range) \u00b7 0/11 sectors green"
     },
     "participation": {
-      "ratio": 0.988,
+      "ratio": 0.989,
       "expected": 0.95,
-      "adjusted": 1.04,
+      "adjusted": 1.041,
       "direction": "fading",
       "drift_pct": -31.8,
       "detail": "45M vs 46M avg"
