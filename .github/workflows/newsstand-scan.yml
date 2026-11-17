@@ -55,5 +55,12 @@ jobs:
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           git add Website/MarketDashboard/data/newsstand.json
           git diff --staged --quiet || git commit -m "chore: newsstand scan $(date -u +%Y-%m-%dT%H:%M)Z"
-          git pull --rebase -Xtheirs origin ${{ github.ref_name }}
-          git push origin HEAD:${{ github.ref_name }}
+          # Several scans push to main; two landing in the same second made one
+          # push fail ("cannot lock ref") and drop that run's update. Retry.
+          for attempt in 1 2 3 4; do
+            git pull --rebase -Xtheirs origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }} && break
+            if [ "$attempt" = 4 ]; then echo "::error::push failed after 4 attempts"; exit 1; fi
+            git rebase --abort 2>/dev/null || true
+            echo "push collided (attempt $attempt); retrying"
+            sleep $((attempt * 5))
+          done
