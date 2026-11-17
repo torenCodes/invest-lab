@@ -1327,7 +1327,7 @@ function setActive(el) {
 function signalClass(s) {
   if (s.includes('gainer'))  return 'signal-gainer';
   if (s.includes('volume') || s.includes('High vol')) return 'signal-active';
-  if (s.includes('Reddit') || s.includes('reddit') || s.includes('News') || s.includes('buzz') || s.includes('mention') || s.includes('Trending')) return 'signal-reddit';
+  if (/reddit|news|buzz|mention|trending|stocktwits|chatter/i.test(s)) return 'signal-reddit';
   if (s.includes('move'))    return 'signal-move';
   return 'signal-default';
 }

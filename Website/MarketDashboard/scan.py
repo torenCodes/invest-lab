@@ -59,245 +59,68 @@ MAX_POSSIBLE_SCORE    = 71
 NEXT_SCAN_INFO = "Weekdays 9:35am, 11:30am & 1:30pm ET"
 
 
-# ── Universe helpers ──────────────────────────────────────────────────────────
+# ── Universe: today's gainers + most active (Nov 2026) ─────────────────────────
+# The old scrape read finance.yahoo.com/screener/predefined/* pages. Yahoo moved
+# those screeners, and the regex then caught a widget that sits on every Yahoo
+# page: the same ~24 symbols for gainers, losers and most active. From at least
+# March 2026 every name was tagged both "Top gainer" (+8) and "High volume" (+5),
+# including stocks that were down on the day. These are real screens through
+# yfinance's screener, with our own criteria: Yahoo's ready-made day_gainers
+# screen only lists companies over $2B, which would cut the small-cap runners
+# this board is built around.
 
-# ── Yahoo Finance movers ───────────────────────────────────────────────────────
+_SCREEN_EXCHANGES = ("NMS", "NGM", "NCM", "NYQ", "ASE")   # Nasdaq tiers, NYSE, NYSE American; no OTC
+GAINERS_N        = 40      # top gainers by % change -> "Top gainer"
+ACTIVE_N         = 25      # top names by share volume -> "High volume"
+GAINER_MIN_PCT   = 3.0     # Yahoo's own gainer cut
+GAINER_MIN_VOL   = 200_000 # shares traded so far today; low enough for a 9:35 scan
+_SYMBOL          = re.compile(r"[A-Z]{1,5}")   # share classes (BRK-B) don't map to Finnhub cleanly
 
-def get_yahoo_movers_categorized():
-    categorized = {"gainers": set(), "losers": set(), "active": set()}
-    urls = {
-        "gainers": "https://finance.yahoo.com/screener/predefined/day_gainers",
-        "losers":  "https://finance.yahoo.com/screener/predefined/day_losers",
-        "active":  "https://finance.yahoo.com/screener/predefined/most_actives",
-    }
-    headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
-    for cat, url in urls.items():
+
+def get_market_movers():
+    """{"gainers": set, "active": set, "losers": set(), "source": str}.
+
+    Losers are never scanned: they fail the change_pct > 0 check anyway. If the
+    custom screens fail, Yahoo's predefined screens are the fallback ($2B+ only,
+    and said so in the log). If both fail the universe is empty and the run says
+    so loudly; it never falls back to the page widget that caused the bug."""
+    cats = {"gainers": set(), "losers": set(), "active": set(), "source": None}
+
+    def symbols(result):
+        return {q.get("symbol", "") for q in (result or {}).get("quotes", [])
+                if _SYMBOL.fullmatch(q.get("symbol", ""))}
+
+    try:
+        from yfinance import EquityQuery as Q
+        base = [Q("eq", ["region", "us"]),
+                Q("btwn", ["intradayprice", DAY_TRADE_MIN_PRICE, DAY_TRADE_MAX_PRICE]),
+                Q("gt", ["intradaymarketcap", MIN_MARKET_CAP]),
+                Q("is-in", ["exchange", *_SCREEN_EXCHANGES])]
+        gainers = yf.screen(Q("and", base + [Q("gt", ["percentchange", GAINER_MIN_PCT]),
+                                             Q("gt", ["dayvolume", GAINER_MIN_VOL])]),
+                            sortField="percentchange", sortAsc=False, size=GAINERS_N)
+        active = yf.screen(Q("and", base), sortField="dayvolume", sortAsc=False, size=ACTIVE_N)
+        cats["gainers"], cats["active"] = symbols(gainers), symbols(active)
+        cats["source"] = "Yahoo screener (custom): gainers + most active"
+    except Exception as e:
+        print(f"[Movers] !! custom screen failed: {type(e).__name__}: {e}")
+
+    if not cats["gainers"] and not cats["active"]:
         try:
-            resp = requests.get(url, headers=headers, timeout=10)
-            found = set(re.findall(r'"symbol":"([A-Z]{1,5})"', resp.text)[:60])
-            categorized[cat] = found
-        except Exception:
-            pass
-    return categorized
+            cats["gainers"] = symbols(yf.screen("day_gainers", count=GAINERS_N))
+            cats["active"] = symbols(yf.screen("most_actives", count=ACTIVE_N))
+            cats["source"] = "Yahoo predefined screens (fallback; $2B+ market cap only)"
+            print("[Movers] !! using Yahoo's predefined screens: small caps are missing this run")
+        except Exception as e:
+            print(f"[Movers] !! predefined screens failed too: {type(e).__name__}: {e}")
 
-
-# ── Reddit buzz ────────────────────────────────────────────────────────────────
-
-def get_reddit_buzz():
-    """Returns (lookup_dict, feed_list)"""
-    counts = defaultdict(float)
-    post_counts = defaultdict(set)   # ticker -> set of distinct post IDs mentioning it
-    feed = []
-    subreddits = ["wallstreetbets", "stocks", "StockMarket", "options", "daytrading"]
-    headers = {
-        "User-Agent": "InvestLabScanner/1.0 (personal market research tool; non-commercial)",
-        "Accept": "application/json",
-    }
-    ticker_pattern = re.compile(r"\b([A-Z]{2,5})\b")
-    dollar_pattern = re.compile(r"\$([A-Z]{1,5})\b")
-    url_pattern    = re.compile(r"https?://\S+")
-
-    NOISE = {
-        # Articles / conjunctions / prepositions / pronouns (2-3 chars)
-        "THE","AND","FOR","ARE","BUT","NOT","YOU","ALL","CAN","HER","WAS","ONE",
-        "OUR","OUT","HAD","HIS","HOW","ITS","WHO","DID","GET","HAS","HIM",
-        "GOT","TOO","SEE","TWO","WAY","BOY","OWN","SAY","SHE","MAY","USE","NEW",
-        "NOW","OLD","ANY","TRY","FEW","CAR","MAN","SET","PUT","END","WHY","LET",
-        "BIG","FAR","OFF","ADD","YET","TOP","SIT","ACT","AGO","AIM","AGE",
-        # Common 2-3 char words that look like tickers
-        "OR","GO","IT","DO","SO","UP","ON","IN","AT","BY","TO","AS","BE","AN",
-        "OF","IS","IF","NO","MY","WE","HE","ME","US","OK","OH","HI","VS","RE",
-        "AM","PM","ER","EX","II","IV","VI","IX","XI","XL","XX",
-        # Finance / market jargon (abbreviations)
-        "USD","EUR","GBP","ETF","IPO","CEO","CFO","CTO","COO","EPS","ATH","ATL",
-        "IMO","WSB","EOM","EOD","YTD","AUM","NAV","OTC","SEC","FED","GDP","CPI",
-        "APR","APY","DCA","FDIC","FOMC","YOLO","FOMO","BTFD","HODL","PUMP","DUMP",
-        "BEAR","BULL","CALL","PUTS","GAIN","LOSS","DEBT","CASH","BOND",
-        "LOAN","RATE","RISK","SELL","HOLD","LONG","HIGH","LOWS","STOP","OPEN",
-        "DUE","TAX","IRA","ROTH","REITS","REIT","SPAC","LOT","BUY","OTM","ITM",
-        "ATM","SPY","QQQ","IWM","DIA","VIX","WSJ","CNBC","TWTR",
-        # Common 4-letter English words that slip through
-        "THIS","WITH","FROM","THAT","HAVE","BEEN","THEY","WILL","MORE","THAN",
-        "THEN","WHEN","WHAT","SOME","LIKE","INTO","JUST","OVER","ALSO","BACK",
-        "ONLY","COME","WELL","EVEN","WANT","LOOK","GOOD","GIVE","MOST","TELL",
-        "VERY","MUCH","NEED","TAKE","KNOW","MAKE","LAST","HERE","MANY","SAID",
-        "SAME","DOES","EACH","BOTH","WENT","WERE","YOUR","YEAR","DAYS","WEEK",
-        "LONG","TERM","TIME","REAL","EVER","NEXT","BEST","WORK","PLAY",
-        "DOWN","MOON","NEWS","SHOW","PLAN","MOVE","KEEP","FIND","FEEL","DONE",
-        "GOES","LETS","STAY","ONCE","NICE","HELP","THEM","USED",
-        "CAME","GONE","LEFT","SEEN","GAVE","HELD","SOLD","FELL","RISE",
-        "HITS","JUMP","TANK","DIPS","DROP","RUNS","GAPS",
-        "HUGE","FAST","EASY","SAFE","HARD","DARK","FULL","FREE","LIVE",
-        "TOLD","SENT","FELT","KNEW","ASKS",
-        "BEAT","MISS","WARN","CUTS","HIKE","FADE","RIPS","LEGS",
-        "ADDS","BUYS","SETS","GETS","PAYS","SAYS","TOPS","NEAR",
-        "LATE","PAST","WONT","CANT","DONT","ISNT","AINT",
-        "ABLE","AWAY","BLUE","BOOM","BUST","COOL","DATA","DEAL","DEEP",
-        "EARN","ELSE","FILL","FIRM","FLIP","FLOW","FUND","GAME","GREW","GROW",
-        "HALF","HASH","HEAR","HEAT","HINT","HOPE","HOUR","HURT","IDEA",
-        "JOIN","KICK","KING","LAND","LEAD","LEAN","LEND","LESS","LINE","LIST",
-        "LOSE","LOVE","MADE","MAIN","MARK","MASS","MEAN","MEET","MILD","MIND",
-        "MINT","MUST","NAME","NOTE","OPTS","PACE","PAID","PASS","PICK","POLL",
-        "POOL","POST","PUSH","RACE","RELY","REST","RICH","ROLE","ROLL","RULE",
-        "RUSH","SALE","SAVE","SHOW","SIDE","SIGN","SIZE","SKIP","SLOW","SNAP",
-        "SOAR","SORT","STEP","STOP","SWAP","TALK","TECH","TEST","TIED","TILL",
-        "TIPS","TOOK","TYPE","VARY","VIEW","VOTE","WAIT","WALK","WEAK","WINS",
-        "WORD","WRAP","BORN","BOLD","BUSY","COLD","DEAD","DEAR","DEBT","DENY",
-        "DRAW","DREW","DUAL","EDGE","EPIC","EVEN","EXAM","FACE","FACT","FAIL",
-        "FAIR","FAKE","FAME","FARM","FATE","FEAR","FEED","FEEL","FEET","FILE",
-        "FINE","FIRE","FIVE","FLAG","FLAT","FLEW","FOLD","FORE","FORK","FORM",
-        "FORT","FOUR","FUEL","FURY","FUSE","GATE","GAVE","GAZE","GEAR","GLOW",
-        "GOAL","GOLD","GRAB","GRAY","GREY","GRID","GRIM","GRIP","GRIT","GULF",
-        "GURU","GUYS","HALT","HANG","HARD","HARM","HATE","HAVE","HEAD","HEED",
-        "HELD","HIRE","HITS","HOLE","HOME","HOOK","HORN","HOST","HUNT","ICON",
-        "IDLE","INFO","IRON","ITEM","JOBS","JOHN","JUMP","KEEP","KILL","LACK",
-        "LAID","LAKE","LAME","LAMP","LANE","LAPS","LASH","LAWN","LAZY","LEAD",
-        "LEAK","LEAN","LEAP","LEND","LENS","LIEN","LIFT","LINK","LION","LIPS",
-        "LOAD","LOCK","LOOM","LOOP","LORE","LOUD","LUCK","LURE","LURK","LUST",
-        "MALL","MATH","MAZE","MILD","MILK","MILL","MOCK","MODE","MOOD","MORE",
-        "MOOT","MOVE","MYTH","NAIL","NAVY","NEED","NODE","NORM","NOSE","NULL",
-        "OATH","OBEY","ODDS","OKAY","ONES","ONTO","ORAL","OVER","OWNS","PACK",
-        "PACT","PAGE","PAIN","PAIR","PALM","PATH","PEAK","PEER","PESO","PILL",
-        "PIPE","PITS","PLOT","PLUG","PLUS","PODS","POKE","POLL","POND","POOR",
-        "PORK","POSE","POUR","PREY","PROD","PROF","PROP","PROS","PULL","PURE",
-        "PUTS","RACK","RAID","RAIL","RAIN","RAMP","RAND","RANK","RANT","RARE",
-        "RAYS","READ","REAR","RELY","REPO","RICH","RIDE","RIFE","RING","RIOT",
-        "ROAD","ROAM","ROAR","ROCK","RODE","ROOF","ROOM","ROOT","ROPE","ROSE",
-        "RUIN","SALE","SALT","SAND","SAVE","SCAN","SEAL","SEED","SELF","SHED",
-        "SHIP","SHOP","SHOT","SHUT","SILK","SING","SINK","SITE","SITS","SKEW",
-        "SKIN","SLIM","SLIP","SLOT","SLOW","SLUM","SNAP","SOIL","SOLD","SOLE",
-        "SOME","SOUL","SOUP","SPAN","SPIN","SPIT","SPOT","SPUN","STAR","STEM",
-        "STIR","STUB","STUN","SUCH","SUIT","SUNK","SURE","SWIM","TALE","TALL",
-        "TAPE","TAPS","TASK","TEAR","TEND","TENS","TEST","THAT","THEM","THEN",
-        "TICK","TIER","TILT","TIRE","TOLL","TONE","TOOL","TOPS","TORE","TORN",
-        "TOSS","TOUT","TOWN","TOYS","TRAP","TRIM","TRIO","TRIP","TROY","TUBE",
-        "TUCK","TUNE","TURN","TWIN","TYING","UGLY","UNIT","UPON","URGE","VAIN",
-        "VEIL","VERY","VEST","VETO","VIBE","VOID","WARY","WAYS","WEED","WELL",
-        "WENT","WHOM","WIDE","WIFE","WIKI","WILD","WIPE","WIRE","WISE","WISH",
-        "ZONE","ZOOM",
-        # Common 5-letter English words that slip through
-        "ABOUT","AFTER","AGAIN","AHEAD","ALLOW","ALONG","AMONG","APPLY","AVOID",
-        "BASIC","BELOW","BLACK","BOARD","BREAK","BRING","BROAD","BUILD","BUYER",
-        "CALLS","DAILY","EARLY","EMAIL","ENTER","EVERY","FALLS","FIRST","FIXED",
-        "FLOOR","FOCUS","FORCE","GIVEN","GOING","GOODS","GREAT","GREEN","GROUP",
-        "GROWN","HAPPY","HELLO","HOUSE","INDEX","INNER","ISSUE","LARGE","LATER",
-        "LAYER","LEARN","LEVEL","LIGHT","LIMIT","LOWER","MAJOR","MAYBE","MEDIA",
-        "MIGHT","MIXED","MODEL","MONTH","MOVED","MONEY","NOTES","OFFER","ORDER",
-        "OTHER","OWNED","PAPER","PARTY","PLACE","POINT","POWER","PRESS","PRICE",
-        "PRINT","QUITE","QUOTE","RAISE","RANGE","RAPID","RATIO","REACH","READY",
-        "REPLY","RESET","RIGHT","ROUND","SCALE","SCORE","SETUP","SHARE","SHORT",
-        "SHOWS","SIDES","SIGNS","SINCE","SMALL","SMART","SPACE","SPEAK","SPEND",
-        "SPLIT","STAGE","START","STATE","STILL","STORE","STORM","STORY","STUDY",
-        "STYLE","SUPER","SURGE","TABLE","TALKS","TAXES","TEAMS","THERE","THING",
-        "THINK","THIRD","THOSE","THREE","THROW","TIGHT","TODAY","TOPIC","TOTAL",
-        "TOUCH","TRACK","TRADE","TREND","TRIED","TRULY","TURNS","ULTRA","UNDER",
-        "UNION","UNTIL","UPPER","USING","USUAL","VALUE","WATCH","WEEKS","WHERE",
-        "WHICH","WHILE","WHITE","WHOLE","WHOSE","WIDER","WORLD","WORRY","WORSE",
-        "WORST","WOULD","WRITE","WRONG","YEARS","YIELD","YOURS","STOCK","HTTPS",
-        "AGAIN","CLOSE","COULD","DOING","DOING","DOING","EARLY","EIGHT","EVERY",
-        "EXACT","FALLS","FILED","FINAL","FIRST","FLOOR","FLIES","FUNDS","GAINS",
-        "GOING","GONNA","GROSS","HANDS","HAPPY","HEAVY","HOURS","IDEAS","KEEPS",
-        "KNOWN","LEAST","LEGAL","LOCAL","LOOKS","MAKES","MARKS","MEANS","MEETS",
-        "MICRO","MILES","MINUS","MOVES","NEEDS","NEVER","NIGHT","NORMS","NORTH",
-        "NOWIT","OFTEN","ONSET","OPENS","PAGES","PANEL","PLANS","PLAYS","POSES",
-        "PRIOR","PULLS","RATES","RATIO","RALLY","RANKS","READS","RISKS","ROLES",
-        "RULES","SALES","SEEMS","SHALL","SHOWS","SIDED","SIDES","SITES","SIXTH",
-        "SIZED","SLOWS","SOLID","SORTS","SOUTH","SPEND","SPINS","SPITE","SPOKE",
-        "STEPS","STOCK","STOPS","SUITS","SUPER","TAKES","TALKS","TASKS","TENTH",
-        "TERMS","TESTS","TEXTS","THEIR","THERE","THESE","THICK","THROW","TICKS",
-        "TIMES","TIRED","TITLE","TODOS","TOOLS","TOWNS","TRACE","TRAIL","TRUST",
-        "TRUTH","TWICE","TYPES","UNITS","UNTIL","USUAL","VALID","VIEWS","VIRAL",
-        "VISIT","VOTES","WANTS","WASTE","WAVES","WELLS","WIDER","WINDS","WORKS",
-        "WORSE","WORST","YARDS","ZEROS",
-        # URL / tech terms (strip URLs first, but also add as safety net)
-        "HTTPS","HTTP","HTML","JSON","REST","APIS","REPO","WIKI","BLOG","FEED",
-        # TA / chart jargon
-        "CHART","CHOCH","MACD","VWAP","OHLC","OHCL","WICK","WICKS","BULL","BEAR",
-        # More common words confirmed slipping through
-        "BEING","BASED","PART","LOTS","IRAN","DOESN","CANT","WONT","ISNT",
-        "EVER","JUST","SOME","BACK","ALSO","ONLY","VERY","MUCH","MORE","MOST",
-        "LESS","LIKE","WELL","EVEN","HERE","SOME","CAME","GONE","LEFT","FELL",
-        # Reddit slang
-        "LMAO","LMFAO","LOL","OMG","WTF","SMH","TBH","IMO","IMHO","NGL","IRL",
-        "AMA","TIL","ELI","AFAIK","IIRC","TLDR","YMMV","RIP","GG","GJ",
-        "BRB","AFK","FYI","DIY","BTW","IDK","TBF","FUD","SHILL","APE","APES",
-        # Country/currency codes
-        "USA","JPY","CAD","AUD","CHF","CNY","INR",
-    }
-
-    for subreddit in subreddits:
-        for sort in ["hot", "new"]:
-            try:
-                url = f"https://www.reddit.com/r/{subreddit}/{sort}.json?limit=50"
-                resp = requests.get(url, headers=headers, timeout=10)
-                if resp.status_code == 429:
-                    print(f"[Reddit] Rate limited on r/{subreddit}, retrying after 15s...")
-                    time.sleep(15)
-                    resp = requests.get(url, headers=headers, timeout=10)
-                if resp.status_code != 200:
-                    print(f"[Reddit] r/{subreddit}/{sort} returned {resp.status_code}, skipping")
-                    continue
-                if "json" not in resp.headers.get("content-type", ""):
-                    print(f"[Reddit] r/{subreddit}/{sort} returned non-JSON, skipping")
-                    continue
-                posts = resp.json().get("data", {}).get("children", [])
-                for post in posts:
-                    pd = post.get("data", {})
-                    post_id = pd.get("id", "")
-                    hours_ago = (time.time() - pd.get("created_utc", 0)) / 3600
-                    if hours_ago > 24:
-                        continue
-                    # Strip URLs before uppercasing to prevent URL fragments (e.g. HTTPS) scoring as tickers
-                    raw = pd.get("title", "") + " " + pd.get("selftext", "")
-                    text = url_pattern.sub(" ", raw).upper()
-                    recency = 2.0 if hours_ago < 6 else (1.5 if hours_ago < 12 else 1.0)
-                    weight = recency * min(1 + pd.get("ups", 1) // 200, 4)
-
-                    mentioned = set()
-
-                    # $-prefixed: strong intentional signal — allow 2-5 chars
-                    for t in dollar_pattern.findall(text):
-                        if t not in NOISE and 2 <= len(t) <= 5 and t.isalpha():
-                            counts[t] += weight * 3
-                            post_counts[t].add(post_id)
-                            mentioned.add(t)
-
-                    # Plain caps: require 4+ chars to avoid catching OR/GO/IT/DAY etc.
-                    for t in ticker_pattern.findall(text):
-                        if t not in NOISE and 4 <= len(t) <= 5 and t.isalpha():
-                            counts[t] += weight
-                            post_counts[t].add(post_id)
-                            mentioned.add(t)
-
-                    if mentioned and pd.get("ups", 0) > 50:
-                        feed.append({
-                            "id":        post_id,
-                            "title":     pd.get("title", "")[:120],
-                            "subreddit": subreddit,
-                            "ups":       pd.get("ups", 0),
-                            "tickers":   sorted(mentioned - NOISE)[:5],
-                            "hours_ago": round(hours_ago, 1),
-                            "url":       f"https://reddit.com{pd.get('permalink', '')}",
-                        })
-                time.sleep(1.2)
-            except Exception:
-                continue
-
-    seen_ids = set()
-    unique_feed = []
-    for item in feed:
-        post_id = item.get("id") or item.get("url", "")
-        if post_id not in seen_ids:
-            seen_ids.add(post_id)
-            unique_feed.append(item)
-    unique_feed.sort(key=lambda x: x["ups"], reverse=True)
-
-    # Require both a minimum weighted score AND mentions across ≥2 distinct posts.
-    # The post diversity check is the key guard against one viral post with a
-    # common word (e.g. "or", "go") artificially inflating a count.
-    lookup = {t: int(c) for t, c in counts.items()
-              if c >= 8 and len(post_counts[t]) >= 2}
-    return lookup, unique_feed[:40]
+    if not cats["gainers"] and not cats["active"]:
+        cats["source"] = "unavailable"
+        print("[Movers] !! NO UNIVERSE this run - the screener is down, so In Play Today will be empty")
+    else:
+        print(f"[Movers] {len(cats['gainers'])} gainers + {len(cats['active'])} most active "
+              f"({len(cats['gainers'] & cats['active'])} on both) via {cats['source']}")
+    return cats
 
 
 # ── Polygon.io news buzz ────────────────────────────────────────────────────────
@@ -403,6 +226,7 @@ def get_yahoo_trending():
 # it a partial outage is invisible: the scan completes, writes valid JSON, and
 # the homepage just quietly loses cards.
 _FINNHUB_FAILS = {}
+_FINNHUB_CALLS = [0]   # requests made this run; the analysis loop paces on it (60/min free tier)
 
 
 def _redact(url):
@@ -438,6 +262,7 @@ def _finnhub_get(url, retries=2, timeout=5):
         return None
 
     for attempt in range(retries + 1):
+        _FINNHUB_CALLS[0] += 1
         try:
             resp = requests.get(url, timeout=timeout)
         except Exception as e:
@@ -559,11 +384,60 @@ def get_stocktwits_sentiment(ticker):
     }
 
 
+def get_stocktwits_trending():
+    """{ticker: rank} from StockTwits' trending equities (rank 1 = hottest).
+    Best-effort: an empty dict just means no StockTwits points this run."""
+    try:
+        r = requests.get("https://api.stocktwits.com/api/2/trending/symbols/equities.json",
+                         headers={"User-Agent": _SOCIAL_UA}, timeout=10)
+        if r.status_code != 200:
+            print(f"[scan.py] StockTwits trending: HTTP {r.status_code}")
+            return {}
+        syms = [x.get("symbol", "") for x in r.json().get("symbols", [])]
+    except Exception as e:
+        print(f"[scan.py] StockTwits trending failed: {e}")
+        return {}
+    syms = [t for t in syms if _SYMBOL.fullmatch(t)]
+    print(f"[scan.py] StockTwits trending: {len(syms)} equities")
+    return {t: i + 1 for i, t in enumerate(syms)}
+
+
+# Social chatter in the day-trade score (Nov 2026). Reddit blocked GitHub's
+# runners (HTTP 403) from at least Aug 2026, so the buzz signal had quietly
+# become news-only. ApeWisdom (Reddit mentions, aggregated) and StockTwits
+# trending replace it. Both are scored by RANK, not raw count: ApeWisdom's #1
+# runs over 1,000 mentions while #25 has about 20, and news counts run under
+# 20, so adding raw counts together would let one source drown the others.
+# The buzz signal takes the stronger of news and social, so it still tops out
+# at 15 and MAX_POSSIBLE_SCORE is unchanged.
+APEWISDOM_TIERS  = ((10, 15), (25, 10), (50, 5))   # rank <= cut -> points
+STOCKTWITS_TIERS = ((10, 10), (30, 5))
+
+
+def social_buzz(ticker, apewisdom, st_trending):
+    """(points, signal) for the strongest social read, or (0, None)."""
+    best = (0, None)
+    aw = (apewisdom or {}).get(ticker)
+    if aw and aw.get("rank") and aw.get("mentions", 0) >= APEWISDOM_MIN_MENT:
+        for cut, pts in APEWISDOM_TIERS:
+            if aw["rank"] <= cut:
+                best = (pts, f"Reddit chatter (#{aw['rank']}, {aw['mentions']} mentions)")
+                break
+    rank = (st_trending or {}).get(ticker)
+    if rank:
+        for cut, pts in STOCKTWITS_TIERS:
+            if rank <= cut:
+                if pts > best[0]:
+                    best = (pts, f"StockTwits trending (#{rank})")
+                break
+    return best
+
+
 def enrich_chatter(reddit_cards, apewisdom, result_map):
-    """Broaden + enrich the Market Chatter cards with the new social sources,
-    WITHOUT touching the day-trade buzz scoring (ApeWisdom counts run far larger
-    than the Reddit/Polygon scale, so they'd skew the buzz thresholds):
-      - pull in top ApeWisdom names the Reddit/news pass missed (momentum names
+    """Broaden + enrich the Market Chatter cards with the social sources. (The
+    day-trade score reads ApeWisdom too, but by rank in social_buzz(): its raw
+    counts run far larger than news counts.)
+      - pull in top ApeWisdom names the news pass missed (momentum names
         often surface there first), up to CHATTER_MAX cards;
       - attach a `social` block to every card: broad Reddit mention count, the
         24h mention trend (velocity), and StockTwits bull/bear sentiment."""
@@ -688,10 +562,21 @@ def compute_emerging_chatter(apewisdom, limit=3):
 _QUOTED = {}   # ticker -> the quote + profile basics, kept even for names rejected below
 
 
-def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_label="Reddit",
-                  buzz_source="news", finviz_set=None):
+def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_label="News",
+                  buzz_source="news", finviz_set=None, social=None):
     quote = get_stock_quote(ticker)
     if not quote or quote.get("c", 0) == 0:
+        return None
+
+    # Most-active names are often down on the day, and those never score. Skip
+    # their profile call: with a real universe, Finnhub's 60-a-minute limit is
+    # the binding constraint.
+    if (quote.get("dp") or 0) <= 0:
+        _QUOTED[ticker] = {
+            "price": quote.get("c"), "change_pct": quote.get("dp"), "open": quote.get("o"),
+            "high": quote.get("h"), "low": quote.get("l"), "prev_close": quote.get("pc"),
+            "market_cap": None, "sector": None,
+        }
         return None
 
     profile = get_company_profile(ticker)
@@ -740,21 +625,22 @@ def analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending=None, buzz_lab
         score += 5
         signals.append(f"Moderate move ({change_pct:+.1f}%)")
 
-    reddit_mentions = buzz_lookup.get(ticker, 0)
-    # Thresholds differ by source: Polygon article counts are smaller than Reddit weighted scores
-    if buzz_source in ("news", "mixed"):
-        _hi, _mid, _lo = 12, 6, 3
-    else:
-        _hi, _mid, _lo = 20, 10, 5
+    # Buzz (max 15): the stronger of news coverage and social chatter.
+    reddit_mentions = buzz_lookup.get(ticker, 0)   # news mentions; key name kept for the page
+    # Polygon article counts run small; the Yahoo-trending fallback is scaled 1..20
+    _hi, _mid, _lo = (12, 6, 3) if buzz_source in ("news", "mixed") else (20, 10, 5)
+    news_pts, news_sig = 0, None
     if reddit_mentions >= _hi:
-        score += 15
-        signals.append(f"High {buzz_label} buzz ({reddit_mentions})")
+        news_pts, news_sig = 15, f"High {buzz_label} buzz ({reddit_mentions})"
     elif reddit_mentions >= _mid:
-        score += 10
-        signals.append(f"{buzz_label} buzz ({reddit_mentions})")
+        news_pts, news_sig = 10, f"{buzz_label} buzz ({reddit_mentions})"
     elif reddit_mentions >= _lo:
-        score += 5
-        signals.append(f"{buzz_label} activity ({reddit_mentions})")
+        news_pts, news_sig = 5, f"{buzz_label} activity ({reddit_mentions})"
+    soc_pts, soc_sig = social_buzz(ticker, *(social or ({}, {})))
+    if news_pts or soc_pts:
+        pts, sig = (news_pts, news_sig) if news_pts >= soc_pts else (soc_pts, soc_sig)
+        score += pts
+        signals.append(sig)
 
     st_rank = (yahoo_trending or {}).get(ticker, 0)
     if st_rank:
@@ -1308,7 +1194,7 @@ def write_universe_snapshot(start, universe, results, day_trades, yahoo_cats, bu
             "finviz": tk in finviz_set,
             "board_rank": board.get(tk),
         })
-    head = {"scan_time": start.isoformat(), "source": "Yahoo day gainers + most active",
+    head = {"scan_time": start.isoformat(), "source": yahoo_cats.get("source") or "unknown",
             "buzz_source": buzz_source, "count": len(rows),
             "quoted": sum(1 for x in rows if x["price"] is not None)}
     lines = [json.dumps(json_safe(x), allow_nan=False) for x in rows]
@@ -1326,44 +1212,36 @@ def run():
     print("[scan.py] Starting market scan...")
     start = datetime.now(timezone.utc)
 
-    yahoo_cats = get_yahoo_movers_categorized()
-    # Exclude losers — they fail the change_pct > 0 check anyway, wasting Finnhub quota
+    yahoo_cats = get_market_movers()
     universe   = sorted(yahoo_cats["gainers"] | yahoo_cats["active"])
-    print(f"[scan.py] Universe: {len(universe)} tickers (gainers + active only)")
+    print(f"[scan.py] Universe: {len(universe)} tickers (gainers + most active)")
 
     print("[scan.py] Fetching Yahoo trending tickers...")
     yahoo_trending = get_yahoo_trending()
 
-    print("[scan.py] Fetching Reddit buzz...")
-    reddit_lookup, reddit_feed = get_reddit_buzz()
-    print(f"[scan.py] Reddit: {len(reddit_lookup)} tickers with buzz")
+    # Social chatter: ApeWisdom (Reddit mentions) + StockTwits trending. These
+    # replaced the direct Reddit scrape, which GitHub's runners can't reach.
+    print("[scan.py] Fetching social chatter (ApeWisdom + StockTwits)...")
+    apewisdom   = get_apewisdom_buzz()
+    st_trending = get_stocktwits_trending()
 
     print("[scan.py] Fetching Polygon.io news buzz...")
     news_lookup, news_feed = get_polygon_news_buzz(POLYGON_API_KEY)
     print(f"[scan.py] News: {len(news_lookup)} tickers in news")
 
-    # Polygon news is always primary; merge Reddit counts as bonus when available
+    # Polygon news drives Highly Discussed and the news side of the buzz score
     buzz_lookup = dict(news_lookup)
     buzz_feed   = news_feed
-    if reddit_lookup:
-        for ticker, count in reddit_lookup.items():
-            buzz_lookup[ticker] = buzz_lookup.get(ticker, 0) + count
-        buzz_source = "mixed" if news_lookup else "reddit"
-        if not news_lookup:
-            buzz_feed = reddit_feed
-    else:
-        buzz_source = "news" if news_lookup else "none"
+    buzz_source = "news" if news_lookup else "none"
 
-    # Yahoo Trending as guaranteed fallback when both Polygon and Reddit fail
+    # Yahoo Trending as guaranteed fallback when Polygon news fails
     if not buzz_lookup and yahoo_trending:
         buzz_lookup = {ticker: (21 - rank) for ticker, rank in yahoo_trending.items()}
         buzz_source = "trending"
         buzz_feed   = []
         print(f"[scan.py] Buzz fallback: Yahoo Trending ({len(buzz_lookup)} tickers)")
 
-    buzz_label = ("Reddit"   if buzz_source == "reddit"
-                  else "Trending" if buzz_source == "trending"
-                  else "News")
+    buzz_label = "Trending" if buzz_source == "trending" else "News"
     print(f"[scan.py] Buzz source: {buzz_source} ({len(buzz_lookup)} tickers)")
 
     print("[scan.py] Fetching Finviz unusual volume...")
@@ -1374,11 +1252,13 @@ def run():
     for i, ticker in enumerate(universe, 1):
         if i % 10 == 0:
             print(f"[scan.py] Analyzing {i}/{len(universe)}: {ticker}")
+        calls_before = _FINNHUB_CALLS[0]
         result = analyze_stock(ticker, yahoo_cats, buzz_lookup, yahoo_trending, buzz_label,
-                               buzz_source, finviz_set)
+                               buzz_source, finviz_set, social=(apewisdom, st_trending))
         if result:
             results.append(result)
-        time.sleep(1.1)
+        # One second per Finnhub call keeps the 60-a-minute free tier happy
+        time.sleep(1.05 * max(1, _FINNHUB_CALLS[0] - calls_before))
 
     # Sector leadership pass — applied before categorize so the +5 bonus
     # can lift a stock over the day-trade score cutoff.
@@ -1389,7 +1269,6 @@ def run():
     )
 
     print("[scan.py] Enriching Market Chatter (ApeWisdom + StockTwits)...")
-    apewisdom   = get_apewisdom_buzz()
     chatter_map = {c["ticker"]: c for c in (day_trades + reddit_cards)}
     reddit_cards = enrich_chatter(reddit_cards, apewisdom, chatter_map)
     chatter_emerging = compute_emerging_chatter(apewisdom)
@@ -1459,6 +1338,8 @@ def run():
         "scan_time":        start.isoformat(),
         "next_scan_info":   NEXT_SCAN_INFO,
         "total_scanned":    len(universe),
+        "universe_source":  yahoo_cats.get("source"),
+        "social_sources":   {"apewisdom": len(apewisdom), "stocktwits_trending": len(st_trending)},
         "day_trades":       day_trades,
         "buzz_source":      buzz_source,
         "reddit_cards":     reddit_cards,
