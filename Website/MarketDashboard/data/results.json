@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-11-17T23:00:45.086023+00:00",
+  "scan_time": "2026-11-17T23:53:21.794375+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 63,
   "universe_source": "Yahoo screener (custom): gainers + most active",
@@ -18,14 +18,13 @@
       "low": 16.7,
       "open": 24.105,
       "prev_close": 7.47,
-      "score": 68,
+      "score": 60,
       "signals": [
         "Top gainer (+156.4%)",
         "High volume",
         "Strong move (+156.4%)",
-        "Reddit chatter (#2, 401 mentions)",
-        "Yahoo trending (#2)",
-        "Unusual volume (Finviz)",
+        "Reddit chatter (#2, 402 mentions)",
+        "Yahoo trending (#3)",
         "Sector leader (Biotechnology)"
       ],
       "reddit_mentions": 0,
@@ -34,7 +33,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SLS.png",
       "weburl": "https://www.sellaslifesciences.com/",
-      "yahoo_trending_rank": 2,
+      "yahoo_trending_rank": 3,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -45,7 +44,7 @@
           "surprise_pct": 1.0
         }
       },
-      "score_normalized": 96
+      "score_normalized": 85
     },
     {
       "ticker": "BILL",
@@ -57,12 +56,11 @@
       "low": 55.13,
       "open": 56.76,
       "prev_close": 57.63,
-      "score": 47,
+      "score": 39,
       "signals": [
         "Top gainer (+12.6%)",
         "Strong move (+12.6%)",
-        "Yahoo trending (#13)",
-        "Unusual volume (Finviz)",
+        "Yahoo trending (#20)",
         "Closing strong",
         "Sector leader (Technology)"
       ],
@@ -72,7 +70,7 @@
       "is_active": false,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/BILL.png",
       "weburl": "https://www.bill.com/",
-      "yahoo_trending_rank": 13,
+      "yahoo_trending_rank": 20,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -81,43 +79,6 @@
           "estimate": 0.98,
           "beat": true,
           "surprise_pct": 20.2
-        }
-      },
-      "score_normalized": 66
-    },
-    {
-      "ticker": "SHAZ",
-      "name": "SharonAI Holdings Inc",
-      "sector": "Technology",
-      "current_price": 22.59,
-      "change_pct": 12.2206,
-      "high": 23.86,
-      "low": 18.5,
-      "open": 19.81,
-      "prev_close": 20.13,
-      "score": 39,
-      "signals": [
-        "Top gainer (+12.2%)",
-        "Strong move (+12.2%)",
-        "Reddit chatter (#47, 16 mentions)",
-        "Unusual volume (Finviz)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 720724522.9999999,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950959300836.png",
-      "weburl": "",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": -1.14,
-          "estimate": -0.52,
-          "beat": false,
-          "surprise_pct": -119.1
         }
       },
       "score_normalized": 55
@@ -160,36 +121,6 @@
       "score_normalized": 51
     },
     {
-      "ticker": "ENR",
-      "name": "Energizer Holdings, Inc.",
-      "sector": "Consumer products",
-      "current_price": 27.4,
-      "change_pct": 12.5719,
-      "high": 27.76,
-      "low": 25.06,
-      "open": 26.465,
-      "prev_close": 24.34,
-      "score": 34,
-      "signals": [
-        "Top gainer (+12.6%)",
-        "Strong move (+12.6%)",
-        "Unusual volume (Finviz)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 1666891870.9999998,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ENR.png",
-      "weburl": "https://www.energizerholdings.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 48
-    },
-    {
       "ticker": "SPCX",
       "name": "Space Exploration Technologies Corp",
       "sector": "Telecommunication",
@@ -203,10 +134,10 @@
       "signals": [
         "High volume",
         "Good move (+3.2%)",
-        "Reddit chatter (#10, 66 mentions)",
+        "Reddit chatter (#10, 67 mentions)",
         "Closing strong"
       ],
-      "reddit_mentions": 2,
+      "reddit_mentions": 3,
       "market_cap": 1865494891559.0,
       "is_gainer": false,
       "is_active": true,
@@ -224,13 +155,85 @@
         }
       },
       "score_normalized": 46
+    },
+    {
+      "ticker": "APMD",
+      "name": "Apnimed Inc",
+      "sector": "Pharmaceuticals",
+      "current_price": 17.8,
+      "change_pct": 9.3366,
+      "high": 17.89,
+      "low": 15.86,
+      "open": 16.03,
+      "prev_close": 16.28,
+      "score": 31,
+      "signals": [
+        "Top gainer (+9.3%)",
+        "Strong move (+9.3%)",
+        "Closing strong",
+        "Sector leader (Pharmaceuticals)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 677749053.0000001,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "",
+      "weburl": "https://apnimed.com",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.99,
+          "estimate": -0.62,
+          "beat": false,
+          "surprise_pct": -59.1
+        }
+      },
+      "score_normalized": 44
+    },
+    {
+      "ticker": "BLSM",
+      "name": "BlossomHill Therapeutics Inc",
+      "sector": "N/A",
+      "current_price": 15.13,
+      "change_pct": 10.8425,
+      "high": 15.37,
+      "low": 13.09,
+      "open": 13.69,
+      "prev_close": 13.65,
+      "score": 31,
+      "signals": [
+        "Top gainer (+10.8%)",
+        "Strong move (+10.8%)",
+        "Closing strong",
+        "Sector leader (N/A)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 433863986.00000006,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "",
+      "weburl": "https://bhtherapeutics.com",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -1.29,
+          "estimate": -0.92,
+          "beat": false,
+          "surprise_pct": -39.7
+        }
+      },
+      "score_normalized": 44
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
     {
       "ticker": "NVDA",
-      "mentions": 6,
+      "mentions": 7,
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
       "current_price": 155.46,
@@ -242,17 +245,17 @@
       "market_cap": 3762973985291.0,
       "score": 0,
       "signals": [
-        "News buzz (6 mentions)",
+        "News buzz (7 mentions)",
         "Yahoo trending (#1)"
       ],
-      "reddit_mentions": 6,
+      "reddit_mentions": 7,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": 1,
       "social": {
-        "trend_pct": 66,
-        "reddit": 1984,
-        "st_bull": 89,
+        "trend_pct": 71,
+        "reddit": 2083,
+        "st_bull": 62,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -272,29 +275,29 @@
       "score_normalized": 0
     },
     {
-      "ticker": "GOOG",
-      "mentions": 4,
-      "name": "Alphabet Inc.",
+      "ticker": "META",
+      "mentions": 3,
+      "name": "Meta Platforms, Inc.",
       "sector": "Media",
-      "current_price": 277.6,
-      "change_pct": -1.3013,
-      "high": 281.61,
-      "low": 276.05,
-      "open": 281.03,
-      "prev_close": 281.26,
-      "market_cap": 3488053680000.0,
+      "current_price": 618.87,
+      "change_pct": -1.2037,
+      "high": 627.48,
+      "low": 613.51,
+      "open": 624.21,
+      "prev_close": 626.41,
+      "market_cap": 1601254889968.0,
       "score": 0,
       "signals": [
-        "News buzz (4 mentions)"
+        "News buzz (3 mentions)"
       ],
-      "reddit_mentions": 4,
+      "reddit_mentions": 3,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -34,
-        "reddit": 44,
-        "st_bull": 46,
+        "trend_pct": 25,
+        "reddit": 15,
+        "st_bull": 38,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -305,38 +308,43 @@
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 2.67,
-          "estimate": 3.11,
-          "beat": false,
-          "surprise_pct": -14.1
+          "actual": 7.4,
+          "estimate": 6.87,
+          "beat": true,
+          "surprise_pct": 7.7
         }
       },
       "score_normalized": 0
     },
     {
-      "ticker": "GOOGL",
-      "mentions": 4,
-      "name": "Alphabet Inc.",
-      "sector": "Media",
-      "current_price": 280.2,
-      "change_pct": -1.2407,
-      "high": 284.09,
-      "low": 278.46,
-      "open": 283.4,
-      "prev_close": 283.72,
-      "market_cap": 3488053680000.0,
-      "score": 0,
+      "ticker": "SPCX",
+      "name": "Space Exploration Technologies Corp",
+      "sector": "Telecommunication",
+      "current_price": 141.7,
+      "change_pct": 3.1596,
+      "high": 142.11,
+      "low": 137.39,
+      "open": 138.55,
+      "prev_close": 137.36,
+      "score": 33,
       "signals": [
-        "News buzz (4 mentions)"
+        "High volume",
+        "Good move (+3.2%)",
+        "Reddit chatter (#10, 67 mentions)",
+        "Closing strong"
       ],
-      "reddit_mentions": 4,
+      "reddit_mentions": 3,
+      "market_cap": 1865494891559.0,
       "is_gainer": false,
-      "is_active": false,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SPCX.png",
+      "weburl": "https://www.spacex.com",
       "yahoo_trending_rank": null,
+      "mentions": 3,
       "social": {
-        "trend_pct": -59,
-        "reddit": 36,
-        "st_bull": 62,
+        "trend_pct": -3,
+        "reddit": 67,
+        "st_bull": 100,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -347,13 +355,13 @@
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 2.67,
-          "estimate": 3.11,
-          "beat": false,
-          "surprise_pct": -14.1
+          "actual": 0.45,
+          "estimate": 0.14,
+          "beat": true,
+          "surprise_pct": 230.6
         }
       },
-      "score_normalized": 0
+      "score_normalized": 46
     },
     {
       "ticker": "SLS",
@@ -365,14 +373,13 @@
       "low": 16.7,
       "open": 24.105,
       "prev_close": 7.47,
-      "score": 68,
+      "score": 60,
       "signals": [
         "Top gainer (+156.4%)",
         "High volume",
         "Strong move (+156.4%)",
-        "Reddit chatter (#2, 401 mentions)",
-        "Yahoo trending (#2)",
-        "Unusual volume (Finviz)",
+        "Reddit chatter (#2, 402 mentions)",
+        "Yahoo trending (#3)",
         "Sector leader (Biotechnology)"
       ],
       "reddit_mentions": 0,
@@ -381,12 +388,12 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SLS.png",
       "weburl": "https://www.sellaslifesciences.com/",
-      "yahoo_trending_rank": 2,
-      "mentions": 401,
+      "yahoo_trending_rank": 3,
+      "mentions": 402,
       "social": {
-        "trend_pct": 3910,
-        "reddit": 401,
-        "st_bull": 81,
+        "trend_pct": 3920,
+        "reddit": 402,
+        "st_bull": 95,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -403,7 +410,7 @@
           "surprise_pct": 1.0
         }
       },
-      "score_normalized": 96
+      "score_normalized": 85
     },
     {
       "ticker": "MU",
@@ -417,10 +424,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 157,
+      "mentions": 163,
       "social": {
-        "trend_pct": 37,
-        "reddit": 157,
+        "trend_pct": 39,
+        "reddit": 163,
         "sources": [
           "Reddit"
         ]
@@ -449,10 +456,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 111,
+      "mentions": 120,
       "social": {
-        "trend_pct": 10,
-        "reddit": 111,
+        "trend_pct": 14,
+        "reddit": 120,
         "sources": [
           "Reddit"
         ]
@@ -475,9 +482,9 @@
       "ticker": "SLS",
       "name": "Sellas Life Sciences Group Inc",
       "sector": "Biotechnology",
-      "mentions": 401,
+      "mentions": 402,
       "prev": 10,
-      "trend_pct": 3910,
+      "trend_pct": 3920,
       "current_price": 19.15,
       "change_pct": 156.3588,
       "market_cap": 1522827893.0
@@ -487,8 +494,8 @@
       "name": "ServiceNow, Inc.",
       "sector": "Technology",
       "mentions": 33,
-      "prev": 9,
-      "trend_pct": 267,
+      "prev": 10,
+      "trend_pct": 230,
       "current_price": 92.9,
       "change_pct": -6.511,
       "market_cap": 103146062850.99998
@@ -1184,6 +1191,58 @@
   },
   "reddit_feed": [
     {
+      "id": "12353cb4a9917287a4c49fc947449d1878cafdb4d5046e3ef07ad0c3c6e68613",
+      "title": "Lunar Outpost Opens New Colorado Headquarters, Scales Production to Meet Demand for Industrial Space Infrastructure",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "NVDA"
+      ],
+      "hours_ago": 0.9,
+      "url": "https://www.globenewswire.com/news-release/2026/11/17/3405305/0/en/lunar-outpost-opens-new-colorado-headquarters-scales-production-to-meet-demand-for-industrial-space-infrastructure.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "5129d1da0f39b73fd054cd9217ef375c7411b48f8866f4f3c2456b4e83c85b41",
+      "title": "$1,000 Would Buy About 12 Anthropic Shares at the Top of the Expected IPO Range. Would That Be a Smart Bet?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "META",
+        "METAM",
+        "SPCX"
+      ],
+      "hours_ago": 1.4,
+      "url": "https://www.fool.com/investing/2026/11/17/usd1-000-would-buy-about-12-anthropic-shares-at-the-top-of-the-ipo-range-would-that-be-a-smart-bet/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "META",
+        "SPCX"
+      ]
+    },
+    {
+      "id": "072c6b5bee09875eb6d2b60202c492dc9b15f81b43917a46d506ce1718a2bcfc",
+      "title": "Stock Market Today, Nov. 17: Stocks Slide on AI Chip and Tech Pressures, Salesforce Plummets 9%",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "CRM",
+        "NVDA",
+        "UNH",
+        "COIN",
+        "HOOD"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/17/stock-market-today-nov-17-stocks-slide-on-ai-chip-and-tech-pressures-salesforce-plummets-9/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
+    },
+    {
       "id": "6b63ea2115ab51f926eb2e8493abf2850e44579e8c0219d9f74233bcb2034ac6",
       "title": "Nvidia Sales Double Under an Interim CEO: Rapid Earnings Reaction",
       "subreddit": "The Motley Fool",
@@ -1191,7 +1250,7 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 1.2,
+      "hours_ago": 2.0,
       "url": "https://www.fool.com/investing/2026/11/17/nvidia-sales-double-under-an-interim-ceo-rapid-earnings-reaction/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1208,7 +1267,7 @@
         "MU",
         "NVDA"
       ],
-      "hours_ago": 1.3,
+      "hours_ago": 2.1,
       "url": "https://www.fool.com/investing/2026/11/17/is-sk-hynix-the-better-artificial-intelligence-ai-memory-stock-compared-with-micron/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1225,123 +1284,11 @@
         "INTC",
         "AMD"
       ],
-      "hours_ago": 1.4,
+      "hours_ago": 2.3,
       "url": "https://www.fool.com/investing/2026/11/17/intel-stock-has-given-back-about-60-since-june-is-it-a-buy-now/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "AMD"
-      ]
-    },
-    {
-      "id": "335cb606cead8b13ffcd27ff2dd57504c5f77f9e63fddf121115d04ad885302a",
-      "title": "Worried About Nvidia? 3 Artificial Intelligence (AI) Stocks That May Be Safer Buys Right Now",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN",
-        "AMZN"
-      ],
-      "hours_ago": 2.5,
-      "url": "https://www.fool.com/investing/2026/11/17/worried-about-nvidia-3-artificial-intelligence-ai-stocks-that-may-be-safer-buys-right-now/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "GOOG",
-        "GOOGL"
-      ]
-    },
-    {
-      "id": "f23cb847ab2236eaf84949e965071dd5d696ef787d0a1999708458053db32426",
-      "title": "CoreWeave Stock Is Down 70% From Its High. Could a Huge Rebound Come in 2027?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "CRWV",
-        "NVDA"
-      ],
-      "hours_ago": 2.7,
-      "url": "https://www.fool.com/investing/2026/11/17/coreweave-stock-is-down-70-from-its-high-could-a-huge-rebound-come-in-2027/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "f22cd6ea05202764efde01275ff436bccd1544a36039fcd9d0e8abd706ba5ab8",
-      "title": "The Justice Department Is Investigating the Company at the Center of Nvidia\u2019s Jensen Huang Scandal",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "NVDA",
-        "SPCX"
-      ],
-      "hours_ago": 2.9,
-      "url": "https://www.fool.com/investing/2026/11/17/the-justice-department-is-investigating-the-company-at-the-center-of-nvidia-s-jensen-huang-scandal/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "c51c8dde763256448915484d629ac966dc65ce3645605a83432d38aac62c8975",
-      "title": "Prediction: SpaceX Stock Could Go Parabolic After Anthropic's IPO. Here's Why.",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "SPCX",
-        "AMZN",
-        "GOOG",
-        "GOOGL",
-        "GOOGM"
-      ],
-      "hours_ago": 3.0,
-      "url": "https://www.fool.com/investing/2026/11/17/prediction-spacex-stock-could-go-parabolic-after-anthropic-s-ipo-here-s-why/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "GOOG",
-        "GOOGL"
-      ]
-    },
-    {
-      "id": "1c2af00cf93c389109fe78e704575018e6ef9dbef26413951a4483000101401b",
-      "title": "4 Dates That Could Move the Stock Market in Epic Fashion This Week. Here's What Investors Need to Know.",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "NVDA",
-        "AMZN",
-        "GOOG",
-        "GOOGL",
-        "GOOGM"
-      ],
-      "hours_ago": 3.0,
-      "url": "https://www.fool.com/investing/2026/11/17/4-dates-that-could-move-the-stock-market-in-epic-fashion-this-week-here-s-what-investors-need-to-know/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA",
-        "GOOG",
-        "GOOGL"
-      ]
-    },
-    {
-      "id": "39181961a34a8ad310935ef45c36aff2acc97deaf17a38619cbfcd4575ba1137",
-      "title": "Deadline Alert: Alphabet Inc. Investors Have Until December 1, 2026 to Seek Lead Plaintiff Role in Securities Fraud Clas",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN"
-      ],
-      "hours_ago": 3.0,
-      "url": "https://www.globenewswire.com/news-release/2026/11/17/3405143/34548/en/deadline-alert-alphabet-inc-investors-have-until-december-1-2026-to-seek-lead-plaintiff-role-in-securities-fraud-class-action-glancy-prongay-wolke-rotter-llp-reminds-investors.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "GOOG",
-        "GOOGL"
       ]
     }
   ]
