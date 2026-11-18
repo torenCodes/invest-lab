@@ -1,13 +1,50 @@
 {
-  "scan_time": "2026-11-18T22:38:05.369339+00:00",
+  "scan_time": "2026-11-18T23:26:33.824102+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 64,
   "universe_source": "Yahoo screener (custom): gainers + most active",
   "social_sources": {
     "apewisdom": 100,
-    "stocktwits_trending": 28
+    "stocktwits_trending": 27
   },
   "day_trades": [
+    {
+      "ticker": "S",
+      "name": "SentinelOne Inc",
+      "sector": "Technology",
+      "current_price": 23.34,
+      "change_pct": 10.3546,
+      "high": 23.525,
+      "low": 21.35,
+      "open": 21.73,
+      "prev_close": 21.15,
+      "score": 39,
+      "signals": [
+        "Top gainer (+10.4%)",
+        "Strong move (+10.4%)",
+        "Yahoo trending (#19)",
+        "Closing strong",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 7361239036.0,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/S.png",
+      "weburl": "https://www.sentinelone.com/",
+      "yahoo_trending_rank": 19,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.08,
+          "estimate": 0.07,
+          "beat": true,
+          "surprise_pct": 9.4
+        }
+      },
+      "score_normalized": 55
+    },
     {
       "ticker": "TJX",
       "name": "The TJX Companies, Inc.",
@@ -18,16 +55,15 @@
       "low": 134.05,
       "open": 137.01,
       "prev_close": 129.85,
-      "score": 44,
+      "score": 39,
       "signals": [
         "Top gainer (+8.0%)",
         "Strong move (+8.0%)",
-        "StockTwits trending (#27)",
         "Yahoo trending (#12)",
         "Closing strong",
         "Sector leader (Retail)"
       ],
-      "reddit_mentions": 0,
+      "reddit_mentions": 1,
       "market_cap": 142831630486.99997,
       "is_gainer": true,
       "is_active": false,
@@ -44,44 +80,38 @@
           "surprise_pct": 1.6
         }
       },
-      "score_normalized": 62
+      "score_normalized": 55
     },
     {
-      "ticker": "NTSK",
-      "name": "Netskope, Inc.",
-      "sector": "Technology",
-      "current_price": 23.505,
-      "change_pct": 12.7338,
-      "high": 23.7433,
-      "low": 20.76,
-      "open": 20.9,
-      "prev_close": 20.85,
-      "score": 41,
+      "ticker": "GLSI",
+      "name": "Greenwich Lifesciences Inc",
+      "sector": "Biotechnology",
+      "current_price": 20.58,
+      "change_pct": 10.0535,
+      "high": 21.98,
+      "low": 18.2401,
+      "open": 18.6,
+      "prev_close": 18.7,
+      "score": 36,
       "signals": [
-        "Top gainer (+12.7%)",
-        "Strong move (+12.7%)",
-        "StockTwits trending (#10)",
+        "Top gainer (+10.1%)",
+        "Strong move (+10.1%)",
+        "StockTwits trending (#17)",
         "Closing strong",
-        "Sector leader (Technology)"
+        "Sector leader (Biotechnology)"
       ],
       "reddit_mentions": 0,
-      "market_cap": 8519054193.0,
+      "market_cap": 274482507.0,
       "is_gainer": true,
       "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950402593546.png",
-      "weburl": "https://www.netskope.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950371254446.png",
+      "weburl": "https://greenwichlifesciences.com",
       "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": -0.03,
-          "estimate": -0.07,
-          "beat": true,
-          "surprise_pct": 56.4
-        }
+        "recent": null
       },
-      "score_normalized": 58
+      "score_normalized": 51
     },
     {
       "ticker": "BRBR",
@@ -112,78 +142,6 @@
         "recent": null
       },
       "score_normalized": 48
-    },
-    {
-      "ticker": "TENB",
-      "name": "Tenable Holdings, Inc",
-      "sector": "Technology",
-      "current_price": 44.68,
-      "change_pct": 15.7513,
-      "high": 45.14,
-      "low": 39,
-      "open": 39.05,
-      "prev_close": 38.6,
-      "score": 34,
-      "signals": [
-        "Top gainer (+15.8%)",
-        "Strong move (+15.8%)",
-        "Yahoo trending (#19)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 4033994040.9999995,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/TENB.png",
-      "weburl": "https://www.tenable.com/",
-      "yahoo_trending_rank": 19,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.63,
-          "estimate": 0.52,
-          "beat": true,
-          "surprise_pct": 21.6
-        }
-      },
-      "score_normalized": 48
-    },
-    {
-      "ticker": "ABSI",
-      "name": "Absci Corp",
-      "sector": "Biotechnology",
-      "current_price": 8.18,
-      "change_pct": 7.9156,
-      "high": 8.73,
-      "low": 7.6,
-      "open": 7.745,
-      "prev_close": 7.58,
-      "score": 31,
-      "signals": [
-        "Top gainer (+7.9%)",
-        "Strong move (+7.9%)",
-        "Closing strong",
-        "Sector leader (Biotechnology)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 1309413296.0,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950410775616.png",
-      "weburl": "https://www.absci.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": -0.19,
-          "estimate": -0.21,
-          "beat": true,
-          "surprise_pct": 7.5
-        }
-      },
-      "score_normalized": 44
     },
     {
       "ticker": "BLMN",
@@ -220,13 +178,48 @@
         }
       },
       "score_normalized": 44
+    },
+    {
+      "ticker": "BLSH",
+      "name": "Bullish",
+      "sector": "Financial Services",
+      "current_price": 20.36,
+      "change_pct": 5.6565,
+      "high": 22.01,
+      "low": 19.63,
+      "open": 21.215,
+      "prev_close": 19.27,
+      "score": 31,
+      "signals": [
+        "Top gainer (+5.7%)",
+        "Strong move (+5.7%)",
+        "Unusual volume (Finviz)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 2896323469.0,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950814801126.png",
+      "weburl": "https://bullish.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.12,
+          "estimate": 0.09,
+          "beat": true,
+          "surprise_pct": 34.2
+        }
+      },
+      "score_normalized": 44
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
     {
       "ticker": "NVDA",
-      "mentions": 6,
+      "mentions": 5,
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
       "current_price": 150.96,
@@ -238,16 +231,16 @@
       "market_cap": 3746586161804.0,
       "score": 0,
       "signals": [
-        "News buzz (6 mentions)"
+        "News buzz (5 mentions)"
       ],
-      "reddit_mentions": 6,
+      "reddit_mentions": 5,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -14,
-        "reddit": 1588,
-        "st_bull": 60,
+        "trend_pct": -25,
+        "reddit": 1491,
+        "st_bull": 79,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -267,27 +260,29 @@
       "score_normalized": 0
     },
     {
-      "ticker": "LEN",
-      "mentions": 2,
-      "name": "Lennar Corporation",
-      "sector": "Consumer products",
-      "current_price": 82.91,
-      "change_pct": 0.6923,
-      "high": 84.61,
-      "low": 81.04,
-      "open": 81.75,
-      "prev_close": 82.34,
-      "market_cap": 19515145978.0,
+      "ticker": "AMZN",
+      "mentions": 3,
+      "name": "Amazon.com Inc",
+      "sector": "Retail",
+      "current_price": 267.74,
+      "change_pct": 3.8195,
+      "high": 268.29,
+      "low": 259.51,
+      "open": 259.81,
+      "prev_close": 257.89,
+      "market_cap": 2788600238640.0,
       "score": 0,
       "signals": [
-        "News buzz (2 mentions)"
+        "News buzz (3 mentions)",
+        "Yahoo trending (#7)"
       ],
-      "reddit_mentions": 2,
+      "reddit_mentions": 3,
       "is_gainer": false,
       "is_active": false,
-      "yahoo_trending_rank": null,
+      "yahoo_trending_rank": 7,
       "social": {
-        "reddit": 2,
+        "trend_pct": 857,
+        "reddit": 67,
         "st_bull": 100,
         "st_msgs": 30,
         "sources": [
@@ -299,26 +294,26 @@
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 1.19,
-          "estimate": 1.31,
+          "actual": 1.89,
+          "estimate": 2.0,
           "beat": false,
-          "surprise_pct": -9.2
+          "surprise_pct": -5.6
         }
       },
       "score_normalized": 0
     },
     {
-      "ticker": "ABR",
+      "ticker": "QSR",
       "mentions": 2,
-      "name": "Arbor Realty Trust, Inc.",
-      "sector": "Real Estate",
-      "current_price": 1.16,
-      "change_pct": 1.7544,
-      "high": 1.23,
-      "low": 1.1,
-      "open": 1.125,
-      "prev_close": 1.14,
-      "market_cap": 209961345.0,
+      "name": "Restaurant Brands International Inc.",
+      "sector": "Hotels, Restaurants & Leisure",
+      "current_price": 73.87,
+      "change_pct": 0.0677,
+      "high": 74.39,
+      "low": 72.9,
+      "open": 72.9,
+      "prev_close": 73.82,
+      "market_cap": 33313267117.000004,
       "score": 0,
       "signals": [
         "News buzz (2 mentions)"
@@ -329,7 +324,7 @@
       "yahoo_trending_rank": null,
       "social": {
         "reddit": 2,
-        "st_bull": 50,
+        "st_bull": 92,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -340,10 +335,10 @@
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 0.08,
-          "estimate": 0.07,
+          "actual": 1.1,
+          "estimate": 1.1,
           "beat": true,
-          "surprise_pct": 9.3
+          "surprise_pct": 0.3
         }
       },
       "score_normalized": 0
@@ -360,11 +355,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 187,
+      "mentions": 184,
       "social": {
-        "trend_pct": 76,
-        "reddit": 187,
-        "st_bull": 95,
+        "trend_pct": 66,
+        "reddit": 184,
+        "st_bull": 93,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -395,10 +390,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 120,
+      "mentions": 113,
       "social": {
-        "trend_pct": -24,
-        "reddit": 120,
+        "trend_pct": -28,
+        "reddit": 113,
         "sources": [
           "Reddit"
         ]
@@ -427,10 +422,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 108,
+      "mentions": 110,
       "social": {
-        "trend_pct": 59,
-        "reddit": 108,
+        "trend_pct": 67,
+        "reddit": 110,
         "sources": [
           "Reddit"
         ]
@@ -453,9 +448,9 @@
       "ticker": "AMZN",
       "name": "Amazon.com Inc",
       "sector": "Retail",
-      "mentions": 65,
-      "prev": 8,
-      "trend_pct": 712,
+      "mentions": 67,
+      "prev": 7,
+      "trend_pct": 857,
       "current_price": 267.74,
       "change_pct": 3.8195,
       "market_cap": 2788600238640.0
@@ -464,9 +459,9 @@
       "ticker": "UNH",
       "name": "UnitedHealth Group Incorporated",
       "sector": "Health Care",
-      "mentions": 50,
+      "mentions": 51,
       "prev": 6,
-      "trend_pct": 733,
+      "trend_pct": 750,
       "current_price": 349.91,
       "change_pct": -10.2058,
       "market_cap": 365294176644.0
@@ -475,9 +470,9 @@
       "ticker": "GME",
       "name": "GameStop Corp.",
       "sector": "Retail",
-      "mentions": 28,
+      "mentions": 27,
       "prev": 9,
-      "trend_pct": 211,
+      "trend_pct": 200,
       "current_price": 26.53,
       "change_pct": 4.6136,
       "market_cap": 12794145847.0
@@ -1187,6 +1182,72 @@
   },
   "reddit_feed": [
     {
+      "id": "7ce865e58bc60ce9ca5b0d77c3678888bc9dfac2196b6f3d3f279c01e3b45ed5",
+      "title": "Stock Market Today, Nov. 18: S&P 500 Breaks Key Support as Fed Minutes Signal More Rate Hikes Ahead",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "UNH",
+        "HUM",
+        "TJX",
+        "AMZN"
+      ],
+      "hours_ago": 0.8,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-s-and-p-500-breaks-key-support-as-fed-minutes-signal-more-rate-hikes-ahead/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMZN"
+      ]
+    },
+    {
+      "id": "1539681ade2cc0d962607d8fef4332611cfeaef168d38c7f0693e91e7fd36172",
+      "title": "Invesco QQQ Is 14% Below Its October Record. Here's Where I Think It Will Be in 2030.",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "QQQ",
+        "MU"
+      ],
+      "hours_ago": 1.1,
+      "url": "https://www.fool.com/investing/2026/11/18/invesco-qqq-is-14-below-its-october-record-here-s-where-i-think-it-will-be-in-2030/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "MU"
+      ]
+    },
+    {
+      "id": "b6c5767c03ea83c520101e1effa17f1ad575a7abc4fc357fa06de12de15ba968",
+      "title": "It\u2019s Official: Anthropic Prices Its IPO at $83 a Share. Here\u2019s What We Know (and What We Don\u2019t)",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "SPCX"
+      ],
+      "hours_ago": 1.2,
+      "url": "https://www.fool.com/investing/2026/11/18/it-s-official-anthropic-prices-its-ipo-at-usd83-a-share-here-s-what-we-know-and-what-we-don-t/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "SPCX"
+      ]
+    },
+    {
+      "id": "cae1f45ddff54183f59577bc2ad3a3fbc0bc0fe0180ea13612b58b5ca35112da",
+      "title": "Target\u2019s Shoppers Are Coming Back as Store Traffic Jumps 5% After Falling 2.2% a Year Ago. Can the Momentum Last?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "TGT",
+        "AMZN",
+        "WMT"
+      ],
+      "hours_ago": 1.3,
+      "url": "https://www.fool.com/investing/2026/11/18/targets-shoppers-are-coming-back-as-store-traffic-jumps-5-after-falling-22-a-year-ago-can-the-momentum-last/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMZN"
+      ]
+    },
+    {
       "id": "9cdeb1b1a9514d5fd1a9c6eb27f569633dcb037add68a8fd31fc1b37492e0c98",
       "title": "Stock Market Today, Nov. 18: Nvidia Slips on Strong Results as Succession and China Business Risks Weigh",
       "subreddit": "The Motley Fool",
@@ -1196,28 +1257,12 @@
         "AMD",
         "AVGO"
       ],
-      "hours_ago": 0.8,
+      "hours_ago": 1.6,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-nvidia-slips-on-strong-results-as-succession-and-china-business-risks-weigh/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "NVDA",
         "AMD"
-      ]
-    },
-    {
-      "id": "23b9f0b33c0fe63b34a9891052e1ccae3fd863a3419f92e9e4ebca5a7ed94b76",
-      "title": "MRP DEADLINE NOTICE: ROSEN, A GLOBALLY RECOGNIZED LAW FIRM, Encourages Millrose Properties, Inc. Investors to Secure Cou",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "LEN",
-        "MRP"
-      ],
-      "hours_ago": 0.8,
-      "url": "https://www.globenewswire.com/news-release/2026/11/18/3406194/673/en/mrp-deadline-notice-rosen-a-globally-recognized-law-firm-encourages-millrose-properties-inc-investors-to-secure-counsel-before-important-deadline-in-securities-class-action-mrp.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "LEN"
       ]
     },
     {
@@ -1230,7 +1275,7 @@
         "NVDA",
         "IREN"
       ],
-      "hours_ago": 0.9,
+      "hours_ago": 1.7,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-coreweave-slides-as-nvidia-s-blowout-earnings-fail-to-ease-debt-concerns/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1247,29 +1292,11 @@
         "NVDA",
         "SNOW"
       ],
-      "hours_ago": 1.0,
+      "hours_ago": 1.8,
       "url": "https://www.fool.com/investing/2026/11/18/where-will-palantir-stock-be-in-1-year/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "NVDA"
-      ]
-    },
-    {
-      "id": "f3f7a4fded6c926012b5efbf093b422fa2c50316197e9de8036417f885eff241",
-      "title": "Scott+Scott Attorneys at Law LLP Is Investigating Arbor Realty Trust, Inc. (NYSE: ABR) on Behalf of Shareholders",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "ABR",
-        "ABRpD",
-        "ABRpE",
-        "ABRpF"
-      ],
-      "hours_ago": 1.6,
-      "url": "https://www.globenewswire.com/news-release/2026/11/18/3406144/0/en/scott-scott-attorneys-at-law-llp-is-investigating-arbor-realty-trust-inc-nyse-abr-on-behalf-of-shareholders.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "ABR"
       ]
     },
     {
@@ -1280,7 +1307,7 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 1.8,
+      "hours_ago": 2.7,
       "url": "https://www.fool.com/investing/2026/11/18/nvidia-just-demolished-earnings-but-the-stock-is-still-plunging-the-reason-is-obvious/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1288,56 +1315,18 @@
       ]
     },
     {
-      "id": "af8aaf49f58234de0ccbbf404b12491f6075234a95b469fe461eae02bb988607",
-      "title": "Deadline Alert: Arbor Realty Trust, Inc. Investors Have Until January 8, 2027 to Seek Lead Plaintiff Role in Securities ",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "ABR",
-        "ABRpD",
-        "ABRpE",
-        "ABRpF"
-      ],
-      "hours_ago": 2.6,
-      "url": "https://www.globenewswire.com/news-release/2026/11/18/3406127/34548/en/deadline-alert-arbor-realty-trust-inc-investors-have-until-january-8-2027-to-seek-lead-plaintiff-role-in-securities-fraud-class-action-glancy-prongay-wolke-rotter-llp-reminds-inves.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "ABR"
-      ]
-    },
-    {
-      "id": "28a74afad2b57ca3a9c9ef6c0d1ebef98a42ec71660565cfc751f9e32433a192",
-      "title": "SpaceX Is Now Nvidia's Biggest Stock Holding, Ahead of Intel. Here's What That Says About SpaceX.",
+      "id": "8f7e1de3e289261077ea4bbb469deb6e5ae9b2422231e1b6438b381d8e2c05ad",
+      "title": "Restaurant Brands: 3 Key Takeaways for Long-Term Investors",
       "subreddit": "The Motley Fool",
       "ups": 0,
       "tickers": [
-        "SPCX",
-        "NVDA",
-        "INTC"
+        "QSR"
       ],
-      "hours_ago": 2.7,
-      "url": "https://www.fool.com/investing/2026/11/18/spacex-is-now-nvidia-s-biggest-stock-holding-ahead-of-intel-here-s-what-that-says-about-spacex/?source=iedfolrf0000001",
+      "hours_ago": 3.4,
+      "url": "https://www.fool.com/earnings/takeaways/2026/11/18/restaurant-brands-3-key-takeaways-for-long-term-investors/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "SPCX",
-        "NVDA"
-      ]
-    },
-    {
-      "id": "f8f4a3ba2ef22297bca9cb571ae935af31411ff2380db22192dca2dfe25deb67",
-      "title": "INVESTOR ALERT: Everest Group, Ltd. (EG) Investors with Substantial Losses May Seek to Lead Class Action Lawsuit Before ",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "EG",
-        "LEN",
-        "QBTS"
-      ],
-      "hours_ago": 3.1,
-      "url": "https://www.globenewswire.com/news-release/2026/11/18/3406118/0/en/investor-alert-everest-group-ltd-eg-investors-with-substantial-losses-may-seek-to-lead-class-action-lawsuit-before-december-28-2026-deadline-rgrd-law.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "LEN"
+        "QSR"
       ]
     }
   ]
