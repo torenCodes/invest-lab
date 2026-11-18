@@ -1,17 +1,17 @@
 {
-  "scan_time": "2026-11-18T17:30:39.000686+00:00",
+  "scan_time": "2026-11-18T19:30:26.283322+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Cautious",
-    "score": 0,
+    "score": -1,
     "headline": "More of the inputs lean negative than positive, so the backdrop reads as choppy and unsettled. Volume is running above its 50-day norm, so there is real participation behind these moves rather than a thin-tape drift.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "+0.08%",
-        "read": "Firm",
-        "tone": "good"
+        "value": "-0.21%",
+        "read": "Flat",
+        "tone": "neutral"
       },
       {
         "label": "Market trend",
@@ -23,7 +23,7 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-3.5%",
+        "value": "-3.8%",
         "read": "Weak",
         "tone": "bad"
       },
@@ -37,7 +37,7 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "24.6",
+        "value": "24.3",
         "read": "Elevated",
         "tone": "neutral"
       },
@@ -49,22 +49,22 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-11-18T17:30:40.694463+00:00",
+    "updated": "2026-11-18T19:30:29.093468+00:00",
     "session": {
-      "change_pct": 0.08,
-      "from_open_pct": -0.05,
-      "range_pos": 0.756,
-      "sectors_green": 7,
+      "change_pct": -0.21,
+      "from_open_pct": -0.34,
+      "range_pos": 0.497,
+      "sectors_green": 5,
       "sectors_total": 11,
       "live": true,
-      "detail": "+0.08% vs prior close \u00b7 at the highs (76% of range) \u00b7 7/11 sectors green"
+      "detail": "-0.21% vs prior close \u00b7 mid-range (50% of range) \u00b7 5/11 sectors green"
     },
     "participation": {
-      "ratio": 1.111,
+      "ratio": 1.112,
       "expected": 0.95,
-      "adjusted": 1.169,
+      "adjusted": 1.17,
       "direction": "fading",
-      "drift_pct": -24.3,
+      "drift_pct": -24.2,
       "detail": "51M vs 46M avg"
     }
   }
