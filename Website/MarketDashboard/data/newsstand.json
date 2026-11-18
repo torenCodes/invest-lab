@@ -1,10 +1,10 @@
 {
-  "scan_time": "2026-11-17T21:30:48.706749+00:00",
+  "scan_time": "2026-11-18T03:08:45.417035+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Risk-Off",
-    "score": -5,
-    "headline": "Today's tape is working against the longer-term trend: SPY -1.01% and off its highs, with only 0 of 11 sectors green. Most of the inputs are negative, and together they show a market working against rising prices.",
+    "score": -4,
+    "headline": "Today's tape is working against the longer-term trend: SPY -1.01% and off its highs, with only 0 of 11 sectors green. Most of the inputs are negative, and together they show a market working against rising prices. Volume is running above its 50-day norm, so there is real participation behind these moves rather than a thin-tape drift.",
     "signals": [
       {
         "label": "Today's tape",
@@ -30,9 +30,9 @@
       {
         "label": "Participation",
         "sub": "Volume vs 50-day norm",
-        "value": "-1%",
-        "read": "Normal",
-        "tone": "neutral"
+        "value": "+11%",
+        "read": "Heavy",
+        "tone": "good"
       },
       {
         "label": "Volatility (VIX)",
@@ -49,23 +49,23 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-11-17T21:30:50.911113+00:00",
+    "updated": "2026-11-18T03:08:47.750320+00:00",
     "session": {
       "change_pct": -1.01,
       "from_open_pct": -0.81,
       "range_pos": 0.426,
       "sectors_green": 0,
       "sectors_total": 11,
-      "live": true,
-      "detail": "-1.01% vs prior close \u00b7 mid-range (43% of range) \u00b7 0/11 sectors green"
+      "live": false,
+      "detail": "-1.01% vs prior close \u00b7 mid-range (43% of range) \u00b7 0/11 sectors green \u00b7 last completed session"
     },
     "participation": {
-      "ratio": 0.989,
+      "ratio": 1.111,
       "expected": 0.95,
-      "adjusted": 1.041,
+      "adjusted": 1.169,
       "direction": "fading",
-      "drift_pct": -31.8,
-      "detail": "45M vs 46M avg"
+      "drift_pct": -24.3,
+      "detail": "51M vs 46M avg"
     }
   }
 }
