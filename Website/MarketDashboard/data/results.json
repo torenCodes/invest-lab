@@ -1,11 +1,11 @@
 {
-  "scan_time": "2026-11-18T21:32:22.172478+00:00",
+  "scan_time": "2026-11-18T21:38:19.996824+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 64,
   "universe_source": "Yahoo screener (custom): gainers + most active",
   "social_sources": {
     "apewisdom": 100,
-    "stocktwits_trending": 30
+    "stocktwits_trending": 29
   },
   "day_trades": [
     {
@@ -22,7 +22,7 @@
       "signals": [
         "Top gainer (+8.0%)",
         "Strong move (+8.0%)",
-        "StockTwits trending (#17)",
+        "StockTwits trending (#18)",
         "Yahoo trending (#11)",
         "Closing strong",
         "Sector leader (Retail)"
@@ -84,6 +84,43 @@
       "score_normalized": 55
     },
     {
+      "ticker": "ABSI",
+      "name": "Absci Corp",
+      "sector": "Biotechnology",
+      "current_price": 8.18,
+      "change_pct": 7.9156,
+      "high": 8.73,
+      "low": 7.6,
+      "open": 7.745,
+      "prev_close": 7.58,
+      "score": 36,
+      "signals": [
+        "Top gainer (+7.9%)",
+        "Strong move (+7.9%)",
+        "StockTwits trending (#24)",
+        "Closing strong",
+        "Sector leader (Biotechnology)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 1309413296.0,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950410775616.png",
+      "weburl": "https://www.absci.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.19,
+          "estimate": -0.21,
+          "beat": true,
+          "surprise_pct": 7.5
+        }
+      },
+      "score_normalized": 51
+    },
+    {
       "ticker": "BRBR",
       "name": "BellRing Brands, Inc.",
       "sector": "Consumer products",
@@ -112,42 +149,6 @@
         "recent": null
       },
       "score_normalized": 48
-    },
-    {
-      "ticker": "ABSI",
-      "name": "Absci Corp",
-      "sector": "Biotechnology",
-      "current_price": 8.18,
-      "change_pct": 7.9156,
-      "high": 8.73,
-      "low": 7.6,
-      "open": 7.745,
-      "prev_close": 7.58,
-      "score": 31,
-      "signals": [
-        "Top gainer (+7.9%)",
-        "Strong move (+7.9%)",
-        "Closing strong",
-        "Sector leader (Biotechnology)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 1309413296.0,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950410775616.png",
-      "weburl": "https://www.absci.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": -0.19,
-          "estimate": -0.21,
-          "beat": true,
-          "surprise_pct": 7.5
-        }
-      },
-      "score_normalized": 44
     },
     {
       "ticker": "BLMN",
@@ -244,9 +245,9 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 11,
-        "reddit": 1809,
-        "st_bull": 71,
+        "trend_pct": 7,
+        "reddit": 1753,
+        "st_bull": 58,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -286,8 +287,8 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 62,
-        "reddit": 63,
+        "trend_pct": 59,
+        "reddit": 62,
         "st_bull": 91,
         "st_msgs": 30,
         "sources": [
@@ -361,11 +362,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 190,
+      "mentions": 188,
       "social": {
-        "trend_pct": 96,
-        "reddit": 190,
-        "st_bull": 92,
+        "trend_pct": 94,
+        "reddit": 188,
+        "st_bull": 91,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -396,10 +397,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 127,
+      "mentions": 125,
       "social": {
-        "trend_pct": -15,
-        "reddit": 127,
+        "trend_pct": -16,
+        "reddit": 125,
         "sources": [
           "Reddit"
         ]
@@ -476,9 +477,9 @@
       "ticker": "AAOI",
       "name": "Applied Optoelectronics, Inc.",
       "sector": "Communications",
-      "mentions": 27,
+      "mentions": 25,
       "prev": 6,
-      "trend_pct": 350,
+      "trend_pct": 317,
       "current_price": 40.79,
       "change_pct": -9.7966,
       "market_cap": 4104652824.0
@@ -1195,7 +1196,7 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 0.8,
+      "hours_ago": 0.9,
       "url": "https://www.fool.com/investing/2026/11/18/nvidia-just-demolished-earnings-but-the-stock-is-still-plunging-the-reason-is-obvious/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1213,7 +1214,7 @@
         "GOOGM",
         "GOOGN"
       ],
-      "hours_ago": 1.0,
+      "hours_ago": 1.1,
       "url": "https://www.fool.com/investing/2026/11/18/here-s-what-a-usd1-000-investment-in-alphabet-stock-could-be-worth-by-2035/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1231,7 +1232,7 @@
         "NVDA",
         "INTC"
       ],
-      "hours_ago": 1.6,
+      "hours_ago": 1.7,
       "url": "https://www.fool.com/investing/2026/11/18/spacex-is-now-nvidia-s-biggest-stock-holding-ahead-of-intel-here-s-what-that-says-about-spacex/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1250,7 +1251,7 @@
         "GOOGM",
         "GOOGN"
       ],
-      "hours_ago": 1.8,
+      "hours_ago": 1.9,
       "url": "https://www.fool.com/investing/2026/11/18/why-isn-t-alphabet-stock-taking-off-after-reporting-record-cloud-growth/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1269,7 +1270,7 @@
         "NVDA",
         "MSFT"
       ],
-      "hours_ago": 3.0,
+      "hours_ago": 3.1,
       "url": "https://www.fool.com/investing/2026/11/18/if-i-were-investing-my-first-1000-today-this-is-the-etf-id-buy-and-hold-for-decades/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
