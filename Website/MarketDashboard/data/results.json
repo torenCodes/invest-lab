@@ -1,11 +1,11 @@
 {
-  "scan_time": "2026-11-19T21:44:31.490474+00:00",
+  "scan_time": "2026-11-19T21:52:34.006329+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 64,
   "universe_source": "Yahoo screener (custom): gainers + most active",
   "social_sources": {
     "apewisdom": 100,
-    "stocktwits_trending": 30
+    "stocktwits_trending": 29
   },
   "day_trades": [
     {
@@ -121,11 +121,10 @@
       "low": 9.98,
       "open": 10.025,
       "prev_close": 9.51,
-      "score": 47,
+      "score": 42,
       "signals": [
         "Top gainer (+13.4%)",
         "Strong move (+13.4%)",
-        "StockTwits trending (#26)",
         "Yahoo trending (#14)",
         "Unusual volume (Finviz)",
         "Closing strong"
@@ -147,44 +146,7 @@
           "surprise_pct": -9.4
         }
       },
-      "score_normalized": 66
-    },
-    {
-      "ticker": "SVRA",
-      "name": "Savara Inc.",
-      "sector": "Biotechnology",
-      "current_price": 5.21,
-      "change_pct": 10.3814,
-      "high": 5.34,
-      "low": 4.73,
-      "open": 4.81,
-      "prev_close": 4.72,
-      "score": 44,
-      "signals": [
-        "Top gainer (+10.4%)",
-        "Strong move (+10.4%)",
-        "StockTwits trending (#10)",
-        "Unusual volume (Finviz)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 1121870549.2118642,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SVRA.png",
-      "weburl": "https://savarapharma.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": -0.17,
-          "estimate": -0.17,
-          "beat": false,
-          "surprise_pct": -2.0
-        }
-      },
-      "score_normalized": 62
+      "score_normalized": 59
     },
     {
       "ticker": "VVV",
@@ -216,6 +178,43 @@
         "recent": null
       },
       "score_normalized": 59
+    },
+    {
+      "ticker": "SVRA",
+      "name": "Savara Inc.",
+      "sector": "Biotechnology",
+      "current_price": 5.21,
+      "change_pct": 10.3814,
+      "high": 5.34,
+      "low": 4.73,
+      "open": 4.81,
+      "prev_close": 4.72,
+      "score": 39,
+      "signals": [
+        "Top gainer (+10.4%)",
+        "Strong move (+10.4%)",
+        "StockTwits trending (#12)",
+        "Unusual volume (Finviz)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 1121870549.2118642,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SVRA.png",
+      "weburl": "https://savarapharma.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.17,
+          "estimate": -0.17,
+          "beat": false,
+          "surprise_pct": -2.0
+        }
+      },
+      "score_normalized": 55
     }
   ],
   "buzz_source": "news",
@@ -241,9 +240,9 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -51,
-        "reddit": 918,
-        "st_bull": 36,
+        "trend_pct": -49,
+        "reddit": 922,
+        "st_bull": 64,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -283,8 +282,8 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 31,
-        "reddit": 42,
+        "trend_pct": 34,
+        "reddit": 43,
         "st_bull": 100,
         "st_msgs": 30,
         "sources": [
@@ -326,9 +325,9 @@
       "is_active": false,
       "yahoo_trending_rank": 19,
       "social": {
-        "trend_pct": 65,
-        "reddit": 162,
-        "st_bull": 82,
+        "trend_pct": 69,
+        "reddit": 164,
+        "st_bull": 75,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -359,11 +358,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 494,
+      "mentions": 496,
       "social": {
-        "trend_pct": 157,
-        "reddit": 494,
-        "st_bull": 27,
+        "trend_pct": 161,
+        "reddit": 496,
+        "st_bull": 62,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -426,10 +425,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 116,
+      "mentions": 115,
       "social": {
-        "trend_pct": -6,
-        "reddit": 116,
+        "trend_pct": -9,
+        "reddit": 115,
         "sources": [
           "Reddit"
         ]
@@ -452,9 +451,9 @@
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
       "sector": "Semiconductors",
-      "mentions": 494,
-      "prev": 192,
-      "trend_pct": 157,
+      "mentions": 496,
+      "prev": 190,
+      "trend_pct": 161,
       "current_price": 489.19,
       "change_pct": -7.7244,
       "market_cap": 807903080376.7192
@@ -463,9 +462,9 @@
       "ticker": "DOW",
       "name": "Dow Inc.",
       "sector": "Chemicals",
-      "mentions": 46,
-      "prev": 14,
-      "trend_pct": 229,
+      "mentions": 47,
+      "prev": 15,
+      "trend_pct": 213,
       "current_price": 30.25,
       "change_pct": -0.3951,
       "market_cap": 21890191014.8594
@@ -1179,7 +1178,7 @@
         "AMD",
         "INTC"
       ],
-      "hours_ago": 1.1,
+      "hours_ago": 1.3,
       "url": "https://www.fool.com/investing/2026/11/19/this-is-incredible-news-for-amd-stock-investors-hint-it-s-bad-news-for-intel/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1197,7 +1196,7 @@
         "NVDA",
         "MSFT"
       ],
-      "hours_ago": 1.7,
+      "hours_ago": 1.9,
       "url": "https://www.fool.com/investing/2026/11/19/can-300-month-voo-build-1-million-portfolio-yes/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1214,7 +1213,7 @@
         "AMD",
         "NVDA"
       ],
-      "hours_ago": 1.8,
+      "hours_ago": 2.0,
       "url": "https://www.fool.com/investing/2026/11/19/first-nvidia-now-amd-a-short-seller-just-put-its-china-business-under-the-microscope/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1230,7 +1229,7 @@
       "tickers": [
         "SPCX"
       ],
-      "hours_ago": 2.0,
+      "hours_ago": 2.2,
       "url": "https://www.fool.com/investing/2026/11/19/where-will-spacex-stock-be-in-2030/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1246,7 +1245,7 @@
         "SPCX",
         "ANT"
       ],
-      "hours_ago": 2.8,
+      "hours_ago": 2.9,
       "url": "https://www.fool.com/investing/2026/11/19/why-spacex-stock-is-down-today/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1265,7 +1264,7 @@
         "GOOGL",
         "GOOGM"
       ],
-      "hours_ago": 2.8,
+      "hours_ago": 2.9,
       "url": "https://www.fool.com/investing/2026/11/19/missed-the-anthropic-ipo-these-3-stocks-give-you-immediate-exposure/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1281,7 +1280,7 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 3.0,
+      "hours_ago": 3.1,
       "url": "https://www.fool.com/investing/2026/11/19/the-sp-500-is-flashing-warning-signs-heres-why-long-term-investors-should-stay-the-course/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1300,7 +1299,7 @@
         "GOOGN",
         "SPCX"
       ],
-      "hours_ago": 3.8,
+      "hours_ago": 3.9,
       "url": "https://www.fool.com/investing/2026/11/19/why-alphabet-stock-popped-today/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1320,7 +1319,7 @@
         "CDNS",
         "DIS"
       ],
-      "hours_ago": 3.8,
+      "hours_ago": 3.9,
       "url": "https://www.fool.com/coverage/better-buy/2026/11/19/adobe-vs-synopsys-which-technology-stock-is-a-better-buy-for-2027/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
