@@ -1,15 +1,15 @@
 {
-  "scan_time": "2026-11-19T17:30:32.033016+00:00",
+  "scan_time": "2026-11-19T19:30:31.132845+00:00",
   "next_scan_info": "Weekdays at 10:30am, 1pm, 4pm ET",
   "trading_conditions": {
     "verdict": "Risk-Off",
-    "score": -5,
-    "headline": "Today's tape is working against the longer-term trend: SPY -0.63% and off its highs, with only 1 of 11 sectors green. Most of the inputs are negative, and together they show a market working against rising prices. Volume is running above its 50-day norm, so there is real participation behind these moves rather than a thin-tape drift.",
+    "score": -6,
+    "headline": "Today's tape is working against the longer-term trend: SPY -1.27% and holding near the session low, with only 0 of 11 sectors green. Most of the inputs are negative, and together they show a market working against rising prices. Volume is running above its 50-day norm, so there is real participation behind these moves rather than a thin-tape drift.",
     "signals": [
       {
         "label": "Today's tape",
         "sub": "Session move + breadth",
-        "value": "-0.63%",
+        "value": "-1.27%",
         "read": "Weak",
         "tone": "bad"
       },
@@ -23,7 +23,7 @@
       {
         "label": "5-day momentum",
         "sub": "SPY one-week change",
-        "value": "-4.2%",
+        "value": "-4.8%",
         "read": "Weak",
         "tone": "bad"
       },
@@ -37,7 +37,7 @@
       {
         "label": "Volatility (VIX)",
         "sub": "Implied S&P volatility",
-        "value": "28.1",
+        "value": "27.9",
         "read": "High fear",
         "tone": "bad"
       },
@@ -49,20 +49,20 @@
         "tone": "neutral"
       }
     ],
-    "updated": "2026-11-19T17:30:34.297283+00:00",
+    "updated": "2026-11-19T19:30:32.991531+00:00",
     "session": {
-      "change_pct": -0.63,
-      "from_open_pct": -1.6,
-      "range_pos": 0.362,
-      "sectors_green": 1,
+      "change_pct": -1.27,
+      "from_open_pct": -2.24,
+      "range_pos": 0.151,
+      "sectors_green": 0,
       "sectors_total": 11,
       "live": true,
-      "detail": "-0.63% vs prior close \u00b7 mid-range (36% of range) \u00b7 1/11 sectors green"
+      "detail": "-1.27% vs prior close \u00b7 at the lows (15% of range) \u00b7 0/11 sectors green"
     },
     "participation": {
-      "ratio": 1.156,
+      "ratio": 1.157,
       "expected": 0.95,
-      "adjusted": 1.217,
+      "adjusted": 1.218,
       "direction": "fading",
       "drift_pct": -14.7,
       "detail": "54M vs 46M avg \u00b7 busier than this week normally runs"
