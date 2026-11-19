@@ -1,13 +1,52 @@
 {
-  "scan_time": "2026-11-19T22:41:49.888007+00:00",
+  "scan_time": "2026-11-19T23:39:08.013993+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 64,
   "universe_source": "Yahoo screener (custom): gainers + most active",
   "social_sources": {
     "apewisdom": 100,
-    "stocktwits_trending": 28
+    "stocktwits_trending": 27
   },
   "day_trades": [
+    {
+      "ticker": "INSM",
+      "name": "Insmed Incorporated",
+      "sector": "Biotechnology",
+      "current_price": 144.46,
+      "change_pct": 20.5843,
+      "high": 149.07,
+      "low": 118,
+      "open": 119.5,
+      "prev_close": 119.8,
+      "score": 56,
+      "signals": [
+        "Top gainer (+20.6%)",
+        "Strong move (+20.6%)",
+        "StockTwits trending (#14)",
+        "Yahoo trending (#3)",
+        "Unusual volume (Finviz)",
+        "Closing strong",
+        "Sector leader (Biotechnology)"
+      ],
+      "reddit_mentions": 2,
+      "market_cap": 30147242976.77212,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/INSM.png",
+      "weburl": "https://insmed.com/",
+      "yahoo_trending_rank": 3,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.46,
+          "estimate": -0.39,
+          "beat": false,
+          "surprise_pct": -19.1
+        }
+      },
+      "score_normalized": 79
+    },
     {
       "ticker": "ANT",
       "name": "Anthropic, PBC",
@@ -27,7 +66,7 @@
         "Yahoo trending (#1)",
         "Sector leader (Technology)"
       ],
-      "reddit_mentions": 3,
+      "reddit_mentions": 4,
       "market_cap": 1208225240000.0,
       "is_gainer": true,
       "is_active": true,
@@ -41,44 +80,6 @@
       "score_normalized": 77
     },
     {
-      "ticker": "INSM",
-      "name": "Insmed Incorporated",
-      "sector": "Biotechnology",
-      "current_price": 144.46,
-      "change_pct": 20.5843,
-      "high": 149.07,
-      "low": 118,
-      "open": 119.5,
-      "prev_close": 119.8,
-      "score": 48,
-      "signals": [
-        "Top gainer (+20.6%)",
-        "Strong move (+20.6%)",
-        "StockTwits trending (#12)",
-        "Yahoo trending (#3)",
-        "Closing strong",
-        "Sector leader (Biotechnology)"
-      ],
-      "reddit_mentions": 1,
-      "market_cap": 30147242976.77212,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/INSM.png",
-      "weburl": "https://insmed.com/",
-      "yahoo_trending_rank": 3,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": -0.46,
-          "estimate": -0.39,
-          "beat": false,
-          "surprise_pct": -19.1
-        }
-      },
-      "score_normalized": 68
-    },
-    {
       "ticker": "PDD",
       "name": "PDD Holdings Inc.",
       "sector": "Retail",
@@ -88,12 +89,12 @@
       "low": 82.02,
       "open": 82.52,
       "prev_close": 77.45,
-      "score": 44,
+      "score": 47,
       "signals": [
         "Top gainer (+11.0%)",
         "Strong move (+11.0%)",
-        "StockTwits trending (#18)",
-        "Yahoo trending (#16)",
+        "Yahoo trending (#17)",
+        "Unusual volume (Finviz)",
         "Closing strong",
         "Sector leader (Retail)"
       ],
@@ -103,10 +104,47 @@
       "is_active": false,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/PDD.png",
       "weburl": "https://www.pddholdings.com/",
-      "yahoo_trending_rank": 16,
+      "yahoo_trending_rank": 17,
       "earnings_info": {
         "upcoming": null,
         "recent": null
+      },
+      "score_normalized": 66
+    },
+    {
+      "ticker": "SVRA",
+      "name": "Savara Inc.",
+      "sector": "Biotechnology",
+      "current_price": 5.21,
+      "change_pct": 10.3814,
+      "high": 5.34,
+      "low": 4.73,
+      "open": 4.81,
+      "prev_close": 4.72,
+      "score": 44,
+      "signals": [
+        "Top gainer (+10.4%)",
+        "Strong move (+10.4%)",
+        "StockTwits trending (#8)",
+        "Unusual volume (Finviz)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 1121870549.2118642,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SVRA.png",
+      "weburl": "https://savarapharma.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.17,
+          "estimate": -0.17,
+          "beat": false,
+          "surprise_pct": -2.0
+        }
       },
       "score_normalized": 62
     },
@@ -120,12 +158,12 @@
       "low": 9.98,
       "open": 10.025,
       "prev_close": 9.51,
-      "score": 39,
+      "score": 42,
       "signals": [
         "Top gainer (+13.4%)",
         "Strong move (+13.4%)",
-        "StockTwits trending (#15)",
         "Yahoo trending (#20)",
+        "Unusual volume (Finviz)",
         "Closing strong"
       ],
       "reddit_mentions": 0,
@@ -145,7 +183,7 @@
           "surprise_pct": -9.4
         }
       },
-      "score_normalized": 55
+      "score_normalized": 59
     },
     {
       "ticker": "VVV",
@@ -157,14 +195,15 @@
       "low": 33.685,
       "open": 34.08,
       "prev_close": 33.37,
-      "score": 34,
+      "score": 42,
       "signals": [
         "Top gainer (+10.4%)",
         "Strong move (+10.4%)",
         "Yahoo trending (#18)",
+        "Unusual volume (Finviz)",
         "Closing strong"
       ],
-      "reddit_mentions": 1,
+      "reddit_mentions": 0,
       "market_cap": 4119770000.0000005,
       "is_gainer": true,
       "is_active": false,
@@ -175,50 +214,14 @@
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 48
-    },
-    {
-      "ticker": "ANTX",
-      "name": "AN2 Therapeutics Inc",
-      "sector": "Pharmaceuticals",
-      "current_price": 5.22,
-      "change_pct": 5.4545,
-      "high": 5.42,
-      "low": 4.815,
-      "open": 4.99,
-      "prev_close": 4.95,
-      "score": 31,
-      "signals": [
-        "Top gainer (+5.5%)",
-        "Strong move (+5.5%)",
-        "Closing strong",
-        "Sector leader (Pharmaceuticals)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 188579929.95757574,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950630397286.png",
-      "weburl": "https://www.an2therapeutics.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": -0.17,
-          "estimate": -0.2,
-          "beat": true,
-          "surprise_pct": 16.7
-        }
-      },
-      "score_normalized": 44
+      "score_normalized": 59
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
     {
       "ticker": "NVDA",
-      "mentions": 10,
+      "mentions": 8,
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
       "current_price": 145.98,
@@ -230,16 +233,16 @@
       "market_cap": 3680313573679.8164,
       "score": 0,
       "signals": [
-        "News buzz (10 mentions)"
+        "News buzz (8 mentions)"
       ],
-      "reddit_mentions": 10,
+      "reddit_mentions": 8,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -45,
-        "reddit": 907,
-        "st_bull": 67,
+        "trend_pct": -41,
+        "reddit": 883,
+        "st_bull": 79,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -259,106 +262,30 @@
       "score_normalized": 0
     },
     {
-      "ticker": "AMZN",
-      "mentions": 3,
-      "name": "Amazon.com Inc",
-      "sector": "Retail",
-      "current_price": 257.37,
-      "change_pct": -3.8732,
-      "high": 274,
-      "low": 256.75,
-      "open": 272.56,
-      "prev_close": 267.74,
-      "market_cap": 2907760751588.067,
-      "score": 0,
-      "signals": [
-        "News buzz (3 mentions)"
-      ],
-      "reddit_mentions": 3,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "trend_pct": 6,
-        "reddit": 69,
-        "st_bull": 80,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 1.89,
-          "estimate": 2.0,
-          "beat": false,
-          "surprise_pct": -5.6
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "MSFT",
-      "mentions": 3,
-      "name": "Microsoft Corporation",
-      "sector": "Technology",
-      "current_price": 498.3,
-      "change_pct": -1.9654,
-      "high": 526.49,
-      "low": 498.16,
-      "open": 519.5,
-      "prev_close": 508.29,
-      "market_cap": 3851224447360.6445,
-      "score": 0,
-      "signals": [
-        "News buzz (3 mentions)"
-      ],
-      "reddit_mentions": 3,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "trend_pct": 36,
-        "reddit": 45,
-        "st_bull": 100,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 4.89,
-          "estimate": 4.82,
-          "beat": true,
-          "surprise_pct": 1.4
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "AMD",
+      "mentions": 5,
       "name": "Advanced Micro Devices, Inc.",
       "sector": "Semiconductors",
       "current_price": 489.19,
       "change_pct": -7.7244,
+      "high": 555.01,
+      "low": 470.56,
+      "open": 542.17,
+      "prev_close": 530.14,
       "market_cap": 807903080376.7192,
       "score": 0,
-      "signals": [],
-      "reddit_mentions": 0,
+      "signals": [
+        "News buzz (5 mentions)",
+        "Yahoo trending (#5)"
+      ],
+      "reddit_mentions": 5,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 507,
+      "yahoo_trending_rank": 5,
       "social": {
-        "trend_pct": 164,
-        "reddit": 507,
-        "st_bull": 69,
+        "trend_pct": 172,
+        "reddit": 508,
+        "st_bull": 46,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -378,6 +305,48 @@
       "score_normalized": 0
     },
     {
+      "ticker": "ANT",
+      "name": "Anthropic, PBC",
+      "sector": "Technology",
+      "current_price": 97.17,
+      "change_pct": 17.0723,
+      "high": 115.1,
+      "low": 92.72,
+      "open": 111.5,
+      "prev_close": 83,
+      "score": 55,
+      "signals": [
+        "Top gainer (+17.1%)",
+        "High volume",
+        "Strong move (+17.1%)",
+        "StockTwits trending (#1)",
+        "Yahoo trending (#1)",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 4,
+      "market_cap": 1208225240000.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950839624896.png",
+      "weburl": "https://www.anthropic.com",
+      "yahoo_trending_rank": 1,
+      "mentions": 4,
+      "social": {
+        "reddit": 4,
+        "st_bull": 46,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 77
+    },
+    {
       "ticker": "SPCX",
       "name": "Space Exploration Technologies Corp",
       "sector": "Telecommunication",
@@ -391,10 +360,13 @@
       "is_active": false,
       "mentions": 159,
       "social": {
-        "trend_pct": 51,
+        "trend_pct": 45,
         "reddit": 159,
+        "st_bull": 59,
+        "st_msgs": 30,
         "sources": [
-          "Reddit"
+          "Reddit",
+          "StockTwits"
         ]
       },
       "earnings_info": {
@@ -421,10 +393,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 132,
+      "mentions": 133,
       "social": {
-        "trend_pct": 116,
-        "reddit": 132,
+        "trend_pct": 146,
+        "reddit": 133,
         "sources": [
           "Reddit"
         ]
@@ -440,6 +412,38 @@
         }
       },
       "score_normalized": 0
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "sector": "Semiconductors",
+      "current_price": 690.44,
+      "change_pct": -2.1027,
+      "market_cap": 813911942709.3949,
+      "score": 0,
+      "signals": [],
+      "reddit_mentions": 0,
+      "is_gainer": false,
+      "is_active": false,
+      "mentions": 115,
+      "social": {
+        "trend_pct": 2,
+        "reddit": 115,
+        "sources": [
+          "Reddit"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 33.42,
+          "estimate": 32.56,
+          "beat": true,
+          "surprise_pct": 2.6
+        }
+      },
+      "score_normalized": 0
     }
   ],
   "chatter_emerging": [
@@ -447,9 +451,9 @@
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
       "sector": "Semiconductors",
-      "mentions": 507,
-      "prev": 192,
-      "trend_pct": 164,
+      "mentions": 508,
+      "prev": 187,
+      "trend_pct": 172,
       "current_price": 489.19,
       "change_pct": -7.7244,
       "market_cap": 807903080376.7192
@@ -458,12 +462,23 @@
       "ticker": "DOW",
       "name": "Dow Inc.",
       "sector": "Chemicals",
-      "mentions": 50,
-      "prev": 15,
-      "trend_pct": 233,
+      "mentions": 51,
+      "prev": 16,
+      "trend_pct": 219,
       "current_price": 30.25,
       "change_pct": -0.3951,
       "market_cap": 21890191014.8594
+    },
+    {
+      "ticker": "ALL",
+      "name": "Allstate Corp",
+      "sector": "Insurance",
+      "mentions": 32,
+      "prev": 12,
+      "trend_pct": 167,
+      "current_price": 266.77,
+      "change_pct": 0.0675,
+      "market_cap": 65467711572.17803
     }
   ],
   "sector_rotation": {
@@ -1166,6 +1181,83 @@
   },
   "reddit_feed": [
     {
+      "id": "4e43c4a511c984fff60b49e72d5bc159065b61bc7881783c367e8bc2bcd28fa0",
+      "title": "Stock Market Today, Nov. 19: Stock Market Today, Nov. 19: Alphabet Shares Fall as Anthropic Nasdaq Debut Puts Fresh Valu",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "ANT",
+        "GOOG",
+        "GOOGL",
+        "GOOGM",
+        "GOOGN"
+      ],
+      "hours_ago": 0.9,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-stock-market-today-nov-19-alphabet-shares-fall-as-anthropic-nasdaq-debut-puts-fresh-value-on-google-s-stake/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "ANT",
+        "GOOG"
+      ]
+    },
+    {
+      "id": "7708101c9c112981a0aa11efb60c9d893b01ba5ee15879b70db33a817454300b",
+      "title": "This Beaten-Down Semiconductor Stock Could Soar in 2027",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "AVGO",
+        "GOOG",
+        "GOOGL",
+        "GOOGM",
+        "GOOGN"
+      ],
+      "hours_ago": 1.2,
+      "url": "https://www.fool.com/investing/2026/11/19/this-beaten-down-semiconductor-stock-could-soar-in-2027/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOOG"
+      ]
+    },
+    {
+      "id": "3baa6b2ff0bd89daa46145a9fa275fa47e34a8ee28d5226387e8239bb7355992",
+      "title": "Anthropic Jumped 17% on its Opening Day. Here's How That Ranks Among Big Tech IPOs",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "ANT",
+        "SPCX",
+        "META",
+        "METAM",
+        "UBER"
+      ],
+      "hours_ago": 1.3,
+      "url": "https://www.fool.com/investing/2026/11/19/anthropic-jumped-17-on-its-opening-day-here-s-how-that-ranks-among-big-tech-ipos/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "ANT",
+        "SPCX"
+      ]
+    },
+    {
+      "id": "29db4dba42946ef48cf7b11effd383f1de9096ad8e79d342de485f1987b5ecd0",
+      "title": "Stock Market Today, Nov. 19: Nvidia Slides as Investors Weigh CEO Transition Fallout Despite Strong Q3 Results",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "AVGO"
+      ],
+      "hours_ago": 1.6,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-nvidia-slides-as-investors-weigh-ceo-transition-fallout-despite-strong-q3-results/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA",
+        "AMD"
+      ]
+    },
+    {
       "id": "0e6567845be50c5ecadaaa792ad4d075400d8741deda61000452b0ff497ae0f4",
       "title": "NVIDIA Announces Upcoming Event for Financial Community",
       "subreddit": "GlobeNewswire Inc.",
@@ -1174,7 +1266,7 @@
         "NVDA",
         "AMKR"
       ],
-      "hours_ago": 0.7,
+      "hours_ago": 1.7,
       "url": "https://www.globenewswire.com/news-release/2026/11/19/3407166/0/en/nvidia-announces-upcoming-event-for-financial-community.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1193,7 +1285,7 @@
         "GOOGN",
         "META"
       ],
-      "hours_ago": 0.7,
+      "hours_ago": 1.7,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-alphabet-shares-fall-as-anthropic-nasdaq-debut-puts-fresh-value-on-googles-stake/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1212,7 +1304,7 @@
         "NVDA",
         "WMT"
       ],
-      "hours_ago": 0.9,
+      "hours_ago": 1.8,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-dow-plunges-1-100-points-as-the-s-and-p-500-suffers-its-6th-straight-day-of-losses/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1232,12 +1324,13 @@
         "TMUS",
         "TMUSI"
       ],
-      "hours_ago": 1.0,
+      "hours_ago": 1.9,
       "url": "https://www.fool.com/investing/2026/11/19/2-reasons-to-buy-spacex-spcx-stock-and-1-reason-to-wait/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "SPCX",
-        "NVDA"
+        "NVDA",
+        "ANT"
       ]
     },
     {
@@ -1249,11 +1342,26 @@
         "NVDA",
         "PURR"
       ],
-      "hours_ago": 1.1,
+      "hours_ago": 2.1,
       "url": "https://www.fool.com/investing/2026/11/19/the-crypto-bear-market-could-be-back-here-s-what-i-m-doing-about-it/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "NVDA"
+      ]
+    },
+    {
+      "id": "9d3460e607df34045b8a748919d023f16009765784f53be972f807151087dd03",
+      "title": "\"The Big Short's\" Michael Burry Issued a Blunt Warning about Anthropic",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "ANT"
+      ],
+      "hours_ago": 2.2,
+      "url": "https://www.fool.com/investing/2026/11/19/the-big-short-s-michael-burry-issued-a-blunt-warning-about-anthropic/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "ANT"
       ]
     },
     {
@@ -1264,7 +1372,7 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 1.4,
+      "hours_ago": 2.4,
       "url": "https://www.fool.com/investing/2026/11/19/is-nvidia-stock-a-once-in-a-decade-buying-opportunity-after-its-latest-earnings/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1280,7 +1388,7 @@
         "AMD",
         "INTC"
       ],
-      "hours_ago": 2.1,
+      "hours_ago": 3.1,
       "url": "https://www.fool.com/investing/2026/11/19/this-is-incredible-news-for-amd-stock-investors-hint-it-s-bad-news-for-intel/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1298,12 +1406,11 @@
         "NVDA",
         "MSFT"
       ],
-      "hours_ago": 2.7,
+      "hours_ago": 3.7,
       "url": "https://www.fool.com/investing/2026/11/19/can-300-month-voo-build-1-million-portfolio-yes/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "NVDA",
-        "MSFT"
+        "NVDA"
       ]
     },
     {
@@ -1315,43 +1422,12 @@
         "AMD",
         "NVDA"
       ],
-      "hours_ago": 2.8,
+      "hours_ago": 3.7,
       "url": "https://www.fool.com/investing/2026/11/19/first-nvidia-now-amd-a-short-seller-just-put-its-china-business-under-the-microscope/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "AMD",
         "NVDA"
-      ]
-    },
-    {
-      "id": "95d5a57045712396aa755ef3b63ccd20f1331bf45ac9aee72a2c140ec625cc70",
-      "title": "Where Will SpaceX Stock Be in 2030?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "SPCX"
-      ],
-      "hours_ago": 3.0,
-      "url": "https://www.fool.com/investing/2026/11/19/where-will-spacex-stock-be-in-2030/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "SPCX"
-      ]
-    },
-    {
-      "id": "9d057564276bf41747e9ecd4bf0d9bbe020d75f35d418053c6eaa9b48398aabe",
-      "title": "Why SpaceX Stock Is Down Today",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "SPCX",
-        "ANT"
-      ],
-      "hours_ago": 3.7,
-      "url": "https://www.fool.com/investing/2026/11/19/why-spacex-stock-is-down-today/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "SPCX"
       ]
     }
   ]
