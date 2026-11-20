@@ -1,64 +1,28 @@
 {
-  "scan_time": "2026-11-20T20:54:02.398125+00:00",
+  "scan_time": "2026-11-20T21:28:44.681799+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 64,
   "universe_source": "Yahoo screener (custom): gainers + most active",
   "social_sources": {
     "apewisdom": 100,
-    "stocktwits_trending": 28
+    "stocktwits_trending": 29
   },
   "day_trades": [
-    {
-      "ticker": "GAP",
-      "name": "The Gap, Inc.",
-      "sector": "Retail",
-      "current_price": 20.93,
-      "change_pct": 11.389,
-      "high": 22.155,
-      "low": 19.805,
-      "open": 19.805,
-      "prev_close": 18.79,
-      "score": 44,
-      "signals": [
-        "Top gainer (+11.4%)",
-        "Strong move (+11.4%)",
-        "Yahoo trending (#20)",
-        "Unusual volume (Finviz)",
-        "Sector leader (Retail)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 6600365438.498993,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/GPS.png",
-      "weburl": "https://www.gapinc.com/",
-      "yahoo_trending_rank": 20,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.52,
-          "estimate": 0.49,
-          "beat": true,
-          "surprise_pct": 7.0
-        }
-      },
-      "score_normalized": 62
-    },
     {
       "ticker": "GPN",
       "name": "Global Payments Inc",
       "sector": "Financial Services",
-      "current_price": 92.96,
-      "change_pct": 11.3027,
+      "current_price": 91.83,
+      "change_pct": 9.9497,
       "high": 95.5,
       "low": 83.33,
-      "open": 83.71,
+      "open": 84.01,
       "prev_close": 83.52,
-      "score": 39,
+      "score": 47,
       "signals": [
-        "Top gainer (+11.3%)",
-        "Strong move (+11.3%)",
+        "Top gainer (+9.9%)",
+        "Strong move (+9.9%)",
+        "Yahoo trending (#17)",
         "Unusual volume (Finviz)",
         "Closing strong",
         "Sector leader (Financial Services)"
@@ -69,7 +33,7 @@
       "is_active": false,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/GPN.png",
       "weburl": "https://www.globalpayments.com/en-ap",
-      "yahoo_trending_rank": null,
+      "yahoo_trending_rank": 17,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -80,22 +44,59 @@
           "surprise_pct": -0.9
         }
       },
+      "score_normalized": 66
+    },
+    {
+      "ticker": "NTLA",
+      "name": "Intellia Therapeutics, Inc.",
+      "sector": "Biotechnology",
+      "current_price": 10,
+      "change_pct": 5.042,
+      "high": 10.395,
+      "low": 9.3,
+      "open": 9.34,
+      "prev_close": 9.52,
+      "score": 39,
+      "signals": [
+        "Top gainer (+5.0%)",
+        "Strong move (+5.0%)",
+        "Unusual volume (Finviz)",
+        "Closing strong",
+        "Sector leader (Biotechnology)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 1336213178.219038,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/NTLA.png",
+      "weburl": "https://www.intelliatx.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.91,
+          "estimate": -0.81,
+          "beat": false,
+          "surprise_pct": -12.0
+        }
+      },
       "score_normalized": 55
     },
     {
       "ticker": "BIPC",
       "name": "Brookfield Infrastructure Corp",
       "sector": "Utilities",
-      "current_price": 42.6,
-      "change_pct": 3.7001,
-      "high": 42.82,
+      "current_price": 42.82,
+      "change_pct": 4.2356,
+      "high": 43.87,
       "low": 40.84,
-      "open": 41.015,
+      "open": 40.93,
       "prev_close": 41.08,
       "score": 34,
       "signals": [
-        "Top gainer (+3.7%)",
-        "Good move (+3.7%)",
+        "Top gainer (+4.2%)",
+        "Good move (+4.2%)",
         "Unusual volume (Finviz)",
         "Closing strong",
         "Sector leader (Utilities)"
@@ -123,16 +124,16 @@
       "ticker": "BRVE",
       "name": "Braveheart Bio, Inc.",
       "sector": "Pharmaceuticals",
-      "current_price": 20.31,
-      "change_pct": 5.397,
-      "high": 21.17,
+      "current_price": 20.39,
+      "change_pct": 5.8121,
+      "high": 21.16,
       "low": 18.825,
-      "open": 19.13,
+      "open": 19.29,
       "prev_close": 19.27,
       "score": 31,
       "signals": [
-        "Top gainer (+5.4%)",
-        "Strong move (+5.4%)",
+        "Top gainer (+5.8%)",
+        "Strong move (+5.8%)",
         "Closing strong",
         "Sector leader (Pharmaceuticals)"
       ],
@@ -159,16 +160,16 @@
       "ticker": "CBLL",
       "name": "CeriBell, Inc.",
       "sector": "Health Care",
-      "current_price": 27.32,
-      "change_pct": 6.0971,
-      "high": 27.34,
+      "current_price": 27.39,
+      "change_pct": 6.3689,
+      "high": 27.45,
       "low": 25.58,
       "open": 25.67,
       "prev_close": 25.75,
       "score": 31,
       "signals": [
-        "Top gainer (+6.1%)",
-        "Strong move (+6.1%)",
+        "Top gainer (+6.4%)",
+        "Strong move (+6.4%)",
         "Closing strong",
         "Sector leader (Health Care)"
       ],
@@ -192,37 +193,37 @@
       "score_normalized": 44
     },
     {
-      "ticker": "DTIL",
-      "name": "Precision Biosciences, Inc",
-      "sector": "Biotechnology",
-      "current_price": 7.38,
-      "change_pct": 6.8017,
-      "high": 7.56,
-      "low": 6.77,
-      "open": 6.85,
-      "prev_close": 6.91,
+      "ticker": "EFOR",
+      "name": "Everforth, Inc.",
+      "sector": "Technology",
+      "current_price": 31.32,
+      "change_pct": 7.8884,
+      "high": 31.59,
+      "low": 29.18,
+      "open": 29.76,
+      "prev_close": 29.03,
       "score": 31,
       "signals": [
-        "Top gainer (+6.8%)",
-        "Strong move (+6.8%)",
+        "Top gainer (+7.9%)",
+        "Strong move (+7.9%)",
         "Closing strong",
-        "Sector leader (Biotechnology)"
+        "Sector leader (Technology)"
       ],
       "reddit_mentions": 0,
-      "market_cap": 193035812.54788736,
+      "market_cap": 1193132927.2003098,
       "is_gainer": true,
       "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950355398456.png",
-      "weburl": "https://precisionbiosciences.com/",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/ASGN.png",
+      "weburl": "https://www.asgn.com",
       "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": -0.28,
-          "estimate": -0.87,
+          "actual": 1.11,
+          "estimate": 1.04,
           "beat": true,
-          "surprise_pct": 67.7
+          "surprise_pct": 6.6
         }
       },
       "score_normalized": 44
@@ -235,11 +236,11 @@
       "mentions": 7,
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
-      "current_price": 126.59,
-      "change_pct": -13.2826,
+      "current_price": 125.53,
+      "change_pct": -14.0088,
       "high": 143.725,
-      "low": 126.3,
-      "open": 143.685,
+      "low": 124.5,
+      "open": 143.52,
       "prev_close": 145.98,
       "market_cap": 3518118156466.2686,
       "score": 0,
@@ -252,9 +253,9 @@
       "is_active": false,
       "yahoo_trending_rank": 1,
       "social": {
-        "trend_pct": 61,
-        "reddit": 1486,
-        "st_bull": 29,
+        "trend_pct": 68,
+        "reddit": 1501,
+        "st_bull": 53,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -274,29 +275,30 @@
       "score_normalized": 0
     },
     {
-      "ticker": "EG",
-      "mentions": 5,
-      "name": "Everest Group, Ltd.",
-      "sector": "Insurance",
-      "current_price": 422.92,
-      "change_pct": 0.2275,
-      "high": 432.6225,
-      "low": 422.59,
-      "open": 426.58,
-      "prev_close": 421.96,
-      "market_cap": 15630662679.718409,
+      "ticker": "MSFT",
+      "mentions": 4,
+      "name": "Microsoft Corporation",
+      "sector": "Technology",
+      "current_price": 484.52,
+      "change_pct": -2.7654,
+      "high": 503.8,
+      "low": 481.03,
+      "open": 493.74,
+      "prev_close": 498.3,
+      "market_cap": 3700472699806.805,
       "score": 0,
       "signals": [
-        "News buzz (5 mentions)"
+        "News buzz (4 mentions)"
       ],
-      "reddit_mentions": 5,
+      "reddit_mentions": 4,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "reddit": 5,
-        "st_bull": 88,
-        "st_msgs": 29,
+        "trend_pct": 33,
+        "reddit": 57,
+        "st_bull": 50,
+        "st_msgs": 30,
         "sources": [
           "Reddit",
           "StockTwits"
@@ -306,37 +308,38 @@
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 7.62,
-          "estimate": 8.93,
-          "beat": false,
-          "surprise_pct": -14.7
+          "actual": 4.89,
+          "estimate": 4.82,
+          "beat": true,
+          "surprise_pct": 1.4
         }
       },
       "score_normalized": 0
     },
     {
-      "ticker": "FLNC",
-      "mentions": 5,
-      "name": "Fluence Energy Inc",
-      "sector": "Electrical Equipment",
-      "current_price": 3.48,
-      "change_pct": -9.1384,
-      "high": 3.9,
-      "low": 3.4333,
-      "open": 3.7575,
-      "prev_close": 3.83,
-      "market_cap": 707004135.9702232,
+      "ticker": "INTC",
+      "mentions": 3,
+      "name": "Intel Corp",
+      "sector": "Semiconductors",
+      "current_price": 51.28,
+      "change_pct": -7.9684,
+      "high": 56.48,
+      "low": 51.1,
+      "open": 54.305,
+      "prev_close": 55.72,
+      "market_cap": 296151790081.08575,
       "score": 0,
       "signals": [
-        "News buzz (5 mentions)"
+        "News buzz (3 mentions)"
       ],
-      "reddit_mentions": 5,
+      "reddit_mentions": 3,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "reddit": 5,
-        "st_bull": 33,
+        "trend_pct": 0,
+        "reddit": 28,
+        "st_bull": 57,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -345,7 +348,13 @@
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.52,
+          "estimate": 0.4,
+          "beat": true,
+          "surprise_pct": 28.6
+        }
       },
       "score_normalized": 0
     },
@@ -353,19 +362,19 @@
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
       "sector": "Semiconductors",
-      "current_price": 425.94,
-      "change_pct": -12.9295,
+      "current_price": 424.39,
+      "change_pct": -13.2464,
       "market_cap": 802314318806.0342,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 331,
+      "mentions": 328,
       "social": {
         "trend_pct": -33,
-        "reddit": 331,
-        "st_bull": 80,
+        "reddit": 328,
+        "st_bull": 55,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -388,18 +397,18 @@
       "ticker": "MU",
       "name": "Micron Technology, Inc.",
       "sector": "Semiconductors",
-      "current_price": 595.56,
-      "change_pct": -13.742,
+      "current_price": 594.51,
+      "change_pct": -13.894,
       "market_cap": 781179868112.7578,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 234,
+      "mentions": 235,
       "social": {
-        "trend_pct": 98,
-        "reddit": 234,
+        "trend_pct": 101,
+        "reddit": 235,
         "sources": [
           "Reddit"
         ]
@@ -417,21 +426,21 @@
       "score_normalized": 0
     },
     {
-      "ticker": "GOOG",
-      "name": "Alphabet Inc.",
-      "sector": "Media",
-      "current_price": 263.64,
-      "change_pct": -2.723,
-      "market_cap": 3352082040000.0005,
+      "ticker": "SNDK",
+      "name": "SanDisk Corporation",
+      "sector": "Technology",
+      "current_price": 79.24,
+      "change_pct": -16.0549,
+      "market_cap": 107451223315.21248,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 191,
+      "mentions": 186,
       "social": {
-        "trend_pct": 74,
-        "reddit": 191,
+        "trend_pct": 280,
+        "reddit": 186,
         "sources": [
           "Reddit"
         ]
@@ -440,10 +449,10 @@
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 2.67,
-          "estimate": 3.11,
-          "beat": false,
-          "surprise_pct": -14.1
+          "actual": 49.51,
+          "estimate": 47.15,
+          "beat": true,
+          "surprise_pct": 5.0
         }
       },
       "score_normalized": 0
@@ -454,34 +463,34 @@
       "ticker": "SNDK",
       "name": "SanDisk Corporation",
       "sector": "Technology",
-      "mentions": 188,
-      "prev": 48,
-      "trend_pct": 292,
-      "current_price": 79.19,
-      "change_pct": -16.1078,
+      "mentions": 186,
+      "prev": 49,
+      "trend_pct": 280,
+      "current_price": 79.24,
+      "change_pct": -16.0549,
       "market_cap": 107451223315.21248
     },
     {
       "ticker": "SO",
       "name": "Southern Co",
       "sector": "Utilities",
-      "mentions": 106,
+      "mentions": 147,
       "prev": 14,
-      "trend_pct": 657,
-      "current_price": 93.17,
-      "change_pct": -0.1286,
+      "trend_pct": 950,
+      "current_price": 93.13,
+      "change_pct": -0.1715,
       "market_cap": 108613911627.73087
     },
     {
-      "ticker": "AAPL",
-      "name": "Apple Inc.",
-      "sector": "Technology",
-      "mentions": 97,
-      "prev": 20,
-      "trend_pct": 385,
-      "current_price": 341.72,
-      "change_pct": -2.1448,
-      "market_cap": 5074783326486.622
+      "ticker": "PUMP",
+      "name": "ProPetro Holding Corp.",
+      "sector": "Energy",
+      "mentions": 117,
+      "prev": 9,
+      "trend_pct": 1200,
+      "current_price": 6.35,
+      "change_pct": -8.7644,
+      "market_cap": 855121855.2893982
     }
   ],
   "sector_rotation": {
@@ -489,18 +498,18 @@
       {
         "ticker": "XLP",
         "sector": "Cons. Staples",
-        "ret_1d": 0.61,
-        "ret_5d": -2.1,
-        "ret_1m": 0.47,
-        "ret_3m": 4.06,
-        "rel_1d": 4.56,
-        "rel_5d": 6.75,
-        "rel_1m": 10.47,
-        "rel_3m": 13.78,
+        "ret_1d": 0.67,
+        "ret_5d": -2.05,
+        "ret_1m": 0.52,
+        "ret_3m": 4.12,
+        "rel_1d": 4.31,
+        "rel_5d": 6.51,
+        "rel_1m": 10.23,
+        "rel_3m": 13.54,
         "rvol": 1.36,
         "rrg": {
-          "x": 102.5,
-          "y": 100.32,
+          "x": 102.45,
+          "y": 100.28,
           "quadrant": "Leading",
           "tail": [
             {
@@ -528,29 +537,29 @@
               "y": 99.28
             },
             {
-              "x": 102.5,
-              "y": 100.32
+              "x": 102.45,
+              "y": 100.28
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "GIS",
-            "name": "General Mills Inc",
-            "change_pct": 3.8283,
-            "price": 35.8
-          },
-          {
-            "ticker": "MKC",
-            "name": "McCormick & Company, Incorporated",
-            "change_pct": 3.7094,
-            "price": 47.53
+            "ticker": "CALM",
+            "name": "Cal-Maine Foods, Inc.",
+            "change_pct": 3.5208,
+            "price": 72.33
           },
           {
             "ticker": "PPC",
             "name": "Pilgrims Pride Corp",
-            "change_pct": 3.6179,
-            "price": 28.64
+            "change_pct": 3.4732,
+            "price": 28.6
+          },
+          {
+            "ticker": "MKC",
+            "name": "McCormick & Company, Incorporated",
+            "change_pct": 3.4257,
+            "price": 47.4
           }
         ],
         "rotation": 0
@@ -558,18 +567,18 @@
       {
         "ticker": "XLRE",
         "sector": "Real Estate",
-        "ret_1d": -1.0,
-        "ret_5d": -4.33,
-        "ret_1m": -0.16,
-        "ret_3m": -5.57,
-        "rel_1d": 2.95,
-        "rel_5d": 4.52,
-        "rel_1m": 9.84,
-        "rel_3m": 4.15,
+        "ret_1d": -0.98,
+        "ret_5d": -4.3,
+        "ret_1m": -0.14,
+        "ret_3m": -5.54,
+        "rel_1d": 2.66,
+        "rel_5d": 4.26,
+        "rel_1m": 9.57,
+        "rel_3m": 3.88,
         "rvol": 1.0,
         "rrg": {
-          "x": 102.28,
-          "y": 100.61,
+          "x": 102.22,
+          "y": 100.52,
           "quadrant": "Leading",
           "tail": [
             {
@@ -597,8 +606,8 @@
               "y": 98.48
             },
             {
-              "x": 102.28,
-              "y": 100.61
+              "x": 102.22,
+              "y": 100.52
             }
           ]
         },
@@ -608,18 +617,18 @@
       {
         "ticker": "XLU",
         "sector": "Utilities",
-        "ret_1d": -0.78,
-        "ret_5d": -3.1,
-        "ret_1m": -0.45,
-        "ret_3m": -0.53,
-        "rel_1d": 3.17,
-        "rel_5d": 5.75,
-        "rel_1m": 9.55,
-        "rel_3m": 9.19,
+        "ret_1d": -0.74,
+        "ret_5d": -3.07,
+        "ret_1m": -0.42,
+        "ret_3m": -0.5,
+        "rel_1d": 2.9,
+        "rel_5d": 5.49,
+        "rel_1m": 9.29,
+        "rel_3m": 8.92,
         "rvol": 1.42,
         "rrg": {
-          "x": 102.45,
-          "y": 100.94,
+          "x": 102.39,
+          "y": 100.85,
           "quadrant": "Leading",
           "tail": [
             {
@@ -647,8 +656,8 @@
               "y": 98.64
             },
             {
-              "x": 102.45,
-              "y": 100.94
+              "x": 102.39,
+              "y": 100.85
             }
           ]
         },
@@ -656,108 +665,39 @@
           {
             "ticker": "OPTX",
             "name": "Syntec Optics Holdings, Inc",
-            "change_pct": 8.9005,
-            "price": 6.24
+            "change_pct": 9.7731,
+            "price": 6.29
           },
           {
             "ticker": "BIP",
             "name": "Brookfield Infrastructure Partners L.P.",
-            "change_pct": 3.774,
-            "price": 42.62
+            "change_pct": 4.2367,
+            "price": 42.81
           },
           {
             "ticker": "BIPC",
             "name": "Brookfield Infrastructure Corp",
-            "change_pct": 3.7001,
-            "price": 42.6
+            "change_pct": 4.2356,
+            "price": 42.82
           }
         ],
         "rotation": 1
       },
       {
-        "ticker": "XLV",
-        "sector": "Health Care",
-        "ret_1d": -0.28,
-        "ret_5d": -6.29,
-        "ret_1m": -2.39,
-        "ret_3m": 1.69,
-        "rel_1d": 3.67,
-        "rel_5d": 2.56,
-        "rel_1m": 7.61,
-        "rel_3m": 11.41,
-        "rvol": 1.56,
-        "rrg": {
-          "x": 101.86,
-          "y": 99.95,
-          "quadrant": "Weakening",
-          "tail": [
-            {
-              "x": 99.89,
-              "y": 101.23
-            },
-            {
-              "x": 102.44,
-              "y": 102.29
-            },
-            {
-              "x": 102.4,
-              "y": 99.82
-            },
-            {
-              "x": 102.97,
-              "y": 100.41
-            },
-            {
-              "x": 102.49,
-              "y": 99.49
-            },
-            {
-              "x": 101.75,
-              "y": 99.27
-            },
-            {
-              "x": 101.86,
-              "y": 99.95
-            }
-          ]
-        },
-        "top_stocks": [
-          {
-            "ticker": "DTIL",
-            "name": "Precision Biosciences, Inc",
-            "change_pct": 6.8017,
-            "price": 7.38
-          },
-          {
-            "ticker": "CBLL",
-            "name": "CeriBell, Inc.",
-            "change_pct": 6.0971,
-            "price": 27.32
-          },
-          {
-            "ticker": "KRSA",
-            "name": "Korsana Biosciences, Inc.",
-            "change_pct": 5.5289,
-            "price": 37.41
-          }
-        ],
-        "rotation": 0
-      },
-      {
         "ticker": "XLY",
         "sector": "Cons. Discretionary",
-        "ret_1d": -3.23,
-        "ret_5d": -6.53,
-        "ret_1m": -2.5,
-        "ret_3m": -5.0,
-        "rel_1d": 0.72,
-        "rel_5d": 2.32,
-        "rel_1m": 7.5,
-        "rel_3m": 4.72,
+        "ret_1d": -2.95,
+        "ret_5d": -6.27,
+        "ret_1m": -2.22,
+        "ret_3m": -4.73,
+        "rel_1d": 0.69,
+        "rel_5d": 2.29,
+        "rel_1m": 7.49,
+        "rel_3m": 4.69,
         "rvol": 1.27,
         "rrg": {
-          "x": 101.84,
-          "y": 99.65,
+          "x": 101.83,
+          "y": 99.64,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -785,42 +725,111 @@
               "y": 98.57
             },
             {
-              "x": 101.84,
-              "y": 99.65
+              "x": 101.83,
+              "y": 99.64
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "GAP",
-            "name": "The Gap, Inc.",
-            "change_pct": 11.389,
-            "price": 20.93
-          },
-          {
             "ticker": "BKE",
             "name": "The Buckle, Inc.",
-            "change_pct": 5.2657,
-            "price": 43.98
+            "change_pct": 5.6726,
+            "price": 44.15
+          },
+          {
+            "ticker": "YSWY",
+            "name": "Yesway Inc",
+            "change_pct": 4.1969,
+            "price": 20.11
           }
         ],
-        "rotation": 0
+        "rotation": -1
+      },
+      {
+        "ticker": "XLV",
+        "sector": "Health Care",
+        "ret_1d": -0.12,
+        "ret_5d": -6.15,
+        "ret_1m": -2.24,
+        "ret_3m": 1.84,
+        "rel_1d": 3.52,
+        "rel_5d": 2.41,
+        "rel_1m": 7.47,
+        "rel_3m": 11.26,
+        "rvol": 1.56,
+        "rrg": {
+          "x": 101.83,
+          "y": 99.92,
+          "quadrant": "Weakening",
+          "tail": [
+            {
+              "x": 99.89,
+              "y": 101.23
+            },
+            {
+              "x": 102.44,
+              "y": 102.29
+            },
+            {
+              "x": 102.4,
+              "y": 99.82
+            },
+            {
+              "x": 102.97,
+              "y": 100.41
+            },
+            {
+              "x": 102.49,
+              "y": 99.49
+            },
+            {
+              "x": 101.75,
+              "y": 99.27
+            },
+            {
+              "x": 101.83,
+              "y": 99.92
+            }
+          ]
+        },
+        "top_stocks": [
+          {
+            "ticker": "DTIL",
+            "name": "Precision Biosciences, Inc",
+            "change_pct": 7.0912,
+            "price": 7.4
+          },
+          {
+            "ticker": "CBLL",
+            "name": "CeriBell, Inc.",
+            "change_pct": 6.3689,
+            "price": 27.39
+          },
+          {
+            "ticker": "KRSA",
+            "name": "Korsana Biosciences, Inc.",
+            "change_pct": 5.952,
+            "price": 37.56
+          }
+        ],
+        "rotation": 1
       },
       {
         "ticker": "XLF",
         "sector": "Financials",
-        "ret_1d": -1.97,
-        "ret_5d": -7.15,
-        "ret_1m": -3.82,
-        "ret_3m": -6.08,
-        "rel_1d": 1.98,
-        "rel_5d": 1.7,
-        "rel_1m": 6.18,
-        "rel_3m": 3.64,
+        "ret_1d": -1.82,
+        "ret_5d": -7.0,
+        "ret_1m": -3.67,
+        "ret_3m": -5.94,
+        "rel_1d": 1.82,
+        "rel_5d": 1.56,
+        "rel_1m": 6.04,
+        "rel_3m": 3.48,
         "rvol": 1.63,
         "rrg": {
-          "x": 101.88,
-          "y": 99.98,
+          "x": 101.84,
+          "y": 99.94,
           "quadrant": "Weakening",
           "tail": [
             {
@@ -848,8 +857,8 @@
               "y": 99.64
             },
             {
-              "x": 101.88,
-              "y": 99.98
+              "x": 101.84,
+              "y": 99.94
             }
           ]
         },
@@ -857,20 +866,20 @@
           {
             "ticker": "GPN",
             "name": "Global Payments Inc",
-            "change_pct": 11.3027,
-            "price": 92.96
+            "change_pct": 9.9497,
+            "price": 91.83
           },
           {
-            "ticker": "PICS",
-            "name": "Pics NV",
-            "change_pct": 4.9485,
-            "price": 5.09
+            "ticker": "SAR",
+            "name": "Saratoga Investment Corp",
+            "change_pct": 4.9853,
+            "price": 10.74
           },
           {
             "ticker": "HDB",
             "name": "HDFC Bank Ltd",
-            "change_pct": 4.8018,
-            "price": 27.5
+            "change_pct": 4.497,
+            "price": 27.42
           }
         ],
         "rotation": -1
@@ -878,18 +887,18 @@
       {
         "ticker": "XLI",
         "sector": "Industrials",
-        "ret_1d": -3.37,
-        "ret_5d": -7.61,
-        "ret_1m": -6.48,
-        "ret_3m": -12.65,
-        "rel_1d": 0.58,
-        "rel_5d": 1.24,
-        "rel_1m": 3.52,
-        "rel_3m": -2.93,
+        "ret_1d": -3.09,
+        "ret_5d": -7.35,
+        "ret_1m": -6.21,
+        "ret_3m": -12.41,
+        "rel_1d": 0.55,
+        "rel_5d": 1.21,
+        "rel_1m": 3.5,
+        "rel_3m": -2.99,
         "rvol": 1.34,
         "rrg": {
-          "x": 101.94,
-          "y": 101.68,
+          "x": 101.91,
+          "y": 101.62,
           "quadrant": "Leading",
           "tail": [
             {
@@ -917,30 +926,30 @@
               "y": 101.23
             },
             {
-              "x": 101.94,
-              "y": 101.68
+              "x": 101.91,
+              "y": 101.62
             }
           ]
         },
         "top_stocks": [],
-        "rotation": -2
+        "rotation": -1
       },
       {
         "ticker": "XLB",
         "sector": "Materials",
-        "ret_1d": -2.35,
-        "ret_5d": -7.6,
-        "ret_1m": -6.64,
-        "ret_3m": -9.51,
-        "rel_1d": 1.6,
-        "rel_5d": 1.25,
-        "rel_1m": 3.36,
-        "rel_3m": 0.21,
+        "ret_1d": -2.19,
+        "ret_5d": -7.45,
+        "ret_1m": -6.48,
+        "ret_3m": -9.36,
+        "rel_1d": 1.45,
+        "rel_5d": 1.11,
+        "rel_1m": 3.23,
+        "rel_3m": 0.06,
         "rvol": 1.15,
         "rrg": {
-          "x": 101.32,
-          "y": 100.02,
-          "quadrant": "Leading",
+          "x": 101.28,
+          "y": 99.97,
+          "quadrant": "Weakening",
           "tail": [
             {
               "x": 98.37,
@@ -967,29 +976,29 @@
               "y": 99.0
             },
             {
-              "x": 101.32,
-              "y": 100.02
+              "x": 101.28,
+              "y": 99.97
             }
           ]
         },
         "top_stocks": [],
-        "rotation": 0
+        "rotation": -1
       },
       {
         "ticker": "XLC",
         "sector": "Comm. Services",
-        "ret_1d": -2.84,
-        "ret_5d": -8.14,
-        "ret_1m": -7.05,
-        "ret_3m": -10.81,
-        "rel_1d": 1.11,
-        "rel_5d": 0.71,
-        "rel_1m": 2.95,
-        "rel_3m": -1.09,
+        "ret_1d": -2.66,
+        "ret_5d": -7.97,
+        "ret_1m": -6.88,
+        "ret_3m": -10.65,
+        "rel_1d": 0.98,
+        "rel_5d": 0.59,
+        "rel_1m": 2.83,
+        "rel_3m": -1.23,
         "rvol": 1.24,
         "rrg": {
-          "x": 100.51,
-          "y": 100.19,
+          "x": 100.46,
+          "y": 100.16,
           "quadrant": "Leading",
           "tail": [
             {
@@ -1017,12 +1026,18 @@
               "y": 100.29
             },
             {
-              "x": 100.51,
-              "y": 100.19
+              "x": 100.46,
+              "y": 100.16
             }
           ]
         },
         "top_stocks": [
+          {
+            "ticker": "RCI",
+            "name": "Rogers Communications Inc",
+            "change_pct": 3.4432,
+            "price": 35.45
+          },
           {
             "ticker": "T",
             "name": "AT&T Inc.",
@@ -1035,18 +1050,18 @@
       {
         "ticker": "XLE",
         "sector": "Energy",
-        "ret_1d": -0.7,
-        "ret_5d": -6.92,
-        "ret_1m": -10.52,
-        "ret_3m": -3.62,
-        "rel_1d": 3.25,
-        "rel_5d": 1.93,
-        "rel_1m": -0.52,
-        "rel_3m": 6.1,
+        "ret_1d": -0.62,
+        "ret_5d": -6.85,
+        "ret_1m": -10.45,
+        "ret_3m": -3.55,
+        "rel_1d": 3.02,
+        "rel_5d": 1.71,
+        "rel_1m": -0.74,
+        "rel_3m": 5.87,
         "rvol": 0.83,
         "rrg": {
-          "x": 100.87,
-          "y": 100.64,
+          "x": 100.81,
+          "y": 100.57,
           "quadrant": "Leading",
           "tail": [
             {
@@ -1074,8 +1089,8 @@
               "y": 100.91
             },
             {
-              "x": 100.87,
-              "y": 100.64
+              "x": 100.81,
+              "y": 100.57
             }
           ]
         },
@@ -1085,18 +1100,18 @@
       {
         "ticker": "XLK",
         "sector": "Technology",
-        "ret_1d": -7.67,
-        "ret_5d": -12.87,
-        "ret_1m": -18.63,
-        "ret_3m": -17.5,
-        "rel_1d": -3.72,
-        "rel_5d": -4.02,
-        "rel_1m": -8.63,
-        "rel_3m": -7.78,
+        "ret_1d": -7.27,
+        "ret_5d": -12.49,
+        "ret_1m": -18.28,
+        "ret_3m": -17.14,
+        "rel_1d": -3.63,
+        "rel_5d": -3.93,
+        "rel_1m": -8.57,
+        "rel_3m": -7.72,
         "rvol": 1.58,
         "rrg": {
-          "x": 97.87,
-          "y": 99.97,
+          "x": 97.89,
+          "y": 99.99,
           "quadrant": "Lagging",
           "tail": [
             {
@@ -1124,8 +1139,8 @@
               "y": 100.75
             },
             {
-              "x": 97.87,
-              "y": 99.97
+              "x": 97.89,
+              "y": 99.99
             }
           ]
         },
@@ -1133,20 +1148,20 @@
           {
             "ticker": "PXLW",
             "name": "Pixelworks, Inc.",
-            "change_pct": 8.9141,
-            "price": 6.72
+            "change_pct": 8.671,
+            "price": 6.705
           },
           {
             "ticker": "EFOR",
             "name": "Everforth, Inc.",
-            "change_pct": 7.6817,
-            "price": 31.26
+            "change_pct": 7.8884,
+            "price": 31.32
           },
           {
             "ticker": "DTIL",
             "name": "Precision Biosciences, Inc",
-            "change_pct": 6.8017,
-            "price": 7.38
+            "change_pct": 7.0912,
+            "price": 7.4
           }
         ],
         "rotation": 0
@@ -1154,7 +1169,7 @@
     ],
     "posture": {
       "label": "Risk-off",
-      "spread": -6.89,
+      "spread": -6.72,
       "leaders": [
         "Cons. Staples",
         "Real Estate"
@@ -1166,13 +1181,66 @@
     },
     "benchmark": {
       "ticker": "SPY",
-      "ret_1d": -3.95,
-      "ret_5d": -8.85,
-      "ret_1m": -10.0,
-      "ret_3m": -9.72
+      "ret_1d": -3.64,
+      "ret_5d": -8.56,
+      "ret_1m": -9.71,
+      "ret_3m": -9.42
     }
   },
   "reddit_feed": [
+    {
+      "id": "9dfed58b8fd3bedd8b8f56a3202de21718bf047a61277661274473a00aafa2ad",
+      "title": "Advanced Micro Devices, Inc. (NASDAQ: AMD) INVESTIGATION ALERT: Portnoy Law Firm Announces Investigation into Advanced M",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "AMD"
+      ],
+      "hours_ago": 0.5,
+      "url": "https://www.globenewswire.com/news-release/2026/11/20/3407810/0/en/advanced-micro-devices-inc-nasdaq-amd-investigation-alert-portnoy-law-firm-announces-investigation-into-advanced-micro-devices-inc-concerning-potential-securities-fraud.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMD"
+      ]
+    },
+    {
+      "id": "7747f2d7f4f48753bf2154c646191f6db3a161c94d2f57481ef5fd2264291616",
+      "title": "AMD Is Down 26% and Intel Is Down 42%. Which AI Stock Is Worth Buying on the Dip?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "AMD",
+        "INTC",
+        "NVDA",
+        "MSFT"
+      ],
+      "hours_ago": 1.0,
+      "url": "https://www.fool.com/coverage/better-buy/2026/11/20/amd-is-down-26-and-intel-is-down-42-which-ai-stock-is-worth-buying-on-the-dip/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMD",
+        "INTC",
+        "NVDA",
+        "MSFT"
+      ]
+    },
+    {
+      "id": "15be6ee767e40947a144d59a03baceb0502b7aeaedd77bcb9330816bc7b73072",
+      "title": "Intuit: 3 Key Takeaways for Long-Term Investors",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "INTU",
+        "MSFT",
+        "BSP"
+      ],
+      "hours_ago": 1.5,
+      "url": "https://www.fool.com/earnings/takeaways/2026/11/20/intuit-3-key-takeaways-for-long-term-investors/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "MSFT"
+      ]
+    },
     {
       "id": "98eb5368c8ae22831ede7d9f6d4a3467482d06f8034b4aa09b99b28dc97b6ea7",
       "title": "The Nasdaq Just Had Its 6th Correction in 4 Years. History Says This Is the Likelihood of a Full-Blown Bear Market",
@@ -1183,11 +1251,46 @@
         "INTC",
         "NVDA"
       ],
-      "hours_ago": 1.0,
+      "hours_ago": 1.5,
       "url": "https://www.fool.com/investing/2026/11/20/the-nasdaq-just-had-its-6th-correction-in-4-years-history-says-this-is-the-likelihood-of-a-full-blown-bear-market/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
+        "INTC",
         "NVDA"
+      ]
+    },
+    {
+      "id": "38806ac940169d73c6c4251946cd4d3abe29bb997b7590a5ce800e87f1f53d66",
+      "title": "GTA VI Boasts a Record-Breaking Launch With $3.79 Billion In Day One Sales. Is It Time to Buy Take-Two Stock?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "TTWO",
+        "MSFT"
+      ],
+      "hours_ago": 1.6,
+      "url": "https://www.fool.com/investing/2026/11/20/gta-vi-boasts-a-record-breaking-launch-with-usd3-79-billion-in-day-one-sales-is-it-time-to-buy-take-two-stock/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "MSFT"
+      ]
+    },
+    {
+      "id": "a1106f0fd2a497508864189b843d3382fb472cbfa1b8ac5077299f8554f9ca15",
+      "title": "Cerebras Stock Looks Like a\u00a0Buy as Customer Base Expands",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "CBRS",
+        "MSFT",
+        "AMZN",
+        "ORCL"
+      ],
+      "hours_ago": 2.0,
+      "url": "https://www.fool.com/investing/2026/11/20/cerebras-stock-looks-like-a-buy-as-customer-base-expands/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "MSFT"
       ]
     },
     {
@@ -1198,7 +1301,7 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 2.1,
+      "hours_ago": 2.6,
       "url": "https://www.globenewswire.com/news-release/2026/11/20/3407773/1020/en/kaplan-fox-notifies-nvidia-corporation-nasdaq-nvda-investors-of-a-securities-class-action-deadline-on-january-8-2027.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1217,12 +1320,11 @@
         "GOOGM",
         "GOOGN"
       ],
-      "hours_ago": 2.6,
+      "hours_ago": 3.2,
       "url": "https://www.fool.com/investing/2026/11/20/dan-ives-just-delivered-great-news-for-ai-stocks-here-s-the-part-that-matters/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "NVDA",
-        "GOOG"
+        "NVDA"
       ]
     },
     {
@@ -1237,11 +1339,10 @@
         "GOOGN",
         "NVDA"
       ],
-      "hours_ago": 2.9,
+      "hours_ago": 3.5,
       "url": "https://www.fool.com/investing/2026/11/20/if-i-could-only-own-1-trillion-dollar-artificial-intelligence-ai-stock-through-2030-it-would-be-anthropic-nvidia-or-alphabet-here-s-my-top-pick/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "GOOG",
         "NVDA"
       ]
     },
@@ -1255,103 +1356,11 @@
         "EG",
         "FLNC"
       ],
-      "hours_ago": 2.9,
+      "hours_ago": 3.5,
       "url": "https://www.globenewswire.com/news-release/2026/11/20/3407745/9788/en/shareholder-alert-bronstein-gewirtz-grossman-llc-announces-class-action-against-nvidia-corporation-nasdaq-nvda-investors-who-suffered-losses-are-encouraged-to-contact-the-firm.html",
       "is_news": true,
       "confirmed_tickers": [
-        "NVDA",
-        "EG",
-        "FLNC"
-      ]
-    },
-    {
-      "id": "a01cec569ab9336ddd38923575d46277a994cda92f2fbdc92afa24be903d8bd8",
-      "title": "Advisor Insights \u2014 Brought to You By The Motley Fool",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "NVDA",
-        "AAPL",
-        "VOO",
-        "RSP"
-      ],
-      "hours_ago": 3.0,
-      "url": "https://www.fool.com/retirement/advisor/2026/11/20/advisor-insights-brought-to-you-by-the-motley-fool/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
         "NVDA"
-      ]
-    },
-    {
-      "id": "d558e9f339ecdb15c7b5afbf63664ed97909ecebc81f324b5fdf513f3144d07d",
-      "title": "SHAREHOLDER ALERT: Bronstein Gewirtz & Grossman, LLC Announces Class Action Against Intel Corporation (NASDAQ: INTC) \u2014 I",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "INTC",
-        "EG",
-        "FLNC"
-      ],
-      "hours_ago": 3.9,
-      "url": "https://www.globenewswire.com/news-release/2026/11/20/3407720/9788/en/shareholder-alert-bronstein-gewirtz-grossman-llc-announces-class-action-against-intel-corporation-nasdaq-intc-investors-who-suffered-losses-are-encouraged-to-contact-the-firm.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "EG",
-        "FLNC"
-      ]
-    },
-    {
-      "id": "d0696b7c13ce6c5b8fa45d15caa4b5a11377a7b6cbdec410ce5b7f276ab4f9c8",
-      "title": "SHAREHOLDER ALERT: Bronstein Gewirtz & Grossman, LLC Announces Class Action Against Fluence Energy, Inc (NASDAQ: FLNC) \u2014",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "FLNC",
-        "EG",
-        "CC"
-      ],
-      "hours_ago": 3.9,
-      "url": "https://www.globenewswire.com/news-release/2026/11/20/3407715/9788/en/shareholder-alert-bronstein-gewirtz-grossman-llc-announces-class-action-against-fluence-energy-inc-nasdaq-flnc-investors-who-suffered-losses-are-encouraged-to-contact-the-firm.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "FLNC",
-        "EG"
-      ]
-    },
-    {
-      "id": "cbd553d82d088f755aa7341fc25e20068cec30610b0cf1c24b19d62ad8da9104",
-      "title": "SHAREHOLDER ALERT: Bronstein Gewirtz & Grossman, LLC Announces Class Action Against Chemours Company (NYSE: CC) \u2014 Invest",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "CC",
-        "EG",
-        "FLNC"
-      ],
-      "hours_ago": 3.9,
-      "url": "https://www.globenewswire.com/news-release/2026/11/20/3407716/9788/en/shareholder-alert-bronstein-gewirtz-grossman-llc-announces-class-action-against-chemours-company-nyse-cc-investors-who-suffered-losses-are-encouraged-to-contact-the-firm.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "EG",
-        "FLNC"
-      ]
-    },
-    {
-      "id": "9c38e39035b0bce21ec63b7f7044a90e559f2f8baf33e1e19985f491ec9bd263",
-      "title": "Business Phone Systems: Is it possible to get crystal-clear VoIP, unified messaging, and enterprise-grade reliability, a",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN"
-      ],
-      "hours_ago": 3.9,
-      "url": "https://www.globenewswire.com/news-release/2026/11/20/3407721/0/en/business-phone-systems-is-it-possible-to-get-crystal-clear-voip-unified-messaging-and-enterprise-grade-reliability-all-in-one-platform.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "GOOG"
       ]
     }
   ]
