@@ -1,11 +1,11 @@
 {
-  "scan_time": "2026-11-20T22:15:53.485418+00:00",
+  "scan_time": "2026-11-20T23:12:19.653232+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 64,
   "universe_source": "Yahoo screener (custom): gainers + most active",
   "social_sources": {
     "apewisdom": 100,
-    "stocktwits_trending": 29
+    "stocktwits_trending": 28
   },
   "day_trades": [
     {
@@ -22,7 +22,7 @@
       "signals": [
         "Top gainer (+9.9%)",
         "Strong move (+9.9%)",
-        "Yahoo trending (#15)",
+        "Yahoo trending (#14)",
         "Unusual volume (Finviz)",
         "Closing strong",
         "Sector leader (Financial Services)"
@@ -33,7 +33,7 @@
       "is_active": false,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/GPN.png",
       "weburl": "https://www.globalpayments.com/en-ap",
-      "yahoo_trending_rank": 15,
+      "yahoo_trending_rank": 14,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -233,7 +233,7 @@
   "reddit_cards": [
     {
       "ticker": "NVDA",
-      "mentions": 6,
+      "mentions": 8,
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
       "current_price": 125.53,
@@ -245,17 +245,17 @@
       "market_cap": 3518118156466.2686,
       "score": 0,
       "signals": [
-        "News buzz (6 mentions)",
+        "News buzz (8 mentions)",
         "Yahoo trending (#1)"
       ],
-      "reddit_mentions": 6,
+      "reddit_mentions": 8,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": 1,
       "social": {
-        "trend_pct": 65,
-        "reddit": 1504,
-        "st_bull": 64,
+        "trend_pct": 69,
+        "reddit": 1528,
+        "st_bull": 50,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -276,7 +276,7 @@
     },
     {
       "ticker": "MSFT",
-      "mentions": 5,
+      "mentions": 8,
       "name": "Microsoft Corporation",
       "sector": "Technology",
       "current_price": 484.52,
@@ -288,16 +288,16 @@
       "market_cap": 3700472699806.805,
       "score": 0,
       "signals": [
-        "News buzz (5 mentions)"
+        "News buzz (8 mentions)"
       ],
-      "reddit_mentions": 5,
+      "reddit_mentions": 8,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 26,
-        "reddit": 53,
-        "st_bull": 44,
+        "trend_pct": 20,
+        "reddit": 54,
+        "st_bull": 55,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -317,64 +317,29 @@
       "score_normalized": 0
     },
     {
-      "ticker": "SPCX",
-      "mentions": 3,
-      "name": "Space Exploration Technologies Corp",
-      "sector": "Telecommunication",
-      "current_price": 127.79,
-      "change_pct": -7.6862,
-      "high": 133.8408,
-      "low": 126.28,
-      "open": 131.93,
-      "prev_close": 138.43,
-      "market_cap": 1880026621222.4001,
-      "score": 0,
-      "signals": [
-        "News buzz (3 mentions)"
-      ],
-      "reddit_mentions": 3,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "trend_pct": -46,
-        "reddit": 87,
-        "st_bull": 67,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.45,
-          "estimate": 0.14,
-          "beat": true,
-          "surprise_pct": 230.6
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "AMD",
+      "mentions": 5,
       "name": "Advanced Micro Devices, Inc.",
       "sector": "Semiconductors",
       "current_price": 424.39,
       "change_pct": -13.2464,
+      "high": 474.79,
+      "low": 418.76,
+      "open": 471.725,
+      "prev_close": 489.19,
       "market_cap": 802314318806.0342,
       "score": 0,
-      "signals": [],
-      "reddit_mentions": 0,
+      "signals": [
+        "News buzz (5 mentions)"
+      ],
+      "reddit_mentions": 5,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 315,
+      "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -36,
-        "reddit": 315,
-        "st_bull": 78,
+        "trend_pct": -38,
+        "reddit": 313,
+        "st_bull": 73,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -405,12 +370,15 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 245,
+      "mentions": 251,
       "social": {
-        "trend_pct": 111,
-        "reddit": 245,
+        "trend_pct": 124,
+        "reddit": 251,
+        "st_bull": 92,
+        "st_msgs": 30,
         "sources": [
-          "Reddit"
+          "Reddit",
+          "StockTwits"
         ]
       },
       "earnings_info": {
@@ -437,10 +405,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 192,
+      "mentions": 199,
       "social": {
-        "trend_pct": 309,
-        "reddit": 192,
+        "trend_pct": 342,
+        "reddit": 199,
         "sources": [
           "Reddit"
         ]
@@ -456,6 +424,38 @@
         }
       },
       "score_normalized": 0
+    },
+    {
+      "ticker": "GOOG",
+      "name": "Alphabet Inc.",
+      "sector": "Media",
+      "current_price": 264,
+      "change_pct": -2.5902,
+      "market_cap": 3352082040000.0005,
+      "score": 0,
+      "signals": [],
+      "reddit_mentions": 0,
+      "is_gainer": false,
+      "is_active": false,
+      "mentions": 177,
+      "social": {
+        "trend_pct": 34,
+        "reddit": 177,
+        "sources": [
+          "Reddit"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 2.67,
+          "estimate": 3.11,
+          "beat": false,
+          "surprise_pct": -14.1
+        }
+      },
+      "score_normalized": 0
     }
   ],
   "chatter_emerging": [
@@ -463,9 +463,9 @@
       "ticker": "SNDK",
       "name": "SanDisk Corporation",
       "sector": "Technology",
-      "mentions": 192,
-      "prev": 47,
-      "trend_pct": 309,
+      "mentions": 199,
+      "prev": 45,
+      "trend_pct": 342,
       "current_price": 79.24,
       "change_pct": -16.0549,
       "market_cap": 107451223315.21248
@@ -474,9 +474,9 @@
       "ticker": "SO",
       "name": "Southern Co",
       "sector": "Utilities",
-      "mentions": 150,
-      "prev": 14,
-      "trend_pct": 971,
+      "mentions": 152,
+      "prev": 12,
+      "trend_pct": 1167,
       "current_price": 93.13,
       "change_pct": -0.1715,
       "market_cap": 108613911627.73087
@@ -1195,20 +1195,76 @@
   },
   "reddit_feed": [
     {
-      "id": "8cfb26d8704bd4e54b934175e1eb0c27afc9cd8b2175be6716e1947c5e79954f",
-      "title": "SpaceX Plans to Spend $2.8 Billion on Gas Turbines. Here\u2019s What That Much Natural Gas Demand Means for Pipeline Investor",
+      "id": "04f5a41be6a583acf263defb007818c7939640b2e4badf14b517a3cf40ea535c",
+      "title": "AMD Investors Have Opportunity to Join Advanced Micro Devices, Inc. Fraud Investigation with SBS Law",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "AMD"
+      ],
+      "hours_ago": 0.7,
+      "url": "https://www.globenewswire.com/news-release/2026/11/20/3407863/0/en/amd-investors-have-opportunity-to-join-advanced-micro-devices-inc-fraud-investigation-with-sbs-law.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMD"
+      ]
+    },
+    {
+      "id": "79a61662d2c08a829b7fdeff7c78621f59631c84e370ed6003cc728a8f2482ce",
+      "title": "Stock Market Today, Nov. 20: Amazon Shares Slide on AI and Mega-Cap Tech Sell-Off",
       "subreddit": "The Motley Fool",
       "ups": 0,
       "tickers": [
-        "SPCX",
-        "WMB",
-        "ET"
+        "AMZN",
+        "WMT",
+        "EBAY",
+        "ANT",
+        "NVDA"
       ],
-      "hours_ago": 0.3,
-      "url": "https://www.fool.com/investing/2026/11/20/spacex-plans-to-spend-usd2-8-billion-on-gas-turbines-here-s-what-that-much-natural-gas-demand-means-for-pipeline-investors/?source=iedfolrf0000001",
+      "hours_ago": 0.7,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-amazon-shares-slide-on-ai-and-mega-cap-tech-sell-off/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "SPCX"
+        "NVDA"
+      ]
+    },
+    {
+      "id": "561d5cb2f3a8ab21a5279c7368378a425f17642c3172b0e47f838b553cbbbe27",
+      "title": "BigBear.ai vs. Innodata: Which Technology Stock Is a Better Buy for 2027?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "BBAI",
+        "INOD",
+        "MSFT",
+        "AMZN",
+        "ACN"
+      ],
+      "hours_ago": 0.7,
+      "url": "https://www.fool.com/coverage/better-buy/2026/11/20/bigbearai-vs-innodata-which-technology-stock-is-a-better-buy-for-2027/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "MSFT"
+      ]
+    },
+    {
+      "id": "79305bac3b151f64a5ad449c770589056bb398b47014a4c7d4989a7ec23634ea",
+      "title": "Stock Market Today, Nov. 20: Stocks Plunge as AI Trade Unwinds",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "NVDA",
+        "AVGO",
+        "GOOG",
+        "GOOGL",
+        "GOOGM"
+      ],
+      "hours_ago": 1.0,
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA",
+        "GOOG"
       ]
     },
     {
@@ -1220,7 +1276,7 @@
         "BABA",
         "NVDA"
       ],
-      "hours_ago": 0.5,
+      "hours_ago": 1.4,
       "url": "https://www.globenewswire.com/news-release/2026/11/20/3407845/0/en/baba-class-action-alert-alibaba-sued-for-securities-fraud-after-export-control-issues-leads-to-7-stock-drop-investors-notified-to-contact-bfa-law.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1236,7 +1292,7 @@
         "NI",
         "MSFT"
       ],
-      "hours_ago": 0.5,
+      "hours_ago": 1.5,
       "url": "https://www.fool.com/earnings/takeaways/2026/11/20/nisource-3-key-takeaways-for-long-term-investors/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1253,12 +1309,31 @@
         "AMD",
         "AVGO"
       ],
-      "hours_ago": 0.7,
+      "hours_ago": 1.6,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-nvidia-s-usd2-5-trillion-rout-deepens-as-sec-accounting-probe-adds-to-wall-street-s-ai-sell-off/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "NVDA",
         "AMD"
+      ]
+    },
+    {
+      "id": "000a7be89759a786c9118f9672ec3da04dcb5b8685a9c09817e098989e425ba0",
+      "title": "Take-Two Interactive vs. Anthropic: Which Market-Moving Stock Is the Better Buy?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "TTWO",
+        "ANT",
+        "GOOG",
+        "GOOGL",
+        "GOOGM"
+      ],
+      "hours_ago": 1.7,
+      "url": "https://www.fool.com/investing/2026/11/20/take-two-interactive-vs-anthropic-which-market-moving-stock-is-the-better-buy/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOOG"
       ]
     },
     {
@@ -1269,7 +1344,7 @@
       "tickers": [
         "AMD"
       ],
-      "hours_ago": 1.3,
+      "hours_ago": 2.3,
       "url": "https://www.globenewswire.com/news-release/2026/11/20/3407810/0/en/advanced-micro-devices-inc-nasdaq-amd-investigation-alert-portnoy-law-firm-announces-investigation-into-advanced-micro-devices-inc-concerning-potential-securities-fraud.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1287,7 +1362,7 @@
         "NVDA",
         "MSFT"
       ],
-      "hours_ago": 1.8,
+      "hours_ago": 2.7,
       "url": "https://www.fool.com/coverage/better-buy/2026/11/20/amd-is-down-26-and-intel-is-down-42-which-ai-stock-is-worth-buying-on-the-dip/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1306,94 +1381,11 @@
         "MSFT",
         "BSP"
       ],
-      "hours_ago": 2.3,
+      "hours_ago": 3.2,
       "url": "https://www.fool.com/earnings/takeaways/2026/11/20/intuit-3-key-takeaways-for-long-term-investors/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "MSFT"
-      ]
-    },
-    {
-      "id": "98eb5368c8ae22831ede7d9f6d4a3467482d06f8034b4aa09b99b28dc97b6ea7",
-      "title": "The Nasdaq Just Had Its 6th Correction in 4 Years. History Says This Is the Likelihood of a Full-Blown Bear Market",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "AMZN",
-        "INTC",
-        "NVDA"
-      ],
-      "hours_ago": 2.3,
-      "url": "https://www.fool.com/investing/2026/11/20/the-nasdaq-just-had-its-6th-correction-in-4-years-history-says-this-is-the-likelihood-of-a-full-blown-bear-market/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "38806ac940169d73c6c4251946cd4d3abe29bb997b7590a5ce800e87f1f53d66",
-      "title": "GTA VI Boasts a Record-Breaking Launch With $3.79 Billion In Day One Sales. Is It Time to Buy Take-Two Stock?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "TTWO",
-        "MSFT"
-      ],
-      "hours_ago": 2.3,
-      "url": "https://www.fool.com/investing/2026/11/20/gta-vi-boasts-a-record-breaking-launch-with-usd3-79-billion-in-day-one-sales-is-it-time-to-buy-take-two-stock/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MSFT"
-      ]
-    },
-    {
-      "id": "a1106f0fd2a497508864189b843d3382fb472cbfa1b8ac5077299f8554f9ca15",
-      "title": "Cerebras Stock Looks Like a\u00a0Buy as Customer Base Expands",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "CBRS",
-        "MSFT",
-        "AMZN",
-        "ORCL"
-      ],
-      "hours_ago": 2.8,
-      "url": "https://www.fool.com/investing/2026/11/20/cerebras-stock-looks-like-a-buy-as-customer-base-expands/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MSFT"
-      ]
-    },
-    {
-      "id": "5e49ac9c12dccb7dd92fb18a54d061158d54a0cb05041cdb0bde642ec12b078a",
-      "title": "Kaplan Fox Notifies NVIDIA Corporation (NASDAQ: NVDA) Investors of a Securities Class Action Deadline on January 8, 2027",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "NVDA"
-      ],
-      "hours_ago": 3.4,
-      "url": "https://www.globenewswire.com/news-release/2026/11/20/3407773/1020/en/kaplan-fox-notifies-nvidia-corporation-nasdaq-nvda-investors-of-a-securities-class-action-deadline-on-january-8-2027.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "d582cba2807c81b98c0fbf3c0f0ea3ae994f18a93d272d22b80f14321f5ef0fa",
-      "title": "Forget SpaceX: This Stock Could Be the Real Winner of the Space Race",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "TSLA",
-        "SPCX",
-        "UBER"
-      ],
-      "hours_ago": 3.8,
-      "url": "https://www.fool.com/investing/2026/11/20/forget-spacex-this-stock-could-be-the-real-winner-of-the-space-race/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "SPCX"
       ]
     }
   ]
