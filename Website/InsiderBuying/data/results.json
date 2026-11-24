@@ -1,6 +1,6 @@
 {
-  "scan_time": "2026-11-24T00:31:03.636962",
-  "total_transactions": 883,
+  "scan_time": "2026-11-24T03:10:45.155870",
+  "total_transactions": 890,
   "date_range": "2026-10-26 \u2013 2026-11-19",
   "min_value": 25000,
   "nominees": [
@@ -531,6 +531,73 @@
         "$2.7M total"
       ],
       "story": "CGON: Two insiders bought including the CEO, $2.7M total."
+    },
+    {
+      "ticker": "ENOV",
+      "insider": "Wienbar Sharon L",
+      "title": "Dir",
+      "date": "2026-11-10",
+      "price": 28.09,
+      "qty": 10806,
+      "value": 298036.0,
+      "txn_count": 5,
+      "insider_count": 3,
+      "is_csuite": false,
+      "company": "Enovis Corporation",
+      "sector": "Healthcare",
+      "current_price": 26.7,
+      "change_pct": 4.83,
+      "market_cap": 1540451456,
+      "week52_high": 31.67,
+      "week52_low": 16.7,
+      "insider_avg_cost": 27.58,
+      "vs_insider_pct": -3.2,
+      "max_delta_own": 13.0,
+      "insiders": [
+        {
+          "name": "Wienbar Sharon L",
+          "title": "Dir",
+          "date": "2026-11-10",
+          "price": 28.09,
+          "qty": 3605,
+          "value": 99749.0,
+          "is_csuite": false,
+          "owned": 45551,
+          "delta_own": 4.0
+        },
+        {
+          "name": "Lalor Angela S",
+          "title": "Dir",
+          "date": "2026-11-12",
+          "price": 28.16,
+          "qty": 3511,
+          "value": 99579.0,
+          "is_csuite": false,
+          "owned": 34997,
+          "delta_own": 6.0
+        },
+        {
+          "name": "Kelly Liam",
+          "title": "Dir",
+          "date": "2026-11-19",
+          "price": 26.75,
+          "qty": 3690,
+          "value": 98708.0,
+          "is_csuite": false,
+          "owned": 32640,
+          "delta_own": 13.0
+        }
+      ],
+      "conviction_score": 72.0,
+      "tier": "A",
+      "signals": [
+        "3 insiders buying together",
+        "Position up 13%",
+        "Bought this week",
+        "$298K total",
+        "Still below insider cost"
+      ],
+      "story": "ENOV: Cluster of 3 insiders, $298K total."
     },
     {
       "ticker": "LILA",
@@ -1934,60 +2001,6 @@
         "Trading 44% below insider cost"
       ],
       "story": "KNOP: Seglem Trygve (Dir) bought, $78.4M total."
-    },
-    {
-      "ticker": "ENOV",
-      "insider": "Wienbar Sharon L",
-      "title": "Dir",
-      "date": "2026-11-10",
-      "price": 28.09,
-      "qty": 7116,
-      "value": 199328.0,
-      "txn_count": 4,
-      "insider_count": 2,
-      "is_csuite": false,
-      "company": "Enovis Corporation",
-      "sector": "Healthcare",
-      "current_price": 26.7,
-      "change_pct": 4.83,
-      "market_cap": 1540451456,
-      "week52_high": 31.67,
-      "week52_low": 16.7,
-      "insider_avg_cost": 28.01,
-      "vs_insider_pct": -4.7,
-      "max_delta_own": 6.0,
-      "insiders": [
-        {
-          "name": "Wienbar Sharon L",
-          "title": "Dir",
-          "date": "2026-11-10",
-          "price": 28.09,
-          "qty": 3605,
-          "value": 99749.0,
-          "is_csuite": false,
-          "owned": 45551,
-          "delta_own": 4.0
-        },
-        {
-          "name": "Lalor Angela S",
-          "title": "Dir",
-          "date": "2026-11-12",
-          "price": 28.16,
-          "qty": 3511,
-          "value": 99579.0,
-          "is_csuite": false,
-          "owned": 34997,
-          "delta_own": 6.0
-        }
-      ],
-      "conviction_score": 60.0,
-      "tier": "B",
-      "signals": [
-        "2 insiders buying",
-        "Position up 6%",
-        "Still below insider cost"
-      ],
-      "story": "ENOV: Two insiders bought, $199K total."
     },
     {
       "ticker": "ECL",
@@ -8068,7 +8081,7 @@
       "company": "SpyGlass Pharma, Inc.",
       "sector": "Healthcare",
       "current_price": 31.81,
-      "change_pct": 4.53,
+      "change_pct": 4.54,
       "market_cap": 1064408704,
       "week52_high": 39.92,
       "week52_low": 17.06,
@@ -9290,10 +9303,10 @@
       "title": "Dir",
       "date": "2026-11-19",
       "price": 6.49,
-      "qty": 299870,
-      "value": 1906137.0,
-      "txn_count": 6,
-      "insider_count": 5,
+      "qty": 315602,
+      "value": 2006193.0,
+      "txn_count": 7,
+      "insider_count": 6,
       "is_csuite": true,
       "company": "Suncrete, Inc.",
       "sector": "Basic Materials",
@@ -9340,6 +9353,17 @@
           "delta_own": 2.0
         },
         {
+          "name": "Edgar Randall W.",
+          "title": "CEO, 10%",
+          "date": "2026-11-19",
+          "price": 6.36,
+          "qty": 15732,
+          "value": 100056.0,
+          "is_csuite": true,
+          "owned": 4824522,
+          "delta_own": null
+        },
+        {
           "name": "Matteson Mark R",
           "title": "Dir",
           "date": "2026-11-17",
@@ -9366,13 +9390,81 @@
       "tier": "B",
       "signals": [
         "Down over 50% from its high",
-        "5 insiders buying, but the stock is well off its highs",
+        "6 insiders buying, but the stock is well off its highs",
         "COO bought",
         "Insider more than doubled their stake",
         "Bought this week",
-        "$1.9M total"
+        "$2.0M total"
       ],
-      "story": "RMIX: Cluster of 5 buyers including the COO, $1.9M total."
+      "story": "RMIX: Cluster of 6 buyers including the CEO, 10% and COO, $2.0M total."
+    },
+    {
+      "ticker": "FPS",
+      "insider": "Spierkel Gregory M",
+      "title": "Dir",
+      "date": "2026-11-20",
+      "price": 18.48,
+      "qty": 39800,
+      "value": 771936.0,
+      "txn_count": 3,
+      "insider_count": 3,
+      "is_csuite": false,
+      "company": "Forgent Power Solutions, Inc.",
+      "sector": "Industrials",
+      "current_price": 20.3,
+      "change_pct": 12.78,
+      "market_cap": 6179906560,
+      "week52_high": 66.0,
+      "week52_low": 17.67,
+      "insider_avg_cost": 19.4,
+      "vs_insider_pct": 4.6,
+      "max_delta_own": 112.0,
+      "insiders": [
+        {
+          "name": "Spierkel Gregory M",
+          "title": "Dir",
+          "date": "2026-11-20",
+          "price": 18.48,
+          "qty": 25000,
+          "value": 462000.0,
+          "is_csuite": false,
+          "owned": 170215,
+          "delta_own": 17.0
+        },
+        {
+          "name": "Hottinger Tyson",
+          "title": "GC",
+          "date": "2026-11-16",
+          "price": 20.76,
+          "qty": 11800,
+          "value": 244956.0,
+          "is_csuite": false,
+          "owned": 22364,
+          "delta_own": 112.0
+        },
+        {
+          "name": "Lund Inez",
+          "title": "Chief Accounting Officer",
+          "date": "2026-11-17",
+          "price": 21.66,
+          "qty": 3000,
+          "value": 64980.0,
+          "is_csuite": false,
+          "owned": 10043,
+          "delta_own": 43.0
+        }
+      ],
+      "conviction_score": 41.0,
+      "tier": "B",
+      "signals": [
+        "Down over 50% from its high",
+        "3 insiders buying, but the stock is well off its highs",
+        "Chief Accounting Officer bought",
+        "Insider more than doubled their stake",
+        "Bought this week",
+        "$772K total"
+      ],
+      "story": "FPS: Cluster of 3 insiders, $772K total."
     },
     {
       "ticker": "APC",
@@ -9897,6 +9989,73 @@
         "$885K total"
       ],
       "story": "KRRO: Lynx1 Capital Management LP (10%) bought, $885K total."
+    },
+    {
+      "ticker": "FUN",
+      "insider": "Jaffer Rehan",
+      "title": "Dir",
+      "date": "2026-11-19",
+      "price": 11.43,
+      "qty": 3214000,
+      "value": 34952320.0,
+      "txn_count": 6,
+      "insider_count": 3,
+      "is_csuite": false,
+      "company": "Six Flags Entertainment Corporation",
+      "sector": "Consumer Cyclical",
+      "current_price": 11.2,
+      "change_pct": 1.27,
+      "market_cap": 1145869952,
+      "week52_high": 26.28,
+      "week52_low": 6.6,
+      "insider_avg_cost": 10.88,
+      "vs_insider_pct": 2.9,
+      "max_delta_own": 30.0,
+      "insiders": [
+        {
+          "name": "Jaffer Rehan",
+          "title": "Dir",
+          "date": "2026-11-19",
+          "price": 11.43,
+          "qty": 3200000,
+          "value": 34815000.0,
+          "is_csuite": false,
+          "owned": 8100000,
+          "delta_own": 30.0
+        },
+        {
+          "name": "Haddrill Richard M",
+          "title": "Exec Chair",
+          "date": "2026-11-06",
+          "price": 10.08,
+          "qty": 9000,
+          "value": 90720.0,
+          "is_csuite": false,
+          "owned": 239117,
+          "delta_own": 4.0
+        },
+        {
+          "name": "Bennett Christopher Lawrence",
+          "title": "GC",
+          "date": "2026-11-06",
+          "price": 9.32,
+          "qty": 5000,
+          "value": 46600.0,
+          "is_csuite": false,
+          "owned": 51697,
+          "delta_own": 11.0
+        }
+      ],
+      "conviction_score": 40.0,
+      "tier": "B",
+      "signals": [
+        "Down over 50% from its high",
+        "3 insiders buying, but the stock is well off its highs",
+        "Position up 30%",
+        "Bought this week",
+        "$35.0M total"
+      ],
+      "story": "FUN: Cluster of 3 insiders, $35.0M total."
     },
     {
       "ticker": "TG",
@@ -10872,63 +11031,6 @@
       "story": "ALTO: Nathan Gilbert E (Dir) bought."
     },
     {
-      "ticker": "FPS",
-      "insider": "Hottinger Tyson",
-      "title": "GC",
-      "date": "2026-11-16",
-      "price": 20.76,
-      "qty": 14800,
-      "value": 309936.0,
-      "txn_count": 2,
-      "insider_count": 2,
-      "is_csuite": false,
-      "company": "Forgent Power Solutions, Inc.",
-      "sector": "Industrials",
-      "current_price": 20.3,
-      "change_pct": 12.78,
-      "market_cap": 6179906560,
-      "week52_high": 66.0,
-      "week52_low": 17.67,
-      "insider_avg_cost": 20.94,
-      "vs_insider_pct": -3.1,
-      "max_delta_own": 112.0,
-      "insiders": [
-        {
-          "name": "Hottinger Tyson",
-          "title": "GC",
-          "date": "2026-11-16",
-          "price": 20.76,
-          "qty": 11800,
-          "value": 244956.0,
-          "is_csuite": false,
-          "owned": 22364,
-          "delta_own": 112.0
-        },
-        {
-          "name": "Lund Inez",
-          "title": "Chief Accounting Officer",
-          "date": "2026-11-17",
-          "price": 21.66,
-          "qty": 3000,
-          "value": 64980.0,
-          "is_csuite": false,
-          "owned": 10043,
-          "delta_own": 43.0
-        }
-      ],
-      "conviction_score": 39.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high",
-        "2 insiders buying, but the stock is well off its highs",
-        "Chief Accounting Officer bought",
-        "Insider more than doubled their stake",
-        "$310K total",
-        "Still below insider cost"
-      ],
-      "story": "FPS: Two insiders bought, $310K total."
-    },
-    {
       "ticker": "FRPH",
       "insider": "Baker John D II",
       "title": "Dir, 10%",
@@ -11437,6 +11539,63 @@
         "Trading 6% below insider cost"
       ],
       "story": "WS: The CEO Americas Kloeckner Metals bought."
+    },
+    {
+      "ticker": "LAB",
+      "insider": "Casdin Partners Master Fund, L.P.",
+      "title": "Dir, 10%",
+      "date": "2026-11-19",
+      "price": 0.61,
+      "qty": 1963607,
+      "value": 1196972.0,
+      "txn_count": 2,
+      "insider_count": 2,
+      "is_csuite": false,
+      "company": "Standard BioTools Inc.",
+      "sector": "Healthcare",
+      "current_price": 0.6072,
+      "change_pct": -3.77,
+      "market_cap": 239716768,
+      "week52_high": 1.72,
+      "week52_low": 0.39,
+      "insider_avg_cost": 0.61,
+      "vs_insider_pct": -0.5,
+      "max_delta_own": 22.0,
+      "insiders": [
+        {
+          "name": "Casdin Partners Master Fund, L.P.",
+          "title": "Dir, 10%",
+          "date": "2026-11-19",
+          "price": 0.61,
+          "qty": 1888607,
+          "value": 1150074.0,
+          "is_csuite": false,
+          "owned": 93725632,
+          "delta_own": 2.0
+        },
+        {
+          "name": "Carey Thomas D.",
+          "title": "Dir",
+          "date": "2026-11-05",
+          "price": 0.63,
+          "qty": 75000,
+          "value": 46898.0,
+          "is_csuite": false,
+          "owned": 419456,
+          "delta_own": 22.0
+        }
+      ],
+      "conviction_score": 38.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "2 insiders buying, but the stock is well off its highs",
+        "Position up 22%",
+        "Bought this week",
+        "$1.2M total",
+        "Still below insider cost"
+      ],
+      "story": "LAB: Two insiders bought, $1.2M total."
     },
     {
       "ticker": "SCOR",
@@ -12184,72 +12343,6 @@
         "Still below insider cost"
       ],
       "story": "DX: Two insiders bought including the Co-CEO, COB, $126K total."
-    },
-    {
-      "ticker": "FUN",
-      "insider": "Jaffer Rehan",
-      "title": "Dir",
-      "date": "2026-11-16",
-      "price": 11.55,
-      "qty": 2839000,
-      "value": 30666320.0,
-      "txn_count": 5,
-      "insider_count": 3,
-      "is_csuite": false,
-      "company": "Six Flags Entertainment Corporation",
-      "sector": "Consumer Cyclical",
-      "current_price": 11.2,
-      "change_pct": 1.27,
-      "market_cap": 1145869952,
-      "week52_high": 26.28,
-      "week52_low": 6.6,
-      "insider_avg_cost": 10.8,
-      "vs_insider_pct": 3.7,
-      "max_delta_own": 30.0,
-      "insiders": [
-        {
-          "name": "Jaffer Rehan",
-          "title": "Dir",
-          "date": "2026-11-16",
-          "price": 11.55,
-          "qty": 2825000,
-          "value": 30529000.0,
-          "is_csuite": false,
-          "owned": 7725000,
-          "delta_own": 30.0
-        },
-        {
-          "name": "Haddrill Richard M",
-          "title": "Exec Chair",
-          "date": "2026-11-06",
-          "price": 10.08,
-          "qty": 9000,
-          "value": 90720.0,
-          "is_csuite": false,
-          "owned": 239117,
-          "delta_own": 4.0
-        },
-        {
-          "name": "Bennett Christopher Lawrence",
-          "title": "GC",
-          "date": "2026-11-06",
-          "price": 9.32,
-          "qty": 5000,
-          "value": 46600.0,
-          "is_csuite": false,
-          "owned": 51697,
-          "delta_own": 11.0
-        }
-      ],
-      "conviction_score": 37.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high",
-        "3 insiders buying, but the stock is well off its highs",
-        "Position up 30%",
-        "$30.7M total"
-      ],
-      "story": "FUN: Cluster of 3 insiders, $30.7M total."
     },
     {
       "ticker": "VIVO",
@@ -19092,49 +19185,6 @@
       "story": "VDTA: Hamble International Inc. (10%) bought, $1000K total."
     },
     {
-      "ticker": "LAB",
-      "insider": "Carey Thomas D.",
-      "title": "Dir",
-      "date": "2026-11-05",
-      "price": 0.63,
-      "qty": 75000,
-      "value": 46898.0,
-      "txn_count": 1,
-      "insider_count": 1,
-      "is_csuite": false,
-      "company": "Standard BioTools Inc.",
-      "sector": "Healthcare",
-      "current_price": 0.6072,
-      "change_pct": -3.77,
-      "market_cap": 239716768,
-      "week52_high": 1.72,
-      "week52_low": 0.39,
-      "insider_avg_cost": 0.63,
-      "vs_insider_pct": -3.6,
-      "max_delta_own": 22.0,
-      "insiders": [
-        {
-          "name": "Carey Thomas D.",
-          "title": "Dir",
-          "date": "2026-11-05",
-          "price": 0.63,
-          "qty": 75000,
-          "value": 46898.0,
-          "is_csuite": false,
-          "owned": 419456,
-          "delta_own": 22.0
-        }
-      ],
-      "conviction_score": 28.0,
-      "tier": "W",
-      "signals": [
-        "Down over 50% from its high",
-        "Position up 22%",
-        "Still below insider cost"
-      ],
-      "story": "LAB: Carey Thomas D. (Dir) bought."
-    },
-    {
       "ticker": "SYNX",
       "insider": "Klein Nir",
       "title": "CEO",
@@ -19286,6 +19336,49 @@
         "Trading 41% below insider cost"
       ],
       "story": "PLUR: Manieu Alexandre Weinstein (Dir, 10%) bought, $1.3M total."
+    },
+    {
+      "ticker": "LENZ",
+      "insider": "Leonard Braden Michael",
+      "title": "10%",
+      "date": "2026-11-20",
+      "price": 2.95,
+      "qty": 38654,
+      "value": 114025.0,
+      "txn_count": 1,
+      "insider_count": 1,
+      "is_csuite": false,
+      "company": "LENZ Therapeutics, Inc.",
+      "sector": "Healthcare",
+      "current_price": 2.805,
+      "change_pct": -5.4,
+      "market_cap": 88134744,
+      "week52_high": 32.13,
+      "week52_low": 2.8,
+      "insider_avg_cost": 2.95,
+      "vs_insider_pct": -4.9,
+      "max_delta_own": 1.0,
+      "insiders": [
+        {
+          "name": "Leonard Braden Michael",
+          "title": "10%",
+          "date": "2026-11-20",
+          "price": 2.95,
+          "qty": 38654,
+          "value": 114025.0,
+          "is_csuite": false,
+          "owned": 3290268,
+          "delta_own": 1.0
+        }
+      ],
+      "conviction_score": 27.0,
+      "tier": "W",
+      "signals": [
+        "Down over 50% from its high",
+        "Bought this week",
+        "Still below insider cost"
+      ],
+      "story": "LENZ: Leonard Braden Michael (10%) bought, $114K total."
     },
     {
       "ticker": "BTDR",
@@ -21281,8 +21374,8 @@
       "current_price": 1.31,
       "change_pct": 8.31,
       "market_cap": 1320341,
-      "week52_high": 460.0,
-      "week52_low": 0.8065,
+      "week52_high": 92.0,
+      "week52_low": 0.161,
       "insider_avg_cost": 0.32,
       "vs_insider_pct": 309.4,
       "max_delta_own": 100.0,
@@ -21582,12 +21675,110 @@
     }
   ],
   "tier_counts": {
-    "A": 25,
-    "B": 180,
-    "W": 224,
-    "total": 429
+    "A": 26,
+    "B": 181,
+    "W": 223,
+    "total": 430
   },
   "recent_feed": [
+    {
+      "ticker": "ENOV",
+      "company": "Enovis Corp",
+      "insider": "Kelly Liam",
+      "title": "Dir",
+      "date": "2026-11-19",
+      "price": 26.75,
+      "qty": 3690,
+      "owned": 32640,
+      "delta_own": 13.0,
+      "value": 98708.0,
+      "filing": "2026-11-23",
+      "is_csuite": false
+    },
+    {
+      "ticker": "LAB",
+      "company": "Standard Biotools Inc.",
+      "insider": "Casdin Partners Master Fund, L.P.",
+      "title": "Dir, 10%",
+      "date": "2026-11-19",
+      "price": 0.61,
+      "qty": 1888607,
+      "owned": 93725632,
+      "delta_own": 2.0,
+      "value": 1150074.0,
+      "filing": "2026-11-23",
+      "is_csuite": false
+    },
+    {
+      "ticker": "FUN",
+      "company": "Six Flags Entertainment Corporation/New",
+      "insider": "Jaffer Rehan",
+      "title": "Dir",
+      "date": "2026-11-19",
+      "price": 11.43,
+      "qty": 375000,
+      "owned": 8100000,
+      "delta_own": 5.0,
+      "value": 4286000.0,
+      "filing": "2026-11-23",
+      "is_csuite": false
+    },
+    {
+      "ticker": "RMIX",
+      "company": "Suncrete, Inc.",
+      "insider": "Edgar Randall W.",
+      "title": "CEO, 10%",
+      "date": "2026-11-19",
+      "price": 6.36,
+      "qty": 15732,
+      "owned": 4824522,
+      "delta_own": 0.0,
+      "value": 100056.0,
+      "filing": "2026-11-23",
+      "is_csuite": true
+    },
+    {
+      "ticker": "SAFTX",
+      "company": "Sound Point Alternative Income Fund",
+      "insider": "Assured Guaranty Ltd",
+      "title": "10%",
+      "date": "2026-11-19",
+      "price": 20.4,
+      "qty": 245098,
+      "owned": 629007,
+      "delta_own": 64.0,
+      "value": 5000000.0,
+      "filing": "2026-11-23",
+      "is_csuite": false
+    },
+    {
+      "ticker": "LENZ",
+      "company": "Lenz Therapeutics, Inc.",
+      "insider": "Leonard Braden Michael",
+      "title": "10%",
+      "date": "2026-11-20",
+      "price": 2.95,
+      "qty": 38654,
+      "owned": 3290268,
+      "delta_own": 1.0,
+      "value": 114025.0,
+      "filing": "2026-11-23",
+      "is_csuite": false
+    },
+    {
+      "ticker": "FPS",
+      "company": "Forgent Power Solutions, Inc.",
+      "insider": "Spierkel Gregory M",
+      "title": "Dir",
+      "date": "2026-11-20",
+      "price": 18.48,
+      "qty": 25000,
+      "owned": 170215,
+      "delta_own": 17.0,
+      "value": 462000.0,
+      "filing": "2026-11-23",
+      "is_csuite": false
+    },
     {
       "ticker": "RMIX",
       "company": "Suncrete, Inc.",
@@ -22049,104 +22240,6 @@
       "value": 171920.0,
       "filing": "2026-11-23",
       "is_csuite": true
-    },
-    {
-      "ticker": "ADTN",
-      "company": "Adtran Holdings, Inc.",
-      "insider": "Santo Timothy P",
-      "title": "SVP of Finance; CFO",
-      "date": "2026-11-06",
-      "price": 4.16,
-      "qty": 17820,
-      "owned": 77744,
-      "delta_own": 30.0,
-      "value": 74188.0,
-      "filing": "2026-11-23",
-      "is_csuite": true
-    },
-    {
-      "ticker": "DTI",
-      "company": "Drilling Tools International Corp",
-      "insider": "Domino Michael Wayne Jr.",
-      "title": "Pres, DTR Division",
-      "date": "2026-11-19",
-      "price": 1.63,
-      "qty": 28000,
-      "owned": 1493006,
-      "delta_own": 2.0,
-      "value": 45534.0,
-      "filing": "2026-11-23",
-      "is_csuite": false
-    },
-    {
-      "ticker": "BULL",
-      "company": "Webull Corp",
-      "insider": "Denier Anthony Michael",
-      "title": "Pres",
-      "date": "2026-11-23",
-      "price": 4.47,
-      "qty": 10000,
-      "owned": 2073065,
-      "delta_own": 0.0,
-      "value": 44687.0,
-      "filing": "2026-11-23",
-      "is_csuite": false
-    },
-    {
-      "ticker": "CWGL",
-      "company": "Crimson Wine Group, Ltd",
-      "insider": "Steinberg Joseph S",
-      "title": "Dir, 10%",
-      "date": "2026-11-20",
-      "price": 3.75,
-      "qty": 50000,
-      "owned": 3472353,
-      "delta_own": 1.0,
-      "value": 187500.0,
-      "filing": "2026-11-23",
-      "is_csuite": false
-    },
-    {
-      "ticker": "CWGL",
-      "company": "Crimson Wine Group, Ltd",
-      "insider": "Cumming John D.",
-      "title": "Dir, 10%",
-      "date": "2026-11-20",
-      "price": 3.75,
-      "qty": 50000,
-      "owned": 1293013,
-      "delta_own": 4.0,
-      "value": 187500.0,
-      "filing": "2026-11-23",
-      "is_csuite": false
-    },
-    {
-      "ticker": "SFST",
-      "company": "Southern First Bancshares Inc",
-      "insider": "Ellison David G",
-      "title": "Dir",
-      "date": "2026-11-23",
-      "price": 57.0,
-      "qty": 500,
-      "owned": 50471,
-      "delta_own": 1.0,
-      "value": 28498.0,
-      "filing": "2026-11-23",
-      "is_csuite": false
-    },
-    {
-      "ticker": "MED",
-      "company": "Medifast Inc",
-      "insider": "Kiai Parsa",
-      "title": "Dir",
-      "date": "2026-11-20",
-      "price": 11.62,
-      "qty": 6677,
-      "owned": 23987,
-      "delta_own": 39.0,
-      "value": 77610.0,
-      "filing": "2026-11-23",
-      "is_csuite": false
     }
   ]
 }
