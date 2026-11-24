@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-11-24T22:53:19.477473+00:00",
+  "scan_time": "2026-11-24T23:14:10.259523+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 65,
   "universe_source": "Yahoo screener (custom): gainers + most active",
@@ -22,7 +22,7 @@
       "signals": [
         "Top gainer (+19.5%)",
         "Strong move (+19.5%)",
-        "StockTwits trending (#8)",
+        "StockTwits trending (#9)",
         "Yahoo trending (#3)",
         "Unusual volume (Finviz)",
         "Closing strong"
@@ -168,7 +168,7 @@
         "Closing strong",
         "Sector leader (Metals & Mining)"
       ],
-      "reddit_mentions": 0,
+      "reddit_mentions": 1,
       "market_cap": 853471147.0000001,
       "is_gainer": true,
       "is_active": false,
@@ -222,7 +222,7 @@
   "reddit_cards": [
     {
       "ticker": "NVDA",
-      "mentions": 11,
+      "mentions": 10,
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
       "current_price": 155.38,
@@ -234,16 +234,16 @@
       "market_cap": 3977705073547.0005,
       "score": 0,
       "signals": [
-        "News buzz (11 mentions)"
+        "News buzz (10 mentions)"
       ],
-      "reddit_mentions": 11,
+      "reddit_mentions": 10,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
         "trend_pct": -47,
-        "reddit": 907,
-        "st_bull": 87,
+        "reddit": 898,
+        "st_bull": 79,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -263,50 +263,8 @@
       "score_normalized": 0
     },
     {
-      "ticker": "MSFT",
-      "mentions": 6,
-      "name": "Microsoft Corporation",
-      "sector": "Technology",
-      "current_price": 496.13,
-      "change_pct": 0.7371,
-      "high": 501.82,
-      "low": 488.43,
-      "open": 490.13,
-      "prev_close": 492.5,
-      "market_cap": 3657400710449.0,
-      "score": 0,
-      "signals": [
-        "News buzz (6 mentions)"
-      ],
-      "reddit_mentions": 6,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "trend_pct": 127,
-        "reddit": 25,
-        "st_bull": 88,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 4.89,
-          "estimate": 4.82,
-          "beat": true,
-          "surprise_pct": 1.4
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "SPCX",
-      "mentions": 6,
+      "mentions": 4,
       "name": "Space Exploration Technologies Corp",
       "sector": "Telecommunication",
       "current_price": 125.81,
@@ -318,17 +276,17 @@
       "market_cap": 1811034901500.9998,
       "score": 0,
       "signals": [
-        "News buzz (6 mentions)",
-        "Yahoo trending (#15)"
+        "News buzz (4 mentions)",
+        "Yahoo trending (#20)"
       ],
-      "reddit_mentions": 6,
+      "reddit_mentions": 4,
       "is_gainer": false,
       "is_active": false,
-      "yahoo_trending_rank": 15,
+      "yahoo_trending_rank": 20,
       "social": {
-        "trend_pct": 189,
-        "reddit": 52,
-        "st_bull": 69,
+        "trend_pct": 194,
+        "reddit": 53,
+        "st_bull": 62,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -348,6 +306,48 @@
       "score_normalized": 0
     },
     {
+      "ticker": "HPE",
+      "mentions": 3,
+      "name": "Hewlett Packard Enterprise Company",
+      "sector": "Technology",
+      "current_price": 40.19,
+      "change_pct": -16.3057,
+      "high": 42.49,
+      "low": 39.415,
+      "open": 42.36,
+      "prev_close": 48.02,
+      "market_cap": 53755418924.14569,
+      "score": 0,
+      "signals": [
+        "News buzz (3 mentions)"
+      ],
+      "reddit_mentions": 3,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": -14,
+        "reddit": 36,
+        "st_bull": 62,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 1.11,
+          "estimate": 0.94,
+          "beat": true,
+          "surprise_pct": 18.0
+        }
+      },
+      "score_normalized": 0
+    },
+    {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
       "sector": "Semiconductors",
@@ -359,11 +359,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 131,
+      "mentions": 128,
       "social": {
         "trend_pct": 2,
-        "reddit": 131,
-        "st_bull": 60,
+        "reddit": 128,
+        "st_bull": 83,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -426,10 +426,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 99,
+      "mentions": 98,
       "social": {
-        "trend_pct": 18,
-        "reddit": 99,
+        "trend_pct": 17,
+        "reddit": 98,
         "sources": [
           "Reddit"
         ]
@@ -463,9 +463,9 @@
       "ticker": "AAPL",
       "name": "Apple Inc.",
       "sector": "Technology",
-      "mentions": 89,
+      "mentions": 90,
       "prev": 12,
-      "trend_pct": 642,
+      "trend_pct": 650,
       "current_price": 354.07,
       "change_pct": 1.4295,
       "market_cap": 5072893771975.0
@@ -474,9 +474,9 @@
       "ticker": "SPCX",
       "name": "Space Exploration Technologies Corp",
       "sector": "Telecommunication",
-      "mentions": 52,
+      "mentions": 53,
       "prev": 18,
-      "trend_pct": 189,
+      "trend_pct": 194,
       "current_price": 125.81,
       "change_pct": -5.6543,
       "market_cap": 1811034901500.9998
@@ -1163,11 +1163,12 @@
         "HPEpC",
         "NVDA"
       ],
-      "hours_ago": 1.0,
+      "hours_ago": 1.3,
       "url": "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "DELL",
+        "HPE",
         "NVDA"
       ]
     },
@@ -1183,12 +1184,11 @@
         "KSS",
         "DLTR"
       ],
-      "hours_ago": 1.0,
+      "hours_ago": 1.4,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/24/stock-market-today-nov-24-tech-sell-off-drags-nasdaq-as-dow-gains-on-value-rotation/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "NVDA",
-        "MSFT"
+        "NVDA"
       ]
     },
     {
@@ -1201,7 +1201,7 @@
         "NVDA",
         "SPCX"
       ],
-      "hours_ago": 1.3,
+      "hours_ago": 1.7,
       "url": "https://www.fool.com/investing/2026/11/24/why-anthropic-stock-fell-again/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1219,7 +1219,7 @@
         "AMD",
         "AVGO"
       ],
-      "hours_ago": 1.4,
+      "hours_ago": 1.7,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/24/stock-market-today-nov-24-nvidia-gives-back-usd240-billion-in-market-value-despite-wall-street-upgrade-signaling-29-upside/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1235,7 +1235,7 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 2.1,
+      "hours_ago": 2.5,
       "url": "https://www.fool.com/investing/2026/11/24/did-nvidia-make-a-big-mistake-by-reinstating-jensen-huang-as-ceo/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1254,11 +1254,10 @@
         "MSFT",
         "NVDA"
       ],
-      "hours_ago": 2.9,
+      "hours_ago": 3.2,
       "url": "https://www.fool.com/coverage/better-buy/2026/11/24/axon-enterprise-vs-palantir-technologies-which-law-enforcement-stock-is-a-better-buy-for-2027/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "MSFT",
         "NVDA"
       ]
     },
@@ -1272,12 +1271,28 @@
         "NVDA",
         "SPCX"
       ],
-      "hours_ago": 3.0,
+      "hours_ago": 3.3,
       "url": "https://www.fool.com/investing/2026/11/24/anthropic-stock-just-broke-below-its-usd83-ipo-price-is-it-a-bargain-buy/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "NVDA",
         "SPCX"
+      ]
+    },
+    {
+      "id": "d508f647dcb6a51e276bedecaa972fd57f68e6b77c6f242bca09b40a93fa4388",
+      "title": "Why Hewlett Packard Enterprise Stock Fell 16% Today",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "HPE",
+        "HPEpC"
+      ],
+      "hours_ago": 3.4,
+      "url": "https://www.fool.com/investing/2026/11/24/why-hewlett-packard-enterprise-stock-fell-16-today/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "HPE"
       ]
     },
     {
@@ -1292,116 +1307,11 @@
         "GOOG",
         "GOOGL"
       ],
-      "hours_ago": 3.0,
+      "hours_ago": 3.4,
       "url": "https://www.fool.com/investing/2026/11/24/should-vanguard-s-and-p-500-etf-investors-be-worried-about-the-downturn-in-nvidia-and-ai-stocks/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "NVDA"
-      ]
-    },
-    {
-      "id": "17a785995ce8b4f96d8542395e5160a24c40ccd3845eab28373a80f113ad8c28",
-      "title": "Anthropic Stock Is Now Trading. Should You Buy It Today?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "ANT",
-        "SPCX"
-      ],
-      "hours_ago": 3.9,
-      "url": "https://www.fool.com/investing/2026/11/24/anthropic-stock-is-now-trading-should-you-buy-it-today/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "SPCX"
-      ]
-    },
-    {
-      "id": "d9c377d6349ff41eb7f5d82cdd5f29dc58d048460db95557b719dfe75ad3b2dc",
-      "title": "If SpaceX and Tesla Merge, History Says One Group of Shareholders Usually Wins. Here\u2019s Which Side to Be On.",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "SPCX",
-        "TSLA",
-        "NVDA"
-      ],
-      "hours_ago": 3.9,
-      "url": "https://www.fool.com/investing/2026/11/24/if-spacex-and-tesla-merge-history-says-one-group-of-shareholders-usually-wins-here-s-which-side-to-be-on/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "SPCX",
-        "NVDA"
-      ]
-    },
-    {
-      "id": "6562ee07aa654dcddb9932e6f212783fab8c7f5ccc012130f6ee28df94441ec1",
-      "title": "Why SpaceX Dropped Again Today",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "SPCX",
-        "ANT",
-        "GOOG",
-        "GOOGL",
-        "GOOGM"
-      ],
-      "hours_ago": 4.2,
-      "url": "https://www.fool.com/investing/2026/11/24/why-spacex-dropped-again-today/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "SPCX"
-      ]
-    },
-    {
-      "id": "ec40cd6e2e56fb24e364184f2be08a346f73cead78d54de0b5af1fed563acb6b",
-      "title": "Here's Why SpaceX Stock Slumped Today, And Why it Could Come Under More Pressure as Tesla Merger Talks Continue",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "SPCX",
-        "TSLA"
-      ],
-      "hours_ago": 5.1,
-      "url": "https://www.fool.com/investing/2026/11/24/here-s-why-spacex-stock-slumped-today-and-why-it-could-come-under-more-pressure-as-tesla-merger-talks-continue/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "SPCX"
-      ]
-    },
-    {
-      "id": "a0af944bb352cf3c3c8bdf3988b0a6f3d8b58ec213fa1858e95745d1a812d8ff",
-      "title": "Why Sandisk Stock Plunged Today",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "SNDK",
-        "NVDA"
-      ],
-      "hours_ago": 5.1,
-      "url": "https://www.fool.com/investing/2026/11/24/why-sandisk-stock-plunged-today/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "22eb20836158efaf8702dcb1af8c1d087a062bbe7e7a1eeb04163db0fc0d42a5",
-      "title": "Anthropic Just Fell Below Its IPO Price, but Here's What the Stock Could Be Worth in 2030",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "ANT",
-        "NVDA",
-        "AMD",
-        "MSFT"
-      ],
-      "hours_ago": 5.2,
-      "url": "https://www.fool.com/investing/2026/11/24/anthropic-just-fell-below-its-ipo-price-but-here-s-what-the-stock-could-be-worth-in-2030/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA",
-        "AMD",
-        "MSFT"
       ]
     }
   ]
