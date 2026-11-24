@@ -1,11 +1,11 @@
 {
-  "scan_time": "2026-11-24T02:24:11.608161+00:00",
+  "scan_time": "2026-11-24T03:22:47.835006+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 60,
+  "total_scanned": 59,
   "universe_source": "Yahoo screener (custom): gainers + most active",
   "social_sources": {
     "apewisdom": 100,
-    "stocktwits_trending": 29
+    "stocktwits_trending": 27
   },
   "day_trades": [
     {
@@ -18,12 +18,12 @@
       "low": 3.36,
       "open": 3.44,
       "prev_close": 3.36,
-      "score": 52,
+      "score": 56,
       "signals": [
         "Top gainer (+117.9%)",
         "High volume",
         "Strong move (+117.9%)",
-        "Yahoo trending (#14)",
+        "Yahoo trending (#10)",
         "Unusual volume (Finviz)",
         "Closing strong",
         "Sector leader (Technology)"
@@ -34,7 +34,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950871254756.png",
       "weburl": "https://brandengagementnetwork.com/",
-      "yahoo_trending_rank": 14,
+      "yahoo_trending_rank": 10,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -45,7 +45,44 @@
           "surprise_pct": 74.7
         }
       },
-      "score_normalized": 73
+      "score_normalized": 79
+    },
+    {
+      "ticker": "HPE",
+      "name": "Hewlett Packard Enterprise Company",
+      "sector": "Technology",
+      "current_price": 48.02,
+      "change_pct": 17.3796,
+      "high": 51,
+      "low": 45.215,
+      "open": 51,
+      "prev_close": 40.91,
+      "score": 50,
+      "signals": [
+        "Top gainer (+17.4%)",
+        "High volume",
+        "Strong move (+17.4%)",
+        "Reddit chatter (#18, 45 mentions)",
+        "Yahoo trending (#1)"
+      ],
+      "reddit_mentions": 1,
+      "market_cap": 63744855696.87657,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HPE.png",
+      "weburl": "https://www.hpe.com/",
+      "yahoo_trending_rank": 1,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 1.11,
+          "estimate": 0.94,
+          "beat": true,
+          "surprise_pct": 18.0
+        }
+      },
+      "score_normalized": 70
     },
     {
       "ticker": "OTLY",
@@ -85,42 +122,6 @@
       "score_normalized": 65
     },
     {
-      "ticker": "HPE",
-      "name": "Hewlett Packard Enterprise Company",
-      "sector": "Technology",
-      "current_price": 48.02,
-      "change_pct": 17.3796,
-      "high": 51,
-      "low": 45.215,
-      "open": 51,
-      "prev_close": 40.91,
-      "score": 45,
-      "signals": [
-        "Top gainer (+17.4%)",
-        "Strong move (+17.4%)",
-        "Reddit chatter (#18, 45 mentions)",
-        "Yahoo trending (#1)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 63744855696.87657,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HPE.png",
-      "weburl": "https://www.hpe.com/",
-      "yahoo_trending_rank": 1,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 1.11,
-          "estimate": 0.94,
-          "beat": true,
-          "surprise_pct": 18.0
-        }
-      },
-      "score_normalized": 63
-    },
-    {
       "ticker": "NBIS",
       "name": "Nebius Group NV",
       "sector": "Technology",
@@ -137,7 +138,7 @@
         "Strong move (+20.3%)",
         "Reddit chatter (#20, 42 mentions)"
       ],
-      "reddit_mentions": 1,
+      "reddit_mentions": 0,
       "market_cap": 28645854258.123234,
       "is_gainer": true,
       "is_active": true,
@@ -157,43 +158,6 @@
       "score_normalized": 54
     },
     {
-      "ticker": "OUST",
-      "name": "Ouster, Inc.",
-      "sector": "Electrical Equipment",
-      "current_price": 27.9,
-      "change_pct": 17.2269,
-      "high": 28.7503,
-      "low": 26.8013,
-      "open": 27.75,
-      "prev_close": 23.8,
-      "score": 36,
-      "signals": [
-        "Top gainer (+17.2%)",
-        "Strong move (+17.2%)",
-        "StockTwits trending (#20)",
-        "Closing strong",
-        "Sector leader (Electrical Equipment)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 2036620963.285714,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950800353446.png",
-      "weburl": "https://ouster.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": -0.2,
-          "estimate": -0.25,
-          "beat": true,
-          "surprise_pct": 20.0
-        }
-      },
-      "score_normalized": 51
-    },
-    {
       "ticker": "SMTC",
       "name": "Semtech Corporation",
       "sector": "Semiconductors",
@@ -207,16 +171,16 @@
       "signals": [
         "Top gainer (+18.8%)",
         "Strong move (+18.8%)",
-        "Yahoo trending (#16)",
+        "Yahoo trending (#15)",
         "Sector leader (Semiconductors)"
       ],
-      "reddit_mentions": 1,
+      "reddit_mentions": 0,
       "market_cap": 9717996771.86169,
       "is_gainer": true,
       "is_active": false,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SMTC.png",
       "weburl": "https://www.semtech.com/",
-      "yahoo_trending_rank": 16,
+      "yahoo_trending_rank": 15,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -228,13 +192,43 @@
         }
       },
       "score_normalized": 51
+    },
+    {
+      "ticker": "GRRR",
+      "name": "Gorilla Technology Group Inc",
+      "sector": "Technology",
+      "current_price": 7.59,
+      "change_pct": 44.4339,
+      "high": 7.75,
+      "low": 5.68,
+      "open": 6.04,
+      "prev_close": 5.255,
+      "score": 34,
+      "signals": [
+        "Top gainer (+44.4%)",
+        "Strong move (+44.4%)",
+        "Yahoo trending (#17)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 209320869.16270217,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950230974096.png",
+      "weburl": "https://www.gorilla-technology.com/",
+      "yahoo_trending_rank": 17,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 48
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
     {
       "ticker": "NVDA",
-      "mentions": 11,
+      "mentions": 8,
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
       "current_price": 165.05,
@@ -246,16 +240,16 @@
       "market_cap": 3977704961319.1597,
       "score": 0,
       "signals": [
-        "News buzz (11 mentions)"
+        "News buzz (8 mentions)"
       ],
-      "reddit_mentions": 11,
+      "reddit_mentions": 8,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 438,
-        "reddit": 1797,
-        "st_bull": 67,
+        "trend_pct": 444,
+        "reddit": 1812,
+        "st_bull": 71,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -310,29 +304,28 @@
       "score_normalized": 0
     },
     {
-      "ticker": "MU",
-      "mentions": 4,
-      "name": "Micron Technology, Inc.",
-      "sector": "Semiconductors",
-      "current_price": 707.7,
-      "change_pct": 19.0392,
-      "high": 720.69,
-      "low": 666.66,
-      "open": 690.72,
-      "prev_close": 594.51,
-      "market_cap": 800708224371.5156,
+      "ticker": "ANT",
+      "mentions": 3,
+      "name": "Anthropic, PBC",
+      "sector": "Technology",
+      "current_price": 87.64,
+      "change_pct": -1.4284,
+      "high": 94.24,
+      "low": 84.61,
+      "open": 93.645,
+      "prev_close": 88.91,
+      "market_cap": 1158569497481.9185,
       "score": 0,
       "signals": [
-        "News buzz (4 mentions)"
+        "News buzz (3 mentions)"
       ],
-      "reddit_mentions": 4,
+      "reddit_mentions": 3,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 126,
-        "reddit": 88,
-        "st_bull": 88,
+        "reddit": 3,
+        "st_bull": 50,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -341,13 +334,7 @@
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 33.42,
-          "estimate": 32.56,
-          "beat": true,
-          "surprise_pct": 2.6
-        }
+        "recent": null
       },
       "score_normalized": 0
     },
@@ -363,10 +350,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 127,
+      "mentions": 128,
       "social": {
-        "trend_pct": 12600,
-        "reddit": 127,
+        "trend_pct": 12700,
+        "reddit": 128,
         "st_bull": 100,
         "st_msgs": 30,
         "sources": [
@@ -400,7 +387,7 @@
       "is_active": false,
       "mentions": 126,
       "social": {
-        "trend_pct": 157,
+        "trend_pct": 162,
         "reddit": 126,
         "sources": [
           "Reddit"
@@ -430,10 +417,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 116,
+      "mentions": 113,
       "social": {
-        "trend_pct": 544,
-        "reddit": 116,
+        "trend_pct": 528,
+        "reddit": 113,
         "sources": [
           "Reddit"
         ]
@@ -456,9 +443,9 @@
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
-      "mentions": 1797,
-      "prev": 334,
-      "trend_pct": 438,
+      "mentions": 1812,
+      "prev": 333,
+      "trend_pct": 444,
       "current_price": 165.05,
       "change_pct": 31.4825,
       "market_cap": 3977704961319.1597
@@ -467,9 +454,9 @@
       "ticker": "NYT",
       "name": "The New York Times Company",
       "sector": "Media",
-      "mentions": 116,
+      "mentions": 113,
       "prev": 18,
-      "trend_pct": 544,
+      "trend_pct": 528,
       "current_price": 68.32,
       "change_pct": -0.4372,
       "market_cap": 10924733439.319149
@@ -479,8 +466,8 @@
       "name": "Advanced Micro Devices, Inc.",
       "sector": "Semiconductors",
       "mentions": 126,
-      "prev": 49,
-      "trend_pct": 157,
+      "prev": 48,
+      "trend_pct": 162,
       "current_price": 453.46,
       "change_pct": 6.8498,
       "market_cap": 743714003783.204
@@ -1191,6 +1178,38 @@
   },
   "reddit_feed": [
     {
+      "id": "e5e980120dbbf0ef17c93fe829d6390c10b7a2e2a50b6839a0c5dbadc1c84f80",
+      "title": "Anthropic Stock Fell About 20% From Its First Trade in Its First 2 Days. Here's the Price at Which I'd Buy It.",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "ANT"
+      ],
+      "hours_ago": 0.6,
+      "url": "https://www.fool.com/investing/2026/11/23/anthropic-stock-fell-about-20-from-its-first-trade-in-its-first-2-days-here-s-the-price-at-which-i-d-buy-it/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "ANT"
+      ]
+    },
+    {
+      "id": "b7bdf8bb7a38d5e8c48bcf73b6ac5d0629b7c2a5da967ce6a96d17c2eec517dc",
+      "title": "How to Invest in Humanoid Robots: 3 Stocks to Watch",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "TSLA",
+        "NVDA",
+        "MU"
+      ],
+      "hours_ago": 0.9,
+      "url": "https://www.fool.com/investing/2026/11/23/how-to-invest-in-humanoid-robots-3-stocks-to-watch/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
+    },
+    {
       "id": "9191fe48c6f2d8fcecd83faa7e43fa709e973faef1832f9ce6c8aac057bef097",
       "title": "ROSEN, TRUSTED INVESTOR COUNSEL, Encourages Everest Group, Ltd. Investors to Secure Counsel Before Important Deadline in",
       "subreddit": "GlobeNewswire Inc.",
@@ -1200,7 +1219,7 @@
         "BBW",
         "QFIN"
       ],
-      "hours_ago": 0.9,
+      "hours_ago": 1.9,
       "url": "https://www.globenewswire.com/news-release/2026/11/24/3408975/673/en/rosen-trusted-investor-counsel-encourages-everest-group-ltd-investors-to-secure-counsel-before-important-deadline-in-securities-class-action-eg.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1217,7 +1236,7 @@
         "EG",
         "QFIN"
       ],
-      "hours_ago": 1.0,
+      "hours_ago": 2.0,
       "url": "https://www.globenewswire.com/news-release/2026/11/24/3408974/673/en/rosen-a-leading-law-firm-encourages-build-a-bear-workshop-inc-investors-to-secure-counsel-before-important-deadline-in-securities-class-action-first-filed-by-the-firm-bbw.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1233,7 +1252,7 @@
         "NVDA",
         "CSCO"
       ],
-      "hours_ago": 1.3,
+      "hours_ago": 2.3,
       "url": "https://www.fool.com/investing/2026/11/23/cfo-colette-kress-just-made-this-subtle-shift-that-could-save-nvidia-shareholders/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1248,7 +1267,7 @@
       "tickers": [
         "QFIN"
       ],
-      "hours_ago": 1.7,
+      "hours_ago": 2.7,
       "url": "https://www.globenewswire.com/news-release/2026/11/24/3408972/673/en/qfin-important-deadline-rosen-national-trial-lawyers-encourages-qfin-holdings-inc-investors-to-secure-counsel-before-important-november-30-deadline-in-securities-class-action-qfin.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1267,10 +1286,11 @@
         "METAM",
         "GOOG"
       ],
-      "hours_ago": 2.0,
+      "hours_ago": 3.0,
       "url": "https://www.fool.com/investing/2026/11/23/the-nasdaq-just-had-its-best-day-since-april-2025-anthropic-stock-fell-anyway/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
+        "ANT",
         "NVDA"
       ]
     },
@@ -1283,7 +1303,7 @@
         "MNTN",
         "QFIN"
       ],
-      "hours_ago": 2.1,
+      "hours_ago": 3.0,
       "url": "https://www.globenewswire.com/news-release/2026/11/24/3408969/673/en/rosen-the-first-filing-firm-encourages-mntn-inc-investors-to-secure-counsel-before-important-deadline-in-securities-class-action-first-filed-by-the-firm-mntn.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1298,7 +1318,7 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 2.7,
+      "hours_ago": 3.7,
       "url": "https://www.fool.com/investing/2026/11/23/nvidia-s-stock-surges-more-than-30-on-jensen-huang-s-return-will-it-get-back-to-usd200/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1317,7 +1337,7 @@
         "MSFT",
         "AMZN"
       ],
-      "hours_ago": 3.2,
+      "hours_ago": 4.2,
       "url": "https://www.fool.com/investing/2026/11/23/retirees-is-now-the-time-to-ditch-s-and-p-500-funds/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1336,60 +1356,10 @@
         "DLRpL",
         "NVDA"
       ],
-      "hours_ago": 3.6,
+      "hours_ago": 4.6,
       "url": "https://www.fool.com/investing/2026/11/23/why-digital-realty-trust-stock-moved-over-3-higher-on-monday/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "33fc80a03174dcea5a508921e0d5f4ac0a8d45116a92d97fa2a48b0d7f53b609",
-      "title": "President Trump Says He Convinced Nvidia\u2019s Board to Bring Back Jensen Huang",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "NVDA"
-      ],
-      "hours_ago": 4.1,
-      "url": "https://www.fool.com/investing/2026/11/23/president-trump-says-he-convinced-nvidia-s-board-to-bring-back-jensen-huang/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "09a3e8de970baff2fc5f3d7bb1a7b4711f15f4877894fccf00aa9578a16e6a79",
-      "title": "Why ASML Stock Popped Today",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "ASML",
-        "NVDA"
-      ],
-      "hours_ago": 4.1,
-      "url": "https://www.fool.com/investing/2026/11/23/why-asml-stock-popped-today/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "415c4bf925d69526796237ff690ef9830e84e4102adc1fdb948c4214bc1c79ca",
-      "title": "Stock Market Today, Nov. 23: Micron Surges 19% as Nvidia CEO Change Calms AI Spending Fears",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "MU",
-        "NVDA",
-        "WDC",
-        "NXPI"
-      ],
-      "hours_ago": 4.4,
-      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-micron-surges-19-as-nvidia-ceo-change-calms-ai-spending-fears/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MU",
         "NVDA"
       ]
     }
