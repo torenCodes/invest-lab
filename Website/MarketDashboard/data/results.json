@@ -1,11 +1,11 @@
 {
-  "scan_time": "2026-11-24T23:17:35.446893+00:00",
+  "scan_time": "2026-11-24T23:57:53.367525+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 65,
   "universe_source": "Yahoo screener (custom): gainers + most active",
   "social_sources": {
     "apewisdom": 100,
-    "stocktwits_trending": 28
+    "stocktwits_trending": 27
   },
   "day_trades": [
     {
@@ -22,7 +22,7 @@
       "signals": [
         "Top gainer (+19.5%)",
         "Strong move (+19.5%)",
-        "StockTwits trending (#9)",
+        "StockTwits trending (#5)",
         "Yahoo trending (#3)",
         "Unusual volume (Finviz)",
         "Closing strong"
@@ -45,43 +45,6 @@
         }
       },
       "score_normalized": 79
-    },
-    {
-      "ticker": "AMTM",
-      "name": "Amentum Holdings, Inc.",
-      "sector": "Professional Services",
-      "current_price": 24.8,
-      "change_pct": 20.0969,
-      "high": 25.35,
-      "low": 22.92,
-      "open": 23.53,
-      "prev_close": 20.65,
-      "score": 44,
-      "signals": [
-        "Top gainer (+20.1%)",
-        "Strong move (+20.1%)",
-        "StockTwits trending (#7)",
-        "Unusual volume (Finviz)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 5049057246.0,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950892968026.png",
-      "weburl": "",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.71,
-          "estimate": 0.67,
-          "beat": true,
-          "surprise_pct": 5.5
-        }
-      },
-      "score_normalized": 62
     },
     {
       "ticker": "COGT",
@@ -147,9 +110,51 @@
       "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.72,
+          "estimate": 0.3,
+          "beat": true,
+          "surprise_pct": 143.7
+        }
       },
       "score_normalized": 55
+    },
+    {
+      "ticker": "AMTM",
+      "name": "Amentum Holdings, Inc.",
+      "sector": "Professional Services",
+      "current_price": 24.8,
+      "change_pct": 20.0969,
+      "high": 25.35,
+      "low": 22.92,
+      "open": 23.53,
+      "prev_close": 20.65,
+      "score": 34,
+      "signals": [
+        "Top gainer (+20.1%)",
+        "Strong move (+20.1%)",
+        "Unusual volume (Finviz)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 5049057246.0,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950892968026.png",
+      "weburl": "",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.71,
+          "estimate": 0.67,
+          "beat": true,
+          "surprise_pct": 5.5
+        }
+      },
+      "score_normalized": 48
     },
     {
       "ticker": "CMP",
@@ -231,7 +236,7 @@
       "low": 150.5,
       "open": 159.1,
       "prev_close": 165.05,
-      "market_cap": 3977705073547.0005,
+      "market_cap": 3744658069238.006,
       "score": 0,
       "signals": [
         "News buzz (10 mentions)"
@@ -241,9 +246,9 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -47,
-        "reddit": 898,
-        "st_bull": 73,
+        "trend_pct": -49,
+        "reddit": 884,
+        "st_bull": 56,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -273,7 +278,7 @@
       "low": 123.52,
       "open": 131.9,
       "prev_close": 133.35,
-      "market_cap": 1811034901500.9998,
+      "market_cap": 1708633677974.059,
       "score": 0,
       "signals": [
         "News buzz (4 mentions)",
@@ -284,9 +289,9 @@
       "is_active": false,
       "yahoo_trending_rank": 20,
       "social": {
-        "trend_pct": 194,
-        "reddit": 53,
-        "st_bull": 64,
+        "trend_pct": 148,
+        "reddit": 52,
+        "st_bull": 85,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -316,7 +321,7 @@
       "low": 39.415,
       "open": 42.36,
       "prev_close": 48.02,
-      "market_cap": 53755418924.14569,
+      "market_cap": 53350807673.118904,
       "score": 0,
       "signals": [
         "News buzz (3 mentions)"
@@ -326,9 +331,9 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -20,
-        "reddit": 36,
-        "st_bull": 62,
+        "trend_pct": -24,
+        "reddit": 35,
+        "st_bull": 67,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -348,58 +353,26 @@
       "score_normalized": 0
     },
     {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "sector": "Semiconductors",
-      "current_price": 413.27,
-      "change_pct": -8.863,
-      "market_cap": 743713964098.0,
-      "score": 0,
-      "signals": [],
-      "reddit_mentions": 0,
-      "is_gainer": false,
-      "is_active": false,
-      "mentions": 128,
-      "social": {
-        "trend_pct": 2,
-        "reddit": 128,
-        "st_bull": 83,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 2.09,
-          "estimate": 1.97,
-          "beat": true,
-          "surprise_pct": 6.1
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "DELL",
       "name": "Dell Technologies Inc",
       "sector": "Technology",
       "current_price": 295.28,
       "change_pct": -11.833,
-      "market_cap": 212940053451.99997,
+      "market_cap": 187742793536.492,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 122,
+      "mentions": 129,
       "social": {
-        "trend_pct": 542,
-        "reddit": 122,
+        "trend_pct": 545,
+        "reddit": 129,
+        "st_bull": 82,
+        "st_msgs": 30,
         "sources": [
-          "Reddit"
+          "Reddit",
+          "StockTwits"
         ]
       },
       "earnings_info": {
@@ -415,12 +388,44 @@
       "score_normalized": 0
     },
     {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "sector": "Semiconductors",
+      "current_price": 413.27,
+      "change_pct": -8.863,
+      "market_cap": 677798857545.9366,
+      "score": 0,
+      "signals": [],
+      "reddit_mentions": 0,
+      "is_gainer": false,
+      "is_active": false,
+      "mentions": 126,
+      "social": {
+        "trend_pct": 1,
+        "reddit": 126,
+        "sources": [
+          "Reddit"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 2.09,
+          "estimate": 1.97,
+          "beat": true,
+          "surprise_pct": 6.1
+        }
+      },
+      "score_normalized": 0
+    },
+    {
       "ticker": "MU",
       "name": "Micron Technology, Inc.",
       "sector": "Semiconductors",
       "current_price": 629.79,
       "change_pct": -11.0089,
-      "market_cap": 800708225030.0001,
+      "market_cap": 712559040612.7507,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
@@ -428,7 +433,7 @@
       "is_active": false,
       "mentions": 98,
       "social": {
-        "trend_pct": 18,
+        "trend_pct": 13,
         "reddit": 98,
         "sources": [
           "Reddit"
@@ -452,12 +457,12 @@
       "ticker": "DELL",
       "name": "Dell Technologies Inc",
       "sector": "Technology",
-      "mentions": 122,
-      "prev": 19,
-      "trend_pct": 542,
+      "mentions": 129,
+      "prev": 20,
+      "trend_pct": 545,
       "current_price": 295.28,
       "change_pct": -11.833,
-      "market_cap": 212940053451.99997
+      "market_cap": 187742793536.492
     },
     {
       "ticker": "AAPL",
@@ -468,18 +473,18 @@
       "trend_pct": 718,
       "current_price": 354.07,
       "change_pct": 1.4295,
-      "market_cap": 5072893771975.0
+      "market_cap": 5145409355572.328
     },
     {
-      "ticker": "SPCX",
-      "name": "Space Exploration Technologies Corp",
-      "sector": "Telecommunication",
-      "mentions": 53,
-      "prev": 18,
-      "trend_pct": 194,
-      "current_price": 125.81,
-      "change_pct": -5.6543,
-      "market_cap": 1811034901500.9998
+      "ticker": "WMT",
+      "name": "Walmart Inc.",
+      "sector": "Retail",
+      "mentions": 22,
+      "prev": 3,
+      "trend_pct": 633,
+      "current_price": 132.31,
+      "change_pct": 2.1068,
+      "market_cap": 979897000000
     }
   ],
   "sector_rotation": {
@@ -1163,7 +1168,7 @@
         "HPEpC",
         "NVDA"
       ],
-      "hours_ago": 1.4,
+      "hours_ago": 2.1,
       "url": "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1184,7 +1189,7 @@
         "KSS",
         "DLTR"
       ],
-      "hours_ago": 1.4,
+      "hours_ago": 2.1,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/24/stock-market-today-nov-24-tech-sell-off-drags-nasdaq-as-dow-gains-on-value-rotation/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1201,7 +1206,7 @@
         "NVDA",
         "SPCX"
       ],
-      "hours_ago": 1.7,
+      "hours_ago": 2.4,
       "url": "https://www.fool.com/investing/2026/11/24/why-anthropic-stock-fell-again/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1219,7 +1224,7 @@
         "AMD",
         "AVGO"
       ],
-      "hours_ago": 1.8,
+      "hours_ago": 2.5,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/24/stock-market-today-nov-24-nvidia-gives-back-usd240-billion-in-market-value-despite-wall-street-upgrade-signaling-29-upside/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1235,7 +1240,7 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 2.5,
+      "hours_ago": 3.2,
       "url": "https://www.fool.com/investing/2026/11/24/did-nvidia-make-a-big-mistake-by-reinstating-jensen-huang-as-ceo/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1254,7 +1259,7 @@
         "MSFT",
         "NVDA"
       ],
-      "hours_ago": 3.3,
+      "hours_ago": 4.0,
       "url": "https://www.fool.com/coverage/better-buy/2026/11/24/axon-enterprise-vs-palantir-technologies-which-law-enforcement-stock-is-a-better-buy-for-2027/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1271,7 +1276,7 @@
         "NVDA",
         "SPCX"
       ],
-      "hours_ago": 3.4,
+      "hours_ago": 4.0,
       "url": "https://www.fool.com/investing/2026/11/24/anthropic-stock-just-broke-below-its-usd83-ipo-price-is-it-a-bargain-buy/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1288,7 +1293,7 @@
         "HPE",
         "HPEpC"
       ],
-      "hours_ago": 3.4,
+      "hours_ago": 4.1,
       "url": "https://www.fool.com/investing/2026/11/24/why-hewlett-packard-enterprise-stock-fell-16-today/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1307,7 +1312,7 @@
         "GOOG",
         "GOOGL"
       ],
-      "hours_ago": 3.4,
+      "hours_ago": 4.1,
       "url": "https://www.fool.com/investing/2026/11/24/should-vanguard-s-and-p-500-etf-investors-be-worried-about-the-downturn-in-nvidia-and-ai-stocks/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
