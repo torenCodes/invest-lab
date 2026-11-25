@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-11-25T22:50:11.152812+00:00",
+  "scan_time": "2026-11-25T23:41:29.118026+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 64,
   "universe_source": "Yahoo screener (custom): gainers + most active",
@@ -8,6 +8,45 @@
     "stocktwits_trending": 28
   },
   "day_trades": [
+    {
+      "ticker": "HPQ",
+      "name": "HP Inc",
+      "sector": "Technology",
+      "current_price": 31.15,
+      "change_pct": 11.4889,
+      "high": 32.05,
+      "low": 29.7,
+      "open": 29.95,
+      "prev_close": 27.94,
+      "score": 54,
+      "signals": [
+        "Top gainer (+11.5%)",
+        "High volume",
+        "Strong move (+11.5%)",
+        "StockTwits trending (#3)",
+        "Unusual volume (Finviz)",
+        "Closing strong",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 1,
+      "market_cap": 27662439932.86149,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HPQ.png",
+      "weburl": "https://investor.hp.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.72,
+          "estimate": 0.7,
+          "beat": true,
+          "surprise_pct": 3.1
+        }
+      },
+      "score_normalized": 76
+    },
     {
       "ticker": "ASTS",
       "name": "AST SpaceMobile, Inc.",
@@ -22,8 +61,8 @@
       "signals": [
         "Top gainer (+10.3%)",
         "Strong move (+10.3%)",
-        "Reddit chatter (#16, 51 mentions)",
-        "Yahoo trending (#2)",
+        "Reddit chatter (#16, 50 mentions)",
+        "Yahoo trending (#5)",
         "Closing strong",
         "Sector leader (Telecommunication)"
       ],
@@ -33,7 +72,7 @@
       "is_active": false,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950711601196.png",
       "weburl": "https://investors.ast-science.com/",
-      "yahoo_trending_rank": 2,
+      "yahoo_trending_rank": 5,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -45,6 +84,44 @@
         }
       },
       "score_normalized": 75
+    },
+    {
+      "ticker": "COGT",
+      "name": "Cogent Biosciences, Inc.",
+      "sector": "Biotechnology",
+      "current_price": 36.08,
+      "change_pct": 9.3002,
+      "high": 36.35,
+      "low": 33.07,
+      "open": 33.41,
+      "prev_close": 33.01,
+      "score": 49,
+      "signals": [
+        "Top gainer (+9.3%)",
+        "Strong move (+9.3%)",
+        "StockTwits trending (#7)",
+        "Unusual volume (Finviz)",
+        "Closing strong",
+        "Sector leader (Biotechnology)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 6033396297.085465,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950433241186.png",
+      "weburl": "https://www.cogentbio.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.59,
+          "estimate": -0.58,
+          "beat": false,
+          "surprise_pct": -2.3
+        }
+      },
+      "score_normalized": 69
     },
     {
       "ticker": "LI",
@@ -85,146 +162,79 @@
       "score_normalized": 66
     },
     {
-      "ticker": "HPQ",
-      "name": "HP Inc",
-      "sector": "Technology",
-      "current_price": 31.15,
-      "change_pct": 11.4889,
-      "high": 32.05,
-      "low": 29.7,
-      "open": 29.95,
-      "prev_close": 27.94,
-      "score": 44,
-      "signals": [
-        "Top gainer (+11.5%)",
-        "High volume",
-        "Strong move (+11.5%)",
-        "Unusual volume (Finviz)",
-        "Closing strong",
-        "Sector leader (Technology)"
-      ],
-      "reddit_mentions": 1,
-      "market_cap": 27662439932.86149,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HPQ.png",
-      "weburl": "https://investor.hp.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.72,
-          "estimate": 0.7,
-          "beat": true,
-          "surprise_pct": 3.1
-        }
-      },
-      "score_normalized": 62
-    },
-    {
-      "ticker": "COGT",
-      "name": "Cogent Biosciences, Inc.",
-      "sector": "Biotechnology",
-      "current_price": 36.08,
-      "change_pct": 9.3002,
-      "high": 36.35,
-      "low": 33.07,
-      "open": 33.41,
-      "prev_close": 33.01,
+      "ticker": "DKNG",
+      "name": "DraftKings Inc.",
+      "sector": "Hotels, Restaurants & Leisure",
+      "current_price": 17.65,
+      "change_pct": 9.5593,
+      "high": 17.69,
+      "low": 15.64,
+      "open": 15.81,
+      "prev_close": 16.11,
       "score": 39,
       "signals": [
-        "Top gainer (+9.3%)",
-        "Strong move (+9.3%)",
-        "Unusual volume (Finviz)",
+        "Top gainer (+9.6%)",
+        "Strong move (+9.6%)",
+        "Yahoo trending (#19)",
         "Closing strong",
-        "Sector leader (Biotechnology)"
+        "Sector leader (Hotels, Restaurants & Leisure)"
       ],
       "reddit_mentions": 0,
-      "market_cap": 6033396297.085465,
+      "market_cap": 8156740696.76226,
       "is_gainer": true,
       "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950433241186.png",
-      "weburl": "https://www.cogentbio.com/",
-      "yahoo_trending_rank": null,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950813883726.png",
+      "weburl": "https://draftkings.gcs-web.com/",
+      "yahoo_trending_rank": 19,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": -0.59,
-          "estimate": -0.58,
+          "actual": -0.94,
+          "estimate": -0.4,
           "beat": false,
-          "surprise_pct": -2.3
+          "surprise_pct": -135.0
         }
       },
       "score_normalized": 55
     },
     {
-      "ticker": "AGLT",
-      "name": "Angel Telecom Corp",
-      "sector": "N/A",
-      "current_price": 6.49,
-      "change_pct": 20.4082,
-      "high": 6.62,
-      "low": 5.1425,
-      "open": 5.27,
-      "prev_close": 5.39,
-      "score": 31,
+      "ticker": "CSIQ",
+      "name": "Canadian Solar Inc.",
+      "sector": "Semiconductors",
+      "current_price": 5.445,
+      "change_pct": 12.5,
+      "high": 5.45,
+      "low": 4.235,
+      "open": 4.53,
+      "prev_close": 4.84,
+      "score": 36,
       "signals": [
-        "Top gainer (+20.4%)",
-        "Strong move (+20.4%)",
+        "Top gainer (+12.5%)",
+        "Strong move (+12.5%)",
+        "StockTwits trending (#19)",
         "Closing strong",
-        "Sector leader (N/A)"
+        "Sector leader (Semiconductors)"
       ],
       "reddit_mentions": 0,
-      "market_cap": 1411383932.0408163,
+      "market_cap": 309948679.78409094,
       "is_gainer": true,
       "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/942964807396.png",
-      "weburl": "",
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950871735466.png",
+      "weburl": "https://www.canadiansolar.com/",
       "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 44
-    },
-    {
-      "ticker": "AGMB",
-      "name": "Agomab Therapeutics NV",
-      "sector": "Pharmaceuticals",
-      "current_price": 6.4,
-      "change_pct": 10.3448,
-      "high": 6.44,
-      "low": 5.48,
-      "open": 5.71,
-      "prev_close": 5.8,
-      "score": 31,
-      "signals": [
-        "Top gainer (+10.3%)",
-        "Strong move (+10.3%)",
-        "Closing strong",
-        "Sector leader (Pharmaceuticals)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 285638293.0,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950602020646.png",
-      "weburl": "https://agomab.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 44
+      "score_normalized": 51
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
     {
       "ticker": "NVDA",
-      "mentions": 9,
+      "mentions": 11,
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
       "current_price": 149.3,
@@ -236,16 +246,16 @@
       "market_cap": 3440154608106.968,
       "score": 0,
       "signals": [
-        "News buzz (9 mentions)"
+        "News buzz (11 mentions)"
       ],
-      "reddit_mentions": 9,
+      "reddit_mentions": 11,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -38,
-        "reddit": 578,
-        "st_bull": 78,
+        "trend_pct": -36,
+        "reddit": 576,
+        "st_bull": 80,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -266,7 +276,7 @@
     },
     {
       "ticker": "GOOG",
-      "mentions": 7,
+      "mentions": 6,
       "name": "Alphabet Inc.",
       "sector": "Media",
       "current_price": 270.98,
@@ -278,17 +288,17 @@
       "market_cap": 3261967020000.0,
       "score": 0,
       "signals": [
-        "News buzz (7 mentions)",
-        "Yahoo trending (#9)"
+        "News buzz (6 mentions)",
+        "Yahoo trending (#13)"
       ],
-      "reddit_mentions": 7,
+      "reddit_mentions": 6,
       "is_gainer": false,
       "is_active": false,
-      "yahoo_trending_rank": 9,
+      "yahoo_trending_rank": 13,
       "social": {
-        "trend_pct": 56,
-        "reddit": 53,
-        "st_bull": 83,
+        "trend_pct": 53,
+        "reddit": 52,
+        "st_bull": 77,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -309,7 +319,7 @@
     },
     {
       "ticker": "GOOGL",
-      "mentions": 7,
+      "mentions": 6,
       "name": "Alphabet Inc.",
       "sector": "Media",
       "current_price": 273.1,
@@ -321,17 +331,17 @@
       "market_cap": 3261967020000.0,
       "score": 0,
       "signals": [
-        "News buzz (7 mentions)",
+        "News buzz (6 mentions)",
         "Yahoo trending (#20)"
       ],
-      "reddit_mentions": 7,
+      "reddit_mentions": 6,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": 20,
       "social": {
-        "trend_pct": 97,
-        "reddit": 57,
-        "st_bull": 50,
+        "trend_pct": 86,
+        "reddit": 54,
+        "st_bull": 60,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -362,11 +372,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 190,
+      "mentions": 188,
       "social": {
-        "trend_pct": 94,
-        "reddit": 190,
-        "st_bull": 59,
+        "trend_pct": 92,
+        "reddit": 188,
+        "st_bull": 83,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -397,10 +407,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 134,
+      "mentions": 133,
       "social": {
-        "trend_pct": 3,
-        "reddit": 134,
+        "trend_pct": 4,
+        "reddit": 133,
         "sources": [
           "Reddit"
         ]
@@ -429,10 +439,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 113,
+      "mentions": 109,
       "social": {
-        "trend_pct": 82,
-        "reddit": 113,
+        "trend_pct": 68,
+        "reddit": 109,
         "sources": [
           "Reddit"
         ]
@@ -455,9 +465,9 @@
       "ticker": "ASTS",
       "name": "AST SpaceMobile, Inc.",
       "sector": "Telecommunication",
-      "mentions": 51,
+      "mentions": 50,
       "prev": 5,
-      "trend_pct": 920,
+      "trend_pct": 900,
       "current_price": 26.02,
       "change_pct": 10.2542,
       "market_cap": 8996125241.74679
@@ -466,9 +476,9 @@
       "ticker": "CRWV",
       "name": "CoreWeave, Inc.",
       "sector": "Technology",
-      "mentions": 37,
-      "prev": 12,
-      "trend_pct": 208,
+      "mentions": 40,
+      "prev": 11,
+      "trend_pct": 264,
       "current_price": 42.57,
       "change_pct": -0.0821,
       "market_cap": 21294053180.169
@@ -477,9 +487,9 @@
       "ticker": "COST",
       "name": "Costco Wholesale Corp",
       "sector": "Retail",
-      "mentions": 31,
+      "mentions": 33,
       "prev": 8,
-      "trend_pct": 288,
+      "trend_pct": 312,
       "current_price": 1086.81,
       "change_pct": -0.4488,
       "market_cap": 483002093641.4824
@@ -1232,6 +1242,59 @@
   },
   "reddit_feed": [
     {
+      "id": "e5765a3e33f307cc61c7969f98a59d6dd5aa27bee9265a9bad0f083620cd84f7",
+      "title": "ADVANCED MICRO DEVICES, INC. AMD INVESTORS: Contact Kirby McInerney LLP About the Firm\u2019s Securities Investigation Follow",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "AMD"
+      ],
+      "hours_ago": 0.7,
+      "url": "https://www.globenewswire.com/news-release/2026/11/25/3410627/937/en/advanced-micro-devices-inc-amd-investors-contact-kirby-mcinerney-llp-about-the-firm-s-securities-investigation-following-7-7-share-drop.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "AMD"
+      ]
+    },
+    {
+      "id": "88b3641320e00b5719e8a0fcc399e6370520e024108fed348d2bfb2fe489dd24",
+      "title": "CoreWeave Stock Could Soar 125%, According to One Wall Street Analyst, Even After a Price Target Cut. Is It a Buy?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "CRWV",
+        "META",
+        "METAM",
+        "NVDA"
+      ],
+      "hours_ago": 1.3,
+      "url": "https://www.fool.com/investing/2026/11/25/coreweave-stock-could-soar-130-according-to-one-wall-street-analyst-even-after-a-price-target-cut-is-it-a-buy/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "b795b784b433d02f65e772e01301679d5f9d09d774990417cdd278e8d17f6b0d",
+      "title": "Anthropic Stock Is Down 33% From Its All-Time High. Here's What a $5,000 Investment Could Be Worth in 1 Year.",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "ANT",
+        "GOOG",
+        "GOOGL",
+        "GOOGM",
+        "GOOGN"
+      ],
+      "hours_ago": 1.4,
+      "url": "https://www.fool.com/investing/2026/11/25/anthropic-stock-is-down-33-from-its-all-time-high-here-s-what-a-usd5-000-investment-could-be-worth-in-1-year/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOOG",
+        "GOOGL"
+      ]
+    },
+    {
       "id": "e340bf8b495c9d195f00ef68249a068928b7c41c568b7ccfe3146d7e32af36ce",
       "title": "Stock Market Today, Nov. 25: Nvidia Slides 3.9% as the Market Considers Hot PCE Inflation Data and New Tariff Proposals",
       "subreddit": "The Motley Fool",
@@ -1241,7 +1304,7 @@
         "AMD",
         "AVGO"
       ],
-      "hours_ago": 1.1,
+      "hours_ago": 1.9,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-today-nov-25-nvidia-slides-3-9-as-the-market-considers-hot-pce-inflation-data-and-new-tariff-proposals/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1260,7 +1323,7 @@
         "AVGO",
         "MU"
       ],
-      "hours_ago": 1.3,
+      "hours_ago": 2.2,
       "url": "https://www.fool.com/investing/2026/11/25/not-micron-not-broadcom-this-is-my-top-oversold-artificial-intelligence-ai-stock-to-buy-in-december/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1279,7 +1342,7 @@
         "NVDA",
         "MU"
       ],
-      "hours_ago": 1.8,
+      "hours_ago": 2.7,
       "url": "https://www.fool.com/coverage/better-buy/2026/11/25/qualcomm-vs-sandisk-which-technology-stock-is-a-better-buy-for-2027/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1300,7 +1363,7 @@
         "GOOGM",
         "GOOGN"
       ],
-      "hours_ago": 2.3,
+      "hours_ago": 3.1,
       "url": "https://www.fool.com/investing/2026/11/25/anthropic-s-chip-choices-could-change-the-nvidia-story-here-s-how/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1321,7 +1384,7 @@
         "GOOGM",
         "GOOGN"
       ],
-      "hours_ago": 2.5,
+      "hours_ago": 3.4,
       "url": "https://www.fool.com/investing/2026/11/25/why-oracle-stock-slumped-today/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1341,7 +1404,7 @@
         "META",
         "METAM"
       ],
-      "hours_ago": 2.6,
+      "hours_ago": 3.4,
       "url": "https://www.fool.com/investing/2026/11/25/is-jensen-huang-really-worth-usd954-billion-to-nvidia/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1360,7 +1423,7 @@
         "GOOGL",
         "GOOGM"
       ],
-      "hours_ago": 2.8,
+      "hours_ago": 3.7,
       "url": "https://www.fool.com/investing/2026/11/25/tech-stock-sell-off-here-s-why-apple-has-been-immune/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1380,7 +1443,7 @@
         "METAM",
         "NVDA"
       ],
-      "hours_ago": 3.1,
+      "hours_ago": 4.0,
       "url": "https://www.fool.com/investing/2026/11/25/micron-and-6-other-big-names-are-down-more-than-50-are-they-bargains-now/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1400,7 +1463,7 @@
         "GOOGN",
         "TSM"
       ],
-      "hours_ago": 3.1,
+      "hours_ago": 4.0,
       "url": "https://www.fool.com/investing/2026/11/25/3-glorious-ai-stocks-to-buy-hand-over-fist-if-the-stock-market-crashes/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1416,7 +1479,7 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 3.1,
+      "hours_ago": 4.0,
       "url": "https://www.globenewswire.com/news-release/2026/11/25/3410557/0/de/ipronics-bef%C3%B6rdert-luis-torrijos-mor%C3%A1n-zum-chief-technology-officer.html",
       "is_news": true,
       "confirmed_tickers": [
@@ -1431,85 +1494,11 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 3.1,
+      "hours_ago": 4.0,
       "url": "https://www.globenewswire.com/news-release/2026/11/25/3410557/0/fr/ipronics-nomme-luis-torrijos-mor%C3%A1n-au-poste-de-directeur-technique.html",
       "is_news": true,
       "confirmed_tickers": [
         "NVDA"
-      ]
-    },
-    {
-      "id": "74853834cb58dbbb133d440d0954d641c6ac6abdebe7ab1c4160a62396d62b47",
-      "title": "Jensen Huang Is Back at Nvidia. History Says This Sell-Off Could Be a Gift.",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "NVDA"
-      ],
-      "hours_ago": 3.8,
-      "url": "https://www.fool.com/investing/2026/11/25/jensen-huang-is-back-at-nvidia-history-says-this-sell-off-could-be-a-gift/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "5934260a8b996f09a17e560b58bf167434fc4370a338fd41b12bff39b70a646d",
-      "title": "David Tepper Sold All of His AMD Stock. His Biggest Position Is Micron.",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "AMD",
-        "MU",
-        "NVDA"
-      ],
-      "hours_ago": 3.8,
-      "url": "https://www.fool.com/investing/2026/11/25/david-tepper-sold-all-of-his-amd-stock-his-biggest-position-is-micron/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "AMD",
-        "MU",
-        "NVDA"
-      ]
-    },
-    {
-      "id": "01324eb504fd6490b335cd5da950b66373c2432ebcf3e9fa21d87b4c2e740e80",
-      "title": "Why Alphabet Stock Is Down Today",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN",
-        "SPCX"
-      ],
-      "hours_ago": 3.9,
-      "url": "https://www.fool.com/investing/2026/11/25/why-alphabet-stock-is-down-today/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "GOOG",
-        "GOOGL"
-      ]
-    },
-    {
-      "id": "cb02c4931b1198d91ff2f68db01fb2d2d77fb3d7e4c155187543c1163512af0f",
-      "title": "Why SpaceX Stock Is Down Today",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "SPCX",
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN"
-      ],
-      "hours_ago": 4.1,
-      "url": "https://www.fool.com/investing/2026/11/25/why-spacex-stock-is-down-today/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "GOOG",
-        "GOOGL"
       ]
     }
   ]
