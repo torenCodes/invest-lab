@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-11-26T15:15:23.121830+00:00",
+  "scan_time": "2026-11-26T22:05:03.063925+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 64,
   "universe_source": "Yahoo screener (custom): gainers + most active",
@@ -12,18 +12,17 @@
       "ticker": "HPQ",
       "name": "HP Inc",
       "sector": "Technology",
-      "current_price": 31.16,
-      "change_pct": 11.5247,
+      "current_price": 31.15,
+      "change_pct": 11.4889,
       "high": 32.05,
       "low": 29.7,
-      "open": 29.96,
+      "open": 29.95,
       "prev_close": 27.94,
-      "score": 49,
+      "score": 44,
       "signals": [
         "Top gainer (+11.5%)",
         "High volume",
         "Strong move (+11.5%)",
-        "StockTwits trending (#14)",
         "Unusual volume (Finviz)",
         "Closing strong",
         "Sector leader (Technology)"
@@ -45,23 +44,23 @@
           "surprise_pct": 3.1
         }
       },
-      "score_normalized": 69
+      "score_normalized": 62
     },
     {
       "ticker": "ASTS",
       "name": "AST SpaceMobile, Inc.",
       "sector": "Telecommunication",
-      "current_price": 26.04,
-      "change_pct": 10.339,
-      "high": 26.675,
+      "current_price": 26.02,
+      "change_pct": 10.2542,
+      "high": 26.665,
       "low": 22.5,
-      "open": 22.650000000000002,
+      "open": 22.64,
       "prev_close": 23.6,
-      "score": 46,
+      "score": 41,
       "signals": [
         "Top gainer (+10.3%)",
         "Strong move (+10.3%)",
-        "Reddit chatter (#10, 52 mentions)",
+        "Reddit chatter (#15, 15 mentions)",
         "Closing strong",
         "Sector leader (Telecommunication)"
       ],
@@ -82,22 +81,59 @@
           "surprise_pct": -7.0
         }
       },
-      "score_normalized": 65
+      "score_normalized": 58
+    },
+    {
+      "ticker": "SEDG",
+      "name": "SolarEdge Technologies, Inc.",
+      "sector": "Semiconductors",
+      "current_price": 19.7,
+      "change_pct": 8.1823,
+      "high": 20.19,
+      "low": 17.3,
+      "open": 17.362,
+      "prev_close": 18.21,
+      "score": 41,
+      "signals": [
+        "Top gainer (+8.2%)",
+        "Strong move (+8.2%)",
+        "StockTwits trending (#6)",
+        "Closing strong",
+        "Sector leader (Semiconductors)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 1219713658.3635364,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/SEDG.png",
+      "weburl": "https://www.solaredge.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.29,
+          "estimate": 0.04,
+          "beat": true,
+          "surprise_pct": 628.6
+        }
+      },
+      "score_normalized": 58
     },
     {
       "ticker": "COGT",
       "name": "Cogent Biosciences, Inc.",
       "sector": "Biotechnology",
-      "current_price": 36.1,
-      "change_pct": 9.3608,
-      "high": 36.36,
+      "current_price": 36.08,
+      "change_pct": 9.3002,
+      "high": 36.35,
       "low": 33.07,
-      "open": 33.419999999999995,
+      "open": 33.41,
       "prev_close": 33.01,
       "score": 39,
       "signals": [
-        "Top gainer (+9.4%)",
-        "Strong move (+9.4%)",
+        "Top gainer (+9.3%)",
+        "Strong move (+9.3%)",
         "Unusual volume (Finviz)",
         "Closing strong",
         "Sector leader (Biotechnology)"
@@ -125,16 +161,16 @@
       "ticker": "LI",
       "name": "Li Auto Inc",
       "sector": "Automobiles",
-      "current_price": 11.9,
-      "change_pct": 11.215,
-      "high": 11.93,
+      "current_price": 11.88,
+      "change_pct": 11.028,
+      "high": 11.92,
       "low": 10.48,
-      "open": 11.415,
+      "open": 11.405,
       "prev_close": 10.7,
       "score": 39,
       "signals": [
-        "Top gainer (+11.2%)",
-        "Strong move (+11.2%)",
+        "Top gainer (+11.0%)",
+        "Strong move (+11.0%)",
         "Unusual volume (Finviz)",
         "Closing strong",
         "Sector leader (Automobiles)"
@@ -162,16 +198,17 @@
       "ticker": "AGLT",
       "name": "Angel Telecom Corp",
       "sector": "N/A",
-      "current_price": 6.51,
-      "change_pct": 20.7792,
-      "high": 6.63,
+      "current_price": 6.49,
+      "change_pct": 20.4082,
+      "high": 6.62,
       "low": 5.1425,
-      "open": 5.279999999999999,
+      "open": 5.27,
       "prev_close": 5.39,
-      "score": 31,
+      "score": 36,
       "signals": [
-        "Top gainer (+20.8%)",
-        "Strong move (+20.8%)",
+        "Top gainer (+20.4%)",
+        "Strong move (+20.4%)",
+        "StockTwits trending (#20)",
         "Closing strong",
         "Sector leader (N/A)"
       ],
@@ -186,65 +223,151 @@
         "upcoming": null,
         "recent": null
       },
-      "score_normalized": 44
-    },
-    {
-      "ticker": "AGMB",
-      "name": "Agomab Therapeutics NV",
-      "sector": "Pharmaceuticals",
-      "current_price": 6.42,
-      "change_pct": 10.6897,
-      "high": 6.45,
-      "low": 5.48,
-      "open": 5.72,
-      "prev_close": 5.8,
-      "score": 31,
-      "signals": [
-        "Top gainer (+10.7%)",
-        "Strong move (+10.7%)",
-        "Closing strong",
-        "Sector leader (Pharmaceuticals)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 285638293.0,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950602020646.png",
-      "weburl": "https://agomab.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 44
+      "score_normalized": 51
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
     {
-      "ticker": "NVDA",
-      "mentions": 9,
-      "name": "NVIDIA Corporation",
-      "sector": "Semiconductors",
-      "current_price": 149.33,
-      "change_pct": -3.8937,
-      "high": 150.37,
-      "low": 141.17,
-      "open": 144.07,
-      "prev_close": 155.38,
-      "market_cap": 3598130113071.353,
+      "ticker": "ANT",
+      "name": "Anthropic, PBC",
+      "sector": "Technology",
+      "current_price": 82.79,
+      "change_pct": 1.0805,
+      "high": 85.92,
+      "low": 73.85,
+      "open": 77.93,
+      "prev_close": 81.905,
+      "score": 13,
+      "signals": [
+        "High volume",
+        "News activity (4)",
+        "Closing strong"
+      ],
+      "reddit_mentions": 4,
+      "market_cap": 1094454168372.8898,
+      "is_gainer": false,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950839624896.png",
+      "weburl": "https://www.anthropic.com",
+      "yahoo_trending_rank": null,
+      "mentions": 4,
+      "social": {
+        "reddit": 4,
+        "st_bull": 15,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 18
+    },
+    {
+      "ticker": "GOOG",
+      "mentions": 4,
+      "name": "Alphabet Inc.",
+      "sector": "Media",
+      "current_price": 270.98,
+      "change_pct": -2.0247,
+      "high": 271.6,
+      "low": 260.692,
+      "open": 263.32,
+      "prev_close": 276.58,
+      "market_cap": 3357491400000.0005,
       "score": 0,
       "signals": [
-        "News buzz (9 mentions)"
+        "News buzz (4 mentions)"
       ],
-      "reddit_mentions": 9,
+      "reddit_mentions": 4,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -39,
-        "reddit": 389,
-        "st_bull": 71,
+        "trend_pct": -81,
+        "reddit": 10,
+        "st_bull": 60,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 2.67,
+          "estimate": 3.11,
+          "beat": false,
+          "surprise_pct": -14.1
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "GOOGL",
+      "mentions": 4,
+      "name": "Alphabet Inc.",
+      "sector": "Media",
+      "current_price": 273.1,
+      "change_pct": -2.1322,
+      "high": 273.62,
+      "low": 262.73,
+      "open": 265.1,
+      "prev_close": 279.05,
+      "market_cap": 3357491400000.0005,
+      "score": 0,
+      "signals": [
+        "News buzz (4 mentions)"
+      ],
+      "reddit_mentions": 4,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": -78,
+        "reddit": 13,
+        "st_bull": 80,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 2.67,
+          "estimate": 3.11,
+          "beat": false,
+          "surprise_pct": -14.1
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "sector": "Semiconductors",
+      "current_price": 149.3,
+      "change_pct": -3.913,
+      "market_cap": 3598130113071.353,
+      "score": 0,
+      "signals": [],
+      "reddit_mentions": 0,
+      "is_gainer": false,
+      "is_active": false,
+      "mentions": 215,
+      "social": {
+        "trend_pct": -63,
+        "reddit": 215,
+        "st_bull": 80,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -264,140 +387,21 @@
       "score_normalized": 0
     },
     {
-      "ticker": "MSFT",
-      "mentions": 6,
-      "name": "Microsoft Corporation",
-      "sector": "Technology",
-      "current_price": 489.97,
-      "change_pct": -1.2416,
-      "high": 493.437,
-      "low": 477.39,
-      "open": 485.24,
-      "prev_close": 496.13,
-      "market_cap": 3638315426813.0522,
-      "score": 0,
-      "signals": [
-        "News buzz (6 mentions)"
-      ],
-      "reddit_mentions": 6,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "trend_pct": -62,
-        "reddit": 12,
-        "st_bull": 100,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 4.89,
-          "estimate": 4.82,
-          "beat": true,
-          "surprise_pct": 1.4
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "AMZN",
-      "mentions": 6,
-      "name": "Amazon.com Inc",
-      "sector": "Retail",
-      "current_price": 244.47,
-      "change_pct": -3.0996,
-      "high": 246.56,
-      "low": 235.96,
-      "open": 243.135,
-      "prev_close": 252.29,
-      "market_cap": 2643055176528.6196,
-      "score": 0,
-      "signals": [
-        "News buzz (6 mentions)"
-      ],
-      "reddit_mentions": 6,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "trend_pct": -29,
-        "reddit": 20,
-        "st_bull": 60,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 1.89,
-          "estimate": 2.0,
-          "beat": false,
-          "surprise_pct": -5.6
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "MU",
-      "name": "Micron Technology, Inc.",
-      "sector": "Semiconductors",
-      "current_price": 601.29,
-      "change_pct": -4.5253,
-      "market_cap": 680268185952.3433,
-      "score": 0,
-      "signals": [],
-      "reddit_mentions": 0,
-      "is_gainer": false,
-      "is_active": false,
-      "mentions": 91,
-      "social": {
-        "trend_pct": -48,
-        "reddit": 91,
-        "st_bull": 93,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 33.42,
-          "estimate": 32.56,
-          "beat": true,
-          "surprise_pct": 2.6
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
       "sector": "Semiconductors",
-      "current_price": 406.07,
-      "change_pct": -1.7422,
+      "current_price": 406.03,
+      "change_pct": -1.7519,
       "market_cap": 665924620706.4849,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 80,
+      "mentions": 49,
       "social": {
-        "trend_pct": -50,
-        "reddit": 80,
+        "trend_pct": -64,
+        "reddit": 49,
         "sources": [
           "Reddit"
         ]
@@ -415,21 +419,21 @@
       "score_normalized": 0
     },
     {
-      "ticker": "SNDK",
-      "name": "SanDisk Corporation",
-      "sector": "Technology",
-      "current_price": 73.63,
-      "change_pct": -5.542,
-      "market_cap": 83791350570.51608,
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "sector": "Semiconductors",
+      "current_price": 601.25,
+      "change_pct": -4.5317,
+      "market_cap": 680268185952.3433,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 70,
+      "mentions": 44,
       "social": {
-        "trend_pct": -30,
-        "reddit": 70,
+        "trend_pct": -77,
+        "reddit": 44,
         "sources": [
           "Reddit"
         ]
@@ -438,50 +442,16 @@
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 6.19,
-          "estimate": 5.89,
+          "actual": 33.42,
+          "estimate": 32.56,
           "beat": true,
-          "surprise_pct": 5.0
+          "surprise_pct": 2.6
         }
       },
       "score_normalized": 0
     }
   ],
-  "chatter_emerging": [
-    {
-      "ticker": "ASTS",
-      "name": "AST SpaceMobile, Inc.",
-      "sector": "Telecommunication",
-      "mentions": 52,
-      "prev": 13,
-      "trend_pct": 300,
-      "current_price": 26.04,
-      "change_pct": 10.339,
-      "market_cap": 10150653643.168644
-    },
-    {
-      "ticker": "NOW",
-      "name": "ServiceNow, Inc.",
-      "sector": "Technology",
-      "mentions": 28,
-      "prev": 11,
-      "trend_pct": 155,
-      "current_price": 92.18,
-      "change_pct": 0.4796,
-      "market_cap": 95662077772.85023
-    },
-    {
-      "ticker": "CD",
-      "name": "Chaince Digital Holdings Inc",
-      "sector": "Financial Services",
-      "mentions": 22,
-      "prev": 8,
-      "trend_pct": 175,
-      "current_price": 5.69,
-      "change_pct": -3.2313,
-      "market_cap": 623721554.6785715
-    }
-  ],
+  "chatter_emerging": [],
   "sector_rotation": {
     "sectors": [
       {
@@ -535,8 +505,8 @@
           {
             "ticker": "OTLY",
             "name": "Oatly Group AB",
-            "change_pct": 26.2745,
-            "price": 16.1
+            "change_pct": 26.1176,
+            "price": 16.08
           }
         ],
         "rotation": -2
@@ -642,20 +612,20 @@
           {
             "ticker": "CPIX",
             "name": "Cumberland Pharmaceuticals Inc.",
-            "change_pct": 24.5723,
-            "price": 8.01
+            "change_pct": 24.2613,
+            "price": 7.99
           },
           {
             "ticker": "CUE",
             "name": "Cue Biopharma, Inc.",
-            "change_pct": 23.2117,
-            "price": 8.44
+            "change_pct": 22.9197,
+            "price": 8.42
           },
           {
             "ticker": "AGMB",
             "name": "Agomab Therapeutics NV",
-            "change_pct": 10.6897,
-            "price": 6.42
+            "change_pct": 10.3448,
+            "price": 6.4
           }
         ],
         "rotation": 1
@@ -711,20 +681,20 @@
           {
             "ticker": "LI",
             "name": "Li Auto Inc",
-            "change_pct": 11.215,
-            "price": 11.9
+            "change_pct": 11.028,
+            "price": 11.88
           },
           {
             "ticker": "DKNG",
             "name": "DraftKings Inc.",
-            "change_pct": 9.6834,
-            "price": 17.67
+            "change_pct": 9.5593,
+            "price": 17.65
           },
           {
             "ticker": "GENI",
             "name": "Genius Sports Ltd",
-            "change_pct": 9.6525,
-            "price": 5.68
+            "change_pct": 9.4595,
+            "price": 5.67
           }
         ],
         "rotation": -6
@@ -780,20 +750,20 @@
           {
             "ticker": "OPTX",
             "name": "Syntec Optics Holdings, Inc",
-            "change_pct": 16.0032,
-            "price": 7.14
+            "change_pct": 15.6783,
+            "price": 7.12
           },
           {
             "ticker": "SHLS",
             "name": "Shoals Technologies Group, Inc.",
-            "change_pct": 9.5385,
-            "price": 7.12
+            "change_pct": 9.2308,
+            "price": 7.1
           },
           {
             "ticker": "INIO",
             "name": "Innio NV",
-            "change_pct": 8.4167,
-            "price": 13.01
+            "change_pct": 8.2083,
+            "price": 12.985
           }
         ],
         "rotation": -1
@@ -849,20 +819,20 @@
           {
             "ticker": "ASTS",
             "name": "AST SpaceMobile, Inc.",
-            "change_pct": 10.339,
-            "price": 26.04
+            "change_pct": 10.2542,
+            "price": 26.02
           },
           {
             "ticker": "CHTR",
             "name": "Charter Communications, Inc.",
-            "change_pct": 8.4125,
-            "price": 147.3
+            "change_pct": 8.3904,
+            "price": 147.27
           },
           {
             "ticker": "SPCX",
             "name": "Space Exploration Technologies Corp",
-            "change_pct": 1.3194,
-            "price": 127.47
+            "change_pct": 1.2956,
+            "price": 127.44
           }
         ],
         "rotation": -1
@@ -918,20 +888,20 @@
           {
             "ticker": "RKT",
             "name": "Rocket Companies Inc",
-            "change_pct": 7.4386,
-            "price": 15.31
+            "change_pct": 7.3684,
+            "price": 15.3
           },
           {
             "ticker": "NU",
             "name": "Nu Holdings Ltd.",
-            "change_pct": 4.3002,
-            "price": 12.37
+            "change_pct": 4.2159,
+            "price": 12.36
           },
           {
             "ticker": "SOFI",
             "name": "SoFi Technologies, Inc.",
-            "change_pct": 1.7885,
-            "price": 13.09
+            "change_pct": 1.633,
+            "price": 13.07
           }
         ],
         "rotation": 2
@@ -987,20 +957,20 @@
           {
             "ticker": "SIND",
             "name": "Sinda Ltd",
-            "change_pct": 18.0751,
-            "price": 10.06
+            "change_pct": 17.9577,
+            "price": 10.05
           },
           {
             "ticker": "SCZM",
             "name": "Santacruz Silver Mining Ltd",
-            "change_pct": 9.927,
-            "price": 7.53
+            "change_pct": 9.635,
+            "price": 7.51
           },
           {
             "ticker": "RYAM",
             "name": "Rayonier Advanced Materials Inc.",
-            "change_pct": 8.2645,
-            "price": 5.24
+            "change_pct": 8.0579,
+            "price": 5.23
           }
         ],
         "rotation": 7
@@ -1056,20 +1026,20 @@
           {
             "ticker": "CDNL",
             "name": "Cardinal Infrastructure Group Inc.",
-            "change_pct": 16.6359,
-            "price": 6.31
+            "change_pct": 16.2662,
+            "price": 6.29
           },
           {
             "ticker": "HY",
             "name": "Hyster-Yale Inc",
-            "change_pct": 10.2679,
-            "price": 17.29
+            "change_pct": 10.2041,
+            "price": 17.28
           },
           {
             "ticker": "AADX",
             "name": "Applied Aerospace & Defense Inc",
-            "change_pct": 9.6124,
-            "price": 7.07
+            "change_pct": 9.4574,
+            "price": 7.06
           }
         ],
         "rotation": 0
@@ -1125,14 +1095,14 @@
           {
             "ticker": "NFE",
             "name": "New Fortress Energy Inc.",
-            "change_pct": 13.3333,
-            "price": 5.1
+            "change_pct": 12.8889,
+            "price": 5.08
           },
           {
             "ticker": "RIG",
             "name": "Transocean Ltd.",
-            "change_pct": 4.3478,
-            "price": 5.04
+            "change_pct": 4.1408,
+            "price": 5.03
           }
         ],
         "rotation": 2
@@ -1188,20 +1158,20 @@
           {
             "ticker": "CUE",
             "name": "Cue Biopharma, Inc.",
-            "change_pct": 23.2117,
-            "price": 8.44
+            "change_pct": 22.9197,
+            "price": 8.42
           },
           {
             "ticker": "BNAI",
             "name": "Brand Engagement Network Inc",
-            "change_pct": 22.8571,
-            "price": 8.17
+            "change_pct": 22.5564,
+            "price": 8.15
           },
           {
-            "ticker": "EVCM",
-            "name": "EverCommerce Inc",
-            "change_pct": 12.4294,
-            "price": 5.97
+            "ticker": "CSIQ",
+            "name": "Canadian Solar Inc.",
+            "change_pct": 12.5,
+            "price": 5.445
           }
         ],
         "rotation": 0
@@ -1229,182 +1199,91 @@
   },
   "reddit_feed": [
     {
-      "id": "bc5fa8988194ea671370786386b8541581e423e42f4c2ba93ad0f10966852e15",
-      "title": "Europe Cloud Computing Market Surges to $ 550.42 billion at a CAGR 11.0% by 2030 | Report by MarketsandMarkets\u2122",
-      "subreddit": "GlobeNewswire Inc.",
+      "id": "1df42b43a78078734e1d3a442f5c82c95563d40d487d391e60b12ea1af64bf73",
+      "title": "O\u2019Reilly\u2019s Sales to Professional Mechanics Jumped 12.7% Last Quarter. Here\u2019s Why That\u2019s the Clearest Sign of Its Moat.",
+      "subreddit": "The Motley Fool",
       "ups": 0,
       "tickers": [
-        "MSFT",
+        "ORLY",
+        "ANT",
+        "SPGI"
+      ],
+      "hours_ago": 0.6,
+      "url": "https://www.fool.com/investing/2026/11/26/oreilly-sales-professional-mechanics-jumped-last-quarter-why-that-s-the-clearest-sign-of-its-moat/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "ANT"
+      ]
+    },
+    {
+      "id": "a36b68bc24c7153bf6ead1d049f8b7da2f3c7376ad3b1d88fc1ab56eac9a9be1",
+      "title": "If a Market Correction Is Around the Corner, I'm Making This 1 Easy Move",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "NVDA"
+      ],
+      "hours_ago": 2.1,
+      "url": "https://www.fool.com/investing/2026/11/26/if-market-correction-around-corner-making-this-1-easy-move/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "6298d267409ec7cf6ecc473baa5fc3d918b5bed7fe8df50b6f602ce597a18e81",
+      "title": "Anthropic Stock Is Now Trading as ANT. Should You Buy Today or Wait?",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "ANT"
+      ],
+      "hours_ago": 2.6,
+      "url": "https://www.fool.com/investing/2026/11/26/anthropic-stock-is-now-trading-as-ant-should-you-buy-today-or-wait/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "ANT"
+      ]
+    },
+    {
+      "id": "cf9bf2d6442413042093b148a94d9e0b4068a7b93d4646b4ddabc8b23c6cfefd",
+      "title": "I'd Buy Anthropic Stock Early \u2014 but Only If I Liked the Answers to These 3 Questions",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "ANT",
         "GOOG",
         "GOOGL",
         "GOOGM",
         "GOOGN"
       ],
-      "hours_ago": 0.3,
-      "url": "https://www.globenewswire.com/news-release/2026/11/26/3410849/0/en/europe-cloud-computing-market-surges-to-550-42-billion-at-a-cagr-11-0-by-2030-report-by-marketsandmarkets.html",
+      "hours_ago": 2.8,
+      "url": "https://www.fool.com/investing/2026/11/26/id-buy-anthropic-stock-on-day-1-but-only-if-you-can-answer-these-3-questions/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "MSFT"
+        "ANT",
+        "GOOG",
+        "GOOGL"
       ]
     },
     {
-      "id": "df445aad412e3936c0d281296e42abba14f2320e19015fc6963a93e7f3225c9d",
-      "title": "AI in Healthcare Market to Reach US$ 1,078.42 Billion by 2034 at 45.3% CAGR, as Generative AI Transforms Healthcare Deli",
+      "id": "73a184f913147401fdfb31d95711200c84c2112a49bde92e3be41de0c66fdda9",
+      "title": "AI SEO in New York City: How Brands Get Recommended by AI Answers, Not Just Ranked on Google",
       "subreddit": "GlobeNewswire Inc.",
       "ups": 0,
       "tickers": [
-        "MSFT",
         "GOOG",
         "GOOGL",
         "GOOGM",
-        "GOOGN"
+        "GOOGN",
+        "DAL"
       ],
-      "hours_ago": 0.3,
-      "url": "https://www.globenewswire.com/news-release/2026/11/26/3410847/0/en/ai-in-healthcare-market-to-reach-us-1-078-42-billion-by-2034-at-45-3-cagr-as-generative-ai-transforms-healthcare-delivery-exclusive-report-by-the-insight-partners.html",
+      "hours_ago": 3.9,
+      "url": "https://www.globenewswire.com/news-release/2026/11/26/3411019/0/en/ai-seo-in-new-york-city-how-brands-get-recommended-by-ai-answers-not-just-ranked-on-google.html",
       "is_news": true,
       "confirmed_tickers": [
-        "MSFT"
-      ]
-    },
-    {
-      "id": "2ef23f0899a583c5b9deffdcecaeb9cc5691ffb0e047e1a3a158d35afbfac21f",
-      "title": "ETO Markets Marks 13th Anniversary With \u201cRace Beyond Limits\u201d Global Brand Strategy",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "AAPL",
-        "NVDA"
-      ],
-      "hours_ago": 0.3,
-      "url": "https://www.globenewswire.com/news-release/2026/11/26/3410848/0/en/eto-markets-marks-13th-anniversary-with-race-beyond-limits-global-brand-strategy.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "3ceba0c3c60ef64563ed22fdbd41e178e7f5848a4f280f6642f73ec3ba86ddcd",
-      "title": "How Much Is Jensen Huang Worth to Nvidia? The Stock Market Just Gave a Clear Answer",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "NVDA"
-      ],
-      "hours_ago": 2.7,
-      "url": "https://www.fool.com/investing/2026/11/26/how-much-is-jensen-huang-worth-to-nvidia-the-stock-market-just-gave-a-clear-answer/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "95b008fec7a45e5b01f8ae7e57583482bb1fc855183713ab02dbb15c51d75053",
-      "title": "The Biggest Mistakes Investors Make During a Market Crash, and How to Avoid Them.",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "AMZN"
-      ],
-      "hours_ago": 3.2,
-      "url": "https://www.fool.com/investing/2026/11/26/the-biggest-mistakes-investors-make-during-a-market-crash-and-how-to-avoid-them/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "AMZN"
-      ]
-    },
-    {
-      "id": "ee49541a3a8340da92f5b3e5846a224f10a6dc8fae96d101cd62a0c42098c960",
-      "title": "Cathie Wood and Philippe Laffont Are on Opposite Sides of AMD Stock. Here's Who I Think Is Right.",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "AMD",
-        "TSM",
-        "MU",
-        "LRCX",
-        "ARKK"
-      ],
-      "hours_ago": 4.4,
-      "url": "https://www.fool.com/investing/2026/11/26/cathie-wood-and-philippe-laffont-are-on-opposite-sides-of-amd-stock-here-s-who-i-think-is-right/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "AMD",
-        "MU"
-      ]
-    },
-    {
-      "id": "2b5d0daca315b175c82c739a591263f50e2deaa32ad4fec1d331efe10c858e85",
-      "title": "Jensen Huang Is Back. Here's My Nvidia Stock Prediction for 2027.",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "NVDA"
-      ],
-      "hours_ago": 4.8,
-      "url": "https://www.fool.com/investing/2026/11/26/jensen-huang-back-my-nvidia-stock-prediction-2027/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "c1b9925f772753810689c01f15798088efa623591b9e95a2f6e947a30aeb479e",
-      "title": "Should WisdomTree U.S. Total Dividend ETF (DTD) Be on Your Investing Radar?",
-      "subreddit": "Zacks Investment Research",
-      "ups": 0,
-      "tickers": [
-        "DTD",
-        "SCHD",
-        "VTV",
-        "MSFT",
-        "NVDA"
-      ],
-      "hours_ago": 4.9,
-      "url": "https://www.zacks.com/stock/news/3035553/should-wisdomtree-u-s-total-dividend-etf-dtd-be-on-your-investing-radar?cid=CS-ZC-FT-style_box_etf-3035553",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MSFT",
-        "NVDA"
-      ]
-    },
-    {
-      "id": "844d4aa65f9defdd9d76bc456fe620e6d37f2854ed632fb173675d9966f67879",
-      "title": "Should Vanguard S&P 500 Growth Index Fund ETF Shares (VOOG) Be on Your Investing Radar?",
-      "subreddit": "Zacks Investment Research",
-      "ups": 0,
-      "tickers": [
-        "VOOG",
-        "NVDA",
-        "MSFT",
-        "AAPL",
-        "VUG"
-      ],
-      "hours_ago": 4.9,
-      "url": "https://www.zacks.com/stock/news/3035557/should-vanguard-s-p-500-growth-index-fund-etf-shares-voog-be-on-your-investing-radar?cid=CS-ZC-FT-style_box_etf-3035557",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA",
-        "MSFT"
-      ]
-    },
-    {
-      "id": "16a11514c34f55a0ae132507ebd721398860a89493b05a14540898e82a1cae90",
-      "title": "Is iShares Core S&P U.S. Growth ETF (IUSG) a Strong ETF Right Now?",
-      "subreddit": "Zacks Investment Research",
-      "ups": 0,
-      "tickers": [
-        "NVDA",
-        "MSFT",
-        "AAPL",
-        "QGRW",
-        "GARP"
-      ],
-      "hours_ago": 4.9,
-      "url": "https://www.zacks.com/stock/news/3035560/is-ishares-core-s-p-u-s-growth-etf-iusg-a-strong-etf-right-now?cid=CS-ZC-FT-smart_beta_etf-3035560",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA",
-        "MSFT"
+        "GOOG",
+        "GOOGL"
       ]
     }
   ]
