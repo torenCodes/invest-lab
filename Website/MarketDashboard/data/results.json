@@ -1,13 +1,52 @@
 {
-  "scan_time": "2026-11-26T14:35:21.971024+00:00",
+  "scan_time": "2026-11-26T15:15:23.121830+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 64,
   "universe_source": "Yahoo screener (custom): gainers + most active",
   "social_sources": {
     "apewisdom": 100,
-    "stocktwits_trending": 23
+    "stocktwits_trending": 20
   },
   "day_trades": [
+    {
+      "ticker": "HPQ",
+      "name": "HP Inc",
+      "sector": "Technology",
+      "current_price": 31.16,
+      "change_pct": 11.5247,
+      "high": 32.05,
+      "low": 29.7,
+      "open": 29.96,
+      "prev_close": 27.94,
+      "score": 49,
+      "signals": [
+        "Top gainer (+11.5%)",
+        "High volume",
+        "Strong move (+11.5%)",
+        "StockTwits trending (#14)",
+        "Unusual volume (Finviz)",
+        "Closing strong",
+        "Sector leader (Technology)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 28090790673.468143,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HPQ.png",
+      "weburl": "https://investor.hp.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.72,
+          "estimate": 0.7,
+          "beat": true,
+          "surprise_pct": 3.1
+        }
+      },
+      "score_normalized": 69
+    },
     {
       "ticker": "ASTS",
       "name": "AST SpaceMobile, Inc.",
@@ -22,7 +61,7 @@
       "signals": [
         "Top gainer (+10.3%)",
         "Strong move (+10.3%)",
-        "Reddit chatter (#10, 55 mentions)",
+        "Reddit chatter (#10, 52 mentions)",
         "Closing strong",
         "Sector leader (Telecommunication)"
       ],
@@ -44,44 +83,6 @@
         }
       },
       "score_normalized": 65
-    },
-    {
-      "ticker": "HPQ",
-      "name": "HP Inc",
-      "sector": "Technology",
-      "current_price": 31.16,
-      "change_pct": 11.5247,
-      "high": 32.05,
-      "low": 29.7,
-      "open": 29.96,
-      "prev_close": 27.94,
-      "score": 44,
-      "signals": [
-        "Top gainer (+11.5%)",
-        "High volume",
-        "Strong move (+11.5%)",
-        "Unusual volume (Finviz)",
-        "Closing strong",
-        "Sector leader (Technology)"
-      ],
-      "reddit_mentions": 1,
-      "market_cap": 28090790673.468143,
-      "is_gainer": true,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HPQ.png",
-      "weburl": "https://investor.hp.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.72,
-          "estimate": 0.7,
-          "beat": true,
-          "surprise_pct": 3.1
-        }
-      },
-      "score_normalized": 62
     },
     {
       "ticker": "COGT",
@@ -222,7 +223,7 @@
   "reddit_cards": [
     {
       "ticker": "NVDA",
-      "mentions": 4,
+      "mentions": 9,
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
       "current_price": 149.33,
@@ -234,16 +235,16 @@
       "market_cap": 3598130113071.353,
       "score": 0,
       "signals": [
-        "News buzz (4 mentions)"
+        "News buzz (9 mentions)"
       ],
-      "reddit_mentions": 4,
+      "reddit_mentions": 9,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -36,
-        "reddit": 422,
-        "st_bull": 83,
+        "trend_pct": -39,
+        "reddit": 389,
+        "st_bull": 71,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -263,32 +264,29 @@
       "score_normalized": 0
     },
     {
-      "ticker": "ANT",
-      "name": "Anthropic, PBC",
+      "ticker": "MSFT",
+      "mentions": 6,
+      "name": "Microsoft Corporation",
       "sector": "Technology",
-      "current_price": 82.81,
-      "change_pct": 1.1049,
-      "high": 85.93,
-      "low": 73.85,
-      "open": 77.94000000000001,
-      "prev_close": 81.905,
-      "score": 13,
+      "current_price": 489.97,
+      "change_pct": -1.2416,
+      "high": 493.437,
+      "low": 477.39,
+      "open": 485.24,
+      "prev_close": 496.13,
+      "market_cap": 3638315426813.0522,
+      "score": 0,
       "signals": [
-        "High volume",
-        "News activity (3)",
-        "Closing strong"
+        "News buzz (6 mentions)"
       ],
-      "reddit_mentions": 3,
-      "market_cap": 1094454168372.8898,
+      "reddit_mentions": 6,
       "is_gainer": false,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950839624896.png",
-      "weburl": "https://www.anthropic.com",
+      "is_active": false,
       "yahoo_trending_rank": null,
-      "mentions": 3,
       "social": {
-        "reddit": 3,
-        "st_bull": 30,
+        "trend_pct": -62,
+        "reddit": 12,
+        "st_bull": 100,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -297,13 +295,19 @@
       },
       "earnings_info": {
         "upcoming": null,
-        "recent": null
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 4.89,
+          "estimate": 4.82,
+          "beat": true,
+          "surprise_pct": 1.4
+        }
       },
-      "score_normalized": 18
+      "score_normalized": 0
     },
     {
       "ticker": "AMZN",
-      "mentions": 3,
+      "mentions": 6,
       "name": "Amazon.com Inc",
       "sector": "Retail",
       "current_price": 244.47,
@@ -315,16 +319,16 @@
       "market_cap": 2643055176528.6196,
       "score": 0,
       "signals": [
-        "News buzz (3 mentions)"
+        "News buzz (6 mentions)"
       ],
-      "reddit_mentions": 3,
+      "reddit_mentions": 6,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -32,
-        "reddit": 19,
-        "st_bull": 50,
+        "trend_pct": -29,
+        "reddit": 20,
+        "st_bull": 60,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -355,11 +359,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 106,
+      "mentions": 91,
       "social": {
-        "trend_pct": -36,
-        "reddit": 106,
-        "st_bull": 92,
+        "trend_pct": -48,
+        "reddit": 91,
+        "st_bull": 93,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -390,10 +394,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 91,
+      "mentions": 80,
       "social": {
-        "trend_pct": -46,
-        "reddit": 91,
+        "trend_pct": -50,
+        "reddit": 80,
         "sources": [
           "Reddit"
         ]
@@ -422,10 +426,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 84,
+      "mentions": 70,
       "social": {
-        "trend_pct": -12,
-        "reddit": 84,
+        "trend_pct": -30,
+        "reddit": 70,
         "sources": [
           "Reddit"
         ]
@@ -448,20 +452,31 @@
       "ticker": "ASTS",
       "name": "AST SpaceMobile, Inc.",
       "sector": "Telecommunication",
-      "mentions": 55,
-      "prev": 12,
-      "trend_pct": 358,
+      "mentions": 52,
+      "prev": 13,
+      "trend_pct": 300,
       "current_price": 26.04,
       "change_pct": 10.339,
       "market_cap": 10150653643.168644
     },
     {
+      "ticker": "NOW",
+      "name": "ServiceNow, Inc.",
+      "sector": "Technology",
+      "mentions": 28,
+      "prev": 11,
+      "trend_pct": 155,
+      "current_price": 92.18,
+      "change_pct": 0.4796,
+      "market_cap": 95662077772.85023
+    },
+    {
       "ticker": "CD",
       "name": "Chaince Digital Holdings Inc",
       "sector": "Financial Services",
-      "mentions": 24,
-      "prev": 7,
-      "trend_pct": 243,
+      "mentions": 22,
+      "prev": 8,
+      "trend_pct": 175,
       "current_price": 5.69,
       "change_pct": -3.2313,
       "market_cap": 623721554.6785715
@@ -1214,20 +1229,57 @@
   },
   "reddit_feed": [
     {
-      "id": "e6ea1ac7c9b5f7daff8697c48a8593ce02292b170f28c530f9118b73d892f991",
-      "title": "Is Anthropic Joining the S&P 500? Here's What Investors Need to Know.",
-      "subreddit": "The Motley Fool",
+      "id": "bc5fa8988194ea671370786386b8541581e423e42f4c2ba93ad0f10966852e15",
+      "title": "Europe Cloud Computing Market Surges to $ 550.42 billion at a CAGR 11.0% by 2030 | Report by MarketsandMarkets\u2122",
+      "subreddit": "GlobeNewswire Inc.",
       "ups": 0,
       "tickers": [
-        "ANT",
-        "QQQ",
-        "SPCX"
+        "MSFT",
+        "GOOG",
+        "GOOGL",
+        "GOOGM",
+        "GOOGN"
       ],
-      "hours_ago": 1.5,
-      "url": "https://www.fool.com/investing/2026/11/26/is-anthropic-joining-sp-500-what-investors-need-to-know/?source=iedfolrf0000001",
+      "hours_ago": 0.3,
+      "url": "https://www.globenewswire.com/news-release/2026/11/26/3410849/0/en/europe-cloud-computing-market-surges-to-550-42-billion-at-a-cagr-11-0-by-2030-report-by-marketsandmarkets.html",
       "is_news": true,
       "confirmed_tickers": [
-        "ANT"
+        "MSFT"
+      ]
+    },
+    {
+      "id": "df445aad412e3936c0d281296e42abba14f2320e19015fc6963a93e7f3225c9d",
+      "title": "AI in Healthcare Market to Reach US$ 1,078.42 Billion by 2034 at 45.3% CAGR, as Generative AI Transforms Healthcare Deli",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "MSFT",
+        "GOOG",
+        "GOOGL",
+        "GOOGM",
+        "GOOGN"
+      ],
+      "hours_ago": 0.3,
+      "url": "https://www.globenewswire.com/news-release/2026/11/26/3410847/0/en/ai-in-healthcare-market-to-reach-us-1-078-42-billion-by-2034-at-45-3-cagr-as-generative-ai-transforms-healthcare-delivery-exclusive-report-by-the-insight-partners.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "MSFT"
+      ]
+    },
+    {
+      "id": "2ef23f0899a583c5b9deffdcecaeb9cc5691ffb0e047e1a3a158d35afbfac21f",
+      "title": "ETO Markets Marks 13th Anniversary With \u201cRace Beyond Limits\u201d Global Brand Strategy",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "AAPL",
+        "NVDA"
+      ],
+      "hours_ago": 0.3,
+      "url": "https://www.globenewswire.com/news-release/2026/11/26/3410848/0/en/eto-markets-marks-13th-anniversary-with-race-beyond-limits-global-brand-strategy.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
       ]
     },
     {
@@ -1238,7 +1290,7 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 2.0,
+      "hours_ago": 2.7,
       "url": "https://www.fool.com/investing/2026/11/26/how-much-is-jensen-huang-worth-to-nvidia-the-stock-market-just-gave-a-clear-answer/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1253,30 +1305,11 @@
       "tickers": [
         "AMZN"
       ],
-      "hours_ago": 2.6,
+      "hours_ago": 3.2,
       "url": "https://www.fool.com/investing/2026/11/26/the-biggest-mistakes-investors-make-during-a-market-crash-and-how-to-avoid-them/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "AMZN"
-      ]
-    },
-    {
-      "id": "273c553ea7971b315d866967daccb2655a41d3dd3d1b44e0657e416e84d56a6b",
-      "title": "Should You Buy Anthropic Stock After Its IPO? Here\u2019s What History Says About Record-Breaking Debuts.",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "ANT",
-        "SPCX",
-        "SKHY",
-        "META",
-        "METAM"
-      ],
-      "hours_ago": 3.5,
-      "url": "https://www.fool.com/investing/2026/11/26/should-you-buy-anthropic-stock-after-its-ipo-what-history-says-about-record-breaking-debuts/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "ANT"
       ]
     },
     {
@@ -1291,7 +1324,7 @@
         "LRCX",
         "ARKK"
       ],
-      "hours_ago": 3.7,
+      "hours_ago": 4.4,
       "url": "https://www.fool.com/investing/2026/11/26/cathie-wood-and-philippe-laffont-are-on-opposite-sides-of-amd-stock-here-s-who-i-think-is-right/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1307,7 +1340,7 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 4.1,
+      "hours_ago": 4.8,
       "url": "https://www.fool.com/investing/2026/11/26/jensen-huang-back-my-nvidia-stock-prediction-2027/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1315,88 +1348,63 @@
       ]
     },
     {
-      "id": "8a7771bf5075df973a393c652dd24e06d8674c3a03b16d2693b3d12c0562f447",
-      "title": "4 Memory and Storage Stocks Cut by More Than 30% That I'd Buy Now and Hold for the Next Decade",
-      "subreddit": "The Motley Fool",
+      "id": "c1b9925f772753810689c01f15798088efa623591b9e95a2f6e947a30aeb479e",
+      "title": "Should WisdomTree U.S. Total Dividend ETF (DTD) Be on Your Investing Radar?",
+      "subreddit": "Zacks Investment Research",
       "ups": 0,
       "tickers": [
-        "SNDK",
-        "WDC",
-        "STX",
-        "SKHY"
+        "DTD",
+        "SCHD",
+        "VTV",
+        "MSFT",
+        "NVDA"
       ],
       "hours_ago": 4.9,
-      "url": "https://www.fool.com/investing/2026/11/26/4-memory-and-storage-stocks-cut-by-more-than-30-that-i-d-buy-now-and-hold-for-the-next-decade/?source=iedfolrf0000001",
+      "url": "https://www.zacks.com/stock/news/3035553/should-wisdomtree-u-s-total-dividend-etf-dtd-be-on-your-investing-radar?cid=CS-ZC-FT-style_box_etf-3035553",
       "is_news": true,
       "confirmed_tickers": [
-        "SNDK"
-      ]
-    },
-    {
-      "id": "fdc507677d3ea6f0cab23b58fb99f6443560cc23c7c23310fcff229b6ac814e0",
-      "title": "Anthropic Stock Fell Below Its IPO Price. Is It a Buy, or Is More Downside Just Ahead?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "ANT",
         "MSFT",
-        "AAPL"
-      ],
-      "hours_ago": 5.6,
-      "url": "https://www.fool.com/investing/2026/11/26/anthropic-stock-fell-below-its-ipo-price-is-it-a-buy-or-is-more-downside-just-ahead/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "ANT"
-      ]
-    },
-    {
-      "id": "550a3383afd0256539f182961fa8cf54b2132488d41d578783658ec29a489a4e",
-      "title": "The Trade Desk Stock Is Headed for Its First Back-to-Back Losing Years. Its Only Other Full-Year Decline Was Followed by",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "TTD",
-        "AMZN",
-        "GOOG",
-        "GOOGL",
-        "GOOGM"
-      ],
-      "hours_ago": 5.9,
-      "url": "https://www.fool.com/investing/2026/11/26/the-trade-desk-stock-is-headed-for-its-first-back-to-back-losing-years-its-only-other-full-year-decline-was-followed-by-a-61-gain/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "AMZN"
-      ]
-    },
-    {
-      "id": "5dc61cb634b853f897233c3ac3ef58ad03fd7596e05b0d797c1903923ef3c8c7",
-      "title": "The Nasdaq Fell Below Correction Territory: 2 Beaten-Down Nasdaq Stocks to Buy and Hold",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "NFLX",
-        "MU"
-      ],
-      "hours_ago": 6.1,
-      "url": "https://www.fool.com/investing/2026/11/26/the-nasdaq-fell-below-correction-territory-2-beaten-down-nasdaq-stocks-to-buy-and-hold/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "MU"
-      ]
-    },
-    {
-      "id": "af440cb90c9d6c1edcc2f87a49d2d4c5fcefd50f0f5fdae8e06896e2c6f9ff50",
-      "title": "Prediction: This Is What Nvidia Stock Will Be Worth by 2028",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
         "NVDA"
+      ]
+    },
+    {
+      "id": "844d4aa65f9defdd9d76bc456fe620e6d37f2854ed632fb173675d9966f67879",
+      "title": "Should Vanguard S&P 500 Growth Index Fund ETF Shares (VOOG) Be on Your Investing Radar?",
+      "subreddit": "Zacks Investment Research",
+      "ups": 0,
+      "tickers": [
+        "VOOG",
+        "NVDA",
+        "MSFT",
+        "AAPL",
+        "VUG"
       ],
-      "hours_ago": 7.0,
-      "url": "https://www.fool.com/investing/2026/11/26/prediction-this-is-what-nvidia-stock-will-be-worth-by-2028/?source=iedfolrf0000001",
+      "hours_ago": 4.9,
+      "url": "https://www.zacks.com/stock/news/3035557/should-vanguard-s-p-500-growth-index-fund-etf-shares-voog-be-on-your-investing-radar?cid=CS-ZC-FT-style_box_etf-3035557",
       "is_news": true,
       "confirmed_tickers": [
-        "NVDA"
+        "NVDA",
+        "MSFT"
+      ]
+    },
+    {
+      "id": "16a11514c34f55a0ae132507ebd721398860a89493b05a14540898e82a1cae90",
+      "title": "Is iShares Core S&P U.S. Growth ETF (IUSG) a Strong ETF Right Now?",
+      "subreddit": "Zacks Investment Research",
+      "ups": 0,
+      "tickers": [
+        "NVDA",
+        "MSFT",
+        "AAPL",
+        "QGRW",
+        "GARP"
+      ],
+      "hours_ago": 4.9,
+      "url": "https://www.zacks.com/stock/news/3035560/is-ishares-core-s-p-u-s-growth-etf-iusg-a-strong-etf-right-now?cid=CS-ZC-FT-smart_beta_etf-3035560",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA",
+        "MSFT"
       ]
     }
   ]
