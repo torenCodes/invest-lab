@@ -1,11 +1,11 @@
 {
-  "scan_time": "2026-11-27T01:03:31.983821+00:00",
+  "scan_time": "2026-11-27T02:08:19.561350+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 64,
   "universe_source": "Yahoo screener (custom): gainers + most active",
   "social_sources": {
     "apewisdom": 100,
-    "stocktwits_trending": 24
+    "stocktwits_trending": 25
   },
   "day_trades": [
     {
@@ -18,12 +18,12 @@
       "low": 29.7,
       "open": 29.95,
       "prev_close": 27.94,
-      "score": 49,
+      "score": 54,
       "signals": [
         "Top gainer (+11.5%)",
         "High volume",
         "Strong move (+11.5%)",
-        "StockTwits trending (#12)",
+        "StockTwits trending (#10)",
         "Unusual volume (Finviz)",
         "Closing strong",
         "Sector leader (Technology)"
@@ -45,38 +45,7 @@
           "surprise_pct": 3.1
         }
       },
-      "score_normalized": 69
-    },
-    {
-      "ticker": "ABVX",
-      "name": "Abivax SA",
-      "sector": "Biotechnology",
-      "current_price": 84.05,
-      "change_pct": 8.2979,
-      "high": 84.12,
-      "low": 75.46,
-      "open": 76,
-      "prev_close": 77.61,
-      "score": 41,
-      "signals": [
-        "Top gainer (+8.3%)",
-        "Strong move (+8.3%)",
-        "StockTwits trending (#3)",
-        "Closing strong",
-        "Sector leader (Biotechnology)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 6329728138.0,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950410768266.png",
-      "weburl": "https://www.abivax.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 58
+      "score_normalized": 76
     },
     {
       "ticker": "ASTS",
@@ -92,7 +61,7 @@
       "signals": [
         "Top gainer (+10.3%)",
         "Strong move (+10.3%)",
-        "Reddit chatter (#11, 16 mentions)",
+        "Reddit chatter (#12, 15 mentions)",
         "Closing strong",
         "Sector leader (Telecommunication)"
       ],
@@ -114,6 +83,43 @@
         }
       },
       "score_normalized": 58
+    },
+    {
+      "ticker": "COGT",
+      "name": "Cogent Biosciences, Inc.",
+      "sector": "Biotechnology",
+      "current_price": 36.08,
+      "change_pct": 9.3002,
+      "high": 36.35,
+      "low": 33.07,
+      "open": 33.41,
+      "prev_close": 33.01,
+      "score": 39,
+      "signals": [
+        "Top gainer (+9.3%)",
+        "Strong move (+9.3%)",
+        "Unusual volume (Finviz)",
+        "Closing strong",
+        "Sector leader (Biotechnology)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 6277719923.0,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950433241186.png",
+      "weburl": "https://www.cogentbio.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.59,
+          "estimate": -0.58,
+          "beat": false,
+          "surprise_pct": -2.3
+        }
+      },
+      "score_normalized": 55
     },
     {
       "ticker": "LI",
@@ -153,42 +159,6 @@
       "score_normalized": 55
     },
     {
-      "ticker": "COGT",
-      "name": "Cogent Biosciences, Inc.",
-      "sector": "Biotechnology",
-      "current_price": 36.08,
-      "change_pct": 9.3002,
-      "high": 36.35,
-      "low": 33.07,
-      "open": 33.41,
-      "prev_close": 33.01,
-      "score": 34,
-      "signals": [
-        "Top gainer (+9.3%)",
-        "Strong move (+9.3%)",
-        "Unusual volume (Finviz)",
-        "Closing strong"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 6277719923.0,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950433241186.png",
-      "weburl": "https://www.cogentbio.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": -0.59,
-          "estimate": -0.58,
-          "beat": false,
-          "surprise_pct": -2.3
-        }
-      },
-      "score_normalized": 48
-    },
-    {
       "ticker": "AGLT",
       "name": "Churchill Capital Corp XI",
       "sector": "N/A",
@@ -217,13 +187,127 @@
         "recent": null
       },
       "score_normalized": 44
+    },
+    {
+      "ticker": "AGMB",
+      "name": "Agomab Therapeutics NV",
+      "sector": "Pharmaceuticals",
+      "current_price": 6.4,
+      "change_pct": 10.3448,
+      "high": 6.44,
+      "low": 5.48,
+      "open": 5.71,
+      "prev_close": 5.8,
+      "score": 31,
+      "signals": [
+        "Top gainer (+10.3%)",
+        "Strong move (+10.3%)",
+        "Closing strong",
+        "Sector leader (Pharmaceuticals)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 315187077.0,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950602020646.png",
+      "weburl": "https://agomab.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": null
+      },
+      "score_normalized": 44
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
     {
-      "ticker": "PG",
+      "ticker": "NVDA",
       "mentions": 3,
+      "name": "NVIDIA Corporation",
+      "sector": "Semiconductors",
+      "current_price": 149.3,
+      "change_pct": -3.913,
+      "high": 150.37,
+      "low": 141.17,
+      "open": 144.06,
+      "prev_close": 155.38,
+      "market_cap": 3598130073546.9995,
+      "score": 0,
+      "signals": [
+        "News buzz (3 mentions)",
+        "Yahoo trending (#1)"
+      ],
+      "reddit_mentions": 3,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": 1,
+      "social": {
+        "trend_pct": -71,
+        "reddit": 166,
+        "st_bull": 85,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 2.22,
+          "estimate": 2.14,
+          "beat": true,
+          "surprise_pct": 3.8
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "TCEHY",
+      "mentions": 2,
+      "name": "Tencent Holdings Ltd",
+      "sector": "Media",
+      "current_price": 43.61,
+      "change_pct": -0.0458,
+      "high": 43.62,
+      "low": 41.43,
+      "open": 42.54,
+      "prev_close": 43.63,
+      "market_cap": 3039941984266.0,
+      "score": 0,
+      "signals": [
+        "News buzz (2 mentions)"
+      ],
+      "reddit_mentions": 2,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "reddit": 2,
+        "st_bull": 89,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 7.23,
+          "estimate": 7.33,
+          "beat": false,
+          "surprise_pct": -1.4
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "PG",
+      "mentions": 2,
       "name": "The Procter & Gamble Company",
       "sector": "Consumer products",
       "current_price": 173.23,
@@ -235,14 +319,14 @@
       "market_cap": 401509574375.0,
       "score": 0,
       "signals": [
-        "News buzz (3 mentions)"
+        "News buzz (2 mentions)"
       ],
-      "reddit_mentions": 3,
+      "reddit_mentions": 2,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "reddit": 3,
+        "reddit": 2,
         "st_bull": 100,
         "st_msgs": 30,
         "sources": [
@@ -263,90 +347,6 @@
       "score_normalized": 0
     },
     {
-      "ticker": "NVDA",
-      "mentions": 3,
-      "name": "NVIDIA Corporation",
-      "sector": "Semiconductors",
-      "current_price": 149.3,
-      "change_pct": -3.913,
-      "high": 150.37,
-      "low": 141.17,
-      "open": 144.06,
-      "prev_close": 155.38,
-      "market_cap": 3598130073546.9995,
-      "score": 0,
-      "signals": [
-        "News buzz (3 mentions)"
-      ],
-      "reddit_mentions": 3,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "trend_pct": -69,
-        "reddit": 180,
-        "st_bull": 86,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 2.22,
-          "estimate": 2.14,
-          "beat": true,
-          "surprise_pct": 3.8
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "GOOG",
-      "mentions": 3,
-      "name": "Alphabet Inc.",
-      "sector": "Media",
-      "current_price": 270.98,
-      "change_pct": -2.0247,
-      "high": 271.6,
-      "low": 260.692,
-      "open": 263.32,
-      "prev_close": 276.58,
-      "market_cap": 3357491400000.0005,
-      "score": 0,
-      "signals": [
-        "News buzz (3 mentions)"
-      ],
-      "reddit_mentions": 3,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "trend_pct": -81,
-        "reddit": 10,
-        "st_bull": 56,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 2.67,
-          "estimate": 3.11,
-          "beat": false,
-          "surprise_pct": -14.1
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
       "sector": "Semiconductors",
@@ -358,11 +358,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 46,
+      "mentions": 44,
       "social": {
-        "trend_pct": -65,
-        "reddit": 46,
-        "st_bull": 75,
+        "trend_pct": -64,
+        "reddit": 44,
+        "st_bull": 87,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -393,10 +393,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 41,
+      "mentions": 40,
       "social": {
         "trend_pct": -78,
-        "reddit": 41,
+        "reddit": 40,
         "sources": [
           "Reddit"
         ]
@@ -425,10 +425,10 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 34,
+      "mentions": 29,
       "social": {
-        "trend_pct": -70,
-        "reddit": 34,
+        "trend_pct": -74,
+        "reddit": 29,
         "sources": [
           "Reddit"
         ]
@@ -1194,6 +1194,36 @@
   },
   "reddit_feed": [
     {
+      "id": "3ce4929d665a7371efee72b8e619e3379865dfbfe06612ee1f2ec3c05e5e92bc",
+      "title": "\u949b\u52a8\u79d1\u6280 \u00d7 \u817e\u8baf\u4e91\u8fbe\u6210\u6218\u7565\u5408\u4f5c\uff0c\u7528AI\u6253\u5f00\u4f01\u4e1a\u5168\u7403\u589e\u957f\u65b0\u7a7a\u95f4\uff01",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "TCEHY"
+      ],
+      "hours_ago": 2.1,
+      "url": "https://www.globenewswire.com/news-release/2026/11/27/3411050/0/zh-hans/%E9%92%9B%E5%8A%A8%E7%A7%91%E6%8A%80-%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BE%BE%E6%88%90%E6%88%98%E7%95%A5%E5%90%88%E4%BD%9C-%E7%94%A8ai%E6%89%93%E5%BC%80%E4%BC%81%E4%B8%9A%E5%85%A8%E7%90%83%E5%A2%9E%E9%95%BF%E6%96%B0%E7%A9%BA%E9%97%B4.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "TCEHY"
+      ]
+    },
+    {
+      "id": "29c668b3222462448ef1033d19109d717ce94d84a60b67315ab3063ed6a7d815",
+      "title": "Tec-Do and Tencent Cloud Form Strategic Partnership to Help Businesses Unlock Global Growth with AI",
+      "subreddit": "GlobeNewswire Inc.",
+      "ups": 0,
+      "tickers": [
+        "TCEHY"
+      ],
+      "hours_ago": 2.1,
+      "url": "https://www.globenewswire.com/news-release/2026/11/27/3411050/0/en/tec-do-and-tencent-cloud-form-strategic-partnership-to-help-businesses-unlock-global-growth-with-ai.html",
+      "is_news": true,
+      "confirmed_tickers": [
+        "TCEHY"
+      ]
+    },
+    {
       "id": "dd3e608d2fa0602eb224149eaffc38498b3b3ff34265084b1e74f715a4a72433",
       "title": "2 Dividend Stocks to Buy in November and 1 to Leave on the Shelf",
       "subreddit": "The Motley Fool",
@@ -1204,7 +1234,7 @@
         "MO",
         "UL"
       ],
-      "hours_ago": 1.6,
+      "hours_ago": 2.7,
       "url": "https://www.fool.com/investing/2026/11/26/2-dividend-stocks-to-buy-in-november-and-1-to-leave-on-the-shelf/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1223,7 +1253,7 @@
         "AMD",
         "AVGO"
       ],
-      "hours_ago": 2.1,
+      "hours_ago": 3.2,
       "url": "https://www.fool.com/investing/2026/11/26/not-nvidia-not-micron-if-i-could-buy-and-hold-only-1-artificial-intelligence-ai-semiconductor-stock-through-2030-this-would-be-it/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1244,12 +1274,11 @@
         "GOOGM",
         "GOOGN"
       ],
-      "hours_ago": 2.5,
+      "hours_ago": 3.6,
       "url": "https://www.fool.com/investing/2026/11/26/nvidia-is-the-worst-performing-magnificent-seven-stock-this-year-is-it-a-buy-before-2027/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "NVDA",
-        "GOOG"
+        "NVDA"
       ]
     },
     {
@@ -1260,26 +1289,11 @@
       "tickers": [
         "SNDK"
       ],
-      "hours_ago": 4.1,
+      "hours_ago": 5.1,
       "url": "https://www.fool.com/investing/2026/11/26/sandisks-8-for-1-split-is-done-heres-what-investors-should-do-next/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "SNDK"
-      ]
-    },
-    {
-      "id": "ac57fe3dcea455ad2d4b38926b15bfed44ead74f380bbffb3cce58469029548c",
-      "title": "Here\u2019s How Many Shares of Procter & Gamble You\u2019d Need to Own to Collect $1,000 in Annual Dividends",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "PG"
-      ],
-      "hours_ago": 4.9,
-      "url": "https://www.fool.com/investing/2026/11/26/here-s-how-many-shares-of-procter-and-gamble-you-d-need-to-own-to-collect-usd1-000-in-annual-dividends/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "PG"
       ]
     }
   ]
