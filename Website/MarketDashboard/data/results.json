@@ -1,11 +1,11 @@
 {
-  "scan_time": "2026-11-27T22:23:20.893324+00:00",
+  "scan_time": "2026-11-27T23:35:11.984658+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
   "total_scanned": 61,
   "universe_source": "Yahoo screener (custom): gainers + most active",
   "social_sources": {
     "apewisdom": 100,
-    "stocktwits_trending": 22
+    "stocktwits_trending": 25
   },
   "day_trades": [
     {
@@ -23,8 +23,8 @@
         "Top gainer (+16.0%)",
         "High volume",
         "Strong move (+16.0%)",
-        "Reddit chatter (#5, 52 mentions)",
-        "Yahoo trending (#1)",
+        "Reddit chatter (#5, 51 mentions)",
+        "Yahoo trending (#2)",
         "Closing strong",
         "Sector leader (Technology)"
       ],
@@ -34,7 +34,7 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950906460416.png",
       "weburl": "https://www.sandisk.com/",
-      "yahoo_trending_rank": 1,
+      "yahoo_trending_rank": 2,
       "earnings_info": {
         "upcoming": null,
         "recent": {
@@ -62,22 +62,59 @@
         "Top gainer (+11.0%)",
         "High volume",
         "Strong move (+11.0%)",
-        "News activity (4)",
-        "Yahoo trending (#3)",
+        "News activity (3)",
+        "Yahoo trending (#1)",
         "Closing strong"
       ],
-      "reddit_mentions": 4,
+      "reddit_mentions": 3,
       "market_cap": 1094454196788.0,
       "is_gainer": true,
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950839624896.png",
       "weburl": "https://www.anthropic.com",
-      "yahoo_trending_rank": 3,
+      "yahoo_trending_rank": 1,
       "earnings_info": {
         "upcoming": null,
         "recent": null
       },
       "score_normalized": 68
+    },
+    {
+      "ticker": "HYMC",
+      "name": "Hycroft Mining Holding Corp",
+      "sector": "Metals & Mining",
+      "current_price": 15.77,
+      "change_pct": 14.9417,
+      "high": 15.81,
+      "low": 14.5501,
+      "open": 14.83,
+      "prev_close": 13.72,
+      "score": 41,
+      "signals": [
+        "Top gainer (+14.9%)",
+        "Strong move (+14.9%)",
+        "StockTwits trending (#3)",
+        "Closing strong",
+        "Sector leader (Metals & Mining)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 1278478407.9999998,
+      "is_gainer": true,
+      "is_active": false,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950605407006.png",
+      "weburl": "https://www.hycroftmining.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": -0.28,
+          "estimate": -0.17,
+          "beat": false,
+          "surprise_pct": -61.5
+        }
+      },
+      "score_normalized": 58
     },
     {
       "ticker": "XP",
@@ -148,43 +185,6 @@
       "score_normalized": 55
     },
     {
-      "ticker": "INTC",
-      "name": "Intel Corp",
-      "sector": "Semiconductors",
-      "current_price": 57.4,
-      "change_pct": 5.3791,
-      "high": 58.38,
-      "low": 54.55,
-      "open": 56.549,
-      "prev_close": 54.47,
-      "score": 36,
-      "signals": [
-        "High volume",
-        "Strong move (+5.4%)",
-        "Yahoo trending (#18)",
-        "Closing strong",
-        "Sector leader (Semiconductors)"
-      ],
-      "reddit_mentions": 1,
-      "market_cap": 289508056487.99994,
-      "is_gainer": false,
-      "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/INTC.png",
-      "weburl": "https://www.intel.com/",
-      "yahoo_trending_rank": 18,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 0.52,
-          "estimate": 0.4,
-          "beat": true,
-          "surprise_pct": 28.6
-        }
-      },
-      "score_normalized": 51
-    },
-    {
       "ticker": "BNAI",
       "name": "Brand Engagement Network Inc",
       "sector": "Technology",
@@ -225,7 +225,7 @@
   "reddit_cards": [
     {
       "ticker": "NVDA",
-      "mentions": 10,
+      "mentions": 9,
       "name": "NVIDIA Corporation",
       "sector": "Semiconductors",
       "current_price": 150.49,
@@ -237,16 +237,16 @@
       "market_cap": 3598130073546.9995,
       "score": 0,
       "signals": [
-        "News buzz (10 mentions)"
+        "News buzz (9 mentions)"
       ],
-      "reddit_mentions": 10,
+      "reddit_mentions": 9,
       "is_gainer": false,
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 58,
+        "trend_pct": 68,
         "reddit": 340,
-        "st_bull": 79,
+        "st_bull": 65,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -286,8 +286,8 @@
       "is_active": false,
       "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 220,
-        "reddit": 32,
+        "trend_pct": 173,
+        "reddit": 30,
         "st_bull": 100,
         "st_msgs": 30,
         "sources": [
@@ -321,16 +321,15 @@
       "market_cap": 3357491400000.0005,
       "score": 0,
       "signals": [
-        "News buzz (5 mentions)",
-        "Yahoo trending (#15)"
+        "News buzz (5 mentions)"
       ],
       "reddit_mentions": 5,
       "is_gainer": false,
       "is_active": false,
-      "yahoo_trending_rank": 15,
+      "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": 146,
-        "reddit": 32,
+        "trend_pct": 154,
+        "reddit": 33,
         "st_bull": 80,
         "st_msgs": 30,
         "sources": [
@@ -362,11 +361,11 @@
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 58,
+      "mentions": 59,
       "social": {
-        "trend_pct": 32,
-        "reddit": 58,
-        "st_bull": 90,
+        "trend_pct": 34,
+        "reddit": 59,
+        "st_bull": 92,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -400,8 +399,8 @@
         "Top gainer (+16.0%)",
         "High volume",
         "Strong move (+16.0%)",
-        "Reddit chatter (#5, 52 mentions)",
-        "Yahoo trending (#1)",
+        "Reddit chatter (#5, 51 mentions)",
+        "Yahoo trending (#2)",
         "Closing strong",
         "Sector leader (Technology)"
       ],
@@ -411,11 +410,11 @@
       "is_active": true,
       "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950906460416.png",
       "weburl": "https://www.sandisk.com/",
-      "yahoo_trending_rank": 1,
-      "mentions": 52,
+      "yahoo_trending_rank": 2,
+      "mentions": 51,
       "social": {
-        "trend_pct": 30,
-        "reddit": 52,
+        "trend_pct": 28,
+        "reddit": 51,
         "sources": [
           "Reddit"
         ]
@@ -446,7 +445,7 @@
       "is_active": false,
       "mentions": 47,
       "social": {
-        "trend_pct": 292,
+        "trend_pct": 327,
         "reddit": 47,
         "sources": [
           "Reddit"
@@ -471,8 +470,8 @@
       "name": "Tesla Inc",
       "sector": "Automobiles",
       "mentions": 47,
-      "prev": 12,
-      "trend_pct": 292,
+      "prev": 11,
+      "trend_pct": 327,
       "current_price": 400,
       "change_pct": 5.2244,
       "market_cap": 1501178406279.1863
@@ -489,15 +488,15 @@
       "market_cap": 12944000276.999998
     },
     {
-      "ticker": "GOOG",
-      "name": "Alphabet Inc.",
-      "sector": "Media",
-      "mentions": 32,
-      "prev": 10,
-      "trend_pct": 220,
-      "current_price": 272.44,
-      "change_pct": 0.5388,
-      "market_cap": 3357491400000.0005
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "sector": "Technology",
+      "mentions": 25,
+      "prev": 3,
+      "trend_pct": 733,
+      "current_price": 492.85,
+      "change_pct": 0.596,
+      "market_cap": 3638315336615.0
     }
   ],
   "sector_rotation": {
@@ -1241,6 +1240,22 @@
   },
   "reddit_feed": [
     {
+      "id": "4afc8fc654840fc70c6abf297fd9b28a965506243d507b656076ce94c5636fd0",
+      "title": "History Says the Nasdaq's Wild Ride Probably Isn't Over. Here's the Case for QQQI and Its 14% Yield.",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "NVDA",
+        "QQQI"
+      ],
+      "hours_ago": 0.8,
+      "url": "https://www.fool.com/investing/2026/11/27/history-says-nasdaq-wild-ride-isnt-over-heres-case-for-qqqi-14-yield/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
+    },
+    {
       "id": "fe78519e1e16b2c5606d97d1e0cb81d7ab7075e46f3ce9241c55244cd1a615f3",
       "title": "Stock Market Today, Nov. 27: Anthropic Jumps 11%, Reclaiming Its $83 IPO Price as Wall Street Rallies",
       "subreddit": "The Motley Fool",
@@ -1252,7 +1267,7 @@
         "GOOGL",
         "GOOGM"
       ],
-      "hours_ago": 0.5,
+      "hours_ago": 1.7,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-anthropic-jumps-11-reclaiming-its-usd83-ipo-price-as-wall-street-rallies/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1272,7 +1287,7 @@
         "STX",
         "NVDA"
       ],
-      "hours_ago": 0.6,
+      "hours_ago": 1.8,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-sandisk-surges-16-as-memory-stocks-rebound-from-ai-driven-selloff/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1292,7 +1307,7 @@
         "VRTX",
         "KNTK"
       ],
-      "hours_ago": 0.9,
+      "hours_ago": 2.1,
       "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-s-and-p-500-posts-best-week-in-19-months-as-ai-stocks-rebound/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1308,7 +1323,7 @@
         "SCHW",
         "NVDA"
       ],
-      "hours_ago": 1.4,
+      "hours_ago": 2.6,
       "url": "https://www.fool.com/investing/2026/11/27/tax-savvy-ways-to-support-charities-and-family/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1327,7 +1342,7 @@
         "METAM",
         "GOOG"
       ],
-      "hours_ago": 1.7,
+      "hours_ago": 2.9,
       "url": "https://www.fool.com/investing/2026/11/27/amd-shares-just-got-crushed-on-a-short-report-why-the-drop-is-a-golden-buying-opportunity/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1345,7 +1360,7 @@
         "MU",
         "SNDK"
       ],
-      "hours_ago": 2.8,
+      "hours_ago": 4.0,
       "url": "https://www.fool.com/investing/2026/11/27/nvidia-micron-and-sandisk-trade-at-half-the-s-and-p-500-s-forward-p-e-they-are-all-genius-buys/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
@@ -1362,63 +1377,8 @@
       "tickers": [
         "NVDA"
       ],
-      "hours_ago": 2.9,
+      "hours_ago": 4.1,
       "url": "https://www.fool.com/investing/2026/11/27/should-you-buy-nvidia-stock-before-ceo-jensen-huang-testifies-in-front-of-congress-on-dec-1-and-dec-3/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA"
-      ]
-    },
-    {
-      "id": "b9dd1b23ff59bd69136884e4872a526b7379d2005b8d552a23fa3ba8d77f37f0",
-      "title": "Anthropic Gets a Blockbuster IPO; Take-Two Gets a Blockbuster GTA VI Release",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "ANT",
-        "TTWO",
-        "NVDA",
-        "AVGO",
-        "GOOG"
-      ],
-      "hours_ago": 3.4,
-      "url": "https://www.fool.com/investing/2026/11/27/anthropic-gets-a-blockbuster-ipo-take-two-gets-a-blockbuster-gta-vi-release/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA",
-        "GOOG"
-      ]
-    },
-    {
-      "id": "d94267b0a00b0e4352a4ce89c8f30f61a07ec4629639320b7df64ae5e47b800e",
-      "title": "Black Friday Stock Deals: 7 Bargains Our Analysts Are Watching Now",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "GEV",
-        "GOOG",
-        "GOOGL",
-        "GOOGM",
-        "GOOGN"
-      ],
-      "hours_ago": 3.5,
-      "url": "https://www.fool.com/investing/2026/11/27/black-friday-stock-deals-7-bargains-our-analysts-are-watching-now/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "GOOG",
-        "GOOGL"
-      ]
-    },
-    {
-      "id": "ddf8505b65e35eca31900831cc9aaae01fd7464283b3ae3969453c2808d78fc7",
-      "title": "Kaplan Fox Reminds NVIDIA Corporation (NASDAQ: NVDA) Investors of a Securities Class Action Deadline on January 8, 2027",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "NVDA"
-      ],
-      "hours_ago": 3.7,
-      "url": "https://www.globenewswire.com/news-release/2026/11/27/3411476/1020/en/kaplan-fox-reminds-nvidia-corporation-nasdaq-nvda-investors-of-a-securities-class-action-deadline-on-january-8-2027.html",
       "is_news": true,
       "confirmed_tickers": [
         "NVDA"
