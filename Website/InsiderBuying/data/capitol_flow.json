@@ -1,11 +1,11 @@
 {
- "scan_time": "2026-11-24T21:54:11.534771+00:00",
+ "scan_time": "2026-11-27T20:22:22.844263+00:00",
  "source": "US House Clerk (Periodic Transaction Reports)",
- "filings_total": 481,
- "filings_with_trades": 292,
- "transactions": 3479,
+ "filings_total": 483,
+ "filings_with_trades": 294,
+ "transactions": 3503,
  "window_days": 90,
- "median_disclosure_lag_days": 16,
+ "median_disclosure_lag_days": 15,
  "caveats": {
   "lag": "The STOCK Act allows 30-45 days between a trade and its disclosure, so this is a thematic read rather than a timing signal.",
   "amounts": "Members disclose a range, not a figure. Totals use the midpoint of each band and are estimates only.",
@@ -36,48 +36,8 @@
   },
   {
    "ticker": "AVGO",
-   "trades": 4,
-   "est_amount": 399000,
-   "members": 2,
-   "member_names": [
-    "David J. Taylor",
-    "Gilbert Cisneros"
-   ]
-  },
-  {
-   "ticker": "NVO",
-   "trades": 5,
-   "est_amount": 180500,
-   "members": 2,
-   "member_names": [
-    "Kevin Hern",
-    "Scott Scott Franklin"
-   ]
-  },
-  {
-   "ticker": "PLD",
-   "trades": 6,
-   "est_amount": 97000,
-   "members": 2,
-   "member_names": [
-    "David J. Taylor",
-    "Harriet Hageman"
-   ]
-  },
-  {
-   "ticker": "MRSH",
-   "trades": 4,
-   "est_amount": 81000,
-   "members": 2,
-   "member_names": [
-    "Harriet Hageman",
-    "Kevin Hern"
-   ]
-  },
-  {
-   "ticker": "ETN",
-   "trades": 3,
-   "est_amount": 48500,
+   "trades": 2,
+   "est_amount": 383000,
    "members": 2,
    "member_names": [
     "David J. Taylor",
@@ -102,16 +62,6 @@
    "member_names": [
     "Cleo Fields",
     "Maria Elvira Salazar"
-   ]
-  },
-  {
-   "ticker": "MCD",
-   "trades": 4,
-   "est_amount": 32000,
-   "members": 2,
-   "member_names": [
-    "Harriet Hageman",
-    "Scott Scott Franklin"
    ]
   },
   {
@@ -195,16 +145,6 @@
    ]
   },
   {
-   "ticker": "GS",
-   "trades": 2,
-   "est_amount": 16000,
-   "members": 2,
-   "member_names": [
-    "Gilbert Cisneros",
-    "Michael Rulli"
-   ]
-  },
-  {
    "ticker": "BBIO",
    "trades": 4,
    "est_amount": 766000,
@@ -229,6 +169,15 @@
    "members": 1,
    "member_names": [
     "Gilbert Cisneros"
+   ]
+  },
+  {
+   "ticker": "NVO",
+   "trades": 4,
+   "est_amount": 172500,
+   "members": 1,
+   "member_names": [
+    "Kevin Hern"
    ]
   },
   {
@@ -257,23 +206,54 @@
    "member_names": [
     "Jonathan Jackson"
    ]
-  }
- ],
- "top_sold": [
+  },
   {
-   "ticker": "MSFT",
-   "trades": 7,
-   "est_amount": 472000,
-   "members": 6,
+   "ticker": "EL",
+   "trades": 2,
+   "est_amount": 83000,
+   "members": 1,
    "member_names": [
-    "David J. Taylor",
-    "Harriet Hageman",
-    "Maria Elvira Salazar",
-    "Michael Rulli",
-    "Pete Sessions",
+    "Jonathan Jackson"
+   ]
+  },
+  {
+   "ticker": "SYK",
+   "trades": 1,
+   "est_amount": 75000,
+   "members": 1,
+   "member_names": [
     "Thomas H. Kean"
    ]
   },
+  {
+   "ticker": "MBGL",
+   "trades": 1,
+   "est_amount": 75000,
+   "members": 1,
+   "member_names": [
+    "Gilbert Cisneros"
+   ]
+  },
+  {
+   "ticker": "SHW",
+   "trades": 2,
+   "est_amount": 65000,
+   "members": 1,
+   "member_names": [
+    "Richard W. Allen"
+   ]
+  },
+  {
+   "ticker": "MRSH",
+   "trades": 2,
+   "est_amount": 65000,
+   "members": 1,
+   "member_names": [
+    "Kevin Hern"
+   ]
+  }
+ ],
+ "top_sold": [
   {
    "ticker": "WBD",
    "trades": 7,
@@ -289,9 +269,22 @@
    ]
   },
   {
+   "ticker": "MSFT",
+   "trades": 5,
+   "est_amount": 431500,
+   "members": 5,
+   "member_names": [
+    "Harriet Hageman",
+    "Maria Elvira Salazar",
+    "Michael Rulli",
+    "Pete Sessions",
+    "Thomas H. Kean"
+   ]
+  },
+  {
    "ticker": "HD",
-   "trades": 11,
-   "est_amount": 186000,
+   "trades": 10,
+   "est_amount": 178000,
    "members": 5,
    "member_names": [
     "David J. Taylor",
@@ -311,18 +304,6 @@
     "Gilbert Cisneros",
     "Harriet Hageman",
     "Michael Rulli",
-    "Pete Sessions"
-   ]
-  },
-  {
-   "ticker": "WMT",
-   "trades": 5,
-   "est_amount": 174000,
-   "members": 4,
-   "member_names": [
-    "Harriet Hageman",
-    "Jonathan Jackson",
-    "Kevin Hern",
     "Pete Sessions"
    ]
   },
@@ -372,24 +353,24 @@
   },
   {
    "ticker": "VZ",
-   "trades": 5,
-   "est_amount": 156000,
+   "trades": 3,
+   "est_amount": 115500,
    "members": 3,
    "member_names": [
-    "Harriet Hageman",
     "Jennifer McClellan",
-    "Pete Sessions"
+    "Pete Sessions",
+    "Robert For Onder"
    ]
   },
   {
-   "ticker": "GOOGL",
-   "trades": 3,
-   "est_amount": 48500,
+   "ticker": "PG",
+   "trades": 5,
+   "est_amount": 64500,
    "members": 3,
    "member_names": [
-    "Michael Rulli",
+    "David J. Taylor",
     "Pete Sessions",
-    "Thomas H. Kean"
+    "Robert For Onder"
    ]
   },
   {
@@ -445,9 +426,19 @@
    ]
   },
   {
+   "ticker": "WMT",
+   "trades": 2,
+   "est_amount": 150000,
+   "members": 2,
+   "member_names": [
+    "Jonathan Jackson",
+    "Pete Sessions"
+   ]
+  },
+  {
    "ticker": "TJX",
-   "trades": 6,
-   "est_amount": 146000,
+   "trades": 5,
+   "est_amount": 138000,
    "members": 2,
    "member_names": [
     "Kevin Hern",
@@ -465,6 +456,16 @@
    ]
   },
   {
+   "ticker": "STX",
+   "trades": 4,
+   "est_amount": 105500,
+   "members": 2,
+   "member_names": [
+    "Kevin Hern",
+    "Lisa McClain"
+   ]
+  },
+  {
    "ticker": "ABT",
    "trades": 2,
    "est_amount": 83000,
@@ -472,16 +473,6 @@
    "member_names": [
     "Pete Sessions",
     "Thomas H. Kean"
-   ]
-  },
-  {
-   "ticker": "STX",
-   "trades": 3,
-   "est_amount": 73000,
-   "members": 2,
-   "member_names": [
-    "Kevin Hern",
-    "Lisa McClain"
    ]
   },
   {
@@ -537,32 +528,36 @@
  ],
  "most_active": [
   {
-   "member": "Gilbert Cisneros",
-   "trades": 129
-  },
-  {
    "member": "Kevin Hern",
-   "trades": 125
+   "trades": 130
   },
   {
-   "member": "Harriet Hageman",
-   "trades": 52
-  },
-  {
-   "member": "David J. Taylor",
-   "trades": 47
+   "member": "Gilbert Cisneros",
+   "trades": 121
   },
   {
    "member": "Maria Elvira Salazar",
    "trades": 47
   },
   {
+   "member": "David J. Taylor",
+   "trades": 38
+  },
+  {
    "member": "Pete Sessions",
    "trades": 34
   },
   {
+   "member": "Harriet Hageman",
+   "trades": 30
+  },
+  {
+   "member": "Robert For Onder",
+   "trades": 12
+  },
+  {
    "member": "Thomas H. Kean",
-   "trades": 15
+   "trades": 12
   },
   {
    "member": "Michael Rulli",
@@ -570,7 +565,7 @@
   },
   {
    "member": "Jonathan Jackson",
-   "trades": 11
+   "trades": 10
   },
   {
    "member": "Cleo Fields",
@@ -579,16 +574,12 @@
   {
    "member": "Lisa McClain",
    "trades": 9
-  },
-  {
-   "member": "Byron Donalds",
-   "trades": 8
   }
  ],
  "asset_mix": [
   {
    "type": "Stock",
-   "trades": 542
+   "trades": 509
   }
  ],
  "recent": [
@@ -619,6 +610,32 @@
    "doc": "20036883"
   },
   {
+   "ticker": "ROK",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-11-17",
+   "notify_date": "2026-11-19",
+   "amount_low": 50001,
+   "amount_high": 100000,
+   "amount_mid": 75000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20036875"
+  },
+  {
+   "ticker": "ROK",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-11-17",
+   "notify_date": "2026-11-19",
+   "amount_low": 50001,
+   "amount_high": 100000,
+   "amount_mid": 75000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20036875"
+  },
+  {
    "ticker": "AAPL",
    "asset_type": "ST",
    "code": "P",
@@ -630,6 +647,32 @@
    "member": "Ed Case",
    "state": "HI01",
    "doc": "20036891"
+  },
+  {
+   "ticker": "CMI",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-11-16",
+   "notify_date": "2026-11-19",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20036875"
+  },
+  {
+   "ticker": "ROK",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-11-16",
+   "notify_date": "2026-11-19",
+   "amount_low": 100001,
+   "amount_high": 250000,
+   "amount_mid": 175000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20036875"
   },
   {
    "ticker": "COST",
@@ -645,6 +688,58 @@
    "doc": "20036855"
   },
   {
+   "ticker": "ACLLY",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-11-10",
+   "notify_date": "2026-11-19",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20036875"
+  },
+  {
+   "ticker": "ETN",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-11-10",
+   "notify_date": "2026-11-19",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20036875"
+  },
+  {
+   "ticker": "PSX",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-11-10",
+   "notify_date": "2026-11-19",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20036875"
+  },
+  {
+   "ticker": "STX",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-11-10",
+   "notify_date": "2026-11-19",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20036875"
+  },
+  {
    "ticker": "JBGS",
    "asset_type": "ST",
    "code": "S",
@@ -656,6 +751,45 @@
    "member": "James French Hill",
    "state": "AR02",
    "doc": "20035807"
+  },
+  {
+   "ticker": "ASML",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-11-09",
+   "notify_date": "2026-11-19",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20036875"
+  },
+  {
+   "ticker": "INTC",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-11-09",
+   "notify_date": "2026-11-19",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20036875"
+  },
+  {
+   "ticker": "INTC",
+   "asset_type": "ST",
+   "code": "P",
+   "trade_date": "2026-11-06",
+   "notify_date": "2026-11-19",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20036875"
   },
   {
    "ticker": "AVGO",
@@ -1009,6 +1143,162 @@
    "doc": "20035788"
   },
   {
+   "ticker": "AMP",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-29",
+   "notify_date": "2026-10-29",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Robert For Onder",
+   "state": "MO03",
+   "doc": "20036908"
+  },
+  {
+   "ticker": "CMCSA",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-29",
+   "notify_date": "2026-10-29",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Robert For Onder",
+   "state": "MO03",
+   "doc": "20036908"
+  },
+  {
+   "ticker": "DUK",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-29",
+   "notify_date": "2026-10-29",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Robert For Onder",
+   "state": "MO03",
+   "doc": "20036908"
+  },
+  {
+   "ticker": "GEHCV",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-29",
+   "notify_date": "2026-10-29",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Robert For Onder",
+   "state": "MO03",
+   "doc": "20036908"
+  },
+  {
+   "ticker": "HPQ",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-29",
+   "notify_date": "2026-10-29",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Robert For Onder",
+   "state": "MO03",
+   "doc": "20036908"
+  },
+  {
+   "ticker": "MDT",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-29",
+   "notify_date": "2026-10-29",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Robert For Onder",
+   "state": "MO03",
+   "doc": "20036908"
+  },
+  {
+   "ticker": "MDLZ",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-29",
+   "notify_date": "2026-10-29",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Robert For Onder",
+   "state": "MO03",
+   "doc": "20036908"
+  },
+  {
+   "ticker": "PEP",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-29",
+   "notify_date": "2026-10-29",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Robert For Onder",
+   "state": "MO03",
+   "doc": "20036908"
+  },
+  {
+   "ticker": "PG",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-29",
+   "notify_date": "2026-10-29",
+   "amount_low": 15001,
+   "amount_high": 50000,
+   "amount_mid": 32500,
+   "member": "Robert For Onder",
+   "state": "MO03",
+   "doc": "20036908"
+  },
+  {
+   "ticker": "PG",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-29",
+   "notify_date": "2026-10-29",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Robert For Onder",
+   "state": "MO03",
+   "doc": "20036908"
+  },
+  {
+   "ticker": "VZ",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-29",
+   "notify_date": "2026-10-29",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Robert For Onder",
+   "state": "MO03",
+   "doc": "20036908"
+  },
+  {
+   "ticker": "DIS",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-29",
+   "notify_date": "2026-10-29",
+   "amount_low": 1001,
+   "amount_high": 15000,
+   "amount_mid": 8000,
+   "member": "Robert For Onder",
+   "state": "MO03",
+   "doc": "20036908"
+  },
+  {
    "ticker": "DIS",
    "asset_type": "ST",
    "code": "S",
@@ -1189,6 +1479,19 @@
    "member": "Thomas H. Kean",
    "state": "NJ07",
    "doc": "20036844"
+  },
+  {
+   "ticker": "ROK",
+   "asset_type": "ST",
+   "code": "S",
+   "trade_date": "2026-10-27",
+   "notify_date": "2026-11-19",
+   "amount_low": 250001,
+   "amount_high": 500000,
+   "amount_mid": 375000,
+   "member": "Kevin Hern",
+   "state": "OK01",
+   "doc": "20036875"
   },
   {
    "ticker": "AMAT",
@@ -1839,318 +2142,6 @@
    "member": "Michael Rulli",
    "state": "OH06",
    "doc": "20035671"
-  },
-  {
-   "ticker": "TXRH",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-10-16",
-   "notify_date": "2026-11-09",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035788"
-  },
-  {
-   "ticker": "BRK.B",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-10-15",
-   "amount_low": 15001,
-   "amount_high": 50000,
-   "amount_mid": 32500,
-   "member": "Pete Sessions",
-   "state": "TX17",
-   "doc": "20035563"
-  },
-  {
-   "ticker": "T",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-10-29",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "David J. Taylor",
-   "state": "OH02",
-   "doc": "20035727"
-  },
-  {
-   "ticker": "LRCX",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-10-29",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "David J. Taylor",
-   "state": "OH02",
-   "doc": "20035727"
-  },
-  {
-   "ticker": "MPC",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-10-29",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "David J. Taylor",
-   "state": "OH02",
-   "doc": "20035727"
-  },
-  {
-   "ticker": "MPC",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-10-29",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "David J. Taylor",
-   "state": "OH02",
-   "doc": "20035727"
-  },
-  {
-   "ticker": "PLD",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-10-29",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "David J. Taylor",
-   "state": "OH02",
-   "doc": "20035727"
-  },
-  {
-   "ticker": "PLD",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-10-29",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "David J. Taylor",
-   "state": "OH02",
-   "doc": "20035727"
-  },
-  {
-   "ticker": "RPM",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-10-29",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "David J. Taylor",
-   "state": "OH02",
-   "doc": "20035727"
-  },
-  {
-   "ticker": "V",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-10-29",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "David J. Taylor",
-   "state": "OH02",
-   "doc": "20035727"
-  },
-  {
-   "ticker": "TLK",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-11-04",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Josh Gottheimer",
-   "state": "NJ05",
-   "doc": "20035770"
-  },
-  {
-   "ticker": "WDC",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-11-04",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "John J Mr McGuire",
-   "state": "VA05",
-   "doc": "20035775"
-  },
-  {
-   "ticker": "ARGX",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-11-09",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035788"
-  },
-  {
-   "ticker": "LNTH",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-11-09",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035788"
-  },
-  {
-   "ticker": "MBGL",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-11-09",
-   "amount_low": 50001,
-   "amount_high": 100000,
-   "amount_mid": 75000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035788"
-  },
-  {
-   "ticker": "STRC",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-15",
-   "notify_date": "2026-11-09",
-   "amount_low": 50001,
-   "amount_high": 100000,
-   "amount_mid": 75000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035788"
-  },
-  {
-   "ticker": "TXN",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-14",
-   "notify_date": "2026-10-27",
-   "amount_low": 15001,
-   "amount_high": 50000,
-   "amount_mid": 32500,
-   "member": "Kevin Hern",
-   "state": "OK01",
-   "doc": "20035710"
-  },
-  {
-   "ticker": "CVX",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-14",
-   "notify_date": "2026-10-14",
-   "amount_low": 15001,
-   "amount_high": 50000,
-   "amount_mid": 32500,
-   "member": "Pete Sessions",
-   "state": "TX17",
-   "doc": "20035563"
-  },
-  {
-   "ticker": "XOM",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-14",
-   "notify_date": "2026-10-14",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Pete Sessions",
-   "state": "TX17",
-   "doc": "20035563"
-  },
-  {
-   "ticker": "APP",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-14",
-   "notify_date": "2026-11-09",
-   "amount_low": 15001,
-   "amount_high": 50000,
-   "amount_mid": 32500,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035788"
-  },
-  {
-   "ticker": "ARGX",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-10-14",
-   "notify_date": "2026-11-09",
-   "amount_low": 15001,
-   "amount_high": 50000,
-   "amount_mid": 32500,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035788"
-  },
-  {
-   "ticker": "CTVA",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-14",
-   "notify_date": "2026-11-09",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035788"
-  },
-  {
-   "ticker": "LNTH",
-   "asset_type": "ST",
-   "code": "S",
-   "trade_date": "2026-10-14",
-   "notify_date": "2026-11-09",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035788"
-  },
-  {
-   "ticker": "ON",
-   "asset_type": "ST",
-   "code": "P",
-   "trade_date": "2026-10-14",
-   "notify_date": "2026-11-09",
-   "amount_low": 1001,
-   "amount_high": 15000,
-   "amount_mid": 8000,
-   "member": "Gilbert Cisneros",
-   "state": "CA31",
-   "doc": "20035788"
   }
  ]
 }
