@@ -1,177 +1,212 @@
 {
-  "scan_time": "2026-11-27T02:08:19.561350+00:00",
+  "scan_time": "2026-11-27T14:35:23.510186+00:00",
   "next_scan_info": "Weekdays 9:35am, 11:30am & 1:30pm ET",
-  "total_scanned": 64,
+  "total_scanned": 57,
   "universe_source": "Yahoo screener (custom): gainers + most active",
   "social_sources": {
     "apewisdom": 100,
-    "stocktwits_trending": 25
+    "stocktwits_trending": 24
   },
   "day_trades": [
     {
-      "ticker": "HPQ",
-      "name": "HP Inc",
+      "ticker": "SNDK",
+      "name": "SanDisk Corporation",
       "sector": "Technology",
-      "current_price": 31.15,
-      "change_pct": 11.4889,
-      "high": 32.05,
-      "low": 29.7,
-      "open": 29.95,
-      "prev_close": 27.94,
-      "score": 54,
+      "current_price": 78.47,
+      "change_pct": 6.6024,
+      "high": 80.22500000000001,
+      "low": 77.1,
+      "open": 80.215,
+      "prev_close": 73.61,
+      "score": 60,
       "signals": [
-        "Top gainer (+11.5%)",
+        "Top gainer (+6.6%)",
         "High volume",
-        "Strong move (+11.5%)",
-        "StockTwits trending (#10)",
-        "Unusual volume (Finviz)",
-        "Closing strong",
+        "Strong move (+6.6%)",
+        "Reddit chatter (#7, 37 mentions)",
+        "Yahoo trending (#1)",
         "Sector leader (Technology)"
       ],
       "reddit_mentions": 0,
-      "market_cap": 28090789793.0,
+      "market_cap": 83791354546.0,
       "is_gainer": true,
       "is_active": true,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/HPQ.png",
-      "weburl": "https://investor.hp.com/",
-      "yahoo_trending_rank": null,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950906460416.png",
+      "weburl": "https://www.sandisk.com/",
+      "yahoo_trending_rank": 1,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 0.72,
-          "estimate": 0.7,
+          "actual": 6.19,
+          "estimate": 5.89,
           "beat": true,
-          "surprise_pct": 3.1
+          "surprise_pct": 5.0
         }
       },
-      "score_normalized": 76
+      "score_normalized": 85
     },
     {
-      "ticker": "ASTS",
-      "name": "AST SpaceMobile, Inc.",
-      "sector": "Telecommunication",
-      "current_price": 26.02,
-      "change_pct": 10.2542,
-      "high": 26.665,
-      "low": 22.5,
-      "open": 22.64,
-      "prev_close": 23.6,
-      "score": 41,
+      "ticker": "PBR",
+      "name": "Petroleo Brasileiro SA Petrobras",
+      "sector": "Energy",
+      "current_price": 17.25,
+      "change_pct": 7.4766,
+      "high": 17.71,
+      "low": 17.22,
+      "open": 17.3825,
+      "prev_close": 16.05,
+      "score": 43,
       "signals": [
-        "Top gainer (+10.3%)",
-        "Strong move (+10.3%)",
-        "Reddit chatter (#12, 15 mentions)",
-        "Closing strong",
-        "Sector leader (Telecommunication)"
+        "Top gainer (+7.5%)",
+        "High volume",
+        "Strong move (+7.5%)",
+        "StockTwits trending (#8)",
+        "Sector leader (Energy)"
       ],
       "reddit_mentions": 0,
-      "market_cap": 10150653657.0,
+      "market_cap": 567151626640.0,
       "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950711601196.png",
-      "weburl": "https://investors.ast-science.com/",
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/PETR4.SA.png",
+      "weburl": "https://petrobras.com.br/",
       "yahoo_trending_rank": null,
       "earnings_info": {
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": -0.44,
-          "estimate": -0.41,
-          "beat": false,
-          "surprise_pct": -7.0
-        }
-      },
-      "score_normalized": 58
-    },
-    {
-      "ticker": "COGT",
-      "name": "Cogent Biosciences, Inc.",
-      "sector": "Biotechnology",
-      "current_price": 36.08,
-      "change_pct": 9.3002,
-      "high": 36.35,
-      "low": 33.07,
-      "open": 33.41,
-      "prev_close": 33.01,
-      "score": 39,
-      "signals": [
-        "Top gainer (+9.3%)",
-        "Strong move (+9.3%)",
-        "Unusual volume (Finviz)",
-        "Closing strong",
-        "Sector leader (Biotechnology)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 6277719923.0,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950433241186.png",
-      "weburl": "https://www.cogentbio.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": -0.59,
-          "estimate": -0.58,
-          "beat": false,
-          "surprise_pct": -2.3
-        }
-      },
-      "score_normalized": 55
-    },
-    {
-      "ticker": "LI",
-      "name": "Li Auto Inc",
-      "sector": "Automobiles",
-      "current_price": 11.88,
-      "change_pct": 11.028,
-      "high": 11.92,
-      "low": 10.48,
-      "open": 11.405,
-      "prev_close": 10.7,
-      "score": 39,
-      "signals": [
-        "Top gainer (+11.0%)",
-        "Strong move (+11.0%)",
-        "Unusual volume (Finviz)",
-        "Closing strong",
-        "Sector leader (Automobiles)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 87000220284.0,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/2015.HK.png",
-      "weburl": "https://www.lixiang.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": -0.33,
-          "estimate": -0.96,
+          "actual": 3.71,
+          "estimate": 3.58,
           "beat": true,
-          "surprise_pct": 65.3
+          "surprise_pct": 3.8
         }
       },
-      "score_normalized": 55
+      "score_normalized": 61
+    },
+    {
+      "ticker": "NU",
+      "name": "Nu Holdings Ltd.",
+      "sector": "Banking",
+      "current_price": 13.35,
+      "change_pct": 8.0097,
+      "high": 13.515,
+      "low": 13.17,
+      "open": 13.43,
+      "prev_close": 12.36,
+      "score": 38,
+      "signals": [
+        "Top gainer (+8.0%)",
+        "High volume",
+        "Strong move (+8.0%)",
+        "StockTwits trending (#13)",
+        "Sector leader (Banking)"
+      ],
+      "reddit_mentions": 1,
+      "market_cap": 59804282184.99999,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/NU.png",
+      "weburl": "https://international.nubank.com.br/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.22,
+          "estimate": 0.23,
+          "beat": false,
+          "surprise_pct": -3.1
+        }
+      },
+      "score_normalized": 54
+    },
+    {
+      "ticker": "XP",
+      "name": "XP Inc",
+      "sector": "Financial Services",
+      "current_price": 16.87,
+      "change_pct": 17.2342,
+      "high": 17.34,
+      "low": 16.77,
+      "open": 17.3,
+      "prev_close": 14.39,
+      "score": 38,
+      "signals": [
+        "Top gainer (+17.2%)",
+        "High volume",
+        "Strong move (+17.2%)",
+        "StockTwits trending (#11)",
+        "Sector leader (Financial Services)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 7383320000.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/XP.png",
+      "weburl": "https://www.xpinc.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 2.69,
+          "estimate": 2.86,
+          "beat": false,
+          "surprise_pct": -6.1
+        }
+      },
+      "score_normalized": 54
+    },
+    {
+      "ticker": "VALE",
+      "name": "Vale SA",
+      "sector": "Metals & Mining",
+      "current_price": 10.35,
+      "change_pct": 5.5046,
+      "high": 10.555,
+      "low": 10.33,
+      "open": 10.45,
+      "prev_close": 9.81,
+      "score": 33,
+      "signals": [
+        "Top gainer (+5.5%)",
+        "High volume",
+        "Strong move (+5.5%)",
+        "Sector leader (Metals & Mining)"
+      ],
+      "reddit_mentions": 0,
+      "market_cap": 278269270000.0,
+      "is_gainer": true,
+      "is_active": true,
+      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/VALE3.SA.png",
+      "weburl": "https://vale.com/",
+      "yahoo_trending_rank": null,
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 0.29,
+          "estimate": 0.37,
+          "beat": false,
+          "surprise_pct": -22.3
+        }
+      },
+      "score_normalized": 46
     },
     {
       "ticker": "AGLT",
       "name": "Churchill Capital Corp XI",
       "sector": "N/A",
-      "current_price": 6.49,
-      "change_pct": 20.4082,
-      "high": 6.62,
-      "low": 5.1425,
-      "open": 5.27,
-      "prev_close": 5.39,
+      "current_price": 7.4,
+      "change_pct": 14.0216,
+      "high": 7.3999999999999995,
+      "low": 6.85,
+      "open": 7,
+      "prev_close": 6.49,
       "score": 31,
       "signals": [
-        "Top gainer (+20.4%)",
-        "Strong move (+20.4%)",
+        "Top gainer (+14.0%)",
+        "Strong move (+14.0%)",
         "Closing strong",
         "Sector leader (N/A)"
       ],
@@ -187,65 +222,152 @@
         "recent": null
       },
       "score_normalized": 44
-    },
-    {
-      "ticker": "AGMB",
-      "name": "Agomab Therapeutics NV",
-      "sector": "Pharmaceuticals",
-      "current_price": 6.4,
-      "change_pct": 10.3448,
-      "high": 6.44,
-      "low": 5.48,
-      "open": 5.71,
-      "prev_close": 5.8,
-      "score": 31,
-      "signals": [
-        "Top gainer (+10.3%)",
-        "Strong move (+10.3%)",
-        "Closing strong",
-        "Sector leader (Pharmaceuticals)"
-      ],
-      "reddit_mentions": 0,
-      "market_cap": 315187077.0,
-      "is_gainer": true,
-      "is_active": false,
-      "logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/950602020646.png",
-      "weburl": "https://agomab.com/",
-      "yahoo_trending_rank": null,
-      "earnings_info": {
-        "upcoming": null,
-        "recent": null
-      },
-      "score_normalized": 44
     }
   ],
   "buzz_source": "news",
   "reddit_cards": [
     {
-      "ticker": "NVDA",
-      "mentions": 3,
-      "name": "NVIDIA Corporation",
-      "sector": "Semiconductors",
-      "current_price": 149.3,
-      "change_pct": -3.913,
-      "high": 150.37,
-      "low": 141.17,
-      "open": 144.06,
-      "prev_close": 155.38,
-      "market_cap": 3598130073546.9995,
+      "ticker": "GOOG",
+      "mentions": 5,
+      "name": "Alphabet Inc.",
+      "sector": "Media",
+      "current_price": 273.02,
+      "change_pct": 0.7528,
+      "high": 277.985,
+      "low": 272.215,
+      "open": 277.985,
+      "prev_close": 270.98,
+      "market_cap": 3357491400000.0005,
       "score": 0,
       "signals": [
-        "News buzz (3 mentions)",
-        "Yahoo trending (#1)"
+        "News buzz (5 mentions)"
       ],
-      "reddit_mentions": 3,
+      "reddit_mentions": 5,
       "is_gainer": false,
       "is_active": false,
-      "yahoo_trending_rank": 1,
+      "yahoo_trending_rank": null,
       "social": {
-        "trend_pct": -71,
-        "reddit": 166,
-        "st_bull": 85,
+        "trend_pct": -69,
+        "reddit": 9,
+        "st_bull": 81,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 2.67,
+          "estimate": 3.11,
+          "beat": false,
+          "surprise_pct": -14.1
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "GOOGL",
+      "mentions": 5,
+      "name": "Alphabet Inc.",
+      "sector": "Media",
+      "current_price": 275.16,
+      "change_pct": 0.7543,
+      "high": 280.0875,
+      "low": 274.335,
+      "open": 280.0875,
+      "prev_close": 273.1,
+      "market_cap": 3357491400000.0005,
+      "score": 0,
+      "signals": [
+        "News buzz (5 mentions)"
+      ],
+      "reddit_mentions": 5,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "trend_pct": -74,
+        "reddit": 11,
+        "st_bull": 80,
+        "st_msgs": 30,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 2.67,
+          "estimate": 3.11,
+          "beat": false,
+          "surprise_pct": -14.1
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "GOOGM",
+      "mentions": 5,
+      "name": "Alphabet Inc.",
+      "sector": "Media",
+      "current_price": 40.89,
+      "change_pct": 0.5657,
+      "high": 41.449999999999996,
+      "low": 40.811,
+      "open": 41.39,
+      "prev_close": 40.66,
+      "market_cap": 3357491400000.0005,
+      "score": 0,
+      "signals": [
+        "News buzz (5 mentions)"
+      ],
+      "reddit_mentions": 5,
+      "is_gainer": false,
+      "is_active": false,
+      "yahoo_trending_rank": null,
+      "social": {
+        "reddit": 5,
+        "st_bull": 100,
+        "st_msgs": 3,
+        "sources": [
+          "Reddit",
+          "StockTwits"
+        ]
+      },
+      "earnings_info": {
+        "upcoming": null,
+        "recent": {
+          "period": "2026-09-30",
+          "actual": 2.67,
+          "estimate": 3.11,
+          "beat": false,
+          "surprise_pct": -14.1
+        }
+      },
+      "score_normalized": 0
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "sector": "Semiconductors",
+      "current_price": 148.68,
+      "change_pct": -0.4153,
+      "market_cap": 3598130073546.9995,
+      "score": 0,
+      "signals": [],
+      "reddit_mentions": 0,
+      "is_gainer": false,
+      "is_active": false,
+      "mentions": 208,
+      "social": {
+        "trend_pct": -53,
+        "reddit": 208,
+        "st_bull": 56,
         "st_msgs": 30,
         "sources": [
           "Reddit",
@@ -265,138 +387,21 @@
       "score_normalized": 0
     },
     {
-      "ticker": "TCEHY",
-      "mentions": 2,
-      "name": "Tencent Holdings Ltd",
-      "sector": "Media",
-      "current_price": 43.61,
-      "change_pct": -0.0458,
-      "high": 43.62,
-      "low": 41.43,
-      "open": 42.54,
-      "prev_close": 43.63,
-      "market_cap": 3039941984266.0,
-      "score": 0,
-      "signals": [
-        "News buzz (2 mentions)"
-      ],
-      "reddit_mentions": 2,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "reddit": 2,
-        "st_bull": 89,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 7.23,
-          "estimate": 7.33,
-          "beat": false,
-          "surprise_pct": -1.4
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "PG",
-      "mentions": 2,
-      "name": "The Procter & Gamble Company",
-      "sector": "Consumer products",
-      "current_price": 173.23,
-      "change_pct": 0.4407,
-      "high": 174.56,
-      "low": 172.54,
-      "open": 173.26,
-      "prev_close": 172.47,
-      "market_cap": 401509574375.0,
-      "score": 0,
-      "signals": [
-        "News buzz (2 mentions)"
-      ],
-      "reddit_mentions": 2,
-      "is_gainer": false,
-      "is_active": false,
-      "yahoo_trending_rank": null,
-      "social": {
-        "reddit": 2,
-        "st_bull": 100,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 2.0,
-          "estimate": 1.94,
-          "beat": true,
-          "surprise_pct": 3.1
-        }
-      },
-      "score_normalized": 0
-    },
-    {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "sector": "Semiconductors",
-      "current_price": 406.03,
-      "change_pct": -1.7519,
-      "market_cap": 665924636407.0,
-      "score": 0,
-      "signals": [],
-      "reddit_mentions": 0,
-      "is_gainer": false,
-      "is_active": false,
-      "mentions": 44,
-      "social": {
-        "trend_pct": -64,
-        "reddit": 44,
-        "st_bull": 87,
-        "st_msgs": 30,
-        "sources": [
-          "Reddit",
-          "StockTwits"
-        ]
-      },
-      "earnings_info": {
-        "upcoming": null,
-        "recent": {
-          "period": "2026-09-30",
-          "actual": 2.09,
-          "estimate": 1.97,
-          "beat": true,
-          "surprise_pct": 6.1
-        }
-      },
-      "score_normalized": 0
-    },
-    {
       "ticker": "MU",
       "name": "Micron Technology, Inc.",
       "sector": "Semiconductors",
-      "current_price": 601.25,
-      "change_pct": -4.5317,
+      "current_price": 622.96,
+      "change_pct": 3.6108,
       "market_cap": 770161763611.0001,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 40,
+      "mentions": 51,
       "social": {
-        "trend_pct": -78,
-        "reddit": 40,
+        "trend_pct": -56,
+        "reddit": 51,
         "sources": [
           "Reddit"
         ]
@@ -414,21 +419,21 @@
       "score_normalized": 0
     },
     {
-      "ticker": "SNDK",
-      "name": "SanDisk Corporation",
-      "sector": "Technology",
-      "current_price": 73.61,
-      "change_pct": -5.5677,
-      "market_cap": 83791354546.0,
+      "ticker": "DTE",
+      "name": "DTE Energy Company",
+      "sector": "Utilities",
+      "current_price": 138.14,
+      "change_pct": 0.2758,
+      "market_cap": 28676543473.0,
       "score": 0,
       "signals": [],
       "reddit_mentions": 0,
       "is_gainer": false,
       "is_active": false,
-      "mentions": 29,
+      "mentions": 38,
       "social": {
-        "trend_pct": -74,
-        "reddit": 29,
+        "trend_pct": -43,
+        "reddit": 38,
         "sources": [
           "Reddit"
         ]
@@ -437,119 +442,131 @@
         "upcoming": null,
         "recent": {
           "period": "2026-09-30",
-          "actual": 6.19,
-          "estimate": 5.89,
+          "actual": 2.3,
+          "estimate": 2.17,
           "beat": true,
-          "surprise_pct": 5.0
+          "surprise_pct": 6.0
         }
       },
       "score_normalized": 0
     }
   ],
-  "chatter_emerging": [],
+  "chatter_emerging": [
+    {
+      "ticker": "PS",
+      "name": "Pershing Square Inc",
+      "sector": "Financial Services",
+      "mentions": 29,
+      "prev": 11,
+      "trend_pct": 164,
+      "current_price": 32.92,
+      "change_pct": 1.7305,
+      "market_cap": 12944000276.999998
+    }
+  ],
   "sector_rotation": {
     "sectors": [
       {
         "ticker": "XLP",
         "sector": "Cons. Staples",
-        "ret_1d": 0.46,
-        "ret_5d": 1.23,
-        "ret_1m": 5.91,
-        "ret_3m": 9.2,
-        "rel_1d": 0.75,
-        "rel_5d": 3.08,
-        "rel_1m": 12.79,
-        "rel_3m": 16.02,
-        "rvol": 1.01,
+        "ret_1d": 0.03,
+        "ret_5d": 2.74,
+        "ret_1m": 6.32,
+        "ret_3m": 8.76,
+        "rel_1d": -0.88,
+        "rel_5d": 1.71,
+        "rel_1m": 12.68,
+        "rel_3m": 14.52,
+        "rvol": 1.05,
         "rrg": {
-          "x": 101.81,
-          "y": 99.72,
+          "x": 101.59,
+          "y": 99.52,
           "quadrant": "Weakening",
           "tail": [
             {
-              "x": 101.24,
-              "y": 102.72
+              "x": 101.41,
+              "y": 102.02
             },
             {
-              "x": 101.23,
-              "y": 99.75
+              "x": 102.83,
+              "y": 101.02
             },
             {
-              "x": 100.8,
-              "y": 99.37
+              "x": 101.44,
+              "y": 98.57
             },
             {
-              "x": 102.3,
-              "y": 101.16
+              "x": 103.0,
+              "y": 101.17
             },
             {
-              "x": 101.63,
-              "y": 99.14
+              "x": 101.54,
+              "y": 98.46
             },
             {
-              "x": 101.85,
-              "y": 99.93
+              "x": 101.84,
+              "y": 99.98
             },
             {
-              "x": 101.81,
-              "y": 99.72
+              "x": 101.59,
+              "y": 99.52
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "OTLY",
-            "name": "Oatly Group AB",
-            "change_pct": 26.1176,
-            "price": 16.08
+            "ticker": "UTZ",
+            "name": "Utz Brands, Inc.",
+            "change_pct": 0.2104,
+            "price": 14.29
           }
         ],
-        "rotation": -2
+        "rotation": -5
       },
       {
         "ticker": "XLRE",
         "sector": "Real Estate",
-        "ret_1d": 0.92,
-        "ret_5d": 0.55,
-        "ret_1m": 3.35,
-        "ret_3m": -0.96,
-        "rel_1d": 1.21,
-        "rel_5d": 2.4,
-        "rel_1m": 10.23,
-        "rel_3m": 5.86,
-        "rvol": 1.03,
+        "ret_1d": 0.57,
+        "ret_5d": 2.87,
+        "ret_1m": 4.7,
+        "ret_3m": 0.0,
+        "rel_1d": -0.34,
+        "rel_5d": 1.84,
+        "rel_1m": 11.06,
+        "rel_3m": 5.76,
+        "rvol": 1.06,
         "rrg": {
-          "x": 101.82,
-          "y": 99.76,
+          "x": 101.66,
+          "y": 99.56,
           "quadrant": "Weakening",
           "tail": [
             {
-              "x": 98.93,
-              "y": 101.47
+              "x": 99.22,
+              "y": 101.6
             },
             {
-              "x": 99.31,
-              "y": 100.54
+              "x": 99.97,
+              "y": 101.16
             },
             {
-              "x": 99.47,
-              "y": 100.07
+              "x": 100.28,
+              "y": 100.33
             },
             {
-              "x": 102.03,
-              "y": 103.0
+              "x": 102.8,
+              "y": 102.98
             },
             {
-              "x": 101.53,
-              "y": 98.86
+              "x": 101.44,
+              "y": 97.72
             },
             {
-              "x": 101.69,
-              "y": 99.81
+              "x": 101.68,
+              "y": 99.91
             },
             {
-              "x": 101.82,
-              "y": 99.76
+              "x": 101.66,
+              "y": 99.56
             }
           ]
         },
@@ -557,346 +574,328 @@
         "rotation": -2
       },
       {
-        "ticker": "XLV",
-        "sector": "Health Care",
-        "ret_1d": -0.56,
-        "ret_5d": 1.39,
-        "ret_1m": 2.51,
-        "ret_3m": 7.46,
-        "rel_1d": -0.27,
-        "rel_5d": 3.24,
-        "rel_1m": 9.39,
-        "rel_3m": 14.28,
-        "rvol": 1.04,
+        "ticker": "XLC",
+        "sector": "Comm. Services",
+        "ret_1d": 1.5,
+        "ret_5d": 4.09,
+        "ret_1m": 3.7,
+        "ret_3m": -5.02,
+        "rel_1d": 0.59,
+        "rel_5d": 3.06,
+        "rel_1m": 10.06,
+        "rel_3m": 0.74,
+        "rvol": 0.67,
         "rrg": {
-          "x": 101.56,
-          "y": 100.1,
+          "x": 101.25,
+          "y": 100.93,
           "quadrant": "Leading",
           "tail": [
             {
-              "x": 101.4,
-              "y": 102.17
+              "x": 100.07,
+              "y": 100.48
             },
             {
-              "x": 101.98,
-              "y": 100.36
+              "x": 97.76,
+              "y": 97.98
             },
             {
-              "x": 101.55,
-              "y": 99.51
+              "x": 97.0,
+              "y": 99.55
             },
             {
-              "x": 102.58,
-              "y": 100.85
+              "x": 99.78,
+              "y": 102.34
             },
             {
-              "x": 101.8,
-              "y": 99.18
+              "x": 99.78,
+              "y": 100.0
             },
             {
-              "x": 101.31,
-              "y": 99.46
+              "x": 100.13,
+              "y": 100.24
             },
             {
-              "x": 101.56,
-              "y": 100.1
+              "x": 101.25,
+              "y": 100.93
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "CPIX",
-            "name": "Cumberland Pharmaceuticals Inc.",
-            "change_pct": 24.2613,
-            "price": 7.99
+            "ticker": "BILI",
+            "name": "Bilibili Inc",
+            "change_pct": 7.874,
+            "price": 12.33
           },
           {
-            "ticker": "CUE",
-            "name": "Cue Biopharma, Inc.",
-            "change_pct": 22.9197,
-            "price": 8.42
+            "ticker": "AAOI",
+            "name": "Applied Optoelectronics, Inc.",
+            "change_pct": 6.0778,
+            "price": 39.27
           },
           {
-            "ticker": "AGMB",
-            "name": "Agomab Therapeutics NV",
-            "change_pct": 10.3448,
-            "price": 6.4
+            "ticker": "TME",
+            "name": "Tencent Music Entertainment Group",
+            "change_pct": 4.717,
+            "price": 9.99
           }
         ],
         "rotation": 1
       },
       {
-        "ticker": "XLY",
-        "sector": "Cons. Discretionary",
-        "ret_1d": -0.2,
-        "ret_5d": -1.43,
-        "ret_1m": 1.77,
-        "ret_3m": 1.61,
-        "rel_1d": 0.09,
-        "rel_5d": 0.42,
-        "rel_1m": 8.65,
-        "rel_3m": 8.43,
-        "rvol": 0.75,
-        "rrg": {
-          "x": 101.68,
-          "y": 98.99,
-          "quadrant": "Weakening",
-          "tail": [
-            {
-              "x": 99.17,
-              "y": 100.83
-            },
-            {
-              "x": 100.41,
-              "y": 101.54
-            },
-            {
-              "x": 100.47,
-              "y": 99.84
-            },
-            {
-              "x": 102.97,
-              "y": 102.81
-            },
-            {
-              "x": 101.95,
-              "y": 98.26
-            },
-            {
-              "x": 102.08,
-              "y": 99.72
-            },
-            {
-              "x": 101.68,
-              "y": 98.99
-            }
-          ]
-        },
-        "top_stocks": [
-          {
-            "ticker": "LI",
-            "name": "Li Auto Inc",
-            "change_pct": 11.028,
-            "price": 11.88
-          },
-          {
-            "ticker": "DKNG",
-            "name": "DraftKings Inc.",
-            "change_pct": 9.5593,
-            "price": 17.65
-          },
-          {
-            "ticker": "GENI",
-            "name": "Genius Sports Ltd",
-            "change_pct": 9.4595,
-            "price": 5.67
-          }
-        ],
-        "rotation": -6
-      },
-      {
         "ticker": "XLU",
         "sector": "Utilities",
-        "ret_1d": 0.48,
-        "ret_5d": 0.14,
-        "ret_1m": 1.77,
-        "ret_3m": 1.74,
-        "rel_1d": 0.77,
-        "rel_5d": 1.99,
-        "rel_1m": 8.65,
-        "rel_3m": 8.56,
-        "rvol": 0.79,
+        "ret_1d": 0.37,
+        "ret_5d": 1.77,
+        "ret_1m": 3.01,
+        "ret_3m": 3.19,
+        "rel_1d": -0.54,
+        "rel_5d": 0.74,
+        "rel_1m": 9.37,
+        "rel_3m": 8.95,
+        "rvol": 0.83,
         "rrg": {
-          "x": 101.74,
-          "y": 99.25,
+          "x": 101.55,
+          "y": 98.82,
           "quadrant": "Weakening",
           "tail": [
             {
-              "x": 99.8,
-              "y": 100.96
+              "x": 99.7,
+              "y": 100.8
             },
             {
-              "x": 99.96,
-              "y": 99.88
+              "x": 100.95,
+              "y": 102.1
             },
             {
-              "x": 100.42,
-              "y": 100.48
+              "x": 101.06,
+              "y": 99.78
             },
             {
-              "x": 101.37,
-              "y": 101.21
+              "x": 102.43,
+              "y": 101.86
             },
             {
-              "x": 101.39,
-              "y": 99.42
+              "x": 101.43,
+              "y": 97.72
             },
             {
-              "x": 101.85,
-              "y": 100.29
+              "x": 101.91,
+              "y": 100.34
             },
             {
-              "x": 101.74,
-              "y": 99.25
+              "x": 101.55,
+              "y": 98.82
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "OPTX",
-            "name": "Syntec Optics Holdings, Inc",
-            "change_pct": 15.6783,
-            "price": 7.12
+            "ticker": "SBS",
+            "name": "Companhia de Saneamento Basico do Estado de Sao Paulo - SABESP",
+            "change_pct": 13.3745,
+            "price": 5.51
           },
           {
-            "ticker": "SHLS",
-            "name": "Shoals Technologies Group, Inc.",
-            "change_pct": 9.2308,
-            "price": 7.1
+            "ticker": "FLNC",
+            "name": "Fluence Energy Inc",
+            "change_pct": 6.3559,
+            "price": 5.02
           },
           {
-            "ticker": "INIO",
-            "name": "Innio NV",
-            "change_pct": 8.2083,
-            "price": 12.985
+            "ticker": "BIPC",
+            "name": "Brookfield Infrastructure Corp",
+            "change_pct": 4.2356,
+            "price": 42.82
           }
         ],
-        "rotation": -1
+        "rotation": -5
       },
       {
-        "ticker": "XLC",
-        "sector": "Comm. Services",
-        "ret_1d": 0.89,
-        "ret_5d": -0.19,
-        "ret_1m": 1.74,
-        "ret_3m": -5.1,
-        "rel_1d": 1.18,
-        "rel_5d": 1.66,
-        "rel_1m": 8.62,
-        "rel_3m": 1.72,
-        "rvol": 0.87,
+        "ticker": "XLY",
+        "sector": "Cons. Discretionary",
+        "ret_1d": 1.05,
+        "ret_5d": 2.45,
+        "ret_1m": 2.94,
+        "ret_3m": 1.51,
+        "rel_1d": 0.14,
+        "rel_5d": 1.42,
+        "rel_1m": 9.3,
+        "rel_3m": 7.27,
+        "rvol": 0.86,
         "rrg": {
-          "x": 101.05,
-          "y": 100.64,
-          "quadrant": "Leading",
+          "x": 101.62,
+          "y": 99.33,
+          "quadrant": "Weakening",
           "tail": [
             {
-              "x": 99.23,
-              "y": 100.54
+              "x": 99.68,
+              "y": 101.13
             },
             {
-              "x": 97.82,
-              "y": 98.69
+              "x": 100.71,
+              "y": 101.23
             },
             {
-              "x": 97.0,
+              "x": 100.97,
+              "y": 100.15
+            },
+            {
+              "x": 102.93,
+              "y": 102.0
+            },
+            {
+              "x": 101.83,
+              "y": 98.17
+            },
+            {
+              "x": 101.77,
               "y": 99.47
             },
             {
-              "x": 98.62,
-              "y": 101.52
-            },
-            {
-              "x": 99.94,
-              "y": 100.95
-            },
-            {
-              "x": 100.34,
-              "y": 100.27
-            },
-            {
-              "x": 101.05,
-              "y": 100.64
+              "x": 101.62,
+              "y": 99.33
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "ASTS",
-            "name": "AST SpaceMobile, Inc.",
-            "change_pct": 10.2542,
-            "price": 26.02
-          },
-          {
-            "ticker": "CHTR",
-            "name": "Charter Communications, Inc.",
-            "change_pct": 8.3904,
-            "price": 147.27
-          },
-          {
-            "ticker": "SPCX",
-            "name": "Space Exploration Technologies Corp",
-            "change_pct": 1.2956,
-            "price": 127.44
+            "ticker": "UGP",
+            "name": "Ultrapar Participacoes SA",
+            "change_pct": 11.4068,
+            "price": 5.86
           }
         ],
-        "rotation": -1
+        "rotation": -2
+      },
+      {
+        "ticker": "XLV",
+        "sector": "Health Care",
+        "ret_1d": 0.04,
+        "ret_5d": 3.54,
+        "ret_1m": 2.24,
+        "ret_3m": 7.77,
+        "rel_1d": -0.87,
+        "rel_5d": 2.51,
+        "rel_1m": 8.6,
+        "rel_3m": 13.53,
+        "rvol": 1.15,
+        "rrg": {
+          "x": 101.34,
+          "y": 99.97,
+          "quadrant": "Weakening",
+          "tail": [
+            {
+              "x": 102.15,
+              "y": 102.67
+            },
+            {
+              "x": 102.86,
+              "y": 100.46
+            },
+            {
+              "x": 102.47,
+              "y": 99.57
+            },
+            {
+              "x": 102.83,
+              "y": 100.23
+            },
+            {
+              "x": 101.66,
+              "y": 98.86
+            },
+            {
+              "x": 101.24,
+              "y": 99.49
+            },
+            {
+              "x": 101.34,
+              "y": 99.97
+            }
+          ]
+        },
+        "top_stocks": [
+          {
+            "ticker": "VERA",
+            "name": "Vera Therapeutics, Inc.",
+            "change_pct": 15.7288,
+            "price": 34.14
+          },
+          {
+            "ticker": "DFTX",
+            "name": "Definium Therapeutics Inc",
+            "change_pct": 9.7781,
+            "price": 34.13
+          }
+        ],
+        "rotation": 3
       },
       {
         "ticker": "XLF",
         "sector": "Financials",
-        "ret_1d": 0.71,
-        "ret_5d": 0.16,
-        "ret_1m": 1.13,
-        "ret_3m": -2.02,
-        "rel_1d": 1.0,
-        "rel_5d": 2.01,
-        "rel_1m": 8.01,
-        "rel_3m": 4.8,
-        "rvol": 0.96,
+        "ret_1d": 1.11,
+        "ret_5d": 2.81,
+        "ret_1m": 1.8,
+        "ret_3m": -1.3,
+        "rel_1d": 0.2,
+        "rel_5d": 1.78,
+        "rel_1m": 8.16,
+        "rel_3m": 4.46,
+        "rvol": 0.92,
         "rrg": {
-          "x": 101.59,
-          "y": 100.04,
-          "quadrant": "Leading",
+          "x": 101.56,
+          "y": 99.88,
+          "quadrant": "Weakening",
           "tail": [
             {
-              "x": 98.92,
-              "y": 101.48
+              "x": 99.29,
+              "y": 101.3
             },
             {
-              "x": 99.75,
-              "y": 101.01
+              "x": 100.51,
+              "y": 101.36
             },
             {
-              "x": 99.91,
-              "y": 100.2
+              "x": 100.53,
+              "y": 100.06
             },
             {
-              "x": 101.92,
-              "y": 101.89
+              "x": 102.36,
+              "y": 101.64
+            },
+            {
+              "x": 101.42,
+              "y": 98.98
+            },
+            {
+              "x": 101.43,
+              "y": 99.85
             },
             {
               "x": 101.56,
-              "y": 99.52
-            },
-            {
-              "x": 101.34,
-              "y": 99.65
-            },
-            {
-              "x": 101.59,
-              "y": 100.04
+              "y": 99.88
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "RKT",
-            "name": "Rocket Companies Inc",
-            "change_pct": 7.3684,
-            "price": 15.3
+            "ticker": "XP",
+            "name": "XP Inc",
+            "change_pct": 17.2342,
+            "price": 16.87
+          },
+          {
+            "ticker": "ITUB",
+            "name": "Itau Unibanco Holding SA",
+            "change_pct": 13.6628,
+            "price": 7.82
           },
           {
             "ticker": "NU",
             "name": "Nu Holdings Ltd.",
-            "change_pct": 4.2159,
-            "price": 12.36
-          },
-          {
-            "ticker": "SOFI",
-            "name": "SoFi Technologies, Inc.",
-            "change_pct": 1.633,
-            "price": 13.07
+            "change_pct": 8.0097,
+            "price": 13.35
           }
         ],
         "rotation": 2
@@ -904,68 +903,68 @@
       {
         "ticker": "XLB",
         "sector": "Materials",
-        "ret_1d": 2.07,
-        "ret_5d": 1.49,
-        "ret_1m": -1.1,
-        "ret_3m": -3.35,
-        "rel_1d": 2.36,
-        "rel_5d": 3.34,
-        "rel_1m": 5.78,
-        "rel_3m": 3.47,
-        "rvol": 0.84,
+        "ret_1d": 1.02,
+        "ret_5d": 4.67,
+        "ret_1m": -0.25,
+        "ret_3m": -2.28,
+        "rel_1d": 0.11,
+        "rel_5d": 3.64,
+        "rel_1m": 6.11,
+        "rel_3m": 3.48,
+        "rvol": 1.09,
         "rrg": {
-          "x": 101.66,
-          "y": 100.57,
+          "x": 101.6,
+          "y": 100.55,
           "quadrant": "Leading",
           "tail": [
             {
-              "x": 99.04,
-              "y": 101.15
+              "x": 99.52,
+              "y": 101.23
             },
             {
-              "x": 100.01,
-              "y": 100.95
+              "x": 100.64,
+              "y": 101.06
             },
             {
-              "x": 100.39,
-              "y": 100.25
+              "x": 100.95,
+              "y": 100.17
             },
             {
-              "x": 101.82,
-              "y": 101.45
+              "x": 102.26,
+              "y": 101.33
             },
             {
-              "x": 101.35,
-              "y": 99.31
+              "x": 101.08,
+              "y": 98.52
             },
             {
-              "x": 100.97,
-              "y": 99.39
+              "x": 100.91,
+              "y": 99.58
             },
             {
-              "x": 101.66,
-              "y": 100.57
+              "x": 101.6,
+              "y": 100.55
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "SIND",
-            "name": "Sinda Ltd",
-            "change_pct": 17.9577,
-            "price": 10.05
+            "ticker": "HYMC",
+            "name": "Hycroft Mining Holding Corp",
+            "change_pct": 7.5802,
+            "price": 14.76
           },
           {
-            "ticker": "SCZM",
-            "name": "Santacruz Silver Mining Ltd",
-            "change_pct": 9.635,
-            "price": 7.51
+            "ticker": "ALM",
+            "name": "Almonty Industries Inc",
+            "change_pct": 6.7847,
+            "price": 7.24
           },
           {
-            "ticker": "RYAM",
-            "name": "Rayonier Advanced Materials Inc.",
-            "change_pct": 8.0579,
-            "price": 5.23
+            "ticker": "EXK",
+            "name": "Endeavour Silver Corp",
+            "change_pct": 6.6775,
+            "price": 6.55
           }
         ],
         "rotation": 7
@@ -973,200 +972,194 @@
       {
         "ticker": "XLI",
         "sector": "Industrials",
-        "ret_1d": 0.83,
-        "ret_5d": -1.04,
-        "ret_1m": -2.96,
-        "ret_3m": -8.62,
-        "rel_1d": 1.12,
-        "rel_5d": 0.81,
-        "rel_1m": 3.92,
-        "rel_3m": -1.8,
-        "rvol": 0.86,
+        "ret_1d": 1.12,
+        "ret_5d": 2.12,
+        "ret_1m": -2.2,
+        "ret_3m": -6.73,
+        "rel_1d": 0.21,
+        "rel_5d": 1.09,
+        "rel_1m": 4.16,
+        "rel_3m": -0.97,
+        "rvol": 1.38,
         "rrg": {
-          "x": 101.97,
-          "y": 100.13,
+          "x": 101.99,
+          "y": 100.27,
           "quadrant": "Leading",
           "tail": [
             {
-              "x": 98.75,
-              "y": 100.93
+              "x": 98.85,
+              "y": 100.65
             },
             {
-              "x": 99.01,
-              "y": 100.59
+              "x": 99.1,
+              "y": 100.57
             },
             {
-              "x": 99.18,
-              "y": 100.39
+              "x": 99.72,
+              "y": 101.12
             },
             {
-              "x": 99.81,
-              "y": 100.85
+              "x": 100.03,
+              "y": 100.19
             },
             {
-              "x": 101.2,
-              "y": 102.38
+              "x": 100.85,
+              "y": 101.14
             },
             {
-              "x": 101.56,
-              "y": 100.05
+              "x": 101.51,
+              "y": 100.77
             },
             {
-              "x": 101.97,
-              "y": 100.13
+              "x": 101.99,
+              "y": 100.27
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "CDNL",
-            "name": "Cardinal Infrastructure Group Inc.",
-            "change_pct": 16.2662,
-            "price": 6.29
+            "ticker": "EMBJ",
+            "name": "Embraer SA",
+            "change_pct": 7.3554,
+            "price": 19.12
+          }
+        ],
+        "rotation": 1
+      },
+      {
+        "ticker": "XLE",
+        "sector": "Energy",
+        "ret_1d": 1.58,
+        "ret_5d": 1.6,
+        "ret_1m": -9.62,
+        "ret_3m": -0.71,
+        "rel_1d": 0.67,
+        "rel_5d": 0.57,
+        "rel_1m": -3.26,
+        "rel_3m": 5.05,
+        "rvol": 0.71,
+        "rrg": {
+          "x": 100.16,
+          "y": 100.29,
+          "quadrant": "Leading",
+          "tail": [
+            {
+              "x": 101.45,
+              "y": 100.4
+            },
+            {
+              "x": 101.88,
+              "y": 100.34
+            },
+            {
+              "x": 101.62,
+              "y": 99.6
+            },
+            {
+              "x": 99.77,
+              "y": 97.89
+            },
+            {
+              "x": 100.02,
+              "y": 100.46
+            },
+            {
+              "x": 100.01,
+              "y": 100.12
+            },
+            {
+              "x": 100.16,
+              "y": 100.29
+            }
+          ]
+        },
+        "top_stocks": [
+          {
+            "ticker": "PBR",
+            "name": "Petroleo Brasileiro SA Petrobras",
+            "change_pct": 7.4766,
+            "price": 17.25
           },
           {
-            "ticker": "HY",
-            "name": "Hyster-Yale Inc",
-            "change_pct": 10.2041,
-            "price": 17.28
+            "ticker": "YPF",
+            "name": "YPF SA",
+            "change_pct": 5.3736,
+            "price": 33.14
           },
           {
-            "ticker": "AADX",
-            "name": "Applied Aerospace & Defense Inc",
-            "change_pct": 9.4574,
-            "price": 7.06
+            "ticker": "NXE",
+            "name": "Nexgen Energy Ltd",
+            "change_pct": 4.3103,
+            "price": 7.26
           }
         ],
         "rotation": 0
       },
       {
-        "ticker": "XLE",
-        "sector": "Energy",
-        "ret_1d": 0.74,
-        "ret_5d": -0.64,
-        "ret_1m": -10.72,
-        "ret_3m": -1.65,
-        "rel_1d": 1.03,
-        "rel_5d": 1.21,
-        "rel_1m": -3.84,
-        "rel_3m": 5.17,
-        "rvol": 0.78,
-        "rrg": {
-          "x": 99.99,
-          "y": 100.48,
-          "quadrant": "Improving",
-          "tail": [
-            {
-              "x": 102.01,
-              "y": 102.05
-            },
-            {
-              "x": 101.87,
-              "y": 99.62
-            },
-            {
-              "x": 101.48,
-              "y": 99.42
-            },
-            {
-              "x": 99.42,
-              "y": 97.5
-            },
-            {
-              "x": 99.54,
-              "y": 100.32
-            },
-            {
-              "x": 99.66,
-              "y": 100.26
-            },
-            {
-              "x": 99.99,
-              "y": 100.48
-            }
-          ]
-        },
-        "top_stocks": [
-          {
-            "ticker": "NFE",
-            "name": "New Fortress Energy Inc.",
-            "change_pct": 12.8889,
-            "price": 5.08
-          },
-          {
-            "ticker": "RIG",
-            "name": "Transocean Ltd.",
-            "change_pct": 4.1408,
-            "price": 5.03
-          }
-        ],
-        "rotation": 2
-      },
-      {
         "ticker": "XLK",
         "sector": "Technology",
-        "ret_1d": -0.83,
-        "ret_5d": -4.9,
-        "ret_1m": -17.78,
-        "ret_3m": -17.3,
-        "rel_1d": -0.54,
-        "rel_5d": -3.05,
-        "rel_1m": -10.9,
-        "rel_3m": -10.48,
-        "rvol": 1.07,
+        "ret_1d": 1.05,
+        "ret_5d": -2.03,
+        "ret_1m": -17.58,
+        "ret_3m": -15.12,
+        "rel_1d": 0.14,
+        "rel_5d": -3.06,
+        "rel_1m": -11.22,
+        "rel_3m": -9.36,
+        "rvol": 1.19,
         "rrg": {
-          "x": 98.26,
-          "y": 100.13,
+          "x": 98.37,
+          "y": 100.16,
           "quadrant": "Improving",
           "tail": [
             {
-              "x": 100.03,
+              "x": 99.67,
+              "y": 98.05
+            },
+            {
+              "x": 98.74,
+              "y": 99.15
+            },
+            {
+              "x": 99.7,
+              "y": 100.96
+            },
+            {
+              "x": 97.0,
               "y": 97.79
             },
             {
-              "x": 99.48,
-              "y": 99.49
+              "x": 98.46,
+              "y": 101.43
             },
             {
-              "x": 100.02,
-              "y": 100.58
+              "x": 98.44,
+              "y": 100.2
             },
             {
-              "x": 97.74,
-              "y": 98.01
-            },
-            {
-              "x": 98.4,
-              "y": 100.77
-            },
-            {
-              "x": 98.36,
-              "y": 100.15
-            },
-            {
-              "x": 98.26,
-              "y": 100.13
+              "x": 98.37,
+              "y": 100.16
             }
           ]
         },
         "top_stocks": [
           {
-            "ticker": "CUE",
-            "name": "Cue Biopharma, Inc.",
-            "change_pct": 22.9197,
-            "price": 8.42
+            "ticker": "VERA",
+            "name": "Vera Therapeutics, Inc.",
+            "change_pct": 15.7288,
+            "price": 34.14
           },
           {
-            "ticker": "BNAI",
-            "name": "Brand Engagement Network Inc",
-            "change_pct": 22.5564,
-            "price": 8.15
+            "ticker": "SNDK",
+            "name": "SanDisk Corporation",
+            "change_pct": 6.6024,
+            "price": 78.47
           },
           {
-            "ticker": "CSIQ",
-            "name": "Canadian Solar Inc.",
-            "change_pct": 12.5,
-            "price": 5.445
+            "ticker": "U",
+            "name": "Unity Software Inc.",
+            "change_pct": 5.7214,
+            "price": 51
           }
         ],
         "rotation": 0
@@ -1174,7 +1167,7 @@
     ],
     "posture": {
       "label": "Risk-off",
-      "spread": -6.25,
+      "spread": -6.0,
       "leaders": [
         "Cons. Staples",
         "Real Estate"
@@ -1186,114 +1179,128 @@
     },
     "benchmark": {
       "ticker": "SPY",
-      "ret_1d": -0.29,
-      "ret_5d": -1.85,
-      "ret_1m": -6.88,
-      "ret_3m": -6.82
+      "ret_1d": 0.91,
+      "ret_5d": 1.03,
+      "ret_1m": -6.36,
+      "ret_3m": -5.76
     }
   },
   "reddit_feed": [
     {
-      "id": "3ce4929d665a7371efee72b8e619e3379865dfbfe06612ee1f2ec3c05e5e92bc",
-      "title": "\u949b\u52a8\u79d1\u6280 \u00d7 \u817e\u8baf\u4e91\u8fbe\u6210\u6218\u7565\u5408\u4f5c\uff0c\u7528AI\u6253\u5f00\u4f01\u4e1a\u5168\u7403\u589e\u957f\u65b0\u7a7a\u95f4\uff01",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "TCEHY"
-      ],
-      "hours_ago": 2.1,
-      "url": "https://www.globenewswire.com/news-release/2026/11/27/3411050/0/zh-hans/%E9%92%9B%E5%8A%A8%E7%A7%91%E6%8A%80-%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BE%BE%E6%88%90%E6%88%98%E7%95%A5%E5%90%88%E4%BD%9C-%E7%94%A8ai%E6%89%93%E5%BC%80%E4%BC%81%E4%B8%9A%E5%85%A8%E7%90%83%E5%A2%9E%E9%95%BF%E6%96%B0%E7%A9%BA%E9%97%B4.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "TCEHY"
-      ]
-    },
-    {
-      "id": "29c668b3222462448ef1033d19109d717ce94d84a60b67315ab3063ed6a7d815",
-      "title": "Tec-Do and Tencent Cloud Form Strategic Partnership to Help Businesses Unlock Global Growth with AI",
-      "subreddit": "GlobeNewswire Inc.",
-      "ups": 0,
-      "tickers": [
-        "TCEHY"
-      ],
-      "hours_ago": 2.1,
-      "url": "https://www.globenewswire.com/news-release/2026/11/27/3411050/0/en/tec-do-and-tencent-cloud-form-strategic-partnership-to-help-businesses-unlock-global-growth-with-ai.html",
-      "is_news": true,
-      "confirmed_tickers": [
-        "TCEHY"
-      ]
-    },
-    {
-      "id": "dd3e608d2fa0602eb224149eaffc38498b3b3ff34265084b1e74f715a4a72433",
-      "title": "2 Dividend Stocks to Buy in November and 1 to Leave on the Shelf",
+      "id": "6a0235748b73695a639d37e8ae226514b4c8604872c2b855b08b6729f67b11ff",
+      "title": "Constellation Energy Just Raised Its Forecast. Is the Stock Still a Buy?",
       "subreddit": "The Motley Fool",
       "ups": 0,
       "tickers": [
-        "PG",
-        "MKC",
-        "MO",
-        "UL"
-      ],
-      "hours_ago": 2.7,
-      "url": "https://www.fool.com/investing/2026/11/26/2-dividend-stocks-to-buy-in-november-and-1-to-leave-on-the-shelf/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "PG"
-      ]
-    },
-    {
-      "id": "a557fae5c8f0392c2c922c8e15a5c80d584a33195012bdc200bb87c00d60c0dc",
-      "title": "Not Nvidia. Not Micron. If I Could Buy and Hold Only 1 Artificial Intelligence (AI) Semiconductor Stock Through 2030, Th",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "TSM",
-        "NVDA",
-        "MU",
-        "AMD",
-        "AVGO"
-      ],
-      "hours_ago": 3.2,
-      "url": "https://www.fool.com/investing/2026/11/26/not-nvidia-not-micron-if-i-could-buy-and-hold-only-1-artificial-intelligence-ai-semiconductor-stock-through-2030-this-would-be-it/?source=iedfolrf0000001",
-      "is_news": true,
-      "confirmed_tickers": [
-        "NVDA",
-        "MU",
-        "AMD"
-      ]
-    },
-    {
-      "id": "2ef20e82b6282a611aaf242057614d93d65bf37c01b7b4f9a9c1d0d827e313b2",
-      "title": "Nvidia Is the Worst-Performing \"Magnificent Seven\" Stock This Year. Is It a Buy Before 2027?",
-      "subreddit": "The Motley Fool",
-      "ups": 0,
-      "tickers": [
-        "NVDA",
+        "CEG",
+        "AMZN",
         "GOOG",
         "GOOGL",
-        "GOOGM",
-        "GOOGN"
+        "GOOGM"
       ],
-      "hours_ago": 3.6,
-      "url": "https://www.fool.com/investing/2026/11/26/nvidia-is-the-worst-performing-magnificent-seven-stock-this-year-is-it-a-buy-before-2027/?source=iedfolrf0000001",
+      "hours_ago": 0.8,
+      "url": "https://www.fool.com/investing/2026/11/27/constellation-energy-just-raised-its-forecast-is-the-stock-still-a-buy/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOOG",
+        "GOOGL",
+        "GOOGM"
+      ]
+    },
+    {
+      "id": "d32987be7eb529d030a7e01651903101ee7a16689f13f76977da841a777bac2c",
+      "title": "Why Applied Materials Stock Fell 17% Despite a Record Quarter",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "AMAT",
+        "NVDA",
+        "INTC"
+      ],
+      "hours_ago": 0.9,
+      "url": "https://www.fool.com/investing/2026/11/27/why-applied-materials-stock-fell-17-despite-a-record-quarter/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
         "NVDA"
       ]
     },
     {
-      "id": "b6c1b1b115bab29e91e9f0b6ffb954e4f935c9000616abf3e6751f9aebd7cded",
-      "title": "Sandisk\u2019s 8-for-1 Split Is Done. Here\u2019s What Investors Should Do Next.",
+      "id": "9847f1574a8b426ecec13201c07b12d86caa8181180038e4d602bc6348b3e1b3",
+      "title": "Breakfast News: Black Friday \u2014 Stocks on Sale!",
       "subreddit": "The Motley Fool",
       "ups": 0,
       "tickers": [
-        "SNDK"
+        "GEV",
+        "GOOG",
+        "GOOGL",
+        "GOOGM",
+        "GOOGN"
       ],
-      "hours_ago": 5.1,
-      "url": "https://www.fool.com/investing/2026/11/26/sandisks-8-for-1-split-is-done-heres-what-investors-should-do-next/?source=iedfolrf0000001",
+      "hours_ago": 2.1,
+      "url": "https://www.fool.com/investing/breakfast-news/2026/11/27/breakfast-news/?source=iedfolrf0000001",
       "is_news": true,
       "confirmed_tickers": [
-        "SNDK"
+        "GOOG",
+        "GOOGL",
+        "GOOGM"
+      ]
+    },
+    {
+      "id": "6ccda70814ddf02c7ba54c0a8f379c5e6ac40807d4c7370ca1a34504f99c44b8",
+      "title": "Tech Sell-Off: 1 Unstoppable Stock-Split Stock to Buy Before It Joins Nvidia, Alphabet, Microsoft, and Apple in the $3 T",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "META",
+        "METAM",
+        "NVDA",
+        "GOOG",
+        "GOOGL"
+      ],
+      "hours_ago": 2.3,
+      "url": "https://www.fool.com/investing/2026/11/27/tech-sell-off-1-unstoppable-stock-split-stock-buy-before-joins-nvidia-alphabet-microsoft-apple-usd3-trillion-club/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA",
+        "GOOG",
+        "GOOGL"
+      ]
+    },
+    {
+      "id": "1cfc01245b4c672af44cbd6666d0a4f26bcc8f0994d9ce0df954f586f080029f",
+      "title": "President Donald Trump Just Floated the Idea of the U.S. Government Buying a Stake in Nvidia -- but It Wouldn't Fix the ",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "NVDA",
+        "INTC"
+      ],
+      "hours_ago": 2.5,
+      "url": "https://www.fool.com/investing/2026/11/27/donald-trump-just-floated-idea-government-buy-stake-in-nvidia-wouldnt-fix-biggest-flaw/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "ed3a2cae9bea3437fea98cca8e0e972153e8e5f77b967925a19845c6118e125b",
+      "title": "Anthropic\u2019s Lock-Up Expirations Start Dec. 15. Here\u2019s What Investors Should Know Before Then.",
+      "subreddit": "The Motley Fool",
+      "ups": 0,
+      "tickers": [
+        "ANT",
+        "SPCX",
+        "GOOG",
+        "GOOGL",
+        "GOOGM"
+      ],
+      "hours_ago": 4.2,
+      "url": "https://www.fool.com/investing/2026/11/27/anthropic-s-lock-up-expirations-start-dec-15-here-s-what-investors-should-know-before-then/?source=iedfolrf0000001",
+      "is_news": true,
+      "confirmed_tickers": [
+        "GOOG",
+        "GOOGL",
+        "GOOGM"
       ]
     }
   ]
